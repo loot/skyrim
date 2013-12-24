@@ -1,0 +1,113 @@
+#Convert dirty messages
+\r\n\s\s\s?\s?\s?\s?IF\sCHECKSUM\(".{1,60}\.es[pm]",\s(.{8,8})\)\s&&\sIF\sVAR\(EN\)\sDIRTY:\s(\d{1,6})\sITM,\s(\d{1,6})\sUDR\srecords.{1,300}\r\n
+\r\n    dirty:\r\n      - crc: 0x\1\r\n        itm: \2\r\n        udr: \3\r\n        util: *dirtyUtil\r\n
+
+#Convert dirty messages with no lang
+\r\n\s\s\s?\s?\s?\s?IF\sCHECKSUM\(".{1,50}\.es[pm]",\s(.{8,8})\)\sDIRTY:\s(\d{1,6})\sITM,\s(\d{1,6})\sUDR\srecords.{1,300}\r\n
+\r\n    dirty:\r\n      - crc: 0x\1\r\n        itm: \2\r\n        udr: \3\r\n        util: *dirtyUtil\r\n
+
+#Remove russian and spanish dirty messages
+\r\n\s{4,6}IF\sCHECKSUM\(".{1,60}\.es[pm]",\s(.{8,8})\)\s&&\sIF\sVAR\((RU|ES)\)\sDIRTY:.{1,444}\r\n
+
+#Remove false CRC messages
+\s{1,6}IF\sCHECKSUM\(.{1,80}, .{0,7}\).+\r\n
+
+#Remove errant "dirty:" lines
+\s\s\s\s\s\s\s\sutil:\s\*dirtyUtil\r\n\s\s\s\sdirty:
+        util: *dirtyUtil
+
+#Convert muli-dirty messages
+\r\n\s\sIF\sCHECKSUM\(".{1,40}\.es[pm]",\s(.{8,8})\)\s\|\|\sIF\sCHECKSUM\(".{1,40}\.es[pm]",\s(.{8,8})\)\s&&\sIF\sVAR\(EN\)\sDIRTY:\s(\d{1,6})\sITM,\s(\d{1,6})\sUDR\srecords.{1,300}\r\n
+\r\n    dirty:\r\n      - crc: 0x\1\r\n        itm: \3\r\n        udr: \4\r\n        util: *dirtyUtil\r\n      - crc: 0x\2\r\n        itm: \3\r\n        udr: \4\r\n        util: *dirtyUtil\r\n
+
+#Remove russian and spanish multi-dirty messages
+\r\n\s{4,6}IF\sCHECKSUM\(".{1,40}\.es[pm]",\s(.{8,8})\)\s\|\|\sIF\sCHECKSUM\(".{1,40}\.es[pm]",\s(.{8,8})\)\s&&\sIF\sVAR\((ES|RU)\)\sDIRTY:\s(\d{1,6})\sITM,\s(\d{1,6})\sUDR\s.{1,300}\r\n
+
+#Convert bashed tags
+\s\sTAG:\s\{\{BASH:(\s\l{1,7}),?(\s\l{1,7})?,?(\s\l{1,7})?,?(\s\l{1,7})?\}\}\r\n
+    tag:\r\n      -\1\r\n      -\2\r\n      -\3\r\n      -\4\r\n
+
+#Remove files with no messages
+\s\s-\sname:\s'.{1,200}\.es[mp]'\r\n\s\s-\sname:\s'(.{1,200}\.es[pm])'\r\n
+  - name: '\1'\r\n
+
+#Convert filenames to YAML
+\r\n([^ ].{1,10000}(?<!\\)\.es[pm])\r\n
+\r\n  - name: '\1'\r\n
+
+#Convert Regex names to YAML
+\r\nREGEX:\s(.{1,400})\\(\.es[pm])\r\n
+\r\n  - name: '\1\\\2'\r\n
+
+#Remove requirement messages with .esp/.esm
+\r\n\s\s(.+)?REQ:.+\.es[pm]"?\r\n
+
+#Remove requirement error messages
+\r\n\s\s\s?\s?\s?\s?IFNOT\s(FILE)?(ACTIVE)?(VAR)?\(.{1,400}\)\s&&\sIF\sVAR\((ES|EN|RU)\)\sERROR:\s.{1,400}\.es[pm]\s?"?.{1,400}\r\n
+
+#Remove navmesh warnings as we have no checksums
+^\s\s\s?\s?\s?\s?(.+)?IF\sVAR\((EN|RU|ES)\)\sWARN:\s(This file contains )?(Этот файл содержит )?(Este archivo contiene )?\d{1,30}\s(deleted NavMesh)?(удаленных NavMesh-записей)?(entradas NavMesh)?.+$
+
+#Convert USKP deletion emssages
+^\s\s\s?\s?\s?\s?IF\sVAR\(EN\)\s&&\sIF\sVAR\(USKP\)\sERROR:\s(.{1,60}Unofficial Skyrim Patch\.esp\.)\r\n\s\s\s?\s?\s?\s?IF\sVAR\(RU\)\s&&\sIF\sVAR\(USKP\)\sERROR:\s(.{1,60}Unofficial Skyrim Patch\.esp\.)\r\n\s\s\s?\s?\s?\s?\s?IF\sVAR\(ES\)\s&&\sIF\sVAR\(USKP\)\sERROR:\s(.{1,60}Unofficial Skyrim Patch\.esp\.)
+\r\n    msg:\r\n      - type: warn\r\n        condition: 'file\("Unofficial Skyrim Patch.esp"\)'\r\n        content:\r\n          - lang: eng\r\n            str: '\1'\r\n          - lang: rus\r\n            str: '\2'\r\n          - lang: spa\r\n            str: '\3'
+
+#Remove skyrim version messages (Unrequired for a legitimate copy of skyrim which is always the newest)
+\s\sIF\sVERSION\("TES5",\s"\d\d?\d?\.?\d?\d?\d?\.?\d?\d?\d?",\s<\)\sREQ:\sSkyrim\s\d\d?\d?\.?\d\d?\d?\.?\d?\d?\d?\+?
+
+#Convert SKSE messages
+\r\n\s?\s?IFNOT\sFILE\("SKSE"\)\sREQ:\s"?(http://skse\.silverlock\.org)?\sSKSE"?.*\r\n
+\r\n\s?\s?IF(NOT)?\sVERSION\("SKSE", "\d\d?\.?\d?\d?\.?\d?\d?\.?\d?\d?", [<>]\)\sREQ:\s"?(http://skse\.silverlock\.org)?\sSKSE"?.+\r\n
+\r\n    req:\r\n      - *SKSE\r\n
+
+#Convert simple messages
+\r\n\s\s?\s?\s?\s?\s?IF\sVAR\((EN|ES|RU)\)\s(WARN|SAY|ERROR):\s(.+)\r\n
+\r\n    msg:\r\n      - type: \2\r\n        content:\r\n          - lang: \1\r\n            str: '\3'\r\n
+
+#Remove errant "msg:" lines
+\s\s\s\s\s\s\s\s\s\s\s\sstr:\s'(.+)'\r\n\s\s\s\smsg:
+            str: '\1'\r\n
+
+#Convert incompatibility lines (multi-4)
+\r\n\s\s?IFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\s\|\|\sIFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\s\|\|\sIFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\s\|\|\sIFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\sINC:\s.+$
+\r\n    inc:\r\n      - '\1'\r\n      - '\2'\r\n      - '\3'\r\n      - '\4'\r\n
+
+#Convert incompatibility lines (multi-3)
+\r\n\s\s?IFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\s\|\|\sIFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\s\|\|\sIFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\sINC:\s.+$
+\r\n    inc:\r\n      - '\1'\r\n      - '\2'\r\n      - '\3'\r\n
+
+#Convert incompatibility lines (multi-2)
+\r\n\s\s?IFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\s\|\|\sIFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\sINC:\s.+$
+\r\n    inc:\r\n      - '\1'\r\n      - '\2'\r\n
+
+#Convert incompatibility lines (single)
+\r\n\s\s?IFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\sINC:\s.+\r\n
+\r\n    inc:\r\n      - '\1'\r\n
+
+#Convert REGEX incompatibilities
+\r\n\s\s?IFN?O?T?\sREGEX\(".{1,200}\.es[pm]"\)\sINC:\s(.+)\r\n
+\r\n    inc:\r\n      - '\1'\r\n
+
+#Add "inc:" lines after cleanup step
+\s\s-\sname:\s'(.+\.es[pm])'\r\n\s\s\s\s\s\s-\s'(.+\.es[pm])'\r\n
+  - name: '\1'\r\n    inc:\r\n      - '\2'\r\n
+
+#Remove group lines
+\r\n(BEGIN)?(END)?GROUP:\s.+\r\n
+
+#Remove comment lines
+\r\n\s{0,8}//.+\r\n
+
+#Remove checksum obsolete messages (should really only be added when a file is recommened to update)
+\r\n\s\s\s?\s?\s?\s?IF\sCHECKSUM\("(.{1,200}\.es[pm])",\s(.{8,8})\)\s&&\sIF\sVAR\((EN|ES|RU)\)\s(ERROR|EARN|SAY):\s(Obsolete)?(Устарело)?(Obsoleto)?.+\r\n
+
+#Convert multi file messages (and)
+\r\n\s\s\s?\s?\s?\s?IF\sFILE\("(.+)"\)\s&&\sIF\sFILE\("(.+)"\)\s&&\sIF\sVAR\((EN|RU|ES)\)\s(WARN|SAY|ERROR):\s(.+)
+\r\n    msg:\r\n      - type: \4\r\n        condition: 'file\("\1"\) and file\("\2"\)'\r\n        content:\r\n          - lang: \3\r\n            str: '\5'
+
+#Finding magnitude for multi-or messages
+\s\s\s?\s?\s?\s?IF\sFILE\("(.+)"\)\s(\|\|\sIF\sFILE\("(.+)"\)\s){2,6}&&\sIF\sVAR\((EN|RU|ES)\)\s(WARN|SAY|ERROR):\s(.+)
+
+#Convert multi file messages (or)
+\r\n\s\s\s?\s?\s?\s?IF\sFILE\("(.+)"\)\s\|\|\sIF\sFILE\("(.+)"\)\s&&\sIF\sVAR\((EN|RU|ES)\)\s(WARN|SAY|ERROR):\s(.+)
+\r\n    msg:\r\n      - type: \4\r\n        condition: 'file\("\1"\) and file\("\2"\)'\r\n        content:\r\n          - lang: \3\r\n            str: '\5'     
