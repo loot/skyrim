@@ -657,9 +657,9 @@ BertsBreezehomeGarde
         itm: 475
         udr: 50
         util: *dirtyUtil
-  IF FILE("GuardedHouseImperial.esm") || IF FILE("GuardedHouseStormcloak.esm") && IF VAR(EN) WARN: Use only one GuardedHouse*.esm.
-    IF FILE("GuardedHouseImperial.esm") || IF FILE("GuardedHouseStormcloak.esm") && IF VAR(RU) WARN: Используйте только один GuardedHouse*.esm.
-      IF FILE("GuardedHouseImperial.esm") || IF FILE("GuardedHouseStormcloak.esm") && IF VAR(ES) WARN: Utilizar solo un GuardedHouse*.esm.
+    inc:
+      - 'GuardedHouseImperial.esm'
+      - 'GuardedHouseStormcloak.esm'
   - name: 'GuardedHouseImperial.esm'
     tag:
       - Relev
@@ -668,9 +668,9 @@ BertsBreezehomeGarde
         itm: 469
         udr: 60
         util: *dirtyUtil
-  IF FILE("GuardedHouse.esm") || IF FILE("GuardedHouseStormcloak.esm") && IF VAR(EN) WARN: Use only one GuardedHouse*.esm.
-    IF FILE("GuardedHouse.esm") || IF FILE("GuardedHouseStormcloak.esm") && IF VAR(RU) WARN: Используйте только один GuardedHouse*.esm.
-      IF FILE("GuardedHouse.esm") || IF FILE("GuardedHouseStormcloak.esm") && IF VAR(ES) WARN: Utilizar solo un GuardedHouse*.esm.
+    inc:
+      - 'GuardedHouse.esm'
+      - 'GuardedHouseStormcloak.esm'
   - name: 'GuardedHouseStormcloak.esm'
     tag:
       - Relev
@@ -679,9 +679,9 @@ BertsBreezehomeGarde
         itm: 469
         udr: 58
         util: *dirtyUtil
-  IF FILE("GuardedHouseImperial.esm") || IF FILE("GuardedHouse.esm") && IF VAR(EN) WARN: Use only one GuardedHouse*.esm.
-    IF FILE("GuardedHouseImperial.esm") || IF FILE("GuardedHouse.esm") && IF VAR(RU) WARN: Используйте только один GuardedHouse*.esm.
-      IF FILE("GuardedHouseImperial.esm") || IF FILE("GuardedHouse.esm") && IF VAR(ES) WARN: Use only one GuardedHouse*.esm.
+    inc:
+      - 'GuardedHouse.esm'
+      - 'GuardedHouseImperial.esm'
   - name: 'hideout.esm'
     msg:
       - type: warn
@@ -4186,11 +4186,9 @@ BertsBreezehomeGarde
     IF FILE("jumpHeightOnly.esp") && IF VAR(RU) WARN: Используйте только один jumpheight esp.
       IF FILE("jumpHeightOnly.esp") && IF VAR(ES) WARN: Utilizar solo un jumpheight esp.
   - name: 'lowerJumpHeight.esp'
-  IF FILE("jumpHeightOnly.esp") || IF FILE("jumpHeightThird.esp") && IF VAR(EN) WARN: Use only one jumpheight esp.
-    IF FILE("jumpHeightOnly.esp") || IF FILE("jumpHeightThird.esp") && IF VAR(RU) WARN: Используйте только один jumpheight esp.
-      IF FILE("jumpHeightOnly.esp") || IF FILE("jumpHeightThird.esp") && IF VAR(ES) WARN: Utilizar solo un jumpheight esp.
-  - name: 'SFD_NumericQuality.esp'
-
+    inc:
+      - 'jumpHeightOnly.esp'
+      - 'jumpHeightThird.esp'
   - name: 'Weapons and Armor fixes.esp'
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
@@ -4705,23 +4703,26 @@ BertsBreezehomeGarde
       - 'Modern Day Calendar Names_Learn Names.esp'
       - 'ModernDayCalenderNames DV.esp'
   - name: 'cao_DweSchematicsBuy.esp'
+    inc:
+      - 'cao_DweSchematicsCheat.esp'
+      - 'cao_DweSchematicsSearch.esp'
   IF CHECKSUM("cao_DweSchematicsBuy.esp", 7E85692A) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("cao_DweSchematicsBuy.esp", 7E85692A) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("cao_DweSchematicsBuy.esp", 7E85692A) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
   - name: 'cao_DweSchematicsCheat.esp'
+    inc:
+      - 'cao_DweSchematicsBuy.esp'
+      - 'cao_DweSchematicsSearch.esp'
   IF CHECKSUM("cao_DweSchematicsCheat.esp", 7E7B9B1A) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("cao_DweSchematicsCheat.esp", 7E7B9B1A) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("cao_DweSchematicsCheat.esp", 7E7B9B1A) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
-  IF FILE("cao_DweSchematicsBuy.esp") && IF VAR(EN) WARN: Use only one cao_DweSchematics esp.
-    IF FILE("cao_DweSchematicsBuy.esp") && IF VAR(RU) WARN: Используйте только один cao_DweSchematics esp.
-      IF FILE("cao_DweSchematicsBuy.esp") && IF VAR(ES) WARN: Utilizar solo un cao_DweSchematics esp.
   - name: 'cao_DweSchematicsSearch.esp'
+    inc:
+      - 'cao_DweSchematicsBuy.esp'
+      - 'cao_DweSchematicsCheat.esp'
   IF CHECKSUM("cao_DweSchematicsSearch.esp", A655AB19) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("cao_DweSchematicsSearch.esp", A655AB19) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("cao_DweSchematicsSearch.esp", A655AB19) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
-  IF FILE("cao_DweSchematicsBuy.esp") || IF FILE("cao_DweSchematicsCheat.esp") && IF VAR(EN) WARN: Use only one cao_DweSchematics esp.
-    IF FILE("cao_DweSchematicsBuy.esp") || IF FILE("cao_DweSchematicsCheat.esp") && IF VAR(RU) WARN: Используйте только один cao_DweSchematics esp.
-      IF FILE("cao_DweSchematicsBuy.esp") || IF FILE("cao_DweSchematicsCheat.esp") && IF VAR(ES) WARN: Utilizar solo un cao_DweSchematics esp.
   - name: 'cao_goldbrand.esp'
     msg:
       - type: warn
@@ -7203,33 +7204,40 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         itm: 3
         udr: 47
         util: *dirtyUtil
+    inc:
+      - 'Zira's Skyrim Horse Base - Bareback Riding.esp'
+      - 'Zira's Skyrim Horse Base - No Tack.esp'
+      - 'Zira's Skyrim Horse Base.esp'
   - name: 'Zira's Skyrim Horse Base - Bareback Riding.esp'
-  IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(EN) WARN: Use only one Zira's Skyrim Horse Base esp.
-    IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(RU) WARN: Используйте только один Zira's Skyrim Horse Base esp.
-      IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(ES) WARN: Utilizar solo un Zira's Skyrim Horse Base esp.
     dirty:
       - crc: 0xA2DD658D
         itm: 3
         udr: 47
         util: *dirtyUtil
+    inc:
+      - 'Zira's Skyrim Horse Base - Armored.esp'
+      - 'Zira's Skyrim Horse Base - No Tack.esp'
+      - 'Zira's Skyrim Horse Base.esp'
   - name: 'Zira's Skyrim Horse Base - No Tack.esp'
-  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(EN) WARN: Use only one Zira's Skyrim Horse Base esp.
-    IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(RU) WARN: Используйте только один Zira's Skyrim Horse Base esp.
-      IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(ES) WARN: Utilizar solo un Zira's Skyrim Horse Base esp.
     dirty:
       - crc: 0xF93CD5D0
         itm: 3
         udr: 47
         util: *dirtyUtil
+    inc:
+      - 'Zira's Skyrim Horse Base - Armored.esp'
+      - 'Zira's Skyrim Horse Base - Bareback Riding.esp'
+      - 'Zira's Skyrim Horse Base.esp'
   - name: 'Zira's Skyrim Horse Base.esp'
-  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(EN) WARN: Use only one Zira's Skyrim Horse Base esp.
-    IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(RU) WARN: Используйте только один Zira's Skyrim Horse Base esp.
-      IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(ES) WARN: Utilizar solo un Zira's Skyrim Horse Base esp.
     dirty:
       - crc: 0x86D08FB5
         itm: 3
         udr: 47
         util: *dirtyUtil
+    inc:
+      - 'Zira's Skyrim Horse Base - Armored.esp'
+      - 'Zira's Skyrim Horse Base - Bareback Riding.esp'
+      - 'Zira's Skyrim Horse Base - No Tack.esp'
   - name: 'KoS_Outcast(_Lite)?\.esp'
     msg:
       - type: say
@@ -7754,13 +7762,13 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         udr: 0
         util: *dirtyUtil
   - name: 'AngisEvenBetterBow.esp'
-  IF FILE("AngisBetterBow.esp") && IF VAR(EN) WARN: Use only one AngisBetterBow esp.
-    IF FILE("AngisBetterBow.esp") && IF VAR(RU) WARN: Используйте только один AngisBetterBow esp.
-      IF FILE("AngisBetterBow.esp") && IF VAR(ES) WARN: Utilizar solo un AngisBetterBow esp.
+    inc:
+      - 'AngisBetterBow.esp'
+      - 'AngisEvenBetterBetterBow.esp'
   - name: 'AngisEvenBetterBetterBow.esp'
-  IF FILE("AngisBetterBow.esp") || IF FILE("AngisEvenBetterBow.esp") && IF VAR(EN) WARN: Use only one AngisBetterBow esp.
-    IF FILE("AngisBetterBow.esp") || IF FILE("AngisEvenBetterBow.esp") && IF VAR(RU) WARN: Используйте только один AngisBetterBow esp.
-      IF FILE("AngisBetterBow.esp") || IF FILE("AngisEvenBetterBow.esp") && IF VAR(ES) WARN: Utilizar solo un AngisBetterBow esp.
+    inc:
+      - 'AngisBetterBow.esp'
+      - 'AngisEvenBetterBow.esp'
   - name: 'Arcania_armory( \(base\))?\.esp'
     tag:
       - Relev
@@ -8169,9 +8177,9 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         udr: 1
         util: *dirtyUtil
   - name: 'Cloaks.esp'
-  IF FILE("Cloaks - No Imperial.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
-    IF FILE("Cloaks - No Imperial.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
-      IF FILE("Cloaks - No Imperial.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
+    inc:
+      - 'Cloaks - No Imperial.esp'
+      - 'Cloaks - Player Only.esp'
     dirty:
       - crc: 0x35C871DE
         itm: 4
@@ -8182,9 +8190,9 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         udr: 0
         util: *dirtyUtil
   - name: 'Cloaks - No Imperial.esp'
-  IF FILE("Cloaks.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
-    IF FILE("Cloaks.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
-      IF FILE("Cloaks.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
+    inc:
+      - 'Cloaks.esp'
+      - 'Cloaks - Player Only.esp'
     dirty:
       - crc: 0xD5733582
         itm: 14
@@ -8195,9 +8203,9 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         udr: 0
         util: *dirtyUtil
   - name: 'Cloaks - Player Only.esp'
-  IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
-    IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
-      IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
+    inc:
+      - 'Cloaks.esp'
+      - 'Cloaks - No Imperial.esp'
     dirty:
       - crc: 0x317B2066
         itm: 50
@@ -8208,17 +8216,17 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         udr: 0
         util: *dirtyUtil
   - name: 'Cloaks - Dawnguard.esp'
-  IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(EN) WARN: Use only one cloaks*Dawnguard.esp.
-    IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(RU) WARN: Используйте только один cloaks*Dawnguard.esp.
-      IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*Dawnguard.esp.
+    inc:
+      - 'Cloaks - No Imperial - Dawnguard.esp'
+      - 'Cloaks - Player Only - Dawnguard.esp'
   - name: 'Cloaks - No Imperial - Dawnguard.esp'
-  IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(EN) WARN: Use only one cloaks*Dawnguard.esp.
-    IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(RU) WARN: Используйте только один cloaks*Dawnguard.esp.
-      IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*Dawnguard.esp.
+    inc:
+      - 'Cloaks - Dawnguard.esp'
+      - 'Cloaks - Player Only - Dawnguard.esp'
   - name: 'Cloaks - Player Only - Dawnguard.esp'
-  IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(EN) WARN: Use only one cloaks*Dawnguard.esp.
-    IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(RU) WARN: Используйте только один cloaks*Dawnguard.esp.
-      IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*Dawnguard.esp.
+    inc:
+      - 'Cloaks - Dawnguard.esp'
+      - 'Cloaks - No Imperial - Dawnguard.esp'
   - name: 'Lorecraft - Cloaks(\d{1,3})( No Imperial| PlayerOnly)?\.esp'
     tag:
       - Relev
@@ -8914,13 +8922,13 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
   - name: 'FlameAtronachArmor.esp'
   REQ: "http://www.nexusmods.com/skyrim/mods/2666 CBBE"
   - name: 'Flare Arrow Explosive.esp'
-  IF FILE("Flare Arrow Brighter.esp") && IF VAR(EN) WARN: Use only one Flare Arrow *.esp.
-    IF FILE("Flare Arrow Brighter.esp") && IF VAR(RU) WARN: Используйте только один Flare Arrow *.esp.
-      IF FILE("Flare Arrow Brighter.esp") && IF VAR(ES) WARN: Utilizar solo un Flare Arrow *.esp.
+    inc:
+      - 'Flare Arrow Brighter.esp'
+      - 'Flare Arrow.esp'
   - name: 'Flare Arrow.esp'
-  IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(EN) WARN: Use only one Flare Arrow *.esp.
-    IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(RU) WARN: Используйте только один Flare Arrow *.esp.
-      IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(ES) WARN: Utilizar solo un Flare Arrow *.esp.
+    inc:
+      - 'Flare Arrow Brighter.esp'
+      - 'Flare Arrow Explosive.esp'
   - name: 'Fitness Outfit OE.esp'
   REQ: "http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP"
   - name: 'Fletching.esp'
@@ -10240,13 +10248,13 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         util: *dirtyUtil
   REQ: "http://www.nexusmods.com/skyrim/mods/21120 Heavy Armory"
   - name: 'RagnvaldBookFarengar+Ragnvald.esp'
-  IF FILE("RagnvaldBook.esp") && IF VAR(EN) WARN: Use either RagnvaldBook.esp or RagnvaldBookFarengar+Ragnvald.esp, not both.
-    IF FILE("RagnvaldBook.esp") && IF VAR(RU) WARN: Используйте любой, или RagnvaldBook.esp или RagnvaldBookFarengar+Ragnvald.esp, не обa.
-      IF FILE("RagnvaldBook.esp") && IF VAR(ES) WARN: Usar RagnvaldBook.esp o RagnvaldBookFarengar+Ragnvald.esp, no ambos.
+    inc:
+      - 'RagnvaldBookFarengar.esp'
+      - 'RagnvaldBook.esp'
   - name: 'RagnvaldBookFarengar.esp'
-  IF FILE("RagnvaldBook.esp") || IF FILE("RagnvaldBookFarengar+Ragnvald.esp") && IF VAR(EN) WARN: Use only one RagnvaldBook *.esp.
-    IF FILE("RagnvaldBook.esp") || IF FILE("RagnvaldBookFarengar+Ragnvald.esp") && IF VAR(RU) WARN: Используйте только один RagnvaldBook *.esp.
-     IF FILE("RagnvaldBook.esp") || IF FILE("RagnvaldBookFarengar+Ragnvald.esp") && IF VAR(ES) WARN: Utilizar solo un RagnvaldBook *.esp.
+    inc:
+      - 'RagnvaldBook.esp'
+      - 'RagnvaldBookFarengar+Ragnvald.esp'
   - name: 'RaestlozArmorReplace.esp'
     msg:
       - type: say
@@ -10293,10 +10301,11 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
   - name: 'Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp'
     inc:
       - 'Ring of Hircine - No Disease Werewolf AND Totem Selection.esp'
+      - 'RoH - No Disease And Selection.esp'
   - name: 'RoH - No Disease And Selection.esp'
-  IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(EN) WARN: Use only one Ring of Hircine - No Disease Werewolf AND Totem Selection esp.
-    IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(RU) WARN: Используйте только один Hircine - No Disease Werewolf AND Totem Selection esp.
-      IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(ES) WARN: Utilizar solo un Ring of Hircine - No Disease Werewolf AND Totem Selection esp.
+    inc:
+      - 'Ring of Hircine - No Disease Werewolf AND Totem Selection.esp'
+      - 'Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp'
   - name: 'RingOfTalos.esp'
     msg:
       - type: warn
@@ -11689,8 +11698,6 @@ TeraCfl18-CBBEByNausicaa.es
         content:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-  - name: 'LegionOverhaulV25.esp'
-
   - name: 'Requiem.esp'
     tag:
       - Delev
@@ -11708,9 +11715,6 @@ TeraCfl18-CBBEByNausicaa.es
         content:
           - lang: spa
             str: 'Requiem makes a LOT of changes. You may want to consider creating and using a Userlist based on your particular mod loadout.'
-  IF CHECKSUM("Requiem.esp", E7945687) || IF CHECKSUM("Requiem.esp", 2E4F346A) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("Requiem.esp", E7945687) || IF CHECKSUM("Requiem.esp", 2E4F346A) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("Requiem.esp", E7945687) || IF CHECKSUM("Requiem.esp", 2E4F346A) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
     dirty:
       - crc: 0xE7945687
         itm: 170
@@ -11721,29 +11725,29 @@ TeraCfl18-CBBEByNausicaa.es
         udr: 9
         util: *dirtyUtil
   - name: 'Requiem - Difficulty Bar Restored.esp'
-  IF FILE("Requiem - Difficulty Bar Restored - Nightmare.esp") && IF VAR(EN) WARN: Use either Requiem - Difficulty Bar Restored - Nightmare.esp or Requiem - Difficulty Bar Restored.esp, not both.
-    IF FILE("Requiem - Difficulty Bar Restored - Nightmare.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - Difficulty Bar Restored - Nightmare.esp или Requiem - Difficulty Bar Restored.esp, не обa.
-      IF FILE("Requiem - Difficulty Bar Restored - Nightmare.esp") && IF VAR(ES) WARN: Usar Requiem - Difficulty Bar Restored - Nightmare.esp o Requiem - Difficulty Bar Restored.esp, no ambos.
+    inc:
+      - 'Requiem - Difficulty Bar Restored - Nightmare.esp'
   - name: 'Requiem - No Overencumbered Messages.esp'
-  IF FILE("Requiem - No Messages.esp") && IF VAR(EN) WARN: Use either Requiem - No Overencumbered Messages.esp or Requiem - No messages.esp, not both.
-    IF FILE("Requiem - No Messages.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - No Overencumbered Messages.esp или Requiem - No messages.esp, не обa.
-      IF FILE("Requiem - No Messages.esp") && IF VAR(ES) WARN: Usar Requiem - No Overencumbered Messages.esp o Requiem - No messages.esp, no ambos.
+    inc:
+      - 'Requiem - No messages.esp'
   - name: 'Requiem - TrainUnitsPerLevel10.esp'
-  IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(EN) WARN: Use either Requiem - TrainUnitsPerLevel0.esp or Requiem - TrainUnitsPerLevel10.esp, not both.
-    IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - TrainUnitsPerLevel0.esp или Requiem - TrainUnitsPerLevel10.esp, не обa.
-      IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(ES) WARN: Usar Requiem - TrainUnitsPerLevel0.esp o Requiem - TrainUnitsPerLevel10.esp, no ambos.
+    inc:
+      - 'Requiem - TrainUnitsPerLevel0.esp'
+      - 'Requiem - TrainUnitsPerLevel100.esp'
+      - 'Requiem - TrainUnitsPerLevel5.esp'
   - name: 'Requiem - TrainUnitsPerLevel100.esp'
-  IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(EN) WARN: Use only one TrainUnitsPerLevel*.esp.
-    IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(RU) WARN: Используйте только один TrainUnitsPerLevel*.esp.
-     IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(ES) WARN: Utilizar solo un TrainUnitsPerLevel*.esp.
+    inc:
+      - 'Requiem - TrainUnitsPerLevel10.esp'
+      - 'Requiem - TrainUnitsPerLevel0.esp'
+      - 'Requiem - TrainUnitsPerLevel5.esp'
   - name: 'Requiem - TrainUnitsPerLevel5.esp'
-  IF FILE("Requiem - TrainUnitsPerLevel100.esp") || IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(EN) WARN: Use only one TrainUnitsPerLevel*.esp.
-    IF FILE("Requiem - TrainUnitsPerLevel100.esp") || IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(RU) WARN: Используйте только один TrainUnitsPerLevel*.esp.
-     IF FILE("Requiem - TrainUnitsPerLevel100.esp") || IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(ES) WARN: Utilizar solo un TrainUnitsPerLevel*.esp.
+    inc:
+      - 'Requiem - TrainUnitsPerLevel100.esp'
+      - 'Requiem - TrainUnitsPerLevel10.esp'
+      - 'Requiem - TrainUnitsPerLevel0.esp'
   - name: 'Requiem - Weapon Damage Modifier 3x Vanilla.esp'
-  IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(EN) WARN: Use either Requiem - Weapon Damage Modifier 2x Vanilla.esp or Requiem - Weapon Damage Modifier 3x Vanilla.esp, not both.
-    IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - Weapon Damage Modifier 2x Vanilla.esp или Requiem - Weapon Damage Modifier 3x Vanilla.esp, не обa.
-      IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(ES) WARN: Usar Requiem - Weapon Damage Modifier 2x Vanilla.esp o Requiem - Weapon Damage Modifier 3x Vanilla.esp, no ambos.
+    inc:
+      - 'Requiem - Weapon Damage Modifier 2x Vanilla.esp'
   - name: 'Skyrim Hardcore Overhaul.esp'
     tag:
       - Delev
@@ -14881,20 +14885,18 @@ TeraCfl18-CBBEByNausicaa.es
   - name: 'Briar'sEndInstantQuest.esp'
     inc:
       - 'Fleetford.esp'
-  IF FILE("Briar'sEndCourierQuest.esp") && IF VAR(EN) WARN: Use only one Briar'sEnd esp.
-    IF FILE("Briar'sEndCourierQuest.esp") && IF VAR(RU) WARN: Используйте только один Briar'sEnd esp.
-      IF FILE("Briar'sEndCourierQuest.esp") && IF VAR(ES) WARN: Utilizar solo un Briar'sEnd esp.
+      - 'Briar'sEndCourierQuest.esp'
+      - 'Briar'sEndNoQuest.esp'
     dirty:
       - crc: 0x3BEEDC33
         itm: 48
         udr: 10
         util: *dirtyUtil
-  - name: 'Briar'sEndNoQuest.esp'
+  - name: ''
     inc:
       - 'Fleetford.esp'
-  IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") && IF VAR(EN) WARN: Use only one Briar'sEnd esp.
-    IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") && IF VAR(RU) WARN: Используйте только один Briar'sEnd esp.
-      IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") && IF VAR(ES) WARN: Utilizar solo un Briar'sEnd esp.
+      - 'Briar'sEndCourierQuest.esp'
+      - 'Briar'sEndInstantQuest.esp'
     dirty:
       - crc: 0xDC577DA1
         itm: 50
@@ -19617,29 +19619,32 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
     IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") && IF VAR(RU) WARN: Используйте только один Arvak esp.
       IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") && IF VAR(ES) WARN: Utilizar solo un Arvak esp.
   - name: 'Arvak_Fire.esp'
+    inc:
+      - 'Arvak_Frost.esp'
+      - 'Arvak_Storm.esp'
     dirty:
       - crc: 0x8B83FC98
         itm: 3
         udr: 0
         util: *dirtyUtil
   - name: 'Arvak_Frost.esp'
+    inc:
+      - 'Arvak_Fire.esp'
+      - 'Arvak_Storm.esp'
     dirty:
       - crc: 0x21746CA3
         itm: 3
         udr: 0
         util: *dirtyUtil
-  IF FILE("Arvak_Fire.esp") && IF VAR(EN) WARN: Use either Arvak_Fire.esp or Arvak_Frost.esp, not both.
-    IF FILE("Arvak_Fire.esp") && IF VAR(RU) WARN: Используйте любой, или Arvak_Fire.esp или Arvak_Frost.esp, не оба.
-      IF FILE("Arvak_Fire.esp") && IF VAR(ES) WARN: Usar Arvak_Fire.esp o Arvak_Frost.esp, no ambos.
   - name: 'Arvak_Storm.esp'
+    inc:
+      - 'Arvak_Fire.esp'
+      - 'Arvak_Frost.esp'
     dirty:
       - crc: 0xA3FADF0F
         itm: 3
         udr: 0
         util: *dirtyUtil
-  IF FILE("Arvak_Fire.esp") || IF FILE("Arvak_Frost.esp") && IF VAR(EN) WARN: Use only one Arvak_*.esp.
-    IF FILE("Arvak_Fire.esp") || IF FILE("Arvak_Frost.esp") && IF VAR(RU) WARN: Используйте только один Arvak_*.esp.
-      IF FILE("Arvak_Fire.esp") || IF FILE("Arvak_Frost.esp") && IF VAR(ES) WARN: Utilizar solo un Arvak_*.esp.
   - name: 'AurielsArrows_BloodCursed.esp'
     msg:
       - type: say
@@ -19982,37 +19987,40 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
           - lang: spa
             str: 'Obsoleto. Actualizar a la "http://www.nexusmods.com/skyrim/mods/8719 última versión".'
   - name: 'Binocular Vision Game Settings 135.esp'
+    inc:
+      - 'Binocular Vision Game Settings 150.esp'
+      - 'Binocular Vision Game Settings 165.esp'
     dirty:
       - crc: 0x9C56E282
         itm: 2
         udr: 0
         util: *dirtyUtil
   - name: 'Binocular Vision Game Settings 150.esp'
-  IF FILE("Binocular Vision Game Settings 135.esp") && IF VAR(EN) SAY: Use only one Binocular Vision esp.
-    IF FILE("Binocular Vision Game Settings 135.esp") && IF VAR(RU) SAY: Используйте только один Binocular Vision esp.
-      IF FILE("Binocular Vision Game Settings 135.esp") && IF VAR(ES) SAY: Utilizar solo un Binocular Vision esp.
+    inc:
+      - 'Binocular Vision Game Settings 135.esp'
+      - 'Binocular Vision Game Settings 165.esp'
     dirty:
       - crc: 0xA7604633
         itm: 2
         udr: 0
         util: *dirtyUtil
   - name: 'Binocular Vision Game Settings 165.esp'
-  IF FILE("Binocular Vision Game Settings 150.esp") || IF FILE("Binocular Vision Game Settings 135.esp") && IF VAR(EN) SAY: Use only one Binocular Vision esp.
-    IF FILE("Binocular Vision Game Settings 150.esp") || IF FILE("Binocular Vision Game Settings 135.esp") && IF VAR(RU) SAY: Используйте только один Binocular Vision esp.
-      IF FILE("Binocular Vision Game Settings 150.esp") || IF FILE("Binocular Vision Game Settings 135.esp") && IF VAR(ES) SAY: Utilizar solo un Binocular Vision esp.
+    inc:
+      - 'Binocular Vision Game Settings 135.esp'
+      - 'Binocular Vision Game Settings 150.esp'
     dirty:
       - crc: 0xD1707318
         itm: 2
         udr: 0
         util: *dirtyUtil
   - name: 'Both Imp and SC-No respawn.esp'
-  IF FILE("Both Imp and SC-With Respawn.esp") || IF FILE("Fullcamprespawn.esp") && IF VAR(EN) WARN: Use only one Killable Leaders esp.
-    IF FILE("Both Imp and SC-With Respawn.esp") || IF FILE("Fullcamprespawn.esp") && IF VAR(RU) WARN: Используйте только один Killable Leaders esp.
-      IF FILE("Both Imp and SC-With Respawn.esp") || IF FILE("Fullcamprespawn.esp") && IF VAR(ES) WARN: Utilizar solo un Killable Leaders esp.
+    inc:
+      - 'Both Imp and SC-With Respawn.esp'
+      - 'Fullcamprespawn.esp'
   - name: 'Both Imp and SC-With Respawn.esp'
-  IF FILE("Both Imp and SC-No respawn.esp") || IF FILE("Fullcamprespawn.esp") && IF VAR(EN) WARN: Use only one Killable Leaders esp.
-    IF FILE("Both Imp and SC-No respawn.esp") || IF FILE("Fullcamprespawn.esp") && IF VAR(RU) WARN: Используйте только один Killable Leaders esp.
-      IF FILE("Both Imp and SC-No respawn.esp") || IF FILE("Fullcamprespawn.esp") && IF VAR(ES) WARN: Utilizar solo un Killable Leaders esp.
+    inc:
+      - 'Both Imp and SC-No respawn.esp'
+      - 'Fullcamprespawn.esp'
   - name: 'bow x\d\d?\.esp'
     msg:
       - type: say
@@ -20170,24 +20178,27 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
         itm: 2
         udr: 0
         util: *dirtyUtil
+    inc:
+      - 'dangerous animals - german.esp'
+      - 'dangerous animals - light.esp'
   - name: 'dangerous animals - german.esp'
-  IF FILE("dangerous animals.esp") && IF VAR(EN) WARN: Use only one dangerous animals esp.
-    IF FILE("dangerous animals.esp") && IF VAR(RU) WARN: Используйте только один dangerous animals esp.
-      IF FILE("dangerous animals.esp") && IF VAR(ES) WARN: Utilizar solo un dangerous animals esp.
     dirty:
       - crc: 0xEE98A386
         itm: 5
         udr: 0
         util: *dirtyUtil
+    inc:
+      - 'dangerous animals.esp'
+      - 'dangerous animals - light.esp'
   - name: 'dangerous animals - light.esp'
-  IF FILE("dangerous animals - german.esp") || IF FILE("dangerous animals.esp") && IF VAR(EN) WARN: Use only one dangerous animals esp.
-    IF FILE("dangerous animals - german.esp") || IF FILE("dangerous animals.esp") && IF VAR(RU) WARN: Используйте только один dangerous animals esp.
-      IF FILE("dangerous animals - german.esp") || IF FILE("dangerous animals.esp") && IF VAR(ES) WARN: Utilizar solo un dangerous animals esp.
     dirty:
       - crc: 0x1386FA38
         itm: 2
         udr: 0
         util: *dirtyUtil
+    inc:
+      - 'dangerous animals.esp'
+      - 'dangerous animals - german.esp'
   - name: 'Dawnguard - Att.esp'
     msg:
       - type: say
@@ -20514,9 +20525,9 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
   - name: 'Fullcamprespawn.esp'
-  IF FILE("Both Imp and SC-With Respawn.esp") || IF FILE("Both Imp and SC-No respawn.esp") && IF VAR(EN) WARN: Use only one Killable Leaders esp.
-    IF FILE("Both Imp and SC-With Respawn.esp") || IF FILE("Both Imp and SC-No respawn.esp") && IF VAR(RU) WARN: Используйте только один Killable Leaders esp.
-      IF FILE("Both Imp and SC-With Respawn.esp") || IF FILE("Both Imp and SC-No respawn.esp") && IF VAR(ES) WARN: Utilizar solo un Killable Leaders esp.
+    inc:
+      - 'Both Imp and SC-With Respawn.esp'
+      - 'Both Imp and SC-No respawn.esp'
   - name: 'Ghostly Shadowmere.*\.esp'
     msg:
       - type: say
@@ -20786,14 +20797,13 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
       - 'Isharas_MLLY_FEMALES_SKSE.esp'
       - 'Isharas_MLLY_MALES.esp'
       - 'Isharas_MLLY_MALES_SKSE.esp'
-  - name: 'Item Prices V2.esp'
-  IF FILE("Item Prices.esp") && IF VAR(EN) WARN: Use only one Item Prices *.esp.
-    IF FILE("Item Prices.esp") && IF VAR(RU) WARN: Используйте только один Item Prices *.esp.
-      IF FILE("Item Prices.esp") && IF VAR(ES) WARN: Utilizar solo un Item Prices *.esp.
+  - name: 'Item Prices V2.esp'    inc:
+      - 'Item Prices.esp'
+      - 'Item Prices V3.esp'
   - name: 'Item Prices V3.esp'
-  IF FILE("Item Prices.esp") || IF FILE("Item Prices V2.esp") && IF VAR(EN) WARN: Use only one Item Prices *.esp.
-    IF FILE("Item Prices.esp") || IF FILE("Item Prices V2.esp") && IF VAR(RU) WARN: Используйте только один Item Prices *.esp.
-      IF FILE("Item Prices.esp") || IF FILE("Item Prices V2.esp") && IF VAR(ES) WARN: Utilizar solo un Item Prices *.esp.
+    inc:
+      - 'Item Prices.esp'
+      - 'Item Prices V2.esp'
   - name: 'JanusForbeare's Fighting Words.esp'
     dirty:
       - crc: 0xEAF4398B
@@ -22556,24 +22566,27 @@ IFNOT REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.
         itm: 28
         udr: 31
         util: *dirtyUtil
+    inc:
+      - 'Riverwood Enhanced - Detailed Cities.esp'
+      - 'Riverwood Enhanced - NO NPC.esp'
   - name: 'Riverwood Enhanced - Detailed Cities.esp'
     dirty:
       - crc: 0x46637208
         itm: 29
         udr: 32
         util: *dirtyUtil
-  IF FILE("Riverwood Enhanced.esp") && IF VAR(EN) WARN: Use only one Riverwood Enhanced *.esp.
-    IF FILE("Riverwood Enhanced.esp") && IF VAR(RU) WARN: Используйте только один Riverwood Enhanced *.esp.
-      IF FILE("Riverwood Enhanced.esp") && IF VAR(ES) WARN: Utilizar solo un Riverwood Enhanced *.esp.
+    inc:
+      - 'Riverwood Enhanced.esp'
+      - 'Riverwood Enhanced - NO NPC.esp'
   - name: 'Riverwood Enhanced - NO NPC.esp'
     dirty:
       - crc: 0x73840440
         itm: 28
         udr: 31
         util: *dirtyUtil
-  IF FILE("Riverwood Enhanced.esp") || IF FILE("Riverwood Enhanced - Detailed Cities.esp") && IF VAR(EN) WARN: Use only one Riverwood Enhanced *.esp.
-    IF FILE("Riverwood Enhanced.esp") || IF FILE("Riverwood Enhanced - Detailed Cities.esp") && IF VAR(RU) WARN: Используйте только один Riverwood Enhanced *.esp.
-      IF FILE("Riverwood Enhanced.esp") || IF FILE("Riverwood Enhanced - Detailed Cities.esp") && IF VAR(ES) WARN: Utilizar solo un Riverwood Enhanced *.esp.
+    inc:
+      - 'Riverwood Enhanced.esp'
+      - 'Riverwood Enhanced - Detailed Cities.esp'
   - name: 'RiverwoodEnhancedPlugin.esp'
   IF FILE("Lanterns Of Skyrim - All In One - Main.esm") SAY: Use the "http://www.nexusmods.com/skyrim/mods/ Lanterns of Skyrim and Towns and Villages Enhanced patch" instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.
   IF FILE("LoS and RE patch.esp") ERROR: Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not an add-on.
@@ -24582,9 +24595,9 @@ Basic Human Needs - Food Drink and Sleep
         udr: 0
         util: *dirtyUtil
   - name: 'Total Voidmagic.esp'
-  IF FILE("Light Voidmagic.esp") || IF FILE("Medium Voidmagic.esp") && IF VAR(EN) WARN: Use only one Voidmagic esp.
-    IF FILE("Light Voidmagic.esp") || IF FILE("Medium Voidmagic.esp") && IF VAR(RU) WARN: Используйте только один Voidmagic esp.
-      IF FILE("Light Voidmagic.esp") || IF FILE("Medium Voidmagic.esp") && IF VAR(ES) WARN: Utilizar solo un Voidmagic esp.
+    inc:
+      - 'Light Voidmagic.esp'
+      - 'Medium Voidmagic.esp'
   - name: 'TotalConjuration.esp'
     tag:
       - Relev
@@ -28684,24 +28697,20 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
     req:
       - *SKSE
       - *SkyUI
-    req:
       - *FNIS
   - name: 'Kate - AnimPack 1HWeapShield.esp'
     req:
       - *SKSE
       - *SkyUI
-    req:
       - *FNIS
   - name: 'Kate - AnimPack TBBP.esp'
     req:
       - *SKSE
       - *SkyUI
-    req:
       - *FNIS
   - name: 'KCustom_ALL_FHC_NDO.esp'
-  IF FILE("KCustom_ALL_FHC.esp") && IF VAR(EN) WARN: Use either KCustom_ALL_FHC.esp or KCustom_ALL_FHC_NDO.esp, not both.
-    IF FILE("KCustom_ALL_FHC.esp") && IF VAR(RU) WARN: Используйте любой, или KCustom_ALL_FHC.esp или KCustom_ALL_FHC_NDO.esp, не оба.
-      IF FILE("KCustom_ALL_FHC.esp") && IF VAR(ES) WARN: Usar KCustom_ALL_FHC.esp o KCustom_ALL_FHC_NDO.esp, no ambos.
+    inc:
+      - 'KCustom_ALL_FHC.esp'
   - name: 'KCustomNPCs.esp'
     inc:
       - 'KCustom_ALL_FHC_NDO.esp'
@@ -30251,9 +30260,9 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
     IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
   - name: 'SlowRespawn_NoClearedCellRespawn.esp'
-  IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(EN) WARN: Use only one NoCellRespawn *.esp.
-    IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(RU) WARN: Используйте только один NoCellRespawn *.esp.
-      IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(ES) WARN: Utilizar solo un NoCellRespawn esp.
+    inc:
+      - 'NoCellRespawn.esp'
+      - 'NoClearedCellRespawn.esp'
   - name: 'Skyrim Timescale \d+\.esp'
   IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
     IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
@@ -31037,13 +31046,13 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
         udr: 0
         util: *dirtyUtil
   - name: 'SSS Deadly Dragons Patch B.esp'
-  IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(EN) WARN: Use only one SSS Deadly Dragons Patch esp.
-    IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(RU) WARN: Используйте только один патч SSS Deadly Dragons Patch esp.
-      IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(ES) WARN: Utilizar solo un SSS Deadly Dragons Patch esp.
+    inc:
+      - 'SSS Deadly Dragons Patch A.esp'
+      - 'SSS Deadly Dragons Patch C.esp'
   - name: 'SSS Deadly Dragons Patch C.esp'
-  IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(EN) WARN: Use only one SSS Deadly Dragons Patch esp.
-    IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(RU) WARN: Используйте только один патч SSS Deadly Dragons Patch esp.
-      IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(ES) WARN: Utilizar solo un SSS Deadly Dragons Patch esp.
+    inc:
+      - 'SSS Deadly Dragons Patch A.esp'
+      - 'SSS Deadly Dragons Patch B.esp'
   - name: 'SSS Weapons of the Third Era Patch.esp'
 TB_RLOverhaul-patch.es
   - name: 'TRO_BasicNeeds_WATERPatch.esp'
@@ -31227,14 +31236,14 @@ TB_RLOverhaul-patch.es
         udr: 0
         util: *dirtyUtil
   - name: 'Warburg's 3D Paper World Map - Texture 3.esp'
-  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(EN) WARN: Use only one Warburg's 3D Paper World Map - Texture *.esp.
-    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(RU) WARN: Используйте только один Warburg's 3D Paper World Map - Texture *.esp.
-      IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(ES) WARN: Utilizar solo un Warburg's 3D Paper World Map - Texture *.esp.
     dirty:
       - crc: 0xAAFE91D6
         itm: 9
         udr: 0
         util: *dirtyUtil
+    inc:
+      - 'Warburg's 3D Paper World Map - Texture 1.esp'
+      - 'Warburg's 3D Paper World Map - Texture 2.esp'
   - name: 'Warburg's 3D Paper World Map - Dawnguard.esp'
   IFNOT FILE("Warburg's 3D Paper World Map.esp") && IFNOT REGEX("Warburg's 3D Paper World Map - Texture (1|2|3)\.esp") REQ: Warburg's 3D Paper World Map - Texture *.esp (The main file)
   - name: 'Warburg's 3D Paper World Map - Dragonborn.esp'
