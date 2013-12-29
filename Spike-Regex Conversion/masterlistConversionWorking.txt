@@ -6261,9 +6261,16 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
   - name: 'SwiftPotion.esp'
     req:
       - *SKSE
-  IFNOT VAR(SkyUI) && IF VAR(EN) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM
-    IFNOT VAR(SkyUI) && IF VAR(RU) WARN: SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.
-      IFNOT VAR(SkyUI) && IF VAR(ES) WARN: SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.'
+          - lang: rus
+            str: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
+          - lang: spa
+            str: 'SkyUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
+        condition: 'not active("SkyUI.esp")'
   IF FILE("Chesko_SwiftPotion.esp") && IF VAR(EN) WARN: Use either Chesko_SwiftPotion.esp or SwiftPotion.esp, not both.
     IF FILE("Chesko_SwiftPotion.esp") && IF VAR(RU) WARN: Используйте любой или Chesko_SwiftPotion.esp или SwiftPotion.esp, не обa.
       IF FILE("Chesko_SwiftPotion.esp") && IF VAR(ES) WARN: Usar Chesko_SwiftPotion.esp or SwiftPotion.esp, no ambos.
@@ -10995,8 +11002,16 @@ TeraCfl18-CBBEByNausicaa.es
           - lang: spa
             str: 'Utilizar solo un ERSO 03.4 esp.'
   - name: 'DeadlyMonsters.esp'
-  IFNOT VAR(SkyUI) && IF VAR(EN) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM
-    IFNOT VAR(SkyUI) && IF VAR(RU) WARN: SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.'
+          - lang: rus
+            str: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
+          - lang: spa
+            str: 'SkyUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
+        condition: 'not active("SkyUI.esp")'
     req:
       - *SKSE
   - name: 'ERSO 03.5 - New Dragon Loots.esp'
@@ -18763,11 +18778,27 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
           - lang: spa
             str: 'Utilizar solo un LegionArmorVariety esp.'
   - name: 'kuerteeGoldAjustment MCM.esp'
-  IFNOT VAR(SkyUI) && IF VAR(EN) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM
-    IFNOT VAR(SkyUI) && IF VAR(RU) WARN: SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.'
+          - lang: rus
+            str: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
+          - lang: spa
+            str: 'SkyUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
+        condition: 'not active("SkyUI.esp")'
   - name: 'kuerteeTekuromotosLessPredictableRespawn MCM.esp'
-  IFNOT VAR(SkyUI) && IF VAR(EN) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM
-    IFNOT VAR(SkyUI) && IF VAR(RU) WARN: SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.'
+          - lang: rus
+            str: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
+          - lang: spa
+            str: 'SkyUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
+        condition: 'not active("SkyUI.esp")'
   - name: 'Less Talkative NPCs Release.+\.esp'
     msg:
       - type: say
@@ -20619,8 +20650,16 @@ IFNOT REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.
         udr: 0
         util: *dirtyUtil
   - name: 'BFT Ships and Carriages - HF.esp'
-  IFNOT VAR(SkyUI) && IF VAR(EN) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM
-    IFNOT VAR(SkyUI) && IF VAR(RU) WARN: SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.'
+          - lang: rus
+            str: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
+          - lang: spa
+            str: 'SkyUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
+        condition: 'not active("SkyUI.esp")'
   - name: 'RealisticRoomRental.esp'
     dirty:
       - crc: 0x484EF81F
@@ -26824,9 +26863,16 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
     req:
       - *SKSE
   - name: 'DeadlyMutilation.esp'
-  IFNOT VAR(SkyUI) && IF VAR(EN) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.
-    IFNOT VAR(SkyUI) && IF VAR(RU) WARN: SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.
-      IFNOT VAR(SkyUI) && IF VAR(ES) WARN: SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.'
+          - lang: rus
+            str: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
+          - lang: spa
+            str: 'SkyUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
+        condition: 'not active("SkyUI.esp")'
   - name: 'dD.?- Realistic Ragdoll Force.*\.esp'
     msg:
       - type: say
