@@ -541,26 +541,8 @@ BertsBreezehomeGarde
         udr: 0
         util: *dirtyUtil
   - name: 'GeneralDisplays.esm'
-  IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IF VAR(EN) SAY: Obsolete. Update to "http://www.nexusmods.com/skyrim/mods/32550 latest version".
-    IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IF VAR(RU) SAY: Устарело. Обновите до "http://www.nexusmods.com/skyrim/mods/32550 последней версии".
-      IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IF VAR(ES) SAY: Obsoleto. Actualizar a la "http://www.nexusmods.com/skyrim/mods/32550 última versión".
-  IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://www.nexusmods.com/skyrim/mods/18340 General Stores".
-    IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://www.nexusmods.com/skyrim/mods/18340 General Stores".
-      IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IFNOT VAR(GS) && IF VAR(ES) ERROR: GeneralStores.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://www.nexusmods.com/skyrim/mods/18340 General Stores".
   - name: 'GeneralDisplays - DG.esm'
-  IFNOT CHECKSUM("GeneralDisplays - DG.esm", 263F6B5) && IF VAR(EN) SAY: Obsolete. Update to "http://www.nexusmods.com/skyrim/mods/32550 latest version".
-    IFNOT CHECKSUM("GeneralDisplays - DG.esm", 263F6B5) && IF VAR(RU) SAY: Устарело. Обновите до "http://www.nexusmods.com/skyrim/mods/32550 последней версии".
-      IFNOT CHECKSUM("GeneralDisplays - DG.esm", 263F6B5) && IF VAR(ES) SAY: Obsoleto. Actualizar a la "http://www.nexusmods.com/skyrim/mods/32550 última versión".
-  IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://www.nexusmods.com/skyrim/mods/18340 General Stores".
-    IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://www.nexusmods.com/skyrim/mods/18340 General Stores".
-      IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IFNOT VAR(GS) && IF VAR(ES) ERROR: GeneralStores.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://www.nexusmods.com/skyrim/mods/18340 General Stores".
   - name: 'GeneralDisplays - DB.esm'
-  IFNOT CHECKSUM("GeneralDisplays - DB.esm", DCCAFA0A) && IF VAR(EN) SAY: Obsolete. Update to "http://www.nexusmods.com/skyrim/mods/32550 latest version".
-    IFNOT CHECKSUM("GeneralDisplays - DB.esm", DCCAFA0A) && IF VAR(RU) SAY: Устарело. Обновите до "http://www.nexusmods.com/skyrim/mods/32550 последней версии".
-      IFNOT CHECKSUM("GeneralDisplays - DB.esm", DCCAFA0A) && IF VAR(ES) SAY: Obsoleto. Actualizar a la "http://www.nexusmods.com/skyrim/mods/32550 última versión".
-  IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://www.nexusmods.com/skyrim/mods/18340 General Stores".
-    IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://www.nexusmods.com/skyrim/mods/18340 General Stores".
-      IFNOT CHECKSUM("GeneralDisplays.esm", 7FF65529) && IFNOT VAR(GS) && IF VAR(ES) ERROR: GeneralStores.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://www.nexusmods.com/skyrim/mods/18340 General Stores".
   - name: 'GiantChild.esm'
     dirty:
       - crc: 0x479C279C
@@ -1165,18 +1147,20 @@ BertsBreezehomeGarde
         udr: 0
         util: *dirtyUtil
   - name: 'Skyrim Project Optimization - Full Version.esp'
-  IF FILE("Skyrim Project Optimization - Full Version.esm") && IF VAR(EN) WARN: Use either Skyrim Project Optimization - Full Version.esm or Skyrim Project Optimization - Full Version.esp, not both.
-    IF FILE("Skyrim Project Optimization - Full Version.esm") && IF VAR(RU) WARN: Используйте любой, или Skyrim Project Optimization - Full Version.esm или Skyrim Project Optimization - Full Version.esp, не оба.
-      IF FILE("Skyrim Project Optimization - Full Version.esm") && IF VAR(ES) WARN: Usar Skyrim Project Optimization - Full Version.esm o Skyrim Project Optimization - Full Version.esp, no ambos.
+    inc:
+      - 'Skyrim Project Optimization - No Homes - Full Version.esp'
+      - 'Skyrim Project Optimization - No Homes.esp'
   - name: 'Skyrim Project Optimization - No Homes.esp'
-  IF FILE("Skyrim Project Optimization - No Homes.esm") && IF VAR(EN) WARN: Use either Skyrim Project Optimization - No Homes.esm or Skyrim Project Optimization - No Homes.esp, not both.
-    IF FILE("Skyrim Project Optimization - No Homes.esm") && IF VAR(RU) WARN: Используйте любой, или Skyrim Project Optimization - No Homes.esm или Skyrim Project Optimization - No Homes.esp, не оба.
-      IF FILE("Skyrim Project Optimization - No Homes.esm") && IF VAR(ES) WARN: Usar Skyrim Project Optimization - No Homes.esm o Skyrim Project Optimization - No Homes.esp, no ambos.
+    inc:
+      - 'Skyrim Project Optimization - No Homes - Full Version.esp'
+      - 'Skyrim Project Optimization - Full Version.esp'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
-  IF FILE("Skyrim Project Optimization - No Homes - Full Version.esm") && IF VAR(EN) WARN: Use either Skyrim Project Optimization - No Homes - Full Version.esm or Skyrim Project Optimization - No Homes - Full Version.esp, not both.
-    IF FILE("Skyrim Project Optimization - No Homes - Full Version.esm") && IF VAR(RU) WARN: Используйте любой, или Skyrim Project Optimization - No Homes - Full Version.esm или Skyrim Project Optimization - No Homes - Full Version.esp, не оба.
-      IF FILE("Skyrim Project Optimization - No Homes - Full Version.esm") && IF VAR(ES) WARN: Usar Skyrim Project Optimization - No Homes - Full Version.esm o Skyrim Project Optimization - No Homes - Full Version.esp, no ambos.
+    inc:
+      - 'Skyrim Project Optimization - No Homes.esp'
+      - 'Skyrim Project Optimization - Full Version.esp'
   - name: 'SuccubusFollower.esp'
+    inc:
+      - 'Succubus Summoning.esp'
     msg:
       - type: say
         content:
@@ -1196,9 +1180,8 @@ BertsBreezehomeGarde
             str: 'На самом деле это esm-файл, выпущенный как esp.'
           - lang: spa
             str: 'Archivo esm distrubuido como esp.'
-  IF FILE("SuccubusFollower.esp") && IF VAR(EN) WARN: Use either Succubus Summoning.esp or SuccubusFollower.esp, not both.
-    IF FILE("SuccubusFollower.esp") && IF VAR(RU) WARN: Используйте любой, или Succubus Summoning.esp или SuccubusFollower.esp, не оба.
-      IF FILE("SuccubusFollower.esp") && IF VAR(ES) WARN: Usar Succubus Summoning.esp o SuccubusFollower.esp, no ambos.
+    inc:
+      - 'SuccubusFollower.esp'
   - name: 'portal2mod.esp'
     dirty:
       - crc: 0xF0C49703
@@ -1226,9 +1209,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1237,9 +1220,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1250,9 +1233,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1261,9 +1244,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1272,9 +1255,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1283,9 +1266,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1294,9 +1277,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1305,9 +1288,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1316,9 +1299,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1327,9 +1310,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1338,9 +1321,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1349,9 +1332,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1360,9 +1343,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1371,9 +1354,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1382,9 +1365,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1398,9 +1381,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1409,9 +1392,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1420,24 +1403,31 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'bard's_college_quests_fix.esp'
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
+    msg:
+      - type: warn
+        condition: 'file("Unofficial Skyrim Patch.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'Belethor Vendor Fix.esp'
     msg:
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1446,9 +1436,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1457,9 +1447,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1468,9 +1458,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1493,9 +1483,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1508,9 +1498,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1535,9 +1525,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1546,9 +1536,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1557,9 +1547,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1568,9 +1558,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1579,9 +1569,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1590,9 +1580,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1601,9 +1591,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1612,9 +1602,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1627,9 +1617,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1638,9 +1628,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1649,9 +1639,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1660,9 +1650,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1677,9 +1667,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1688,9 +1678,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1703,9 +1693,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1714,9 +1704,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1729,9 +1719,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1740,9 +1730,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1751,9 +1741,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1767,9 +1757,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1778,9 +1768,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1789,9 +1779,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1800,9 +1790,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1811,9 +1801,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1822,9 +1812,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1833,9 +1823,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1844,9 +1834,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1855,9 +1845,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1866,9 +1856,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1877,9 +1867,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1894,9 +1884,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1905,9 +1895,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1916,9 +1906,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1927,9 +1917,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1938,9 +1928,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1949,9 +1939,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1972,9 +1962,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1983,9 +1973,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -1994,9 +1984,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2013,9 +2003,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2024,9 +2014,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2035,9 +2025,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2046,9 +2036,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2057,9 +2047,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2081,9 +2071,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2097,9 +2087,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2108,9 +2098,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2119,9 +2109,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2130,9 +2120,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2141,9 +2131,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2155,9 +2145,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2166,9 +2156,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2177,9 +2167,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2188,9 +2178,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2199,9 +2189,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2250,9 +2240,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2282,9 +2272,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2293,9 +2283,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2308,9 +2298,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2319,9 +2309,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2330,9 +2320,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2341,9 +2331,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2352,9 +2342,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2363,9 +2353,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2374,9 +2364,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2385,9 +2375,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2396,9 +2386,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2411,9 +2401,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2422,9 +2412,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2433,9 +2423,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2451,9 +2441,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2462,9 +2452,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2473,9 +2463,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2484,9 +2474,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2495,9 +2485,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2506,9 +2496,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2525,9 +2515,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2540,9 +2530,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2551,9 +2541,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2562,9 +2552,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2573,9 +2563,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2584,9 +2574,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2598,9 +2588,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2609,9 +2599,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2632,9 +2622,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2643,9 +2633,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2662,9 +2652,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2678,9 +2668,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2689,9 +2679,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2700,9 +2690,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2711,9 +2701,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2722,9 +2712,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2733,9 +2723,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2745,9 +2735,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2756,9 +2746,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2767,9 +2757,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2782,9 +2772,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2793,9 +2783,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2804,9 +2794,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2815,9 +2805,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2826,9 +2816,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2837,9 +2827,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2848,9 +2838,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2859,9 +2849,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2878,9 +2868,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2889,9 +2879,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2900,9 +2890,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2911,9 +2901,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -2946,9 +2936,6 @@ BertsBreezehomeGarde
   - name: 'RaceCompatibilityUSKPOverride.esp'
     req:
       - Unofficial Skyrim Patch.esp
-  IF CHECKSUM("RaceCompatibilityUSKPOverride.esp", DC71C73F) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-    IF CHECKSUM("RaceCompatibilityUSKPOverride.esp", DC71C73F) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC).
-      IF CHECKSUM("RaceCompatibilityUSKPOverride.esp", DC71C73F) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activo. kyrim fallará sin se carga este archivo sin Dawnguard (DLC Oficial de Betheseda).
   - name: 'ancient-nordic-pickaxe-smith-fix.esp'
   IF VAR(EN) && IF VAR(UDBP) ERROR: Delete. Already included in Unofficial Dragonborn Patch.esp.
     IF VAR(RU) && IF VAR(UDBP) ERROR: Удалите. Уже включено в Unofficial Dragonborn Patch.esp.
@@ -3038,9 +3025,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -3230,8 +3217,8 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'El OrientalbeautyMod.esp que uses depende de cual sustituto del cuerpo femenino (En su caso) uses.'
   - name: 'Solitude Girl's Replacer.esp'
- IFNOT VAR(UFO) MOD: SupermodelSkyrim.esp
- IFNOT VAR(UFO) MOD: SupermodelDawnguard.esp
+ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: SupermodelSkyrim.esp
+ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: SupermodelDawnguard.esp
   - name: 'Tonilia.esp'
   IF CHECKSUM("Tonilia.esp", 1AEB51FC) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Tonilia.esp", 1AEB51FC) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
@@ -3410,9 +3397,6 @@ BertsBreezehomeGarde
         util: *dirtyUtil
   IF CHECKSUM("ExpandedSnowSystems.esp", 03A9B612) || IF CHECKSUM("ExpandedSnowSystems.esp", 72CC3B0C) && IF VAR(Dawnguard) && IF VAR(EN) || IF VAR(RU) WARN: Dawnguard.esm found. Use the Dawnguard version of ExpandedSnowSystems.esp instead to have mod work as intended.
     IF CHECKSUM("ExpandedSnowSystems.esp", 03A9B612) || IF CHECKSUM("ExpandedSnowSystems.esp", 72CC3B0C) && IF VAR(Dawnguard) && IF VAR(ES) WARN: Dawnguard.esm esta siencdo utilizado. Usa la versión de ExpandedSnowSystems.esp para Dawnguard.
-  IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) || IF CHECKSUM("ExpandedSnowSystems.esp", 5B79F47D) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-    IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) || IF CHECKSUM("ExpandedSnowSystems.esp", 5B79F47D) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
-      IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) || IF CHECKSUM("ExpandedSnowSystems.esp", 5B79F47D) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
   IF ACTIVE("ClimatesOfTamriel.esm") WARN: ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.
   - name: 'AOS.esp'
     msg:
@@ -3434,9 +3418,6 @@ BertsBreezehomeGarde
         itm: 12
         udr: 0
         util: *dirtyUtil
-  IF ACTIVE("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF ACTIVE("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF ACTIVE("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp") && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'Clanking Armor.esp'
     dirty:
       - crc: 0x7055B881
@@ -4400,9 +4381,9 @@ BertsBreezehomeGarde
       - type: warn
         condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
-          - lang: engg
+          - lang: eng
             str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
-          - lang: russ
+          - lang: rus
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
@@ -4956,11 +4937,7 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         udr: 0
         util: *dirtyUtil
   - name: 'Hearthfire Sorting.esp'
-  IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
-    IFNOT FILE ("GeneralStores.esm") && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
   - name: 'HearthFireStores(GS).esp'
-  IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
-    IFNOT FILE ("GeneralStores.esm") && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
   - name: 'High Level Enemies.esp'
     tag:
       - Relev
@@ -4990,12 +4967,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         udr: 0
         util: *dirtyUtil
   - name: 'HM Marry All.esp'
-  IF CHECKSUM("HM Marry All.esp", 139C1E4C) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("HM Marry All.esp", 139C1E4C) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("HM Marry All.esp", 139C1E4C) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF CHECKSUM("HM Marry All.esp", 139C1E4C) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
-    IF CHECKSUM("HM Marry All.esp", 139C1E4C) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
-      IF CHECKSUM("HM Marry All.esp", 139C1E4C) && IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
     dirty:
       - crc: 0xDB88B8BE
         itm: 5
@@ -5389,9 +5360,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
       - *SkyUI
     req:
       - *FNIS
-  IF CHECKSUM("LoversComfort.esp", F813096A) && IFNOT ACTIVE("SexLabAroused.esm") && IF VAR(EN) ERROR: SexLabAroused.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("LoversComfort.esp", F813096A) && IFNOT ACTIVE("SexLabAroused.esm") && IF VAR(RU) ERROR: SexLabAroused.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("LoversComfort.esp", F813096A) && IFNOT ACTIVE("SexLabAroused.esm") && IF VAR(ES) ERROR: SexLabAroused.esm no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IFNOT FILE("SexLabAroused.esm") && IF VAR(EN) WARN: "http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/ SexLabAroused" is new dependency for the latest version of mod, install and enable it, otherwise you will get CTD.
     IFNOT FILE("SexLabAroused.esm") && IF VAR(RU) WARN: "http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/ SexLabAroused" - новое требование для последней версии мода, установите и подключите его, для избежания вылетов с последними версиями.
       IFNOT FILE("SexLabAroused.esm") && IF VAR(ES) WARN: "http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/ SexLabAroused" is new dependency for the latest version of mod, install and enable it, otherwise you will get CTD.
@@ -5848,12 +5816,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
     tag:
       - Delev
       - Relev
-  IF CHECKSUM("RealisticLootList.esp", F0FD39EB) || IF CHECKSUM("RealisticLootList.esp", 5D7C8CA2) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("RealisticLootList.esp", F0FD39EB) || IF CHECKSUM("RealisticLootList.esp", 5D7C8CA2) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("RealisticLootList.esp", F0FD39EB) || IF CHECKSUM("RealisticLootList.esp", 5D7C8CA2) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF CHECKSUM("RealisticLootList.esp", F0FD39EB) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IF CHECKSUM("RealisticLootList.esp", F0FD39EB) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-      IF CHECKSUM("RealisticLootList.esp", F0FD39EB) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
     dirty:
       - crc: 0x5D7C8CA2
         itm: 13
@@ -5918,9 +5880,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
       IF FILE("rt_AutoHarvest.esp") && IF VAR(ES) ERROR: Usar rt_AutoHarvest.esp o rt_Animal - Processing.esp, no ambos.
   - name: 'rt_AutoHarvest.esp'
   IFNOT CHECKSUM("rt_AutoHarvest.esp", BBDBA57A) && IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
-  IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'RWB - Realistic Wolf Behavior.esp'
     dirty:
       - crc: 0x652FD3F8
@@ -6214,15 +6173,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
             str: 'Используйте только один SkyrimImprovedPuddles esp.'
           - lang: spa
             str: 'Utilizar solo un SkyrimImprovedPuddles esp.'
-  IF FILE("SkyrimImprovedPuddles-Dawnguard.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF FILE("SkyrimImprovedPuddles-Dawnguard.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF FILE("SkyrimImprovedPuddles-Dawnguard.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF FILE("SkyrimImprovedPuddles-HearthFires.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
-    IF FILE("SkyrimImprovedPuddles-HearthFires.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
-      IF FILE("SkyrimImprovedPuddles-HearthFires.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
-  IF FILE("SkyrimImprovedPuddles-Dragonborn.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IF FILE("SkyrimImprovedPuddles-Dragonborn.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-      IF FILE("SkyrimImprovedPuddles-Dragonborn.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   - name: 'SlotMachine.esp'
     dirty:
       - crc: 0xC651ADB4
@@ -6259,9 +6209,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
   - name: 'Soul Eater The Enchantment Removing Chest.esp'
     req:
       - *SKSE
-  IF CHECKSUM("Soul Eater The Enchantment Removing Chest.esp", 9D754581) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("Soul Eater The Enchantment Removing Chest.esp", 9D754581) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("Soul Eater The Enchantment Removing Chest.esp", 9D754581) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'SPTFemaleGuards(InPlace)?\.esp'
     msg:
       - type: say
@@ -6308,9 +6255,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         udr: 7
         util: *dirtyUtil
   - name: 'Sweetroll Randomization Act.esp'
-  IF CHECKSUM("Sweetroll Randomization Act.esp", A1C97CA6) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-    IF CHECKSUM("Sweetroll Randomization Act.esp", A1C97CA6) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
-      IF CHECKSUM("Sweetroll Randomization Act.esp", A1C97CA6) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
     tag:
       - Delev
       - Relev
@@ -6688,9 +6632,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
       IF FILE("rt_AutoHarvest.esp") && IF VAR(ES) ERROR: Usar rt_AutoHarvest.esp o rt_Animal - Processing.esp, no ambos.
   - name: 'rt_AutoHarvest.esp'
   IFNOT CHECKSUM("rt_AutoHarvest.esp", BBDBA57A) && IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
-  IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'CAS.esp'
   IF VAR(EN) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Only use the save features of either "CAS" or "kuertee's auto-save and time".
     IF VAR(RU) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee's auto-save and time".
@@ -7014,9 +6955,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         udr: 2
         util: *dirtyUtil
   - name: 'AlchemistSatchel.esp'
-  IF CHECKSUM("AlchemistSatchel.esp", 2412654C) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("AlchemistSatchel.esp", 2412654C) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("AlchemistSatchel.esp", 2412654C) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
     dirty:
       - crc: 0x2412654C
         itm: 15
@@ -10393,9 +10331,6 @@ TeraCfl18-CBBEByNausicaa.es
     IF FILE("Complete Crafting Overhaul.esp") && IF VAR(RU) SAY: С модом Smithing Perks Overhaul - Balanced.esp используйте Complete Crafting Overhaul.
       IF FILE("Complete Crafting Overhaul.esp") && IF VAR(ES) SAY: Usar Smithing Perks Overhaul - Balanced.esp como Complete Crafting Overhaul.
   - name: 'Smithing Perks Overhaul_Remade.esp'
-  IF CHECKSUM("Smithing Perks Overhaul_Remade.esp", E957FD42) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("Smithing Perks Overhaul_Remade.esp", E957FD42) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("Smithing Perks Overhaul_Remade.esp", E957FD42) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'Complete Crafting Overhaul( - BS version)?\.esp'
     inc:
       - 'Smithing Perks Overhaul.esp'
@@ -15007,12 +14942,6 @@ TeraCfl18-CBBEByNausicaa.es
         udr: 5
         util: *dirtyUtil
   - name: 'LevelersShowroom.esp'
-  IF CHECKSUM("LevelersShowroom.esp", AD333CC5) && IFNOT ACTIVE("LevelersTower.esm") && IF VAR(EN) ERROR: LevelersTower.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF CHECKSUM("LevelersShowroom.esp", AD333CC5) && IFNOT ACTIVE("LevelersTower.esm") && IF VAR(RU) ERROR: LevelersTower.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF CHECKSUM("LevelersShowroom.esp", AD333CC5) && IFNOT ACTIVE("LevelersTower.esm") && IF VAR(ES) ERROR: LevelersTower.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF CHECKSUM("LevelersShowroom.esp", 9ED58CC5) && IFNOT ACTIVE("LevelersTower.esp") && IF VAR(EN) ERROR: LevelersTower.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF CHECKSUM("LevelersShowroom.esp", 9ED58CC5) && IFNOT ACTIVE("LevelersTower.esp") && IF VAR(RU) ERROR: LevelersTower.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF CHECKSUM("LevelersShowroom.esp", 9ED58CC5) && IFNOT ACTIVE("LevelersTower.esp") && IF VAR(ES) ERROR: LevelersTower.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Liberation Beacon.esp'
     dirty:
       - crc: 0xEAC2C978
@@ -15364,7 +15293,7 @@ TeraCfl18-CBBEByNausicaa.es
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, HjakhtraevarrTomb.esm.'
   - name: 'Museum.esp'
- IFNOT VAR(UFO) MOD: My home is your home.esp
+ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: My home is your home.esp
     dirty:
       - crc: 0xC36587B3
         itm: 3
@@ -15575,9 +15504,6 @@ TeraCfl18-CBBEByNausicaa.es
         udr: 0
         util: *dirtyUtil
   - name: 'Proudspire Manor Refurbished.esp'
-  IF CHECKSUM("Proudspire Manor Refurbished.esp", CDE3CA7C) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
-    IF CHECKSUM("Proudspire Manor Refurbished.esp", CDE3CA7C) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
-      IF CHECKSUM("Proudspire Manor Refurbished.esp", CDE3CA7C) && IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
     dirty:
       - crc: 0xCDE3CA7C
         itm: 3
@@ -16092,9 +16018,6 @@ TeraCfl18-CBBEByNausicaa.es
         udr: 0
         util: *dirtyUtil
   - name: 'Simply Improved Breezehome.esp'
-  IF CHECKSUM("Simply Improved Breezehome.esp", 946E7BCB) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
-    IF CHECKSUM("Simply Improved Breezehome.esp", 946E7BCB) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
-      IF CHECKSUM("Simply Improved Breezehome.esp", 946E7BCB) && IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   - name: 'SK_Berserk.esp'
     dirty:
       - crc: 0xC30C6667
@@ -16284,9 +16207,6 @@ TeraCfl18-CBBEByNausicaa.es
         udr: 0
         util: *dirtyUtil
   - name: 'SSHjerimMod.esp'
-  IF CHECKSUM("SSHjerimMod.esp", 6C605C36) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
-    IF CHECKSUM("SSHjerimMod.esp", 6C605C36) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
-      IF CHECKSUM("SSHjerimMod.esp", 6C605C36) && IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
     dirty:
       - crc: 0x6C605C36
         itm: 151
@@ -17486,12 +17406,6 @@ zecogaisland2.es
         itm: 5
         udr: 0
         util: *dirtyUtil
-  IF CHECKSUM("SkyrimWeightImprovement.esp", 770F0BB8) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("SkyrimWeightImprovement.esp", 770F0BB8) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("SkyrimWeightImprovement.esp", 770F0BB8) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF CHECKSUM("SkyrimWeightImprovement.esp", DB1E6677) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("SkyrimWeightImprovement.esp", DB1E6677) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("SkyrimWeightImprovement.esp", DB1E6677) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
     dirty:
       - crc: 0x84521D2D
         itm: 3
@@ -17787,8 +17701,8 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
         udr: 0
         util: *dirtyUtil
   - name: 'BasicHorseRidingAI.esp'
-  IF VAR(EN) && IF VAR(UFO) WARN: included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
-    IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
   - name: 'better artifacts.esp'
     dirty:
       - crc: 0x52BAB796
@@ -17865,16 +17779,9 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
             str: 'Устарело. Пожалуйста используйте универсальный патч со страницы Even Better Quest Objectives. ("http://www.nexusmods.com/skyrim/mods/32695 Nexus")'
           - lang: spa
             str: 'This file is obselte. Please use the universal patch on the Even Better Quest Objectives page. ("http://www.nexusmods.com/skyrim/mods/32695 Nexus")'
-  IFNOT FILE("Better Skill and Quest Books Names - BS.esp") ERROR: Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names - BS
   - name: 'BetterQuestObjectives-PaarDilemmaPatch.esp'
  IFNOT FILE("ESFCompanions.esp") MOD: BetterQuestObjectives-RequiemPatch.esp
   - name: 'Book Covers Skyrim.esp'
-  IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-    IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
-      IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
-  IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
-    IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
-      IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
   - name: 'Book Covers Dawnguard.esp'
   IF FILE("Book Covers Skyrim.esp") && IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IF VAR(EN) WARN: Delete. Already included in Book Covers Skyrim.esp.
     IF FILE("Book Covers Skyrim.esp") && IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IF VAR(RU) WARN: Удалите. Уже включено в Book Covers Skyrim.esp.
@@ -18367,9 +18274,7 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
         udr: 0
         util: *dirtyUtil
   - name: 'EBS - All in One (eclips3's Selection).esp'
-  IFNOT FILE("Book Covers Skyrim.esp") ERROR: Book Covers Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without Book Covers Skyrim.
   - name: 'EBS - All in One (SkyRe).esp'
-  IFNOT FILE("Book Covers Skyrim.esp") ERROR: Book Covers Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without Book Covers Skyrim.
   - name: 'ebonymod.esp'
     dirty:
       - crc: 0xE385086E
@@ -18388,9 +18293,6 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
         util: *dirtyUtil
  IFNOT FILE("Brevi_MoonlightTales.esp") && IFNOT FILE ("WerewolfMastery.esp") MOD: ESFCompanions - VilkasProvingHonorNoShowFix.esp
  IFNOT FILE("Brevi_MoonlightTales.esp") && IFNOT FILE ("WerewolfMastery.esp") MOD: BetterQuestObjectives-ESFCompanionsPatch.esp
-  IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'Essential Frost.esp'
   IF CHECKSUM("Essential Frost.esp", D44409A0) && IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Essential Frost.esp", D44409A0) && IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
@@ -18676,8 +18578,8 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
     inc:
       - 'Housecarls Can Wear Anything.esp'
   - name: 'Housecarls improved AI( \+ higher lvl cap)?\.esp'
-  IF VAR(EN) && IF VAR(UFO) WARN: Improved AI included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
-    IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Improved AI included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
   - name: 'iMaxPlayerRunes\d+\.esp'
     msg:
       - type: say
@@ -18836,7 +18738,6 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
   - name: 'Ket_ARMONIZER_LListsNPC.esp'
     tag:
       - Delev
-  IFNOT ACTIVE ("Ket_ARMONIZER_v2.esm") ERROR: Ket_ARMONIZER_v2.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     dirty:
       - crc: 0xB96F7183
         itm: 6
@@ -19046,12 +18947,6 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
         util: *dirtyUtil
   - name: 'MenuShoutsInDragonsLanguage.esp'
   
-  IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-    IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
-      IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
-  IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
-    IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
-      IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
   
   IF VAR(Dawnguard) && IFNOT CHECKSUM("MenuShoutsInDragonsLanguage.esp", E06D6E46) ERROR: Use Dawnguard version.
   - name: 'mjhReducedGoldRewards.esp'
@@ -19998,11 +19893,6 @@ IFNOT REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.
   - name: 'aMidianborn_Skyforge_Weapons_Fix.esp'
  IFNOT FILE("ESFCompanions.esp") MOD: BetterQuestObjectives-AMBSkyforgePatch.esp
   - name: 'WeaponsArmorFixes_MultiMod_(DLC)?(Vanilla)?Patch\.esp'
-  IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT FILE("imp_helm_dawn.esp") && IF VAR(EN) ERROR: imp_helm_dawn.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets - Dawnguard
-    IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT FILE("imp_helm_dawn.esp") && IF VAR(RU) ERROR: imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard
   IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://www.nexusmods.com/skyrim/mods/34093 Weapon and Armor Fixes Remade"
   IFNOT FILE("Guard Dialogue Overhaul.esp") REQ: "http://www.nexusmods.com/skyrim/mods/23390 Guard Dialouge Overhaul"
   - name: 'Weapons & Armor_TrueDaedricWeapons.esp'
@@ -20044,12 +19934,6 @@ IFNOT REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.
     tag:
       - Delev
       - Relev
-  IF CHECKSUM("Skyrim unleashed_npc.esp", FEC7CFF0) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("Skyrim unleashed_npc.esp", FEC7CFF0) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("Skyrim unleashed_npc.esp", FEC7CFF0) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF CHECKSUM("Skyrim unleashed_npc.esp", FEC7CFF0) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IF CHECKSUM("Skyrim unleashed_npc.esp", FEC7CFF0) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-      IF CHECKSUM("Skyrim unleashed_npc.esp", FEC7CFF0) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
     dirty:
       - crc: 0x5E9123B6
         itm: 43
@@ -20076,12 +19960,6 @@ IFNOT REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.
     tag:
       - Delev
       - Relev
-  IF CHECKSUM("Skyrim unleashed_crafting.esp", 790D9E30) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("Skyrim unleashed_crafting.esp", 790D9E30) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("Skyrim unleashed_crafting.esp", 790D9E30) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF CHECKSUM("Skyrim unleashed_crafting.esp", 790D9E30) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IF CHECKSUM("Skyrim unleashed_crafting.esp", 790D9E30) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-      IF CHECKSUM("Skyrim unleashed_crafting.esp", 790D9E30) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
     dirty:
       - crc: 0x16C9C087
         itm: 1
@@ -20092,9 +19970,6 @@ IFNOT REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.
         udr: 0
         util: *dirtyUtil
   - name: 'Skyrim unleashed_enchantments.esp'
-  IF CHECKSUM("Skyrim unleashed_enchantments.esp", 351BFD9A) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("Skyrim unleashed_enchantments.esp", 351BFD9A) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("Skyrim unleashed_enchantments.esp", 351BFD9A) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'Skyrim unleashed Xtra_items.esp'
     tag:
       - Delev
@@ -20500,7 +20375,6 @@ IFNOT REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.
         udr: 15
         util: *dirtyUtil
   - name: 'WinterholdRuinsAddon_V1.esp'
-  IFNOT ACTIVE("WinterholdDestruction.esm") ERROR: WinterholdDestruction.esm is not present or is not active. Skyrim will CTD when loading if using this file.
     dirty:
       - crc: 0x1AF5E998
         itm: 41
@@ -21088,8 +20962,6 @@ Basic Human Needs - Food Drink and Sleep
   IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(EN) SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
     IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(RU) SAY: Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.
  IFNOT FILE("3DNPC.esp") MOD: KnapsackEnhanced.esp
-  IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://www.nexusmods.com/skyrim/mods/26228 Realistic Needs and Diseases"
-    IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://www.nexusmods.com/skyrim/mods/26228 Realistic Needs and Diseases"
  IFNOT FILE("3DNPC.esp") MOD: FalskaarRNDHotfix.esp
   - name: 'Realistic Weapon Weights.esp'
       - Stats
@@ -21105,17 +20977,12 @@ Basic Human Needs - Food Drink and Sleep
   - name: 'SkyRealism - Capacity and Carry Weight.esp'
     req:
       - *SKSE
-  IF CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF VAR(EN) && IF VAR(Dawnguard) && IFNOT CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) SAY: Use the Dawnguard compatible version please.
     IF VAR(RU) && IF VAR(Dawnguard) && IFNOT CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) SAY: Рекомендуется использовать совместимую с Dawnguard версию.
   IFNOT FILE("Dr_Bandolier.esp") || IFNOT FILE("Dr_BandolierDG.esp") REQ: "http://www.nexusmods.com/skyrim/mods/16438 Bandolier - Bags and Pouches"
   IF VAR(EN) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://www.nexusmods.com/skyrim/mods/13732 Leather Backpack".  Install only the black, brown and original varients. Also be sure to choose "Regular" for all install options.
     IF VAR(RU) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://www.nexusmods.com/skyrim/mods/13732 Leather Backpack".  Устанавливайте только черную(black) или коричневую(brown) и оригинальную версию. Также убедитесь, что выбрали "Regular", для всех опций установки.
   - name: 'SkyRealism - Mass and Materials - ExpandedJewelryCrafting.esp'
-  IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE ("ExpandedJewelryCrafting.esp") ERROR: ExpandedJewelryCrafting.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   - name: 'SkyRealism - Portable Crafting Kits.esp'
     req:
       - *SKSE
@@ -21363,9 +21230,6 @@ Basic Human Needs - Food Drink and Sleep
         util: *dirtyUtil
  IF FILE("Brevi_MoonlightTales.esp") || IF FILE ("WerewolfMastery.esp") MOD: ESFCompanions - VilkasProvingHonorNoShowFix.esp
  IF FILE("Brevi_MoonlightTales.esp") || IF FILE ("WerewolfMastery.esp") MOD: BetterQuestObjectives-ESFCompanionsPatch.esp
-  IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
  IF FILE("ESFCompanions.esp") MOD: BetterQuestObjectives-RequiemPatch.esp
  IF FILE("ESFCompanions.esp") MOD: BetterQuestObjectives-AMBSkyforgePatch.esp
   - name: 'WerewolfMastery.esp'
@@ -22075,7 +21939,7 @@ Basic Human Needs - Food Drink and Sleep
         udr: 0
         util: *dirtyUtil
   - name: 'room.esp'
-  IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
+  IF FILE("UFO - Ultimate Follower Overhaul.esp") INC: UFO - Ultimate Follower Overhaul.esp
   - name: 'SMEssentialKills.esp'
     msg:
       - type: say
@@ -22402,9 +22266,6 @@ Basic Human Needs - Food Drink and Sleep
  IFNOT REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") MOD: Enhanced Soul Trap.esp
   IF CHECKSUM("Enhanced Soul Trap.esp", C5F82F49) SAY: Use the Acquisitive Soul Gems non-compatible version.
   
-  IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(EN) ERROR: Acquisitive Soul Gems.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(RU) ERROR: Acquisitive Soul Gems.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(ES) ERROR: Acquisitive Soul Gems.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Lost Magic.esp'
     tag:
       - Delev
@@ -22709,9 +22570,6 @@ IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
           - lang: spa
             str: 'Utilizar solo un PT Alchemy / Food Overhaul esp.'
   - name: 'zzzAlmostUnlimitedWeaponEnchant.esp'
-  IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'AME.esp'
  IFNOT VAR(SkyReM) MOD: Artifact Disenchanting.esp
  IFNOT VAR(SkyReM) MOD: cnArtifact+Disenchanting.esp
@@ -22861,9 +22719,6 @@ IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   IF FILE("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
   IF VAR(EN) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Dawnguard version. Remove and install 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
     IF VAR(RU) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Версия для Dawnguard. Удалите это и установите 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
-  IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'Duel2_ArmorRating.esp'
     inc:
       - 'Duel_Master.esp'
@@ -23380,9 +23235,6 @@ IF REGEX("EmpoweredMagic.+\.esp") || IF VAR(SkyRe) REGEX: Acquisitive Soul Gems(
   
   IF CHECKSUM("Enhanced Soul Trap.esp", B4803235) || IF CHECKSUM("Enhanced Soul Trap.esp", DF45FD75) SAY: Use the Acquisitive Soul Gems compatible version.
   
-  IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(EN) ERROR: Acquisitive Soul Gems.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(RU) ERROR: Acquisitive Soul Gems.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(ES) ERROR: Acquisitive Soul Gems.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.esp
  IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") MOD: Soul Gems Glow When Full.esp
  IF VAR(SkyReM) MOD: Artifact Disenchanting.esp
@@ -23880,8 +23732,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         udr: 0
         util: *dirtyUtil
   - name: 'SPERG Dragonborn Patch.esp'
-  IF CHECKSUM("SPERG Dragonborn Patch.esp", 5F78B5AA) && IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF CHECKSUM("SPERG Dragonborn Patch.esp", 5F78B5AA) && IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
   - name: 'Override Alchemy.esp'
     msg:
       - type: say
@@ -24265,9 +24115,9 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
             str: 'Устарело. Обновите до последней версии.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
- IFNOT VAR(UFO) MOD: ApachiiHairStyles.esp
- IFNOT VAR(UFO) MOD: ApachiiHairStylesELVES.esp
- IFNOT VAR(UFO) MOD: ApachiiHairStyles-FemaleOnly.esp
+ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles.esp
+ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStylesELVES.esp
+ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles-FemaleOnly.esp
   - name: 'ApachiiHairStylesELVES-FemaleOnly.esp'
     dirty:
       - crc: 0x109E5111
@@ -24587,18 +24437,12 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
     IF FILE("New Playable Races by Budcat v4.0.esp") && IF VAR(RU) WARN: Используйте любой, или New Playable Races by Budcat v4.0.esp или NPR 4.0 w Unarmed Compatibility by Budcat.esp, не оба.
       IF FILE("New Playable Races by Budcat v4.0.esp") && IF VAR(ES) WARN: Usar New Playable Races by Budcat v4.0.esp o NPR 4.0 w Unarmed Compatibility by Budcat.esp, no ambos.
   - name: 'OhmesRaht.esp'
-  IF CHECKSUM("OhmesRaht.esp", 7969A102) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("OhmesRaht.esp", 7969A102) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("OhmesRaht.esp", 7969A102) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
     dirty:
       - crc: 0xCB3E2362
         itm: 2
         udr: 0
         util: *dirtyUtil
   - name: 'OrientalRace.esp'
-  IF CHECKSUM("OrientalRace.esp", D9E80FF5) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("OrientalRace.esp", D9E80FF5) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("OrientalRace.esp", D9E80FF5) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
     dirty:
       - crc: 0xF8DB1304
         itm: 2
@@ -24609,9 +24453,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         udr: 0
         util: *dirtyUtil
   - name: 'CuteDesigns.esp'
-  IF CHECKSUM("CuteDesigns.esp", FF625067) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("CuteDesigns.esp", FF625067) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("CuteDesigns.esp", FF625067) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   - name: 'RZW_ChubbyRaces.esp'
   REQ: "http://www.nexusmods.com/skyrim/mods/4888 CHSBHC - BBP - Nude and Jiggly Mod"
   - name: 'SC_Drow Race.esp'
@@ -24793,8 +24634,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
   IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(EN) SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
     IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(RU) SAY: Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.
  IF FILE("3DNPC.esp") MOD: KnapsackEnhanced.esp
-  IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://www.nexusmods.com/skyrim/mods/26228 Realistic Needs and Diseases"
-    IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://www.nexusmods.com/skyrim/mods/26228 Realistic Needs and Diseases"
  IF FILE("3DNPC.esp") MOD: FalskaarRNDHotfix.esp
   - name: 'AlmostEveryoneIsAnAdventurer.esp'
     req:
@@ -24862,8 +24701,8 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         udr: 0
         util: *dirtyUtil
   - name: 'DFB - Disable Hidden Follower Bows & Arrows.esp'
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can remove all default followers equpment with UFO.
-    IF VAR(RU) && IF VAR(UFO) SAY: Этот мод избыточен для 'UFO - Ultimate Follower Overhaul.esp'. Вы можете удалить весь скрытый инвентарь у компаньонов с помощью UFO.
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can remove all default followers equpment with UFO.
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") SAY: Этот мод избыточен для 'UFO - Ultimate Follower Overhaul.esp'. Вы можете удалить весь скрытый инвентарь у компаньонов с помощью UFO.
   - name: 'EASamhairNE_1_1.esp'
   IF FILE("EASamhairE_1_1.esp") && IF VAR(EN) WARN: Use either EASamhairE_1_1.esp or EASamhairNE_1_1.esp, not both.
     IF FILE("EASamhairE_1_1.esp") && IF VAR(RU) WARN: Используйте любой, или EASamhairE_1_1.esp или EASamhairNE_1_1.esp, не оба.
@@ -24882,17 +24721,17 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
  IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrimBodyPatch.esp
  IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: PC Exclusive Animation Path - Vilja.esp
   - name: 'Essential followers - all followers.esp'
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
   - name: 'essential followers.esp'
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
   - name: 'essentialfollowers.esp'
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
   - name: 'Essential Vigilance.esp'
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
   - name: 'follower pack orcs.esp'
     dirty:
       - crc: 0xF226DDFB
@@ -24903,11 +24742,11 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
   - name: 'Gandalf.Esp'
   REQ: "http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles"
   - name: 'HorseCompanions.esp'
-  IF VAR(EN) && IF VAR(UFO) WARN: HorseCompanions.es is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
-    IF VAR(RU) && IF VAR(UFO) WARN: HorseCompanions.es уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: HorseCompanions.es is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: HorseCompanions.es уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
   - name: '.*HorseRidingFollowers\.esp'
-  IF VAR(EN) && IF VAR(UFO) WARN: HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
-    IF VAR(RU) && IF VAR(UFO) WARN: HorseRidingFollowers уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: HorseRidingFollowers уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
   - name: 'Inigo.esp'
     dirty:
       - crc: 0xB9FC7507
@@ -24926,9 +24765,9 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
   IF CHECKSUM("Kharjo.esp", 1004ECD3) WARN: This mod was made using a 3rd party tool leaving dirty edits behind. It may need manual "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" cleaning.
     inc:
       - 'Better Kharjo.esp'
- IFNOT VAR(UFO) MOD: KTNUlfric.esp
-  IF CHECKSUM("KTNUlfric.esp", 8CF90F55) && IF VAR(UFO) ERROR: Use the UFO version of KTNUlfric.esp
-  IF CHECKSUM("KTNUlfric.esp", 35CB3586) && IFNOT VAR(UFO) ERROR: Use the non-UFO version of KTNUlfric.esp
+ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 8CF90F55) && IF FILE("UFO - Ultimate Follower Overhaul.esp") ERROR: Use the UFO version of KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 35CB3586) && IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") ERROR: Use the non-UFO version of KTNUlfric.esp
     dirty:
       - crc: 0x8CF90F55
         itm: 18
@@ -24938,8 +24777,8 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         itm: 15
         udr: 0
         util: *dirtyUtil
- IFNOT VAR(UFO) MOD: CWBattleUlfric.esp
- IFNOT VAR(UFO) MOD: OriginalrecipeUlfric.esp
+ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: CWBattleUlfric.esp
+ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: OriginalrecipeUlfric.esp
     inc:
       - 'CWBattleUlfric.esp'
   - name: 'Legolas.Esp'
@@ -24969,7 +24808,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         util: *dirtyUtil
   IF CHECKSUM("Only Kharjo.esp", B0CDAB38) WARN: The mod also has a lot of dirty edits in addition to the ITM records. Further manual "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" cleaning may be needed.
   - name: 'PAHAPDialoguePatcher.esp'
-  IFNOT FILE("AP Skyrim.esm") ERROR: AP Skyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without AP Skyrim
     dirty:
       - crc: 0x8FC75A5B
         itm: 2
@@ -24999,8 +24837,8 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         util: *dirtyUtil
   - name: 'PetBearOslo.esp'
   - name: 'TCG.esp'
-  IF VAR(EN) && IF VAR(UFO) WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
-    IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
   - name: 'VendorSaleDelay-Gone.esp'
     dirty:
       - crc: 0x6C8AB86B
@@ -25014,8 +24852,8 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         udr: 3
         util: *dirtyUtil
   - name: 'voidMountedFollowers.esp'
-  IF VAR(EN) && IF VAR(UFO) WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO.
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Already included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
   - name: 'FCKaraThePathfinder.esp'
@@ -25050,8 +24888,8 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
   - name: 'UFO - Ultimate Follower Overhaul.esp'
     inc:
       - 'BDO.esp'
-  IF VAR(Dawnguard) && IF VAR(UFOVI) && IFNOT FILE("UFO - Dawnguard AddOn.esp") WARN: UFO - Dawnguard AddOn.esp required to work properly with Dawnguard (Official Bethesda DLC)
-  IF VAR(Hearthfire) && IF VAR(UFOVI) && IFNOT FILE("UFO - Heartfire AddOn.esp") WARN: UFO - Heartfire AddOn.esp required to work properly with Hearthfires (Official Bethesda DLC)
+  IF VAR(Dawnguard) && IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 396AE69F) && IFNOT FILE("UFO - Dawnguard AddOn.esp") WARN: UFO - Dawnguard AddOn.esp required to work properly with Dawnguard (Official Bethesda DLC)
+  IF VAR(Hearthfire) && IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 396AE69F) && IFNOT FILE("UFO - Heartfire AddOn.esp") WARN: UFO - Heartfire AddOn.esp required to work properly with Hearthfires (Official Bethesda DLC)
     msg:
       - type: say
         content:
@@ -25085,19 +24923,19 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
       - 'UFO - Dragonborn AddOn.esp'
   IFNOT FILE("UFO - Dragonborn AddOn.esp") WARN: Outdated. Please upgrade to "http://www.nexusmods.com/skyrim/mods/14037 new official Dragonborn AddOn".
   - name: 'BetterQuestObjectives-UFOPatch.esp'
- IF VAR(UFO) MOD: ApachiiHairStyles.esp
- IF VAR(UFO) MOD: ApachiiHairStylesELVES.esp
- IF VAR(UFO) MOD: ApachiiHairStyles-FemaleOnly.esp
+ IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles.esp
+ IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStylesELVES.esp
+ IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles-FemaleOnly.esp
   - name: 'Feminine Females With All DLCs.esp'
     inc:
       - 'Feminine Females.esp'
       - 'Feminine Females Dawnguard.esp'
       - 'Feminine Females Hearthfires.esp'
       - 'Feminine Females Dragonborn.esp'
- IF VAR(UFO) MOD: SupermodelSkyrim.esp
- IF VAR(UFO) MOD: SupermodelDawnguard.esp
+ IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: SupermodelSkyrim.esp
+ IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: SupermodelDawnguard.esp
   - name: 'SBF .+\.esp'
- IF VAR(UFO) MOD: My home is your home.esp
+ IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: My home is your home.esp
     dirty:
       - crc: 0xC36587B3
         itm: 3
@@ -25107,9 +24945,9 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         itm: 3
         udr: 0
         util: *dirtyUtil
- IF VAR(UFO) MOD: KTNUlfric.esp
-  IF CHECKSUM("KTNUlfric.esp", 8CF90F55) && IF VAR(UFO) ERROR: Use UFO version of KTNUlfric.esp
-  IF CHECKSUM("KTNUlfric.esp", 35CB3586) && IFNOT VAR(UFO) ERROR: Use UFO version of KTNUlfric.esp
+ IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 8CF90F55) && IF FILE("UFO - Ultimate Follower Overhaul.esp") ERROR: Use UFO version of KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 35CB3586) && IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") ERROR: Use UFO version of KTNUlfric.esp
     dirty:
       - crc: 0x8CF90F55
         itm: 18
@@ -25119,9 +24957,9 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         itm: 15
         udr: 0
         util: *dirtyUtil
- IF VAR(UFO) MOD: CWBattleUlfric.esp
+ IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: CWBattleUlfric.esp
   - name: 'Midna.esp'
- IF VAR(UFO) MOD: OriginalrecipeUlfric.esp
+ IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: OriginalrecipeUlfric.esp
     inc:
       - 'CWBattleUlfric.esp'
   - name: '(No |Reduced Distance |Slightly Reduced Distance |Slightly Reduced )NPC Greetings\.esp'
@@ -25191,9 +25029,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         util: *dirtyUtil
   - name: 'AlvhildeLycan.esp'
   IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) REQ: "http://www.nexusmods.com/skyrim/mods/13722 The Eyes of Beauty".
-  IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) || IF CHECKSUM("AlvhildeLycan.esp", 4A47C015) && IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) || IF CHECKSUM("AlvhildeLycan.esp", 4A47C015) && IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) || IF CHECKSUM("AlvhildeLycan.esp", 4A47C015) && IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Amina.esp'
     msg:
       - type: warn
@@ -25410,8 +25245,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         udr: 0
         util: *dirtyUtil
   - name: 'CGKarena.esp'
-  IF CHECKSUM("CGKarena.esp", 4973DA86) && IFNOT VAR(ApachiiHairF) ERROR: "http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if this file is active without "http://www.nexusmods.com/skyrim/mods/10168 ApachiiSkyHairFemales.esm".
-  IF CHECKSUM("CGKarena.esp", F4FA7C33) && IFNOT VAR(ApachiiHairF) ERROR: "http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if this file is active without "http://www.nexusmods.com/skyrim/mods/10168 ApachiiSkyHairFemales.esm".
   - name: 'Cicero.esp'
   REQ: "http://www.nexusmods.com/skyrim/mods/3421 Nude Male with Roberts New Vegas male"
   - name: 'CleanBalimund.esp'
@@ -26562,8 +26395,8 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         util: *dirtyUtil
     inc:
       - 'TCG.esp'
-  IF VAR(EN) && IF VAR(UFO) WARN: Delete C01QuestScript.pex from data/scripts folder, if exist.
-    IF VAR(RU) && IF VAR(UFO) WARN: Удалите скрипт C01QuestScript.pex, из папки data/scripts, если он существует.
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Delete C01QuestScript.pex from data/scripts folder, if exist.
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Удалите скрипт C01QuestScript.pex, из папки data/scripts, если он существует.
   IF VAR(EN) && IF REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Better Followers - Armor Pack I & II, download it on BF page.
     IF VAR(RU) && IF REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Better Followers - Armor Pack I & II, вы можете их загрузить на странице Better Followers.
     msg:
@@ -26587,8 +26420,8 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
             str: 'Obsoleto. Actualizar a la última versión, Better Followers y Big Dialogue Overhaul.'
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Already included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
-  IF VAR(EN) && IF VAR(UFO) WARN: Delete. Use UFO - Ultimate Follower Overhaul.esp instead
-    IF VAR(RU) && IF VAR(UFO) WARN: Удалите. Используйте вместо этого UFO - Ultimate Follower Overhaul.esp
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Delete. Use UFO - Ultimate Follower Overhaul.esp instead
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Удалите. Используйте вместо этого UFO - Ultimate Follower Overhaul.esp
   - name: 'Better NPC - Faction Pack.esp'
   IF VAR(EN) && IFNOT REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty version of Better Followers, named BP or BNP or SBP or SBNP
     IF VAR(RU) && IFNOT REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty-версия Better Followers, имеющая окончание BP или BNP или SBP или SBNP
@@ -26601,16 +26434,16 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
   - name: 'FollowerWander2.esp'
   IF VAR(EN) && IF FILE("XFLMain.esm") SAY: XFLMain.esm has the same functional, but you can use FollowerWander2.esp on your choice.
     IF VAR(RU) && IF FILE("XFLMain.esm") SAY: XFLMain.esm имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.
-  IF VAR(EN) && IF VAR(UFO) SAY: UFO - Ultimate Follower Overhaul.esp has the same functional, but you can use FollowerWander2.esp on your choice.
-    IF VAR(RU) && IF VAR(UFO) SAY: UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") SAY: UFO - Ultimate Follower Overhaul.esp has the same functional, but you can use FollowerWander2.esp on your choice.
+    IF VAR(RU) && IF FILE("UFO - Ultimate Follower Overhaul.esp") SAY: UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Already included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
   - name: 'Followers Unlimited 11.esp'
-  IF VAR(UFO) && IF VAR(EN) WARN: Delete. Already included in UFO - Ultimate Follower Overhaul.esp.
-    IF VAR(UFO) && IF VAR(RU) WARN: Удалите. Уже включено в UFO - Ultimate Follower Overhaul.esp.
-      IF VAR(UFO) && IF VAR(ES) WARN: Borrar. Esta incluido en UFO - Ultimate Follower Overhaul.esp.
+  IF FILE("UFO - Ultimate Follower Overhaul.esp") && IF VAR(EN) WARN: Delete. Already included in UFO - Ultimate Follower Overhaul.esp.
+    IF FILE("UFO - Ultimate Follower Overhaul.esp") && IF VAR(RU) WARN: Удалите. Уже включено в UFO - Ultimate Follower Overhaul.esp.
+      IF FILE("UFO - Ultimate Follower Overhaul.esp") && IF VAR(ES) WARN: Borrar. Esta incluido en UFO - Ultimate Follower Overhaul.esp.
   - name: 'MultipleFollowers.esp'
-  IF VAR(EN) && IF VAR(UFO) WARN: Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
     msg:
       - type: say
@@ -26618,7 +26451,7 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
           - lang: eng
             str: 'Make sure you dismiss any followers (except dogs) before installation.'
   - name: 'Follower Limit Increased.esp'
-  IF VAR(EN) && IF VAR(UFO) WARN: Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+  IF VAR(EN) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
     inc:
       - 'Better Follower Improvements.esp'
@@ -27414,9 +27247,6 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
         itm: 214
         udr: 0
         util: *dirtyUtil
-  IF CHECKSUM("RealShelter.esp", 47B98821) && IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF CHECKSUM("RealShelter.esp", 47B98821) && IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без требуемого.
-      IF CHECKSUM("RealShelter.esp", 47B98821) && IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(ES) ERROR: ClimatesOfTamriel.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Hot Volcanic Water.esp'
     dirty:
       - crc: 0xCB9A32B4
@@ -27873,161 +27703,16 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
             str: 'If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)'
   - name: 'AZ Khajiit Vampire No Color Change.esp'
   - name: 'Compatibility Patch - (PHL, IA & CoS|PHL, IA CoS|PHL, CoS, WIC IA)\.esp'
-  IF FILE("Compatibility patch - PHL, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Compatibility patch - PHL, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Compatibility patch - PHL, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Compatibility Patch - (PHL WIC|PHL, CoS WIC)\.esp'
-  IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("Cloaks.esp") && IF VAR(ES) ERROR: Cloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(ES) ERROR: 1nivWICSkyCloaksPatch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Compatibility Patch - (PHL & Immersive armor|PHL IA|PHL WIC IA)\.esp'
-  IF FILE("Compatibility Patch - PHL WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Compatibility Patch - PHL WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Compatibility Patch - PHL WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Compatibility Patch - (PHT, IA & CoS|PHT, IA CoS|PHT, IA, CoS & WIC|PHT, CoS, WIC IA)\.esp'
-  IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-  IF FILE("Compatibility patch - PHT, IA, CoS & WIC.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Compatibility patch - PHT, IA, CoS & WIC.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Compatibility patch - PHT, IA, CoS & WIC.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Compatibility patch - PHT, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Compatibility patch - PHT, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Compatibility patch - PHT, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Compatibility Patch - (PHT, CoS & WIC|PHT, CoS WIC)\.esp'
-  IF FILE("Compatibility Patch - PHT, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Compatibility Patch - PHT, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Compatibility Patch - PHT, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(ES) ERROR: 1nivWICSkyCloaksPatch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Compatibility Patch - (PHT & Immersive armor|PHT IA|PHT WIC IA)\.esp'
-  IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-  IFNOT ACTIVE ("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE ("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-  IF FILE("Compatibility Patch - PHT WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Compatibility Patch - PHT WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Compatibility Patch - PHT WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'Compatibility Patch - (PHT & WIC|PHT WIC)\.esp'
-  IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-  IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
   - name: 'HearthfireMultikid_PNP Patch.esp'
   - name: 'Helmet ?Toggle - (Omegared99|Deadly Dragons Arm|Divine Aeg|hothtrooper44|Jacko0s|Knight of Th|Listeners|Lore Friendly|LPotD|Nights Watch|Schwertleite|Seratic|Silver Dragon|SkyRe_|Weapons of the Third).+ Patch\.esp'
-  IF FILE("HelmetToggle - Omegared99ArmorCompilation Patch.esp") && IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(EN) ERROR: Omegared99-Compilation.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("HelmetToggle - Omegared99ArmorCompilation Patch.esp") && IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(RU) ERROR: Omegared99-Compilation.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("HelmetToggle - Omegared99ArmorCompilation Patch.esp") && IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(ES) ERROR: Omegared99-Compilation.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Deadly Dragons Armory Patch.esp") && IFNOT ACTIVE("DeadlyDragonsArmory.esp") && IF VAR(EN) ERROR: DeadlyDragonsArmory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Deadly Dragons Armory Patch.esp") && IFNOT ACTIVE("DeadlyDragonsArmory.esp") && IF VAR(RU) ERROR: DeadlyDragonsArmory.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Deadly Dragons Armory Patch.esp") && IFNOT ACTIVE("DeadlyDragonsArmory.esp") && IF VAR(ES) ERROR: DeadlyDragonsArmory.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Divine Aegis Patch.esp") && IFNOT ACTIVE("Divine Aegis.esp") && IF VAR(EN) ERROR: Divine Aegis.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Divine Aegis Patch.esp") && IFNOT ACTIVE("Divine Aegis.esp") && IF VAR(RU) ERROR: Divine Aegis.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Divine Aegis Patch.esp") && IFNOT ACTIVE("Divine Aegis.esp") && IF VAR(ES) ERROR: Divine Aegis.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - hothtrooper44_ArmorCompilation Patch.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - hothtrooper44_ArmorCompilation Patch.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - hothtrooper44_ArmorCompilation Patch.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(ES) ERROR: hothtrooper44_ArmorCompilation.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Jacko0s Knightly Armory Patch.esp") && IFNOT ACTIVE("JoOsSkyrimKnightlyArmory.esp") && IF VAR(EN) ERROR: JoOsSkyrimKnightlyArmory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Jacko0s Knightly Armory Patch.esp") && IFNOT ACTIVE("JoOsSkyrimKnightlyArmory.esp") && IF VAR(RU) ERROR: JoOsSkyrimKnightlyArmory.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Jacko0s Knightly Armory Patch.esp") && IFNOT ACTIVE("JoOsSkyrimKnightlyArmory.esp") && IF VAR(ES) ERROR: JoOsSkyrimKnightlyArmory.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Knight of Thorns Patch.esp") && IFNOT ACTIVE("Knight Of Thorns Armor.esp") && IF VAR(EN) ERROR: Knight Of Thorns Armor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Knight of Thorns Patch.esp") && IFNOT ACTIVE("Knight Of Thorns Armor.esp") && IF VAR(RU) ERROR: Knight Of Thorns Armor.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Knight of Thorns Patch.esp") && IFNOT ACTIVE("Knight Of Thorns Armor.esp") && IF VAR(ES) ERROR: Knight Of Thorns Armor.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Listeners Armor Patch.esp") && IFNOT ACTIVE("listernersarmorset.esp") && IF VAR(EN) ERROR: listernersarmorset.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Listeners Armor Patch.esp") && IFNOT ACTIVE("listernersarmorset.esp") && IF VAR(RU) ERROR: listernersarmorset.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Listeners Armor Patch.esp") && IFNOT ACTIVE("listernersarmorset.esp") && IF VAR(ES) ERROR: listernersarmorset.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Lore Friendly Armor Pack Patch.esp") && IFNOT ACTIVE("LFArmors.esp") && IF VAR(EN) ERROR: LFArmors.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Lore Friendly Armor Pack Patch.esp") && IFNOT ACTIVE("LFArmors.esp") && IF VAR(RU) ERROR: LFArmors.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Lore Friendly Armor Pack Patch.esp") && IFNOT ACTIVE("LFArmors.esp") && IF VAR(ES) ERROR: LFArmors.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("LPotD Armor.esp") && IF VAR(EN) ERROR: LPotD Armor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("LPotD Armor.esp") && IF VAR(RU) ERROR: LPotD Armor.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("LPotD Armor.esp") && IF VAR(ES) ERROR: LPotD Armor.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Nights Watch Armor Heavy Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(EN) ERROR: NightsWatchArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Nights Watch Armor Heavy Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(RU) ERROR: NightsWatchArmor.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Nights Watch Armor Heavy Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(ES) ERROR: NightsWatchArmor.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Nights Watch Armor Light Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(EN) ERROR: NightsWatchArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Nights Watch Armor Light Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(RU) ERROR: NightsWatchArmor.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Nights Watch Armor Light Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(ES) ERROR: NightsWatchArmor.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Schwertleite Set Patch.esp") && IFNOT ACTIVE("Schwertleite Set.esp") && IF VAR(EN) ERROR: Schwertleite Set.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Schwertleite Set Patch.esp") && IFNOT ACTIVE("Schwertleite Set.esp") && IF VAR(RU) ERROR: Schwertleite Set.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Schwertleite Set Patch.esp") && IFNOT ACTIVE("Schwertleite Set.esp") && IF VAR(ES) ERROR: Schwertleite Set.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Seratic Dark Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorDark.esp") && IF VAR(EN) ERROR: SeraticHeavyArmorDark.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Seratic Dark Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorDark.esp") && IF VAR(RU) ERROR: SeraticHeavyArmorDark.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Seratic Dark Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorDark.esp") && IF VAR(ES) ERROR: SeraticHeavyArmorDark.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Seratic Gray Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorGray.esp") && IF VAR(EN) ERROR: SeraticHeavyArmorGray.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Seratic Gray Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorGray.esp") && IF VAR(RU) ERROR: SeraticHeavyArmorGray.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Seratic Gray Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorGray.esp") && IF VAR(ES) ERROR: SeraticHeavyArmorGray.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Seratic Light Armor Patch.esp") && IFNOT ACTIVE("seraticarmor.esp") && IF VAR(EN) ERROR: seraticarmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Seratic Light Armor Patch.esp") && IFNOT ACTIVE("seraticarmor.esp") && IF VAR(RU) ERROR: seraticarmor.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Seratic Light Armor Patch.esp") && IFNOT ACTIVE("seraticarmor.esp") && IF VAR(ES) ERROR: seraticarmor.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-    msg:
-      - type: ERROR
-        condition: 'file("Helmet Toggle - Silver Dragon Armor Patch.esp") and file("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("SilverDragonArmor.esp")'
-        content:
-          - lang: EN
-            str: 'SilverDragonArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-    msg:
-      - type: ERROR
-        condition: 'file("Helmet Toggle - Silver Dragon Armor Patch.esp") and file("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("SilverDragonArmor.esp")'
-        content:
-          - lang: RU
-            str: 'SilverDragonArmor.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-    msg:
-      - type: ERROR
-        condition: 'file("Helmet Toggle - Silver Dragon Armor Patch.esp") and file("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("SilverDragonArmor.esp")'
-        content:
-          - lang: ES
-            str: 'SilverDragonArmor.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-  IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(ES) ERROR: SkyRe_Main.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Helmet Toggle - Weapons of the Third Era MoS edition Patch.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(EN) ERROR: 3rdEraWeaponsMoS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Helmet Toggle - Weapons of the Third Era MoS edition Patch.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(RU) ERROR: 3rdEraWeaponsMoS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Helmet Toggle - Weapons of the Third Era MoS edition Patch.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(ES) ERROR: 3rdEraWeaponsMoS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: '(3rdEraWeaponsMoS|Armonizer|crafting300|Dragonborn|Immersive Armors|Ivory|RaistlenRobes|Thalmor|Tribunal Robes -|WVExpansion) Lootification\.esp'
-  IF FILE("3rdEraWeaponsMoS Lootification.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(EN) ERROR: 3rdEraWeaponsMoS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("3rdEraWeaponsMoS Lootification.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(RU) ERROR: 3rdEraWeaponsMoS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("3rdEraWeaponsMoS Lootification.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(ES) ERROR: 3rdEraWeaponsMoS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Armonizer Lootification.esp") && IFNOT ACTIVE("Ket_ARMONIZER_v2.esm") && IF VAR(EN) ERROR: Ket_ARMONIZER_v2.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Armonizer Lootification.esp") && IFNOT ACTIVE("Ket_ARMONIZER_v2.esm") && IF VAR(RU) ERROR: Ket_ARMONIZER_v2.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Armonizer Lootification.esp") && IFNOT ACTIVE("Ket_ARMONIZER_v2.esm") && IF VAR(ES) ERROR: Ket_ARMONIZER_v2.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Armonizer Lootification.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF FILE("Armonizer Lootification.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF FILE("Armonizer Lootification.esp") && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF FILE("crafting300 Lootification.esp") && IFNOT ACTIVE("Crafting300.esp") && IF VAR(EN) ERROR: Crafting300.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("crafting300 Lootification.esp") && IFNOT ACTIVE("Crafting300.esp") && IF VAR(RU) ERROR: Crafting300.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("crafting300 Lootification.esp") && IFNOT ACTIVE("Crafting300.esp") && IF VAR(ES) ERROR: Crafting300.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Dragonborn Lootification.esp") && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IF FILE("Dragonborn Lootification.esp") && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-      IF FILE("Dragonborn Lootification.esp") && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
-  IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("SPIKE.esm") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("SPIKE.esm") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("SPIKE.esm") && IF VAR(ES) ERROR: SPIKE.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(ES) ERROR: hothtrooper44_ArmorCompilation.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Ivory Lootification.esp") && IFNOT ACTIVE("Ivory.esp") && IF VAR(EN) ERROR: Ivory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Ivory Lootification.esp") && IFNOT ACTIVE("Ivory.esp") && IF VAR(RU) ERROR: Ivory.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Ivory Lootification.esp") && IFNOT ACTIVE("Ivory.esp") && IF VAR(ES) ERROR: Ivory.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("RaistlenRobes Lootification.esp") && IFNOT ACTIVE("RaistlinRobes.esp") && IF VAR(EN) ERROR: RaistlinRobes.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("RaistlenRobes Lootification.esp") && IFNOT ACTIVE("RaistlinRobes.esp") && IF VAR(RU) ERROR: RaistlinRobes.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("RaistlenRobes Lootification.esp") && IFNOT ACTIVE("RaistlinRobes.esp") && IF VAR(ES) ERROR: RaistlinRobes.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Thalmor Lootification.esp") && IFNOT ACTIVE("ThalmorStandalone.esp") && IF VAR(EN) ERROR: ThalmorStandalone.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Thalmor Lootification.esp") && IFNOT ACTIVE("ThalmorStandalone.esp") && IF VAR(RU) ERROR: ThalmorStandalone.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Thalmor Lootification.esp") && IFNOT ACTIVE("ThalmorStandalone.esp") && IF VAR(ES) ERROR: ThalmorStandalone.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("Tribunal Robes - Lootification.esp") && IFNOT ACTIVE("Tribunal Robes by Zairaam.esp") && IF VAR(EN) ERROR: Tribunal Robes by Zairaam.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("Tribunal Robes - Lootification.esp") && IFNOT ACTIVE("Tribunal Robes by Zairaam.esp") && IF VAR(RU) ERROR: Tribunal Robes by Zairaam.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("Tribunal Robes - Lootification.esp") && IFNOT ACTIVE("Tribunal Robes by Zairaam.esp") && IF VAR(ES) ERROR: Tribunal Robes by Zairaam.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("WVExpansion Lootification.esp") && IFNOT ACTIVE("WVExpansion.esp") && IF VAR(EN) ERROR: WVExpansion.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF FILE("WVExpansion Lootification.esp") && IFNOT ACTIVE("WVExpansion.esp") && IF VAR(RU) ERROR: WVExpansion.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IF FILE("WVExpansion Lootification.esp") && IFNOT ACTIVE("WVExpansion.esp") && IF VAR(ES) ERROR: WVExpansion.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'UFOtweak.esp'
-  IFNOT VAR(UFO) && IF VAR(EN) ERROR: UFO is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT VAR(UFO) && IF VAR(RU) ERROR: UFO отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT VAR(UFO) && IF VAR(ES) ERROR: UFO no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   - name: 'SoundPropagationOverhaul DSAMG Patch.esp'
     dirty:
       - crc: 0x32DA1D52
@@ -28124,10 +27809,10 @@ TB_RLOverhaul-patch.es
   - name: 'HM_HotkeyMod.esp'
     req:
       - *SKSE
-  IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IF VAR(UFO) WARN: UFO detected.  Use the UFO version to have the mod work as intended.
-    IFNOT VAR(UFO) && IF VAR(RU) SAY: При отсутствии UFO используйте обычную НЕ UFO-версию этого мода.
-  IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT VAR(UFO) ERROR: UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.
-    IF VAR(UFO) && IF VAR(RU) SAY: При наличии UFO используйте UFO-версию этого мода.
+  IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IF FILE("UFO - Ultimate Follower Overhaul.esp") WARN: UFO detected.  Use the UFO version to have the mod work as intended.
+    IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") && IF VAR(RU) SAY: При отсутствии UFO используйте обычную НЕ UFO-версию этого мода.
+  IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") ERROR: UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.
+    IF FILE("UFO - Ultimate Follower Overhaul.esp") && IF VAR(RU) SAY: При наличии UFO используйте UFO-версию этого мода.
     dirty:
       - crc: 0x374C564C
         itm: 3
