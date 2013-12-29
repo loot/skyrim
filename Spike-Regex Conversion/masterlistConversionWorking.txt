@@ -11740,7 +11740,7 @@ TeraCfl18-CBBEByNausicaa.es
       - type: say
         content:
           - lang: eng
-            str: 'Remember not to load (or to simply delete) Insanitys Dragon Katana mod'
+            str: 'Remember not to load (or to simply delete) the Insanitys Dragon Katana plugin'
           - lang: rus
             str: 'Не забудьте отключить или удалить мод Insanitys Dragon Katana'
         condition: 'file("InsanitysDragonKatana.esp") or file("Insanity's Dragon Katana.esp")'
@@ -11752,8 +11752,13 @@ TeraCfl18-CBBEByNausicaa.es
             str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.'
           - lang: rus
             str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-  IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
-    IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
+      - type: say
+        content:
+          - lang: eng
+            str: 'Remember not to load (or to simply delete) the Insanitys Dragon Katana plugin'
+          - lang: rus
+            str: 'Не забудьте отключить или удалить мод Insanitys Dragon Katana'
+        condition: 'file("InsanitysDragonKatana.esp") or file("Insanity's Dragon Katana.esp")'
   - name: 'SkyRe_Plugin_isilNarsil.esp'
   IF VAR(EN) && IF ACTIVE("isilNarsil.esp") SAY: Remember not to load (or to simply delete) isilNarsil.esp
     IF VAR(RU) && IF ACTIVE("isilNarsil.esp") SAY: Не забудьте отключить или удалить isilNarsil.esp
@@ -25913,10 +25918,26 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         itm: 8
         udr: 0
         util: *dirtyUtil
-  - name: 'Kashi(m|m - Ahtar Replacer)\.esp'
-  IF FILE("Kashim.esp") || IF FILE("Kashim - Ahtar Replacer.esp") && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF FILE("Kashim.esp") || IF FILE("Kashim - Ahtar Replacer.esp") && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-      IF FILE("Kashim.esp") || IF FILE("Kashim - Ahtar Replacer.esp") && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+  - name: 'Kashim.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'This file contains unexpected (or out of order) records and should be removed.'
+          - lang: rus
+            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
+          - lang: spa
+            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+  - name: 'Kashim - Ahtar Replacer.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'This file contains unexpected (or out of order) records and should be removed.'
+          - lang: rus
+            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
+          - lang: spa
+            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
   - name: 'Kate.esp'
     req:
       - *SKSE
