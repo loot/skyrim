@@ -2232,9 +2232,16 @@ BertsBreezehomeGarde
   IF FILE("lightingfix.esp") && IF VAR(EN) WARN: Using lightingfix.esp along with Relighting Skyrim - Dawnguard.esp is likely to cause lighting inconsistencies.
     IF FILE("lightingfix.esp") && IF VAR(RU) WARN: Использование lightingfix.esp вместе с Relighting Skyrim - Dawnguard.esp может вызвать несоответствия освещения.
   - name: 'lydia chair fix.esp'
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp
+    msg:
+      - type: warn
+        condition: 'file("Unofficial Skyrim Patch.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'MageRobesCommentFix.esp'
     msg:
       - type: warn
@@ -3813,9 +3820,16 @@ BertsBreezehomeGarde
       - 'jumpHeightOnly.esp'
       - 'jumpHeightThird.esp'
   - name: 'Weapons and Armor fixes.esp'
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp
+    msg:
+      - type: warn
+        condition: 'file("Unofficial Skyrim Patch.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   IF VAR(EN) && IFNOT CHECKSUM("Weapons and Armor fixes.esp", D27D2F2) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained "http://www.nexusmods.com/skyrim/mods/26230 here".
     IF VAR(RU) && IFNOT CHECKSUM("Weapons and Armor fixes.esp", D27D2F2) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
       IF VAR(ES) && IFNOT CHECKSUM("Weapons and Armor fixes.esp", D27D2F2) WARN: Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado "http://www.nexusmods.com/skyrim/mods/26230 aquí".
@@ -4390,9 +4404,6 @@ BertsBreezehomeGarde
   IF VAR(EN) && IF FILE("SpellFix.esp") ERROR: Delete. Already included in SpellFix.esp.
     IF VAR(RU) && IF FILE("SpellFix.esp") ERROR: Удалите. Уже включено в SpellFix.esp.
       IF VAR(ES) && IF FILE("SpellFix.esp") ERROR: Borrar. Ya esta incluido en SpellFix.esp.
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp
   - name: 'Console Books.esp'
     dirty:
       - crc: 0x6AE62CA9
@@ -19165,9 +19176,16 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, BeastWithinNightEye.esp.'
   - name: 'posesivecorpses.esp'
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp
+    msg:
+      - type: warn
+        condition: 'file("Unofficial Skyrim Patch.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'PowerOfBlood.esp'
     dirty:
       - crc: 0x9572B55C
@@ -26909,9 +26927,16 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
 
  IF VAR(ExtSlider) MOD: Tribal Warpaint for Females.esp
  IF VAR(ExtSlider) MOD: Vampire Eyes Fix.esp
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp
+    msg:
+      - type: warn
+        condition: 'file("Unofficial Skyrim Patch.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'Expanded Eye Color Selection.esp'
     msg:
       - type: say
@@ -27113,15 +27138,6 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
         udr: 0
         util: *dirtyUtil
   - name: 'Isharas_CustomPlayerBody.esp'
-/*
-  Per discussion in the Google Group, I've started sorted the mods in this
-  group into three categories: "Message override overhauls",
-  "Single message overrides", and "Message suppressors". I don't know most of
-  the mods and some of those I've tried to look up, I have not been able to
-  locate. Please do help out and sort the "Unsorted group" into one of the
-  three 'sorted' ones. (DeleteWhenCooked)
-  - Freso
-*/
   - name: 'Chesko_LevelUp.esp'
     req:
       - *SKSE
@@ -27152,9 +27168,16 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
           - lang: spa
             str: 'Utilizar solo un Blood Coins esp.'
   - name: 'ChickenNestFix.esp'
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp
+    msg:
+      - type: warn
+        condition: 'file("Unofficial Skyrim Patch.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'MD - WMTBNDE .+\.esp'
     msg:
       - type: say
