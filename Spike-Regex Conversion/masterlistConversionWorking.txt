@@ -6648,9 +6648,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
   IF CHECKSUM("Destructible_bottles.esp", 33A7D490) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Destructible_bottles.esp", 33A7D490) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("Destructible_bottles.esp", 33A7D490) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
-  IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) || IF CHECKSUM("Destructible_bottles.esp", 0900B364) || IF CHECKSUM("Destructible_bottles.esp", 48639563) || IF CHECKSUM("Destructible_bottles.esp", 078C74DD) || IF CHECKSUM("Destructible_bottles.esp", 5BE52467) || IF CHECKSUM("Destructible_bottles.esp", D59FAF05) || IF CHECKSUM("Destructible_bottles.esp", D80876E8) && IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) || IF CHECKSUM("Destructible_bottles.esp", 0900B364) || IF CHECKSUM("Destructible_bottles.esp", 48639563) || IF CHECKSUM("Destructible_bottles.esp", 078C74DD) || IF CHECKSUM("Destructible_bottles.esp", 5BE52467) || IF CHECKSUM("Destructible_bottles.esp", D59FAF05) || IF CHECKSUM("Destructible_bottles.esp", D80876E8) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-      IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) || IF CHECKSUM("Destructible_bottles.esp", 0900B364) || IF CHECKSUM("Destructible_bottles.esp", 48639563) || IF CHECKSUM("Destructible_bottles.esp", 078C74DD) || IF CHECKSUM("Destructible_bottles.esp", 5BE52467) || IF CHECKSUM("Destructible_bottles.esp", D59FAF05) || IF CHECKSUM("Destructible_bottles.esp", D80876E8) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
   - name: 'Item Sorting by Saige.esp'
     dirty:
       - crc: 0x658A6A4E
@@ -10244,9 +10241,19 @@ TeraCfl18-CBBEByNausicaa.es
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
  IF VAR(BFNIAP) MOD: SI_WicCosIaPatch.esp
   - name: 'BandolierForNPCMasterFile.esp'
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 76E11697) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 0146A38B) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 882FDEA5) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 18D6D7C8) || IF CHECKSUM("BandolierForNPCMasterFile.esp", BECFD7BA) && IFNOT VAR(Dawnguard) ERROR: Use non-Dawnguard version.
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 882FDEA5) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 18D6D7C8) || IF CHECKSUM("BandolierForNPCMasterFile.esp", BECFD7BA) && IFNOT FILE("Dr_BandolierDG.esp") && IF VAR(Dawnguard) ERROR: Dawnguard add-on for Bandolier required. "http://www.nexusmods.com/skyrim/mods/22119 Dr_BandolierDG.esp"
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'Use Dawnguard version.'
+          - lang: rus
+            str: 'Используйте версию для Dawnguard.'
+        condition: 'checksum("BandolierForNPCMasterFile.esp", 112359C0) or checksum("BandolierForNPCMasterFile.esp", 0146A38B) or checksum("BandolierForNPCMasterFile.esp", 76E11697)'
+      - type: error
+        content:
+          - lang: eng
+            str: 'Dawnguard add-on for Bandolier required. "http://www.nexusmods.com/skyrim/mods/22119 Dr_BandolierDG.esp"'
+        condition: '(checksum("BandolierForNPCMasterFile.esp", 882FDEA5) or checksum("BandolierForNPCMasterFile.esp", 18D6D7C8) or checksum("BandolierForNPCMasterFile.esp", BECFD7BA)) and file("Dawnguard.esm") and not file("Dr_BandolierDG.esp")'
   - name: 'BandolierForNPCsWinterIsComing.esp'
     msg:
       - type: say
@@ -13694,8 +13701,6 @@ TeraCfl18-CBBEByNausicaa.es
   - name: 'Destroy the Thieves Guild.esp'
   
   - name: 'WIP-Destroy the Thieves Guild.esp'
-  IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", 4FF5C52F) || IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", 43FB188C) || IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", BE25DF00) || IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", E5C3CF54) && IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without "http://www.nexusmods.com/skyrim/mods/10168 ApachiiSkyHair".
-    IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", 4FF5C52F) || IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", 43FB188C) || IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", BE25DF00) || IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", E5C3CF54) && IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://www.nexusmods.com/skyrim/mods/10168 ApachiiSkyHair".
     dirty:
       - crc: 0x43FB188C
         itm: 3
@@ -14061,9 +14066,6 @@ TeraCfl18-CBBEByNausicaa.es
         udr: 2
         util: *dirtyUtil
   - name: 'expanded basement.esp'
-  IF CHECKSUM("expanded basement.esp", 77B3D0AF) || IF CHECKSUM("expanded basement.esp", 05D3BC5E) || IF CHECKSUM("expanded basement.esp", AF1BA96C) || IF CHECKSUM("expanded basement.esp", F7137B70) || IF CHECKSUM("expanded basement.esp", C8B1446D) && IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF CHECKSUM("expanded basement.esp", 77B3D0AF) || IF CHECKSUM("expanded basement.esp", 05D3BC5E) || IF CHECKSUM("expanded basement.esp", AF1BA96C) || IF CHECKSUM("expanded basement.esp", F7137B70) || IF CHECKSUM("expanded basement.esp", C8B1446D) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-      IF CHECKSUM("expanded basement.esp", 77B3D0AF) || IF CHECKSUM("expanded basement.esp", 05D3BC5E) || IF CHECKSUM("expanded basement.esp", AF1BA96C) || IF CHECKSUM("expanded basement.esp", F7137B70) || IF CHECKSUM("expanded basement.esp", C8B1446D) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
     dirty:
       - crc: 0x27C7711A
         itm: 2
@@ -14219,15 +14221,6 @@ TeraCfl18-CBBEByNausicaa.es
         udr: 21
         util: *dirtyUtil
   - name: 'FortBuffscale.esp'
-  IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", 8EDB06C9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) || IF CHECKSUM("FortBuffscale.esp", 74868200) || IF CHECKSUM("FortBuffscale.esp", 7BFBCD8F) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", 8EDB06C9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) || IF CHECKSUM("FortBuffscale.esp", 74868200) || IF CHECKSUM("FortBuffscale.esp", 7BFBCD8F) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", 8EDB06C9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) || IF CHECKSUM("FortBuffscale.esp", 74868200) || IF CHECKSUM("FortBuffscale.esp", 7BFBCD8F) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
-    IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
-      IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) && IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
-  IF CHECKSUM("FortBuffscale.esp", 35168FD9) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IF CHECKSUM("FortBuffscale.esp", 35168FD9) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-      IF CHECKSUM("FortBuffscale.esp", 35168FD9) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
     dirty:
       - crc: 0x1FBBACF2
         itm: 23
@@ -14413,9 +14406,6 @@ TeraCfl18-CBBEByNausicaa.es
         udr: 1
         util: *dirtyUtil
   - name: 'GreatTalosHunt.esp'
-  IF CHECKSUM("GreatTalosHunt.esp", 6C0CFBE4) || IF CHECKSUM("GreatTalosHunt.esp", E1A53EA5) || IF CHECKSUM("GreatTalosHunt.esp", A174E77C) || IF CHECKSUM("GreatTalosHunt.esp", 3A1727DF) || IF CHECKSUM("GreatTalosHunt.esp", 4566C395) || IF CHECKSUM("GreatTalosHunt.esp", 18250375) && IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF CHECKSUM("GreatTalosHunt.esp", 6C0CFBE4) || IF CHECKSUM("GreatTalosHunt.esp", E1A53EA5) || IF CHECKSUM("GreatTalosHunt.esp", A174E77C) || IF CHECKSUM("GreatTalosHunt.esp", 3A1727DF) || IF CHECKSUM("GreatTalosHunt.esp", 4566C395) || IF CHECKSUM("GreatTalosHunt.esp", 18250375) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-      IF CHECKSUM("GreatTalosHunt.esp", 6C0CFBE4) || IF CHECKSUM("GreatTalosHunt.esp", E1A53EA5) || IF CHECKSUM("GreatTalosHunt.esp", A174E77C) || IF CHECKSUM("GreatTalosHunt.esp", 3A1727DF) || IF CHECKSUM("GreatTalosHunt.esp", 4566C395) || IF CHECKSUM("GreatTalosHunt.esp", 18250375) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
     dirty:
       - crc: 0x10E82562
         itm: 27
@@ -17507,12 +17497,6 @@ zecogaisland2.es
         itm: 3
         udr: 0
         util: *dirtyUtil
-  IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) || IF CHECKSUM("SkyrimWeightImprovement.esp", 8FB74AF5) || IF CHECKSUM("SkyrimWeightImprovement.esp", 58D86ADD) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) || IF CHECKSUM("SkyrimWeightImprovement.esp", 8FB74AF5) || IF CHECKSUM("SkyrimWeightImprovement.esp", 58D86ADD) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) || IF CHECKSUM("SkyrimWeightImprovement.esp", 8FB74AF5) || IF CHECKSUM("SkyrimWeightImprovement.esp", 58D86ADD) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) || IF CHECKSUM("SkyrimWeightImprovement.esp", 8FB74AF5) || IF CHECKSUM("SkyrimWeightImprovement.esp", 58D86ADD) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
-    IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) || IF CHECKSUM("SkyrimWeightImprovement.esp", 8FB74AF5) || IF CHECKSUM("SkyrimWeightImprovement.esp", 58D86ADD) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
-      IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) || IF CHECKSUM("SkyrimWeightImprovement.esp", 8FB74AF5) || IF CHECKSUM("SkyrimWeightImprovement.esp", 58D86ADD) && IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
   - name: 'WeightedArrows(Heavy|Light|Medium)?\.esp'
     msg:
       - type: say
@@ -23132,7 +23116,6 @@ IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
           - lang: rus
             str: 'Выберете только один из нижестледующих, если вы предпочитаете ванильные настройки или другие моды, которые регулируют эти значения.'
   - name: 'betterskillgains.esp'
-        IF CHECKSUM("betterskillgains.esp", D1DF377A) || IF CHECKSUM("betterskillgains.esp", 2A4DE483) || IF CHECKSUM("betterskillgains.esp", 7D6A1243) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
     dirty:
       - crc: 0x750982FC
         itm: 32
@@ -25786,9 +25769,16 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
           - lang: rus
             str: 'Этот файл содержит <x> удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".'
   - name: 'Grandies_Companion_by_kill.esp'
-  IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-      IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'This file contains unexpected (or out of order) records and should be removed.'
+          - lang: rus
+            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
+          - lang: spa
+            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+        condition: 'checksum("Grandies_Companion_by_kill.esp", F1E5D380) or checksum("Grandies_Companion_by_kill.esp", 03490D91) or checksum("Grandies_Companion_by_kill.esp", B59E33FE)'
   - name: 'Haeli.esp'
     dirty:
       - crc: 0xDC8D51C0
@@ -25902,16 +25892,24 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         udr: 0
         util: *dirtyUtil
   - name: 'Jezebel.esp'
+    inc:
+      - 'Jezebel Simon.esp'
   IF CHECKSUM("Jezebel.esp", 77C303DF) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Jezebel.esp", 77C303DF) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("Jezebel.esp", 77C303DF) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
   - name: 'Jezebel Simon.esp'
-  IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-      IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
-  IF FILE("Jezebel.esp") && IF VAR(EN) WARN: Use either Jezebel.esp or Jezebel Simon.esp, not both.
-    IF FILE("Jezebel.esp") && IF VAR(RU) WARN: Используйте любой, или Jezebel.esp или Jezebel Simon.esp, не оба.
-      IF FILE("Jezebel.esp") && IF VAR(ES) WARN: Usar Jezebel.esp o Jezebel Simon.esp, no ambos.
+    inc:
+      - 'Jezebel.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: 'This file contains unexpected (or out of order) records and should be removed.'
+          - lang: rus
+            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
+          - lang: spa
+            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+        condition: 'checksum("Jezebel Simon.esp", C75CAB33) or checksum("Jezebel Simon.esp", 35728E70) or checksum("Jezebel Simon.esp", E8D86949)'
   - name: 'Jhaz.esp'
     dirty:
       - crc: 0x208E7086
@@ -26879,12 +26877,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
             str: 'Используйте только один Height Adjusted Races*.esp.'
           - lang: spa
             str: 'Utilizar solo un Height Adjusted Races*.esp.'
-  IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-      IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   - name: 'True Giants( v\d)?\.esp'
       - 'Height Adjusted Races with True Giants'
   - name: 'AROP- Altmer.+\.esp'
