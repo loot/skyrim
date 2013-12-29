@@ -88,6 +88,12 @@ common:
   - &FNIS
     name: 'tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811)'
+  - &SkyUI
+    name: 'SkyUI.esp'
+    display: '[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)'
+# Other Strings
+  - &dirtyUtil
+    '[TES5Edit](http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit)'
 
 plugins:  
   - name: 'Update.esm'
@@ -17718,9 +17724,8 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, LoreFriendlyArtifactRebalance.esp.'
   - name: 'Arvak Dark Power Voice power version.esp'
-  IF FILE("Arvak Dark Power.esp") && IF VAR(EN) WARN: Use either Arvak Dark Power.esp or Arvak Dark Power Voice power version.esp, not both.
-    IF FILE("Arvak Dark Power.esp") && IF VAR(RU) WARN: Используйте любой, или Arvak Dark Power.esp или Arvak Dark Power Voice power version.esp, не обa.
-      IF FILE("Arvak Dark Power.esp") && IF VAR(ES) WARN: Usar Arvak Dark Power.esp o Arvak Dark Power Voice power version.esp, no ambos.
+    inc:
+      - 'Arvak Dark Power.esp'
   - name: 'Arvak, Shadowmere's Body - No Saddle.esp'
   IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") && IF VAR(EN) WARN: Use only one Arvak esp.
     IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") && IF VAR(RU) WARN: Используйте только один Arvak esp.
@@ -17808,8 +17813,8 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
         udr: 0
         util: *dirtyUtil
   - name: 'mod1.esp'
-  IF VAR(EN) && IF FILE("Better Bone Armor.esp") SAY: Use either Better Bone Armor.esp or mod1.esp
-    IF VAR(RU) && IF FILE("Better Bone Armor.esp") SAY: Используйте или Better Bone Armor.esp или mod1.esp
+    inc:
+      - 'Better Bone Armor.esp'
   - name: 'Better Deadly Bandits.esp'
     tag:
       - Relev
