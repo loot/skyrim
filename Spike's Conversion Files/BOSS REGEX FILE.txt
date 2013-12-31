@@ -1,3 +1,24 @@
+##---------Run at end---------
+
+#Remove errant "dirty:" lines
+\s\s\s\s\s\s\s\sutil:\s\*dirtyUtil\r\n\s\s\s\sdirty:
+        util: *dirtyUtil
+        
+#Remove files with no messages
+\s\s-\sname:\s'.{1,200}\.es[mp]'\r\n\s\s-\sname:\s'(.{1,200}\.es[pm])'\r\n
+  - name: '\1'\r\n
+  
+#Remove errant "msg:" lines
+\s\s\s\s\s\s\s\s\s\s\s\sstr:\s'(.+)'\r\n\s\s\s\smsg:
+            str: '\1'\r\n
+
+#Remove blank lines
+\r\n\r\n
+\r\n
+
+
+##---------Conversion---------
+
 #Convert dirty messages
 \r\n\s\s\s?\s?\s?\s?IF\sCHECKSUM\(".{1,60}\.es[pm]",\s(.{8,8})\)\s&&\sIF\sVAR\(EN\)\sDIRTY:\s(\d{1,6})\sITM,\s(\d{1,6})\sUDR\srecords.{1,300}\r\n
 \r\n    dirty:\r\n      - crc: 0x\1\r\n        itm: \2\r\n        udr: \3\r\n        util: *dirtyUtil\r\n
@@ -12,10 +33,6 @@
 #Remove false CRC messages
 \s{1,6}IF\sCHECKSUM\(.{1,80}, .{0,7}\).+\r\n
 
-#Remove errant "dirty:" lines
-\s\s\s\s\s\s\s\sutil:\s\*dirtyUtil\r\n\s\s\s\sdirty:
-        util: *dirtyUtil
-
 #Convert muli-dirty messages
 \r\n\s\sIF\sCHECKSUM\(".{1,40}\.es[pm]",\s(.{8,8})\)\s\|\|\sIF\sCHECKSUM\(".{1,40}\.es[pm]",\s(.{8,8})\)\s&&\sIF\sVAR\(EN\)\sDIRTY:\s(\d{1,6})\sITM,\s(\d{1,6})\sUDR\srecords.{1,300}\r\n
 \r\n    dirty:\r\n      - crc: 0x\1\r\n        itm: \3\r\n        udr: \4\r\n        util: *dirtyUtil\r\n      - crc: 0x\2\r\n        itm: \3\r\n        udr: \4\r\n        util: *dirtyUtil\r\n
@@ -26,10 +43,6 @@
 #Convert bashed tags
 \s\sTAG:\s\{\{BASH:(\s\l{1,7}),?(\s\l{1,7})?,?(\s\l{1,7})?,?(\s\l{1,7})?\}\}\r\n
     tag:\r\n      -\1\r\n      -\2\r\n      -\3\r\n      -\4\r\n
-
-#Remove files with no messages
-\s\s-\sname:\s'.{1,200}\.es[mp]'\r\n\s\s-\sname:\s'(.{1,200}\.es[pm])'\r\n
-  - name: '\1'\r\n
 
 #Convert filenames to YAML
 \r\n([^ ].{1,10000}(?<!\\)\.es[pm])\r\n
@@ -63,10 +76,6 @@
 #Convert simple messages
 \r\n\s\s?\s?\s?\s?\s?IF\sVAR\((EN|ES|RU)\)\s(WARN|SAY|ERROR):\s(.+)\r\n
 \r\n    msg:\r\n      - type: \2\r\n        content:\r\n          - lang: \1\r\n            str: '\3'\r\n
-
-#Remove errant "msg:" lines
-\s\s\s\s\s\s\s\s\s\s\s\sstr:\s'(.+)'\r\n\s\s\s\smsg:
-            str: '\1'\r\n
 
 #Convert incompatibility lines (multi-4)
 \r\n\s\s?IFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\s\|\|\sIFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\s\|\|\sIFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\s\|\|\sIFN?O?T?\sFILE\("(.{1,200}\.es[pm])"\)\sINC:\s.+$
