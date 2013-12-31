@@ -2930,23 +2930,6 @@ BertsBreezehomeGarde
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
- IFNOT VAR(USKP20) MOD: Unofficial Skyrim Patch.esp
-    tag:
-      - Delev
-      - Relev
-      - Stats
-  IF VAR(EN) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".
-    IF VAR(RU) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".
-      IF VAR(ES) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch" además de Dawnguard. Se necesita para el correcto funcionamiento de Dawnguard.
-  IF VAR(EN) && IF VAR(Hearthfire) && IFNOT FILE("Unofficial Hearthfire Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".
-    IF VAR(RU) && IF VAR(Hearthfire) && IFNOT FILE("Unofficial Hearthfire Patch.esp") SAY: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".
-      IF VAR(ES) && IF VAR(Hearthfire) && IFNOT FILE("Unofficial Hearthfire Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".
-  IF VAR(EN) && IF VAR(Dragonborn) && IFNOT FILE("Unofficial Dragonborn Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
-    IF VAR(RU) && IF VAR(Dragonborn) && IFNOT FILE("Unofficial Dragonborn Patch.esp") SAY: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
-      IF VAR(ES) && IF VAR(Dragonborn) && IFNOT FILE("Unofficial Dragonborn Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
-  IF VAR(EN) && IFNOT VAR(USKP20) SAY: If you using version 2.0 of the unofficial patches but you see this message you need to download this file: "https://dl.dropboxusercontent.com/u/25091645/Skyrim/userlist.txt userlist.txt". After the download you need to copy this file to your 'BOSS\Skyrim\' folder or add the contents of this file to an already existing userlist.txt. Just ignore this message after updating any preexisting userlist.txt or copying the file to your 'BOSS\Skyrim\' folder.
-    IF VAR(RU) && IFNOT VAR(USKP20) SAY: Если у вас установлены неофициальные патчи версии 2.0, но вы видите это сообщение, вам необходимо загрузить следующий файл: "https://dl.dropboxusercontent.com/u/25091645/Skyrim/userlist.txt userlist.txt". После загрузки скопируйте файл в папку 'BOSS\Skyrim\' или добавьте его содержимое в ваш существующий файл userlist.txt. Просто игнорируйте это сообщение, если вы уже добавили содержимое файла userlist.txt в папку 'BOSS\Skyrim\' или у вас установлены старые версии неофициальных патчей.
-      IF VAR(ES) && IFNOT VAR(USKP20) SAY: Si utiliza la versión 2.0 de los parches no oficiales pero vea este mensaje es necesario descargar este archivo: "https://dl.dropboxusercontent.com/u/25091645/Skyrim/userlist.txt userlist.txt". Después de la descarga tiene que copiar este archivo a la carpeta de 'BOSS\Skyrim\' o añadir el contenido de este archivo a un userlist.txt ya existente. Simplemente ignorar este mensaje después de actualizar cualquier userlist.txt preexistente o después de copiar el archivo a la carpeta de 'BOSS\Skyrim\'.
   - name: 'USKP_addon.esp'
     dirty:
       - crc: 0xF99D79A5
@@ -3087,16 +3070,6 @@ BertsBreezehomeGarde
   IF VAR(EN) && IF VAR(UDGP) ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp
     IF VAR(RU) && IF VAR(UDGP) ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.esp
       IF VAR(ES) && IF VAR(UDGP) ERROR: Borrar. Esta incluido en Unofficial Dawnguard Patch.esp
- IFNOT VAR(UDGP20) MOD: Unofficial Dawnguard Patch.esp
-    tag:
-      - Delev
-      - Relev
-      - Stats
- IFNOT VAR(UHFP20) MOD: Unofficial Hearthfire Patch.esp
- IFNOT VAR(UDBP20) MOD: Unofficial Dragonborn Patch.esp
-    tag:
-      - Delev
-      - Stats
   - name: 'EveryVampireEyesGrow.esp'
     msg:
       - type: say
