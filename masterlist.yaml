@@ -113,7 +113,7 @@ plugins:
         itm: 73
         udr: 1
         util: *dirtyUtil
- IF VAR(USKP20) MOD: Unofficial Skyrim Patch.esp
+  - name: 'Unofficial Skyrim Patch.esp'
     tag:
       - Delev
       - Relev
@@ -128,6 +128,9 @@ plugins:
     IF VAR(RU) && IF VAR(Dragonborn) && IFNOT FILE("Unofficial Dragonborn Patch.esp") SAY: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
       IF VAR(ES) && IF VAR(Dragonborn) && IFNOT FILE("Unofficial Dragonborn Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
   - name: 'Dawnguard.esm'
+    after:
+      - name: 'Unofficial Skyrim Patch.esp'
+        condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
     dirty:
       - crc: 0xBD72CCF3
         itm: 619
@@ -136,25 +139,43 @@ plugins:
     tag:
       - Delev
       - Relev
- IF VAR(UDGP20) MOD: Unofficial Dawnguard Patch.esp
+  - name: 'Unofficial Dawnguard Patch.esp'
+    after:
+      - 'Unofficial Skyrim Patch.esp'
     tag:
       - Delev
       - Relev
       - Stats
   - name: 'Hearthfires.esm'
+    after:
+      - name: 'Unofficial Dawnguard Patch.esp'
+        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
+      - 'Dawnguard.esm'
     dirty:
       - crc: 0xAF82CE6A
         itm: 184
         udr: 11
         util: *dirtyUtil
- IF VAR(UHFP20) MOD: Unofficial Hearthfire Patch.esp
+  - name: 'Unofficial Hearthfire Patch.esp'
+    after:
+      - 'Unofficial Skyrim Patch.esp'
+      - 'Unofficial Dawnguard Patch.esp'
   - name: 'Dragonborn.esm'
+    after:
+      - name: 'Unofficial Hearthfire Patch.esp'
+        condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
+      - 'Dawnguard.esm'
+      - 'Hearthfires.esm'
     dirty:
       - crc: 0xA9F83BFF
         itm: 61
         udr: 8
         util: *dirtyUtil
- IF VAR(UDBP20) MOD: Unofficial Dragonborn Patch.esp
+  - name: 'Unofficial Dragonborn Patch.esp'
+    after:
+      - 'Unofficial Skyrim Patch.esp'
+      - 'Unofficial Dawnguard Patch.esp'
+      - 'Unofficial Hearthfire Patch.esp'
     tag:
       - Delev
       - Stats
