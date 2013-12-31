@@ -114,19 +114,38 @@ plugins:
         udr: 1
         util: *dirtyUtil
   - name: 'Unofficial Skyrim Patch.esp'
+    msg:
+      - type: warn
+        condition: 'file("Dawnguard.esm") and not file("Unofficial Dawnguard Patch.esp")'
+        content:
+          - lang: eng
+            str: 'It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".'
+          - lang: rus
+            str: 'Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".'
+          - lang: spa
+            str: 'Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch" además de Dawnguard. Se necesita para el correcto funcionamiento de Dawnguard.'
+      - type: warn
+        condition: 'file("Hearthfires.esm") and not file("Unofficial Hearthfire Patch.esp")'
+        content:
+          - lang: eng
+            str: 'It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".'
+          - lang: rus
+            str: 'Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".'
+          - lang: spa
+            str: 'Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch" además de Hearthfire. Se necesita para el correcto funcionamiento de Hearthfire.'
+      - type: warn
+        condition: 'file("Dragonborn.esm") and not file("Unofficial Dragonborn Patch.esp")'
+        content:
+          - lang: eng
+            str: 'It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".'
+          - lang: rus
+            str: 'Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".'
+          - lang: spa
+            str: 'Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch" además de Dragonborn. Se necesita para el correcto funcionamiento de Dragonborn.'
     tag:
       - Delev
       - Relev
       - Stats
-  IF VAR(EN) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".
-    IF VAR(RU) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".
-      IF VAR(ES) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch" además de Dawnguard. Se necesita para el correcto funcionamiento de Dawnguard.
-  IF VAR(EN) && IF VAR(Hearthfire) && IFNOT FILE("Unofficial Hearthfire Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".
-    IF VAR(RU) && IF VAR(Hearthfire) && IFNOT FILE("Unofficial Hearthfire Patch.esp") SAY: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".
-      IF VAR(ES) && IF VAR(Hearthfire) && IFNOT FILE("Unofficial Hearthfire Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".
-  IF VAR(EN) && IF VAR(Dragonborn) && IFNOT FILE("Unofficial Dragonborn Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
-    IF VAR(RU) && IF VAR(Dragonborn) && IFNOT FILE("Unofficial Dragonborn Patch.esp") SAY: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
-      IF VAR(ES) && IF VAR(Dragonborn) && IFNOT FILE("Unofficial Dragonborn Patch.esp") SAY: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
   - name: 'Dawnguard.esm'
     after:
       - name: 'Unofficial Skyrim Patch.esp'
@@ -413,7 +432,10 @@ BertsBreezehomeGarde
         udr: 0
         util: *dirtyUtil
   - name: 'DA_Skyship.esm'
-  IF VAR(Dragonborn) && IFNOT FILE("DA_Skyship_Dragonborn.esp") WARN: If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.
+    msg:
+      - type: warn
+        condition: 'file("Dragonborn.esm") and not file("DA_Skyship_Dragonborn.esp")'
+        content: 'If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.'
     req:
       - *SKSE
     dirty:
@@ -3009,7 +3031,7 @@ BertsBreezehomeGarde
       IF VAR(ES) && IF VAR(UDGP) ERROR: Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.
   - name: 'HF-MoveSpouse.esp'
     msg:
-      - type: warn
+      - type: error
         content:
           - lang: eng
             str: 'This file is corrupted and should be removed as soon as possible. It breaks the RelationshipMarriageFIN quest.'
@@ -3038,9 +3060,16 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'Krill_AurielsBowFix.esp'
-  IF VAR(EN) && IF VAR(UDGP) ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp.
-    IF VAR(RU) && IF VAR(UDGP) ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.esp.
-      IF VAR(ES) && IF VAR(UDGP) ERROR: Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.
+    msg:
+      - type: warn
+        condition: 'file("Unofficial Dawnguard Patch.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
   - name: 'Prodspire Cooking pot hearthfire bugfix.esp'
     dirty:
       - crc: 0x91AA4E51
@@ -3051,7 +3080,9 @@ BertsBreezehomeGarde
     IF VAR(RU) && IF VAR(UHFP) ERROR: Удалите. Уже включено в Unofficial Hearthfire Patch.esp.
       IF VAR(ES) && IF VAR(UHFP) ERROR: Borrar. Esta incluido en Unofficial Hearthfire Patch.esp.
   - name: 'Skyrim - Director's Cut - HD Pack Fix.esp'
-  IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
+    req:
+      - 'HighResTexturePack01.esp'
+      - 'HighResTexturePack02.esp'
   - name: 'Stahlrim Arrow Projectile Fix.esp'
   IF VAR(EN) && IF VAR(UDBP) ERROR: Delete. Already included in Unofficial Dragonborn Patch.esp.
     IF VAR(RU) && IF VAR(UDBP) ERROR: Удалите. Уже включено в Unofficial Dragonborn Patch.esp.
@@ -3067,9 +3098,16 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'This mod will not be compatible with any mods that alter the vampire character classes.'
   - name: 'USKP Dawnguard vampire face & eye fix.esp'
-  IF VAR(EN) && IF VAR(UDGP) ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp
-    IF VAR(RU) && IF VAR(UDGP) ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.esp
-      IF VAR(ES) && IF VAR(UDGP) ERROR: Borrar. Esta incluido en Unofficial Dawnguard Patch.esp
+    msg:
+      - type: warn
+        condition: 'file("Unofficial Dawnguard Patch.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
   - name: 'EveryVampireEyesGrow.esp'
     msg:
       - type: say
@@ -3636,7 +3674,6 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Utilizar solo un KatuLights*.esp.'
   - name: 'Real Lights - Cities.esp'
-
   - name: 'Further Dark Dungeons for ENB.esp'
     inc:
       - 'Dark Dungeons for ENB.esp'
@@ -3649,7 +3686,6 @@ BertsBreezehomeGarde
         udr: 1
         util: *dirtyUtil
   - name: 'Zfixed Lights RCRN.esp'
-
   - name: 'CLARALUX.esp'
     dirty:
       - crc: 0xFD3F3144
@@ -4461,7 +4497,6 @@ BertsBreezehomeGarde
             str: 'В большинстве случаев будет конфликтовать со всеми модами, меняющими подземелья.'
           - lang: spa
             str: 'No funcionará con mods que alteren los dungeons.'
-
   - name: 'CrossbowsRevamped.esp'
     tag:
       - Delev
@@ -4864,7 +4899,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
   IF VAR(DualGMLevList) && IF VAR(EN) SAY: Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp.
     IF VAR(DualGMLevList) && IF VAR(RU) SAY: Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLevelledOutfits.esp.
       IF VAR(DualGMLevList) && IF VAR(ES) SAY: Utilizar solo un GM-ForgeAdditionsLevelledOutfits.esp o GM-ForgeAdditionsLAotBLevelledOutfits.esp.
-
   - name: 'GM-ForgeAdditionsLAotB.esp'
   IF VAR(DualGMForgeAdd) && IF VAR(EN) SAY: Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp.
     IF VAR(DualGMForgeAdd) && IF VAR(RU) SAY: Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp.
@@ -6116,7 +6150,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
       - Delev
       - Relev
   - name: 'Skyrim Expanded Loot Tables.esp'
-
   - name: 'Skyrim Expanded Loot Tables - Lower Drop Rate.esp'
     inc:
       - 'Skyrim Expanded Loot Tables.esp'
@@ -6191,7 +6224,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
     inc:
       - 'SkyrimGranary.esp'
   - name: 'Smithing Tailoring.esp'
-
   - name: 'smithingextended.esp'
     tag:
       - Delev
@@ -7020,22 +7052,20 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
     tag:
       - Relev
     msg:
-      - type: WARN
+      - type: warn
         condition: 'file("Arcania_armory.esp") and file("Arcania_armory (base).esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use only one Arcania_armory*.esp.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Arcania_armory.esp") and file("Arcania_armory (base).esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте только один Arcania_armory*.esp.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Arcania_armory.esp") and file("Arcania_armory (base).esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Utilizar solo un Arcania_armory*.esp.'
   - name: 'ArcaneArchery.esp'
     dirty:
@@ -7137,7 +7167,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_BaratheonArmor_1.esp") or file("SG_HothTrooper.esp")'
   - name: 'Basaraoutfit by Himmelsky.esp'
-
   - name: 'Battledress Armor.esp'
     dirty:
       - crc: 0x68CE399F
@@ -7873,7 +7902,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
   IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Delete. Already included in AetheriumSwordsnArmor.esp
     IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
   - name: 'dwarvenrifle.esp'
-
   - name: 'j3x-autocrossbows.esp'
     dirty:
       - crc: 0x350C9568
@@ -8071,7 +8099,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
   - name: 'Footwear OE.esp'
   REQ: "http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP"
   - name: 'Forsworn Boots Replacer.esp'
-
   - name: 'fox\d\d? Armor\.esp'
   IF FILE("FoxMerged.esp") && IF VAR(EN) WARN: Delete. Already included in FoxMerged.esp.
     IF FILE("FoxMerged.esp") && IF VAR(RU) WARN: Удалите. Уже включено в FoxMerged.esp.
@@ -8517,9 +8544,7 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
     tag:
       - Delev
       - Relev
-
   - name: 'JSwordsDistribution_Lieux.esp'
-
   - name: 'Deleveled Skyrim - JSwords.esp'
     tag:
       - Delev
@@ -10111,7 +10136,6 @@ TeraCfl18-CBBEByNausicaa.es
         util: *dirtyUtil
   - name: 'zzTmBallGown.esp'
   REQ: "http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP"
-
   - name: 'Lorecraft - Bandolier.esp'
   IF VAR(EN) && IFNOT FILE("Dr_Bandolier.esp") WARN: Keep 'Dr_Bandolier.esp' aswell!
     IF VAR(RU) && IFNOT FILE("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' также необходим для работы!
@@ -10304,22 +10328,20 @@ TeraCfl18-CBBEByNausicaa.es
     inc:
       - 'PerkUP-Smithing.esp'
     msg:
-      - type: WARN
+      - type: warn
         condition: 'file("Smithing Perks Overhaul - Balanced.esp") and file("Smithing Perks Overhaul.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either Smithing Perks Overhaul.esp or Smithing Perks Overhaul - Balanced.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Smithing Perks Overhaul - Balanced.esp") and file("Smithing Perks Overhaul.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или Smithing Perks Overhaul.esp или Smithing Perks Overhaul - Balanced.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Smithing Perks Overhaul - Balanced.esp") and file("Smithing Perks Overhaul.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar Smithing Perks Overhaul.esp o Smithing Perks Overhaul - Balanced.esp, no ambos.'
   IF FILE("Complete Crafting Overhaul.esp") && IF VAR(EN) SAY: Use Smithing Perks Overhaul - Balanced.esp with Complete Crafting Overhaul.
     IF FILE("Complete Crafting Overhaul.esp") && IF VAR(RU) SAY: С модом Smithing Perks Overhaul - Balanced.esp используйте Complete Crafting Overhaul.
@@ -10328,22 +10350,20 @@ TeraCfl18-CBBEByNausicaa.es
     inc:
       - 'Smithing Perks Overhaul.esp'
     msg:
-      - type: WARN
+      - type: warn
         condition: 'file("Complete Crafting Overhaul - BS version.esp") and file("Complete Crafting Overhaul.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either Complete Crafting Overhaul.esp or Complete Crafting Overhaul - BS version.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Complete Crafting Overhaul - BS version.esp") and file("Complete Crafting Overhaul.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или Complete Crafting Overhaul.esp или Complete Crafting Overhaul - BS version.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Complete Crafting Overhaul - BS version.esp") and file("Complete Crafting Overhaul.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar Complete Crafting Overhaul.esp o Complete Crafting Overhaul - BS version.esp, no ambos.'
   IF VAR(EN) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Use only BS-version for Better Sorting.
     IF VAR(RU) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Для Better Sorting используйте только BS-версию.
@@ -11348,7 +11368,6 @@ TeraCfl18-CBBEByNausicaa.es
         util: *dirtyUtil
   - name: 'Monster Wars - Venator Daemonous.esp'
  IF VAR(SkyReM) MOD: Reanimate FX.esp
-
   - name: 'SkyRe_Main.esp'
     tag:
       - Relev
@@ -11716,7 +11735,6 @@ TeraCfl18-CBBEByNausicaa.es
     tag:
       - Delev
   IF CHECKSUM("SkyRe_Plugin_JaySuSSwords_1.3D.esp", 33879A9F) ERROR: The order of the master files are listed as: Skyrim.esm, JSwords.esm, Update.esm which conflicts with the order in the masterlist.  There are also 4 unresolved keywords and, Skyrim won't properly track to them because SkyRe_Main.esp is not a master.  Correcting this in the CK is not recomended because there will be too many errors to resolve.  Delete this file it should not be used.
-
     msg:
       - type: warn
         content:
@@ -12519,7 +12537,6 @@ TeraCfl18-CBBEByNausicaa.es
           - lang: rus
             str: 'Обновите до версии 5.0+'
   - name: 'AnorithsShack.esp'
-
   - name: 'Another Breezehome Basement.esp'
     msg:
       - type: say
@@ -14609,7 +14626,6 @@ TeraCfl18-CBBEByNausicaa.es
         udr: 5
         util: *dirtyUtil
   - name: 'Homogenous Detailed Landscapes.esp'
-
   - name: 'Honeyside Sweetener.esp'
     dirty:
       - crc: 0x1473D9EF
@@ -17382,7 +17398,6 @@ zecogaisland2.es
     req:
       - *SKSE
   - name: 'PRPs_UChoosePotnWght_\d\.esp'
-
   - name: 'SkyrimCoinReplacer.*\.esp'
     tag:
       - Delev
@@ -18342,7 +18357,6 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
   - name: 'Fast Respawns And Rich Merchants.esp'
     tag:
       - Relev
-
   - name: 'fasterdragonbonearrows.+\.esp'
     msg:
       - type: say
@@ -18892,7 +18906,6 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
         udr: 0
         util: *dirtyUtil
   - name: 'MasterEnchanter.esp'
-
   - name: 'EnchantPowerX.*\.esp'
     msg:
       - type: say
@@ -18964,7 +18977,6 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, "http://www.nexusmods.com/skyrim/mods/25802 Way of the Spellblade".'
   - name: 'MoreDragons.esp'
-
   - name: 'More Dynamic Shadows.esp'
     dirty:
       - crc: 0x60E49DC8
@@ -19002,7 +19014,6 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
     inc:
       - 'NeV-P_ExtremeMaterials.esp'
   - name: 'New Encounter zone Levels.esp'
-
   - name: 'No Falling Damage.esp'
   IF FILE("Less Falling Damage.esp") && IF VAR(EN) WARN: Use either Less Falling Damage.esp or No Falling Damage.esp, not both.
     IF FILE("Less Falling Damage.esp") && IF VAR(RU) WARN: Используйте любой, или Less Falling Damage.esp или No Falling Damage.esp, не оба.
@@ -19241,7 +19252,6 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
       - Relev
   IF VAR(EN) && IF FILE("MidasSkyrim.esp") WARN: Possible conflict with Vendor-version of Midas Magic in Skyrim, use Reactor-version.
     IF VAR(RU) && IF FILE("MidasSkyrim.esp") WARN: Возможны конфликты с Vendor-версией мода Магия мидаса в Скайриме, используйте Reactor-версию.
-
   - name: 'Riften Bigger Trees.esp'
     dirty:
       - crc: 0xA7E66F55
@@ -19249,7 +19259,6 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
         udr: 0
         util: *dirtyUtil
   - name: 'RunesAlwaysStagger.esp'
-
   - name: 'Safely Thrall.esp'
     msg:
       - type: say
@@ -19429,9 +19438,7 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
           - lang: spa
             str: 'Utilizar solo un Sinister Shadowmere*.esp.'
   - name: 'skoomaeffect.esp'
-
   - name: 'SkyNotebook.esp'
-
   - name: 'SkyRe.esp'
     msg:
       - type: say
@@ -20411,7 +20418,6 @@ IFNOT REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.
   IF FILE("CityForestv2.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF FILE("CityForestv2.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF FILE("CityForestv2.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
-
   - name: 'City Forest and Landscape V2 trees whiterun light fix.esp'
     dirty:
       - crc: 0xC81876C0
@@ -21050,7 +21056,6 @@ Basic Human Needs - Food Drink and Sleep
       - *SKSE
       - *SkyUI
   - name: 'ZF TrapsDiseasesPoison.esp'
-
   - name: 'SkyRe_Vampirism.esp'
       - 'Belua Sanguinare'
     inc:
@@ -22033,7 +22038,6 @@ Basic Human Needs - Food Drink and Sleep
         udr: 0
         util: *dirtyUtil
   - name: 'SummonDarklings.esp'
-
   - name: 'SummonFollowers.esp'
     req:
       - *SKSE
@@ -22256,7 +22260,6 @@ Basic Human Needs - Food Drink and Sleep
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, Burn Freeze Shock Effects.'
   - name: 'candlelightnobulb.esp'
-
   - name: 'Candlelightspelllasts15min.esp'
     inc:
       - 'candlelightandmagelight10minute.esp'
@@ -22449,22 +22452,20 @@ IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'Skyrim Improved Magic System( - No Race Spell Removal)?\.esp'
     msg:
-      - type: WARN
+      - type: warn
         condition: 'file("Skyrim Improved Magic System.esp") and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use only one Skyrim Improved Magic System esp.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Skyrim Improved Magic System.esp") and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте только один Skyrim Improved Magic System esp.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Skyrim Improved Magic System.esp") and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Utilizar solo un Skyrim Improved Magic System esp.'
   - name: 'SpellSneak.esp'
  IFNOT FILE("Alternate Start - Live Another Life.esp") MOD: Starting Spell Choice.esp
@@ -23005,7 +23006,6 @@ IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
         itm: 14
         udr: 41
         util: *dirtyUtil
-
   - name: 'ACE Archery Dawnguard Patch.esp'
     msg:
       - type: say
@@ -23040,7 +23040,6 @@ IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   - name: 'AB?T - Faster (Arrows)?(Bolts)? Improved (\+\d{1,3}%)\.esp'
   IFNOT VAR(Dawnguard) && IF REGEX("ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp") REQ: Dawnguard (Official Bethesda DLC)
   - name: 'AB?T - Recover ([-\+]?\d{1,3}%)( Less| More)? Arrows( and Bolts)?\.esp'
-
   - name: 'cao_PerkRanks.esp'
   IF VAR(EN) && IFNOT CHECKSUM("cao_PerkRanks.esp", B2A7936F) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch")
     IF VAR(RU) && IFNOT CHECKSUM("cao_PerkRanks.esp", B2A7936F) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
@@ -25105,76 +25104,65 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
   IF VAR(EN) && IF FILE("Compilationv1-clean.esp") WARN: Delete. Already included in Compilationv1-clean.esp.
     IF VAR(RU) && IF FILE("Compilationv1-clean.esp") WARN: Удалите. Уже входит в Compilationv1-clean.esp.
     msg:
-      - type: WARN
+      - type: warn
         condition: 'file("pack1-clean.esp") and file("pack1.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either pack1.esp or Pack1-clean.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack1-clean.esp") and file("pack1.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или pack1.esp или Pack1-clean.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack1-clean.esp") and file("pack1.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar pack1.esp o Pack1-clean.esp, no ambos.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack2-clean.esp") and file("pack2.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either pack2.esp or Pack2-clean.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack2-clean.esp") and file("pack2.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или pack2.esp или Pack2-clean.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack2-clean.esp") and file("pack2.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar pack2.esp o Pack2-clean.esp, no ambos.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack3-clean.esp") and file("pack3.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either pack3.esp or Pack3-clean.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack3-clean.esp") and file("pack3.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или pack3.esp или Pack3-clean.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack3-clean.esp") and file("pack3.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar pack3.esp o Pack3-clean.esp, no ambos.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack4-clean.esp") and file("pack4.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either pack4.esp or Pack4-clean.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack4-clean.esp") and file("pack4.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или pack4.esp или Pack4-clean.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("pack4-clean.esp") and file("pack4.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar pack4.esp o Pack4-clean.esp, no ambos.'
   - name: 'beanshousecarls.esp'
     msg:
@@ -26216,7 +26204,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
   - name: 'Shady.esp'
-
   - name: 'Sigrid.esp'
     dirty:
       - crc: 0x72F4F16E
@@ -26713,60 +26700,54 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
       - 'Height Adjusted Races with True Giants'
   - name: 'AROP- Altmer.+\.esp'
     msg:
-      - type: WARN
+      - type: warn
         condition: 'file("AROP- Altmer Edition.esp") and file("AROP- Altmer Edition - NW.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either AROP- Altmer Edition.esp or AROP- Altmer Edition - NW.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("AROP- Altmer Edition.esp") and file("AROP- Altmer Edition - NW.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или Altmer Edition.esp или AROP- Altmer Edition - NW.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("AROP- Altmer Edition.esp") and file("AROP- Altmer Edition - NW.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar AROP- Altmer Edition.esp o AROP- Altmer Edition - NW.esp, no ambos.'
   - name: 'AROP- Argonian.+\.esp'
     msg:
-      - type: WARN
+      - type: warn
         condition: 'file("AROP- Argonian Edition.esp") and file("AROP- Argonian Edition - Poison.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either AROP- Argonian Edition.esp or AROP- Argonian Edition - Poison.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("AROP- Argonian Edition.esp") and file("AROP- Argonian Edition - Poison.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или Argonian Edition.esp или AROP- Argonian Edition - Poison.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("AROP- Argonian Edition.esp") and file("AROP- Argonian Edition - Poison.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar AROP- Argonian Edition.esp o AROP- Argonian Edition - Poison.esp, no ambos.'
   - name: 'AROP- Redguard.+\.esp'
     msg:
-      - type: WARN
+      - type: warn
         condition: 'file("AROP- Redguard Edition.esp") and file("AROP- Redguard Edition - SS.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either AROP- Redguard Edition.esp or AROP- Redguard Edition - SS.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("AROP- Redguard Edition.esp") and file("AROP- Redguard Edition - SS.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или AROP- Redguard Edition.esp или AROP- Redguard Edition - SS.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("AROP- Redguard Edition.esp") and file("AROP- Redguard Edition - SS.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar AROP- Redguard Edition.esp o AROP- Redguard Edition - SS.esp, no ambos.'
   - name: 'AutoCastPowers.esp'
     dirty:
@@ -26782,22 +26763,20 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
         util: *dirtyUtil
   - name: 'Better Racials- .+\.esp'
     msg:
-      - type: WARN
+      - type: warn
         condition: 'file("Better Racials- Altmer Edition.esp") and file("Better Racials- Altmer Edition - NW.esp")'
         content:
-          - lang: EN
+          - lang: eng
             str: 'Use either Better Racials- Altmer Edition.esp or Better Racials- Altmer Edition - NW.esp, not both.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Better Racials- Altmer Edition.esp") and file("Better Racials- Altmer Edition - NW.esp")'
         content:
-          - lang: RU
+          - lang: rus
             str: 'Используйте любой, или Better Racials- Altmer Edition.esp или Better Racials- Altmer Edition - NW.esp, не оба.'
-
-      - type: WARN
+      - type: warn
         condition: 'file("Better Racials- Altmer Edition.esp") and file("Better Racials- Altmer Edition - NW.esp")'
         content:
-          - lang: ES
+          - lang: spa
             str: 'Usar Better Racials- Altmer Edition.esp o Better Racials- Altmer Edition - NW.esp, no ambos.'
   - name: 'BVLT - (Argonian|Ashen|Dark Elf|High Elf|Human|Khajiit|Wood Elf)?\.esp'
     msg:
@@ -26866,7 +26845,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
             str: 'Устарело. Обновите до последней версии.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-
  IF VAR(ExtSlider) MOD: Tribal Warpaint for Females.esp
  IF VAR(ExtSlider) MOD: Vampire Eyes Fix.esp
     msg:
@@ -27285,7 +27263,6 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   IF VAR(EN) && IFNOT FILE("WATER.esp") WARN: Old. Use "http://www.nexusmods.com/skyrim/mods/13268 WATER" mod instead.
     IF VAR(RU) && IFNOT FILE("WATER.esp") WARN: Устарело. Используйте вместо этого мод "http://www.nexusmods.com/skyrim/mods/13268 WATER".
       IF VAR(ES) && IF FILE("WATER.esp") WARN: Obsoleto. Utilizar "http://www.nexusmods.com/skyrim/mods/13268 WATER" en lugar.
-
   - name: 'RWTT - Get Wet.esp'
     msg:
       - type: say
@@ -27305,7 +27282,6 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
     IF FILE("WATER DB.esp") && IF VAR(RU) WARN: Используйте только один WATER DB esp.
       IF FILE("WATER DB.esp") && IF VAR(ES) WARN: Utilizar solo un WATER DB esp.
   - name: 'WATER - Get Wet.esp'
-
   - name: 'Water FX - Get Wet.esp'
     tag:
       - name: Deactivate
@@ -27729,7 +27705,6 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   - name: 'SSS Weapons of the Third Era Patch.esp'
 TB_RLOverhaul-patch.es
   - name: 'TRO_BasicNeeds_WATERPatch.esp'
-
   - name: 'PC Exclusive Animation Path.esp'
     inc:
       - 'AP Skyrim.esp'
