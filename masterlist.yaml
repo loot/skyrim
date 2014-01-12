@@ -727,9 +727,8 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, LunariRace.esp.'
   - name: 'MagicDuelReborn.esm'
-  IF FILE("MagicDuel.esm") && IF VAR(EN) WARN: Use either MagicDuel.esm or MagicDuelReborn.esm, not both.
-    IF FILE("MagicDuel.esm") && IF VAR(RU) WARN: Используйте любой, или MagicDuel.esm или MagicDuelReborn.esm, не оба.
-      IF FILE("MagicDuel.esm") && IF VAR(ES) WARN: Usar MagicDuel.esm o MagicDuelReborn.esm, no ambos.
+    inc:
+      - 'MagicDuel.esm'
   - name: 'Malise - A Companion By Joseph Anthony.esm'
   REQ: "http://www.nexusmods.com/skyrim/mods/2812 Better Females"
   - name: 'MiniLoversSound.esm'
@@ -1067,8 +1066,14 @@ BertsBreezehomeGarde
         udr: 0
         util: *dirtyUtil
   - name: 'The Spice of Life.esm'
-  IF VAR(EN) || IF VAR(RU) && IF CHECKSUM("The Spice of Life.esm", A75F2F6D) SAY: File not created with Creation Kit.
-    IF VAR(ES) && IF CHECKSUM("The Spice of Life.esm", A75F2F6D) SAY: Archivo no creado con el Creation Kit.
+    msg:
+      - type: warn
+        condition: 'checksum("The Spice of Life.esm", A75F2F6D)'
+        content:
+          - lang: eng
+            str: 'File not created with Creation Kit.'
+          - lang: spa
+            str: 'Archivo no creado con el Creation Kit.'
   - name: 'TRO_BasicNeeds.esm'
     msg:
       - type: say
@@ -1105,9 +1110,8 @@ BertsBreezehomeGarde
         itm: 1
         udr: 4
         util: *dirtyUtil
-  IF FILE("UndergroundBathhouse.esm") && IF VAR(EN) WARN: Use either UndergroundBathhouse.esm or UndergroundBathhouse_light.esm, not both.
-    IF FILE("UndergroundBathhouse.esm") && IF VAR(RU) WARN: Используйте любой, или UndergroundBathhouse.esm или UndergroundBathhouse_light.esm, не оба.
-      IF FILE("UndergroundBathhouse.esm") && IF VAR(ES) WARN: Usar UndergroundBathhouse.esm o UndergroundBathhouse_light.esm, no ambos.
+    inc:
+      - 'UndergroundBathhouse.esm'
   - name: 'UnicornCave.esm'
     dirty:
       - crc: 0xC5D100F6
@@ -1527,9 +1531,8 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'BreezehomeLadderFixJP.esp'
-  IF FILE("BreezehomeLadderFix.esp") && IF VAR(EN) WARN: Use either BreezehomeLadderFix.esp or BreezehomeLadderFixJP.esp, not both.
-     IF FILE("BreezehomeLadderFix.esp") && IF VAR(RU) WARN: Используйте любой, или BreezehomeLadderFix.esp или BreezehomeLadderFixJP.esp, не оба.
-       IF FILE("BreezehomeLadderFix.esp") && IF VAR(EN) WARN: Utilizar BreezehomeLadderFix.esp o BreezehomeLadderFixJP.esp, not ambos.
+    inc:
+      - 'BreezehomeLadderFix.esp'
   - name: 'BreezehomeLightingFix.esp'
     msg:
       - type: warn
@@ -1646,9 +1649,16 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'Chesko_MatchingSetPerkFix.esp'
-  IF VAR(EN) && IF VERSION("TES5", "1.9", >) ERROR: Delete. Fixed in Official Patch 1.9.
-    IF VAR(RU) && IF VERSION("TES5", "1.9", >) ERROR: Удалите. Исправлено в официальном патче 1.9.
-      IF VAR(ES) && IF VERSION("TES5", "1.9", >) ERROR: Borrar. Incluido en el patch oficial 1.9.
+    msg:
+      - type: warn
+        condition: 'version("../TESV.exe", "1.9", >)'
+        content:
+          - lang: eng
+            str: 'Delete. Fixed in Official Patch 1.9.'
+          - lang: rus
+            str: 'Удалите. Исправлено в официальном патче 1.9.'
+          - lang: spa
+            str: 'Borrar. Incluido en el patch oficial 1.9.'
   - name: 'Cloak Fix.esp'
     msg:
       - type: warn
@@ -2334,9 +2344,16 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'MatchingSetFixes.esp'
-  IF VAR(EN) && IF VERSION("TES5", "1.9", >) ERROR: Delete. Fixed in Official Patch 1.9.
-    IF VAR(RU) && IF VERSION("TES5", "1.9", >) ERROR: Удалите. Исправлено в официальном патче 1.9.
-      IF VAR(ES) && IF VERSION("TES5", "1.9", >) ERROR: Borrar. Esta incluido en el patch oficial 1.9.
+    msg:
+      - type: warn
+        condition: 'version("../TESV.exe", "1.9", >)'
+        content:
+          - lang: eng
+            str: 'Delete. Fixed in Official Patch 1.9.'
+          - lang: rus
+            str: 'Удалите. Исправлено в официальном патче 1.9.'
+          - lang: spa
+            str: 'Borrar. Incluido en el patch oficial 1.9.'
   - name: 'Miner's Clothes Variant Fix.esp'
     msg:
       - type: warn
@@ -2437,9 +2454,16 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'NordHeroBowTemperFix.esp'
-  IF VAR(EN) && IF VERSION("TES5", "1.9", >) ERROR: Delete. Fixed by Official Patch 1.9.26.
-    IF VAR(RU) && IF VERSION("TES5", "1.9", >) ERROR: Удалите. Исправлено в официальном патче 1.9.26.
-      IF VAR(ES) && IF VERSION("TES5", "1.9", >) ERROR: Borrar. Esta incluido en el patch oficial 1.9.26.
+    msg:
+      - type: warn
+        condition: 'version("../TESV.exe", "1.9", >)'
+        content:
+          - lang: eng
+            str: 'Delete. Fixed in Official Patch 1.9.'
+          - lang: rus
+            str: 'Удалите. Исправлено в официальном патче 1.9.'
+          - lang: spa
+            str: 'Borrar. Incluido en el patch oficial 1.9.'
   - name: 'onehandeddagger.esp'
     msg:
       - type: warn
@@ -2547,9 +2571,16 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'RiverwoodTraderInvestorFix.esp'
-  IF VAR(EN) && IF VERSION("TES5", "1.9", >) ERROR: Delete. Fixed by Official Patch 1.9.26.
-    IF VAR(RU) && IF VERSION("TES5", "1.9", >) ERROR: Удалите. Исправлено в официальном патче 1.9.26.
-      IF VAR(ES) && IF VERSION("TES5", "1.9", >) ERROR: Borrar. Esta incluido en el patch oficial 1.9.26.
+    msg:
+      - type: warn
+        condition: 'version("../TESV.exe", "1.9", >)'
+        content:
+          - lang: eng
+            str: 'Delete. Fixed in Official Patch 1.9.'
+          - lang: rus
+            str: 'Удалите. Исправлено в официальном патче 1.9.'
+          - lang: spa
+            str: 'Borrar. Incluido en el patch oficial 1.9.'
   - name: 'SanguineRoseFix.esp'
   IF VAR(EN) && IF VERSION("TES5", "1.4.27", >) ERROR: Delete. Fixed by Official Patch 1.5.
     IF VAR(RU) && IF VERSION("TES5", "1.4.27", >) ERROR: Удалите. Исправлено в официальном патче 1.5.
@@ -2654,13 +2685,27 @@ BertsBreezehomeGarde
     IF VAR(RU) && IF VERSION("TES5", "1.4", >) ERROR: Удалите. Исправлено в официальном патче 1.4.26.
       IF VAR(ES) && IF VERSION("TES5", "1.4", >) ERROR: Borrar. Esta incluido en el patch oficial 1.4.26.
   - name: 'stormcloak boot fix.esp'
-  IF VAR(EN) && IF VERSION("TES5", "1.9", >) ERROR: Delete. Fixed by Official Patch 1.9.26.
-    IF VAR(RU) && IF VERSION("TES5", "1.9", >) ERROR: Удалите. Исправлено в официальном патче 1.9.26.
-      IF VAR(ES) && IF VERSION("TES5", "1.9", >) ERROR: Borrar. Esta incluido en el patch oficial 1.9.26.
+    msg:
+      - type: warn
+        condition: 'version("../TESV.exe", "1.9", >)'
+        content:
+          - lang: eng
+            str: 'Delete. Fixed in Official Patch 1.9.'
+          - lang: rus
+            str: 'Удалите. Исправлено в официальном патче 1.9.'
+          - lang: spa
+            str: 'Borrar. Incluido en el patch oficial 1.9.'
   - name: 'StuddedArmorFixes.esp'
-  IF VAR(EN) && IF VERSION("TES5", "1.9", >) ERROR: Delete. Fixed by Official Patch 1.9.26.
-    IF VAR(RU) && IF VERSION("TES5", "1.9", >) ERROR: Удалите. Исправлено в официальном патче 1.9.26.
-      IF VAR(ES) && IF VERSION("TES5", "1.9", >) ERROR: Borrar. Esta incluido en el patch oficial 1.9.26.
+    msg:
+      - type: warn
+        condition: 'version("../TESV.exe", "1.9", >)'
+        content:
+          - lang: eng
+            str: 'Delete. Fixed in Official Patch 1.9.'
+          - lang: rus
+            str: 'Удалите. Исправлено в официальном патче 1.9.'
+          - lang: spa
+            str: 'Borrar. Incluido en el patch oficial 1.9.'
   - name: 'SybilleStentorFix.esp'
     msg:
       - type: warn
