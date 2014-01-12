@@ -214,13 +214,11 @@ plugins:
         udr: 0
         util: *dirtyUtil
   - name: 'Skyrim Project Optimization - No Homes.esm'
-  IF FILE("Skyrim Project Optimization - No Homes.esp") && IF VAR(EN) WARN: Use either Skyrim Project Optimization - No Homes.esm or No Homes.esm or Skyrim Project Optimization - No Homes.esp, not both.
-    IF FILE("Skyrim Project Optimization - No Homes.esp") && IF VAR(RU) WARN: Используйте любой, или Skyrim Project Optimization - No Homes.esm или No Homes.esm or Skyrim Project Optimization - No Homes.esp, не оба.
-      IF FILE("Skyrim Project Optimization - No Homes.esp") && IF VAR(ES) WARN: Usar Skyrim Project Optimization - No Homes.esm o No Homes.esm or Skyrim Project Optimization - No Homes.esp, no ambos.
+    inc:
+      - 'Skyrim Project Optimization - No Homes.esp'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
-  IF FILE("Skyrim Project Optimization - No Homes - Full Version.esp") && IF VAR(EN) WARN: Use either Skyrim Project Optimization - No Homes - Full Version.esm or Skyrim Project Optimization - No Homes - Full Version.esp, not both.
-    IF FILE("Skyrim Project Optimization - No Homes - Full Version.esp") && IF VAR(RU) WARN: Используйте любой, или Skyrim Project Optimization - No Homes - Full Version.esm или Skyrim Project Optimization - No Homes - Full Version.esp, не оба.
-      IF FILE("Skyrim Project Optimization - No Homes - Full Version.esp") && IF VAR(ES) WARN: Usar Skyrim Project Optimization - No Homes - Full Version.esm or Skyrim Project Optimization - No Homes - Full Version.esp, no ambos.
+    inc:
+      - 'Skyrim Project Optimization - No Homes - Full Version.esp'
   - name: '1NordDungeonAlt.esm'
     dirty:
       - crc: 0x68AD6D32
@@ -412,18 +410,29 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'ClimatesOfTamriel.esm'
-  IF FILE("SoS - Civilization.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/20193 here".
-      IF FILE("SoS - Civilization.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://www.nexusmods.com/skyrim/mods/20193 здесь."
-        IF FILE("SoS - Civilization.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/20193 here".
-  IF FILE("SoS - The Wilds.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/10886 here".
-      IF FILE("SoS - The Wilds.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://www.nexusmods.com/skyrim/mods/10886 здесь."
-        IF FILE("SoS - The Wilds.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/10886 here".
-  IF CHECKSUM("ClimatesOfTamriel.esm", C30AB34E) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://www.nexusmods.com/skyrim/mods/17802 updated plugin".
     dirty:
       - crc: 0xC110B173
         itm: 4
         udr: 0
         util: *dirtyUtil
+    msg:
+      - type: warn
+        condition: 'checksum("ClimatesOfTamriel.esm", C30AB34E)'
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://www.nexusmods.com/skyrim/mods/17802 updated plugin".'
+      - type: warn
+        condition: 'file("SoS - Civilization.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        content:
+          - lang: eng
+            str: 'Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/20193 here".'
+          - lang: rus
+            str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://www.nexusmods.com/skyrim/mods/20193 здесь."'
+      - type: warn
+        condition: 'file("SoS - The Wilds.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        content:
+          - lang: eng
+            str: 'Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/10886 here".'
+          - lang: rus
+            str: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://www.nexusmods.com/skyrim/mods/10886 здесь."'
   - name: 'CK's Companions.esm'
     dirty:
       - crc: 0xD5550E36
@@ -2655,9 +2664,15 @@ BertsBreezehomeGarde
             str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
-  IF VAR(EN) && IF VAR(UDGP) ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp.
-    IF VAR(RU) && IF VAR(UDGP) ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.esp.
-      IF VAR(ES) && IF VAR(UDGP) ERROR: Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.
+      - type: warn
+        condition: 'file("Unofficial Dawnguard Patch.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
   - name: 'SolitudeProudspireManorFix.esp'
     msg:
       - type: warn
