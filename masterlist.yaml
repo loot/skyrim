@@ -5376,12 +5376,6 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
         util: *dirtyUtil
  IF VAR(LB) MOD: RingsOnTheLeftHand.esp
   - name: 'Lady Body.esp'
-  IF VAR(EN) && IF VERSION("TES5", "1.7.7", <) && IFNOT VAR(Dawnguard) WARN: For Lady Body 1.5 and highter Skyrim 1.7.7 and DLC Dawnguard are required.
-    IF VAR(RU) && IF VERSION("TES5", "1.7.7", <) && IFNOT VAR(Dawnguard) WARN: Для Lady Body 1.5 и выше требуются Skyrim 1.7.7 и DLC Dawnguard.
-      IF VAR(ES) && IF VERSION("TES5", "1.7.7", <) && IFNOT VAR(Dawnguard) WARN: Si utilizas Lady Body 1.7 o posterior Skyrim 1.7.7 y Dawnguard DLC son requeridos.
-  IF VAR(EN) && IF VERSION("TES5", "1.8.151.0.7", <) && IFNOT VAR(Dawnguard) && IFNOT VAR(Dragonborn) WARN: For version Lady Body 2.1 and highter Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn are required.
-    IF VAR(RU) && IF VERSION("TES5", "1.8.151.0.7", <) && IFNOT VAR(Dawnguard) && IFNOT VAR(Dragonborn) WARN: Для версии 2.1 и выше требуется Skyrim 1.8.151.0.7, DLC Dawnguard и DLC Dragonborn.
-      IF VAR(ES) && IF VERSION("TES5", "1.8.151.0.7", <) && IFNOT VAR(Dawnguard) && IFNOT VAR(Dragonborn) WARN: Si utilizas Lady Body 2.1 o posterior Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn son requeridos.
     msg:
       - type: say
         content:
@@ -8187,7 +8181,10 @@ REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp.
   IF VAR(EN) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://www.nexusmods.com/skyrim/mods/20868".
     IF VAR(RU) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://www.nexusmods.com/skyrim/mods/20868 здесь".
   - name: 'Frostmourne.esp'
-  IFNOT CHECKSUM("Frostmourne.esp", 428F46D4) && IFNOT CHECKSUM("Frostmourne.esp", 51F43BA4) && IF VAR(EN) && IF VERSION("TES5", "1.8", >) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch")
+    msg:
+      - type: warn
+        condition: 'not checksum("Frostmourne.esp", 428F46D4) and not checksum("Frostmourne.esp", 51F43BA4)'
+        content: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch")'
   - name: 'Frostmourne 1.0.1.esp'
     msg:
       - type: say
@@ -19680,13 +19677,28 @@ IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul
           - lang: spa
             str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
   - name: 'dD - Enhanced Blood Main.esp'
-  IF VAR(Dawnguard) && IFNOT VAR(Dragonborn) && IFNOT VAR(SkyMoMod) && IFNOT FILE("dD-Dawnguard-EBT Patch.esp") REQ: "http://www.nexusmods.com/skyrim/mods/60 Dawnguard Compatibility_Patch".
-  IF VAR(Dragonborn) && IFNOT VAR(Dawnguard) && IFNOT VAR(SkyMoMod) && IFNOT FILE("dD-Dragonborn-EBT Patch.esp") REQ: "http://www.nexusmods.com/skyrim/mods/60 Dragonborn Compatibility_Patch".
-  IF VAR(Dragonborn) && IF VAR(Dawnguard) && IFNOT VAR(SkyMoMod) && IFNOT FILE("dD-Dragonborn-Dawnguard-EBT Patch.esp") REQ: "http://www.nexusmods.com/skyrim/mods/60 0 Dragonborn-Dawnguard_Compatibility Patch" \ Dawnguard + Dragonborn.
-  IFNOT VAR(Dawnguard) && IFNOT VAR(Dragonborn) && IF VAR(SkyMoMod) && IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") REQ: "http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Monster Mod.
-  IF VAR(Dawnguard) && IFNOT VAR(Dragonborn) && IF VAR(SkyMoMod) && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") REQ: "http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Dawnguard + Monster Mod.
-  IF VAR(Dragonborn) && IFNOT VAR(Dawnguard) && IF VAR(SkyMoMod) && IFNOT FILE("dD-Dragonborn-MonsterMod EBT Patch.esp") REQ: "http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Dragonborn + Monster Mod.
-  IF VAR(Dawnguard) && IF VAR(Dragonborn) && IF VAR(SkyMoMod) && IFNOT FILE("dD-DG-DB-MonsterMod EBT Patch.esp") REQ: "http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Dawnguard + Dragonborn + Monster Mod.
+    req:
+      - name: 'dD-Dawnguard-EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 Dawnguard Compatibility Patch"'
+        condition: 'file("Dawnguard.esm") and not file("Dragonborn.esm") and not file("SkyMoMod.esm")'
+      - name: 'dD-Dragonborn-EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 Dragonborn Compatibility Patch"'
+        condition: 'file("Dragonborn.esm") and not file("Dawnguard.esm") and not file("SkyMoMod.esm")'
+      - name: 'dD-Dragonborn-Dawnguard-EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 Dragonborn+Dawnguard Compatibility Patch"'
+        condition: 'file("Dragonborn.esm") and file("Dawnguard.esm") and not file("SkyMoMod.esm")'
+      - name: 'dD-SkyrimMonsterMod EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod Compatibility Patch"'
+        condition: 'file("SkyMoMod.esm") and not file("Dragonborn.esm") and not file("Dawnguard.esm")'
+      - name: 'dD-Dawnguard-MonsterMod EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 SkyrimMoMod+Dawnguard Compatibility Patch"'
+        condition: 'file("SkyMoMod.esm") and file("Dawnguard.esm") and not file("Dragonborn.esm")'
+      - name: 'dD-Dragonborn-MonsterMod EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 SkyrimMoMod+Dragonborn Compatibility Patch"'
+        condition: 'file("SkyMoMod.esm") and file("Dragonborn.esm") and not file("Dawnguard.esm")'
+      - name: 'dD-DG-DB-MonsterMod EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 SkyrimMoMod+Dawnguard+Dragonborn Compatibility Patch"'
+        condition: 'file("SkyMoMod.esm") and file("Dragonborn.esm") and file("Dawnguard.esm")'
     dirty:
       - crc: 0xFD8ABF04
         itm: 1
@@ -22903,9 +22915,10 @@ IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
           - lang: spa
             str: 'Utilizar solo un decap_chance_*.esp.'
   - name: 'AdvancedKillMoves.esp'
-  IF VAR(EN) && IFNOT VAR(Dawnguard) && IF VERSION("TES5", "1.5.24", >) && IFNOT CHECKSUM("AdvancedKillMoves.esp", 257F870C) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_Only_2-0b_fixed"
-  IF VAR(RU) && IFNOT VAR(Dawnguard) && IF VERSION("TES5", "1.5.24", >) && IFNOT CHECKSUM("AdvancedKillMoves.esp", B27890A5) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_Russian_2-0b_fixed"
-  IF VAR(Dawnguard) && IFNOT CHECKSUM("AdvancedKillMoves.esp", 97C9E8CC) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_2-0b_Dawnguard"
+    msg:
+      - type: warn
+        condition: 'not checksum("AdvancedKillMoves.esp", 257F870C) and not checksum("AdvancedKillMoves.esp", B27890A5) and not checksum("AdvancedKillMoves.esp", 97C9E8CC)'
+        content: 'It is recommended that you use the appropriate version of "http://skyrim.nexusmods.com/mods/21226 AdvancedKillMoves Fixed"'
   - name: 'The Dance of Death V.+\.esp'
     msg:
       - type: say
