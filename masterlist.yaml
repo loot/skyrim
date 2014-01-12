@@ -1,84 +1,83 @@
-﻿IF FILE("SKSE_Elys_Uncapper.dll") SET: SKCU
-IF FILE("..\ScriptDragon.dll") SET: SCDR
-IF FILE("Fuz Ro D'oh.dll") SET: FuzRoDoh
-IF ACTIVE("Dawnguard.esm") SET: Dawnguard
-IF ACTIVE("Hearthfires.esm") SET: Hearthfire
-IF ACTIVE("Dragonborn.esm") SET: Dragonborn
-IF ACTIVE("ApachiiHair.esm") SET: ApachiiHair
-IF ACTIVE("ApachiiHairFemales.esm") SET: ApachiiHairF
-IF ACTIVE("ApachiiHairMales.esm") SET: ApachiiHairM
-IF FILE("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
-IF ACTIVE("BBLuxurySuite.esm") SET: BBLS
-IF REGEX("(0001)?BertsBreezehome.+\.es[pm]") SET: BertsBHInst
-IF REGEX("Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
-IF REGEX("DragonSwarms.*\.esp") SET: DSwarmInst
-IF FILE("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
-IF FILE("EpicGloryByMadmole.esp") SET: EpicGloryInst
-IF REGEX("Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF FILE("Extended Slider Colors.esp") SET: ExtSlider
-IF ACTIVE("GeneralStores.esm") SET: GS
-IF FILE("GM-ForgeAdditions.esp") || IF FILE("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
-IF FILE("GM-ForgeAdditionsLevelledOutfits.esp") && IF FILE("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
-IF FILE("GM-ForgeAdditions.esp") && IF FILE("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
-IF ACTIVE("Imp's More Complex Needs.esm") SET: ICMN
-IF FILE("Lady Body.esp") || IF FILE("Lady Body.esm") SET: LB
-IF REGEX("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp") SET: NobleArtInst
-IF ACTIVE("RaceCompatibility.esm") SET: RaceComp
-IF FILE("SkyMoMod.esm") SET: SkyMoMod
-IF REGEX("SkyRe_.+\.esp") SET: SkyRe
-IF FILE("SkyRe_Main.esp") || IF FILE("SkyRe_Main_NoDawnguard.esp") SET: SkyReM
-IF ACTIVE("SkyUI.esp") SET: SkyUI
-IF ACTIVE("TheEyesOfBeauty.esp") SET: EOB
-IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
-IF FILE("UFO - Ultimate Follower Overhaul.esp") SET: UFO
-IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 396AE69F) SET: UFOVI
-IF FILE("Update.esm") SET: Update
-IF ACTIVE("Unofficial Skyrim Patch.esp") SET: USKP
-IF ACTIVE("Unofficial Dawnguard Patch.esp") SET: UDGP
-IF ACTIVE("Unofficial Hearthfire Patch.esp") SET: UHFP
-IF ACTIVE("Unofficial Dragonborn Patch.esp") SET: UDBP
-IF ACTIVE("Unofficial High Resolution Patch.esp") SET: UHRP
-IF CHECKSUM("Unofficial Skyrim Patch.esp", 10A6C650) SET: USKP20
-IF CHECKSUM("Unofficial Skyrim Patch.esp", 29D2C7DF) SET: USKP20
-IF CHECKSUM("Unofficial Skyrim Patch.esp", 840E444C) SET: USKP20
-IF CHECKSUM("Unofficial Skyrim Patch.esp", 7F2BBDA0) SET: USKP20
-IF CHECKSUM("Unofficial Dawnguard Patch.esp", C2880009) SET: UDGP20
-IF CHECKSUM("Unofficial Dawnguard Patch.esp", 65A320C3) SET: UDGP20
-IF CHECKSUM("Unofficial Dawnguard Patch.esp", 2C9880ED) SET: UDGP20
-IF CHECKSUM("Unofficial Dawnguard Patch.esp", 35AAD3CA) SET: UDGP20
-IF CHECKSUM("Unofficial Dawnguard Patch.esp", FF134167) SET: UDGP20
-IF CHECKSUM("Unofficial Dawnguard Patch.esp", 7B84DB0F) SET: UDGP20
-IF CHECKSUM("Unofficial Hearthfire Patch.esp", F913F25E) SET: UHFP20
-IF CHECKSUM("Unofficial Hearthfire Patch.esp", 7B3D122F) SET: UHFP20
-IF CHECKSUM("Unofficial Hearthfire Patch.esp", A5D121AA) SET: UHFP20
-IF CHECKSUM("Unofficial Dragonborn Patch.esp", DA46F3C8) SET: UDBP20
-IF CHECKSUM("Unofficial Dragonborn Patch.esp", E72B837B) SET: UDBP20
-IF CHECKSUM("Unofficial Dragonborn Patch.esp", 427B8910) SET: UDBP20
-IF REGEX("SoS - (The Dungeons|The Wilds|Civilization)?\.esp") SET: SoS
-IF REGEX("Bashed Patch.*\.esp") SET: BP
-
-globals:
-  IF VAR(EN) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: An update for BOSS (v2.1.1) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
-    IF VAR(RU) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
-      IF VAR(ES) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Tu versión de BOSS es obsoleto Puedes descargar la nueva versión (v2.1.1) aquí: "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
-  IF VAR(EN) GLOBAL SAY: "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ Latest BOSS thread"
-    IF VAR(RU) GLOBAL SAY: "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ Обсуждение BOSS"(Eng).
-      IF VAR(ES) GLOBAL SAY: "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ Forum de BOSS"
-  
-  IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
-    IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
-      IF VAR(ES) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: Tienes Skyrim Community Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: "http://skse.silverlock.org/".
-  IF VAR(EN) && IF VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: It appears you do not have the latest version of SKSE. If you wish to update it can be found "http://skse.silverlock.org/ here".
-    IF VAR(EN) && IFNOT VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Your SKSE is up-to-date.
-  IF VAR(RU) && IF VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Вы используете не самую последнюю версию SKSE. Последняя версия может быть найдена "http://skse.silverlock.org/ здесь".
-    IF VAR(RU) && IFNOT VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Ваш SKSE имеет последнюю версию.
-  IF VAR(ES) && IF VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Parece que no tienes la última versión de SKSE. la nueva versión se puede encontrar "http://skse.silverlock.org/ aquí".
-    IF VAR(ES) && IFNOT VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Tienes la última versión de SKSE
-  IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
-    IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(RU) GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
-      IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(ES) GLOBAL SAY: Tienes un plugin dinamicamente creado. Por favor, consulta las notas de autor para obtener más información sobre cómo determinar el mejor orden.
-  IF VAR(EN) && IF VAR(FNIS) GLOBAL SAY: It appears you have "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
-    IF VAR(RU) && IF VAR(FNIS) GLOBAL SAY: У вас установлен "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim". Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.
-      IF VAR(ES) && IF VAR(FNIS) GLOBAL SAY: Parece que "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim" está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.
+﻿# IF FILE("SKSE_Elys_Uncapper.dll") SET: SKCU
+# IF FILE("..\ScriptDragon.dll") SET: SCDR
+# IF FILE("Fuz Ro D'oh.dll") SET: FuzRoDoh
+# IF ACTIVE("Dawnguard.esm") SET: Dawnguard
+# IF ACTIVE("Hearthfires.esm") SET: Hearthfire
+# IF ACTIVE("Dragonborn.esm") SET: Dragonborn
+# IF ACTIVE("ApachiiHair.esm") SET: ApachiiHair
+# IF ACTIVE("ApachiiHairFemales.esm") SET: ApachiiHairF
+# IF ACTIVE("ApachiiHairMales.esm") SET: ApachiiHairM
+# IF FILE("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
+# IF ACTIVE("BBLuxurySuite.esm") SET: BBLS
+# IF REGEX("(0001)?BertsBreezehome.+\.es[pm]") SET: BertsBHInst
+# IF REGEX("Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
+# IF REGEX("DragonSwarms.*\.esp") SET: DSwarmInst
+# IF FILE("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
+# IF FILE("EpicGloryByMadmole.esp") SET: EpicGloryInst
+# IF REGEX("Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF FILE("Extended Slider Colors.esp") SET: ExtSlider
+# IF ACTIVE("GeneralStores.esm") SET: GS
+# IF FILE("GM-ForgeAdditions.esp") || IF FILE("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
+# IF FILE("GM-ForgeAdditionsLevelledOutfits.esp") && IF FILE("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
+# IF FILE("GM-ForgeAdditions.esp") && IF FILE("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
+# IF ACTIVE("Imp's More Complex Needs.esm") SET: ICMN
+# IF FILE("Lady Body.esp") || IF FILE("Lady Body.esm") SET: LB
+# IF REGEX("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp") SET: NobleArtInst
+# IF ACTIVE("RaceCompatibility.esm") SET: RaceComp
+# IF FILE("SkyMoMod.esm") SET: SkyMoMod
+# IF REGEX("SkyRe_.+\.esp") SET: SkyRe
+# IF FILE("SkyRe_Main.esp") || IF FILE("SkyRe_Main_NoDawnguard.esp") SET: SkyReM
+# IF ACTIVE("SkyUI.esp") SET: SkyUI
+# IF ACTIVE("TheEyesOfBeauty.esp") SET: EOB
+# IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
+# IF FILE("UFO - Ultimate Follower Overhaul.esp") SET: UFO
+# IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 396AE69F) SET: UFOVI
+# IF FILE("Update.esm") SET: Update
+# IF ACTIVE("Unofficial Skyrim Patch.esp") SET: USKP
+# IF ACTIVE("Unofficial Dawnguard Patch.esp") SET: UDGP
+# IF ACTIVE("Unofficial Hearthfire Patch.esp") SET: UHFP
+# IF ACTIVE("Unofficial Dragonborn Patch.esp") SET: UDBP
+# IF ACTIVE("Unofficial High Resolution Patch.esp") SET: UHRP
+# IF CHECKSUM("Unofficial Skyrim Patch.esp", 10A6C650) SET: USKP20
+# IF CHECKSUM("Unofficial Skyrim Patch.esp", 29D2C7DF) SET: USKP20
+# IF CHECKSUM("Unofficial Skyrim Patch.esp", 840E444C) SET: USKP20
+# IF CHECKSUM("Unofficial Skyrim Patch.esp", 7F2BBDA0) SET: USKP20
+# IF CHECKSUM("Unofficial Dawnguard Patch.esp", C2880009) SET: UDGP20
+# IF CHECKSUM("Unofficial Dawnguard Patch.esp", 65A320C3) SET: UDGP20
+# IF CHECKSUM("Unofficial Dawnguard Patch.esp", 2C9880ED) SET: UDGP20
+# IF CHECKSUM("Unofficial Dawnguard Patch.esp", 35AAD3CA) SET: UDGP20
+# IF CHECKSUM("Unofficial Dawnguard Patch.esp", FF134167) SET: UDGP20
+# IF CHECKSUM("Unofficial Dawnguard Patch.esp", 7B84DB0F) SET: UDGP20
+# IF CHECKSUM("Unofficial Hearthfire Patch.esp", F913F25E) SET: UHFP20
+# IF CHECKSUM("Unofficial Hearthfire Patch.esp", 7B3D122F) SET: UHFP20
+# IF CHECKSUM("Unofficial Hearthfire Patch.esp", A5D121AA) SET: UHFP20
+# IF CHECKSUM("Unofficial Dragonborn Patch.esp", DA46F3C8) SET: UDBP20
+# IF CHECKSUM("Unofficial Dragonborn Patch.esp", E72B837B) SET: UDBP20
+# IF CHECKSUM("Unofficial Dragonborn Patch.esp", 427B8910) SET: UDBP20
+# IF REGEX("SoS - (The Dungeons|The Wilds|Civilization)?\.esp") SET: SoS
+# IF REGEX("Bashed Patch.*\.esp") SET: BP
+# globals:
+#  IF VAR(EN) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: An update for BOSS (v2.1.1) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
+#    IF VAR(RU) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
+#      IF VAR(ES) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Tu versión de BOSS es obsoleto Puedes descargar la nueva versión (v2.1.1) aquí: "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
+#  IF VAR(EN) GLOBAL SAY: "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ Latest BOSS thread"
+#    IF VAR(RU) GLOBAL SAY: "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ Обсуждение BOSS"(Eng).
+#      IF VAR(ES) GLOBAL SAY: "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ Forum de BOSS"
+#  
+#  IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
+#    IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
+#      IF VAR(ES) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: Tienes Skyrim Community Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: "http://skse.silverlock.org/".
+#  IF VAR(EN) && IF VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: It appears you do not have the latest version of SKSE. If you wish to update it can be found "http://skse.silverlock.org/ here".
+#    IF VAR(EN) && IFNOT VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Your SKSE is up-to-date.
+#  IF VAR(RU) && IF VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Вы используете не самую последнюю версию SKSE. Последняя версия может быть найдена "http://skse.silverlock.org/ здесь".
+#    IF VAR(RU) && IFNOT VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Ваш SKSE имеет последнюю версию.
+#  IF VAR(ES) && IF VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Parece que no tienes la última versión de SKSE. la nueva versión se puede encontrar "http://skse.silverlock.org/ aquí".
+#    IF VAR(ES) && IFNOT VERSION("SKSE", "0.1.6.16", <) GLOBAL SAY: Tienes la última versión de SKSE
+#  IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
+#    IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(RU) GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
+#      IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(ES) GLOBAL SAY: Tienes un plugin dinamicamente creado. Por favor, consulta las notas de autor para obtener más información sobre cómo determinar el mejor orden.
+#  IF VAR(EN) && IF VAR(FNIS) GLOBAL SAY: It appears you have "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
+#    IF VAR(RU) && IF VAR(FNIS) GLOBAL SAY: У вас установлен "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim". Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.
+#      IF VAR(ES) && IF VAR(FNIS) GLOBAL SAY: Parece que "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim" está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.
 
 common:
 # Files
