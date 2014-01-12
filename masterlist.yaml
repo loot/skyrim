@@ -515,9 +515,15 @@ BertsBreezehomeGarde
             str: 'Используйте только один EagleEyePerk esm.'
           - lang: spa
             str: 'Utilizar solo un EagleEyePerk esm.'
-  IF FILE("PerkUP-Archery.esp") && IF VAR(EN) WARN: Delete. Already included in PerkUP-Archery.esp.
-    IF FILE("PerkUP-Archery.esp") && IF VAR(RU) WARN: Удалите. Уже включено в PerkUP-Archery.esp.
-      IF FILE("PerkUP-Archery.esp") && IF VAR(ES) WARN: Borrar. Esta incluido en PerkUP-Archery.esp.
+      - type: warn
+        condition: 'file("PerkUP-Archery.esp")'
+        content:
+          - lang: eng
+            str: 'Delete. Already included in PerkUP-Archery.esp.'
+          - lang: rus
+            str: 'Удалите. Уже включено в PerkUP-Archery.esp.'
+          - lang: spa
+            str: 'Borrar. Esta incluido en PerkUP-Archery.esp.'
   - name: 'EASamhair.esm'
     msg:
       - type: say
@@ -529,9 +535,8 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, EASamhairE_1_1.esm.'
   - name: 'EASamhairNE_1_1.esm'
-  IF FILE("EASamhairE_1_1.esm") && IF VAR(EN) WARN: Use either EASamhairE_1_1.esm or EASamhairNE_1_1.esm, not both.
-    IF FILE("EASamhairE_1_1.esm") && IF VAR(RU) WARN: Используйте любой, или EASamhairE_1_1.esm или EASamhairNE_1_1.esm, не оба.
-      IF FILE("EASamhairE_1_1.esm") && IF VAR(ES) WARN: Usar EASamhairE_1_1.esm o EASamhairNE_1_1.esm, no ambos.
+    inc:
+      - 'EASamhairE_1_1.esm'
   - name: 'Enchanting Scrolls.esm'
     dirty:
       - crc: 0x8C4258BC
@@ -639,9 +644,15 @@ BertsBreezehomeGarde
             str: 'Устарело. Обновите до Hideout_Main.esp на "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".'
           - lang: spa
             str: 'Obsoleto. Actualizar a la Hideout_Main.esp en "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".'
-  IF VAR(EN) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").
-    IF VAR(RU) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-      IF VAR(ES) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").
+      - type: warn
+        condition: 'not checksum("hideout.esm", F1703639)'
+        content:
+          - lang: eng
+            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").'
+          - lang: rus
+            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+          - lang: spa
+            str: 'El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").'
   - name: 'HjakhtraevarrTomb.esm'
     dirty:
       - crc: 0xB10B9F8F
@@ -673,9 +684,16 @@ BertsBreezehomeGarde
         udr: 0
         util: *dirtyUtil
   - name: 'JSwords.esm'
-  IF CHECKSUM("JSwords.esm", 5C5F1687) || IF CHECKSUM("JSwords.esm", 58016F83) && IF VAR(EN) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained "http://www.nexusmods.com/skyrim/mods/26230 here".
-    IF CHECKSUM("JSwords.esm", 5C5F1687) || IF CHECKSUM("JSwords.esm", 58016F83) && IF VAR(RU) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-      IF CHECKSUM("JSwords.esm", 5C5F1687) || IF CHECKSUM("JSwords.esm", 58016F83) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado "http://www.nexusmods.com/skyrim/mods/26230 aquí".
+    msg:
+      - type: warn
+        condition: 'checksum("JSwords.esm", 5C5F1687) or checksum("JSwords.esm", 58016F83)'
+        content:
+          - lang: eng
+            str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained "http://www.nexusmods.com/skyrim/mods/26230 here".'
+          - lang: rus
+            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+          - lang: spa
+            str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado "http://www.nexusmods.com/skyrim/mods/26230 aquí".'
   - name: 'kuerteeInventoryAndWeight.esm'
     msg:
       - type: say
@@ -687,7 +705,10 @@ BertsBreezehomeGarde
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
-  IF VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC) SAY: Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.
+    msg:
+      - type: say
+        condition: 'file("Dawnguard.esm") and checksum("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC)'
+        content: 'Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.'
     dirty:
       - crc: 0xDA6791AC
         itm: 24
