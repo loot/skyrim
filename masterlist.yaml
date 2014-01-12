@@ -25046,9 +25046,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
       - 'CWBattleUlfric.esp'
   - name: '(No |Reduced Distance |Slightly Reduced Distance |Slightly Reduced )NPC Greetings\.esp'
  IFNOT FILE("ethereal_elven_overhaul.esp") MOD: SPTConsistentOlderPeople.esp
-  IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 21792C1E) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", F6C6B5AC) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 91A5BE22) && IF VAR(EN) SAY: If this is not newer than v1.3, update to the latest version.
-    IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 21792C1E) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", F6C6B5AC) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 91A5BE22) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 6DFAE0FA) && IF VAR(RU) SAY: Если этот плагин не новее версии 1.3, обновите до последней версии.
-      IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 21792C1E) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", F6C6B5AC) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 91A5BE22) && IF VAR(ES) SAY: If this is not newer than v1.3, update to the latest version.
   - name: 'Tauriel The Hobbit.esp'
     dirty:
       - crc: 0x3E16AF9D
@@ -27122,9 +27119,6 @@ IF REGEX("Acquisitive Soul Gems( 2.1 FR| FR)?\.esp") REGEX: Soul Gems Differ.*\.
 IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   - name: 'Third Era Attributes for Skyrim - Races.esp'
  IF FILE("ethereal_elven_overhaul.esp") MOD: SPTConsistentOlderPeople.esp
-  IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 21792C1E) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", F6C6B5AC) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 91A5BE22) && IF VAR(EN) SAY: If this is not newer than v1.3, update to the latest version.
-    IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 21792C1E) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", F6C6B5AC) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 91A5BE22) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 6DFAE0FA) && IF VAR(RU) SAY: Если этот плагин не новее версии 1.3, обновите до последней версии.
-      IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 21792C1E) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", F6C6B5AC) && IFNOT CHECKSUM("SPTConsistentOlderPeople.esp", 91A5BE22) && IF VAR(ES) SAY: If this is not newer than v1.3, update to the latest version.
   - name: 'ethereal_elven_overhaul.esp'
     inc:
       - 'XCES.esp'
@@ -27140,7 +27134,6 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   - name: 'Chesko_LevelUp.esp'
     req:
       - *SKSE
-  IF VERSION("TES5", "1.7.7.0", <) REQ: Skyrim 1.7.7+
   - name: 'NymSkyrimGrammarHammer.esp'
     dirty:
       - crc: 0x90A68AA7
