@@ -60343,27 +60343,13 @@ plugins:
       - type: say
         content: "Incompatible with: CWBattleUlfric.esp"
         condition: file("CWBattleUlfric.esp")
-  - name: 'SPTConsistentOlderPeople.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: If this is not newer than v1.3, update to the latest version.
-        condition: ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)
-      - type: say
-        content:
-          - lang: rus
-            str: Если этот плагин не новее версии 1.3, обновите до последней версии.
-        condition: ( ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22) ) and not checksum("SPTConsistentOlderPeople.esp",6DFAE0FA)
-      - type: say
-        content:
-          - lang: spa
-            str: If this is not newer than v1.3, update to the latest version.
-        condition: ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)
   - name: 'Tauriel The Hobbit.esp'
+    after:
+      - name: 'SPTConsistentOlderPeople.esp'
+        condition: not active("ethereal_elven_overhaul.esp")
     dirty:
-      - crc: 0x3e16af9d
-        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+      - util: *dirtyUtil
+        crc: 0x3e16af9d
   - name: 'Better Followers.esp'
     msg:
       - type: say
@@ -67512,43 +67498,34 @@ plugins:
   - name: 'SPTConsistentOlderPeople.esp'
     msg:
       - type: say
+        condition: ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)
         content:
           - lang: eng
             str: If this is not newer than v1.3, update to the latest version.
-        condition: ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)
-      - type: say
-        content:
           - lang: rus
             str: Если этот плагин не новее версии 1.3, обновите до последней версии.
-        condition: ( ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22) ) and not checksum("SPTConsistentOlderPeople.esp",6DFAE0FA)
-      - type: say
-        content:
           - lang: spa
             str: If this is not newer than v1.3, update to the latest version.
-        condition: ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)
   - name: 'ethereal_elven_overhaul.esp'
+    after:
+      - name: 'SPTConsistentOlderPeople.esp'
+        condition: active("SPTConsistentOlderPeople.esp")
+    dirty:
+      - util: *dirtyUtil
+        crc: 0x1841112c
+    inc:
+      - name: 'XCES.esp'
+        condition: active("XCES.esp")
     msg:
       - type: say
-        content: "Incompatible with: XCES.esp"
-        condition: file("XCES.esp")
-      - type: say
+        condition: file("SkyRe_Races.esp") and not file("PreASISPatchEEO.esp") and not file("EEO patch.esp") and not checksum("ethereal_elven_overhaul.esp",38515FFF)
         content:
           - lang: eng
             str: "Incompatible with: SkyRe Races.  A compatibility patch is available \"http://www.nexusmods.com/skyrim/mods/29185 here\"."
-        condition: file("SkyRe_Races.esp") and not file("PreASISPatchEEO.esp") and not file("EEO patch.esp") and not checksum("ethereal_elven_overhaul.esp",38515FFF)
-      - type: say
-        content:
           - lang: rus
             str: "Несовместим с: SkyRe Races.  Патч совместимости доступен \"http://www.nexusmods.com/skyrim/mods/29185 здесь\"."
-        condition: file("SkyRe_Races.esp") and not file("PreASISPatchEEO.esp") and not file("EEO patch.esp") and not checksum("ethereal_elven_overhaul.esp",38515FFF)
-      - type: say
-        content:
           - lang: spa
             str: "Incompatible con: SkyRe Races.  A compatibility patch is available \"http://www.nexusmods.com/skyrim/mods/29185 here\"."
-        condition: file("SkyRe_Races.esp") and not file("PreASISPatchEEO.esp") and not file("EEO patch.esp") and not checksum("ethereal_elven_overhaul.esp",38515FFF)
-    dirty:
-      - crc: 0x1841112c
-        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
   - name: 'EEO patch.esp'
     msg:
       - type: error
