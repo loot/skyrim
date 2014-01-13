@@ -12300,47 +12300,31 @@ plugins:
   - name: 'Lady Body.esp'
     msg:
       - type: warn
+        condition: ( version("..\TESV.exe","1.7.7",<) ) and not active("Dawnguard.esm")
         content:
           - lang: eng
-            str: For Lady Body 1.5 and highter Skyrim 1.7.7 and DLC Dawnguard are required.
-        condition: ( version("..\TESV.exe","1.7.7",<) ) and not active("Dawnguard.esm")
-      - type: warn
-        content:
+            str: 'For Lady Body 1.5 and highter Skyrim 1.7.7 and DLC Dawnguard are required.'
           - lang: rus
-            str: Для Lady Body 1.5 и выше требуются Skyrim 1.7.7 и DLC Dawnguard.
-        condition: ( version("..\TESV.exe","1.7.7",<) ) and not active("Dawnguard.esm")
-      - type: warn
-        content:
+            str: 'Для Lady Body 1.5 и выше требуются Skyrim 1.7.7 и DLC Dawnguard.'
           - lang: spa
-            str: Si utilizas Lady Body 1.7 o posterior Skyrim 1.7.7 y Dawnguard DLC son requeridos.
-        condition: ( version("..\TESV.exe","1.7.7",<) ) and not active("Dawnguard.esm")
+            str: 'Si utilizas Lady Body 1.7 o posterior Skyrim 1.7.7 y Dawnguard DLC son requeridos.'
       - type: warn
+        condition: ( ( version("..\TESV.exe","1.8.151.0.7",<) ) and not active("Dawnguard.esm") ) and not active("Dragonborn.esm")
         content:
           - lang: eng
-            str: For version Lady Body 2.1 and highter Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn are required.
-        condition: ( ( version("..\TESV.exe","1.8.151.0.7",<) ) and not active("Dawnguard.esm") ) and not active("Dragonborn.esm")
-      - type: warn
-        content:
+            str: 'For version Lady Body 2.1 and highter Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn are required.'
           - lang: rus
-            str: Для версии 2.1 и выше требуется Skyrim 1.8.151.0.7, DLC Dawnguard и DLC Dragonborn.
-        condition: ( ( version("..\TESV.exe","1.8.151.0.7",<) ) and not active("Dawnguard.esm") ) and not active("Dragonborn.esm")
-      - type: warn
-        content:
+            str: 'Для версии 2.1 и выше требуется Skyrim 1.8.151.0.7, DLC Dawnguard и DLC Dragonborn.'
           - lang: spa
-            str: Si utilizas Lady Body 2.1 o posterior Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn son requeridos.
-        condition: ( ( version("..\TESV.exe","1.8.151.0.7",<) ) and not active("Dawnguard.esm") ) and not active("Dragonborn.esm")
+            str: 'Si utilizas Lady Body 2.1 o posterior Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn son requeridos.'
       - type: say
         content:
           - lang: eng
-            str: This mod makes Khajiit and Argonian races unplayable. Don't install this mod if you want to play for Argonian or Khajiit.
-      - type: say
-        content:
+            str: 'This mod makes Khajiit and Argonian races unplayable. Don't install this mod if you want to play for Argonian or Khajiit.'
           - lang: rus
-            str: С данным модом женский вариант аргониан и хаджитов становятся недоступны игрокам в виде игровых рас! Не ставьте этот мод, если играете/хотите играть зверорасами.
-      - type: say
-        content:
+            str: 'С данным модом женский вариант аргониан и хаджитов становятся недоступны игрокам в виде игровых рас! Не ставьте этот мод, если играете/хотите играть зверорасами.'
           - lang: spa
-            str: Este mod hace que las razas Khajiit and Argonian races no sean accesibles al jugador. No lo utilizaes si planeas ser un Argonian o Khajit.
+            str: 'Este mod hace que las razas Khajiit and Argonian races no sean accesibles al jugador. No lo utilizaes si planeas ser un Argonian o Khajit.'
   - name: 'Legionettes.esp'
     tag:
       - Relev
@@ -19256,10 +19240,10 @@ plugins:
   - name: 'Frostmourne.esp'
     msg:
       - type: warn
+        condition: ( ( not checksum("Frostmourne.esp",428F46D4) ) and not checksum("Frostmourne.esp",51F43BA4) ) and version("..\TESV.exe","1.8",>)
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch")
-        condition: ( ( not checksum("Frostmourne.esp",428F46D4) ) and not checksum("Frostmourne.esp",51F43BA4) ) and version("..\TESV.exe","1.8",>)
   - name: 'Frostmourne 1.0.1.esp'
     msg:
       - type: say
@@ -45801,33 +45785,33 @@ plugins:
       - type: say
         content: "Requires: Skyrim 1.9+"
         condition: version("..\TESV.exe","1.9",<)
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Dawnguard Compatibility_Patch\"."
-        condition: active("Dawnguard.esm") and not active("Dragonborn.esm") and not file("SkyMoMod.esm") and not file("dD-Dawnguard-EBT Patch.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Dragonborn Compatibility_Patch\"."
-        condition: active("Dragonborn.esm") and not active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-EBT Patch.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 0 Dragonborn-Dawnguard_Compatibility Patch\" \\ Dawnguard + Dragonborn."
-        condition: active("Dragonborn.esm") and active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-Dawnguard-EBT Patch.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch\" \\ Monster Mod."
-        condition: not active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-SkyrimMonsterMod EBT Patch.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch\" \\ Dawnguard + Monster Mod."
-        condition: active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-Dawnguard-MonsterMod EBT Patch.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch\" \\ Dragonborn + Monster Mod."
-        condition: active("Dragonborn.esm") and not active("Dawnguard.esm") and file("SkyMoMod.esm") and not file("dD-Dragonborn-MonsterMod EBT Patch.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch\" \\ Dawnguard + Dragonborn + Monster Mod."
-        condition: active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-DG-DB-MonsterMod EBT Patch.esp") and not file("Skyrim Immersive Creatures.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Monster Mod and Immersive Creatures Patch\" \\ Dawnguard + Dragonborn + Monster Mod + Immersive Creatures."
-        condition: active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and file("Skyrim Immersive Creatures.esp") and not file("dD-DG-DB-MM-SiC EBT Patch.esp")
+    req:
+      - name: 'dD-Dawnguard-EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 Dawnguard Compatibility Patch"'
+        condition: 'file("Dawnguard.esm") and not file("Dragonborn.esm") and not file("SkyMoMod.esm")'
+      - name: 'dD-Dragonborn-EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 Dragonborn Compatibility Patch"'
+        condition: 'file("Dragonborn.esm") and not file("Dawnguard.esm") and not file("SkyMoMod.esm")'
+      - name: 'dD-Dragonborn-Dawnguard-EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 Dragonborn+Dawnguard Compatibility Patch"'
+        condition: 'file("Dragonborn.esm") and file("Dawnguard.esm") and not file("SkyMoMod.esm")'
+      - name: 'dD-SkyrimMonsterMod EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod Compatibility Patch"'
+        condition: 'file("SkyMoMod.esm") and not file("Dragonborn.esm") and not file("Dawnguard.esm")'
+      - name: 'dD-Dawnguard-MonsterMod EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 SkyrimMoMod+Dawnguard Compatibility Patch"'
+        condition: 'file("SkyMoMod.esm") and file("Dawnguard.esm") and not file("Dragonborn.esm")'
+      - name: 'dD-Dragonborn-MonsterMod EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 SkyrimMoMod+Dragonborn Compatibility Patch"'
+        condition: 'file("SkyMoMod.esm") and file("Dragonborn.esm") and not file("Dawnguard.esm")'
+      - name: 'dD-DG-DB-MonsterMod EBT Patch.esp'
+        display: '"http://www.nexusmods.com/skyrim/mods/60 SkyrimMoMod+Dawnguard+Dragonborn Compatibility Patch"'
+        condition: 'file("SkyMoMod.esm") and file("Dragonborn.esm") and file("Dawnguard.esm")'
     dirty:
-      - crc: 0xfd8abf04
-        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+      - util: *dirtyUtil
+        crc: 0xFD8ABF04
+        itm: 1
+        udr: 0
   - name: 'dD-Dawnguard-EBT Patch.esp'
     msg:
       - type: error
