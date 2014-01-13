@@ -111,6 +111,7 @@ globals:
       - lang: spa
         str: Parece que "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim" está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.
     condition: file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+
 plugins:
   - name: 'Update.esm'
     tag:
@@ -134,47 +135,47 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".
+            str: 'It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".'
         condition: ( active("Dawnguard.esm") ) and not file("Unofficial Dawnguard Patch.esp")
       - type: say
         content:
           - lang: rus
-            str: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".
+            str: 'Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".'
         condition: ( active("Dawnguard.esm") ) and not file("Unofficial Dawnguard Patch.esp")
       - type: say
         content:
           - lang: spa
-            str: Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch" además de Dawnguard. Se necesita para el correcto funcionamiento de Dawnguard.
+            str: 'Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch" además de Dawnguard. Se necesita para el correcto funcionamiento de Dawnguard.'
         condition: ( active("Dawnguard.esm") ) and not file("Unofficial Dawnguard Patch.esp")
       - type: say
         content:
           - lang: eng
-            str: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".
+            str: 'It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".'
         condition: ( active("Hearthfires.esm") ) and not file("Unofficial Hearthfire Patch.esp")
       - type: say
         content:
           - lang: rus
-            str: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".
+            str: 'Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".'
         condition: ( active("Hearthfires.esm") ) and not file("Unofficial Hearthfire Patch.esp")
       - type: say
         content:
           - lang: spa
-            str: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".
+            str: 'Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch" además de Hearthfire. Se necesita para el correcto funcionamiento de Hearthfire.'
         condition: ( active("Hearthfires.esm") ) and not file("Unofficial Hearthfire Patch.esp")
       - type: say
         content:
           - lang: eng
-            str: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
+            str: 'It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".'
         condition: ( active("Dragonborn.esm") ) and not file("Unofficial Dragonborn Patch.esp")
       - type: say
         content:
           - lang: rus
-            str: Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
+            str: 'Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".'
         condition: ( active("Dragonborn.esm") ) and not file("Unofficial Dragonborn Patch.esp")
       - type: say
         content:
           - lang: spa
-            str: It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".
+            str: 'Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch" además de Dragonborn. Se necesita para el correcto funcionamiento de Dragonborn.'
         condition: ( active("Dragonborn.esm") ) and not file("Unofficial Dragonborn Patch.esp")
     tag:
       - Delev
@@ -814,11 +815,9 @@ plugins:
   - name: 'DA_Skyship.esm'
     msg:
       - type: warn
-        content: If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.
+        content: 'If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.'
         condition: ( active("Dragonborn.esm") ) and not file("DA_Skyship_Dragonborn.esp")
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+      req: [ *SKSE ]
     dirty:
       - crc: 0x51f4b5ce
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
@@ -6295,7 +6294,7 @@ plugins:
         condition: active("Unofficial Dawnguard Patch.esp")
   - name: 'HF-MoveSpouse.esp'
     msg:
-      - type: warn
+      - type: error
         content:
           - lang: eng
             str: This file is corrupted and should be removed as soon as possible. It breaks the RelationshipMarriageFIN quest.
@@ -6346,20 +6345,20 @@ plugins:
         condition: active("Unofficial Skyrim Patch.esp")
   - name: 'Krill_AurielsBowFix.esp'
     msg:
-      - type: error
+      - type: warn
         content:
           - lang: eng
-            str: Delete. Already included in Unofficial Dawnguard Patch.esp.
+            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
         condition: active("Unofficial Dawnguard Patch.esp")
       - type: error
         content:
           - lang: rus
-            str: Удалите. Уже включено в Unofficial Dawnguard Patch.esp.
+            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
         condition: active("Unofficial Dawnguard Patch.esp")
       - type: error
         content:
           - lang: spa
-            str: Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.
+            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
         condition: active("Unofficial Dawnguard Patch.esp")
   - name: 'Lava Imagespace Fix.esp'
     msg:
