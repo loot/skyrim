@@ -351,101 +351,29 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: ( checksum("RaceCompatibility.esm",EB1DBB4C) ) and not active("Dawnguard.esm")
   - name: 'Skyrim Project Optimization - Full Version.esm'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: rus
-            str: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: spa
-            str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: eng
-            str: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
-          - lang: rus
-            str: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
-          - lang: spa
-            str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
-        condition: not active("Dragonborn.esm")
+    inc:
+      - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
+        condition: file("Skyrim Project Optimization - No Homes - Full Version.esm")
+      - name: 'Skyrim Project Optimization - No Homes.esm'
+        condition: file("Skyrim Project Optimization - No Homes.esm")
+      - name: 'Skyrim Project Optimization - Full Version.esp'
+        condition: file("Skyrim Project Optimization - Full Version.esp")
   - name: 'Skyrim Project Optimization - No Homes.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: Use either Skyrim Project Optimization - No Homes.esm or No Homes.esm or Skyrim Project Optimization - No Homes.esp, not both.
-        condition: file("Skyrim Project Optimization - No Homes.esp")
-      - type: warn
-        content:
-          - lang: rus
-            str: Используйте любой, или Skyrim Project Optimization - No Homes.esm или No Homes.esm or Skyrim Project Optimization - No Homes.esp, не оба.
-        condition: file("Skyrim Project Optimization - No Homes.esp")
-      - type: warn
-        content:
-          - lang: spa
-            str: Usar Skyrim Project Optimization - No Homes.esm o No Homes.esm or Skyrim Project Optimization - No Homes.esp, no ambos.
+    inc:
+      - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
+        condition: file("Skyrim Project Optimization - No Homes - Full Version.esm")
+      - name: 'Skyrim Project Optimization - Full Version.esm'
+        condition: file("Skyrim Project Optimization - Full Version.esm")
+      - name: 'Skyrim Project Optimization - No Homes.esp'
         condition: file("Skyrim Project Optimization - No Homes.esp")
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: Use either Skyrim Project Optimization - No Homes - Full Version.esm or Skyrim Project Optimization - No Homes - Full Version.esp, not both.
+    inc:
+      - name: 'Skyrim Project Optimization - No Homes.esm'
+        condition: file("Skyrim Project Optimization - No Homes.esm")
+      - name: 'Skyrim Project Optimization - Full Version.esm'
+        condition: file("Skyrim Project Optimization - Full Version.esm")
+      - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
         condition: file("Skyrim Project Optimization - No Homes - Full Version.esp")
-      - type: warn
-        content:
-          - lang: rus
-            str: Используйте любой, или Skyrim Project Optimization - No Homes - Full Version.esm или Skyrim Project Optimization - No Homes - Full Version.esp, не оба.
-        condition: file("Skyrim Project Optimization - No Homes - Full Version.esp")
-      - type: warn
-        content:
-          - lang: spa
-            str: Usar Skyrim Project Optimization - No Homes - Full Version.esm or Skyrim Project Optimization - No Homes - Full Version.esp, no ambos.
-        condition: file("Skyrim Project Optimization - No Homes - Full Version.esp")
-      - type: error
-        content:
-          - lang: eng
-            str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: rus
-            str: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: spa
-            str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: eng
-            str: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
-          - lang: rus
-            str: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
-          - lang: spa
-            str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
-        condition: not active("Dragonborn.esm")
   - name: '1NordDungeonAlt.esm'
     dirty:
       - crc: 0x68ad6d32
@@ -2579,116 +2507,29 @@ plugins:
       - crc: 0x53c845c8
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
   - name: 'Skyrim Project Optimization - Full Version.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: rus
-            str: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: spa
-            str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: eng
-            str: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
-          - lang: rus
-            str: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
-          - lang: spa
-            str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
-        condition: not active("Dragonborn.esm")
-      - type: warn
-        content:
-          - lang: eng
-            str: Use either Skyrim Project Optimization - Full Version.esm or Skyrim Project Optimization - Full Version.esp, not both.
-        condition: file("Skyrim Project Optimization - Full Version.esm")
-      - type: warn
-        content:
-          - lang: rus
-            str: Используйте любой, или Skyrim Project Optimization - Full Version.esm или Skyrim Project Optimization - Full Version.esp, не оба.
-        condition: file("Skyrim Project Optimization - Full Version.esm")
-      - type: warn
-        content:
-          - lang: spa
-            str: Usar Skyrim Project Optimization - Full Version.esm o Skyrim Project Optimization - Full Version.esp, no ambos.
+    inc:
+      - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
+        condition: file("Skyrim Project Optimization - No Homes - Full Version.esp")
+      - name: 'Skyrim Project Optimization - No Homes.esp'
+        condition: file("Skyrim Project Optimization - No Homes.esp")
+      - name: 'Skyrim Project Optimization - Full Version.esm'
         condition: file("Skyrim Project Optimization - Full Version.esm")
   - name: 'Skyrim Project Optimization - No Homes.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: Use either Skyrim Project Optimization - No Homes.esm or Skyrim Project Optimization - No Homes.esp, not both.
-        condition: file("Skyrim Project Optimization - No Homes.esm")
-      - type: warn
-        content:
-          - lang: rus
-            str: Используйте любой, или Skyrim Project Optimization - No Homes.esm или Skyrim Project Optimization - No Homes.esp, не оба.
-        condition: file("Skyrim Project Optimization - No Homes.esm")
-      - type: warn
-        content:
-          - lang: spa
-            str: Usar Skyrim Project Optimization - No Homes.esm o Skyrim Project Optimization - No Homes.esp, no ambos.
+    inc:
+      - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
+        condition: file("Skyrim Project Optimization - No Homes - Full Version.esp")
+      - name: 'Skyrim Project Optimization - Full Version.esp'
+        condition: file("Skyrim Project Optimization - Full Version.esp")
+      - name: 'Skyrim Project Optimization - No Homes.esm'
         condition: file("Skyrim Project Optimization - No Homes.esm")
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: Use either Skyrim Project Optimization - No Homes - Full Version.esm or Skyrim Project Optimization - No Homes - Full Version.esp, not both.
+    inc:
+      - name: 'Skyrim Project Optimization - No Homes.esp'
+        condition: file("Skyrim Project Optimization - No Homes.esp")
+      - name: 'Skyrim Project Optimization - Full Version.esp'
+        condition: file("Skyrim Project Optimization - Full Version.esp")
+      - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
         condition: file("Skyrim Project Optimization - No Homes - Full Version.esm")
-      - type: warn
-        content:
-          - lang: rus
-            str: Используйте любой, или Skyrim Project Optimization - No Homes - Full Version.esm или Skyrim Project Optimization - No Homes - Full Version.esp, не оба.
-        condition: file("Skyrim Project Optimization - No Homes - Full Version.esm")
-      - type: warn
-        content:
-          - lang: spa
-            str: Usar Skyrim Project Optimization - No Homes - Full Version.esm o Skyrim Project Optimization - No Homes - Full Version.esp, no ambos.
-        condition: file("Skyrim Project Optimization - No Homes - Full Version.esm")
-      - type: error
-        content:
-          - lang: eng
-            str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: rus
-            str: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: spa
-            str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: eng
-            str: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
-          - lang: rus
-            str: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC).
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
-          - lang: spa
-            str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
-        condition: not active("Dragonborn.esm")
   - name: 'SuccubusFollower.esp'
     msg:
       - type: say
