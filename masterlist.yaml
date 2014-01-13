@@ -15,26 +15,20 @@ common:
     '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
 
 globals:
-  - type: warn
-    content:
-      condition: version("BOSS","2.1.1.0",<)
-      - lang: eng
-        str: An update for BOSS (v2.1.1) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
-      - lang: rus
-        str: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
-      - lang: spa
-        str: "Tu versión de BOSS es obsoleto Puedes descargar la nueva versión (v2.1.1) aquí: \"http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page.\""
+  - type: say
+    condition: 'version("BOSS","3.0.0.0",<=)'
+    content: 'All Beta updates for BOSS (v3.0.0) can be downloaded [here](https://github.com/boss-developers/boss-code/releases).'
   - type: say
     content:
       - lang: eng
-        str: "\"http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/ Latest BOSS thread\""
+        str: '[Latest BOSS thread](http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/).'
       - lang: rus
-        str: "\"http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/ Обсуждение BOSS\"(Eng)."
+        str: '[Обсуждение BOSS \"(Eng)\"](http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/).'
       - lang: spa
-        str: "\"http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/ Forum de BOSS\""
+        str: '[Forum de BOSS](http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/).'
   - type: warn
+    condition: ( file("SKSE_Elys_Uncapper.dll") ) and not file("..\skse_loader.exe")
     content:
-      condition: ( file("SKSE_Elys_Uncapper.dll") ) and not file("..\skse_loader.exe")
       - lang: eng
         str: "You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: \"http://skse.silverlock.org/\"."
       - lang: rus
@@ -42,8 +36,8 @@ globals:
       - lang: spa
         str: "Tienes Skyrim Community Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: \"http://skse.silverlock.org/\"."
   - type: say
+    condition: version("..\skse_loader.exe","0.1.6.16",<)
     content:
-      condition: version("..\skse_loader.exe","0.1.6.16",<)
       - lang: eng
         str: It appears you do not have the latest version of SKSE. If you wish to update it can be found "http://skse.silverlock.org/ here".
       - lang: rus
@@ -51,8 +45,8 @@ globals:
       - lang: spa
         str: Parece que no tienes la última versión de SKSE. la nueva versión se puede encontrar "http://skse.silverlock.org/ aquí".
   - type: say
+    condition: not version("..\skse_loader.exe","0.1.6.16",<)
     content:
-      condition: not version("..\skse_loader.exe","0.1.6.16",<)
       - lang: eng
         str: Your SKSE is up-to-date.
       - lang: rus
@@ -60,8 +54,8 @@ globals:
       - lang: spa
         str: Tienes la última versión de SKSE
   - type: say
+    condition: ( regex("ASIS(-Dependency)?\.esp") ) or regex("Automatic (Spells|Variations|Variants)\.esp")
     content:
-      condition: ( regex("ASIS(-Dependency)?\.esp") ) or regex("Automatic (Spells|Variations|Variants)\.esp")
       - lang: eng
         str: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
       - lang: rus
@@ -69,8 +63,8 @@ globals:
       - lang: spa
         str: Tienes un plugin dinamicamente creado. Por favor, consulta las notas de autor para obtener más información sobre cómo determinar el mejor orden.
   - type: say
+    condition: file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
     content:
-      condition: file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - lang: eng
         str: It appears you have "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
       - lang: rus
@@ -12280,7 +12274,7 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: 'This mod makes Khajiit and Argonian races unplayable. Don't install this mod if you want to play for Argonian or Khajiit.'
+            str: 'This mod makes Khajiit and Argonian races unplayable. Don''t install this mod if you want to play for Argonian or Khajiit.'
           - lang: rus
             str: 'С данным модом женский вариант аргониан и хаджитов становятся недоступны игрокам в виде игровых рас! Не ставьте этот мод, если играете/хотите играть зверорасами.'
           - lang: spa
