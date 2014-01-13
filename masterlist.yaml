@@ -2,7 +2,13 @@ common:
 # Files
   - &SKSE
     name: '..\skse_loader.exe'
-    display: '[SKSE](http://skse.silverlock.org/)'
+    display: '[SKSE](http://skse.silverlock.org)'
+  - &FNIS
+    name: 'tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe'
+    display: '[Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811)'
+  - &SkyUI
+    name: 'SkyUI.esp'
+    display: '[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)'
 
 # Other Strings
   - &dirtyUtil
@@ -37950,13 +37956,9 @@ plugins:
       - crc: 0xac16f40
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
   - name: 'Survive The Night.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: SkyUI 3.1+"
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'Sutvaka2.esp'
     tag:
       - Relev
@@ -40543,13 +40545,9 @@ plugins:
       - crc: 0xf3a600aa
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
   - name: 'AchieveThat.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: SkyUI 3.1+"
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'actuallypowerfulbows.esp'
     dirty:
       - crc: 0xe4c7a652
@@ -50277,13 +50275,9 @@ plugins:
         content: "Requires: Skyrim 1.5.26+"
         condition: version("..\TESV.exe","1.5.26",<)
   - name: 'kuerteeEncumberingLootArmourAndWeapons MCM.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: SkyUI 3.1+"
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'kuerteeEatAndSleep.esp'
     msg:
       - type: say
