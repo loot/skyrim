@@ -118,14 +118,14 @@ plugins:
       - Delev
       - Relev
     dirty:
-      - crc: 0x412d96fb
       - util: *dirtyUtil
+        crc: 0x412d96fb
         udr: 1
-      - crc: 0x7f464083
       - util: *dirtyUtil
+        crc: 0x7f464083
         udr: 1
-      - crc: 0xe5b67bda
       - util: *dirtyUtil
+        crc: 0xe5b67bda
         udr: 3
   - name: 'Unofficial Skyrim Patch.esp'
     msg:
@@ -193,8 +193,8 @@ plugins:
       - Delev
       - Relev
     dirty:
-      - crc: 0xbd72ccf3
       - util: *dirtyUtil
+        crc: 0xbd72ccf3
         udr: 82
   - name: 'Unofficial Dawnguard Patch.esp'
     after:
@@ -232,8 +232,8 @@ plugins:
         content: "Requires: Skyrim 1.7.7+"
         condition: version("..\TESV.exe","1.7.7",<)
     dirty:
-      - crc: 0xaf82ce6a
       - util: *dirtyUtil
+        crc: 0xaf82ce6a
         udr: 11
   - name: 'Unofficial Hearthfire Patch.esp'
     after:
@@ -267,8 +267,8 @@ plugins:
         content: "Requires: Skyrim 1.8.151+"
         condition: version("..\TESV.exe","1.8.151",<)
     dirty:
-      - crc: 0xa9f83bff
       - util: *dirtyUtil
+        crc: 0xa9f83bff
         udr: 8
   - name: 'Unofficial Dragonborn Patch.esp'
     after:
@@ -831,11 +831,11 @@ plugins:
       - crc: 0xd5550e36
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
   - name: 'DA_Skyship.esm'
+    req: [ *SKSE ]
     msg:
       - type: warn
         content: 'If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.'
         condition: ( active("Dragonborn.esm") ) and not file("DA_Skyship_Dragonborn.esp")
-      req: [ *SKSE ]
     dirty:
       - crc: 0x51f4b5ce
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
@@ -6517,7 +6517,7 @@ plugins:
           - lang: spa
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
         condition: not active("Hearthfires.esm")
-  - name: 'Skyrim - Director's Cut - HD Pack Fix.esp'
+  - name: 'Skyrim - Director''s Cut - HD Pack Fix.esp'
     msg:
       - type: say
         content: "Requires: DLC HighResTexturePack"
