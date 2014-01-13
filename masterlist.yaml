@@ -1569,21 +1569,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, LunariRace.esp.
   - name: 'MagicDuelReborn.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: Use either MagicDuel.esm or MagicDuelReborn.esm, not both.
-        condition: file("MagicDuel.esm")
-      - type: warn
-        content:
-          - lang: rus
-            str: Используйте любой, или MagicDuel.esm или MagicDuelReborn.esm, не оба.
-        condition: file("MagicDuel.esm")
-      - type: warn
-        content:
-          - lang: spa
-            str: Usar MagicDuel.esm o MagicDuelReborn.esm, no ambos.
+    inc:
+      - name: 'MagicDuel.esm'
         condition: file("MagicDuel.esm")
   - name: 'Malise - A Companion By Joseph Anthony.esm'
     msg:
@@ -2408,16 +2395,15 @@ plugins:
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
   - name: 'The Spice of Life.esm'
     msg:
-      - type: say
+      - type: warn
+        condition: checksum("The Spice of Life.esm",A75F2F6D)
         content:
+          - lang: eng
+            str: 'File not created with Creation Kit.'
           - lang: rus
-            str: File not created with Creation Kit.
-        condition: checksum("The Spice of Life.esm",A75F2F6D)
-      - type: say
-        content:
+            str: 'File not created with Creation Kit.'
           - lang: spa
-            str: Archivo no creado con el Creation Kit.
-        condition: checksum("The Spice of Life.esm",A75F2F6D)
+            str: 'Archivo no creado con el Creation Kit.'
   - name: 'TRO_BasicNeeds.esm'
     msg:
       - type: say
@@ -2488,25 +2474,12 @@ plugins:
       - crc: 0xc07c8282
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
   - name: 'UndergroundBathhouse_light.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: Use either UndergroundBathhouse.esm or UndergroundBathhouse_light.esm, not both.
-        condition: file("UndergroundBathhouse.esm")
-      - type: warn
-        content:
-          - lang: rus
-            str: Используйте любой, или UndergroundBathhouse.esm или UndergroundBathhouse_light.esm, не оба.
-        condition: file("UndergroundBathhouse.esm")
-      - type: warn
-        content:
-          - lang: spa
-            str: Usar UndergroundBathhouse.esm o UndergroundBathhouse_light.esm, no ambos.
+    inc:
+      - name: 'UndergroundBathhouse.esm'
         condition: file("UndergroundBathhouse.esm")
     dirty:
-      - crc: 0xf4137ac5
-        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+      - util: *dirtyUtil
+        crc: 0xf4137ac5
         udr: 4
   - name: 'UnicornCave.esm'
     dirty:
@@ -3290,49 +3263,25 @@ plugins:
   - name: 'BreezehomeLadderFixJP.esp'
     msg:
       - type: warn
-        content:
-          - lang: eng
-            str: This file contains 2 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
         condition: checksum("BreezehomeLadderFixJP.esp",F2BAA689)
-      - type: warn
         content:
+          - lang: eng
+            str: 'This file contains 2 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".'
           - lang: rus
-            str: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-        condition: checksum("BreezehomeLadderFixJP.esp",F2BAA689)
-      - type: warn
-        content:
+            str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".'
           - lang: spa
-            str: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
-        condition: checksum("BreezehomeLadderFixJP.esp",94D3C2C0)
+            str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".'
       - type: warn
+        condition: checksum("BreezehomeLadderFixJP.esp",94D3C2C0)
         content:
           - lang: eng
-            str: This file contains 32 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
-        condition: checksum("BreezehomeLadderFixJP.esp",94D3C2C0)
-      - type: warn
-        content:
+            str: 'This file contains 32 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".'
           - lang: rus
-            str: Этот файл содержит 32 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-        condition: checksum("BreezehomeLadderFixJP.esp",94D3C2C0)
-      - type: warn
-        content:
+            str: 'Этот файл содержит 32 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".'
           - lang: spa
-            str: Este archivo contiene 32 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
-        condition: checksum("BreezehomeLadderFixJP.esp",94D3C2C0)
-      - type: warn
-        content:
-          - lang: eng
-            str: Use either BreezehomeLadderFix.esp or BreezehomeLadderFixJP.esp, not both.
-        condition: file("BreezehomeLadderFix.esp")
-      - type: warn
-        content:
-          - lang: rus
-            str: Используйте любой, или BreezehomeLadderFix.esp или BreezehomeLadderFixJP.esp, не оба.
-        condition: file("BreezehomeLadderFix.esp")
-      - type: warn
-        content:
-          - lang: eng
-            str: Utilizar BreezehomeLadderFix.esp o BreezehomeLadderFixJP.esp, not ambos.
+            str: 'Este archivo contiene 32 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".'
+    inc:
+      - name: 'BreezehomeLadderFix.esp'
         condition: file("BreezehomeLadderFix.esp")
   - name: 'BreezehomeLightingFix.esp'
     msg:
@@ -3508,21 +3457,15 @@ plugins:
         condition: active("Unofficial Skyrim Patch.esp")
   - name: 'Chesko_MatchingSetPerkFix.esp'
     msg:
-      - type: error
+      - type: warn
+        condition: 'version("../TESV.exe", "1.9", >)'
         content:
           - lang: eng
-            str: Delete. Fixed in Official Patch 1.9.
-        condition: version("..\TESV.exe","1.9",>)
-      - type: error
-        content:
+            str: 'Delete. Fixed in Official Patch 1.9.'
           - lang: rus
-            str: Удалите. Исправлено в официальном патче 1.9.
-        condition: version("..\TESV.exe","1.9",>)
-      - type: error
-        content:
+            str: 'Удалите. Исправлено в официальном патче 1.9.'
           - lang: spa
-            str: Borrar. Incluido en el patch oficial 1.9.
-        condition: version("..\TESV.exe","1.9",>)
+            str: 'Borrar. Incluido en el patch oficial 1.9.'
   - name: 'Cloak Fix.esp'
     msg:
       - type: error
@@ -4838,20 +4781,14 @@ plugins:
   - name: 'MatchingSetFixes.esp'
     msg:
       - type: error
+        condition: 'version("../TESV.exe", "1.9", >)'
         content:
           - lang: eng
-            str: Delete. Fixed in Official Patch 1.9.
-        condition: version("..\TESV.exe","1.9",>)
-      - type: error
-        content:
+            str: 'Delete. Fixed in Official Patch 1.9.'
           - lang: rus
-            str: Удалите. Исправлено в официальном патче 1.9.
-        condition: version("..\TESV.exe","1.9",>)
-      - type: error
-        content:
+            str: 'Удалите. Исправлено в официальном патче 1.9.'
           - lang: spa
-            str: Borrar. Esta incluido en el patch oficial 1.9.
-        condition: version("..\TESV.exe","1.9",>)
+            str: 'Borrar. Esta incluido en el patch oficial 1.9.'
   - name: Miner's Clothes Variant Fix.esp
     msg:
       - type: error
@@ -5008,20 +4945,14 @@ plugins:
   - name: 'NordHeroBowTemperFix.esp'
     msg:
       - type: error
+        condition: version("..\TESV.exe","1.9",>)
         content:
           - lang: eng
-            str: Delete. Fixed by Official Patch 1.9.26.
-        condition: version("..\TESV.exe","1.9",>)
-      - type: error
-        content:
+            str: 'Delete. Fixed by Official Patch 1.9.26.'
           - lang: rus
-            str: Удалите. Исправлено в официальном патче 1.9.26.
-        condition: version("..\TESV.exe","1.9",>)
-      - type: error
-        content:
+            str: 'Удалите. Исправлено в официальном патче 1.9.26.'
           - lang: spa
-            str: Borrar. Esta incluido en el patch oficial 1.9.26.
-        condition: version("..\TESV.exe","1.9",>)
+            str: 'Borrar. Esta incluido en el patch oficial 1.9.26.'
   - name: 'onehandeddagger.esp'
     msg:
       - type: error
