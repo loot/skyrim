@@ -17,106 +17,66 @@ common:
 globals:
   - type: warn
     content:
+      condition: version("BOSS","2.1.1.0",<)
       - lang: eng
         str: An update for BOSS (v2.1.1) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
-    condition: version("BOSS","2.1.1.0",<)
-  - type: warn
-    content:
       - lang: rus
         str: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
-    condition: version("BOSS","2.1.1.0",<)
-  - type: warn
-    content:
       - lang: spa
         str: "Tu versión de BOSS es obsoleto Puedes descargar la nueva versión (v2.1.1) aquí: \"http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page.\""
-    condition: version("BOSS","2.1.1.0",<)
   - type: say
     content:
       - lang: eng
         str: "\"http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/ Latest BOSS thread\""
-  - type: say
-    content:
       - lang: rus
         str: "\"http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/ Обсуждение BOSS\"(Eng)."
-  - type: say
-    content:
       - lang: spa
         str: "\"http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/ Forum de BOSS\""
   - type: warn
     content:
+      condition: ( file("SKSE_Elys_Uncapper.dll") ) and not file("..\skse_loader.exe")
       - lang: eng
         str: "You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: \"http://skse.silverlock.org/\"."
-    condition: ( file("SKSE_Elys_Uncapper.dll") ) and not file("..\skse_loader.exe")
-  - type: warn
-    content:
       - lang: rus
         str: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
-    condition: ( file("SKSE_Elys_Uncapper.dll") ) and not file("..\skse_loader.exe")
-  - type: warn
-    content:
       - lang: spa
         str: "Tienes Skyrim Community Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: \"http://skse.silverlock.org/\"."
-    condition: ( file("SKSE_Elys_Uncapper.dll") ) and not file("..\skse_loader.exe")
   - type: say
     content:
+      condition: version("..\skse_loader.exe","0.1.6.16",<)
       - lang: eng
         str: It appears you do not have the latest version of SKSE. If you wish to update it can be found "http://skse.silverlock.org/ here".
-    condition: version("..\skse_loader.exe","0.1.6.16",<)
-  - type: say
-    content:
-      - lang: eng
-        str: Your SKSE is up-to-date.
-    condition: not version("..\skse_loader.exe","0.1.6.16",<)
-  - type: say
-    content:
       - lang: rus
         str: Вы используете не самую последнюю версию SKSE. Последняя версия может быть найдена "http://skse.silverlock.org/ здесь".
-    condition: version("..\skse_loader.exe","0.1.6.16",<)
-  - type: say
-    content:
-      - lang: rus
-        str: Ваш SKSE имеет последнюю версию.
-    condition: not version("..\skse_loader.exe","0.1.6.16",<)
-  - type: say
-    content:
       - lang: spa
         str: Parece que no tienes la última versión de SKSE. la nueva versión se puede encontrar "http://skse.silverlock.org/ aquí".
-    condition: version("..\skse_loader.exe","0.1.6.16",<)
   - type: say
     content:
+      condition: not version("..\skse_loader.exe","0.1.6.16",<)
+      - lang: eng
+        str: Your SKSE is up-to-date.
+      - lang: rus
+        str: Ваш SKSE имеет последнюю версию.
       - lang: spa
         str: Tienes la última versión de SKSE
-    condition: not version("..\skse_loader.exe","0.1.6.16",<)
   - type: say
     content:
+      condition: ( regex("ASIS(-Dependency)?\.esp") ) or regex("Automatic (Spells|Variations|Variants)\.esp")
       - lang: eng
         str: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
-    condition: ( regex("ASIS(-Dependency)?\.esp") ) or regex("Automatic (Spells|Variations|Variants)\.esp")
-  - type: say
-    content:
       - lang: rus
         str: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
-    condition: ( regex("ASIS(-Dependency)?\.esp") ) or regex("Automatic (Spells|Variations|Variants)\.esp")
-  - type: say
-    content:
       - lang: spa
         str: Tienes un plugin dinamicamente creado. Por favor, consulta las notas de autor para obtener más información sobre cómo determinar el mejor orden.
-    condition: ( regex("ASIS(-Dependency)?\.esp") ) or regex("Automatic (Spells|Variations|Variants)\.esp")
   - type: say
     content:
+      condition: file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - lang: eng
         str: It appears you have "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
-    condition: file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
-  - type: say
-    content:
       - lang: rus
         str: У вас установлен "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim". Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.
-    condition: file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
-  - type: say
-    content:
       - lang: spa
         str: Parece que "http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim" está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.
-    condition: file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
 
 plugins:
   - name: 'Update.esm'
