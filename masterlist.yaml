@@ -845,93 +845,58 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: Use only one EagleEyePerk esm.
-      - type: say
-        content:
+            str: 'Use only one EagleEyePerk esm.'
           - lang: rus
-            str: Используйте только один EagleEyePerk esm.
-      - type: say
-        content:
+            str: 'Используйте только один EagleEyePerk esm.'
           - lang: spa
-            str: Utilizar solo un EagleEyePerk esm.
+            str: 'Utilizar solo un EagleEyePerk esm.'
       - type: warn
+        condition: 'file("PerkUP-Archery.esp")'
         content:
           - lang: eng
-            str: Delete. Already included in PerkUP-Archery.esp.
-        condition: file("PerkUP-Archery.esp")
-      - type: warn
-        content:
+            str: 'Delete. Already included in PerkUP-Archery.esp.'
           - lang: rus
-            str: Удалите. Уже включено в PerkUP-Archery.esp.
-        condition: file("PerkUP-Archery.esp")
-      - type: warn
-        content:
+            str: 'Удалите. Уже включено в PerkUP-Archery.esp.'
           - lang: spa
-            str: Borrar. Esta incluido en PerkUP-Archery.esp.
-        condition: file("PerkUP-Archery.esp")
+            str: 'Borrar. Esta incluido en PerkUP-Archery.esp.'
   - name: 'EASamhair.esm'
     msg:
       - type: say
         content:
           - lang: eng
-            str: Obsolete. Update to latest version, EASamhairE_1_1.esm.
-      - type: say
-        content:
+            str: 'Obsolete. Update to latest version, EASamhairE_1_1.esm.'
           - lang: rus
-            str: Устарело. Обновите до последней версии, EASamhairE_1_1.esm.
-      - type: say
-        content:
+            str: 'Устарело. Обновите до последней версии, EASamhairE_1_1.esm.'
           - lang: spa
-            str: Obsoleto. Actualizar a la última versión, EASamhairE_1_1.esm.
+            str: 'Obsoleto. Actualizar a la última versión, EASamhairE_1_1.esm.'
   - name: 'EASamhairE_1_1.esm'
+    inc:
+      - name: 'EASamhairNE_1_1.esm'
+        condition: file("EASamhairNE_1_1.esm")
     msg:
       - type: error
+        condition: not active("ApachiiHair.esm")
         content:
           - lang: eng
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
-        condition: not active("ApachiiHair.esm")
-      - type: error
-        content:
           - lang: rus
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
-        condition: not active("ApachiiHair.esm")
-      - type: error
-        content:
           - lang: spa
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
-        condition: not active("ApachiiHair.esm")
   - name: 'EASamhairNE_1_1.esm'
+    inc:
+      - name: 'EASamhairE_1_1.esm'
+        condition: file("EASamhairE_1_1.esm")
     msg:
       - type: error
+        condition: not active("ApachiiHair.esm")
         content:
           - lang: eng
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
-        condition: not active("ApachiiHair.esm")
-      - type: error
-        content:
           - lang: rus
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
-        condition: not active("ApachiiHair.esm")
-      - type: error
-        content:
           - lang: spa
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
-        condition: not active("ApachiiHair.esm")
-      - type: warn
-        content:
-          - lang: eng
-            str: Use either EASamhairE_1_1.esm or EASamhairNE_1_1.esm, not both.
-        condition: file("EASamhairE_1_1.esm")
-      - type: warn
-        content:
-          - lang: rus
-            str: Используйте любой, или EASamhairE_1_1.esm или EASamhairNE_1_1.esm, не оба.
-        condition: file("EASamhairE_1_1.esm")
-      - type: warn
-        content:
-          - lang: spa
-            str: Usar EASamhairE_1_1.esm o EASamhairNE_1_1.esm, no ambos.
-        condition: file("EASamhairE_1_1.esm")
   - name: 'ElinRaceTaint.esm'
     msg:
       - type: error
@@ -1248,30 +1213,20 @@ plugins:
       - type: warn
         content:
           - lang: eng
-            str: Obsolete. Update to Hideout_Main.esp at "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".
-      - type: warn
-        content:
+            str: 'Obsolete. Update to Hideout_Main.esp at "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".'
           - lang: rus
-            str: Устарело. Обновите до Hideout_Main.esp на "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".
-      - type: warn
-        content:
+            str: 'Устарело. Обновите до Hideout_Main.esp на "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".'
           - lang: spa
-            str: Obsoleto. Actualizar a la Hideout_Main.esp en "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".
+            str: 'Obsoleto. Actualizar a la Hideout_Main.esp en "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".'
       - type: warn
+        condition: not checksum("hideout.esm",F1703639)
         content:
           - lang: eng
-            str: Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").
-        condition: not checksum("hideout.esm",F1703639)
-      - type: warn
-        content:
+            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner").'
           - lang: rus
-            str: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("hideout.esm",F1703639)
-      - type: warn
-        content:
+            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден ("http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner"). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: spa
-            str: El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").
-        condition: not checksum("hideout.esm",F1703639)
+            str: 'El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner").'
   - name: 'HjakhtraevarrTomb.esm'
     dirty:
       - crc: 0xb10b9f8f
@@ -1337,20 +1292,14 @@ plugins:
   - name: 'JSwords.esm'
     msg:
       - type: warn
+        condition: 'checksum("JSwords.esm", 5C5F1687) or checksum("JSwords.esm", 58016F83)'
         content:
           - lang: eng
-            str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained "http://www.nexusmods.com/skyrim/mods/26230 here".
-        condition: ( checksum("JSwords.esm",5C5F1687) ) or checksum("JSwords.esm",58016F83)
-      - type: warn
-        content:
+            str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained "http://www.nexusmods.com/skyrim/mods/26230 here".'
           - lang: rus
-            str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: ( checksum("JSwords.esm",5C5F1687) ) or checksum("JSwords.esm",58016F83)
-      - type: warn
-        content:
+            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: spa
-            str: Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado "http://www.nexusmods.com/skyrim/mods/26230 aquí".
-        condition: ( checksum("JSwords.esm",5C5F1687) ) or checksum("JSwords.esm",58016F83)
+            str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado "http://www.nexusmods.com/skyrim/mods/26230 aquí".'
   - name: 'Ket_ARMONIZER_v2.esm'
     msg:
       - type: error
@@ -1385,26 +1334,17 @@ plugins:
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
     msg:
       - type: say
-        content: Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.
-        condition: ( active("Dawnguard.esm") ) and checksum("Lanterns Of Skyrim - All In One - Main.esm",DA6791AC)
-      - type: error
-        content:
-          - lang: eng
-            str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm.
-        condition: ( not active("Dawnguard.esm") ) and checksum("Lanterns Of Skyrim - All In One - Main.esm",042A3DE0)
-      - type: error
-        content:
-          - lang: rus
-            str: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm.
-        condition: ( not active("Dawnguard.esm") ) and checksum("Lanterns Of Skyrim - All In One - Main.esm",042A3DE0)
-      - type: error
-        content:
-          - lang: spa
-            str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda) ola versión de Lanterns Of Skyrim - All In One - Main.esm que no requiere Dawnguard.
-        condition: ( not active("Dawnguard.esm") ) and checksum("Lanterns Of Skyrim - All In One - Main.esm",042A3DE0)
+        condition: 'file("Dawnguard.esm") and checksum("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC)'
+        content: 'Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.'
     dirty:
-      - crc: 0xda6791ac
-        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+      - util: *dirtyUtil
+        crc: 0xDA6791AC
+        itm: 24
+        udr: 0
+      - util: *dirtyUtil
+        crc: 0x1E83E045
+        itm: 24
+        udr: 0
   - name: Lanterns Of Skyrim - All In One( 2x brighter)?\.esm
     msg:
       - type: say
@@ -5097,102 +5037,57 @@ plugins:
         condition: active("Unofficial Skyrim Patch.esp")
   - name: 'Spell Absorb Fix.esp'
     msg:
-      - type: error
+      - type: warn
+        condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
           - lang: eng
-            str: Delete. Already included in Unofficial Skyrim Patch.esp.
-        condition: active("Unofficial Skyrim Patch.esp")
-      - type: error
-        content:
+            str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
           - lang: rus
-            str: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
-        condition: active("Unofficial Skyrim Patch.esp")
-      - type: error
-        content:
+            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
-            str: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
-        condition: active("Unofficial Skyrim Patch.esp")
-      - type: error
+            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
+      - type: warn
+        condition: 'file("Unofficial Dawnguard Patch.esp")'
         content:
           - lang: eng
-            str: Delete. Already included in Unofficial Dawnguard Patch.esp.
-        condition: active("Unofficial Dawnguard Patch.esp")
-      - type: error
-        content:
+            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
           - lang: rus
-            str: Удалите. Уже включено в Unofficial Dawnguard Patch.esp.
-        condition: active("Unofficial Dawnguard Patch.esp")
-      - type: error
-        content:
+            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
           - lang: spa
-            str: Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.
-        condition: active("Unofficial Dawnguard Patch.esp")
-      - type: error
-        content:
-          - lang: eng
-            str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: rus
-            str: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
-          - lang: spa
-            str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
-        condition: not active("Dawnguard.esm")
+            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
   - name: 'SolitudeProudspireManorFix.esp'
     msg:
-      - type: error
+      - type: warn
+        condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
           - lang: eng
-            str: Delete. Already included in Unofficial Skyrim Patch.esp.
-        condition: active("Unofficial Skyrim Patch.esp")
-      - type: error
-        content:
+            str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
           - lang: rus
-            str: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
-        condition: active("Unofficial Skyrim Patch.esp")
-      - type: error
-        content:
+            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
-            str: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
-        condition: active("Unofficial Skyrim Patch.esp")
+            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'StaggerFix.esp'
     msg:
-      - type: error
+      - type: warn
+        condition: 'file("Unofficial Skyrim Patch.esp")'
         content:
           - lang: eng
-            str: Delete. Already included in Unofficial Skyrim Patch.esp.
-        condition: active("Unofficial Skyrim Patch.esp")
-      - type: error
-        content:
+            str: 'Delete. Already included in Unofficial Skyrim Patch.esp.'
           - lang: rus
-            str: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
-        condition: active("Unofficial Skyrim Patch.esp")
-      - type: error
-        content:
+            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
           - lang: spa
-            str: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
-        condition: active("Unofficial Skyrim Patch.esp")
+            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
   - name: 'StaffOfMagnusFix.esp'
     msg:
       - type: error
+        condition: version("..\TESV.exe","1.4",>)
         content:
           - lang: eng
-            str: Delete. Fixed by Official Patch 1.4.26.
-        condition: version("..\TESV.exe","1.4",>)
-      - type: error
-        content:
+            str: 'Delete. Fixed by Official Patch 1.4.26.'
           - lang: rus
-            str: Удалите. Исправлено в официальном патче 1.4.26.
-        condition: version("..\TESV.exe","1.4",>)
-      - type: error
-        content:
+            str: 'Удалите. Исправлено в официальном патче 1.4.26.'
           - lang: spa
-            str: Borrar. Esta incluido en el patch oficial 1.4.26.
-        condition: version("..\TESV.exe","1.4",>)
+            str: 'Borrar. Esta incluido en el patch oficial 1.4.26.'
   - name: 'stormcloak boot fix.esp'
     msg:
       - type: error
@@ -33468,30 +33363,20 @@ plugins:
       - type: warn
         content:
           - lang: eng
-            str: Obsolete. Update to Hideout_Main.esp at "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".
-      - type: warn
-        content:
+            str: 'Obsolete. Update to Hideout_Main.esp at "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".'
           - lang: rus
-            str: Устарело. Обновите до Hideout_Main.esp на "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".
-      - type: warn
-        content:
+            str: 'Устарело. Обновите до Hideout_Main.esp на "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".'
           - lang: spa
-            str: Obsoleto. Actualizar a la Hideout_Main.esp en "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".
+            str: 'Obsoleto. Actualizar a la Hideout_Main.esp en "http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner".'
       - type: warn
+        condition: not checksum("hideout.esp",69104BC7)
         content:
           - lang: eng
-            str: Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch")
-        condition: not checksum("hideout.esp",69104BC7)
-      - type: warn
-        content:
+            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner").'
           - lang: rus
-            str: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("hideout.esp",69104BC7)
-      - type: warn
-        content:
+            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден ("http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner"). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: spa
-            str: El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").
-        condition: not checksum("hideout.esp",F1703639)
+            str: 'El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://www.nexusmods.com/skyrim/mods/43593 Shawks Corner").'
   - name: 'hideout - hearthfires.esp'
     msg:
       - type: warn
