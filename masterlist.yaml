@@ -706,43 +706,29 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
   - name: 'ClimatesOfTamriel.esm'
+    dirty:
+      - util: *dirtyUtil
+        crc: 0xc110b173
+        itm: 4
+        udr: 0
     msg:
       - type: warn
+        condition: 'checksum("ClimatesOfTamriel.esm", C30AB34E)'
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://www.nexusmods.com/skyrim/mods/17802 updated plugin".'
+      - type: warn
+        condition: 'file("SoS - Civilization.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
         content:
           - lang: eng
-            str: Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/20193 here".
-        condition: ( file("SoS - Civilization.esp") ) and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")
-      - type: warn
-        content:
+            str: 'Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/20193 here".'
           - lang: rus
-            str: В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://www.nexusmods.com/skyrim/mods/20193 здесь."
-        condition: ( file("SoS - Civilization.esp") ) and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")
+            str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://www.nexusmods.com/skyrim/mods/20193 здесь."'
       - type: warn
-        content:
-          - lang: spa
-            str: Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/20193 here".
-        condition: ( file("SoS - Civilization.esp") ) and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")
-      - type: warn
+        condition: 'file("SoS - The Wilds.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
         content:
           - lang: eng
-            str: Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/10886 here".
-        condition: ( file("SoS - The Wilds.esp") ) and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")
-      - type: warn
-        content:
+            str: 'Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/10886 here".'
           - lang: rus
-            str: В соответствии с конфликтами между Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://www.nexusmods.com/skyrim/mods/10886 здесь."
-        condition: ( file("SoS - The Wilds.esp") ) and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")
-      - type: warn
-        content:
-          - lang: spa
-            str: Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/10886 here".
-        condition: ( file("SoS - The Wilds.esp") ) and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")
-      - type: warn
-        content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://www.nexusmods.com/skyrim/mods/17802 updated plugin".
-        condition: checksum("ClimatesOfTamriel.esm",C30AB34E)
-    dirty:
-      - crc: 0xc110b173
-        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+            str: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://www.nexusmods.com/skyrim/mods/10886 здесь."'
   - name: 'CMHalfElf.esm'
     msg:
       - type: error
@@ -760,10 +746,10 @@ plugins:
           - lang: spa
             str: RaceCompatibility.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://www.nexusmods.com/skyrim/mods/24168 RaceCompatibility".
         condition: not active("RaceCompatibility.esm")
-  - name: CK's Companions.esm
+  - name: 'CK''s Companions.esm'
     dirty:
-      - crc: 0xd5550e36
-        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+      - util: *dirtyUtil
+        crc: 0xd5550e36
   - name: 'DA_Skyship.esm'
     req: [ *SKSE ]
     msg:
