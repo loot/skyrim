@@ -259,30 +259,36 @@ plugins:
         content: "Requires: Skyrim 1.9.32+"
         condition: version("..\TESV.exe","1.9.32",<)
   - name: 'Dragonborn.esm'
+    after:
+      - name: 'Unofficial Hearthfire Patch.esp'
+        condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
     msg:
       - type: say
         content: "Requires: Skyrim 1.8.151+"
         condition: version("..\TESV.exe","1.8.151",<)
     dirty:
       - crc: 0xa9f83bff
-        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+      - util: *dirtyUtil
         udr: 8
   - name: 'Unofficial Dragonborn Patch.esp'
+    after:
+      - name: 'Dragonborn.esm'
+        condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
     msg:
       - type: error
         content:
           - lang: eng
-            str: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+            str: 'Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).'
         condition: not active("Dragonborn.esm")
       - type: error
         content:
           - lang: rus
-            str: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+            str: 'Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).'
         condition: not active("Dragonborn.esm")
       - type: error
         content:
           - lang: spa
-            str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+            str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
         condition: not active("Dragonborn.esm")
       - type: say
         content: "Requires: Skyrim 1.9.32+"
@@ -295,15 +301,15 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: This esm file WILL damage your game. We strongly advise that you use the official version of the "http://www.nexusmods.com/skyrim/mods/19 Unofficial Skyrim Patch". Do not modify its extension.
+            str: 'This esm file WILL damage your game. We strongly advise that you use the official version of the "http://www.nexusmods.com/skyrim/mods/19 Unofficial Skyrim Patch". Do not modify its extension.'
       - type: error
         content:
           - lang: rus
-            str: Этот esm-файл может повредить вашу игру. Настоятельно рекомендуется использовать этот "http://www.nexusmods.com/skyrim/mods/19 Unofficial Skyrim Patch".
+            str: 'Этот esm-файл может повредить вашу игру. Настоятельно рекомендуется использовать этот "http://www.nexusmods.com/skyrim/mods/19 Unofficial Skyrim Patch".'
       - type: error
         content:
           - lang: spa
-            str: Este archivo esm dañará tu juego. Recomendamos fuertemente que descarges "http://www.nexusmods.com/skyrim/mods/19 Unofficial Skyrim Patch".
+            str: 'Este archivo esm dañará tu juego. Recomendamos fuertemente que descarges "http://www.nexusmods.com/skyrim/mods/19 Unofficial Skyrim Patch".'
   - name: 'MoT_First_LoadOrder_File_After_Skyrim.esm'
     msg:
       - type: warn
