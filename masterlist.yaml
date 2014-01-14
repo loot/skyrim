@@ -60867,7 +60867,7 @@ plugins:
       - crc: 0x8cf90f55
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 18
-  - name: 'OriginalrecipeUlfric.esp'
+  - name: OriginalrecipeUlfric.esp
     msg:
       - type: say
         content: "Incompatible with: CWBattleUlfric.esp"
@@ -67077,6 +67077,17 @@ plugins:
       - type: say
         content: "Incompatible with: Better Follower Improvements.esp"
         condition: file("Better Follower Improvements.esp")
+# BEGINGROUP: Multimarriage
+# Must load after Unlimited companions mods
+# multimarriage.esp
+# must be load after multiple followers mods for wedding ceremony work.
+# ENDGROUP: Multimarriage
+# ENDGROUP: Unlimited Companions
+
+# Oct 2013: This appears to be another unsorted or un-annotated region. and/or some mods with small/single tweaks -LD
+# IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: brhucefollower.esp
+# IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: brhucelegacy.esp
+# test placement of Brhuce as for Vilja; Trainwiz reco to place after every follower mod incl aft but I'm skeptical -LD
   - name: 'CerwidenCompanion.esp'
     msg:
       - type: say
