@@ -798,7 +798,7 @@ plugins:
         condition: 'checksum("ClimatesOfTamriel.esm", C30AB34E)'
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://www.nexusmods.com/skyrim/mods/17802 updated plugin".'
       - type: warn
-        condition: 'file("SoS - Civilization.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        condition: ( file("SoS - Civilization.esp") ) and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")
         content:
           - lang: eng
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://www.nexusmods.com/skyrim/mods/20193 here".'
@@ -1393,7 +1393,7 @@ plugins:
   - name: 'JSwords.esm'
     msg:
       - type: warn
-        condition: 'checksum("JSwords.esm", 5C5F1687) or checksum("JSwords.esm", 58016F83)'
+        condition: ( checksum("JSwords.esm",5C5F1687) ) or checksum("JSwords.esm",58016F83)
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained "http://www.nexusmods.com/skyrim/mods/26230 here".'
@@ -1435,7 +1435,7 @@ plugins:
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
     msg:
       - type: say
-        condition: 'file("Dawnguard.esm") and checksum("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC)'
+        condition: ( not active("Dawnguard.esm") ) and checksum("Lanterns Of Skyrim - All In One - Main.esm",042A3DE0)
         content: 'Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.'
     dirty:
       - util: *dirtyUtil
@@ -1935,12 +1935,12 @@ plugins:
     msg:
       - type: say
         content: "Requires: Skyrim 1.8.151.07+"
-        condition: ( not checksum("RaestlozArmorReplace.esm",B83CB078) ) or not checksum("RaestlozArmorReplace.esm",6FA99C8F) and version("..\TESV.exe","1.8.151.07",<)
+        condition: ( ( not checksum("RaestlozArmorReplace.esm",B83CB078) ) or not checksum("RaestlozArmorReplace.esm",6FA99C8F) ) and version("..\TESV.exe","1.8.151.07",<)
   - name: 'RaestlozArmorReplace - Dawnguard.esm'
     msg:
       - type: say
         content: "Requires: Skyrim 1.8.151.07+"
-        condition: ( not checksum("RaestlozArmorReplace - Dawnguard.esm",FBBDED04) ) or not checksum("RaestlozArmorReplace - Dawnguard.esm",00449758) and version("..\TESV.exe","1.8.151.07",<)
+        condition: ( ( not checksum("RaestlozArmorReplace - Dawnguard.esm",FBBDED04) ) or not checksum("RaestlozArmorReplace - Dawnguard.esm",00449758) ) and version("..\TESV.exe","1.8.151.07",<)
       - type: error
         content:
           - lang: eng
