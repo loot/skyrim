@@ -52693,6 +52693,11 @@ plugins:
         content:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
+# ENDGROUP: Vampires and Werewolves
+# BEGINGROUP: Magic
+#
+# Overrides overhauls. New spells and magic systems go here for convenience.
+# BEGINGROUP: General Spells
         condition: not active("Dawnguard.esm")
   - name: 'AdoringFanSummon.esp'
     msg:
@@ -54733,6 +54738,8 @@ plugins:
     dirty:
       - crc: 0xf4d4c951
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: General Spells
+# BEGINGROUP: Shouts
   - name: 'Better Dragon Aspect.esp'
     msg:
       - type: error
@@ -54940,6 +54947,8 @@ plugins:
       - type: say
         content: "Incompatible with: ShoutCD.esp"
         condition: file("ShoutCD.esp")
+# ENDGROUP: Shouts
+# BEGINGROUP: Spells Late
   - name: 'BurnifiedEffects.esp'
     msg:
       - type: say
@@ -55418,6 +55427,8 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un WiS IV - AI & Spells for NPC esp.
+# ENDGROUP: Spells Late
+# BEGINGROUP: Alchemy
   - name: 'Alchemy Fixed Beta 0.02.esp'
     msg:
       - type: say
@@ -55654,6 +55665,8 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un PT Alchemy / Food Overhaul esp.
+# ENDGROUP: Alchemy
+# BEGINGROUP: Enchantment
   - name: 'zzzAlmostUnlimitedWeaponEnchant.esp'
     msg:
       - type: error
@@ -55849,6 +55862,11 @@ plugins:
   - name: NightEye_Ench+Potion+Spell.esp
     tag:
       - Relev
+# ENDGROUP: Enchantment
+# ENDGROUP: Magic
+# BEGINGROUP: Thievery, Sneaking and Crime
+#
+# Overrides overhauls.
   - name: 'BetterQuestObjectives-BetterStealthAIPatch.esp'
     msg:
       - type: error
@@ -55899,6 +55917,8 @@ plugins:
     dirty:
       - crc: 0x9b5a3dee
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Thievery, Sneaking and Crime
+# BEGINGROUP: Combat
   - name: 'Duel - Combat Realism.esp'
     msg:
       - type: say
@@ -56313,6 +56333,8 @@ plugins:
     dirty:
       - crc: 0x2b8ad3d0
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Combat
+# BEGINGROUP: Skills, Attributes and Leveling
   - name: ACE BYOG Carry Weight ([Dd]+\d{1,3})\.esp
     msg:
       - type: say
@@ -57082,6 +57104,10 @@ plugins:
       - crc: 0xa456b6cd
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 5
+# ENDGROUP: Skills, Attributes and Leveling
+# BEGINGROUP: Player Perks
+# Alters player perks or adds a new perk. Should not contain QUST entries if possible.
+# perks #
   - name: '2HandSpeed30.esp'
     dirty:
       - crc: 0x57db9855
@@ -58568,11 +58594,17 @@ plugins:
     dirty:
       - crc: 0xe830cbbe
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# must be load after any perk and/or smithing mods
   - name: 'Skyrim15SmithingFix.esp'
     msg:
       - type: say
         content: "Requires: Skyrim 1.5.24+"
         condition: version("..\TESV.exe","1.5.24",<)
+# ENDGROUP: Player Perks
+
+# BEGINGROUP: Pose and Animation Mods
+# new animations.
+# TAG: {{BASH: Actors.Anims}}
   - name: 'ActionPoser.esp'
     msg:
       - type: say
@@ -58777,6 +58809,14 @@ plugins:
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/5564/ a little sexy apparel replacer - for CBBE/UNP/ADEC\""
+# ENDGROUP: Pose and Animation Mods
+
+# BEGINGROUP: Beauty Packs & Race Changes\Addons
+# In Skyrim HAIR records do not Exist they are part of the group HDPT
+# The Bash TAG: {{BASH: Hair}} should be deprecated.
+# There are not any separate Eyebrows in Skyrim they are Headparts
+
+# BEGINGROUP: Headparts
   - name: all hair colors for all races {dawnguard required} vampire version.esp
     msg:
       - type: error
@@ -58986,6 +59026,8 @@ plugins:
           - lang: spa
             str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: not active("Dawnguard.esm")
+# ENDGROUP: Headparts
+# BEGINGROUP: Eyes
   - name: 'GlowEyesArgonianKhajiitVamp.esp'
     msg:
       - type: error
@@ -59143,6 +59185,10 @@ plugins:
       - type: say
         content: "Incompatible with: ethereal_elven_overhaul.esp"
         condition: file("ethereal_elven_overhaul.esp")
+# ENDGROUP: Eyes
+# BEGINGROUP: Warpaints
+# New warpaints.
+# Keep in mind any Warpaint plugin changes the RACE record
   - name: 'BHWarPaints.esp'
     msg:
       - type: say
@@ -59158,6 +59204,12 @@ plugins:
       - type: say
         content: "Requires: \"http://skse.silverlock.org SKSE\"."
         condition: not file("..\skse_loader.exe")
+# ENDGROUP: Warpaints
+
+# BEGINGROUP: Race additions
+# Plugins for this group should have both Hair and Eye changes
+# The Bash TAG: {{BASH: Hair}} should be depreciated.  Updated to HDPT possibly.
+# TAG: {{BASH: Hair, Eyes}}
   - name: 'Burning Sky.esp'
     dirty:
       - crc: 0x6d6ccfd9
@@ -60127,6 +60179,9 @@ plugins:
       - crc: 0xd7668232
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 2
+# ENDGROUP: Race additions
+# BEGINGROUP: Character Presets
+# I figured this group should be around this area If someone feels it could be placed better, feel free to move it
   - name: 'AsharaTemptressPresets.esp'
     msg:
       - type: error
@@ -60208,6 +60263,23 @@ plugins:
       - type: warn
         content: This file is broken and will not work.
         condition: checksum("KhaleesiFacePreset.esp",42C16D17)
+# ENDGROUP: Character Presets
+# ENDGROUP: Beauty Packs & Race Changes\Addons
+
+# BEGINGROUP: Companions and NPCs
+# Those related to companion mod systems. Most others in Quests section.
+# Recommended by authors to load very late.
+# Feedback from Tokc.D.K.
+# 1) Mods loaded before UFO
+# 2) UFO, BDO, XFL and other simular mods
+# 3) Global Companions\Housecarls face\stats changing mods
+# 4) Single Companions\Housecarls face\stats changing mods
+# 5) mods that will be loaded after UFO
+# Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
+
+# BEGINGROUP: Companions Load Early
+
+# pre ufo #
   - name: '3DNPC.esp'
     dirty:
       - crc: 0x143c788a
@@ -60791,8 +60863,10 @@ plugins:
     dirty:
       - crc: 0x35cb3586
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 15
       - crc: 0x8cf90f55
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 18
   - name: 'OriginalrecipeUlfric.esp'
     msg:
       - type: say
@@ -60920,11 +60994,17 @@ plugins:
           - lang: rus
             str: Удалите. Уже входит в BDO.esp.
         condition: file("BDO.esp")
+# pre ufo w
+# pre ufo xyz
+# ENDGROUP: Companions Load Early
+
+# BEGINGROUP: Questgiver NPCs
   - name: 'FCKaraThePathfinder.esp'
     dirty:
       - crc: 0x69a4fb16
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 10
+# not sure where to put 'Conversions' this seemed most likely based on description (no readme).
   - name: 'GoTSkyrimConversion.esp'
     msg:
       - type: say
@@ -60943,6 +61023,8 @@ plugins:
       - crc: 0x22c9e07
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 32
+# ENDGROUP: Questgiver NPCs
+# BEGINGROUP: Extensible Follower Framework
   - name: 'XFLDialogue.esp'
     msg:
       - type: say
@@ -60981,6 +61063,8 @@ plugins:
           - lang: rus
             str: XFLDialogue.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://www.nexusmods.com/skyrim/mods/12933 XFLDialog"
         condition: not active("XFLDialogue.esp")
+# ENDGROUP: Extensible Follower Framework
+# BEGINGROUP: Ultimate Follower Overhaul
   - name: 'UFO - Ultimate Follower Overhaul.esp'
     msg:
       - type: say
@@ -61082,6 +61166,9 @@ plugins:
           - lang: rus
             str: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://www.nexusmods.com/skyrim/mods/32695 Even Better Quest Objectives"
         condition: not active("BetterQuestObjectives.esp")
+# ENDGROUP: Ultimate Follower Overhaul
+# BEGINGROUP: Post UFO
+# Other mods that must loaded after UFO (if UFO is installed).
   - name: 'ApachiiHairStyles-FemaleOnly.esp'
     msg:
       - type: error
@@ -61303,20 +61390,54 @@ plugins:
     dirty:
       - crc: 0x35cb3586
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 15
       - crc: 0x8cf90f55
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
-  - name: 'OriginalrecipeUlfric.esp'
+        itm: 18
+  - name: OriginalrecipeUlfric.esp
     msg:
       - type: say
         content: "Incompatible with: CWBattleUlfric.esp"
         condition: file("CWBattleUlfric.esp")
-  - name: 'Tauriel The Hobbit.esp'
-    after:
-      - name: 'SPTConsistentOlderPeople.esp'
-        condition: not active("ethereal_elven_overhaul.esp")
+# ENDGROUP: Post UFO
+
+# BEGINGROUP: NPC Distance, Face & Makeup Overrides
+# Distance Tweaks before Face & Makeup Overrides
+# Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
+# moved from Race additions - no longer contains race changes.  Must be loaded before EEO if EEO present
+  - name: 'SPTConsistentOlderPeople.esp'
+    msg:
+      - type: say
+        content:
+          - lang: eng
+            str: If this is not newer than v1.3, update to the latest version.
+        condition: ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)
+      - type: say
+        content:
+          - lang: rus
+            str: Если этот плагин не новее версии 1.3, обновите до последней версии.
+        condition: ( ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22) ) and not checksum("SPTConsistentOlderPeople.esp",6DFAE0FA)
+      - type: say
+        content:
+          - lang: spa
+            str: If this is not newer than v1.3, update to the latest version.
+        condition: ( ( not checksum("SPTConsistentOlderPeople.esp",21792C1E) ) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) ) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)
+  - name: Tauriel The Hobbit.esp
     dirty:
       - util: *dirtyUtil
-        crc: 0x3e16af9d
+      - crc: 0x3e16af9d
+        itm: 1
+# ENDGROUP: NPC Distance, Face & Makeup Overrides
+
+# BEGINGROUP: Companions
+# Load after UFO, XFL
+# Companions face changes
+# Dialog changes
+# Unlimited followers
+# Multimarriage
+#
+# Better followers
+# Single vanilla companion change recommend to place after this
   - name: 'Better Followers.esp'
     msg:
       - type: say
@@ -66907,6 +67028,7 @@ plugins:
           - lang: spa
             str: SexLab.esm no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin el.
         condition: not active("SexLab.esm")
+# BEGINGROUP: Unlimited Companions
   - name: 'Followers Unlimited 11.esp'
     msg:
       - type: warn
