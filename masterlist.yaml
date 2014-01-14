@@ -26048,6 +26048,48 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un ERSO 14.08 esp.
+  - name: 'ERSO 15 .*\.esp'
+    msg:
+      - type: say
+        content:
+          - lang: eng
+            str: Use only one ERSO 15 esp.
+      - type: say
+        content:
+          - lang: rus
+            str: Используйте только один ERSO 15 esp.
+      - type: say
+        content:
+          - lang: spa
+            str: Utilizar solo un ERSO 15 esp.
+  - name: 'ERSO 16 .*\.esp'
+    msg:
+      - type: say
+        content:
+          - lang: eng
+            str: Use only one ERSO 16 esp.
+      - type: say
+        content:
+          - lang: rus
+            str: Используйте только один ERSO 16 esp.
+      - type: say
+        content:
+          - lang: spa
+            str: Utilizar solo un ERSO 16 esp.
+  - name: 'ERSO 17 .*\.esp'
+    msg:
+      - type: say
+        content:
+          - lang: eng
+            str: Use only one ERSO 17 esp.
+      - type: say
+        content:
+          - lang: rus
+            str: Используйте только один ERSO 17 esp.
+      - type: say
+        content:
+          - lang: spa
+            str: Utilizar solo un ERSO 17 esp.
   - name: 'ERSO 18 - Legendary Armors and Weapons Enhanced.esp'
     msg:
       - type: say
@@ -39547,6 +39589,22 @@ plugins:
     dirty:
       - crc: 0x97d055dd
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+  - name: 'VlindrelArmory( v1.61| v1.62| v2_Nav| v2| v2a)?\.esp'
+    msg:
+      - type: say
+        content:
+          - lang: eng
+            str: Obsolete. Update to latest version, VlindrelArmory v2a.esp.
+        condition: not file("VlindrelArmory v2a.esp")
+      - type: say
+        content:
+          - lang: rus
+            str: Устарело. Обновите до последней версии, VlindrelArmory v2a.esp.
+        condition: not file("VlindrelArmory v2a.esp")
+      - type: say
+        content:
+          - lang: spa
+            str: Obsoleto. Actualizar a la última versión, VlindrelArmory v2a.esp.
   - name: 'VodahminMahhe.esp'
     dirty:
       - crc: 0x167a4215
@@ -40276,6 +40334,20 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
+  - name: 'Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp'
+    msg:
+      - type: say
+        content:
+          - lang: eng
+            str: Use only one Imperial Soldiers*.esp.
+      - type: say
+        content:
+          - lang: rus
+            str: Используйте только один Imperial Soldiers*.esp.
+      - type: say
+        content:
+          - lang: spa
+            str: Utilizar solo un Imperial Soldiers*.esp.
   - name: 'dlc_armor_crafting.esp'
     msg:
       - type: say
@@ -44836,6 +44908,20 @@ plugins:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://www.nexusmods.com/skyrim/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
         condition: not checksum("OpenFaceHelmets.esp",D695AB86)
+  - name: 'Organized Books v(0.1|1.0)?\.esp'
+    msg:
+      - type: say
+        content:
+          - lang: eng
+            str: Obsolete. Update to latest version.
+      - type: say
+        content:
+          - lang: rus
+            str: Устарело. Обновите до последней версии.
+      - type: say
+        content:
+          - lang: spa
+            str: Obsoleto. Actualizar a la última versión.
   - name: 'Organized Books v1.1 - DLC Compatibility.esp'
     dirty:
       - crc: 0xaeda7e22
@@ -71177,6 +71263,20 @@ plugins:
       - crc: 0xa2c3f4c9
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 56
+  - name: 'PTAlchemyOverhaul_SkillRate_(0|1)_\d{1, 2}\.esp'
+    msg:
+      - type: say
+        content:
+          - lang: eng
+            str: Use only one PTAlchemyOverhaul_SkillRate esp.
+      - type: say
+        content:
+          - lang: rus
+            str: Используйте только один PTAlchemyOverhaul_SkillRate esp.
+      - type: say
+        content:
+          - lang: spa
+            str: Utilizar solo un PTAlchemyOverhaul_SkillRate esp.
   - name: 'SKSE Hotkeys.esp'
     msg:
       - type: say
@@ -71217,6 +71317,100 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un World_Map_Height_Pitch_Tweak esp.
+  - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
+    msg:
+      - type: say
+        content: "Requires: Skyrim 1.8+"
+        condition: version("..\TESV.exe","1.8",<)
+      - type: say
+        content: In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).
+    dirty:
+      - crc: 0xc243a5f2
+        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+  - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: Use only one Warburg 's 3D Paper World Map - Texture *.esp.
+        condition: file("Warburg's 3D Paper World Map - Texture 1.esp")
+      - type: warn
+        content:
+          - lang: rus
+            str: Используйте только один Warburg's 3D Paper World Map - Texture *.esp.
+        condition: file("Warburg's 3D Paper World Map - Texture 1.esp")
+      - type: warn
+        content:
+          - lang: spa
+            str: Utilizar solo un Warburg's 3D Paper World Map - Texture *.esp.
+        condition: file("Warburg's 3D Paper World Map - Texture 1.esp")
+      - type: say
+        content: "Requires: Skyrim 1.8+"
+        condition: version("..\TESV.exe","1.8",<)
+      - type: say
+        content: In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).
+    dirty:
+      - crc: 0xaafe91d6
+        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+  - name: 'Warburg''s 3D Paper World Map - Texture 3.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: eng
+            str: Use only one Warburg's 3D Paper World Map - Texture *.esp.
+        condition: ( file("Warburg's 3D Paper World Map - Texture 1.esp") ) or file("Warburg's 3D Paper World Map - Texture 2.esp")
+      - type: warn
+        content:
+          - lang: rus
+            str: Используйте только один Warburg's 3D Paper World Map - Texture *.esp.
+        condition: ( file("Warburg's 3D Paper World Map - Texture 1.esp") ) or file("Warburg's 3D Paper World Map - Texture 2.esp")
+      - type: warn
+        content:
+          - lang: spa
+            str: Utilizar solo un Warburg's 3D Paper World Map - Texture *.esp.
+        condition: ( file("Warburg's 3D Paper World Map - Texture 1.esp") ) or file("Warburg's 3D Paper World Map - Texture 2.esp")
+      - type: say
+        content: "Requires: Skyrim 1.8+"
+        condition: version("..\TESV.exe","1.8",<)
+      - type: say
+        content: In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).
+    dirty:
+      - crc: 0xaafe91d6
+        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+  - name: 'Warburg''s 3D Paper World Map - Dawnguard.esp'
+    msg:
+      - type: error
+        content:
+          - lang: eng
+            str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+        condition: not active("Dawnguard.esm")
+      - type: error
+        content:
+          - lang: rus
+            str: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+        condition: not active("Dawnguard.esm")
+      - type: error
+        content:
+          - lang: spa
+            str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
+        condition: not active("Dawnguard.esm")
+  - name: 'Warburg''s 3D Paper World Map - Dragonborn.esp'
+    msg:
+      - type: error
+        content:
+          - lang: eng
+            str: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+        condition: not active("Dragonborn.esm")
+      - type: error
+        content:
+          - lang: rus
+            str: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
+        condition: not active("Dragonborn.esm")
+      - type: error
+        content:
+          - lang: spa
+            str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
+        condition: not active("Dragonborn.esm")
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
     msg:
       - type: say
@@ -71290,197 +71484,4 @@ plugins:
           - lang: spa
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
         condition: not active("Dragonborn.esm")
-#  - name: ERSO 15 .*\.esp
-#    msg:
-#      - type: say
-#        content:
-#          - lang: eng
-#            str: Use only one ERSO 15 esp.
-#      - type: say
-#        content:
-#          - lang: rus
-#            str: Используйте только один ERSO 15 esp.
-#      - type: say
-#        content:
-#          - lang: spa
-#            str: Utilizar solo un ERSO 15 esp.
-#  - name: ERSO 16 .*\.esp
-#    msg:
-#      - type: say
-#        content:
-#          - lang: eng
-#            str: Use only one ERSO 16 esp.
-#      - type: say
-#        content:
-#          - lang: rus
-#            str: Используйте только один ERSO 16 esp.
-#      - type: say
-#        content:
-#          - lang: spa
-#            str: Utilizar solo un ERSO 16 esp.
-#  - name: ERSO 17 .*\.esp
-#    msg:
-#      - type: say
-#        content:
-#          - lang: eng
-#            str: Use only one ERSO 17 esp.
-#      - type: say
-#        content:
-#          - lang: rus
-#            str: Используйте только один ERSO 17 esp.
-#      - type: say
-#        content:
-#          - lang: spa
-#            str: Utilizar solo un ERSO 17 esp.
-#  - name: 'VlindrelArmory( v1.61'| v1.62| v2_Nav| v2| v2a)?\.esp
-#    msg:
-#      - type: say
-#        content:
-#          - lang: eng
-#            str: Obsolete. Update to latest version, VlindrelArmory v2a.esp.
-#        condition: not file("VlindrelArmory v2a.esp")
-#      - type: say
-#        content:
-#          - lang: rus
-#            str: Устарело. Обновите до последней версии, VlindrelArmory v2a.esp.
-#        condition: not file("VlindrelArmory v2a.esp")
-#      - type: say
-#        content:
-#          - lang: spa
-#            str: Obsoleto. Actualizar a la última versión, VlindrelArmory v2a.esp.
-#  - name: 'Imperial Soldiers v 1.5'( DE&O)?( Essential)?\.esp
-#    msg:
-#      - type: say
-#        content:
-#          - lang: eng
-#            str: Use only one Imperial Soldiers*.esp.
-#      - type: say
-#        content:
-#          - lang: rus
-#            str: Используйте только один Imperial Soldiers*.esp.
-#      - type: say
-#        content:
-#          - lang: spa
-#            str: Utilizar solo un Imperial Soldiers*.esp.
-#  - name: 'Organized Books v(0.1'|1.0)?\.esp
-#    msg:
-#      - type: say
-#        content:
-#          - lang: eng
-#            str: Obsolete. Update to latest version.
-#      - type: say
-#        content:
-#          - lang: rus
-#            str: Устарело. Обновите до последней версии.
-#      - type: say
-#        content:
-#          - lang: spa
-#            str: Obsoleto. Actualizar a la última versión.
-#  - name: PTAlchemyOverhaul_SkillRate_(0|1)_\d{1, 2}\.esp
-#    msg:
-#      - type: say
-#        content:
-#          - lang: eng
-#            str: Use only one PTAlchemyOverhaul_SkillRate esp.
-#      - type: say
-#        content:
-#          - lang: rus
-#            str: Используйте только один PTAlchemyOverhaul_SkillRate esp.
-#      - type: say
-#        content:
-#          - lang: spa
-#            str: Utilizar solo un PTAlchemyOverhaul_SkillRate esp.
-#  - name: 'Warburg's 3D Paper World Map - Texture 1.esp'
-#    msg:
-#      - type: say
-#        content: "Requires: Skyrim 1.8+"
-#        condition: version("..\TESV.exe","1.8",<)
-#      - type: say
-#        content: In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).
-#    dirty:
-#      - crc: 0xc243a5f2
-#        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
-#  - name: 'Warburg's 3D Paper World Map - Texture 2.esp'
-#    msg:
-#      - type: warn
-#        content:
-#          - lang: eng
-#            str: Use only one Warburg 's 3D Paper World Map - Texture *.esp.
-#        condition: file("Warburg's 3D Paper World Map - Texture 1.esp")
-#      - type: warn
-#        content:
-#          - lang: rus
-#            str: Используйте только один Warburg's 3D Paper World Map - Texture *.esp.
-#        condition: file("Warburg's 3D Paper World Map - Texture 1.esp")
-#      - type: warn
-#        content:
-#          - lang: spa
-#            str: Utilizar solo un Warburg's 3D Paper World Map - Texture *.esp.
-#        condition: file("Warburg's 3D Paper World Map - Texture 1.esp")
-#      - type: say
-#        content: "Requires: Skyrim 1.8+"
-#        condition: version("..\TESV.exe","1.8",<)
-#      - type: say
-#        content: In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).
-#    dirty:
-#      - crc: 0xaafe91d6
-#        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
-#  - name: 'Warburg's 3D Paper World Map - Texture 3.esp'
-#    msg:
-#      - type: warn
-#        content:
-#          - lang: eng
-#            str: Use only one Warburg's 3D Paper World Map - Texture *.esp.
-#        condition: ( file("Warburg's 3D Paper World Map - Texture 1.esp") ) or file("Warburg's 3D Paper World Map - Texture 2.esp")
-#      - type: warn
-#        content:
-#          - lang: rus
-#            str: Используйте только один Warburg's 3D Paper World Map - Texture *.esp.
-#        condition: ( file("Warburg's 3D Paper World Map - Texture 1.esp") ) or file("Warburg's 3D Paper World Map - Texture 2.esp")
-#      - type: warn
-#        content:
-#          - lang: spa
-#            str: Utilizar solo un Warburg's 3D Paper World Map - Texture *.esp.
-#        condition: ( file("Warburg's 3D Paper World Map - Texture 1.esp") ) or file("Warburg's 3D Paper World Map - Texture 2.esp")
-#      - type: say
-#        content: "Requires: Skyrim 1.8+"
-#        condition: version("..\TESV.exe","1.8",<)
-#      - type: say
-#        content: In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).
-#    dirty:
-#      - crc: 0xaafe91d6
-#        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
-#  - name: 'Warburg's 3D Paper World Map - Dawnguard.esp'
-#    msg:
-#      - type: error
-#        content:
-#          - lang: eng
-#            str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-#        condition: not active("Dawnguard.esm")
-#      - type: error
-#        content:
-#          - lang: rus
-#            str: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-#        condition: not active("Dawnguard.esm")
-#      - type: error
-#        content:
-#          - lang: spa
-#            str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-#        condition: not active("Dawnguard.esm")
-#  - name: Warburg's 3D Paper World Map - Dragonborn.esp
-#    msg:
-#      - type: error
-#        content:
-#          - lang: eng
-#            str: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-#        condition: not active("Dragonborn.esm")
-#      - type: error
-#        content:
-#          - lang: rus
-#            str: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
-#        condition: not active("Dragonborn.esm")
-#      - type: error
-#        content:
-#          - lang: spa
-#            str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
-#        condition: not active("Dragonborn.esm")
+
