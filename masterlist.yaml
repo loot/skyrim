@@ -2592,10 +2592,16 @@ plugins:
           - lang: spa
             str: Usar Succubus Summoning.esp o SuccubusFollower.esp, no ambos.
         condition: file("SuccubusFollower.esp")
+# ENDGROUP: ESMs
+
+# BEGINGROUP: Official DLC Files
   - name: 'portal2mod.esp'
     dirty:
       - crc: 0xf0c49703
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Official DLC Files
+
+# BEGINGROUP: Earliest mods
   - name: NPCEssential - .+\.esp
     msg:
       - type: say
@@ -2610,6 +2616,9 @@ plugins:
         content:
           - lang: spa
             str: Necesita ser cargado antes de cualquier mod que modifique NPCs. Este mod cambia el statatus de los NPCs a esencial.
+# ENDGROUP: Earliest mods
+
+# BEGINGROUP: Vanilla fixes
   - name: 'AbsentAuCombat_Fix_FR.esp'
     dirty:
       - crc: 0x3f909f6e
@@ -5783,6 +5792,9 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activo. kyrim fallará sin se carga este archivo sin Dawnguard (DLC Oficial de Betheseda).
         condition: ( checksum("RaceCompatibilityUSKPOverride.esp",DC71C73F) ) and not active("Dawnguard.esm")
+# ENDGROUP: Vanilla fixes
+
+# BEGINGROUP: DLC Fixes
   - name: 'ancient-nordic-pickaxe-smith-fix.esp'
     msg:
       - type: error
@@ -6470,6 +6482,9 @@ plugins:
         condition: not active("Dragonborn.esm")
     tag:
       - Stats
+# ENDGROUP: DLC Fixes
+
+# BEGINGROUP: NPC face mods
   - name: 'ColourEyesNoDGHF.esp'
     dirty:
       - crc: 0x3b2f32fc
@@ -6762,6 +6777,10 @@ plugins:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
         condition: checksum("Vilkas.esp",BF4211DE)
+# ENDGROUP: NPC face mods
+
+# BEGINGROUP: General Base Mods
+# BEGINGROUP: Weather mods and overhauls
   - name: '1 Day Moon Phases.esp'
     dirty:
       - crc: 0xfe2f1935
@@ -7062,6 +7081,9 @@ plugins:
           - lang: spa
             str: ClimatesOfTamriel.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("ClimatesOfTamriel.esm")
+# ENDGROUP: Weather mods and overhauls
+
+# BEGINGROUP: Sound mods
   - name: 'AOS.esp'
     msg:
       - type: say
@@ -7197,6 +7219,9 @@ plugins:
     dirty:
       - crc: 0x68eb2f
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Sound mods
+
+# BEGINGROUP: Lighting
   - name: 'better_torches.esp'
     msg:
       - type: warn
@@ -7741,6 +7766,9 @@ plugins:
           - lang: spa
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
         condition: not active("Hearthfires.esm")
+# ENDGROUP: Lighting
+
+# BEGINGROUP: Music
   - name: 'AdditionalMusicBundleI.esp'
     dirty:
       - crc: 0x10e2879
@@ -7937,6 +7965,9 @@ plugins:
           - lang: spa
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
+# ENDGROUP: Music
+
+# BEGINGROUP: Textures
   - name: 'VanillaReducedTexturesDG.esp'
     msg:
       - type: error
@@ -7983,6 +8014,9 @@ plugins:
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2666 CBBE\""
+# ENDGROUP: Textures
+
+# BEGINGROUP: Base Early
   - name: 'BeastModels.esp'
     msg:
       - type: say
@@ -8222,6 +8256,9 @@ plugins:
     dirty:
       - crc: 0xc3c5505
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Base Early
+
+# BEGINGROUP: Base #
   - name: '_pocketempirebuilder.esp'
     msg:
       - type: warn
@@ -8259,6 +8296,9 @@ plugins:
     tag:
       - Delev
       - Relev
+# ENDGROUP: Base #
+
+# BEGINGROUP: Base A
   - name: 'A Dash of Flavor HFDB.esp'
     msg:
       - type: error
@@ -8843,6 +8883,9 @@ plugins:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
         condition: checksum("AvengersBosses.esp",806151D5)
+# ENDGROUP: Base A
+
+# BEGINGROUP: Base B
   - name: 'BabettesFeastBalanced.esp'
     msg:
       - type: warn
@@ -9462,6 +9505,9 @@ plugins:
           - lang: spa
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
         condition: not active("Hearthfires.esm")
+# ENDGROUP: Base B
+
+# BEGINGROUP: Base C
   - name: 'Cabbage In Pot.esp'
     dirty:
       - crc: 0x8491bb6b
