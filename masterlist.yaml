@@ -367,9 +367,16 @@ plugins:
 
 # BEGINGROUP: ESMs
 # esms early
-# Falskaar.esm
+  - name: 'Falskaar.esm'
+    after:
+      - name: 'Unofficial Dragonborn Patch.esp'
+        condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
 # as it is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
-  - name: 'Unofficial Skyrim Patch.esm'
+  - name: 'Wrymstooth.esp'
+    after:
+      - name: 'Dragonborn.esm'
+      - name: 'Falskaar.esm'
+ - name: 'Unofficial Skyrim Patch.esm'
     msg:
       - type: error
         content:
@@ -6503,6 +6510,8 @@ plugins:
             str: Este mod no es compatible con mods que alteren razas humanoides (imperial, breton, nord, redguard). Tampoco es compatible con mods que alteren el facegendata Babette's (0001D4B7.NIF).
   - name: Weapons & Armor Fixes_Remade.esp
     tag:
+      - Delev
+      - Relev
       - Stats
   - name: Clothing & Clutter Fixes.esp
     tag:
