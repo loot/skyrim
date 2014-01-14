@@ -13676,6 +13676,9 @@ plugins:
           - lang: spa
             str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: not active("Dawnguard.esm")
+# ENDGROUP: Base Q
+
+# BEGINGROUP: Base R
   - name: 'Rageofthespirits.esp'
     dirty:
       - crc: 0xbc4ba4f4
@@ -14038,6 +14041,9 @@ plugins:
     dirty:
       - crc: 0x652fd3f8
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Base R
+
+# BEGINGROUP: Base S
   - name: 'SaltSacks.esp'
     dirty:
       - crc: 0x1d44162d
@@ -14865,6 +14871,9 @@ plugins:
     dirty:
       - crc: 0xd1641b6b
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Base S
+
+# BEGINGROUP: Base T
   - name: 'Tailoring.esp'
     dirty:
       - crc: 0x9fabd6ad
@@ -15035,6 +15044,9 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
+# ENDGROUP: Base T
+
+# BEGINGROUP: Base U
   - name: 'Underwater_Treasure.esp'
     dirty:
       - crc: 0x2676b18f
@@ -15081,6 +15093,9 @@ plugins:
     tag:
       - Delev
       - Relev
+# ENDGROUP: Base U
+
+# BEGINGROUP: Base V
   - name: 'ValsCraftingMeltdownAlpha.esp'
     msg:
       - type: warn
@@ -15129,6 +15144,9 @@ plugins:
         content:
           - lang: spa
             str: "Incompatible con: Cualquier mod que modifique la iluminación."
+# ENDGROUP: Base V
+
+# BEGINGROUP: Base W
   - name: 'WantedPosters.esp'
     dirty:
       - crc: 0x30717872
@@ -15266,6 +15284,9 @@ plugins:
     dirty:
       - crc: 0xc6e9683
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Base W
+
+# BEGINGROUP: Base XYZ
   - name: 'xFenWSOWAF.esp'
     tag:
       - Delev
@@ -15351,7 +15372,10 @@ plugins:
       - crc: 0x86d08fb5
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 47
-  - name: KoS_Outcast(_Lite)?\.esp
+# ENDGROUP: Base XYZ
+
+# BEGINGROUP: Base Late
+  - name: 'KoS_Outcast(_Lite)?\.esp'
     msg:
       - type: say
         content:
@@ -15518,6 +15542,13 @@ plugins:
     dirty:
       - crc: 0x28cca4f1
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# REGEX: .+Waterbugfix\.esp
+# Only this REGEX work for SIM - Waterbugfix.esp
+# ENDGROUP: Base Late
+# ENDGROUP: General Base Mods
+
+# BEGINGROUP: Load Order Independent Mods
+# if these are truly load indep, they can just go into general Base section, right? -LD
   - name: 'rt_Animal - Processing.esp'
     msg:
       - type: error
@@ -15794,6 +15825,9 @@ plugins:
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
+# ENDGROUP: Load Order Independent Mods
+
+# BEGINGROUP: MCM Mods
   - name: 'skyui.esp'
     msg:
       - type: say
@@ -16117,6 +16151,13 @@ plugins:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
         condition: not active("SkyUI.esp")
+# ENDGROUP: MCM Mods
+
+# BEGINGROUP: Items
+# Armor, Weapons, Clothes and recipes to craft them
+# VITAL for overhaul mod users: Wrye Bash tag all armor replacers {{BASH: Graphics}}(After it will work for Skyrim) to keep their new look.
+# Some items will need to go after overhaul or location altering mods to appear.
+# BEGINGROUP: Items #
   - name: '118 Weapon Pack.esp'
     msg:
       - type: warn
@@ -16162,7 +16203,10 @@ plugins:
           - lang: spa
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
-  - name: Aaron's X-Bow.esp
+# ENDGROUP: Items #
+
+# BEGINGROUP: Items A
+  - name: 'Aaron''s X-Bow.esp'
     msg:
       - type: error
         content:
@@ -16698,6 +16742,9 @@ plugins:
     dirty:
       - crc: 0x1b0cb166
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Items A
+
+# BEGINGROUP: Items B
   - name: 'Backpack OE.esp'
     msg:
       - type: say
@@ -17020,6 +17067,9 @@ plugins:
   - name: 'Bulwark of Azzinoth.esp'
     tag:
       - Relev
+# ENDGROUP: Items B
+
+# BEGINGROUP: Items C
   - name: 'Carbon Fiber Bow.esp'
     dirty:
       - crc: 0xc62c2cff
