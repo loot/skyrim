@@ -34752,7 +34752,7 @@ plugins:
 # ENDGROUP: Quests K
 
 # BEGINGROUP: Quests L
-  - name: 'L'Antre Dwemer v1.(4|5|6|7)?\.esp'
+  - name: 'L''Antre Dwemer v\d\.?\d?\.esp'
     msg:
       - type: warn
         content:
@@ -40541,6 +40541,19 @@ plugins:
     dirty:
       - crc: 0x5f88132
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Quests XYZ
+# ENDGROUP: Quests and Locations
+
+# BEGINGROUP: Overrides
+#
+# Mods that deliberately change specific things about vanilla Skyrim, overhauls or other mods.
+# Some late loading quests and locations in here too.
+# Specific NPC behavior changes.  Follower mods go in Companions section.
+
+# BEGINGROUP: Weight Changes
+# moved to this position because have conflicts with too many plugins in overrides groups
+# TAG: {{BASH: Stats}} for all
+# notice the                \/ (..esp)
   - name: A&P weight change only..esp
     msg:
       - type: say
@@ -40766,6 +40779,9 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
+# ENDGROUP: Weight Changes
+
+# BEGINGROUP: Overrides Early
   - name: 'Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp'
     msg:
       - type: say
@@ -40938,6 +40954,9 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un zzALittleSexyApparelReplacer esp.
+# ENDGROUP: Overrides Early
+
+# BEGINGROUP: Overrides #
   - name: .?.?.?.? magickaregen\.esp
     msg:
       - type: say
@@ -40994,6 +41013,9 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un *staminaregen.esp.
+# ENDGROUP: Overrides #
+
+# BEGINGROUP: Overrides A
   - name: 'AccessibleMerchantStorage.esp'
     dirty:
       - crc: 0xf3a600aa
@@ -41307,6 +41329,9 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
+# ENDGROUP: Overrides A
+
+# BEGINGROUP: Overrides B
   - name: 'Babette.esp'
     msg:
       - type: warn
@@ -42644,6 +42669,9 @@ plugins:
       - crc: 0x92507d8a
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 5
+# ENDGROUP: Overrides B
+
+# BEGINGROUP: Overrides C
   - name: 'CandleLight-Medium.esp'
     msg:
       - type: warn
@@ -42857,6 +42885,9 @@ plugins:
   - name: 'CrossbowEnhancement.esp'
     tag:
       - Delev
+# ENDGROUP: Overrides C
+
+# BEGINGROUP: Overrides D
   - name: 'DA_Maxwell_Outfit_Dibella_UNP.esp'
     msg:
       - type: say
@@ -43242,6 +43273,9 @@ plugins:
     dirty:
       - crc: 0x2d7849d0
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Overrides D
+
+# BEGINGROUP: Overrides E
   - name: 'East Empire Strongbox Logo.esp'
     msg:
       - type: error
@@ -43546,6 +43580,9 @@ plugins:
     dirty:
       - crc: 0x50af0ec3
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Overrides E
+
+# BEGINGROUP: Overrides F
   - name: 'Fast Respawns And Rich Merchants.esp'
     tag:
       - Relev
@@ -43727,6 +43764,9 @@ plugins:
           - lang: spa
             str: Utilizar solo un Killable Leaders esp.
         condition: ( file("Both Imp and SC-With Respawn.esp") ) or file("Both Imp and SC-No respawn.esp")
+# ENDGROUP: Overrides F
+
+# BEGINGROUP: Overrides G
   - name: Ghostly Shadowmere.*\.esp
     msg:
       - type: say
@@ -43814,6 +43854,9 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
+# ENDGROUP: Overrides G
+
+# BEGINGROUP: Overrides H
   - name: Harder Trading - Sell Cap (4x|6x|10x)\.esp
     msg:
       - type: say
