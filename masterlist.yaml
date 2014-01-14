@@ -45586,6 +45586,10 @@ plugins:
       - type: say
         content: "Incompatible with: AutoAim.esp"
         condition: file("AutoAim.esp")
+# ENDGROUP: Overrides P
+# BEGINGROUP: Overrides Q
+# ENDGROUP: Overrides Q
+# BEGINGROUP: Overrides R
   - name: 'RangerNightingale.esp'
     msg:
       - type: warn
@@ -45782,6 +45786,9 @@ plugins:
     dirty:
       - crc: 0xa7e66f55
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 10
+# ENDGROUP: Overrides R
+# BEGINGROUP: Overrides S
   - name: 'Safely Thrall.esp'
     msg:
       - type: say
@@ -47113,10 +47120,14 @@ plugins:
     dirty:
       - crc: 0x2fffbe67
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 3
+# ENDGROUP: Overrides S
+# BEGINGROUP: Overrides T
   - name: 'thalmor_disguise.esp'
     dirty:
       - crc: 0x2c877368
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 2
   - name: 'Dawnguard - TJofP.esp'
     msg:
       - type: error
@@ -47331,6 +47342,8 @@ plugins:
     dirty:
       - crc: 0x9c8f811b
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Overrides T
+# BEGINGROUP: Overrides U
   - name: 'ultimateodahviing.esp'
     msg:
       - type: say
@@ -47592,6 +47605,8 @@ plugins:
       - type: say
         content: "Incompatible with: Ustengrav gate removal.esp"
         condition: file("Ustengrav gate removal.esp")
+# ENDGROUP: Overrides U
+# BEGINGROUP: Overrides V
   - name: 'valkiirs_tastier_food.esp'
     msg:
       - type: say
@@ -47777,6 +47792,8 @@ plugins:
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, Invisible Aetherial Crown.esp.
+# ENDGROUP: Overrides V
+# BEGINGROUP: Overrides W
   - name: 'wabba-ori_proj.esp'
     msg:
       - type: say
@@ -47862,6 +47879,8 @@ plugins:
       - crc: 0xabfb4c56
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 7
+# ENDGROUP: Overrides W
+# BEGINGROUP: Overrides XYZ
   - name: 'xvisionchildren - hearthfire.esp'
     msg:
       - type: error
@@ -48029,6 +48048,8 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un Zbuffed Candlelight Spell R*.esp
+# ENDGROUP: Overrides XYZ
+# BEGINGROUP: Overrides Late
   - name: 'WeaponsArmorFixes_ambSkyforge_Patch.esp'
     msg:
       - type: error
@@ -48346,6 +48367,9 @@ plugins:
       - type: say
         content: "Incompatible with: Skyrim unleashed_enchantments.esp"
         condition: file("Skyrim unleashed_enchantments.esp")
+# ENDGROUP: Overrides Late
+# ENDGROUP: Overrides
+# BEGINGROUP: Towns and Villages
   - name: 'Unique Region Names - Dragonborn.esp'
     msg:
       - type: error
@@ -49138,15 +49162,20 @@ plugins:
     dirty:
       - crc: 0x1af5e998
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 41
+# ENDGROUP: Towns and Villages
+# BEGINGROUP: Landscaping
   - name: 'Better Forests and Environments.esp'
     dirty:
       - crc: 0xae2df319
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 92
         udr: 3
   - name: 'BetterSkyrimWorld-RabanMod.esp'
     dirty:
       - crc: 0x3d65e6cc
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 234
         udr: 21
   - name: CampingKitNorthernRanger( - Without Amberwood| - Tent Not For Sale| - Free Kits)?\.esp
     msg:
@@ -49347,6 +49376,8 @@ plugins:
       - crc: 0x12d6056d
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 11
+# ENDGROUP: Landscaping
+# BEGINGROUP: City Overhauls
   - name: 'Beautiful Cities.esp'
     dirty:
       - crc: 0xb70ceb49
@@ -49612,6 +49643,12 @@ plugins:
       - type: say
         content: "Requires: Skyrim 1.9.32+"
         condition: version("..\TESV.exe","1.9.32",<)
+# ENDGROUP: City Overhauls
+# BEGINGROUP: Sounds of Skyrim and Sound Propagation Overhaul
+# Moved into a separate group because mods that place objects can inadvertently overwrite changes from this mod.
+# Also includes Sound Propagation Overhaul, because the author of Sounds of Skyrim recommends that that be loaded
+# after his mod.
+# Main files
   - name: 'SoS - The Dungeons.esp'
     msg:
       - type: say
@@ -49687,6 +49724,9 @@ plugins:
     dirty:
       - crc: 0x131bb61c
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Sounds of Skyrim and Sound Propogation Overhaul
+# BEGINGROUP: Image Space and Lighting Changes
+# BEGINGROUP: IMGS and LIGH Load Late
   - name: Realistic Lighting( - Full| - Addon)\.esp
     msg:
       - type: say
@@ -50190,6 +50230,13 @@ plugins:
     dirty:
       - crc: 0x8a040f19
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 7
+# ENDGROUP: IMGS and LIGH Load Late
+# ENDGROUP: Image Space and Lighting Changes
+# BEGINGROUP: Sounds of Skyrim patches
+# All patches for Sounds of Skyrim, per author's suggestion.
+# more like addons, move elsewhere if necessary:
+# Patches for The Dungeons
   - name: 'SoS - The Dungeons-PatchSPO.esp'
     msg:
       - type: error
@@ -50567,6 +50614,8 @@ plugins:
           - lang: spa
             str: ELE-Interior Lighting.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("ELE-Interior Lighting.esp")
+# ENDGROUP: Sounds of Skyrim patches
+# BEGINGROUP: Realism
   - name: 'Skyrim_realism.esp'
     dirty:
       - crc: 0x536bcffa
@@ -51507,6 +51556,8 @@ plugins:
           - lang: spa
             str: Imp's More Complex Needs.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin el.
         condition: not active("Imp's More Complex Needs.esm")
+# ENDGROUP: Realism
+# BEGINGROUP: Vampires and Werewolves
   - name: 'SkyRe_Vampirism.esp'
     msg:
       - type: say
