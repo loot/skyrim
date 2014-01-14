@@ -60867,7 +60867,7 @@ plugins:
       - crc: 0x8cf90f55
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 18
-  - name: OriginalrecipeUlfric.esp
+  - name: 'OriginalrecipeUlfric.esp'
     msg:
       - type: say
         content: "Incompatible with: CWBattleUlfric.esp"
@@ -67097,6 +67097,8 @@ plugins:
     dirty:
       - crc: 0xc45d4383
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+        itm: 2
+# Must load after CerwidenCompanion.esp
   - name: 'EMViljaInSolstheimAddOn.esp'
     msg:
       - type: error
@@ -67252,6 +67254,10 @@ plugins:
           - lang: spa
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
+# ENDGROUP: Companions
+
+# BEGINGROUP: Companions Load Late
+# Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
   - name: 'ajd_moredawnguardmarriagecandidates.esp'
     msg:
       - type: error
@@ -67816,6 +67822,9 @@ plugins:
           - lang: spa
             str: CompanionValfar.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("CompanionValfar.esp")
+# ENDGROUP: Companions Load Late
+# ENDGROUP: Companions and NPCs
+# BEGINGROUP: Alternative starts
   - name: 'BecomeKingofSkyrim.esp'
     dirty:
       - crc: 0x62c0e76d
@@ -67955,6 +67964,8 @@ plugins:
     dirty:
       - crc: 0x77f5d848
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Alternative starts
+# BEGINGROUP: Race Overrides
   - name: '01VampireNoDirtTintmask.esp'
     msg:
       - type: error
@@ -68705,6 +68716,23 @@ plugins:
           - lang: spa
             str: SkyRe_Races.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: ( checksum("Vampire Skin Color Fix.esp",AA1A560) ) and not active("SkyRe_Races.esp")
+# ENDGROUP: Race Overrides
+
+# BEGINGROUP: Message suppression/changing overrides
+#
+# Best loaded late to override possible message additions from other mods.
+
+#
+#  Per discussion in the Google Group, I've started sorted the mods in this
+#  group into three categories: "Message override overhauls",
+#  "Single message overrides", and "Message suppressors". I don't know most of
+#  the mods and some of those I've tried to look up, I have not been able to
+#  locate. Please do help out and sort the "Unsorted group" into one of the
+#  three 'sorted' ones. (DeleteWhenCooked)
+#  - Freso
+#
+
+# Unsorted
   - name: 'Chesko_LevelUp.esp'
     msg:
       - type: say
@@ -68738,6 +68766,8 @@ plugins:
           - lang: spa
             str: Chesko_Frostfall.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("Chesko_Frostfall.esp")
+# ENDGROUP: Message suppression/changing overrides
+# BEGINGROUP: Respawn and day length overrides
   - name: '72HoursRespawn.esp'
     msg:
       - type: say
@@ -68901,6 +68931,11 @@ plugins:
           - lang: rus
             str: Используйте вместо этого настройку башед патча.
         condition: regex("Bashed Patch.*\.esp")
+# ENDGROUP: Respawn and day length overrides
+# BEGINGROUP: Shader Mods
+#
+# Need to go after new items to affect them.
+# BEGINGROUP: Shader Removers
   - name: 'Duns_Inc_Shaders_Begone.esp'
     msg:
       - type: warn
@@ -68917,6 +68952,9 @@ plugins:
       - type: warn
         content: Sharlikran's version is now obsolete. You should upgrade to version 2. You can obtain the authors new version "http://www.nexusmods.com/skyrim/mods/6566 here".
         condition: checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",493A9DEA)
+# ENDGROUP: Shader Removers
+
+# BEGINGROUP: Shader Replacers
   - name: RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp
     msg:
       - type: say
@@ -69337,6 +69375,8 @@ plugins:
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
       - crc: 0xad1d1564
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
+# ENDGROUP: Shader Replacers
+# BEGINGROUP: Water and Lava
   - name: 'Hot Volcanic Water.esp'
     dirty:
       - crc: 0xcb9a32b4
@@ -69670,6 +69710,8 @@ plugins:
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/13268 WATER 1.5b\""
+# ENDGROUP: Shader Mods
+# BEGINGROUP: Map marker Tweaks
   - name: 'allmarkersvisible_dawn_en.esp'
     msg:
       - type: error
@@ -70324,6 +70366,19 @@ plugins:
         content:
           - lang: spa
             str: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
+# ENDGROUP: Map marker Tweaks
+
+# BEGINGROUP: Load Late
+# Plugins which load late or are more conveniently loaded late.
+#
+# Arrows renamed for better sorting.esp
+# Must load after arrow tweaks (AT - *)
+# AZ Khajiit Vampire No Color Change.esp
+
+# BEGINGROUP: Compatibility Patches
+# Compatibility Patches which must load after a certain mod go here
+# Only if no conflicts are made in between
+#
   - name: 'AFT_iNPCFix.esp'
     msg:
       - type: error
@@ -71767,6 +71822,9 @@ plugins:
           - lang: spa
             str: UFO - Ultimate Follower Overhaul.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("UFO - Ultimate Follower Overhaul.esp")
+# ENDGROUP: Compatibility Patches
+# BEGINGROUP: Extra Late
+# For plugins which must be after all others
   - name: 'PC Exclusive Animation Path.esp'
     msg:
       - type: say
@@ -72100,6 +72158,17 @@ plugins:
           - lang: spa
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
         condition: not active("Dragonborn.esm")
+# ENDGROUP: Extra Late
+
+# ENDGROUP: Load Late
+
+# BEGINGROUP: Bashed Patch
+
+# Bashed Patch.esp
+# REGEX: Bashed Patch.*\.esp
+# ENDGROUP: Bashed Patch
+
+# BEGINGROUP: Post Bashed Patch
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
     msg:
       - type: say
@@ -72117,6 +72186,12 @@ plugins:
       - type: say
         content: "Requires: \"http://skse.silverlock.org SKSE\""
         condition: not file("..\skse_loader.exe")
+# BEGINGROUP: Dynamic Plugins
+#
+#  IF VAR(EN) && IF VAR(SkyReM) WARN: Unmark Automatic Perks and Automatic Spells flags in ASIS patch options. Or you will have bugs and CTDs in game when using SkyRe and ASIS.
+#    IF VAR(RU) && IF VAR(SkyReM) WARN: Отключите флажки Automatic Perks и Automatic Spells в опциях патча. Если этого не сделать, то будут серьезные проблемы с АИ, при использовании SkyRe и ASIS (патч наделит неписей и мобов перками и заклинаниями, приводящими к периодическому замораживанию неписей, а также вылетам на рабочий стол).
+# Message does not appear to be relevant with newer SkyRe versions. - William
+#
   - name: 'WTF.esp'
     msg:
       - type: say
@@ -72131,6 +72206,8 @@ plugins:
         content:
           - lang: spa
             str: May need "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" cleaning. Several test generations of this SkyProc Patch included ITMs. Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+# BEGINGROUP: Patches for Dynamic Plugins
+# Patches for dynamic plugins - moved here because SUM offers patch merging functionality. - William
   - name: 'SkyRe_EnemyAI.esp'
     msg:
       - type: say
@@ -72173,4 +72250,17 @@ plugins:
           - lang: spa
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
         condition: not active("Dragonborn.esm")
+# Begin qotsafan's compatbility patches:
+# End qotsafan's compatbility patches
+# ENDGROUP: Patches for Dynamic Plugins
+# ENDGROUP: Dynamic Plugins
 
+# Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.
+# Once WryeBash is updated this shouldn't be needed, since that's what its for.
+#
+# BEGINGROUP: Non Dynamic Plugins
+
+# DeadlyCombat_PISE_Patch.esp
+# Must load after ASIS (Unconfirmed, as comment for now)
+# ENDGROUP: Non Dynamic Plugins
+# ENDGROUP: Post Bashed Patch
