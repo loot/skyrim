@@ -57677,15 +57677,15 @@ plugins:
         content:
           - lang: eng
             str: "Requires: \"http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_Only_2-0b_fixed\""
-        condition: not active("Dawnguard.esm") and version("..\TESV.exe","1.5.24",>) and not checksum("AdvancedKillMoves.esp",257F870C)
+        condition: ( ( not active("Dawnguard.esm") ) and version("..\TESV.exe","1.5.24",>) ) and not checksum("AdvancedKillMoves.esp",257F870C)
       - type: say
         content:
           - lang: rus
             str: "Требуется: \"http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_Russian_2-0b_fixed\""
-        condition: not active("Dawnguard.esm") and version("..\TESV.exe","1.5.24",>) and not checksum("AdvancedKillMoves.esp",B27890A5)
+        condition: ( ( not active("Dawnguard.esm") ) and version("..\TESV.exe","1.5.24",>) ) and not checksum("AdvancedKillMoves.esp",B27890A5)
       - type: say
         content: "Requires: \"http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_2-0b_Dawnguard\""
-        condition: active("Dawnguard.esm") and not checksum("AdvancedKillMoves.esp",97C9E8CC)
+        condition: ( active("Dawnguard.esm") ) and not checksum("AdvancedKillMoves.esp",97C9E8CC)
   - name: The Dance of Death V.+\.esp
     msg:
       - type: say
@@ -58488,7 +58488,7 @@ plugins:
     msg:
       - type: say
         content: "Requires: SkyrimRedone"
-        condition: not file("SkyRe_Main.esp") and not file("SkyRe_Main_NoDawnguard.esp")
+        condition: ( not file("SkyRe_Main.esp") ) and not file("SkyRe_Main_NoDawnguard.esp")
       - type: say
         content: "Requires: Guard Dialogue Overhaul"
         condition: not file("SPIKE.esm")
@@ -69091,12 +69091,12 @@ plugins:
         content:
           - lang: eng
             str: "Incompatible with: Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF."
-        condition: file("Better Follower Improvements.esp") and regex("Better Followers - [SBNP].*\.esp")
+        condition: ( file("Better Follower Improvements.esp") ) and regex("Better Followers - [SBNP].*\.esp")
       - type: say
         content:
           - lang: rus
             str: "Несовместим с: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF."
-        condition: file("Better Follower Improvements.esp") and regex("Better Followers - [SBNP].*\.esp")
+        condition: ( file("Better Follower Improvements.esp") ) and regex("Better Followers - [SBNP].*\.esp")
       - type: warn
         content:
           - lang: eng
@@ -70320,16 +70320,10 @@ plugins:
           - lang: spa
             str: If this is not newer than v1.3, update to the latest version.
   - name: 'ethereal_elven_overhaul.esp'
-    after:
-      - name: 'SPTConsistentOlderPeople.esp'
-        condition: active("SPTConsistentOlderPeople.esp")
-    dirty:
-      - util: *dirtyUtil
-        crc: 0x1841112c
-    inc:
-      - name: 'XCES.esp'
-        condition: active("XCES.esp")
     msg:
+      - type: say
+        content: "Incompatible with: XCES.esp"
+        condition: file("XCES.esp")
       - type: say
         condition: ( ( ( file("SkyRe_Races.esp") ) and not file("PreASISPatchEEO.esp") ) and not file("EEO patch.esp") ) and not checksum("ethereal_elven_overhaul.esp",38515FFF)
         content:
@@ -70339,6 +70333,9 @@ plugins:
             str: "Несовместим с: SkyRe Races.  Патч совместимости доступен \"http://www.nexusmods.com/skyrim/mods/29185 здесь\"."
           - lang: spa
             str: "Incompatible con: SkyRe Races.  A compatibility patch is available \"http://www.nexusmods.com/skyrim/mods/29185 here\"."
+    dirty:
+      - crc: 0x1841112c
+        util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 6
   - name: 'EEO patch.esp'
     msg:
