@@ -187,12 +187,7 @@ plugins:
         crc: 0xe5b67bda
         udr: 3
   - name: 'Unofficial Skyrim Patch.esp'
-    req: [ *SKSE ]
     priority: -400
-    # Version 2.0 of the Unofficial Patches that are false flagged
-    after:
-      - condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
-        name: 'Update.esm'
     msg:
       - type: say
         condition: ( active("Dawnguard.esm") ) and not file("Unofficial Dawnguard Patch.esp")
@@ -243,23 +238,10 @@ plugins:
         crc: 0xbd72ccf3
         itm: 619
         udr: 82
-# Unofficial Patches that are false flagged
   - name: 'Unofficial Dawnguard Patch.esp'
-    req: [ *SKSE ]
     priority: -400
     after:
-      - name: 'Dawnguard.esm'
-        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
-    msg:
-      - type: error
-        condition: not active("Dawnguard.esm")
-        content:
-          - lang: eng
-            str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).'
+      - 'Unofficial Skyrim Patch.esp'
     tag:
       - Delev
       - Relev
@@ -269,9 +251,7 @@ plugins:
     after:
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
-    after:
       - name: 'Dawnguard.esm'
-        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", <)'
     msg:
       - type: say
         content: "Requires: Skyrim 1.7.7+"
@@ -282,31 +262,18 @@ plugins:
         crc: 0xaf82ce6a
         itm: 184
         udr: 11
-# Unofficial Patches that are false flagged
   - name: 'Unofficial Hearthfire Patch.esp'
-    req: [ *SKSE ]
     priority: -400
     after:
-      - name: 'Hearthfires.esm'
-        condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
-    msg:
-      - type: error
-        condition: not active("Hearthfires.esm")
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).'
+      - 'Unofficial Skyrim Patch.esp'
+      - 'Unofficial Dawnguard Patch.esp'
   - name: 'Dragonborn.esm'
     priority: -400
     after:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
-    after:
-      - name: 'Hearthfires.esm'
-        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", <)'
+      - 'Dawnguard.esm'
+      - 'Hearthfires.esm'
     msg:
       - type: say
         content: "Requires: Skyrim 1.8.151+"
@@ -317,23 +284,13 @@ plugins:
         crc: 0xa9f83bff
         itm: 61
         udr: 8
-# Unofficial Patches that are false flagged
   - name: 'Unofficial Dragonborn Patch.esp'
-    req: [ *SKSE ]
     priority: -400
     after:
-      - name: 'Dragonborn.esm'
-        condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
+      - 'Unofficial Skyrim Patch.esp'
+      - 'Unofficial Dawnguard Patch.esp'
+      - 'Unofficial Hearthfire Patch.esp'
     msg:
-      - type: error
-        condition: not active("Dragonborn.esm")
-        content:
-          - lang: eng
-            str: 'Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
       - type: say
         content: "Requires: Skyrim 1.9.32+"
         condition: version("..\TESV.exe","1.9.32",<)
