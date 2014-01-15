@@ -169,6 +169,7 @@ globals:
 # BEGINGROUP: Official ESMs
 plugins:
   - name: 'Update.esm'
+    priority: -400
     tag:
       - Delev
       - Relev
@@ -177,71 +178,55 @@ plugins:
         crc: 0x412d96fb
         itm: 50
         udr: 1
-# This is version 1.8 of Update.esm
+      # This is version 1.8 of Update.esm
       - util: *dirtyUtil
         crc: 0x7f464083
         udr: 1
-# Version 1.9 of Update.esm
+      # Version 1.9 of Update.esm
       - util: *dirtyUtil
         crc: 0xe5b67bda
         udr: 3
-# Unofficial Patches that are false flagged
   - name: 'Unofficial Skyrim Patch.esp'
+    req: [ *SKSE ]
+    priority: -400
+    # Version 2.0 of the Unofficial Patches that are false flagged
+    after:
+      - condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
+        name: 'Update.esm'
     msg:
       - type: say
-        content: "Requires: Skyrim 1.9.32+"
-        condition: version("..\TESV.exe","1.9.32",<)
-      - type: say
+        condition: ( active("Dawnguard.esm") ) and not file("Unofficial Dawnguard Patch.esp")
         content:
           - lang: eng
             str: 'It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".'
-        condition: ( active("Dawnguard.esm") ) and not file("Unofficial Dawnguard Patch.esp")
-      - type: say
-        content:
           - lang: rus
             str: 'Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch".'
-        condition: ( active("Dawnguard.esm") ) and not file("Unofficial Dawnguard Patch.esp")
-      - type: say
-        content:
           - lang: spa
             str: 'Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/23491 Unofficial Dawnguard Patch" además de Dawnguard. Se necesita para el correcto funcionamiento de Dawnguard.'
-        condition: ( active("Dawnguard.esm") ) and not file("Unofficial Dawnguard Patch.esp")
       - type: say
+        condition: ( active("Hearthfires.esm") ) and not file("Unofficial Hearthfire Patch.esp")
         content:
           - lang: eng
             str: 'It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".'
-        condition: ( active("Hearthfires.esm") ) and not file("Unofficial Hearthfire Patch.esp")
-      - type: say
-        content:
           - lang: rus
             str: 'Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch".'
-        condition: ( active("Hearthfires.esm") ) and not file("Unofficial Hearthfire Patch.esp")
-      - type: say
-        content:
           - lang: spa
             str: 'Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/25127 Unofficial Hearthfire Patch" además de Hearthfire. Se necesita para el correcto funcionamiento de Hearthfire.'
-        condition: ( active("Hearthfires.esm") ) and not file("Unofficial Hearthfire Patch.esp")
       - type: say
+        condition: ( active("Dragonborn.esm") ) and not file("Unofficial Dragonborn Patch.esp")
         content:
           - lang: eng
             str: 'It is highly recommended that you also use the "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".'
-        condition: ( active("Dragonborn.esm") ) and not file("Unofficial Dragonborn Patch.esp")
-      - type: say
-        content:
           - lang: rus
             str: 'Настоятельно рекомендуется также использовать "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch".'
-        condition: ( active("Dragonborn.esm") ) and not file("Unofficial Dragonborn Patch.esp")
-      - type: say
-        content:
           - lang: spa
             str: 'Se recomienda que utilizes "http://www.nexusmods.com/skyrim/mods/31083 Unofficial Dragonborn Patch" además de Dragonborn. Se necesita para el correcto funcionamiento de Dragonborn.'
-        condition: ( active("Dragonborn.esm") ) and not file("Unofficial Dragonborn Patch.esp")
     tag:
       - Delev
       - Relev
       - Stats
-# TES5Edit 3.0.30: 619 ITM, 82 UDR, 57 deleted NavMeshes (CRC: BD72CCF3)
   - name: 'Dawnguard.esm'
+    priority: -400
     after:
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
@@ -252,6 +237,7 @@ plugins:
     tag:
       - Delev
       - Relev
+    # TES5Edit 3.0.30: 619 ITM, 82 UDR, 57 deleted NavMeshes (CRC: BD72CCF3)
     dirty:
       - util: *dirtyUtil
         crc: 0xbd72ccf3
@@ -259,41 +245,38 @@ plugins:
         udr: 82
 # Unofficial Patches that are false flagged
   - name: 'Unofficial Dawnguard Patch.esp'
+    req: [ *SKSE ]
+    priority: -400
     after:
       - name: 'Dawnguard.esm'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
     msg:
       - type: error
+        condition: not active("Dawnguard.esm")
         content:
           - lang: eng
             str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).'
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
           - lang: rus
             str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).'
-        condition: not active("Dawnguard.esm")
-      - type: error
-        content:
           - lang: spa
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).'
-        condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Requires: Skyrim 1.9.32+"
-        condition: version("..\TESV.exe","1.9.32",<)
     tag:
       - Delev
       - Relev
       - Stats
-# TES5Edit 3.0.30: 184 ITM, 11 UDR, 5 deleted NavMeshes (CRC: AF82CE6A)
   - name: 'Hearthfires.esm'
+    priority: -400
     after:
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
+    after:
+      - name: 'Dawnguard.esm'
+        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", <)'
     msg:
       - type: say
         content: "Requires: Skyrim 1.7.7+"
         condition: version("..\TESV.exe","1.7.7",<)
+    # TES5Edit 3.0.30: 184 ITM, 11 UDR, 5 deleted NavMeshes (CRC: AF82CE6A)
     dirty:
       - util: *dirtyUtil
         crc: 0xaf82ce6a
@@ -301,37 +284,34 @@ plugins:
         udr: 11
 # Unofficial Patches that are false flagged
   - name: 'Unofficial Hearthfire Patch.esp'
+    req: [ *SKSE ]
+    priority: -400
     after:
       - name: 'Hearthfires.esm'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
     msg:
       - type: error
+        condition: not active("Hearthfires.esm")
         content:
           - lang: eng
             str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC).'
-        condition: not active("Hearthfires.esm")
-      - type: error
-        content:
           - lang: rus
             str: 'Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).'
-        condition: not active("Hearthfires.esm")
-      - type: error
-        content:
           - lang: spa
             str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).'
-        condition: not active("Hearthfires.esm")
-      - type: say
-        content: "Requires: Skyrim 1.9.32+"
-        condition: version("..\TESV.exe","1.9.32",<)
-# TES5Edit 3.0.30: 61 ITM, 8 UDR, 1 deleted NavMesh (CRC: A9F83BFF)
   - name: 'Dragonborn.esm'
+    priority: -400
     after:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
+    after:
+      - name: 'Hearthfires.esm'
+        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", <=)'
     msg:
       - type: say
         content: "Requires: Skyrim 1.8.151+"
         condition: version("..\TESV.exe","1.8.151",<)
+    # TES5Edit 3.0.30: 61 ITM, 8 UDR, 1 deleted NavMesh (CRC: A9F83BFF)
     dirty:
       - util: *dirtyUtil
         crc: 0xa9f83bff
@@ -339,6 +319,7 @@ plugins:
         udr: 8
 # Unofficial Patches that are false flagged
   - name: 'Unofficial Dragonborn Patch.esp'
+    priority: -400
     after:
       - name: 'Dragonborn.esm'
         condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
@@ -364,16 +345,17 @@ plugins:
     tag:
       - Delev
       - Stats
-#  additional fixes after unofficial patches
+# additional fixes after unofficial patches
 # ENDGROUP: Official ESMs
 
 # BEGINGROUP: ESMs
 # esms early
+# Falskaar is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
   - name: 'Falskaar.esm'
     after:
       - name: 'Unofficial Dragonborn Patch.esp'
         condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
-# as it is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
+# Wrymstooth to load very early around Falskaar
   - name: 'Wrymstooth.esp'
     after:
       - name: 'Dragonborn.esm'
