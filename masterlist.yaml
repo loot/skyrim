@@ -306,7 +306,7 @@ plugins:
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
     after:
       - name: 'Hearthfires.esm'
-        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", <=)'
+        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", <)'
     msg:
       - type: say
         content: "Requires: Skyrim 1.8.151+"
@@ -319,26 +319,21 @@ plugins:
         udr: 8
 # Unofficial Patches that are false flagged
   - name: 'Unofficial Dragonborn Patch.esp'
+    req: [ *SKSE ]
     priority: -400
     after:
       - name: 'Dragonborn.esm'
         condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
     msg:
       - type: error
+        condition: not active("Dragonborn.esm")
         content:
           - lang: eng
             str: 'Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).'
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
           - lang: rus
             str: 'Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).'
-        condition: not active("Dragonborn.esm")
-      - type: error
-        content:
           - lang: spa
             str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
-        condition: not active("Dragonborn.esm")
       - type: say
         content: "Requires: Skyrim 1.9.32+"
         condition: version("..\TESV.exe","1.9.32",<)
@@ -352,14 +347,28 @@ plugins:
 # esms early
 # Falskaar is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
   - name: 'Falskaar.esm'
+    priority: -400
     after:
       - name: 'Unofficial Dragonborn Patch.esp'
         condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
+    after:
+      - condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", <)'
+        name: 'Dawnguard.esm'
+        name: 'Hearthfires.esm'
+        name: 'Dragonborn.esm'
 # Wrymstooth to load very early around Falskaar
   - name: 'Wrymstooth.esp'
+    priority: -400
+    # Adding multiple files to account for any DLC not installed
     after:
-      - name: 'Dragonborn.esm'
-      - name: 'Falskaar.esm'
+      - 'Dawnguard.esm'
+      - 'Hearthfires.esm'
+      - 'Dragonborn.esm'
+      - 'Falskaar.esm'
+      - 'Unofficial Skyrim Patch.esm'
+      - 'Unofficial Dawnguard Patch.esm'
+      - 'Unofficial Hearthfires Patch.esm'
+      - 'Unofficial Dragonborn Patch.esm'
   - name: 'Unofficial Skyrim Patch.esm'
     msg:
       - type: error
