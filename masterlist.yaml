@@ -4458,11 +4458,17 @@ plugins:
       - crc: 0xb22ed6c8
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 9
+# ## RelightingSkyrim.esp
+# ## Load order from author of RS
   - name: 'OLSE for Dawnguard.esp'
     dirty:
       - crc: 0x931f68bd
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 1
+# ## Relighting Skyrim - OLSE.esp
+# ## IF ACTIVE("RelightingSkyrim.esp") MOD: OLSE for Dawnguard.esp
+# From V2 Masterlist placed just above Relighting Skyrim - Dawnguard.esp
+# moved as suggested in bsg thread 28 post 105
   - name: 'Relighting Skyrim - Dawnguard.esp'
     msg:
       - type: error
@@ -4897,6 +4903,8 @@ plugins:
           - lang: spa
             str: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
         condition: active("Unofficial Skyrim Patch.esp")
+# ## Orc&ElfFix4TBBP.esp
+# ## This is a fix for TBBP meshes, I believe.
   - name: 'Potema and Mjoll Quest Fix.esp'
     msg:
       - type: error
@@ -5557,6 +5565,9 @@ plugins:
           - lang: spa
             str: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
         condition: active("Unofficial Skyrim Patch.esp")
+# ## VampireRaceDetection.esp
+# ## As per thread on the mod's Steam Workshop page: "http://steamcommunity.com/sharedfiles/filedetails/?id=89925318"
+# ## Vulkanglas statt Malachit.esp
   - name: 'Wandering Dupe Mannequin Fix v1.2 SPODUM Vanilla.esp'
     msg:
       - type: error
@@ -5739,6 +5750,9 @@ plugins:
           - lang: spa
             str: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
         condition: active("Unofficial Skyrim Patch.esp")
+# ## Unofficial Patches
+# ## Unofficial Skyrim Patch that is not false flagged
+# ## maybe need better place for this file. also need to correct english message (tokcdk)
   - name: 'USKP_addon.esp'
     msg:
       - type: error
@@ -5780,6 +5794,8 @@ plugins:
       - type: say
         content: "Incompatible with: USKP_addon.esp"
         condition: file("USKP_addon.esp")
+# ## USKP addon HF 2.esp
+# ## fixes that must load after USKP
   - name: 'RaceCompatibilityUSKPOverride.esp'
     msg:
       - type: error
@@ -5812,6 +5828,8 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activo. kyrim fallará sin se carga este archivo sin Dawnguard (DLC Oficial de Betheseda).
         condition: ( checksum("RaceCompatibilityUSKPOverride.esp",DC71C73F) ) and not active("Dawnguard.esm")
+# ## RaceComp is explicit master; USKP is implicit
+# ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
 # ENDGROUP: Vanilla fixes
 
 # BEGINGROUP: DLC Fixes
@@ -5895,6 +5913,8 @@ plugins:
         content:
           - lang: spa
             str: Borrar. Includido en el update official de febrero 2013.
+# ## correctdoucebriseALCH.esp
+# ## french patch to allow the purchase of alchemy lab in Breezehome under DG
   - name: 'CraftableBoneHawkRings.esp'
     msg:
       - type: error
@@ -6326,6 +6346,7 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: not active("Dawnguard.esm")
+# ## Unofficial DLC Patches
   - name: 'USKP Dawnguard vampire face & eye fix.esp'
     msg:
       - type: error
@@ -6343,6 +6364,12 @@ plugins:
           - lang: spa
             str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
         condition: active("Unofficial Dawnguard Patch.esp")
+# ## Unofficial Dawnguard Patch that is not false flagged
+# ## IFNOT VAR(UDGP20) MOD: Unofficial Dawnguard Patch.esp
+# ## Unofficial Hearthfire Patch that is not false flagged
+# ## Unofficial Dragonborn Patch that is not false flagged
+# ## Unofficial High Resolution Patch.esp
+# ## fixes that must be loaded after Unofficial DLC Patches
   - name: 'EveryVampireEyesGrow.esp'
     msg:
       - type: error
