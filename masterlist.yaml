@@ -1356,6 +1356,8 @@ plugins:
       - crc: 0xeaedbcb6
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 1
+# ## REGEX: Joshen.+\.esm
+# ## Chinese-language followers
   - name: 'JSwords.esm'
     msg:
       - type: warn
@@ -1443,6 +1445,10 @@ plugins:
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2666 CBBE\" | \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+# ## Lighting.esm
+# ## this is a companion mod
+# ## Lightsabers.esm
+# ## Lighting.esm is a companion mod for Lightsabers.esm?
   - name: 'Liliath.esm'
     msg:
       - type: warn
@@ -2661,9 +2667,18 @@ plugins:
       - crc: 0xf0c49703
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 5
+# ## TexturesPack_PL.esp
+# ## Official Polish DLC??
 # ENDGROUP: Official DLC Files
 
 # BEGINGROUP: Earliest mods
+# ## Agony's Sorting Frenzy.esp
+# ## All Compatibility esp should be loaded after their respective mod.
+# ## See Group: Compatibility Patches
+# ## MyMod (english translation).esp
+# ## LOTR new land, recommended to place very high
+# ## REGEX: NPCEssential - .+\.esp
+# ## Global set flag Essential for NPCs. Loaded before vanilla fixes and USKP
   - name: NPCEssential - .+\.esp
     msg:
       - type: say
@@ -2678,6 +2693,8 @@ plugins:
         content:
           - lang: spa
             str: Necesita ser cargado antes de cualquier mod que modifique NPCs. Este mod cambia el statatus de los NPCs a esencial.
+# ## Xvision Children - DB.esp
+# ## some elements of xvision children are specified to load pre-USKP; also note 2 parallel releases with different naming schemes; rest appear to be various compat patches, so put in that section for now -LD
 # ENDGROUP: Earliest mods
 
 # BEGINGROUP: Vanilla fixes
@@ -3148,6 +3165,7 @@ plugins:
           - lang: spa
             str: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
         condition: checksum("BreezehomeLadderFixJP.esp",94D3C2C0)
+      # leave navmesh checksums 7CA22630 in this one given disparity
       - type: warn
         content:
           - lang: eng
@@ -3176,6 +3194,7 @@ plugins:
             str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".'
       - type: warn
         condition: checksum("BreezehomeLadderFixJP.esp",94D3C2C0)
+      # leave navmesh checksums 7CA22630 in this one given disparity
         content:
           - lang: eng
             str: 'This file contains 32 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://www.nexusmods.com/skyrim/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".'
@@ -3274,6 +3293,9 @@ plugins:
             str: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
         condition: active("Unofficial Skyrim Patch.esp")
   - name: 'bugfixalchemynoregeneration.esp'
+# ## DSAMG - Miraak Music Fixes.esp
+# ## author instructions to place above UDBP: should cut some DB "can't absorb dragon souls" reports
+# ## DSAMG proper is just bunch of scripts and music files, no esp- possibly why load order troubleshooting comes up empty -LD
     msg:
       - type: error
         content:
