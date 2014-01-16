@@ -6415,6 +6415,9 @@ plugins:
   - name: Clothing Jewelry & Clutter Fixes.esp
     tag:
       - Stats
+# ## Clothing & Clutter Fixes.esp
+# ## Clothing Jewelry & Clutter Fixes.esp
+# ## optionals of WAF remade
   - name: 'SMPC HF Safes eng.esp'
     msg:
       - type: error
@@ -6473,6 +6476,10 @@ plugins:
 # ENDGROUP: DLC Fixes
 
 # BEGINGROUP: NPC face mods
+# ## TAG: {{BASH: NpcFaces}}
+# ## Aelafacelift.esp
+# ## moved from companions, face change only
+# ## aelafacelift-origpaint.esp
   - name: 'ColourEyesNoDGHF.esp'
     dirty:
       - crc: 0x3b2f32fc
@@ -6488,6 +6495,7 @@ plugins:
       - crc: 0xee0634b4
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 4
+# removed apachii req- not all matching mods have the req. Add back req by checksum as needed.
   - name: 'Faendal.esp'
     msg:
       - type: warn
@@ -6595,6 +6603,8 @@ plugins:
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, marcurio2.1.esp.
+# ## REGEX: (N|ThievesguildN)PCOverha.+byHaroda.+\.esp
+# ## Warning applies across the ""http://www.nexusmods.com/skyrim/mods/15116 entire large esp set" pre-4/2013; some but not all are dirty as well. Checksum-specific dirty reports not playing well with the regex'ed output, so leave as only this.
   - name: (N|ThievesguildN)PCOverha.+byHaroda.+\.esp
     msg:
       - type: warn
@@ -6640,6 +6650,7 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
+# SupermodelSkyrim.esp moved back to npc faces because it's npc faces overhaul (too many conflicts)
   - name: 'SupermodelSkyrim.esp'
     msg:
       - type: error
@@ -6740,6 +6751,7 @@ plugins:
       - crc: 0x926deea0
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 3
+# removed apachii req- not all matching mods have the req. Add back req by checksum as needed.
   - name: 'Vex.esp'
     msg:
       - type: warn
@@ -6777,7 +6789,10 @@ plugins:
 # ENDGROUP: NPC face mods
 
 # BEGINGROUP: General Base Mods
+# Includes nearly all new items (except weapons and armor).
+# Low priority mods.
 # BEGINGROUP: Weather mods and overhauls
+# Unlikely to be affected by anything but sound mods.
   - name: '1 Day Moon Phases.esp'
     dirty:
       - crc: 0xfe2f1935
@@ -6954,6 +6969,9 @@ plugins:
       - crc: 0x4a595497
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 2
+# 'Better Dynamic Snow.esp' moved before 'EnhancedLightsandFX.esp' to 
+# prevent bug with falling in textures when 'EnhancedLightsandFX.esp' 
+# loaded before 'Better Dynamic Snow.esp'
   - name: 'Better Dynamic Snow.esp'
     dirty:
       - crc: 0x541965a9
@@ -7022,6 +7040,9 @@ plugins:
           - lang: spa
             str: Remover la niebla afectara WATER. Carga despues de WATER si experiencias problemas.
         condition: file("WATER.esp")
+# ## tweak_fog.esp
+# ## tweak_fog-AmbL_c.esp
+# ## japanese release- may be weather, lighting or both, unsure- LD
   - name: 'VanillaSnowWindyand150percentLessView.esp'
     msg:
       - type: say
@@ -7036,6 +7057,7 @@ plugins:
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, MoreSnowWindyand150percentLessView.esp.
+# Expanded Snow Systems should load after Supreme Storms - William
   - name: 'ExpandedSnowSystems.esp'
     msg:
       - type: warn
@@ -7093,6 +7115,14 @@ plugins:
 # ENDGROUP: Weather mods and overhauls
 
 # BEGINGROUP: Sound mods
+# Sound plugins; also, sound packs that are packaged with a BSA file, while the ESP lists only the TES4 Skyrim header, example:
+# Some Sounds.esp
+# TES4 (Header only)
+# 
+# It appears that *ANY* sound is ok to be placed here.
+# Sound mods that modify cell data should be placed in the "Sounds of Skyrim" catagory.
+# ## MoreSoundOptions.esp
+# ## suggested to load before ADS
   - name: 'AOS.esp'
     msg:
       - type: say
@@ -7107,6 +7137,9 @@ plugins:
         content:
           - lang: spa
             str: See also "http://www.nexusmods.com/skyrim/mods/44541/ AOS compatibility patches" page on Nexus.
+# ## AOS_DG Patch.esp
+# ## AOS_DB Patch.esp
+# ## these should sort up here; regex: AOS_.+ down in compat patches section was unfortunately too broad -LD
   - name: DFG's Blade & Dagger Sheathe Sounds.*\.esp
     msg:
       - type: error
