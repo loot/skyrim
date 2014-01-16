@@ -186,6 +186,7 @@ plugins:
       - util: *dirtyUtil
         crc: 0xe5b67bda
         udr: 3
+# Unofficial Patches that are false flagged
   - name: 'Unofficial Skyrim Patch.esp'
     priority: -400
     msg:
@@ -220,6 +221,7 @@ plugins:
       - Delev
       - Relev
       - Stats
+# TES5Edit 3.0.30: 619 ITM, 82 UDR, 57 deleted NavMeshes (CRC: BD72CCF3)
   - name: 'Dawnguard.esm'
     priority: -400
     after:
@@ -238,6 +240,7 @@ plugins:
         crc: 0xbd72ccf3
         itm: 619
         udr: 82
+# Unofficial Patches that are false flagged
   - name: 'Unofficial Dawnguard Patch.esp'
     priority: -400
     after:
@@ -246,6 +249,7 @@ plugins:
       - Delev
       - Relev
       - Stats
+# TES5Edit 3.0.30: 184 ITM, 11 UDR, 5 deleted NavMeshes (CRC: AF82CE6A)
   - name: 'Hearthfires.esm'
     priority: -400
     after:
@@ -262,6 +266,7 @@ plugins:
         crc: 0xaf82ce6a
         itm: 184
         udr: 11
+# Unofficial Patches that are false flagged
   - name: 'Unofficial Hearthfire Patch.esp'
     priority: -400
     after:
@@ -272,6 +277,7 @@ plugins:
     after:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
+# TES5Edit 3.0.30: 61 ITM, 8 UDR, 1 deleted NavMesh (CRC: A9F83BFF)
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
     msg:
@@ -284,6 +290,7 @@ plugins:
         crc: 0xa9f83bff
         itm: 61
         udr: 8
+# Unofficial Patches that are false flagged
   - name: 'Unofficial Dragonborn Patch.esp'
     priority: -400
     after:
@@ -1483,10 +1490,6 @@ plugins:
           - lang: spa
             str: Borrar. Esta incluido en Pretty Followers.esm.
         condition: file("Pretty Followers.esm")
-# ## Lighting.esm
-# ## this is a companion mod
-# ## Lightsabers.esm
-# ## This File comment made no sence, Lighting.esm is a companion mod for Lightsabers.esm?
   - name: 'LunariRace.esm'
     msg:
       - type: say
@@ -73903,6 +73906,10 @@ plugins:
         condition: not active("Dragonborn.esm")
 # Begin qotsafan's compatbility patches:
 # End qotsafan's compatbility patches
+# ## AOS_SkyRe-Patch Patch.esp
+# ## a compat patch for qotsafan's compat patches
+# ## AOS_Reduced_Reverb_Addon.esp
+# ## two AOS reported to load after any other AOS plugins or patches
 # ENDGROUP: Patches for Dynamic Plugins
 # ENDGROUP: Dynamic Plugins
 
