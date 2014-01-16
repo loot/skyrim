@@ -6418,6 +6418,10 @@ plugins:
 # ## Clothing & Clutter Fixes.esp
 # ## Clothing Jewelry & Clutter Fixes.esp
 # ## optionals of WAF remade
+# ## SMPC.esp
+# ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
+# ## summer 2013: this is a rename of USKP_addon, now suggested to load
+# ## after the normal slate of unofficials, not just after USKP -LD
   - name: 'SMPC HF Safes eng.esp'
     msg:
       - type: error
@@ -7267,6 +7271,12 @@ plugins:
       - crc: 0x68eb2f
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 43
+# ## REGEX: MoT2? - (Misc 1|Scripts 1|Sounds 1|Visual 1|Visual 2|Visual 3|Visual 4)\.esp
+# ## these are all TES4 header only
+# ## Reverb.esp
+# ## Sound.esp
+# ## paired with Reverb.esp
+
 # ENDGROUP: Sound mods
 
 # BEGINGROUP: Lighting
@@ -7437,11 +7447,14 @@ plugins:
       - type: say
         content: "Requires: \"http://skse.silverlock.org SKSE\" 1.6.5+."
         condition: version("..\skse_loader.exe","0.1.6.5",<)
+# ## Lanterns of Skyrim - Project ENB plus CoT 3_1.esp
+# ## a LoS preset, test placement here
   - name: 'MikeFoxs_CorrectLighting.esp'
     dirty:
       - crc: 0xd2b44ebe
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         udr: 302
+# Moved Realistic Lighting From under MikeFoxs_CorrectLighting.esp to a new location
   - name: 'realrain.esp'
     msg:
       - type: say
@@ -7565,6 +7578,7 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
+# ordered individual V2 modules as DB, HF, DG, SK per author's guidelines
   - name: 'Remove Interior Fog V2 - Skyrim.esp'
     msg:
       - type: warn
@@ -7623,6 +7637,7 @@ plugins:
           - lang: spa
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
         condition: not active("Hearthfires.esm")
+# See readme for more info about load order
   - name: 'enhanceddynamicweathersystem.esp'
     msg:
       - type: say
@@ -7637,6 +7652,8 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un enhanceddynamicweathersystem esp.
+# ## Natural Skyrim Rain.esp
+# ## Bethsoft6.118,128and9.187,193
   - name: 'Warmer Magic Lights v2.esp'
     msg:
       - type: warn
@@ -7705,6 +7722,8 @@ plugins:
           - lang: spa
             str: El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").
         condition: not checksum("Warmer Magic Lights v2 - Big.esp",DE4F928D)
+# ## NoTint.esp
+# ## Moved ClimatesOfTamriel From Here
   - name: 'SI_DarkerNightsAddon.esp'
     msg:
       - type: say
@@ -7724,6 +7743,7 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un KatuLights*.esp.
+# Darker Dungeons
   - name: 'Dark Dungeons for Dawnguard.esp'
     msg:
       - type: error
@@ -7778,6 +7798,7 @@ plugins:
       - type: say
         content: "Incompatible with: Dark Dungeons for ENB.esp"
         condition: file("Dark Dungeons for ENB.esp")
+# Might need to be moved
   - name: 'OLSE for Dawnguard.esp'
     dirty:
       - crc: 0x931f68bd
@@ -7952,6 +7973,9 @@ plugins:
       - crc: 0x7d9e7a5f
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 1
+# ## Fantasy Music Overhaul Redone.esp
+# ## REGEX: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp
+# ## should load after fantasy music overhaul
   - name: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp
     msg:
       - type: warn
@@ -8028,6 +8052,10 @@ plugins:
 # ENDGROUP: Music
 
 # BEGINGROUP: Textures
+# Textures that are packaged with a BSA file, while the ESP lists only the TES4 Skyrim header
+# 
+# Generally the bigger packs go near to the top.
+# Large Packs, these are placed at the top to prevent overwriting smaller texture changes - rendering them useless.
   - name: 'VanillaReducedTexturesDG.esp'
     msg:
       - type: error
@@ -8062,6 +8090,8 @@ plugins:
           - lang: spa
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
         condition: not active("Dragonborn.esm")
+# Large Packs
+# assorted k dds below from bugzilla are likely due to steam packaging reqs -LD
   - name: 'calientevanillaarmor - banditpack curvy.esp'
     msg:
       - type: say
@@ -8144,6 +8174,7 @@ plugins:
           - lang: spa
             str: Utilizar solo un jumpheight esp.
         condition: ( file("jumpHeightOnly.esp") ) or file("jumpHeightThird.esp")
+# Removed REGEX because specific load order is needed
   - name: 'Weapons and Armor fixes.esp'
     msg:
       - type: error
@@ -8191,6 +8222,9 @@ plugins:
           - lang: spa
             str: Para los que utilizen 'WAF+SPO+CCO'. No tiene conflictos con 'Smithing Perks Overhaul' o 'Complete Crafting Overhaul'.
         condition: ( regex("Smithing Perks Overhaul( - Balanced)?\.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")
+# Vanilla fixes. Must be load here (and also for CCO and SPO), to prevent
+# overrides for new changes from mods in Base group. Too many conflicts
+# with other mods in Base group.
   - name: 'Weapons and Armor fixes - Hacks.esp'
     msg:
       - type: warn
@@ -8300,6 +8334,9 @@ plugins:
     tag:
       - Delev
       - Relev
+# ## TradeBarter.esp
+# ## Recommended to be loaded before Economics of Skyrim
+# ## TradeBarterLite.esp
   - name: 'TradeBarter.esp'
     msg:
       - type: say
@@ -8319,6 +8356,9 @@ plugins:
       - crc: 0xc3c5505
         util: "\"http://www.nexusmods.com/skyrim/mods/25859 TES5Edit\""
         itm: 16
+# ## Economics of Skyrim - Dawnguard.esp
+# ## Economics of Skyrim Merged.esp
+# ## Estimate for correct position. Mod file no longer on Nexus.
 # ENDGROUP: Base Early
 
 # BEGINGROUP: Base #
@@ -8626,6 +8666,10 @@ plugins:
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
+# ## REGEX: ArmorRatingTweak_(\d{8}|U)?.+\.esp
+# ## following two lines found here during tidying, not sure how related to Base A, so left them -LD
+# ## ENG_All_In_One_v1.2.esp
+# ## NoRestorationExploit.esp
   - name: ArmorRatingTweak_(\d{8}|U)?.+\.esp
     msg:
       - type: say
@@ -8694,6 +8738,7 @@ plugins:
           - lang: spa
             str: Borrar. Ya esta incluido en Complete Crafting Overhaul.
         condition: ( file("Arrowsmith.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")
+# Not sure but SkyRe_Main.esp is requires the Dawnguard DLC and includes Arrowsmith.esp
   - name: 'arrowsmith-dawnguard.esp'
     msg:
       - type: say
