@@ -1353,10 +1353,8 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'IsharasUniqueRaces.esm'
-    msg:
-      - type: say
-        content: "Incompatible with: Ethereal elven overhaul. See \"http://forums.nexusmods.com/index.php?showtopic=817456&pid=6542372&st=0&#entry6542372 compatability instructions\"."
-        condition: file("ethereal_elven_overhaul.esp")
+    inc:
+      - 'ethereal_elven_overhaul.esp'
   - name: 'Janus follower.esm'
     dirty:
       - crc: 0xeaedbcb6
@@ -2488,16 +2486,13 @@ plugins:
         util: *dirtyUtil
         itm: 28
   - name: 'XFLMain.esm'
+    inc:
+      - 'BDO.esp'
+      - 'UFO - Ultimate Follower Overhaul.esp'
     msg:
       - type: say
         content: "Requires: Skyrim 1.3+"
         condition: version("..\TESV.exe","1.3.0",<)
-      - type: say
-        content: "Incompatible with: UFO - Ultimate Follower Overhaul.esp"
-        condition: file("UFO - Ultimate Follower Overhaul.esp")
-      - type: say
-        content: "Incompatible with: BDO.esp"
-        condition: file("BDO.esp")
       - type: say
         content:
           - lang: eng
@@ -5777,6 +5772,8 @@ plugins:
         util: *dirtyUtil
         udr: 7
   - name: 'USKP_addon ENG.esp'
+    inc:
+      - 'USKP_addon.esp'
     msg:
       - type: error
         content:
@@ -5793,9 +5790,6 @@ plugins:
           - lang: spa
             str: Unofficial Skyrim Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("Unofficial Skyrim Patch.esp")
-      - type: say
-        content: "Incompatible with: USKP_addon.esp"
-        condition: file("USKP_addon.esp")
 # ## USKP addon HF 2.esp
 # ## fixes that must load after USKP
   - name: 'RaceCompatibilityUSKPOverride.esp'
@@ -6816,29 +6810,17 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
   - name: 'enb_reference.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ClimatesOfTamriel.esm"
-        condition: active("ClimatesOfTamriel.esm")
-      - type: say
-        content: "Incompatible with: Realistic Lighting.esp"
-        condition: active("Realistic Lighting.esp")
+    inc:
+      - 'ClimatesOfTamriel.esm'
+      - 'Realistic Lighting.esp'
   - name: 'enbweather.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ClimatesOfTamriel.esm"
-        condition: active("ClimatesOfTamriel.esm")
-      - type: say
-        content: "Incompatible with: Realistic Lighting.esp"
-        condition: active("Realistic Lighting.esp")
+    inc:
+      - 'ClimatesOfTamriel.esm'
+      - 'Realistic Lighting.esp'
   - name: 'ENB Weather - Exterior Fog Plugin.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ClimatesOfTamriel.esm"
-        condition: active("ClimatesOfTamriel.esm")
-      - type: say
-        content: "Incompatible with: Realistic Lighting.esp"
-        condition: active("Realistic Lighting.esp")
+    inc:
+      - 'ClimatesOfTamriel.esm'
+      - 'Realistic Lighting.esp'
   - name: 'enhanceddynamicweathersystem.esp'
     msg:
       - type: say
@@ -6854,6 +6836,8 @@ plugins:
           - lang: spa
             str: Utilizar solo un enhanceddynamicweathersystem esp.
   - name: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
+    inc:
+      - 'Realistic Lighting.esp'
     msg:
       - type: say
         content:
@@ -6867,19 +6851,14 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un enhanceddynamicweathersystem esp.
-      - type: say
-        content: "Incompatible with: Realistic Lighting.esp"
-        condition: file("Realistic Lighting.esp")
   - name: 'Fewer Snowstorms.esp'
     dirty:
       - crc: 0x88cb9260
         util: *dirtyUtil
         itm: 7
   - name: getSnowyV.+\.esp
-    msg:
-      - type: say
-        content: "Incompatible with: Chesko_Frostfall.esp"
-        condition: file("Chesko_Frostfall.esp")
+    inc:
+      - 'Chesko_Frostfall.esp'
   - name: 'MoreSnow.esp'
     dirty:
       - crc: 0xf26a6037
@@ -6981,10 +6960,8 @@ plugins:
         util: *dirtyUtil
         itm: 6
   - name: 'Morning Fogs.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Supreme Fog.esp"
-        condition: file("Supreme Fog.esp")
+    inc:
+      - 'Supreme Fog.esp'
     dirty:
       - crc: 0x2cc974e4
         util: *dirtyUtil
@@ -6995,10 +6972,8 @@ plugins:
         content: Use non-Dawnguard version.
         condition: ( checksum("PNENB.esp",B8865296) ) and not active("Dawnguard.esm")
   - name: 'RevampedExteriorFog.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Realistic Lighting.esp"
-        condition: file("Realistic Lighting.esp")
+    inc:
+      - 'Realistic Lighting.esp'
   - name: 'Dragonbornfogdistance.esp'
     msg:
       - type: error
@@ -7397,7 +7372,7 @@ plugins:
         udr: 1489
   - name: 'ImmersiveContentExteriorLighting.esp'
     msg:
-      - type: say
+      - type: warn
         content: "Incompatible with: CLARALUX lighting mods"
         condition: regex("CLARALU.*\.esp")
     dirty:
@@ -7778,6 +7753,8 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
   - name: 'Further Dark Dungeons for ENB.esp'
+    inc:
+      - 'Dark Dungeons for ENB.esp'
     msg:
       - type: say
         content:
@@ -7794,9 +7771,6 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
         condition: ( ( checksum("Dark Dungeons for ENB.esp",A7023FF2) ) or checksum("Dark Dungeons for ENB.esp",1EC2E726) ) or checksum("Dark Dungeons for ENB.esp",ABC1F0E1)
-      - type: say
-        content: "Incompatible with: Dark Dungeons for ENB.esp"
-        condition: file("Dark Dungeons for ENB.esp")
 # Might need to be moved
   - name: 'OLSE for Dawnguard.esp'
     dirty:
@@ -8739,10 +8713,9 @@ plugins:
         condition: ( file("Arrowsmith.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")
 # Not sure but SkyRe_Main.esp is requires the Dawnguard DLC and includes Arrowsmith.esp
   - name: 'arrowsmith-dawnguard.esp'
+    inc:
+      - 'Arrowsmith.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Arrowsmith.esp"
-        condition: file("Arrowsmith.esp")
       - type: error
         content:
           - lang: eng
@@ -9449,6 +9422,8 @@ plugins:
         util: *dirtyUtil
         itm: 45
   - name: 'BirdsHF.esp'
+    inc:
+      - 'Birds.esp'
     msg:
       - type: say
         content:
@@ -9477,19 +9452,15 @@ plugins:
           - lang: spa
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
         condition: not active("Hearthfires.esm")
-      - type: say
-        content: "Incompatible with: Birds.esp"
-        condition: file("Birds.esp")
     dirty:
       - crc: 0x9f07f0a4
         util: *dirtyUtil
         itm: 368
         udr: 2
   - name: 'BirdsHFclean.esp'
+    inc:
+      - 'Birds.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Birds.esp"
-        condition: file("Birds.esp")
       - type: error
         content:
           - lang: eng
@@ -9646,10 +9617,10 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: Calendar - (Deutsch|English|Francais|Italiano|Russian|Spanish)\.esp
-    msg:
-      - type: say
-        content: "Incompatible with: Modern Day Calendar Names"
-        condition: ( ( file("ModernDayCalendarNames.esp") ) or file("Modern Day Calendar Names_Learn Names.esp") ) or file("ModernDayCalenderNames DV.esp")
+    inc:
+      - 'ModernDayCalendarNames.esp'
+      - 'Modern Day Calendar Names_Learn Names.esp'
+      - 'ModernDayCalenderNames DV.esp'
   - name: 'cao_DweSchematicsBuy.esp'
     msg:
       - type: warn
@@ -9953,10 +9924,9 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Chesko_WearableLantern_Candle_DG.esp'
+    inc:
+      - 'Chesko_WearableLantern_Candle.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Chesko_WearableLantern_Candle.esp"
-        condition: file("Chesko_WearableLantern_Candle.esp")
       - type: error
         content:
           - lang: eng
@@ -10820,10 +10790,9 @@ plugins:
         content: "Requires: \"http://skse.silverlock.org SKSE\""
         condition: not file("..\skse_loader.exe")
   - name: 'DrinkingGivesYourBottles.esp'
+    inc:
+      - 'Skyrealism - Feast and Famine.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Skyrealism - Feast and Famine.esp"
-        condition: file("Skyrealism - Feast and Famine.esp")
       - type: say
         content: "Incompatible with: Headbomb's Better Sorting - Food *.esp"
         condition: regex("Headbomb's Better Sorting - Food.+\.esp")
@@ -12256,10 +12225,8 @@ plugins:
         content: "Requires: \"http://skse.silverlock.org SKSE\""
         condition: not file("..\skse_loader.exe")
   - name: 'ImprovedFish.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: BetterFishAdded.esp"
-        condition: file("BetterFishAdded.esp")
+    inc:
+      - 'BetterFishAdded.esp'
     tag:
       - Relev
   - name: 'ImprovedFishBASIC.esp'
@@ -12307,10 +12274,8 @@ plugins:
         content: "Requires: \"http://skse.silverlock.org SKSE\" 1.5.6+."
         condition: version("..\skse_loader.exe","0.1.5.6",<)
   - name: 'IsharasAutoStorageForVidanisBoH.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Isharas_BoH_StorageAndRetrieval.esp"
-        condition: file("Isharas_BoH_StorageAndRetrieval.esp")
+    inc:
+      - 'Isharas_BoH_StorageAndRetrieval.esp'
 # ENDGROUP: Base I
 
 # BEGINGROUP: Base J
@@ -12339,15 +12304,14 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
   - name: 'JBS_gem_cutting.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
   - name: 'jbs_item_breakdown_rev.esp'
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
     msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
       - type: say
         content:
           - lang: eng
@@ -12364,13 +12328,10 @@ plugins:
             str: "Incompatible con: jbs_smithing_overhaul.esp utilizar More Realistic Recipes [revised] en vez."
         condition: file("jbs_smithing_overhaul.esp")
   - name: 'jbs_item_breakdown.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
-      - type: say
-        content: "Incompatible with: jbs_smithing_real.esp"
-        condition: file("jbs_smithing_real.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
+      - 'jbs_smithing_real.esp'
   - name: 'jbs_combined.esp'
     msg:
       - type: say
@@ -12386,55 +12347,44 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, JBS_overhaul.esp.
   - name: 'JBS_overhaul_thalmor.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul.esp"
-        condition: file("JBS_overhaul.esp")
+    inc:
+      - 'JBS_overhaul.esp'
   - name: 'jbs_smithing_overhaul.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
   - name: 'JBS_scrolls.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
   - name: 'jbs_smithing_real_ext.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
   - name: 'jbs_smithing_real.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
   - name: 'jbs_smithing_soul.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
   - name: 'JBS_tailor.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
   - name: 'jbs_upgrade.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
   - name: 'jbs_weight_overhaul_complete.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
   - name: 'jbs_weight_overhaul_pot.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: JBS_overhaul * .esp"
-        condition: ( file("JBS_overhaul.esp") ) or file("JBS_overhaul_thalmor.esp")
+    inc:
+      - 'JBS_overhaul.esp'
+      - 'JBS_overhaul_thalmor.esp'
 # ENDGROUP: Base J
 
 # BEGINGROUP: Base K
@@ -12915,10 +12865,9 @@ plugins:
 
 # BEGINGROUP: Base M
   - name: MAD Ingots & Leather.esp
+    inc:
+      - 'Ars Metallica.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Ars Metallica. Use the compatible version."
-        condition: file("Ars Metallica.esp")
       - type: warn
         content:
           - lang: eng
@@ -13120,10 +13069,9 @@ plugins:
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
         condition: not active("Hearthfires.esm")
   - name: 'Modern Day Calendar Names_Learn Names.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ModernDayCalendarNames esp."
-        condition: ( file("ModernDayCalendarNames.esp") ) or file("ModernDayCalenderNames DV.esp")
+    inc:
+      - 'ModernDayCalendarNames.esp'
+      - 'ModernDayCalenderNames DV.esp'
   - name: 'Montures Monstres.esp'
     dirty:
       - crc: 0xadbf7d3b
@@ -14077,10 +14025,8 @@ plugins:
         itm: 340
         udr: 1
   - name: 'Real Wildlife Skyrim 0.1 No Food.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Real Wildlife Skyrim 0.1.esp"
-        condition: active("Real Wildlife Skyrim 0.1.esp")
+    inc:
+      - 'Real Wildlife Skyrim 0.1.esp'
     tag:
       - Delev
     dirty:
@@ -14455,10 +14401,8 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: TF_SimpleSilver+SovngardeReplacement.esp
-    msg:
-      - type: say
-        content: "Incompatible with: TF_SimpleSilverReplacement.esp"
-        condition: file("TF_SimpleSilverReplacement.esp")
+    inc:
+      - 'TF_SimpleSilverReplacement.esp'
   - name: 'SIS.esp'
     tag:
       - Relev
@@ -14674,6 +14618,9 @@ plugins:
       - Delev
       - Relev
   - name: SkyMoMod Lore.+\.esp
+    inc:
+      - 'SkyMoMod_lists.esp'
+      - 'SkyMo-Dawn.esp'
     msg:
       - type: say
         content:
@@ -14689,12 +14636,6 @@ plugins:
             str: Utilizar solo un SkyMoMod Lore esp.
       - type: say
         content: "Requires: SkyMoMod 10"
-      - type: say
-        content: "Incompatible with: SkyMoMod_lists.esp"
-        condition: file("SkyMoMod_lists.esp")
-      - type: say
-        content: "Incompatible with: SkyMo-Dawn.esp"
-        condition: file("SkyMo-Dawn.esp")
     tag:
       - Delev
   - name: 'SkyMoMod Extras Collectables.esp'
@@ -14772,10 +14713,8 @@ plugins:
             str: Obsoleto. Actualizar a la última versión.
         condition: checksum("Skyrim Expanded Loot Tables.esp",24E08D9F)
   - name: 'Skyrim Expanded Loot Tables - Lower Drop Rate.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Skyrim Expanded Loot Tables.esp"
-        condition: file("Skyrim Expanded Loot Tables.esp")
+    inc:
+      - 'Skyrim Expanded Loot Tables.esp'
   - name: 'Skyrim Flora Overhaul.esp'
     dirty:
       - crc: 0xdd0bf6d4
@@ -14903,10 +14842,8 @@ plugins:
         util: *dirtyUtil
         itm: 12
   - name: Smithing [D|G]rainMill\.esp
-    msg:
-      - type: say
-        content: "Incompatible with: SkyrimGranary.esp"
-        condition: file("SkyrimGranary.esp")
+    inc:
+      - 'SkyrimGranary.esp'
   - name: 'smithingextended.esp'
     tag:
       - Delev
@@ -15215,10 +15152,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
   - name: 'TravellersOfSkyrim - Light.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: TravellersOfSkyrim - Vanilla.esp"
-        condition: file("TravellersOfSkyrim - Vanilla.esp")
+    inc:
+      - 'TravellersOfSkyrim - Vanilla.esp'
   - name: 'TravellersOfSkyrim - Dragonborn Addon.esp'
     msg:
       - type: error
@@ -15252,25 +15187,21 @@ plugins:
             str: TravellersOfSkyrim.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("TravellersOfSkyrim.esm")
   - name: 'TravellersOfSkyrim - Alchemists Vanilla.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp"
-        condition: ( file("TravellersOfSkyrim - Light.esp") ) or file("TravellersOfSkyrim - Vanilla.esp")
+    inc:
+      - 'TravellersOfSkyrim - Light.esp'
+      - 'TravellersOfSkyrim - Vanilla.esp'
   - name: 'TravellersOfSkyrim - Apothecaries Vanilla.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp"
-        condition: ( file("TravellersOfSkyrim - Light.esp") ) or file("TravellersOfSkyrim - Vanilla.esp")
+    inc:
+      - 'TravellersOfSkyrim - Light.esp'
+      - 'TravellersOfSkyrim - Vanilla.esp'
   - name: 'TravellersOfSkyrim - Mercenaries Vanilla.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp"
-        condition: ( file("TravellersOfSkyrim - Light.esp") ) or file("TravellersOfSkyrim - Vanilla.esp")
+    inc:
+      - 'TravellersOfSkyrim - Light.esp'
+      - 'TravellersOfSkyrim - Vanilla.esp'
   - name: 'TravellersOfSkyrim - Merchants Vanilla.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp"
-        condition: ( file("TravellersOfSkyrim - Light.esp") ) or file("TravellersOfSkyrim - Vanilla.esp")
+    inc:
+      - 'TravellersOfSkyrim - Light.esp'
+      - 'TravellersOfSkyrim - Vanilla.esp'
   - name: 'two_handed_rebalance.esp'
     dirty:
       - crc: 0x5871d2fc
@@ -15522,20 +15453,14 @@ plugins:
           - lang: spa
             str: Utilizar solo un WiS IV - Heroes & villains esp.
   - name: 'Wolfs_Buff_Recipes_Rus.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Wolfs_Buff_Recipes.esp"
-        condition: file("Wolfs_Buff_Recipes.esp")
+    inc:
+      - 'Wolfs_Buff_Recipes.esp'
   - name: 'Wolfs_Intermediate_Recipes_Rus.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Wolfs_Intermediate_Recipes.esp"
-        condition: file("Wolfs_Intermediate_Recipes.esp")
+    inc:
+      - 'Wolfs_Intermediate_Recipes.esp'
   - name: 'Wolfs_Advanced_Recipes_Rus.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Wolfs_Advanced_Recipes.esp"
-        condition: file("Wolfs_Advanced_Recipes.esp")
+    inc:
+      - 'Wolfs_Advanced_Recipes.esp'
   - name: WolfsRecettes.+\.esp
     msg:
       - type: warn
@@ -15566,13 +15491,12 @@ plugins:
       - Delev
       - Relev
   - name: 'xgfPferdeKarren-en.esp'
+    inc:
+      - 'xgfpferdekarren.esp'
     msg:
       - type: say
         content: If you have errors at creation Bashed Patch you can use "http://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906 the corrected version".
         condition: checksum("xgfPferdeKarren-en.esp",99BFDF60)
-      - type: say
-        content: "Incompatible with: xgfpferdekarren.esp"
-        condition: file("xgfpferdekarren.esp")
     dirty:
       - crc: 0x7c465726
         util: *dirtyUtil
@@ -15676,30 +15600,26 @@ plugins:
           - lang: rus
             str: Устарело, обновите до версии 0.7 и выше - CWND-Basic.esp
   - name: 'CiviliansWillNotDieChild.esp'
+    inc:
+      - 'CiviliansWillNotDie.esp'
     msg:
       - type: warn
         content:
           - lang: rus
             str: Устарело, обновите до версии 0.7 и выше - CWND-KillChild.esp
       - type: say
-        content: "Incompatible with: CiviliansWillNotDie.esp"
-        condition: file("CiviliansWillNotDie.esp")
-      - type: say
         content:
           - lang: rus
             str: Данная версия мода убирает в детских расах пометку "Child".
   - name: 'CiviliansWillNotDiePatches.esp - CWND-UnofficialPatches.esp'
+    inc:
+      - 'CiviliansWillNotDieChild.esp'
+      - 'CiviliansWillNotDie.esp'
     msg:
       - type: warn
         content:
           - lang: rus
             str: Устарело, обновите до версии 0.7 и выше - CWND-UnofficialPatches.esp
-      - type: say
-        content: "Incompatible with: CiviliansWillNotDie.esp"
-        condition: file("CiviliansWillNotDie.esp")
-      - type: say
-        content: "Incompatible with: CiviliansWillNotDieChild.esp"
-        condition: file("CiviliansWillNotDieChild.esp")
       - type: say
         content: "Requires: Skyrim 1.7+"
         condition: checksum("CiviliansWillNotDiePatches.esp",C0754EA7) and version("..\TESV.exe","1.7",<)
@@ -16564,15 +16484,11 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
   - name: 'AdvancedGlassArmorPlus.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: AdvancedGlassArmor.esp"
-        condition: file("AdvancedGlassArmor.esp")
+    inc:
+      - 'AdvancedGlassArmor.esp'
   - name: 'AdvancedGlassWeaponsPlus.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: AdvancedGlassWeapons.esp"
-        condition: file("AdvancedGlassWeapons.esp")
+    inc:
+      - 'AdvancedGlassWeapons.esp'
   - name: AetherialBow&Arrows.esp
     msg:
       - type: error
@@ -16745,10 +16661,8 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Althirs Camping Tools German.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Althirs Camping Tools English.esp"
-        condition: file("Althirs Camping Tools English.esp")
+    inc:
+      - 'Althirs Camping Tools English.esp'
     dirty:
       - crc: 0xd1b56978
         util: *dirtyUtil
@@ -17799,6 +17713,8 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: '1nivWICSkyCloaksPatch-No Imp.esp'
+    inc:
+      - '1nivWICSkyCloaksPatch.esp'
     msg:
       - type: error
         content:
@@ -17830,9 +17746,6 @@ plugins:
           - lang: spa
             str: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("1nivWICCloaks.esp")
-      - type: say
-        content: "Incompatible with: 1nivWICSkyCloaksPatch esp"
-        condition: file("1nivWICSkyCloaksPatch.esp")
   - name: '1nivWICSkyCloaksPatch-NoGuards.esp'
     msg:
       - type: error
@@ -18959,10 +18872,8 @@ plugins:
             str: Obsoleto. Actualizar a la última versión.
         condition: checksum("DLE_en.esp",3F26B1FA)
   - name: 'DME_Light.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DME.esp"
-        condition: file("DME.esp")
+    inc:
+      - 'DME.esp'
   - name: 'Doom Heavy Set.esp'
     msg:
       - type: say
@@ -19365,10 +19276,8 @@ plugins:
       - name: Deactivate
         condition: file("SkyRe_Plugin_DwemerAutoBlade.esp")
   - name: 'DwemerBombsNoPerkTree.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DwemerBombs.esp"
-        condition: file("DwemerBombs.esp")
+    inc:
+      - 'DwemerBombs.esp'
     dirty:
       - crc: 0x8d5e43b0
         util: *dirtyUtil
@@ -19945,10 +19854,9 @@ plugins:
       - Delev
       - Relev
   - name: 'GM-LeatherHood.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Gromits Smithing Forge Additions"
-        condition: ( file("GM-ForgeAdditions.esp") ) or file("GM-ForgeAdditionsLAotB.esp")
+    inc:
+      - 'GM-ForgeAdditions.esp'
+      - 'GM-ForgeAdditionsLAotB.esp'
   - name: Gold Ingot \d?.+\.esp
     msg:
       - type: say
@@ -20327,10 +20235,8 @@ plugins:
       - name: Deactivate
         condition: file("SkyRe_Plugin_NordicHunterLightArmor_1.2.esp")
   - name: 'hunterarmornofur.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: hunterarmorv1.2.esp"
-        condition: file("hunterarmorv1.2.esp")
+    inc:
+      - 'hunterarmorv1.2.esp'
 # ENDGROUP: Items H
 
 # BEGINGROUP: Items I
@@ -21402,10 +21308,9 @@ plugins:
       - name: Deactivate
         condition: ( file("SkyRe_Plugin_Malo_Waffen.esp") ) or file("SG_Malo_Waffen.esp")
   - name: 'SG_Malo_Waffen.esp'
+    inc:
+      - 'SkyRe_Plugin_Malo_Waffen.esp'
     msg:
-      - type: say
-        content: "Incompatible with: SkyRe_Plugin_Malo_Waffen.esp"
-        condition: file("SkyRe_Plugin_Malo_Waffen.esp")
       - type: error
         content:
           - lang: eng
@@ -21695,10 +21600,9 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'MorrowindSmithingVanilla.esp'
+    inc:
+      - 'Dawnguard.esm'
     msg:
-      - type: say
-        content: "Incompatible with: Use Dawnguard version, MorrowindSmithing.esp"
-        condition: active("Dawnguard.esm")
       - type: warn
         content:
           - lang: eng
@@ -22050,10 +21954,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
   - name: 'Nine_Divines_Amulet_nonOP_1.1.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Nine_Divines_Amulet_1.1.esp"
-        condition: file("Nine_Divines_Amulet_1.1.esp")
+    inc:
+      - 'Nine_Divines_Amulet_1.1.esp'
   - name: 'ninjaarmor.esp'
     dirty:
       - crc: 0x6a5c0876
@@ -22625,10 +22527,8 @@ plugins:
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
         condition: checksum("ringofhircine.esp",BE953E6C)
   - name: Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp
-    msg:
-      - type: say
-        content: "Incompatible with: Ring of Hircine - No Disease Werewolf AND Totem Selection.esp"
-        condition: file("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp")
+    inc:
+      - 'Ring of Hircine - No Disease Werewolf AND Totem Selection.esp'
   - name: 'RoH - No Disease And Selection.esp'
     msg:
       - type: warn
@@ -22672,10 +22572,8 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'RobedSteelPlateArmor.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: RobedEbonyArmor.esp"
-        condition: file("RobedEbonyArmor.esp")
+    inc:
+      - 'RobedEbonyArmor.esp'
     tag:
       - Delev
   - name: 'RogueOutfit.esp'
@@ -22851,10 +22749,8 @@ plugins:
         util: *dirtyUtil
         itm: 7
   - name: 'ShieldsofSkyrimLists.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ShieldsofSkyrim.esp"
-        condition: file("ShieldsofSkyrim.esp")
+    inc:
+      - 'ShieldsofSkyrim.esp'
     tag:
       - Relev
   - name: 'ShreddedTrissHat.esp'
@@ -23511,10 +23407,8 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'THVampireRoyalArmorUnenchanted_BoneHawkRingCraftable.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: THBoneHawkRingCraftable.esp"
-        condition: file("THBoneHawkRingCraftable.esp")
+    inc:
+      - 'THBoneHawkRingCraftable.esp'
   - name: 'tinyangrytrolls.esp'
     dirty:
       - crc: 0x5393f1e8
@@ -23535,10 +23429,9 @@ plugins:
           - lang: spa
             str: "Requiere: Meshes and textures from \"http://www.nexusmods.com/skyrim/mods/20077 Tribunal Maskes by Zairaam\", esp usage optional."
   - name: 'TorchArrow-Dawnguard.esp'
+    inc:
+      - 'TorchArrow.esp'
     msg:
-      - type: say
-        content: "Incompatible with: TorchArrow.esp"
-        condition: file("TorchArrow.esp")
       - type: error
         content:
           - lang: eng
@@ -23799,10 +23692,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, InquisitorGear.esp.
   - name: 'VampireMasterSet.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: VampireMasterHood.esp"
-        condition: file("VampireMasterHood.esp")
+    inc:
+      - 'VampireMasterHood.esp'
   - name: 'VanguardArmor.esp'
     tag:
       - name: Deactivate
@@ -23881,10 +23772,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, Cleric Armours - Credo.esp.
   - name: 'Weapons of the Dohvakiin.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Dragonborn.esm"
-        condition: file("Dragonborn.esm")
+    inc:
+      - 'Dragonborn.esm'
   - name: Weapons of the Third Era.+\.esp
     msg:
       - type: say
@@ -24330,23 +24219,21 @@ plugins:
       - Delev
       - Relev
   - name: 'IA6npc01.esp'
+    inc:
+      - 'ImmersiveArmorsNPCs.esp'
     msg:
       - type: say
         content: "Requires: Immersive Armors (by hothtrooper44)"
         condition: not file("hothtrooper44_ArmorCompilation.esp")
-      - type: say
-        content: "Incompatible with: ImmersiveArmorsNPCs.esp"
-        condition: file("ImmersiveArmorsNPCs.esp")
   - name: 'ImmersiveArmorsNPCs.esp'
     msg:
       - type: say
         content: "Requires: Immersive Armors (by hothtrooper44)"
         condition: not file("hothtrooper44_ArmorCompilation.esp")
   - name: 'ImmersiveArmorsNPCsNoHelmets.esp'
+    inc:
+      - 'ImmersiveArmorsNPCs.esp'
     msg:
-      - type: say
-        content: "Incompatible with: ImmersiveArmorsNPCs.esp"
-        condition: not file("ImmersiveArmorsNPCs.esp")
       - type: say
         content: "Requires: Immersive Armors (by hothtrooper44)"
         condition: not file("hothtrooper44_ArmorCompilation.esp")
@@ -24507,6 +24394,13 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'SG_HothTrooper.esp'
+    inc:
+      - 'SkyRe_Plugin_BaratheonArmor_1.esp'
+      - 'SkyRe_Plugin_HedgeKnightArmor_1.esp'
+      - 'SkyRe_Plugin_RedguardKnightArmor_3.esp'
+      - 'SkyRe_Plugin_VagabondArmor_5.esp'
+      - 'SkyRe_Plugin_VanguardArmor_3.esp'
+      - 'SkyRe_Plugin_WarchiefArmor_4.esp'
     msg:
       - type: say
         content:
@@ -24536,9 +24430,6 @@ plugins:
             str: SG_BlacksmithsCavern.esm no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin el.
         condition: not active("SG_BlacksmithsCavern.esm")
       - type: say
-        content: "Incompatible with: SkyRe_Plugin_BaratheonArmor_1.esp"
-        condition: file("SkyRe_Plugin_BaratheonArmor_1.esp")
-      - type: say
         content:
           - lang: eng
             str: Remember not to load (or to simply delete) BaratheonArmor.esp
@@ -24548,9 +24439,6 @@ plugins:
           - lang: rus
             str: Не забудьте отключить или удалить BaratheonArmor.esp
         condition: active("BaratheonArmor.esp")
-      - type: say
-        content: "Incompatible with: SkyRe_Plugin_HedgeKnightArmor_1.esp"
-        condition: file("SkyRe_Plugin_HedgeKnightArmor_1.esp")
       - type: say
         content:
           - lang: eng
@@ -24562,9 +24450,6 @@ plugins:
             str: Не забудьте отключить или удалить HedgeKnight.esp
         condition: active("HedgeKnight.esp")
       - type: say
-        content: "Incompatible with: SkyRe_Plugin_RedguardKnightArmor_3.esp"
-        condition: file("SkyRe_Plugin_RedguardKnightArmor_3.esp")
-      - type: say
         content:
           - lang: eng
             str: Remember not to load (or to simply delete) RedguardKnight.esp
@@ -24574,9 +24459,6 @@ plugins:
           - lang: rus
             str: Не забудьте отключить или удалить RedguardKnight.esp
         condition: active("RedguardKnight.esp")
-      - type: say
-        content: "Incompatible with: SkyRe_Plugin_VagabondArmor_5.esp"
-        condition: file("SkyRe_Plugin_VagabondArmor_5.esp")
       - type: say
         content:
           - lang: eng
@@ -24588,9 +24470,6 @@ plugins:
             str: Не забудьте отключить или удалить VagabondArmor.esp
         condition: active("VagabondArmor.esp")
       - type: say
-        content: "Incompatible with: SkyRe_Plugin_VanguardArmor_3.esp"
-        condition: file("SkyRe_Plugin_VanguardArmor_3.esp")
-      - type: say
         content:
           - lang: eng
             str: Remember not to load (or to simply delete) VanguardArmor.esp
@@ -24600,9 +24479,6 @@ plugins:
           - lang: rus
             str: Не забудьте отключить или удалить VanguardArmor.esp
         condition: active("VanguardArmor.esp")
-      - type: say
-        content: "Incompatible with: SkyRe_Plugin_WarchiefArmor_4.esp"
-        condition: file("SkyRe_Plugin_WarchiefArmor_4.esp")
       - type: say
         content:
           - lang: eng
@@ -24990,6 +24866,8 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: Smithing Perks Overhaul( - Balanced)?\.esp
+    inc:
+      - 'PerkUP-Smithing.esp'
     msg:
       - type: say
         content:
@@ -25001,9 +24879,6 @@ plugins:
           - lang: rus
             str: Не содержит неверных записей, как было найдено в других модах от разных авторов, однако новый esp, исправленный и очищенный в Tes5Edit вы можене найти "http://www.nexusmods.com/skyrim/mods/26230 здесь". Исправленный esp добавит больше стабильности. Если вы уже используете русифицированную-исправленную версию, то вам не о чем беспокоиться.
         condition: ( not checksum("Smithing Perks Overhaul.esp",92158BE3) ) and not checksum("Smithing Perks Overhaul - Balanced.esp",80AAE7FF)
-      - type: say
-        content: "Incompatible with: PerkUP-Smithing.esp"
-        condition: file("PerkUP-Smithing.esp")
       - type: warn
         content:
           - lang: eng
@@ -25086,6 +24961,8 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
         condition: not active("Dragonborn.esm")
   - name: Complete Crafting Overhaul( - BS version)?\.esp
+    inc:
+      - 'Smithing Perks Overhaul.esp'
     msg:
       - type: say
         content:
@@ -25097,9 +24974,6 @@ plugins:
           - lang: rus
             str: Не содержит неверных записей, как было найдено в других модах от разных авторов, однако новый esp, исправленный и очищенный в Tes5Edit вы можене найти "http://www.nexusmods.com/skyrim/mods/26230 здесь". Исправленный esp добавит больше стабильности. Если вы уже используете русифицированную-исправленную версию, то вам не о чем беспокоиться.
         condition: ( not checksum("Complete Crafting Overhaul.esp",8534CD3C) ) and not checksum("Complete Crafting Overhaul - BS version.esp",193D9214)
-      - type: say
-        content: "Incompatible with: Smithing Perks Overhaul.esp"
-        condition: file("Smithing Perks Overhaul.esp")
       - type: warn
         content:
           - lang: eng
@@ -25238,18 +25112,12 @@ plugins:
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
         condition: not active("Hearthfires.esm")
   - name: 'HarvestOverhaulCreaturesDawnguard.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: HarvestOverhaulCreatures.esp"
-        condition: not file("HarvestOverhaulCreatures.esp")
+    inc:
+      - 'HarvestOverhaulCreatures.esp'
   - name: 'HarvestOverhaulCreaturesDawnguardDragonborn.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: HarvestOverhaulCreatures.esp"
-        condition: not file("HarvestOverhaulCreatures.esp")
-      - type: say
-        content: "Incompatible with: HarvestOverhaulCreaturesDawnguard"
-        condition: not file("HarvestOverhaulCreaturesDawnguard.esp")
+    inc:
+      - HarvestOverhaulCreatures.esp'
+      - HarvestOverhaulCreaturesDawnguard.esp'
   - name: 'HarvestOverhaul_100Chance.esp'
     msg:
       - type: say
@@ -25424,6 +25292,8 @@ plugins:
           - lang: rus
             str: Для не ENB-пользователей.
   - name: 'T3nd0sOverhaulNoLighting.esp'
+    inc:
+      - 'T3nd0sOverhaul.esp'
     msg:
       - type: say
         content:
@@ -25437,9 +25307,6 @@ plugins:
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, SkyRe - Skyrim Redone.
-      - type: say
-        content: "Incompatible with: T3nd0sOverhaul.esp"
-        condition: file("T3nd0sOverhaul.esp")
       - type: say
         content:
           - lang: eng
@@ -25507,10 +25374,8 @@ plugins:
       - Delev
       - Relev
   - name: 'EpicGlorySlowerLevelingByMadmole.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: EpicGloryByMadmole.esp"
-        condition: file("EpicGloryByMadmole.esp")
+    inc:
+      - 'EpicGloryByMadmole.esp'
   - name: 'FactionOverhaulV25.esp'
     msg:
       - type: say
@@ -26011,16 +25876,14 @@ plugins:
 
 # BEGINGROUP: Dragons hunt in Swarms
   - name: 'DragonSwarms.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DS-MoreAgressionForRemover.esp"
-        condition: file("DS-MoreAgressionForRemover.esp")
+    inc:
+      - 'DS-MoreAgressionForRemover.esp'
   - name: DragonSwarms (V...)?-Easy Mode\.esp
-    msg:
-      - type: say
-        content: "Incompatible with: DS-MoreAgressionForRemover.esp"
-        condition: file("DS-MoreAgressionForRemover.esp")
+    inc:
+      - 'DS-MoreAgressionForRemover.esp'
   - name: 'DS-ExtendedDragonList.esp'
+    inc:
+      - 'DS-MoreAgressionForRemover.esp'
     msg:
       - type: warn
         content:
@@ -26032,10 +25895,9 @@ plugins:
           - lang: rus
             str: Не нужно, уже включено в версию v3.1+
         condition: regex("DragonSwarms.*\.esp")
-      - type: say
-        content: "Incompatible with: DS-MoreAgressionForRemover.esp"
-        condition: file("DS-MoreAgressionForRemover.esp")
   - name: 'DS-FlybyOpt.esp'
+    inc:
+      - 'DS-MoreAgressionForRemover.esp'
     msg:
       - type: warn
         content:
@@ -26047,9 +25909,6 @@ plugins:
           - lang: rus
             str: Не нужно, уже включено в версию v3.1+
         condition: regex("DragonSwarms.*\.esp")
-      - type: say
-        content: "Incompatible with: DS-MoreAgressionForRemover.esp"
-        condition: file("DS-MoreAgressionForRemover.esp")
   - name: 'DS-MoreAgressionForRemover.esp'
     msg:
       - type: warn
@@ -26075,10 +25934,8 @@ plugins:
             str: Не нужно, уже включено в версию v3.1+
         condition: regex("DragonSwarms.*\.esp")
   - name: DS-VanillaTimer+MultipleEvents.esp
-    msg:
-      - type: say
-        content: "Incompatible with: DS-MoreAgressionForRemover.esp"
-        condition: file("DS-MoreAgressionForRemover.esp")
+    inc:
+      - 'DS-MoreAgressionForRemover.esp'
 # ENDGROUP: Dragons hunt in Swarms
 
 # BEGINGROUP: PISE
@@ -27123,6 +26980,11 @@ plugins:
 
 # SkyRe Section
   - name: 'SkyRe_Main.esp'
+    inc:
+      - 'ACE Crafting.esp'
+      - 'ACE Speech.esp'
+      - 'Perky.esp'
+      - 'Crafting300.esp'
     msg:
       - type: say
         content: "Requires: \"http://skse.silverlock.org SKSE\" 1.5.11+"
@@ -27130,15 +26992,6 @@ plugins:
       - type: say
         content: "Requires: Dawnguard DLC (SkyRe 0.99.17+)"
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Incompatible with: ACE Crafting.esp"
-        condition: file("ACE Crafting.esp")
-      - type: say
-        content: "Incompatible with: ACE Speech.esp"
-        condition: file("ACE Speech.esp")
-      - type: say
-        content: "Incompatible with: Perky.esp (Syynx's Perky)"
-        condition: file("Perky.esp")
       - type: say
         content: "Incompatible with: PerkUP"
         condition: regex("PerkUP-.*\.esp")
@@ -27160,21 +27013,6 @@ plugins:
           - lang: spa
             str: "Incompatible con: Complete Crafting Overhaul (doubles in crafting)."
         condition: regex("Complete Crafting Overhaul( - BS version)?\.esp")
-      - type: say
-        content:
-          - lang: eng
-            str: "Incompatible with: Crafting300.esp (Perk conflicts  and doubles in crafting)."
-        condition: file("Crafting300.esp")
-      - type: say
-        content:
-          - lang: rus
-            str: "Несовместим с: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)."
-        condition: file("Crafting300.esp")
-      - type: say
-        content:
-          - lang: spa
-            str: "Incompatible con: Crafting300.esp (Perk conflicts  and doubles in crafting)."
-        condition: file("Crafting300.esp")
       - type: say
         content:
           - lang: eng
@@ -27250,25 +27088,17 @@ plugins:
       - Delev
       - Relev
   - name: 'SkyRe_Main_NoDawnguard.esp'
+    inc:
+      - 'SkyRe_Main.esp'
+      - 'Dawnguard.esm'
+      - 'ACE Crafting.esp'
+      - 'ACE Speech.esp'
+      - 'Perky.esp'
+      - 'Crafting300.esp'
     msg:
       - type: say
         content: "Requires: \"http://skse.silverlock.org SKSE\" 1.5.11+"
         condition: version("..\skse_loader.exe","0.1.5.11",<)
-      - type: say
-        content: "Incompatible with: Dawnguard DLC"
-        condition: active("Dawnguard.esm")
-      - type: say
-        content: "Incompatible with: SkyRe_Main.esp"
-        condition: file("SkyRe_Main.esp")
-      - type: say
-        content: "Incompatible with: ACE Crafting.esp"
-        condition: file("ACE Crafting.esp")
-      - type: say
-        content: "Incompatible with: ACE Speech.esp"
-        condition: file("ACE Speech.esp")
-      - type: say
-        content: "Incompatible with: Perky.esp (Syynx's Perky)"
-        condition: file("Perky.esp")
       - type: say
         content: "Incompatible with: PerkUP"
         condition: regex("PerkUP-.*\.esp")
@@ -27290,21 +27120,6 @@ plugins:
           - lang: spa
             str: "Incompatible con: Complete Crafting Overhaul (doubles in crafting)."
         condition: regex("Complete Crafting Overhaul( - BS version)?\.esp")
-      - type: say
-        content:
-          - lang: eng
-            str: "Incompatible with: Crafting300.esp (Perk conflicts  and doubles in crafting)."
-        condition: file("Crafting300.esp")
-      - type: say
-        content:
-          - lang: rus
-            str: "Несовместим с: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)."
-        condition: file("Crafting300.esp")
-      - type: say
-        content:
-          - lang: spa
-            str: "Incompatible con: Crafting300.esp (Perk conflicts  and doubles in crafting)."
-        condition: file("Crafting300.esp")
       - type: warn
         content:
           - lang: eng
@@ -27578,6 +27393,9 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'SkyRe_StandingStones.esp'
+    inc:
+      - 'Drakian race.esp'
+      - 'Signs and Guardians.esp'
     msg:
       - type: say
         content:
@@ -27589,12 +27407,6 @@ plugins:
           - lang: rus
             str: Не забудьте отключить или удалить StaRe.esp
         condition: file("StaRe.esp")
-      - type: say
-        content: "Incompatible with: Drakian race.esp"
-        condition: file("Drakian race.esp")
-      - type: say
-        content: "Incompatible with: Signs and Guardians.esp"
-        condition: file("Signs and Guardians.esp")
   - name: 'SkyRe_StandingStones_Fix.esp'
     msg:
       - type: say
@@ -31612,10 +31424,8 @@ plugins:
         itm: 2
         udr: 1
   - name: 'Breezehome Mannequins.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Breezehome Mannequins Lite.esp"
-        condition: file("Breezehome Mannequins Lite.esp")
+    inc:
+      - 'Breezehome Mannequins Lite.esp'
   - name: 'Breezehome Nordic House v.3.esp'
     msg:
       - type: warn
@@ -31958,10 +31768,9 @@ plugins:
         content: "Incompatible with: BertsBreezeRemodel"
         condition: regex("(0001)?BertsBreezehome.+\.es[pm]")
   - name: Briar'sEndCourierQuest.esp
+    inc:
+      - 'Fleetford.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Fleetford.esp"
-        condition: file("Fleetford.esp")
       - type: warn
         content:
           - lang: eng
@@ -31980,10 +31789,9 @@ plugins:
         itm: 48
         udr: 10
   - name: Briar'sEndInstantQuest.esp
+    inc:
+      - 'Fleetford.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Fleetford.esp"
-        condition: file("Fleetford.esp")
       - type: warn
         content:
           - lang: eng
@@ -32017,10 +31825,9 @@ plugins:
         itm: 48
         udr: 10
   - name: Briar'sEndNoQuest.esp
+    inc:
+      - 'Fleetford.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Fleetford.esp"
-        condition: file("Fleetford.esp")
       - type: warn
         content:
           - lang: eng
@@ -32054,10 +31861,8 @@ plugins:
         itm: 50
         udr: 10
   - name: 'Bridge Farm Hearthfire version.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Bridge Farm.esp"
-        condition: file("Bridge Farm.esp")
+    inc:
+      - 'Bridge Farm.esp'
   - name: 'Brothel.esp'
     msg:
       - type: say
@@ -32193,6 +31998,8 @@ plugins:
             str: Obsoleto. Actualizar a la última versión.
         condition: checksum("Candle Pond Ranch Default Mannequin.esp",BDD2E234)
   - name: 'Candle Pond Ranch.esp'
+    inc:
+      - 'Candle Pond Ranch Default Mannequin.esp'
     msg:
       - type: say
         content:
@@ -32209,9 +32016,6 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
         condition: checksum("Candle Pond Ranch.esp",8B643328)
-      - type: say
-        content: "Incompatible with: Candle Pond Ranch Default Mannequin.esp"
-        condition: file("Candle Pond Ranch Default Mannequin.esp")
   - name: 'Castle Brennenburgh.esp'
     msg:
       - type: warn
@@ -32346,10 +32150,8 @@ plugins:
         itm: 20
         udr: 102
   - name: 'CastleGrey.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: UFO - Ultimate Follower Overhaul.esp"
-        condition: file("UFO - Ultimate Follower Overhaul.esp")
+    inc:
+      - 'UFO - Ultimate Follower Overhaul.esp'
   - name: 'Castle Riverwood.esp'
     msg:
       - type: warn
@@ -32675,13 +32477,10 @@ plugins:
         util: *dirtyUtil
         itm: 14
   - name: 'CollegeOfWinterholdImmersive.esp'
+    inc:
+      - 'College of Winterhold Reborn.esp'
+      - 'College Of Winterhold Overhaul Release - V1.02.esp'
     msg:
-      - type: say
-        content: "Incompatible with: College Of Winterhold Overhaul Release - V1.02.esp"
-        condition: file("College Of Winterhold Overhaul Release - V1.02.esp")
-      - type: say
-        content: "Incompatible with: College of Winterhold Reborn.esp"
-        condition: file("College of Winterhold Reborn.esp")
       - type: warn
         content: Enhanced Lights and FX alters some lighting in the College of Winterhold which is incompatible with this mod. Please see Immersive College of Winterhold's Readme for how to alter Enhanced Lights and FX yourself to make it compatible.
         condition: ( file("EnhancedLightsandFX.esp") ) or regex("ELFX - (NoBreezehome|NoTaverns)\.esp")
@@ -33753,10 +33552,8 @@ plugins:
 
 # BEGINGROUP: Quests F
   - name: 'Falconroost.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: WhiteFallsHouse.esp"
-        condition: file("WhiteFallsHouse.esp")
+    inc:
+      - 'WhiteFallsHouse.esp'
   - name: Falkreath Graveyard\w?\.esp
     dirty:
       - crc: 0x51c7052a
@@ -34707,10 +34504,10 @@ plugins:
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
         condition: not active("Hearthfires.esm")
   - name: 'HeartOfThunder.esp'
+    inc:
+      - 'SkyRe_Main.esp'
+      - 'SkyRe_Main_NoDawnguard.esp'
     msg:
-      - type: say
-        content: "Incompatible with: SkyRe_Main.esp"
-        condition: ( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")
       - type: say
         content:
           - lang: eng
@@ -34779,10 +34576,8 @@ plugins:
         itm: 20
         udr: 9
   - name: 'heartwoodcottageNM1_v2.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: heartwoodcottage1_v2.esp"
-        condition: file("heartwoodcottage1_v2.esp")
+    inc:
+      - 'heartwoodcottage1_v2.esp'
     dirty:
       - crc: 0x4bfde1c5
         util: *dirtyUtil
@@ -35165,10 +34960,8 @@ plugins:
         util: *dirtyUtil
         itm: 231
   - name: 'Hunting in Skyrim - No Perks.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Hunting in Skyrim"
-        condition: file("Hunting in Skyrim.esp")
+    inc:
+      - 'Hunting in Skyrim.esp'
   - name: 'HvilaHome.esp'
     dirty:
       - crc: 0x81e6081f
@@ -35770,10 +35563,8 @@ plugins:
         util: *dirtyUtil
         itm: 7
   - name: 'LB_MuchAdoSnowElves_WeaponsOnly.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: LB_MuchAdoSnowElves_Quest.esp"
-        condition: file("LB_MuchAdoSnowElves_Quest.esp")
+    inc:
+      - 'LB_MuchAdoSnowElves_Quest.esp'
   - name: 'LC_CastleInvasion.esp'
     msg:
       - type: warn
@@ -36244,37 +36035,25 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'MapsellerDV.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Mapseller.esp"
-        condition: file("Mapseller.esp")
+    inc:
+      - 'Mapseller.esp'
     dirty:
       - crc: 0xe9ad27fd
         util: *dirtyUtil
         itm: 4
   - name: 'MapsellerDawnguard.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Mapseller.esp"
-        condition: file("Mapseller.esp")
-      - type: say
-        content: "Incompatible with: MapsellerDV.esp"
-        condition: file("MapsellerDV.esp")
+    inc:
+      - 'MapsellerDV.esp'
+      - 'Mapseller.esp'
     dirty:
       - crc: 0x4e319705
         util: *dirtyUtil
         itm: 4
   - name: 'MapsellerDawnguardDV.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Mapseller.esp"
-        condition: file("Mapseller.esp")
-      - type: say
-        content: "Incompatible with: MapsellerDV.esp"
-        condition: file("MapsellerDV.esp")
-      - type: say
-        content: "Incompatible with: MapsellerDawnguard.esp"
-        condition: file("MapsellerDawnguard.esp")
+    inc:
+      - 'MapsellerDV.esp'
+      - 'Mapseller.esp'
+      - 'MapsellerDawnguard.esp'
     dirty:
       - crc: 0xb17fe086
         util: *dirtyUtil
@@ -36688,10 +36467,8 @@ plugins:
         itm: 43
         udr: 2
   - name: 'mq stickyspot workaround.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: The Paarthurnax Dilemma.esp"
-        condition: file("The Paarthurnax Dilemma.esp")
+    inc:
+      - 'The Paarthurnax Dilemma.esp'
   - name: 'Mudcrab Farm.esp'
     dirty:
       - crc: 0xf90c3cc9
@@ -37626,6 +37403,8 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
   - name: 'Ramen0dawnguard.esp'
+    inc:
+      - 'Ramen.esp'
     msg:
       - type: error
         content:
@@ -37642,9 +37421,6 @@ plugins:
           - lang: spa
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
-      - type: say
-        content: "Incompatible with: Ramen.esp"
-        condition: file("Ramen.esp")
   - name: 'Ranger Ridge.esp'
     msg:
       - type: error
@@ -38056,14 +37832,15 @@ plugins:
         itm: 13
         udr: 59
   - name: 'Run For Your Lives.esp'
+    inc:
+      - 'EveryoneGetInside.esp'
     msg:
-      - type: say
-        content: "Incompatible with: EveryoneGetInside.esp"
-        condition: file("EveryoneGetInside.esp")
       - type: say
         content: "Requires: Skyrim 1.8.151+"
         condition: version("..\TESV.exe","1.8.151",<)
   - name: 'When Vampires Attack.esp'
+    inc:
+      - 'TheTownIsSafe.esp'
     msg:
       - type: say
         content: "Requires: Skyrim 1.8.151+"
@@ -38083,9 +37860,6 @@ plugins:
           - lang: spa
             str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Incompatible with: TheTownIsSafe.esp"
-        condition: file("TheTownIsSafe.esp")
   - name: 'Dwarvenhaven.esp'
     msg:
       - type: error
@@ -39225,10 +38999,8 @@ plugins:
         util: *dirtyUtil
         itm: 141
   - name: Stag'sRest.esp
-    msg:
-      - type: say
-        content: "Incompatible with: Cabin in the woods.esp"
-        condition: file("Cabin in the woods.esp")
+    inc:
+      - 'Cabin in the woods.esp'
   - name: 'Star-NorthernFrostBrewery.esp'
     msg:
       - type: warn
@@ -39893,6 +39665,8 @@ plugins:
             str: Usar The Secret Room of Breezehome.esp o secretroom-bh-en.esp, no ambos.
         condition: file("secretroom-bh-en.esp")
   - name: 'TheTownIsSafe.esp'
+    inc:
+      - 'When Vampires Attack.esp'
     msg:
       - type: error
         content:
@@ -39909,9 +39683,6 @@ plugins:
           - lang: spa
             str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Incompatible with: When Vampires Attack.esp"
-        condition: file("When Vampires Attack.esp")
   - name: 'the tree of vjaas.esp'
     tag:
       - Relev
@@ -41605,10 +41376,8 @@ plugins:
         util: *dirtyUtil
         itm: 13
   - name: 'WoTS - Non-Overhaul Version.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: WoTS - Overhaul Version.esp"
-        condition: file("WoTS - Overhaul Version.esp")
+    inc:
+      - 'WoTS - Overhaul Version.esp'
     dirty:
       - crc: 0xdf5c6bef
         util: *dirtyUtil
@@ -41723,18 +41492,12 @@ plugins:
           - lang: spa
             str: Utilizar solo un 'Scales' esp.
   - name: 'KTGold0.005.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: KTGold.esp"
-        condition: file("KTGold.esp")
+    inc:
+      - 'KTGold.esp'
   - name: 'KTGold0.0005.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: KTGold.esp"
-        condition: file("KTGold.esp")
-      - type: say
-        content: "Incompatible with: KTGold0.005.esp"
-        condition: file("KTGold0.005.esp")
+    inc:
+      - 'KTGold.esp'
+      - 'KTGold0.005.esp'
   - name: 'Lighter Tools.esp'
     msg:
       - type: say
@@ -41980,13 +41743,10 @@ plugins:
         util: *dirtyUtil
         itm: 7
   - name: 'Morrowloot_nwah.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Morrowloot.esp"
-        condition: file("Morrowloot.esp")
-      - type: say
-        content: "Incompatible with: SkyRe_Main.esp"
-        condition: ( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")
+    inc:
+      - 'Morrowloot.esp'
+      - 'SkyRe_Main.esp'
+      - 'SkyRe_Main_NoDawnguard.esp'
   - name: 'xFenWSOWAFW3E.esp'
     tag:
       - Delev
@@ -42041,25 +41801,17 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, no_quest_items.esp (CRC 47CDC33D).
   - name: 'NoEnchDarkBrotherhood.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: NoEnchAll.esp"
-        condition: file("NoEnchAll.esp")
+    inc:
+      - 'NoEnchAll.esp'
   - name: 'NoEnchNightingale.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: NoEnchAll.esp"
-        condition: file("NoEnchAll.esp")
+    inc:
+      - 'NoEnchAll.esp'
   - name: 'NoEnchThalmor.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: NoEnchAll.esp"
-        condition: file("NoEnchAll.esp")
+    inc:
+      - 'NoEnchAll.esp'
   - name: 'NoEnchThievesGuild.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: NoEnchAll.esp"
-        condition: file("NoEnchAll.esp")
+    inc:
+      - 'NoEnchAll.esp'
   - name: zzALittleSexyApparelReplacer.*\.esp
     msg:
       - type: say
@@ -42605,10 +42357,8 @@ plugins:
     tag:
       - Relev
   - name: 'Better Deadly Bandits Weapons Only.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Better Deadly Bandits.esp"
-        condition: file("Better Deadly Bandits.esp")
+    inc:
+      - 'Better Deadly Bandits.esp'
     tag:
       - Relev
   - name: 'Better Horses - Hearthfires.esp'
@@ -42709,10 +42459,8 @@ plugins:
             str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: not active("Dawnguard.esm")
   - name: 'BetterBreezehomeBedsNoble.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: BetterBreezehomeBeds.esp"
-        condition: file("BetterBreezehomeBeds.esp")
+    inc:
+      - 'BetterBreezehomeBeds.esp'
   - name: 'BetterEnhancedCrossbows.esp'
     dirty:
       - crc: 0x547fa257
@@ -43646,10 +43394,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, betterwards.esp.
   - name: 'betterwards-nostagger.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: betterwards.esp"
-        condition: file("betterwards.esp")
+    inc:
+      - 'betterwards.esp'
   - name: 'BinocularVisionForNPCs while Sneaking.esp'
     msg:
       - type: say
@@ -43830,6 +43576,8 @@ plugins:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
   - name: 'CandleLight-Minimum.esp'
+    inc:
+      - 'CandleLight-Medium.esp'
     msg:
       - type: warn
         content:
@@ -43843,9 +43591,6 @@ plugins:
         content:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
-      - type: say
-        content: "Incompatible with: CandleLight-Medium.esp"
-        condition: file("CandleLight-Medium.esp")
   - name: 'CCO - Permanent Birthsigns.esp'
     dirty:
       - crc: 0x9cb120ee
@@ -44246,10 +43991,8 @@ plugins:
         content: Use Distant DetailHF.esp
         condition: active("Hearthfires.esm")
   - name: 'Distant DetailHF.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Distant Detail.esp"
-        condition: file("Distant Detail.esp")
+    inc:
+      - 'Distant Detail.esp'
     dirty:
       - crc: 0x7ae9614f
         util: *dirtyUtil
@@ -44481,10 +44224,8 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'ElkHide - Basic.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ElkHide.esp"
-        condition: file("ElkHide.esp")
+    inc:
+      - 'ElkHide.esp'
   - name: 'ESFCompanions.esp'
     dirty:
       - crc: 0x16c76fa7
@@ -44908,10 +44649,8 @@ plugins:
           - lang: rus
             str: "Несовместим с: Другие моды, меняющие лошадей"
   - name: 'FSS-No pause between lines.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: UFO - Ultimate Follower Overhaul.esp"
-        condition: file("UFO - Ultimate Follower Overhaul.esp")
+    inc:
+      - 'UFO - Ultimate Follower Overhaul.esp'
   - name: 'Fullcamprespawn.esp'
     msg:
       - type: warn
@@ -44947,10 +44686,8 @@ plugins:
           - lang: spa
             str: Utilizar solo un Ghostly Shadowmere*.esp.
   - name: 'GiantClubNerfed.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: GiantClub.esp"
-        condition: file("GiantClub.esp")
+    inc:
+      - 'GiantClub.esp'
   - name: 'GoldenVendors.esp'
     tag:
       - Relev
@@ -45291,10 +45028,8 @@ plugins:
         itm: 2
         udr: 76
   - name: 'Housecarls Are Hotties.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Housecarls Can Wear Anything.esp"
-        condition: file("Housecarls Can Wear Anything.esp")
+    inc:
+      - 'Housecarls Can Wear Anything.esp'
   - name: 'Hearthfires Housecarls Are Hotties.esp'
     msg:
       - type: error
@@ -45488,34 +45223,20 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'improvedrealistic.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: improvedoverpowered.esp"
-        condition: file("improvedoverpowered.esp")
+    inc:
+      - 'improvedoverpowered.esp'
   - name: 'ImprovedScImpUniforms - Armor Base.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ImprovedScImpUniforms - Vanilla Only.esp"
-        condition: file("ImprovedScImpUniforms - Vanilla only.esp")
+    inc:
+      - 'ImprovedScImpUniforms - Vanilla only.esp'
   - name: 'ImprovedScImpUniforms - Main.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ImprovedScImpUniforms - Armor Base.esp"
-        condition: file("ImprovedScImpUniforms - Armor Base.esp")
-      - type: say
-        content: "Incompatible with: ImprovedScImpUniforms - Vanilla Only.esp"
-        condition: file("ImprovedScImpUniforms - Vanilla only.esp")
+    inc:
+      - 'ImprovedScImpUniforms - Armor Base.esp'
+      - 'ImprovedScImpUniforms - Vanilla only.esp'
   - name: 'ImprovedScImpUniforms - WARZONES only.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ImprovedScImpUniforms - Armor Base.esp"
-        condition: file("ImprovedScImpUniforms - Armor Base.esp")
-      - type: say
-        content: "Incompatible with: ImprovedScImpUniforms - Vanilla Only.esp"
-        condition: file("ImprovedScImpUniforms - Vanilla only.esp")
-      - type: say
-        content: "Incompatible with: ImprovedScImpUniforms - Main.esp"
-        condition: file("ImprovedScImpUniforms - Main.esp")
+    inc:
+      - 'ImprovedScImpUniforms - Armor Base.esp'
+      - 'ImprovedScImpUniforms - Vanilla only.esp'
+      - 'ImprovedScImpUniforms - Main.esp'
   - name: 'Improved Shields.esp'
     dirty:
       - crc: 0xcc6b7d57
@@ -45550,21 +45271,16 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'Isharas_MLLY_FEMALES_SKSE.esp'
+    inc:
+      - 'Isharas_MLLY_FEMALES.esp'
     msg:
       - type: say
         content: "Requires: \"http://skse.silverlock.org SKSE\""
         condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Incompatible with: Isharas_MLLY_FEMALES.esp"
-        condition: file("Isharas_MLLY_FEMALES.esp")
   - name: 'Isharas_MLLY_MALES.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Isharas_MLLY_FEMALES.esp"
-        condition: file("Isharas_MLLY_FEMALES.esp")
-      - type: say
-        content: "Incompatible with: Isharas_MLLY_FEMALES_SKSE.esp"
-        condition: file("Isharas_MLLY_FEMALES_SKSE.esp")
+    inc:
+      - 'Isharas_MLLY_FEMALES.esp'
+      - 'Isharas_MLLY_FEMALES_SKSE.esp'
   - name: 'Isharas_MLLY_MALES_SKSE.esp'
     msg:
       - type: say
@@ -45826,18 +45542,12 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'longercandlelight2min.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: longercandlelight.esp"
-        condition: file("longercandlelight.esp")
+    inc:
+      - 'longercandlelight.esp'
   - name: 'longercandlelight5min.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: longercandlelight.esp"
-        condition: file("longercandlelight.esp")
-      - type: say
-        content: "Incompatible with: longercandlelight2min.esp"
-        condition: file("longercandlelight2min.esp")
+    inc:
+      - 'longercandlelight.esp'
+      - 'longercandlelight2min.esp'
   - name: 'LorebalanceArtifacts.esp'
     msg:
       - type: error
@@ -45961,10 +45671,8 @@ plugins:
             str: Obsoleto. Actualizar a la última versión.
         condition: checksum("Magnify Spell Enchantments.esp",74C76DD8)
   - name: 'Magnify Spell Enchantments - Disenchant.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Magnify Spell Enchantments.esp"
-        condition: file("Magnify Spell Enchantments.esp")
+    inc:
+      - 'Magnify Spell Enchantments.esp'
   - name: 'Magnus100_50.esp'
     msg:
       - type: warn
@@ -46029,13 +45737,12 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'masteredmagickaalternative.esp'
+    inc:
+      - 'masteredmagicka.esp'
     msg:
       - type: say
         content: "Incompatible with: Mighty Magic"
         condition: regex("Mighty Magick .+\.esp")
-      - type: say
-        content: "Incompatible with: masteredmagicka.esp"
-        condition: file("masteredmagicka.esp")
     dirty:
       - crc: 0x89ff6fe5
         util: *dirtyUtil
@@ -46111,18 +45818,12 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
   - name: 'MD 07 - EFCS.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: MD - EFCS.esp"
-        condition: file("MD - EFCS.esp")
+    inc:
+      - 'MD - EFCS.esp'
   - name: Only vampires&werewolves changes.esp
-    msg:
-      - type: say
-        content: "Incompatible with: MD - EFCS.esp"
-        condition: file("MD - EFCS.esp")
-      - type: say
-        content: "Incompatible with: MD 07 - EFCS.esp"
-        condition: file("MD 07 - EFCS.esp")
+    inc:
+      - 'MD - EFCS.esp'
+      - 'MD 07 - EFCS.esp'
   - name: 'MECR_MythicDawnCommentaries_are_Skill_Books.esp'
     msg:
       - type: say
@@ -46357,10 +46058,8 @@ plugins:
 # ENDGROUP: Overrides M
 # BEGINGROUP: Overrides N
   - name: 'NeV-P_ExtremeMaterialsENG.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: NeV-P_ExtremeMaterials.esp"
-        condition: file("NeV-P_ExtremeMaterials.esp")
+    inc:
+      - 'NeV-P_ExtremeMaterials.esp'
     dirty:
       - crc: 0x745b4390
         util: *dirtyUtil
@@ -46504,10 +46203,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, Thieves Guild Requirements.esp.
   - name: 'NoAutoAim.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: AutoAim.esp"
-        condition: file("AutoAim.esp")
+    inc:
+      - 'AutoAim.esp'
   - name: 'NoAutoSkillBooks.esp'
     msg:
       - type: say
@@ -46578,10 +46275,8 @@ plugins:
 # ENDGROUP: Overrides N
 # BEGINGROUP: Overrides O
   - name: 'OpenFaceGuardHelmetsFR.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: OpenFaceGuardHelmets.esp."
-        condition: file("OpenFaceGuardHelmets.esp")
+    inc:
+      - 'OpenFaceGuardHelmets.esp'
   - name: 'OpenFaceHelmets.esp'
     msg:
       - type: warn
@@ -46624,19 +46319,15 @@ plugins:
         util: *dirtyUtil
         itm: 19
   - name: 'ORS_MorthalPain_InsanePatch.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ORS_MorthalPain_AdeptPatch.esp"
-        condition: file("ORS_MorthalPain_AdeptPatch.esp")
+    inc:
+      - 'ORS_MorthalPain_AdeptPatch.esp'
     dirty:
       - crc: 0xb623f96d
         util: *dirtyUtil
         itm: 2
   - name: 'ORS1InsanePatch.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ORS1AdeptPatch.esp"
-        condition: file("ORS1AdeptPatch.esp")
+    inc:
+      - 'ORS1AdeptPatch.esp'
     dirty:
       - crc: 0xcd653e42
         util: *dirtyUtil
@@ -46644,10 +46335,8 @@ plugins:
 # ENDGROUP: Overrides O
 # BEGINGROUP: Overrides P
   - name: 'Paralyze-1.1b.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Paralyze.esp"
-        condition: file("Paralyze.esp")
+    inc:
+      - 'Paralyze.esp'
   - name: 'Passive Dragons (non-aggressive to all potentially friendly factions).esp'
     msg:
       - type: warn
@@ -46771,10 +46460,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, Proper Aiming.esp.
   - name: 'Proper Aiming.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: AutoAim.esp"
-        condition: file("AutoAim.esp")
+    inc:
+      - 'AutoAim.esp'
 # ENDGROUP: Overrides P
 # BEGINGROUP: Overrides Q
 # ENDGROUP: Overrides Q
@@ -47228,10 +46915,8 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
   - name: 'SilentRuneSpellsUncap_v100.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: SilentRuneSpells_v100.esp"
-        condition: file("SilentRuneSpells_v100.esp")
+    inc:
+      - 'SilentRuneSpells_v100.esp'
   - name: 'SkaalKidAetaCoat.esp'
     msg:
       - type: error
@@ -47250,10 +46935,8 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
         condition: not active("Dragonborn.esm")
   - name: 'Skyrim bigger trees.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Riften Bigger Trees.esp"
-        condition: file("Riften Bigger Trees.esp")
+    inc:
+      - 'Riften Bigger Trees.esp'
     dirty:
       - crc: 0x7faad905
         util: *dirtyUtil
@@ -47326,29 +47009,23 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, SkyJubs_Invisible_Helmets_Eng_Main.esp.
   - name: SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp
-    msg:
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Main.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Main.esp")
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
   - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
     msg:
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Main.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Main.esp")
       - type: say
         content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp"
         condition: regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")
   - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyHelmets.esp'
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
+      - 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
     msg:
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Main.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Main.esp")
       - type: say
         content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp"
         condition: regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp")
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp'
     msg:
       - type: error
@@ -47440,26 +47117,17 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp.
   - name: 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Main.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Main.esp")
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
   - name: SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp
-    msg:
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Main.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Main.esp")
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp")
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
   - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
     msg:
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Main.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Main.esp")
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp")
       - type: say
         content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp"
         condition: regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")
@@ -47467,30 +47135,22 @@ plugins:
         content: "Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp"
         condition: regex("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")
   - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp'
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
+      - 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
     msg:
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Main.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Main.esp")
       - type: say
         content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp"
         condition: regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")
       - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp")
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Ger_MainAll_Headdress.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp")
-      - type: say
         content: "Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp"
         condition: regex("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp")
   - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dawnguard.esp'
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp'
     msg:
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp")
       - type: error
         content:
           - lang: eng
@@ -47507,10 +47167,9 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dragonborn.esp'
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp'
     msg:
-      - type: say
-        content: "Incompatible with: SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp"
-        condition: file("SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp")
       - type: error
         content:
           - lang: eng
@@ -48002,6 +47661,9 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
         condition: not active("Dragonborn.esm")
   - name: 'dD-Dragonborn-Dawnguard-EBT Patch.esp'
+    inc:
+      - 'dD-Dawnguard-EBT Patch.esp'
+      - 'dD-Dragonborn-EBT Patch.esp'
     msg:
       - type: error
         content:
@@ -48036,25 +47698,21 @@ plugins:
       - type: error
         content: dD - Enhanced Blood Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without dD - Enhanced Blood Main.esp.
         condition: not file("dD - Enhanced Blood Main.esp")
-      - type: say
-        content: "Incompatible with: dD-Dawnguard-EBT Patch.esp"
-        condition: file("dD-Dawnguard-EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-Dragonborn-EBT Patch.esp"
-        condition: file("dD-Dragonborn-EBT Patch.esp")
     dirty:
       - crc: 0x4730f8bd
         util: *dirtyUtil
         itm: 1
   - name: 'dD-SkyrimMonsterMod EBT Patch.esp'
+    inc:
+      - 'dD-Dawnguard-EBT Patch.esp'
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
         condition: not file("SkyMoMod.esm")
-      - type: say
-        content: "Incompatible with: dD-Dawnguard-EBT Patch.esp"
-        condition: file("dD-Dawnguard-EBT Patch.esp")
   - name: 'dD-Dawnguard-MonsterMod EBT Patch.esp'
+    inc:
+      - 'dD-Dawnguard-EBT Patch.esp'
+      - 'dD-SkyrimMonsterMod EBT Patch.esp'
     msg:
       - type: error
         content:
@@ -48074,12 +47732,6 @@ plugins:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
         condition: not file("SkyMoMod.esm")
-      - type: say
-        content: "Incompatible with: dD-Dawnguard-EBT Patch.esp"
-        condition: file("dD-Dawnguard-EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-SkyrimMonsterMod EBT Patch.esp"
-        condition: file("dD-SkyrimMonsterMod EBT Patch.esp")
   - name: 'dD-Dragonborn-MonsterMod EBT Patch.esp'
     msg:
       - type: error
@@ -48101,6 +47753,13 @@ plugins:
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
         condition: not file("SkyMoMod.esm")
   - name: 'dD-DG-DB-MonsterMod EBT Patch.esp'
+    inc:
+      - 'dD-Dawnguard-EBT Patch.esp'
+      - 'dD-Dragonborn-EBT Patch.esp'
+      - 'dD-Dragonborn-Dawnguard-EBT Patch.esp'
+      - 'dD-SkyrimMonsterMod EBT Patch.esp'
+      - 'dD-Dawnguard-MonsterMod EBT Patch.esp'
+      - 'dD-Dragonborn-MonsterMod EBT Patch.esp'
     msg:
       - type: error
         content:
@@ -48135,25 +47794,15 @@ plugins:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
         condition: not file("SkyMoMod.esm")
-      - type: say
-        content: "Incompatible with: dD-Dawnguard-EBT Patch.esp"
-        condition: file("dD-Dawnguard-EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-Dragonborn-EBT Patch.esp"
-        condition: file("dD-Dragonborn-EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-Dragonborn-Dawnguard-EBT Patch.esp"
-        condition: file("dD-Dragonborn-Dawnguard-EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-SkyrimMonsterMod EBT Patch.esp"
-        condition: file("dD-SkyrimMonsterMod EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-Dawnguard-MonsterMod EBT Patch.esp"
-        condition: file("dD-Dawnguard-MonsterMod EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-Dragonborn-MonsterMod EBT Patch.esp"
-        condition: file("dD-Dragonborn-MonsterMod EBT Patch.esp")
   - name: 'dD-DG-DB-MM-SiC EBT Patch.esp'
+    inc:
+      - 'dD-Dawnguard-EBT Patch.esp'
+      - 'dD-Dragonborn-EBT Patch.esp'
+      - 'dD-Dragonborn-Dawnguard-EBT Patch.esp'
+      - 'dD-SkyrimMonsterMod EBT Patch.esp'
+      - 'dD-Dawnguard-MonsterMod EBT Patch.esp'
+      - 'dD-Dragonborn-MonsterMod EBT Patch.esp'
+      - 'dD-DG-DB-MonsterMod EBT Patch.esp'
     msg:
       - type: error
         content:
@@ -48191,27 +47840,6 @@ plugins:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/24913 Skyrim Immersive Creatures\""
         condition: not file("Skyrim Immersive Creatures.esp")
-      - type: say
-        content: "Incompatible with: dD-Dawnguard-EBT Patch.esp"
-        condition: file("dD-Dawnguard-EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-Dragonborn-EBT Patch.esp"
-        condition: file("dD-Dragonborn-EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-Dragonborn-Dawnguard-EBT Patch.esp"
-        condition: file("dD-Dragonborn-Dawnguard-EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-SkyrimMonsterMod EBT Patch.esp"
-        condition: file("dD-SkyrimMonsterMod EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-Dawnguard-MonsterMod EBT Patch.esp"
-        condition: file("dD-Dawnguard-MonsterMod EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-Dragonborn-MonsterMod EBT Patch.esp"
-        condition: file("dD-Dragonborn-MonsterMod EBT Patch.esp")
-      - type: say
-        content: "Incompatible with: dD-DG-DB-MonsterMod EBT Patch.esp"
-        condition: file("dD-DG-DB-MonsterMod EBT Patch.esp")
   - name: 'Skeleton Resurrection.esp'
     msg:
       - type: say
@@ -48731,10 +48359,8 @@ plugins:
       - Delev
       - Relev
   - name: 'Unique.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Unique.esm"
-        condition: file("Unique.esm")
+    inc:
+      - 'Unique.esm'
   - name: 'Unique Unique.esp'
     msg:
       - type: say
@@ -48811,10 +48437,8 @@ plugins:
         util: *dirtyUtil
         udr: 6
   - name: 'Ustengrav gate removal - alternate.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Ustengrav gate removal.esp"
-        condition: file("Ustengrav gate removal.esp")
+    inc:
+      - 'Ustengrav gate removal.esp'
 # ENDGROUP: Overrides U
 # BEGINGROUP: Overrides V
   - name: 'valkiirs_tastier_food.esp'
@@ -49026,10 +48650,9 @@ plugins:
             str: Obsoleto. Actualizar a la última versión.
         condition: ( ( checksum("wabba-ori_proj.esp",920BFEAC) ) or checksum("wabba-ori_proj.esp",C0BCC465) ) or checksum("wabba-ori_proj.esp",C4D440F8)
   - name: 'wabba-unrel_proj.esp'
+    inc:
+      - 'wabba-ori_proj.esp'
     msg:
-      - type: say
-        content: "Incompatible with: wabba-ori_proj.esp"
-        condition: file("wabba-ori_proj.esp")
       - type: say
         content:
           - lang: eng
@@ -49115,10 +48738,9 @@ plugins:
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
         condition: not active("Hearthfires.esm")
   - name: 'R1Cots-Refait.esp'
+    inc:
+      - 'YChildren of the Sky.esp'
     msg:
-      - type: say
-        content: "Incompatible with: YChildren of the Sky.esp"
-        condition: file("YChildren of the Sky.esp")
       - type: error
         content:
           - lang: eng
@@ -49402,10 +49024,8 @@ plugins:
       - Relev
       - Stats
   - name: 'improvedrealistic.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: improvedoverpowered.esp"
-        condition: file("improvedoverpowered.esp")
+    inc:
+      - 'improvedoverpowered.esp'
   - name: 'Skyrim unleashed_items.esp'
     msg:
       - type: error
@@ -49555,10 +49175,8 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: ( checksum("Skyrim unleashed_enchantments.esp",351BFD9A) ) and not active("Dawnguard.esm")
   - name: 'Skyrim unleashed Xtra_items.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Skyrim unleashed_items.esp"
-        condition: file("Skyrim unleashed_items.esp")
+    inc:
+      - 'Skyrim unleashed_items.esp'
     tag:
       - Delev
       - Relev
@@ -49567,10 +49185,8 @@ plugins:
         util: *dirtyUtil
         itm: 80
   - name: 'Skyrim unleashed Xtra_npc.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Skyrim unleashed_npc.esp"
-        condition: file("Skyrim unleashed_npc.esp")
+    inc:
+      - 'Skyrim unleashed_npc.esp'
     tag:
       - Delev
       - Relev
@@ -49579,18 +49195,14 @@ plugins:
         util: *dirtyUtil
         itm: 69
   - name: 'Skyrim unleashed Xtra_crafting.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Skyrim unleashed_crafting.esp"
-        condition: file("Skyrim unleashed_crafting.esp")
+    inc:
+      - 'Skyrim unleashed_crafting.esp'
     tag:
       - Delev
       - Relev
   - name: 'Skyrim unleashed Xtra_enchantments.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Skyrim unleashed_enchantments.esp"
-        condition: file("Skyrim unleashed_enchantments.esp")
+    inc:
+      - 'Skyrim unleashed_enchantments.esp'
 # ENDGROUP: Overrides Late
 # ENDGROUP: Overrides
 # BEGINGROUP: Towns and Villages
@@ -49856,10 +49468,9 @@ plugins:
         util: *dirtyUtil
         itm: 31
   - name: 'ETaC SkyRealFF Patch - Dawnguard.esp'
+    inc:
+      - 'ETaC SkyRealFF Patch - Standard.esp'
     msg:
-      - type: say
-        content: "Incompatible with: ETaC SkyRealFF Patch - Standard.esp"
-        condition: file("ETaC SkyRealFF Patch - Standard.esp")
       - type: error
         content:
           - lang: eng
@@ -49900,10 +49511,8 @@ plugins:
         util: *dirtyUtil
         itm: 188
   - name: 'FarvynsDivineOctavo.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Open Cities Skyrim.esp"
-        condition: file("Open Cities Skyrim.esp")
+    inc:
+      - 'Open Cities Skyrim.esp'
     dirty:
       - crc: 0xe8a983e6
         util: *dirtyUtil
@@ -50041,10 +49650,8 @@ plugins:
         itm: 82
         udr: 24
   - name: 'NerniesCityandVillageExpansion.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: NerniesSolitudeExpansion.esp"
-        condition: file("NerniesSolitudeExpansion.esp")
+    inc:
+      - 'NerniesSolitudeExpansion.esp'
     dirty:
       - crc: 0x53a97488
         util: *dirtyUtil
@@ -50095,10 +49702,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
   - name: 'Pinewood Village.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: pinewoodvillage.esm"
-        condition: file("pinewoodvillage.esm")
+    inc:
+      - 'pinewoodvillage.esm'
     dirty:
       - crc: 0x4a26ea6a
         util: *dirtyUtil
@@ -50233,18 +49838,12 @@ plugins:
         itm: 296
         udr: 3
   - name: 'Solitude A City Of Trade.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Solitude A City Of Trade.esm"
-        condition: file("Solitude A City Of Trade.esm")
+    inc:
+      - 'Solitude A City Of Trade.esm'
   - name: Solitude A City Of Trade LITE!.esp
-    msg:
-      - type: say
-        content: "Incompatible with: Solitude A City Of Trade.esm"
-        condition: file("Solitude A City Of Trade.esm")
-      - type: say
-        content: "Incompatible with: Solitude A City Of Trade.esp"
-        condition: file("Solitude A City Of Trade.esp")
+    inc:
+      - 'Solitude A City Of Trade.esp'
+      - 'Solitude A City Of Trade.esm'
   - name: 'solitude enhanced.esp'
     msg:
       - type: warn
@@ -50804,18 +50403,12 @@ plugins:
             str: RealisticRoomRental.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Realistic Room Rental
         condition: not file("RealisticRoomRental.esp")
   - name: 'RealisticRoomRental-Basic.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: RealisticRoomRental.esp"
-        condition: file("RealisticRoomRental.esp")
+    inc:
+      - 'RealisticRoomRental.esp'
   - name: 'RRRE-Lite.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: RealisticRoomRental.esp"
-        condition: file("RealisticRoomRental.esp")
-      - type: say
-        content: "Incompatible with: RealisticRoomRental-Basic.esp"
-        condition: file("RealisticRoomRental-Basic.esp")
+    inc:
+      - 'RealisticRoomRental.esp'
+      - 'RealisticRoomRental-Basic.esp'
     dirty:
       - crc: 0x653acd5d
         util: *dirtyUtil
@@ -51315,13 +50908,12 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'ClimatesOfTamriel-Dungeons-Hazardous.esp'
+    inc:
+      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
     msg:
       - type: warn
         content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
         condition: checksum("ClimatesOfTamriel-Dungeons-Hazardous.esp",CBE304CE)
-      - type: say
-        content: "Incompatible with: ClimatesOfTamriel-Dungeons-Hardcore.esp"
-        condition: file("ClimatesOfTamriel-Dungeons-Hardcore.esp")
       - type: say
         content: "Incompatible with: Realistic Lighting Overhaul"
   - name: 'ClimatesOfTamriel-Interiors-Cold.esp'
@@ -51332,13 +50924,12 @@ plugins:
       - type: say
         content: "Incompatible with: Realistic Lighting Overhaul"
   - name: 'ClimatesOfTamriel-Interiors-Warm.esp'
+    inc:
+      - 'ClimatesOfTamriel-Interiors-Cold.esp'
     msg:
       - type: warn
         content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
         condition: checksum("ClimatesOfTamriel-Interiors-Warm.esp",77C47623)
-      - type: say
-        content: "Incompatible with: ClimatesOfTamriel-Interiors-Cold.esp"
-        condition: file("ClimatesOfTamriel-Interiors-Cold.esp")
       - type: say
         content: "Incompatible with: Realistic Lighting Overhaul"
   - name: 'ClimatesOfTamriel-WinterEdition.esp'
@@ -52215,10 +51806,9 @@ plugins:
         content: "Incompatible with: Realistic Ragdoll Force"
         condition: regex("dD.?- Realistic Ragdoll Force.*\.esp")
   - name: 'Realistic hit.esp'
+    inc:
+      - 'Medium hit.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Medium hit.esp"
-        condition: file("Medium hit.esp")
       - type: say
         content: "Incompatible with: Realistic Ragdoll Force"
         condition: regex("dD.?- Realistic Ragdoll Force.*\.esp")
@@ -52329,10 +51919,9 @@ plugins:
             str: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://www.nexusmods.com/skyrim/mods/26228 Realistic Needs and Diseases"
         condition: ( checksum("KnapsackEnhanced.esp",CD3D515C) ) and not active("RealisticNeedsandDiseases.esp")
   - name: 'Real Wildlife Skyrim 0.1 IMCN.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Real Wildlife Skyrim 0.1.esp or Real Wildlife Skyrim 0.1 No Food.esp"
-        condition: ( active("Real Wildlife Skyrim 0.1 No Food.esp") ) or active("Real Wildlife Skyrim 0.1.esp")
+    inc:
+      - 'Real Wildlife Skyrim 0.1.esp'
+      - 'Real Wildlife Skyrim 0.1 No Food.esp'
     tag:
       - Delev
     dirty:
@@ -52870,6 +52459,11 @@ plugins:
 # ENDGROUP: Realism
 # BEGINGROUP: Vampires and Werewolves
   - name: 'SkyRe_Vampirism.esp'
+    inc:
+      - 'VampireOverhaul.esp'
+      - 'UVO - Ultimate Vampirism Overhaul.esp'
+      - 'Alternate Start - Live Another Life.esp'
+      - 'Dawnguard.esm'
     msg:
       - type: say
         content: "Incompatible with: Belua Sanguinare"
@@ -52878,20 +52472,8 @@ plugins:
         content: "Incompatible with: Better Vampires"
         condition: regex("Better Vampires( ML| DG)?( - No DawnGuard.esp)?\.esp")
       - type: say
-        content: "Incompatible with: VampireOverhaul.esp"
-        condition: file("VampireOverhaul.esp")
-      - type: say
-        content: "Incompatible with: UVO - Ultimate Vampirism Overhaul.esp"
-        condition: file("UVO - Ultimate Vampirism Overhaul.esp")
-      - type: say
         content: "Incompatible with: Imp's More Complex Needs"
         condition: regex("Imp's More Complex Needs\.es[mp]")
-      - type: say
-        content: "Incompatible with: Alternate Start - Live Another Life.esp"
-        condition: file("Alternate Start - Live Another Life.esp")
-      - type: say
-        content: "Incompatible with: Dawnguard.esm"
-        condition: active("Dawnguard.esm")
       - type: say
         content:
           - lang: eng
@@ -52990,6 +52572,9 @@ plugins:
           - lang: spa
             str: "Contiene ediciones sucia: Do not clean. \"Dirty\" edits are intentional and required for the mod to function."
   - name: 'Better Vampires ML.esp'
+    inc:
+      - 'Better Vampires.esp'
+      - 'Better Vampires DG.esp'
     msg:
       - type: error
         content:
@@ -53007,12 +52592,6 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
       - type: say
-        content: "Incompatible with: Better Vampires.esp"
-        condition: file("Better Vampires.esp")
-      - type: say
-        content: "Incompatible with: Better Vampires DG.esp"
-        condition: file("Better Vampires DG.esp")
-      - type: say
         content:
           - lang: eng
             str: "Contains dirty edits: Do not clean. \"Dirty\" edits are intentional and required for the mod to function."
@@ -53025,16 +52604,11 @@ plugins:
           - lang: spa
             str: "Contiene ediciones sucia: Do not clean. \"Dirty\" edits are intentional and required for the mod to function."
   - name: 'Better Vampires - No DawnGuard.esp'
+    inc:
+      - 'Better Vampires.esp'
+      - 'Better Vampires DG.esp'
+      - 'Better Vampires ML.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Better Vampires.esp"
-        condition: file("Better Vampires.esp")
-      - type: say
-        content: "Incompatible with: Better Vampires DG.esp"
-        condition: file("Better Vampires DG.esp")
-      - type: say
-        content: "Incompatible with: Better Vampires ML.esp"
-        condition: file("Better Vampires ML.esp")
       - type: warn
         content:
           - lang: eng
@@ -53063,19 +52637,12 @@ plugins:
           - lang: spa
             str: "Contiene ediciones sucia: Do not clean. \"Dirty\" edits are intentional and required for the mod to function."
   - name: 'Better Vampires ML - No DawnGuard.esp'
+    inc:
+      - 'Better Vampires.esp'
+      - 'Better Vampires DG.esp'
+      - 'Better Vampires ML.esp'
+      - 'Better Vampires - No DawnGuard.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Better Vampires.esp"
-        condition: file("Better Vampires.esp")
-      - type: say
-        content: "Incompatible with: Better Vampires DG.esp"
-        condition: file("Better Vampires DG.esp")
-      - type: say
-        content: "Incompatible with: Better Vampires ML.esp"
-        condition: file("Better Vampires ML.esp")
-      - type: say
-        content: "Incompatible with: Better Vampires - No DawnGuard.esp"
-        condition: file("Better Vampires - No DawnGuard.esp")
       - type: warn
         content:
           - lang: eng
@@ -53332,15 +52899,11 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, "http://www.nexusmods.com/skyrim/mods/21660 Revamped Vampire Lord".
   - name: 'Scary Vampire Lord 3 sec.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Scary Vampire Lord.esp"
-        condition: file("Scary Vampire Lord.esp")
+    inc:
+      - 'Scary Vampire Lord.esp'
   - name: 'Scary Werewolf 3 sec.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Scary Werewolf Form.esp"
-        condition: file("Scary Werewolf Form.esp")
+    inc:
+      - 'Scary Werewolf Form.esp'
   - name: 'Shoo_TestCRVampFix.esp'
     msg:
       - type: error
@@ -53688,6 +53251,8 @@ plugins:
             str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: not active("Dawnguard.esm")
   - name: 'BetterQuestObjectives-MoonlightPatch.esp'
+    inc:
+      - 'BetterQuestObjectives-MoonlightMasteryPatch.esp'
     msg:
       - type: error
         content:
@@ -53709,10 +53274,9 @@ plugins:
           - lang: rus
             str: Brevi_MoonlightTales.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Moonlight Tales
         condition: not file("Brevi_MoonlightTales.esp")
-      - type: say
-        content: "Incompatible with: BetterQuestObjectives-MoonlightMasteryPatch.esp"
-        condition: file("BetterQuestObjectives-MoonlightMasteryPatch.esp")
   - name: 'BetterQuestObjectives-MoonlightMasteryPatch.esp'
+    inc:
+      - 'BetterQuestObjectives-MoonlightPatch.esp'
     msg:
       - type: say
         content:
@@ -53746,9 +53310,6 @@ plugins:
           - lang: rus
             str: WerewolfMastery.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Werewolf
         condition: not file("WerewolfMastery.esp")
-      - type: say
-        content: "Incompatible with: BetterQuestObjectives-MoonlightPatch.esp"
-        condition: file("BetterQuestObjectives-MoonlightPatch.esp")
   - name: 'WerewolfNigtheyeHowl.esp'
     msg:
       - type: say
@@ -53891,6 +53452,8 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'YetAnotherWerewolfImprovement_DG.esp'
+    inc:
+      - 'YetAnotherWerewolfImprovement.esp'
     msg:
       - type: error
         content:
@@ -53907,10 +53470,9 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Incompatible with: YetAnotherWerewolfImprovement.esp"
-        condition: file("YetAnotherWerewolfImprovement.esp")
   - name: DawnguardDelayedStart(20|30|40|50|999)\.esp
+    inc:
+      - 'DG-NoAttacks.esp'
     msg:
       - type: error
         content:
@@ -53927,9 +53489,6 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Incompatible with: DG-NoAttacks.esp"
-        condition: file("DG-NoAttacks.esp")
       - type: say
         content:
           - lang: eng
@@ -53998,10 +53557,9 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'DelayDawnguardQuestStartCLEAN.esp'
+    inc:
+      - 'DelayDawnguardQuestStart.esp'
     msg:
-      - type: say
-        content: "Incompatible with: DelayDawnguardQuestStart.esp"
-        condition: file("DelayDawnguardQuestStart.esp")
       - type: error
         content:
           - lang: eng
@@ -54490,38 +54048,14 @@ plugins:
             str: "Несовместим с: Midas Magic.esp (Заклинание 'Призыв кирки')"
         condition: file("MidasSkyrim.esp")
   - name: 'BoundTools.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: MiningFlames.esp"
-        condition: file("MiningFlames.esp")
-      - type: say
-        content:
-          - lang: eng
-            str: "Incompatible with: MidasSkyrim.esp (Spell 'Bound Pickaxe')"
-        condition: file("MidasSkyrim.esp")
-      - type: say
-        content:
-          - lang: rus
-            str: "Несовместим с: Midas Magic.esp (Заклинание 'Призыв кирки')"
-        condition: file("MidasSkyrim.esp")
+    inc:
+      - 'MiningFlames.esp'
+      - 'MidasSkyrim.esp'
   - name: 'ExtractOreSpell.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: BoundTools.esp"
-        condition: file("BoundTools.esp")
-      - type: say
-        content: "Incompatible with: MiningFlames.esp"
-        condition: file("MiningFlames.esp")
-      - type: say
-        content:
-          - lang: eng
-            str: "Incompatible with: MidasSkyrim.esp (Spell 'Bound Pickaxe')"
-        condition: file("MidasSkyrim.esp")
-      - type: say
-        content:
-          - lang: rus
-            str: "Несовместим с: Midas Magic.esp (Заклинание 'Призыв кирки')"
-        condition: file("MidasSkyrim.esp")
+    inc:
+      - 'BoundTools.esp'
+      - 'MiningFlames.esp'
+      - MidasSkyrim.esp'
   - name: 'boundxbows.esp'
     msg:
       - type: error
@@ -55423,22 +54957,16 @@ plugins:
         util: *dirtyUtil
         itm: 8
   - name: 'MiningforMagesAdvanced.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: MiningforMages.esp"
-        condition: file("MiningforMages.esp")
+    inc:
+      - 'MiningforMages.esp'
     dirty:
       - crc: 0xe7f03a9
         util: *dirtyUtil
         itm: 7
   - name: 'MiningforMagesEasy.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: MiningforMages.esp"
-        condition: file("MiningforMages.esp")
-      - type: say
-        content: "Incompatible with: MiningforMagesAdvanced.esp"
-        condition: file("MiningforMagesAdvanced.esp")
+    inc:
+      - 'MiningforMages.esp'
+      - 'MiningforMagesAdvanced.esp'
     dirty:
       - crc: 0x6164a0c6
         util: *dirtyUtil
@@ -55475,10 +55003,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, Evilbass Light and Dark Spells.esp.
   - name: 'MYSpellHard.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: MYSpell.esp"
-        condition: file("MYSpell.esp")
+    inc:
+      - 'MYSpell.esp'
   - name: 'MystraTransmuteOreNoCooldown.esp'
     dirty:
       - crc: 0xea66f549
@@ -55695,10 +55221,8 @@ plugins:
         util: *dirtyUtil
         itm: 6
   - name: 'room.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: UFO - Ultimate Follower Overhaul.esp"
-        condition: file("UFO - Ultimate Follower Overhaul.esp")
+    inc:
+      - 'UFO - Ultimate Follower Overhaul.esp'
   - name: 'SMEssentialKills.esp'
     msg:
       - type: say
@@ -55806,6 +55330,8 @@ plugins:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/17473 Behemoth\" meshes, textures"
   - name: 'Summon_Gargoyle.esp'
+    inc:
+      - 'Conjure_Gargoyle.esp'
     msg:
       - type: say
         content:
@@ -55819,9 +55345,6 @@ plugins:
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, Conjure_Gargoyle.esp.
-      - type: say
-        content: "Incompatible with: Conjure_Gargoyle.esp"
-        condition: file("Conjure_Gargoyle.esp")
   - name: 'SummonableCreatures.esp'
     msg:
       - type: say
@@ -56186,10 +55709,8 @@ plugins:
         util: *dirtyUtil
         itm: 9
   - name: 'DragonFire - Voice of the Dragon.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DragonFire.esp"
-        condition: file("DragonFire.esp")
+    inc:
+      - 'DragonFire.esp'
   - name: 'Excalibur _powerfirebreath.esp'
     dirty:
       - crc: 0x409bb061
@@ -56228,20 +55749,14 @@ plugins:
             str: Usar Excalibur _powerfirebreath.esp o Excalibur _firebreath_IMBA ver.esp, no ambos.
         condition: file("Excalibur _powerfirebreath.esp")
   - name: 'Improved Dragon Shouts.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DragonbornAscendant.esp"
-        condition: file("DragonbornAscendant.esp")
+    inc:
+      - 'DragonbornAscendant.esp'
   - name: 'Improved Dragon Shouts - Dawnguard.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DragonbornAscendantDawnguardExpansion.esp"
-        condition: file("DragonbornAscendantDawnguardExpansion.esp")
+    inc:
+      - 'DragonbornAscendantDawnguardExpansion.esp'
   - name: 'Improved Dragon Shouts - Dragonborn.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DragonbornAscendantDragonbornDLCAddon.esp"
-        condition: file("DragonbornAscendantDragonbornDLCAddon.esp")
+    inc:
+      - 'DragonbornAscendantDragonbornDLCAddon.esp'
   - name: 'InfernoStormShout.esp'
     msg:
       - type: say
@@ -56268,15 +55783,11 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: More Powerful Shouts (Traducción español).esp
-    msg:
-      - type: say
-        content: "Incompatible with: MorePowerfulShouts.esp"
-        condition: file("MorePowerfulShouts.esp")
+    inc:
+      - 'MorePowerfulShouts.esp'
   - name: 'MorePowerfulShoutsVanillaCooldown.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: MorePowerfulShouts_DragonTimes.esp"
-        condition: file("MorePowerfulShouts_DragonTimes.esp")
+    inc:
+      - 'MorePowerfulShouts_DragonTimes.esp'
   - name: 'reducedshouttimes.esp'
     dirty:
       - crc: 0x486a4036
@@ -56342,10 +55853,8 @@ plugins:
         util: *dirtyUtil
         itm: 11
   - name: 'TrueDragonblood-DawnguardV001.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: ShoutCD.esp"
-        condition: file("ShoutCD.esp")
+    inc:
+      - 'ShoutCD.esp'
 # ENDGROUP: Shouts
 # BEGINGROUP: Spells Late
   - name: 'BurnifiedEffects.esp'
@@ -56363,20 +55872,17 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, Burn Freeze Shock Effects.
   - name: 'Candlelightspelllasts15min.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: candlelightandmagelight10minute.esp"
-        condition: file("candlelightandmagelight10minute.esp")
+    inc:
+      - 'candlelightandmagelight10minute.esp'
   - name: 'Candlelightspelllasts1hour.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: candlelightandmagelight10minute.esp and Candlelightspelllasts15min.esp"
-        condition: ( file("candlelightandmagelight10minute.esp") ) or file("Candlelightspelllasts15min.esp")
+    inc:
+      - 'candlelightandmagelight10minute.esp'
+      - 'Candlelightspelllasts15min.esp'
   - name: 'Candlelightspelllasts30min.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: candlelightandmagelight10minute.esp or Candlelightspelllasts * .esp"
-        condition: ( ( file("Candlelightspelllasts1hour.esp") ) or file("candlelightandmagelight10minute.esp") ) or file("Candlelightspelllasts15min.esp")
+    inc:
+      - 'Candlelightspelllasts1hour.esp'
+      - 'candlelightandmagelight10minute.esp'
+      - 'Candlelightspelllasts15min.esp'
   - name: 'Clear Skies Fix - CoT version.esp'
     msg:
       - type: error
@@ -56515,20 +56021,17 @@ plugins:
       - Delev
       - Relev
   - name: 'MagelightLasts15Min.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: candlelightandmagelight10minute.esp"
-        condition: file("candlelightandmagelight10minute.esp")
+    inc:
+      - 'candlelightandmagelight10minute.esp'
   - name: 'MagelightLasts1Hour.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: candlelightandmagelight10minute.esp and MageLightLasts15min.esp"
-        condition: ( file("candlelightandmagelight10minute.esp") ) or file("MagelightLasts15Min.esp")
+    inc:
+      - 'candlelightandmagelight10minute.esp'
+      - 'MagelightLasts15Min.esp'
   - name: 'MagelightLasts30Min.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: candlelightandmagelight10minute.esp or MageLightLasts * .esp"
-        condition: ( ( file("MagelightLasts1Hour.esp") ) or file("candlelightandmagelight10minute.esp") ) or file("MagelightLasts15Min.esp")
+    inc:
+      - 'candlelightandmagelight10minute.esp'
+      - 'MagelightLasts15Min.esp'
+      - 'MagelightLasts1Hour.esp'
   - name: 'Mighty Magick - Alteration.esp'
     dirty:
       - crc: 0x89544a70
@@ -56739,10 +56242,8 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, Summon Shadow Merchant.
   - name: 'Skyrim_Best Voise Magic Damage.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Skyrim_Best Voise Magic.esp"
-        condition: file("Skyrim_Best Voise Magic.esp")
+    inc:
+      - 'Skyrim_Best Voise Magic.esp'
   - name: 'SkyrimBalancedMagicSystem.esp'
     msg:
       - type: warn
@@ -56806,24 +56307,14 @@ plugins:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
   - name: 'Vampiric_Drain_Fix.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Vampire Lord Serana Fixed.esp"
-        condition: file("Vampire Lord Serana Fixed.esp")
-      - type: say
-        content: "Incompatible with: Serana Fixed.esp"
-        condition: file("Serana Fixed.esp")
+    inc:
+      - 'Vampire Lord Serana Fixed.esp'
+      - 'Serana Fixed.esp'
   - name: 'Vampiric_Drain_Fix_BloodChalice.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Vampire Lord Serana Fixed.esp"
-        condition: file("Vampire Lord Serana Fixed.esp")
-      - type: say
-        content: "Incompatible with: Vampiric_Drain_Fix.esp"
-        condition: file("Vampiric_Drain_Fix.esp")
-      - type: say
-        content: "Incompatible with: Serana Fixed.esp"
-        condition: file("Serana Fixed.esp")
+    inc:
+      - 'Vampire Lord Serana Fixed.esp'
+      - 'Vampiric_Drain_Fix.esp'
+      - 'Serana Fixed.esp'
   - name: WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp
     msg:
       - type: say
@@ -57468,10 +56959,8 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
         condition: not active("Dragonborn.esm")
   - name: 'DeadlyCombat_NoDamageChanges.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DeadlyCombat_HardcoreDamage.esp"
-        condition: file("DeadlyCombat_HardcoreDamage.esp")
+    inc:
+      - 'DeadlyCombat_HardcoreDamage.esp'
   - name: 'dodge.esp'
     msg:
       - type: say
@@ -57510,40 +56999,26 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: ( file("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") ) and not active("Dawnguard.esm")
   - name: 'Duel2_ArmorRating.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Duel_Master.esp"
-        condition: file("Duel_Master.esp")
+    inc:
+      - 'Duel_Master.esp'
   - name: 'Duel2_Blocking.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Duel_Master.esp"
-        condition: file("Duel_Master.esp")
+    inc:
+      - 'Duel_Master.esp'
   - name: 'Duel2_Knockback_Knockdown.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Duel_Master.esp"
-        condition: file("Duel_Master.esp")
+    inc:
+      - 'Duel_Master.esp'
   - name: 'Duel2_ReducedReach.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Duel_Master.esp"
-        condition: file("Duel_Master.esp")
+    inc:
+      - 'Duel_Master.esp'
   - name: 'Duel2_ShieldBash.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Duel_Master.esp"
-        condition: file("Duel_Master.esp")
+    inc:
+      - 'Duel_Master.esp'
   - name: 'Duel2_Stagger.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Duel_Master.esp"
-        condition: file("Duel_Master.esp")
+    inc:
+      - 'Duel_Master.esp'
   - name: 'Duel2_Stamina.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Duel_Master.esp"
-        condition: file("Duel_Master.esp")
+    inc:
+      - 'Duel_Master.esp'
   - name: 'duel weild 2 hand.esp'
     msg:
       - type: say
@@ -57963,10 +57438,8 @@ plugins:
           - lang: spa
             str: Utilizar solo un New Leveled Encounter Levels*.esp.
   - name: 'Crimson Tide - Blood.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: dD - Enhanced Blood Main.esp"
-        condition: file("dD - Enhanced Blood Main.esp")
+    inc:
+      - 'dD - Enhanced Blood Main.esp'
     dirty:
       - crc: 0xdb6c1082
         util: *dirtyUtil
@@ -58090,15 +57563,11 @@ plugins:
           - lang: spa
             str: Utilizar solo un Deadly Torches - *.esp.
   - name: 'EpicGlory-SkillsStartAtZeroByMadmole.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: EpicGloryByMadmole.esp"
-        condition: file("EpicGloryByMadmole.esp")
+    inc:
+      - 'EpicGloryByMadmole.esp'
   - name: 'EpicGloryStatsStartAt50ByMadmole.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: EpicGloryByMadmole.esp"
-        condition: file("EpicGloryByMadmole.esp")
+    inc:
+      - 'EpicGloryByMadmole.esp'
   - name: 'GrandMaster.esp'
     dirty:
       - crc: 0xcdc7d117
@@ -58391,10 +57860,8 @@ plugins:
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\""
         condition: not file("SKSE_Elys_Uncapper.dll")
   - name: 'SmithingMasteryPerks.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: PerkUP-Smithing.esp"
-        condition: file("PerkUP-Smithing.esp")
+    inc:
+      - 'PerkUP-Smithing.esp'
   - name: 'Target Training System - TTS.esp'
     dirty:
       - crc: 0x59f6e5c8
@@ -58499,20 +57966,14 @@ plugins:
             str: Acquisitive Soul Gems.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: ( checksum("Enhanced Soul Trap.esp",264C4B77) ) and not active("Acquisitive Soul Gems.esp")
   - name: 'Improved Dragon Shouts.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DragonbornAscendant.esp"
-        condition: file("DragonbornAscendant.esp")
+    inc:
+      - 'DragonbornAscendant.esp'
   - name: 'Improved Dragon Shouts - Dawnguard.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DragonbornAscendantDawnguardExpansion.esp"
-        condition: file("DragonbornAscendantDawnguardExpansion.esp")
+    inc:
+      - 'DragonbornAscendantDawnguardExpansion.esp'
   - name: 'Improved Dragon Shouts - Dragonborn.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DragonbornAscendantDragonbornDLCAddon.esp"
-        condition: file("DragonbornAscendantDragonbornDLCAddon.esp")
+    inc:
+      - 'DragonbornAscendantDragonbornDLCAddon.esp'
   - name: 'OpenFaceHelmets.esp'
     msg:
       - type: warn
@@ -58579,10 +58040,9 @@ plugins:
             str: Удалите. Уже включено в 'PerkUP-Enchanting.esp'
         condition: file("PerkUP-Enchanting.esp")
   - name: '12 extra effect.esp'
+    inc:
+      - '10 extra effect.esp'
     msg:
-      - type: say
-        content: "Incompatible with: 10 extra effect.esp"
-        condition: file("10 extra effect.esp")
       - type: warn
         content:
           - lang: eng
@@ -58620,10 +58080,8 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'Archery Perk Mods Toned Down.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Archery Perk Mods.esp"
-        condition: file("Archery Perk Mods.esp")
+    inc:
+      - 'Archery Perk Mods.esp'
     dirty:
       - crc: 0x964625c0
         util: *dirtyUtil
@@ -58728,10 +58186,8 @@ plugins:
         util: *dirtyUtil
         itm: 9
   - name: 'DwemerBombs.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: DwemerBombsNoPerkTree.esp"
-        condition: file("DwemerBombsNoPerkTree.esp")
+    inc:
+      - 'DwemerBombsNoPerkTree.esp'
     dirty:
       - crc: 0xd7bb72c4
         util: *dirtyUtil
@@ -58759,10 +58215,8 @@ plugins:
             str: SkyRe_Main.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("SkyRe_Main.esp")
   - name: 'JNwepPerkoverhaul.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Duel - Combat Realism.esp"
-        condition: file("Duel - Combat Realism.esp")
+    inc:
+      - 'Duel - Combat Realism.esp'
     dirty:
       - crc: 0x2711a049
         util: *dirtyUtil
@@ -60614,6 +60068,8 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'serana1normaleyes.esp'
+    inc:
+      - 'serana1.esp'
     msg:
       - type: error
         content:
@@ -60630,10 +60086,10 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Incompatible with: serana1.esp"
-        condition: file("serana1.esp")
   - name: 'serana1demoneyes.esp'
+    inc:
+      - 'serana1normaleyes.esp'
+      - 'serana1.esp'
     msg:
       - type: error
         content:
@@ -60650,12 +60106,6 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Incompatible with: serana1normaleyes.esp"
-        condition: file("serana1normaleyes.esp")
-      - type: say
-        content: "Incompatible with: serana1.esp"
-        condition: file("serana1.esp")
   - name: 'SeranaEyeFixGreenEyes.esp'
     msg:
       - type: error
@@ -60674,6 +60124,8 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'XCES.esp'
+    inc:
+      - 'ethereal_elven_overhaul.esp'
     msg:
       - type: say
         content:
@@ -60690,9 +60142,6 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
         condition: checksum("XCES.esp",0D760898)
-      - type: say
-        content: "Incompatible with: ethereal_elven_overhaul.esp"
-        condition: file("ethereal_elven_overhaul.esp")
 # ENDGROUP: Eyes
 # BEGINGROUP: Warpaints
 # New warpaints.
@@ -60878,12 +60327,11 @@ plugins:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
   - name: 'Gimli.Esp'
+    inc:
+      - 'Dwarf Race.Esp'
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
-      - type: say
-        content: "Incompatible with: Dwarf Race.Esp"
-        condition: file("Dwarf Race.Esp")
   - name: 'Dwemer_Race.esp'
     dirty:
       - crc: 0x91cd07be
@@ -61016,22 +60464,18 @@ plugins:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
   - name: 'Sam Merry and Peppin.Esp'
+    inc:
+      - 'Halfling Race.Esp'
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
-      - type: say
-        content: "Incompatible with: Halfling Race.Esp"
-        condition: file("Halfling Race.Esp")
   - name: Frodo Sam Merry & Peppin.Esp
+    inc:
+      - 'Halfling Race.Esp'
+      - 'Sam Merry and Peppin.Esp'
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
-      - type: say
-        content: "Incompatible with: Halfling Race.Esp"
-        condition: file("Halfling Race.Esp")
-      - type: say
-        content: "Incompatible with: Sam Merry and Peppin.Esp"
-        condition: file("Sam Merry and Peppin.Esp")
   - name: 'HBR_Marshwalker(Argonian)_Standalone.esp'
     dirty:
       - crc: 0x8e76e40f
@@ -61167,25 +60611,19 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'MilkyGirlRaceAssassinExtendedcolors.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: MilkyGirlRaceAssassin.esp"
-        condition: file("MilkyGirlRaceAssassin.esp")
+    inc:
+      - 'MilkyGirlRaceAssassin.esp'
   - name: 'MilkyGirlRaceMage.esp'
     dirty:
       - crc: 0xb05087fe
         util: *dirtyUtil
         itm: 9
   - name: 'MilkyGirlRaceMageExtendedcolors.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: MilkyGirlRaceMage.esp"
-        condition: file("MilkyGirlMage.esp")
+    inc:
+      - 'MilkyGirlMage.esp'
   - name: 'MilkyGirlRaceWarriorExtendedcolors.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: MilkyGirlRaceWarrior.esp"
-        condition: file("MilkyGirlRaceWarrior.esp")
+    inc:
+      - 'MilkyGirlRaceWarrior.esp'
   - name: 'MoonshadowElves.esp'
     msg:
       - type: error
@@ -61844,10 +61282,8 @@ plugins:
         itm: 52
         udr: 4
   - name: 'NerniesCityandVillageExpansion.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: NerniesSolitudeExpansion.esp"
-        condition: file("NerniesSolitudeExpansion.esp")
+    inc:
+      - 'NerniesSolitudeExpansion.esp'
     dirty:
       - crc: 0x53a97488
         util: *dirtyUtil
@@ -62175,10 +61611,8 @@ plugins:
         util: *dirtyUtil
         itm: 29
   - name: 'Better Kharjo.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Kharjo.esp"
-        condition: file("Kharjo.esp")
+    inc:
+      - 'Kharjo.esp'
     dirty:
       - crc: 0xcb773cef
         util: *dirtyUtil
@@ -62403,10 +61837,8 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'Kharjo.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Better Kharjo.esp"
-        condition: file("Better Kharjo.esp")
+    inc:
+      - 'Better Kharjo.esp'
     dirty:
       - crc: 0x1004ecd3
         util: *dirtyUtil
@@ -62426,10 +61858,8 @@ plugins:
         util: *dirtyUtil
         itm: 18
   - name: 'OriginalrecipeUlfric.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: CWBattleUlfric.esp"
-        condition: file("CWBattleUlfric.esp")
+    inc:
+      - 'CWBattleUlfric.esp'
   - name: 'Legolas.Esp'
     msg:
       - type: say
@@ -62445,16 +61875,13 @@ plugins:
         util: *dirtyUtil
         itm: 8
   - name: 'Only Kharjo.esp'
+    inc:
+      - 'Kharjo.esp'
+      - 'Better Kharjo.esp'
     msg:
       - type: say
         content: Use only one of Ja´dirr + Kharjo Makeover.esp or Only Kharjo.esp, not both.
         condition: file("Ja´dirr + Kharjo Makeover.esp")
-      - type: say
-        content: "Incompatible with: Better Kharjo.esp"
-        condition: file("Better Kharjo.esp")
-      - type: say
-        content: "Incompatible with: Kharjo.esp"
-        condition: file("Kharjo.esp")
     dirty:
       - crc: 0xb0cdab38
         util: *dirtyUtil
@@ -62594,21 +62021,13 @@ plugins:
 # ENDGROUP: Questgiver NPCs
 # BEGINGROUP: Extensible Follower Framework
   - name: 'XFLDialogue.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: UFO - Ultimate Follower Overhaul.esp"
-        condition: file("UFO - Ultimate Follower Overhaul.esp")
-      - type: say
-        content: "Incompatible with: BDO.esp"
-        condition: file("BDO.esp")
+    inc:
+      - 'UFO - Ultimate Follower Overhaul.esp'
+      - 'BDO.esp'
   - name: 'XFLPlugins.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: UFO - Ultimate Follower Overhaul.esp"
-        condition: file("UFO - Ultimate Follower Overhaul.esp")
-      - type: say
-        content: "Incompatible with: BDO.esp"
-        condition: file("BDO.esp")
+    inc:
+      - 'UFO - Ultimate Follower Overhaul.esp'
+      - 'BDO.esp'
   - name: 'BetterQuestObjectives-XFLPatch.esp'
     msg:
       - type: error
@@ -62634,13 +62053,12 @@ plugins:
 # ENDGROUP: Extensible Follower Framework
 # BEGINGROUP: Ultimate Follower Overhaul
   - name: 'UFO - Ultimate Follower Overhaul.esp'
+    inc:
+      - 'BDO.esp'
     msg:
       - type: say
         content: "Requires: Skyrim 1.5.24+"
         condition: version("..\TESV.exe","1.5.24",<)
-      - type: say
-        content: "Incompatible with: BDO.esp"
-        condition: file("BDO.esp")
       - type: warn
         content: UFO - Dawnguard AddOn.esp required to work properly with Dawnguard (Official Bethesda DLC)
         condition: ( ( active("Dawnguard.esm") ) and checksum("UFO - Ultimate Follower Overhaul.esp",396AE69F) ) and not file("UFO - Dawnguard AddOn.esp")
@@ -62703,10 +62121,9 @@ plugins:
         itm: 29
         udr: 18
   - name: 'UFO - Dragonborn AddOn - Unofficial.esp'
+    inc:
+      - 'UFO - Dragonborn AddOn.esp'
     msg:
-      - type: say
-        content: "Incompatible with: UFO - Dragonborn AddOn.esp"
-        condition: file("UFO - Dragonborn AddOn.esp")
       - type: warn
         content: Outdated. Please upgrade to "http://www.nexusmods.com/skyrim/mods/14037 new official Dragonborn AddOn".
         condition: not file("UFO - Dragonborn AddOn.esp")
@@ -62809,19 +62226,12 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
   - name: 'Feminine Females With All DLCs.esp'
+    inc:
+      - 'Feminine Females.esp'
+      - 'Feminine Females Dawnguard.esp'
+      - 'Feminine Females Hearthfires.esp'
+      - 'Feminine Females Dragonborn.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Feminine Females.esp"
-        condition: file("Feminine Females.esp")
-      - type: say
-        content: "Incompatible with: Feminine Females Dawnguard.esp"
-        condition: file("Feminine Females Dawnguard.esp")
-      - type: say
-        content: "Incompatible with: Feminine Females Hearthfires.esp"
-        condition: file("Feminine Females Hearthfires.esp")
-      - type: say
-        content: "Incompatible with: Feminine Females Dragonborn.esp"
-        condition: file("Feminine Females Dragonborn.esp")
       - type: error
         content:
           - lang: eng
@@ -62967,10 +62377,8 @@ plugins:
         util: *dirtyUtil
         itm: 18
   - name: OriginalrecipeUlfric.esp
-    msg:
-      - type: say
-        content: "Incompatible with: CWBattleUlfric.esp"
-        condition: file("CWBattleUlfric.esp")
+    inc:
+      - 'CWBattleUlfric.esp'
 # ENDGROUP: Post UFO
 
 # BEGINGROUP: NPC Distance, Face & Makeup Overrides
@@ -63085,10 +62493,8 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
   - name: 'AdaliaFollower.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: R1Cots-Refait.esp"
-        condition: file("R1Cots-Refait.esp")
+    inc:
+      - 'R1Cots-Refait.esp'
   - name: 'AdrianneAvenicci.esp'
     msg:
       - type: error
@@ -65283,10 +64689,8 @@ plugins:
         util: *dirtyUtil
         itm: 6
   - name: 'herman.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: UFO - Ultimate Follower Overhaul.esp"
-        condition: file("UFO - Ultimate Follower Overhaul.esp")
+    inc:
+      - 'UFO - Ultimate Follower Overhaul.esp'
   - name: 'highfive.esp'
     msg:
       - type: error
@@ -65684,29 +65088,17 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
   - name: 'Iona_CombatRanger.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Iona_CombatDual.esp"
-        condition: file("Iona_CombatDual.esp")
+    inc:
+      - 'Iona_CombatDual.esp'
   - name: 'Iona_CombatThief.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Iona_CombatDual.esp"
-        condition: file("Iona_CombatDual.esp")
-      - type: say
-        content: "Incompatible with: Iona_CombatRanger.esp"
-        condition: file("Iona_CombatRanger.esp")
+    inc:
+      - 'Iona_CombatDual.esp'
+      - 'Iona_CombatRanger.esp'
   - name: 'Iona_CombatStandart.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Iona_CombatDual.esp"
-        condition: file("Iona_CombatDual.esp")
-      - type: say
-        content: "Incompatible with: Iona_CombatRanger.esp"
-        condition: file("Iona_CombatRanger.esp")
-      - type: say
-        content: "Incompatible with: Iona_CombatThief.esp"
-        condition: file("Iona_CombatThief.esp")
+    inc:
+      - 'Iona_CombatDual.esp'
+      - 'Iona_CombatRanger.esp'
+      - 'Iona_CombatThief.esp'
   - name: 'Irileth.esp'
     msg:
       - type: error
@@ -65916,20 +65308,14 @@ plugins:
             str: Usar KCustom_ALL_FHC.esp o KCustom_ALL_FHC_NDO.esp, no ambos.
         condition: file("KCustom_ALL_FHC.esp")
   - name: 'KCustomNPCs.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: KCustom_ALL_FHC_NDO.esp"
-        condition: file("KCustom_ALL_FHC_NDO.esp")
+    inc:
+      - 'KCustom_ALL_FHC_NDO.esp'
   - name: 'KCustomMagesCollege-NDO.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: KCustom_ALL_FHC_NDO.esp"
-        condition: file("KCustom_ALL_FHC_NDO.esp")
+    inc:
+      - 'KCustom_ALL_FHC_NDO.esp'
   - name: 'KCustomMoreNPCs.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: KCustom_ALL_FHC_NDO.esp"
-        condition: file("KCustom_ALL_FHC_NDO.esp")
+    inc:
+      - 'KCustom_ALL_FHC_NDO.esp'
   - name: 'Khagra.esp'
     msg:
       - type: warn
@@ -65945,6 +65331,8 @@ plugins:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
   - name: 'Khagra - Ghorbash Replacer.esp'
+    inc:
+      - 'Khagra.esp'
     msg:
       - type: warn
         content:
@@ -65961,9 +65349,6 @@ plugins:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
         condition: checksum("Khagra - Ghorbash Replacer.esp",A3528322)
-      - type: say
-        content: "Incompatible with: Khagra.esp"
-        condition: file("Khagra.esp")
   - name: 'KhajiitChildren.esp'
     msg:
       - type: error
@@ -66224,29 +65609,17 @@ plugins:
           - lang: rus
             str: Этот мод может конфликтовать с любыми реплейсерами женских тел.
   - name: 'Lydia_CombatRanger.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Lydia_CombatDual.esp"
-        condition: file("Lydia_CombatDual.esp")
+    inc:
+      - 'Lydia_CombatDual.esp'
   - name: 'Lydia_CombatStandart.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Lydia_CombatDual.esp"
-        condition: file("Lydia_CombatDual.esp")
-      - type: say
-        content: "Incompatible with: Lydia_CombatRanger.esp"
-        condition: file("Lydia_CombatRanger.esp")
+    inc:
+      - 'Lydia_CombatDual.esp'
+      - 'Lydia_CombatRanger.esp'
   - name: 'Lydia_CombatThief.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Lydia_CombatDual.esp"
-        condition: file("Lydia_CombatDual.esp")
-      - type: say
-        content: "Incompatible with: Lydia_CombatRanger.esp"
-        condition: file("Lydia_CombatRanger.esp")
-      - type: say
-        content: "Incompatible with: Lydia_CombatStandart.esp"
-        condition: file("Lydia_CombatStandart.esp")
+    inc:
+      - 'Lydia_CombatDual.esp'
+      - 'Lydia_CombatRanger.esp'
+      - 'Lydia_CombatStandart.esp'
   - name: LydiaMo(d|dCBBE)?\.esp
     msg:
       - type: error
@@ -66282,6 +65655,8 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
   - name: 'Lydia_edited_without_scars.esp'
+    inc:
+      - 'Lydia_edited.esp'
     msg:
       - type: error
         content:
@@ -66298,9 +65673,6 @@ plugins:
           - lang: spa
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
-      - type: say
-        content: "Incompatible with: Lydia_edited.esp"
-        condition: file("Lydia_edited.esp")
   - name: UniqueLydia(Armor|SF|SFArmor|ArmorNoCloak|NoOutfit|SFArmorNoCloak|SFNoOutfit)?\.esp
     msg:
       - type: say
@@ -66735,10 +66107,9 @@ plugins:
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
         condition: checksum("Meesei.esp",9B5C5318)
   - name: 'MHBArganna.esp'
+    inc:
+      - 'HousecarlBeauties.esp'
     msg:
-      - type: say
-        content: "Incompatible with: HousecarlBeauties.esp"
-        condition: file("HousecarlBeauties.esp")
       - type: error
         content:
           - lang: eng
@@ -66755,10 +66126,9 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
   - name: 'MHBCalderenne.esp'
+    inc:
+      - 'HousecarlBeauties.esp'
     msg:
-      - type: say
-        content: "Incompatible with: HousecarlBeauties.esp"
-        condition: file("HousecarlBeauties.esp")
       - type: error
         content:
           - lang: eng
@@ -66775,10 +66145,9 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
   - name: 'MHBIona.esp'
+    inc:
+      - 'HousecarlBeauties.esp'
     msg:
-      - type: say
-        content: "Incompatible with: HousecarlBeauties.esp"
-        condition: file("HousecarlBeauties.esp")
       - type: error
         content:
           - lang: eng
@@ -66795,10 +66164,9 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
   - name: 'MHBJordis.esp'
+    inc:
+      - 'HousecarlBeauties.esp'
     msg:
-      - type: say
-        content: "Incompatible with: HousecarlBeauties.esp"
-        condition: file("HousecarlBeauties.esp")
       - type: error
         content:
           - lang: eng
@@ -66815,10 +66183,9 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
   - name: 'MHBLydia.esp'
+    inc:
+      - 'HousecarlBeauties.esp'
     msg:
-      - type: say
-        content: "Incompatible with: HousecarlBeauties.esp"
-        condition: file("HousecarlBeauties.esp")
       - type: error
         content:
           - lang: eng
@@ -67088,16 +66455,15 @@ plugins:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
   - name: 'My_Little_hatchling_K.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: My_Little_hatchling.esp"
-        condition: file("My_Little_hatchling.esp")
+    inc:
+      - 'My_Little_hatchling.esp'
   - name: 'My_Little_kitty_k.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: My_Little_kitty.esp"
-        condition: file("My_Little_kitty.esp")
+    inc:
+      - 'My_Little_kitty.esp'
   - name: 'My_Little_kitty_non_replaced.esp'
+    inc:
+      - 'My_Little_kitty.esp'
+      - 'My_Little_kitty_k.esp'
     msg:
       - type: error
         content:
@@ -67114,12 +66480,6 @@ plugins:
           - lang: spa
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
         condition: not active("Hearthfires.esm")
-      - type: say
-        content: "Incompatible with: My_Little_kitty.esp"
-        condition: file("My_Little_kitty.esp")
-      - type: say
-        content: "Incompatible with: My_Little_kitty_k.esp"
-        condition: file("My_Little_kitty_k.esp")
   - name: 'MyStenvar.esp'
     msg:
       - type: warn
@@ -67386,10 +66746,9 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairFemales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairFemales.esm")
   - name: 'Follower_Addon_V2_.esp'
+    inc:
+      - 'Follower_Addon_1_1_.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Follower_Addon_1_1_.esp"
-        condition: file("Follower_Addon_1_1_.esp")
       - type: error
         content:
           - lang: eng
@@ -67818,10 +67177,9 @@ plugins:
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/13722 The Eyes of Beauty\""
         condition: not file("TheEyesOfBeauty.esp")
   - name: Serafina & co complete.esp
+    inc:
+      - 'Serafina & co.esp'
     msg:
-      - type: say
-        content: "Incompatible with: Serafina & co.esp, do not use both."
-        condition: file("Serafina & co.esp")
       - type: error
         content:
           - lang: eng
@@ -68527,10 +67885,9 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHair.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
   - name: Better Followers - [SBNP].*\.esp
+    inc:
+      - 'TCG.esp'
     msg:
-      - type: say
-        content: "Incompatible with: TCG.esp"
-        condition: file("TCG.esp")
       - type: warn
         content:
           - lang: eng
@@ -68721,6 +68078,8 @@ plugins:
           - lang: eng
             str: Make sure you dismiss any followers (except dogs) before installation.
   - name: 'Follower Limit Increased.esp'
+    inc:
+      - 'Better Follower Improvements.esp'
     msg:
       - type: warn
         content:
@@ -68732,9 +68091,6 @@ plugins:
           - lang: rus
             str: Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
         condition: file("BDO.esp")
-      - type: say
-        content: "Incompatible with: Better Follower Improvements.esp"
-        condition: file("Better Follower Improvements.esp")
 # BEGINGROUP: Multimarriage
 # Must load after Unlimited companions mods
 # multimarriage.esp
@@ -68821,29 +68177,17 @@ plugins:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
   - name: 'Tauriel original de Standalone_v1_0.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Tauriel Original Standalone_v1_0.esp"
-        condition: file("Tauriel Original Standalone_v1_0.esp")
+    inc:
+      - 'Tauriel Original Standalone_v1_0.esp'
   - name: 'Tauriel Standalone_v1_1.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Tauriel Original Standalone_v1_0.esp"
-        condition: file("Tauriel Original Standalone_v1_0.esp")
-      - type: say
-        content: "Incompatible with: Tauriel original de Standalone_v1_0.esp"
-        condition: file("Tauriel original de Standalone_v1_0.esp")
+    inc:
+      - 'Tauriel Original Standalone_v1_0.esp'
+      - 'Tauriel original de Standalone_v1_0.esp'
   - name: 'Tauriel Standalone XCE v1_2.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Tauriel Original Standalone_v1_0.esp"
-        condition: file("Tauriel Original Standalone_v1_0.esp")
-      - type: say
-        content: "Incompatible with: Tauriel original de Standalone_v1_0.esp"
-        condition: file("Tauriel original de Standalone_v1_0.esp")
-      - type: say
-        content: "Incompatible with: Tauriel Standalone_v1_1.esp"
-        condition: file("Tauriel Standalone_v1_1.esp")
+    inc:
+      - 'Tauriel Original Standalone_v1_0.esp'
+      - 'Tauriel original de Standalone_v1_0.esp'
+      - 'Tauriel Standalone_v1_1.esp'
   - name: 'Taleya.esp'
     msg:
       - type: say
@@ -69096,10 +68440,8 @@ plugins:
             str: Utilizar solo un move it esp.
         condition: ( regex("move.?it\.esp") ) and file("moveitLWT.esp")
   - name: 'HugMe.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: UFO - Ultimate Follower Overhaul.esp"
-        condition: file("UFO - Ultimate Follower Overhaul.esp")
+    inc:
+      - 'UFO - Ultimate Follower Overhaul.esp'
   - name: 'NonEssentialChilds.esp'
     msg:
       - type: say
@@ -69575,15 +68917,11 @@ plugins:
           - lang: spa
             str: Utilizar solo un QuickStart3_*.esp.
   - name: 'Random Alternate Start.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Alternate Start - Live Another Life.esp"
-        condition: file("Alternate Start - Live Another Life.esp")
+    inc:
+      - 'Alternate Start - Live Another Life.esp'
   - name: 'RAS - Riverwood CharGen.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Alternate Start - Live Another Life.esp"
-        condition: file("Alternate Start - Live Another Life.esp")
+    inc:
+      - 'Alternate Start - Live Another Life.esp'
   - name: 'Skyrim Unbound - Dawnguard Patch.esp'
     msg:
       - type: error
@@ -70051,39 +69389,35 @@ plugins:
         util: *dirtyUtil
         itm: 40
   - name: 'Henrys All Animals BeFriend German.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Henrys All Animals BeFriend.esp"
-        condition: file("Henrys All Animals BeFriend.esp")
+    inc:
+      - 'Henrys All Animals BeFriend.esp'
     dirty:
       - crc: 0x772b3a32
         util: *dirtyUtil
         itm: 20
   - name: 'Henrys All Animals and Creatures BeFriend.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Henrys All * BeFriend mods"
-        condition: ( file("Henrys All Animals BeFriend.esp") ) or file("Henrys All Animals BeFriend German.esp")
+    inc:
+      - 'Henrys All Animals BeFriend.esp'
+      - 'Henrys All Animals BeFriend German.esp'
     dirty:
       - crc: 0x11e1b4a5
         util: *dirtyUtil
         itm: 40
   - name: 'Henrys All Animals and Creatures BeFriend German.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Henrys All * BeFriend mods"
-        condition: ( ( file("Henrys All Animals BeFriend.esp") ) or file("Henrys All Animals BeFriend German.esp") ) or file("Henrys All Animals  and Creatures BeFriend.esp")
+    inc:
+      - 'Henrys All Animals BeFriend.esp'
+      - 'Henrys All Animals BeFriend German.esp'
+      - 'Henrys All Animals  and Creatures BeFriend.esp'
     dirty:
       - crc: 0x7e773ee5
         util: *dirtyUtil
         itm: 21
   - name: 'LiFE.esp'
+    inc:
+      - 'LiFE.esm'
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2666 CBBE\" | \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
-      - type: say
-        content: "Incompatible with: LiFE.esm"
-        condition: file("LiFE.esm")
   - name: 'nord_nightseye01.esp'
     dirty:
       - crc: 0xbb8b06a8
@@ -70131,10 +69465,8 @@ plugins:
         util: *dirtyUtil
         itm: 7
   - name: 'Racial Perks Instead of Skills.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: Race Abilities and Skills Redone.esp"
-        condition: file("Race Abilities and Skills Redone.esp")
+    inc:
+      - 'Race Abilities and Skills Redone.esp'
     dirty:
       - crc: 0xf8a60dd
         util: *dirtyUtil
@@ -70270,22 +69602,12 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'SkyRe_Races.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: EnhancedCharacterEdit.esp"
-        condition: file("EnhancedCharacterEdit.esp")
-      - type: say
-        content: "Incompatible with: DSpSoB.esp"
-        condition: file("DSpSoB.esp")
-      - type: say
-        content: "Incompatible with: ArmedttTeeth.esm"
-        condition: file("ArmedttTeeth.esm")
-      - type: say
-        content: "Incompatible with: [MPX]RaceHeights.esp"
-        condition: file("[MPX]RaceHeights.esp")
-      - type: say
-        content: "Incompatible with: [mpx] npc gender race heights v2.esp"
-        condition: file("[mpx] npc gender race heights v2.esp")
+    inc:
+      - 'EnhancedCharacterEdit.esp'
+      - 'DSpSoB.esp'
+      - 'ArmedttTeeth.esm'
+      - '[MPX]RaceHeights.esp'
+      - '[mpx] npc gender race heights v2.esp'
   - name: 'SkyRe_Races_Fix.esp'
     msg:
       - type: say
@@ -70303,10 +69625,9 @@ plugins:
           - lang: spa
             str: If this is not newer than v1.3, update to the latest version.
   - name: 'ethereal_elven_overhaul.esp'
+    inc:
+      - 'XCES.esp'
     msg:
-      - type: say
-        content: "Incompatible with: XCES.esp"
-        condition: file("XCES.esp")
       - type: say
         condition: ( ( ( file("SkyRe_Races.esp") ) and not file("PreASISPatchEEO.esp") ) and not file("EEO patch.esp") ) and not checksum("ethereal_elven_overhaul.esp",38515FFF)
         content:
@@ -71554,18 +70875,12 @@ plugins:
         util: *dirtyUtil
         itm: 281
   - name: 'cartographers map markers - vf.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: cartographers map markers.esp"
-        condition: file("cartographers map markers.esp")
+    inc:
+      - 'cartographers map markers.esp'
   - name: 'Cartographers Map Markers_DE.esp'
-    msg:
-      - type: say
-        content: "Incompatible with: cartographers map markers.esp"
-        condition: file("cartographers map markers.esp")
-      - type: say
-        content: "Incompatible with: cartographers map markers - vf.esp"
-        condition: file("cartographers map markers - vf.esp")
+    inc:
+      - 'cartographers map markers.esp'
+      - 'cartographers map markers - vf.esp'
   - name: 'City Secret Entrances Map Markers.esp'
     dirty:
       - crc: 0xdfffcffd
@@ -73550,18 +72865,16 @@ plugins:
 # BEGINGROUP: Extra Late
 # For plugins which must be after all others
   - name: 'PC Exclusive Animation Path.esp'
+    inc:
+      - 'AP Skyrim.esp'
     msg:
-      - type: say
-        content: "Incompatible with: AP Skyrim.esp"
-        condition: file("AP Skyrim.esp")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\" (FNIS 3.1+)"
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
   - name: 'PC Exclusive Animation Path - Elder Race.esp'
+    inc:
+      - 'AP Skyrim.esp'
     msg:
-      - type: say
-        content: "Incompatible with: AP Skyrim.esp"
-        condition: file("AP Skyrim.esp")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\" (FNIS 3.1+)"
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
