@@ -121,7 +121,7 @@ globals:
 # Now that the bug list is under 500, recruitment for v2 is unnecessary.  ae
 # SKSE & SKCU
   - type: warn
-    condition: ( file("SKSE_Elys_Uncapper.dll") ) and not file("..\skse_loader.exe")
+    condition: ( file("SKSE\Plugins\SKSE_Elys_Uncapper.dll") ) and not file("..\skse_loader.exe")
     content:
       - lang: eng
         str: "You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: \"http://skse.silverlock.org/\"."
@@ -26786,17 +26786,17 @@ plugins:
         content:
           - lang: eng
             str: "Requires: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\" for full perk functionality."
-        condition: not file("SKSE_Elys_Uncapper.dll")
+        condition: not file("SKSE\Plugins\SKSE_Elys_Uncapper.dll")
       - type: say
         content:
           - lang: rus
             str: "Требуется: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\" для полного функционирования перков."
-        condition: not file("SKSE_Elys_Uncapper.dll")
+        condition: not file("SKSE\Plugins\SKSE_Elys_Uncapper.dll")
       - type: say
         content:
           - lang: spa
             str: "Requiere: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\" para que los perks funcionen adecuadamente."
-        condition: not file("SKSE_Elys_Uncapper.dll")
+        condition: not file("SKSE\Plugins\SKSE_Elys_Uncapper.dll")
       - type: say
         content:
           - lang: eng
@@ -26899,12 +26899,12 @@ plugins:
             str: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://www.nexusmods.com/skyrim/mods/9286 здесь"(Англ.) или "http://u.to/EpZaAg здесь".
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\" for full perk functional"
-        condition: not file("SKSE_Elys_Uncapper.dll")
+        condition: not file("SKSE\Plugins\SKSE_Elys_Uncapper.dll")
       - type: say
         content:
           - lang: rus
             str: "Требуется: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\" для полного функционирования перков."
-        condition: not file("SKSE_Elys_Uncapper.dll")
+        condition: not file("SKSE\Plugins\SKSE_Elys_Uncapper.dll")
       - type: say
         content:
           - lang: eng
@@ -56677,11 +56677,14 @@ plugins:
     inc:
       - 'DeadlyCombat_HardcoreDamage.esp'
   - name: 'dodge.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon\")"
-        condition: not file("..\ScriptDragon.dll")
+    req:
+      - name: '..\ScriptDragon.dll'
+        display: 'Requires [Script Dragon](http://alexander.sannybuilder.com/?altname=skyrim_script_dragon)'
   - name: Dual Wield Parrying.*\.esp
+    req:
+      - name: '..\ScriptDragon.dll'
+        display: 'Requires [Script Dragon](http://alexander.sannybuilder.com/?altname=skyrim_script_dragon)'
+        condition: 'file("Dual Wield Parrying_ScriptDragon.esp") and not file("..\ScriptDragon.dll")'
     msg:
       - type: say
         content:
@@ -56695,9 +56698,6 @@ plugins:
         content:
           - lang: spa
             str: Utilizar solo un Dual Wield Parrying*.esp.
-      - type: say
-        content: "Requires: \"http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon\")"
-        condition: file("Dual Wield Parrying_ScriptDragon.esp") and not file("..\ScriptDragon.dll")
       - type: error
         content:
           - lang: eng
@@ -57567,13 +57567,12 @@ plugins:
       - Delev
       - Relev
   - name: 'SkyXP.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\" 1.5.6+"
+    req:
+      - name: '..\skse_loader.exe'
+        display: 'Requires [SKSE 1.5.6+](http://skse.silverlock.org)'
         condition: version("..\skse_loader.exe","0.1.5.6",<)
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\""
-        condition: not file("SKSE_Elys_Uncapper.dll")
+      - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
+        display: 'Requires [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
   - name: 'SmithingMasteryPerks.esp'
     inc:
       - 'PerkUP-Smithing.esp'
@@ -57588,36 +57587,34 @@ plugins:
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/21792/? MTS\""
         condition: not active("MergedThieverySkill.esp")
   - name: Uncapped Perks - [CM].+\.esp
+    req:
+      - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
+        display: 'Requires [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
     msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\""
-        condition: not file("SKSE_Elys_Uncapper.dll")
       - type: say
         content: "Incompatible with: PerkUP"
         condition: regex("PerkUP-.*\.esp")
   - name: 'Uncapped Perks.esp'
+    req:
+      - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
+        display: 'Requires [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
     msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\""
-        condition: not file("SKSE_Elys_Uncapper.dll")
       - type: say
         content: "Incompatible with: PerkUP"
         condition: regex("PerkUP-.*\.esp")
   - name: 'Uncapped Perks - Optional Magic Add-on.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\""
-        condition: not file("SKSE_Elys_Uncapper.dll")
+    req:
+      - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
+        display: 'Requires [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
   - name: Uncapped Perks - .+\.esp
     msg:
       - type: say
         content: "Incompatible with: PerkUP"
         condition: regex("PerkUP-.*\.esp")
   - name: 'BlueStarPerkAdventure.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1175 Skyrim -Community- Uncapper\""
-        condition: not file("SKSE_Elys_Uncapper.dll")
+    req:
+      - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
+        display: 'Requires [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
   - name: WiS IV - leveld World X\d+\.esp
     msg:
       - type: say
@@ -63639,9 +63636,8 @@ plugins:
   - name: 'DwarvenDollFollowers.esp'
     req:
       - *SKSE
-      - name: 'Fuz Ro D''oh.dll'
-        display: '[Fuz Ro D''oh](http://www.nexusmods.com/skyrim/mods/14884)'
-        condition: 'not file("Fuz Ro D''oh.dll")'
+      - name: 'SKSE\Plugins\Fuz Ro D''oh.dll'
+        display: 'Requires [Fuz Ro D''oh](http://www.nexusmods.com/skyrim/mods/14884)'
   - name: 'EACalypso.esp'
     msg:
       - type: say
@@ -63846,17 +63842,15 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairFemales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairFemales.esm")
   - name: 'ExpandedDialogueFaendal.esp'
-    req: [ *SKSE ]
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/14884 Fuz Ro D'oh\""
-        condition: not file("Fuz Ro D'oh.dll")
+    req: 
+      - *SKSE
+      - name: 'SKSE\Plugins\Fuz Ro D''oh.dll'
+        display: 'Requires [Fuz Ro D''oh](http://www.nexusmods.com/skyrim/mods/14884)'
   - name: 'ExpandedNPCDialogue.esp'
-    req: [ *SKSE ]
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/14884 Fuz Ro D'oh\""
-        condition: not file("Fuz Ro D'oh.dll")
+    req: 
+      - *SKSE
+      - name: 'SKSE\Plugins\Fuz Ro D''oh.dll'
+        display: 'Requires [Fuz Ro D''oh](http://www.nexusmods.com/skyrim/mods/14884)'
   - name: 'ExtraBlades.esp'
     msg:
       - type: say
@@ -68939,20 +68933,17 @@ plugins:
         content: "Requires: \"http://skse.silverlock.org SKSE\" 1.6.9+"
         condition: version("..\skse_loader.exe","0.1.6.9",<)
   - name: 'CharGen Morphs.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/ CharGen Core\""
-        condition: not file("chargen.dll")
+    req:
+      - name: 'SKSE\Plugins\chargen.dll'
+        display: 'Requires [CharGen Core](http://www.nexusmods.com/skyrim/mods/36925)'
   - name: 'CharGen ECE Morphs.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/ CharGen Core\""
-        condition: not file("chargen.dll")
+    req:
+      - name: 'SKSE\Plugins\chargen.dll'
+        display: 'Requires [CharGen Core](http://www.nexusmods.com/skyrim/mods/36925)'
   - name: 'Extra Scars.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/ CharGen Core\""
-        condition: not file("chargen.dll")
+    req:
+      - name: 'SKSE\Plugins\chargen.dll'
+        display: 'Requires [CharGen Core](http://www.nexusmods.com/skyrim/mods/36925)'
   - name: Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp
     msg:
       - type: say
