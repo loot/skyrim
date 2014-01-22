@@ -10722,6 +10722,9 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'Dual Sheath Redux.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: say
         content: "Requires: Skyrim v1.9.32.0+"
@@ -10729,9 +10732,6 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.13 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.13",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
-        condition: not active("SkyUI.esp")
       - type: say
         content: "Requires: Java Runtime Environment 7 update 17+"
   - name: 'Duke Patricks - FollowThatActor.esp'
@@ -12642,11 +12642,9 @@ plugins:
   - name: 'LoversComfort.esp'
     req:
       - *SKSE
+      - *SkyUI
       - *FNIS
     msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" 3.4+"
-        condition: not active("SkyUI.esp")
       - type: error
         content:
           - lang: eng
@@ -12695,11 +12693,9 @@ plugins:
   - name: 'LoversHook.esp'
     req:
       - *SKSE
+      - *SkyUI
       - *FNIS
     msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" 3.4+"
-        condition: not active("SkyUI.esp")
       - type: error
         content:
           - lang: eng
@@ -14712,13 +14708,13 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'Sorcerer Renamer.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: warn
         content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.9",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
-        condition: not active("SkyUI.esp")
   - name: 'Soul Eater The Enchantment Removing Chest.esp'
     msg:
       - type: warn
@@ -15624,10 +15620,11 @@ plugins:
             str: Usar rt_AutoHarvest.esp o rt_Animal - Processing.esp, no ambos.
         condition: file("rt_AutoHarvest.esp")
   - name: 'rt_AutoHarvest.esp'
+    req:
+      - name: '..\skse_loader.exe'
+        display: 'Requires [SKSE](http://skse.silverlock.org)'
+        condition: 'not checksum("rt_AutoHarvest.esp",BBDBA57A)'
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not checksum("rt_AutoHarvest.esp",BBDBA57A) and not file("..\skse_loader.exe")
       - type: error
         content:
           - lang: eng
@@ -15842,13 +15839,13 @@ plugins:
         content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.9",<)'
   - name: 'SkyTweak.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: warn
         content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.9",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
-        condition: not active("SkyUI.esp")
   - name: 'towConversation.esp'
     msg:
       - type: say
@@ -15927,6 +15924,9 @@ plugins:
       - *SKSE
       - *SkyUI
   - name: 'Customizable Camera.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: say
         content: "Requires: Skyrim 1.9.32+"
@@ -15934,10 +15934,10 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.14 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.14",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v4.0+"
-        condition: not active("SkyUI.esp")
   - name: 'DragonSoulConverter.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: say
         content: "Requires: Skyrim 1.9.32+"
@@ -15945,9 +15945,6 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.13 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.13",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
-        condition: not active("SkyUI.esp")
   - name: 'Dual Hand Combo Hotkeys.esp'
     req:
       - *SKSE
@@ -15973,14 +15970,17 @@ plugins:
       - *SKSE
       - *SkyUI
   - name: 'hmkLockOn.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: warn
         content: 'Requires [SKSE version 1.6.3 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.3",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
-        condition: not active("SkyUI.esp")
   - name: 'kuerteeAutoFirstThirdPersonView MCM.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: error
         content:
@@ -16003,10 +16003,10 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3+"
-        condition: not active("SkyUI.esp")
   - name: 'kuerteeAutoSaveAndTime MCM.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: error
         content:
@@ -16029,10 +16029,10 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3+"
-        condition: not active("SkyUI.esp")
   - name: 'kuerteeDisableLightsFarFromActors MCM.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: error
         content:
@@ -16055,14 +16055,14 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3+"
-        condition: not active("SkyUI.esp")
   - name: 'LoadOrder.esp'
     req:
       - *SKSE
       - *SkyUI
   - name: 'manny_Status.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: say
         content: "Requires: Skyrim 1.8.151+"
@@ -16070,24 +16070,22 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.9",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.1+"
-        condition: not active("SkyUI.esp")
   - name: 'MCMHeadPhone.esp'
     req:
       - *SKSE
       - *SkyUI
   - name: 'MinimalHUD.esp'
-    req: [ *SKSE ]
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" 3.4+"
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'Model Manager.esp'
     req:
       - *SKSE
       - *SkyUI
   - name: 'SaveHotKeyMCM.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: say
         content: "Requires: Skyrim 1.8.151+"
@@ -16095,18 +16093,18 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.4 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.4",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3+"
-        condition: not active("SkyUI.esp")
   - name: 'SkyrimConfigMenu.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: warn
         content: 'Requires [SKSE version 1.6.6 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.6",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.1+"
-        condition: not active("SkyUI.esp")
   - name: 'SkyrimSpellCleaner.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: say
         content: "Requires: Skyrim 1.9.32+"
@@ -16114,10 +16112,10 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.13 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.13",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
-        condition: not active("SkyUI.esp")
   - name: 'towPov.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: say
         content: "Requires: Skyrim 1.9.32+"
@@ -16125,9 +16123,6 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.13 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.13",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
-        condition: not active("SkyUI.esp")
 # ENDGROUP: MCM Mods
 
 # BEGINGROUP: Items
@@ -47796,6 +47791,9 @@ plugins:
             str: Thieves Guild Requirements.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("Thieves Guild Requirements.esp")
   - name: 'TimingIsEverything.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: say
         content: "Requires: Skyrim 1.9.32+"
@@ -47803,9 +47801,6 @@ plugins:
       - type: warn
         content: 'Requires [SKSE version 1.6.13 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.13",<)'
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
-        condition: not active("SkyUI.esp")
       - type: error
         content:
           - lang: eng
