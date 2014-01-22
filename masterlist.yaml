@@ -47318,28 +47318,28 @@ plugins:
         content: "Requires: Skyrim 1.9+"
         condition: version("..\TESV.exe","1.9",<)
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Dawnguard Compatibility_Patch\"."
+        content: "Requires: [Dawnguard Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60)."
         condition: ( ( ( active("Dawnguard.esm") ) and not active("Dragonborn.esm") ) and not file("SkyMoMod.esm") ) and not file("dD-Dawnguard-EBT Patch.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Dragonborn Compatibility_Patch\"."
+        content: "Requires: [Dragonborn Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60)."
         condition: ( ( ( active("Dragonborn.esm") ) and not active("Dawnguard.esm") ) and not file("SkyMoMod.esm") ) and not file("dD-Dragonborn-EBT Patch.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 0 Dragonborn-Dawnguard_Compatibility Patch\" \\ Dawnguard + Dragonborn."
+        content: "Requires: [Dragonborn-Dawnguard_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dawnguard + Dragonborn."
         condition: ( ( ( active("Dragonborn.esm") ) and active("Dawnguard.esm") ) and not file("SkyMoMod.esm") ) and not file("dD-Dragonborn-Dawnguard-EBT Patch.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch\" \\ Monster Mod."
+        content: "Requires: [Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Monster Mod."
         condition: ( ( ( not active("Dawnguard.esm") ) and not active("Dragonborn.esm") ) and file("SkyMoMod.esm") ) and not file("dD-SkyrimMonsterMod EBT Patch.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch\" \\ Dawnguard + Monster Mod."
+        content: "Requires: [Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dawnguard + Monster Mod."
         condition: ( ( ( active("Dawnguard.esm") ) and not active("Dragonborn.esm") ) and file("SkyMoMod.esm") ) and not file("dD-Dawnguard-MonsterMod EBT Patch.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch\" \\ Dragonborn + Monster Mod."
+        content: "Requires: [Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dragonborn + Monster Mod."
         condition: ( ( ( active("Dragonborn.esm") ) and not active("Dawnguard.esm") ) and file("SkyMoMod.esm") ) and not file("dD-Dragonborn-MonsterMod EBT Patch.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Skyrim Monster Mod_Compatibility Patch\" \\ Dawnguard + Dragonborn + Monster Mod."
+        content: "Requires: [Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dawnguard + Dragonborn + Monster Mod."
         condition: ( ( ( ( active("Dawnguard.esm") ) and active("Dragonborn.esm") ) and file("SkyMoMod.esm") ) and not file("dD-DG-DB-MonsterMod EBT Patch.esp") ) and not file("Skyrim Immersive Creatures.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/60 Monster Mod and Immersive Creatures Patch\" \\ Dawnguard + Dragonborn + Monster Mod + Immersive Creatures."
+        content: "Requires: [Monster Mod and Immersive Creatures Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dawnguard + Dragonborn + Monster Mod + Immersive Creatures."
         condition: ( ( ( ( active("Dawnguard.esm") ) and active("Dragonborn.esm") ) and file("SkyMoMod.esm") ) and file("Skyrim Immersive Creatures.esp") ) and not file("dD-DG-DB-MM-SiC EBT Patch.esp")
     dirty:
       - util: *dirtyUtil
@@ -47440,7 +47440,7 @@ plugins:
       - 'dD-Dawnguard-EBT Patch.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
+        content: "Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)"
         condition: not file("SkyMoMod.esm")
   - name: 'dD-Dawnguard-MonsterMod EBT Patch.esp'
     inc:
@@ -47463,7 +47463,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
+        content: "Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)"
         condition: not file("SkyMoMod.esm")
   - name: 'dD-Dragonborn-MonsterMod EBT Patch.esp'
     msg:
@@ -47483,7 +47483,7 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
+        content: "Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)"
         condition: not file("SkyMoMod.esm")
   - name: 'dD-DG-DB-MonsterMod EBT Patch.esp'
     inc:
@@ -47525,7 +47525,7 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
+        content: "Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)"
         condition: not file("SkyMoMod.esm")
   - name: 'dD-DG-DB-MM-SiC EBT Patch.esp'
     inc:
@@ -47568,10 +47568,10 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
+        content: "Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)"
         condition: not file("SkyMoMod.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/24913 Skyrim Immersive Creatures\""
+        content: "Requires: [Skyrim Immersive Creatures](http://www.nexusmods.com/skyrim/mods/24913)"
         condition: not file("Skyrim Immersive Creatures.esp")
   - name: 'Skeleton Resurrection.esp'
     msg:
@@ -48704,10 +48704,10 @@ plugins:
             str: imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard
         condition: ( file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") ) and not file("imp_helm_dawn.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/34093 Weapon and Armor Fixes Remade\""
+        content: "Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093)"
         condition: not file("Weapons & Armor Fixes_Remade.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/23390 Guard Dialouge Overhaul\""
+        content: "Requires: [Guard Dialouge Overhaul](http://www.nexusmods.com/skyrim/mods/23390)"
         condition: not file("Guard Dialogue Overhaul.esp")
   - name: Weapons & Armor_TrueDaedricWeapons.esp
     msg:
@@ -51686,17 +51686,17 @@ plugins:
             str: Рекомендуется использовать совместимую с Dawnguard версию.
         condition: ( active("Dawnguard.esm") ) and not checksum("SkyRealism - Capacity and Carry Weight.esp",E8FE85CD)
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/16438 Bandolier - Bags and Pouches\""
+        content: "Requires: [Bandolier - Bags and Pouches](http://www.nexusmods.com/skyrim/mods/16438)"
         condition: ( not file("Dr_Bandolier.esp") ) or not file("Dr_BandolierDG.esp")
       - type: say
         content:
           - lang: eng
-            str: "Requires: \"http://www.nexusmods.com/skyrim/mods/13732 Leather Backpack\".  Install only the black, brown and original varients. Also be sure to choose \"Regular\" for all install options."
+            str: "Requires: [Leather Backpack](http://www.nexusmods.com/skyrim/mods/13732).  Install only the black, brown and original varients. Also be sure to choose \"Regular\" for all install options."
         condition: not regex("LeatherBackpack(Brown|Black|DarkBrown)\.esp")
       - type: say
         content:
           - lang: rus
-            str: "Требуется: \"http://www.nexusmods.com/skyrim/mods/13732 Leather Backpack\".  Устанавливайте только черную(black) или коричневую(brown) и оригинальную версию. Также убедитесь, что выбрали \"Regular\", для всех опций установки."
+            str: "Требуется: [Leather Backpack](http://www.nexusmods.com/skyrim/mods/13732).  Устанавливайте только черную(black) или коричневую(brown) и оригинальную версию. Также убедитесь, что выбрали \"Regular\", для всех опций установки."
         condition: not regex("LeatherBackpack(Brown|Black|DarkBrown)\.esp")
   - name: 'SkyRealism - Mass and Materials - Dawnguard.esp'
     msg:
@@ -52095,6 +52095,7 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
+      - *FNIS
     msg:
       - type: error
         content:
@@ -52141,9 +52142,6 @@ plugins:
           - lang: spa
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
   - name: 'IMCN Hearthfire Patch.esp'
     msg:
       - type: error
@@ -53600,10 +53598,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: ASX( - |_)Spells\.esp
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'BanishLight.esp'
     msg:
       - type: warn
@@ -55040,7 +55035,7 @@ plugins:
   - name: 'Summon Behemot Dragon.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/17473 Behemoth\" meshes, textures"
+        content: "Requires: [Behemoth](http://www.nexusmods.com/skyrim/mods/17473) meshes, textures"
   - name: 'Summon_Gargoyle.esp'
     inc:
       - 'Conjure_Gargoyle.esp'
@@ -57213,7 +57208,7 @@ plugins:
   - name: 'RecyclingModCrafting300.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2933 Crafting 300 - Armoury of Tamriel\""
+        content: "Requires: [Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)"
         condition: not file("Crafting300.esp")
   - name: 'LB_MuchAdoSnowElves_ACE_Patch_Long.esp'
     msg:
@@ -58307,7 +58302,7 @@ plugins:
         content: "Requires: More Craftables"
         condition: not file("More Craftables.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9359 PerkUP\"."
+        content: "Requires: [PerkUP](http://www.nexusmods.com/skyrim/mods/9359)."
         condition: not regex("PerkUP-.*\.esp")
   - name: 'Perky.esp'
     msg:
@@ -59261,10 +59256,7 @@ plugins:
 # new animations.
 # TAG: {{BASH: Actors.Anims}}
   - name: 'ActionPoser.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\" (FNIS 3.1+)"
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'AP Skyrim.esp'
     msg:
       - type: say
@@ -59320,15 +59312,9 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
   - name: 'ElinRaceIdle.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\" (FNIS 3.1+)"
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'FAMP2.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\" (FNIS 3.2+)"
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'HeartBreaker.esp'
     msg:
       - type: error
@@ -59361,20 +59347,14 @@ plugins:
         itm: 70
         udr: 7
   - name: 'NiruinsBusinessPlan.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\" (FNIS 3.2+)"
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'OutOfMyWay.esp'
     dirty:
       - crc: 0x39d7fa2e
         util: *dirtyUtil
         itm: 35
   - name: 'PinupsMen.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\" (FNIS 3.2+)"
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'PotionsBETA.esp'
     msg:
       - type: error
@@ -59399,19 +59379,15 @@ plugins:
   - name: 'psikoticsnecromancy.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
+        content: "Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)"
         condition: not file("SkyMoMod.esm")
   - name: 'SexiSArrokAnimations.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'SexiSCupid.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *FNIS
     msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - type: error
         content:
           - lang: eng
@@ -59428,11 +59404,10 @@ plugins:
             str: SexiS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("SexiS.esm")
   - name: 'SexiSDefeated.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *FNIS
     msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - type: error
         content:
           - lang: eng
@@ -59449,20 +59424,16 @@ plugins:
             str: SexiS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("SexiS.esm")
   - name: 'ShakeIt.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
     dirty:
       - crc: 0x7e047c66
         util: *dirtyUtil
         itm: 1
   - name: 'zzLSARAddon.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *FNIS
     msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/5564/ a little sexy apparel replacer - for CBBE/UNP/ADEC\""
 # ENDGROUP: Pose and Animation Mods
@@ -59609,15 +59580,15 @@ plugins:
             str: "[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/19623 Crazy hairs and demoness hairs conversion by zzjay\""
+        content: "Requires: [Crazy hairs and demoness hairs conversion by zzjay](http://www.nexusmods.com/skyrim/mods/19623)"
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3809 Hair Pack\""
+        content: "Requires: [Hair Pack](http://www.nexusmods.com/skyrim/mods/3809)"
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/18110 Hair packs of TES IV Oblivion\""
+        content: "Requires: [Hair packs of TES IV Oblivion](http://www.nexusmods.com/skyrim/mods/18110)"
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/17993 Hair packs of Fallout3\""
+        content: "Requires: [Hair packs of Fallout3](http://www.nexusmods.com/skyrim/mods/17993)"
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/18220 Hair packs of Fallout3 Patch\""
+        content: "Requires: [Hair packs of Fallout3 Patch](http://www.nexusmods.com/skyrim/mods/18220)"
     dirty:
       - crc: 0xa31830f1
         util: *dirtyUtil
@@ -60014,13 +59985,13 @@ plugins:
   - name: 'Dwarf Race.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: 'Gimli.Esp'
     inc:
       - 'Dwarf Race.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: 'Dwemer_Race.esp'
     dirty:
       - crc: 0x91cd07be
@@ -60115,7 +60086,7 @@ plugins:
   - name: 'Gollum.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: 'Half Orc Race.esp'
     msg:
       - type: error
@@ -60151,20 +60122,20 @@ plugins:
   - name: 'Halfling Race.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: 'Sam Merry and Peppin.Esp'
     inc:
       - 'Halfling Race.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: Frodo Sam Merry & Peppin.Esp
     inc:
       - 'Halfling Race.Esp'
       - 'Sam Merry and Peppin.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: 'HBR_Marshwalker(Argonian)_Standalone.esp'
     dirty:
       - crc: 0x8e76e40f
@@ -60348,7 +60319,7 @@ plugins:
   - name: 'Neovalen Race Compatibility.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/17746 Duel Sheath plus Shields on Back\""
+        content: "Requires: [Duel Sheath plus Shields on Back](http://www.nexusmods.com/skyrim/mods/17746)"
         condition: not file("DSpSoB.esp")
   - name: 'New Playable Races by Budcat v3.0.esp'
     msg:
@@ -60606,7 +60577,7 @@ plugins:
   - name: 'RZW_ChubbyRaces.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/4888 CHSBHC - BBP - Nude and Jiggly Mod\""
+        content: "Requires: [CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)"
   - name: 'SC_Drow Race.esp'
     msg:
       - type: say
@@ -60923,7 +60894,7 @@ plugins:
   - name: 'Kawaii Face Presets2.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/12951 Enhanced Character Edit\""
+        content: "Requires: [Enhanced Character Edit](http://www.nexusmods.com/skyrim/mods/12951)"
         condition: not file("CharacterMakingExtender.esp")
       - type: warn
         content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
@@ -61284,7 +61255,7 @@ plugins:
   - name: 'Aragorn.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: 'Azzi.esp'
     dirty:
       - crc: 0x22f94ac9
@@ -61305,7 +61276,7 @@ plugins:
   - name: 'Boromir.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: 'DFB - Companions Lost No More.esp'
     dirty:
       - crc: 0x500dd498
@@ -61477,7 +61448,7 @@ plugins:
   - name: 'Gandalf.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: 'HorseCompanions.esp'
     msg:
       - type: warn
@@ -61543,7 +61514,7 @@ plugins:
   - name: 'Legolas.Esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2488 Better males - Beautiful nudes and faces - New hairstyles\""
+        content: "Requires: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)"
   - name: 'Lilium_Companion.esp'
     dirty:
       - crc: 0x3c10445f
@@ -62372,7 +62343,7 @@ plugins:
   - name: 'AlvhildeLycan.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/13722 The Eyes of Beauty\"."
+        content: "Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)."
         condition: checksum("AlvhildeLycan.esp",BE4CD149)
       - type: error
         content:
@@ -62509,17 +62480,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/13722 TheEyesOfBeauty.esp\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[TheEyesOfBeauty.esp](http://www.nexusmods.com/skyrim/mods/13722) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("TheEyesOfBeauty.esp")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/13722 TheEyesOfBeauty.esp\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[TheEyesOfBeauty.esp](http://www.nexusmods.com/skyrim/mods/13722) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("TheEyesOfBeauty.esp")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/13722 TheEyesOfBeauty.esp\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[TheEyesOfBeauty.esp](http://www.nexusmods.com/skyrim/mods/13722) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("TheEyesOfBeauty.esp")
       - type: error
         content:
@@ -63195,15 +63166,15 @@ plugins:
   - name: 'CGKarena.esp'
     msg:
       - type: error
-        content: "[ApachiiHairFemales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if this file is active without \"http://www.nexusmods.com/skyrim/mods/10168 ApachiiSkyHairFemales.esm\"."
+        content: "[ApachiiHairFemales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if this file is active without [ApachiiSkyHairFemales.esm](http://www.nexusmods.com/skyrim/mods/10168)."
         condition: ( checksum("CGKarena.esp",4973DA86) ) and not active("ApachiiHairFemales.esm")
       - type: error
-        content: "[ApachiiHairFemales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if this file is active without \"http://www.nexusmods.com/skyrim/mods/10168 ApachiiSkyHairFemales.esm\"."
+        content: "[ApachiiHairFemales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if this file is active without [ApachiiSkyHairFemales.esm](http://www.nexusmods.com/skyrim/mods/10168)."
         condition: ( checksum("CGKarena.esp",F4FA7C33) ) and not active("ApachiiHairFemales.esm")
   - name: 'Cicero.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3421 Nude Male with Roberts New Vegas male\""
+        content: "Requires: [Nude Male with Roberts New Vegas male](http://www.nexusmods.com/skyrim/mods/3421)"
   - name: 'CinderFrost.esp'
     msg:
       - type: error
@@ -63347,17 +63318,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/13443 Conan.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[Conan.esm](http://www.nexusmods.com/skyrim/mods/13443) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("Conan.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/13443 Conan.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[Conan.esm](http://www.nexusmods.com/skyrim/mods/13443) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("Conan.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/13443 Conan.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[Conan.esm](http://www.nexusmods.com/skyrim/mods/13443) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("Conan.esm")
   - name: 'Consuelo de Montoya.esp'
     msg:
@@ -64017,9 +63988,9 @@ plugins:
   - name: 'FelixConstantine.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1971 Smooth Faces for Ladies and Gents\""
+        content: "Requires: [Smooth Faces for Ladies and Gents](http://www.nexusmods.com/skyrim/mods/1971)"
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3424 Pretty Eyes\""
+        content: "Requires: [Pretty Eyes](http://www.nexusmods.com/skyrim/mods/3424)"
   - name: 'Fezzik the Giant.esp'
     msg:
       - type: warn
@@ -65373,7 +65344,7 @@ plugins:
             str: "[ApachiiHairFemales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairFemales.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/195 Human eyes for Elves\""
+        content: "Requires: [Human eyes for Elves](http://www.nexusmods.com/skyrim/mods/195)"
       - type: warn
         content:
           - lang: eng
@@ -65423,17 +65394,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairMales.esm")
   - name: 'Marriable Serana.esp'
     msg:
@@ -65539,7 +65510,7 @@ plugins:
   - name: 'MC-Fiona.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/14539 Flans Eyes for Skyrim\""
+        content: "Requires: [Flans Eyes for Skyrim](http://www.nexusmods.com/skyrim/mods/14539)"
         condition: not file("FlansEyesForSkrim.esp")
       - type: error
         content:
@@ -65559,7 +65530,7 @@ plugins:
   - name: 'MC-Synbios.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/14539 Flans Eyes for Skyrim\""
+        content: "Requires: [Flans Eyes for Skyrim](http://www.nexusmods.com/skyrim/mods/14539)"
         condition: not file("FlansEyesForSkrim.esp")
       - type: error
         content:
@@ -65579,34 +65550,34 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairMales.esm")
   - name: 'MarcurioGB.esp'
     msg:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairMales.esm")
   - name: 'MeekoHusky.esp'
     msg:
@@ -65981,17 +65952,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
@@ -66047,17 +66018,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
@@ -66145,17 +66116,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/13722 TheEyesOfBeauty.esp\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[TheEyesOfBeauty.esp](http://www.nexusmods.com/skyrim/mods/13722) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("TheEyesOfBeauty.esp")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/13722 TheEyesOfBeauty.esp\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[TheEyesOfBeauty.esp](http://www.nexusmods.com/skyrim/mods/13722) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("TheEyesOfBeauty.esp")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/13722 TheEyesOfBeauty.esp\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[TheEyesOfBeauty.esp](http://www.nexusmods.com/skyrim/mods/13722) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("TheEyesOfBeauty.esp")
       - type: error
         content:
@@ -66307,17 +66278,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairMales.esm")
   - name: 'NPC_Overhaul_1_3_.esp'
     msg:
@@ -66354,17 +66325,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairMales.esm")
   - name: 'Follower_Addon_1_1_.esp'
     msg:
@@ -66435,17 +66406,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("ApachiiHairMales.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairMales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[ApachiiHairMales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairMales.esm")
   - name: 'NPC REDESIGN.esp'
     msg:
@@ -66522,7 +66493,7 @@ plugins:
   - name: 'Onmeya.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/18110 Hair packs of TESIV Oblivion esm\" and \"http://www.nexusmods.com/skyrim/mods/16266 Additional Vanilla Follower Voice Types\""
+        content: "Requires: [Hair packs of TESIV Oblivion esm](http://www.nexusmods.com/skyrim/mods/18110) and [Additional Vanilla Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)"
         condition: ( not file("AdditionalNPCFollwerVoices.esp") ) and not file("oblivion hair.esm")
   - name: 'SFR_Onmund.esp'
     dirty:
@@ -66756,11 +66727,11 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: "Requires: Meshes and Textures from \"http://www.nexusmods.com/skyrim/mods/21038 Girls of Skyrim - Michelle\""
+            str: "Requires: Meshes and Textures from [Girls of Skyrim - Michelle](http://www.nexusmods.com/skyrim/mods/21038)"
       - type: say
         content:
           - lang: rus
-            str: "Требуется: Модели(Meshes) и тестуры мз мода \"http://www.nexusmods.com/skyrim/mods/21038 Girls of Skyrim - Michelle\""
+            str: "Требуется: Модели(Meshes) и тестуры мз мода [Girls of Skyrim - Michelle](http://www.nexusmods.com/skyrim/mods/21038)"
   - name: 'SeranaSecret.esp'
     msg:
       - type: error
@@ -66827,7 +66798,7 @@ plugins:
             str: "[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/13722 The Eyes of Beauty\""
+        content: "Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)"
         condition: not file("TheEyesOfBeauty.esp")
   - name: Serafina & co complete.esp
     inc:
@@ -66849,13 +66820,13 @@ plugins:
             str: "[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/13722 The Eyes of Beauty\""
+        content: "Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)"
         condition: not file("TheEyesOfBeauty.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6429 Monster Hunter\""
+        content: "Requires: [Monster Hunter](http://www.nexusmods.com/skyrim/mods/6429)"
         condition: not file("monster_hunter.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/19733 Immersive Armors\""
+        content: "Requires: [Immersive Armors](http://www.nexusmods.com/skyrim/mods/19733)"
         condition: not file("hothtrooper44_ArmorCompilation.esp")
   - name: 'Sexy Housecarls V 2.1.esp'
     msg:
@@ -66926,7 +66897,7 @@ plugins:
   - name: 'Skjor II.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/16266 Additional Vanilla Follower Voice Types\""
+        content: "Requires: [Additional Vanilla Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)"
         condition: not file("AdditionalNPCFollwerVoices.esp")
   - name: 'Skyrim - The three divine brothers.esp'
     msg:
