@@ -57568,11 +57568,12 @@ plugins:
       - Relev
   - name: 'SkyXP.esp'
     req:
-      - name: '..\skse_loader.exe'
-        display: 'Requires [SKSE 1.5.6+](http://skse.silverlock.org)'
-        condition: version("..\skse_loader.exe","0.1.5.6",<)
       - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
         display: 'Requires [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
+    msg:
+      - type: warn
+        display: 'Requires [SKSE 1.5.6+](http://skse.silverlock.org)'
+        condition: version("..\skse_loader.exe","0.1.5.6",<)
   - name: 'SmithingMasteryPerks.esp'
     inc:
       - 'PerkUP-Smithing.esp'
