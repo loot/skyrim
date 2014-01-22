@@ -12640,14 +12640,13 @@ plugins:
             str: El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").
         condition: not checksum("Lost Art of the Blacksmith.esp",1720F631)
   - name: 'LoversComfort.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *FNIS
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" 3.4+"
         condition: not active("SkyUI.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - type: error
         content:
           - lang: eng
@@ -12681,27 +12680,26 @@ plugins:
       - type: warn
         content:
           - lang: eng
-            str: "\"http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/ SexLabAroused\" is new dependency for the latest version of mod, install and enable it, otherwise you will get CTD."
+            str: "[SexLabAroused](http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/) is new dependency for the latest version of mod, install and enable it, otherwise you will get CTD."
         condition: not file("SexLabAroused.esm")
       - type: warn
         content:
           - lang: rus
-            str: "\"http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/ SexLabAroused\" - новое требование для последней версии мода, установите и подключите его, для избежания вылетов с последними версиями."
+            str: "[SexLabAroused](http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/) - новое требование для последней версии мода, установите и подключите его, для избежания вылетов с последними версиями."
         condition: not file("SexLabAroused.esm")
       - type: warn
         content:
           - lang: spa
-            str: "\"http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/ SexLabAroused\" is new dependency for the latest version of mod, install and enable it, otherwise you will get CTD."
+            str: "[SexLabAroused](http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/) is new dependency for the latest version of mod, install and enable it, otherwise you will get CTD."
         condition: not file("SexLabAroused.esm")
   - name: 'LoversHook.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *FNIS
     msg:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" 3.4+"
         condition: not active("SkyUI.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - type: error
         content:
           - lang: eng
@@ -67815,10 +67813,10 @@ plugins:
   - name: 'Taleya.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/18110 Hair packs of TES IV Oblivion\"."
+        content: "Requires: [Hair packs of TES IV Oblivion](http://www.nexusmods.com/skyrim/mods/18110)."
         condition: not file("oblivion hair.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/16266 Additional Vanilla NPC Follower Voice Types\"."
+        content: "Requires: [Additional Vanilla NPC Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)."
         condition: not file("AdditionalNPCFollwerVoices.esp")
   - name: 'TTS - Lydia.esp'
     msg:
@@ -67838,7 +67836,7 @@ plugins:
             str: "[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/13722 The Eyes of Beauty\"."
+        content: "Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)."
         condition: not file("TheEyesOfBeauty.esp")
   - name: 'VizerinChronicles.esp'
     msg:
@@ -67858,10 +67856,10 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/17993 Hair packs of Fallout 3\"."
+        content: "Requires: [Hair packs of Fallout 3](http://www.nexusmods.com/skyrim/mods/17993)."
         condition: not file("FallOut3Hairs.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/16266 Additional Vanilla NPC Follower Voice Types\"."
+        content: "Requires: [Additional Vanilla NPC Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)."
         condition: not file("AdditionalNPCFollwerVoices.esp")
   - name: 'Viszerinfollower.esp'
     msg:
@@ -69076,10 +69074,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: PC Exclusive Animation Path - .+\.esp
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'Race Abilities and Skills Redone.esp'
     dirty:
       - crc: 0xe4a1c5f7
@@ -69253,11 +69248,11 @@ plugins:
         condition: ( ( ( file("SkyRe_Races.esp") ) and not file("PreASISPatchEEO.esp") ) and not file("EEO patch.esp") ) and not checksum("ethereal_elven_overhaul.esp",38515FFF)
         content:
           - lang: eng
-            str: "Incompatible with: SkyRe Races.  A compatibility patch is available \"http://www.nexusmods.com/skyrim/mods/29185 here\"."
+            str: "Incompatible with: SkyRe Races.  A compatibility patch is available [here](http://www.nexusmods.com/skyrim/mods/29185)."
           - lang: rus
-            str: "Несовместим с: SkyRe Races.  Патч совместимости доступен \"http://www.nexusmods.com/skyrim/mods/29185 здесь\"."
+            str: "Несовместим с: SkyRe Races.  Патч совместимости доступен [здесь](http://www.nexusmods.com/skyrim/mods/29185)."
           - lang: spa
-            str: "Incompatible con: SkyRe Races.  A compatibility patch is available \"http://www.nexusmods.com/skyrim/mods/29185 here\"."
+            str: "Incompatible con: SkyRe Races.  A compatibility patch is available [here](http://www.nexusmods.com/skyrim/mods/29185)."
     dirty:
       - crc: 0x1841112c
         util: *dirtyUtil
@@ -69785,7 +69780,7 @@ plugins:
             str: SoS - The Dungeons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("SoS - The Dungeons.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1875 RCRN\""
+        content: "Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)"
         condition: ( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")
   - name: 'SoS - The Wilds-PatchRCRN.esp'
     msg:
@@ -69805,7 +69800,7 @@ plugins:
             str: SoS - The Wilds.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("SoS - The Wilds.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1875 RCRN\""
+        content: "Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)"
         condition: ( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")
   - name: 'SoS - Civilization-PatchRCRN.esp'
     msg:
@@ -69825,7 +69820,7 @@ plugins:
             str: SoS - Civilization.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("SoS - Civilization.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1875 RCRN\""
+        content: "Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)"
         condition: ( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")
   - name: 'SoS - The Dungeons-PatchELFX.esp'
     msg:
@@ -69894,11 +69889,11 @@ plugins:
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1875 RCRN\""
+        content: "Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)"
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN - Lanterns Of Skyrim.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1875 RCRN\""
+        content: "Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)"
   - name: Volrath - Dragonreach - Brazier fix( - 1\.1)\.esp
     msg:
       - type: error
@@ -70346,7 +70341,7 @@ plugins:
   - name: 'GreenWaterFix_CompWithWATER1_5b.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/13268 WATER 1.5b\""
+        content: "Requires: [WATER 1.5b](http://www.nexusmods.com/skyrim/mods/13268)"
 # ENDGROUP: Shader Mods
 # BEGINGROUP: Map marker Tweaks
   - name: 'allmarkersvisible_dawn_en.esp'
@@ -72488,17 +72483,11 @@ plugins:
   - name: 'PC Exclusive Animation Path.esp'
     inc:
       - 'AP Skyrim.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\" (FNIS 3.1+)"
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'PC Exclusive Animation Path - Elder Race.esp'
     inc:
       - 'AP Skyrim.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\" (FNIS 3.1+)"
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: [ *FNIS ]
   - name: 'BalancedModeCore.esp'
     msg:
       - type: say
