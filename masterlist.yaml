@@ -10519,6 +10519,7 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
   - name: Don.?Juan.*\.esp
+    req: [ *FNIS ]
     msg:
       - type: error
         content:
@@ -10535,9 +10536,6 @@ plugins:
           - lang: spa
             str: "[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHair.esm")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
   - name: 'Dogsofskyrim.esp'
     dirty:
       - crc: 0x3de83b91
@@ -12981,18 +12979,18 @@ plugins:
   - name: 'More Craftables - Crafting 300 compatibility.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2933 Crafting 300 - Armoury of Tamriel\""
+        content: "Requires: [Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)"
         condition: not file("Crafting300.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/799 More Craftables\""
+        content: "Requires: [More Craftables](http://www.nexusmods.com/skyrim/mods/799)"
         condition: not file("More Craftables.esp")
   - name: 'More Craftables - Dwemer Certified compatibility.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/10442 Dwemer Certified\""
+        content: "Requires: [Dwemer Certified](http://www.nexusmods.com/skyrim/mods/10442)"
         condition: not file("Dwemer Certified.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/799 More Craftables\""
+        content: "Requires: [More Craftables](http://www.nexusmods.com/skyrim/mods/799)"
         condition: not file("More Craftables.esp")
   - name: 'More Escape Passages.esp'
     msg:
@@ -13115,7 +13113,7 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/31856 Moss Rocks\""
+        content: "Requires: [Moss Rocks](http://www.nexusmods.com/skyrim/mods/31856)"
         condition: not file("Moss Rocks.esp")
   - name: 'mxdemonicarmoredhorse.esp'
     dirty:
@@ -13355,10 +13353,10 @@ plugins:
   - name: Nord Needs + Cooking Expanded patch.esp
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/1409 Cooking Expanded\""
+        content: "Requires: [Cooking Expanded](http://www.nexusmods.com/skyrim/mods/1409)"
         condition: not file("CookingExpanded.esp")
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/21384 NordNeeds\""
+        content: "Requires: [NordNeeds](http://www.nexusmods.com/skyrim/mods/21384)"
         condition: not file("NordNeeds.esp")
   - name: 'RecettesSansSel.esp'
     msg:
@@ -13988,7 +13986,7 @@ plugins:
   - name: 'RecyclingModCrafting300.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/2933 Crafting 300 - Armoury of Tamriel\""
+        content: "Requires: [Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)"
         condition: not file("Crafting300.esp")
   - name: 'RedMountainErupts.esp'
     msg:
@@ -14068,7 +14066,7 @@ plugins:
   - name: 'rt_AutoHarvest.esp'
     msg:
       - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
+        content: "Requires: [SKSE](http://skse.silverlock.org)"
         condition: not checksum("rt_AutoHarvest.esp",BBDBA57A) and not file("..\skse_loader.exe")
       - type: error
         content:
@@ -14146,11 +14144,10 @@ plugins:
         itm: 3
         udr: 5
   - name: 'SexiSWorkingGirl.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
+      - *FNIS
     msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - type: error
         content:
           - lang: eng
@@ -14442,7 +14439,7 @@ plugins:
   - name: 'SkyMoMod_lists.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
+        content: "Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)"
         condition: not file("SkyMoMod.esm")
       - type: say
         content:
@@ -14504,7 +14501,7 @@ plugins:
   - name: 'SkyMoMod Extras Collectables.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/9694 Skyrim Monster Mod\""
+        content: "Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)"
         condition: not file("SkyMoMod.esm")
   - name: 'skymo-dawn.esp'
     msg:
@@ -14533,17 +14530,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/9694 SkyMoMod.esm\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[SkyMoMod.esm](http://www.nexusmods.com/skyrim/mods/9694) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not file("SkyMoMod.esm")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/9694 SkyMoMod.esm\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[SkyMoMod.esm](http://www.nexusmods.com/skyrim/mods/9694) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not file("SkyMoMod.esm")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/9694 SkyMoMod.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod él."
+            str: "[SkyMoMod.esm](http://www.nexusmods.com/skyrim/mods/9694) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod él."
         condition: not file("SkyMoMod.esm")
     tag:
       - Delev
@@ -15252,17 +15249,17 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: "\"http://www.nexusmods.com/skyrim/mods/27563 WetandCold.esp\" is not present or is not active. Skyrim will CTD when loading if using this file without it."
+            str: "[WetandCold.esp](http://www.nexusmods.com/skyrim/mods/27563) is not present or is not active. Skyrim will CTD when loading if using this file without it."
         condition: not active("WetandCold.esp")
       - type: error
         content:
           - lang: rus
-            str: "\"http://www.nexusmods.com/skyrim/mods/27563 WetandCold.esp\" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
+            str: "[WetandCold.esp](http://www.nexusmods.com/skyrim/mods/27563) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него."
         condition: not active("WetandCold.esp")
       - type: error
         content:
           - lang: spa
-            str: "\"http://www.nexusmods.com/skyrim/mods/27563 WetandCold.esp\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
+            str: "[WetandCold.esp](http://www.nexusmods.com/skyrim/mods/27563) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("WetandCold.esp")
   - name: Where's My Horse Gone.esp
     msg:
@@ -16400,7 +16397,7 @@ plugins:
   - name: 'Alexia CatGarter.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'AlexScorpionsShop.esp'
     dirty:
       - crc: 0xc2dbdc74
@@ -16742,7 +16739,7 @@ plugins:
   - name: 'Backpack OE.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'BadGremlinsJarHunt.esp'
     dirty:
       - crc: 0x82caa554
@@ -17080,7 +17077,7 @@ plugins:
   - name: 'Casual Outfit OE.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'Cattelya Greatsword.esp'
     dirty:
       - crc: 0x38c1fcb3
@@ -17094,7 +17091,7 @@ plugins:
   - name: 'chainmail.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'Chainmail Hood v2.2.esp'
     tag:
       - Relev
@@ -18492,7 +18489,7 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: "Be sure you have the correct version for the body type installed: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\" or [CBBE](http://www.nexusmods.com/skyrim/mods/2666)"
+            str: "Be sure you have the correct version for the body type installed: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) or [CBBE](http://www.nexusmods.com/skyrim/mods/2666)"
       - type: say
         content:
           - lang: rus
@@ -18587,7 +18584,7 @@ plugins:
   - name: 'DIMclothes1.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'DLC-CraftableVampireItems.esp'
     msg:
       - type: error
@@ -19449,7 +19446,7 @@ plugins:
   - name: 'Fitness Outfit OE.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'Fletching.esp'
     dirty:
       - crc: 0xb2669e47
@@ -19458,7 +19455,7 @@ plugins:
   - name: 'Footwear OE.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'fortunequackerscraftableskallsets.esp'
     msg:
       - type: error
@@ -19824,7 +19821,7 @@ plugins:
   - name: 'HmmWhatToWear.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'HmmWhatToWearMerged.esp'
     msg:
       - type: error
@@ -20450,7 +20447,7 @@ plugins:
   - name: 'Juquinha-armory.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
 # ENDGROUP: Items J
 
 # BEGINGROUP: Items K
@@ -20530,7 +20527,7 @@ plugins:
   - name: 'KURESE Gloria conversion.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
       - type: warn
         content:
           - lang: eng
@@ -21161,11 +21158,11 @@ plugins:
   - name: 'MinaArmors.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'Mini Sage Outfit.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: Miraak's Cloth Set Heavy Mask.esp
     msg:
       - type: error
@@ -21619,15 +21616,15 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\" or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
+            str: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
       - type: say
         content:
           - lang: rus
-            str: "Требуется: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\" или [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
+            str: "Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) или [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
       - type: say
         content:
           - lang: spa
-            str: "Requiere: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\" or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
+            str: "Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
   - name: 'NewmillerShoesUNP.esp'
     msg:
       - type: say
@@ -21645,15 +21642,15 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\" or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
+            str: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
       - type: say
         content:
           - lang: rus
-            str: "Требуется: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\" или [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
+            str: "Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) или [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
       - type: say
         content:
           - lang: spa
-            str: "Requiere: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\" or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
+            str: "Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or \"http://www.nexusmods.com/skyrim/mods/14899 UNP Blessed Body (UNPB)\"."
   - name: 'Niagras Bleach Pack.esp'
     msg:
       - type: warn
@@ -22066,11 +22063,11 @@ plugins:
   - name: 'Osare KneeSocks.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'Osare Maid Outfit.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
 # ENDGROUP: Items O
 
 # BEGINGROUP: Items P
@@ -22394,7 +22391,7 @@ plugins:
   - name: 'Saber Lily - Caliburn Outfit.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'Samurai Light Armors .esp'
     dirty:
       - crc: 0x3cf22aae
@@ -23026,11 +23023,11 @@ plugins:
   - name: 'TERAArmors.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'TERA Armors for Skyrim - UNP.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'TERA Armors for Skyrim - UNPB-BBP.esp'
     msg:
       - type: say
@@ -23285,7 +23282,7 @@ plugins:
   - name: 'UNP Jewelry Retextured.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'UNP Jewelry Variants.esp'
     msg:
       - type: say
@@ -23303,15 +23300,15 @@ plugins:
   - name: 'UNP Jewelry Variants V-2.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'UNP Leather Clothes.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: UNP Boots.*\.esp
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'Isharas_PetrovichClothes.esp'
     msg:
       - type: say
@@ -23320,7 +23317,7 @@ plugins:
   - name: 'UNP Undies.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'UNPB Barbarian Armor.esp'
     msg:
       - type: say
@@ -23328,7 +23325,7 @@ plugins:
   - name: 'UNP Petrovna.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'URW_Enhanced Crossbows Enhanced.esp'
     msg:
       - type: error
@@ -23884,7 +23881,7 @@ plugins:
   - name: 'YPSArmorPack.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'zabswitchhat.esp'
     dirty:
       - crc: 0x70e18e66
@@ -23898,7 +23895,7 @@ plugins:
   - name: 'zzTmBallGown.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
 # ENDGROUP: Items XYZ
 
 # Temporary place holder for mods that need to be loaded after many other item mods
@@ -43525,11 +43522,11 @@ plugins:
   - name: 'DA_Maxwell_Outfit_Dibella_UNP.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'DA_Maxwell_Outfit_Dibella_UNP_EV.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'Deadly_Slaughterfish.esp'
     msg:
       - type: say
@@ -62430,7 +62427,7 @@ plugins:
   - name: 'Angelina Jolie UNP.esp'
     msg:
       - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'angi.esp'
     msg:
       - type: error
@@ -63316,7 +63313,7 @@ plugins:
   - name: 'Companion_Crea.esp'
     msg:
       - type: say
-        content: "Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
       - type: say
         content:
           - lang: eng
@@ -63332,7 +63329,7 @@ plugins:
   - name: 'Companion_Lese.esp'
     msg:
       - type: say
-        content: "Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
       - type: say
         content:
           - lang: eng
@@ -69070,7 +69067,7 @@ plugins:
       - 'LiFE.esm'
     msg:
       - type: say
-        content: "Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | \"http://www.nexusmods.com/skyrim/mods/6709 DIMONIZED UNP\""
+        content: "Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)"
   - name: 'nord_nightseye01.esp'
     dirty:
       - crc: 0xbb8b06a8
