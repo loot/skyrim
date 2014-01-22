@@ -1782,13 +1782,9 @@ plugins:
         content: "Requires: \"http://skse.silverlock.org SKSE\" 1.6.8+."
         condition: version("..\skse_loader.exe","0.1.6.8",<)
   - name: 'Perk-Reset-MCM.esm'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'pinewoodvillage.esm'
     msg:
       - type: say
@@ -2039,24 +2035,17 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, DrowRace.esp.
   - name: 'SexiS.esm'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
   - name: 'SexLab.esm'
+    req: 
+      - *SKSE
+      - *SkyUI
+      - *FNIS
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
       - type: error
         content:
           - lang: eng
@@ -4290,10 +4279,7 @@ plugins:
             str: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
         condition: active("Unofficial Skyrim Patch.esp")
   - name: 'Invisibility Eyes Fix.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'KarliahFix.esp'
     msg:
       - type: error
@@ -8288,13 +8274,9 @@ plugins:
 # ## Recommended to be loaded before Economics of Skyrim
 # ## TradeBarterLite.esp
   - name: 'TradeBarter.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req: 
+      - *SKSE
+      - *SkyUI
     tag:
       - Delev
       - Relev
@@ -8395,10 +8377,7 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Advanced Spell Toggle.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Aetherial Forge Advanced.esp'
     msg:
       - type: error
@@ -8417,10 +8396,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'AK- Clothe Dead NPCs.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'AK- Mines and Mills - Hearthfire.esp'
     msg:
       - type: error
@@ -8439,19 +8415,14 @@ plugins:
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
         condition: not active("Hearthfires.esm")
   - name: 'AK- Placeable Statics.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
     dirty:
       - crc: 0xf20cbafa
         util: *dirtyUtil
         itm: 7
   - name: 'AK- Placeable Statics - Hearthfire.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: error
         content:
           - lang: eng
@@ -8923,10 +8894,7 @@ plugins:
             str: Borrar. Esta incluido en "http://www.nexusmods.com/skyrim/mods/10753 Auto Unequip Ammo".
         condition: file("Auto Unequip Ammo.esp")
   - name: 'autotravel.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'AV1Jills.esp'
     dirty:
       - crc: 0x803fa31
@@ -9087,6 +9055,9 @@ plugins:
         util: *dirtyUtil
         itm: 6
   - name: 'BecomeAVampire.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: error
         content:
@@ -9103,12 +9074,6 @@ plugins:
           - lang: spa
             str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
   - name: 'Belleza DiBella - PNJ Overhaul.esp'
     msg:
       - type: error
@@ -9468,18 +9433,11 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'BLEED.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'Blood Options (SKSE).esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Bloody Cannibalism.esp'
     msg:
       - type: error
@@ -9891,10 +9849,7 @@ plugins:
             str: Change Follower Outfits Redux.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("Change Follower Outfits Redux.esp")
   - name: 'Char Your Own Skeevers.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Chesko_WearableLantern.esp'
     dirty:
       - crc: 0xa451e273
@@ -9920,15 +9875,9 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'ChickenDeath.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'circlet displays.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Cliffracers.esp'
     msg:
       - type: warn
@@ -10062,13 +10011,9 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
   - name: 'CopyArmor.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.1+"
-        condition: not active("SkyUI.esp")
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'CP Apple Trees.esp'
     dirty:
       - crc: 0xc4e6faf8
@@ -10429,10 +10374,7 @@ plugins:
       - Delev
       - Relev
   - name: 'DetailedPotionNamesAuto.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'DF127EnchantedArrows2.0.esp'
     tag:
       - Relev
@@ -10481,15 +10423,9 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'DIM-playeridlingmod.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'DineWithFollowers.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Disease Descriptions.esp'
     msg:
       - type: say
@@ -10762,10 +10698,7 @@ plugins:
     tag:
       - Delev
   - name: 'DragonsCanAbsorbYourSoul.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'DrinkingGivesYourBottles.esp'
     inc:
       - 'Skyrealism - Feast and Famine.esp'
@@ -10774,10 +10707,7 @@ plugins:
         content: "Incompatible with: Headbomb's Better Sorting - Food *.esp"
         condition: regex("Headbomb's Better Sorting - Food.+\.esp")
   - name: 'DropThatGold.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'DSpSoB.esp'
     msg:
       - type: say
@@ -10813,10 +10743,7 @@ plugins:
       - type: say
         content: "Requires: Java Runtime Environment 7 update 17+"
   - name: 'Duke Patricks - FollowThatActor.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
 # ENDGROUP: Base D
 
 # BEGINGROUP: Base E
@@ -11117,10 +11044,7 @@ plugins:
           - lang: spa
             str: Utilizar solo un Faster Bolts esp.
   - name: 'FCC- Main.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
     dirty:
       - crc: 0xd286578
         util: *dirtyUtil
@@ -11787,10 +11711,7 @@ plugins:
         util: *dirtyUtil
         itm: 39
   - name: 'GuessDistance.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'GunjarNoFool.esp'
     dirty:
       - crc: 0xcc07c650
@@ -12097,13 +12018,9 @@ plugins:
         content: This file is missing records and should NOT be used
         condition: checksum("Necessary Markers_german.esp",58DB7A80)
   - name: 'Hunterborn.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
 # ENDGROUP: Base H
 
 # BEGINGROUP: Base I
@@ -12192,15 +12109,9 @@ plugins:
         itm: 17
         udr: 2
   - name: 'ImmersiveSpells.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'ImmersiveSpells-NoDlcDawnDragComp.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'ImprovedFish.esp'
     inc:
       - 'BetterFishAdded.esp'
@@ -12737,10 +12648,8 @@ plugins:
             str: El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch").
         condition: not checksum("Lost Art of the Blacksmith.esp",1720F631)
   - name: 'LoversComfort.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" 3.4+"
         condition: not active("SkyUI.esp")
@@ -12793,10 +12702,8 @@ plugins:
             str: "\"http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/ SexLabAroused\" is new dependency for the latest version of mod, install and enable it, otherwise you will get CTD."
         condition: not file("SexLabAroused.esm")
   - name: 'LoversHook.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" 3.4+"
         condition: not active("SkyUI.esp")
@@ -12819,10 +12726,7 @@ plugins:
             str: SexLab.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("SexLab.esm")
   - name: 'LPSleep.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\" 1.6.16+"
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'lt_better_horses.esp'
     msg:
       - type: error
@@ -13525,10 +13429,7 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'Open Empty Containers.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'ORM-Arvak.esp'
     msg:
       - type: error
@@ -13550,13 +13451,9 @@ plugins:
 
 # BEGINGROUP: Base P
   - name: 'PassiveWeaponEnchantmentRecharging.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'People Have Lanterns.esp'
     msg:
       - type: say
@@ -14255,10 +14152,8 @@ plugins:
         itm: 3
         udr: 5
   - name: 'SexiSWorkingGirl.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
@@ -14409,10 +14304,7 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'SKSE_Athletics.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'skyBirds - Airborne Perching Birds.esp'
     dirty:
       - crc: 0x131bb61c
@@ -15229,10 +15121,7 @@ plugins:
         itm: 18
         udr: 3
   - name: 'Undies Underneath.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Unicorn.esp'
     dirty:
       - crc: 0x69a349b1
@@ -15340,10 +15229,7 @@ plugins:
         util: *dirtyUtil
         udr: 2
   - name: 'WerewolfAftermathEquipper.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'WetandCold.esp'
     msg:
       - type: say
@@ -15786,10 +15672,7 @@ plugins:
             str: Utilizar únicamente las funciones de guardar de "CAS" o "kuertee's auto-save and time".
         condition: file("kuerteeAutoSaveAndTime.esp")
   - name: 'ContainerMagic.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
     dirty:
       - crc: 0xcbf09128
         util: *dirtyUtil
@@ -15820,19 +15703,13 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Duke Patricks - Savvy Save.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
     dirty:
       - crc: 0x4dc4ef35
         util: *dirtyUtil
         itm: 1
   - name: 'DynamicNaming.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Dynavision.esp'
     msg:
       - type: warn
@@ -15901,13 +15778,11 @@ plugins:
             str: JSwords.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("JSwords.esm")
   - name: 'kuerteeActorDetails.esp'
+    req: [ *SKSE ]
     msg:
       - type: say
         content: "Requires: Skyrim 1.8+"
         condition: version("..\TESV.exe","1.8",<)
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
   - name: 'kuerteeAutoFirstThirdPersonView.esp'
     msg:
       - type: say
@@ -15933,15 +15808,9 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'NoxUEc.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'NoxUE2.00.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'RaceMenu.esp'
     msg:
       - type: say
@@ -16022,10 +15891,7 @@ plugins:
         content: "Requires: \"http://skse.silverlock.org SKSE\" 1.6.16+."
         condition: version("..\skse_loader.exe","0.1.6.16",<)
   - name: 'iHUD.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'IMAGINATOR - MCMenu.esp'
     msg:
       - type: error
@@ -16044,61 +15910,33 @@ plugins:
             str: IMAGINATOR - Visual Control for Skyrim.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él"http://www.nexusmods.com/skyrim/mods/13049 IMAGINATOR - Visual Control for Skyrim".
         condition: not active("IMAGINATOR - Visual Control for Skyrim.esp")
   - name: 'LessIntrusiveHUD.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'AI Gamesettings.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'auto camera.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'BlitzConsoleCommandsMCM.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'BodyChange.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'bugi_quicksave.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'cheat_mod_mcm.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'Customizable Camera.esp'
     msg:
       - type: say
@@ -16122,53 +15960,29 @@ plugins:
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.4+"
         condition: not active("SkyUI.esp")
   - name: 'Dual Hand Combo Hotkeys.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'Enhanced 3rd Person Camera.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'Enhanced 3rd Person Camera V1.0.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'Fine-Tuned Challenge.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'Grimy Utilities Interface.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'Headtrack Crosshair.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v4.1+"
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'hmkLockOn.esp'
     msg:
       - type: say
@@ -16256,13 +16070,9 @@ plugins:
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3+"
         condition: not active("SkyUI.esp")
   - name: 'LoadOrder.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'manny_Status.esp'
     msg:
       - type: say
@@ -16275,29 +16085,19 @@ plugins:
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" v3.1+"
         condition: not active("SkyUI.esp")
   - name: 'MCMHeadPhone.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'MinimalHUD.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\" 3.4+"
         condition: not active("SkyUI.esp")
   - name: 'Model Manager.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
+    req:
+      - *SKSE
+      - *SkyUI
   - name: 'SaveHotKeyMCM.esp'
     msg:
       - type: say
@@ -17002,10 +16802,7 @@ plugins:
           - lang: spa
             str: Utilizar solo un Berserk Black Swordsman Armor esp.
   - name: 'Berserk Greatsword.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'betterbladesgear.esp'
     tag:
       - Relev
@@ -20446,10 +20243,7 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'InigoPerkPointGiver.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'InsanitysCelticKatana.esp'
     tag:
       - name: Deactivate
@@ -25021,6 +24815,7 @@ plugins:
     tag:
       - Relev
   - name: 'egp2.esp'
+    req: [ *SKSE ]
     msg:
       - type: error
         content:
@@ -25037,9 +24832,6 @@ plugins:
           - lang: spa
             str: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
   - name: 'Expanded Apothecary Inventory.esp'
     dirty:
       - crc: 0x761777ff
@@ -27252,6 +27044,9 @@ plugins:
             str: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
         condition: file("PerkReset.esp")
   - name: 'SkyRE-Patch.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: error
         content:
@@ -27268,12 +27063,6 @@ plugins:
           - lang: spa
             str: Perk-Reset-MCM.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("Perk-Reset-MCM.esm")
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
   - name: 'SkyRe_EnemyScaling.esp'
     tag:
       - Relev
@@ -32476,10 +32265,7 @@ plugins:
         content: "Requires: Skyrim 1.8.151.0.7+"
         condition: version("..\TESV.exe","0.1.8.151.0.7",<)
   - name: 'Corpse_Preparation.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Creeks.esp'
     msg:
       - type: say
@@ -32598,13 +32384,11 @@ plugins:
 
 # BEGINGROUP: Quests D
   - name: 'DA_Skyship.esp'
+    req: [ *SKSE ]
     msg:
       - type: warn
         content: If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.
         condition: ( active("Dragonborn.esm") ) and not file("DA_Skyship_Dragonborn.esp")
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
     dirty:
       - crc: 0x5b03bf9a
         util: *dirtyUtil
@@ -37711,10 +37495,8 @@ plugins:
         itm: 29
         udr: 4
   - name: 'ROEBETA.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
       - type: error
         content:
           - lang: eng
@@ -40996,15 +40778,9 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'WayofDragonborn.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'WayofDragonbornCreativePerks.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'WeatherTop.esp'
     msg:
       - type: error
@@ -41498,19 +41274,13 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'PorkUp.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
     dirty:
       - crc: 0x62b426c3
         util: *dirtyUtil
         itm: 1
   - name: 'DynamicWeight.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: SkyrimCoinReplacer.*\.esp
     tag:
       - Delev
@@ -45250,19 +45020,14 @@ plugins:
   - name: 'Isharas_MLLY_FEMALES_SKSE.esp'
     inc:
       - 'Isharas_MLLY_FEMALES.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Isharas_MLLY_MALES.esp'
     inc:
       - 'Isharas_MLLY_FEMALES.esp'
       - 'Isharas_MLLY_FEMALES_SKSE.esp'
   - name: 'Isharas_MLLY_MALES_SKSE.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: warn
         content:
           - lang: eng
@@ -48339,10 +48104,8 @@ plugins:
     inc:
       - 'Unique.esm'
   - name: 'Unique Unique.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: warn
         content:
           - lang: eng
@@ -50459,10 +50222,7 @@ plugins:
             str: moonpath.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://www.nexusmods.com/skyrim/mods/9782 Moonpath to Elsweyr".
         condition: not active("moonpath.esm")
   - name: 'MHYH_RentRoomFollower.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'SkyrimSewers.esp'
     msg:
       - type: say
@@ -51907,10 +51667,8 @@ plugins:
         itm: 322
         udr: 9
   - name: 'SkyRealism - Capacity and Carry Weight.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: error
         content:
           - lang: eng
@@ -52278,10 +52036,7 @@ plugins:
             str: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("SkyRealism - Mass and Materials.esp")
   - name: 'SkyRealism - Portable Crafting Kits.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'SkyrimHeartRate.esp'
     msg:
       - type: say
@@ -52346,6 +52101,9 @@ plugins:
         util: *dirtyUtil
         itm: 17
   - name: 'ZF Primary Needs.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: error
         content:
@@ -52395,12 +52153,6 @@ plugins:
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
   - name: 'IMCN Hearthfire Patch.esp'
     msg:
       - type: error
@@ -52468,6 +52220,9 @@ plugins:
           - lang: rus
             str: Возможны конфликты с другими модами, меняющими систему вампиризма.
   - name: 'DVA - Dynamic Vampire Appearance.esp'
+    req:
+      - *SKSE
+      - *SkyUI
     msg:
       - type: error
         content:
@@ -52484,12 +52239,6 @@ plugins:
           - lang: spa
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: not active("Dragonborn.esm")
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
   - name: 'Better Vampires DG.esp'
     msg:
       - type: error
@@ -52716,6 +52465,7 @@ plugins:
             str: Отключите или удалите это. Уже включено в 'LFox Werewolf Improvements.esp'
         condition: file("LFox Werewolf Improvements.esp")
   - name: 'mslVampiricThirst.esp'
+    req: [ *SKSE ]
     msg:
       - type: error
         content:
@@ -52732,9 +52482,6 @@ plugins:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
       - type: say
         content:
           - lang: eng
@@ -54051,10 +53798,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'BuryTheDead.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'CDM - Blink Teleport Enhanced.esp'
     dirty:
       - crc: 0xcb7d6fb7
@@ -55361,10 +55105,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: not active("Dawnguard.esm")
   - name: 'SummonFollowers.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Support Magic.esp'
     tag:
       - Relev
@@ -55559,10 +55300,7 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'Unspontaneous-combustion.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Wheel Of Time Powers.esp'
     dirty:
       - crc: 0x9a60231c
@@ -59680,10 +59418,8 @@ plugins:
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
   - name: 'SexiSCupid.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
@@ -59703,10 +59439,8 @@ plugins:
             str: SexiS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("SexiS.esm")
   - name: 'SexiSDefeated.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
@@ -59735,10 +59469,8 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'zzLSARAddon.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
         condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
@@ -60124,20 +59856,11 @@ plugins:
 # New warpaints.
 # Keep in mind any Warpaint plugin changes the RACE record
   - name: 'BHWarPaints.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'RaceMenuOverlays.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'TSMaleWarPaint.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\"."
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
 # ENDGROUP: Warpaints
 
 # BEGINGROUP: Race additions
@@ -61514,20 +61237,11 @@ plugins:
             str: RealisticNeedsandDiseases.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
         condition: not active("RealisticNeedsandDiseases.esp")
   - name: 'AlmostEveryoneIsAnAdventurer.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'kuerteeSimpleMultipleFollowers MCM.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'kuerteeSimpleMultipleFollowers.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
+    req: [ *SKSE ]
   - name: 'Akasha.esp'
     msg:
       - type: warn
@@ -63923,13 +63637,11 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'DwarvenDollFollowers.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\" 1.6.16+"
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/14884 Fuz Ro D'oh\""
-        condition: not file("Fuz Ro D'oh.dll")
+    req:
+      - *SKSE
+      - name: 'Fuz Ro D''oh.dll'
+        display: '[Fuz Ro D''oh](http://www.nexusmods.com/skyrim/mods/14884)'
+        condition: 'not file("Fuz Ro D''oh.dll")'
   - name: 'EACalypso.esp'
     msg:
       - type: say
@@ -64134,18 +63846,14 @@ plugins:
             str: "\"http://www.nexusmods.com/skyrim/mods/10168 ApachiiHairFemales.esm\" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él."
         condition: not active("ApachiiHairFemales.esm")
   - name: 'ExpandedDialogueFaendal.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/14884 Fuz Ro D'oh\""
         condition: not file("Fuz Ro D'oh.dll")
   - name: 'ExpandedNPCDialogue.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
       - type: say
         content: "Requires: \"http://www.nexusmods.com/skyrim/mods/14884 Fuz Ro D'oh\""
         condition: not file("Fuz Ro D'oh.dll")
@@ -65235,38 +64943,20 @@ plugins:
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
         condition: ( file("Kashim.esp") ) or file("Kashim - Ahtar Replacer.esp")
   - name: 'Kate.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: 
+      - *SKSE
+      - *SkyUI
+      - *FNIS
   - name: 'Kate - AnimPack 1HWeapShield.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: 
+      - *SKSE
+      - *SkyUI
+      - *FNIS
   - name: 'Kate - AnimPack TBBP.esp'
-    msg:
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/3863 SkyUI\""
-        condition: not active("SkyUI.esp")
-      - type: say
-        content: "Requires: \"http://www.nexusmods.com/skyrim/mods/11811 Fores New Idles in Skyrim\""
-        condition: not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")
+    req: 
+      - *SKSE
+      - *SkyUI
+      - *FNIS
   - name: 'KCustom_ALL_FHC_NDO.esp'
     msg:
       - type: warn
@@ -73194,6 +72884,7 @@ plugins:
 
 # BEGINGROUP: Post Bashed Patch
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
+    req: [ *SKSE ]
     msg:
       - type: say
         content:
@@ -73207,9 +72898,6 @@ plugins:
         content:
           - lang: spa
             str: Do not clean. "Dirty" edits are intentional and required for the mod to function.
-      - type: say
-        content: "Requires: \"http://skse.silverlock.org SKSE\""
-        condition: not file("..\skse_loader.exe")
 # BEGINGROUP: Dynamic Plugins
 #
 #  IF VAR(EN) && IF VAR(SkyReM) WARN: Unmark Automatic Perks and Automatic Spells flags in ASIS patch options. Or you will have bugs and CTDs in game when using SkyRe and ASIS.
