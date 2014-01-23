@@ -23863,10 +23863,10 @@ plugins:
   - name: 'XAC.esp'
     msg:
       - type: say
-        content: This is the SkyRe compatible version.
+        content: 'This is the SkyRe compatible version.'
         condition: 'checksum("XAC.esp",7BD34BA7)'
       - type: warn
-        content: Requires bsa or loose files from original version or this mod will not work.
+        content: 'Requires bsa or loose files from original version or this mod will not work.'
         condition: '( checksum("XAC.esp",7BD34BA7) ) and not file("XAC.bsa")'
     tag:
       - name: Deactivate
@@ -23925,7 +23925,7 @@ plugins:
   - name: 'hothtrooper44_ArmorCompilation.esp'
     msg:
       - type: warn
-        content: This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches.  It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.
+        content: 'This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches.  It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.'
         condition: '( checksum("hothtrooper44_ArmorCompilation.esp",1B01C914) ) or checksum("hothtrooper44_ArmorCompilation.esp",983EFB9E)'
       - type: error
         content:
@@ -24000,13 +24000,13 @@ plugins:
   - name: 'BandolierForNPCMasterFile.esp'
     msg:
       - type: error
-        content: Use Dawnguard version.
+        content: 'Use Dawnguard version.'
         condition: '( ( ( checksum("BandolierForNPCMasterFile.esp",112359C0) ) or checksum("BandolierForNPCMasterFile.esp",76E11697) ) or checksum("BandolierForNPCMasterFile.esp",0146A38B) ) and active("Dawnguard.esm")'
       - type: error
-        content: Use non-Dawnguard version.
+        content: 'Use non-Dawnguard version.'
         condition: '( ( ( checksum("BandolierForNPCMasterFile.esp",882FDEA5) ) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) ) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) ) and not active("Dawnguard.esm")'
       - type: error
-        content: Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)
+        content: 'Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)'
         condition: '( ( ( ( checksum("BandolierForNPCMasterFile.esp",882FDEA5) ) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) ) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) ) and not file("Dr_BandolierDG.esp") ) and active("Dawnguard.esm")'
   - name: 'BandolierForNPCsWinterIsComing.esp'
     msg:
@@ -24064,18 +24064,18 @@ plugins:
   - name: 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
     msg:
       - type: error
-        content: Use non-Dawnguard version.
+        content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm")'
       - type: error
-        content: Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)
+        content: 'Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)'
         condition: '( not file("Dr_BandolierDG.esp") ) and active("Dawnguard.esm")'
   - name: 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
     msg:
       - type: error
-        content: Use non-Dawnguard version.
+        content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm")'
       - type: error
-        content: Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)
+        content: 'Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)'
         condition: '( not file("Dr_BandolierDG.esp") ) and active("Dawnguard.esm")'
       - type: warn
         content:
@@ -24487,7 +24487,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: 'not active("Dawnguard.esm")'
       - type: say
-        content: Use only 1 Better Sorting by eclips3 - Ingredients .esp file
+        content: 'Use only 1 Better Sorting by eclips3 - Ingredients .esp file'
         condition: '( ( active("Better Sorting by eclips3 - Ingredients (Weightless).esp") ) or active("Better Sorting by eclips3 - Ingredients (Vanilla Weight).esp") ) or active("Better Sorting by eclips3 - Ingredients (Light Weight).esp")'
   - name: 'Better Sorting by eclips3 - Soul Gems .+\.esp'
     msg:
@@ -24507,7 +24507,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: 'not active("Dawnguard.esm")'
       - type: say
-        content: Use only 1 Better Sorting by eclips3 - Soul Gem .esp file
+        content: 'Use only 1 Better Sorting by eclips3 - Soul Gem .esp file'
         condition: '( active("Better Sorting by eclips3 - Soul Gems (Named).esp") ) and active("Better Sorting by eclips3 - Soul Gems (Numbered).esp")'
   - name: 'Better Sorting by eclips3 - Books .+\.esp'
     msg:
@@ -24527,7 +24527,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: 'not active("Dawnguard.esm")'
       - type: say
-        content: Use only 1 Better Sorting by eclips3 - Books .esp file
+        content: 'Use only 1 Better Sorting by eclips3 - Books .esp file'
         condition: '( active("Better Sorting by eclips3 - Books (Before).esp") ) and active("Better Sorting by eclips3 - Books (After).esp")'
   - name: 'Better Sorting by eclips3 - Food .+\.esp'
     msg:
@@ -24547,7 +24547,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: 'not active("Dawnguard.esm")'
       - type: say
-        content: Use only 1 Better Sorting by eclips3 - Food .esp file
+        content: 'Use only 1 Better Sorting by eclips3 - Food .esp file'
         condition: '( ( active("Better Sorting by eclips3 - Food (Weightless).esp") ) or active("Better Sorting by eclips3 - Food (Vanilla Weight).esp") ) or active("Better Sorting by eclips3 - Food (Light Weight).esp")'
   - name: 'Better Sorting by eclips3 - Potions .+\.esp'
     msg:
@@ -24567,7 +24567,7 @@ plugins:
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
         condition: 'not active("Dawnguard.esm")'
       - type: say
-        content: Use only 1 Better Sorting by eclips3 - Potions .esp file
+        content: 'Use only 1 Better Sorting by eclips3 - Potions .esp file'
         condition: '( ( active("Better Sorting by eclips3 - Potions (Weightless).esp") ) or active("Better Sorting by eclips3 - Potions (Vanilla Weight).esp") ) or active("Better Sorting by eclips3 - Potions (Light Weight).esp")'
   - name: 'Better Sorting by eclips3 - Spells.esp'
     msg:
@@ -26826,17 +26826,17 @@ plugins:
       - type: say
         content: '[Actor]'
       - type: say
-        content: fVisibleNavmeshMoveDist=12288.0000
+        content: 'fVisibleNavmeshMoveDist=12288.0000'
       - type: say
         content: '[Combat]'
       - type: say
-        content: f1PArrowTiltUpAngle=0.64
+        content: 'f1PArrowTiltUpAngle=0.64'
       - type: say
-        content: f3PArrowTiltUpAngle=0.64
+        content: 'f3PArrowTiltUpAngle=0.64'
       - type: say
-        content: fMagnetismStrafeHeadingMult=0.0
+        content: 'fMagnetismStrafeHeadingMult=0.0'
       - type: say
-        content: fMagnetismLookingMult=0.0
+        content: 'fMagnetismLookingMult=0.0'
     tag:
       - Delev
       - Relev
@@ -26918,17 +26918,17 @@ plugins:
       - type: say
         content: '[Actor]'
       - type: say
-        content: fVisibleNavmeshMoveDist=12288.0000
+        content: 'fVisibleNavmeshMoveDist=12288.0000'
       - type: say
         content: '[Combat]'
       - type: say
-        content: f1PArrowTiltUpAngle=0.64
+        content: 'f1PArrowTiltUpAngle=0.64'
       - type: say
-        content: f3PArrowTiltUpAngle=0.64
+        content: 'f3PArrowTiltUpAngle=0.64'
       - type: say
-        content: fMagnetismStrafeHeadingMult=0.0
+        content: 'fMagnetismStrafeHeadingMult=0.0'
       - type: say
-        content: fMagnetismLookingMult=0.0
+        content: 'fMagnetismLookingMult=0.0'
     tag:
       - Delev
       - Relev
@@ -27160,7 +27160,7 @@ plugins:
   - name: 'SkyRe_StandingStones_Fix.esp'
     msg:
       - type: say
-        content: This mod is meant to be used with the Races module of SkyRe. The game should generally work fine without it, but the effect from the Lady Standing Stone may not behave as expected.
+        content: 'This mod is meant to be used with the Races module of SkyRe. The game should generally work fine without it, but the effect from the Lady Standing Stone may not behave as expected.'
         condition: 'not active("SkyRe_Races.esp")'
   - name: 'SkyRe_Survivalism.esp'
     msg:
@@ -28787,7 +28787,7 @@ plugins:
   - name: 'ExplosiveBoltsVisualized-SkyRe.esp'
     msg:
       - type: error
-        content: Deactivate ExplosiveBoltsVisualized.esp. This ESP is completly standalone.
+        content: 'Deactivate ExplosiveBoltsVisualized.esp. This ESP is completly standalone.'
         condition: 'active("ExplosiveBoltsVisualized.esp")'
       - type: error
         content:
@@ -32232,7 +32232,7 @@ plugins:
       - 'College Of Winterhold Overhaul Release - V1.02.esp'
     msg:
       - type: warn
-        content: Enhanced Lights and FX alters some lighting in the College of Winterhold which is incompatible with this mod. Please see Immersive College of Winterhold''s Readme for how to alter Enhanced Lights and FX yourself to make it compatible.
+        content: 'Enhanced Lights and FX alters some lighting in the College of Winterhold which is incompatible with this mod. Please see Immersive College of Winterhold''s Readme for how to alter Enhanced Lights and FX yourself to make it compatible.'
         condition: '( file("EnhancedLightsandFX.esp") ) or regex("ELFX - (NoBreezehome|NoTaverns)\.esp")'
   - name: 'colossus.esp'
     dirty:
@@ -32371,7 +32371,7 @@ plugins:
     req: [ *SKSE ]
     msg:
       - type: warn
-        content: If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.
+        content: 'If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.'
         condition: '( active("Dragonborn.esm") ) and not file("DA_Skyship_Dragonborn.esp")'
     dirty:
       - crc: 0x5b03bf9a
@@ -32732,7 +32732,7 @@ plugins:
   - name: 'DovahkiinSpeech - HigherReq.esp'
     msg:
       - type: warn
-        content: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
+        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
         condition: 'checksum("DovahkiinSpeech - HigherReq.esp",E1870DC5)'
     dirty:
       - crc: 0xe1870dc5
@@ -32741,7 +32741,7 @@ plugins:
   - name: 'DovahkiinSpeech - HigherReqNerfed.esp'
     msg:
       - type: warn
-        content: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
+        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
         condition: 'checksum("DovahkiinSpeech - HigherReqNerfed.esp",4B15F923)'
       - type: warn
         content:
@@ -32765,7 +32765,7 @@ plugins:
   - name: 'DovahkiinSpeech - MidNoPerkReq.esp'
     msg:
       - type: warn
-        content: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
+        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
         condition: 'checksum("DovahkiinSpeech - MidNoPerkReq.esp",6179F01D)'
       - type: warn
         content:
@@ -32789,7 +32789,7 @@ plugins:
   - name: 'DovahkiinSpeech - MidReq.esp'
     msg:
       - type: warn
-        content: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
+        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
         condition: 'checksum("DovahkiinSpeech - MidReq.esp",FFFCDA31)'
       - type: warn
         content:
@@ -32813,7 +32813,7 @@ plugins:
   - name: 'DovahkiinSpeech.esp'
     msg:
       - type: warn
-        content: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
+        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
         condition: 'checksum("DovahkiinSpeech.esp",27656479)'
       - type: warn
         content:
@@ -32879,7 +32879,7 @@ plugins:
   - name: 'Manoir des chutes du Dragon.esp'
     msg:
       - type: error
-        content: French translation of Dragon Falls Manor.esp.
+        content: 'French translation of Dragon Falls Manor.esp.'
         condition: 'file("Dragon Falls Manor.esp")'
     dirty:
       - crc: 0x2590076
@@ -32932,7 +32932,7 @@ plugins:
   - name: 'DragonsReach_Hideout_Assassin_Redesign3_0.esp'
     msg:
       - type: error
-        content: This mod requires DragonsReach_Hideout.esm
+        content: 'This mod requires DragonsReach_Hideout.esm'
         condition: 'not file("DragonsReach_Hideout.esm")'
       - type: warn
         content:
@@ -33821,7 +33821,7 @@ plugins:
   - name: 'Freedom of Speech.esp'
     msg:
       - type: error
-        content: Use Freedom of Speech -- Dawnguard.esp
+        content: 'Use Freedom of Speech -- Dawnguard.esp'
         condition: '( active("Dawnguard.esm") ) and checksum("Freedom of Speech.esp",48DA06FC)'
     dirty:
       - crc: 0x251fdaed
@@ -34351,7 +34351,7 @@ plugins:
             str: 'An English translation of this mod [is now available here](http://www.nexusmods.com/skyrim/mods/36843)'
         condition: 'checksum("Hebrock_Der Schatten von Meresis.esp",49083650)'
       - type: say
-        content: The English version has been renamed starting from version 1.1.2.
+        content: 'The English version has been renamed starting from version 1.1.2.'
         condition: 'checksum("Hebrock_Der Schatten von Meresis.esp",61DCB4E0)'
     dirty:
       - crc: 0x49083650
@@ -35913,7 +35913,7 @@ plugins:
   - name: 'Millview.esp'
     msg:
       - type: warn
-        content: from author, 'A conflict with CLARALUX has been brought to my attention. To avoid this, you will need to disable the "CLARALUX Headquarters, Carts and Engineers" feature of CLARALUX.'
+        content: 'from author, ''A conflict with CLARALUX has been brought to my attention. To avoid this, you will need to disable the "CLARALUX Headquarters, Carts and Engineers" feature of CLARALUX.'''
         condition: '( ( file("CLARALUX.esp") ) or file("CLARALUX-DG-Patch.esp") ) or file("CLARALUX-HF-Patch.esp")'
     dirty:
       - crc: 0xf27a06cb
@@ -37130,7 +37130,7 @@ plugins:
   - name: 'Ramen.esp'
     msg:
       - type: error
-        content: Use Ramen0dawnguard.esp instead.
+        content: 'Use Ramen0dawnguard.esp instead.'
         condition: 'active("Dawnguard.esm")'
       - type: error
         content:
@@ -38256,7 +38256,7 @@ plugins:
   - name: 'Skyhaven_modified.esp'
     msg:
       - type: say
-        content: Skyhaven_modified.esp is meant to be used with the [ExtraBlades.esp module](http://www.nexusmods.com/skyrim/mods/15979). It should still work without it though, but may make cause things to look out of place.
+        content: 'Skyhaven_modified.esp is meant to be used with the [ExtraBlades.esp module](http://www.nexusmods.com/skyrim/mods/15979). It should still work without it though, but may make cause things to look out of place.'
         condition: 'not active("ExtraBlades.esp")'
     dirty:
       - crc: 0x85335156
@@ -38710,7 +38710,7 @@ plugins:
   - name: 'SovngardeNordHeroes.esp'
     msg:
       - type: say
-        content: If this file is lower than version 1.3, it is Obsolete. Update to latest version.
+        content: 'If this file is lower than version 1.3, it is Obsolete. Update to latest version.'
         condition: 'not checksum("SovngardeNordHeroes.esp",F767A6A6)'
   - name: 'SovngardeQuest.esp'
     dirty:
@@ -39695,7 +39695,7 @@ plugins:
   - name: 'towHarvest.esp'
     msg:
       - type: error
-        content: Dawnguard version required.
+        content: 'Dawnguard version required.'
         condition: '( checksum("towHarvest.esp",A3654F92) ) and active("Dawnguard.esm")'
   - name: 'TQContest_Agamashi.esp'
     dirty:
@@ -40527,7 +40527,7 @@ plugins:
   - name: 'Dawnguard - Vigilant of Stendarr Quests Patch.esp'
     msg:
       - type: warn
-        content: This patch is to be used only if the Hall of the Viligent has been "trashed" by the Dawnguard NPC''s.
+        content: 'This patch is to be used only if the Hall of the Viligent has been "trashed" by the Dawnguard NPC''s.'
         condition: 'not active("Dawnguard.esm")'
     dirty:
       - crc: 0x9f4d4339
@@ -40902,7 +40902,7 @@ plugins:
   - name: 'Whiterun Trees 1.1.esp'
     msg:
       - type: warn
-        content: Different mod with same name. Probably incompatible.
+        content: 'Different mod with same name. Probably incompatible.'
         condition: 'checksum("Whiterun Trees.esp",D2995274)'
   - name: 'ICP Whiterun Exterior.esp'
     msg:
@@ -41271,10 +41271,10 @@ plugins:
   - name: 'SkyrimWeightImprovement.esp'
     msg:
       - type: say
-        content: Use Dawnguard version if you want Dawnguard items to be adjusted by this mod.
+        content: 'Use Dawnguard version if you want Dawnguard items to be adjusted by this mod.'
         condition: '( ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) ) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
       - type: say
-        content: Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.
+        content: 'Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.'
         condition: '( ( ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) ) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm") ) and active("Hearthfires.esm")'
       - type: error
         content:
@@ -41361,7 +41361,7 @@ plugins:
           - lang: spa
             str: Utilizar solo un WeightedArrows *.esp.
       - type: say
-        content: Use Dawnguard version to include weighted crossbow bolts.
+        content: 'Use Dawnguard version to include weighted crossbow bolts.'
         condition: 'active("Dawnguard.esm")'
   - name: 'WeightedArrowsDLC1(Heavy|Light|Medium)?\.esp'
     msg:
@@ -42317,7 +42317,7 @@ plugins:
           - lang: spa
             str: This file is obselte. Please use the universal patch on the Even Better Quest Objectives page. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)
       - type: error
-        content: Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names - BS
+        content: 'Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names - BS'
         condition: 'not file("Better Skill and Quest Books Names - BS.esp")'
   - name: 'BetterQuestObjectives-PaarDilemmaPatch.esp'
     msg:
@@ -42589,7 +42589,7 @@ plugins:
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
         condition: 'not checksum("Headbomb''s Better Sorting - Ammo.esp",58924631)'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Ammo.esp",58924631)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
@@ -42604,7 +42604,7 @@ plugins:
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
         condition: 'not checksum("Headbomb''s Better Sorting - Books.esp",81E996E7)'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Books.esp",81E996E7)'
   - name: 'Headbomb''s Better Sorting - Food (Light Weight).esp'
     msg:
@@ -42619,7 +42619,7 @@ plugins:
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
         condition: 'not checksum("Headbomb''s Better Sorting - Food (Light Weight).esp",1F070090)'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Food (Light Weight).esp",1F070090)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
@@ -42649,7 +42649,7 @@ plugins:
             str: Utilizar solo un Headbomb''s Better Sorting - Food esp.
         condition: 'file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Food (Normal Weight).esp",B3DBF94F)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
@@ -42679,7 +42679,7 @@ plugins:
             str: Utilizar solo un Headbomb''s Better Sorting - Food esp.
         condition: '( file("Headbomb''s Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Food (Reduced Weight).esp",FC6492D6)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
@@ -42709,7 +42709,7 @@ plugins:
             str: Utilizar solo un Headbomb''s Better Sorting - Food esp.
         condition: '( ( file("Headbomb''s Better Sorting - Food (Reduced Weight).esp") ) or file("Headbomb''s Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Food (Weightless).esp",D6118DD)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
@@ -42724,7 +42724,7 @@ plugins:
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
         condition: 'not checksum("Headbomb''s Better Sorting - Ingredients.esp",E3C63F1F)'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Ingredients.esp",E3C63F1F)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
@@ -42739,7 +42739,7 @@ plugins:
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
         condition: 'not checksum("Headbomb''s Better Sorting - Miscellaneous.esp",73D66022)'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Miscellaneous.esp",73D66022)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
@@ -42754,7 +42754,7 @@ plugins:
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
         condition: 'not checksum("Headbomb''s Better Sorting - Potions (Half Weight).esp",DFAA113A)'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Potions (Half Weight).esp",DFAA113A)'
   - name: 'Headbomb''s Better Sorting - Potions (Light Weight).esp'
     msg:
@@ -42784,7 +42784,7 @@ plugins:
             str: Utilizar solo un Headbomb''s Better Sorting - Potions esp.
         condition: 'file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Potions (Light Weight).esp",B55194E2)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
@@ -42814,7 +42814,7 @@ plugins:
             str: Utilizar solo un Headbomb''s Better Sorting - Potions esp.
         condition: '( file("Headbomb''s Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Potions (Normal Weight).esp",26CFE603)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
@@ -42844,7 +42844,7 @@ plugins:
             str: Utilizar solo un Headbomb''s Better Sorting - Potions esp.
         condition: '( ( file("Headbomb''s Better Sorting - Potions (Normal Weight).esp") ) or file("Headbomb''s Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Potions (Weightless).esp",4D304DE6)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
@@ -42859,7 +42859,7 @@ plugins:
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
         condition: 'not checksum("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp",F828AB1B)'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp",F828AB1B)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (Ranked).esp'
     msg:
@@ -42889,7 +42889,7 @@ plugins:
             str: Utilizar solo un Headbomb''s Better Sorting - Soul Gems esp.
         condition: 'file("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp")'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Soul Gems (Ranked).esp",A5408056)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
@@ -42904,7 +42904,7 @@ plugins:
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
         condition: 'not checksum("Headbomb''s Better Sorting - Spells.esp",83D7CCD)'
       - type: say
-        content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
+        content: 'Sharlikran''s update of this file. Do not clean the file further with TES5Edit.'
         condition: 'checksum("Headbomb''s Better Sorting - Spells.esp",83D7CCD)'
   - name: 'Headbomb''s Better Sorting.esp'
     msg:
@@ -43719,7 +43719,7 @@ plugins:
   - name: 'Distant Detail.esp'
     msg:
       - type: error
-        content: Use Distant DetailHF.esp
+        content: 'Use Distant DetailHF.esp'
         condition: 'active("Hearthfires.esm")'
   - name: 'Distant DetailHF.esp'
     inc:
@@ -43942,12 +43942,12 @@ plugins:
   - name: 'EBS - All in One (eclips3''s Selection).esp'
     msg:
       - type: error
-        content: Book Covers Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without Book Covers Skyrim.
+        content: 'Book Covers Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without Book Covers Skyrim.'
         condition: 'not file("Book Covers Skyrim.esp")'
   - name: 'EBS - All in One (SkyRe).esp'
     msg:
       - type: error
-        content: Book Covers Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without Book Covers Skyrim.
+        content: 'Book Covers Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without Book Covers Skyrim.'
         condition: 'not file("Book Covers Skyrim.esp")'
   - name: 'ebonymod.esp'
     dirty:
@@ -44715,7 +44715,7 @@ plugins:
   - name: 'HigherEnchantmentsNoChargeArtifacts.esp'
     msg:
       - type: warn
-        content: Use Dawnguard version HigherEnchantmentsNoChargeArtifactsDawnguard.esp
+        content: 'Use Dawnguard version HigherEnchantmentsNoChargeArtifactsDawnguard.esp'
         condition: 'active("Dawnguard.esm")'
     dirty:
       - crc: 0x890aed0c
@@ -44984,7 +44984,7 @@ plugins:
   - name: 'increaseddifficulty.esp'
     msg:
       - type: warn
-        content: This mod is not properly mastered to Skyrim.esm.  It will not change or add anything in your game.
+        content: 'This mod is not properly mastered to Skyrim.esm.  It will not change or add anything in your game.'
         condition: 'checksum("increaseddifficulty.esp",DFD6D81E)'
   - name: 'Intense Difficulty 2x to player.esp'
     msg:
@@ -45137,7 +45137,7 @@ plugins:
   - name: 'Ket_ARMONIZER_LListsNPC.esp'
     msg:
       - type: error
-        content: Ket_ARMONIZER_v2.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+        content: 'Ket_ARMONIZER_v2.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.'
         condition: 'not active("Ket_ARMONIZER_v2.esm")'
     tag:
       - Delev
@@ -45604,7 +45604,7 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
         condition: '( checksum("MenuShoutsInDragonsLanguage.esp",2AC21E2A) ) and not active("Dragonborn.esm")'
       - type: error
-        content: Use Dawnguard version.
+        content: 'Use Dawnguard version.'
         condition: '( active("Dawnguard.esm") ) and not checksum("MenuShoutsInDragonsLanguage.esp",E06D6E46)'
   - name: 'Merchants Reply Only With Take A Look.esp'
     dirty:
@@ -47422,7 +47422,7 @@ plugins:
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
         condition: 'not active("Dragonborn.esm")'
       - type: error
-        content: dD - Enhanced Blood Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without dD - Enhanced Blood Main.esp.
+        content: 'dD - Enhanced Blood Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without dD - Enhanced Blood Main.esp.'
         condition: 'not file("dD - Enhanced Blood Main.esp")'
     dirty:
       - crc: 0x4730f8bd
@@ -47744,7 +47744,7 @@ plugins:
   - name: 'BetterQuestObjectives-TheChoiceIsYoursPatch.esp'
     msg:
       - type: error
-        content: TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if this file is active without The Choice Is Yours
+        content: 'TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if this file is active without The Choice Is Yours'
         condition: 'not file("TheChoiceIsYours.esp")'
   - name: 'the_god_auriel.esp'
     msg:
@@ -48168,7 +48168,7 @@ plugins:
   - name: 'valkiirs_tastier_food.esp'
     msg:
       - type: say
-        content: Use Hearthfires version to get changes made to Hearthfires food.
+        content: 'Use Hearthfires version to get changes made to Hearthfires food.'
         condition: 'active("Hearthfires.esm")'
   - name: 'valkiirs_tastier_food_hearthfire.esp'
     msg:
@@ -48288,7 +48288,7 @@ plugins:
   - name: 'VanillaMonsterLoot.esp'
     msg:
       - type: warn
-        content: Use Dawnguard version - ImprovedMonsterLoot.esp
+        content: 'Use Dawnguard version - ImprovedMonsterLoot.esp'
         condition: 'active("Dawnguard.esm")'
     tag:
       - Relev
@@ -49540,10 +49540,10 @@ plugins:
   - name: 'RiverwoodEnhancedPlugin.esp'
     msg:
       - type: say
-        content: Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.
+        content: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.'
         condition: 'file("Lanterns Of Skyrim - All In One - Main.esm")'
       - type: error
-        content: Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not an add-on.
+        content: 'Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not an add-on.'
         condition: 'file("LoS and RE patch.esp")'
     dirty:
       - crc: 0x5b3c0e5a
@@ -49636,7 +49636,7 @@ plugins:
   - name: 'tos_oakwood.esp'
     msg:
       - type: warn
-        content: You need to use Heartfires version of Oakwood to work as intended with Hearthfires.
+        content: 'You need to use Heartfires version of Oakwood to work as intended with Hearthfires.'
         condition: 'active("Hearthfires.esm")'
     dirty:
       - crc: 0x9ff8763e
@@ -49652,10 +49652,10 @@ plugins:
   - name: 'TownsAndCitiesEnhanced.esp'
     msg:
       - type: say
-        content: Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns And Cities Enhanced.
+        content: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns And Cities Enhanced.'
         condition: 'file("Lanterns Of Skyrim - All In One - Main.esm")'
       - type: error
-        content: Remove. L0S and TaVE patch.esp is designed as a replacement for TownsAndCitiesEnhanced.esp, not an add-on.
+        content: 'Remove. L0S and TaVE patch.esp is designed as a replacement for TownsAndCitiesEnhanced.esp, not an add-on.'
         condition: 'file("L0S and TaVE patch.esp")'
     dirty:
       - crc: 0xa37760e6
@@ -49718,7 +49718,7 @@ plugins:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, UniqueTaverns.esp.
       - type: error
-        content: Included in UniqueTaverns.esp
+        content: 'Included in UniqueTaverns.esp'
         condition: 'file("UniqueTaverns.esp")'
   - name: 'WhiterunInEnhanced.esp'
     dirty:
@@ -49733,7 +49733,7 @@ plugins:
   - name: 'WinterholdRuinsAddon_V1.esp'
     msg:
       - type: error
-        content: WinterholdDestruction.esm is not present or is not active. Skyrim will CTD when loading if using this file.
+        content: 'WinterholdDestruction.esm is not present or is not active. Skyrim will CTD when loading if using this file.'
         condition: 'not active("WinterholdDestruction.esm")'
       - type: warn
         content:
@@ -50219,7 +50219,7 @@ plugins:
   - name: 'Open Cities Skyrim.esp'
     msg:
       - type: warn
-        content: Stolen content. Please show respect for authors'' rights and download from a legitimate source ([here](http://www.nexusmods.com/skyrim/mods/8058)).
+        content: 'Stolen content. Please show respect for authors'' rights and download from a legitimate source ([here](http://www.nexusmods.com/skyrim/mods/8058)).'
         condition: 'checksum("Open Cities Skyrim.esp",022AD2C8)'
       - type: say
         content: 'Requires: Skyrim 1.9.32+'
@@ -50326,7 +50326,7 @@ plugins:
   - name: 'ClimatesOfTamriel-Sound.esp'
     msg:
       - type: warn
-        content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Sound.esp",47AF2A0B)'
   - name: 'skyBirds - Airborne Perching Birds.esp'
     dirty:
@@ -50500,7 +50500,7 @@ plugins:
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
     msg:
       - type: warn
-        content: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).
+        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
         condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - The Dungeons-PatchRLODungeons.esp")'
     dirty:
       - crc: 0x18ad5feb
@@ -50529,7 +50529,7 @@ plugins:
             str: Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).
         condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
       - type: warn
-        content: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).
+        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
         condition: '( file("SoS - Civilization.esp") ) and not file("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp")'
     dirty:
       - crc: 0x33a5fd6
@@ -50564,7 +50564,7 @@ plugins:
   - name: 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     msg:
       - type: warn
-        content: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).
+        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
         condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
     dirty:
       - crc: 0xcb2aeeaf
@@ -50577,7 +50577,7 @@ plugins:
   - name: 'ClimatesOfTamriel-Dawnguard-Patch.esp'
     msg:
       - type: warn
-        content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Dawnguard-Patch.esp",8F78567C)'
       - type: error
         content:
@@ -50597,7 +50597,7 @@ plugins:
   - name: 'ClimatesOfTamriel-Dragonborn-Patch.esp'
     msg:
       - type: warn
-        content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Dragonborn-Patch.esp",81CF7754)'
       - type: error
         content:
@@ -50617,10 +50617,10 @@ plugins:
   - name: 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
     msg:
       - type: warn
-        content: Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).
+        content: 'Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
         condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - The Dungeons-PatchCoTHardcore.esp")'
       - type: warn
-        content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Dungeons-Hardcore.esp",4EEA922F)'
       - type: say
         content: 'Incompatible with: Realistic Lighting Overhaul'
@@ -50633,14 +50633,14 @@ plugins:
       - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
     msg:
       - type: warn
-        content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Dungeons-Hazardous.esp",CBE304CE)'
       - type: say
         content: 'Incompatible with: Realistic Lighting Overhaul'
   - name: 'ClimatesOfTamriel-Interiors-Cold.esp'
     msg:
       - type: warn
-        content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Interiors-Cold.esp",84DB3F8)'
       - type: say
         content: 'Incompatible with: Realistic Lighting Overhaul'
@@ -50649,14 +50649,14 @@ plugins:
       - 'ClimatesOfTamriel-Interiors-Cold.esp'
     msg:
       - type: warn
-        content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Interiors-Warm.esp",77C47623)'
       - type: say
         content: 'Incompatible with: Realistic Lighting Overhaul'
   - name: 'ClimatesOfTamriel-WinterEdition.esp'
     msg:
       - type: warn
-        content: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-WinterEdition.esp",74DF3C5)'
   - name: 'CoT-WeatherPatch.esp'
     msg:
@@ -51314,7 +51314,7 @@ plugins:
   - name: 'Imp''s More Complex Needs.esp'
     msg:
       - type: say
-        content: It is recommended that you unsubscribe from and delete this mod, then install the [SkyrimNexus version](http://www.nexusmods.com/skyrim/mods/10639) for more compatibility with other mods.
+        content: 'It is recommended that you unsubscribe from and delete this mod, then install the [SkyrimNexus version](http://www.nexusmods.com/skyrim/mods/10639) for more compatibility with other mods.'
         condition: '( checksum("imp''s more complex needs.esp",DAADC533) ) or checksum("imp''s more complex needs.esp",59466F1E)'
       - type: warn
         content:
@@ -51758,10 +51758,10 @@ plugins:
   - name: 'SkyRealism - Mass and Materials - ExpandedJewelryCrafting.esp'
     msg:
       - type: error
-        content: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+        content: 'SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
         condition: 'not active("SkyRealism - Mass and Materials.esp")'
       - type: error
-        content: ExpandedJewelryCrafting.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+        content: 'ExpandedJewelryCrafting.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
         condition: 'not active("ExpandedJewelryCrafting.esp")'
   - name: 'SkyRealism - Mass and Materials - 1nivWICCloaks.esp'
     msg:
@@ -52681,7 +52681,7 @@ plugins:
   - name: 'ToL_Core_by_Brevi.esp'
     msg:
       - type: say
-        content: It has been reported that Automatic Variants does not import the spell that infects the player on being hit by a werewolf.
+        content: 'It has been reported that Automatic Variants does not import the spell that infects the player on being hit by a werewolf.'
         condition: 'active("Automatic Variants.esp")'
   - name: 'ToL_SKSE_by_Brevi.esp'
     msg:
@@ -52930,10 +52930,10 @@ plugins:
   - name: 'WerewolfMastery.esp'
     msg:
       - type: error
-        content: Use Dawnguard version.
+        content: 'Use Dawnguard version.'
         condition: '( active("Dawnguard.esm") ) and checksum("WerewolfMastery.esp",57E4BC0F)'
       - type: error
-        content: Use non-Dawnguard version.
+        content: 'Use non-Dawnguard version.'
         condition: '( not active("Dawnguard.esm") ) and checksum("WerewolfMastery.esp",73AC0648)'
     dirty:
       - crc: 0x73ac0648
@@ -54236,10 +54236,10 @@ plugins:
   - name: 'Evilbass Light and Dark Spells.esp'
     msg:
       - type: error
-        content: Use non-Dawnguard version.
+        content: 'Use non-Dawnguard version.'
         condition: '( not active("Dawnguard.esm") ) and checksum("Evilbass Light and Dark Spells.esp",4E1181E9)'
       - type: error
-        content: Use Dawnguard version.
+        content: 'Use Dawnguard version.'
         condition: '( active("Dawnguard.esm") ) and checksum("Evilbass Light and Dark Spells.esp",248F5114)'
     dirty:
       - crc: 0x248f5114
@@ -54458,7 +54458,7 @@ plugins:
   - name: 'Isharas_Glimpse_of_Elsweyr.esp'
     msg:
       - type: say
-        content: Note that to allow containers to have categories like the player inventory you need [SKSE](http://skse.silverlock.org/). See the "Tip" section on the mods [description page](http://www.nexusmods.com/skyrim/mods/25362).
+        content: 'Note that to allow containers to have categories like the player inventory you need [SKSE](http://skse.silverlock.org/). See the "Tip" section on the mods [description page](http://www.nexusmods.com/skyrim/mods/25362).'
         condition: 'not file("..\skse_loader.exe")'
   - name: 'KodlakWhitemane.esp'
     msg:
@@ -55464,10 +55464,10 @@ plugins:
   - name: 'MorePowerfulShouts.esp'
     msg:
       - type: error
-        content: Remove and use the Dawnguard version.
+        content: 'Remove and use the Dawnguard version.'
         condition: '( checksum("MorePowerfulShouts.esp",F1EDB543) ) and active("Dawnguard.esm")'
       - type: error
-        content: Remove and use the non-Dawnguard version.
+        content: 'Remove and use the non-Dawnguard version.'
         condition: '( checksum("MorePowerfulShouts.esp",E845AEC7) ) and not active("Dawnguard.esm")'
     dirty:
       - crc: 0xe845aec7
@@ -55629,7 +55629,7 @@ plugins:
   - name: 'Enhanced Soul Trap.esp'
     msg:
       - type: say
-        content: Use the Acquisitive Soul Gems non-compatible version.
+        content: 'Use the Acquisitive Soul Gems non-compatible version.'
         condition: 'checksum("Enhanced Soul Trap.esp",C5F82F49)'
       - type: error
         content:
@@ -55833,7 +55833,7 @@ plugins:
   - name: 'Improved Soultrap.esp'
     msg:
       - type: error
-        content: Use NamedSoulGems compatibility patch instead.
+        content: 'Use NamedSoulGems compatibility patch instead.'
         condition: 'file("NamedSoulGems.esp")'
   - name: 'NamedSoulGems.esp'
     dirty:
@@ -56855,7 +56855,7 @@ plugins:
   - name: 'The Dance of Death.esp'
     msg:
       - type: warn
-        content: Dawnguard detected. Use The Dance of Death - Dawnguard Edition.esp instead.
+        content: 'Dawnguard detected. Use The Dance of Death - Dawnguard Edition.esp instead.'
         condition: 'active("Dawnguard.esm")'
     dirty:
       - crc: 0xfb852f7a
@@ -57196,7 +57196,7 @@ plugins:
   - name: 'ACE Archery-Weapons of the Third Era Patch.esp'
     msg:
       - type: warn
-        content: This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.
+        content: 'This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.'
         condition: 'checksum("ACE Archery-Weapons of the Third Era Patch.esp",873EAB94)'
   - name: 'RecyclingModCrafting300.esp'
     msg:
@@ -57365,7 +57365,7 @@ plugins:
   - name: 'MergedThieverySkill.esp'
     msg:
       - type: error
-        content: Will conflict with SkyRe, as both mods alter the skill trees. Please pick only one.
+        content: 'Will conflict with SkyRe, as both mods alter the skill trees. Please pick only one.'
         condition: '( ( active("SkyRe_Main.esm") ) or file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
     dirty:
       - crc: 0x1617a10d
@@ -57635,12 +57635,12 @@ plugins:
         content: 'Requires: Guard Dialogue Overhaul'
         condition: 'not file("SPIKE.esm")'
       - type: warn
-        content: Delete. Not to be used if using the SkyRe Reproccer.
+        content: 'Delete. Not to be used if using the SkyRe Reproccer.'
         condition: 'file("ReProccer.esp")'
   - name: 'Enhanced Soul Trap.esp'
     msg:
       - type: say
-        content: Use the Acquisitive Soul Gems compatible version.
+        content: 'Use the Acquisitive Soul Gems compatible version.'
         condition: '( checksum("Enhanced Soul Trap.esp",B4803235) ) or checksum("Enhanced Soul Trap.esp",DF45FD75)'
       - type: error
         content:
@@ -58324,7 +58324,7 @@ plugins:
   - name: 'perk tweak.esp'
     msg:
       - type: warn
-        content: Conflicts with SkyRe, as both make changes to perks. Unintended changes may occur if both are active.
+        content: 'Conflicts with SkyRe, as both make changes to perks. Unintended changes may occur if both are active.'
         condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
   - name: 'PPE_Perk-.+\.esp'
     msg:
@@ -59272,7 +59272,7 @@ plugins:
   - name: 'AP Skyrim-NCG_patch.esp'
     msg:
       - type: error
-        content: This mod requires AP Skyrim.esm
+        content: 'This mod requires AP Skyrim.esm'
         condition: 'not file("AP Skyrim.esm")'
     dirty:
       - crc: 0x86f0226b
@@ -59281,7 +59281,7 @@ plugins:
   - name: 'aptraduction.esp'
     msg:
       - type: error
-        content: This mod requires AP Skyrim.esm
+        content: 'This mod requires AP Skyrim.esm'
         condition: 'not file("AP Skyrim.esm")'
     dirty:
       - crc: 0x797a1372
@@ -60895,7 +60895,7 @@ plugins:
   - name: 'KhaleesiFacePreset.esp'
     msg:
       - type: warn
-        content: This file is broken and will not work.
+        content: 'This file is broken and will not work.'
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
 # ENDGROUP: Character Presets
 # ENDGROUP: Beauty Packs & Race Changes\Addons
@@ -61474,7 +61474,7 @@ plugins:
   - name: 'Ja´dirr + Kharjo Makeover.esp'
     msg:
       - type: say
-        content: Use only one of Ja´dirr + Kharjo Makeover.esp or Only Kharjo.esp, not both.
+        content: 'Use only one of Ja´dirr + Kharjo Makeover.esp or Only Kharjo.esp, not both.'
         condition: 'file("Only Kharjo.esp")'
     dirty:
       - crc: 0xc21a23e1
