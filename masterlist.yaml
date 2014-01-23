@@ -57532,7 +57532,7 @@ plugins:
   - name: 'Throwing Knives Skill.esp'
     req:
       - name: 'MergedThieverySkill.esp'
-        display: 'Requires: [MTS](http://www.nexusmods.com/skyrim/mods/21792/?)'
+        display: '[MTS](http://www.nexusmods.com/skyrim/mods/21792/?)'
   - name: 'Uncapped Perks - [CM].+\.esp'
     req:
       - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
@@ -66762,11 +66762,11 @@ plugins:
       - 'Serafina & co.esp'
     req:
       - name: 'TheEyesOfBeauty.esp'
-        display: 'Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)'
+        display: '[The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)'
       - name: 'monster_hunter.esp'
-        display: 'Requires: [Monster Hunter](http://www.nexusmods.com/skyrim/mods/6429)'
+        display: '[Monster Hunter](http://www.nexusmods.com/skyrim/mods/6429)'
       - name: 'hothtrooper44_ArmorCompilation.esp'
-        display: 'Requires: [Immersive Armors](http://www.nexusmods.com/skyrim/mods/19733)'
+        display: '[Immersive Armors](http://www.nexusmods.com/skyrim/mods/19733)'
     msg:
       - type: error
         content:
@@ -69716,65 +69716,20 @@ plugins:
             str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
         condition: 'not active("Dragonborn.esm")'
   - name: 'SoS - The Dungeons-PatchRCRN.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons'
-        condition: 'not active("SoS - The Dungeons.esp")'
-      - type: error
-        content:
-          - lang: rus
-            str: 'SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons'
-        condition: 'not active("SoS - The Dungeons.esp")'
-      - type: error
-        content:
-          - lang: spa
-            str: 'SoS - The Dungeons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: 'not active("SoS - The Dungeons.esp")'
-      - type: say
-        content: 'Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
-        condition: '( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")'
+    req:
+      - name: 'rcrnShaders.esp'
+        display: '[RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
+        condition: 'not file("rcrnPlus.esp")'
   - name: 'SoS - The Wilds-PatchRCRN.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds'
-        condition: 'not active("SoS - The Wilds.esp")'
-      - type: error
-        content:
-          - lang: rus
-            str: 'SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds'
-        condition: 'not active("SoS - The Wilds.esp")'
-      - type: error
-        content:
-          - lang: spa
-            str: 'SoS - The Wilds.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: 'not active("SoS - The Wilds.esp")'
-      - type: say
-        content: 'Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
-        condition: '( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")'
+    req:
+      - name: 'rcrnShaders.esp'
+        display: '[RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
+        condition: 'not file("rcrnPlus.esp")'
   - name: 'SoS - Civilization-PatchRCRN.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization'
-        condition: 'not active("SoS - Civilization.esp")'
-      - type: error
-        content:
-          - lang: rus
-            str: 'SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization'
-        condition: 'not active("SoS - Civilization.esp")'
-      - type: error
-        content:
-          - lang: spa
-            str: 'SoS - Civilization.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: 'not active("SoS - Civilization.esp")'
-      - type: say
-        content: 'Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
-        condition: '( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")'
+    req:
+      - name: 'rcrnShaders.esp'
+        display: '[RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
+        condition: 'not file("rcrnPlus.esp")'
   - name: 'SoS - The Dungeons-PatchELFX.esp'
     msg:
       - type: error
