@@ -1510,10 +1510,7 @@ plugins:
       - type: say
         content: 'Requires: [Better Females](http://www.nexusmods.com/skyrim/mods/2812)'
   - name: 'MiniLoversSound.esm'
-    msg:
-      - type: say
-        content: 'Requires: [Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811)'
-        condition: 'not file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")'
+    req: [ *FNIS ]
   - name: 'MjanasLabyrinth.esm'
     msg:
       - type: error
@@ -1635,6 +1632,8 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, HjakhtraevarrTomb.esm.'
   - name: 'Natural Characters and Companions.esm'
+    req:
+      - LovelyHairstyles.esp
     msg:
       - type: error
         content:
@@ -1651,9 +1650,6 @@ plugins:
           - lang: spa
             str: '[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("ApachiiHair.esm")'
-      - type: say
-        content: 'Requires: [Lovely Hairstyles](http://www.nexusmods.com/skyrim/mods/7403).'
-        condition: 'not file("LovelyHairstyles.esp")'
   - name: 'NeV-P_ExtremeMaterials.esm'
     tag:
       - Delev
@@ -7656,10 +7652,8 @@ plugins:
 # ## NoTint.esp
 # ## Moved ClimatesOfTamriel From Here
   - name: 'SI_DarkerNightsAddon.esp'
-    msg:
-      - type: say
-        content: 'Requires: Climates of Tamriel'
-        condition: 'not file("ClimatesOfTamriel.esm")'
+    req:
+      - 'ClimatesOfTamriel.esm'
   - name: 'KatuLights.*\.esp'
     msg:
       - type: say
@@ -12971,21 +12965,17 @@ plugins:
     tag:
       - Relev
   - name: 'More Craftables - Crafting 300 compatibility.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)'
-        condition: 'not file("Crafting300.esp")'
-      - type: say
-        content: 'Requires: [More Craftables](http://www.nexusmods.com/skyrim/mods/799)'
-        condition: 'not file("More Craftables.esp")'
+    req:
+      - name: 'Crafting300.esp'
+        display: 'Requires: [Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)'
+      - name: 'More Craftables.esp'
+        display: 'Requires: [More Craftables](http://www.nexusmods.com/skyrim/mods/799)'
   - name: 'More Craftables - Dwemer Certified compatibility.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Dwemer Certified](http://www.nexusmods.com/skyrim/mods/10442)'
-        condition: 'not file("Dwemer Certified.esp")'
-      - type: say
-        content: 'Requires: [More Craftables](http://www.nexusmods.com/skyrim/mods/799)'
-        condition: 'not file("More Craftables.esp")'
+    req:
+      - name: 'Dwemer Certified.esp'
+        display: 'Requires: [Dwemer Certified](http://www.nexusmods.com/skyrim/mods/10442)'
+      - name: 'More Craftables.esp'
+        display: 'Requires: [More Craftables](http://www.nexusmods.com/skyrim/mods/799)'
   - name: 'More Escape Passages.esp'
     msg:
       - type: warn
@@ -13090,6 +13080,9 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'Moss Rocks_DB.esp'
+    req:
+      - name: 'Moss Rocks.esp'
+        display: 'Requires: [Moss Rocks](http://www.nexusmods.com/skyrim/mods/31856)'
     msg:
       - type: error
         content:
@@ -13106,9 +13099,6 @@ plugins:
           - lang: spa
             str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
         condition: 'not active("Dragonborn.esm")'
-      - type: say
-        content: 'Requires: [Moss Rocks](http://www.nexusmods.com/skyrim/mods/31856)'
-        condition: 'not file("Moss Rocks.esp")'
   - name: 'mxdemonicarmoredhorse.esp'
     dirty:
       - crc: 0xdbe462c2
@@ -13345,13 +13335,11 @@ plugins:
             str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).'
         condition: 'not active("Hearthfires.esm")'
   - name: 'Nord Needs + Cooking Expanded patch.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Cooking Expanded](http://www.nexusmods.com/skyrim/mods/1409)'
-        condition: 'not file("CookingExpanded.esp")'
-      - type: say
-        content: 'Requires: [NordNeeds](http://www.nexusmods.com/skyrim/mods/21384)'
-        condition: 'not file("NordNeeds.esp")'
+    req:
+      - name: 'CookingExpanded.esp'
+        display: 'Requires: [Cooking Expanded](http://www.nexusmods.com/skyrim/mods/1409)'
+      - name: 'NordNeeds.esp'
+        display: 'Requires: [NordNeeds](http://www.nexusmods.com/skyrim/mods/21384)'
   - name: 'RecettesSansSel.esp'
     msg:
       - type: warn
@@ -13978,10 +13966,9 @@ plugins:
             str: 'Se recomienda utilizar RecyclingModWo3E.esp para Weapons of the Third Era. Ver la página de RecyclingMod.'
         condition: 'regex("Weapons of the Third Era.+\.esp")'
   - name: 'RecyclingModCrafting300.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)'
-        condition: 'not file("Crafting300.esp")'
+    req:
+      - name: 'Crafting300.esp'
+        display: 'Requires: [Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)'
   - name: 'RedMountainErupts.esp'
     msg:
       - type: error
@@ -14431,10 +14418,10 @@ plugins:
       - Delev
       - Relev
   - name: 'SkyMoMod_lists.esp'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
     msg:
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
       - type: say
         content:
           - lang: eng
@@ -14493,10 +14480,9 @@ plugins:
     tag:
       - Delev
   - name: 'SkyMoMod Extras Collectables.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
   - name: 'skymo-dawn.esp'
     msg:
       - type: say
@@ -18713,10 +18699,9 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_DragonBoneWeaponsComplete.+\.esp")'
   - name: 'Lorecraft - Dragon Bone Weapons.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Lorecraft](http://www.nexusmods.com/skyrim/mods/9959) 4.05b+'
-        condition: 'not file("LorecraftESM.esm")'
+    req:
+      - name: 'LorecraftESM.esm'
+        display: 'Requires: [Lorecraft](http://www.nexusmods.com/skyrim/mods/9959) 4.05b+'
   - name: 'dragonborndagger.esp'
     msg:
       - type: error
@@ -20170,6 +20155,9 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'WeaponsArmorFixes_ClosefacedHelmets_Patch.esp'
+    req:
+      - name: 'Weapons & Armor Fixes_Remade.esp'
+        display: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093)'
     msg:
       - type: error
         content:
@@ -20181,10 +20169,10 @@ plugins:
           - lang: rus
             str: 'imp_helm.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets'
         condition: 'not file("imp_helm.esp")'
-      - type: say
-        content: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093)'
-        condition: 'not file("Weapons & Armor Fixes_Remade.esp")'
   - name: 'WeaponsArmorFixes_ClosefacedHelmetsDG_Patch.esp'
+    req:
+      - name: 'Weapons & Armor Fixes_Remade.esp'
+        display: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093)'
     msg:
       - type: error
         content:
@@ -20196,9 +20184,6 @@ plugins:
           - lang: rus
             str: 'imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard'
         condition: 'not file("imp_helm_dawn.esp")'
-      - type: say
-        content: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093)'
-        condition: 'not file("Weapons & Armor Fixes_Remade.esp")'
   - name: 'imperialrobes.esp'
     dirty:
       - crc: 0x519a4055
@@ -21739,10 +21724,9 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'SC_NobleDresses.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Standalone Noble Wedding Dress](http://www.nexusmods.com/skyrim/mods/39588)'
-        condition: 'not file("NobleWeddingDressByUrshi.esp")'
+    req:
+      - name: 'NobleWeddingDressByUrshi.esp'
+        display: 'Requires: [Standalone Noble Wedding Dress](http://www.nexusmods.com/skyrim/mods/39588)'
   - name: 'nordhero.esp'
     tag:
       - Delev
@@ -23303,10 +23287,9 @@ plugins:
       - type: say
         content: 'Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
   - name: 'Isharas_PetrovichClothes.esp'
-    msg:
-      - type: say
-        content: 'Requires: [UNP Simply Clothes](http://www.nexusmods.com/skyrim/mods/16658)'
-        condition: 'not file("UNP Simply Clothes.esp")'
+    req:
+      - name: 'UNP Simply Clothes.esp'
+        display: 'Requires: [UNP Simply Clothes](http://www.nexusmods.com/skyrim/mods/16658)'
   - name: 'UNP Undies.esp'
     msg:
       - type: say
@@ -23976,27 +23959,23 @@ plugins:
   - name: 'IA6npc01.esp'
     inc:
       - 'ImmersiveArmorsNPCs.esp'
-    msg:
-      - type: say
-        content: 'Requires: Immersive Armors (by hothtrooper44)'
-        condition: 'not file("hothtrooper44_ArmorCompilation.esp")'
+    req:
+      - name: 'hothtrooper44_ArmorCompilation.esp'
+        display: 'Requires: Immersive Armors (by hothtrooper44)'
   - name: 'ImmersiveArmorsNPCs.esp'
-    msg:
-      - type: say
-        content: 'Requires: Immersive Armors (by hothtrooper44)'
-        condition: 'not file("hothtrooper44_ArmorCompilation.esp")'
+    req:
+      - name: 'hothtrooper44_ArmorCompilation.esp'
+        display: 'Requires: Immersive Armors (by hothtrooper44)'
   - name: 'ImmersiveArmorsNPCsNoHelmets.esp'
     inc:
       - 'ImmersiveArmorsNPCs.esp'
-    msg:
-      - type: say
-        content: 'Requires: Immersive Armors (by hothtrooper44)'
-        condition: 'not file("hothtrooper44_ArmorCompilation.esp")'
+    req:
+      - name: 'hothtrooper44_ArmorCompilation.esp'
+        display: 'Requires: Immersive Armors (by hothtrooper44)'
   - name: 'Immersive Armors for NPCs.esp'
-    msg:
-      - type: say
-        content: 'Requires: Immersive Armors (by hothtrooper44)'
-        condition: 'not file("hothtrooper44_ArmorCompilation.esp")'
+    req:
+      - name: 'hothtrooper44_ArmorCompilation.esp'
+        display: 'Requires: Immersive Armors (by hothtrooper44)'
   - name: 'BandolierForNPCMasterFile.esp'
     msg:
       - type: error
@@ -31786,15 +31765,13 @@ plugins:
         itm: 25
         udr: 9
   - name: 'CastleDKmaster.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
   - name: 'CastleDKmod.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
   - name: 'Castle Draco.esp'
     msg:
       - type: warn
@@ -34695,10 +34672,9 @@ plugins:
         util: *dirtyUtil
         itm: 29
   - name: 'Hunter.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
   - name: 'HuntersLakeHouse1-5.esp'
     dirty:
       - crc: 0xaa229d1b
@@ -44454,13 +44430,11 @@ plugins:
           - lang: spa
             str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
   - name: 'WeaponsArmorFixes_GuardDialogueOverhaul_Patch.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093)'
-        condition: 'not file("Weapons & Armor Fixes_Remade.esp")'
-      - type: say
-        content: 'Requires: [Guard Dialouge Overhaul](http://www.nexusmods.com/skyrim/mods/23390)'
-        condition: 'not file("Guard Dialogue Overhaul.esp")'
+    req:
+      - name: 'Weapons & Armor Fixes_Remade.esp'
+        display: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093)'
+      - name: 'Guard Dialogue Overhaul.esp'
+        display: 'Requires: [Guard Dialouge Overhaul](http://www.nexusmods.com/skyrim/mods/23390)'
   - name: 'Guards armor replacement.esp'
     msg:
       - type: say
@@ -45990,10 +45964,9 @@ plugins:
         util: *dirtyUtil
         udr: 2
   - name: 'NoSpiders - SkyMoMod.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
     dirty:
       - crc: 0x1baeed6c
         util: *dirtyUtil
@@ -47431,14 +47404,16 @@ plugins:
   - name: 'dD-SkyrimMonsterMod EBT Patch.esp'
     inc:
       - 'dD-Dawnguard-EBT Patch.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
   - name: 'dD-Dawnguard-MonsterMod EBT Patch.esp'
     inc:
       - 'dD-Dawnguard-EBT Patch.esp'
       - 'dD-SkyrimMonsterMod EBT Patch.esp'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
     msg:
       - type: error
         content:
@@ -47455,10 +47430,10 @@ plugins:
           - lang: spa
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
         condition: 'not active("Dawnguard.esm")'
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
   - name: 'dD-Dragonborn-MonsterMod EBT Patch.esp'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
     msg:
       - type: error
         content:
@@ -47475,9 +47450,6 @@ plugins:
           - lang: spa
             str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
         condition: 'not active("Dragonborn.esm")'
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
   - name: 'dD-DG-DB-MonsterMod EBT Patch.esp'
     inc:
       - 'dD-Dawnguard-EBT Patch.esp'
@@ -47486,6 +47458,9 @@ plugins:
       - 'dD-SkyrimMonsterMod EBT Patch.esp'
       - 'dD-Dawnguard-MonsterMod EBT Patch.esp'
       - 'dD-Dragonborn-MonsterMod EBT Patch.esp'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
     msg:
       - type: error
         content:
@@ -47517,9 +47492,6 @@ plugins:
           - lang: spa
             str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
         condition: 'not active("Dragonborn.esm")'
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
   - name: 'dD-DG-DB-MM-SiC EBT Patch.esp'
     inc:
       - 'dD-Dawnguard-EBT Patch.esp'
@@ -47529,6 +47501,11 @@ plugins:
       - 'dD-Dawnguard-MonsterMod EBT Patch.esp'
       - 'dD-Dragonborn-MonsterMod EBT Patch.esp'
       - 'dD-DG-DB-MonsterMod EBT Patch.esp'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
+      - name: 'Skyrim Immersive Creatures.esp'
+        display: 'Requires: [Skyrim Immersive Creatures](http://www.nexusmods.com/skyrim/mods/24913)'
     msg:
       - type: error
         content:
@@ -47560,12 +47537,6 @@ plugins:
           - lang: spa
             str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
         condition: 'not active("Dragonborn.esm")'
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
-      - type: say
-        content: 'Requires: [Skyrim Immersive Creatures](http://www.nexusmods.com/skyrim/mods/24913)'
-        condition: 'not file("Skyrim Immersive Creatures.esp")'
   - name: 'Skeleton Resurrection.esp'
     msg:
       - type: say
@@ -48613,6 +48584,9 @@ plugins:
 # ENDGROUP: Overrides XYZ
 # BEGINGROUP: Overrides Late
   - name: 'WeaponsArmorFixes_ambSkyforge_Patch.esp'
+    req:
+      - name: 'Weapons & Armor Fixes_Remade.esp'
+        display: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093/?)'
     msg:
       - type: error
         content:
@@ -48624,9 +48598,6 @@ plugins:
           - lang: rus
             str: 'aMidianborn_Skyforge_Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без aMidianborn_Skyforge_Weapons'
         condition: 'not file("aMidianborn_Skyforge_Weapons.esp")'
-      - type: say
-        content: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093/?)'
-        condition: 'not file("Weapons & Armor Fixes_Remade.esp")'
   - name: 'BetterQuestObjectives-AMBSkyforgePatch.esp'
     msg:
       - type: error
@@ -48640,6 +48611,11 @@ plugins:
             str: 'aMidianborn_Skyforge_Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без aMidianborn_Skyforge_Weapons'
         condition: 'not file("aMidianborn_Skyforge_Weapons.esp")'
   - name: 'WeaponsArmorFixes_MultiMod_(DLC)?(Vanilla)?Patch\.esp'
+    req:
+      - name: 'Weapons & Armor Fixes_Remade.esp'
+        display: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093)'
+      - name: 'Guard Dialogue Overhaul.esp'
+        display: 'Requires: [Guard Dialouge Overhaul](http://www.nexusmods.com/skyrim/mods/23390)'
     msg:
       - type: error
         content:
@@ -48696,12 +48672,6 @@ plugins:
           - lang: rus
             str: 'imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard'
         condition: '( file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") ) and not file("imp_helm_dawn.esp")'
-      - type: say
-        content: 'Requires: [Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093)'
-        condition: 'not file("Weapons & Armor Fixes_Remade.esp")'
-      - type: say
-        content: 'Requires: [Guard Dialouge Overhaul](http://www.nexusmods.com/skyrim/mods/23390)'
-        condition: 'not file("Guard Dialogue Overhaul.esp")'
   - name: 'Weapons & Armor_TrueDaedricWeapons.esp'
     msg:
       - type: error
@@ -50459,10 +50429,9 @@ plugins:
         util: *dirtyUtil
         itm: 247
   - name: '[Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\\.esp'
-    msg:
-      - type: say
-        content: 'Requires: Realistic Lighting with Customization'
-        condition: 'not file("Realistic Lighting.esp")'
+    req:
+      - name: 'Realistic Lighting.esp'
+        display: 'Requires: Realistic Lighting with Customization'
   - name: 'Hearthfire - RL Patch.esp'
     msg:
       - type: error
@@ -57199,10 +57168,9 @@ plugins:
         content: 'This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.'
         condition: 'checksum("ACE Archery-Weapons of the Third Era Patch.esp",873EAB94)'
   - name: 'RecyclingModCrafting300.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)'
-        condition: 'not file("Crafting300.esp")'
+    req:
+      - name: 'Crafting300.esp'
+        display: 'Requires: [Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)'
   - name: 'LB_MuchAdoSnowElves_ACE_Patch_Long.esp'
     msg:
       - type: warn
@@ -57627,13 +57595,13 @@ plugins:
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
         condition: 'not active("Dawnguard.esm")'
   - name: 'GDO_Plugin_SkyRe.esp'
+    req:
+      - name: 'SPIKE.esm'
+        display: 'Requires: Guard Dialogue Overhaul'
     msg:
       - type: say
         content: 'Requires: SkyrimRedone'
         condition: '( not file("SkyRe_Main.esp") ) and not file("SkyRe_Main_NoDawnguard.esp")'
-      - type: say
-        content: 'Requires: Guard Dialogue Overhaul'
-        condition: 'not file("SPIKE.esm")'
       - type: warn
         content: 'Delete. Not to be used if using the SkyRe Reproccer.'
         condition: 'file("ReProccer.esp")'
@@ -58290,10 +58258,9 @@ plugins:
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("PerkUP-zOptional-Pickpocket_CarryMore100.esp",C7001A4E)'
   - name: 'MXMaxAllSkills.esp'
+    req:
+      - 'More Craftables.esp'
     msg:
-      - type: say
-        content: 'Requires: More Craftables'
-        condition: 'not file("More Craftables.esp")'
       - type: say
         content: 'Requires: [PerkUP](http://www.nexusmods.com/skyrim/mods/9359).'
         condition: 'not regex("PerkUP-.*\.esp")'
@@ -59370,10 +59337,9 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'psikoticsnecromancy.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-        condition: 'not file("SkyMoMod.esm")'
+    req:
+      - name: 'SkyMoMod.esm'
+        display: 'Requires: [Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
   - name: 'SexiSArrokAnimations.esp'
     req: [ *FNIS ]
   - name: 'SexiSCupid.esp'
@@ -60310,10 +60276,9 @@ plugins:
         util: *dirtyUtil
         itm: 26
   - name: 'Neovalen Race Compatibility.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Duel Sheath plus Shields on Back](http://www.nexusmods.com/skyrim/mods/17746)'
-        condition: 'not file("DSpSoB.esp")'
+    req:
+      - name: 'DSpSoB.esp'
+        display: 'Requires: [Duel Sheath plus Shields on Back](http://www.nexusmods.com/skyrim/mods/17746)'
   - name: 'New Playable Races by Budcat v3.0.esp'
     msg:
       - type: say
@@ -60885,10 +60850,10 @@ plugins:
             str: 'Obsoleto. Actualizar a la última versión.'
         condition: 'checksum("Kawaii Face Presets.esp",2774F3D6)'
   - name: 'Kawaii Face Presets2.esp'
+    req:
+      - name: 'CharacterMakingExtender.esp'
+        display: 'Requires: [Enhanced Character Edit](http://www.nexusmods.com/skyrim/mods/12951)'
     msg:
-      - type: say
-        content: 'Requires: [Enhanced Character Edit](http://www.nexusmods.com/skyrim/mods/12951)'
-        condition: 'not file("CharacterMakingExtender.esp")'
       - type: warn
         content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.6.9",<)'
@@ -65501,10 +65466,10 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'MC-Fiona.esp'
+    req:
+      - name: 'FlansEyesForSkrim.esp'
+        display: 'Requires: [Flans Eyes for Skyrim](http://www.nexusmods.com/skyrim/mods/14539)'
     msg:
-      - type: say
-        content: 'Requires: [Flans Eyes for Skyrim](http://www.nexusmods.com/skyrim/mods/14539)'
-        condition: 'not file("FlansEyesForSkrim.esp")'
       - type: error
         content:
           - lang: eng
@@ -65521,10 +65486,10 @@ plugins:
             str: '[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("ApachiiHair.esm")'
   - name: 'MC-Synbios.esp'
+    req:
+      - name: 'FlansEyesForSkrim.esp'
+        display: 'Requires: [Flans Eyes for Skyrim](http://www.nexusmods.com/skyrim/mods/14539)'
     msg:
-      - type: say
-        content: 'Requires: [Flans Eyes for Skyrim](http://www.nexusmods.com/skyrim/mods/14539)'
-        condition: 'not file("FlansEyesForSkrim.esp")'
       - type: error
         content:
           - lang: eng
@@ -66774,6 +66739,9 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'Serafina & co.esp'
+    req:
+      - name: 'TheEyesOfBeauty.esp'
+        display: 'Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)'
     msg:
       - type: error
         content:
@@ -66790,9 +66758,6 @@ plugins:
           - lang: spa
             str: '[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("ApachiiHair.esm")'
-      - type: say
-        content: 'Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)'
-        condition: 'not file("TheEyesOfBeauty.esp")'
   - name: 'Serafina & co complete.esp'
     inc:
       - 'Serafina & co.esp'
@@ -66888,10 +66853,9 @@ plugins:
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Skjor.esp",C892B655)'
   - name: 'Skjor II.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Additional Vanilla Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)'
-        condition: 'not file("AdditionalNPCFollwerVoices.esp")'
+    req:
+      - name: 'AdditionalNPCFollwerVoices.esp'
+        display: 'Requires: [Additional Vanilla Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)'
   - name: 'Skyrim - The three divine brothers.esp'
     msg:
       - type: say
@@ -67806,14 +67770,15 @@ plugins:
       - 'Tauriel original de Standalone_v1_0.esp'
       - 'Tauriel Standalone_v1_1.esp'
   - name: 'Taleya.esp'
-    msg:
-      - type: say
-        content: 'Requires: [Hair packs of TES IV Oblivion](http://www.nexusmods.com/skyrim/mods/18110).'
-        condition: 'not file("oblivion hair.esm")'
-      - type: say
-        content: 'Requires: [Additional Vanilla NPC Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266).'
-        condition: 'not file("AdditionalNPCFollwerVoices.esp")'
+    req:
+      - name: 'oblivion hair.esm'
+        display: 'Requires: [Hair packs of TES IV Oblivion](http://www.nexusmods.com/skyrim/mods/18110).'
+      - name: 'AdditionalNPCFollwerVoices.esp'
+        display: 'Requires: [Additional Vanilla NPC Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266).'
   - name: 'TTS - Lydia.esp'
+    req:
+      - name: 'TheEyesOfBeauty.esp'
+        display: 'Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722).'
     msg:
       - type: error
         content:
@@ -67830,10 +67795,12 @@ plugins:
           - lang: spa
             str: '[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("ApachiiHair.esm")'
-      - type: say
-        content: 'Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722).'
-        condition: 'not file("TheEyesOfBeauty.esp")'
   - name: 'VizerinChronicles.esp'
+    req:
+      - name: 'FallOut3Hairs.esm'
+        display: 'Requires: [Hair packs of Fallout 3](http://www.nexusmods.com/skyrim/mods/17993).'
+      - name: 'AdditionalNPCFollwerVoices.esp'
+        display: 'Requires: [Additional Vanilla NPC Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266).'
     msg:
       - type: error
         content:
@@ -67850,12 +67817,6 @@ plugins:
           - lang: spa
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
         condition: 'not active("Dawnguard.esm")'
-      - type: say
-        content: 'Requires: [Hair packs of Fallout 3](http://www.nexusmods.com/skyrim/mods/17993).'
-        condition: 'not file("FallOut3Hairs.esm")'
-      - type: say
-        content: 'Requires: [Additional Vanilla NPC Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266).'
-        condition: 'not file("AdditionalNPCFollwerVoices.esp")'
   - name: 'Viszerinfollower.esp'
     msg:
       - type: error
