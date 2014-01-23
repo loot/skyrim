@@ -57530,10 +57530,9 @@ plugins:
         util: *dirtyUtil
         itm: 10
   - name: 'Throwing Knives Skill.esp'
-    msg:
-      - type: say
-        content: 'Requires: [MTS](http://www.nexusmods.com/skyrim/mods/21792/?)'
-        condition: 'not active("MergedThieverySkill.esp")'
+    req:
+      - name: 'MergedThieverySkill.esp'
+        display: 'Requires: [MTS](http://www.nexusmods.com/skyrim/mods/21792/?)'
   - name: 'Uncapped Perks - [CM].+\.esp'
     req:
       - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
@@ -57600,7 +57599,7 @@ plugins:
         display: 'Requires: Guard Dialogue Overhaul'
     msg:
       - type: say
-        content: 'Requires: SkyrimRedone'
+        content: 'Requires: Skyrim Redone'
         condition: '( not file("SkyRe_Main.esp") ) and not file("SkyRe_Main_NoDawnguard.esp")'
       - type: warn
         content: 'Delete. Not to be used if using the SkyRe Reproccer.'
@@ -66761,6 +66760,13 @@ plugins:
   - name: 'Serafina & co complete.esp'
     inc:
       - 'Serafina & co.esp'
+    req:
+      - name: 'TheEyesOfBeauty.esp'
+        display: 'Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)'
+      - name: 'monster_hunter.esp'
+        display: 'Requires: [Monster Hunter](http://www.nexusmods.com/skyrim/mods/6429)'
+      - name: 'hothtrooper44_ArmorCompilation.esp'
+        display: 'Requires: [Immersive Armors](http://www.nexusmods.com/skyrim/mods/19733)'
     msg:
       - type: error
         content:
@@ -66777,15 +66783,6 @@ plugins:
           - lang: spa
             str: '[ApachiiHair.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("ApachiiHair.esm")'
-      - type: say
-        content: 'Requires: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722)'
-        condition: 'not file("TheEyesOfBeauty.esp")'
-      - type: say
-        content: 'Requires: [Monster Hunter](http://www.nexusmods.com/skyrim/mods/6429)'
-        condition: 'not file("monster_hunter.esp")'
-      - type: say
-        content: 'Requires: [Immersive Armors](http://www.nexusmods.com/skyrim/mods/19733)'
-        condition: 'not file("hothtrooper44_ArmorCompilation.esp")'
   - name: 'Sexy Housecarls V 2.1.esp'
     msg:
       - type: say
@@ -69846,10 +69843,12 @@ plugins:
     msg:
       - type: say
         content: 'Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
+        condition: '( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")'
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN - Lanterns Of Skyrim.esp'
     msg:
       - type: say
         content: 'Requires: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
+        condition: '( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")'
   - name: 'Volrath - Dragonreach - Brazier fix( - 1\.1)\.esp'
     msg:
       - type: error
