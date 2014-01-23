@@ -7081,17 +7081,17 @@ plugins:
         content:
           - lang: eng
             str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-        condition: ( active("DFG''s Blade & Dagger Sheathe Sounds_Dawnguard.esp") ) and not active("Dawnguard.esm")
+        condition: '( active("DFG''s Blade & Dagger Sheathe Sounds_Dawnguard.esp") ) and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: rus
             str: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-        condition: ( active("DFG''s Blade & Dagger Sheathe Sounds_Dawnguard.esp") ) and not active("Dawnguard.esm")
+        condition: '( active("DFG''s Blade & Dagger Sheathe Sounds_Dawnguard.esp") ) and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-        condition: ( active("DFG''s Blade & Dagger Sheathe Sounds_Dawnguard.esp") ) and not active("Dawnguard.esm")
+        condition: '( active("DFG''s Blade & Dagger Sheathe Sounds_Dawnguard.esp") ) and not active("Dawnguard.esm")'
     dirty:
       - crc: 0x3f16767e
         util: *dirtyUtil
@@ -15386,17 +15386,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one Zira''s Skyrim Horse Base esp.
-        condition: ( file("Zira's Skyrim Horse Base - Armored.esp") ) or file("Zira's Skyrim Horse Base - Bareback Riding.esp")
+        condition: '( file("Zira''s Skyrim Horse Base - Armored.esp") ) or file("Zira''s Skyrim Horse Base - Bareback Riding.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Zira''s Skyrim Horse Base esp.
-        condition: ( file("Zira's Skyrim Horse Base - Armored.esp") ) or file("Zira's Skyrim Horse Base - Bareback Riding.esp")
+        condition: '( file("Zira''s Skyrim Horse Base - Armored.esp") ) or file("Zira''s Skyrim Horse Base - Bareback Riding.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Zira''s Skyrim Horse Base esp.
-        condition: ( file("Zira's Skyrim Horse Base - Armored.esp") ) or file("Zira's Skyrim Horse Base - Bareback Riding.esp")
+        condition: '( file("Zira''s Skyrim Horse Base - Armored.esp") ) or file("Zira''s Skyrim Horse Base - Bareback Riding.esp")'
     dirty:
       - crc: 0xf93cd5d0
         util: *dirtyUtil
@@ -18850,7 +18850,7 @@ plugins:
   - name: 'Dread Knight Weapon Set.esp'
     tag:
       - name: Deactivate
-        condition: ( file("SkyRe  - Jojjo''s Dreadknight Patch.esp") ) or regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")
+        condition: '( file("SkyRe  - Jojjo''s Dreadknight Patch.esp") ) or regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
   - name: 'DreamBurrowSageRetexture.esp'
     msg:
       - type: say
@@ -20813,17 +20813,17 @@ plugins:
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: checksum("Lich King''s Armor.esp",5C5EB4D7)
+        condition: 'checksum("Lich King''s Armor.esp",5C5EB4D7)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: checksum("Lich King''s Armor.esp",5C5EB4D7)
+        condition: 'checksum("Lich King''s Armor.esp",5C5EB4D7)'
       - type: warn
         content:
           - lang: spa
             str: Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).
-        condition: checksum("Lich King''s Armor.esp",5C5EB4D7)
+        condition: 'checksum("Lich King''s Armor.esp",5C5EB4D7)'
   - name: 'light daedric armor.esp'
     dirty:
       - crc: 0x53ae8253
@@ -24748,12 +24748,12 @@ plugins:
         content:
           - lang: eng
             str: Use only BS-version for Better Sorting.
-        condition: ( regex("(Headbomb''s )?Better Sorting.*\.esp") ) and file("Complete Crafting Overhaul.esp")
+        condition: '( regex("(Headbomb''s )?Better Sorting.*\.esp") ) and file("Complete Crafting Overhaul.esp")'
       - type: warn
         content:
           - lang: rus
             str: Для Better Sorting используйте только BS-версию.
-        condition: ( regex("(Headbomb''s )?Better Sorting.*\.esp") ) and file("Complete Crafting Overhaul.esp")
+        condition: '( regex("(Headbomb''s )?Better Sorting.*\.esp") ) and file("Complete Crafting Overhaul.esp")'
       - type: warn
         content:
           - lang: eng
@@ -27554,12 +27554,12 @@ plugins:
         content:
           - lang: eng
             str: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
-        condition: ( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")
+        condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
       - type: say
         content:
           - lang: rus
             str: Не забудьте отключить или удалить мод Insanitys Dragon Katana
-        condition: ( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")
+        condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
   - name: 'SkyRe_Plugin_InsanitysDragonKatana.esp'
     msg:
       - type: say
@@ -27574,12 +27574,12 @@ plugins:
         content:
           - lang: eng
             str: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
-        condition: ( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")
+        condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
       - type: say
         content:
           - lang: rus
             str: Не забудьте отключить или удалить мод Insanitys Dragon Katana
-        condition: ( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")
+        condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
   - name: 'SkyRe_Plugin_isilNarsil.esp'
     msg:
       - type: say
@@ -31582,17 +31582,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one Briar''sEnd esp.
-        condition: ( file("Briar'sEndCourierQuest.esp") ) or file("Briar'sEndInstantQuest.esp")
+        condition: '( file("Briar''sEndCourierQuest.esp") ) or file("Briar''sEndInstantQuest.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Briar''sEnd esp.
-        condition: ( file("Briar'sEndCourierQuest.esp") ) or file("Briar'sEndInstantQuest.esp")
+        condition: '( file("Briar''sEndCourierQuest.esp") ) or file("Briar''sEndInstantQuest.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Briar''sEnd esp.
-        condition: ( file("Briar'sEndCourierQuest.esp") ) or file("Briar'sEndInstantQuest.esp")
+        condition: '( file("Briar''sEndCourierQuest.esp") ) or file("Briar''sEndInstantQuest.esp")'
       - type: warn
         content:
           - lang: eng
@@ -38769,17 +38769,17 @@ plugins:
         content:
           - lang: eng
             str: Obsolete. Update to latest version.
-        condition: checksum("Stegdon''s Book Collection.esp",A53FC583)
+        condition: 'checksum("Stegdon''s Book Collection.esp",A53FC583)'
       - type: say
         content:
           - lang: rus
             str: Устарело. Обновите до последней версии.
-        condition: checksum("Stegdon''s Book Collection.esp",A53FC583)
+        condition: 'checksum("Stegdon''s Book Collection.esp",A53FC583)'
       - type: say
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
-        condition: checksum("Stegdon''s Book Collection.esp",A53FC583)
+        condition: 'checksum("Stegdon''s Book Collection.esp",A53FC583)'
       - type: warn
         content:
           - lang: eng
@@ -42582,57 +42582,57 @@ plugins:
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Ammo.esp",58924631)
+        condition: 'not checksum("Headbomb''s Better Sorting - Ammo.esp",58924631)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Ammo.esp",58924631)
+        condition: 'not checksum("Headbomb''s Better Sorting - Ammo.esp",58924631)'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Ammo.esp",58924631)
+        condition: 'checksum("Headbomb''s Better Sorting - Ammo.esp",58924631)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Books.esp",81E996E7)
+        condition: 'not checksum("Headbomb''s Better Sorting - Books.esp",81E996E7)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Books.esp",81E996E7)
+        condition: 'not checksum("Headbomb''s Better Sorting - Books.esp",81E996E7)'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Books.esp",81E996E7)
+        condition: 'checksum("Headbomb''s Better Sorting - Books.esp",81E996E7)'
   - name: 'Headbomb''s Better Sorting - Food (Light Weight).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Food (Light Weight).esp",1F070090)
+        condition: 'not checksum("Headbomb''s Better Sorting - Food (Light Weight).esp",1F070090)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Food (Light Weight).esp",1F070090)
+        condition: 'not checksum("Headbomb''s Better Sorting - Food (Light Weight).esp",1F070090)'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Food (Light Weight).esp",1F070090)
+        condition: 'checksum("Headbomb''s Better Sorting - Food (Light Weight).esp",1F070090)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Food (Normal Weight).esp",B3DBF94F)
+        condition: 'not checksum("Headbomb''s Better Sorting - Food (Normal Weight).esp",B3DBF94F)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Food (Normal Weight).esp",B3DBF94F)
+        condition: 'not checksum("Headbomb''s Better Sorting - Food (Normal Weight).esp",B3DBF94F)'
       - type: warn
         content:
           - lang: eng
@@ -42650,49 +42650,49 @@ plugins:
         condition: 'file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Food (Normal Weight).esp",B3DBF94F)
+        condition: 'checksum("Headbomb''s Better Sorting - Food (Normal Weight).esp",B3DBF94F)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Food (Reduced Weight).esp",FC6492D6)
+        condition: 'not checksum("Headbomb''s Better Sorting - Food (Reduced Weight).esp",FC6492D6)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Food (Reduced Weight).esp",FC6492D6)
+        condition: 'not checksum("Headbomb''s Better Sorting - Food (Reduced Weight).esp",FC6492D6)'
       - type: warn
         content:
           - lang: eng
             str: Use only one Headbomb''s Better Sorting - Food esp.
-        condition: ( file("Headbomb's Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb's Better Sorting - Food (Light Weight).esp")
+        condition: '( file("Headbomb''s Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Headbomb''s Better Sorting - Food esp.
-        condition: ( file("Headbomb's Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb's Better Sorting - Food (Light Weight).esp")
+        condition: '( file("Headbomb''s Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Headbomb''s Better Sorting - Food esp.
-        condition: ( file("Headbomb's Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb's Better Sorting - Food (Light Weight).esp")
+        condition: '( file("Headbomb''s Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Food (Reduced Weight).esp",FC6492D6)
+        condition: 'checksum("Headbomb''s Better Sorting - Food (Reduced Weight).esp",FC6492D6)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Food (Weightless).esp",D6118DD)
+        condition: 'not checksum("Headbomb''s Better Sorting - Food (Weightless).esp",D6118DD)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Food (Weightless).esp",D6118DD)
+        condition: 'not checksum("Headbomb''s Better Sorting - Food (Weightless).esp",D6118DD)'
       - type: warn
         content:
           - lang: eng
@@ -42710,64 +42710,64 @@ plugins:
         condition: '( ( file("Headbomb''s Better Sorting - Food (Reduced Weight).esp") ) or file("Headbomb''s Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Food (Weightless).esp",D6118DD)
+        condition: 'checksum("Headbomb''s Better Sorting - Food (Weightless).esp",D6118DD)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Ingredients.esp",E3C63F1F)
+        condition: 'not checksum("Headbomb''s Better Sorting - Ingredients.esp",E3C63F1F)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Ingredients.esp",E3C63F1F)
+        condition: 'not checksum("Headbomb''s Better Sorting - Ingredients.esp",E3C63F1F)'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Ingredients.esp",E3C63F1F)
+        condition: 'checksum("Headbomb''s Better Sorting - Ingredients.esp",E3C63F1F)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Miscellaneous.esp",73D66022)
+        condition: 'not checksum("Headbomb''s Better Sorting - Miscellaneous.esp",73D66022)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Miscellaneous.esp",73D66022)
+        condition: 'not checksum("Headbomb''s Better Sorting - Miscellaneous.esp",73D66022)'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Miscellaneous.esp",73D66022)
+        condition: 'checksum("Headbomb''s Better Sorting - Miscellaneous.esp",73D66022)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Potions (Half Weight).esp",DFAA113A)
+        condition: 'not checksum("Headbomb''s Better Sorting - Potions (Half Weight).esp",DFAA113A)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Potions (Half Weight).esp",DFAA113A)
+        condition: 'not checksum("Headbomb''s Better Sorting - Potions (Half Weight).esp",DFAA113A)'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Potions (Half Weight).esp",DFAA113A)
+        condition: 'checksum("Headbomb''s Better Sorting - Potions (Half Weight).esp",DFAA113A)'
   - name: 'Headbomb''s Better Sorting - Potions (Light Weight).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Potions (Light Weight).esp",B55194E2)
+        condition: 'not checksum("Headbomb''s Better Sorting - Potions (Light Weight).esp",B55194E2)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Potions (Light Weight).esp",B55194E2)
+        condition: 'not checksum("Headbomb''s Better Sorting - Potions (Light Weight).esp",B55194E2)'
       - type: warn
         content:
           - lang: eng
@@ -42785,49 +42785,49 @@ plugins:
         condition: 'file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Potions (Light Weight).esp",B55194E2)
+        condition: 'checksum("Headbomb''s Better Sorting - Potions (Light Weight).esp",B55194E2)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Potions (Normal Weight).esp",26CFE603)
+        condition: 'not checksum("Headbomb''s Better Sorting - Potions (Normal Weight).esp",26CFE603)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Potions (Normal Weight).esp",26CFE603)
+        condition: 'not checksum("Headbomb''s Better Sorting - Potions (Normal Weight).esp",26CFE603)'
       - type: warn
         content:
           - lang: eng
             str: Use only one Headbomb''s Better Sorting - Potions esp.
-        condition: ( file("Headbomb's Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb's Better Sorting - Potions (Half Weight).esp")
+        condition: '( file("Headbomb''s Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Headbomb''s Better Sorting - Potions esp.
-        condition: ( file("Headbomb's Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb's Better Sorting - Potions (Half Weight).esp")
+        condition: '( file("Headbomb''s Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Headbomb''s Better Sorting - Potions esp.
-        condition: ( file("Headbomb's Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb's Better Sorting - Potions (Half Weight).esp")
+        condition: '( file("Headbomb''s Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Potions (Normal Weight).esp",26CFE603)
+        condition: 'checksum("Headbomb''s Better Sorting - Potions (Normal Weight).esp",26CFE603)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Potions (Weightless).esp",4D304DE6)
+        condition: 'not checksum("Headbomb''s Better Sorting - Potions (Weightless).esp",4D304DE6)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Potions (Weightless).esp",4D304DE6)
+        condition: 'not checksum("Headbomb''s Better Sorting - Potions (Weightless).esp",4D304DE6)'
       - type: warn
         content:
           - lang: eng
@@ -42845,34 +42845,34 @@ plugins:
         condition: '( ( file("Headbomb''s Better Sorting - Potions (Normal Weight).esp") ) or file("Headbomb''s Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Potions (Weightless).esp",4D304DE6)
+        condition: 'checksum("Headbomb''s Better Sorting - Potions (Weightless).esp",4D304DE6)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp",F828AB1B)
+        condition: 'not checksum("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp",F828AB1B)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp",F828AB1B)
+        condition: 'not checksum("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp",F828AB1B)'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp",F828AB1B)
+        condition: 'checksum("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp",F828AB1B)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (Ranked).esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Soul Gems (Ranked).esp",A5408056)
+        condition: 'not checksum("Headbomb''s Better Sorting - Soul Gems (Ranked).esp",A5408056)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Soul Gems (Ranked).esp",A5408056)
+        condition: 'not checksum("Headbomb''s Better Sorting - Soul Gems (Ranked).esp",A5408056)'
       - type: warn
         content:
           - lang: eng
@@ -42890,22 +42890,22 @@ plugins:
         condition: 'file("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp")'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Soul Gems (Ranked).esp",A5408056)
+        condition: 'checksum("Headbomb''s Better Sorting - Soul Gems (Ranked).esp",A5408056)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)
-        condition: not checksum("Headbomb''s Better Sorting - Spells.esp",83D7CCD)
+        condition: 'not checksum("Headbomb''s Better Sorting - Spells.esp",83D7CCD)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-        condition: not checksum("Headbomb''s Better Sorting - Spells.esp",83D7CCD)
+        condition: 'not checksum("Headbomb''s Better Sorting - Spells.esp",83D7CCD)'
       - type: say
         content: Sharlikran''s update of this file. Do not clean the file further with TES5Edit.
-        condition: checksum("Headbomb''s Better Sorting - Spells.esp",83D7CCD)
+        condition: 'checksum("Headbomb''s Better Sorting - Spells.esp",83D7CCD)'
   - name: 'Headbomb''s Better Sorting.esp'
     msg:
       - type: say
@@ -43028,17 +43028,17 @@ plugins:
         content:
           - lang: eng
             str: This file contains unexpected (or out of order) records and should be removed.
-        condition: checksum("Headbomb''s Better Sorting -- DE (by sheijian) v1.03.esp",BC4FACB7)
+        condition: 'checksum("Headbomb''s Better Sorting -- DE (by sheijian) v1.03.esp",BC4FACB7)'
       - type: warn
         content:
           - lang: rus
             str: Этот файл содержит неверные записи. Рекомендуется удалить.
-        condition: checksum("Headbomb''s Better Sorting -- DE (by sheijian) v1.03.esp",BC4FACB7)
+        condition: 'checksum("Headbomb''s Better Sorting -- DE (by sheijian) v1.03.esp",BC4FACB7)'
       - type: warn
         content:
           - lang: spa
             str: Este archivo contiene entradas fuera de orden y debe ser removido.
-        condition: checksum("Headbomb''s Better Sorting -- DE (by sheijian) v1.03.esp",BC4FACB7)
+        condition: 'checksum("Headbomb''s Better Sorting -- DE (by sheijian) v1.03.esp",BC4FACB7)'
   - name: 'Better Sorting by Soth - Dawnguard.esp'
     msg:
       - type: error
@@ -51315,7 +51315,7 @@ plugins:
     msg:
       - type: say
         content: It is recommended that you unsubscribe from and delete this mod, then install the [SkyrimNexus version](http://www.nexusmods.com/skyrim/mods/10639) for more compatibility with other mods.
-        condition: ( checksum("imp's more complex needs.esp",DAADC533) ) or checksum("imp's more complex needs.esp",59466F1E)
+        condition: '( checksum("imp''s more complex needs.esp",DAADC533) ) or checksum("imp''s more complex needs.esp",59466F1E)'
       - type: warn
         content:
           - lang: eng
@@ -57116,7 +57116,7 @@ plugins:
     msg:
       - type: say
         content: 'Requires: Better Sorting'
-        condition: not regex("(Headbomb''s )?Better Sorting.*\.esp")
+        condition: 'not regex("(Headbomb''s )?Better Sorting.*\.esp")'
   - name: 'New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp'
     msg:
       - type: say
@@ -72753,17 +72753,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one Warburg''s 3D Paper World Map - Texture *.esp.
-        condition: ( file("Warburg's 3D Paper World Map - Texture 1.esp") ) or file("Warburg's 3D Paper World Map - Texture 2.esp")
+        condition: '( file("Warburg''s 3D Paper World Map - Texture 1.esp") ) or file("Warburg''s 3D Paper World Map - Texture 2.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Warburg''s 3D Paper World Map - Texture *.esp.
-        condition: ( file("Warburg's 3D Paper World Map - Texture 1.esp") ) or file("Warburg's 3D Paper World Map - Texture 2.esp")
+        condition: '( file("Warburg''s 3D Paper World Map - Texture 1.esp") ) or file("Warburg''s 3D Paper World Map - Texture 2.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Warburg''s 3D Paper World Map - Texture *.esp.
-        condition: ( file("Warburg's 3D Paper World Map - Texture 1.esp") ) or file("Warburg's 3D Paper World Map - Texture 2.esp")
+        condition: '( file("Warburg''s 3D Paper World Map - Texture 1.esp") ) or file("Warburg''s 3D Paper World Map - Texture 2.esp")'
       - type: say
         content: 'Requires: Skyrim 1.8+'
         condition: 'version("..\TESV.exe","1.8",<)'
