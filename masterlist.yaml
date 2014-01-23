@@ -3842,17 +3842,17 @@ plugins:
         content:
           - lang: eng
             str: Delete. Already included in Better followers.
-        condition: regex("Better Followers - [SBNP].*\.esp")
+        condition: 'regex("Better Followers - [SBNP].*\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже включено в мод Better followers.
-        condition: regex("Better Followers - [SBNP].*\.esp")
+        condition: 'regex("Better Followers - [SBNP].*\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Borrar. Esta incluido en Better followers.
-        condition: regex("Better Followers - [SBNP].*\.esp")
+        condition: 'regex("Better Followers - [SBNP].*\.esp")'
   - name: 'FollowerHuntingBow12.esp'
     msg:
       - type: error
@@ -7331,7 +7331,7 @@ plugins:
     msg:
       - type: warn
         content: 'Incompatible with: CLARALUX lighting mods'
-        condition: regex("CLARALU.*\.esp")
+        condition: 'regex("CLARALU.*\.esp")'
     dirty:
       - crc: 0xf2a7a8bd
         util: *dirtyUtil
@@ -10697,7 +10697,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Headbomb''s Better Sorting - Food *.esp'
-        condition: regex("Headbomb's Better Sorting - Food.+\.esp")
+        condition: 'regex("Headbomb's Better Sorting - Food.+\.esp")'
   - name: 'DropThatGold.esp'
     req: [ *SKSE ]
   - name: 'DSpSoB.esp'
@@ -13966,17 +13966,17 @@ plugins:
         content:
           - lang: eng
             str: Recommed RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
-        condition: regex("Weapons of the Third Era.+\.esp")
+        condition: 'regex("Weapons of the Third Era.+\.esp")'
       - type: say
         content:
           - lang: rus
             str: Рекомендуется патч RecyclingModWo3E.esp для мода Weapons of the Third Era. Ищите его на странице загрузки RecyclingMod.
-        condition: regex("Weapons of the Third Era.+\.esp")
+        condition: 'regex("Weapons of the Third Era.+\.esp")'
       - type: say
         content:
           - lang: spa
             str: Se recomienda utilizar RecyclingModWo3E.esp para Weapons of the Third Era. Ver la página de RecyclingMod.
-        condition: regex("Weapons of the Third Era.+\.esp")
+        condition: 'regex("Weapons of the Third Era.+\.esp")'
   - name: 'RecyclingModCrafting300.esp'
     msg:
       - type: say
@@ -14452,7 +14452,7 @@ plugins:
         condition: not file("Deleveled Skyrim - SkyMoMod_list.esp")
       - type: say
         content: 'Incompatible with: SkyMoMod Lore * v10.esp''s'
-        condition: regex("SkyMoMod Lore.+\.esp")
+        condition: 'regex("SkyMoMod Lore.+\.esp")'
       - type: say
         content:
           - lang: eng
@@ -14503,20 +14503,20 @@ plugins:
         content:
           - lang: eng
             str: Obsolete. Update to latest version, SkyMoMod Lore-Friendly * v10.esp.
-        condition: regex("SkyMoMod Lore-Friendly .+\.esp")
+        condition: 'regex("SkyMoMod Lore-Friendly .+\.esp")'
       - type: say
         content:
           - lang: rus
             str: Устарело. Обновите до последней версии, SkyMoMod Lore-Friendly * v10.esp.
-        condition: regex("SkyMoMod Lore-Friendly .+\.esp")
+        condition: 'regex("SkyMoMod Lore-Friendly .+\.esp")'
       - type: say
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión, SkyMoMod Lore-Friendly * v10.esp.
-        condition: regex("SkyMoMod Lore-Friendly .+\.esp")
+        condition: 'regex("SkyMoMod Lore-Friendly .+\.esp")'
       - type: say
         content: 'Incompatible with: SkyMoMod Lore-Friendly * v10.esp''s'
-        condition: regex("SkyMoMod Lore-Friendly .+\.esp")
+        condition: 'regex("SkyMoMod Lore-Friendly .+\.esp")'
     tag:
       - Delev
   - name: 'Skymomod_jackGa_Add-on.esp'
@@ -18546,17 +18546,17 @@ plugins:
         content:
           - lang: eng
             str: Obsolete. Update to latest version.
-        condition: regex("diamondweapons1\.[02]\.esp")
+        condition: 'regex("diamondweapons1\.[02]\.esp")'
       - type: say
         content:
           - lang: rus
             str: Устарело. Обновите до последней версии.
-        condition: regex("diamondweapons1\.[02]\.esp")
+        condition: 'regex("diamondweapons1\.[02]\.esp")'
       - type: say
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
-        condition: regex("diamondweapons1\.[02]\.esp")
+        condition: 'regex("diamondweapons1\.[02]\.esp")'
   - name: 'DiamondCrossbow.esp'
     msg:
       - type: error
@@ -19862,9 +19862,9 @@ plugins:
         condition: not active("SPIKE.esm")
     tag:
       - name: Deactivate
-        condition: regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")
+        condition: 'regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
       - name: Delev
-        condition: regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")
+        condition: 'regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
       - name: Relev
         condition: not regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")
     dirty:
@@ -21664,7 +21664,7 @@ plugins:
   - name: 'Nicoroshi Creations.esp'
     tag:
       - name: Deactivate
-        condition: regex("SkyRe_Plugin_NicoroshiCreations.*\.esp")
+        condition: 'regex("SkyRe_Plugin_NicoroshiCreations.*\.esp")'
   - name: '(TWE) Nilfgaardian Sorcerer Pack.esp'
     dirty:
       - crc: 0x6610cc7
@@ -22018,7 +22018,7 @@ plugins:
   - name: 'Oriental Weapon&Armor.esp'
     tag:
       - name: Deactivate
-        condition: regex("SkyRe_Plugin_Oriental Weapon&Armor.*\.esp")
+        condition: 'regex("SkyRe_Plugin_Oriental Weapon&Armor.*\.esp")'
   - name: 'ORM-Blackguard.esp'
     msg:
       - type: error
@@ -23944,9 +23944,9 @@ plugins:
         condition: not active("SPIKE.esm")
     tag:
       - name: Deactivate
-        condition: regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")
+        condition: 'regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
       - name: Delev
-        condition: regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")
+        condition: 'regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
       - name: Relev
         condition: not regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")
     dirty:
@@ -25217,24 +25217,24 @@ plugins:
         content:
           - lang: spa
             str: Usar Requiem - No Overencumbered Messages.esp o Requiem - No messages.esp, no ambos.
-        condition: file("Requiem - No Messages.esp")
+        condition: 'file("Requiem - No Messages.esp")'
   - name: 'Requiem - TrainUnitsPerLevel10.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Use either Requiem - TrainUnitsPerLevel0.esp or Requiem - TrainUnitsPerLevel10.esp, not both.
-        condition: file("Requiem - TrainUnitsPerLevel0.esp")
+        condition: 'file("Requiem - TrainUnitsPerLevel0.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте любой или Requiem - TrainUnitsPerLevel0.esp или Requiem - TrainUnitsPerLevel10.esp, не обa.
-        condition: file("Requiem - TrainUnitsPerLevel0.esp")
+        condition: 'file("Requiem - TrainUnitsPerLevel0.esp")'
       - type: warn
         content:
           - lang: spa
             str: Usar Requiem - TrainUnitsPerLevel0.esp o Requiem - TrainUnitsPerLevel10.esp, no ambos.
-        condition: file("Requiem - TrainUnitsPerLevel0.esp")
+        condition: 'file("Requiem - TrainUnitsPerLevel0.esp")'
   - name: 'Requiem - TrainUnitsPerLevel100.esp'
     msg:
       - type: warn
@@ -25275,17 +25275,17 @@ plugins:
         content:
           - lang: eng
             str: Use either Requiem - Weapon Damage Modifier 2x Vanilla.esp or Requiem - Weapon Damage Modifier 3x Vanilla.esp, not both.
-        condition: file("Requiem - Weapon Damage Modifier 2x Vanilla.esp")
+        condition: 'file("Requiem - Weapon Damage Modifier 2x Vanilla.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте любой или Requiem - Weapon Damage Modifier 2x Vanilla.esp или Requiem - Weapon Damage Modifier 3x Vanilla.esp, не обa.
-        condition: file("Requiem - Weapon Damage Modifier 2x Vanilla.esp")
+        condition: 'file("Requiem - Weapon Damage Modifier 2x Vanilla.esp")'
       - type: warn
         content:
           - lang: spa
             str: Usar Requiem - Weapon Damage Modifier 2x Vanilla.esp o Requiem - Weapon Damage Modifier 3x Vanilla.esp, no ambos.
-        condition: file("Requiem - Weapon Damage Modifier 2x Vanilla.esp")
+        condition: 'file("Requiem - Weapon Damage Modifier 2x Vanilla.esp")'
   - name: 'SkyRealism.esp'
     msg:
       - type: error
@@ -25642,12 +25642,12 @@ plugins:
         content:
           - lang: eng
             str: Not Needed Already in v3.1
-        condition: regex("DragonSwarms.*\.esp")
+        condition: 'regex("DragonSwarms.*\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Не нужно, уже включено в версию v3.1+
-        condition: regex("DragonSwarms.*\.esp")
+        condition: 'regex("DragonSwarms.*\.esp")'
   - name: 'DS-FlybyOpt.esp'
     inc:
       - 'DS-MoreAgressionForRemover.esp'
@@ -25656,36 +25656,36 @@ plugins:
         content:
           - lang: eng
             str: Not Needed Already in v3.1
-        condition: regex("DragonSwarms.*\.esp")
+        condition: 'regex("DragonSwarms.*\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Не нужно, уже включено в версию v3.1+
-        condition: regex("DragonSwarms.*\.esp")
+        condition: 'regex("DragonSwarms.*\.esp")'
   - name: 'DS-MoreAgressionForRemover.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Not Needed Already in v3.1
-        condition: regex("DragonSwarms.*\.esp")
+        condition: 'regex("DragonSwarms.*\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Не нужно, уже включено в версию v3.1+
-        condition: regex("DragonSwarms.*\.esp")
+        condition: 'regex("DragonSwarms.*\.esp")'
   - name: 'DragonSwarmsOptRemoveTimerStable.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Not Needed Already in v3.1
-        condition: regex("DragonSwarms.*\.esp")
+        condition: 'regex("DragonSwarms.*\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Не нужно, уже включено в версию v3.1+
-        condition: regex("DragonSwarms.*\.esp")
+        condition: 'regex("DragonSwarms.*\.esp")'
   - name: 'DS-VanillaTimer+MultipleEvents.esp'
     inc:
       - 'DS-MoreAgressionForRemover.esp'
@@ -26612,17 +26612,17 @@ plugins:
         content:
           - lang: eng
             str: Use either ERSO 22 - Better Necromancy Spells.esp or Lord of the Dead.esp, not both.
-        condition: file("Lord of the Dead.esp")
+        condition: 'file("Lord of the Dead.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте любой, или ERSO 22 - Better Necromancy Spells.esp или Lord of the Dead.esp, не оба.
-        condition: file("Lord of the Dead.esp")
+        condition: 'file("Lord of the Dead.esp")'
       - type: warn
         content:
           - lang: spa
             str: Usar ERSO 22 - Better Necromancy Spells.esp o Lord of the Dead.esp, no ambos.
-        condition: file("Lord of the Dead.esp")
+        condition: 'file("Lord of the Dead.esp")'
   - name: 'ERSO 26 .*\.esp'
     msg:
       - type: say
@@ -26747,10 +26747,10 @@ plugins:
         condition: not active("Dawnguard.esm")
       - type: say
         content: 'Incompatible with: PerkUP'
-        condition: regex("PerkUP-.*\.esp")
+        condition: 'regex("PerkUP-.*\.esp")'
       - type: say
         content: 'Incompatible with: Uncapped perks'
-        condition: regex("Uncapped Perks.*\.esp")
+        condition: 'regex("Uncapped Perks.*\.esp")'
       - type: say
         content:
           - lang: eng
@@ -26785,17 +26785,17 @@ plugins:
         content:
           - lang: eng
             str: If lockpicking is not work then try to delete 'interface\lockpickingmenu.swf'.
-        condition: file("interface\lockpickingmenu.swf")
+        condition: 'file("interface\lockpickingmenu.swf")'
       - type: say
         content:
           - lang: rus
             str: Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл 'interface\lockpickingmenu.swf'.
-        condition: file("interface\lockpickingmenu.swf")
+        condition: 'file("interface\lockpickingmenu.swf")'
       - type: say
         content:
           - lang: spa
             str: Si lockpicking no funciona intenta borrar 'interface\lockpickingmenu.swf'.
-        condition: file("interface\lockpickingmenu.swf")
+        condition: 'file("interface\lockpickingmenu.swf")'
       - type: say
         content:
           - lang: eng
@@ -26854,10 +26854,10 @@ plugins:
         condition: 'version("..\skse_loader.exe","0.1.5.11",<)'
       - type: say
         content: 'Incompatible with: PerkUP'
-        condition: regex("PerkUP-.*\.esp")
+        condition: 'regex("PerkUP-.*\.esp")'
       - type: say
         content: 'Incompatible with: Uncapped perks'
-        condition: regex("Uncapped Perks.*\.esp")
+        condition: 'regex("Uncapped Perks.*\.esp")'
       - type: say
         content:
           - lang: eng
@@ -26893,12 +26893,12 @@ plugins:
         content:
           - lang: eng
             str: If lockpicikng is not work then try to delete 'interface\lockpickingmenu.swf'
-        condition: file("interface\lockpickingmenu.swf")
+        condition: 'file("interface\lockpickingmenu.swf")'
       - type: say
         content:
           - lang: rus
             str: Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл 'interface\lockpickingmenu.swf'
-        condition: file("interface\lockpickingmenu.swf")
+        condition: 'file("interface\lockpickingmenu.swf")'
       - type: say
         content:
           - lang: eng
@@ -26999,34 +26999,34 @@ plugins:
         content:
           - lang: eng
             str: Delete and use 'PerkReset SkyRe Compatibility Patch.esp' instead.
-        condition: file("PerkReset SkyRe Compatibility Patch.esp")
+        condition: 'file("PerkReset SkyRe Compatibility Patch.esp")'
       - type: error
         content:
           - lang: rus
             str: Удалите и используйте вместо этого 'PerkReset SkyRe Compatibility Patch.esp'.
-        condition: file("PerkReset SkyRe Compatibility Patch.esp")
+        condition: 'file("PerkReset SkyRe Compatibility Patch.esp")'
       - type: warn
         content:
           - lang: eng
             str: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
-        condition: file("PerkReset.esp")
+        condition: 'file("PerkReset.esp")'
       - type: warn
         content:
           - lang: rus
             str: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
-        condition: file("PerkReset.esp")
+        condition: 'file("PerkReset.esp")'
   - name: 'PerkReset SkyRe Compatibility Patch.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
-        condition: file("PerkReset.esp")
+        condition: 'file("PerkReset.esp")'
       - type: warn
         content:
           - lang: rus
             str: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
-        condition: file("PerkReset.esp")
+        condition: 'file("PerkReset.esp")'
   - name: 'SkyRE-Patch.esp'
     req:
       - *SKSE
@@ -27151,12 +27151,12 @@ plugins:
         content:
           - lang: eng
             str: Remember not to load (or to simply delete) StaRe.esp
-        condition: file("StaRe.esp")
+        condition: 'file("StaRe.esp")'
       - type: say
         content:
           - lang: rus
             str: Не забудьте отключить или удалить StaRe.esp
-        condition: file("StaRe.esp")
+        condition: 'file("StaRe.esp")'
   - name: 'SkyRe_StandingStones_Fix.esp'
     msg:
       - type: say
@@ -27715,12 +27715,12 @@ plugins:
         content:
           - lang: eng
             str: Possible already include the hunterarmorv1.2.esp
-        condition: file("hunterarmorv1.2.esp")
+        condition: 'file("hunterarmorv1.2.esp")'
       - type: say
         content:
           - lang: rus
             str: Возможно уже включено в hunterarmorv1.2.esp
-        condition: file("hunterarmorv1.2.esp")
+        condition: 'file("hunterarmorv1.2.esp")'
       - type: say
         content:
           - lang: eng
@@ -27862,12 +27862,12 @@ plugins:
         content:
           - lang: eng
             str: Remember not to load (or to simply delete) RedguardKnight.esp
-        condition: file("RedguardKnight.esp")
+        condition: 'file("RedguardKnight.esp")'
       - type: say
         content:
           - lang: rus
             str: Не забудьте отключить или удалить RedguardKnight.esp
-        condition: file("RedguardKnight.esp")
+        condition: 'file("RedguardKnight.esp")'
   - name: 'SkyRe_Plugin_RegentSwords.esp'
     msg:
       - type: say
@@ -27882,12 +27882,12 @@ plugins:
         content:
           - lang: eng
             str: Remember not to load (or to simply delete) RegentSword.esp
-        condition: file("RegentSword.esp")
+        condition: 'file("RegentSword.esp")'
       - type: say
         content:
           - lang: rus
             str: Не забудьте отключить или удалить RegentSword.esp
-        condition: file("RegentSword.esp")
+        condition: 'file("RegentSword.esp")'
   - name: 'SkyRe_Plugin_Scoiatael Weapons.esp'
     msg:
       - type: say
@@ -28433,17 +28433,17 @@ plugins:
         content:
           - lang: eng
             str: Use either SkyRe Nordic Conqueror Armor.esp or SkyRe Nordic Conqueror Armor - Realistic.esp, not both.
-        condition: file("SkyRe Nordic Conqueror Armor.esp")
+        condition: 'file("SkyRe Nordic Conqueror Armor.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте любой или SkyRe Nordic Conqueror Armor.esp или SkyRe Nordic Conqueror Armor - Realistic.esp, не обa.
-        condition: file("SkyRe Nordic Conqueror Armor.esp")
+        condition: 'file("SkyRe Nordic Conqueror Armor.esp")'
       - type: warn
         content:
           - lang: spa
             str: Usar xxx o yyy, no ambos.
-        condition: file("xxx")
+        condition: 'file("xxx")'
       - type: say
         content:
           - lang: eng
@@ -28914,12 +28914,12 @@ plugins:
         content:
           - lang: eng
             str: Do not use '28 Days and a Bit 5.esp' and '28 Days and a Bit 5.esm' at the same time.
-        condition: file("28 Days and a Bit 5.esm")
+        condition: 'file("28 Days and a Bit 5.esm")'
       - type: error
         content:
           - lang: rus
             str: Не используйте одновременно '28 Days and a Bit 5.esp' и '28 Days and a Bit 5.esm'.
-        condition: file("28 Days and a Bit 5.esm")
+        condition: 'file("28 Days and a Bit 5.esm")'
       - type: say
         content:
           - lang: eng
@@ -29138,17 +29138,17 @@ plugins:
         content:
           - lang: eng
             str: Use either AGameOfThrones.esp or AGameOfThronesEnglish.esp, not both.
-        condition: file("AGameOfThrones.esp")
+        condition: 'file("AGameOfThrones.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте любой, или AGameOfThrones.esp или AGameOfThronesEnglish.esp, не оба.
-        condition: file("AGameOfThrones.esp")
+        condition: 'file("AGameOfThrones.esp")'
       - type: warn
         content:
           - lang: spa
             str: Usar AGameOfThrones.esp o AGameOfThronesEnglish.esp, no ambos.
-        condition: file("AGameOfThrones.esp")
+        condition: 'file("AGameOfThrones.esp")'
     dirty:
       - crc: 0x86878bda
         util: *dirtyUtil
@@ -30846,17 +30846,17 @@ plugins:
         content:
           - lang: eng
             str: Obsolete. Update to latest version.
-        condition: file("Bigger Cities and Villages0.1.1.esp")
+        condition: 'file("Bigger Cities and Villages0.1.1.esp")'
       - type: say
         content:
           - lang: rus
             str: Устарело. Обновите до последней версии.
-        condition: file("Bigger Cities and Villages0.1.1.esp")
+        condition: 'file("Bigger Cities and Villages0.1.1.esp")'
       - type: say
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
-        condition: file("Bigger Cities and Villages0.1.1.esp")
+        condition: 'file("Bigger Cities and Villages0.1.1.esp")'
   - name: 'Black Books Begone.esp'
     msg:
       - type: error
@@ -31546,17 +31546,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one Briar'sEnd esp.
-        condition: file("Briar'sEndCourierQuest.esp")
+        condition: 'file("Briar'sEndCourierQuest.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Briar'sEnd esp.
-        condition: file("Briar'sEndCourierQuest.esp")
+        condition: 'file("Briar'sEndCourierQuest.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Briar'sEnd esp.
-        condition: file("Briar'sEndCourierQuest.esp")
+        condition: 'file("Briar'sEndCourierQuest.esp")'
       - type: warn
         content:
           - lang: eng
@@ -31942,17 +31942,17 @@ plugins:
         content:
           - lang: eng
             str: Use either Castle Riverwood.esp or Burg Flusswald.esp, not both.
-        condition: file("Castle Riverwood.esp")
+        condition: 'file("Castle Riverwood.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте любой или Castle Riverwood.esp или Burg Flusswald.esp, не обa.
-        condition: file("Castle Riverwood.esp")
+        condition: 'file("Castle Riverwood.esp")'
       - type: warn
         content:
           - lang: spa
             str: Usar Castle Riverwood.esp o Burg Flusswald.esp, no ambos.
-        condition: file("Castle Riverwood.esp")
+        condition: 'file("Castle Riverwood.esp")'
       - type: warn
         content:
           - lang: eng
@@ -32747,17 +32747,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one DovahkiinSpeech esp.
-        condition: file("DovahkiinSpeech - HigherReq.esp")
+        condition: 'file("DovahkiinSpeech - HigherReq.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один DovahkiinSpeech esp.
-        condition: file("DovahkiinSpeech - HigherReq.esp")
+        condition: 'file("DovahkiinSpeech - HigherReq.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un DovahkiinSpeech esp.
-        condition: file("DovahkiinSpeech - HigherReq.esp")
+        condition: 'file("DovahkiinSpeech - HigherReq.esp")'
     dirty:
       - crc: 0x4b15f923
         util: *dirtyUtil
@@ -32880,7 +32880,7 @@ plugins:
     msg:
       - type: error
         content: French translation of Dragon Falls Manor.esp.
-        condition: file("Dragon Falls Manor.esp")
+        condition: 'file("Dragon Falls Manor.esp")'
     dirty:
       - crc: 0x2590076
         util: *dirtyUtil
@@ -33474,7 +33474,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Briar''sEnd'
-        condition: regex("Briar'sEnd.*\.esp")
+        condition: 'regex("Briar'sEnd.*\.esp")'
     dirty:
       - crc: 0x6d3a13d9
         util: *dirtyUtil
@@ -45457,7 +45457,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Mighty Magic'
-        condition: regex("Mighty Magick .+\.esp")
+        condition: 'regex("Mighty Magick .+\.esp")'
     dirty:
       - crc: 0xe5918397
         util: *dirtyUtil
@@ -45468,7 +45468,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Mighty Magic'
-        condition: regex("Mighty Magick .+\.esp")
+        condition: 'regex("Mighty Magick .+\.esp")'
     dirty:
       - crc: 0x89ff6fe5
         util: *dirtyUtil
@@ -45477,12 +45477,12 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Mighty Magic'
-        condition: regex("Mighty Magick .+\.esp")
+        condition: 'regex("Mighty Magick .+\.esp")'
   - name: 'masteredmagickaenchantmentfix.esp'
     msg:
       - type: say
         content: 'Incompatible with: Mighty Magic'
-        condition: regex("Mighty Magick .+\.esp")
+        condition: 'regex("Mighty Magick .+\.esp")'
     dirty:
       - crc: 0x94af712d
         util: *dirtyUtil
@@ -45867,36 +45867,36 @@ plugins:
         content:
           - lang: eng
             str: Delete. Already included in 'PerkUP esps'
-        condition: regex("PerkUP.+\.esp")
+        condition: 'regex("PerkUP.+\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже включено в 'PerkUP esps'
-        condition: regex("PerkUP.+\.esp")
+        condition: 'regex("PerkUP.+\.esp")'
   - name: 'No Perk Prereqs - No Helmets Required.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Delete. Already included in 'PerkUP esps'
-        condition: regex("PerkUP.+\.esp")
+        condition: 'regex("PerkUP.+\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже включено в 'PerkUP esps'
-        condition: regex("PerkUP.+\.esp")
+        condition: 'regex("PerkUP.+\.esp")'
   - name: 'No Perk Prereqs - Smithing Excluded.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Delete. Already included in 'PerkUP esps'
-        condition: regex("PerkUP.+\.esp")
+        condition: 'regex("PerkUP.+\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже включено в 'PerkUP esps'
-        condition: regex("PerkUP.+\.esp")
+        condition: 'regex("PerkUP.+\.esp")'
   - name: 'No Sun.esp'
     msg:
       - type: error
@@ -46743,7 +46743,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")
+        condition: 'regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyHelmets.esp'
     inc:
       - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
@@ -46751,7 +46751,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")
+        condition: 'regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp'
     msg:
       - type: error
@@ -46856,10 +46856,10 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")
+        condition: 'regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
       - type: say
         content: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-        condition: regex("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")
+        condition: 'regex("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp'
     inc:
       - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
@@ -46869,10 +46869,10 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")
+        condition: 'regex("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
       - type: say
         content: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-        condition: regex("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")
+        condition: 'regex("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dawnguard.esp'
     inc:
       - 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp'
@@ -47570,7 +47570,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Skyrim Redone'
-        condition: regex("SkyRe_.+\.esp")
+        condition: 'regex("SkyRe_.+\.esp")'
       - type: warn
         content:
           - lang: eng
@@ -51525,14 +51525,14 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Realistic Ragdoll Force'
-        condition: regex("dD.?- Realistic Ragdoll Force.*\.esp")
+        condition: 'regex("dD.?- Realistic Ragdoll Force.*\.esp")'
   - name: 'Realistic hit.esp'
     inc:
       - 'Medium hit.esp'
     msg:
       - type: say
         content: 'Incompatible with: Realistic Ragdoll Force'
-        condition: regex("dD.?- Realistic Ragdoll Force.*\.esp")
+        condition: 'regex("dD.?- Realistic Ragdoll Force.*\.esp")'
   - name: 'RealisticCarryWeight.esp'
     dirty:
       - crc: 0xda01fd93
@@ -51611,12 +51611,12 @@ plugins:
         content:
           - lang: eng
             str: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
-        condition: regex("Unique BOOZE Bottles.*\.esp")
+        condition: 'regex("Unique BOOZE Bottles.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.
-        condition: regex("Unique BOOZE Bottles.*\.esp")
+        condition: 'regex("Unique BOOZE Bottles.*\.esp")'
   - name: 'KnapsackEnhanced.esp'
     msg:
       - type: error
@@ -52178,13 +52178,13 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Belua Sanguinare'
-        condition: regex("MM_BeluaSangunaire.*\.esp")
+        condition: 'regex("MM_BeluaSangunaire.*\.esp")'
       - type: say
         content: 'Incompatible with: Better Vampires'
         condition: regex("Better Vampires( ML| DG)?( - No DawnGuard.esp)?\.esp")
       - type: say
         content: 'Incompatible with: Imp''s More Complex Needs'
-        condition: regex("Imp's More Complex Needs\.es[mp]")
+        condition: 'regex("Imp's More Complex Needs\.es[mp]")'
       - type: say
         content:
           - lang: eng
@@ -57573,7 +57573,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: PerkUP'
-        condition: regex("PerkUP-.*\.esp")
+        condition: 'regex("PerkUP-.*\.esp")'
   - name: 'Uncapped Perks.esp'
     req:
       - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
@@ -57581,7 +57581,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: PerkUP'
-        condition: regex("PerkUP-.*\.esp")
+        condition: 'regex("PerkUP-.*\.esp")'
   - name: 'Uncapped Perks - Optional Magic Add-on.esp'
     req:
       - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
@@ -57590,7 +57590,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: PerkUP'
-        condition: regex("PerkUP-.*\.esp")
+        condition: 'regex("PerkUP-.*\.esp")'
   - name: 'BlueStarPerkAdventure.esp'
     req:
       - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
@@ -61067,12 +61067,12 @@ plugins:
         content:
           - lang: eng
             str: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
-        condition: regex("Unique BOOZE Bottles.*\.esp")
+        condition: 'regex("Unique BOOZE Bottles.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.
-        condition: regex("Unique BOOZE Bottles.*\.esp")
+        condition: 'regex("Unique BOOZE Bottles.*\.esp")'
   - name: 'KnapsackEnhanced.esp'
     msg:
       - type: error
@@ -62082,12 +62082,12 @@ plugins:
         content:
           - lang: eng
             str: Delete. Use Better Followers - S*.esp instead.
-        condition: regex("Better Followers - .+\.esp")
+        condition: 'regex("Better Followers - .+\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Используйте вместо этого Better Followers - S*.esp.
-        condition: regex("Better Followers - .+\.esp")
+        condition: 'regex("Better Followers - .+\.esp")'
   - name: 'Better Followers - Specialized( - Not E)?\.esp'
     msg:
       - type: say
@@ -65615,12 +65615,12 @@ plugins:
         content:
           - lang: rus
             str: Используйте только один MeekoHusky *.esp.
-        condition: regex("MeekoHusky .+\.esp")
+        condition: 'regex("MeekoHusky .+\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un MeekoHusky *.esp.
-        condition: regex("MeekoHusky .+\.esp")
+        condition: 'regex("MeekoHusky .+\.esp")'
   - name: 'MeekoHuskyArmored.esp'
     msg:
       - type: error
@@ -69391,12 +69391,12 @@ plugins:
         content:
           - lang: eng
             str: Use Bashed Patch tweak instead.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: Используйте вместо этого настройку башед патча.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
   - name: 'WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp'
     msg:
       - type: say
@@ -69465,48 +69465,48 @@ plugins:
         content:
           - lang: eng
             str: Use Bashed Patch tweak instead.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: Используйте вместо этого настройку башед патча.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
   - name: 'SkyRim \d Day Respawn\.esp'
     msg:
       - type: say
         content:
           - lang: eng
             str: Use Bashed Patch tweak instead.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: Используйте вместо этого настройку башед патча.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
   - name: 'skyrimespawn\d{0,1}\.esp'
     msg:
       - type: say
         content:
           - lang: eng
             str: Use Bashed Patch tweak instead.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: Используйте вместо этого настройку башед патча.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
   - name: 'Skyrim 120 Day Respawn.esp'
     msg:
       - type: say
         content:
           - lang: eng
             str: Use Bashed Patch tweak instead.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: Используйте вместо этого настройку башед патча.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
   - name: 'SlowRespawn_NoClearedCellRespawn.esp'
     msg:
       - type: warn
@@ -69530,24 +69530,24 @@ plugins:
         content:
           - lang: eng
             str: Use Bashed Patch tweak instead.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: Используйте вместо этого настройку башед патча.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
   - name: 'Timescale\d{1,2}\.esp'
     msg:
       - type: say
         content:
           - lang: eng
             str: Use Bashed Patch tweak instead.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: Используйте вместо этого настройку башед патча.
-        condition: regex("Bashed Patch.*\.esp")
+        condition: 'regex("Bashed Patch.*\.esp")'
 # ENDGROUP: Respawn and day length overrides
 # BEGINGROUP: Shader Mods
 #
@@ -72879,7 +72879,7 @@ plugins:
     msg:
       - type: error
         content: Deactivate. Already included in Qotsafan's Reproccer patches.
-        condition: regex("qotsafans.*\.esp")
+        condition: 'regex("qotsafans.*\.esp")'
   - name: 'ReProccerDragonborn.esp'
     msg:
       - type: say
