@@ -121,7 +121,7 @@ globals:
 # Now that the bug list is under 500, recruitment for v2 is unnecessary.  ae
 # SKSE & SKCU
   - type: warn
-    condition: '( file("SKSE\Plugins\SKSE_Elys_Uncapper.dll") ) and not file("..\skse_loader.exe")'
+    condition: 'file("SKSE\Plugins\SKSE_Elys_Uncapper.dll") and not file("..\skse_loader.exe")'
     content:
       - lang: eng
         str: '"You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: [SKSE](http://skse.silverlock.org/).'
@@ -11571,68 +11571,68 @@ plugins:
         content:
           - lang: eng
             str: 'Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp.'
-        condition: '( file("GM-ForgeAdditions.esp") ) and file("GM-ForgeAdditionsLAotB.esp")'
+        condition: 'file("GM-ForgeAdditions.esp") and file("GM-ForgeAdditionsLAotB.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp.'
-        condition: '( file("GM-ForgeAdditions.esp") ) and file("GM-ForgeAdditionsLAotB.esp")'
+        condition: 'file("GM-ForgeAdditions.esp") and file("GM-ForgeAdditionsLAotB.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Utilizar solo un GM-ForgeAdditions.esp o GM-ForgeAdditionsLAotB.esp.'
-        condition: '( file("GM-ForgeAdditions.esp") ) and file("GM-ForgeAdditionsLAotB.esp")'
+        condition: 'file("GM-ForgeAdditions.esp") and file("GM-ForgeAdditionsLAotB.esp")'
   - name: 'GM-ForgeAdditionsLevelledOutfits.esp'
     msg:
       - type: say
         content:
           - lang: eng
             str: 'Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-        condition: '( file("GM-ForgeAdditionsLevelledOutfits.esp") ) and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
+        condition: 'file("GM-ForgeAdditionsLevelledOutfits.esp") and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLevelledOutfits.esp.'
-        condition: '( file("GM-ForgeAdditionsLevelledOutfits.esp") ) and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
+        condition: 'file("GM-ForgeAdditionsLevelledOutfits.esp") and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Utilizar solo un GM-ForgeAdditionsLevelledOutfits.esp o GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-        condition: '( file("GM-ForgeAdditionsLevelledOutfits.esp") ) and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
+        condition: 'file("GM-ForgeAdditionsLevelledOutfits.esp") and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
   - name: 'GM-ForgeAdditionsLAotB.esp'
     msg:
       - type: say
         content:
           - lang: eng
             str: 'Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp.'
-        condition: '( file("GM-ForgeAdditions.esp") ) and file("GM-ForgeAdditionsLAotB.esp")'
+        condition: 'file("GM-ForgeAdditions.esp") and file("GM-ForgeAdditionsLAotB.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp.'
-        condition: '( file("GM-ForgeAdditions.esp") ) and file("GM-ForgeAdditionsLAotB.esp")'
+        condition: 'file("GM-ForgeAdditions.esp") and file("GM-ForgeAdditionsLAotB.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Utilizar solo un GM-ForgeAdditions.esp o GM-ForgeAdditionsLAotB.esp.'
-        condition: '( file("GM-ForgeAdditions.esp") ) and file("GM-ForgeAdditionsLAotB.esp")'
+        condition: 'file("GM-ForgeAdditions.esp") and file("GM-ForgeAdditionsLAotB.esp")'
   - name: 'GM-ForgeAdditionsLAotBLevelledOutfits.esp'
     msg:
       - type: say
         content:
           - lang: eng
             str: 'Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-        condition: '( file("GM-ForgeAdditionsLevelledOutfits.esp") ) and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
+        condition: 'file("GM-ForgeAdditionsLevelledOutfits.esp") and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-        condition: '( file("GM-ForgeAdditionsLevelledOutfits.esp") ) and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
+        condition: 'file("GM-ForgeAdditionsLevelledOutfits.esp") and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Utilizar solo un GM-ForgeAdditionsLevelledOutfits.esp o GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-        condition: '( file("GM-ForgeAdditionsLevelledOutfits.esp") ) and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
+        condition: 'file("GM-ForgeAdditionsLevelledOutfits.esp") and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
   - name: 'Grab Moveable Statics.esp'
     msg:
       - type: say
@@ -13471,7 +13471,7 @@ plugins:
     msg:
       - type: say
         content: 'Update (PU,PU-DG,PU-DB) to Perks Unbound - Merged.esp'
-        condition: '( file("Perks Unbound - Dragonborn.esp") ) and file("Perks Unbound - Dawnguard.esp")'
+        condition: 'file("Perks Unbound - Dragonborn.esp") and file("Perks Unbound - Dawnguard.esp")'
   - name: 'Perks Unbound - Helmless Warrior.esp'
     msg:
       - type: warn
@@ -16497,17 +16497,17 @@ plugins:
         content:
           - lang: eng
             str: 'Use only one Arcania_armory*.esp.'
-        condition: '( file("Arcania_armory.esp") ) and file("Arcania_armory (base).esp")'
+        condition: 'file("Arcania_armory.esp") and file("Arcania_armory (base).esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте только один Arcania_armory*.esp.'
-        condition: '( file("Arcania_armory.esp") ) and file("Arcania_armory (base).esp")'
+        condition: 'file("Arcania_armory.esp") and file("Arcania_armory (base).esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Utilizar solo un Arcania_armory*.esp.'
-        condition: '( file("Arcania_armory.esp") ) and file("Arcania_armory (base).esp")'
+        condition: 'file("Arcania_armory.esp") and file("Arcania_armory (base).esp")'
     tag:
       - Relev
   - name: 'ArcaneArchery.esp'
@@ -24617,17 +24617,17 @@ plugins:
         content:
           - lang: eng
             str: 'Use either Smithing Perks Overhaul.esp or Smithing Perks Overhaul - Balanced.esp, not both.'
-        condition: '( file("Smithing Perks Overhaul - Balanced.esp") ) and file("Smithing Perks Overhaul.esp")'
+        condition: 'file("Smithing Perks Overhaul - Balanced.esp") and file("Smithing Perks Overhaul.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или Smithing Perks Overhaul.esp или Smithing Perks Overhaul - Balanced.esp, не оба.'
-        condition: '( file("Smithing Perks Overhaul - Balanced.esp") ) and file("Smithing Perks Overhaul.esp")'
+        condition: 'file("Smithing Perks Overhaul - Balanced.esp") and file("Smithing Perks Overhaul.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar Smithing Perks Overhaul.esp o Smithing Perks Overhaul - Balanced.esp, no ambos.'
-        condition: '( file("Smithing Perks Overhaul - Balanced.esp") ) and file("Smithing Perks Overhaul.esp")'
+        condition: 'file("Smithing Perks Overhaul - Balanced.esp") and file("Smithing Perks Overhaul.esp")'
       - type: say
         content:
           - lang: eng
@@ -24712,17 +24712,17 @@ plugins:
         content:
           - lang: eng
             str: 'Use either Complete Crafting Overhaul.esp or Complete Crafting Overhaul - BS version.esp, not both.'
-        condition: '( file("Complete Crafting Overhaul - BS version.esp") ) and file("Complete Crafting Overhaul.esp")'
+        condition: 'file("Complete Crafting Overhaul - BS version.esp") and file("Complete Crafting Overhaul.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или Complete Crafting Overhaul.esp или Complete Crafting Overhaul - BS version.esp, не оба.'
-        condition: '( file("Complete Crafting Overhaul - BS version.esp") ) and file("Complete Crafting Overhaul.esp")'
+        condition: 'file("Complete Crafting Overhaul - BS version.esp") and file("Complete Crafting Overhaul.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar Complete Crafting Overhaul.esp o Complete Crafting Overhaul - BS version.esp, no ambos.'
-        condition: '( file("Complete Crafting Overhaul - BS version.esp") ) and file("Complete Crafting Overhaul.esp")'
+        condition: 'file("Complete Crafting Overhaul - BS version.esp") and file("Complete Crafting Overhaul.esp")'
       - type: warn
         content:
           - lang: eng
@@ -47128,17 +47128,17 @@ plugins:
         content:
           - lang: eng
             str: 'Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.'
-        condition: '( file("SkyRe.esp") ) and file("SkyReNoLighting.esp")'
+        condition: 'file("SkyRe.esp") and file("SkyReNoLighting.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Может перезаписать расовую информацию. из SkyRe.esp или SkyReNoLighting.esp, но может быть безопасно отключен, после использования расового меню.'
-        condition: '( file("SkyRe.esp") ) and file("SkyReNoLighting.esp")'
+        condition: 'file("SkyRe.esp") and file("SkyReNoLighting.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.'
-        condition: '( file("SkyRe.esp") ) and file("SkyReNoLighting.esp")'
+        condition: 'file("SkyRe.esp") and file("SkyReNoLighting.esp")'
   - name: 'Skyrim Creatures Alive.esp'
     tag:
       - Delev
@@ -48666,12 +48666,12 @@ plugins:
         content:
           - lang: eng
             str: 'imp_helm_dawn.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets - Dawnguard'
-        condition: '( file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") ) and not file("imp_helm_dawn.esp")'
+        condition: 'file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") and not file("imp_helm_dawn.esp")'
       - type: error
         content:
           - lang: rus
             str: 'imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard'
-        condition: '( file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") ) and not file("imp_helm_dawn.esp")'
+        condition: 'file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") and not file("imp_helm_dawn.esp")'
   - name: 'Weapons & Armor_TrueDaedricWeapons.esp'
     msg:
       - type: error
@@ -50470,7 +50470,7 @@ plugins:
     msg:
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-        condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - The Dungeons-PatchRLODungeons.esp")'
+        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeons.esp")'
     dirty:
       - crc: 0x18ad5feb
         util: *dirtyUtil
@@ -50486,20 +50486,20 @@ plugins:
         content:
           - lang: eng
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-        condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
+        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
+        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-        condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
+        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp")'
     dirty:
       - crc: 0x33a5fd6
         util: *dirtyUtil
@@ -50510,17 +50510,17 @@ plugins:
         content:
           - lang: eng
             str: 'Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
     dirty:
       - crc: 0x53706bfb
         util: *dirtyUtil
@@ -50534,7 +50534,7 @@ plugins:
     msg:
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-        condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
+        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
     dirty:
       - crc: 0xcb2aeeaf
         util: *dirtyUtil
@@ -50587,7 +50587,7 @@ plugins:
     msg:
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-        condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - The Dungeons-PatchCoTHardcore.esp")'
+        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchCoTHardcore.esp")'
       - type: warn
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Dungeons-Hardcore.esp",4EEA922F)'
@@ -55944,17 +55944,17 @@ plugins:
         content:
           - lang: eng
             str: 'Use only one Skyrim Improved Magic System esp.'
-        condition: '( file("Skyrim Improved Magic System.esp") ) and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
+        condition: 'file("Skyrim Improved Magic System.esp") and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте только один Skyrim Improved Magic System esp.'
-        condition: '( file("Skyrim Improved Magic System.esp") ) and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
+        condition: 'file("Skyrim Improved Magic System.esp") and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Utilizar solo un Skyrim Improved Magic System esp.'
-        condition: '( file("Skyrim Improved Magic System.esp") ) and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
+        condition: 'file("Skyrim Improved Magic System.esp") and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
   - name: 'tSSSSS.esp'
     msg:
       - type: warn
@@ -62784,62 +62784,62 @@ plugins:
         content:
           - lang: eng
             str: 'Use either pack1.esp or Pack1-clean.esp, not both.'
-        condition: '( file("pack1-clean.esp") ) and file("pack1.esp")'
+        condition: 'file("pack1-clean.esp") and file("pack1.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или pack1.esp или Pack1-clean.esp, не оба.'
-        condition: '( file("pack1-clean.esp") ) and file("pack1.esp")'
+        condition: 'file("pack1-clean.esp") and file("pack1.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar pack1.esp o Pack1-clean.esp, no ambos.'
-        condition: '( file("pack1-clean.esp") ) and file("pack1.esp")'
+        condition: 'file("pack1-clean.esp") and file("pack1.esp")'
       - type: warn
         content:
           - lang: eng
             str: 'Use either pack2.esp or Pack2-clean.esp, not both.'
-        condition: '( file("pack2-clean.esp") ) and file("pack2.esp")'
+        condition: 'file("pack2-clean.esp") and file("pack2.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или pack2.esp или Pack2-clean.esp, не оба.'
-        condition: '( file("pack2-clean.esp") ) and file("pack2.esp")'
+        condition: 'file("pack2-clean.esp") and file("pack2.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar pack2.esp o Pack2-clean.esp, no ambos.'
-        condition: '( file("pack2-clean.esp") ) and file("pack2.esp")'
+        condition: 'file("pack2-clean.esp") and file("pack2.esp")'
       - type: warn
         content:
           - lang: eng
             str: 'Use either pack3.esp or Pack3-clean.esp, not both.'
-        condition: '( file("pack3-clean.esp") ) and file("pack3.esp")'
+        condition: 'file("pack3-clean.esp") and file("pack3.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или pack3.esp или Pack3-clean.esp, не оба.'
-        condition: '( file("pack3-clean.esp") ) and file("pack3.esp")'
+        condition: 'file("pack3-clean.esp") and file("pack3.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar pack3.esp o Pack3-clean.esp, no ambos.'
-        condition: '( file("pack3-clean.esp") ) and file("pack3.esp")'
+        condition: 'file("pack3-clean.esp") and file("pack3.esp")'
       - type: warn
         content:
           - lang: eng
             str: 'Use either pack4.esp or Pack4-clean.esp, not both.'
-        condition: '( file("pack4-clean.esp") ) and file("pack4.esp")'
+        condition: 'file("pack4-clean.esp") and file("pack4.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или pack4.esp или Pack4-clean.esp, не оба.'
-        condition: '( file("pack4-clean.esp") ) and file("pack4.esp")'
+        condition: 'file("pack4-clean.esp") and file("pack4.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar pack4.esp o Pack4-clean.esp, no ambos.'
-        condition: '( file("pack4-clean.esp") ) and file("pack4.esp")'
+        condition: 'file("pack4-clean.esp") and file("pack4.esp")'
   - name: 'beanshousecarls.esp'
     msg:
       - type: say
@@ -68651,51 +68651,51 @@ plugins:
         content:
           - lang: eng
             str: 'Use either AROP- Altmer Edition.esp or AROP- Altmer Edition - NW.esp, not both.'
-        condition: '( file("AROP- Altmer Edition.esp") ) and file("AROP- Altmer Edition - NW.esp")'
+        condition: 'file("AROP- Altmer Edition.esp") and file("AROP- Altmer Edition - NW.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или Altmer Edition.esp или AROP- Altmer Edition - NW.esp, не оба.'
-        condition: '( file("AROP- Altmer Edition.esp") ) and file("AROP- Altmer Edition - NW.esp")'
+        condition: 'file("AROP- Altmer Edition.esp") and file("AROP- Altmer Edition - NW.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar AROP- Altmer Edition.esp o AROP- Altmer Edition - NW.esp, no ambos.'
-        condition: '( file("AROP- Altmer Edition.esp") ) and file("AROP- Altmer Edition - NW.esp")'
+        condition: 'file("AROP- Altmer Edition.esp") and file("AROP- Altmer Edition - NW.esp")'
   - name: 'AROP- Argonian.+\.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: 'Use either AROP- Argonian Edition.esp or AROP- Argonian Edition - Poison.esp, not both.'
-        condition: '( file("AROP- Argonian Edition.esp") ) and file("AROP- Argonian Edition - Poison.esp")'
+        condition: 'file("AROP- Argonian Edition.esp") and file("AROP- Argonian Edition - Poison.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или Argonian Edition.esp или AROP- Argonian Edition - Poison.esp, не оба.'
-        condition: '( file("AROP- Argonian Edition.esp") ) and file("AROP- Argonian Edition - Poison.esp")'
+        condition: 'file("AROP- Argonian Edition.esp") and file("AROP- Argonian Edition - Poison.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar AROP- Argonian Edition.esp o AROP- Argonian Edition - Poison.esp, no ambos.'
-        condition: '( file("AROP- Argonian Edition.esp") ) and file("AROP- Argonian Edition - Poison.esp")'
+        condition: 'file("AROP- Argonian Edition.esp") and file("AROP- Argonian Edition - Poison.esp")'
   - name: 'AROP- Redguard.+\.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: 'Use either AROP- Redguard Edition.esp or AROP- Redguard Edition - SS.esp, not both.'
-        condition: '( file("AROP- Redguard Edition.esp") ) and file("AROP- Redguard Edition - SS.esp")'
+        condition: 'file("AROP- Redguard Edition.esp") and file("AROP- Redguard Edition - SS.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или AROP- Redguard Edition.esp или AROP- Redguard Edition - SS.esp, не оба.'
-        condition: '( file("AROP- Redguard Edition.esp") ) and file("AROP- Redguard Edition - SS.esp")'
+        condition: 'file("AROP- Redguard Edition.esp") and file("AROP- Redguard Edition - SS.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar AROP- Redguard Edition.esp o AROP- Redguard Edition - SS.esp, no ambos.'
-        condition: '( file("AROP- Redguard Edition.esp") ) and file("AROP- Redguard Edition - SS.esp")'
+        condition: 'file("AROP- Redguard Edition.esp") and file("AROP- Redguard Edition - SS.esp")'
   - name: 'AutoCastPowers.esp'
     dirty:
       - crc: 0xea872e4c
@@ -68712,17 +68712,17 @@ plugins:
         content:
           - lang: eng
             str: 'Use either Better Racials- Altmer Edition.esp or Better Racials- Altmer Edition - NW.esp, not both.'
-        condition: '( file("Better Racials- Altmer Edition.esp") ) and file("Better Racials- Altmer Edition - NW.esp")'
+        condition: 'file("Better Racials- Altmer Edition.esp") and file("Better Racials- Altmer Edition - NW.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте любой, или Better Racials- Altmer Edition.esp или Better Racials- Altmer Edition - NW.esp, не оба.'
-        condition: '( file("Better Racials- Altmer Edition.esp") ) and file("Better Racials- Altmer Edition - NW.esp")'
+        condition: 'file("Better Racials- Altmer Edition.esp") and file("Better Racials- Altmer Edition - NW.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar Better Racials- Altmer Edition.esp o Better Racials- Altmer Edition - NW.esp, no ambos.'
-        condition: '( file("Better Racials- Altmer Edition.esp") ) and file("Better Racials- Altmer Edition - NW.esp")'
+        condition: 'file("Better Racials- Altmer Edition.esp") and file("Better Racials- Altmer Edition - NW.esp")'
   - name: 'BVLT - (Argonian|Ashen|Dark Elf|High Elf|Human|Khajiit|Wood Elf)?\.esp'
     msg:
       - type: error
@@ -69558,35 +69558,35 @@ plugins:
         content:
           - lang: eng
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - Civilization-PatchRCRN.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and rcrnShaders.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - Civilization-PatchRCRN.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - Civilization-PatchRCRN.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: eng
             str: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-        condition: '( file("SoS - The Wilds.esp") ) and not file("SoS - The Wilds-PatchRCRN.esp")'
+        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and rcrnShaders.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/10886)'
-        condition: '( file("SoS - The Wilds.esp") ) and not file("SoS - The Wilds-PatchRCRN.esp")'
+        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-        condition: '( file("SoS - The Wilds.esp") ) and not file("SoS - The Wilds-PatchRCRN.esp")'
+        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-        condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - The Dungeons-PatchRCRN.esp")'
+        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
     dirty:
       - crc: 0x209fd1b5
         util: *dirtyUtil
@@ -69598,35 +69598,35 @@ plugins:
         content:
           - lang: eng
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - Civilization-PatchRCRN.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and rcrnPlus.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - Civilization-PatchRCRN.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-        condition: '( file("SoS - Civilization.esp") ) and not file("SoS - Civilization-PatchRCRN.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: eng
             str: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-        condition: '( file("SoS - The Wilds.esp") ) and not file("SoS - The Wilds-PatchRCRN.esp")'
+        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and rcrnPlus.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/10886)'
-        condition: '( file("SoS - The Wilds.esp") ) and not file("SoS - The Wilds-PatchRCRN.esp")'
+        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-        condition: '( file("SoS - The Wilds.esp") ) and not file("SoS - The Wilds-PatchRCRN.esp")'
+        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-        condition: '( file("SoS - The Dungeons.esp") ) and not file("SoS - The Dungeons-PatchRCRN.esp")'
+        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
   - name: 'RCRNdawnguard.esp'
     msg:
       - type: error
@@ -72387,17 +72387,17 @@ plugins:
         content:
           - lang: eng
             str: 'Use only one SSS Deadly Dragons Patch esp.'
-        condition: '( file("SSS Deadly Dragons Patch A.esp") ) and not file("SSS Deadly Dragons Patch C.esp")'
+        condition: 'file("SSS Deadly Dragons Patch A.esp") and not file("SSS Deadly Dragons Patch C.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте только один патч SSS Deadly Dragons Patch esp.'
-        condition: '( file("SSS Deadly Dragons Patch A.esp") ) and not file("SSS Deadly Dragons Patch C.esp")'
+        condition: 'file("SSS Deadly Dragons Patch A.esp") and not file("SSS Deadly Dragons Patch C.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Utilizar solo un SSS Deadly Dragons Patch esp.'
-        condition: '( file("SSS Deadly Dragons Patch A.esp") ) and not file("SSS Deadly Dragons Patch C.esp")'
+        condition: 'file("SSS Deadly Dragons Patch A.esp") and not file("SSS Deadly Dragons Patch C.esp")'
   - name: 'SSS Deadly Dragons Patch C.esp'
     msg:
       - type: warn
