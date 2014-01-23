@@ -16842,6 +16842,9 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("SUNMagicArmor.esp",EAB06AA4)'
+  - name: 'sunnydawnbreaker.esp'
+    after:
+      - 'improvedrealistic.esp'
   - name: 'Sword Master Armor.esp'
     dirty:
       - crc: 0x7d6fd4ae
@@ -24607,6 +24610,9 @@ plugins:
       - crc: 0x51c7052a
         util: *dirtyUtil
         itm: 7
+  - name: 'BetterBreezehome.esp'
+    after:
+      - 'FalkreathCastle.esp'
   - name: 'Falkreath Home.esp'
     dirty:
       - crc: 0x671dcfb3
@@ -37421,7 +37427,34 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
+  - name: 'EnhancedLightsandFX.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
+  - name: 'EnhancedLightsandFX_CN.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
+  - name: 'ELFX - Exteriors.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
+  - name: 'ELFX - Moonpath.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
+  - name: 'ELFX - NoBreezehome.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
+  - name: 'ELFX - NoTaverns.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
   - name: 'ELFX - Dawnguard.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
     msg:
       - type: error
         content:
@@ -37433,6 +37466,9 @@ plugins:
             str: 'Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).'
         condition: 'not active("Dawnguard.esm")'
   - name: 'ELFX - Dragonborn.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
     msg:
       - type: error
         content:
@@ -37728,6 +37764,11 @@ plugins:
           - lang: spa
             str: 'ClimatesOfTamriel.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("ClimatesOfTamriel.esm")'
+  - name: 'ELFXEnhancer.esp'
+    ## loaded after COT as it is more specialized
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
   - name: 'Unique Region Names - Dragonborn COT Patch.esp'
     msg:
       - type: error
@@ -37966,6 +38007,9 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un Sounds of Skyrim - Civilization and CoT patch.'
   - name: 'SoS - The Dungeons-PatchELFX.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
     msg:
       - type: error
         content:
@@ -37986,6 +38030,9 @@ plugins:
             str: 'ELFXEnhancer.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("ELFXEnhancer.esp")'
   - name: 'SoS - Civilization-PatchELFX.esp'
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
     msg:
       - type: error
         content:
@@ -39572,12 +39619,12 @@ plugins:
             str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)'
           - lang: spa
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
+        condition: 'not active("Dawnguard.esm")'
 # ENDGROUP: Vampires and Werewolves
 # BEGINGROUP: Magic
 #
 # Overrides overhauls. New spells and magic systems go here for convenience.
 # BEGINGROUP: General Spells
-        condition: 'not active("Dawnguard.esm")'
   - name: 'AdoringFanSummon.esp'
     msg:
       - type: error
@@ -51314,28 +51361,6 @@ plugins:
       - crc: 0x54176f89
         util: *dirtyUtil
         itm: 2
-  - name: 'ELFX - Dawnguard.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).'
-        condition: 'not active("Dawnguard.esm")'
-  - name: 'ELFX - Dragonborn.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
-        condition: 'not active("Dragonborn.esm")'
   - name: 'SoS - The Dungeons-PatchRCRN.esp'
     req:
       - name: 'rcrnShaders.esp'
@@ -51351,46 +51376,6 @@ plugins:
       - name: 'rcrnShaders.esp'
         display: '[RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
         condition: 'not file("rcrnPlus.esp")'
-  - name: 'SoS - The Dungeons-PatchELFX.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-          - lang: rus
-            str: 'SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-          - lang: spa
-            str: 'SoS - The Dungeons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: 'not active("SoS - The Dungeons.esp")'
-      - type: error
-        content:
-          - lang: eng
-            str: 'ELFXEnhancer.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-          - lang: rus
-            str: 'ELFXEnhancer.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-          - lang: spa
-            str: 'ELFXEnhancer.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: 'not active("ELFXEnhancer.esp")'
-  - name: 'SoS - Civilization-PatchELFX.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-          - lang: rus
-            str: 'SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-          - lang: spa
-            str: 'SoS - Civilization.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: 'not active("SoS - Civilization.esp")'
-      - type: error
-        content:
-          - lang: eng
-            str: 'ELFXEnhancer.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-          - lang: rus
-            str: 'ELFXEnhancer.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-          - lang: spa
-            str: 'ELFXEnhancer.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: 'not active("ELFXEnhancer.esp")'
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN.esp'
     msg:
       - type: say
