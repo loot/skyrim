@@ -3557,9 +3557,6 @@ plugins:
         content:
           - lang: eng
             str: 'Using lightingfix.esp along with Relighting Skyrim - Dawnguard.esp is likely to cause lighting inconsistencies.'
-        condition: 'file("lightingfix.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Использование lightingfix.esp вместе с Relighting Skyrim - Dawnguard.esp может вызвать несоответствия освещения.'
         condition: 'file("lightingfix.esp")'
@@ -4260,14 +4257,6 @@ plugins:
         content:
           - lang: eng
             str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).'
-        condition: 'not active("Dawnguard.esm")'
-      - type: error
-        content:
-          - lang: rus
-            str: 'Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC).'
-        condition: 'not active("Dawnguard.esm")'
-      - type: error
-        content:
           - lang: rus
             str: 'Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC).'
         condition: 'not active("Dawnguard.esm")'
@@ -8403,9 +8392,6 @@ plugins:
         content:
           - lang: eng
             str: 'Use only one Expensive Transports *.esp.'
-        condition: '( file("Expensive Transports 5x.esp") ) or file("Expensive Transports 10x.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Используйте только один Expensive Transports *.esp.'
         condition: '( file("Expensive Transports 5x.esp") ) or file("Expensive Transports 10x.esp")'
@@ -9033,10 +9019,9 @@ plugins:
   - name: 'Hearthfire Sorting.esp'
     msg:
       - type: error
-        content: 'GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm'
-        condition: 'not file("GeneralStores.esm")'
-      - type: error
-        content:
+        content: 
+          - lang: eng
+            str: 'GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm'
           - lang: rus
             str: 'GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)'
         condition: 'not file("GeneralStores.esm")'
@@ -9052,10 +9037,9 @@ plugins:
   - name: 'HearthFireStores(GS).esp'
     msg:
       - type: error
-        content: 'GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm'
-        condition: 'not file("GeneralStores.esm")'
-      - type: error
-        content:
+        content: 
+          - lang: eng
+            str: 'GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm'
           - lang: rus
             str: 'GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)'
         condition: 'not file("GeneralStores.esm")'
@@ -13176,9 +13160,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
@@ -13451,9 +13432,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete. Already included in WetandCold - Ashes.esp.'
-        condition: 'file("WetandCold - Ashes.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'Удалите. Уже включено в WetandCold - Ashes.esp.'
         condition: 'file("WetandCold - Ashes.esp")'
@@ -13634,9 +13612,6 @@ plugins:
         content:
           - lang: eng
             str: 'Incompatible with: Cloaks of skyrim, get the compatibility patch in the WIC optional files.'
-        condition: 'file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Несовместим с: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.'
         condition: 'file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp")'
@@ -13644,9 +13619,6 @@ plugins:
         content:
           - lang: eng
             str: 'Incompatible with: Cloaks of skyrim, get the compatibility patch in the WIC optional files.'
-        condition: 'file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Несовместим с: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.'
         condition: 'file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
@@ -13782,9 +13754,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("CompanionsShields.esp",75F460D6)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("CompanionsShields.esp",75F460D6)'
@@ -13794,9 +13763,6 @@ plugins:
         content:
           - lang: eng
             str: 'This file has a large amount of corrupted records. Remove and use latest fixed version.'
-        condition: 'checksum("CoolItems1_2.esp",8E310144)'
-      - type: error
-        content:
           - lang: rus
             str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
         condition: 'checksum("CoolItems1_2.esp",8E310144)'
@@ -14149,9 +14115,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("Daedric Extra Armor.esp",8DDD039)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("Daedric Extra Armor.esp",8DDD039)'
@@ -14578,9 +14541,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: '( not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) ) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: '( not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) ) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
@@ -14781,9 +14741,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete. Already included in AetheriumSwordsnArmor.esp'
-        condition: 'file("AetheriumSwordsnArmor.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'Удалите. Уже включено в AetheriumSwordsnArmor.esp'
         condition: 'file("AetheriumSwordsnArmor.esp")'
@@ -15039,9 +14996,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: '( version("..\TESV.exe","1.8",>) ) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: '( version("..\TESV.exe","1.8",>) ) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
@@ -15238,9 +15192,6 @@ plugins:
         content:
           - lang: eng
             str: 'Requires: Elemental Base Pack. Download it [here](http://steamcommunity.com/sharedfiles/filedetails/?id=83061079) or [here](http://www.nexusmods.com/skyrim/mods/20868).'
-        condition: 'not file("Elemental Base.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Требуется: Elemental Base Pack. Ищите его [здесь](http://steamcommunity.com/sharedfiles/filedetails/?id=83061079) или [здесь](http://www.nexusmods.com/skyrim/mods/20868).'
         condition: 'not file("Elemental Base.esp")'
@@ -15435,9 +15386,6 @@ plugins:
         content:
           - lang: eng
             str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("Hana.esp",C86C77D9)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("Hana.esp",C86C77D9)'
@@ -15801,9 +15749,6 @@ plugins:
         content:
           - lang: eng
             str: 'imp_helm.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets'
-        condition: 'not file("imp_helm.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'imp_helm.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets'
         condition: 'not file("imp_helm.esp")'
@@ -15816,9 +15761,6 @@ plugins:
         content:
           - lang: eng
             str: 'imp_helm_dawn.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets - Dawnguard'
-        condition: 'not file("imp_helm_dawn.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard'
         condition: 'not file("imp_helm_dawn.esp")'
@@ -16094,9 +16036,6 @@ plugins:
         content:
           - lang: eng
             str: 'Redundant. Included in "DIMONIZED UNP clothing resources".'
-        condition: 'file("DIMclothes1.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Избыточно. Уже включено в "DIMONIZED UNP clothing resources".'
         condition: 'file("DIMclothes1.esp")'
@@ -16351,9 +16290,6 @@ plugins:
         content:
           - lang: eng
             str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("LFArmors.esp",EF8F74B6)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("LFArmors.esp",EF8F74B6)'
@@ -16484,9 +16420,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("loners_sword.esp",246E1CBB)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("loners_sword.esp",246E1CBB)'
@@ -16606,9 +16539,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Malo_Waffen.esp'
-        condition: 'active("Malo_Waffen.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Malo_Waffen.esp'
         condition: 'active("Malo_Waffen.esp")'
@@ -16861,9 +16791,6 @@ plugins:
         content:
           - lang: eng
             str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("Mystic.esp",67CBB5B2)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("Mystic.esp",67CBB5B2)'
@@ -16890,9 +16817,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
@@ -16902,9 +16826,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
@@ -16918,9 +16839,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
@@ -16934,9 +16852,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
@@ -16946,9 +16861,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
@@ -16958,9 +16870,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
@@ -16970,9 +16879,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
@@ -16982,9 +16888,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
@@ -16997,9 +16900,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
@@ -17733,9 +17633,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("SeraphimStandAlone.esp",556E0B68)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("SeraphimStandAlone.esp",556E0B68)'
@@ -17782,9 +17679,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete. Already included in ''DBShreddedTriss.esp'''
-        condition: 'file("DBShreddedTriss.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Удалите. Уже включено в ''DBShreddedTriss.esp'''
         condition: 'file("DBShreddedTriss.esp")'
@@ -17870,9 +17764,6 @@ plugins:
         content:
           - lang: eng
             str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.'
-        condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
         condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
@@ -17934,9 +17825,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("SnowyNightingale.esp",83B46ABF)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("SnowyNightingale.esp",83B46ABF)'
@@ -17969,9 +17857,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("Sovngarde Steel Armor and Weapons.esp",B84EB4CE)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("Sovngarde Steel Armor and Weapons.esp",B84EB4CE)'
@@ -18201,9 +18086,6 @@ plugins:
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("TemplarArmor.esp",EE0395E4)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("TemplarArmor.esp",EE0395E4)'
@@ -18374,9 +18256,6 @@ plugins:
         content:
           - lang: eng
             str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: 'not checksum("TrissArmorRetextured.esp",342AD937)'
-      - type: warn
-        content:
           - lang: rus
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("TrissArmorRetextured.esp",342AD937)'
@@ -18979,9 +18858,6 @@ plugins:
         content:
           - lang: eng
             str: 'Keep 'Dr_Bandolier.esp' aswell!'
-        condition: 'not file("Dr_Bandolier.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: '''Dr_Bandolier.esp'' также необходим для работы!'
         condition: 'not file("Dr_Bandolier.esp")'
@@ -19081,9 +18957,6 @@ plugins:
         content:
           - lang: eng
             str: 'Use Dawnguard version.'
-        condition: 'file("Dr_BandolierDG.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'Используйте версию для Dawnguard.'
         condition: 'file("Dr_BandolierDG.esp")'
@@ -19093,9 +18966,6 @@ plugins:
         content:
           - lang: eng
             str: 'Use Dawnguard version.'
-        condition: 'file("Dr_BandolierDG.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'Используйте версию для Dawnguard.'
         condition: 'file("Dr_BandolierDG.esp")'
@@ -19217,9 +19087,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) BaratheonArmor.esp'
-        condition: 'active("BaratheonArmor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить BaratheonArmor.esp'
         condition: 'active("BaratheonArmor.esp")'
@@ -19227,9 +19094,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) HedgeKnight.esp'
-        condition: 'active("HedgeKnight.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить HedgeKnight.esp'
         condition: 'active("HedgeKnight.esp")'
@@ -19237,9 +19101,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) RedguardKnight.esp'
-        condition: 'active("RedguardKnight.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить RedguardKnight.esp'
         condition: 'active("RedguardKnight.esp")'
@@ -19247,9 +19108,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) VagabondArmor.esp'
-        condition: 'active("VagabondArmor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить VagabondArmor.esp'
         condition: 'active("VagabondArmor.esp")'
@@ -19257,9 +19115,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) VanguardArmor.esp'
-        condition: 'active("VanguardArmor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить VanguardArmor.esp'
         condition: 'active("VanguardArmor.esp")'
@@ -19267,9 +19122,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) warchiefarmor.esp'
-        condition: 'active("warchiefarmor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить warchiefarmor.esp'
         condition: 'active("warchiefarmor.esp")'
@@ -19531,9 +19383,6 @@ plugins:
         content:
           - lang: eng
             str: 'Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: '( not checksum("Smithing Perks Overhaul.esp",92158BE3) ) and not checksum("Smithing Perks Overhaul - Balanced.esp",80AAE7FF)'
-      - type: say
-        content:
           - lang: rus
             str: 'Не содержит неверных записей, как было найдено в других модах от разных авторов, однако новый esp, исправленный и очищенный в Tes5Edit вы можене найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). Исправленный esp добавит больше стабильности. Если вы уже используете русифицированную-исправленную версию, то вам не о чем беспокоиться.'
         condition: '( not checksum("Smithing Perks Overhaul.esp",92158BE3) ) and not checksum("Smithing Perks Overhaul - Balanced.esp",80AAE7FF)'
@@ -19596,9 +19445,6 @@ plugins:
         content:
           - lang: eng
             str: 'Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-        condition: '( not checksum("Complete Crafting Overhaul.esp",8534CD3C) ) and not checksum("Complete Crafting Overhaul - BS version.esp",193D9214)'
-      - type: say
-        content:
           - lang: rus
             str: 'Не содержит неверных записей, как было найдено в других модах от разных авторов, однако новый esp, исправленный и очищенный в Tes5Edit вы можене найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). Исправленный esp добавит больше стабильности. Если вы уже используете русифицированную-исправленную версию, то вам не о чем беспокоиться.'
         condition: '( not checksum("Complete Crafting Overhaul.esp",8534CD3C) ) and not checksum("Complete Crafting Overhaul - BS version.esp",193D9214)'
@@ -19615,9 +19461,6 @@ plugins:
         content:
           - lang: eng
             str: 'Use only BS-version for Better Sorting.'
-        condition: 'regex("(Headbomb''s )?Better Sorting.*\.esp") and file("Complete Crafting Overhaul.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Для Better Sorting используйте только BS-версию.'
         condition: 'regex("(Headbomb''s )?Better Sorting.*\.esp") and file("Complete Crafting Overhaul.esp")'
@@ -19625,9 +19468,6 @@ plugins:
         content:
           - lang: eng
             str: 'Skyre mod is detected. Possible doubles in crafting menu'
-        condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Обнаружен мод SkyRe. Возможны дубликаты в меню крафтинга.'
         condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
@@ -20264,9 +20104,6 @@ plugins:
         content:
           - lang: eng
             str: 'Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without the [Unofficial Skyrim Patch](http://www.nexusmods.com/skyrim/mods/19)'
-        condition: 'not active("Unofficial Skyrim Patch.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без the [Unofficial Skyrim Patch](http://www.nexusmods.com/skyrim/mods/19)'
         condition: 'not active("Unofficial Skyrim Patch.esp")'
@@ -20274,9 +20111,6 @@ plugins:
         content:
           - lang: eng
             str: 'Unofficial Dawnguard Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without the [Unofficial Dawnguard Patch](http://www.nexusmods.com/skyrim/mods/23491)'
-        condition: 'not active("Unofficial Dawnguard Patch.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'Unofficial Dawnguard Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без the [Unofficial Dawnguard Patch](http://www.nexusmods.com/skyrim/mods/23491)'
         condition: 'not active("Unofficial Dawnguard Patch.esp")'
@@ -20284,9 +20118,6 @@ plugins:
         content:
           - lang: eng
             str: 'Unofficial Hearthfire Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without the [Unofficial Hearthfire Patch](http://www.nexusmods.com/skyrim/mods/25127)'
-        condition: 'not active("Unofficial Hearthfire Patch.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'Unofficial Hearthfire Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без the [Unofficial Hearthfire Patch](http://www.nexusmods.com/skyrim/mods/25127)'
         condition: 'not active("Unofficial Hearthfire Patch.esp")'
@@ -20294,9 +20125,6 @@ plugins:
         content:
           - lang: eng
             str: 'Unofficial Dragonborn Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without the [Unofficial Dragonborn Patch](http://www.nexusmods.com/skyrim/mods/31083)'
-        condition: 'not active("Unofficial Dragonborn Patch.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'Unofficial Dragonborn Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без the [Unofficial Dragonborn Patch](http://www.nexusmods.com/skyrim/mods/31083)'
         condition: 'not active("Unofficial Dragonborn Patch.esp")'
@@ -20329,9 +20157,6 @@ plugins:
         content:
           - lang: eng
             str: 'Not Needed Already in v3.1'
-        condition: 'regex("DragonSwarms.*\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Не нужно, уже включено в версию v3.1+'
         condition: 'regex("DragonSwarms.*\.esp")'
@@ -20343,9 +20168,6 @@ plugins:
         content:
           - lang: eng
             str: 'Not Needed Already in v3.1'
-        condition: 'regex("DragonSwarms.*\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Не нужно, уже включено в версию v3.1+'
         condition: 'regex("DragonSwarms.*\.esp")'
@@ -20355,9 +20177,6 @@ plugins:
         content:
           - lang: eng
             str: 'Not Needed Already in v3.1'
-        condition: 'regex("DragonSwarms.*\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Не нужно, уже включено в версию v3.1+'
         condition: 'regex("DragonSwarms.*\.esp")'
@@ -20367,9 +20186,6 @@ plugins:
         content:
           - lang: eng
             str: 'Not Needed Already in v3.1'
-        condition: 'regex("DragonSwarms.*\.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Не нужно, уже включено в версию v3.1+'
         condition: 'regex("DragonSwarms.*\.esp")'
@@ -20655,9 +20471,6 @@ plugins:
         content:
           - lang: eng
             str: 'Use the [compatibility patch](http://www.nexusmods.com/skyrim/mods/13423) for deadly dragons.'
-        condition: 'regex("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") and not regex("MD with DeadlyD and DDiversified( Unleveled)?\.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Используйте [патч совместимости](http://www.nexusmods.com/skyrim/mods/13423) для мода Deadly Dragons.'
         condition: 'regex("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") and not regex("MD with DeadlyD and DDiversified( Unleveled)?\.esp")'
@@ -20848,9 +20661,6 @@ plugins:
         content:
           - lang: eng
             str: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-        condition: 'not active("SkyUI.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
         condition: 'not active("SkyUI.esp")'
@@ -21492,9 +21302,6 @@ plugins:
             str: 'SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его [здесь](http://www.nexusmods.com/skyrim/mods/9286)(Англ.) или [здесь](http://u.to/EpZaAg).'
       - type: say
         content: 'Requires: [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175) for full perk functional'
-        condition: 'not file("SKSE\Plugins\SKSE_Elys_Uncapper.dll")'
-      - type: say
-        content:
           - lang: rus
             str: 'Требуется: [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175) для полного функционирования перков.'
         condition: 'not file("SKSE\Plugins\SKSE_Elys_Uncapper.dll")'
@@ -21502,9 +21309,6 @@ plugins:
         content:
           - lang: eng
             str: 'If lockpicikng is not work then try to delete ''interface\lockpickingmenu.swf'''
-        condition: 'file("interface\lockpickingmenu.swf")'
-      - type: say
-        content:
           - lang: rus
             str: 'Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл ''interface\lockpickingmenu.swf'''
         condition: 'file("interface\lockpickingmenu.swf")'
@@ -21580,9 +21384,6 @@ plugins:
         content:
           - lang: eng
             str: 'Recommend to use [PerkReset SkyRe Compatibility Patch.esp](http://www.nexusmods.com/skyrim/mods/22070) instead.'
-        condition: 'not file("PerkReset SkyRe Compatibility Patch.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Рекомендуется использовать вместо этого [PerkReset SkyRe Compatibility Patch.esp](http://www.nexusmods.com/skyrim/mods/22070).'
         condition: 'not file("PerkReset SkyRe Compatibility Patch.esp")'
@@ -21590,9 +21391,6 @@ plugins:
         content:
           - lang: eng
             str: 'Delete and use 'PerkReset SkyRe Compatibility Patch.esp' instead.'
-        condition: 'file("PerkReset SkyRe Compatibility Patch.esp")'
-      - type: error
-        content:
           - lang: rus
             str: 'Удалите и используйте вместо этого 'PerkReset SkyRe Compatibility Patch.esp'.'
         condition: 'file("PerkReset SkyRe Compatibility Patch.esp")'
@@ -21600,9 +21398,6 @@ plugins:
         content:
           - lang: eng
             str: 'Rename your 'PerkReset.esp' to 'PerkReset.esm'.'
-        condition: 'file("PerkReset.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.'
         condition: 'file("PerkReset.esp")'
@@ -21612,9 +21407,6 @@ plugins:
         content:
           - lang: eng
             str: 'Rename your 'PerkReset.esp' to 'PerkReset.esm'.'
-        condition: 'file("PerkReset.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.'
         condition: 'file("PerkReset.esp")'
@@ -21712,9 +21504,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) StaRe.esp'
-        condition: 'file("StaRe.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить StaRe.esp'
         condition: 'file("StaRe.esp")'
@@ -21752,9 +21541,6 @@ plugins:
         content:
           - lang: eng
             str: 'You need the SkyRe compatibility patch for this to work as intended with SkyRe.'
-        condition: 'regex("SkyRe_.+\.esp") and not file("SkyRe_Plugin_Morrowloot.esp")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Вам нужно установить патч совместимости для правильной работы мода с SkyRe.'
         condition: 'regex("SkyRe_.+\.esp") and not file("SkyRe_Plugin_Morrowloot.esp")'
@@ -21779,9 +21565,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) BaratheonArmor.esp'
-        condition: 'active("BaratheonArmor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить BaratheonArmor.esp'
         condition: 'active("BaratheonArmor.esp")'
@@ -21799,9 +21582,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) blackswordsman.esp'
-        condition: 'active("blackswordsman.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить blackswordsman.esp .'
         condition: 'active("blackswordsman.esp")'
@@ -21819,9 +21599,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) HBetterBows.esp'
-        condition: 'active("HBetterBows.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить HBetterBows.esp'
         condition: 'active("HBetterBows.esp")'
@@ -21839,9 +21616,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) HBetterBows.esp'
-        condition: 'active("HBetterBows.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить HBetterBows.esp'
         condition: 'active("HBetterBows.esp")'
@@ -21859,9 +21633,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) BowofIorveth.esp'
-        condition: 'active("BowofIorveth.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить BowofIorveth.esp'
         condition: 'active("BowofIorveth.esp")'
@@ -21879,9 +21650,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) DaggerCraft.esp'
-        condition: 'active("DaggerCraft.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить DaggerCraft.esp'
         condition: 'active("DaggerCraft.esp")'
@@ -21899,9 +21667,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) DaggerCraft.esp'
-        condition: 'active("DaggerCraft.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить DaggerCraft.esp'
         condition: 'active("DaggerCraft.esp")'
@@ -21921,9 +21686,6 @@ plugins:
         content:
           - lang: eng
             str: 'You need to rename "DragonBoneWeaponsComplete.bsa" to "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" or this mod won''t work.'
-        condition: 'not file("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Вам нужно переименовать "DragonBoneWeaponsComplete.bsa" в "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" для подключения ресурсов мода..'
         condition: 'not file("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa")'
@@ -21931,9 +21693,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) ''Dragonbone Weapons Complete.esp'''
-        condition: 'active("Dragonbone Weapons Complete.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить ''Dragonbone Weapons Complete.esp'''
         condition: 'active("Dragonbone Weapons Complete.esp")'
@@ -21959,9 +21718,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Dread Knight Weapon Set mod'
-        condition: '( active("DreadKnightWeaponSet.\esp") ) or active("Dread Knight Weapon Set.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить мод Dread Knight Weapon Set.'
         condition: '( active("DreadKnightWeaponSet.\esp") ) or active("Dread Knight Weapon Set.esp")'
@@ -21971,9 +21727,6 @@ plugins:
         content:
           - lang: eng
             str: 'You need to rename "DwemerAutoBlade.bsa" to "SkyRe_Plugin_DwemerAutoBlade.bsa" or this mod won''t work.'
-        condition: 'not file("SkyRe_Plugin_DwemerAutoBlade.bsa")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Вам нужно переименовать "DwemerAutoBlade.bsa" в "SkyRe_Plugin_DwemerAutoBlade.bsa" или этот мод не будет работать.'
         condition: 'not file("SkyRe_Plugin_DwemerAutoBlade.bsa")'
@@ -21981,9 +21734,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) DwemerAutoBlade.esp'
-        condition: 'active("DwemerAutoBlade.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить DwemerAutoBlade.esp'
         condition: 'active("DwemerAutoBlade.esp")'
@@ -22009,9 +21759,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) HedgeKnight.esp'
-        condition: 'active("HedgeKnight.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить HedgeKnight.esp'
         condition: 'active("HedgeKnight.esp")'
@@ -22021,9 +21768,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) hothtrooper44_ArmorCompilation.esp'
-        condition: 'active("hothtrooper44_ArmorCompilation.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить hothtrooper44_ArmorCompilation.esp'
         condition: 'active("hothtrooper44_ArmorCompilation.esp")'
@@ -22049,9 +21793,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) InsanitysCelticKatana.esp'
-        condition: 'active("InsanitysCelticKatana.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить InsanitysCelticKatana.esp'
         condition: 'active("InsanitysCelticKatana.esp")'
@@ -22069,9 +21810,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) nsanitysCelticKatana.esp'
-        condition: 'active("nsanitysCelticKatana.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить nsanitysCelticKatana.esp'
         condition: 'active("nsanitysCelticKatana.esp")'
@@ -22089,9 +21827,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Insanity''s Craftable Dragonbane.esp'
-        condition: 'active("Insanity''s Craftable Dragonbane.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Insanity''s Craftable Dragonbane.esp'
         condition: 'active("Insanity''s Craftable Dragonbane.esp")'
@@ -22109,9 +21844,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Insanitys Dragon Katana mod'
-        condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить мод Insanitys Dragon Katana'
         condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
@@ -22129,9 +21861,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Insanitys Dragon Katana mod'
-        condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить мод Insanitys Dragon Katana'
         condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
@@ -22141,9 +21870,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) isilNarsil.esp'
-        condition: 'active("isilNarsil.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить isilNarsil.esp'
         condition: 'active("isilNarsil.esp")'
@@ -22176,9 +21902,6 @@ plugins:
         content:
           - lang: eng
             str: 'The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-        condition: 'not regex("JSwords(DV)?\.esm")'
-      - type: error
-        content:
           - lang: rus
             str: 'Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
         condition: 'not regex("JSwords(DV)?\.esm")'
@@ -22202,9 +21925,6 @@ plugins:
         content:
           - lang: eng
             str: 'The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-        condition: 'not regex("JSwords(DV)?\.esm")'
-      - type: error
-        content:
           - lang: rus
             str: 'Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
         condition: 'not regex("JSwords(DV)?\.esm")'
@@ -22220,9 +21940,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Malo_Waffen.esp'
-        condition: 'active("Malo_Waffen.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Malo_Waffen.esp'
         condition: 'active("Malo_Waffen.esp")'
@@ -22258,9 +21975,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Nicoroshi Creations.esp'
-        condition: 'active("Nicoroshi Creations.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Nicoroshi Creations.esp'
         condition: 'active("Nicoroshi Creations.esp")'
@@ -22270,9 +21984,6 @@ plugins:
         content:
           - lang: eng
             str: 'Possible already include the hunterarmorv1.2.esp'
-        condition: 'file("hunterarmorv1.2.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Возможно уже включено в hunterarmorv1.2.esp'
         condition: 'file("hunterarmorv1.2.esp")'
@@ -22290,9 +22001,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Omegared99-WeaponSets.esp'
-        condition: 'active("Omegared99-WeaponSets.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Omegared99-WeaponSets.esp'
         condition: 'active("Omegared99-WeaponSets.esp")'
@@ -22310,9 +22018,6 @@ plugins:
         content:
           - lang: eng
             str: 'You still need Omegared99-Compilation.esm'
-        condition: 'not file("Omegared99-Compilation.esm")'
-      - type: error
-        content:
           - lang: rus
             str: 'Вам все еще нужен Omegared99-Compilation.esm'
         condition: 'not file("Omegared99-Compilation.esm")'
@@ -22342,9 +22047,6 @@ plugins:
         content:
           - lang: eng
             str: 'You still need Omegared99-Compilation.esm'
-        condition: 'not file("Omegared99-Compilation.esm")'
-      - type: error
-        content:
           - lang: rus
             str: 'Вам все еще нужен Omegared99-Compilation.esm'
         condition: 'not file("Omegared99-Compilation.esm")'
@@ -22389,9 +22091,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Oriental Weapon&Armor.esp'
-        condition: 'active("Oriental Weapon&Armor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Oriental Weapon&Armor.esp'
         condition: 'active("Oriental Weapon&Armor.esp")'
@@ -22417,9 +22116,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) RedguardKnight.esp'
-        condition: 'file("RedguardKnight.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить RedguardKnight.esp'
         condition: 'file("RedguardKnight.esp")'
@@ -22437,9 +22133,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) RegentSword.esp'
-        condition: 'file("RegentSword.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить RegentSword.esp'
         condition: 'file("RegentSword.esp")'
@@ -22457,9 +22150,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Scoiatael Weapons.esp'
-        condition: 'active("Scoiatael Weapons.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Scoiatael Weapons.esp'
         condition: 'active("Scoiatael Weapons.esp")'
@@ -22477,9 +22167,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) VagabondArmor.esp'
-        condition: 'active("VagabondArmor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить VagabondArmor.esp'
         condition: 'active("VagabondArmor.esp")'
@@ -22497,9 +22184,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) VanguardArmor.esp'
-        condition: 'active("VanguardArmor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить VanguardArmor.esp'
         condition: 'active("VanguardArmor.esp")'
@@ -22509,9 +22193,6 @@ plugins:
         content:
           - lang: eng
             str: 'You need to rename "viciousdawnbreaker.bsa" to "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" or this mod won''t work.'
-        condition: 'not file("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Вам нужно переименовать "viciousdawnbreaker.bsa" в "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" или этот мод не будет работать.'
         condition: 'not file("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa")'
@@ -22519,9 +22200,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) viciousdawnbreaker.esp'
-        condition: 'active("viciousdawnbreaker.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить viciousdawnbreaker.esp'
         condition: 'active("viciousdawnbreaker.esp")'
@@ -22547,9 +22225,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) warchiefarmor.esp'
-        condition: 'active("warchiefarmor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить warchiefarmor.esp'
         condition: 'active("warchiefarmor.esp")'
@@ -22576,9 +22251,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Dread Knight Weapon Set.esp'
-        condition: 'active("Dread Knight Weapon Set.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить мод Dread Knight Weapon.esp'
         condition: 'active("Dread Knight Weapon Set.esp")'
@@ -22596,9 +22268,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Avatar of Baltazar.esp'
-        condition: 'active("Avatar of Baltazar.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Avatar of Baltazar.esp'
         condition: 'active("Avatar of Baltazar.esp")'
@@ -22616,9 +22285,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Avatar of Grenth.esp'
-        condition: 'active("Avatar of Grenth.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Avatar of Grenth.esp'
         condition: 'active("Avatar of Grenth.esp")'
@@ -22636,9 +22302,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Black Mage Armor.esp'
-        condition: 'active("Black Mage Armor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Black Mage Armor.esp'
         condition: 'active("Black Mage Armor.esp")'
@@ -22656,9 +22319,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Chainmailhauberks 1.1.esp'
-        condition: 'active("Chainmailhauberks 1.1.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Chainmailhauberks 1.1.esp'
         condition: 'active("Chainmailhauberks 1.1.esp")'
@@ -22682,9 +22342,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Song General Armor&weapon.esp'
-        condition: 'active("Song General Armor&weapon.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Song General Armor&weapon.esp'
         condition: 'active("Song General Armor&weapon.esp")'
@@ -22702,9 +22359,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Song General Armor&weapon.esp'
-        condition: 'active("SkyRe Chinese General Set - Realistic.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Song General Armor&weapon.esp'
         condition: 'active("SkyRe Chinese General Set - Realistic.esp")'
@@ -22739,9 +22393,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) DarkNemesis.esp'
-        condition: '( active("DarkNemesis.esp") ) and not checksum("DarkNemesis.esp",CE5E555B)'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить DarkNemesis.esp'
         condition: '( active("DarkNemesis.esp") ) and not checksum("DarkNemesis.esp",CE5E555B)'
@@ -22759,9 +22410,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) DarkNemesis.esp'
-        condition: '( active("Divine Aegis.esp") ) and not checksum("DarkNemesis.esp",CE5E555B)'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить DarkNemesis.esp'
         condition: '( active("Divine Aegis.esp") ) and not checksum("DarkNemesis.esp",CE5E555B)'
@@ -22788,9 +22436,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete)'
-        condition: 'active("EternalShineArmorAndWeapons.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить'
         condition: 'active("EternalShineArmorAndWeapons.esp")'
@@ -22800,9 +22445,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Guardian Plate Armor.esp'
-        condition: 'active("Guardian Plate Armor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Guardian Plate Armor.esp'
         condition: 'active("Guardian Plate Armor.esp")'
@@ -22820,9 +22462,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) HeroicDwarven.esp'
-        condition: 'active("HeroicDwarven.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить HeroicDwarven.esp'
         condition: 'active("HeroicDwarven.esp")'
@@ -22840,9 +22479,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) dfnkt-IronArmorSleeves-Craftable.esp'
-        condition: 'active("dfnkt-IronArmorSleeves-Craftable.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить dfnkt-IronArmorSleeves-Craftable.esp'
         condition: 'active("dfnkt-IronArmorSleeves-Craftable.esp")'
@@ -22860,9 +22496,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp'
-        condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp'
         condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
@@ -22880,9 +22513,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp'
-        condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp'
         condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
@@ -22900,9 +22530,6 @@ plugins:
         content:
           - lang: eng
             str: 'You need to rename "Matys Mithril armor Enhanced.bsa" to "SkyRe Mithril Armor.bsa" or this mod won''t work.'
-        condition: 'not file("SkyRe Mithril Armor.bsa")'
-      - type: warn
-        content:
           - lang: rus
             str: 'Вам нужно переименовать "Matys Mithril armor Enhanced.bsa" в "SkyRe Mithril Armor.bsa" или этот мод не будет работать.'
         condition: 'not file("SkyRe Mithril Armor.bsa")'
@@ -22910,9 +22537,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Matys Mithril armor Enhanced.esp'
-        condition: 'active("Matys Mithril armor Enhanced.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Matys Mithril armor Enhanced.esp'
         condition: 'active("Matys Mithril armor Enhanced.esp")'
@@ -22930,9 +22554,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Mystic.esp'
-        condition: 'active("Mystic.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Mystic.esp'
         condition: 'active("Mystic.esp")'
@@ -22950,9 +22571,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Nordic Conqueror Armor.esp'
-        condition: 'active("Nordic Conqueror Armor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Nordic Conqueror Armor.esp'
         condition: 'active("Nordic Conqueror Armor.esp")'
@@ -22979,9 +22597,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) Nordic Conqueror Armor.esp'
-        condition: 'active("Nordic Conqueror Armor.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить Nordic Conqueror Armor.esp'
         condition: 'active("Nordic Conqueror Armor.esp")'
@@ -22999,9 +22614,6 @@ plugins:
         content:
           - lang: eng
             str: 'Remember not to load (or to simply delete) theRoadstrokersRogueSorceress.esp'
-        condition: 'active("theRoadstrokersRogueSorceress.esp")'
-      - type: say
-        content:
           - lang: rus
             str: 'Не забудьте отключить или удалить theRoadstrokersRogueSorceress.esp'
         condition: 'active("theRoadstrokersRogueSorceress.esp")'
