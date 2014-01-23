@@ -753,14 +753,14 @@ plugins:
         condition: 'checksum("ClimatesOfTamriel.esm", C30AB34E)'
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the [updated plugin](http://www.nexusmods.com/skyrim/mods/17802).'
       - type: warn
-        condition: '( file("SoS - Civilization.esp") ) and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        condition: 'file("SoS - Civilization.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
         content:
           - lang: eng
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
           - lang: rus
             str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
       - type: warn
-        condition: '( file("SoS - The Wilds.esp") ) and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        condition: 'file("SoS - The Wilds.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
         content:
           - lang: eng
             str: 'Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
@@ -8135,17 +8135,17 @@ plugins:
         content:
           - lang: eng
             str: 'For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.'
-        condition: '( regex("Smithing Perks Overhaul( - Balanced)?\.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'regex("Smithing Perks Overhaul( - Balanced)?\.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Для использующих 'WAF+SPO+CCO'. Конфликтов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.'
-        condition: '( regex("Smithing Perks Overhaul( - Balanced)?\.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'regex("Smithing Perks Overhaul( - Balanced)?\.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Para los que utilizen 'WAF+SPO+CCO'. No tiene conflictos con 'Smithing Perks Overhaul' o 'Complete Crafting Overhaul'.'
-        condition: '( regex("Smithing Perks Overhaul( - Balanced)?\.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'regex("Smithing Perks Overhaul( - Balanced)?\.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
 # Vanilla fixes. Must be load here (and also for CCO and SPO), to prevent
 # overrides for new changes from mods in Base group. Too many conflicts
 # with other mods in Base group.
@@ -8636,17 +8636,17 @@ plugins:
         content:
           - lang: eng
             str: 'Delete. Already included in Complete Crafting Overhaul.'
-        condition: '( file("Arrowsmith.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'file("Arrowsmith.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: error
         content:
           - lang: rus
             str: 'Удалите. Уже включен в мод Complete Crafting Overhaul.'
-        condition: '( file("Arrowsmith.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'file("Arrowsmith.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: error
         content:
           - lang: spa
             str: 'Borrar. Ya esta incluido en Complete Crafting Overhaul.'
-        condition: '( file("Arrowsmith.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'file("Arrowsmith.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
 # Not sure but SkyRe_Main.esp is requires the Dawnguard DLC and includes Arrowsmith.esp
   - name: 'arrowsmith-dawnguard.esp'
     inc:
@@ -8686,17 +8686,17 @@ plugins:
         content:
           - lang: eng
             str: 'Delete. arrowsmith-dawnguard.esp already included in Complete Crafting Overhaul.'
-        condition: '( file("arrowsmith-dawnguard.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'file("arrowsmith-dawnguard.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: error
         content:
           - lang: rus
             str: 'Удалите. arrowsmith-dawnguard.esp уже включен в мод Complete Crafting Overhaul.'
-        condition: '( file("arrowsmith-dawnguard.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'file("arrowsmith-dawnguard.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: error
         content:
           - lang: spa
             str: 'Borrar. Ya esta incluido en Complete Crafting Overhaul.'
-        condition: '( file("arrowsmith-dawnguard.esp") ) and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'file("arrowsmith-dawnguard.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
   - name: 'arrowboltupgrades.esp'
     msg:
       - type: error
@@ -13722,17 +13722,17 @@ plugins:
         content:
           - lang: eng
             str: 'Uninstall Unique BOOZE Bottles.'
-        condition: '( file("Radiant and Unique Potions Poisons and BOOZE.esp") ) and regex("Unique BOOZE Bottles.*\.esp")'
+        condition: 'file("Radiant and Unique Potions Poisons and BOOZE.esp") and regex("Unique BOOZE Bottles.*\.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Деинсталируйте Unique BOOZE Bottles.'
-        condition: '( file("Radiant and Unique Potions Poisons and BOOZE.esp") ) and regex("Unique BOOZE Bottles.*\.esp")'
+        condition: 'file("Radiant and Unique Potions Poisons and BOOZE.esp") and regex("Unique BOOZE Bottles.*\.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Desinstala Unique BOOZE Bottles.'
-        condition: '( file("Radiant and Unique Potions Poisons and BOOZE.esp") ) and regex("Unique BOOZE Bottles.*\.esp")'
+        condition: 'file("Radiant and Unique Potions Poisons and BOOZE.esp") and regex("Unique BOOZE Bottles.*\.esp")'
   - name: 'Raw Food Alchemy (DG HF DB) .esp'
     msg:
       - type: error
@@ -15301,17 +15301,17 @@ plugins:
         content:
           - lang: eng
             str: 'Use Wolfs_*_Recipes esps or WolfsRecettes* esps, not both.'
-        condition: '( regex("Wolfs_.+_Recipes\.esp") ) and regex("WolfsRecettes.+\.esp")'
+        condition: 'regex("Wolfs_.+_Recipes\.esp") and regex("WolfsRecettes.+\.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте Wolfs_*_Recipes esps или WolfsRecettes* esps, не не вместе.'
-        condition: '( regex("Wolfs_.+_Recipes\.esp") ) and regex("WolfsRecettes.+\.esp")'
+        condition: 'regex("Wolfs_.+_Recipes\.esp") and regex("WolfsRecettes.+\.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Usar Wolfs_*_Recipes esps o WolfsRecettes* esps, no ambos.'
-        condition: '( regex("Wolfs_.+_Recipes\.esp") ) and regex("WolfsRecettes.+\.esp")'
+        condition: 'regex("Wolfs_.+_Recipes\.esp") and regex("WolfsRecettes.+\.esp")'
   - name: 'Woodcutter''s Wife.esp'
     dirty:
       - crc: 0xc6e9683
@@ -20352,17 +20352,17 @@ plugins:
         content:
           - lang: eng
             str: 'Delete. Already included in JackshShop.esm.'
-        condition: '( file("JackshShop.esm") ) and regex("Jacksh(BabyDoll|Zephie|Secretary|SailorV|BlackCrusaders)\.esp")'
+        condition: 'file("JackshShop.esm") and regex("Jacksh(BabyDoll|Zephie|Secretary|SailorV|BlackCrusaders)\.esp")'
       - type: error
         content:
           - lang: rus
             str: 'Удалите. Уже включено в JackshShop.esm.'
-        condition: '( file("JackshShop.esm") ) and regex("Jacksh(BabyDoll|Zephie|Secretary|SailorV|BlackCrusaders)\.esp")'
+        condition: 'file("JackshShop.esm") and regex("Jacksh(BabyDoll|Zephie|Secretary|SailorV|BlackCrusaders)\.esp")'
       - type: error
         content:
           - lang: spa
             str: 'Borrar. Esta incluido en JackshShop.esm.'
-        condition: '( file("JackshShop.esm") ) and regex("Jacksh(BabyDoll|Zephie|Secretary|SailorV|BlackCrusaders)\.esp")'
+        condition: 'file("JackshShop.esm") and regex("Jacksh(BabyDoll|Zephie|Secretary|SailorV|BlackCrusaders)\.esp")'
   - name: 'Jaredschons&D13AdvancedDwarvenBowv2.esp'
     msg:
       - type: say
@@ -24487,7 +24487,7 @@ plugins:
         condition: 'not active("Dawnguard.esm")'
       - type: say
         content: 'Use only 1 Better Sorting by eclips3 - Soul Gem .esp file'
-        condition: '( active("Better Sorting by eclips3 - Soul Gems (Named).esp") ) and active("Better Sorting by eclips3 - Soul Gems (Numbered).esp")'
+        condition: 'active("Better Sorting by eclips3 - Soul Gems (Named).esp") and active("Better Sorting by eclips3 - Soul Gems (Numbered).esp")'
   - name: 'Better Sorting by eclips3 - Books .+\.esp'
     msg:
       - type: error
@@ -24507,7 +24507,7 @@ plugins:
         condition: 'not active("Dawnguard.esm")'
       - type: say
         content: 'Use only 1 Better Sorting by eclips3 - Books .esp file'
-        condition: '( active("Better Sorting by eclips3 - Books (Before).esp") ) and active("Better Sorting by eclips3 - Books (After).esp")'
+        condition: 'active("Better Sorting by eclips3 - Books (Before).esp") and active("Better Sorting by eclips3 - Books (After).esp")'
   - name: 'Better Sorting by eclips3 - Food .+\.esp'
     msg:
       - type: error
@@ -24727,12 +24727,12 @@ plugins:
         content:
           - lang: eng
             str: 'Use only BS-version for Better Sorting.'
-        condition: '( regex("(Headbomb''s )?Better Sorting.*\.esp") ) and file("Complete Crafting Overhaul.esp")'
+        condition: 'regex("(Headbomb''s )?Better Sorting.*\.esp") and file("Complete Crafting Overhaul.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Для Better Sorting используйте только BS-версию.'
-        condition: '( regex("(Headbomb''s )?Better Sorting.*\.esp") ) and file("Complete Crafting Overhaul.esp")'
+        condition: 'regex("(Headbomb''s )?Better Sorting.*\.esp") and file("Complete Crafting Overhaul.esp")'
       - type: warn
         content:
           - lang: eng
@@ -25947,12 +25947,12 @@ plugins:
         content:
           - lang: eng
             str: 'Use the [compatibility patch](http://www.nexusmods.com/skyrim/mods/13423) for deadly dragons.'
-        condition: '( regex("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") ) and not regex("MD with DeadlyD and DDiversified( Unleveled)?\.esp")'
+        condition: 'regex("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") and not regex("MD with DeadlyD and DDiversified( Unleveled)?\.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Используйте [патч совместимости](http://www.nexusmods.com/skyrim/mods/13423) для мода Deadly Dragons.'
-        condition: '( regex("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") ) and not regex("MD with DeadlyD and DDiversified( Unleveled)?\.esp")'
+        condition: 'regex("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") and not regex("MD with DeadlyD and DDiversified( Unleveled)?\.esp")'
     tag:
       - Delev
       - Relev
@@ -27176,12 +27176,12 @@ plugins:
         content:
           - lang: eng
             str: 'You need the SkyRe compatibility patch for this to work as intended with SkyRe.'
-        condition: '( regex("SkyRe_.+\.esp") ) and not file("SkyRe_Plugin_Morrowloot.esp")'
+        condition: 'regex("SkyRe_.+\.esp") and not file("SkyRe_Plugin_Morrowloot.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Вам нужно установить патч совместимости для правильной работы мода с SkyRe.'
-        condition: '( regex("SkyRe_.+\.esp") ) and not file("SkyRe_Plugin_Morrowloot.esp")'
+        condition: 'regex("SkyRe_.+\.esp") and not file("SkyRe_Plugin_Morrowloot.esp")'
     tag:
       - Delev
       - Relev
@@ -32349,7 +32349,7 @@ plugins:
     msg:
       - type: warn
         content: 'If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.'
-        condition: '( active("Dragonborn.esm") ) and not file("DA_Skyship_Dragonborn.esp")'
+        condition: 'active("Dragonborn.esm") and not file("DA_Skyship_Dragonborn.esp")'
     dirty:
       - crc: 0x5b03bf9a
         util: *dirtyUtil
@@ -46667,17 +46667,17 @@ plugins:
         content:
           - lang: eng
             str: 'Uninstall old version of Skyrim Flora Overhaul if using SFO - Expanded Diversity.esp'
-        condition: '( active("SFO - Expanded Diversity.esp") ) and active("Skyrim Flora Overhaul.esp")'
+        condition: 'active("SFO - Expanded Diversity.esp") and active("Skyrim Flora Overhaul.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Удалите старую версию Skyrim Flora Overhaul, если используется SFO - Expanded Diversity.esp.'
-        condition: '( active("SFO - Expanded Diversity.esp") ) and active("Skyrim Flora Overhaul.esp")'
+        condition: 'active("SFO - Expanded Diversity.esp") and active("Skyrim Flora Overhaul.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Uninstall old version of Skyrim Flora Overhaul if using SFO - Expanded Diversity.esp'
-        condition: '( active("SFO - Expanded Diversity.esp") ) and active("Skyrim Flora Overhaul.esp")'
+        condition: 'active("SFO - Expanded Diversity.esp") and active("Skyrim Flora Overhaul.esp")'
     dirty:
       - crc: 0x2a0f1313
         util: *dirtyUtil
@@ -48217,12 +48217,12 @@ plugins:
         content:
           - lang: eng
             str: 'Use vanillaarcheryimproveddawnguard.esp instead'
-        condition: '( active("Dawnguard.esm") ) and not file("vanillaarcheryimproveddawnguard.esp")'
+        condition: 'active("Dawnguard.esm") and not file("vanillaarcheryimproveddawnguard.esp")'
       - type: error
         content:
           - lang: rus
             str: 'Используйте вместо этого vanillaarcheryimproveddawnguard.esp'
-        condition: '( active("Dawnguard.esm") ) and not file("vanillaarcheryimproveddawnguard.esp")'
+        condition: 'active("Dawnguard.esm") and not file("vanillaarcheryimproveddawnguard.esp")'
   - name: 'vanillaarcheryimproveddawnguard.esp'
     msg:
       - type: warn
@@ -48651,17 +48651,17 @@ plugins:
         content:
           - lang: eng
             str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)'
-        condition: '( file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") ) and not active("Dawnguard.esm")'
+        condition: 'file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: rus
             str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)'
-        condition: '( file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") ) and not active("Dawnguard.esm")'
+        condition: 'file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: spa
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
-        condition: '( file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") ) and not active("Dawnguard.esm")'
+        condition: 'file("WeaponsArmorFixes_MultiMod_DLCPatch.esp") and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: eng
@@ -56650,17 +56650,17 @@ plugins:
         content:
           - lang: eng
             str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)'
-        condition: '( file("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") ) and not active("Dawnguard.esm")'
+        condition: 'file("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: rus
             str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)'
-        condition: '( file("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") ) and not active("Dawnguard.esm")'
+        condition: 'file("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: spa
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
-        condition: '( file("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") ) and not active("Dawnguard.esm")'
+        condition: 'file("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") and not active("Dawnguard.esm")'
   - name: 'Duel2_ArmorRating.esp'
     inc:
       - 'Duel_Master.esp'
@@ -67993,27 +67993,27 @@ plugins:
         content:
           - lang: eng
             str: 'Incompatible with: Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.'
-        condition: '( file("Better Follower Improvements.esp") ) and regex("Better Followers - [SBNP].*\.esp")'
+        condition: 'file("Better Follower Improvements.esp") and regex("Better Followers - [SBNP].*\.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Несовместим с: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.'
-        condition: '( file("Better Follower Improvements.esp") ) and regex("Better Followers - [SBNP].*\.esp")'
+        condition: 'file("Better Follower Improvements.esp") and regex("Better Followers - [SBNP].*\.esp")'
       - type: warn
         content:
           - lang: eng
             str: 'Use only one move it esp.'
-        condition: '( regex("move.?it\.esp") ) and file("moveitLWT.esp")'
+        condition: 'regex("move.?it\.esp") and file("moveitLWT.esp")'
       - type: warn
         content:
           - lang: rus
             str: 'Используйте только один nnn esp.'
-        condition: '( regex("move.?it\.esp") ) and file("moveitLWT.esp")'
+        condition: 'regex("move.?it\.esp") and file("moveitLWT.esp")'
       - type: warn
         content:
           - lang: spa
             str: 'Utilizar solo un move it esp.'
-        condition: '( regex("move.?it\.esp") ) and file("moveitLWT.esp")'
+        condition: 'regex("move.?it\.esp") and file("moveitLWT.esp")'
   - name: 'HugMe.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
@@ -71280,17 +71280,17 @@ plugins:
         content:
           - lang: eng
             str: '1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("Compatibility patch - PHL, CoS, WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility patch - PHL, CoS, WIC IA.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: rus
             str: '1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-        condition: '( file("Compatibility patch - PHL, CoS, WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility patch - PHL, CoS, WIC IA.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: spa
             str: '1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: '( file("Compatibility patch - PHL, CoS, WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility patch - PHL, CoS, WIC IA.esp") and not active("1nivWICCloaks.esp")'
   - name: 'Compatibility Patch - (PHL WIC|PHL, CoS WIC)\.esp'
     msg:
       - type: error
@@ -71327,32 +71327,32 @@ plugins:
         content:
           - lang: eng
             str: 'Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("Compatibility Patch - PHL, CoS WIC.esp") ) and not active("Cloaks.esp")'
+        condition: 'file("Compatibility Patch - PHL, CoS WIC.esp") and not active("Cloaks.esp")'
       - type: error
         content:
           - lang: rus
             str: 'Cloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-        condition: '( file("Compatibility Patch - PHL, CoS WIC.esp") ) and not active("Cloaks.esp")'
+        condition: 'file("Compatibility Patch - PHL, CoS WIC.esp") and not active("Cloaks.esp")'
       - type: error
         content:
           - lang: spa
             str: 'Cloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: '( file("Compatibility Patch - PHL, CoS WIC.esp") ) and not active("Cloaks.esp")'
+        condition: 'file("Compatibility Patch - PHL, CoS WIC.esp") and not active("Cloaks.esp")'
       - type: error
         content:
           - lang: eng
             str: '1nivWICSkyCloaksPatch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("Compatibility Patch - PHL, CoS WIC.esp") ) and not active("1nivWICSkyCloaksPatch.esp")'
+        condition: 'file("Compatibility Patch - PHL, CoS WIC.esp") and not active("1nivWICSkyCloaksPatch.esp")'
       - type: error
         content:
           - lang: rus
             str: '1nivWICSkyCloaksPatch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-        condition: '( file("Compatibility Patch - PHL, CoS WIC.esp") ) and not active("1nivWICSkyCloaksPatch.esp")'
+        condition: 'file("Compatibility Patch - PHL, CoS WIC.esp") and not active("1nivWICSkyCloaksPatch.esp")'
       - type: error
         content:
           - lang: spa
             str: '1nivWICSkyCloaksPatch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: '( file("Compatibility Patch - PHL, CoS WIC.esp") ) and not active("1nivWICSkyCloaksPatch.esp")'
+        condition: 'file("Compatibility Patch - PHL, CoS WIC.esp") and not active("1nivWICSkyCloaksPatch.esp")'
   - name: 'Compatibility Patch - (PHL & Immersive armor|PHL IA|PHL WIC IA)\.esp'
     msg:
       - type: error
@@ -71389,17 +71389,17 @@ plugins:
         content:
           - lang: eng
             str: '1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("Compatibility Patch - PHL WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility Patch - PHL WIC IA.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: rus
             str: '1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-        condition: '( file("Compatibility Patch - PHL WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility Patch - PHL WIC IA.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: spa
             str: '1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: '( file("Compatibility Patch - PHL WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility Patch - PHL WIC IA.esp") and not active("1nivWICCloaks.esp")'
   - name: 'Compatibility Patch - (PHT & Cloaks of Skyrim|PHT CoS)\.esp'
     msg:
       - type: error
@@ -71483,32 +71483,32 @@ plugins:
         content:
           - lang: eng
             str: '1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("Compatibility patch - PHT, IA, CoS & WIC.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility patch - PHT, IA, CoS & WIC.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: rus
             str: '1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-        condition: '( file("Compatibility patch - PHT, IA, CoS & WIC.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility patch - PHT, IA, CoS & WIC.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: spa
             str: '1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: '( file("Compatibility patch - PHT, IA, CoS & WIC.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility patch - PHT, IA, CoS & WIC.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: eng
             str: '1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("Compatibility patch - PHT, CoS, WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility patch - PHT, CoS, WIC IA.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: rus
             str: '1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-        condition: '( file("Compatibility patch - PHT, CoS, WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility patch - PHT, CoS, WIC IA.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: spa
             str: '1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: '( file("Compatibility patch - PHT, CoS, WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility patch - PHT, CoS, WIC IA.esp") and not active("1nivWICCloaks.esp")'
   - name: 'Compatibility Patch - (PHT, CoS & WIC|PHT, CoS WIC)\.esp'
     msg:
       - type: error
@@ -71560,17 +71560,17 @@ plugins:
         content:
           - lang: eng
             str: '1nivWICSkyCloaksPatch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("Compatibility Patch - PHT, CoS WIC.esp") ) and not active("1nivWICSkyCloaksPatch.esp")'
+        condition: 'file("Compatibility Patch - PHT, CoS WIC.esp") and not active("1nivWICSkyCloaksPatch.esp")'
       - type: error
         content:
           - lang: rus
             str: '1nivWICSkyCloaksPatch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-        condition: '( file("Compatibility Patch - PHT, CoS WIC.esp") ) and not active("1nivWICSkyCloaksPatch.esp")'
+        condition: 'file("Compatibility Patch - PHT, CoS WIC.esp") and not active("1nivWICSkyCloaksPatch.esp")'
       - type: error
         content:
           - lang: spa
             str: '1nivWICSkyCloaksPatch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: '( file("Compatibility Patch - PHT, CoS WIC.esp") ) and not active("1nivWICSkyCloaksPatch.esp")'
+        condition: 'file("Compatibility Patch - PHT, CoS WIC.esp") and not active("1nivWICSkyCloaksPatch.esp")'
   - name: 'Compatibility Patch - (PHT & Immersive armor|PHT IA|PHT WIC IA)\.esp'
     msg:
       - type: error
@@ -71607,17 +71607,17 @@ plugins:
         content:
           - lang: eng
             str: '1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("Compatibility Patch - PHT WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility Patch - PHT WIC IA.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: rus
             str: '1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-        condition: '( file("Compatibility Patch - PHT WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility Patch - PHT WIC IA.esp") and not active("1nivWICCloaks.esp")'
       - type: error
         content:
           - lang: spa
             str: '1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: '( file("Compatibility Patch - PHT WIC IA.esp") ) and not active("1nivWICCloaks.esp")'
+        condition: 'file("Compatibility Patch - PHT WIC IA.esp") and not active("1nivWICCloaks.esp")'
   - name: 'Compatibility Patch - (PHT & WIC|PHT WIC)\.esp'
     msg:
       - type: error
@@ -71767,22 +71767,22 @@ plugins:
         content:
           - lang: eng
             str: 'Omegared99-Compilation.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("HelmetToggle - Omegared99ArmorCompilation Patch.esp") ) and not active("Omegared99-Compilation.esm")'
+        condition: 'file("HelmetToggle - Omegared99ArmorCompilation Patch.esp") and not active("Omegared99-Compilation.esm")'
       - type: error
         content:
           - lang: rus
             str: 'Omegared99-Compilation.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-        condition: '( file("HelmetToggle - Omegared99ArmorCompilation Patch.esp") ) and not active("Omegared99-Compilation.esm")'
+        condition: 'file("HelmetToggle - Omegared99ArmorCompilation Patch.esp") and not active("Omegared99-Compilation.esm")'
       - type: error
         content:
           - lang: spa
             str: 'Omegared99-Compilation.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: '( file("HelmetToggle - Omegared99ArmorCompilation Patch.esp") ) and not active("Omegared99-Compilation.esm")'
+        condition: 'file("HelmetToggle - Omegared99ArmorCompilation Patch.esp") and not active("Omegared99-Compilation.esm")'
       - type: error
         content:
           - lang: eng
             str: 'DeadlyDragonsArmory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-        condition: '( file("Helmet Toggle - Deadly Dragons Armory Patch.esp") ) and not active("DeadlyDragonsArmory.esp")'
+        condition: 'file("Helmet Toggle - Deadly Dragons Armory Patch.esp") and not active("DeadlyDragonsArmory.esp")'
       - type: error
         content:
           - lang: rus
