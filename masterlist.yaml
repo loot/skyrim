@@ -8328,94 +8328,25 @@ plugins:
         itm: 1
         udr: 1
   - name: 'Expensive Transports 5x.esp'
-    msg:
-      - type: error
-        content:
-          - lang: rus
-            str: 'Use Dawnguard version.'
-        condition: '( checksum("Expensive Transports 5x.esp",508E4CE3) ) and active("Dawnguard.esm")'
-      - type: error
-        content:
-          - lang: spa
-            str: 'Utilizar la versión para Dawnguard.'
-          - lang: rus
-            str: 'Use non-Dawnguard version.'
-          - lang: spa
-            str: 'Utilizar la versión que no requiere Dawnguard.'
-        condition: '( checksum("Expensive Transports 5x.esp",58CC3897) ) and not active("Dawnguard.esm")'
+    inc:
+      - 'Expensive Transports 10x.esp'
+      - 'Expensive Transports 10x Linear.esp'
+      - 'Expensive Transports 20x.esp'
   - name: 'Expensive Transports 10x.esp'
-    msg:
-      - type: error
-        content:
-          - lang: rus
-            str: 'Use Dawnguard version.'
-        condition: '( checksum("Expensive Transports 10x.esp",519298F9) ) and active("Dawnguard.esm")'
-      - type: error
-        content:
-          - lang: spa
-            str: 'Utilizar la versión para Dawnguard.'
-          - lang: rus
-            str: 'Use non-Dawnguard version.'
-          - lang: spa
-            str: 'Utilizar la versión que no requiere Dawnguard.'
-        condition: '( checksum("Expensive Transports 10x.esp",9AE20AC6) ) and not active("Dawnguard.esm")'
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use only one Expensive Transports *.esp.'
-          - lang: rus
-            str: 'Используйте только один Expensive Transports *.esp.'
-          - lang: spa
-            str: 'Utilizar solo un nnn Expensive Transports *.esp.'
-        condition: 'file("Expensive Transports 5x.esp")'
+    inc:
+      - 'Expensive Transports 5x.esp'
+      - 'Expensive Transports 10x Linear.esp'
+      - 'Expensive Transports 20x.esp'
   - name: 'Expensive Transports 10x Linear.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
-        condition: 'not active("Dawnguard.esm")'
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use only one Expensive Transports *.esp.'
-          - lang: rus
-            str: 'Используйте только один Expensive Transports *.esp.'
-        condition: '( file("Expensive Transports 5x.esp") ) or file("Expensive Transports 10x.esp")'
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Utilizar solo un nnn Expensive Transports *.esp.'
-        condition: '( file("Expensive Transports 5x.esp") ) or file("Expensive Transports 10x.esp")'
+    inc:
+      - 'Expensive Transports 5x.esp'
+      - 'Expensive Transports 10x.esp'
+      - 'Expensive Transports 20x.esp'
   - name: 'Expensive Transports 20x.esp'
-    msg:
-      - type: error
-        content:
-          - lang: rus
-            str: 'Use Dawnguard version.'
-        condition: '( checksum("Expensive Transports 20x.esp",F88C8F09) ) and active("Dawnguard.esm")'
-      - type: error
-        content:
-          - lang: spa
-            str: 'Utilizar la versión para Dawnguard.'
-          - lang: rus
-            str: 'Use non-Dawnguard version.'
-          - lang: spa
-            str: 'Utilizar la versión que no requiere Dawnguard.'
-        condition: '( checksum("Expensive Transports 20x.esp",EA972067) ) and not active("Dawnguard.esm")'
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use only one Expensive Transports *.esp.'
-          - lang: rus
-            str: 'Используйте только один Expensive Transports *.esp.'
-          - lang: spa
-            str: 'Utilizar solo un nnn Expensive Transports *.esp.'
-        condition: 'file("Expensive Transports 5x.esp") or file("Expensive Transports 10x.esp") or file("Expensive Transports 10x Linear.esp")'
+    inc:
+      - 'Expensive Transports 5x.esp'
+      - 'Expensive Transports 10x.esp'
+      - 'Expensive Transports 10x Linear.esp'
   - name: 'Extra Encounters V1.0.esp'
     msg:
       - type: say
