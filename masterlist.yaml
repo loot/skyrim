@@ -551,17 +551,17 @@ plugins:
         content:
           - lang: eng
             str: 'Obsolete. Update to latest version. (The esm version produces a massive conflict error which can result in having no dialog.)'
-        condition: '( checksum("AP Skyrim.esm",857D5AAC) ) or checksum("AP Skyrim.esm",CBE8B5C2)'
+        condition: 'checksum("AP Skyrim.esm",857D5AAC) or checksum("AP Skyrim.esm",CBE8B5C2)'
       - type: say
         content:
           - lang: rus
             str: 'Устарело. Обновите до последней версии. (Esm-версия приводит к многочисленным ошибкам, которые могут привести к отсутствию диалогов.)'
-        condition: '( checksum("AP Skyrim.esm",857D5AAC) ) or checksum("AP Skyrim.esm",CBE8B5C2)'
+        condition: 'checksum("AP Skyrim.esm",857D5AAC) or checksum("AP Skyrim.esm",CBE8B5C2)'
       - type: say
         content:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( checksum("AP Skyrim.esm",857D5AAC) ) or checksum("AP Skyrim.esm",CBE8B5C2)'
+        condition: 'checksum("AP Skyrim.esm",857D5AAC) or checksum("AP Skyrim.esm",CBE8B5C2)'
   - name: 'archmageTrophyhall.esm'
     dirty:
       - crc: 0xf788fdf0
@@ -1351,7 +1351,7 @@ plugins:
   - name: 'JSwords.esm'
     msg:
       - type: warn
-        condition: '( checksum("JSwords.esm",5C5F1687) ) or checksum("JSwords.esm",58016F83)'
+        condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
@@ -7211,7 +7211,7 @@ plugins:
     msg:
       - type: warn
         content: 'This mod appears to have a duplicated cell. You may encounter 'weirdness' in the Riften Ratway.'
-        condition: '( checksum("better_torches.esp",9F5EA6E6) ) or checksum("better_torches.esp",96F75656)'
+        condition: 'checksum("better_torches.esp",9F5EA6E6) or checksum("better_torches.esp",96F75656)'
     dirty:
       - crc: 0x9f5ea6e6
         util: *dirtyUtil
@@ -7220,7 +7220,7 @@ plugins:
     msg:
       - type: warn
         content: 'This mod appears to have a duplicated cell. You may encounter 'weirdness' in the Riften Ratway.'
-        condition: '( checksum("better_torches_brighter_torchlight.esp",9BEBAD4D) ) or checksum("better_torches_brighter_torchlight.esp",CB5777CE)'
+        condition: 'checksum("better_torches_brighter_torchlight.esp",9BEBAD4D) or checksum("better_torches_brighter_torchlight.esp",CB5777CE)'
       - type: warn
         content:
           - lang: eng
@@ -8604,17 +8604,17 @@ plugins:
         content:
           - lang: eng
             str: 'Obsolete. Update to latest version.'
-        condition: '( checksum("arrowcrafting.esp",8E307ED0) ) or checksum("arrowcrafting.esp",D15AE0C5)'
+        condition: 'checksum("arrowcrafting.esp",8E307ED0) or checksum("arrowcrafting.esp",D15AE0C5)'
       - type: say
         content:
           - lang: rus
             str: 'Устарело. Обновите до последней версии.'
-        condition: '( checksum("arrowcrafting.esp",8E307ED0) ) or checksum("arrowcrafting.esp",D15AE0C5)'
+        condition: 'checksum("arrowcrafting.esp",8E307ED0) or checksum("arrowcrafting.esp",D15AE0C5)'
       - type: say
         content:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( checksum("arrowcrafting.esp",8E307ED0) ) or checksum("arrowcrafting.esp",D15AE0C5)'
+        condition: 'checksum("arrowcrafting.esp",8E307ED0) or checksum("arrowcrafting.esp",D15AE0C5)'
   - name: 'Arrowsmith\w{0,2}\.esp'
     msg:
       - type: error
@@ -24467,7 +24467,7 @@ plugins:
         condition: 'not active("Dawnguard.esm")'
       - type: say
         content: 'Use only 1 Better Sorting by eclips3 - Ingredients .esp file'
-        condition: '( ( active("Better Sorting by eclips3 - Ingredients (Weightless).esp") ) or active("Better Sorting by eclips3 - Ingredients (Vanilla Weight).esp") ) or active("Better Sorting by eclips3 - Ingredients (Light Weight).esp")'
+        condition: 'active("Better Sorting by eclips3 - Ingredients (Weightless).esp") or active("Better Sorting by eclips3 - Ingredients (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Ingredients (Light Weight).esp")'
   - name: 'Better Sorting by eclips3 - Soul Gems .+\.esp'
     msg:
       - type: error
@@ -24527,7 +24527,7 @@ plugins:
         condition: 'not active("Dawnguard.esm")'
       - type: say
         content: 'Use only 1 Better Sorting by eclips3 - Food .esp file'
-        condition: '( ( active("Better Sorting by eclips3 - Food (Weightless).esp") ) or active("Better Sorting by eclips3 - Food (Vanilla Weight).esp") ) or active("Better Sorting by eclips3 - Food (Light Weight).esp")'
+        condition: 'active("Better Sorting by eclips3 - Food (Weightless).esp") or active("Better Sorting by eclips3 - Food (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Food (Light Weight).esp")'
   - name: 'Better Sorting by eclips3 - Potions .+\.esp'
     msg:
       - type: error
@@ -24547,7 +24547,7 @@ plugins:
         condition: 'not active("Dawnguard.esm")'
       - type: say
         content: 'Use only 1 Better Sorting by eclips3 - Potions .esp file'
-        condition: '( ( active("Better Sorting by eclips3 - Potions (Weightless).esp") ) or active("Better Sorting by eclips3 - Potions (Vanilla Weight).esp") ) or active("Better Sorting by eclips3 - Potions (Light Weight).esp")'
+        condition: 'active("Better Sorting by eclips3 - Potions (Weightless).esp") or active("Better Sorting by eclips3 - Potions (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Potions (Light Weight).esp")'
   - name: 'Better Sorting by eclips3 - Spells.esp'
     msg:
       - type: error
@@ -55020,17 +55020,17 @@ plugins:
         content:
           - lang: eng
             str: 'Obsolete. Update to latest version.'
-        condition: '( checksum("SummonableCreatures.esp",442DF73F) ) or checksum("SummonableCreatures.esp",86FBDC8B)'
+        condition: 'checksum("SummonableCreatures.esp",442DF73F) or checksum("SummonableCreatures.esp",86FBDC8B)'
       - type: say
         content:
           - lang: rus
             str: 'Устарело. Обновите до последней версии.'
-        condition: '( checksum("SummonableCreatures.esp",442DF73F) ) or checksum("SummonableCreatures.esp",86FBDC8B)'
+        condition: 'checksum("SummonableCreatures.esp",442DF73F) or checksum("SummonableCreatures.esp",86FBDC8B)'
       - type: say
         content:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( checksum("SummonableCreatures.esp",442DF73F) ) or checksum("SummonableCreatures.esp",86FBDC8B)'
+        condition: 'checksum("SummonableCreatures.esp",442DF73F) or checksum("SummonableCreatures.esp",86FBDC8B)'
     dirty:
       - crc: 0x5e074043
         util: *dirtyUtil
@@ -55301,17 +55301,17 @@ plugins:
         content:
           - lang: eng
             str: 'Obsolete. Update to latest version.'
-        condition: '( checksum("wkyddUnlockingSpell.esp",AAA13CE3) ) or checksum("wkyddUnlockingSpell.esp",73D0DE92)'
+        condition: 'checksum("wkyddUnlockingSpell.esp",AAA13CE3) or checksum("wkyddUnlockingSpell.esp",73D0DE92)'
       - type: say
         content:
           - lang: rus
             str: 'Устарело. Обновите до последней версии.'
-        condition: '( checksum("wkyddUnlockingSpell.esp",AAA13CE3) ) or checksum("wkyddUnlockingSpell.esp",73D0DE92)'
+        condition: 'checksum("wkyddUnlockingSpell.esp",AAA13CE3) or checksum("wkyddUnlockingSpell.esp",73D0DE92)'
       - type: say
         content:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( checksum("wkyddUnlockingSpell.esp",AAA13CE3) ) or checksum("wkyddUnlockingSpell.esp",73D0DE92)'
+        condition: 'checksum("wkyddUnlockingSpell.esp",AAA13CE3) or checksum("wkyddUnlockingSpell.esp",73D0DE92)'
     dirty:
       - crc: 0xf4d4c951
         util: *dirtyUtil
@@ -55479,17 +55479,17 @@ plugins:
         content:
           - lang: eng
             str: 'Obsolete. Update to latest version.'
-        condition: '( checksum("Shout-tastic.esp",7BE79CD0) ) or checksum("Shout-tastic.esp",96544986)'
+        condition: 'checksum("Shout-tastic.esp",7BE79CD0) or checksum("Shout-tastic.esp",96544986)'
       - type: say
         content:
           - lang: rus
             str: 'Устарело. Обновите до последней версии.'
-        condition: '( checksum("Shout-tastic.esp",7BE79CD0) ) or checksum("Shout-tastic.esp",96544986)'
+        condition: 'checksum("Shout-tastic.esp",7BE79CD0) or checksum("Shout-tastic.esp",96544986)'
       - type: say
         content:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( checksum("Shout-tastic.esp",7BE79CD0) ) or checksum("Shout-tastic.esp",96544986)'
+        condition: 'checksum("Shout-tastic.esp",7BE79CD0) or checksum("Shout-tastic.esp",96544986)'
     dirty:
       - crc: 0x8420cd21
         util: *dirtyUtil
@@ -57334,7 +57334,7 @@ plugins:
     msg:
       - type: error
         content: 'Will conflict with SkyRe, as both mods alter the skill trees. Please pick only one.'
-        condition: '( ( active("SkyRe_Main.esm") ) or file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'active("SkyRe_Main.esm") or file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
     dirty:
       - crc: 0x1617a10d
         util: *dirtyUtil
@@ -57608,7 +57608,7 @@ plugins:
     msg:
       - type: say
         content: 'Use the Acquisitive Soul Gems compatible version.'
-        condition: '( checksum("Enhanced Soul Trap.esp",B4803235) ) or checksum("Enhanced Soul Trap.esp",DF45FD75)'
+        condition: 'checksum("Enhanced Soul Trap.esp",B4803235) or checksum("Enhanced Soul Trap.esp",DF45FD75)'
       - type: error
         content:
           - lang: eng
@@ -58269,17 +58269,17 @@ plugins:
         content:
           - lang: eng
             str: 'Obsolete. Update to latest version.'
-        condition: '( checksum("Perky.esp",EE1F755B) ) or checksum("Perky.esp",469D04CE)'
+        condition: 'checksum("Perky.esp",EE1F755B) or checksum("Perky.esp",469D04CE)'
       - type: say
         content:
           - lang: rus
             str: 'Устарело. Обновите до последней версии.'
-        condition: '( checksum("Perky.esp",EE1F755B) ) or checksum("Perky.esp",469D04CE)'
+        condition: 'checksum("Perky.esp",EE1F755B) or checksum("Perky.esp",469D04CE)'
       - type: say
         content:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( checksum("Perky.esp",EE1F755B) ) or checksum("Perky.esp",469D04CE)'
+        condition: 'checksum("Perky.esp",EE1F755B) or checksum("Perky.esp",469D04CE)'
     dirty:
       - crc: 0xdfa3acce
         util: *dirtyUtil
@@ -61539,17 +61539,17 @@ plugins:
         content:
           - lang: eng
             str: 'Obsolete. Update to latest version.'
-        condition: '( checksum("PetBearOslo.esp",7614B5F9) ) or checksum("PetBearOslo.esp",EA58D0C9)'
+        condition: 'checksum("PetBearOslo.esp",7614B5F9) or checksum("PetBearOslo.esp",EA58D0C9)'
       - type: say
         content:
           - lang: rus
             str: 'Устарело. Обновите до последней версии.'
-        condition: '( checksum("PetBearOslo.esp",7614B5F9) ) or checksum("PetBearOslo.esp",EA58D0C9)'
+        condition: 'checksum("PetBearOslo.esp",7614B5F9) or checksum("PetBearOslo.esp",EA58D0C9)'
       - type: say
         content:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( checksum("PetBearOslo.esp",7614B5F9) ) or checksum("PetBearOslo.esp",EA58D0C9)'
+        condition: 'checksum("PetBearOslo.esp",7614B5F9) or checksum("PetBearOslo.esp",EA58D0C9)'
   - name: 'TCG.esp'
     msg:
       - type: warn
@@ -63293,17 +63293,17 @@ plugins:
         content:
           - lang: eng
             str: 'This file contains unexpected (or out of order) records and should be removed.'
-        condition: '( checksum("Consuelo de Montoya.esp",684257A3) ) or checksum("Consuelo de Montoya.esp",7B137E96)'
+        condition: 'checksum("Consuelo de Montoya.esp",684257A3) or checksum("Consuelo de Montoya.esp",7B137E96)'
       - type: warn
         content:
           - lang: rus
             str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-        condition: '( checksum("Consuelo de Montoya.esp",684257A3) ) or checksum("Consuelo de Montoya.esp",7B137E96)'
+        condition: 'checksum("Consuelo de Montoya.esp",684257A3) or checksum("Consuelo de Montoya.esp",7B137E96)'
       - type: warn
         content:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
-        condition: '( checksum("Consuelo de Montoya.esp",684257A3) ) or checksum("Consuelo de Montoya.esp",7B137E96)'
+        condition: 'checksum("Consuelo de Montoya.esp",684257A3) or checksum("Consuelo de Montoya.esp",7B137E96)'
   - name: 'Damsella.esp'
     msg:
       - type: warn
@@ -63954,17 +63954,17 @@ plugins:
         content:
           - lang: eng
             str: 'This file contains unexpected (or out of order) records and should be removed.'
-        condition: '( checksum("Fezzik the Giant.esp",3D97A0E0) ) or checksum("Fezzik the Giant.esp",9ED962E7)'
+        condition: 'checksum("Fezzik the Giant.esp",3D97A0E0) or checksum("Fezzik the Giant.esp",9ED962E7)'
       - type: warn
         content:
           - lang: rus
             str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-        condition: '( checksum("Fezzik the Giant.esp",3D97A0E0) ) or checksum("Fezzik the Giant.esp",9ED962E7)'
+        condition: 'checksum("Fezzik the Giant.esp",3D97A0E0) or checksum("Fezzik the Giant.esp",9ED962E7)'
       - type: warn
         content:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
-        condition: '( checksum("Fezzik the Giant.esp",3D97A0E0) ) or checksum("Fezzik the Giant.esp",9ED962E7)'
+        condition: 'checksum("Fezzik the Giant.esp",3D97A0E0) or checksum("Fezzik the Giant.esp",9ED962E7)'
   - name: 'FFDogs.esp'
     msg:
       - type: warn
@@ -65031,17 +65031,17 @@ plugins:
         content:
           - lang: eng
             str: 'This file contains unexpected (or out of order) records and should be removed.'
-        condition: '( checksum("Kitana.esp",BCF5969B) ) or checksum("Kitana.esp",2077B972)'
+        condition: 'checksum("Kitana.esp",BCF5969B) or checksum("Kitana.esp",2077B972)'
       - type: warn
         content:
           - lang: rus
             str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-        condition: '( checksum("Kitana.esp",BCF5969B) ) or checksum("Kitana.esp",2077B972)'
+        condition: 'checksum("Kitana.esp",BCF5969B) or checksum("Kitana.esp",2077B972)'
       - type: warn
         content:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
-        condition: '( checksum("Kitana.esp",BCF5969B) ) or checksum("Kitana.esp",2077B972)'
+        condition: 'checksum("Kitana.esp",BCF5969B) or checksum("Kitana.esp",2077B972)'
   - name: 'KMM_2a.esp'
     msg:
       - type: say
