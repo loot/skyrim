@@ -7537,7 +7537,7 @@ plugins:
     msg:
       - type: error
         content: Do not use the modular versions of Remove Interior Fog V2 with the Full version.
-        condition: regex("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp")
+        condition: 'regex("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp")'
       - type: error
         content:
           - lang: eng
@@ -7912,17 +7912,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one Del_ConditionalCombatMusic esp.
-        condition: regex("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp")
+        condition: 'regex("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Del_ConditionalCombatMusic esp.
-        condition: regex("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp")
+        condition: 'regex("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Del_ConditionalCombatMusic esp.
-        condition: regex("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp")
+        condition: 'regex("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp")'
   - name: 'HearthfireManorTavernMusic.esp'
     msg:
       - type: error
@@ -8311,17 +8311,17 @@ plugins:
         content:
           - lang: eng
             str: Remove this mod when esm is being used.
-        condition: regex("(83Willows_)?101BUGs.+\.esm")
+        condition: 'regex("(83Willows_)?101BUGs.+\.esm")'
       - type: error
         content:
           - lang: rus
             str: Удалите этот мод когда используется esm-версия.
-        condition: regex("(83Willows_)?101BUGs.+\.esm")
+        condition: 'regex("(83Willows_)?101BUGs.+\.esm")'
       - type: error
         content:
           - lang: spa
             str: Remueve este mod si utilizas el esm.
-        condition: regex("(83Willows_)?101BUGs.+\.esm")
+        condition: 'regex("(83Willows_)?101BUGs.+\.esm")'
     tag:
       - Delev
       - Relev
@@ -17380,22 +17380,22 @@ plugins:
         content:
           - lang: eng
             str: 'Incompatible with: Cloaks of skyrim, get the compatibility patch in the WIC optional files.'
-        condition: file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp")
+        condition: 'file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Несовместим с: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.'
-        condition: file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp")
+        condition: 'file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp")'
       - type: say
         content:
           - lang: eng
             str: 'Incompatible with: Cloaks of skyrim, get the compatibility patch in the WIC optional files.'
-        condition: file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")
+        condition: 'file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Несовместим с: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.'
-        condition: file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")
+        condition: 'file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
     tag:
       - Relev
   - name: '1nivWICCloaksCRAFT.esp'
@@ -21129,7 +21129,7 @@ plugins:
   - name: 'Masters of Death - Sicarius Armor (Standalone).esp'
     tag:
       - name: Deactivate
-        condition: file("SkyRe Masters of Death - Sicarius Armor (Standalone)")
+        condition: 'file("SkyRe Masters of Death - Sicarius Armor (Standalone)")'
   - name: 'Medium Buckler.esp'
     tag:
       - Relev
@@ -21465,24 +21465,24 @@ plugins:
         content:
           - lang: eng
             str: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_CleaverFelms_Eng.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
     dirty:
       - crc: 0xc40354d2
         util: *dirtyUtil
@@ -21493,12 +21493,12 @@ plugins:
         content:
           - lang: eng
             str: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
     dirty:
       - crc: 0x3ef8d4b9
         util: *dirtyUtil
@@ -21509,75 +21509,75 @@ plugins:
         content:
           - lang: eng
             str: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_Goldbrand_(Eng|Rus|Deu)\.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_IBOTM_(Eng|Rus|Deu)\.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_Scourge_(Eng|Rus|Deu)\.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_Trueflame_(Eng|Rus)\.esp'
     msg:
       - type: warn
         content:
           - lang: eng
             str: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_Trueflame_Unenchanted_(Eng|Rus)\.esp'
     msg:
       - type: say
         content: 'Incompatible with: NA_Trueflame_Eng or Rus esp'
-        condition: regex("NA_Trueflame_(Eng|Rus)\.esp")
+        condition: 'regex("NA_Trueflame_(Eng|Rus)\.esp")'
       - type: warn
         content:
           - lang: eng
             str: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-        condition: regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")
+        condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NobleArtifactsForSkyrim.esp'
     dirty:
       - crc: 0x9b24bc8a
@@ -23642,7 +23642,7 @@ plugins:
         condition: ( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")
       - type: say
         content: 'Incompatible with: WeaponsOf3E*.esp'
-        condition: regex("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp")
+        condition: 'regex("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp")'
     tag:
       - Delev
       - Relev
@@ -23870,7 +23870,7 @@ plugins:
         condition: ( checksum("XAC.esp",7BD34BA7) ) and not file("XAC.bsa")
     tag:
       - name: Deactivate
-        condition: regex("SkyRe XAC Stat (Original|Swap)( Classic)?\.esp")
+        condition: 'regex("SkyRe XAC Stat (Original|Swap)( Classic)?\.esp")'
   - name: 'YPSArmorPack.esp'
     msg:
       - type: say
@@ -26755,17 +26755,17 @@ plugins:
         content:
           - lang: eng
             str: 'Incompatible with: Complete Crafting Overhaul (doubles in crafting).'
-        condition: regex("Complete Crafting Overhaul( - BS version)?\.esp")
+        condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Несовместим с: Complete Crafting Overhaul (дубликаты в меню крафтинга).'
-        condition: regex("Complete Crafting Overhaul( - BS version)?\.esp")
+        condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Incompatible con: Complete Crafting Overhaul (doubles in crafting).'
-        condition: regex("Complete Crafting Overhaul( - BS version)?\.esp")
+        condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: say
         content:
           - lang: eng
@@ -26862,17 +26862,17 @@ plugins:
         content:
           - lang: eng
             str: 'Incompatible with: Complete Crafting Overhaul (doubles in crafting).'
-        condition: regex("Complete Crafting Overhaul( - BS version)?\.esp")
+        condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Несовместим с: Complete Crafting Overhaul (дубликаты в меню крафтинга).'
-        condition: regex("Complete Crafting Overhaul( - BS version)?\.esp")
+        condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: say
         content:
           - lang: spa
             str: 'Incompatible con: Complete Crafting Overhaul (doubles in crafting).'
-        condition: regex("Complete Crafting Overhaul( - BS version)?\.esp")
+        condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: warn
         content:
           - lang: eng
@@ -28004,17 +28004,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one Skyre Dreadknight.
-        condition: regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")
+        condition: 'regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один SkyRe Dreadknight.
-        condition: regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")
+        condition: 'regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Skyre Dreadknight.
-        condition: regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")
+        condition: 'regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
       - type: say
         content:
           - lang: eng
@@ -30708,7 +30708,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
-        condition: regex("(0001)?BertsBreezehome.+\.es[pm]")
+        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'bettercities(morebees|docksolitude|jarlshouses|newfarm)?\.esp'
     dirty:
       - crc: 0x3f73afce
@@ -31049,7 +31049,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
-        condition: regex("(0001)?BertsBreezehome.+\.es[pm]")
+        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
       - type: warn
         content:
           - lang: eng
@@ -31088,7 +31088,7 @@ plugins:
             str: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
-        condition: regex("(0001)?BertsBreezehome.+\.es[pm]")
+        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
     dirty:
       - crc: 0x444a410c
         util: *dirtyUtil
@@ -31098,7 +31098,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
-        condition: regex("(0001)?BertsBreezehome.+\.es[pm]")
+        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
       - type: say
         content:
           - lang: eng
@@ -31115,7 +31115,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
-        condition: regex("(0001)?BertsBreezehome.+\.es[pm]")
+        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
       - type: say
         content:
           - lang: eng
@@ -31132,7 +31132,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
-        condition: regex("(0001)?BertsBreezehome.+\.es[pm]")
+        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Breezehome_Fully_Upgradable_DG.esp'
     msg:
       - type: error
@@ -31199,7 +31199,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
-        condition: regex("(0001)?BertsBreezehome.+\.es[pm]")
+        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Breezehome Sovngarde Portal.esp'
     dirty:
       - crc: 0xa743ab12
@@ -31304,17 +31304,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|JP|FSW|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|JP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|JP|FSW|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|JP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|JP|FSW|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|JP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: eng
@@ -31337,17 +31337,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: eng
@@ -31370,17 +31370,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp")'
       - type: warn
         content:
           - lang: eng
@@ -31399,17 +31399,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: eng
@@ -31432,17 +31432,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: eng
@@ -31465,17 +31465,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un BreezehomeRenovation*.esp.
-        condition: regex("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp")
+        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp")'
       - type: warn
         content:
           - lang: eng
@@ -31516,7 +31516,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
-        condition: regex("(0001)?BertsBreezehome.+\.es[pm]")
+        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Briar''sEndCourierQuest.esp'
     inc:
       - 'Fleetford.esp'
@@ -33114,17 +33114,17 @@ plugins:
         content:
           - lang: eng
             str: Obsolete. Update to latest version.
-        condition: ( not checksum("EBM.esp",2CBBAEC7) ) and not checksum("EBM.esp",ADA00DD0)
+        condition: '( not checksum("EBM.esp",2CBBAEC7) ) and not checksum("EBM.esp",ADA00DD0)'
       - type: say
         content:
           - lang: rus
             str: Устарело. Обновите до последней версии.
-        condition: ( not checksum("EBM.esp",2CBBAEC7) ) and not checksum("EBM.esp",ADA00DD0)
+        condition: '( not checksum("EBM.esp",2CBBAEC7) ) and not checksum("EBM.esp",ADA00DD0)'
       - type: say
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
-        condition: ( not checksum("EBM.esp",2CBBAEC7) ) and not checksum("EBM.esp",ADA00DD0)
+        condition: '( not checksum("EBM.esp",2CBBAEC7) ) and not checksum("EBM.esp",ADA00DD0)'
       - type: warn
         content:
           - lang: eng
@@ -33264,17 +33264,17 @@ plugins:
         content:
           - lang: eng
             str: Obsolete. Update to latest version.
-        condition: ( ( ( ( checksum("expanded basement.esp",77B3D0AF) ) or checksum("expanded basement.esp",05D3BC5E) ) or checksum("expanded basement.esp",AF1BA96C) ) or checksum("expanded basement.esp",F7137B70) ) or checksum("expanded basement.esp",C8B1446D)
+        condition: '( ( ( ( checksum("expanded basement.esp",77B3D0AF) ) or checksum("expanded basement.esp",05D3BC5E) ) or checksum("expanded basement.esp",AF1BA96C) ) or checksum("expanded basement.esp",F7137B70) ) or checksum("expanded basement.esp",C8B1446D)'
       - type: say
         content:
           - lang: rus
             str: Устарело. Обновите до последней версии.
-        condition: ( ( ( ( checksum("expanded basement.esp",77B3D0AF) ) or checksum("expanded basement.esp",05D3BC5E) ) or checksum("expanded basement.esp",AF1BA96C) ) or checksum("expanded basement.esp",F7137B70) ) or checksum("expanded basement.esp",C8B1446D)
+        condition: '( ( ( ( checksum("expanded basement.esp",77B3D0AF) ) or checksum("expanded basement.esp",05D3BC5E) ) or checksum("expanded basement.esp",AF1BA96C) ) or checksum("expanded basement.esp",F7137B70) ) or checksum("expanded basement.esp",C8B1446D)'
       - type: say
         content:
           - lang: spa
             str: Obsoleto. Actualizar a la última versión.
-        condition: ( ( ( ( checksum("expanded basement.esp",77B3D0AF) ) or checksum("expanded basement.esp",05D3BC5E) ) or checksum("expanded basement.esp",AF1BA96C) ) or checksum("expanded basement.esp",F7137B70) ) or checksum("expanded basement.esp",C8B1446D)
+        condition: '( ( ( ( checksum("expanded basement.esp",77B3D0AF) ) or checksum("expanded basement.esp",05D3BC5E) ) or checksum("expanded basement.esp",AF1BA96C) ) or checksum("expanded basement.esp",F7137B70) ) or checksum("expanded basement.esp",C8B1446D)'
     dirty:
       - crc: 0x27c7711a
         util: *dirtyUtil
@@ -33648,47 +33648,47 @@ plugins:
         content:
           - lang: eng
             str: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-        condition: ( ( ( ( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",8EDB06C9) ) or checksum("FortBuffscale.esp",E8B27322) ) or checksum("FortBuffscale.esp",74868200) ) or checksum("FortBuffscale.esp",7BFBCD8F) ) and not active("Dawnguard.esm")
+        condition: '( ( ( ( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",8EDB06C9) ) or checksum("FortBuffscale.esp",E8B27322) ) or checksum("FortBuffscale.esp",74868200) ) or checksum("FortBuffscale.esp",7BFBCD8F) ) and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: rus
             str: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-        condition: ( ( ( ( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",8EDB06C9) ) or checksum("FortBuffscale.esp",E8B27322) ) or checksum("FortBuffscale.esp",74868200) ) or checksum("FortBuffscale.esp",7BFBCD8F) ) and not active("Dawnguard.esm")
+        condition: '( ( ( ( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",8EDB06C9) ) or checksum("FortBuffscale.esp",E8B27322) ) or checksum("FortBuffscale.esp",74868200) ) or checksum("FortBuffscale.esp",7BFBCD8F) ) and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: spa
             str: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-        condition: ( ( ( ( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",8EDB06C9) ) or checksum("FortBuffscale.esp",E8B27322) ) or checksum("FortBuffscale.esp",74868200) ) or checksum("FortBuffscale.esp",7BFBCD8F) ) and not active("Dawnguard.esm")
+        condition: '( ( ( ( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",8EDB06C9) ) or checksum("FortBuffscale.esp",E8B27322) ) or checksum("FortBuffscale.esp",74868200) ) or checksum("FortBuffscale.esp",7BFBCD8F) ) and not active("Dawnguard.esm")'
       - type: error
         content:
           - lang: eng
             str: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
-        condition: ( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",E8B27322) ) and not active("Hearthfires.esm")
+        condition: '( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",E8B27322) ) and not active("Hearthfires.esm")'
       - type: error
         content:
           - lang: rus
             str: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
-        condition: ( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",E8B27322) ) and not active("Hearthfires.esm")
+        condition: '( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",E8B27322) ) and not active("Hearthfires.esm")'
       - type: error
         content:
           - lang: spa
             str: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
-        condition: ( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",E8B27322) ) and not active("Hearthfires.esm")
+        condition: '( ( checksum("FortBuffscale.esp",35168FD9) ) or checksum("FortBuffscale.esp",E8B27322) ) and not active("Hearthfires.esm")'
       - type: error
         content:
           - lang: eng
             str: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-        condition: ( checksum("FortBuffscale.esp",35168FD9) ) and not active("Dragonborn.esm")
+        condition: '( checksum("FortBuffscale.esp",35168FD9) ) and not active("Dragonborn.esm")'
       - type: error
         content:
           - lang: rus
             str: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-        condition: ( checksum("FortBuffscale.esp",35168FD9) ) and not active("Dragonborn.esm")
+        condition: '( checksum("FortBuffscale.esp",35168FD9) ) and not active("Dragonborn.esm")'
       - type: error
         content:
           - lang: spa
             str: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
-        condition: ( checksum("FortBuffscale.esp",35168FD9) ) and not active("Dragonborn.esm")
+        condition: '( checksum("FortBuffscale.esp",35168FD9) ) and not active("Dragonborn.esm")'
     dirty:
       - crc: 0x1fbbacf2
         util: *dirtyUtil
@@ -33822,7 +33822,7 @@ plugins:
     msg:
       - type: error
         content: Use Freedom of Speech -- Dawnguard.esp
-        condition: ( active("Dawnguard.esm") ) and checksum("Freedom of Speech.esp",48DA06FC)
+        condition: '( active("Dawnguard.esm") ) and checksum("Freedom of Speech.esp",48DA06FC)'
     dirty:
       - crc: 0x251fdaed
         util: *dirtyUtil
@@ -33927,17 +33927,17 @@ plugins:
         content:
           - lang: eng
             str: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without [General Stores](http://www.nexusmods.com/skyrim/mods/18340).
-        condition: ( checksum("GeneralDisplays.esm",7FF65529) ) and not active("GeneralStores.esm")
+        condition: '( checksum("GeneralDisplays.esm",7FF65529) ) and not active("GeneralStores.esm")'
       - type: error
         content:
           - lang: rus
             str: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без [General Stores](http://www.nexusmods.com/skyrim/mods/18340).
-        condition: ( checksum("GeneralDisplays.esm",7FF65529) ) and not active("GeneralStores.esm")
+        condition: '( checksum("GeneralDisplays.esm",7FF65529) ) and not active("GeneralStores.esm")'
       - type: error
         content:
           - lang: spa
             str: GeneralStores.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin [General Stores](http://www.nexusmods.com/skyrim/mods/18340).
-        condition: ( checksum("GeneralDisplays.esm",7FF65529) ) and not active("GeneralStores.esm")
+        condition: '( checksum("GeneralDisplays.esm",7FF65529) ) and not active("GeneralStores.esm")'
   - name: 'genpeoplelite.esp'
     dirty:
       - crc: 0x53993c77
@@ -42637,17 +42637,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one Headbomb's Better Sorting - Food esp.
-        condition: file("Headbomb's Better Sorting - Food (Light Weight).esp")
+        condition: 'file("Headbomb's Better Sorting - Food (Light Weight).esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Headbomb's Better Sorting - Food esp.
-        condition: file("Headbomb's Better Sorting - Food (Light Weight).esp")
+        condition: 'file("Headbomb's Better Sorting - Food (Light Weight).esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Headbomb's Better Sorting - Food esp.
-        condition: file("Headbomb's Better Sorting - Food (Light Weight).esp")
+        condition: 'file("Headbomb's Better Sorting - Food (Light Weight).esp")'
       - type: say
         content: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
         condition: checksum("Headbomb's Better Sorting - Food (Normal Weight).esp",B3DBF94F)
@@ -42772,17 +42772,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one Headbomb's Better Sorting - Potions esp.
-        condition: file("Headbomb's Better Sorting - Potions (Half Weight).esp")
+        condition: 'file("Headbomb's Better Sorting - Potions (Half Weight).esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Headbomb's Better Sorting - Potions esp.
-        condition: file("Headbomb's Better Sorting - Potions (Half Weight).esp")
+        condition: 'file("Headbomb's Better Sorting - Potions (Half Weight).esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Headbomb's Better Sorting - Potions esp.
-        condition: file("Headbomb's Better Sorting - Potions (Half Weight).esp")
+        condition: 'file("Headbomb's Better Sorting - Potions (Half Weight).esp")'
       - type: say
         content: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
         condition: checksum("Headbomb's Better Sorting - Potions (Light Weight).esp",B55194E2)
@@ -42877,17 +42877,17 @@ plugins:
         content:
           - lang: eng
             str: Use only one Headbomb's Better Sorting - Soul Gems esp.
-        condition: file("Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp")
+        condition: 'file("Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте только один Headbomb's Better Sorting - Soul Gems esp.
-        condition: file("Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp")
+        condition: 'file("Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp")'
       - type: warn
         content:
           - lang: spa
             str: Utilizar solo un Headbomb's Better Sorting - Soul Gems esp.
-        condition: file("Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp")
+        condition: 'file("Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp")'
       - type: say
         content: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
         condition: checksum("Headbomb's Better Sorting - Soul Gems (Ranked).esp",A5408056)
@@ -45951,17 +45951,17 @@ plugins:
         content:
           - lang: eng
             str: Use either NoAutoSkillBooks(Normal).esp or NoAutoSkillBooks(Better).esp, not both.
-        condition: file("NoAutoSkillBooks(Normal).esp")
+        condition: 'file("NoAutoSkillBooks(Normal).esp")'
       - type: warn
         content:
           - lang: rus
             str: Используйте любой, или NoAutoSkillBooks(Normal).esp или NoAutoSkillBooks(Better).esp, не оба.
-        condition: file("NoAutoSkillBooks(Normal).esp")
+        condition: 'file("NoAutoSkillBooks(Normal).esp")'
       - type: warn
         content:
           - lang: spa
             str: Usar NoAutoSkillBooks(Normal).esp o NoAutoSkillBooks(Better).esp, no ambos.
-        condition: file("NoAutoSkillBooks(Normal).esp")
+        condition: 'file("NoAutoSkillBooks(Normal).esp")'
   - name: 'NoBonesPlz.esp'
     msg:
       - type: error
@@ -52181,7 +52181,7 @@ plugins:
         condition: 'regex("MM_BeluaSangunaire.*\.esp")'
       - type: say
         content: 'Incompatible with: Better Vampires'
-        condition: regex("Better Vampires( ML| DG)?( - No DawnGuard.esp)?\.esp")
+        condition: 'regex("Better Vampires( ML| DG)?( - No DawnGuard.esp)?\.esp")'
       - type: say
         content: 'Incompatible with: Imp''s More Complex Needs'
         condition: 'regex("Imp's More Complex Needs\.es[mp]")'
@@ -67519,12 +67519,12 @@ plugins:
         content:
           - lang: eng
             str: 'Requires: Better Followers - Armor Pack I & II, download it on BF page.'
-        condition: regex("Better Followers - (BP|BNP|SBP|SBNP)\.esp")
+        condition: 'regex("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Требуется: Better Followers - Armor Pack I & II, вы можете их загрузить на странице Better Followers.'
-        condition: regex("Better Followers - (BP|BNP|SBP|SBNP)\.esp")
+        condition: 'regex("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
       - type: say
         content:
           - lang: eng
@@ -68686,7 +68686,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Height Adjusted Races with True Giants'
-        condition: regex("Height Adjusted Races(.+)True Giants(.+)?\.esp")
+        condition: 'regex("Height Adjusted Races(.+)True Giants(.+)?\.esp")'
   - name: 'AROP- Altmer.+\.esp'
     msg:
       - type: warn
@@ -69124,12 +69124,12 @@ plugins:
         content:
           - lang: eng
             str: 'Incompatible with: Serana-ish*.esp'
-        condition: regex("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")
+        condition: 'regex("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")'
       - type: say
         content:
           - lang: rus
             str: 'Несовместим с: Serana-ish*.esp'
-        condition: regex("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")
+        condition: 'regex("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")'
   - name: 'Undead Vampires Player and NPCs.esp'
     msg:
       - type: error
