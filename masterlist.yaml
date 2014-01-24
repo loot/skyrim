@@ -1628,11 +1628,11 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, DrowRace.esp.'
   - name: 'SexiS.esm'
-    req: 
+    req:
       - *SKSE
       - *FNIS
   - name: 'SexLab.esm'
-    req: 
+    req:
       - *SKSE
       - *SkyUI
       - *FNIS
@@ -4716,7 +4716,7 @@ plugins:
     msg:
       - type: warn
         content:
-          - lang: rus
+          - lang: eng
             str: 'This mod contains numerous corrupted records generated with TESVSmip. It is strongly advised you remove this from your load order to avoid damage to your saves.'
           - lang: spa
             str: 'Este mod contiene varios meshes corruptos. Es fuertemente recomendado que lo remouevos para evitar daños a tu juego.'
@@ -4992,8 +4992,8 @@ plugins:
       - crc: 0x4a595497
         util: *dirtyUtil
         itm: 2
-# 'Better Dynamic Snow.esp' moved before 'EnhancedLightsandFX.esp' to 
-# prevent bug with falling in textures when 'EnhancedLightsandFX.esp' 
+# 'Better Dynamic Snow.esp' moved before 'EnhancedLightsandFX.esp' to
+# prevent bug with falling in textures when 'EnhancedLightsandFX.esp'
 # loaded before 'Better Dynamic Snow.esp'
   - name: 'Better Dynamic Snow.esp'
     dirty:
@@ -5106,7 +5106,7 @@ plugins:
 # Sound plugins; also, sound packs that are packaged with a BSA file, while the ESP lists only the TES4 Skyrim header, example:
 # Some Sounds.esp
 # TES4 (Header only)
-# 
+#
 # It appears that *ANY* sound is ok to be placed here.
 # Sound mods that modify cell data should be placed in the "Sounds of Skyrim" catagory.
 # ## MoreSoundOptions.esp
@@ -5784,7 +5784,7 @@ plugins:
 
 # BEGINGROUP: Textures
 # Textures that are packaged with a BSA file, while the ESP lists only the TES4 Skyrim header
-# 
+#
 # Generally the bigger packs go near to the top.
 # Large Packs, these are placed at the top to prevent overwriting smaller texture changes - rendering them useless.
   - name: 'VanillaReducedTexturesDG.esp'
@@ -5989,7 +5989,7 @@ plugins:
 # ## Recommended to be loaded before Economics of Skyrim
 # ## TradeBarterLite.esp
   - name: 'TradeBarter.esp'
-    req: 
+    req:
       - *SKSE
       - *SkyUI
     tag:
@@ -8393,7 +8393,7 @@ plugins:
   - name: 'Hearthfire Sorting.esp'
     msg:
       - type: error
-        content: 
+        content:
           - lang: eng
             str: 'GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm'
           - lang: rus
@@ -8411,7 +8411,7 @@ plugins:
   - name: 'HearthFireStores(GS).esp'
     msg:
       - type: error
-        content: 
+        content:
           - lang: eng
             str: 'GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm'
           - lang: rus
@@ -14244,7 +14244,7 @@ plugins:
   - name: 'Frostmourne.esp'
     msg:
       - type: warn
-        condition: 'not checksum("Frostmourne.esp",428F46D4) and not checksum("Frostmourne.esp",51F43BA4) and version("..\TESV.exe","1.8",>)' 
+        condition: 'not checksum("Frostmourne.esp",428F46D4) and not checksum("Frostmourne.esp",51F43BA4) and version("..\TESV.exe","1.8",>)'
         content:
           - lang: eng
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
@@ -19803,6 +19803,7 @@ plugins:
           - lang: rus
             str: 'SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его [здесь](http://www.nexusmods.com/skyrim/mods/9286)(Англ.) или [здесь](http://u.to/EpZaAg).'
       - type: say
+        content:
           - lang: eng
             str: 'Requires: [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175) for full perk functional'
           - lang: rus
@@ -24249,7 +24250,7 @@ plugins:
             str: 'Используйте только один DovahkiinSpeech esp.'
           - lang: spa
             str: 'Utilizar solo un DovahkiinSpeech esp.'
-        condition: 'file("DovahkiinSpeech - HigherReq.esp") or file("DovahkiinSpeech - HigherReqNerfed.esp") or file("DovahkiinSpeech - MidNoPerkReq.esp") or file("DovahkiinSpeech - MidReq.esp")'   
+        condition: 'file("DovahkiinSpeech - HigherReq.esp") or file("DovahkiinSpeech - HigherReqNerfed.esp") or file("DovahkiinSpeech - MidNoPerkReq.esp") or file("DovahkiinSpeech - MidReq.esp")'
     dirty:
       - crc: 0x27656479
         util: *dirtyUtil
@@ -32694,17 +32695,17 @@ plugins:
     inc:
       - 'ElkHide.esp'
   - name: 'ESFCompanions.esp'
-    after: 
+    after:
       - 'Brevi_MoonlightTales.esp'
     dirty:
       - crc: 0x16c76fa7
         util: *dirtyUtil
         itm: 1
   - name: 'ESFCompanions - VilkasProvingHonorNoShowFix.esp'
-    after: 
+    after:
       - 'Brevi_MoonlightTales.esp'
   - name: 'BetterQuestObjectives-ESFCompanionsPatch.esp'
-    after: 
+    after:
       - 'Brevi_MoonlightTales.esp'
     msg:
       - type: error
@@ -33489,7 +33490,7 @@ plugins:
             str: 'Используйте только один Isharas_MLLY_* esp.'
           - lang: spa
             str: 'Utilizar solo un Isharas_MLLY_* esp.'
-        condition: 'file("Isharas_MLLY_FEMALES.esp") or file("Isharas_MLLY_FEMALES_SKSE.esp") or file("Isharas_MLLY_MALES.esp") or file("Isharas_MLLY_MALES_SKSE.esp")'   
+        condition: 'file("Isharas_MLLY_FEMALES.esp") or file("Isharas_MLLY_FEMALES_SKSE.esp") or file("Isharas_MLLY_MALES.esp") or file("Isharas_MLLY_MALES_SKSE.esp")'
   - name: 'Item Prices V2.esp'
     msg:
       - type: warn
@@ -35141,28 +35142,28 @@ plugins:
         condition: 'version("..\TESV.exe","1.9",<)'
       - type: say
         content: 'Requires: [Dawnguard Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60).'
-        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and not file("SkyMoMod.esm") and not file("dD-Dawnguard-EBT Patch.esp")'  
+        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and not file("SkyMoMod.esm") and not file("dD-Dawnguard-EBT Patch.esp")'
       - type: say
         content: 'Requires: [Dragonborn Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60).'
-        condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-EBT Patch.esp")'  
+        condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-EBT Patch.esp")'
       - type: say
         content: 'Requires: [Dragonborn-Dawnguard_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dawnguard + Dragonborn.'
-        condition: 'active("Dragonborn.esm") and active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-Dawnguard-EBT Patch.esp")'  
+        condition: 'active("Dragonborn.esm") and active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-Dawnguard-EBT Patch.esp")'
       - type: say
         content: 'Requires: [Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Monster Mod.'
-        condition: 'not active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-SkyrimMonsterMod EBT Patch.esp")'  
+        condition: 'not active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-SkyrimMonsterMod EBT Patch.esp")'
       - type: say
         content: 'Requires: [Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dawnguard + Monster Mod.'
-        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-Dawnguard-MonsterMod EBT Patch.esp")'  
+        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-Dawnguard-MonsterMod EBT Patch.esp")'
       - type: say
         content: 'Requires: [Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dragonborn + Monster Mod.'
-        condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and file("SkyMoMod.esm") and not file("dD-Dragonborn-MonsterMod EBT Patch.esp")'  
+        condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and file("SkyMoMod.esm") and not file("dD-Dragonborn-MonsterMod EBT Patch.esp")'
       - type: say
         content: 'Requires: [Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dawnguard + Dragonborn + Monster Mod.'
-        condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-DG-DB-MonsterMod EBT Patch.esp") and not file("Skyrim Immersive Creatures.esp")' 
+        condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-DG-DB-MonsterMod EBT Patch.esp") and not file("Skyrim Immersive Creatures.esp")'
       - type: say
         content: 'Requires: [Monster Mod and Immersive Creatures Patch](http://www.nexusmods.com/skyrim/mods/60) \\ Dawnguard + Dragonborn + Monster Mod + Immersive Creatures.'
-        condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and file("Skyrim Immersive Creatures.esp") and not file("dD-DG-DB-MM-SiC EBT Patch.esp")' 
+        condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and file("Skyrim Immersive Creatures.esp") and not file("dD-DG-DB-MM-SiC EBT Patch.esp")'
     dirty:
       - util: *dirtyUtil
         crc: 0xFD8ABF04
@@ -38471,12 +38472,12 @@ plugins:
       - Relev
   - name: 'SI_RNADPatch.esp'
     after:
-      - '3DNPC.esp
+      - '3DNPC.esp'
     msg:
       - type: error
         content:
           - lang: eng
-            str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)'
+            str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard Official Bethesda DLC'
           - lang: rus
             str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)'
           - lang: spa
@@ -42191,7 +42192,7 @@ plugins:
             str: 'Requires: [AdvancedKillMoves_English_Only_2-0b_fixed](http://skyrim.nexusmods.com/mods/21226)'
           - lang: rus
             str: 'Требуется: [AdvancedKillMoves_Russian_2-0b_fixed](http://skyrim.nexusmods.com/mods/21226)'
-        condition: 'not active("Dawnguard.esm") and version("..\TESV.exe","1.5.24",>) and not checksum("AdvancedKillMoves.esp",B27890A5)' 
+        condition: 'not active("Dawnguard.esm") and version("..\TESV.exe","1.5.24",>) and not checksum("AdvancedKillMoves.esp",B27890A5)'
       - type: say
         content: 'Requires: [AdvancedKillMoves_English_2-0b_Dawnguard](http://skyrim.nexusmods.com/mods/21226)'
         condition: '( active("Dawnguard.esm") ) and not checksum("AdvancedKillMoves.esp",97C9E8CC)'
@@ -45607,7 +45608,9 @@ plugins:
   - name: 'PAHAPDialoguePatcher.esp'
     msg:
       - type: error
-        content: 'AP Skyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without AP Skyrim'
+        content:
+          - lang: eng
+            str: 'AP Skyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without AP Skyrim'
           - lang: rus
             str: 'AP Skyrim.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без AP Skyrim'
         condition: 'not file("AP Skyrim.esm")'
@@ -45747,10 +45750,10 @@ plugins:
         condition: 'version("..\TESV.exe","1.5.24",<)'
       - type: warn
         content: 'UFO - Dawnguard AddOn.esp required to work properly with Dawnguard (Official Bethesda DLC)'
-        condition: 'active("Dawnguard.esm") and checksum("UFO - Ultimate Follower Overhaul.esp",396AE69F) and not file("UFO - Dawnguard AddOn.esp")'   
+        condition: 'active("Dawnguard.esm") and checksum("UFO - Ultimate Follower Overhaul.esp",396AE69F) and not file("UFO - Dawnguard AddOn.esp")'
       - type: warn
         content: 'UFO - Heartfire AddOn.esp required to work properly with Hearthfires (Official Bethesda DLC)'
-        condition: 'active("Hearthfires.esm") and checksum("UFO - Ultimate Follower Overhaul.esp",396AE69F) and not file("UFO - Heartfire AddOn.esp")'   
+        condition: 'active("Hearthfires.esm") and checksum("UFO - Ultimate Follower Overhaul.esp",396AE69F) and not file("UFO - Heartfire AddOn.esp")'
       - type: say
         content:
           - lang: eng
@@ -45986,7 +45989,7 @@ plugins:
             str: 'Если этот плагин не новее версии 1.3, обновите до последней версии.'
           - lang: spa
             str: 'If this is not newer than v1.3, update to the latest version.'
-        condition: 'not checksum("SPTConsistentOlderPeople.esp",21792C1E) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)' 
+        condition: 'not checksum("SPTConsistentOlderPeople.esp",21792C1E) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)'
   - name: 'Tauriel The Hobbit.esp'
     dirty:
       - util: *dirtyUtil
@@ -47197,12 +47200,12 @@ plugins:
             str: '[ApachiiHairFemales.esm](http://www.nexusmods.com/skyrim/mods/10168) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("ApachiiHairFemales.esm")'
   - name: 'ExpandedDialogueFaendal.esp'
-    req: 
+    req:
       - *SKSE
       - name: 'SKSE\Plugins\Fuz Ro D''oh.dll'
         display: 'Requires [Fuz Ro D''oh](http://www.nexusmods.com/skyrim/mods/14884)'
   - name: 'ExpandedNPCDialogue.esp'
-    req: 
+    req:
       - *SKSE
       - name: 'SKSE\Plugins\Fuz Ro D''oh.dll'
         display: 'Requires [Fuz Ro D''oh](http://www.nexusmods.com/skyrim/mods/14884)'
@@ -47965,17 +47968,17 @@ plugins:
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: '( file("Kashim.esp") ) or file("Kashim - Ahtar Replacer.esp")'
   - name: 'Kate.esp'
-    req: 
+    req:
       - *SKSE
       - *SkyUI
       - *FNIS
   - name: 'Kate - AnimPack 1HWeapShield.esp'
-    req: 
+    req:
       - *SKSE
       - *SkyUI
       - *FNIS
   - name: 'Kate - AnimPack TBBP.esp'
-    req: 
+    req:
       - *SKSE
       - *SkyUI
       - *FNIS
@@ -52098,7 +52101,7 @@ plugins:
             str: 'Используйте только один smakit_house_markers esp.'
           - lang: spa
             str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'   
+        condition: 'file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x6fdbd6b9
         util: *dirtyUtil
@@ -52113,7 +52116,7 @@ plugins:
             str: 'Используйте только один smakit_house_markers esp.'
           - lang: spa
             str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'  
+        condition: 'file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x34bbd145
         util: *dirtyUtil
@@ -52128,7 +52131,7 @@ plugins:
             str: 'Используйте только один smakit_house_markers esp.'
           - lang: spa
             str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_plus_russian.esp") or file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")' 
+        condition: 'file("smakit_house_markers_plus_russian.esp") or file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x4bd3a2a0
         util: *dirtyUtil
@@ -52143,7 +52146,7 @@ plugins:
             str: 'Используйте только один smakit_house_markers esp.'
           - lang: spa
             str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_polish.esp") or file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")' 
+        condition: 'file("smakit_house_markers_polish.esp") or file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x3077b684
         util: *dirtyUtil
@@ -52842,7 +52845,7 @@ plugins:
             str: 'SilverDragonArmor.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
           - lang: spa
             str: 'SilverDragonArmor.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: 'file("Helmet Toggle - Silver Dragon Armor Patch.esp") and file("Helmet Toggle - LPotD Armor Patch.esp") and not active("SilverDragonArmor.esp")'   
+        condition: 'file("Helmet Toggle - Silver Dragon Armor Patch.esp") and file("Helmet Toggle - LPotD Armor Patch.esp") and not active("SilverDragonArmor.esp")'
       - type: error
         content:
           - lang: eng
@@ -53205,13 +53208,17 @@ plugins:
         condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
       - type: warn
         content: 'UFO detected.  Use the UFO version to have the mod work as intended.'
-        condition: '( checksum("HM_HotkeyMod.esp",374C564C) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and file("UFO - Ultimate Follower Overhaul.esp")'
+        condition: '( ( checksum("HM_HotkeyMod.esp",374C564C) ) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and file("UFO - Ultimate Follower Overhaul.esp")'
+      - type: say
+        content:
           - lang: rus
             str: 'При отсутствии UFO используйте обычную НЕ UFO-версию этого мода.'
         condition: 'not file("UFO - Ultimate Follower Overhaul.esp")'
       - type: error
         content: 'UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.'
-        condition: '( checksum("HM_HotkeyMod.esp",676790BF) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
+        condition: '( ( checksum("HM_HotkeyMod.esp",676790BF) ) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
+      - type: say
+        content:
           - lang: rus
             str: 'При наличии UFO используйте UFO-версию этого мода.'
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
