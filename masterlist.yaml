@@ -5065,11 +5065,11 @@ plugins:
     msg:
       - type: error
         content:
-          - lang: rus
+          - lang: eng
             str: 'Dawnguard.esm found. Use the Dawnguard version of ExpandedSnowSystems.esp instead to have mod work as intended.'
           - lang: spa
             str: 'Dawnguard.esm esta siencdo utilizado. Usa la versión de ExpandedSnowSystems.esp para Dawnguard.'
-        condition: '( checksum("ExpandedSnowSystems.esp",03A9B612) or checksum("ExpandedSnowSystems.esp",72CC3B0C) ) and active("Dawnguard.esm")'
+        condition: '( ( checksum("ExpandedSnowSystems.esp",03A9B612) ) or checksum("ExpandedSnowSystems.esp",72CC3B0C) ) and active("Dawnguard.esm")'
       - type: error
         content:
           - lang: eng
@@ -5078,7 +5078,7 @@ plugins:
             str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).'
           - lang: spa
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).'
-        condition: '( checksum("ExpandedSnowSystems.esp",B5EB3179) or checksum("ExpandedSnowSystems.esp",5B79F47D) ) and not active("Dawnguard.esm")'
+        condition: '( ( checksum("ExpandedSnowSystems.esp",B5EB3179) ) or checksum("ExpandedSnowSystems.esp",5B79F47D) ) and not active("Dawnguard.esm")'
       - type: warn
         content: 'ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.'
         condition: 'active("ClimatesOfTamriel.esm")'
@@ -7373,11 +7373,13 @@ plugins:
     msg:
       - type: say
         content:
+          - lang: eng
+            str: 'Incompatible: Use Dawnguard version.'
           - lang: rus
             str: 'Несовместим с: Use Dawnguard version.'
           - lang: spa
-            str: 'Incompatible con: Utilizar la versión para Dawnguard.'
-        condition: 'checksum("Cumulable Blessings.esp",DA1971DC) and not active("Dawnguard.esm")'
+            str: 'Incompatible: Utilizar la versión para Dawnguard.'
+        condition: '( checksum("Cumulable Blessings.esp",DA1971DC) ) and active("Dawnguard.esm")'
     dirty:
       - crc: 0xbcc10635
         util: *dirtyUtil
@@ -9139,7 +9141,7 @@ plugins:
     msg:
       - type: warn
         content:
-          - lang: rus
+          - lang: eng
             str: 'Do not use. Mod is abandoned and known to cause permanent save corruption.'
           - lang: spa
             str: 'No utilizar. Este mod ha sido abandonado y puede dañar tu juego.'
