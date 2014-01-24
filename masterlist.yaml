@@ -124,11 +124,11 @@ globals:
     condition: 'file("SKSE\Plugins\SKSE_Elys_Uncapper.dll") and not file("..\skse_loader.exe")'
     content:
       - lang: eng
-        str: '"You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: [SKSE](http://skse.silverlock.org/).'
+        str: 'You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: [SKSE](http://skse.silverlock.org/).'
       - lang: rus
         str: 'У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки [SKSE](http://skse.silverlock.org/).'
       - lang: spa
-        str: '"Tienes Skyrim Community Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: [SKSE](http://skse.silverlock.org/)'
+        str: 'Tienes Skyrim Community Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: [SKSE](http://skse.silverlock.org/)'
   - type: say
     condition: 'version("..\skse_loader.exe","0.1.6.16",<)'
     content:
@@ -5945,6 +5945,8 @@ plugins:
       - Relev
   - name: 'StaticMeshImprovementMod.esp'
     msg:
+      - type: say
+        content:
           - lang: rus
             str: 'Вы можете использовать данный esp для версии 1.20-1.26 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.'
         condition: 'checksum("StaticMeshImprovementMod.esp",8806A693)'
@@ -7377,6 +7379,8 @@ plugins:
       - Relev
   - name: 'Cumulable Blessings.esp'
     msg:
+      - type: say
+        content:
           - lang: rus
             str: 'Несовместим с: Use Dawnguard version.'
           - lang: spa
@@ -9139,6 +9143,8 @@ plugins:
     req: [ *SKSE ]
   - name: 'lt_better_horses.esp'
     msg:
+      - type: warn
+        content:
           - lang: rus
             str: 'Do not use. Mod is abandoned and known to cause permanent save corruption.'
           - lang: spa
@@ -11185,12 +11191,16 @@ plugins:
             str: 'Utilizar solo unKoS_Outcast*.esp.'
   - name: 'CiviliansWillNotDie.esp'
     msg:
+      - type: say
+        content:
           - lang: rus
             str: 'Устарело, обновите до версии 0.7 и выше - CWND-Basic.esp'
   - name: 'CiviliansWillNotDieChild.esp'
     inc:
       - 'CiviliansWillNotDie.esp'
     msg:
+      - type: say
+        content:
           - lang: rus
             str: 'Устарело, обновите до версии 0.7 и выше - CWND-KillChild.esp'
           - lang: rus
@@ -11200,6 +11210,8 @@ plugins:
       - 'CiviliansWillNotDieChild.esp'
       - 'CiviliansWillNotDie.esp'
     msg:
+      - type: say
+        content:
           - lang: rus
             str: 'Устарело, обновите до версии 0.7 и выше - CWND-UnofficialPatches.esp'
       - type: say
@@ -11216,28 +11228,42 @@ plugins:
         condition: 'checksum("CiviliansWillNotDiePatches.esp",C0754EA7)'
   - name: 'CWND-Basic.esp'
     msg:
+      - type: say
+        content:
           - lang: rus
             str: 'Требуется: Skyrim 1.6.89.0.6'
         condition: 'not version("..\TESV.exe","1.6.89.0.6",==)'
+      - type: say
+        content:
           - lang: rus
             str: 'Не работает с версиями Скайрим 1.8.151.0.7 и выше. Используйте вместо этого альтернативную версию - CWND-UnofficialPatches.esp'
         condition: '( not file("CWND-UnofficialPatches.esp") ) and version("..\TESV.exe","1.8.151.0.7",==)'
   - name: 'CWND-UnofficialPatches.esp'
     msg:
+      - type: say
+        content:
           - lang: rus
             str: 'Требуется: Skyrim 1.8.151.0.7+'
         condition: 'version("..\TESV.exe","1.8.151.0.7",<)'
+      - type: say
+        content:
           - lang: rus
             str: 'Несовместим с: CWND-Basic.esp'
         condition: 'file("CWND-Basic.esp")'
   - name: 'CWND-UnofficialPatches_LB.esp'
     msg:
+      - type: say
+        content:
           - lang: rus
             str: 'Несовместим с: CWND-Basic.esp'
         condition: 'file("CWND-Basic.esp")'
+      - type: say
+        content:
           - lang: rus
             str: 'Несовместим с: CWND-UnofficialPatches.esp'
         condition: 'file("CWND-UnofficialPatches.esp")'
+      - type: say
+        content:
           - lang: rus
             str: 'Помимо Unofficial Skyrim Patch v1.3.2a и выше требуется еще и esm версия плагина "Lady Body" [LB] v2.1 и выше. Это очень важно, т.к. иначе вызовет вылеты и баги, если этих файлов нет.'
         condition: '( not active("Unofficial Skyrim Patch.esp") ) or not file("Lady Body.esm")'
@@ -19924,6 +19950,8 @@ plugins:
         condition: 'not active("HarvestOverhaulDawnguardDragonborn.esp")'
   - name: 'SkyRe_Lighting.esp'
     msg:
+      - type: say
+        content:
           - lang: spa
             str: 'Only for non ENB users'
           - lang: rus
@@ -19993,6 +20021,8 @@ plugins:
         itm: 3
   - name: 'Morrowloot.esp'
     msg:
+      - type: say
+        content:
           - lang: spa
             str: 'It is recommended to load morrowloot after any plugins that have a Relev tag which change the same leveled lists as morrowloot because they will re-add vanilla records removed by morrowloot.'
           - lang: rus
@@ -37411,6 +37441,8 @@ plugins:
 # BEGINGROUP: IMGS and LIGH Load Late
   - name: 'Realistic Lighting( - Full| - Addon)\.esp'
     msg:
+      - type: say
+        content:
           - lang: rus
             str: 'Используйте только один LightAdjuster esp'
       - type: say
