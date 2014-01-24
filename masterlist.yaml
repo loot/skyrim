@@ -3650,11 +3650,8 @@ plugins:
   - name: 'USKP_addon ENG.esp'
     inc:
       - 'USKP_addon.esp'
-    msg:
 # ## USKP addon HF 2.esp
 # ## fixes that must load after USKP
-  - name: 'RaceCompatibilityUSKPOverride.esp'
-    msg:
 # ## RaceComp is explicit master; USKP is implicit
 # ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
 # ENDGROUP: Vanilla fixes
@@ -3893,7 +3890,6 @@ plugins:
             str: 'Этот мод может быть несовместим с любыми модами, меняющими классы персонажей вампиров.'
           - lang: spa
             str: 'This mod will not be compatible with any mods that alter the vampire character classes.'
-  - name: 'VLCollisionFix.esp'    msg:
 # ## Unofficial DLC Patches
   - name: 'USKP Dawnguard vampire face & eye fix.esp'
     msg:
@@ -4073,7 +4069,6 @@ plugins:
             str: 'Версия OrientalbeautyMod.esp зависит от реплейсера женского тела, который вы используете, если таковой имеется.'
           - lang: spa
             str: 'El OrientalbeautyMod.esp que uses depende de cual sustituto del cuerpo femenino (En su caso) uses.'
-  - name: 'serana.esp'    msg:
 # SupermodelSkyrim.esp moved back to npc faces because it''s npc faces overhaul (too many conflicts)
   - name: 'SupermodelSkyrim.esp'
   - name: 'SupermodelDawnguard.esp'  - name: 'Tonilia.esp'
@@ -6974,7 +6969,8 @@ plugins:
           - lang: spa
             str: 'Usar MAD Ingots & Leather.esp o MAD Ingots & Leather Ars Metallica Compatible.esp, no ambos.'
         condition: 'file("MAD Ingots & Leather Ars Metallica Compatible.esp")'
-  - name: 'Magecraft.esp'    dirty:
+  - name: 'Magecraft.esp'
+    dirty:
       - crc: 0x8cd7efba
         util: *dirtyUtil
         udr: 39
@@ -7008,7 +7004,8 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("marader.esp",AAC47B36)'
-  - name: 'Marco''s Integrated Leveled Lists.esp'    tag:
+  - name: 'Marco''s Integrated Leveled Lists.esp'
+    tag:
       - Delev
       - Relev
     dirty:
@@ -13786,7 +13783,8 @@ plugins:
       - crc: 0x64810379
         util: *dirtyUtil
         itm: 32
-  - name: 'YASH.esp'    msg:
+  - name: 'YASH.esp'
+    msg:
       - type: say
         content:
           - lang: eng
@@ -16602,7 +16600,8 @@ plugins:
       - crc: 0x90c691
         util: *dirtyUtil
         itm: 1
-  - name: 'BBLS No Ore or Soul Gems for v5.esp'  - name: 'BBLSGeneralStoresbyNatilde.esp'    dirty:
+  - name: 'BBLS No Ore or Soul Gems for v5.esp'  - name: 'BBLSGeneralStoresbyNatilde.esp'
+    dirty:
       - crc: 0x578e287
         util: *dirtyUtil
         udr: 22
@@ -20106,7 +20105,8 @@ plugins:
         itm: 37
         udr: 160
   - name: 'MjanasLabyrinthUpdater.esp'
-  - name: 'MjanasPlayground.esp'    dirty:
+  - name: 'MjanasPlayground.esp'
+    dirty:
       - crc: 0x34dafcdd
         util: *dirtyUtil
         itm: 5
