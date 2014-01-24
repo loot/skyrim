@@ -3757,16 +3757,6 @@ plugins:
 # ## fixes that must load after USKP
   - name: 'RaceCompatibilityUSKPOverride.esp'
     msg:
-
-      - type: error
-        content:
-          - lang: eng
-            str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Dawnguard.esm no se encuentra presente o activo. kyrim fallará sin se carga este archivo sin Dawnguard (DLC Oficial de Betheseda).'
-        condition: '( checksum("RaceCompatibilityUSKPOverride.esp",DC71C73F) ) and not active("Dawnguard.esm")'
 # ## RaceComp is explicit master; USKP is implicit
 # ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
 # ENDGROUP: Vanilla fixes
@@ -8322,15 +8312,6 @@ plugins:
       - Delev
   - name: 'Skymomod_jackGa_Add-on.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: '[SkyMoMod.esm](http://www.nexusmods.com/skyrim/mods/9694) is not present or is not active. Skyrim will CTD when loading if using this file without it.'
-          - lang: rus
-            str: '[SkyMoMod.esm](http://www.nexusmods.com/skyrim/mods/9694) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
-          - lang: spa
-            str: '[SkyMoMod.esm](http://www.nexusmods.com/skyrim/mods/9694) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod él.'
-        condition: 'not file("SkyMoMod.esm")'
     tag:
       - Delev
       - Relev
@@ -8399,15 +8380,6 @@ plugins:
             str: 'Используйте только один SkyrimImprovedPuddles esp.'
           - lang: spa
             str: 'Utilizar solo un SkyrimImprovedPuddles esp.'
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: '( file("SkyrimImprovedPuddles-HearthFires.esp") or file("SkyrimImprovedPuddles-DG-HF.esp") or file("SkyrimImprovedPuddles-HF-DB.esp") or file("SkyrimImprovedPuddles-DG-HF-DB.esp") ) and not active("Hearthfires.esm")'
   - name: 'skyrimoverhauldragonborn.esp'
     msg:
 
@@ -19931,15 +19903,6 @@ plugins:
         udr: 21
   - name: 'FortBuffscale.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: '( checksum("FortBuffscale.esp",35168FD9) or checksum("FortBuffscale.esp",E8B27322) ) and not active("Hearthfires.esm")'
     dirty:
       - crc: 0x1fbbacf2
         util: *dirtyUtil
@@ -20564,15 +20527,6 @@ plugins:
         udr: 144
   - name: 'HoneysideTNF.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: 'not active("Hearthfires.esm")'
     dirty:
       - crc: 0x8e050bd2
         util: *dirtyUtil
@@ -21813,15 +21767,6 @@ plugins:
     msg:
   - name: 'Proudspire Manor Refurbished.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: '( checksum("Proudspire Manor Refurbished.esp",CDE3CA7C) ) and not active("Hearthfires.esm")'
     dirty:
       - crc: 0x54bdfaee
         util: *dirtyUtil
@@ -22499,15 +22444,6 @@ plugins:
         itm: 49
   - name: 'ShezriesHFKitchen.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: 'not active("Hearthfires.esm")'
     dirty:
       - crc: 0x9e35b611
         util: *dirtyUtil
@@ -22517,15 +22453,6 @@ plugins:
         itm: 8
   - name: 'ShezriesHFKitchenHel.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: 'not active("Hearthfires.esm")'
     dirty:
       - crc: 0xbd5acd77
         util: *dirtyUtil
@@ -22569,15 +22496,6 @@ plugins:
         itm: 103
   - name: 'Simply Improved Breezehome.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: '( checksum("Simply Improved Breezehome.esp",946E7BCB) ) and not active("Hearthfires.esm")'
       - type: warn
         content:
           - lang: eng
@@ -22827,15 +22745,6 @@ plugins:
         itm: 16
   - name: 'SSHjerimMod.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: '( checksum("SSHjerimMod.esp",6C605C36) ) and not active("Hearthfires.esm")'
     dirty:
       - crc: 0x6c605c36
         util: *dirtyUtil
@@ -28269,38 +28178,11 @@ plugins:
     inc:
       - 'YChildren of the Sky.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).'
-        condition: 'not active("Hearthfires.esm")'
     tag:
       - Delev
       - Relev
   - name: 'R1Cots-Refait-Hearthfire.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).'
-        condition: 'not active("Hearthfires.esm")'
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).'
-        condition: 'not file("R1Cots-Refait.esp")'
   - name: 'RCOTS-RACES.esp'
     msg:
   - name: 'RCOTS-Armorpack(\(EnglishVersion\))?\.esp'
@@ -37376,26 +37258,8 @@ plugins:
         condition: 'checksum("Ral-Kur1.1.1.esp",3EB078AF)'
   - name: 'Rayya Housecarl Makeover GRW.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: 'not active("Hearthfires.esm")'
   - name: 'RayyaMakeOver.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: 'not active("Hearthfires.esm")'
   - name: 'Rowena Frostmoor.esp'
     msg:
       - type: warn
@@ -39196,15 +39060,6 @@ plugins:
         udr: 1
   - name: 'Atlas Hearthfire.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: 'not active("Hearthfires.esm")'
   - name: 'Atlas Dragonborn.esp'
     msg:
     dirty:
