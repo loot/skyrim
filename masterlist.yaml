@@ -4906,16 +4906,6 @@ plugins:
     inc:
       - 'ClimatesOfTamriel.esm'
       - 'Realistic Lighting.esp'
-  - name: 'enhanceddynamicweathersystem.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Use only one enhanceddynamicweathersystem esp.'
-          - lang: rus
-            str: 'Используйте только один enhanceddynamicweathersystem esp.'
-          - lang: spa
-            str: 'Utilizar solo un enhanceddynamicweathersystem esp.'
   - name: 'enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp'
     inc:
       - 'Realistic Lighting.esp'
@@ -5398,6 +5388,8 @@ plugins:
             str: 'Utilizar solo un realrain esp.'
         condition: '( file("realrainBWRLWC.esp") ) or file("realrain.esp")'
   - name: 'realrainextended.esp'
+    after:
+      - 'Purewaters.esp'
     msg:
       - type: warn
         content:
@@ -5497,7 +5489,7 @@ plugins:
           - lang: spa
             str: 'Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)'
         condition: 'not active("Hearthfires.esm")'
-# See readme for more info about load order
+# See readme for more info about load order (heh.. it doesn't have a readme -egocarib)
   - name: 'enhanceddynamicweathersystem.esp'
     msg:
       - type: say
@@ -8702,6 +8694,8 @@ plugins:
             str: 'Utilizar solo un Invulnerable Horses esp.'
         condition: 'file("Invulnerable Horses - Brave.esp")'
   - name: 'Ish''s Respec Mod.esp'
+    after:
+      - 'Perky.esp'
     tag:
       - Relev
   - name: 'Ish''s Souls to Perks.esp'
@@ -10611,6 +10605,9 @@ plugins:
       - crc: 0x883d4a75
         util: *dirtyUtil
         itm: 12
+  - name: 'Smithing Coinage.esp'
+    after:
+      - 'Invent.esp'
   - name: 'Smithing [D|G]rainMill\.esp'
     inc:
       - 'SkyrimGranary.esp'
@@ -11014,11 +11011,15 @@ plugins:
   - name: 'WerewolfAftermathEquipper.esp'
     req: [ *SKSE ]
   - name: 'WetandCold.esp'
+    after:
+      - 'SKSE Hotkeys.esp'
     msg:
       - type: say
         content: 'Requires: Skyrim 1.9.29.0.8+'
         condition: 'version("..\TESV.exe","1.9.29.0.8",<)'
   - name: 'WetandCold - Ashes.esp'
+    after:
+      - 'SKSE Hotkeys.esp'
     msg:
       - type: say
         content: 'Requires: Skyrim 1.9.29.0.8+'
@@ -30506,6 +30507,9 @@ plugins:
       - crc: 0x1c31e69b
         util: *dirtyUtil
         itm: 1
+  - name: 'whiterunMarket.esp'
+    after:
+      - 'forested_skyrim.esp'
   - name: 'WhiterunFortified.esp'
     dirty:
       - crc: 0x35897eae
@@ -31535,6 +31539,8 @@ plugins:
             str: 'The Paarthurnax Dilemma.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без The Paarthurnax Dilemma'
         condition: 'not file("The Paarthurnax Dilemma.esp")'
   - name: 'BetterQuestObjectives-RequiemPatch.esp'
+    after:
+      - 'ESFCompanions.esp'
     msg:
       - type: error
         content:
@@ -32446,6 +32452,8 @@ plugins:
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
         condition: 'not active("Dawnguard.esm")'
   - name: 'DawnguardArmorLaup26.esp'
+    after:
+      - 'LorebalanceArtifacts.esp'
     msg:
       - type: error
         content:
@@ -32685,11 +32693,18 @@ plugins:
     inc:
       - 'ElkHide.esp'
   - name: 'ESFCompanions.esp'
+    after: 
+      - 'Brevi_MoonlightTales.esp'
     dirty:
       - crc: 0x16c76fa7
         util: *dirtyUtil
         itm: 1
+  - name: 'ESFCompanions - VilkasProvingHonorNoShowFix.esp'
+    after: 
+      - 'Brevi_MoonlightTales.esp'
   - name: 'BetterQuestObjectives-ESFCompanionsPatch.esp'
+    after: 
+      - 'Brevi_MoonlightTales.esp'
     msg:
       - type: error
         content:
@@ -33396,6 +33411,8 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'improvedrealistic.esp'
+    after:
+      - 'LMBalancingDawnguardDV.esp'
     inc:
       - 'improvedoverpowered.esp'
   - name: 'ImprovedScImpUniforms - Armor Base.esp'
@@ -33669,17 +33686,6 @@ plugins:
       - crc: 0xe22f5916
         util: *dirtyUtil
         itm: 1
-  - name: 'DawnguardArmorLaup26.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
-        condition: 'not active("Dawnguard.esm")'
   - name: 'lowerlevellegendaryandrevereddragons.esp'
     msg:
       - type: error
@@ -36078,6 +36084,8 @@ plugins:
             str: 'aMidianborn_Skyforge_Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без aMidianborn_Skyforge_Weapons'
         condition: 'not file("aMidianborn_Skyforge_Weapons.esp")'
   - name: 'BetterQuestObjectives-AMBSkyforgePatch.esp'
+    after:
+      - 'ESFCompanions.esp'
     msg:
       - type: error
         content:
@@ -36163,9 +36171,6 @@ plugins:
       - Delev
       - Relev
       - Stats
-  - name: 'improvedrealistic.esp'
-    inc:
-      - 'improvedoverpowered.esp'
   - name: 'Skyrim unleashed_items.esp'
     msg:
       - type: error
@@ -39368,47 +39373,6 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Vampires hate the sun.esp.esp",820C3864)'
-  - name: 'ESFCompanions.esp'
-    dirty:
-      - crc: 0x16c76fa7
-        util: *dirtyUtil
-        itm: 1
-  - name: 'BetterQuestObjectives-ESFCompanionsPatch.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'ESFCompanions.esp is not present or is not active. Skyrim will CTD when loading if this file is active without ESFCompanions'
-          - lang: rus
-            str: 'ESFCompanions.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)'
-        condition: 'not file("ESFCompanions.esp")'
-      - type: error
-        content:
-          - lang: eng
-            str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
-        condition: '( checksum("BetterQuestObjectives-ESFCompanionsPatch.esp",D49C6FE4) ) and not active("Dawnguard.esm")'
-  - name: 'BetterQuestObjectives-RequiemPatch.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Requiem.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem'
-          - lang: rus
-            str: 'Requiem.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Requiem'
-        condition: 'not file("Requiem.esp")'
-  - name: 'BetterQuestObjectives-AMBSkyforgePatch.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'aMidianborn_Skyforge_Weapons.esp is not present or is not active. Skyrim will CTD when loading if using this file without aMidianborn_Skyforge_Weapons'
-          - lang: rus
-            str: 'aMidianborn_Skyforge_Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без aMidianborn_Skyforge_Weapons'
-        condition: 'not file("aMidianborn_Skyforge_Weapons.esp")'
   - name: 'WerewolfMastery.esp'
     msg:
       - type: error
@@ -41325,6 +41289,9 @@ plugins:
           - lang: spa
             str: 'Usar Clear Skies Fix.esp o Clear Skies Fix - CoT version.esp, no ambos.'
         condition: 'file("Clear Skies Fix.esp")'
+  - name: 'DeadlySpellImpacts.esp'
+    after:
+      - 'balanceddestructionv4.esp'
   - name: 'EmpoweredMagic_Dawnguard.esp'
     msg:
       - type: error
@@ -41604,6 +41571,9 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un Skyrim Improved Magic System esp.'
         condition: 'file("Skyrim Improved Magic System.esp") and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
+  - name: 'Starting Spell Choice.esp'
+    after:
+      - 'Alternate Start - Live Another Life.esp'
   - name: 'tSSSSS.esp'
     msg:
       - type: warn
@@ -41851,17 +41821,12 @@ plugins:
     tag:
       - Delev
       - Relev
+  - name: 'EnchantingAwakenedPlugins.esp'
+    msg:
+      - type: say
+        content: 'Obsolete. Delete this plugin and upgrade to a newer version of [Enchanting Awakened](http://www.nexusmods.com/skyrim/mods/42796)'
   - name: 'EnchantingAwakenedRequiem.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).'
-        condition: 'not active("Dragonborn.esm")'
       - type: error
         content:
           - lang: eng
@@ -41873,15 +41838,8 @@ plugins:
         condition: 'not active("Dawnguard.esm")'
   - name: 'EnchantingAwakenedDawnguard.esp'
     msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).'
-          - lang: rus
-            str: 'Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).'
-          - lang: spa
-            str: 'Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).'
-        condition: 'not active("Dawnguard.esm")'
+      - type: say
+        content: 'Obsolete. Delete this plugin and upgrade to a newer version of [Enchanting Awakened](http://www.nexusmods.com/skyrim/mods/42796)'
   - name: 'EA Skyre No DLC Patch.esp'
     msg:
       - type: say
@@ -41897,23 +41855,35 @@ plugins:
       - type: error
         content:
           - lang: eng
-            str: 'Animated Weapon Enchants.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
+            str: '[Animated Weapon Enchants.esp](http://www.nexusmods.com/skyrim/mods/12668) is not present or is not active. Skyrim will CTD when loading if using this file without it.'
           - lang: rus
-            str: 'Animated Weapon Enchants.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
+            str: '[Animated Weapon Enchants.esp](http://www.nexusmods.com/skyrim/mods/12668) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
           - lang: spa
-            str: 'Animated Weapon Enchants.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
+            str: '[Animated Weapon Enchants.esp](http://www.nexusmods.com/skyrim/mods/12668) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("Animated Weapon Enchants.esp")'
   - name: 'EnchantingAwakenedSeeEnchPatch.esp'
     msg:
       - type: error
         content:
           - lang: eng
-            str: 'SeeEnchs.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.'
+            str: '[SeeEnchs.esp](http://www.nexusmods.com/skyrim/mods/38839) is not present or is not active. Skyrim will CTD when loading if using this file without it.'
           - lang: rus
-            str: 'SeeEnchs.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
+            str: '[SeeEnchs.esp](http://www.nexusmods.com/skyrim/mods/38839) отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.'
           - lang: spa
-            str: 'SeeEnchs.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
+            str: '[SeeEnchs.esp](http://www.nexusmods.com/skyrim/mods/38839) no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
         condition: 'not active("SeeEnchs.esp")'
+  - name: 'EnchantingAwakenedBaneOfSoulsFix.esp'
+    msg:
+      - type: say
+        content: 'Obsolete. Delete this plugin and upgrade to a newer version of [Enchanting Awakened](http://www.nexusmods.com/skyrim/mods/42796)'
+  - name: 'EnchantingAwakenedGemAbsorbFix.esp'
+    msg:
+      - type: say
+        content: 'Obsolete. Delete this plugin and upgrade to a newer version of [Enchanting Awakened](http://www.nexusmods.com/skyrim/mods/42796)'
+  - name: 'EnchantingAwakenedMCM.esp'
+    msg:
+      - type: say
+        content: 'Obsolete. Delete this plugin and upgrade to a newer version of [Enchanting Awakened](http://www.nexusmods.com/skyrim/mods/42796)'
   - name: 'enchanting freedom.esp'
     dirty:
       - crc: 0xc1ed186f
@@ -42648,6 +42618,11 @@ plugins:
       - crc: 0x1617a10d
         util: *dirtyUtil
         itm: 3
+  - name: 'More Exp Chance.esp'
+    msg:
+      - type: say
+        content: 'Must be moved before EnchantingAwakened.esp in your load order to avoid breaking some features of Enchanting Awakened.'
+        condition: 'file("EnchantingAwakened.esp")'
   - name: 'MR_(FasterDualcasting|MagickaRevisited|PowerfulDualcasting)\.esp'
     msg:
       - type: say
@@ -51028,17 +51003,6 @@ plugins:
       - type: say
         content: 'This mod is meant to be used with the Races module of SkyRe. The game should work fine without it, but the Khajiit "Claws" effect will have a wrong description.'
         condition: 'not active("SkyRe_Races.esp")'
-  - name: 'SPTConsistentOlderPeople.esp'
-    msg:
-      - type: say
-        condition: 'not checksum("SPTConsistentOlderPeople.esp",21792C1E) and not checksum("SPTConsistentOlderPeople.esp",F6C6B5AC) and not checksum("SPTConsistentOlderPeople.esp",91A5BE22)' 
-        content:
-          - lang: eng
-            str: 'If this is not newer than v1.3, update to the latest version.'
-          - lang: rus
-            str: 'Если этот плагин не новее версии 1.3, обновите до последней версии.'
-          - lang: spa
-            str: 'If this is not newer than v1.3, update to the latest version.'
   - name: 'ethereal_elven_overhaul.esp'
     inc:
       - 'XCES.esp'
@@ -51440,6 +51404,14 @@ plugins:
       - crc: 0x98cc7458
         util: *dirtyUtil
         itm: 8
+  - name: 'Animated Weapon Enchants.esp'
+    msg:
+      - type: say
+        content: 'Requries a patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) when used with Enchanting Awakened.'
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedAWEPatch.esp")'
+      - type: say
+        content: 'When used with Enchanting Awakened, the correct load order is: ''Animated Weapon Enchants.esp'', ''EnchantingAwakened.esp'', any other Enchanting Awakened .esps, then ''EnchantingAwakenedAWEPatch''.'
+        condition: 'active("EnchantingAwakened.esp") and active("EnchantingAwakenedAWEPatch.esp")'
   - name: 'DawnguardRuneWeaponsFXSReplacer.esp'
     msg:
       - type: error
@@ -51499,6 +51471,14 @@ plugins:
       - crc: 0xad1d1564
         util: *dirtyUtil
         itm: 220
+  - name: 'SeeEnchs.esp'
+    msg:
+      - type: say
+        content: 'Requries a patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) when used with Enchanting Awakened.'
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSeeEnchPatch.esp")'
+      - type: say
+        content: 'When used with Enchanting Awakened, the correct load order is: ''SeeEnchs.esp'', ''EnchantingAwakened.esp'', Any other Enchanting Awakened .esps, then ''EnchantingAwakenedSeeEnchPatch.esp''.'
+        condition: 'active("EnchantingAwakened.esp") and active("EnchantingAwakenedSeeEnchPatch.esp")'
 # ENDGROUP: Shader Replacers
 # BEGINGROUP: Water and Lava
   - name: 'Hot Volcanic Water.esp'
@@ -51511,16 +51491,6 @@ plugins:
       - crc: 0xb395566b
         util: *dirtyUtil
         itm: 2
-  - name: 'realrainextended.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Use only one realrain esp.'
-          - lang: rus
-            str: 'Используйте только один realrain esp.'
-          - lang: spa
-            str: 'Utilizar solo un realrain esp.'
   - name: 'PurewatersDG.esp'
     msg:
       - type: error
