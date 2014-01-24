@@ -4884,6 +4884,11 @@ plugins:
       - crc: 0xfe2f1935
         util: *dirtyUtil
         itm: 3
+  - name: 'Chesko_Frostfall.esp'
+    msg:
+      - type: say
+        content: 'Frostfall''s Portable Enchanter''s Circle requires a Patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) to work correctly when used with Enchanting Awakened.'
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedFrostfallPatch.esp")'
   - name: 'FrostfallWalkingStickFix.esp'
     msg:
       - type: say
@@ -5826,6 +5831,9 @@ plugins:
 # ENDGROUP: Textures
 
 # BEGINGROUP: Base Early
+  - name: 'Cutting Room Floor.esp'
+    after:
+      - 'TouringCarriages.esp'
   - name: 'BeastModels.esp'
     msg:
       - type: say
@@ -10363,6 +10371,9 @@ plugins:
         util: *dirtyUtil
         itm: 24
   - name: 'Skyrim Immersive Creatures.esp'
+    after:
+      - 'Sleeping Dangers - Sands of Time.esp'
+      - 'SleepingDangers-SandsofTime.esp'
     msg:
       - type: say
         content: 'This is the Lore-Friendly version by jackstarr.  Do not use the original esp or esm by lifestorock.'
@@ -19106,6 +19117,9 @@ plugins:
 
 # BEGINGROUP: Deadly and Mighty Dragons
   - name: 'DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp'
+    after:
+      - name: 'DragonsDiversified.esp'
+        condition: 'file("DeadlyDiversifiedDragonsPatch.esp")'
     tag:
       - Delev
       - Relev
@@ -19139,6 +19153,16 @@ plugins:
     tag:
       - Delev
       - Relev
+  - name: 'DeadlyDiversifiedDragonsPatch.esp'
+    after:
+      - 'DeadlyDragons.esp'
+      - 'DeadlyDragonsNormal.esp'
+      - 'DeadlyDragonsHard.esp'
+      - 'DeadlyDragonsHardcore.esp'
+      - 'DeadlyDragons DV.esp'
+      - 'DeadlyDragonsNormal DV.esp'
+      - 'DeadlyDragonsHard DV.esp'
+      - 'DeadlyDragonsHardcore DV.esp'
   - name: 'Odahviing Mighty Dragons.esp'
     tag:
       - Delev
@@ -37350,6 +37374,10 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'Open Cities Skyrim.esp'
+    after:
+      - 'Unique Region Names.esp'
+      - 'URN+CoT Patch.esp'
+      - 'Atlas Map Markers.esp'
     msg:
       - type: warn
         content: 'Stolen content. Please show respect for authors'' rights and download from a legitimate source ([here](http://www.nexusmods.com/skyrim/mods/8058)).'
@@ -39681,6 +39709,10 @@ plugins:
         util: *dirtyUtil
         itm: 6
   - name: 'Apocalypse - The Spell Package.esp'
+    msg:
+      - type: say
+        content: 'This mod''s Cloak of Souls spell requires a Patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) to work correctly when used with Enchanting Awakened.'
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedApocalypsePatch.esp")'
     dirty:
       - crc: 0x9f7f929a
         util: *dirtyUtil
@@ -41722,6 +41754,11 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Eld-combinePotions.esp",B44CC974)'
+  - name: 'DynamicPotions.esp'
+    msg:
+      - type: say
+        content: 'To save and load custom presets while using this mod, download the [FISS plugin](http://www.nexusmods.com/skyrim/mods/48265). A "Presets" page will appear in the MCM menu once FISS is active.'
+        condition: 'not file("FISS.esp")'
   - name: 'PISE-Reduced Potions.esp'
     tag:
       - Delev
@@ -41829,6 +41866,13 @@ plugins:
     tag:
       - Delev
       - Relev
+  - name: 'EnchantingAwakened.esp'
+    after:
+      - 'More Exp Chance.esp'
+      - name: 'Animated Weapon Enchants.esp'
+        condition: 'file("EnchantingAwakenedAWEPatch.esp")'
+      - name: 'SeeEnchs.esp'
+        condition: 'file("EnchantingAwakenedSeeEnchPatch.esp")'
   - name: 'EnchantingAwakenedPlugins.esp'
     msg:
       - type: say
@@ -42467,20 +42511,10 @@ plugins:
           - lang: spa
             str: 'Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)'
         condition: 'not active("Dawnguard.esm")'
-  - name: 'Stealth Skills Rebalanced_COMPLETE.esp'
-    tag:
-      - Delev
-  - name: 'Stealth Skills Rebalanced_SNEAK.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_SNEAK.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_SNEAK.esp, не обa.'
-          - lang: spa
-            str: 'Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_SNEAK.esp, no ambos.'
-        condition: 'file("Stealth Skills Rebalanced_COMPLETE.esp")'
+  - name: 'ACE Armor.esp'
+    after:
+      - 'Stealth Skills Rebalanced_COMPLETE.esp'
+      - 'Stealth Skills Rebalanced_SNEAK.esp'
   - name: 'ACE Archery-Weapons of the Third Era Patch.esp'
     msg:
       - type: warn
@@ -42626,11 +42660,6 @@ plugins:
       - crc: 0x1617a10d
         util: *dirtyUtil
         itm: 3
-  - name: 'More Exp Chance.esp'
-    msg:
-      - type: say
-        content: 'Must be moved before EnchantingAwakened.esp in your load order to avoid breaking some features of Enchanting Awakened.'
-        condition: 'file("EnchantingAwakened.esp")'
   - name: 'MR_(FasterDualcasting|MagickaRevisited|PowerfulDualcasting)\.esp'
     msg:
       - type: say
@@ -43486,6 +43515,9 @@ plugins:
           - lang: spa
             str: 'Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_LOCKPICKING.esp, no ambos.'
         condition: 'file("Stealth Skills Rebalanced_COMPLETE.esp")'
+      - type: say
+        content: 'Requires a patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) when used with Enchanting Awakened.'
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSSRPatch.esp")'
     tag:
       - Delev
   - name: 'Stealth Skills Rebalanced_PICKPOCKET.esp'
@@ -43512,6 +43544,9 @@ plugins:
           - lang: spa
             str: 'Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_SNEAK.esp, no ambos.'
         condition: 'file("Stealth Skills Rebalanced_COMPLETE.esp")'
+      - type: say
+        content: 'Requires a patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) when used with Enchanting Awakened.'
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSSRPatch.esp")'
   - name: 'Skyrim Perk Enhancements.esp'
     dirty:
       - crc: 0xf2b16be
@@ -45450,29 +45485,6 @@ plugins:
           - lang: spa
             str: 'Usar EASamhairE_1_1.esp o EASamhairNE_1_1.esp, no ambos.'
         condition: 'file("EASamhairE_1_1.esp")'
-  - name: 'EMCompViljaSkyrim.esp'
-    dirty:
-      - crc: 0xc45d4383
-        util: *dirtyUtil
-        itm: 2
-  - name: 'EMViljaInSolstheimAddOn.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)'
-          - lang: rus
-            str: 'Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)'
-          - lang: spa
-            str: 'Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)'
-        condition: 'not active("Dragonborn.esm")'
-      - type: error
-        content:
-          - lang: eng
-            str: 'EMCompViljaSkyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without [EMCompViljaSkyrim](http://www.nexusmods.com/skyrim/mods/26393)'
-          - lang: rus
-            str: 'EMCompViljaSkyrim.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без [EMCompViljaSkyrim](http://www.nexusmods.com/skyrim/mods/26393)'
-        condition: 'not file("EMCompViljaSkyrim.esp")'
   - name: 'Essential followers - all followers.esp'
     msg:
       - type: say
@@ -45748,6 +45760,16 @@ plugins:
 # ENDGROUP: Extensible Follower Framework
 # BEGINGROUP: Ultimate Follower Overhaul
   - name: 'UFO - Ultimate Follower Overhaul.esp'
+    after:
+      - 'brhucefollower.esp'
+      - 'brhucelegacy.esp'
+      - 'EMViljangelinaPatch.esp'
+      - 'EMViljessicaPatch.esp'
+      - 'EMCompViljaNarphousHeadPatch.esp'
+      - 'EMCompViljaSkyrimBodyPatch.esp'
+      - 'PC Exclusive Animation Path - Vilja.esp'
+      - 'EMCompViljaSkyrim.esp'
+      - 'EMViljaInSolstheimAddOn.esp'
     inc:
       - 'BDO.esp'
     msg:
@@ -51419,9 +51441,6 @@ plugins:
       - type: say
         content: 'Requries a patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) when used with Enchanting Awakened.'
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedAWEPatch.esp")'
-      - type: say
-        content: 'When used with Enchanting Awakened, the correct load order is: ''Animated Weapon Enchants.esp'', ''EnchantingAwakened.esp'', any other Enchanting Awakened .esps, then ''EnchantingAwakenedAWEPatch''.'
-        condition: 'active("EnchantingAwakened.esp") and active("EnchantingAwakenedAWEPatch.esp")'
   - name: 'DawnguardRuneWeaponsFXSReplacer.esp'
     msg:
       - type: error
@@ -51486,9 +51505,6 @@ plugins:
       - type: say
         content: 'Requries a patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) when used with Enchanting Awakened.'
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSeeEnchPatch.esp")'
-      - type: say
-        content: 'When used with Enchanting Awakened, the correct load order is: ''SeeEnchs.esp'', ''EnchantingAwakened.esp'', Any other Enchanting Awakened .esps, then ''EnchantingAwakenedSeeEnchPatch.esp''.'
-        condition: 'active("EnchantingAwakened.esp") and active("EnchantingAwakenedSeeEnchPatch.esp")'
 # ENDGROUP: Shader Replacers
 # BEGINGROUP: Water and Lava
   - name: 'Hot Volcanic Water.esp'
