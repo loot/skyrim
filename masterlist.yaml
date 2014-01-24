@@ -11206,6 +11206,8 @@ plugins:
         content:
           - lang: rus
             str: 'Устарело, обновите до версии 0.7 и выше - CWND-KillChild.esp'
+      - type: say
+        content:
           - lang: rus
             str: 'Данная версия мода убирает в детских расах пометку "Child".'
   - name: 'CiviliansWillNotDiePatches.esp - CWND-UnofficialPatches.esp'
@@ -11219,15 +11221,17 @@ plugins:
             str: 'Устарело, обновите до версии 0.7 и выше - CWND-UnofficialPatches.esp'
       - type: say
         content: 'Requires: Skyrim 1.7+'
-        condition: 'checksum("CiviliansWillNotDiePatches.esp",C0754EA7) and version("..\TESV.exe","1.7",<)'
+        condition: '( checksum("CiviliansWillNotDiePatches.esp",C0754EA7) ) and version("..\TESV.exe","1.7",<)'
       - type: say
         content: 'Requires: Skyrim 1.8+'
-        condition: 'checksum("CiviliansWillNotDiePatches.esp",2336B8B8) and version("..\TESV.exe","1.8",<)'
+        condition: '( checksum("CiviliansWillNotDiePatches.esp",2336B8B8) ) and version("..\TESV.exe","1.8",<)'
       - type: say
         content: 'Requires: Unofficial Skyrim Patch'
         condition: 'not active("Unofficial Skyrim Patch.esp")'
       - type: say
-        content: 'Устарело. Обновите до [CiviliansWillNotDiePatches.esp](http://modgames.net/load/247-1-0-13970) 0.6+'
+        content:
+          - lang: rus
+            str: 'Устарело. Обновите до "http://modgames.net/load/247-1-0-13970 CiviliansWillNotDiePatches.esp" 0.6+'
         condition: 'checksum("CiviliansWillNotDiePatches.esp",C0754EA7)'
   - name: 'CWND-Basic.esp'
     msg:
@@ -19956,7 +19960,7 @@ plugins:
     msg:
       - type: say
         content:
-          - lang: spa
+          - lang: eng
             str: 'Only for non ENB users'
           - lang: rus
             str: 'Только для не ENB пользователей.'
@@ -20027,7 +20031,7 @@ plugins:
     msg:
       - type: say
         content:
-          - lang: spa
+          - lang: eng
             str: 'It is recommended to load morrowloot after any plugins that have a Relev tag which change the same leveled lists as morrowloot because they will re-add vanilla records removed by morrowloot.'
           - lang: rus
             str: 'Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.'
@@ -42754,7 +42758,7 @@ plugins:
         display: 'Requires [Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
     msg:
       - type: warn
-        display: 'Requires [SKSE 1.5.6+](http://skse.silverlock.org)'
+        content: 'Requires [SKSE 1.5.6+](http://skse.silverlock.org)'
         condition: 'version("..\skse_loader.exe","0.1.5.6",<)'
   - name: 'SmithingMasteryPerks.esp'
     inc:
