@@ -21894,7 +21894,8 @@ plugins:
       - crc: 0xc1886dbd
         util: *dirtyUtil
         itm: 5
-  - name: 'Thunderchild - Epic Shout Package.esp'    msg:
+  - name: 'Thunderchild - Epic Shout Package.esp'
+    msg:
       - type: say
         content:
           - lang: eng
@@ -22556,7 +22557,8 @@ plugins:
         content: 'Requires: [WARZONES](http://www.nexusmods.com/skyrim/mods/9494)'
       - type: say
         content: 'Requires: [Cloaks of Skyrim](http://www.nexusmods.com/skyrim/mods/12092)'
-  - name: 'waterstonemanor.esp'    msg:
+  - name: 'waterstonemanor.esp'
+    msg:
       - type: warn
         content:
           - lang: eng
@@ -25123,7 +25125,8 @@ plugins:
       - crc: 0x8dab779c
         util: *dirtyUtil
         udr: 2
-  - name: 'MenuShoutsInDragonsLanguage.esp'    msg:
+  - name: 'MenuShoutsInDragonsLanguage.esp'
+    msg:
       - type: error
         content: 'Use Dawnguard version.'
         condition: '( active("Dawnguard.esm") ) and not checksum("MenuShoutsInDragonsLanguage.esp",E06D6E46)'
@@ -25913,7 +25916,7 @@ plugins:
             str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
           - lang: spa
             str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-  - name: 'convenient horses ultimate.esp'  - name: 'ORM Convenient Alsvid.esp'    - name: 'dD - Enhanced Blood Main.esp'
+  - name: 'convenient horses ultimate.esp'  - name: 'dD - Enhanced Blood Main.esp'
     msg:
       - type: say
         content: 'Requires: Skyrim 1.9+'
@@ -28082,8 +28085,7 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
-      - *FNIS  - name: 'IMCN Hearthfire Patch.esp'    msg:
-# ENDGROUP: Realism
+      - *FNIS# ENDGROUP: Realism
 # BEGINGROUP: Vampires and Werewolves
   - name: 'SkyRe_Vampirism.esp'
     inc:
@@ -28438,7 +28440,7 @@ plugins:
         util: *dirtyUtil
         itm: 6
   - name: 'Apocalypse - The Spell Package.esp'
-   msg:
+    msg:
       - type: say
         content: 'This mod''s Cloak of Souls spell requires a Patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) to work correctly when used with Enchanting Awakened.'
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedApocalypsePatch.esp")'
@@ -32502,7 +32504,8 @@ plugins:
             str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
-  - name: 'ApprenticeOfThuum.esp'    dirty:
+  - name: 'ApprenticeOfThuum.esp'
+    dirty:
       - crc: 0xf12ccb3a
         util: *dirtyUtil
         itm: 3
@@ -33994,7 +33997,8 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-  - name: 'Khajiit Marriage And Follower Mod 2-2.esp'    dirty:
+  - name: 'Khajiit Marriage And Follower Mod 2-2.esp'
+    dirty:
       - crc: 0xa00d7ad4
         util: *dirtyUtil
         itm: 7
@@ -35519,7 +35523,7 @@ plugins:
       - 'XCES.esp'
     msg:
       - type: say
-        condition: 'file("SkyRe_Races.esp") and not file("PreASISPatchEEO.esp") and not file("EEO patch.esp") and not checksum("ethereal_elven_overhaul.esp",38515FFF)'
+        condition: '( ( ( file("SkyRe_Races.esp") ) and not file("PreASISPatchEEO.esp") ) and not file("EEO patch.esp") ) and not checksum("ethereal_elven_overhaul.esp",38515FFF)'
         content:
           - lang: eng
             str: 'Incompatible with: SkyRe Races.  A compatibility patch is available [here](http://www.nexusmods.com/skyrim/mods/29185).'
@@ -35531,8 +35535,6 @@ plugins:
       - crc: 0x1841112c
         util: *dirtyUtil
         itm: 6
-  - name: 'EEO patch.esp'    - name: 'Vampire Skin Color Fix.esp'
-    msg:
 # ENDGROUP: Race Overrides
 
 # BEGINGROUP: Message suppression/changing overrides
