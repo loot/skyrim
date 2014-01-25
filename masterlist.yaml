@@ -616,7 +616,7 @@ plugins:
         udr: 0
     msg:
       - type: warn
-        condition: 'checksum("ClimatesOfTamriel.esm", C30AB34E)'
+        condition: 'checksum("ClimatesOfTamriel.esm",C30AB34E)'
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the [updated plugin](http://www.nexusmods.com/skyrim/mods/17802).'
       - type: warn
         condition: 'file("SoS - Civilization.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
@@ -36403,12 +36403,55 @@ plugins:
           - lang: spa
             str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
 # BEGINGROUP: Dynamic Plugins
-#
-#  IF VAR(EN) && IF VAR(SkyReM) WARN: Unmark Automatic Perks and Automatic Spells flags in ASIS patch options. Or you will have bugs and CTDs in game when using SkyRe and ASIS.
-#    IF VAR(RU) && IF VAR(SkyReM) WARN: Отключите флажки Automatic Perks и Automatic Spells в опциях патча. Если этого не сделать, то будут серьезные проблемы с АИ, при использовании SkyRe и ASIS (патч наделит неписей и мобов перками и заклинаниями, приводящими к периодическому замораживанию неписей, а также вылетам на рабочий стол).
-# Message does not appear to be relevant with newer SkyRe versions. - William
-#
+  - name: 'Pre Automatic Variants.*\.esp'
+    priority: 600
+  - name: 'Automatic Variants.esp'
+    priority: 600
+  - name: 'ASIS-Dependency.esp'
+    priority: 600
+  - name: 'PreASISPatch.*\.esp'
+    priority: 600
+  - name: 'ASIS.esp'
+    priority: 600
+    ##  IF VAR(EN) && IF VAR(SkyReM) WARN: Unmark Automatic Perks and Automatic Spells flags in ASIS patch options. Or you will have bugs and CTDs in game when using SkyRe and ASIS.
+    ##    IF VAR(RU) && IF VAR(SkyReM) WARN: Отключите флажки Automatic Perks и Automatic Spells в опциях патча. Если этого не сделать, то будут серьезные проблемы с АИ, при использовании SkyRe и ASIS (патч наделит неписей и мобов перками и заклинаниями, приводящими к периодическому замораживанию неписей, а также вылетам на рабочий стол).
+    ## Message does not appear to be relevant with newer SkyRe versions. - William
+  - name: 'Automatic Spells.esp'
+    priority: 600
+  - name: 'Automatic Variations.esp'
+    priority: 600
+  - name: 'Customized AI.esp'
+    priority: 600
+  - name: 'DeadlyCombat_ASIS_Patch.esp'
+    priority: 600
+  - name: 'DEOS - Patch.esp'
+    priority: 600
+  - name: 'LLI.esp'
+    priority: 600
+    ## Lootification dynamic recommended to go above Dual Sheath dynamic
+  - name: 'GELO_Patcher_Build.esp'
+    priority: 600
+    ## and so should GELOs
+  - name: 'Dual Sheath Redux Patch.esp'
+    priority: 600
+    after:
+      - 'LLI.esp'
+      - 'GELO_Patcher_Build.esp'
+  - name: 'EveryBody''s Different.esp'
+    priority: 600
+  - name: 'NPC Enchant Fix.esp'
+    priority: 600
+  - name: 'Perk Patch.esp'
+    priority: 600
+  - name: 'RBS.esp'
+    priority: 600
+  - name: 'Pre ReProccer.*\.esp'
+    priority: 600
+    ## Qotsafans pre Reproccer patches
+  - name: 'ReProccer.esp'
+    priority: 600
   - name: 'WTF.esp'
+    priority: 600
     msg:
       - type: say
         content:
@@ -36418,9 +36461,14 @@ plugins:
             str: 'Может понадобиться очистка в [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859). Некоторые сгенерированные тестовые записи этого SkyProc патча являются ITM записями. Инструкция по очистке доступна [здесь](http://u.to/cRq2BA).'
           - lang: spa
             str: 'May need [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning. Several test generations of this SkyProc Patch included ITMs. Puedes encontra una guía [aquí](http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit).'
+  - name: 'ZF Primary Needs Patcher.esp'
+    priority: 600
+  - name: 'SUM.esp'
+    priority: 600
 # BEGINGROUP: Patches for Dynamic Plugins
 # Patches for dynamic plugins - moved here because SUM offers patch merging functionality. - William
   - name: 'SkyRe_EnemyAI.esp'
+    priority: 700
     msg:
       - type: say
         content:
@@ -36431,22 +36479,82 @@ plugins:
           - lang: spa
             str: 'Deactivate ''SkyRe_EnemyAI.esp'' before creation of ASIS patch and activate only after creation of ASIS patch.'
         condition: 'active("SkyRe_EnemyAI.esp") and regex("ASIS(-Dependency)?\.esp")'
+  - name: 'PostASISPatch.esp'
+    priority: 700
+  - name: 'ANC EOS Recipe Patch.esp'
+    priority: 700
+  - name: 'BlackSacramentArmor ReProccer Patch.esp'
+    priority: 700
+  - name: 'BSA WIC LVA ReProccer Patch.esp'
+    priority: 700
+  - name: 'CBC EN LL ReProccer Patch.esp'
+    priority: 700
+  - name: 'kids_of_skyrim - skeleton AV patch.esp'
+    priority: 700
   - name: 'ReProccerNONPLAYERfix.esp'
+    priority: 700
     msg:
       - type: error
         content: 'Deactivate. Already included in Qotsafan''s Reproccer patches.'
         condition: 'regex("qotsafans.*\.esp")'
   - name: 'ReProccerDragonborn.esp'
+    priority: 700
     msg:
       - type: say
         content: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature. This can be done using Wrye Bash.'
         condition: 'file("SUM.esp")'
-# Begin qotsafan''s compatbility patches:
-# End qotsafan''s compatbility patches
-# ## AOS_SkyRe-Patch Patch.esp
-# ## a compat patch for qotsafan''s compat patches
-# ## AOS_Reduced_Reverb_Addon.esp
-# ## two AOS reported to load after any other AOS plugins or patches
+  - name: 'ReProccer-SkyforgeShields.esp'
+    priority: 700
+  - name: 'SkyforgedWeapons ReProccer Patch.esp'
+    priority: 700
+  - name: 'ReProccerSRP Better Vampires Compat.esp'
+    priority: 700
+  - name: 'WIC ReProccer Patch.esp'
+    priority: 700
+  - name: 'Miscellaneous ReProccer Patch.esp'
+    priority: 700
+  ## Begin qotsafans compatbility patches:
+  - name: '(qotsafans )?SkyRe Destruction Tree Tweak Patch.*\.esp'
+    priority: 700
+  - name: 'qotsafans Miscellaneous.*\.esp'
+    priority: 700
+  - name: 'qotsafans LeveledLists.*\.esp'
+    priority: 700
+  - name: 'qotsafans Ars Metallica.*\.esp'
+    priority: 700
+  - name: 'qotsafans BringOutYourDead.*\.esp'
+    priority: 700
+  - name: 'qotsafans EEO.*\.esp'
+    priority: 700
+  - name: 'qotsafans Books.*\.esp'
+    priority: 700
+  - name: 'qotsafans Ingestibles.*\.esp'
+    priority: 700
+  - name: 'qotsafans AOM ReProccer Patch.esp'
+    priority: 700
+  - name: 'qotsafans Bucklers-Complete ReProccer Patch.esp'
+    priority: 700
+  - name: 'qotsafans Dwarven Autorifle ReProccer Patch.esp'
+    priority: 700
+  - name: 'qotsafans Dwarven Rifle ReProccer Patch.esp'
+    priority: 700
+  - name: 'qotsafans IA6 Invisible Helmets Patch.esp'
+    priority: 700
+  ## End qotsafans compatbility patches
+  - name: 'AOS_SkyRe-Patch Patch.esp'
+    priority: 700
+    ## a compat patch for qotsafans compat patches
+  - name: 'AOS_CTD_Fix.esp'
+    after: 
+      - 'AOS_SkyRe-Patch Patch.esp'
+    priority: 700
+  - name: 'AOS_Reduced_Reverb_Addon.esp'
+    after: 
+      - 'AOS_CTD_Fix.esp'
+      - 'AOS_SkyRe-Patch Patch.esp'
+    priority: 700
+    ## two AOS reported to load after any other AOS plugins or patches
+
 # ENDGROUP: Patches for Dynamic Plugins
 # ENDGROUP: Dynamic Plugins
 
@@ -36457,5 +36565,11 @@ plugins:
 
 # DeadlyCombat_PISE_Patch.esp
 # Must load after ASIS (Unconfirmed, as comment for now)
+  - name: 'EzEWorldMap.esp'
+    priority: 1000
+  - name: 'EzEMapSolstheim.esp'
+    priority: 1000
+  - name: 'Warburgs Paper World Map.esp'
+    priority: 1000
 # ENDGROUP: Non Dynamic Plugins
 # ENDGROUP: Post Bashed Patch
