@@ -36321,6 +36321,9 @@ plugins:
             str: 'Utilizar solo un World_Map_Height_Pitch_Tweak esp.'
   - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
     priority: 300
+    inc:
+      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
+      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
     msg:
       - type: say
         content: 'Requires: Skyrim 1.8+'
@@ -36333,16 +36336,10 @@ plugins:
         itm: 9
   - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
     priority: 300
+    inc:
+      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
+      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
     msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use only one Warburg ''s 3D Paper World Map - Texture *.esp.'
-          - lang: rus
-            str: 'Используйте только один Warburg''s 3D Paper World Map - Texture *.esp.'
-          - lang: spa
-            str: 'Utilizar solo un Warburg''s 3D Paper World Map - Texture *.esp.'
-        condition: 'file("Warburg''s 3D Paper World Map - Texture 1.esp")'
       - type: say
         content: 'Requires: Skyrim 1.8+'
         condition: 'version("..\TESV.exe","1.8",<)'
@@ -36354,16 +36351,10 @@ plugins:
         itm: 9
   - name: 'Warburg''s 3D Paper World Map - Texture 3.esp'
     priority: 300
+    inc:
+      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
+      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
     msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use only one Warburg''s 3D Paper World Map - Texture *.esp.'
-          - lang: rus
-            str: 'Используйте только один Warburg''s 3D Paper World Map - Texture *.esp.'
-          - lang: spa
-            str: 'Utilizar solo un Warburg''s 3D Paper World Map - Texture *.esp.'
-        condition: '( file("Warburg''s 3D Paper World Map - Texture 1.esp") ) or file("Warburg''s 3D Paper World Map - Texture 2.esp")'
       - type: say
         content: 'Requires: Skyrim 1.8+'
         condition: 'version("..\TESV.exe","1.8",<)'
