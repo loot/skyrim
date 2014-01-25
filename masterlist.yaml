@@ -8347,6 +8347,8 @@ plugins:
     msg:
       - type: say
         content:
+          - lang: eng
+            str: 'Outdated, upgrade to version 0.7 and above - CWND-Basic.esp'
           - lang: rus
             str: 'Устарело, обновите до версии 0.7 и выше - CWND-Basic.esp'
   - name: 'CiviliansWillNotDieChild.esp'
@@ -8355,10 +8357,14 @@ plugins:
     msg:
       - type: say
         content:
+          - lang: eng
+            str: 'Outdated, upgrade to version 0.7 and above - CWND-KillChild.esp'
           - lang: rus
             str: 'Устарело, обновите до версии 0.7 и выше - CWND-KillChild.esp'
       - type: say
         content:
+          - lang: eng
+            str: 'This version leaves children immune to violent NPC attacks, but the player will be able to kill them.'
           - lang: rus
             str: 'Данная версия мода убирает в детских расах пометку "Child".'
   - name: 'CiviliansWillNotDiePatches.esp - CWND-UnofficialPatches.esp'
@@ -8368,6 +8374,8 @@ plugins:
     msg:
       - type: say
         content:
+          - lang: eng
+            str: 'Outdated, upgrade to version 0.7 and above - CWND-UnofficialPatches.esp'
           - lang: rus
             str: 'Устарело, обновите до версии 0.7 и выше - CWND-UnofficialPatches.esp'
       - type: say
@@ -8381,6 +8389,8 @@ plugins:
         condition: 'not active("Unofficial Skyrim Patch.esp")'
       - type: say
         content:
+          - lang: eng
+            str: 'Outdated, upgrade to [version 0.6 or above](http://modgames.net/load/247-1-0-13970).'
           - lang: rus
             str: 'Устарело. Обновите до "http://modgames.net/load/247-1-0-13970 CiviliansWillNotDiePatches.esp" 0.6+'
         condition: 'checksum("CiviliansWillNotDiePatches.esp",C0754EA7)'
@@ -8388,43 +8398,21 @@ plugins:
     msg:
       - type: say
         content:
-          - lang: rus
-            str: 'Требуется: Skyrim 1.6.89.0.6'
-        condition: 'not version("..\TESV.exe","1.6.89.0.6",==)'
-      - type: say
-        content:
+          - lang: eng
+            str: 'Does not work with Skyrim version 1.8.151.0.7 and beyond. Use the [Unofficial patches](http://modgames.net/load/247-1-0-13970) to fix.'
           - lang: rus
             str: 'Не работает с версиями Скайрим 1.8.151.0.7 и выше. Используйте вместо этого альтернативную версию - CWND-UnofficialPatches.esp'
         condition: '( not file("CWND-UnofficialPatches.esp") ) and version("..\TESV.exe","1.8.151.0.7",==)'
   - name: 'CWND-UnofficialPatches.esp'
-    msg:
-      - type: say
-        content:
-          - lang: rus
-            str: 'Требуется: Skyrim 1.8.151.0.7+'
-        condition: 'version("..\TESV.exe","1.8.151.0.7",<)'
-      - type: say
-        content:
-          - lang: rus
-            str: 'Несовместим с: CWND-Basic.esp'
-        condition: 'file("CWND-Basic.esp")'
+    inc:
+      - 'CWND-Basic.esp'
   - name: 'CWND-UnofficialPatches_LB.esp'
-    msg:
-      - type: say
-        content:
-          - lang: rus
-            str: 'Несовместим с: CWND-Basic.esp'
-        condition: 'file("CWND-Basic.esp")'
-      - type: say
-        content:
-          - lang: rus
-            str: 'Несовместим с: CWND-UnofficialPatches.esp'
-        condition: 'file("CWND-UnofficialPatches.esp")'
-      - type: say
-        content:
-          - lang: rus
-            str: 'Помимо Unofficial Skyrim Patch v1.3.2a и выше требуется еще и esm версия плагина "Lady Body" [LB] v2.1 и выше. Это очень важно, т.к. иначе вызовет вылеты и баги, если этих файлов нет.'
-        condition: '( not active("Unofficial Skyrim Patch.esp") ) or not file("Lady Body.esm")'
+    inc:
+      - 'CWND-Basic.esp'
+      - 'CWND-UnofficialPatches.esp'
+    req:
+      - 'Unofficial Skyrim Patch.esp'
+      - 'Lady Body.esm'
   - name: 'CWND-Dragonborn.esp'
     msg:
       - type: say
@@ -27359,6 +27347,8 @@ plugins:
     msg:
       - type: say
         content:
+          - lang: eng
+            str: 'Use only one LightAdjuster esp'
           - lang: rus
             str: 'Используйте только один LightAdjuster esp'
       - type: say
@@ -36230,29 +36220,22 @@ plugins:
           - lang: spa
             str: 'See [mod page comments](http://www.nexusmods.com/skyrim/mods/27321) for error reports.'
   - name: 'HM_HotkeyMod.esp'
+    req: [ *SKSE ]
     msg:
-      - type: say
-        content: 'Requires: Skyrim 1.8.151+'
-        condition: 'version("..\TESV.exe","1.8.151",<)'
       - type: warn
-        content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
-      - type: warn
-        content: 'UFO detected.  Use the UFO version to have the mod work as intended.'
-        condition: '( ( checksum("HM_HotkeyMod.esp",374C564C) ) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and file("UFO - Ultimate Follower Overhaul.esp")'
-      - type: say
         content:
-          - lang: rus
-            str: 'При отсутствии UFO используйте обычную НЕ UFO-версию этого мода.'
-        condition: 'not file("UFO - Ultimate Follower Overhaul.esp")'
-      - type: error
-        content: 'UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.'
-        condition: '( ( checksum("HM_HotkeyMod.esp",676790BF) ) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
-      - type: say
-        content:
+          - lang: eng
+            str: 'UFO detected.  Use the UFO version to have the mod work as intended.'
           - lang: rus
             str: 'При наличии UFO используйте UFO-версию этого мода.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+        condition: '( ( checksum("HM_HotkeyMod.esp",374C564C) ) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and file("UFO - Ultimate Follower Overhaul.esp")'
+      - type: error
+        content:
+          - lang: eng
+            str: 'UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.'
+          - lang: rus
+            str: 'При отсутствии UFO используйте обычную НЕ UFO-версию этого мода.'
+        condition: '( ( checksum("HM_HotkeyMod.esp",676790BF) ) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
     dirty:
       - crc: 0x374c564c
         util: *dirtyUtil
