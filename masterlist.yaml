@@ -4100,6 +4100,11 @@ plugins:
       - crc: 0xfe2f1935
         util: *dirtyUtil
         itm: 3
+  - name: 'Chesko_Frostfall.esp'
+    msg:
+      - type: say
+        content: 'Frostfall''s Portable Enchanter''s Circle requires a Patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) to work correctly when used with Enchanting Awakened.'
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedFrostfallPatch.esp")'
   - name: 'FrostfallWalkingStickFix.esp'
     msg:
       - type: say
@@ -4829,6 +4834,9 @@ plugins:
 # ENDGROUP: Textures
 
 # BEGINGROUP: Base Early
+  - name: 'Cutting Room Floor.esp'
+    after:
+      - 'TouringCarriages.esp'
   - name: 'BeastModels.esp'
     msg:
       - type: say
@@ -28298,11 +28306,6 @@ plugins:
         condition: 'file("EnchantingAwakenedAWEPatch.esp")'
       - name: 'SeeEnchs.esp'
         condition: 'file("EnchantingAwakenedSeeEnchPatch.esp")'
-  - name: 'DynamicPotions.esp'
-    msg:
-      - type: say
-        content: 'To save and load custom presets while using this mod, download the [FISS plugin](http://www.nexusmods.com/skyrim/mods/48265). A "Presets" page will appear in the MCM menu once FISS is active.'
-        condition: 'not file("FISS.esp")'
   - name: 'Ancient Spells.esp'
     tag:
       - Relev
@@ -29900,6 +29903,11 @@ plugins:
       - crc: 0x25395f5d
         util: *dirtyUtil
         itm: 2
+  - name: 'DynamicPotions.esp'
+    msg:
+      - type: say
+        content: 'To save and load custom presets while using this mod, download the [FISS plugin](http://www.nexusmods.com/skyrim/mods/48265). A "Presets" page will appear in the MCM menu once FISS is active.'
+        condition: 'not file("FISS.esp")'
   - name: 'Eld-combinePotions.esp'
     msg:
       - type: warn
@@ -36383,6 +36391,7 @@ plugins:
 
 # BEGINGROUP: Post Bashed Patch
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
+    priority: 500
     req: [ *SKSE ]
     msg:
       - type: say
@@ -36432,14 +36441,6 @@ plugins:
       - type: say
         content: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature. This can be done using Wrye Bash.'
         condition: 'file("SUM.esp")'
-  - name: 'Cutting Room Floor.esp'
-    after:
-      - 'TouringCarriages.esp'
-  - name: 'Chesko_Frostfall.esp'
-    msg:
-      - type: say
-        content: 'Frostfall''s Portable Enchanter''s Circle requires a Patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) to work correctly when used with Enchanting Awakened.'
-        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedFrostfallPatch.esp")'
 # Begin qotsafan''s compatbility patches:
 # End qotsafan''s compatbility patches
 # ## AOS_SkyRe-Patch Patch.esp
