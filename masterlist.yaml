@@ -117,9 +117,7 @@ globals:
         str: '[Обсуждение BOSS (Eng)](http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/).'
       - lang: spa
         str: '[Forum de BOSS](http://forums.bethsoft.com/topic/1479875-relz-boss-for-skyrim/).'
-# I''m rapidly shrinking v2 bugzilla list. We should change recruitment focus to v3 conversion instead. Will need translations. -LD
-# Now that the bug list is under 500, recruitment for v2 is unnecessary.  ae
-# SKSE & SKCU
+# Uncapper SKSE requirement
   - type: warn
     condition: 'file("SKSE\Plugins\SKSE_Elys_Uncapper.dll") and not file("..\skse_loader.exe")'
     content:
@@ -129,6 +127,7 @@ globals:
         str: 'У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки [SKSE](http://skse.silverlock.org/).'
       - lang: spa
         str: 'Tienes Skyrim Community Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: [SKSE](http://skse.silverlock.org/)'
+# SKSE Latest
   - type: say
     condition: 'file("..\skse_loader.exe") and version("..\skse_loader.exe", "0.1.6.16", <)'
     content:
@@ -147,6 +146,7 @@ globals:
         str: 'Ваш SKSE имеет последнюю версию.'
       - lang: spa
         str: 'Tienes la última versión de SKSE'
+# Other
   - type: say
     condition: '( regex("ASIS(-Dependency)?\.esp") ) or regex("Automatic (Spells|Variations|Variants)\.esp")'
     content:
@@ -186,7 +186,6 @@ plugins:
       - util: *dirtyUtil
         crc: 0xe5b67bda
         udr: 3
-# Unofficial Patches that are false flagged
   - name: 'Unofficial Skyrim Patch.esp'
     priority: -400
     msg:
@@ -239,7 +238,6 @@ plugins:
         crc: 0xbd72ccf3
         itm: 619
         udr: 82
-# Unofficial Patches that are false flagged
   - name: 'Unofficial Dawnguard Patch.esp'
     priority: -400
     after:
@@ -264,7 +262,6 @@ plugins:
         crc: 0xaf82ce6a
         itm: 184
         udr: 11
-# Unofficial Patches that are false flagged
   - name: 'Unofficial Hearthfire Patch.esp'
     priority: -400
     after:
@@ -288,7 +285,6 @@ plugins:
         crc: 0xa9f83bff
         itm: 61
         udr: 8
-# Unofficial Patches that are false flagged
   - name: 'Unofficial Dragonborn Patch.esp'
     priority: -400
     after:
