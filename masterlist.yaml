@@ -1202,15 +1202,7 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, Populated Cities 2.esp.'
   - name: 'RaestlozArmorReplace.esm'
-    msg:
-      - type: say
-        content: 'Requires: Skyrim 1.8.151.07+'
-        condition: '( not checksum("RaestlozArmorReplace.esm",B83CB078) or not checksum("RaestlozArmorReplace.esm",6FA99C8F) ) and version("..\TESV.exe","1.8.151.07",<)'
   - name: 'RaestlozArmorReplace - Dawnguard.esm'
-    msg:
-      - type: say
-        content: 'Requires: Skyrim 1.8.151.07+'
-        condition: '( not checksum("RaestlozArmorReplace - Dawnguard.esm",FBBDED04) or not checksum("RaestlozArmorReplace - Dawnguard.esm",00449758) ) and version("..\TESV.exe","1.8.151.07",<)'
   - name: 'Ranger Ridge.esm'
     msg:
       - type: warn
@@ -7439,10 +7431,10 @@ plugins:
             str: 'Usar rt_AutoHarvest.esp o rt_Animal - Processing.esp, no ambos.'
         condition: 'file("rt_AutoHarvest.esp")'
   - name: 'rt_AutoHarvest.esp'
-    msg:
-      - type: say
-        content: 'Requires: [SKSE](http://skse.silverlock.org)'
-        condition: 'not checksum("rt_AutoHarvest.esp",BBDBA57A) and not file("..\skse_loader.exe")'
+    req:
+      - name: '..\skse_loader.exe'
+        display: [SKSE](http://skse.silverlock.org)
+        condition: 'not checksum("rt_AutoHarvest.esp", BBDBA57A)'
   - name: 'RWB - Realistic Wolf Behavior.esp'
     dirty:
       - crc: 0x652fd3f8
@@ -8086,17 +8078,9 @@ plugins:
   - name: 'WetandCold.esp'
     after:
       - 'SKSE Hotkeys.esp'
-    msg:
-      - type: say
-        content: 'Requires: Skyrim 1.9.29.0.8+'
-        condition: 'version("..\TESV.exe","1.9.29.0.8",<)'
   - name: 'WetandCold - Ashes.esp'
     after:
       - 'SKSE Hotkeys.esp'
-    msg:
-      - type: say
-        content: 'Requires: Skyrim 1.9.29.0.8+'
-        condition: 'version("..\TESV.exe","1.9.29.0.8",<)'
   - name: 'Where''s My Horse Gone.esp'
   - name: 'Where''s My Horse Gone Essential Horses.esp'
     msg:
@@ -8273,12 +8257,6 @@ plugins:
             str: 'Outdated, upgrade to version 0.7 and above - CWND-UnofficialPatches.esp'
           - lang: rus
             str: 'Устарело, обновите до версии 0.7 и выше - CWND-UnofficialPatches.esp'
-      - type: say
-        content: 'Requires: Skyrim 1.7+'
-        condition: '( checksum("CiviliansWillNotDiePatches.esp",C0754EA7) ) and version("..\TESV.exe","1.7",<)'
-      - type: say
-        content: 'Requires: Skyrim 1.8+'
-        condition: '( checksum("CiviliansWillNotDiePatches.esp",2336B8B8) ) and version("..\TESV.exe","1.8",<)'
       - type: say
         content: 'Requires: Unofficial Skyrim Patch'
         condition: 'not active("Unofficial Skyrim Patch.esp")'
@@ -12956,10 +12934,6 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'calyps-dragonpriestmasks.esp'
-    msg:
-      - type: say
-        content: 'Requires: Skyrim 1.9.32+ for version 1.1+'
-        condition: 'version("..\TESV.exe","1.9.32",<)'
   - name: 'CraftableODPM.esp'
     msg:
       - type: say
@@ -22637,9 +22611,6 @@ plugins:
             str: 'Utilizar solo un Imperial Soldiers*.esp.'
   - name: 'dlc_armor_crafting.esp'
     msg:
-      - type: say
-        content: 'Requires: Skyrim 1.7.7.0.6+'
-        condition: 'version("..\TESV.exe","1.7.7",<)'
       - type: say
         content:
           - lang: eng
@@ -35820,9 +35791,6 @@ plugins:
 #  - name: 'World_Map_Height_Pitch_Tweak.+\.esp'
   - name: 'World_Map_Height_Pitch_Tweak.esp'
     msg:
-      - type: say
-        content: 'Requires: Skyrim 1.8.151+'
-        condition: 'version("..\TESV.exe","1.8.151.0",<)'
       - type: say
         content:
           - lang: eng
