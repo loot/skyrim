@@ -1138,15 +1138,11 @@ plugins:
         util: *dirtyUtil
         itm: 47
   - name: 'paradise_halls_base.esm'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.8 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.8",<)'
+    req:
+      - *SKSE
   - name: 'paradise_halls_core.esm'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.8 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.8",<)'
+    req:
+      - *SKSE
   - name: 'Perk-Reset-MCM.esm'
     req:
       - *SKSE
@@ -4473,10 +4469,8 @@ plugins:
             str: 'Usar ImmersiveContentLateLightPatch.esp o ImmersiveContentLateLightPatch.esp, no ambos.'
         condition: 'file("ImmersiveContentLateLightPatch.esp")'
   - name: 'kuerteeDisableLightsFarFromActors.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
+    req:
+      - *SKSE
 # ## Lanterns of Skyrim - Project ENB plus CoT 3_1.esp
 # ## a LoS preset, test placement here
   - name: 'MikeFoxs_CorrectLighting.esp'
@@ -5108,10 +5102,8 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un ArmorRatingTweak esp.'
   - name: 'ArmorSets.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.5.6 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.5.6",<)'
+    req:
+      - *SKSE
   - name: 'arrowcrafting.esp'
     msg:
       - type: say
@@ -5813,10 +5805,8 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'CUYC_CleanUpYourCorpses.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
+    req:
+      - *SKSE
 # ENDGROUP: Base C
 
 # BEGINGROUP: Base D
@@ -5968,12 +5958,6 @@ plugins:
       - *SKSE
       - *SkyUI
     msg:
-      - type: say
-        content: 'Requires: Skyrim v1.9.32.0+'
-        condition: 'version("..\TESV.exe","1.9.32",<)'
-      - type: warn
-        content: 'Requires [SKSE version 1.6.13 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.13",<)'
       - type: say
         content: 'Requires: Java Runtime Environment 7 update 17+'
   - name: 'Duke Patricks - FollowThatActor.esp'
@@ -6460,10 +6444,8 @@ plugins:
     tag:
       - Relev
   - name: 'Ish''s Souls to Perks.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.5.6 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.5.6",<)'
+    req:
+      - *SKSE
   - name: 'IsharasAutoStorageForVidanisBoH.esp'
     inc:
       - 'Isharas_BoH_StorageAndRetrieval.esp'
@@ -7828,15 +7810,9 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.9",<)'
   - name: 'Soul Eater The Enchantment Removing Chest.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
+    req:
+      - *SKSE
   - name: 'SPTFemaleGuards(InPlace)?\.esp'
     msg:
       - type: say
@@ -7891,10 +7867,9 @@ plugins:
       - Delev
       - Relev
   - name: 'SwiftPotion.esp'
+    req:
+      - *SKSE
     msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
       - type: warn
         content:
           - lang: eng
@@ -8434,10 +8409,9 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'DEAsprint&jump.esp'
+    req:
+      - *SKSE
     msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.5.9 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.5.9",<)'
       - type: say
         content:
           - lang: eng
@@ -8487,19 +8461,15 @@ plugins:
   - name: 'kuerteeActorDetails.esp'
     req: [ *SKSE ]
   - name: 'kuerteeAutoFirstThirdPersonView.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
+    req:
+      - *SKSE
     dirty:
       - crc: 0x44b0d8bf
         util: *dirtyUtil
         itm: 2
   - name: 'kuerteeAutoSaveAndTime.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
+    req:
+      - *SKSE
     dirty:
       - crc: 0x1b5b09f7
         util: *dirtyUtil
@@ -8509,13 +8479,8 @@ plugins:
   - name: 'NoxUE2.00.esp'
     req: [ *SKSE ]
   - name: 'RaceMenu.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.6 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.6",<)'
-      - type: warn
-        content: 'Requires [SKSE version 1.6.15 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.15",<) and checksum("RaceMenu.esp",2765B7D0)'
+    req:
+      - *SKSE
   - name: 'RaceMenuPlugin.esp'
     msg:
       - type: say
