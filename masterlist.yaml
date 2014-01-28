@@ -382,10 +382,8 @@ plugins:
       - Delev
       - Relev
   - name: 'actorEvents.esm'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.16 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.16",<)'
+    req:
+      - *SKSE
   - name: 'alchstone(1pt5x|2x|3x|x3|4x|x4x2|5x)\.esm'
     msg:
       - type: say
@@ -30152,10 +30150,8 @@ plugins:
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("cao_PerkRanks.esp",B2A7936F)'
   - name: 'Character_Generation.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.5.10 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.5.10",<)'
+    req:
+      - *SKSE
   - name: 'Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp'
     msg:
       - type: say
@@ -30208,10 +30204,8 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'kuerteeSkillBasedDamageMultipliers.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.5.4 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.5.4",<)'
+    req:
+      - *SKSE
   - name: 'Enchanting and Alchemy.esp'
     dirty:
       - crc: 0x1774bfd2
@@ -30325,12 +30319,9 @@ plugins:
       - Relev
   - name: 'SkyXP.esp'
     req:
+      - *SKSE
       - name: 'SKSE\Plugins\SKSE_Elys_Uncapper.dll'
         display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE 1.5.6+](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.5.6",<)'
   - name: 'SmithingMasteryPerks.esp'
     inc:
       - 'PerkUP-Smithing.esp'
@@ -31322,10 +31313,8 @@ plugins:
   - name: 'FAMP2.esp'
     req: [ *FNIS ]
   - name: 'Interactive Skyrim.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.5 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.5",<)'
+    req:
+      - *SKSE
   - name: 'jutsu.esp'
     dirty:
       - crc: 0xaed46b46
@@ -31875,12 +31864,9 @@ plugins:
         condition: 'checksum("Kawaii Face Presets.esp",2774F3D6)'
   - name: 'Kawaii Face Presets2.esp'
     req:
+      - *SKSE
       - name: 'CharacterMakingExtender.esp'
         display: '[Enhanced Character Edit](http://www.nexusmods.com/skyrim/mods/12951)'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.9",<)'
   - name: 'KhaleesiFacePreset.esp'
     msg:
       - type: warn
@@ -34583,10 +34569,8 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
   - name: 'CharacterMakingExtender.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.9",<)'
+    req:
+      - *SKSE
   - name: 'DeadlyMutilation.esp'
     msg:
       - type: warn
@@ -34612,10 +34596,8 @@ plugins:
         util: *dirtyUtil
         itm: 8
   - name: 'EnhancedCharacterEdit.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.9 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.9",<)'
+    req:
+      - *SKSE
   - name: 'CharGen Morphs.esp'
     req:
       - name: 'SKSE\Plugins\chargen.dll'
@@ -34861,13 +34843,8 @@ plugins:
 
 # Unsorted
   - name: 'Chesko_LevelUp.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.6.1 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.6.1",<)'
-      - type: say
-        content: 'Requires: Skyrim 1.7.7+'
-        condition: 'version("..\TESV.exe","1.7.7.0",<)'
+    req:
+      - *SKSE
   - name: 'NymSkyrimGrammarHammer.esp'
     dirty:
       - crc: 0x90a68aa7
@@ -35827,10 +35804,8 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un PTAlchemyOverhaul_SkillRate esp.'
   - name: 'SKSE Hotkeys.esp'
-    msg:
-      - type: warn
-        content: 'Requires [SKSE version 1.5.11 or later](http://skse.silverlock.org)'
-        condition: 'version("..\skse_loader.exe","0.1.5.11",<)'
+    req:
+      - *SKSE
   - name: 'Skyrim Performance MOD 5min.esp'
     msg:
       - type: warn
