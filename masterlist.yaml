@@ -27426,25 +27426,16 @@ plugins:
         itm: 322
         udr: 9
   - name: 'SkyRealism - Capacity and Carry Weight.esp'
-    req: [ *SKSE ]
+    req:
+      - *SKSE
     msg:
-      - type: say
+      - type: warn
         content:
           - lang: eng
-            str: 'Use the Dawnguard compatible version please.'
+            str: 'You are not using the Dawnguard compatible version.'
           - lang: rus
             str: 'Рекомендуется использовать совместимую с Dawnguard версию.'
-        condition: '( active("Dawnguard.esm") ) and not checksum("SkyRealism - Capacity and Carry Weight.esp",E8FE85CD)'
-      - type: say
-        content: 'Requires: [Bandolier - Bags and Pouches](http://www.nexusmods.com/skyrim/mods/16438)'
-        condition: '( not file("Dr_Bandolier.esp") ) or not file("Dr_BandolierDG.esp")'
-      - type: say
-        content:
-          - lang: eng
-            str: 'Requires: [Leather Backpack](http://www.nexusmods.com/skyrim/mods/13732).  Install only the black, brown and original varients. Also be sure to choose "Regular" for all install options.'
-          - lang: rus
-            str: 'Требуется: [Leather Backpack](http://www.nexusmods.com/skyrim/mods/13732).  Устанавливайте только черную(black) или коричневую(brown) и оригинальную версию. Также убедитесь, что выбрали "Regular", для всех опций установки.'
-        condition: 'not regex("LeatherBackpack(Brown|Black|DarkBrown)\.esp")'
+        condition: 'active("Dawnguard.esm") and not ( checksum("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) or checksum("SkyRealism - Capacity and Carry Weight.esp", 31764A66) )'
   - name: 'SkyRealism - Portable Crafting Kits.esp'
     req: [ *SKSE ]
   - name: 'SkyrimHeartRate.esp'
