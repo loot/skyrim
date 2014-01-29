@@ -27053,8 +27053,6 @@ plugins:
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
           - lang: rus
             str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-          - lang: spa
-            str: 'Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
         condition: 'file("SoS - The Dungeons.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
@@ -27071,8 +27069,6 @@ plugins:
             str: 'Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
           - lang: rus
             str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-          - lang: spa
-            str: 'Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
         condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
     dirty:
       - crc: 0x53706bfb
@@ -27093,9 +27089,10 @@ plugins:
         util: *dirtyUtil
         itm: 5
   - name: 'ClimatesOfTamriel-Dungeons&Interiors.esp'
-    msg:
-      - type: say
-        content: 'Incompatible with: Realistic Lighting Overhaul'
+    inc:
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
   - name: 'ClimatesOfTamriel-Dawnguard-Patch.esp'
     msg:
       - type: warn
@@ -27107,15 +27104,16 @@ plugins:
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Dragonborn-Patch.esp",81CF7754)'
   - name: 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
+    inc:
+      - 'ClimatesOfTamriel-Dungeons-Hazardous.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
     msg:
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
         condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchCoTHardcore.esp")'
       - type: warn
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
-        condition: 'checksum("ClimatesOfTamriel-Dungeons-Hardcore.esp",4EEA922F)'
-      - type: say
-        content: 'Incompatible with: Realistic Lighting Overhaul'
+        condition: 'checksum("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F)'
     dirty:
       - crc: 0x4eea922f
         util: *dirtyUtil
@@ -27123,28 +27121,29 @@ plugins:
   - name: 'ClimatesOfTamriel-Dungeons-Hazardous.esp'
     inc:
       - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
     msg:
       - type: warn
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Dungeons-Hazardous.esp",CBE304CE)'
-      - type: say
-        content: 'Incompatible with: Realistic Lighting Overhaul'
   - name: 'ClimatesOfTamriel-Interiors-Cold.esp'
+    inc:
+      - 'ClimatesOfTamriel-Interiors-Warm.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
     msg:
       - type: warn
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Interiors-Cold.esp",84DB3F8)'
-      - type: say
-        content: 'Incompatible with: Realistic Lighting Overhaul'
   - name: 'ClimatesOfTamriel-Interiors-Warm.esp'
     inc:
       - 'ClimatesOfTamriel-Interiors-Cold.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
     msg:
       - type: warn
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
         condition: 'checksum("ClimatesOfTamriel-Interiors-Warm.esp",77C47623)'
-      - type: say
-        content: 'Incompatible with: Realistic Lighting Overhaul'
   - name: 'ClimatesOfTamriel-WinterEdition.esp'
     msg:
       - type: warn
