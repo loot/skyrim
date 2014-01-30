@@ -427,7 +427,6 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, AMOvanilla.esm.'
   - name: 'AmethystHollowsMaster.esm'
-  - name: 'ANK_Castle_Main.esm'
     msg:
       - type: say
         content:
@@ -1092,8 +1091,10 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, HjakhtraevarrTomb.esm.'
   - name: 'Natural Characters and Companions.esm'
-    req:
-      - LovelyHairstyles.esp
+    msg:
+      - type: warn
+        content: 'LovelyHairstyles.esp is not active in your load order. LovelyHairstyles.esp is required for this mod to function correctly.'
+        condition: 'not active("LovelyHairstyles.esp")'
   - name: 'NeV-P_ExtremeMaterials.esm'
     tag:
       - Delev
@@ -1154,7 +1155,10 @@ plugins:
   - name: 'Perk-Reset-MCM.esm'
     req:
       - *SKSE
-      - *SkyUI
+    msg:
+      - type: warn
+        content: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for this mod to be fully functional.'
+        condition: 'not active("SkyUI.esp")'
   - name: 'pinewoodvillage.esm'
     msg:
       - type: say
@@ -1211,8 +1215,6 @@ plugins:
             str: 'Устарело. Обновите до последней версии, Populated Cities 2.esp.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, Populated Cities 2.esp.'
-  - name: 'RaestlozArmorReplace.esm'
-  - name: 'RaestlozArmorReplace - Dawnguard.esm'
   - name: 'Ranger Ridge.esm'
     msg:
       - type: warn
@@ -1265,7 +1267,7 @@ plugins:
       - *FNIS
     msg:
       - type: warn
-        content: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for features of this mod.'
+        content: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for this mod to be fully functional.'
         condition: 'not active("SkyUI.esp")'
       - type: error
         content:
@@ -1395,7 +1397,6 @@ plugins:
             str: 'Устарело. Обновите до последней версии, SuccubusFollower.esp или Succubus Summoning.esp.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, SuccubusFollower.esp o Succubus Summoning.esp.'
-  - name: 'SummerWear.esm'
   - name: 'Tamrielic Lore.esm'
     dirty:
       - crc: 0x1ec8407a
@@ -5162,10 +5163,6 @@ plugins:
   - name: 'arrowboltupgrades.esp'
     tag:
       - Relev
-  - name: 'Ars Metallica.esp'
-  - name: 'Ars Metallica - Dawnguard.esp'
-  - name: 'Ars Metallica - Hearthfire.esp'
-  - name: 'Ars Metallica - Dragonborn.esp'
   - name: 'Arrows of Magicka.*\.esp'
     msg:
       - type: say
@@ -5510,7 +5507,6 @@ plugins:
             str: 'Может не работать с некоторыми модами, меняющими Дом Теплых ветров(Breezehome).'
           - lang: spa
             str: 'Este mod no funcionará con algunos mods que modifiquen Breezehome.'
-  - name: 'Bring Out Your Dead.esp'
 # ENDGROUP: Base B
 
 # BEGINGROUP: Base C
@@ -7175,7 +7171,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'Point The Way.esp'
   - name: 'Populated Prisons.esp'
     dirty:
       - crc: 0x6bd131f0
@@ -8092,7 +8087,6 @@ plugins:
   - name: 'WetandCold - Ashes.esp'
     after:
       - 'SKSE Hotkeys.esp'
-  - name: 'Where''s My Horse Gone.esp'
   - name: 'Where''s My Horse Gone Essential Horses.esp'
     msg:
       - type: warn
@@ -12944,7 +12938,6 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-  - name: 'calyps-dragonpriestmasks.esp'
   - name: 'CraftableODPM.esp'
     msg:
       - type: say
@@ -15941,7 +15934,6 @@ plugins:
         util: *dirtyUtil
         itm: 2
         udr: 15
-  - name: 'AmethystHollowsUpdate.esp'
   - name: 'Amberhalls Heartwood Village.esp'
     msg:
       - type: warn
@@ -16181,7 +16173,6 @@ plugins:
             str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
           - lang: spa
             str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-  - name: 'BBLSapachii.esp'
   - name: 'BBLSHousecarlsmovein.esp'
     msg:
       - type: say
@@ -16212,9 +16203,6 @@ plugins:
             str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
           - lang: spa
             str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-  - name: 'BBLSMotseerOutfits.esp'
-  - name: 'BBLSmusic.esp'
-  - name: 'BBLuxurySuiteClassier.esp'
   - name: 'BBLuxurySuiteClassierDisplayRoom.esp'
     dirty:
       - crc: 0x91e5fc6a
@@ -17635,7 +17623,6 @@ plugins:
       - crc: 0x998e6fa5
         util: *dirtyUtil
         itm: 6
-  - name: 'DB_Bayview_Playerhome.esp'
   - name: 'DeadManor 1.0.esp'
     dirty:
       - crc: 0x52d70bbb
@@ -18521,7 +18508,6 @@ plugins:
       - crc: 0x450d037b
         util: *dirtyUtil
         itm: 4
-  - name: 'Gildergreen Regrown.esp'
   - name: 'Gleaming falls.esp'
     dirty:
       - crc: 0x4630fe0e
@@ -18686,7 +18672,6 @@ plugins:
         util: *dirtyUtil
         itm: 3
         udr: 15
-  - name: 'HearthfireMultiKid.esp'
   - name: 'HeartOfThunder.esp'
     inc:
       - 'SkyRe_Main.esp'
@@ -21394,7 +21379,6 @@ plugins:
         util: *dirtyUtil
         itm: 13
         udr: 14
-  - name: 'The Paarthurnax Dilemma.esp'
   - name: 'The Pit.esp'
     dirty:
       - crc: 0xebf44000
@@ -24464,7 +24448,6 @@ plugins:
             str: 'Используйте только один LegionArmorVariety esp.'
           - lang: spa
             str: 'Utilizar solo un LegionArmorVariety esp.'
-  - name: 'kuerteeGoldAjustment.esp'
   - name: 'kuerteeGoldAjustment MCM.esp'
     msg:
       - type: warn
@@ -25432,7 +25415,6 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-  - name: 'Signs and Guardians.esp'
   - name: 'ESP.esp'
     msg:
       - type: say
@@ -25604,10 +25586,6 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("spellbreaker_150.esp",EB334104)'
-  - name: 'SPTUnlimitedAmulets.esp'
-  - name: 'SPTUnlimitedAmuletsDawnguard.esp'
-  - name: 'SPTUnlimitedRings.esp'
-  - name: 'SPTUnlimitedRingsDawnguard.esp'
   - name: 'Stickier_Arrows V2.esp'
     msg:
       - type: warn
@@ -26434,7 +26412,6 @@ plugins:
         util: *dirtyUtil
         itm: 4
         udr: 5
-  - name: 'LoS and RE patch.esp'
   - name: 'seadragonoasis.esp'
     dirty:
       - crc: 0xb28eec06
@@ -26917,11 +26894,6 @@ plugins:
         content: 'Stolen content. Please show respect for authors'' rights and download from a legitimate source ([here](http://www.nexusmods.com/skyrim/mods/8058)).'
         condition: 'checksum("Open Cities Skyrim.esp",022AD2C8)'
 
-  - name: 'Open Cities Skyrim -- No Gates.esp'
-  - name: 'OCS + Hearthfire Patch.esp'
-  - name: 'OCS + CLWhiterun Patch.esp'
-  - name: 'OCS + Skyrim Sewers.esp'
-  - name: 'OCS + Dragonborn.esp'
 # ENDGROUP: City Overhauls
 # BEGINGROUP: Sounds of Skyrim and Sound Propagation Overhaul
 # Moved into a separate group because mods that place objects can inadvertently overwrite changes from this mod.
@@ -27242,7 +27214,6 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Fatigue_Effects.esp",A4C14B80)'
-  - name: 'Field Alchemy.esp'
   - name: 'Imp''s More Complex Needs.esp'
     msg:
       - type: say
@@ -27974,7 +27945,6 @@ plugins:
       - crc: 0x7b8ef9c
         util: *dirtyUtil
         itm: 15
-  - name: 'AsharaConjureDurnehviir.esp'
   - name: 'ASX( - |_)Spells\.esp'
     req: [ *FNIS ]
   - name: 'BanishLight.esp'
@@ -28111,7 +28081,6 @@ plugins:
             str: 'Этот мод требует от вас введения в консоли команды для добавления достаточного количества магии для произнесения заклинания - player.modav magicka 999999999 или player.setav magicka 999999999'
           - lang: spa
             str: 'This mod requires you to enter a cosole command to add enough Magicka to cast the spell - player.modav magicka 999999999 or player.setav magicka 999999999'
-  - name: 'ColettesRevenge.esp'
   - name: 'CompanionSkjorSummon.esp'
     msg:
       - type: error
@@ -29035,7 +29004,6 @@ plugins:
       - crc: 0x9a60231c
         util: *dirtyUtil
         udr: 3
-  - name: 'Where''s My Horse Gone.esp'
   - name: 'WhispersCallerSummon.esp'
     msg:
       - type: error
@@ -31243,8 +31211,6 @@ plugins:
       - crc: 0xe830cbbe
         util: *dirtyUtil
         itm: 2
-# must be load after any perk and/or smithing mods
-  - name: 'Skyrim15SmithingFix.esp'
 # ENDGROUP: Player Perks
 
 # BEGINGROUP: Pose and Animation Mods
@@ -31817,7 +31783,6 @@ plugins:
 # ENDGROUP: Race additions
 # BEGINGROUP: Character Presets
 # I figured this group should be around this area If someone feels it could be placed better, feel free to move it
-  - name: 'AsharaTemptressPresets.esp'
   - name: 'Children of Skyrim - NORD PRESETS.esp'
     msg:
       - type: say
@@ -32433,9 +32398,6 @@ plugins:
       - crc: 0xbf61e5d3
         util: *dirtyUtil
         itm: 2
-  - name: 'AsharaErinFollower.esp'
-  - name: 'AsharaFollowerFaces.esp'
-  - name: 'AWC_ArnulfWarzenSchleggerCompanion.esp'
   - name: 'Azog.esp'
     dirty:
       - crc: 0x5a6d9903
@@ -32631,7 +32593,6 @@ plugins:
           - lang: rus
             str: 'Удалите. Этот мод больше не важен. Поскольку патч 1.6+ исправляет баг.  Компаньоны теперь будут повышать свои навыки, каждый раз, при поднятии уровня игрока.'
         condition: 'version("..\TESV.exe","1.5.26",>)'
-  - name: 'CMNewCompanions.esp'
   - name: 'Companion_Crea.esp'
     msg:
       - type: say
@@ -33638,7 +33599,6 @@ plugins:
   - name: 'Follower_Addon_V2_.esp'
     inc:
       - 'Follower_Addon_1_1_.esp'
-  - name: 'NPCs of Dibella - Females.esp'
   - name: 'OkamiShiranui.esp'
     dirty:
       - crc: 0xfd8a3158
@@ -34181,14 +34141,12 @@ plugins:
 # IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: brhucefollower.esp
 # IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: brhucelegacy.esp
 # test placement of Brhuce as for Vilja; Trainwiz reco to place after every follower mod incl aft but I''m skeptical -LD
-  - name: 'CerwidenCompanion.esp'
   - name: 'EMCompViljaSkyrim.esp'
     dirty:
       - crc: 0xc45d4383
         util: *dirtyUtil
         itm: 2
 # Must load after CerwidenCompanion.esp
-  - name: 'MujuroStormbringer.esp'
   - name: 'Selene.esp'
     msg:
       - type: warn
