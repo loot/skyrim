@@ -1262,9 +1262,11 @@ plugins:
   - name: 'SexLab.esm'
     req:
       - *SKSE
-      - *SkyUI
       - *FNIS
     msg:
+      - type: warn
+        content: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for features of this mod.'
+        condition: 'not active("SkyUI.esp")'
       - type: error
         content:
           - lang: eng
