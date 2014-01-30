@@ -225,6 +225,7 @@ plugins:
     after:
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
+      - 'SMPC.esp'
     tag:
       - Delev
       - Relev
@@ -238,6 +239,7 @@ plugins:
     priority: -400
     after:
       - 'Unofficial Skyrim Patch.esp'
+      - 'SMPC.esp'
     tag:
       - Delev
       - Relev
@@ -247,7 +249,8 @@ plugins:
     after:
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
-      - name: 'Dawnguard.esm'
+      - 'Dawnguard.esm'
+      - 'SMPC.esp'
     # TES5Edit 3.0.30: 184 ITM, 11 UDR, 5 deleted NavMeshes (CRC: AF82CE6A)
     dirty:
       - util: *dirtyUtil
@@ -259,14 +262,15 @@ plugins:
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
+      - 'SMPC.esp'
   - name: 'Dragonborn.esm'
     priority: -400
     after:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
-# TES5Edit 3.0.30: 61 ITM, 8 UDR, 1 deleted NavMesh (CRC: A9F83BFF)
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
+      - 'SMPC.esp'
     # TES5Edit 3.0.30: 61 ITM, 8 UDR, 1 deleted NavMesh (CRC: A9F83BFF)
     dirty:
       - util: *dirtyUtil
@@ -279,6 +283,7 @@ plugins:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
       - 'Unofficial Hearthfire Patch.esp'
+      - 'SMPC.esp'
     tag:
       - Delev
 # additional fixes after unofficial patches
@@ -301,6 +306,7 @@ plugins:
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
       - name: 'Unofficial Dragonborn Patch.esp'
         condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
+      - 'SMPC.esp'
 # Wrymstooth to load very early around Falskaar
   - name: 'Wrymstooth.esp'
     priority: -400
@@ -314,6 +320,10 @@ plugins:
       - 'Unofficial Dawnguard Patch.esm'
       - 'Unofficial Hearthfires Patch.esm'
       - 'Unofficial Dragonborn Patch.esm'
+      - 'SMPC.esp'
+  - name: 'SMPC.esp'
+    after:
+      - 'Unofficial Skyrim Patch.esp'
   - name: 'Unofficial Skyrim Patch.esm'
     msg:
       - type: error
@@ -3863,7 +3873,6 @@ plugins:
 # ## Clothing & Clutter Fixes.esp
 # ## Clothing Jewelry & Clutter Fixes.esp
 # ## optionals of WAF remade
-# ## SMPC.esp
 # ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
 # ## summer 2013: this is a rename of USKP_addon, now suggested to load
 # ## after the normal slate of unofficials, not just after USKP -LD
@@ -27882,6 +27891,8 @@ plugins:
   - name: 'EnchantingAwakened.esp'
     after:
       - 'More Exp Chance.esp'
+      - name: 'Animated Weapon Enchants.esp'
+        condition: 'file("EnchantingAwakenedAWEPatch.esp")'
       - name: 'SeeEnchs.esp'
         condition: 'file("EnchantingAwakenedSeeEnchPatch.esp")'
   - name: 'Ancient Spells.esp'
@@ -35863,12 +35874,14 @@ plugins:
             str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
 # BEGINGROUP: Dynamic Plugins
   - name: 'Pre Automatic Variants.*\.esp'
-    priority: 600
-  - name: 'Automatic Variants.esp'
-    priority: 600
+    priority: 550
   - name: 'ASIS-Dependency.esp'
-    priority: 600
+    priority: 550
   - name: 'PreASISPatch.*\.esp'
+    priority: 550
+  - name: 'Pre ReProccer.*\.esp'
+    priority: 550
+  - name: 'Automatic Variants.esp'
     priority: 600
   - name: 'ASIS.esp'
     priority: 600
@@ -35881,16 +35894,12 @@ plugins:
     priority: 600
   - name: 'Customized AI.esp'
     priority: 600
-  - name: 'DeadlyCombat_ASIS_Patch.esp'
-    priority: 600
   - name: 'DEOS - Patch.esp'
     priority: 600
   - name: 'LLI.esp'
     priority: 600
-    ## Lootification dynamic recommended to go above Dual Sheath dynamic
   - name: 'GELO_Patcher_Build.esp'
     priority: 600
-    ## and so should GELOs
   - name: 'Dual Sheath Redux Patch.esp'
     priority: 600
     after:
@@ -35903,8 +35912,6 @@ plugins:
   - name: 'Perk Patch.esp'
     priority: 600
   - name: 'RBS.esp'
-    priority: 600
-  - name: 'Pre ReProccer.*\.esp'
     priority: 600
     ## Qotsafans pre Reproccer patches
   - name: 'ReProccer.esp'
@@ -35938,6 +35945,8 @@ plugins:
           - lang: spa
             str: 'Deactivate ''SkyRe_EnemyAI.esp'' before creation of ASIS patch and activate only after creation of ASIS patch.'
         condition: 'active("SkyRe_EnemyAI.esp") and regex("ASIS(-Dependency)?\.esp")'
+  - name: 'DeadlyCombat_ASIS_Patch.esp'
+    priority: 700
   - name: 'PostASISPatch.esp'
     priority: 700
   - name: 'ANC EOS Recipe Patch.esp'
@@ -35992,6 +36001,8 @@ plugins:
   - name: 'qotsafans AOM ReProccer Patch.esp'
     priority: 700
   - name: 'qotsafans Bucklers-Complete ReProccer Patch.esp'
+    priority: 700
+  - name: 'qotsafans BucklersOnly ReProccer Patch.esp'
     priority: 700
   - name: 'qotsafans Dwarven Autorifle ReProccer Patch.esp'
     priority: 700
