@@ -4111,21 +4111,15 @@ plugins:
     inc:
       - 'Chesko_Frostfall.esp'
   - name: 'MoreSnow.esp'
+    inc:
+      - 'MoreSnowWindy.esp'
     dirty:
       - crc: 0xf26a6037
         util: *dirtyUtil
         itm: 2
   - name: 'MoreSnowWindy.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either MoreSnow.esp or MoreSnowWindy.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или MoreSnow.esp или MoreSnowWindy.esp, не оба.'
-          - lang: spa
-            str: 'Usar MoreSnow.esp o MoreSnowWindy.esp, no ambos.'
-        condition: 'file("MoreSnow.esp")'
+    inc:
+      - 'MoreSnow.esp'
     dirty:
       - crc: 0xb1cc90a4
         util: *dirtyUtil
@@ -4195,7 +4189,7 @@ plugins:
     msg:
       - type: say
         content: 'Use non-Dawnguard version.'
-        condition: '( checksum("PNENB.esp",B8865296) ) and not active("Dawnguard.esm")'
+        condition: 'checksum("PNENB.esp",B8865296) and not file("Dawnguard.esm")'
   - name: 'RevampedExteriorFog.esp'
     inc:
       - 'Realistic Lighting.esp'
@@ -4210,16 +4204,8 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'PaperMapHeight-RemoveFog.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Removing Fog will affect WATER. Load after WATER if you are experiencing errors.'
-          - lang: rus
-            str: 'Удаление тумана повлияет на мод WATER. Загружайте после WATER если вы замечаете баги.'
-          - lang: spa
-            str: 'Remover la niebla afectara WATER. Carga despues de WATER si experiencias problemas.'
-        condition: 'file("WATER.esp")'
+    after: 
+      - 'WATER.esp'
 # ## tweak_fog.esp
 # ## tweak_fog-AmbL_c.esp
 # ## japanese release- may be weather, lighting or both, unsure- LD
@@ -4370,19 +4356,12 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'better_torches_brighter_torchlight.esp'
+    inc:
+      - 'better_torches.esp'
     msg:
       - type: warn
         content: 'This mod appears to have a duplicated cell. You may encounter ''weirdness'' in the Riften Ratway.'
         condition: 'checksum("better_torches_brighter_torchlight.esp",9BEBAD4D) or checksum("better_torches_brighter_torchlight.esp",CB5777CE)'
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either better_torches.esp or better_torches_brighter_torchlight.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой или better_torches.esp или better_torches_brighter_torchlight.esp, не обa.'
-          - lang: spa
-            str: 'Usar better_torches.esp o better_torches_brighter_torchlight.esp, no ambos.'
-        condition: 'file("better_torches.esp")'
     dirty:
       - crc: 0x9bebad4d
         util: *dirtyUtil
@@ -4460,16 +4439,8 @@ plugins:
         util: *dirtyUtil
         itm: 17
   - name: 'ImmersiveContentVeryLateLightPatch.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either ImmersiveContentLateLightPatch.esp or ImmersiveContentLateLightPatch.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или ImmersiveContentLateLightPatch.esp или ImmersiveContentLateLightPatch.esp, не оба.'
-          - lang: spa
-            str: 'Usar ImmersiveContentLateLightPatch.esp o ImmersiveContentLateLightPatch.esp, no ambos.'
-        condition: 'file("ImmersiveContentLateLightPatch.esp")'
+    inc:
+      - 'ImmersiveContentLateLightPatch.esp'
   - name: 'kuerteeDisableLightsFarFromActors.esp'
     req:
       - *SKSE
@@ -33423,38 +33394,17 @@ plugins:
       - name: 'FlansEyesForSkrim.esp'
         display: '[Flans Eyes for Skyrim](http://www.nexusmods.com/skyrim/mods/14539)'
   - name: 'MeekoHuskyEssential.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use only one MeekoHusky *.esp.'
-          - lang: rus
-            str: 'Используйте только один MeekoHusky *.esp.'
-          - lang: spa
-            str: 'Utilizar solo un MeekoHusky *.esp.'
-        condition: 'regex("MeekoHusky .+\.esp")'
+    inc:
+      - 'MeekoHuskyArmored.esp'
+      - 'MeekoHuskyArmoredEssential.esp'
   - name: 'MeekoHuskyArmored.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use only one MeekoHusky *.esp,'
-          - lang: rus
-            str: 'Используйте только один MeekoHusky *.esp.'
-          - lang: spa
-            str: 'Utilizar solo un MeekoHusky *.esp.'
-        condition: '( file("MeekoHusky.esp") ) or file("MeekoHuskyEssential.esp")'
+    inc:
+      - 'MeekoHuskyEssential.esp'
+      - 'MeekoHuskyArmoredEssential.esp'
   - name: 'MeekoHuskyArmoredEssential.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use only one MeekoHusky *.esp.'
-          - lang: rus
-            str: 'Используйте только один MeekoHusky *.esp.'
-          - lang: spa
-            str: 'Utilizar solo un MeekoHusky *.esp.'
-        condition: 'file("MeekoHusky.esp") or file("MeekoHuskyArmored.esp") or file("MeekoHuskyEssential.esp")'
+    inc:
+      - 'MeekoHuskyEssential.esp'
+      - 'MeekoHuskyArmored.esp'
   - name: 'TheMeekoMod.esp'
     dirty:
       - crc: 0xba87765e
@@ -34174,16 +34124,8 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'Seguidores DEJAR de pelear Entre Other.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either Followers Stop Fighting Each Other 2.0.esp or Seguidores DEJAR de pelear Entre Other.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или Followers Stop Fighting Each Other 2.0.esp или Seguidores DEJAR de pelear Entre Other.esp, не оба.'
-          - lang: spa
-            str: 'Usar Followers Stop Fighting Each Other 2.0.esp o Seguidores DEJAR de pelear Entre Other.esp, no ambos.'
-        condition: 'file("Followers Stop Fighting Each Other 2.0.esp")'
+    inc:
+      - 'Followers Stop Fighting Each Other 2.0.esp'
   - name: 'Khaliza of Gilane.esp'
     msg:
       - type: warn
@@ -34199,7 +34141,7 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: 'Incompatible with: Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.'
+            str: 'Incompatible with: Better Followers, BF already has the same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.'
           - lang: rus
             str: 'Несовместим с: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.'
         condition: 'file("Better Follower Improvements.esp") and regex("Better Followers - [SBNP].*\.esp")'
@@ -34265,7 +34207,7 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: 'This mod overwrites all dialogue enable only when playing Khajiit.'
+            str: 'This mod overwrites all dialogue. You likely wish to enable only when playing as a Khajiit.'
           - lang: rus
             str: 'Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.'
   - name: 'mjhKhajiitSpeakDLC - Dawnguard.esp'
@@ -34273,7 +34215,7 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: 'This mod overwrites all dialogue enable only when playing Khajiit.'
+            str: 'This mod overwrites all dialogue. You likely wish to enable only when playing as a Khajiit.'
           - lang: rus
             str: 'Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.'
   - name: 'mjhKhajiitSpeakDLC - Hearthfire.esp'
@@ -34281,30 +34223,16 @@ plugins:
       - type: say
         content:
           - lang: eng
-            str: 'This mod overwrites all dialogue enable only when playing Khajiit.'
+            str: 'This mod overwrites all dialogue. You likely wish to enable only when playing as a Khajiit.'
           - lang: rus
             str: 'Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.'
-  - name: 'mjhKhajiitSpeakExtra - (Ohmes-Raht|Dagi-Raht)?\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Use only one KhajiitSpeakExtra esp.'
-          - lang: rus
-            str: 'Используйте только один KhajiitSpeakExtra esp.'
-          - lang: spa
-            str: 'Utilizar solo un KhajiitSpeakExtra esp.'
+  - name: 'mjhKhajiitSpeakExtra - Dagi-Raht.esp'
+    inc:
+      - 'mjhKhajiitSpeakExtra - Ohmes-Raht.esp'
+  - name: 'mjhKhajiitSpeakExtra - Ohmes-Raht.esp'
+    inc:
+      - 'mjhKhajiitSpeakExtra - Dagi-Raht.esp'
   - name: 'mjhKhajiitSpeakMod - Realistic Needs And Diseases.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'RealisticNeedsandDiseases.esp is not present or not active. Skyrim will CTD when loading if using this file without it.'
-          - lang: rus
-            str: 'RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives'
-          - lang: spa
-            str: 'RealisticNeedsandDiseases.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.'
-        condition: 'not active("RealisticNeedsandDiseases.esp")'
 # ENDGROUP: Companions Load Late
 # ENDGROUP: Companions and NPCs
 # BEGINGROUP: Alternative starts
