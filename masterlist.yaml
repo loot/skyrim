@@ -35518,45 +35518,25 @@ plugins:
       - 'AP Skyrim.esp'
     req: [ *FNIS ]
   - name: 'BalancedModeCore.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Use only one BalancedModeCore esp.'
-          - lang: rus
-            str: 'Используйте только один BalancedModeCore esp.'
-          - lang: spa
-            str: 'Utilizar solo un BalancedModeCore esp.'
+    inc:
+      - 'BalancedModeCoreDG.esp'
+      - 'BalancedModeNoResp.esp'
+      - 'BalancedModeNoRespClear.esp'
   - name: 'BalancedModeCoreDG.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Use only one BalancedModeCore esp.'
-          - lang: rus
-            str: 'Используйте только один BalancedModeCore esp.'
-          - lang: spa
-            str: 'Utilizar solo un BalancedModeCore esp.'
+    inc:
+      - 'BalancedModeCore.esp'
+      - 'BalancedModeNoResp.esp'
+      - 'BalancedModeNoRespClear.esp'
   - name: 'BalancedModeNoResp.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Use only one BalancedModeNoResp esp.'
-          - lang: rus
-            str: 'Используйте только один BalancedModeNoResp esp.'
-          - lang: spa
-            str: 'Utilizar solo un BalancedModeNoResp esp.'
+    inc:
+      - 'BalancedModeCore.esp'
+      - 'BalancedModeCoreDG.esp'
+      - 'BalancedModeNoRespClear.esp'
   - name: 'BalancedModeNoRespClear.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Use only one BalancedModeNoResp esp.'
-          - lang: rus
-            str: 'Используйте только один BalancedModeNoResp esp.'
-          - lang: spa
-            str: 'Utilizar solo un BalancedModeNoResp esp.'
+    inc:
+      - 'BalancedModeCore.esp'
+      - 'BalancedModeCoreDG.esp'
+      - 'BalancedModeNoResp.esp'
     dirty:
       - crc: 0x1a4d3a64
         util: *dirtyUtil
