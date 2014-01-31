@@ -4482,40 +4482,27 @@ plugins:
         udr: 302
 # Moved Realistic Lighting From under MikeFoxs_CorrectLighting.esp to a new location
   - name: 'realrain.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Use only one realrain esp.'
-          - lang: rus
-            str: 'Используйте только один realrain esp.'
-          - lang: spa
-            str: 'Utilizar solo un realrain esp.'
-        condition: 'file("realrainBWRLWC.esp")'
+    inc:
+      - 'realrainextended.esp'
+      - 'realrainCoT.esp'
+      - 'realrainBWRLWC.esp'
+  - name: 'realrainBWRLWC.esp'
+    inc:
+      - 'realrainextended.esp'
+      - 'realrainCoT.esp'
+      - 'realrain.esp'
   - name: 'realrainCoT.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Use only one realrain esp.'
-          - lang: rus
-            str: 'Используйте только один realrain esp.'
-          - lang: spa
-            str: 'Utilizar solo un realrain esp.'
-        condition: '( file("realrainBWRLWC.esp") ) or file("realrain.esp")'
+    inc:
+      - 'realrainextended.esp'
+      - 'realrainBWRLWC.esp'
+      - 'realrain.esp'
   - name: 'realrainextended.esp'
     after:
       - 'Purewaters.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use only one realrain esp.'
-          - lang: rus
-            str: 'Используйте только один realrain esp.'
-          - lang: spa
-            str: 'Utilizar solo un realrain esp.'
-        condition: 'file("realrainCoT.esp") or file("realrainBWRLWC.esp") or file("realrain.esp")'
+    inc:
+      - 'realrainCoT.esp'
+      - 'realrainBWRLWC.esp'
+      - 'realrain.esp'
   - name: 'RemoveAmbientInteriorFog.esp'
     msg:
       - type: warn
@@ -4630,16 +4617,6 @@ plugins:
   - name: 'Further Dark Dungeons for ENB.esp'
     inc:
       - 'Dark Dungeons for ENB.esp'
-    msg:
-      - type: say
-        content:
-          - lang: eng
-            str: 'Obsolete. Update to latest version.'
-          - lang: rus
-            str: 'Устарело. Обновите до последней версии.'
-          - lang: spa
-            str: 'Obsoleto. Actualizar a la última versión.'
-        condition: 'checksum("Dark Dungeons for ENB.esp",A7023FF2) or checksum("Dark Dungeons for ENB.esp",1EC2E726) or checksum("Dark Dungeons for ENB.esp",ABC1F0E1)'
 # Might need to be moved
   - name: 'OLSE for Dawnguard.esp'
     dirty:
@@ -4890,16 +4867,8 @@ plugins:
     tag:
       - Relev
   - name: 'Skyrim Shadow Striping Fix.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either BreezehomeShadowStripingFix.esp or Skyrim Shadow Striping Fix.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или BreezehomeShadowStripingFix.esp или Skyrim Shadow Striping Fix.esp, не оба.'
-          - lang: spa
-            str: 'Usar BreezehomeShadowStripingFix.esp o Skyrim Shadow Striping Fix.esp, no ambos.'
-        condition: 'file("BreezehomeShadowStripingFix.esp")'
+    inc:
+      - 'BreezehomeShadowStripingFix.esp'
   - name: 'SkyrimImprovedChanges.esp'
     tag:
       - Delev
@@ -5127,7 +5096,7 @@ plugins:
             str: 'Удалите. Уже включен в SkyRe_Main.esp.'
           - lang: spa
             str: 'Borrar. Ya esta incluido en SkyRe_Main.esp.'
-        condition: '( file("Arrowsmith.esp") and file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
       - type: error
         content:
           - lang: eng
@@ -5136,7 +5105,7 @@ plugins:
             str: 'Удалите. Уже включен в мод Complete Crafting Overhaul.'
           - lang: spa
             str: 'Borrar. Ya esta incluido en Complete Crafting Overhaul.'
-        condition: 'file("Arrowsmith.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
 # Not sure but SkyRe_Main.esp is requires the Dawnguard DLC and includes Arrowsmith.esp
   - name: 'arrowsmith-dawnguard.esp'
     inc:
@@ -5150,7 +5119,7 @@ plugins:
             str: 'Удалите. Arrowsmith.esp уже включен в SkyRe_Main.esp.'
           - lang: spa
             str: 'Borrar. Ya esta incluido en Complete SkyRe_Main.esp.'
-        condition: '( file("arrowsmith-dawnguard.esp") and file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
       - type: error
         content:
           - lang: eng
@@ -5159,7 +5128,7 @@ plugins:
             str: 'Удалите. arrowsmith-dawnguard.esp уже включен в мод Complete Crafting Overhaul.'
           - lang: spa
             str: 'Borrar. Ya esta incluido en Complete Crafting Overhaul.'
-        condition: 'file("arrowsmith-dawnguard.esp") and regex("Complete Crafting Overhaul( - BS version)?\.esp")'
+        condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
   - name: 'arrowboltupgrades.esp'
     tag:
       - Relev
