@@ -113,8 +113,6 @@ globals:
         str: 'All Beta updates for BOSS (v3.0.0) can be downloaded [here](https://github.com/boss-developers/boss-code/releases).'
       - lang: rus
         str: 'Все бета-обновления для BOSS (3.0.0) могут быть загружены [отсюда](https://github.com/boss-developers/boss-code/releases).'
-      - lang: spa
-        str: 'All Beta updates for BOSS (v3.0.0) can be downloaded [here](https://github.com/boss-developers/boss-code/releases).'
   - type: say
     content:
       - lang: eng
@@ -32099,16 +32097,8 @@ plugins:
         util: *dirtyUtil
         itm: 204
   - name: 'LovelyHairstylesLITE.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either LovelyHairstyles.esp or LovelyHairstylesLITE.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или LovelyHairstyles.esp или LovelyHairstylesLITE.esp, не оба.'
-          - lang: spa
-            str: 'Usar LovelyHairstyles.esp o LovelyHairstylesLITE.esp, no ambos.'
-        condition: 'file("LovelyHairstyles.esp")'
+    inc:
+      - 'LovelyHairstyles.esp'
   - name: 'NoMoreVanillaHair.esp'
     msg:
       - type: say
@@ -32192,16 +32182,8 @@ plugins:
         util: *dirtyUtil
         itm: 5
   - name: 'KidsColouredEyesNoHF.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either KidsColouredEyesV2.esp or KidsColouredEyesNoHF.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой или KidsColouredEyesV2.esp или KidsColouredEyesNoHF.esp, не обa.'
-          - lang: spa
-            str: 'Usar KidsColouredEyesV2.esp o KidsColouredEyesNoHF.esp, no ambos.'
-        condition: 'file("KidsColouredEyesV2.esp")'
+    inc:
+      - 'KidsColouredEyesV2.esp'
   - name: 'Naruto - Overhaul.esp'
     dirty:
       - crc: 0x614c4fda
@@ -32486,23 +32468,8 @@ plugins:
         util: *dirtyUtil
         itm: 94
   - name: 'NPR 4.0 w Unarmed Compatibility by Budcat.esp'
-    msg:
-      - type: error
-        content:
-          - lang: eng
-            str: 'Use either New Playable Races by Budcat v4.0.esp or NPR 4.0 w Unarmed Compatibility by Budcat.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или New Playable Races by Budcat v4.0.esp или NPR 4.0 w Unarmed Compatibility by Budcat.esp, не оба.'
-        condition: 'file("New Playable Races by Budcat v4.0.esp")'
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either New Playable Races by Budcat v4.0.esp or NPR 4.0 w Unarmed Compatibility by Budcat.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или New Playable Races by Budcat v4.0.esp или NPR 4.0 w Unarmed Compatibility by Budcat.esp, не оба.'
-          - lang: spa
-            str: 'Usar New Playable Races by Budcat v4.0.esp o NPR 4.0 w Unarmed Compatibility by Budcat.esp, no ambos.'
-        condition: 'file("New Playable Races by Budcat v4.0.esp")'
+    inc:
+      - 'New Playable Races by Budcat v4.0.esp'
     dirty:
       - crc: 0xf1caa272
         util: *dirtyUtil
@@ -32722,16 +32689,8 @@ plugins:
             str: 'Этот мод избыточен для ''UFO - Ultimate Follower Overhaul.esp''. Вы можете удалить весь скрытый инвентарь у компаньонов с помощью UFO.'
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'EASamhairNE_1_1.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either EASamhairE_1_1.esp or EASamhairNE_1_1.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или EASamhairE_1_1.esp или EASamhairNE_1_1.esp, не оба.'
-          - lang: spa
-            str: 'Usar EASamhairE_1_1.esp o EASamhairNE_1_1.esp, no ambos.'
-        condition: 'file("EASamhairE_1_1.esp")'
+    inc:
+      - 'EASamhairE_1_1.esp'
   - name: 'Essential followers - all followers.esp'
     msg:
       - type: say
@@ -33270,16 +33229,8 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'Compilationv1-clean.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either CompilationV1.esp or Compilationv1-clean.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или CompilationV1.esp или Compilationv1-clean.esp, не оба.'
-          - lang: spa
-            str: 'Usar CompilationV1.esp o Compilationv1-clean.esp, no ambos.'
-        condition: 'file("CompilationV1.esp")'
+    inc:
+      - 'CompilationV1.esp'
   - name: 'pack\d\.esp'
     msg:
       - type: warn
@@ -33545,16 +33496,8 @@ plugins:
         util: *dirtyUtil
         itm: 8
   - name: 'Draquel_nonessential.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either Draquel.esp or Draquel_nonessential.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой или Draquel.esp или Draquel_nonessential.esp, не обa.'
-          - lang: spa
-            str: 'Usar Draquel.esp o Draquel_nonessential.esp, no ambos.'
-        condition: 'file("Draquel.esp")'
+    inc:
+      - 'Draquel.esp'
     dirty:
       - crc: 0xa9917e80
         util: *dirtyUtil
@@ -34061,6 +34004,8 @@ plugins:
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Jezebel.esp",77C303DF)'
   - name: 'Jezebel Simon.esp'
+    inc:
+      - 'Jezebel.esp'
     msg:
       - type: warn
         content:
@@ -34071,15 +34016,6 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Jezebel Simon.esp",C75CAB33) or checksum("Jezebel Simon.esp",E8D86949) or checksum("Jezebel Simon.esp",35728E70)'
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either Jezebel.esp or Jezebel Simon.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или Jezebel.esp или Jezebel Simon.esp, не оба.'
-          - lang: spa
-            str: 'Usar Jezebel.esp o Jezebel Simon.esp, no ambos.'
-        condition: 'file("Jezebel.esp")'
   - name: 'Jhaz.esp'
     dirty:
       - crc: 0x208e7086
@@ -34112,16 +34048,8 @@ plugins:
       - *SkyUI
       - *FNIS
   - name: 'KCustom_ALL_FHC_NDO.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either KCustom_ALL_FHC.esp or KCustom_ALL_FHC_NDO.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или KCustom_ALL_FHC.esp или KCustom_ALL_FHC_NDO.esp, не оба.'
-          - lang: spa
-            str: 'Usar KCustom_ALL_FHC.esp o KCustom_ALL_FHC_NDO.esp, no ambos.'
-        condition: 'file("KCustom_ALL_FHC.esp")'
+    inc:
+      - 'KCustom_ALL_FHC.esp'
   - name: 'KCustomNPCs.esp'
     inc:
       - 'KCustom_ALL_FHC_NDO.esp'
@@ -34411,16 +34339,8 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, mjollfacelift-v4-1 esp.'
   - name: 'mjollfacelift-v4-1-Blonde.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either mjollfacelift-v4-1-Black.esp or mjollfacelift-v4-1-Blonde.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или mjollfacelift-v4-1-Black.esp или mjollfacelift-v4-1-Blonde.esp, не обa.'
-          - lang: spa
-            str: 'Usar mjollfacelift-v4-1-Black.esp o mjollfacelift-v4-1-Blonde.esp, no ambos.'
-        condition: 'file("mjollfacelift-v4-1-Black.esp")'
+    inc:
+      - 'mjollfacelift-v4-1-Black.esp'
   - name: 'MoreNpcProject.esp'
     dirty:
       - crc: 0x1399bdbe
