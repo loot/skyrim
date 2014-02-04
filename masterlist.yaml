@@ -170,7 +170,7 @@ globals:
       - lang: spa
         str: 'Parece que [Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811) está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.'
 
-# BEGINGROUP: Official ESMs
+
 plugins:
   - name: 'Update.esm'
     priority: -400
@@ -291,9 +291,9 @@ plugins:
     tag:
       - Delev
 # additional fixes after unofficial patches
-# ENDGROUP: Official ESMs
 
-# BEGINGROUP: ESMs
+
+
 # esms early
 # Falskaar is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
   - name: 'Falskaar.esm'
@@ -1614,9 +1614,9 @@ plugins:
             str: 'На самом деле это esm-файл, выпущенный как esp.'
           - lang: spa
             str: 'Archivo esm distrubuido como esp.'
-# ENDGROUP: ESMs
 
-# BEGINGROUP: Official DLC Files
+
+
   - name: 'portal2mod.esp'
     dirty:
       - crc: 0xf0c49703
@@ -1624,9 +1624,9 @@ plugins:
         itm: 5
 # ## TexturesPack_PL.esp
 # ## Official Polish DLC??
-# ENDGROUP: Official DLC Files
 
-# BEGINGROUP: Earliest mods
+
+
 # ## Agony''s Sorting Frenzy.esp
 # ## All Compatibility esp should be loaded after their respective mod.
 # ## See Group: Compatibility Patches
@@ -1646,9 +1646,9 @@ plugins:
             str: 'Necesita ser cargado antes de cualquier mod que modifique NPCs. Este mod cambia el statatus de los NPCs a esencial.'
 # ## Xvision Children - DB.esp
 # ## some elements of xvision children are specified to load pre-USKP; also note 2 parallel releases with different naming schemes; rest appear to be various compat patches, so put in that section for now -LD
-# ENDGROUP: Earliest mods
 
-# BEGINGROUP: Vanilla fixes
+
+
   - name: 'AbsentAuCombat_Fix_FR.esp'
     dirty:
       - crc: 0x3f909f6e
@@ -3621,9 +3621,9 @@ plugins:
 # ## fixes that must load after USKP
 # ## RaceComp is explicit master; USKP is implicit
 # ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
-# ENDGROUP: Vanilla fixes
 
-# BEGINGROUP: DLC Fixes
+
+
   - name: 'ancient-nordic-pickaxe-smith-fix.esp'
     msg:
       - type: error
@@ -3902,9 +3902,9 @@ plugins:
   - name: 'Weapons & Armor Fixes_Dragonborn.esp'
     tag:
       - Stats
-# ENDGROUP: DLC Fixes
 
-# BEGINGROUP: NPC face mods
+
+
 # ## TAG: {{BASH: NpcFaces}}
 # ## Aelafacelift.esp
 # ## moved from companions, face change only
@@ -4068,12 +4068,12 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Vilkas.esp",BF4211DE)'
-# ENDGROUP: NPC face mods
 
-# BEGINGROUP: General Base Mods
+
+
 # Includes nearly all new items (except weapons and armor).
 # Low priority mods.
-# BEGINGROUP: Weather mods and overhauls
+
 # Unlikely to be affected by anything but sound mods.
   - name: '1 Day Moon Phases.esp'
     dirty:
@@ -4256,9 +4256,9 @@ plugins:
       - crc: 0xb5eb3179
         util: *dirtyUtil
         itm: 1460
-# ENDGROUP: Weather mods and overhauls
 
-# BEGINGROUP: Sound mods
+
+
 # Sound plugins; also, sound packs that are packaged with a BSA file, while the ESP lists only the TES4 Skyrim header, example:
 # Some Sounds.esp
 # TES4 (Header only)
@@ -4360,9 +4360,9 @@ plugins:
 # ## Sound.esp
 # ## paired with Reverb.esp
 
-# ENDGROUP: Sound mods
 
-# BEGINGROUP: Lighting
+
+
   - name: 'better_torches.esp'
     msg:
       - type: warn
@@ -4608,9 +4608,9 @@ plugins:
       - crc: 0xfd3f3144
         util: *dirtyUtil
         itm: 87
-# ENDGROUP: Lighting
 
-# BEGINGROUP: Music
+
+
   - name: 'AdditionalMusicBundleI.esp'
     dirty:
       - crc: 0x10e2879
@@ -4725,9 +4725,9 @@ plugins:
       - crc: 0x6fa5890
         util: *dirtyUtil
         itm: 1
-# ENDGROUP: Music
 
-# BEGINGROUP: Textures
+
+
 # Textures that are packaged with a BSA file, while the ESP lists only the TES4 Skyrim header
 #
 # Generally the bigger packs go near to the top.
@@ -4764,9 +4764,9 @@ plugins:
             str: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
           - lang: spa
             str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-# ENDGROUP: Textures
 
-# BEGINGROUP: Base Early
+
+
   - name: 'Cutting Room Floor.esp'
     after:
       - 'TouringCarriages.esp'
@@ -4923,9 +4923,9 @@ plugins:
 # ## Economics of Skyrim - Dawnguard.esp
 # ## Economics of Skyrim Merged.esp
 # ## Estimate for correct position. Mod file no longer on Nexus.
-# ENDGROUP: Base Early
 
-# BEGINGROUP: Base #
+
+
   - name: '_pocketempirebuilder.esp'
     msg:
       - type: warn
@@ -4951,9 +4951,9 @@ plugins:
     tag:
       - Delev
       - Relev
-# ENDGROUP: Base #
 
-# BEGINGROUP: Base A
+
+
   - name: 'ADV HB-Style.esp'
     dirty:
       - crc: 0x4ae9efe5
@@ -5193,9 +5193,9 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("AvengersBosses.esp",806151D5)'
-# ENDGROUP: Base A
 
-# BEGINGROUP: Base B
+
+
   - name: 'BabettesFeastBalanced.esp'
     msg:
       - type: warn
@@ -5474,9 +5474,9 @@ plugins:
             str: 'Может не работать с некоторыми модами, меняющими Дом Теплых ветров(Breezehome).'
           - lang: spa
             str: 'Este mod no funcionará con algunos mods que modifiquen Breezehome.'
-# ENDGROUP: Base B
 
-# BEGINGROUP: Base C
+
+
   - name: 'Cabbage In Pot.esp'
     dirty:
       - crc: 0x8491bb6b
@@ -5771,9 +5771,9 @@ plugins:
   - name: 'CUYC_CleanUpYourCorpses.esp'
     req:
       - *SKSE
-# ENDGROUP: Base C
 
-# BEGINGROUP: Base D
+
+
   - name: 'DBCallingCard.+\.esp'
     msg:
       - type: say
@@ -5932,9 +5932,9 @@ plugins:
             str: 'Requiere: Java Runtime Environment 7 update 17+'
   - name: 'Duke Patricks - FollowThatActor.esp'
     req: [ *SKSE ]
-# ENDGROUP: Base D
 
-# BEGINGROUP: Base E
+
+
   - name: 'E0PortableBedroll.esp'
     dirty:
       - crc: 0xc4a5be33
@@ -6034,9 +6034,9 @@ plugins:
       - crc: 0x2a2be0f4
         util: *dirtyUtil
         itm: 6
-# ENDGROUP: Base E
 
-# BEGINGROUP: Base F
+
+
   - name: 'Faster Bolts (100|25|50|75).*\.esp'
     msg:
       - type: say
@@ -6106,9 +6106,9 @@ plugins:
       - crc: 0xe02cc68b
         util: *dirtyUtil
         itm: 6
-# ENDGROUP: Base F
 
-# BEGINGROUP: Base G
+
+
   - name: 'GenebrisTreasureChests.esp'
     tag:
       - Delev
@@ -6244,9 +6244,9 @@ plugins:
       - crc: 0xcc07c650
         util: *dirtyUtil
         itm: 2
-# ENDGROUP: Base G
 
-# BEGINGROUP: Base H
+
+
   - name: 'Harvest More Food & Ingredients.esp'
     tag:
       - Delev
@@ -6323,9 +6323,9 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
-# ENDGROUP: Base H
 
-# BEGINGROUP: Base I
+
+
   - name: 'Immersive Battles.esp'
     dirty:
       - crc: 0x6cecb1b1
@@ -6419,9 +6419,9 @@ plugins:
   - name: 'IsharasAutoStorageForVidanisBoH.esp'
     inc:
       - 'Isharas_BoH_StorageAndRetrieval.esp'
-# ENDGROUP: Base I
 
-# BEGINGROUP: Base J
+
+
   - name: 'JAWS.esp'
     dirty:
       - crc: 0xcf25ed24
@@ -6514,9 +6514,9 @@ plugins:
     inc:
       - 'JBS_overhaul.esp'
       - 'JBS_overhaul_thalmor.esp'
-# ENDGROUP: Base J
 
-# BEGINGROUP: Base K
+
+
   - name: 'KhajiitfemGuild.esp'
     dirty:
       - crc: 0x47ceb0c1
@@ -6559,9 +6559,9 @@ plugins:
           - lang: spa
             str: 'Usar Kuun''s angels drop armor.esp o Kuun''s angels drop worn armor.esp, no ambos.'
         condition: 'file("Kuun''s angels drop armor.esp")'
-# ENDGROUP: Base K
 
-# BEGINGROUP: Base L
+
+
   - name: 'Langsam wirkende Tränke.esp'
     msg:
       - type: warn
@@ -6799,9 +6799,9 @@ plugins:
       - crc: 0x3ac741ca
         util: *dirtyUtil
         itm: 31
-# ENDGROUP: Base L
 
-# BEGINGROUP: Base M
+
+
   - name: 'MAD Ingots & Leather.esp'
     inc:
       - 'Ars Metallica.esp'
@@ -6941,9 +6941,9 @@ plugins:
       - crc: 0xdbe462c2
         util: *dirtyUtil
         itm: 1
-# ENDGROUP: Base M
 
-# BEGINGROUP: Base N
+
+
   - name: 'NamedSoulGems.esp'
     dirty:
       - crc: 0x3b92c13a
@@ -7043,9 +7043,9 @@ plugins:
       - crc: 0xcf92e3ac
         util: *dirtyUtil
         itm: 5
-# ENDGROUP: Base N
 
-# BEGINGROUP: Base O
+
+
   - name: 'Oblivion Black Soul Gem Creation.esp'
     dirty:
       - crc: 0x91e35983
@@ -7068,9 +7068,9 @@ plugins:
         itm: 2
   - name: 'Open Empty Containers.esp'
     req: [ *SKSE ]
-# ENDGROUP: Base O
 
-# BEGINGROUP: Base P
+
+
   - name: 'PassiveWeaponEnchantmentRecharging.esp'
     req:
       - *SKSE
@@ -7199,12 +7199,12 @@ plugins:
         util: *dirtyUtil
         itm: 94
         udr: 40
-# ENDGROUP: Base P
 
-# BEGINGROUP: Base Q
-# ENDGROUP: Base Q
 
-# BEGINGROUP: Base R
+
+
+
+
   - name: 'Rageofthespirits.esp'
     dirty:
       - crc: 0xbc4ba4f4
@@ -7425,9 +7425,9 @@ plugins:
       - crc: 0x652fd3f8
         util: *dirtyUtil
         itm: 6
-# ENDGROUP: Base R
 
-# BEGINGROUP: Base S
+
+
   - name: 'SaltSacks.esp'
     dirty:
       - crc: 0x1d44162d
@@ -7874,9 +7874,9 @@ plugins:
       - crc: 0xd1641b6b
         util: *dirtyUtil
         itm: 1
-# ENDGROUP: Base S
 
-# BEGINGROUP: Base T
+
+
   - name: 'Tailoring.esp'
     dirty:
       - crc: 0x9fabd6ad
@@ -7979,9 +7979,9 @@ plugins:
     tag:
       - Delev
       - Relev
-# ENDGROUP: Base T
 
-# BEGINGROUP: Base U
+
+
   - name: 'Underwater_Treasure.esp'
     dirty:
       - crc: 0x2676b18f
@@ -8013,9 +8013,9 @@ plugins:
     tag:
       - Delev
       - Relev
-# ENDGROUP: Base U
 
-# BEGINGROUP: Base V
+
+
   - name: 'ValsCraftingMeltdownAlpha.esp'
     msg:
       - type: warn
@@ -8048,9 +8048,9 @@ plugins:
             str: 'Несовместим с: Все моды, меняющие освещение.'
           - lang: spa
             str: 'Incompatible con: Cualquier mod que modifique la iluminación.'
-# ENDGROUP: Base V
 
-# BEGINGROUP: Base W
+
+
   - name: 'WantedPosters.esp'
     dirty:
       - crc: 0x30717872
@@ -8124,9 +8124,9 @@ plugins:
       - crc: 0xc6e9683
         util: *dirtyUtil
         itm: 15
-# ENDGROUP: Base W
 
-# BEGINGROUP: Base XYZ
+
+
   - name: 'xFenWSOWAF.esp'
     tag:
       - Delev
@@ -8199,9 +8199,9 @@ plugins:
         util: *dirtyUtil
         itm: 3
         udr: 47
-# ENDGROUP: Base XYZ
 
-# BEGINGROUP: Base Late
+
+
   - name: 'KoS_Outcast(_Lite)?\.esp'
     msg:
       - type: say
@@ -8348,10 +8348,10 @@ plugins:
         itm: 48
 # REGEX: .+Waterbugfix\.esp
 # Only this REGEX work for SIM - Waterbugfix.esp
-# ENDGROUP: Base Late
-# ENDGROUP: General Base Mods
 
-# BEGINGROUP: Load Order Independent Mods
+
+
+
 # if these are truly load indep, they can just go into general Base section, right? -LD
   - name: 'rt_Animal - Processing.esp'
     msg:
@@ -8499,9 +8499,9 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
-# ENDGROUP: Load Order Independent Mods
 
-# BEGINGROUP: MCM Mods
+
+
   - name: 'skyui.esp'
     req:
       - *SKSE
@@ -8619,13 +8619,13 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
-# ENDGROUP: MCM Mods
 
-# BEGINGROUP: Items
+
+
 # Armor, Weapons, Clothes and recipes to craft them
 # VITAL for overhaul mod users: Wrye Bash tag all armor replacers {{BASH: Graphics}}(After it will work for Skyrim) to keep their new look.
 # Some items will need to go after overhaul or location altering mods to appear.
-# BEGINGROUP: Items #
+
   - name: '118 Weapon Pack.esp'
     msg:
       - type: warn
@@ -8646,9 +8646,9 @@ plugins:
             str: 'Устарело. Обновите до последней версии, 18 Black Katanas.esp.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, 18 Black Katanas.esp.'
-# ENDGROUP: Items #
 
-# BEGINGROUP: Items A
+
+
   - name: 'abimod.esp'
     dirty:
       - crc: 0x86bec75a
@@ -8902,9 +8902,9 @@ plugins:
       - crc: 0x1b0cb166
         util: *dirtyUtil
         itm: 4
-# ENDGROUP: Items A
 
-# BEGINGROUP: Items B
+
+
   - name: 'Backpack OE.esp'
     msg:
       - type: say
@@ -9154,9 +9154,9 @@ plugins:
   - name: 'Bulwark of Azzinoth.esp'
     tag:
       - Relev
-# ENDGROUP: Items B
 
-# BEGINGROUP: Items C
+
+
   - name: 'Carbon Fiber Bow.esp'
     dirty:
       - crc: 0xc62c2cff
@@ -9524,9 +9524,9 @@ plugins:
             str: 'Устарело. Обновите до последней версии, UnenchantedNightingaleSetMod.esp.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, UnenchantedNightingaleSetMod.esp.'
-# ENDGROUP: Items C
 
-# BEGINGROUP: Items D
+
+
   - name: 'Daedric Extra Armor.esp'
     msg:
       - type: warn
@@ -9977,9 +9977,9 @@ plugins:
       - crc: 0x8d5e43b0
         util: *dirtyUtil
         itm: 11
-# ENDGROUP: Items D
 
-# BEGINGROUP: Items E
+
+
   - name: 'Earrings Set1.esp'
     dirty:
       - crc: 0x5d8a9fdb
@@ -10100,9 +10100,9 @@ plugins:
       - crc: 0x2c3ddd87
         util: *dirtyUtil
         itm: 2
-# ENDGROUP: Items E
 
-# BEGINGROUP: Items F
+
+
   - name: 'FaceMasksforNPC.esp'
     tag:
       - Relev
@@ -10258,9 +10258,9 @@ plugins:
             str: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
           - lang: spa
             str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-# ENDGROUP: Items F
 
-# BEGINGROUP: Items G
+
+
   - name: 'GattiBondage0.esp'
     msg:
       - type: say
@@ -10343,9 +10343,9 @@ plugins:
       - crc: 0xe05797b
         util: *dirtyUtil
         itm: 6
-# ENDGROUP: Items G
 
-# BEGINGROUP: Items H
+
+
   - name: 'Hana.esp'
     msg:
       - type: warn
@@ -10533,9 +10533,9 @@ plugins:
   - name: 'hunterarmornofur.esp'
     inc:
       - 'hunterarmorv1.2.esp'
-# ENDGROUP: Items H
 
-# BEGINGROUP: Items I
+
+
   - name: 'I5KWeaponOH.esp'
     tag:
       - Delev
@@ -10674,9 +10674,9 @@ plugins:
       - crc: 0xe7cea340
         util: *dirtyUtil
         itm: 1
-# ENDGROUP: Items I
 
-# BEGINGROUP: Items J
+
+
   - name: 'Jack of All Trades.esp'
     msg:
       - type: warn
@@ -10761,9 +10761,9 @@ plugins:
             str: 'Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
           - lang: spa
             str: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-# ENDGROUP: Items J
 
-# BEGINGROUP: Items K
+
+
   - name: 'katana.esp'
     dirty:
       - crc: 0xa48ab749
@@ -10800,9 +10800,9 @@ plugins:
           - lang: rus
             str: 'Избыточно. Уже включено в "DIMONIZED UNP clothing resources".'
         condition: 'file("DIMclothes1.esp")'
-# ENDGROUP: Items K
 
-# BEGINGROUP: Items L
+
+
   - name: 'Lady of Death.esp'
     msg:
       - type: say
@@ -11364,9 +11364,9 @@ plugins:
   - name: 'LSB_BattleHammersV6.esp'
     tag:
       - Delev
-# ENDGROUP: Items L
 
-# BEGINGROUP: Items M
+
+
   - name: 'Magicka Sabers.esp'
     dirty:
       - crc: 0x118a2015
@@ -11616,9 +11616,9 @@ plugins:
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Mystic Armor and Weapon Set.esp")'
-# ENDGROUP: Items M
 
-# BEGINGROUP: Items N
+
+
   - name: 'NA_BipolarBlade_(Eng|Rus|Deu)\.esp'
     msg:
       - type: warn
@@ -11882,9 +11882,9 @@ plugins:
           - lang: spa
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("numenume elf ear.esp",2112184A)'
-# ENDGROUP: Items N
 
-# BEGINGROUP: Items O
+
+
   - name: 'OdemsSakabato.esp'
     dirty:
       - crc: 0x2a48fcf
@@ -11971,9 +11971,9 @@ plugins:
             str: 'Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
           - lang: spa
             str: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-# ENDGROUP: Items O
 
-# BEGINGROUP: Items P
+
+
   - name: 'Painkiller''s_Hrothmund''s_Axe.esp'
     dirty:
       - crc: 0x781b36e
@@ -12069,12 +12069,12 @@ plugins:
       - crc: 0xbaf5e2e4
         util: *dirtyUtil
         itm: 1
-# ENDGROUP: Items P
 
-# BEGINGROUP: Items Q
-# ENDGROUP: Items Q
 
-# BEGINGROUP: Items R
+
+
+
+
   - name: 'RagnvaldBookFarengar+Ragnvald.esp'
     msg:
       - type: warn
@@ -12203,9 +12203,9 @@ plugins:
       - crc: 0xbe7e3fdd
         util: *dirtyUtil
         udr: 2
-# ENDGROUP: Items R
 
-# BEGINGROUP: Items S
+
+
   - name: 'Saber Lily - Caliburn Outfit.esp'
     msg:
       - type: say
@@ -12635,9 +12635,9 @@ plugins:
       - crc: 0x7d6fd4ae
         util: *dirtyUtil
         itm: 8
-# ENDGROUP: Items S
 
-# BEGINGROUP: Items T
+
+
   - name: 'Tales of Tamriel - Merchants.esp'
     msg:
       - type: warn
@@ -12870,8 +12870,8 @@ plugins:
         util: *dirtyUtil
         itm: 8
         udr: 6
-# ENDGROUP: Items T
-# BEGINGROUP: Items U
+
+
   - name: 'UnenchantedNightingaleArmour.esp'
     msg:
       - type: say
@@ -12981,9 +12981,9 @@ plugins:
             str: 'Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
           - lang: spa
             str: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-# ENDGROUP: Items U
 
-# BEGINGROUP: Items V
+
+
   - name: 'VagabondArmor.esp'
     tag:
       - name: Deactivate
@@ -13024,9 +13024,9 @@ plugins:
     tag:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_viciousdawnbreaker.esp")'
-# ENDGROUP: Items V
 
-# BEGINGROUP: Items W
+
+
   - name: 'warchief armor.esp'
     tag:
       - name: Deactivate
@@ -13298,9 +13298,9 @@ plugins:
     tag:
       - Delev
       - Relev
-# ENDGROUP: Items W
 
-# BEGINGROUP: Items XYZ
+
+
   - name: 'XAC.esp'
     msg:
       - type: say
@@ -13342,10 +13342,10 @@ plugins:
             str: 'Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
           - lang: spa
             str: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-# ENDGROUP: Items XYZ
+
 
 # Temporary place holder for mods that need to be loaded after many other item mods
-# BEGINGROUP: Items Load Late
+
   - name: 'Lorecraft - Bandolier.esp'
     msg:
       - type: warn
@@ -13587,13 +13587,13 @@ plugins:
         util: *dirtyUtil
         itm: 8
         udr: 2
-# ENDGROUP: Items Load Late
-# ENDGROUP: Items
 
-# BEGINGROUP: Overhauls
+
+
+
 # Initial position for Overhaul mods
 
-# BEGINGROUP: General Overhauls
+
   - name: 'Better Sorting by eclips3 - Ingredients .+\.esp'
     msg:
       - type: say
@@ -14034,9 +14034,9 @@ plugins:
             str: 'Если установлены опциональные файлы, используйте любой YASH.esp + YASH_AllOptionals.esp или YASH.esp + один или более опциональных ESP.'
           - lang: spa
             str: 'If installing optional files, use either YASH.esp + YASH_AllOptionals.esp OR YASH.esp + one or more of the optional ESPs.'
-# ENDGROUP:  General Overhauls
 
-# BEGINGROUP: Dragons hunt in Swarms
+
+
   - name: 'DragonSwarms.esp'
     inc:
       - 'DS-MoreAgressionForRemover.esp'
@@ -14086,9 +14086,9 @@ plugins:
   - name: 'DS-VanillaTimer+MultipleEvents.esp'
     inc:
       - 'DS-MoreAgressionForRemover.esp'
-# ENDGROUP: Dragons hunt in Swarms
 
-# BEGINGROUP: PISE
+
+
   - name: 'PISE.esp'
     tag:
       - Delev
@@ -14131,9 +14131,9 @@ plugins:
     tag:
       - Delev
       - Relev
-# ENDGROUP: PISE
 
-# BEGINGROUP: War in Skyrim
+
+
   - name: 'WarinSkyrim.esp'
     msg:
       - type: say
@@ -14202,8 +14202,8 @@ plugins:
     tag:
       - Delev
       - Relev
-# ENDGROUP: War in Skyrim
-# BEGINGROUP: ERSO Start
+
+
 # Note that some ERSO files are in the "Deadly and Mighty Dragons" group
 # erso
 # Vanilla Races Redone.esp
@@ -14268,9 +14268,9 @@ plugins:
             str: 'Используйте только один ERSO 02 esp.'
           - lang: spa
             str: 'Utilizar solo un ERSO 02 esp.'
-# ENDGROUP: ERSO Start
 
-# BEGINGROUP: Deadly and Mighty Dragons
+
+
   - name: 'DeadlyDiversifiedDragonsPatch.esp'
     after:
       - 'DeadlyDragons.esp'
@@ -14435,9 +14435,9 @@ plugins:
             str: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
         condition: 'not active("SkyUI.esp")'
 
-# ENDGROUP: Deadly and Mighty Dragons
 
-# BEGINGROUP: ERSO End
+
+
 # Note that some ERSO files are in the "Deadly and Mighty" Dragons group
   - name: 'ERSO 03.5 - New Dragon Loots.esp'
     msg:
@@ -14783,15 +14783,15 @@ plugins:
     tag:
       - Delev
       - Relev
-# ENDGROUP: ERSO End
 
-# BEGINGROUP: Overhauls Load Late
+
+
   - name: 'mehrdrachenstufen.esp'
     tag:
       - Relev
-# ENDGROUP: Overhauls Load Late
 
-# BEGINGROUP: Monster Wars
+
+
   - name: 'Monster Wars.esp'
     msg:
       - type: warn
@@ -14807,9 +14807,9 @@ plugins:
         util: *dirtyUtil
         itm: 302
         udr: 16
-# ENDGROUP: Monster Wars
 
-# BEGINGROUP: SkyRe
+
+
 # IF VAR(SkyReM) MOD: Reanimate FX.esp
 # As the author suggested
 
@@ -16216,10 +16216,10 @@ plugins:
         content: 'Deactivate ExplosiveBoltsVisualized.esp. This ESP is completly standalone.'
         condition: 'active("ExplosiveBoltsVisualized.esp")'
 
-# ENDGROUP: SkyRe
-# ENDGROUP: Overhauls
 
-# BEGINGROUP: Quests and Locations
+
+
+
 #
 # All mods that add or change quests,
 # add player houses,
@@ -16228,7 +16228,7 @@ plugins:
 #
 # Mods not in alphabetical order have been hand placed to avoid conflicts (as much as possible).
 
-# BEGINGROUP: Quests #
+
   - name: '0.1.6.esp'
     msg:
       - type: warn
@@ -16283,9 +16283,9 @@ plugins:
       - crc: 0x6055640f
         util: *dirtyUtil
         itm: 23
-# ENDGROUP: Quests #
 
-# BEGINGROUP: Quests A
+
+
   - name: 'A new look at Skyrim v1\.[1-6]\.esp'
     msg:
       - type: say
@@ -16633,9 +16633,9 @@ plugins:
         util: *dirtyUtil
         itm: 116
         udr: 286
-# ENDGROUP: Quests A
 
-# BEGINGROUP: Quests B
+
+
   - name: 'B3.esp'
     msg:
       - type: warn
@@ -17681,9 +17681,9 @@ plugins:
         util: *dirtyUtil
         itm: 167
         udr: 221
-# ENDGROUP: Quests B
 
-# BEGINGROUP: Quests C
+
+
   - name: 'CabinInFalkreath.esp'
     msg:
       - type: warn
@@ -18119,9 +18119,9 @@ plugins:
         util: *dirtyUtil
         itm: 4
         udr: 51
-# ENDGROUP: Quests C
 
-# BEGINGROUP: Quests D
+
+
   - name: 'DA_Skyship.esp'
     req: [ *SKSE ]
     msg:
@@ -18601,9 +18601,9 @@ plugins:
             str: 'The plugin is partially companion-friendly. However, they cannot pass through vine doors despite navmeshes.'
           - lang: rus
             str: 'Плагин является частично дружественным к компаньонам. Компаньоны не смогут проходить через двери.'
-# ENDGROUP: Quests D
 
-# BEGINGROUP: Quests E
+
+
   - name: 'EBM.esp'
     msg:
       - type: say
@@ -18728,9 +18728,9 @@ plugins:
         util: *dirtyUtil
         itm: 61
         udr: 10
-# ENDGROUP: Quests E
 
-# BEGINGROUP: Quests F
+
+
   - name: 'Falconroost.esp'
     inc:
       - 'WhiteFallsHouse.esp'
@@ -19004,9 +19004,9 @@ plugins:
       - crc: 0x976c3807
         util: *dirtyUtil
         itm: 14
-# ENDGROUP: Quests F
 
-# BEGINGROUP: Quests G
+
+
   - name: 'garrettsretreat_v02a.esp'
     msg:
       - type: warn
@@ -19165,9 +19165,9 @@ plugins:
         util: *dirtyUtil
         itm: 3
         udr: 2
-# ENDGROUP: Quests G
 
-# BEGINGROUP: Quests H
+
+
   - name: 'Hades.esp'
     dirty:
       - crc: 0xb1ae3e0c
@@ -19567,9 +19567,9 @@ plugins:
         util: *dirtyUtil
         itm: 7
         udr: 1
-# ENDGROUP: Quests H
 
-# BEGINGROUP: Quests I
+
+
   - name: 'IC-HearthfireEmittanceEnhancement_Blue.esp'
     dirty:
       - crc: 0x6d09c0b6
@@ -19696,9 +19696,9 @@ plugins:
         util: *dirtyUtil
         itm: 3
         udr: 4
-# ENDGROUP: Quests I
 
-# BEGINGROUP: Quests J
+
+
   - name: 'JNL - Lots More Followers.esp'
     dirty:
       - crc: 0x17a0601a
@@ -19733,9 +19733,9 @@ plugins:
       - crc: 0xbb7ffd
         util: *dirtyUtil
         udr: 4
-# ENDGROUP: Quests J
 
-# BEGINGROUP: Quests K
+
+
   - name: 'KatixasBeerBrewery.esp'
     msg:
       - type: say
@@ -19783,9 +19783,9 @@ plugins:
         util: *dirtyUtil
         itm: 2
         udr: 1
-# ENDGROUP: Quests K
 
-# BEGINGROUP: Quests L
+
+
   - name: 'L''Antre Dwemer v\d\.?\d?\.esp'
     msg:
       - type: warn
@@ -20019,9 +20019,9 @@ plugins:
         util: *dirtyUtil
         itm: 5
         udr: 11
-# ENDGROUP: Quests L
 
-# BEGINGROUP: Quests M
+
+
   - name: 'Mage Tower.esp'
     dirty:
       - crc: 0xaef400a
@@ -20392,9 +20392,9 @@ plugins:
       - crc: 0x7adeaf2
         util: *dirtyUtil
         itm: 23
-# ENDGROUP: Quests M
 
-# BEGINGROUP: Quests N
+
+
   - name: 'N70MountainsideHome.esp'
     msg:
       - type: say
@@ -20501,9 +20501,9 @@ plugins:
       - crc: 0x51a8111e
         util: *dirtyUtil
         itm: 6
-# ENDGROUP: Quests N
 
-# BEGINGROUP: Quests O
+
+
   - name: 'OBIS.esp'
     tag:
       - Delev
@@ -20568,9 +20568,9 @@ plugins:
         util: *dirtyUtil
         itm: 159
         udr: 3
-# ENDGROUP: Quests O
 
-# BEGINGROUP: Quests P
+
+
   - name: 'Pirate Sharphook.esp'
     dirty:
       - crc: 0x95abd098
@@ -20690,9 +20690,9 @@ plugins:
             str: 'Устарело. Обновите до последней версии, PuppetMaster2.1.esp.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, PuppetMaster2.1.esp.'
-# ENDGROUP: Quests P
 
-# BEGINGROUP: Quests Q
+
+
   - name: 'Queen of the damned-Akasha Dress.esp'
     dirty:
       - crc: 0xd0ea5488
@@ -20703,9 +20703,9 @@ plugins:
       - crc: 0xb75e31aa
         util: *dirtyUtil
         udr: 4
-# ENDGROUP: Quests Q
 
-# BEGINGROUP: Quests R
+
+
   - name: 'R0R0N0 Stable.esp'
     dirty:
       - crc: 0x17d01a7c
@@ -21040,9 +21040,9 @@ plugins:
   - name: 'When Vampires Attack.esp'
     inc:
       - 'TheTownIsSafe.esp'
-# ENDGROUP: Quests R
 
-# BEGINGROUP: Quests S
+
+
   - name: 'SaltMines.esp'
     dirty:
       - crc: 0x6d17f30e
@@ -21701,9 +21701,9 @@ plugins:
         util: *dirtyUtil
         itm: 24
         udr: 18
-# ENDGROUP: Quests S
 
-# BEGINGROUP: Quests T
+
+
   - name: 'TalosCamp.esp'
     dirty:
       - crc: 0x48d354d4
@@ -22209,9 +22209,9 @@ plugins:
       - crc: 0x81f1b405
         util: *dirtyUtil
         udr: 14
-# ENDGROUP: Quests T
 
-# BEGINGROUP: Quests U
+
+
   - name: 'BBLuxurySuiteUndergroundBathhouse.esp'
     msg:
       - type: warn
@@ -22409,9 +22409,9 @@ plugins:
         util: *dirtyUtil
         itm: 62
         udr: 4
-# ENDGROUP: Quests U
 
-# BEGINGROUP: Quests V
+
+
   - name: 'Vampire Slavers Den.esp'
     dirty:
       - crc: 0x47aa2819
@@ -22663,9 +22663,9 @@ plugins:
       - crc: 0xf8ec984c
         util: *dirtyUtil
         udr: 190
-# ENDGROUP: Quests V
 
-# BEGINGROUP: Quests W
+
+
   - name: 'walkingstickquest.esp'
     dirty:
       - crc: 0x273d57b2
@@ -23033,9 +23033,9 @@ plugins:
         util: *dirtyUtil
         itm: 32
         udr: 3
-# ENDGROUP: Quests W
 
-# BEGINGROUP: Quests XYZ
+
+
   - name: 'Zelda Whiterun.esp'
     dirty:
       - crc: 0x7a4c187e
@@ -23047,16 +23047,16 @@ plugins:
       - crc: 0x5f88132
         util: *dirtyUtil
         itm: 4
-# ENDGROUP: Quests XYZ
-# ENDGROUP: Quests and Locations
 
-# BEGINGROUP: Overrides
+
+
+
 #
 # Mods that deliberately change specific things about vanilla Skyrim, overhauls or other mods.
 # Some late loading quests and locations in here too.
 # Specific NPC behavior changes.  Follower mods go in Companions section.
 
-# BEGINGROUP: Weight Changes
+
 # moved to this position because have conflicts with too many plugins in overrides groups
 # TAG: {{BASH: Stats}} for all
 # notice the                \/ (..esp)
@@ -23175,9 +23175,9 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un WeightedArrows *.esp.'
 
-# ENDGROUP: Weight Changes
 
-# BEGINGROUP: Overrides Early
+
+
   - name: 'Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp'
     msg:
       - type: say
@@ -23267,9 +23267,9 @@ plugins:
             str: 'Используйте только один zzALittleSexyApparelReplacer esp.'
           - lang: spa
             str: 'Utilizar solo un zzALittleSexyApparelReplacer esp.'
-# ENDGROUP: Overrides Early
 
-# BEGINGROUP: Overrides #
+
+
   - name: '.?.?.?.? magickaregen\.esp'
     msg:
       - type: say
@@ -23310,9 +23310,9 @@ plugins:
             str: 'Используйте только один *staminaregen.esp.'
           - lang: spa
             str: 'Utilizar solo un *staminaregen.esp.'
-# ENDGROUP: Overrides #
 
-# BEGINGROUP: Overrides A
+
+
   - name: 'AccessibleMerchantStorage.esp'
     dirty:
       - crc: 0xf3a600aa
@@ -23458,9 +23458,9 @@ plugins:
       - crc: 0xcdade9f6
         util: *dirtyUtil
         itm: 5
-# ENDGROUP: Overrides A
 
-# BEGINGROUP: Overrides B
+
+
   - name: 'Babette.esp'
     msg:
       - type: warn
@@ -24130,9 +24130,9 @@ plugins:
         util: *dirtyUtil
         itm: 1
         udr: 5
-# ENDGROUP: Overrides B
 
-# BEGINGROUP: Overrides C
+
+
   - name: 'CandleLight-Medium.esp'
     msg:
       - type: warn
@@ -24193,9 +24193,9 @@ plugins:
   - name: 'CrossbowEnhancement.esp'
     tag:
       - Delev
-# ENDGROUP: Overrides C
 
-# BEGINGROUP: Overrides D
+
+
   - name: 'DA_Maxwell_Outfit_Dibella_UNP.esp'
     msg:
       - type: say
@@ -24398,9 +24398,9 @@ plugins:
       - crc: 0x2d7849d0
         util: *dirtyUtil
         itm: 2
-# ENDGROUP: Overrides D
 
-# BEGINGROUP: Overrides E
+
+
   - name: 'ebonymod.esp'
     dirty:
       - crc: 0xe385086e
@@ -24568,9 +24568,9 @@ plugins:
       - crc: 0x50af0ec3
         util: *dirtyUtil
         itm: 2
-# ENDGROUP: Overrides E
 
-# BEGINGROUP: Overrides F
+
+
   - name: 'Fast Respawns And Rich Merchants.esp'
     tag:
       - Relev
@@ -24680,9 +24680,9 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un Killable Leaders esp.'
         condition: '( file("Both Imp and SC-With Respawn.esp") ) or file("Both Imp and SC-No respawn.esp")'
-# ENDGROUP: Overrides F
 
-# BEGINGROUP: Overrides G
+
+
   - name: 'Ghostly Shadowmere.*\.esp'
     msg:
       - type: say
@@ -24742,9 +24742,9 @@ plugins:
             str: 'Несовместим с: меняющими шлемы модами.'
     tag:
       - Delev
-# ENDGROUP: Overrides G
 
-# BEGINGROUP: Overrides H
+
+
   - name: 'Harder Trading - Sell Cap (4x|6x|10x)\.esp'
     msg:
       - type: say
@@ -24830,8 +24830,8 @@ plugins:
           - lang: rus
             str: 'Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
-# ENDGROUP: Overrides H
-# BEGINGROUP: Overrides I
+
+
   - name: 'iMaxPlayerRunes\d+\.esp'
     msg:
       - type: say
@@ -24969,9 +24969,9 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un Item Prices *.esp.'
         condition: '( file("Item Prices.esp") ) or file("Item Prices V2.esp")'
-# ENDGROUP: Overrides I
 
-# BEGINGROUP: Overrides J
+
+
   - name: 'JanusForbeare''s Fighting Words.esp'
     dirty:
       - crc: 0xeaf4398b
@@ -25001,8 +25001,8 @@ plugins:
             str: 'Posible conflicts with other Dragon mods'
           - lang: rus
             str: 'Возможны конфликты с модами, меняющими драконов.'
-# ENDGROUP: Overrides J
-# BEGINGROUP: Overrides K
+
+
   - name: 'Ket_ARMONIZER_v2.esp'
     msg:
       - type: say
@@ -25033,8 +25033,8 @@ plugins:
             str: 'Incompatible with: Other dragons mods(Deadly Dragons etc)'
           - lang: rus
             str: 'Несовместим с: Другие, меняющие драконов,  моды(Deadly Dragons и т.п.)'
-# ENDGROUP: Overrides K
-# BEGINGROUP: Overrides L
+
+
   - name: 'LB Yarl Clothes.esp'
     msg:
       - type: say
@@ -25133,8 +25133,8 @@ plugins:
             str: 'Используйте только один LZA Incremental Difficulty_*.esp.'
           - lang: spa
             str: 'Utilizar solo un LZA Incremental Difficulty_*.esp.'
-# ENDGROUP: Overrides L
-# BEGINGROUP: Overrides M
+
+
   - name: 'MageFriendlyDiademOfTheSavant.esp'
     msg:
       - type: warn
@@ -25350,8 +25350,8 @@ plugins:
       - crc: 0xd31d84e2
         util: *dirtyUtil
         itm: 1
-# ENDGROUP: Overrides M
-# BEGINGROUP: Overrides N
+
+
   - name: 'NeV-P_ExtremeMaterialsENG.esp'
     inc:
       - 'NeV-P_ExtremeMaterials.esp'
@@ -25452,8 +25452,8 @@ plugins:
       - crc: 0x1baeed6c
         util: *dirtyUtil
         udr: 2
-# ENDGROUP: Overrides N
-# BEGINGROUP: Overrides O
+
+
   - name: 'OpenFaceGuardHelmetsFR.esp'
     inc:
       - 'OpenFaceGuardHelmets.esp'
@@ -25505,8 +25505,8 @@ plugins:
       - crc: 0xcd653e42
         util: *dirtyUtil
         itm: 1
-# ENDGROUP: Overrides O
-# BEGINGROUP: Overrides P
+
+
   - name: 'Paralyze-1.1b.esp'
     inc:
       - 'Paralyze.esp'
@@ -25570,10 +25570,10 @@ plugins:
   - name: 'Proper Aiming.esp'
     inc:
       - 'AutoAim.esp'
-# ENDGROUP: Overrides P
-# BEGINGROUP: Overrides Q
-# ENDGROUP: Overrides Q
-# BEGINGROUP: Overrides R
+
+
+
+
   - name: 'RangerNightingale.esp'
     msg:
       - type: warn
@@ -25678,8 +25678,8 @@ plugins:
       - crc: 0xa7e66f55
         util: *dirtyUtil
         itm: 10
-# ENDGROUP: Overrides R
-# BEGINGROUP: Overrides S
+
+
   - name: 'Safely Thrall.esp'
     msg:
       - type: say
@@ -26270,8 +26270,8 @@ plugins:
       - crc: 0x2fffbe67
         util: *dirtyUtil
         itm: 3
-# ENDGROUP: Overrides S
-# BEGINGROUP: Overrides T
+
+
   - name: 'thalmor_disguise.esp'
     dirty:
       - crc: 0x2c877368
@@ -26319,8 +26319,8 @@ plugins:
       - crc: 0x9c8f811b
         util: *dirtyUtil
         itm: 3
-# ENDGROUP: Overrides T
-# BEGINGROUP: Overrides U
+
+
   - name: 'ultimateodahviing.esp'
     msg:
       - type: say
@@ -26394,8 +26394,8 @@ plugins:
   - name: 'Ustengrav gate removal - alternate.esp'
     inc:
       - 'Ustengrav gate removal.esp'
-# ENDGROUP: Overrides U
-# BEGINGROUP: Overrides V
+
+
   - name: 'valkiirs_tastier_food.esp'
     msg:
       - type: say
@@ -26490,8 +26490,8 @@ plugins:
             str: 'Устарело. Обновите до последней версии, Invisible Aetherial Crown.esp.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, Invisible Aetherial Crown.esp.'
-# ENDGROUP: Overrides V
-# BEGINGROUP: Overrides W
+
+
   - name: 'wabba-ori_proj.esp'
     msg:
       - type: say
@@ -26556,8 +26556,8 @@ plugins:
         util: *dirtyUtil
         itm: 5
         udr: 7
-# ENDGROUP: Overrides W
-# BEGINGROUP: Overrides XYZ
+
+
   - name: 'R1Cots-Refait.esp'
     inc:
       - 'YChildren of the Sky.esp'
@@ -26578,8 +26578,8 @@ plugins:
             str: 'Используйте только один Zbuffed Candlelight Spell R*.esp'
           - lang: spa
             str: 'Utilizar solo un Zbuffed Candlelight Spell R*.esp'
-# ENDGROUP: Overrides XYZ
-# BEGINGROUP: Overrides Late
+
+
   - name: 'WeaponsArmorFixes_ambSkyforge_Patch.esp'
     req:
       - name: 'Weapons & Armor Fixes_Remade.esp'
@@ -26673,9 +26673,9 @@ plugins:
   - name: 'Skyrim unleashed Xtra_enchantments.esp'
     inc:
       - 'Skyrim unleashed_enchantments.esp'
-# ENDGROUP: Overrides Late
-# ENDGROUP: Overrides
-# BEGINGROUP: Towns and Villages
+
+
+
   - name: 'Unique Region Names - Dragonborn.esp'
     dirty:
       - crc: 0xe71dbfd
@@ -27251,8 +27251,8 @@ plugins:
       - crc: 0x1af5e998
         util: *dirtyUtil
         itm: 41
-# ENDGROUP: Towns and Villages
-# BEGINGROUP: Landscaping
+
+
   - name: 'Better Forests and Environments.esp'
     dirty:
       - crc: 0xae2df319
@@ -27446,8 +27446,8 @@ plugins:
         util: *dirtyUtil
         itm: 20
         udr: 11
-# ENDGROUP: Landscaping
-# BEGINGROUP: City Overhauls
+
+
   - name: 'Beautiful Cities.esp'
     dirty:
       - crc: 0xb70ceb49
@@ -27568,8 +27568,8 @@ plugins:
         content: 'Stolen content. Please show respect for authors'' rights and download from a legitimate source ([here](http://www.nexusmods.com/skyrim/mods/8058)).'
         condition: 'checksum("Open Cities Skyrim.esp",022AD2C8)'
 
-# ENDGROUP: City Overhauls
-# BEGINGROUP: Sounds of Skyrim and Sound Propagation Overhaul
+
+
 # Moved into a separate group because mods that place objects can inadvertently overwrite changes from this mod.
 # Also includes Sound Propagation Overhaul, because the author of Sounds of Skyrim recommends that that be loaded
 # after his mod.
@@ -27623,9 +27623,9 @@ plugins:
       - crc: 0x131bb61c
         util: *dirtyUtil
         itm: 3
-# ENDGROUP: Sounds of Skyrim and Sound Propogation Overhaul
-# BEGINGROUP: Image Space and Lighting Changes
-# BEGINGROUP: IMGS and LIGH Load Late
+
+
+
   - name: 'Realistic Lighting( - Full| - Addon)\.esp'
     msg:
       - type: say
@@ -27826,9 +27826,9 @@ plugins:
       - crc: 0x8a040f19
         util: *dirtyUtil
         itm: 7
-# ENDGROUP: IMGS and LIGH Load Late
-# ENDGROUP: Image Space and Lighting Changes
-# BEGINGROUP: Sounds of Skyrim patches
+
+
+
 # All patches for Sounds of Skyrim, per author''s suggestion.
 # more like addons, move elsewhere if necessary:
 # Patches for The Dungeons
@@ -27860,8 +27860,8 @@ plugins:
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
-# ENDGROUP: Sounds of Skyrim patches
-# BEGINGROUP: Realism
+
+
   - name: 'Skyrim_realism.esp'
     dirty:
       - crc: 0x536bcffa
@@ -28154,8 +28154,8 @@ plugins:
       - *SKSE
       - *SkyUI
       - *FNIS
-# ENDGROUP: Realism
-# BEGINGROUP: Vampires and Werewolves
+
+
   - name: 'SkyRe_Vampirism.esp'
     inc:
       - 'VampireOverhaul.esp'
@@ -28475,11 +28475,11 @@ plugins:
   - name: 'DelayDawnguardQuestStartCLEAN.esp'
     inc:
       - 'DelayDawnguardQuestStart.esp'
-# ENDGROUP: Vampires and Werewolves
-# BEGINGROUP: Magic
+
+
 #
 # Overrides overhauls. New spells and magic systems go here for convenience.
-# BEGINGROUP: General Spells
+
   - name: 'AdoringFanSummon.esp'
     msg:
       - type: error
@@ -29723,8 +29723,8 @@ plugins:
       - crc: 0xf4d4c951
         util: *dirtyUtil
         itm: 3
-# ENDGROUP: General Spells
-# BEGINGROUP: Shouts
+
+
   - name: 'shouts_for_thuu''mic_2.esp'
     msg:
       - type: say
@@ -29844,8 +29844,8 @@ plugins:
   - name: 'TrueDragonblood-DawnguardV001.esp'
     inc:
       - 'ShoutCD.esp'
-# ENDGROUP: Shouts
-# BEGINGROUP: Spells Late
+
+
   - name: 'BurnifiedEffects.esp'
     msg:
       - type: say
@@ -30103,8 +30103,8 @@ plugins:
             str: 'Используйте только один WiS IV - AI & Spells for NPC esp.'
           - lang: spa
             str: 'Utilizar solo un WiS IV - AI & Spells for NPC esp.'
-# ENDGROUP: Spells Late
-# BEGINGROUP: Alchemy
+
+
   - name: 'Alchemy Fixed Beta 0.02.esp'
     msg:
       - type: say
@@ -30208,7 +30208,7 @@ plugins:
             str: 'Используйте только один PT Alchemy / Food Overhaul esp.'
           - lang: spa
             str: 'Utilizar solo un PT Alchemy / Food Overhaul esp.'
-# ENDGROUP: Alchemy
+
 # BEGINGROUP: Enchantment
   - name: 'Dark Brotherhood Enchantment.esp'
     dirty:
