@@ -1591,34 +1591,29 @@ plugins:
       - 'Skyrim Project Optimization - Full Version.esp'
       - 'Skyrim Project Optimization - No Homes - Full Version.esm'
   - name: 'SuccubusFollower.esp'
+    inc:
+      - 'Succubus Summoning.esp'
     msg:
       - type: say
         content:
           - lang: eng
-            str: 'This is actually an esm released as an esp file.'
+            str: 'This is a false esm file.'
           - lang: rus
             str: 'На самом деле это esm-файл, выпущенный как esp.'
           - lang: spa
             str: 'Archivo esm distrubuido como esp.'
   - name: 'Succubus Summoning.esp'
+    inc:
+      - 'SuccubusFollower.esp'
     msg:
       - type: say
         content:
           - lang: eng
-            str: 'This is actually an esm released as an esp file.'
+            str: 'This is a false esm file.'
           - lang: rus
             str: 'На самом деле это esm-файл, выпущенный как esp.'
           - lang: spa
             str: 'Archivo esm distrubuido como esp.'
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either Succubus Summoning.esp or SuccubusFollower.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой, или Succubus Summoning.esp или SuccubusFollower.esp, не оба.'
-          - lang: spa
-            str: 'Usar Succubus Summoning.esp o SuccubusFollower.esp, no ambos.'
-        condition: 'file("SuccubusFollower.esp")'
 # ENDGROUP: ESMs
 
 # BEGINGROUP: Official DLC Files
@@ -4513,28 +4508,20 @@ plugins:
         itm: 4
 # ordered individual V2 modules as DB, HF, DG, SK per author''s guidelines
   - name: 'Remove Interior Fog V2 - Skyrim.esp'
+    inc:
+      - 'RemoveAmbientInteriorFog.esp'
     msg:
-      - type: warn
-        content:
-          - lang: eng
-            str: 'Use either RemoveAmbientInteriorFog.esp or Remove Interior Fog V2 *.esp, not both.'
-          - lang: rus
-            str: 'Используйте любой или RemoveAmbientInteriorFog.esp или Remove Interior Fog V2 *.esp, не обa.'
-          - lang: spa
-            str: 'Usar RemoveAmbientInteriorFog.esp o Remove Interior Fog V2 *.esp, no ambos.'
-        condition: 'file("RemoveAmbientInteriorFog.esp")'
       - type: say
         content: 'Use Remove Interior Fog V2 - Dawnguard.esp in addition to include Dawnguard locations.'
-        condition: 'active("Dawnguard.esm")'
+        condition: 'file("Dawnguard.esm")'
       - type: say
         content: 'Use Remove Interior Fog V2 - Hearthfire.esp in addition to include Hearthfires locations.'
-        condition: 'active("Hearthfires.esm")'
+        condition: 'file("Hearthfires.esm")'
   - name: 'Remove Interior Fog V2 - Full Version.esp'
     msg:
       - type: error
         content: 'Do not use the modular versions of Remove Interior Fog V2 with the Full version.'
         condition: 'regex("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp")'
-# See readme for more info about load order (heh.. it doesn't have a readme -egocarib)
   - name: 'enhanceddynamicweathersystem.esp'
     msg:
       - type: say
@@ -36532,7 +36519,6 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un Skyrim performance Mod esp.'
         condition: 'file("Skyrim Performance MOD.esp")'
-#  - name: 'World_Map_Height_Pitch_Tweak.+\.esp'
   - name: 'World_Map_Height_Pitch_Tweak.esp'
     msg:
       - type: say
