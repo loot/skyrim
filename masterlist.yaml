@@ -32198,8 +32198,6 @@ plugins:
         condition: 'checksum("XCES.esp",0D760898)'
 
 
-# New warpaints.
-# Keep in mind any Warpaint plugin changes the RACE record
   - name: 'BHWarPaints.esp'
     req: [ *SKSE ]
   - name: 'RaceMenuOverlays.esp'
@@ -32209,9 +32207,6 @@ plugins:
 
 
 
-# Plugins for this group should have both Hair and Eye changes
-# The Bash TAG: {{BASH: Hair}} should be depreciated.  Updated to HDPT possibly.
-# TAG: {{BASH: Hair, Eyes}}
   - name: 'Burning Sky.esp'
     dirty:
       - crc: 0x6d6ccfd9
@@ -32539,7 +32534,6 @@ plugins:
         udr: 2
 
 
-# I figured this group should be around this area If someone feels it could be placed better, feel free to move it
   - name: 'Children of Skyrim - NORD PRESETS.esp'
     msg:
       - type: say
@@ -32573,21 +32567,6 @@ plugins:
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
 
 
-
-
-# Those related to companion mod systems. Most others in Quests section.
-# Recommended by authors to load very late.
-# Feedback from Tokc.D.K.
-# 1) Mods loaded before UFO
-# 2) UFO, BDO, XFL and other simular mods
-# 3) Global Companions\Housecarls face\stats changing mods
-# 4) Single Companions\Housecarls face\stats changing mods
-# 5) mods that will be loaded after UFO
-# Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
-
-
-
-# pre ufo #
   - name: '3DNPC.esp'
     dirty:
       - crc: 0x143c788a
@@ -32889,9 +32868,6 @@ plugins:
           - lang: rus
             str: 'Удалите. Уже входит в BDO.esp.'
         condition: 'file("BDO.esp")'
-# pre ufo w
-# pre ufo xyz
-
 
 
   - name: 'FCKaraThePathfinder.esp'
@@ -35534,18 +35510,8 @@ plugins:
 
 #
 # Best loaded late to override possible message additions from other mods.
-
-#
-#  Per discussion in the Google Group, I''ve started sorted the mods in this
-#  group into three categories: "Message override overhauls",
-#  "Single message overrides", and "Message suppressors". I don''t know most of
-#  the mods and some of those I''ve tried to look up, I have not been able to
-#  locate. Please do help out and sort the "Unsorted group" into one of the
-#  three 'sorted' ones. (DeleteWhenCooked)
-#  - Freso
 #
 
-# Unsorted
   - name: 'Chesko_LevelUp.esp'
     req:
       - *SKSE
@@ -36359,16 +36325,9 @@ plugins:
 
 
 
-# Plugins which load late or are more conveniently loaded late.
-#
 # Arrows renamed for better sorting.esp
 # Must load after arrow tweaks (AT - *)
 # AZ Khajiit Vampire No Color Change.esp
-
-
-# Compatibility Patches which must load after a certain mod go here
-# Only if no conflicts are made in between
-#
   - name: 'SoundPropagationOverhaul DSAMG Patch.esp'
     dirty:
       - crc: 0x32da1d52
@@ -36398,7 +36357,6 @@ plugins:
         condition: '( file("SSS Deadly Dragons Patch A.esp") ) or file("SSS Deadly Dragons Patch B.esp")'
 
 
-# For plugins which must be after all others
   - name: 'PC Exclusive Animation Path.esp'
     inc:
       - 'AP Skyrim.esp'
@@ -36583,8 +36541,6 @@ plugins:
 
 
 
-# Bashed Patch.esp
-# REGEX: Bashed Patch.*\.esp
   - name: 'Bashed Patch.*\.esp'
     priority: 400
 
@@ -36663,7 +36619,6 @@ plugins:
   - name: 'SUM.esp'
     priority: 600
 
-# Patches for dynamic plugins - moved here because SUM offers patch merging functionality. - William
   - name: 'SkyRe_EnemyAI.esp'
     priority: 700
     msg:
@@ -36755,15 +36710,6 @@ plugins:
       - 'AOS_SkyRe-Patch Patch.esp'
     priority: 700
     ## two AOS reported to load after any other AOS plugins or patches
-
-
-
-
-# Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.
-# Once WryeBash is updated this shouldn't be needed, since that's what its for.
-#
-
-
 # DeadlyCombat_PISE_Patch.esp
 # Must load after ASIS (Unconfirmed, as comment for now)
   - name: 'EzEWorldMap.esp'
