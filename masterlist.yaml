@@ -30209,7 +30209,7 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un PT Alchemy / Food Overhaul esp.'
 
-# BEGINGROUP: Enchantment
+
   - name: 'Dark Brotherhood Enchantment.esp'
     dirty:
       - crc: 0x3aab054a
@@ -30297,9 +30297,9 @@ plugins:
   - name: 'NightEye_Ench+Potion+Spell.esp'
     tag:
       - Relev
-# ENDGROUP: Enchantment
-# ENDGROUP: Magic
-# BEGINGROUP: Thievery, Sneaking and Crime
+
+
+
 #
 # Overrides overhauls.
   - name: 'Realistic crime report radius( zero)?\.esp'
@@ -30317,8 +30317,8 @@ plugins:
       - crc: 0x9b5a3dee
         util: *dirtyUtil
         itm: 3
-# ENDGROUP: Thievery, Sneaking and Crime
-# BEGINGROUP: Combat
+
+
   - name: 'Duel - Combat Realism.esp'
     dirty:
       - crc: 0x948c8561
@@ -30566,8 +30566,8 @@ plugins:
       - crc: 0x2b8ad3d0
         util: *dirtyUtil
         itm: 21
-# ENDGROUP: Combat
-# BEGINGROUP: Skills, Attributes and Leveling
+
+
   - name: 'ACE BYOG Carry Weight ([Dd]+\d{1,3})\.esp'
     msg:
       - type: say
@@ -31066,8 +31066,8 @@ plugins:
         util: *dirtyUtil
         itm: 4
         udr: 5
-# ENDGROUP: Skills, Attributes and Leveling
-# BEGINGROUP: Player Perks
+
+
 # Alters player perks or adds a new perk. Should not contain QUST entries if possible.
 # perks #
   - name: '2HandSpeed30.esp'
@@ -31921,9 +31921,9 @@ plugins:
       - crc: 0xe830cbbe
         util: *dirtyUtil
         itm: 2
-# ENDGROUP: Player Perks
 
-# BEGINGROUP: Pose and Animation Mods
+
+
 # new animations.
 # TAG: {{BASH: Actors.Anims}}
   - name: 'ActionPoser.esp'
@@ -32059,14 +32059,14 @@ plugins:
             str: 'Требуется: [a little sexy apparel replacer - for CBBE/UNP/ADEC](http://www.nexusmods.com/skyrim/mods/5564/)'
           - lang: spa
             str: 'Requiere: [a little sexy apparel replacer - for CBBE/UNP/ADEC](http://www.nexusmods.com/skyrim/mods/5564/)'
-# ENDGROUP: Pose and Animation Mods
 
-# BEGINGROUP: Beauty Packs & Race Changes\Addons
+
+
 # In Skyrim HAIR records do not Exist they are part of the group HDPT
 # The Bash TAG: {{BASH: Hair}} should be deprecated.
 # There are not any separate Eyebrows in Skyrim they are Headparts
 
-# BEGINGROUP: Headparts
+
   - name: 'ApachiiHair.esp'
     msg:
       - type: say
@@ -32160,8 +32160,8 @@ plugins:
             str: 'Устарело. Обновите до последней версии, RANs Hair.esp.'
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión, RANs Hair.esp.'
-# ENDGROUP: Headparts
-# BEGINGROUP: Eyes
+
+
   - name: 'KidsColouredEyes.esp'
     dirty:
       - crc: 0xb6ae437
@@ -32196,8 +32196,8 @@ plugins:
           - lang: spa
             str: 'Obsoleto. Actualizar a la última versión.'
         condition: 'checksum("XCES.esp",0D760898)'
-# ENDGROUP: Eyes
-# BEGINGROUP: Warpaints
+
+
 # New warpaints.
 # Keep in mind any Warpaint plugin changes the RACE record
   - name: 'BHWarPaints.esp'
@@ -32206,9 +32206,9 @@ plugins:
     req: [ *SKSE ]
   - name: 'TSMaleWarPaint.esp'
     req: [ *SKSE ]
-# ENDGROUP: Warpaints
 
-# BEGINGROUP: Race additions
+
+
 # Plugins for this group should have both Hair and Eye changes
 # The Bash TAG: {{BASH: Hair}} should be depreciated.  Updated to HDPT possibly.
 # TAG: {{BASH: Hair, Eyes}}
@@ -32537,8 +32537,8 @@ plugins:
         util: *dirtyUtil
         itm: 12
         udr: 2
-# ENDGROUP: Race additions
-# BEGINGROUP: Character Presets
+
+
 # I figured this group should be around this area If someone feels it could be placed better, feel free to move it
   - name: 'Children of Skyrim - NORD PRESETS.esp'
     msg:
@@ -32571,10 +32571,10 @@ plugins:
       - type: warn
         content: 'This file is broken and will not work.'
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
-# ENDGROUP: Character Presets
-# ENDGROUP: Beauty Packs & Race Changes\Addons
 
-# BEGINGROUP: Companions and NPCs
+
+
+
 # Those related to companion mod systems. Most others in Quests section.
 # Recommended by authors to load very late.
 # Feedback from Tokc.D.K.
@@ -32585,7 +32585,7 @@ plugins:
 # 5) mods that will be loaded after UFO
 # Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
 
-# BEGINGROUP: Companions Load Early
+
 
 # pre ufo #
   - name: '3DNPC.esp'
@@ -32891,9 +32891,9 @@ plugins:
         condition: 'file("BDO.esp")'
 # pre ufo w
 # pre ufo xyz
-# ENDGROUP: Companions Load Early
 
-# BEGINGROUP: Questgiver NPCs
+
+
   - name: 'FCKaraThePathfinder.esp'
     dirty:
       - crc: 0x69a4fb16
@@ -32916,8 +32916,8 @@ plugins:
         util: *dirtyUtil
         itm: 97
         udr: 32
-# ENDGROUP: Questgiver NPCs
-# BEGINGROUP: Extensible Follower Framework
+
+
   - name: 'XFLDialogue.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
@@ -32926,8 +32926,8 @@ plugins:
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
       - 'BDO.esp'
-# ENDGROUP: Extensible Follower Framework
-# BEGINGROUP: Ultimate Follower Overhaul
+
+
   - name: 'UFO - Ultimate Follower Overhaul.esp'
     after:
       - 'brhucefollower.esp'
@@ -32977,8 +32977,8 @@ plugins:
         content: 'Outdated. Please upgrade to [new official Dragonborn AddOn](http://www.nexusmods.com/skyrim/mods/14037).'
         condition: 'not file("UFO - Dragonborn AddOn.esp")'
 
-# ENDGROUP: Ultimate Follower Overhaul
-# BEGINGROUP: Post UFO
+
+
 # Other mods that must loaded after UFO (if UFO is installed).
   - name: 'Feminine Females With All DLCs.esp'
     inc:
@@ -33009,9 +33009,9 @@ plugins:
   - name: 'OriginalrecipeUlfric.esp'
     inc:
       - 'CWBattleUlfric.esp'
-# ENDGROUP: Post UFO
 
-# BEGINGROUP: NPC Distance, Face & Makeup Overrides
+
+
 # Distance Tweaks before Face & Makeup Overrides
 # Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 # moved from Race additions - no longer contains race changes.  Must be loaded before EEO if EEO present
@@ -33031,9 +33031,9 @@ plugins:
       - util: *dirtyUtil
         crc: 0x3e16af9d
         itm: 1
-# ENDGROUP: NPC Distance, Face & Makeup Overrides
 
-# BEGINGROUP: Companions
+
+
 # Load after UFO, XFL
 # Companions face changes
 # Dialog changes
@@ -34879,7 +34879,7 @@ plugins:
           - lang: rus
             str: 'Удалите. Уже входит в BDO.esp.'
         condition: 'file("BDO.esp")'
-# BEGINGROUP: Unlimited Companions
+
   - name: 'Followers Unlimited 11.esp'
     msg:
       - type: warn
@@ -34915,12 +34915,12 @@ plugins:
           - lang: rus
             str: 'Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.'
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
-# BEGINGROUP: Multimarriage
+
 # Must load after Unlimited companions mods
 # multimarriage.esp
 # must be load after multiple followers mods for wedding ceremony work.
-# ENDGROUP: Multimarriage
-# ENDGROUP: Unlimited Companions
+
+
 
 # Oct 2013: This appears to be another unsorted or un-annotated region. and/or some mods with small/single tweaks -LD
 # IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: brhucefollower.esp
@@ -34970,9 +34970,9 @@ plugins:
         display: '[Hair packs of Fallout 3](http://www.nexusmods.com/skyrim/mods/17993).'
       - name: 'AdditionalNPCFollwerVoices.esp'
         display: '[Additional Vanilla NPC Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266).'
-# ENDGROUP: Companions
 
-# BEGINGROUP: Companions Load Late
+
+
 # Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
   - name: 'Childclothes_For_AdultBased_Children.esp'
     dirty:
@@ -35099,9 +35099,9 @@ plugins:
     inc:
       - 'mjhKhajiitSpeakExtra - Dagi-Raht.esp'
   - name: 'mjhKhajiitSpeakMod - Realistic Needs And Diseases.esp'
-# ENDGROUP: Companions Load Late
-# ENDGROUP: Companions and NPCs
-# BEGINGROUP: Alternative starts
+
+
+
   - name: 'BecomeKingofSkyrim.esp'
     dirty:
       - crc: 0x62c0e76d
@@ -35165,8 +35165,8 @@ plugins:
       - crc: 0x77f5d848
         util: *dirtyUtil
         itm: 4
-# ENDGROUP: Alternative starts
-# BEGINGROUP: Race Overrides
+
+
   - name: 'Height Adjusted Skyrim(.+)?\.esp'
     msg:
       - type: say
@@ -35529,9 +35529,9 @@ plugins:
       - crc: 0x1841112c
         util: *dirtyUtil
         itm: 6
-# ENDGROUP: Race Overrides
 
-# BEGINGROUP: Message suppression/changing overrides
+
+
 #
 # Best loaded late to override possible message additions from other mods.
 
@@ -35559,8 +35559,8 @@ plugins:
       - crc: 0x9a11b0c4
         util: *dirtyUtil
         itm: 3
-# ENDGROUP: Message suppression/changing overrides
-# BEGINGROUP: Respawn and day length overrides
+
+
   - name: '72HoursRespawn.esp'
     msg:
       - type: say
@@ -35677,11 +35677,11 @@ plugins:
           - lang: rus
             str: 'Используйте вместо этого настройку башед патча.'
         condition: 'regex("Bashed Patch.*\.esp")'
-# ENDGROUP: Respawn and day length overrides
-# BEGINGROUP: Shader Mods
+
+
 #
 # Need to go after new items to affect them.
-# BEGINGROUP: Shader Removers
+
   - name: 'Duns_Inc_Shaders_Begone.esp'
     msg:
       - type: warn
@@ -35698,9 +35698,9 @@ plugins:
       - type: warn
         content: 'Sharlikran''s version is now obsolete. You should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
         condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",493A9DEA)'
-# ENDGROUP: Shader Removers
 
-# BEGINGROUP: Shader Replacers
+
+
   - name: 'RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp'
     msg:
       - type: say
@@ -35857,8 +35857,8 @@ plugins:
       - type: say
         content: 'Requries a patch [(found here)](http://www.nexusmods.com/skyrim/mods/42796) when used with Enchanting Awakened.'
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSeeEnchPatch.esp")'
-# ENDGROUP: Shader Replacers
-# BEGINGROUP: Water and Lava
+
+
   - name: 'Hot Volcanic Water.esp'
     dirty:
       - crc: 0xcb9a32b4
@@ -35995,8 +35995,8 @@ plugins:
             str: 'Требуется: [WATER 1.5b](http://www.nexusmods.com/skyrim/mods/13268)'
           - lang: spa
             str: 'Requiere: [WATER 1.5b](http://www.nexusmods.com/skyrim/mods/13268)'
-# ENDGROUP: Shader Mods
-# BEGINGROUP: Map marker Tweaks
+
+
   - name: 'Atlas Dawnguard.esp'
     dirty:
       - crc: 0xc03d5fcd
@@ -36356,16 +36356,16 @@ plugins:
             str: 'Если вы используете другие моды. изменяющие карты, такие как Quality World Map with roads, измените параметр uLockedTerrainLOD на 32 для их отображения (только внутри помещений)'
           - lang: spa
             str: 'If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)'
-# ENDGROUP: Map marker Tweaks
 
-# BEGINGROUP: Load Late
+
+
 # Plugins which load late or are more conveniently loaded late.
 #
 # Arrows renamed for better sorting.esp
 # Must load after arrow tweaks (AT - *)
 # AZ Khajiit Vampire No Color Change.esp
 
-# BEGINGROUP: Compatibility Patches
+
 # Compatibility Patches which must load after a certain mod go here
 # Only if no conflicts are made in between
 #
@@ -36396,8 +36396,8 @@ plugins:
           - lang: spa
             str: 'Utilizar solo un SSS Deadly Dragons Patch esp.'
         condition: '( file("SSS Deadly Dragons Patch A.esp") ) or file("SSS Deadly Dragons Patch B.esp")'
-# ENDGROUP: Compatibility Patches
-# BEGINGROUP: Extra Late
+
+
 # For plugins which must be after all others
   - name: 'PC Exclusive Animation Path.esp'
     inc:
@@ -36577,20 +36577,20 @@ plugins:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
-# ENDGROUP: Extra Late
 
-# ENDGROUP: Load Late
 
-# BEGINGROUP: Bashed Patch
+
+
+
 
 # Bashed Patch.esp
 # REGEX: Bashed Patch.*\.esp
   - name: 'Bashed Patch.*\.esp'
     priority: 400
 
-# ENDGROUP: Bashed Patch
 
-# BEGINGROUP: Post Bashed Patch
+
+
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
     priority: 500
     req: [ *SKSE ]
@@ -36603,7 +36603,7 @@ plugins:
             str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
           - lang: spa
             str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-# BEGINGROUP: Dynamic Plugins
+
   - name: 'Pre Automatic Variants.*\.esp'
     priority: 550
   - name: 'ASIS-Dependency.esp'
@@ -36662,7 +36662,7 @@ plugins:
     priority: 600
   - name: 'SUM.esp'
     priority: 600
-# BEGINGROUP: Patches for Dynamic Plugins
+
 # Patches for dynamic plugins - moved here because SUM offers patch merging functionality. - William
   - name: 'SkyRe_EnemyAI.esp'
     priority: 700
@@ -36756,13 +36756,13 @@ plugins:
     priority: 700
     ## two AOS reported to load after any other AOS plugins or patches
 
-# ENDGROUP: Patches for Dynamic Plugins
-# ENDGROUP: Dynamic Plugins
+
+
 
 # Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.
 # Once WryeBash is updated this shouldn't be needed, since that's what its for.
 #
-# BEGINGROUP: Non Dynamic Plugins
+
 
 # DeadlyCombat_PISE_Patch.esp
 # Must load after ASIS (Unconfirmed, as comment for now)
@@ -36772,5 +36772,5 @@ plugins:
     priority: 1000
   - name: 'Warburgs Paper World Map.esp'
     priority: 1000
-# ENDGROUP: Non Dynamic Plugins
-# ENDGROUP: Post Bashed Patch
+
+
