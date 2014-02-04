@@ -182,7 +182,7 @@ plugins:
         crc: 0x412d96fb
         itm: 50
         udr: 1
-      # This is version 1.8 of Update.esm
+      # Version 1.8 of Update.esm
       - util: *dirtyUtil
         crc: 0x7f464083
         udr: 1
@@ -223,7 +223,6 @@ plugins:
     tag:
       - Delev
       - Relev
-# TES5Edit 3.0.30: 619 ITM, 82 UDR, 57 deleted NavMeshes (CRC: BD72CCF3)
   - name: 'Dawnguard.esm'
     priority: -400
     after:
@@ -233,12 +232,13 @@ plugins:
     tag:
       - Delev
       - Relev
-    # TES5Edit 3.0.30: 619 ITM, 82 UDR, 57 deleted NavMeshes (CRC: BD72CCF3)
     dirty:
+    # TES5Edit 3.0.30
       - util: *dirtyUtil
         crc: 0xbd72ccf3
         itm: 619
         udr: 82
+        nav: 57
   - name: 'Unofficial Dawnguard Patch.esp'
     priority: -400
     after:
@@ -247,7 +247,6 @@ plugins:
     tag:
       - Delev
       - Relev
-# TES5Edit 3.0.30: 184 ITM, 11 UDR, 5 deleted NavMeshes (CRC: AF82CE6A)
   - name: 'Hearthfires.esm'
     priority: -400
     after:
@@ -255,12 +254,13 @@ plugins:
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
       - 'Dawnguard.esm'
       - 'SMPC.esp'
-    # TES5Edit 3.0.30: 184 ITM, 11 UDR, 5 deleted NavMeshes (CRC: AF82CE6A)
     dirty:
+    # TES5Edit 3.0.30
       - util: *dirtyUtil
         crc: 0xaf82ce6a
         itm: 184
         udr: 11
+        nav: 5
   - name: 'Unofficial Hearthfire Patch.esp'
     priority: -400
     after:
@@ -275,12 +275,13 @@ plugins:
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
       - 'SMPC.esp'
-    # TES5Edit 3.0.30: 61 ITM, 8 UDR, 1 deleted NavMesh (CRC: A9F83BFF)
     dirty:
+    # TES5Edit 3.0.30
       - util: *dirtyUtil
         crc: 0xa9f83bff
         itm: 61
         udr: 8
+        nav: 1
   - name: 'Unofficial Dragonborn Patch.esp'
     priority: -400
     after:
@@ -290,11 +291,6 @@ plugins:
       - 'SMPC.esp'
     tag:
       - Delev
-# additional fixes after unofficial patches
-
-
-
-# esms early
 # Falskaar is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
   - name: 'Falskaar.esm'
     priority: -400
@@ -369,7 +365,7 @@ plugins:
       - 'Skyrim Project Optimization - No Homes - Full Version.esp'
 # TCRA.esm
 # a racecomp-like file
-# esms #
+
   - name: '1NordDungeonAlt.esm'
     dirty:
       - crc: 0x68ad6d32
@@ -1260,7 +1256,6 @@ plugins:
         util: *dirtyUtil
         itm: 3700
         udr: 192
-# ## esms s
 # ## MOD: S´Drass follower.esm
 # ## Removing the MOD: tag from this seems to cause crashes.
   - name: 'SC_Drow Race.esm'
