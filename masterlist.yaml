@@ -528,10 +528,6 @@ plugins:
         udr: 0
   - name: 'DA_Skyship.esm'
     req: [ *SKSE ]
-    msg:
-      - type: warn
-        content: 'If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.'
-        condition: 'active("Dragonborn.esm") and not file("DA_Skyship_Dragonborn.esp")'
     dirty:
       - crc: 0x51f4b5ce
         util: *dirtyUtil
@@ -17880,10 +17876,6 @@ plugins:
         udr: 51
   - name: 'DA_Skyship.esp'
     req: [ *SKSE ]
-    msg:
-      - type: warn
-        content: 'If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.'
-        condition: 'active("Dragonborn.esm") and not file("DA_Skyship_Dragonborn.esp")'
     dirty:
       - crc: 0x5b03bf9a
         util: *dirtyUtil
@@ -17893,6 +17885,10 @@ plugins:
         util: *dirtyUtil
         itm: 30
         udr: 1
+  - name: 'DA_Skyship_Dragonborn.esp'
+    msg:
+      - type: warn
+        content: 'Patch no longer required. Please delete DA_SkyShip_Dragonborn.esp and upgrade to the latest version of [Dev Aveza Airship](http://www.nexusmods.com/skyrim/mods/24234).'
   - name: 'Daedra in Conjurer Dungeons.esp'
     dirty:
       - crc: 0xee210836
