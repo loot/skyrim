@@ -4088,8 +4088,7 @@ plugins:
         util: *dirtyUtil
         itm: 6
   - name: 'Morning Fogs.esp'
-    inc:
-      - 'Supreme Fog.esp'
+    ## very old versions incompatible with 'Supreme Fog.esp' but unlikely to be used anymore
     dirty:
       - crc: 0x2cc974e4
         util: *dirtyUtil
@@ -10364,6 +10363,9 @@ plugins:
           - lang: ru
             str: 'Требуется: Elemental Base Pack. Ищите его [здесь](http://steamcommunity.com/sharedfiles/filedetails/?id=83061079) или [здесь](http://www.nexusmods.com/skyrim/mods/20868).'
         condition: 'not file("Elemental Base.esp")'
+  - name: 'ElementalArrows.esp'
+    tag:
+      - Relev
   - name: 'ImmersiveLoot.esp'
     tag:
       - Delev
@@ -32747,6 +32749,25 @@ plugins:
       - type: warn
         content: 'Outdated. Please upgrade to [new official Dragonborn AddOn](http://www.nexusmods.com/skyrim/mods/14037).'
         condition: 'not file("UFO - Dragonborn AddOn.esp")'
+  - name: 'Endgame NPC Overhaul.esp'
+    after:
+      - 'UFO - Ultimate Follower Overhaul.esp'
+      - 'UFO - Dragonborn AddOn.esp'
+      - 'UFO - Dawnguard AddOn.esp'
+      - 'UFO - Heartfire AddOn.esp'
+  - name: 'ENPCO Dawnguard.esp'
+    after:
+      - 'Endgame NPC Overhaul.esp'
+  - name: 'ENPCO Hearthfire.esp'
+    after:
+      - 'Endgame NPC Overhaul.esp'
+  - name: 'ENPCO Dragonborn.esp'
+    after:
+      - 'Endgame NPC Overhaul.esp'
+  - name: 'SBF [A-Z][^l].*\.esp'
+    after:
+      - 'SBF All In One + DLC.esp'
+      - 'SBF All In One Vanilla.esp'
 # Other mods that must loaded after UFO (if UFO is installed).
   - name: 'Feminine Females With All DLCs.esp'
     inc:
