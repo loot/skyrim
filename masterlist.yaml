@@ -28291,6 +28291,9 @@ plugins:
         itm: 5
   - name: 'EnchantingAwakened.esp'
     after:
+      - 'Chesko_Frostfall.esp'
+      - 'Apocalypse - The Spell Package.esp'
+      - 'Dwemer Certified.esp'
       - 'More Exp Chance.esp'
       - name: 'Animated Weapon Enchants.esp'
         condition: 'file("EnchantingAwakenedAWEPatch.esp")'
@@ -29884,6 +29887,9 @@ plugins:
       - type: say
         content: 'To save and load custom presets while using this mod, download the [FISS plugin](http://www.nexusmods.com/skyrim/mods/48265). A "Presets" page will appear in the MCM menu once FISS is active.'
         condition: 'not file("FISS.esp")'
+      - type: say
+        content: 'To gain access to all the features of Dynamic Potions version 3.1, you will need to upgrade to [SKSE version 1.7+](http://skse.silverlock.org)'
+        condition: 'version("..\skse_loader.exe", "0.1.7.0", <)'
   - name: 'Eld-combinePotions.esp'
     msg:
       - type: warn
@@ -31400,6 +31406,8 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Stealth Skills Rebalanced_COMPLETE.esp'
+    after:
+      - 'EnchantingAwakened.esp'
     tag:
       - Delev
   - name: 'Stealth Skills Rebalanced_LOCKPICKING.esp'
@@ -31435,6 +31443,8 @@ plugins:
     tag:
       - Delev
   - name: 'Stealth Skills Rebalanced_SNEAK.esp'
+    after:
+      - 'EnchantingAwakened.esp'
     msg:
       - type: warn
         content:
@@ -31646,6 +31656,9 @@ plugins:
     tag:
       - Delev
       - Relev
+  - name: 'SPERG.esp'
+    after:
+      - 'EnchantingAwakened.esp'
   - name: 'REGEX: PTAlchemyOverhaul_SkillRate_\\d_\\d\\d\\?.esp'
     msg:
       - type: say
