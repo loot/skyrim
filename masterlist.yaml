@@ -1463,6 +1463,21 @@ plugins:
             str: 'Устарело. Обновите до последней версии, ZZZ_Stenvar_Replacer_THAIDEN.esp.'
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión, ZZZ_Stenvar_Replacer_THAIDEN.esp.'
+# Low priority .esp's
+  - name: 'HighResTexturePack01.esp'
+    priority: -400
+  - name: 'HighResTexturePack02.esp'
+    priority: -400
+  - name: 'HighResTexturePack03.esp'
+    priority: -400
+  - name: 'VanillaReducedTextures.esp'
+    priority: -300
+  - name: 'VanillaReducedTexturesDG.esp'
+    priority: -300
+  - name: 'VanillaReducedTexturesDB.esp'
+    priority: -300
+  - name: 'Bethesda_Hi-Res_Optimized.esp'
+    priority: -300
 # esm''s released with esp extension
   - name: 'Bandit Raid.esp'
     msg:
@@ -27445,6 +27460,8 @@ plugins:
       - name: 'Realistic Lighting.esp'
         display: 'Realistic Lighting with Customization'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
     msg:
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
@@ -27453,12 +27470,68 @@ plugins:
       - crc: 0x18ad5feb
         util: *dirtyUtil
         itm: 18
+  - name: 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+  - name: 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+    msg:
+      - type: warn
+        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
+    dirty:
+      - crc: 0xcb2aeeaf
+        util: *dirtyUtil
+        itm: 5
+  - name: 'Realistic Lighting Overhaul - Dawnguard.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+  - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            str: 'Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
+          - lang: ru
+            str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
+        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
+    dirty:
+      - crc: 0x53706bfb
+        util: *dirtyUtil
+        itm: 2
   - name: 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
     dirty:
       - crc: 0x89ceaa91
         util: *dirtyUtil
         itm: 2
   - name: 'Realistic Lighting Overhaul - Major City Interiors.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
+      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
     msg:
       - type: warn
         content:
@@ -27474,36 +27547,72 @@ plugins:
       - crc: 0x33a5fd6
         util: *dirtyUtil
         itm: 9
-  - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: ru
-            str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
-    dirty:
-      - crc: 0x53706bfb
-        util: *dirtyUtil
-        itm: 2
   - name: 'Realistic Lighting Overhaul - Weathers.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
+      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
     dirty:
       - crc: 0x89ee7304
         util: *dirtyUtil
         itm: 4
-  - name: 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-    msg:
-      - type: warn
-        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
-    dirty:
-      - crc: 0xcb2aeeaf
-        util: *dirtyUtil
-        itm: 5
+  - name: 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
+      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Weathers.esp'
+  - name: 'RLO - Adaptive Interiors Vanilla Weathers Patch.esp'
+    inc:
+      - 'ClimatesOfTamriel.esm'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
+      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Weathers.esp'
+      - 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
+  - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
+      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Weathers.esp'
+      - 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
+  - name: 'ClimatesOfTamriel - VannillaNights.esp'
+    inc:
+      - 'Realistic Lighting Overhaul - Weathers.esp'
+      - 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
+    after:
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dawnguard.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
+      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
   - name: 'ClimatesOfTamriel-Dungeons&Interiors.esp'
     inc:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
   - name: 'ClimatesOfTamriel-Dawnguard-Patch.esp'
@@ -27520,6 +27629,8 @@ plugins:
     inc:
       - 'ClimatesOfTamriel-Dungeons-Hazardous.esp'
       - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     msg:
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
@@ -27538,6 +27649,8 @@ plugins:
     inc:
       - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
       - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     msg:
       - type: warn
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
