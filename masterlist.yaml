@@ -17790,6 +17790,12 @@ plugins:
       - type: warn
         content: 'Enhanced Lights and FX alters some lighting in the College of Winterhold which is incompatible with this mod. Please see Immersive College of Winterhold''s Readme for how to alter Enhanced Lights and FX yourself to make it compatible.'
         condition: '( file("EnhancedLightsandFX.esp") ) or regex("ELFX - (NoBreezehome|NoTaverns)\.esp")'
+  - name: 'CWIDragonbornPatch.esp'
+    after:
+      - 'CollegeOfWinterholdImmersive.esp'
+  - name: 'CWIDawnguardPatch.esp'
+    after:
+      - 'CollegeOfWinterholdImmersive.esp'
   - name: 'colossus.esp'
     dirty:
       - crc: 0x750d890c
@@ -18874,7 +18880,7 @@ plugins:
     dirty:
       - crc: 0x1550e5c4
         util: *dirtyUtil
-        itm: 10
+        itm: 13
   - name: 'gravkammir01.esp'
     dirty:
       - crc: 0xd8f79c94
