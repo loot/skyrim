@@ -1472,8 +1472,13 @@ plugins:
   - name: 'HighResTexturePack01.esp'
     priority: -400
   - name: 'HighResTexturePack02.esp'
+    after:
+      - 'HighResTexturePack01.esp'
     priority: -400
   - name: 'HighResTexturePack03.esp'
+    after:
+      - 'HighResTexturePack01.esp'
+      - 'HighResTexturePack02.esp'
     priority: -400
   - name: 'VanillaReducedTextures.esp'
     priority: -300
@@ -1482,6 +1487,10 @@ plugins:
   - name: 'VanillaReducedTexturesDB.esp'
     priority: -300
   - name: 'Bethesda_Hi-Res_Optimized.esp'
+    after:
+      - 'HighResTexturePack01.esp'
+      - 'HighResTexturePack02.esp'
+      - 'HighResTexturePack03.esp'
     priority: -300
 # esm''s released with esp extension
   - name: 'Bandit Raid.esp'
