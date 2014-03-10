@@ -4506,12 +4506,6 @@ plugins:
   - name: 'Further Dark Dungeons for ENB.esp'
     inc:
       - 'Dark Dungeons for ENB.esp'
-# Might need to be moved
-  - name: 'OLSE for Dawnguard.esp'
-    dirty:
-      - crc: 0x931f68bd
-        util: *dirtyUtil
-        udr: 1
   - name: 'CLARALUX.esp'
     dirty:
       - crc: 0xfd3f3144
@@ -6826,11 +6820,6 @@ plugins:
       - crc: 0xdbe462c2
         util: *dirtyUtil
         itm: 1
-  - name: 'NamedSoulGems.esp'
-    dirty:
-      - crc: 0x3b92c13a
-        util: *dirtyUtil
-        itm: 3
   - name: 'Names - NPCs.esp'
     msg:
       - type: say
@@ -8220,22 +8209,6 @@ plugins:
 # REGEX: .+Waterbugfix\.esp
 # Only this REGEX work for SIM - Waterbugfix.esp
 # if these are truly load indep, they can just go into general Base section, right? -LD
-  - name: 'rt_Animal - Processing.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Use either rt_AutoHarvest.esp or rt_Animal - Processing.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или rt_AutoHarvest.esp или rt_Animal - Processing.esp, не оба.'
-          - lang: es
-            str: 'Usar rt_AutoHarvest.esp o rt_Animal - Processing.esp, no ambos.'
-        condition: 'file("rt_AutoHarvest.esp")'
-  - name: 'rt_AutoHarvest.esp'
-    req:
-      - name: '..\skse_loader.exe'
-        display: '[SKSE](http://skse.silverlock.org)'
-        condition: 'not checksum("rt_AutoHarvest.esp",BBDBA57A)'
   - name: 'CAS.esp'
     msg:
       - type: warn
@@ -10208,11 +10181,6 @@ plugins:
       - crc: 0xd43e7148
         util: *dirtyUtil
         itm: 9
-  - name: 'HeartOfThunder.esp'
-    dirty:
-      - crc: 0x2ca96833
-        util: *dirtyUtil
-        itm: 37
   - name: 'HeavyBows.esp'
     dirty:
       - crc: 0x3d45749
@@ -10283,7 +10251,11 @@ plugins:
         condition: 'checksum("hothtrooper44_ArmorCompilation.esp",1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp",983EFB9E)'
     tag:
       - name: Delev
-        condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=)'
+        condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=) or regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
+      - name: Deactivate
+        condition: 'regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
+      - name: Relev
+        condition: 'not regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
     dirty:
       - crc: 0x1b01c914
         util: *dirtyUtil
@@ -13174,49 +13146,6 @@ plugins:
           - lang: ru
             str: '''Dr_Bandolier.esp'' также необходим для работы!'
         condition: 'not file("Dr_Bandolier.esp")'
-  - name: 'hothtrooper44_ArmorCompilation.esp'
-    msg:
-      - type: warn
-        content: 'This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches.  It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.'
-        condition: 'checksum("hothtrooper44_ArmorCompilation.esp",1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp",983EFB9E)'
-    tag:
-      - name: Deactivate
-        condition: 'regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
-      - name: Delev
-        condition: 'regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
-      - name: Relev
-        condition: 'not regex("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
-    dirty:
-      - crc: 0x1b01c914
-        util: *dirtyUtil
-        itm: 2
-      - crc: 0x983EFB9E
-        util: *dirtyUtil
-        itm: 2
-      - crc: 0x306605a4
-        util: *dirtyUtil
-        itm: 5
-      - crc: 0x53E0D03D
-        util: *dirtyUtil
-        itm: 5
-      - crc: 0x96B29C9D
-        util: *dirtyUtil
-        itm: 5
-      - crc: 0xf95218fd
-        util: *dirtyUtil
-        itm: 7
-  - name: 'SkyRe_Plugin_ImmersiveArmor_2.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-  - name: 'Level List - Immersive Armor.esp'
-    tag:
-      - Delev
-      - Relev
   - name: 'IA6npc01.esp'
     inc:
       - 'ImmersiveArmorsNPCs.esp'
@@ -21236,14 +21165,6 @@ plugins:
         util: *dirtyUtil
         itm: 599
         udr: 67
-  - name: 'SleepingDangers-SandsofTime.esp'
-    dirty:
-      - crc: 0x16c5fedd
-        util: *dirtyUtil
-        itm: 10
-      - crc: 0x6e945f25
-        util: *dirtyUtil
-        itm: 24
   - name: 'SM_PlayerHome.esp'
     msg:
       - type: warn
@@ -23005,21 +22926,6 @@ plugins:
           - lang: ru
             str: 'Рекомендуется установить плагин Complete Crafting Overhaul, потому что этот плагин был разработан как дополнение к CCO.'
         condition: 'not regex("Complete Crafting Overhaul( - BS version)?\.esp")'
-  - name: 'Morrowloot.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'It''s recommend to load morrowloot after any plugins that have a Relev tag and change the same LeveledLists as morrowloot because they will add vanilla records removed by morrowloot'
-          - lang: ru
-            str: 'Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные вещи обратно - в списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.'
-    tag:
-      - Delev
-      - Relev
-    dirty:
-      - crc: 0x7c6ea81c
-        util: *dirtyUtil
-        itm: 7
   - name: 'Morrowloot_nwah.esp'
     inc:
       - 'Morrowloot.esp'
@@ -26110,10 +26016,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'Skyrim Creatures Alive.esp'
-    tag:
-      - Delev
-      - Relev
   - name: 'Unique.esp'
     inc:
       - 'Unique.esm'
@@ -27423,19 +27325,6 @@ plugins:
       - crc: 0x3363ba8f
         util: *dirtyUtil
         itm: 1
-  - name: 'ClimatesOfTamriel-Sound.esp'
-    msg:
-      - type: warn
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
-        condition: 'checksum("ClimatesOfTamriel-Sound.esp",47AF2A0B)'
-  - name: 'skyBirds - Airborne Perching Birds.esp'
-    dirty:
-      - crc: 0x131bb61c
-        util: *dirtyUtil
-        itm: 3
-      - crc: 0x18DBC60E
-        util: *dirtyUtil
-        itm: 3
   - name: 'Realistic Lighting( - Full| - Addon)\.esp'
     msg:
       - type: say
@@ -29788,11 +29677,6 @@ plugins:
   - name: 'DeadlySpellImpacts.esp'
     after:
       - 'balanceddestructionv4.esp'
-  - name: 'Enhanced Soul Trap.esp'
-    msg:
-      - type: say
-        content: 'Use the Acquisitive Soul Gems non-compatible version.'
-        condition: 'checksum("Enhanced Soul Trap.esp",C5F82F49)'
   - name: 'Lost Magic.esp'
     tag:
       - Delev
@@ -29885,6 +29769,9 @@ plugins:
       - crc: 0xa030e3d0
         util: *dirtyUtil
         itm: 5
+      - crc: 0x3b92c13a
+        util: *dirtyUtil
+        itm: 3
   - name: 'More Accessible Magicka no buyable masters.esp'
     dirty:
       - crc: 0xa6a5f13f
@@ -30680,10 +30567,6 @@ plugins:
       - type: warn
         content: 'This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.'
         condition: 'checksum("ACE Archery-Weapons of the Third Era Patch.esp",873EAB94)'
-  - name: 'RecyclingModCrafting300.esp'
-    req:
-      - name: 'Crafting300.esp'
-        display: '[Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)'
   - name: 'LB_MuchAdoSnowElves_ACE_Patch_Long.esp'
     msg:
       - type: warn
@@ -30960,25 +30843,15 @@ plugins:
     msg:
       - type: say
         content: 'Use the Acquisitive Soul Gems compatible version.'
-        condition: 'checksum("Enhanced Soul Trap.esp",B4803235) or checksum("Enhanced Soul Trap.esp",DF45FD75)'
+        condition: 'checksum("Enhanced Soul Trap.esp",B4803235) or checksum("Enhanced Soul Trap.esp",DF45FD75) or checksum("Enhanced Soul Trap.esp",C5F82F49)'
+  - name: 'Enhanced Soul Trap.esp'
+    msg:
+      - type: say
+        content: 'Use the Acquisitive Soul Gems non-compatible version.'
+        condition: ''
   - name: 'Improved Dragon Shouts.esp'
     inc:
       - 'DragonbornAscendant.esp'
-  - name: 'Improved Dragon Shouts - Dawnguard.esp'
-    inc:
-      - 'DragonbornAscendantDawnguardExpansion.esp'
-  - name: 'Improved Dragon Shouts - Dragonborn.esp'
-    inc:
-      - 'DragonbornAscendantDragonbornDLCAddon.esp'
-  - name: 'OpenFaceHelmets.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-        condition: 'not checksum("OpenFaceHelmets.esp",D695AB86)'
   - name: 'StavesofSkyrim.esp'
     dirty:
       - crc: 0x5924d476
@@ -31415,9 +31288,6 @@ plugins:
       - crc: 0xdfa3acce
         util: *dirtyUtil
         itm: 35
-  - name: 'Ish''s Respec Mod.esp'
-    tag:
-      - Relev
   - name: 'perk tweak.esp'
     msg:
       - type: warn
@@ -31843,32 +31713,6 @@ plugins:
         condition: 'file("SmithingTree.esp")'
     tag:
       - Delev
-  - name: 'StavesofSkyrim.esp'
-    dirty:
-      - crc: 0x5924d476
-        util: *dirtyUtil
-        itm: 3
-        udr: 5
-      - crc: 0xa456b6cd
-        util: *dirtyUtil
-        itm: 4
-        udr: 5
-      - crc: 0x938B07D0
-        util: *dirtyUtil
-        itm: 4
-        udr: 5
-      - crc: 0x265E9C99
-        util: *dirtyUtil
-        itm: 4
-        udr: 5
-      - crc: 0x43E13A2E
-        util: *dirtyUtil
-        itm: 4
-        udr: 5
-      - crc: 0x6A04E2AA
-        util: *dirtyUtil
-        itm: 4
-        udr: 5
   - name: 'Summoning.esp'
     msg:
       - type: warn
@@ -32726,21 +32570,6 @@ plugins:
     dirty:
       - crc: 0x1004ecd3
         util: *dirtyUtil
-  - name: 'KTNUlfric.esp'
-    msg:
-      - type: error
-        content: 'Use the UFO version of KTNUlfric.esp'
-        condition: '( checksum("KTNUlfric.esp",8CF90F55) ) and file("UFO - Ultimate Follower Overhaul.esp")'
-      - type: error
-        content: 'Use the non-UFO version of KTNUlfric.esp'
-        condition: '( checksum("KTNUlfric.esp",35CB3586) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
-    dirty:
-      - crc: 0x35cb3586
-        util: *dirtyUtil
-        itm: 15
-      - crc: 0x8cf90f55
-        util: *dirtyUtil
-        itm: 18
   - name: 'OriginalrecipeUlfric.esp'
     inc:
       - 'CWBattleUlfric.esp'
@@ -32993,14 +32822,6 @@ plugins:
       - 'Feminine Females Dawnguard.esp'
       - 'Feminine Females Hearthfires.esp'
       - 'Feminine Females Dragonborn.esp'
-  - name: 'My home is your home.esp'
-    dirty:
-      - crc: 0xc36587b3
-        util: *dirtyUtil
-        itm: 3
-      - crc: 0xDDC76932
-        util: *dirtyUtil
-        itm: 3
   - name: 'KTNUlfric.esp'
     msg:
       - type: error
@@ -33016,9 +32837,6 @@ plugins:
       - crc: 0x8cf90f55
         util: *dirtyUtil
         itm: 18
-  - name: 'OriginalrecipeUlfric.esp'
-    inc:
-      - 'CWBattleUlfric.esp'
 # Distance Tweaks before Face & Makeup Overrides
 # Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 # moved from Race additions - no longer contains race changes.  Must be loaded before EEO if EEO present
@@ -35344,17 +35162,6 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión.'
-  - name: 'Vampire Eyes Fix.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Skyrim Patch.esp'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp'
-        condition: 'active("Unofficial Skyrim Patch.esp")'
   - name: 'Expanded Eye Color Selection.esp'
     msg:
       - type: say
