@@ -81,7 +81,7 @@ globals:
 
 plugins:
   - name: 'Update.esm'
-    priority: -400
+    priority: -400000000
     tag:
       - Delev
       - Relev
@@ -99,7 +99,7 @@ plugins:
         crc: 0xe5b67bda
         udr: 3
   - name: 'Unofficial Skyrim Patch.esp'
-    priority: -400
+    priority: -400000000
     msg:
       - type: say
         condition: 'active("Dawnguard.esm") and not file("Unofficial Dawnguard Patch.esp")'
@@ -132,7 +132,7 @@ plugins:
       - Delev
       - Relev
   - name: 'Dawnguard.esm'
-    priority: -400
+    priority: -400000000
     after:
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
@@ -147,14 +147,14 @@ plugins:
         udr: 82
         nav: 57
   - name: 'Unofficial Dawnguard Patch.esp'
-    priority: -400
+    priority: -400000000
     after:
       - 'Unofficial Skyrim Patch.esp'
     tag:
       - Delev
       - Relev
   - name: 'Hearthfires.esm'
-    priority: -400
+    priority: -400000000
     after:
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
@@ -167,12 +167,12 @@ plugins:
         udr: 11
         nav: 5
   - name: 'Unofficial Hearthfire Patch.esp'
-    priority: -400
+    priority: -400000000
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
   - name: 'Dragonborn.esm'
-    priority: -400
+    priority: -400000000
     after:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
@@ -186,7 +186,7 @@ plugins:
         udr: 8
         nav: 1
   - name: 'Unofficial Dragonborn Patch.esp'
-    priority: -400
+    priority: -400000000
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
@@ -195,7 +195,7 @@ plugins:
       - Delev
 # Falskaar is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
   - name: 'Falskaar.esm'
-    priority: -400
+    priority: -400000000
     after:
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
@@ -211,7 +211,7 @@ plugins:
       - 'SMPC.esp'
 # Wrymstooth to load very early around Falskaar
   - name: 'Wrymstooth.esp'
-    priority: -400
+    priority: -400000000
     # Adding multiple files to account for any DLC not installed
     after:
       - 'Dawnguard.esm'
@@ -665,7 +665,7 @@ plugins:
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'Unofficial High Resolution Patch.esp'
-    priority: -400
+    priority: -400000000
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
@@ -1464,28 +1464,28 @@ plugins:
             str: 'Obsoleto. Actualizar a la última versión, ZZZ_Stenvar_Replacer_THAIDEN.esp.'
 # Low priority .esp's
   - name: 'HighResTexturePack01.esp'
-    priority: -400
+    priority: -400000000
   - name: 'HighResTexturePack02.esp'
     after:
       - 'HighResTexturePack01.esp'
-    priority: -400
+    priority: -400000000
   - name: 'HighResTexturePack03.esp'
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
-    priority: -400
+    priority: -400000000
   - name: 'VanillaReducedTextures.esp'
-    priority: -300
+    priority: -300000000
   - name: 'VanillaReducedTexturesDG.esp'
-    priority: -300
+    priority: -300000000
   - name: 'VanillaReducedTexturesDB.esp'
-    priority: -300
+    priority: -300000000
   - name: 'Bethesda_Hi-Res_Optimized.esp'
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
       - 'HighResTexturePack03.esp'
-    priority: -300
+    priority: -300000000
 # esm''s released with esp extension
   - name: 'Bandit Raid.esp'
     msg:
@@ -4656,9 +4656,9 @@ plugins:
           - lang: es
             str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
   - name: 'TouringCarriages.esp'
-    priority: -300
+    priority: -300000000
   - name: 'Cutting Room Floor.esp'
-    priority: -300
+    priority: -300000000
     after:
       - 'TouringCarriages.esp'
   - name: 'BeastModels.esp'
@@ -27266,7 +27266,7 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'Open Cities Skyrim.esp'
-    priority: 300
+    priority: 300000000
     after:
       - 'Unique Region Names.esp'
       - 'URN+CoT Patch.esp'
@@ -34944,7 +34944,7 @@ plugins:
         util: *dirtyUtil
         itm: 141
   - name: 'Alternate Start - Live Another Life.esp'
-    priority: 300
+    priority: 300000000
     msg:
       - type: error
         content:
@@ -36661,7 +36661,7 @@ plugins:
           - lang: es
             str: 'Utilizar solo un World_Map_Height_Pitch_Tweak esp.'
   - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
-    priority: 300
+    priority: 300000000
     inc:
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
@@ -36673,7 +36673,7 @@ plugins:
         util: *dirtyUtil
         itm: 9
   - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
-    priority: 300
+    priority: 300000000
     inc:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
@@ -36685,7 +36685,7 @@ plugins:
         util: *dirtyUtil
         itm: 9
   - name: 'Warburg''s 3D Paper World Map - Texture 3.esp'
-    priority: 300
+    priority: 300000000
     inc:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
@@ -36697,21 +36697,21 @@ plugins:
         util: *dirtyUtil
         itm: 9
   - name: 'Bashed Patch.*\.esp'
-    priority: 400
+    priority: 400000000
   - name: 'Warburg''s 3D Paper World Map - Dawnguard.esp'
-    priority: 500
+    priority: 500000000
     after:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
   - name: 'Warburg''s 3D Paper World Map - Dragonborn.esp'
-    priority: 500
+    priority: 500000000
     after:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
-    priority: 500
+    priority: 500000000
     req: [ *SKSE ]
     msg:
       - type: say
@@ -36723,50 +36723,50 @@ plugins:
           - lang: es
             str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
   - name: 'Pre Automatic Variants.*\.esp'
-    priority: 550
+    priority: 550000000
   - name: 'ASIS-Dependency.esp'
-    priority: 550
+    priority: 550000000
   - name: 'PreASISPatch.*\.esp'
-    priority: 550
+    priority: 550000000
   - name: 'Pre ReProccer.*\.esp'
-    priority: 550
+    priority: 550000000
   - name: 'Automatic Variants.esp'
-    priority: 600
+    priority: 600000000
   - name: 'ASIS.esp'
-    priority: 600
+    priority: 600000000
     ##  IF VAR(EN) && IF VAR(SkyReM) WARN: Unmark Automatic Perks and Automatic Spells flags in ASIS patch options. Or you will have bugs and CTDs in game when using SkyRe and ASIS.
     ##    IF VAR(RU) && IF VAR(SkyReM) WARN: Отключите флажки Automatic Perks и Automatic Spells в опциях патча. Если этого не сделать, то будут серьезные проблемы с АИ, при использовании SkyRe и ASIS (патч наделит неписей и мобов перками и заклинаниями, приводящими к периодическому замораживанию неписей, а также вылетам на рабочий стол).
     ## Message does not appear to be relevant with newer SkyRe versions. - William
   - name: 'Automatic Spells.esp'
-    priority: 600
+    priority: 600000000
   - name: 'Automatic Variations.esp'
-    priority: 600
+    priority: 600000000
   - name: 'Customized AI.esp'
-    priority: 600
+    priority: 600000000
   - name: 'DEOS - Patch.esp'
-    priority: 600
+    priority: 600000000
   - name: 'LLI.esp'
-    priority: 600
+    priority: 600000000
   - name: 'GELO_Patcher_Build.esp'
-    priority: 600
+    priority: 600000000
   - name: 'Dual Sheath Redux Patch.esp'
-    priority: 600
+    priority: 600000000
     after:
       - 'LLI.esp'
       - 'GELO_Patcher_Build.esp'
   - name: 'EveryBody''s Different.esp'
-    priority: 600
+    priority: 600000000
   - name: 'NPC Enchant Fix.esp'
-    priority: 600
+    priority: 600000000
   - name: 'Perk Patch.esp'
-    priority: 600
+    priority: 600000000
   - name: 'RBS.esp'
-    priority: 600
+    priority: 600000000
     ## Qotsafans pre Reproccer patches
   - name: 'ReProccer.esp'
-    priority: 600
+    priority: 600000000
   - name: 'WTF.esp'
-    priority: 600
+    priority: 600000000
     msg:
       - type: say
         content:
@@ -36777,11 +36777,11 @@ plugins:
           - lang: es
             str: 'May need [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning. Several test generations of this SkyProc Patch included ITMs. Puedes encontra una guía [aquí](http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit).'
   - name: 'ZF Primary Needs Patcher.esp'
-    priority: 600
+    priority: 600000000
   - name: 'SUM.esp'
-    priority: 600
+    priority: 600000000
   - name: 'SkyRe_EnemyAI.esp'
-    priority: 700
+    priority: 700000000
     msg:
       - type: say
         content:
@@ -36793,91 +36793,91 @@ plugins:
             str: 'Deactivate ''SkyRe_EnemyAI.esp'' before creation of ASIS patch and activate only after creation of ASIS patch.'
         condition: 'active("SkyRe_EnemyAI.esp") and regex("ASIS(-Dependency)?\.esp")'
   - name: 'DeadlyCombat_ASIS_Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'PostASISPatch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'Post ?Re[pP]roccer.*\.esp'
-    priority: 700
+    priority: 700000000
   - name: 'ANC EOS Recipe Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'BlackSacramentArmor ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'BSA WIC LVA ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'CBC EN LL ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'kids_of_skyrim - skeleton AV patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'ReProccerNONPLAYERfix.esp'
-    priority: 700
+    priority: 700000000
     msg:
       - type: error
         content: 'Deactivate. Already included in Qotsafan''s Reproccer patches.'
         condition: 'regex("qotsafans.*\.esp")'
   - name: 'ReProccerDragonborn.esp'
-    priority: 700
+    priority: 700000000
     msg:
       - type: say
         content: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature. This can be done using Wrye Bash.'
         condition: 'file("SUM.esp")'
   - name: 'ReProccer-SkyforgeShields.esp'
-    priority: 700
+    priority: 700000000
   - name: 'SkyforgedWeapons ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'ReProccerSRP Better Vampires Compat.esp'
-    priority: 700
+    priority: 700000000
   - name: 'WIC ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'Miscellaneous ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   ## Begin qotsafans compatbility patches:
   - name: '(qotsafans )?SkyRe Destruction Tree Tweak Patch.*\.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans Miscellaneous.*\.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans LeveledLists.*\.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans Ars Metallica.*\.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans BringOutYourDead.*\.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans EEO.*\.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans Books.*\.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans Ingestibles.*\.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans AOM ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans Bucklers-Complete ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans BucklersOnly ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans Dwarven Autorifle ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans Dwarven Rifle ReProccer Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'qotsafans IA6 Invisible Helmets Patch.esp'
-    priority: 700
+    priority: 700000000
   ## End qotsafans compatbility patches
   - name: 'AOS_SkyRe-Patch Patch.esp'
-    priority: 700
+    priority: 700000000
     ## a compat patch for qotsafans compat patches
   - name: 'AOS_CTD_Fix.esp'
     after:
       - 'AOS_SkyRe-Patch Patch.esp'
-    priority: 700
+    priority: 700000000
   - name: 'AOS_Reduced_Reverb_Addon.esp'
     after:
       - 'AOS_CTD_Fix.esp'
       - 'AOS_SkyRe-Patch Patch.esp'
-    priority: 700
+    priority: 700000000
     ## two AOS reported to load after any other AOS plugins or patches
 # DeadlyCombat_PISE_Patch.esp
 # Must load after ASIS (Unconfirmed, as comment for now)
   - name: 'EzEWorldMap.esp'
-    priority: 1000
+    priority: 1000000000
   - name: 'EzEMapSolstheim.esp'
-    priority: 1000
+    priority: 1000000000
   - name: 'Warburgs Paper World Map.esp'
-    priority: 1000
+    priority: 1000000000
