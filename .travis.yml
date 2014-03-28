@@ -1,3 +1,10 @@
 language: ruby
 rvm: 2.1.0
 script: ruby -e "require 'yaml'; YAML.load_file('masterlist.yaml')"
+
+notifications:
+  irc:
+    channels:
+      - "chat.freenode.net#loot"
+    use_notice: true
+    skip_join: true
