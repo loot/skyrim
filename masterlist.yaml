@@ -202,8 +202,8 @@ plugins:
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
       - name: 'Unofficial Dragonborn Patch.esp'
         condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
-# Wrymstooth to load very early around Falskaar
-  - name: 'Wrymstooth.esp'
+# Wyrmstooth to load very early around Falskaar
+  - name: 'Wyrmstooth.esp'
     priority: -400999000
     # Adding multiple files to account for any DLC not installed
     after:
@@ -215,6 +215,10 @@ plugins:
       - 'Unofficial Dawnguard Patch.esm'
       - 'Unofficial Hearthfires Patch.esm'
       - 'Unofficial Dragonborn Patch.esm'
+    dirty:
+      - crc: 0x54f43cef
+        util: *dirtyUtil
+        itm: 6259
   - name: 'SMPC.esp'
     priority: -400999000
     after:
@@ -22755,11 +22759,6 @@ plugins:
       - crc: 0xdf5c6bef
         util: *dirtyUtil
         itm: 8
-  - name: 'Wyrmstooth.esp'
-    dirty:
-      - crc: 0x54f43cef
-        util: *dirtyUtil
-        itm: 6259
   - name: 'WyvernCliff.esp'
     dirty:
       - crc: 0xe7d2ec3e
