@@ -74,7 +74,7 @@ globals:
 
 plugins:
   - name: 'Update.esm'
-    priority: -400999000
+    priority: -1999000
     tag:
       - Delev
       - Relev
@@ -92,7 +92,7 @@ plugins:
         crc: 0xe5b67bda
         udr: 3
   - name: 'Unofficial Skyrim Patch.esp'
-    priority: -400999000
+    priority: -1999000
     msg:
       - type: say
         condition: 'active("Dawnguard.esm") and not file("Unofficial Dawnguard Patch.esp")'
@@ -124,10 +124,19 @@ plugins:
     tag:
       - Delev
       - Relev
+    after:
+      - 'Skyrim Project Optimization.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
+  - name: 'SMPC.esp'
+    priority: -1999000
+    after:
+      - 'Unofficial Skyrim Patch.esp'
   - name: 'Dawnguard.esm'
-    priority: -400999000
+    priority: -1999000
     after:
       - 'SMPC.esp'
+      - 'Skyrim Project Optimization.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
     tag:
@@ -141,17 +150,23 @@ plugins:
         udr: 82
         nav: 57
   - name: 'Unofficial Dawnguard Patch.esp'
-    priority: -400999000
+    priority: -1999000
     after:
       - 'Unofficial Skyrim Patch.esp'
+      - 'Skyrim Project Optimization.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
+      - 'Skyrim Project Optimization - Dawnguard.esm'
     tag:
       - Delev
       - Relev
   - name: 'Hearthfires.esm'
-    priority: -400999000
+    priority: -1999000
     after:
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
+      - 'Skyrim Project Optimization.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
+      - 'Skyrim Project Optimization - Dawnguard.esm'
       - 'Dawnguard.esm'
     dirty:
     # TES5Edit 3.0.30
@@ -161,15 +176,21 @@ plugins:
         udr: 11
         nav: 5
   - name: 'Unofficial Hearthfire Patch.esp'
-    priority: -400999000
+    priority: -1999000
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
+      - 'Skyrim Project Optimization.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
+      - 'Skyrim Project Optimization - Dawnguard.esm'
   - name: 'Dragonborn.esm'
-    priority: -400999000
+    priority: -1999000
     after:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
+      - 'Skyrim Project Optimization.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
+      - 'Skyrim Project Optimization - Dawnguard.esm'
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
     dirty:
@@ -180,49 +201,29 @@ plugins:
         udr: 8
         nav: 1
   - name: 'Unofficial Dragonborn Patch.esp'
-    priority: -400999000
+    priority: -1999000
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
       - 'Unofficial Hearthfire Patch.esp'
+      - 'Skyrim Project Optimization.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
+      - 'Skyrim Project Optimization - Dawnguard.esm'
+      - 'Skyrim Project Optimization - Dragonborn.esm'
     tag:
       - Delev
 # Falskaar is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
   - name: 'Falskaar.esm'
-    priority: -400999000
-    after:
-      - 'Dawnguard.esm'
-      - 'Hearthfires.esm'
-      - 'Dragonborn.esm'
-      - name: 'Unofficial Skyrim Patch.esp'
-        condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
-      - name: 'Unofficial Dawnguard Patch.esp'
-        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
-      - name: 'Unofficial Hearthfire Patch.esp'
-        condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
-      - name: 'Unofficial Dragonborn Patch.esp'
-        condition: 'version("Unofficial Dragonborn Patch.esp", "2.0", >=)'
+    priority: -1998000
 # Wyrmstooth to load very early around Falskaar
   - name: 'Wyrmstooth.esp'
-    priority: -400999000
-    # Adding multiple files to account for any DLC not installed
+    priority: -1998000
     after:
-      - 'Dawnguard.esm'
-      - 'Hearthfires.esm'
-      - 'Dragonborn.esm'
       - 'Falskaar.esm'
-      - 'Unofficial Skyrim Patch.esm'
-      - 'Unofficial Dawnguard Patch.esm'
-      - 'Unofficial Hearthfires Patch.esm'
-      - 'Unofficial Dragonborn Patch.esm'
     dirty:
       - crc: 0x54f43cef
         util: *dirtyUtil
         itm: 6259
-  - name: 'SMPC.esp'
-    priority: -400999000
-    after:
-      - 'Unofficial Skyrim Patch.esp'
   - name: 'Unofficial Skyrim Patch.esm'
     msg:
       - type: error
@@ -247,21 +248,54 @@ plugins:
       - crc: 0x6d3163ad
         util: *dirtyUtil
         itm: 22
-  - name: 'Skyrim Project Optimization - Full Version.esm'
-    inc:
-      - 'Skyrim Project Optimization - No Homes - Full Version.esm'
-      - 'Skyrim Project Optimization - No Homes.esm'
-      - 'Skyrim Project Optimization - Full Version.esp'
+# SPO should load before the unofficial patches to avoid overriding Unoffical Patch cell edits (conditioned in after data above)
+  - name: 'Skyrim Project Optimization.esm'
+    priority: -1999000
   - name: 'Skyrim Project Optimization - No Homes.esm'
+    priority: -1999000
     inc:
       - 'Skyrim Project Optimization - No Homes - Full Version.esm'
       - 'Skyrim Project Optimization - Full Version.esm'
       - 'Skyrim Project Optimization - No Homes.esp'
+      - 'Skyrim Project Optimization.esm'
+  - name: 'Skyrim Project Optimization - Dawnguard.esm'
+    priority: -1999000
+    after:
+      - 'Skyrim Project Optimization.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
+    inc:
+      - 'Skyrim Project Optimization - No Homes - Full Version.esm'
+      - 'Skyrim Project Optimization - Full Version.esm'
+  - name: 'Skyrim Project Optimization - Dragonborn.esm'
+    priority: -1999000
+    after:
+      - 'Skyrim Project Optimization.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
+      - 'Skyrim Project Optimization - Dawnguard.esm'
+    inc:
+      - 'Skyrim Project Optimization - No Homes - Full Version.esm'
+      - 'Skyrim Project Optimization - Full Version.esm'
+# SPO full versions need to load later since they edit all DLCs
+  - name: 'Skyrim Project Optimization - Full Version.esm'
+    priority: -1998000
+    inc:
+      - 'Skyrim Project Optimization - No Homes - Full Version.esm'
+      - 'Skyrim Project Optimization - No Homes.esm'
+      - 'Skyrim Project Optimization - Full Version.esp'
+    msg:
+      type: say
+      content: 'Instead of the Full Version, consider using the modular versions of SPO for Skyrim and each DLC, to avoid overriding Unofficial Patch cell edits.'
+      condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
+    priority: -1998000
     inc:
       - 'Skyrim Project Optimization - No Homes.esm'
       - 'Skyrim Project Optimization - Full Version.esm'
       - 'Skyrim Project Optimization - No Homes - Full Version.esp'
+    msg:
+      type: say
+      content: 'Instead of the Full Version, consider using the modular versions of SPO for Skyrim and each DLC, to avoid overriding Unofficial Patch cell edits.'
+      condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
 # TCRA.esm
 # a racecomp-like file
   - name: '1NordDungeonAlt.esm'
@@ -662,7 +696,7 @@ plugins:
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión.'
   - name: 'Unofficial High Resolution Patch.esp'
-    priority: -400999000
+    priority: -1999000
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
@@ -1461,28 +1495,28 @@ plugins:
             str: 'Obsoleto. Actualizar a la última versión, ZZZ_Stenvar_Replacer_THAIDEN.esp.'
 # Low priority .esp's
   - name: 'HighResTexturePack01.esp'
-    priority: -400999000
+    priority: -1999000
   - name: 'HighResTexturePack02.esp'
     after:
       - 'HighResTexturePack01.esp'
-    priority: -400999000
+    priority: -1999000
   - name: 'HighResTexturePack03.esp'
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
-    priority: -400999000
+    priority: -1999000
   - name: 'VanillaReducedTextures.esp'
-    priority: -400998000
+    priority: -1998000
   - name: 'VanillaReducedTexturesDG.esp'
-    priority: -400998000
+    priority: -1998000
   - name: 'VanillaReducedTexturesDB.esp'
-    priority: -400998000
+    priority: -1998000
   - name: 'Bethesda_Hi-Res_Optimized.esp'
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
       - 'HighResTexturePack03.esp'
-    priority: -400998000
+    priority: -1998000
 # esm''s released with esp extension
   - name: 'Bandit Raid.esp'
     msg:
@@ -1500,16 +1534,19 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'Skyrim Project Optimization - Full Version.esp'
+    priority: -1998000
     inc:
       - 'Skyrim Project Optimization - No Homes - Full Version.esp'
       - 'Skyrim Project Optimization - No Homes.esp'
       - 'Skyrim Project Optimization - Full Version.esm'
   - name: 'Skyrim Project Optimization - No Homes.esp'
+    priority: -1998000
     inc:
       - 'Skyrim Project Optimization - No Homes - Full Version.esp'
       - 'Skyrim Project Optimization - Full Version.esp'
       - 'Skyrim Project Optimization - No Homes.esm'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
+    priority: -1998000
     inc:
       - 'Skyrim Project Optimization - No Homes.esp'
       - 'Skyrim Project Optimization - Full Version.esp'
@@ -4655,9 +4692,9 @@ plugins:
           - lang: es
             str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
   - name: 'TouringCarriages.esp'
-    priority: -400998000
+    priority: -1998000
   - name: 'Cutting Room Floor.esp'
-    priority: -400998000
+    priority: -1998000
     after:
       - 'TouringCarriages.esp'
   - name: 'BeastModels.esp'
