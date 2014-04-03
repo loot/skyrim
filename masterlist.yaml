@@ -124,9 +124,6 @@ plugins:
     tag:
       - Delev
       - Relev
-    after:
-      - 'Skyrim Project Optimization.esm'
-      - 'Skyrim Project Optimization - No Homes.esm'
   - name: 'SMPC.esp'
     priority: -1999000
     after:
@@ -135,8 +132,6 @@ plugins:
     priority: -1999000
     after:
       - 'SMPC.esp'
-      - 'Skyrim Project Optimization.esm'
-      - 'Skyrim Project Optimization - No Homes.esm'
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
     tag:
@@ -153,9 +148,6 @@ plugins:
     priority: -1999000
     after:
       - 'Unofficial Skyrim Patch.esp'
-      - 'Skyrim Project Optimization.esm'
-      - 'Skyrim Project Optimization - No Homes.esm'
-      - 'Skyrim Project Optimization - Dawnguard.esm'
     tag:
       - Delev
       - Relev
@@ -164,9 +156,6 @@ plugins:
     after:
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
-      - 'Skyrim Project Optimization.esm'
-      - 'Skyrim Project Optimization - No Homes.esm'
-      - 'Skyrim Project Optimization - Dawnguard.esm'
       - 'Dawnguard.esm'
     dirty:
     # TES5Edit 3.0.30
@@ -180,17 +169,11 @@ plugins:
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
-      - 'Skyrim Project Optimization.esm'
-      - 'Skyrim Project Optimization - No Homes.esm'
-      - 'Skyrim Project Optimization - Dawnguard.esm'
   - name: 'Dragonborn.esm'
     priority: -1999000
     after:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
-      - 'Skyrim Project Optimization.esm'
-      - 'Skyrim Project Optimization - No Homes.esm'
-      - 'Skyrim Project Optimization - Dawnguard.esm'
       - 'Dawnguard.esm'
       - 'Hearthfires.esm'
     dirty:
@@ -206,10 +189,6 @@ plugins:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
       - 'Unofficial Hearthfire Patch.esp'
-      - 'Skyrim Project Optimization.esm'
-      - 'Skyrim Project Optimization - No Homes.esm'
-      - 'Skyrim Project Optimization - Dawnguard.esm'
-      - 'Skyrim Project Optimization - Dragonborn.esm'
     tag:
       - Delev
 # Falskaar is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
@@ -248,18 +227,17 @@ plugins:
       - crc: 0x6d3163ad
         util: *dirtyUtil
         itm: 22
-# SPO should load before the unofficial patches to avoid overriding Unoffical Patch cell edits (conditioned in after data above)
   - name: 'Skyrim Project Optimization.esm'
-    priority: -1999000
+    priority: -1998000
   - name: 'Skyrim Project Optimization - No Homes.esm'
-    priority: -1999000
+    priority: -1998000
     inc:
       - 'Skyrim Project Optimization - No Homes - Full Version.esm'
       - 'Skyrim Project Optimization - Full Version.esm'
       - 'Skyrim Project Optimization - No Homes.esp'
       - 'Skyrim Project Optimization.esm'
   - name: 'Skyrim Project Optimization - Dawnguard.esm'
-    priority: -1999000
+    priority: -1998000
     after:
       - 'Skyrim Project Optimization.esm'
       - 'Skyrim Project Optimization - No Homes.esm'
@@ -267,7 +245,7 @@ plugins:
       - 'Skyrim Project Optimization - No Homes - Full Version.esm'
       - 'Skyrim Project Optimization - Full Version.esm'
   - name: 'Skyrim Project Optimization - Dragonborn.esm'
-    priority: -1999000
+    priority: -1998000
     after:
       - 'Skyrim Project Optimization.esm'
       - 'Skyrim Project Optimization - No Homes.esm'
