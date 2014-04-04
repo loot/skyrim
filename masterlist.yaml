@@ -36800,7 +36800,9 @@ plugins:
   - name: 'SUM.esp'
     priority: 1993000
   - name: 'SkyRe_EnemyAI.esp'
-    priority: 1994000
+    after:
+      - 'ASIS-Dependency.esp'
+      - 'ASIS.esp'
     msg:
       - type: say
         content:
@@ -36810,7 +36812,7 @@ plugins:
             str: 'Отключите ''SkyRe_EnemyAI.esp'' перед созданием ASIS-патча и активируйте только после создания.'
           - lang: es
             str: 'Deactivate ''SkyRe_EnemyAI.esp'' before creation of ASIS patch and activate only after creation of ASIS patch.'
-        condition: 'active("SkyRe_EnemyAI.esp") and regex("ASIS(-Dependency)?\.esp")'
+        condition: 'active("SkyRe_EnemyAI.esp") and (file("ASIS.esp") or file("ASIS-Dependency.esp"))'
   - name: 'DeadlyCombat_ASIS_Patch.esp'
     priority: 1994000
   - name: 'PostASISPatch.esp'
