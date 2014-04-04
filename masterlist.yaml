@@ -14613,6 +14613,8 @@ plugins:
       - 'ACE Speech.esp'
       - 'Perky.esp'
       - 'Crafting300.esp'
+    after:
+      - 'Scoped Bows.esp'
     msg:
       - type: say
         content: 'Incompatible with: PerkUP'
@@ -14925,6 +14927,13 @@ plugins:
           - lang: ru
             str: 'Не забудьте отключить или удалить HBetterBows.esp'
         condition: 'active("HBetterBows.esp")'
+  - name: 'Scoped Bows - SkyRe Patch.esp'
+    after:
+      - 'SkyRe_Main.esp'
+      - 'SkyRe_Main_NoDawnguard.esp'
+      - 'SkyRe_Combat.esp'
+      - 'SkyRe_Plugin_BetterBows.esp'
+      - 'SkyRe_Plugin_BetterBows_1.4.1.esp'
   - name: 'SkyRe_Plugin_BowofIorveth_1.2.esp'
     msg:
       - type: say
@@ -36960,36 +36969,14 @@ plugins:
     priority: 1994000
   - name: 'Miscellaneous ReProccer Patch.esp'
     priority: 1994000
-  ## Begin qotsafans compatbility patches:
-  - name: '(qotsafans )?SkyRe Destruction Tree Tweak Patch.*\.esp'
+  - name: 'SkyRe Destruction Tree Tweak Patch.*\.esp'
     priority: 1994000
-  - name: 'qotsafans Miscellaneous.*\.esp'
+  #qotsafans patches now include over 150 uniquely named esps
+  - name: 'qotsafans.*\.esp'
     priority: 1994000
-  - name: 'qotsafans LeveledLists.*\.esp'
-    priority: 1994000
-  - name: 'qotsafans Ars Metallica.*\.esp'
-    priority: 1994000
-  - name: 'qotsafans BringOutYourDead.*\.esp'
-    priority: 1994000
-  - name: 'qotsafans EEO.*\.esp'
-    priority: 1994000
-  - name: 'qotsafans Books.*\.esp'
-    priority: 1994000
-  - name: 'qotsafans Ingestibles.*\.esp'
-    priority: 1994000
-  - name: 'qotsafans AOM ReProccer Patch.esp'
-    priority: 1994000
-  - name: 'qotsafans Bucklers-Complete ReProccer Patch.esp'
-    priority: 1994000
-  - name: 'qotsafans BucklersOnly ReProccer Patch.esp'
-    priority: 1994000
-  - name: 'qotsafans Dwarven Autorifle ReProccer Patch.esp'
-    priority: 1994000
-  - name: 'qotsafans Dwarven Rifle ReProccer Patch.esp'
-    priority: 1994000
-  - name: 'qotsafans IA6 Invisible Helmets Patch.esp'
-    priority: 1994000
-  ## End qotsafans compatbility patches
+  #Post Reproccer Scoped Bows Patch must load after qotsafans stuff
+  - name: 'Post Reproccer Scoped Bows Patch.esp'
+    priority: 1994100
   - name: 'AOS_SkyRe-Patch Patch.esp'
     priority: 1994000
     ## a compat patch for qotsafans compat patches
