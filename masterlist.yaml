@@ -128,6 +128,15 @@ plugins:
     priority: -1999000
     after:
       - 'Unofficial Skyrim Patch.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+          - lang: ru
+            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
+          - lang: es
+            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
   - name: 'Dawnguard.esm'
     priority: -1999000
     after:
@@ -144,6 +153,10 @@ plugins:
         itm: 619
         udr: 82
         nav: 57
+    # TES5EDIT 3.0.31
+     - util: *dirtyUtil
+       crc: 0x3af859f5
+       itm: 6
   - name: 'Unofficial Dawnguard Patch.esp'
     priority: -1999000
     after:
@@ -21546,6 +21559,9 @@ plugins:
         util: *dirtyUtil
         itm: 53
         udr: 9
+      - crc:0xdd944705
+        util: *dirtyUtil
+        itm: 22
   - name: 'TEG_TelvanniHall.esp'
     dirty:
       - crc: 0x802bcc84
@@ -32513,6 +32529,9 @@ plugins:
       - crc: 0xd802277e
         util: *dirtyUtil
         itm: 31
+      - crc: 0x8e88023f
+        util: *dirtyUtil
+        itm: 6
   - name: 'AlmostEveryoneIsAnAdventurer.esp'
     req: [ *SKSE ]
   - name: 'kuerteeSimpleMultipleFollowers MCM.esp'
@@ -36998,3 +37017,28 @@ plugins:
     priority: 1997000
   - name: 'Warburgs Paper World Map.esp'
     priority: 1997000
+  - name: 'CombatDramaOverhaul.esp'
+    dirty:
+      - crc: 0x964e1f5c
+        util: *dirtyUtil
+        itm: 2
+  - name: 'LakeviewManorRoad.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+          - lang: ru
+            str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+          - lang: es
+            str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+    dirty:
+      - crc: 0x14c1ed9b
+        util: *dirtyUtil
+        itm: 43
+        udr: 6
+   - name: 'Skyrim Unbound.esp'
+    dirty:
+      - crc: 0x59869ADE
+        util: *dirtyUtil
+        itm: 5
