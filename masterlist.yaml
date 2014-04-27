@@ -13223,9 +13223,6 @@ plugins:
       - type: error
         content: 'Use non-Dawnguard version.'
         condition: '( checksum("BandolierForNPCMasterFile.esp",882FDEA5) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) ) and not active("Dawnguard.esm")'
-      - type: error
-        content: 'Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)'
-        condition: '( checksum("BandolierForNPCMasterFile.esp",882FDEA5) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) ) and not file("Dr_BandolierDG.esp") and active("Dawnguard.esm")'
   - name: 'BandolierForNPCsWinterIsComing.esp'
     msg:
       - type: say
@@ -13245,6 +13242,8 @@ plugins:
           - lang: ru
             str: 'Используйте версию для Dawnguard.'
         condition: 'file("Dr_BandolierDG.esp")'
+    inc:
+      - 'BandolierForNPCsCheaperBandoliers_BalancedWeight.esp'
   - name: 'BandolierForNPCsCheaperBandoliers_BalancedWeight.esp'
     msg:
       - type: error
@@ -13261,17 +13260,13 @@ plugins:
       - type: error
         content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm")'
-      - type: error
-        content: 'Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)'
-        condition: '( not file("Dr_BandolierDG.esp") ) and active("Dawnguard.esm")'
+    inc:
+      - 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
   - name: 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
     msg:
       - type: error
         content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm")'
-      - type: error
-        content: 'Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)'
-        condition: '( not file("Dr_BandolierDG.esp") ) and active("Dawnguard.esm")'
     inc:
       - 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
   - name: 'BandolierForNPCsImmersiveArmorsPatch.esp'
