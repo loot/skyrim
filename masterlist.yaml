@@ -13254,15 +13254,8 @@ plugins:
           - lang: ru
             str: 'Используйте версию для Dawnguard.'
         condition: 'file("Dr_BandolierDG.esp")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either BandolierForNPCsCheaperBandoliers.esp or BandolierForNPCsCheaperBandoliers_BalancedWeight.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или BandolierForNPCsCheaperBandoliers.esp или BandolierForNPCsCheaperBandoliers_BalancedWeight.esp, не оба.'
-          - lang: es
-            str: 'Usar BandolierForNPCsCheaperBandoliers.esp o BandolierForNPCsCheaperBandoliers_BalancedWeight.esp, no ambos.'
-        condition: 'file("BandolierForNPCsCheaperBandoliers.esp")'
+    inc:
+      - 'BandolierForNPCsCheaperBandoliers.esp'
   - name: 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
     msg:
       - type: error
@@ -13279,15 +13272,8 @@ plugins:
       - type: error
         content: 'Dawnguard add-on for Bandolier required. [Dr_BandolierDG.esp](http://www.nexusmods.com/skyrim/mods/22119)'
         condition: '( not file("Dr_BandolierDG.esp") ) and active("Dawnguard.esm")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either BandolierForNPCsCheaperBandoliersDawnguard.esp or BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или BandolierForNPCsCheaperBandoliersDawnguard.esp или BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp, не оба.'
-          - lang: es
-            str: 'Usar BandolierForNPCsCheaperBandoliersDawnguard.esp o BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp, no ambos.'
-        condition: 'file("BandolierForNPCsCheaperBandoliersDawnguard.esp")'
+    inc:
+      - 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
   - name: 'BandolierForNPCsImmersiveArmorsPatch.esp'
     msg:
       - type: say
