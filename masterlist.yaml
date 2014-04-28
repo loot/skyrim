@@ -26551,11 +26551,11 @@ plugins:
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión, [Expanded Towns and Cities](http://www.nexusmods.com/skyrim/mods/13608).'
   - name: 'ETaC - Complete.esp'
-    after:
-      - '3DNPC.esp'
+    msg:
+      - type: say
+        content: 'It is recommended to also install the [3DNPC patch](http://www.nexusmods.com/skyrim/mods/13608) for Expanded Towns and Cities.'
+        condtion: 'file("3DNPC.esp") and not file("ETaC - Complete 3DNPC Patch.esp")'
   - name: 'ETaC - Darkwater.esp'
-    after:
-      - '3DNPC.esp'
     msg:
       - type: error
         content:
@@ -26569,8 +26569,6 @@ plugins:
         util: *dirtyUtil
         itm: 31
   - name: 'ETaC - Dragon Bridge.esp'
-    after:
-      - '3DNPC.esp'
     msg:
       - type: error
         content:
@@ -26584,8 +26582,6 @@ plugins:
         util: *dirtyUtil
         itm: 196
   - name: 'ETaC - Ivarstead.esp'
-    after:
-      - '3DNPC.esp'
     msg:
       - type: error
         content:
@@ -26595,8 +26591,6 @@ plugins:
             str: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
         condition: 'file("ETaC - Villages Complete.esp")'
   - name: 'ETaC - Riverwood.esp'
-    after:
-      - '3DNPC.esp'
     msg:
       - type: error
         content:
@@ -26610,8 +26604,6 @@ plugins:
         util: *dirtyUtil
         itm: 29
   - name: 'ETaC - Rorikstead.esp'
-    after:
-      - '3DNPC.esp'
     msg:
       - type: error
         content:
@@ -26625,8 +26617,6 @@ plugins:
         util: *dirtyUtil
         itm: 38
   - name: 'ETaC - Morthal.esp'
-    after:
-      - '3DNPC.esp'
     dirty:
       - crc: 0xa20e7abc
         util: *dirtyUtil
@@ -32502,6 +32492,21 @@ plugins:
         content: 'This file is broken and will not work.'
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
   - name: '3DNPC.esp'
+    after:
+      - 'ETaC - Complete.esp'
+      - 'ETaC - Dragon Bridge South.esp'
+      - 'ETaC - Smelters.esp'
+      - 'ETaC - Darkwater Crossing.esp'
+      - 'ETaC - Dawnstar.esp'
+      - 'ETaC - Dragon Bridge.esp'
+      - 'ETaC - Dragon Bridge South.esp'
+      - 'ETaC - Falkreath.esp'
+      - 'ETaC - Ivarstead.esp'
+      - 'ETaC - Kynesgrove.esp'
+      - 'ETaC - Morthal.esp'
+      - 'ETaC - Riverwood.esp'
+      - 'ETaC - Rorikstead.esp'
+      - 'ETaC - Winterhold.esp'
     dirty:
       - crc: 0x143c788a
         util: *dirtyUtil
