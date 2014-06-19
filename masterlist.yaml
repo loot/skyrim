@@ -27501,8 +27501,6 @@ plugins:
       - name: 'Realistic Lighting.esp'
         display: 'Realistic Lighting with Customization'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
     msg:
       - type: warn
         content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
@@ -27513,11 +27511,9 @@ plugins:
         itm: 18
   - name: 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
     after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
       - 'Realistic Lighting Overhaul - Dungeons.esp'
   - name: 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
       - 'Realistic Lighting Overhaul - Dungeons.esp'
     msg:
       - type: warn
@@ -27528,18 +27524,16 @@ plugins:
         util: *dirtyUtil
         itm: 5
   - name: 'Realistic Lighting Overhaul - Dawnguard.esp'
+    msg:
+      - type: say
+        content: 'Outdated. Please update to a [newer version of Realistic Lighting Overhaul](http://www.nexusmods.com/skyrim/mods/30450).'
+  - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
     after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
       - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+    msg:
+      - type: say
+        content: 'The order of ''Major City Interiors.esp'' and ''Dawnguard Interiors.esp'' is interchangeable. [Here is a note from RLO author, Daemonui, about the differences you will see](http://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard.esp'
     msg:
       - type: warn
         content:
@@ -27553,26 +27547,11 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
     dirty:
       - crc: 0x89ceaa91
         util: *dirtyUtil
         itm: 2
   - name: 'Realistic Lighting Overhaul - Major City Interiors.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
     msg:
       - type: warn
         content:
@@ -27589,73 +27568,37 @@ plugins:
         util: *dirtyUtil
         itm: 9
   - name: 'Realistic Lighting Overhaul - Weathers.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
     dirty:
       - crc: 0x89ee7304
         util: *dirtyUtil
         itm: 4
   - name: 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
     after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
   - name: 'RLO - Adaptive Interiors Vanilla Weathers Patch.esp'
     inc:
       - 'ClimatesOfTamriel.esm'
     after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
       - 'Realistic Lighting Overhaul - Dungeons.esp'
       - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard.esp'
       - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     after:
-      - 'Realistic Lighting Overhaul - Illuminated Spells.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
       - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Weathers.esp'
-      - 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
   - name: 'ClimatesOfTamriel - VannillaNights.esp'
     inc:
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
     after:
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dawnguard.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Towns Interiors.esp'
       - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
   - name: 'ClimatesOfTamriel-Dungeons&Interiors.esp'
     inc:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
       - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
       - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
   - name: 'ClimatesOfTamriel-Dawnguard-Patch.esp'
     msg:
       - type: warn
