@@ -34909,55 +34909,22 @@ plugins:
   - name: 'Change Follower Outfits Redux.esp'
     after:
       - 'Lively Followers.esp'
-    msg:
-      - type: say
-        condition: 'active("Lively Followers.esp") and not file("Change Follower Outfits Redux -- Lively Followers Compatability.esp")'
-        content:
-          - lang: en
-            str: 'The [Lively Followers Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) is required.'
-          - lang: ru
-            str: '[Lively Followers Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) требуется.'
-          - lang: es
-            str: 'Se requiere [Lively Followers Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?).'
-      - type: say
-        condition: 'active("Unofficial Skyrim Patch.esp") and not file("Change Follower Outfits Redux -- USKP 1.2 Farkas Compatability.esp")'
-        content:
-          - lang: en
-            str: 'The [USKP Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) is required.'
-          - lang: ru
-            str: '[USKP Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) требуется.'
-          - lang: es
-            str: 'Se requiere [USKP Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?).'
-    msg:
-      - type: say
-        condition: 'active("Dawnguard.esm") and not file("Change Follower Outfits Redux -- Dawnguard.esp")'
-        content:
-          - lang: en
-            str: 'The [Dawnguard Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) is required.'
-          - lang: ru
-            str: '[Dawnguard Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) требуется.'
-          - lang: es
-            str: 'Se requiere [Dawnguard Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?).'
-    msg:
-      - type: say
-        condition: 'active("Hearthfires.esm") and not file("Change Follower Outfits Redux -- Hearthfire.esp")'
-        content:
-          - lang: en
-            str: 'The [Hearthfire Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) is required.'
-          - lang: ru
-            str: '[Hearthfire Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) требуется.'
-          - lang: es
-            str: 'Se requiere [Hearthfire Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?).'
-    msg:
-      - type: say
-        condition: 'active("Dragonborn.esm") and not file("Change Follower Outfits Redux -- Dragonborn.esp")'
-        content:
-          - lang: en
-            str: 'The [Dragonborn Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) is required.'
-          - lang: ru
-            str: '[Dragonborn Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?) требуется.'
-          - lang: es
-            str: 'Se requiere [Dragonborn Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/?).'
+    req:
+      - name: 'Change Follower Outfits Redux -- Lively Followers Compatability.esp'
+         display: '[Lively Followers Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
+        condition: 'active("Lively Followers.esp")'
+      - name: 'Change Follower Outfits Redux -- USKP 1.2 Farkas Compatability.esp'
+        display: '[USKP Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
+        condition: 'active("Unofficial Skyrim Patch.esp")'
+      - name: 'Change Follower Outfits Redux -- Dawnguard.esp'
+         display: '[Dawnguard Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
+        condition: 'active("Dawnguard.esm")'
+      - name: 'Change Follower Outfits Redux -- Hearthfire.esp'
+         display: '[Hearthfire Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
+        condition: 'active("Hearthfires.esm")'
+      - name: 'Change Follower Outfits Redux -- Dragonborn.esp'
+         display: '[Dragonborn Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
+        condition: 'active("Dragonborn.esm")'
   - name: 'Change Follower Outfits Redux -- Dawnguard.esp'
     after:
       - 'Change Follower Outfits Redux.esp'
@@ -34972,6 +34939,9 @@ plugins:
       - 'Change Follower Outfits Redux.esp'
   - name: 'Change Follower Outfits Redux -- Lively Followers Compatability.esp'
     after:
+      - 'Change Follower Outfits Redux.esp'
+  - name: 'Change Follower Outfits Redux -- Thieves Guild.esp'
+    after: 
       - 'Change Follower Outfits Redux.esp'
   - name: 'Followers Stop Fighting Each Other.esp'
     msg:
