@@ -36105,6 +36105,18 @@ plugins:
       - 'SkyFalls + SkyMills + DG.esp'
       - 'SkyFalls + SkyMills + DB.esp'
       - 'SkyFalls + SkyMills + DG + DB.esp'
+      - 'SkyFalls + SkyMills + FS.esp'
+      - 'SkyFalls + SkyMills + WT.esp'
+      - 'SkyFalls + SkyMills + DG + FS.esp'
+      - 'SkyFalls + SkyMills + DG + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DG + DB + WT.esp'
+      - 'SkyFalls + SkyMills + DG + FS + WT.esp'
+	  - 'SkyFalls + SkyMills + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DB + WT.esp'
+      - 'SkyFalls + SkyMills + DB + FS + WT.esp'
+      - 'SkyFalls + SkyMills + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS + WT.esp'
       - 'SkyFalls Dragonborn Small waterfalls.esp'
       - 'SkyFalls Falskaar Small waterfalls.esp'
       - 'SkyFalls DB + FS Small Waterfalls.esp'
@@ -36117,6 +36129,18 @@ plugins:
       - 'SkyFalls + SkyMills + DG.esp'
       - 'SkyFalls + SkyMills + DB.esp'
       - 'SkyFalls + SkyMills + DG + DB.esp'
+      - 'SkyFalls + SkyMills + FS.esp'
+      - 'SkyFalls + SkyMills + WT.esp'
+      - 'SkyFalls + SkyMills + DG + FS.esp'
+      - 'SkyFalls + SkyMills + DG + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DG + DB + WT.esp'
+      - 'SkyFalls + SkyMills + DG + FS + WT.esp'
+	  - 'SkyFalls + SkyMills + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DB + WT.esp'
+      - 'SkyFalls + SkyMills + DB + FS + WT.esp'
+      - 'SkyFalls + SkyMills + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS + WT.esp'
       - 'SkyFalls Dragonborn Small waterfalls.esp'
       - 'SkyFalls Falskaar Small waterfalls.esp'
       - 'SkyFalls DB + FS Small Waterfalls.esp'
@@ -36129,6 +36153,18 @@ plugins:
       - 'SkyFalls + SkyMills + DG.esp'
       - 'SkyFalls + SkyMills + DB.esp'
       - 'SkyFalls + SkyMills + DG + DB.esp'
+      - 'SkyFalls + SkyMills + FS.esp'
+      - 'SkyFalls + SkyMills + WT.esp'
+      - 'SkyFalls + SkyMills + DG + FS.esp'
+      - 'SkyFalls + SkyMills + DG + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DG + DB + WT.esp'
+      - 'SkyFalls + SkyMills + DG + FS + WT.esp'
+	  - 'SkyFalls + SkyMills + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DB + WT.esp'
+      - 'SkyFalls + SkyMills + DB + FS + WT.esp'
+      - 'SkyFalls + SkyMills + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS + WT.esp'
       - 'SkyFalls Dragonborn Small waterfalls.esp'
       - 'SkyFalls Falskaar Small waterfalls.esp'
       - 'SkyFalls DB + FS Small Waterfalls.esp'
@@ -37045,8 +37081,8 @@ plugins:
       - 'nighteyetoggle.esp'
   - name: 'Acquisitive Soul Gems.esp'
     after:
-      - name: 'SkyRe_Main.esp'
-      - name: 'Enchantments Upgraded.esp'
+      - 'SkyRe_Main.esp'
+      - 'Enchantments Upgraded.esp'
     msg:
       - type: warn
         content: 'Acquisitive Soul Gems should not be used in conjunction with Smart Souls.'
@@ -37056,31 +37092,66 @@ plugins:
         condition: 'not file("Dawnguard.esm")'
   - name: 'SkyFalls + SkyMills.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
+    msg:
+		- type: say
+        content: 'Unnecessary: SkyFalls + SkyMills.esp is included with a SkyFalls + SkyMills merged file.'
+		condition: 'file("SkyFalls + SkyMills + DG.esp") or file("SkyFalls + SkyMills + DB.esp") or file("SkyFalls + SkyMills + DG + DB.esp") or file("SkyFalls + SkyMills + DG + DB + FS + WT.esp")'
   - name: 'SkyFalls + SkyMills Dawnguard.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
+    msg:
+		- type: say
+        content: 'Unnecessary: SkyFalls + SkyMills Dawnguard.esp is included with a SkyFalls + SkyMills merged file.'
+		condition: 'file("SkyFalls + SkyMills + DG.esp") or file("SkyFalls + SkyMills + DG + DB.esp") or file("SkyFalls + SkyMills + DG + DB + FS + WT.esp")'
   - name: 'SkyFalls + SkyMills Dragonborn.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
+    msg:
+		- type: say
+        content: 'Unnecessary: SkyFalls + SkyMills Dragonborn.esp is included with a SkyFalls + SkyMills merged file.'
+		condition: 'file("SkyFalls + SkyMills + DB.esp") or file("SkyFalls + SkyMills + DG + DB.esp") or file("SkyFalls + SkyMills + DG + DB + FS + WT.esp")'
   - name: 'SkyFalls + SkyMills Falskaar.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
   - name: 'SkyFalls + SkyMills + DG.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
+    msg:
+		- type: say
+		content: 'Unnecessary: SkyFalls + SkyMills + DG.esp is included with a SkyFalls + SkyMills merged file.'
+		condition: 'file("SkyFalls + SkyMills + DG + DB.esp") or file("SkyFalls + SkyMills + DG + DB + FS.esp") or file("SkyFalls + SkyMills + DG + DB + FS + WT.esp") or file("SkyFalls + SkyMills + DG + FS.esp") or file("SkyFalls + SkyMills + DG + FS + WT.esp")'
   - name: 'SkyFalls + SkyMills + DB.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
+    msg:
+		- type: say
+		content: 'Unnecessary: SkyFalls + SkyMills + DB.esp is included with a SkyFalls + SkyMills merged file.'
+		condition: 'file("SkyFalls + SkyMills + DG + DB.esp") or file("SkyFalls + SkyMills + DG + DB + FS.esp") or file("SkyFalls + SkyMills + DG + DB + FS + WT.esp") or file("SkyFalls + SkyMills + DB + FS.esp") or file("SkyFalls + SkyMills + DB + FS + WT.esp")'
   - name: 'SkyFalls + SkyMills + DG + DB.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
+  - name: 'SkyFalls + SkyMills + DG + DB + FS.esp'
+    after:
+      - 'Wyrmstooth.esp'
+    msg:
+		- type: say
+		content: 'Unnecessary: SkyFalls + SkyMills + DG + DB + FS.esp is included in SkyFalls + SkyMills + DG + DB + FS + WT.esp.
+		condition: 'file("SkyFalls + SkyMills + DG + DB + FS + WT.esp")'
   - name: 'SkyFalls Dragonborn Small waterfalls.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
+    msg:
+		- type: say
+		content: 'Unnecessary: SkyFalls Dragonborn Small waterfalls.esp is included in SkyFalls DB + FS Small Waterfalls.esp'
+		condition: 'file("SkyFalls DB + FS Small Waterfalls.esp")'
   - name: 'SkyFalls Falskaar Small waterfalls.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
+    msg:
+		- type: say
+		content: 'Unnecessary: SkyFalls Falskaar Small waterfalls.esp is included in SkyFalls DB + FS Small Waterfalls.esp'
+		condition: 'file("SkyFalls DB + FS Small Waterfalls.esp")'
   - name: 'SkyFalls DB + FS Small Waterfalls.esp'
     after:
-      - name: 'Wyrmstooth.esp'
+      - 'Wyrmstooth.esp'
