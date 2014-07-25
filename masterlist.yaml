@@ -24818,7 +24818,7 @@ plugins:
   - name: 'RSkyrimChildren.esm'
     msg:
       - type: warn
-        condition: 'active("Unofficial Skyrim Patch.esp") and not file("RSChildren_PatchUSKP.esp")'
+        condition: 'active("Unofficial Skyrim Patch.esp") and (not file("RSChildren_PatchUSKP.esp") or not file("RSChildren_CompleteUSKP.esp"))'
         content:
           - lang: en
             str: 'The [RSChildren USKP Patch](http://www.nexusmods.com/skyrim/mods/55555/?) is required.'
@@ -37126,3 +37126,6 @@ plugins:
   - name: 'SkyFalls DB + FS Small Waterfalls.esp'
     after:
       - 'Wyrmstooth.esp'
+  - name: 'PocketMoney.esp'
+    tag:
+      - Relev
