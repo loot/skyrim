@@ -4707,6 +4707,10 @@ plugins:
     priority: -1998000
     after:
       - 'TouringCarriages.esp'
+    dirty:
+      - util: *dirtyUtil
+        crc: 0x6A765402
+        itm: 4
   - name: 'BeastModels.esp'
     msg:
       - type: say
@@ -24831,7 +24835,7 @@ plugins:
   - name: 'RSkyrimChildren.esm'
     msg:
       - type: warn
-        condition: 'active("Unofficial Skyrim Patch.esp") and not file("RSChildren_PatchUSKP.esp")'
+        condition: 'active("Unofficial Skyrim Patch.esp") and not file("RSChildren_PatchUSKP.esp") and not file("RSChildren_CompleteUSKP.esp")'
         content:
           - lang: en
             str: 'The [RSChildren USKP Patch](http://www.nexusmods.com/skyrim/mods/55555/?) is required.'
@@ -24839,6 +24843,32 @@ plugins:
             str: '[RSChildren USKP Patch](http://www.nexusmods.com/skyrim/mods/55555/?) требуется.'
           - lang: es
             str: 'Se requiere [RSChildren USKP Patch](http://www.nexusmods.com/skyrim/mods/55555/?.'
+  - name: 'RSChildren_PatchUSKP.esp'
+    after:
+      - 'RSChildren_V.esp'
+      - 'RSChildren_HF.esp'
+      - 'RSChildren_DB.esp'
+      - 'RSChildren - Complete.esp'
+  - name: 'RSChildren_CompleteUSKP.esp'
+    msg:
+      - type: warn
+        condition: 'active("RSChildren - Complete.esp")'
+        content:
+          - lang: en
+            str: 'Delete RSChildren - Complete.esp.'
+          - lang: ru
+            str: 'Удалить RSChildren - Complete.esp.'
+          - lang: es
+            str: 'Elimina RSChildren - Complete.esp.'
+      - type: warn
+        condition: 'active("RSChildren_PatchUSKP.esp")'
+        content:
+          - lang: en
+            str: 'Delete RSChildren_PatchUSKP.esp.'
+          - lang: ru
+            str: 'Удалить RSChildren_PatchUSKP.esp'
+          - lang: es
+            str: 'Elimina RSChildren_PatchUSKP.esp'
   - name: 'Killable Children - Quest Important Protected.esp'
     dirty:
       - crc: 0x4231901c
