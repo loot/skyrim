@@ -24836,25 +24836,9 @@ plugins:
       - 'RSChildren_DB.esp'
       - 'RSChildren - Complete.esp'
   - name: 'RSChildren_CompleteUSKP.esp'
-    msg:
-      - type: warn
-        condition: 'active("RSChildren - Complete.esp")'
-        content:
-          - lang: en
-            str: 'Delete RSChildren - Complete.esp.'
-          - lang: ru
-            str: 'Удалить RSChildren - Complete.esp.'
-          - lang: es
-            str: 'Elimina RSChildren - Complete.esp.'
-      - type: warn
-        condition: 'active("RSChildren_PatchUSKP.esp")'
-        content:
-          - lang: en
-            str: 'Delete RSChildren_PatchUSKP.esp.'
-          - lang: ru
-            str: 'Удалить RSChildren_PatchUSKP.esp'
-          - lang: es
-            str: 'Elimina RSChildren_PatchUSKP.esp'
+    inc:
+      - 'RSChildren - Complete.esp'
+      - 'RSChildren_PatchUSKP.esp'
   - name: 'Killable Children - Quest Important Protected.esp'
     dirty:
       - crc: 0x4231901c
