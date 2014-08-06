@@ -4850,6 +4850,8 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
+    after:
+      - 'TradeRoutes.esp'
     tag:
       - Delev
       - Relev
@@ -27838,6 +27840,7 @@ plugins:
   - name: 'RealisticNeedsandDiseases.esp'
     after:
       - '3DNPC.esp'
+      - 'TradeRoutes.esp'
     tag:
       - Delev
       - Relev
@@ -36131,10 +36134,22 @@ plugins:
       - 'SkyFalls + SkyMills Dawnguard.esp'
       - 'SkyFalls + SkyMills Dragonborn.esp'
       - 'SkyFalls + SkyMills Falskaar.esp'
+      - 'SkyFalls + SkyMills Wyrmstooth.esp'
       - 'SkyFalls + SkyMills + DG.esp'
       - 'SkyFalls + SkyMills + DB.esp'
+      - 'SkyFalls + SkyMills + FS.esp'
+      - 'SkyFalls + SkyMills + WT.esp'
       - 'SkyFalls + SkyMills + DG + DB.esp'
-      - 'SkyFalls + SkyMills Falskaar.esp'
+      - 'SkyFalls + SkyMills + DG + FS.esp'
+      - 'SkyFalls + SkyMills + DG + WT.esp'
+      - 'SkyFalls + SkyMills + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DB + WT.esp'
+      - 'SkyFalls + SkyMills + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DG + DB + WT.esp'
+      - 'SkyFalls + SkyMills + DG + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DB + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS + WT.esp'
       - 'SkyFalls Dragonborn Small waterfalls.esp'
       - 'SkyFalls Falskaar Small waterfalls.esp'
       - 'SkyFalls DB + FS Small Waterfalls.esp'
@@ -36144,10 +36159,22 @@ plugins:
       - 'SkyFalls + SkyMills Dawnguard.esp'
       - 'SkyFalls + SkyMills Dragonborn.esp'
       - 'SkyFalls + SkyMills Falskaar.esp'
+      - 'SkyFalls + SkyMills Wyrmstooth.esp'
       - 'SkyFalls + SkyMills + DG.esp'
       - 'SkyFalls + SkyMills + DB.esp'
+      - 'SkyFalls + SkyMills + FS.esp'
+      - 'SkyFalls + SkyMills + WT.esp'
       - 'SkyFalls + SkyMills + DG + DB.esp'
-      - 'SkyFalls + SkyMills Falskaar.esp'
+      - 'SkyFalls + SkyMills + DG + FS.esp'
+      - 'SkyFalls + SkyMills + DG + WT.esp'
+      - 'SkyFalls + SkyMills + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DB + WT.esp'
+      - 'SkyFalls + SkyMills + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DG + DB + WT.esp'
+      - 'SkyFalls + SkyMills + DG + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DB + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS + WT.esp'
       - 'SkyFalls Dragonborn Small waterfalls.esp'
       - 'SkyFalls Falskaar Small waterfalls.esp'
       - 'SkyFalls DB + FS Small Waterfalls.esp'
@@ -36157,10 +36184,22 @@ plugins:
       - 'SkyFalls + SkyMills Dawnguard.esp'
       - 'SkyFalls + SkyMills Dragonborn.esp'
       - 'SkyFalls + SkyMills Falskaar.esp'
+      - 'SkyFalls + SkyMills Wyrmstooth.esp'
       - 'SkyFalls + SkyMills + DG.esp'
       - 'SkyFalls + SkyMills + DB.esp'
+      - 'SkyFalls + SkyMills + FS.esp'
+      - 'SkyFalls + SkyMills + WT.esp'
       - 'SkyFalls + SkyMills + DG + DB.esp'
-      - 'SkyFalls + SkyMills Falskaar.esp'
+      - 'SkyFalls + SkyMills + DG + FS.esp'
+      - 'SkyFalls + SkyMills + DG + WT.esp'
+      - 'SkyFalls + SkyMills + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DB + WT.esp'
+      - 'SkyFalls + SkyMills + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS.esp'
+      - 'SkyFalls + SkyMills + DG + DB + WT.esp'
+      - 'SkyFalls + SkyMills + DG + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DB + FS + WT.esp'
+      - 'SkyFalls + SkyMills + DG + DB + FS + WT.esp'
       - 'SkyFalls Dragonborn Small waterfalls.esp'
       - 'SkyFalls Falskaar Small waterfalls.esp'
       - 'SkyFalls DB + FS Small Waterfalls.esp'
@@ -37072,3 +37111,39 @@ plugins:
       - crc: 0x59869ADE
         util: *dirtyUtil
         itm: 5
+  - name: 'Silent khajiit night-eye.esp'
+    after:
+      - 'nighteyetoggle.esp'
+  - name: 'Acquisitive Soul Gems.esp'
+    after:
+      - 'SkyRe_Main.esp'
+      - 'Enchantments Upgraded.esp'
+    inc:
+      - 'SKSE\Plugins\Smart Souls.dll'
+  - name: 'SkyFalls + SkyMills.esp'
+    after:
+      - 'Wyrmstooth.esp'
+  - name: 'SkyFalls + SkyMills (Dawnguard|Dragonborn|Falskaar)?\.esp'
+    after:
+      - 'Wyrmstooth.esp'
+  - name: 'SkyFalls + SkyMills + (DG|DB|FS)?\.esp'
+    after:
+      - 'Wyrmstooth.esp'
+  - name: 'SkyFalls + SkyMills + (DG + FS|DB + FS|DG + DB)?\.esp'
+    after:
+      - 'Wyrmstooth.esp'
+  - name: 'SkyFalls + SkyMills + DG + DB + FS.esp'
+    after:
+      - 'Wyrmstooth.esp'
+  - name: 'SkyFalls Dragonborn Small waterfalls.esp'
+    after:
+      - 'Wyrmstooth.esp'
+  - name: 'SkyFalls Falskaar Small waterfalls.esp'
+    after:
+      - 'Wyrmstooth.esp'
+  - name: 'SkyFalls DB + FS Small Waterfalls.esp'
+    after:
+      - 'Wyrmstooth.esp'
+  - name: 'PocketMoney.esp'
+    tag:
+      - Relev
