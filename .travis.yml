@@ -1,6 +1,8 @@
 language: ruby
 rvm: 2.1.1
-script: ruby -e "require 'yaml'; YAML.load_file('masterlist.yaml')"
+install: gem install kwalify
+before_install: wget https://loot.github.io/masterlist.schema.yaml
+script: kwalify -f masterlist.schema.yaml masterlist.yaml
 
 notifications:
   irc:
