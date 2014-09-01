@@ -2,7 +2,12 @@ language: ruby
 rvm: 2.1.1
 install: gem install kwalify
 before_install: wget https://loot.github.io/masterlist.schema.yaml
-script: kwalify -f masterlist.schema.yaml masterlist.yaml
+script:
+  - kwalify -f masterlist.schema.yaml masterlist.yaml
+  # The below is a hack as `kwalify` doesn't return with a non-zero exist code
+  # when the "kwalification" fails, so this forces an error if there are any
+  # errors in the file being validated.
+  - return $(kwalify -q -f masterlist.schema.yaml masterlist.yaml|wc -l)
 
 notifications:
   irc:
