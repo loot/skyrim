@@ -349,6 +349,9 @@ plugins:
             str: 'Obsoleto. Actualizar a la última versión.'
 # Changing esp to esm: "http://www.nexusmods.com/skyrim/mods/20166"
   - name: '(83Willows_)?101BUGs.+\.esm'
+    msg:
+      - type: say
+        content: 'Update to the latest version of [83Willows](http://www.nexusmods.com/skyrim/mods/4955).'
     tag:
       - Delev
       - Relev
@@ -3712,20 +3715,6 @@ plugins:
           - lang: es
             str: 'Este archivo contiene entradas fuera de lugar y debería ser removido.'
         condition: 'checksum("_pocketempirebuilder.esp",CCC24004)'
-  - name: '(83Willows_)?101BUGs.+\.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Remove this mod when esm is being used.'
-          - lang: ru
-            str: 'Удалите этот мод когда используется esm-версия.'
-          - lang: es
-            str: 'Remueve este mod si utilizas el esm.'
-        condition: 'regex("(83Willows_)?101BUGs.+\.esm")'
-    tag:
-      - Delev
-      - Relev
   - name: 'ADV HB-Style.esp'
     dirty:
       - crc: 0x4ae9efe5
