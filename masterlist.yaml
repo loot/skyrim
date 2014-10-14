@@ -91,7 +91,9 @@ plugins:
   - name: 'Update.esm'
     priority: -1999000
     tag:
+      - C.Location
       - Delev
+      - Invent
       - Relev
     dirty:
       - util: *dirtyUtil
@@ -138,9 +140,22 @@ plugins:
           - lang: es
             str: 'Se recomienda que utilizes [Unofficial Dragonborn Patch](http://www.nexusmods.com/skyrim/mods/31083) además de Dragonborn. Se necesita para el correcto funcionamiento de Dragonborn.'
     tag:
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Music
+      - C.Name
+      - C.Owner
+      - C.Water
       - Delev
+      - Graphics
+      - Invent
       - Names
       - Relev
+      - Sound
       - Stats
   - name: 'SMPC.esp'
     priority: -1999000
@@ -153,8 +168,12 @@ plugins:
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
       - 'SMPC.esp'
     tag:
+      - C.Location
       - Delev
-      - Relev
+      - Graphics
+      - Invent
+      - Names
+      - Sound
     dirty:
     # TES5Edit 3.0.30
       - util: *dirtyUtil
@@ -175,8 +194,15 @@ plugins:
       - 'Unofficial Skyrim Patch.esp'
       - 'Dawnguard - Textures.esm'
     tag:
+      - C.Climate
+      - C.Encounter
+      - C.Location
+      - C.Name
       - Delev
+      - Graphics
+      - Invent
       - Names
+      - Sound
       - Stats
   - name: 'SMPC_DG.esp'
     after:
@@ -192,6 +218,10 @@ plugins:
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
       - 'SMPC_DG.esp'
+    tag:
+      - C.Location
+      - Graphics
+      - Invent
     dirty:
     # TES5Edit 3.0.30
       - util: *dirtyUtil
@@ -207,7 +237,13 @@ plugins:
       - 'Dawnguard - Textures.esm'
       - 'HearthFires - Textures.esm'
     tag:
+      - C.Climate
+      - C.Location
+      - C.Owner
+      - Graphics
+      - Invent
       - Names
+      - Sound
   - name: 'SMPC_HF.esp'
     after:
       - 'Hearthfires.esm'
@@ -226,6 +262,11 @@ plugins:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
       - 'SMPC_HF.esp'
+    tag:
+      - C.Location
+      - Graphics
+      - Invent
+      - Names
     dirty:
     # TES5Edit 3.0.30
       - util: *dirtyUtil
@@ -243,8 +284,16 @@ plugins:
       - 'HearthFires - Textures.esm'
       - 'Dragonborn - Textures.esm'
     tag:
+      - C.Climate
+      - C.Encounter
+      - C.Location
+      - C.Music
+      - C.Name
       - Delev
+      - Graphics
+      - Invent
       - Names
+      - Sound
       - Stats
   - name: 'SMPC_DB.esp'
     after:
@@ -3556,8 +3605,13 @@ plugins:
     after:
       - 'TouringCarriages.esp'
     tag:
+      - C.Climate
+      - C.Location
+      - C.Owner
       - Delev
+      - Invent
       - Names
+      - Stats
     dirty:
       - util: *dirtyUtil
         crc: 0x6A765402
@@ -26236,6 +26290,8 @@ plugins:
       - 'URN+CoT Patch.esp'
       - 'Atlas Map Markers.esp'
       - 'The Horkerpocalypse.esp'
+    tag:
+      - C.Location
     msg:
       - type: warn
         content: 'Stolen content. Please show respect for authors'' rights and download from a legitimate source ([here](http://www.nexusmods.com/skyrim/mods/8058)).'
@@ -33902,6 +33958,8 @@ plugins:
         itm: 141
   - name: 'Alternate Start - Live Another Life.esp'
     priority: 1990000
+    tag:
+      - C.Location
     msg:
       - type: error
         content:
