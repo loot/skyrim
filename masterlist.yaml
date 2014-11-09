@@ -36068,3 +36068,78 @@ plugins:
   - name: 'PocketMoney.esp'
     tag:
       - Relev
+
+  - name: 'PerkusMaximus_Master.esp'
+    after:
+      - Apocalypse - The Spell Package.esp
+      - Complete Crafting Overhaul_Remade.esp
+      - Skyrim Immersive Creatures.esp
+    tag:
+      - Names
+    msg:
+      - type: warn
+        condition: 'not file("SKSE")'
+        content: 'Several spells require [SKSE](http://skse.silverlock.org/) to function properly.'
+
+  - name: 'PerMa Expansion 1 - Wintermyst.esp'
+    after:
+      - 'PerkusMaximus_Master.esp'
+
+  - name: 'PerkusMaximus_Mage.esp'
+    after:
+      - 'PerMa Expansion 1 - Wintermyst.esp'
+    tag:
+      - Names
+    msg:
+      - type: warn
+        condition: 'not file("SKSE")'
+        content: 'Several spells require [SKSE](http://skse.silverlock.org/) to function properly.'
+
+  - name: 'PerkusMaximus_Thief.esp'
+    tag:
+      - Names
+      - Stats
+
+  - name: 'PerkusMaximus_Warrior.esp'
+    tag:
+      - Names
+
+  - name: 'Wind Destruction.esp'
+    after:
+      - 'PerkusMaximus_Mage.esp'
+    tag:
+      - name: -Relev
+        condition: 'file("PerkusMaximus_Master.esp")'
+
+  - name: 'Pre PaMa WAFR Patch.esp'
+    priority: 990500
+    tag:
+      - Names
+    req:
+      - name: 'Weapons & Armor Fixes_Remade.esp'
+        display: '[Weapons & Armor Fixes_Remade](http://www.nexusmods.com/skyrim/mods/34093)'
+
+  - name: 'Pre PaMa CCF Patch.esp'
+    priority: 990500
+    tag:
+      - Names
+      - Stats
+
+  - name: 'Pre PaMa CCOR Patch.esp'
+    after:
+      - 'PerkusMaximus_Warrior.esp'
+    priority: 990500
+    tag:
+      - Names
+      - Stats
+    msg:
+      - type: say
+        content: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+
+  - name: PatchusMaximus.esp
+    after:
+      - 'Bashed Patch, 0.esp'
+
+  - name: 'NPO Module - Crossbows.esp'
+    after:
+      - 'PerkusMaximus_Warrior.esp'
