@@ -12948,6 +12948,7 @@ plugins:
     after:
       - name: 'DragonsDiversified.esp'
         condition: 'file("DeadlyDiversifiedDragonsPatch.esp")'
+      - 'PerkusMaximus_Master.esp'
     tag:
       - Delev
       - Relev
@@ -18068,6 +18069,11 @@ plugins:
             str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: es
             str: 'El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
+  - name: 'Morskom.esp'
+    dirty:
+      - crc: 0x700cd98d
+        util: *dirtyUtil
+        itm: 8
   - name: 'hideout - hearthfires.esp'
     msg:
       - type: warn
@@ -23360,6 +23366,21 @@ plugins:
       - crc: 0x745dbcc
         util: *dirtyUtil
         itm: 20
+  - name: 'SeaPointSettlement.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+          - lang: ru
+            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
+          - lang: es
+            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+  - name: 'SerenitySeapointPatch.esp'
+    dirty:
+      - crc: 0x74F86411
+        util: *dirtyUtil
+        itm: 4
   - name: 'Guard Dialogue Overhaul.esp'
     msg:
       - type: say
@@ -24709,6 +24730,11 @@ plugins:
     tag:
       - Delev
       - Relev
+    dirty:
+      # Checked with TES5Edit 3.0.33 r1848: <http://forums.bethsoft.com/topic/1509883-rel-loot-thread-14/?p=23828810>
+      - crc: 0x8B9EF695
+        util: *dirtyUtil
+        itm: 8
   - name: 'SkyTEST-RealPredators(\&Animals)?\.esp'
     msg:
       - type: say
@@ -25845,6 +25871,16 @@ plugins:
         util: *dirtyUtil
         itm: 14
         udr: 3
+  - name: 'tos_laintardale_hf.esp'
+    dirty:
+      - crc: 0xe536de07
+        util: *dirtyUtil
+        itm: 13
+  - name: 'SerenityCrewPatch.esp'
+    dirty:
+      - crc: 0x8de14c64
+        util: *dirtyUtil
+        itm: 3
   - name: 'TownsAndCitiesEnhanced.esp'
     msg:
       - type: say
@@ -29309,6 +29345,11 @@ plugins:
       - crc: 0x21a635c6
         util: *dirtyUtil
         itm: 1
+  - name: 'VioLens( - Requiem Patch)?\.esp'
+    after:
+      - 'DragonCombatOverhaul.esp'
+      - 'DragonCombatOverhaulDragonborn.esp'
+      - 'DragonCombatOverhaulDragonborn - Requiem Patch.esp'
   - name: 'TKcombat.esp'
     req:
       - *SKSE
@@ -31493,6 +31534,9 @@ plugins:
       - crc: 0xb9fc7507
         util: *dirtyUtil
         itm: 10
+      - crc: 0x4321049d
+        util: *dirtyUtil
+        itm: 39
   - name: 'Ja´dirr + Kharjo Makeover.esp'
     msg:
       - type: say
@@ -35919,8 +35963,9 @@ plugins:
             str: 'May need [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning. Several test generations of this SkyProc Patch included ITMs. Puedes encontra una guía [aquí](http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit).'
   - name: 'ZF Primary Needs Patcher.esp'
     priority: 1993000
+# Needs to load last.  If other plugins need to load this low, please adjust metadata so this always remains last.
   - name: 'SUM.esp'
-    priority: 1993000
+    priority: 1939999
   - name: 'SkyRe_EnemyAI.esp'
     msg:
       - type: say
@@ -35954,11 +35999,13 @@ plugins:
       - type: error
         content: 'Deactivate. Already included in Qotsafan''s Reproccer patches.'
         condition: 'regex("qotsafans.*\.esp")'
+# changing the Master should not be done with Wrye Bash, see commit notes.
   - name: 'ReProccerDragonborn.esp'
     priority: 1994000
     msg:
       - type: say
         content: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature. This can be done using Wrye Bash.'
+# Wrye Bash can not handle this
         condition: 'file("SUM.esp")'
   - name: 'ReProccer-SkyforgeShields.esp'
     priority: 1994000
@@ -36071,14 +36118,12 @@ plugins:
 
   - name: 'PerkusMaximus_Master.esp'
     after:
-      - Apocalypse - The Spell Package.esp
       - Complete Crafting Overhaul_Remade.esp
-      - Skyrim Immersive Creatures.esp
     tag:
       - Names
     msg:
       - type: warn
-        condition: 'not file("SKSE")'
+        condition: 'not file("..\skse_loader.exe")'
         content: 'Several spells require [SKSE](http://skse.silverlock.org/) to function properly.'
 
   - name: 'PerMa Expansion 1 - Wintermyst.esp'
@@ -36092,7 +36137,7 @@ plugins:
       - Names
     msg:
       - type: warn
-        condition: 'not file("SKSE")'
+        condition: 'not file("..\skse_loader.exe")'
         content: 'Several spells require [SKSE](http://skse.silverlock.org/) to function properly.'
 
   - name: 'PerkusMaximus_Thief.esp'
@@ -36143,3 +36188,17 @@ plugins:
   - name: 'NPO Module - Crossbows.esp'
     after:
       - 'PerkusMaximus_Warrior.esp'
+
+  - name: 'Default Teammate Weapon Draw Distance.esp'
+    after:
+      - 'Convenient Horses.esp'
+
+  - name: 'Undeath.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/40607' ]
+    after:
+      - 'MoonAndStar_MAS.esp'
+      - 'MoonAndStar_Undeath_compat.esp'
+    msg:
+      - type: warn
+        condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_Undeath_compat.esp")'
+        content: 'This mod has certain conflicts with "MoonAndStar_MAS.esp". Consider using [the compatibility patch](http://www.nexusmods.com/skyrim/mods/52397/).'
