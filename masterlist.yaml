@@ -35919,8 +35919,9 @@ plugins:
             str: 'May need [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning. Several test generations of this SkyProc Patch included ITMs. Puedes encontra una guía [aquí](http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit).'
   - name: 'ZF Primary Needs Patcher.esp'
     priority: 1993000
+# Needs to load last.  If other plugins need to load this low, please adjust metadata so this always remains last.
   - name: 'SUM.esp'
-    priority: 1993000
+    priority: 1999000
   - name: 'SkyRe_EnemyAI.esp'
     msg:
       - type: say
@@ -36007,9 +36008,6 @@ plugins:
     priority: 1997000
   - name: 'Warburgs Paper World Map.esp'
     priority: 1997000
-  # Needs to load last.  If other plugins need to load this low, please adjust metadata so this always remains last.
-  - name: 'SUM.esp'
-    priority: 1999000
   - name: 'CombatDramaOverhaul.esp'
     dirty:
       - crc: 0x964e1f5c
