@@ -35955,11 +35955,13 @@ plugins:
       - type: error
         content: 'Deactivate. Already included in Qotsafan''s Reproccer patches.'
         condition: 'regex("qotsafans.*\.esp")'
+# changing the Master should not be done with Wrye Bash, see commit notes.
   - name: 'ReProccerDragonborn.esp'
     priority: 1994000
     msg:
       - type: say
         content: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature. This can be done using Wrye Bash.'
+# Wrye Bash can not handle this
         condition: 'file("SUM.esp")'
   - name: 'ReProccer-SkyforgeShields.esp'
     priority: 1994000
