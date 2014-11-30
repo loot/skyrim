@@ -36153,3 +36153,13 @@ plugins:
   - name: 'Default Teammate Weapon Draw Distance.esp'
     after:
       - 'Convenient Horses.esp'
+
+  - name: 'Undeath.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/40607' ]
+    after:
+      - 'MoonAndStar_MAS.esp'
+      - 'MoonAndStar_Undeath_compat.esp'
+    msg:
+      - type: warn
+        condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_Undeath_compat.esp")'
+        content: 'This mod has certain conflicts with "MoonAndStar_MAS.esp". Consider using [the compatibility patch](http://www.nexusmods.com/skyrim/mods/52397/).'
