@@ -20,6 +20,8 @@ common:
         str: 'Удалите. Уже включено в Unofficial Skyrim Patch.esp.'
       - lang: es
         str: 'Borrar. Esta incluido en Unofficial Skyrim Patch.esp.'
+      - lang: ko
+        str: '삭제하십시오. 이미 Unofficial Skyrim Patch.esp에 포함되어 있습니다.'
     condition: 'active("Unofficial Skyrim Patch.esp")'
 
 # Other Strings
@@ -38,6 +40,8 @@ globals:
         str: '[Обсуждение LOOT "(Eng)"](http://forums.bethsoft.com/topic/1512502-rel-loot-thread-16/).'
       - lang: es
         str: '[Forum de LOOT](http://forums.bethsoft.com/topic/1512502-rel-loot-thread-16/).'
+      - lang: ko
+        str: '[최신 LOOT 스레드](http://forums.bethsoft.com/topic/1512502-rel-loot-thread-16/).'
 # Uncapper SKSE requirement
   - type: warn
     condition: 'file("SKSE\Plugins\SKSE_Elys_Uncapper.dll") and not file("..\skse_loader.exe")'
@@ -48,6 +52,8 @@ globals:
         str: 'У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки [SKSE](http://skse.silverlock.org/).'
       - lang: es
         str: 'Tienes Skyrim Community Uncapper instalado pero SKSE no se pudo encontrar! Por favor descarga SKSE: [SKSE](http://skse.silverlock.org/)'
+      - lang: ko
+        str: 'Skyrim Community Uncapper가 설치되었지만 SKSE를 찾을 수 없습니다! SKSE 다운로드 페이지를 참조하십시오: [SKSE](http://skse.silverlock.org/).'
 # SKSE Latest
   - type: say
     condition: 'file("..\skse_loader.exe") and version("..\skse_loader.exe", "0.1.7.1", <)'
@@ -58,6 +64,8 @@ globals:
         str: 'Возможно, что вы используете НЕ [самую последнюю версию SKSE](http://skse.silverlock.org). Для работы некоторых модов может требоваться функционал, добавленный в последнюю версию SKSE'
       - lang: es
         str: 'Parece que no tienes la última versión de SKSE. la nueva versión se puede encontrar [aquí](http://skse.silverlock.org/).'
+      - lang: ko
+        str: '[SKSE의 최신 버전](http://skse.silverlock.org)이 설치 되지 않은 것같습니다. 일부 모드가 동작하려면 SKSE의 최신 버전에서 추가된 기능을 필요로 할 수도 있습니다.'
   - type: say
     condition: 'not version("..\skse_loader.exe", "0.1.7.1", <)'
     content:
@@ -67,6 +75,8 @@ globals:
         str: 'Ваш SKSE имеет последнюю версию.'
       - lang: es
         str: 'Tienes la última versión de SKSE'
+      - lang:
+        str: 'SKSE가 최신버전입니다.'
 # Other
   - type: say
     condition: '( regex("ASIS(-Dependency)?\.esp") ) or regex("Automatic (Spells|Variations|Variants)\.esp")'
@@ -77,6 +87,8 @@ globals:
         str: 'Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.'
       - lang: es
         str: 'Tienes un plugin dinamicamente creado. Por favor, consulta las notas de autor para obtener más información sobre cómo determinar el mejor orden.'
+      - lang: ko
+        str: '동적으로 생성된 플러그인이 설치되었습니다. 최적의 로드 순서를 확인하는 방법에 대한 자세한 정보는 제작자 노트를 참조하시기 바랍니다.'
   - type: say
     condition: 'file("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe")'
     content:
@@ -86,6 +98,8 @@ globals:
         str: 'У вас установлен [Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811). Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.'
       - lang: es
         str: 'Parece que [Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811) está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.'
+      - lang: ko
+        str: '[Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811)이 설치된 것같습니다. FNIS나 FNIS 기반 모드를 설치하거나 제거할때마다 GenerateFNISforUsers.exe를 실행하는 것을 잊지마세요.'
 
 plugins:
   - name: 'Update.esm'
@@ -121,6 +135,8 @@ plugins:
             str: 'Настоятельно рекомендуется также использовать [Unofficial Dawnguard Patch](http://www.nexusmods.com/skyrim/mods/23491).'
           - lang: es
             str: 'Se recomienda que utilizes [Unofficial Dawnguard Patch](http://www.nexusmods.com/skyrim/mods/23491) además de Dawnguard. Se necesita para el correcto funcionamiento de Dawnguard.'
+          - lang: ko
+            str: '[Unofficial Dawnguard Patch](http://www.nexusmods.com/skyrim/mods/23491)도 사용하는 것을 적극 권장합니다.'
       - type: say
         condition: 'active("Hearthfires.esm") and not file("Unofficial Hearthfire Patch.esp")'
         content:
@@ -130,6 +146,8 @@ plugins:
             str: 'Настоятельно рекомендуется также использовать [Unofficial Hearthfire Patch](http://www.nexusmods.com/skyrim/mods/25127).'
           - lang: es
             str: 'Se recomienda que utilizes [Unofficial Hearthfire Patch](http://www.nexusmods.com/skyrim/mods/25127) además de Hearthfire. Se necesita para el correcto funcionamiento de Hearthfire.'
+          - lang: ko
+            str: '[Unofficial Hearthfire Patch](http://www.nexusmods.com/skyrim/mods/25127)도 사용하는 것을 적극 권장합니다.'
       - type: say
         condition: 'active("Dragonborn.esm") and not file("Unofficial Dragonborn Patch.esp")'
         content:
@@ -139,6 +157,8 @@ plugins:
             str: 'Настоятельно рекомендуется также использовать [Unofficial Dragonborn Patch](http://www.nexusmods.com/skyrim/mods/31083).'
           - lang: es
             str: 'Se recomienda que utilizes [Unofficial Dragonborn Patch](http://www.nexusmods.com/skyrim/mods/31083) además de Dragonborn. Se necesita para el correcto funcionamiento de Dragonborn.'
+          - lang: ko
+            str: '[Unofficial Dragonborn Patch](http://www.nexusmods.com/skyrim/mods/31083).도 사용하는 것을 적극 권장합니다.'
     tag:
       - C.Acoustic
       - C.Climate
@@ -353,6 +373,8 @@ plugins:
             str: 'Этот esm-файл может повредить вашу игру. Настоятельно рекомендуется использовать этот [Unofficial Skyrim Patch](http://www.nexusmods.com/skyrim/mods/19).'
           - lang: es
             str: 'Este archivo esm dañará tu juego. Recomendamos fuertemente que descarges [Unofficial Skyrim Patch](http://www.nexusmods.com/skyrim/mods/19).'
+          - lang: ko
+            str: '이 esm파일은 게임을 손상시킬 수도 있습니다. [Unofficial Skyrim Patch](http://www.nexusmods.com/skyrim/mods/19)의 공식 버전을 사용하는 것을 적극 권장합니다. 확장자를 변경하지 마십시오.'
   - name: 'MoT_First_LoadOrder_File_After_Skyrim.esm'
     msg:
       - type: warn
@@ -363,6 +385,8 @@ plugins:
             str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: es
             str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+          - lang: ko
+            str: '이 파일에는 TES5Edit이 자동으로 복구할 수 없는 1개의 삭제된 NavMesh 레코드가 포함되어 있으며 이는 게임에 문제가 발생 할 수도 있습니다. NavMesh의 삭제는 모드 제작자에게 보고해야합니다. [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)으로 NavMesh의 삭제를 복구하는 방법은 [여기](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html)에 있습니다.'
     dirty:
       - crc: 0x6d3163ad
         util: *dirtyUtil
@@ -428,6 +452,8 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión.'
+          - lang: ko
+            str: '사용되지 않습니다. 최신 버전으로 업데이트하십시오.'
 # Changing esp to esm: "http://www.nexusmods.com/skyrim/mods/20166"
   - name: '(83Willows_)?101BUGs.+\.esm'
     msg:
@@ -454,6 +480,9 @@ plugins:
             str: 'Используйте только один alchstone esm.'
           - lang: es
             str: 'Utilizar solo un alchstone esm.'
+          - lang: ko
+            str: 'alchstone esm을 한개만 사용하십시오.'
+            # SteamB23's Korean Translation Bookmark
   - name: 'All Star Animations.esm'
     req: [ *FNIS ]
   - name: 'Ambience Music Overhaul.esm'
@@ -36282,3 +36311,4 @@ plugins:
       - type: warn
         condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_Undeath_compat.esp")'
         content: 'This mod has certain conflicts with "MoonAndStar_MAS.esp". Consider using [the compatibility patch](http://www.nexusmods.com/skyrim/mods/52397/).'
+
