@@ -6,11 +6,10 @@ script:
   ### Check for basic coding style, but failure here won't fail the build.
   - 'grep --line-number --perl-regexp "name: (?!(''|-?(Delev|Relev|Deactivate|NoMerge)$))" masterlist.yaml || true'
   ### Check masterlist against the Kwalify schema
-  - kwalify -f masterlist.schema.yaml masterlist.yaml
-  # The below is a hack as `kwalify` doesn't return with a non-zero exist code
-  # when the "kwalification" fails, so this forces an error if there are any
-  # errors in the file being validated.
-  - return $(kwalify -q -f masterlist.schema.yaml masterlist.yaml|wc -l)
+  # The `return` addition is a hack as `kwalify` doesn't return with a
+  # non-zero exist code when the "kwalification" fails, so this forces an
+  # error if anything fails the validation.
+  - kwalify -f masterlist.schema.yaml masterlist.yaml && return $(kwalify -q -f masterlist.schema.yaml masterlist.yaml|wc -l)
 
 notifications:
   irc:
