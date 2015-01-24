@@ -20162,11 +20162,31 @@ plugins:
         itm: 37
         udr: 2
   - name: 'SkyHavenTempleEnhanced.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+          - lang: ru
+            str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+          - lang: es
+            str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+          - lang: ko
+            str: '이 파일에는 TES5Edit이 자동으로 복구할 수 없는 1개의 삭제된 NavMesh 레코드가 포함되어 있으며 이는 게임에 문제가 발생 할 수도 있습니다. NavMesh의 삭제는 모드 제작자에게 보고해야합니다. [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)으로 NavMesh의 삭제를 복구하는 방법은 [여기](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html)에 있습니다.'
+        condition: 'checksum("SkyHavenTempleEnhanced.esp",A2E8A0B6) or checksum("SkyHavenTempleEnhanced.esp",99AC1B47)'
     dirty:
       - crc: 0xdc10ae9f
         util: *dirtyUtil
         itm: 61
         udr: 304
+      - crc: 0xA2E8A0B6
+        util: *dirtyUtil
+        itm: 85
+        udr: 315
+      - crc: 0x99AC1B47
+        util: *dirtyUtil
+        itm: 85
+        udr: 315
   - name: 'Sky Haven Temple and Onsen.esp'
     dirty:
       - crc: 0x64f5ac1e
