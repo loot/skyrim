@@ -3238,6 +3238,9 @@ plugins:
 # ## MoreSoundOptions.esp
 # ## suggested to load before ADS
   - name: 'AOS.esp'
+    after:
+      - 'WetandCold.esp'
+      - 'RealisticWaterTwo.esp'
     dirty:
       - crc: 0xd88afe72
         util: *dirtyUtil
@@ -12458,6 +12461,7 @@ plugins:
     after:
       - 'Weapons & Armor Fixes_Remade.esp'
       - 'Clothing & Clutter Fixes.esp'
+      - 'aMidianBorn_ContentAddon.esp'
   - name: 'CCO_Frostfall_Patch.esp'
     dirty:
       - crc: 0x7b3ce75d
@@ -25433,6 +25437,8 @@ plugins:
       - Relev
       - Stats
   - name: 'Weapons & Armor_TrueOrcish&DaedricWeapons.esp'
+    after:
+      - 'Weapons & Armor Fixes_Remade.esp'
     tag:
       - Delev
       - Relev
@@ -35151,6 +35157,9 @@ plugins:
       - crc: 0xad1d1564
         util: *dirtyUtil
         itm: 220
+  - name: 'SkyFalls + SkyMills + DG + DB.esp'
+    after:
+      - 'Distant DetailHF.esp'
   - name: 'SeeEnchs.esp'
     msg:
       - type: say
@@ -35191,6 +35200,13 @@ plugins:
       - 'SkyFalls Dragonborn Small waterfalls.esp'
       - 'SkyFalls Falskaar Small waterfalls.esp'
       - 'SkyFalls DB + FS Small Waterfalls.esp'
+      - 'FarmhouseChimneys.esp'
+      - 'SDO Full-LOD - Waterfall Effects.esp'
+      - 'BirdsHFclean.esp'
+      - 'Point The Way.esp'
+      - 'Book Covers Skyrim.esp'
+      - 'Ducks and Swans.esp'
+      - 'Helgen Reborn.esp'
   - name: 'RealisticWaterTwo - Legendary.esp'
     after:
       - 'SkyFalls + SkyMills.esp'
@@ -35896,21 +35912,21 @@ plugins:
         condition: 'file("Skyrim Performance MOD.esp")'
 ## STEP
   - name: 'STEP Core Patch.esp'
-    priority: 1988000
+    priority: 1980000
     tag:
       - Stats
       - Names
   - name: 'STEP Extended Patch.esp'
-    priority: 1989000
+    priority: 1980000
     tag:
       - Stats
       - Names
       - Delev
       - Relev
   - name: 'STEP Combined Plugin.esp'
-    priority: 1986000
+    priority: 1980000
   - name: 'STEP Combined PluginHF.esp'
-    priority: 1987000
+    priority: 1980000
   - name: 'World_Map_Height_Pitch_Tweak.esp'
     msg:
       - type: say
