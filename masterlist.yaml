@@ -3240,7 +3240,8 @@ plugins:
   - name: 'AOS.esp'
     after:
       - 'WetandCold.esp'
-      - 'RealisticWaterTwo.esp'
+      - name: 'RealisticWaterTwo.esp'
+        condition: 'not file("AOS2_RealisticWaterTwo Patch.esp")'
     dirty:
       - crc: 0xd88afe72
         util: *dirtyUtil
