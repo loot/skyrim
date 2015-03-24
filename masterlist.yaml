@@ -36096,11 +36096,26 @@ plugins:
       - 'TES5Merged.esp'
     tag:
       - NoMerge
+    msg:
+      - type: say
+        condition: 'regex("Bashed Patch.*\.esp")'
+        content:
+          - lang: en
+            str: 'Can be used with a Bashed Patch but would require extra work. It's suggested to use either a Smashed Patch or a Bash Patch independently.'
+          - lang: es
+            str: 'Se puede utilizar con un Bashed Patch pero requeriría un trabajo adicional. Deben de estar utilizado un Smashed Patch o un Bash Patch independiente del uno el otro.'
   - name: 'Bashed Patch.*\.esp'
     priority: 1991000
     after:
       - 'TES5Merged.esp'
-      - 'Smashed Patch.esp'
+    msg:
+      - type: say
+        condition: 'file("Smashed Patch.esp")'
+        content:
+          - lang: en
+            str: 'Can be used with a Smashed Patch.esp but would require additional work. A Smashed Patch or Bash Patch should be used independently of one another.'
+          - lang: es
+            str: 'Se puede utilizar con un Smashed Patch.esp pero requeriría un trabajo adicional. Deben de estar utilizado un Smashed Patch o un Bash Patch independiente del uno el otro.'
   - name: 'Warburg''s 3D Paper World Map - Dawnguard.esp'
     priority: 1992000
     after:
