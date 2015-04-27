@@ -22298,7 +22298,6 @@ plugins:
       - Relev
     after:
       - 'BetterQuestObjectives.esp'
-      # Once Even Better Quest Objectives gets updated with a patch, please remove the "After" line. Assuming I don't get to it first. - William
   - name: 'Babette.esp'
     msg:
       - type: warn
@@ -22450,19 +22449,17 @@ plugins:
       - type: error
         content:
           - lang: en
-            str: 'This file is obselte. Please use the universal patch on the Even Better Quest Objectives page. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
+            str: 'This file is obsolete. Please use the universal patch on the Even Better Quest Objectives page. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
           - lang: ru
             str: 'Устарело. Пожалуйста используйте универсальный патч со страницы Even Better Quest Objectives. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
           - lang: es
-            str: 'This file is obselte. Please use the universal patch on the Even Better Quest Objectives page. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
+            str: 'This file is obsolete. Please use the universal patch on the Even Better Quest Objectives page. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
   - name: 'BetterQuestObjectives-RequiemPatch.esp'
     after:
       - 'ESFCompanions.esp'
   - name: 'Book Covers Skyrim.esp'
     after:
       - 'BetterQuestObjectives.esp'
-      - 'BetterQuestObjectives-Dawnguard.esp'
-      - 'BetterQuestObjectives-Hearthfire.esp'
   - name: 'Book Covers Dawnguard.esp'
     msg:
       - type: warn
@@ -23244,6 +23241,7 @@ plugins:
   - name: 'ESFCompanions.esp'
     after:
       - 'Brevi_MoonlightTales.esp'
+      - 'BetterQuestObjectives.esp'
     dirty:
       - crc: 0x16c76fa7
         util: *dirtyUtil
@@ -25135,6 +25133,8 @@ plugins:
           - lang: es
             str: 'Utilizar solo un The Skyrim conflict *.esp.'
   - name: 'TheChoiceIsYours.esp'
+    after:
+      - 'BetterQuestObjectives.esp'
     dirty:
       - crc: 0xdd345cc
         util: *dirtyUtil
@@ -25157,6 +25157,8 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
+    after:
+      - 'BetterQuestObjectives.esp'
     dirty:
       - crc: 0x99c43ba5
         util: *dirtyUtil
@@ -36447,7 +36449,15 @@ plugins:
   - name: 'Verdant - A Skyrim Grass Plugin.esp'
     after:
       - 'Skyrim Flora Overhaul.esp'
-
   - name: 'Immersive detection of NPC.esp'
     after:
       - 'Combat Evolved.esp'
+  - name: 'Better Stealth AI for Followers.esp'
+    after:
+      - 'BetterQuestObjectives.esp'
+  - name: 'EBS -.*\.esp' # Enhanced Better Sorting uses a ton of plugins
+    after:
+      - 'BetterQuestObjectives.esp'
+  - name: 'Thieves Guild Requirements.esp'
+    after:
+      - 'BetterQuestObjectives.esp'
