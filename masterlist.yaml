@@ -25,6 +25,17 @@ common:
       - lang: zh_CN
         str: '删除。已包含在Unofficial Skyrim Patch.esp中。'
     condition: 'active("Unofficial Skyrim Patch.esp")'
+  - &doNotClean
+    type: say
+    content:
+      - lang: en
+        str: 'Do not clean ITM records, they are intentional and required for the mod to function. It is safe to undelete records, but do not do anything other than that.'
+      - lang: ru
+        str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
+      - lang: es
+        str: 'Do not clean ITM records, they are intentional and required for the mod to function. It is safe to undelete records, but do not do anything other than that.'
+      - lang: zh_CN
+        str: '不干净。"脏"数据是故意的，这是mod需要的功能。'
 
 # Other Strings
   - &dirtyUtil
@@ -583,17 +594,7 @@ plugins:
         util: *dirtyUtil
         udr: 20
   - name: 'BBLuxurySuite.esm'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: zh_CN
-            str: '不干净。"脏"数据是故意的，这是mod需要的功能。'
+    msg: [ *doNotClean ]
   - name: 'BecomeKingOfRiverHelm.esm'
     msg:
       - type: say
@@ -15499,45 +15500,13 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'BBLuxurySuiteExt.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'BBLSHousecarlsmovein.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'BBLSspouse.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'BBLSVisitors.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'BBLuxurySuiteClassierDisplayRoom.esp'
     dirty:
       - crc: 0x91e5fc6a
@@ -20920,15 +20889,7 @@ plugins:
   - name: 'Thunderchild - Epic Shout Package.esp'
     after:
       - 'SPERG.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'tinyalchemisthut.esp'
     msg:
       - type: say
@@ -23541,15 +23502,7 @@ plugins:
         util: *dirtyUtil
         itm: 20
   - name: 'Guard Dialogue Overhaul.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'WeaponsArmorFixes_GuardDialogueOverhaul_Patch.esp'
     req:
       - name: 'Weapons & Armor Fixes_Remade.esp'
@@ -24915,15 +24868,7 @@ plugins:
         util: *dirtyUtil
         itm: 17
   - name: 'Convenient Horses.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Skyrim Horses Renewal.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/54908' ]
     after: [ 'Convenient Horses.esp' ]
@@ -27041,14 +26986,7 @@ plugins:
         itm: 2
   - name: 'SkyrimHeartRate.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+      - *doNotClean
       - type: say
         content:
           - lang: en
@@ -27137,28 +27075,12 @@ plugins:
           - lang: es
             str: 'Obsolete. Update to latest version.'
   - name: 'Better Vampires.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Contains dirty edits: Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: '''Грязные'' правки: Не очищать. ''Грязные'' правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Contiene ediciones sucia: Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Better Vampires ML.esp'
     inc:
       - 'Better Vampires.esp'
       - 'Better Vampires DG.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Contains dirty edits: Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: '''Грязные'' правки: Не очищать. ''Грязные'' правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Contiene ediciones sucia: Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Better Vampires - No DawnGuard.esp'
     inc:
       - 'Better Vampires.esp'
@@ -27174,14 +27096,7 @@ plugins:
           - lang: es
             str: 'You need the Dawnguard version of better vampires to work as intended with dawnguard.'
         condition: 'active("Dawnguard.esm")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Contains dirty edits: Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: '''Грязные'' правки: Не очищать. ''Грязные'' правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Contiene ediciones sucia: Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+      - *doNotClean
   - name: 'Better Vampires ML - No DawnGuard.esp'
     inc:
       - 'Better Vampires.esp'
@@ -27198,14 +27113,7 @@ plugins:
           - lang: es
             str: 'You need the Dawnguard version of better vampires to work as intended with dawnguard.'
         condition: 'active("Dawnguard.esm")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Contains dirty edits: Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: '''Грязные'' правки: Не очищать. ''Грязные'' правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Contiene ediciones sucia: Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+      - *doNotClean
   - name: 'godly werewold.esp'
     dirty:
       - crc: 0x8badfd1b
@@ -27294,15 +27202,7 @@ plugins:
         util: *dirtyUtil
         itm: 14
   - name: 'vampfix.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'VampireInveterDG.esp'
     msg:
       - type: say
@@ -29179,15 +29079,7 @@ plugins:
       - type: say
         content: 'Obsolete. Delete this plugin and upgrade to a newer version of [Enchanting Awakened](http://www.nexusmods.com/skyrim/mods/42796)'
   - name: 'EA Skyre No DLC Patch.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'EnchantingAwakenedBaneOfSoulsFix.esp'
     msg:
       - type: say
@@ -30629,185 +30521,41 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Override Alchemy.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Alteration.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Archery.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Block.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Conjuration.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Destruction.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Enchanting.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override HeavyArmor.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Illusion.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override LightArmor.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Lockpicking.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override OneHanded.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Pickpocket.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Restoration.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Smithing.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Sneak.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override Speech.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Override TwoHanded.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'ERSO 32 - Lord of the Dead for SPERG.esp'
     msg:
       - type: say
@@ -31708,15 +31456,7 @@ plugins:
         util: *dirtyUtil
         itm: 8
   - name: 'SeaPointSettlement.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'SerenitySeapointPatch.esp'
     dirty:
       - crc: 0x74F86411
@@ -36132,15 +35872,7 @@ plugins:
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
     priority: 1992000
     req: [ *SKSE ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-          - lang: ru
-            str: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-          - lang: es
-            str: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
+    msg: [ *doNotClean ]
   - name: 'Pre Automatic Variants.*\.esp'
     priority: 1992500
   - name: 'ASIS-Dependency.esp'
@@ -36427,10 +36159,7 @@ plugins:
     tag:
       - Names
       - Stats
-    msg:
-      - type: say
-        content: 'Do not clean. "Dirty" edits are intentional and required for the mod to function.'
-
+    msg: [ *doNotClean ]
   - name: 'NPO Module - Crossbows.esp'
     after:
       - 'PerkusMaximus_Warrior.esp'
