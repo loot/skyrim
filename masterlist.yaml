@@ -36,6 +36,24 @@ common:
         str: 'No limpiar las referencias ITM (iguales al master), ya que son intencionales y necesarias para que el Mod funcione. Sí es seguro restaurar las UDR (referencias borradas), pero no haga más que eso.'
       - lang: zh_CN
         str: '不干净。"脏"数据是故意的，这是mod需要的功能。'
+  - &patchOutSub
+    type: warn
+    content:
+      - lang: en
+        str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+      - lang: ru
+        str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - lang: es
+        str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+  - &patchB4CK
+    type: warn
+    content:
+      - lang: en
+        str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+      - lang: ru
+        str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - lang: es
+        str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
 
 # Other Strings
   - &dirtyUtil
@@ -8623,6 +8641,17 @@ plugins:
           - lang: ru
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
+  - name: 'DPArmor.esp'
+    msg:
+      - type: warn
+        condition: 'version("DPArmor.esp","0.3",<)'
+        content:
+          - lang: en
+            str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+          - lang: ru
+            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+          - lang: es
+            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - name: 'DragonboneCrossbow.esp'
     dirty:
       - crc: 0x294218c5
