@@ -5374,6 +5374,9 @@ plugins:
       - crc: 0xb8cb08cc
         util: *dirtyUtil
         itm: 5
+      - crc: 0xF681DE32
+        util: *dirtyUtil
+        itm: 9
   - name: 'Invisibility_Spells(_Plus)?\.esp'
     msg:
       - type: say
@@ -21767,6 +21770,7 @@ plugins:
     dirty:
       - crc: 0x27b7618e
         util: *dirtyUtil
+        itm: 12
         udr: 83
   - name: 'Whispering Waters Barrow.esp'
     dirty:
@@ -24234,12 +24238,15 @@ plugins:
     msg:
       - type: error
         content: 'Use Dawnguard version.'
-        condition: '( active("Dawnguard.esm") ) and not checksum("MenuShoutsInDragonsLanguage.esp",E06D6E46)'
+        condition: 'active("Dawnguard.esm") and checksum("MenuShoutsInDragonsLanguage.esp",B36BDB9A)'
   - name: 'Merchants Reply Only With Take A Look.esp'
     dirty:
       - crc: 0x82f59d12
         util: *dirtyUtil
         itm: 9
+    msg:
+      - type: say
+        content: 'Contains wild edits to some NPC_ records''s tint masks. Delete the NPC_ tree to remove the wild edits.'
   - name: 'mjhReducedGoldRewards.esp'
     tag:
       - Delev
@@ -36363,3 +36370,20 @@ plugins:
   - name: 'Thieves Guild Requirements.esp'
     after:
       - 'BetterQuestObjectives.esp'
+  - name: 'Solstheim - The Lost Levels.esp'
+    dirty:
+      - crc: 0x98580AA3
+        util: *dirtyUtil
+        itm: 1
+  - name: '_tck_SpellCrafting.esp'
+    dirty:
+      - crc: 0x43EBAE28
+        util: *dirtyUtil
+        itm: 3
+        udr: 20
+  - name: 'Skyrim_Ice_Shader_Fix.esp'
+    dirty:
+      - crc: 0xE44C980C
+        util: *dirtyUtil
+        itm: 1
+        udr: 1
