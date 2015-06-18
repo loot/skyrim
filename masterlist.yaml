@@ -67,6 +67,15 @@ common:
         str: '사용되지 않습니다. 최신 버전으로 업데이트하십시오.'
       - lang: zh_CN
         str: '已过时。请升级到最新版本。'
+  - &corrupt
+    type: warn
+    content:
+      - lang: en
+        str: 'This file is corrupt and should not be used.'
+      - lang: ru
+        str: 'Файл испорчен и не должен использоваться.'
+      - lang: es
+        str: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
 
 # Other Strings
   - &dirtyUtil
@@ -1894,14 +1903,7 @@ plugins:
         condition: 'version("..\TESV.exe","1.4",>)'
   - name: 'GM-KhajiitDSHFix.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'File is corrupt and should not be used.'
-          - lang: ru
-            str: 'Файл испорчен и не должен использоваться.'
-          - lang: es
-            str: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - *corrupt
       - *AlreadyInUSKP
   - name: 'gourmetFix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -1909,14 +1911,7 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'Greatsword Attack speed Fix 1.3.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file is corrupted and should be removed as soon as possible.'
-          - lang: ru
-            str: 'Файл испорчен и не должен использоваться.'
-          - lang: es
-            str: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - *corrupt
       - *AlreadyInUSKP
   - name: 'HeadsmansAxeFixed.esp'
     msg: [ *AlreadyInUSKP ]
@@ -2263,14 +2258,7 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'TemperSkyforgeDaggers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file is corrupted and should be removed as soon as possible.'
-          - lang: ru
-            str: 'Файл испорчен и не должен использоваться.'
-          - lang: es
-            str: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - *corrupt
       - *AlreadyInUSKP
   - name: 'terramend.esp'
     msg: [ *AlreadyInUSKP ]
@@ -2327,14 +2315,7 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'Winterhold Shields.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'File is corrupt and should not be used.'
-          - lang: ru
-            str: 'Файл испорчен и не должен использоваться.'
-          - lang: es
-            str: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - *corrupt
       - *AlreadyInUSKP
   - name: 'wolfqueenfix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -2494,15 +2475,7 @@ plugins:
             str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
         condition: 'active("Unofficial Dawnguard Patch.esp")'
   - name: 'HF-MoveSpouse.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'This file is corrupted and should be removed as soon as possible. It breaks the RelationshipMarriageFIN quest.'
-          - lang: ru
-            str: 'Файл испорчен и не должен использоваться. It breaks the RelationshipMarriageFIN quest.'
-          - lang: es
-            str: 'Este archivo puede corromper tu juego y no debería ser utilizado. It breaks the RelationshipMarriageFIN quest.'
+    msg: [ *corrupt ]
     dirty:
       - crc: 0x7d544dfe
         util: *dirtyUtil
@@ -2689,15 +2662,7 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'Layla.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Less Fugly Female NPCs.esp'
     msg:
       - type: warn
@@ -2716,15 +2681,7 @@ plugins:
 # ## REGEX: (N|ThievesguildN)PCOverha.+byHaroda.+\.esp
 # ## Warning applies across the "[entire large esp set](http://www.nexusmods.com/skyrim/mods/15116) pre-4/2013; some but not all are dirty as well. Checksum-specific dirty reports not playing well with the regex''ed output, so leave as only this.
   - name: '(N|ThievesguildN)PCOverha.+byHaroda.+\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'OrientalbeautyMod.esp'
     msg:
       - type: say
@@ -3852,15 +3809,7 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'Better Aura Whisper & Detect Aura Spell.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
     dirty:
       - crc: 0x6b9403cc
         util: *dirtyUtil
@@ -4162,14 +4111,7 @@ plugins:
         condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
   - name: 'Conjuration & Summoning fixes.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file is corrupted and should be removed as soon as possible.'
-          - lang: ru
-            str: 'Файл испорчен и не должен использоваться.'
-          - lang: es
-            str: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - *corrupt
       - *AlreadyInUSKP
       - type: error
         content:
@@ -5228,15 +5170,7 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'MicroBikin.+\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'marader.esp'
     msg:
       - type: warn
@@ -5490,15 +5424,7 @@ plugins:
             str: 'Usar Perks Unbound.esp or Perks Unbound - Helmless Warrior.esp, no ambos.'
         condition: 'file("Perks Unbound.esp")'
   - name: 'pf_removeenchantingrestrictions.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'phiNoFF.esp'
     msg: [ *obsolete ]
   - name: 'Piratelords Loot Adjustments.esp'
@@ -6863,15 +6789,7 @@ plugins:
 # VITAL for overhaul mod users: Wrye Bash tag all armor replacers {{BASH: Graphics}}(After it will work for Skyrim) to keep their new look.
 # Some items will need to go after overhaul or location altering mods to appear.
   - name: '118 Weapon Pack.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: '18 Black® Katanas HD ML.esp'
     msg: [ *obsolete ]
   - name: 'abimod.esp'
@@ -7239,25 +7157,9 @@ plugins:
   - name: 'Blessing of God.esp'
     msg: [ *obsolete ]
   - name: 'BlutKult_Dwarven_Axes.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'BlutKult_Zwergenaexte.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Books+.esp'
     dirty:
       - crc: 0x8095bb6
@@ -7921,13 +7823,7 @@ plugins:
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("DragonIron.esp",0C4425D4)'
   - name: 'DragonplateHelmFix.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'File is corrupt and should not be used.'
-          - lang: ru
-            str: 'Файл испорчен и не должен использоваться.'
+    msg: [ *corrupt ]
   - name: 'DragonsBanev1.esp'
     dirty:
       - crc: 0x8c997bc8
@@ -9222,15 +9118,7 @@ plugins:
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Lightning Blaze Edge.esp",6B2B704B)'
   - name: 'Lightning''s Latex Mask.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'lilithscarver(1_0|2_0|2_1)?\.esp'
     msg: [ *obsolete ]
   - name: 'lilithsobliterator3_0.esp'
@@ -9318,15 +9206,7 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'Maid Armor.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Maliki.esp'
     dirty:
       - crc: 0xea4cc153
@@ -9444,17 +9324,8 @@ plugins:
           - lang: ru
             str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
           - lang: es
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-        condition: 'checksum("MongolArmor.esp",7A153783)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
-        condition: 'checksum("MongolArmor.esp",7A153783)'
+        condition: 'checksum("MongolArmor.esp",7A153783) or checksum("MongolArmor.esp",7A153783)'
   - name: 'monster_hunter.esp'
     dirty:
       - crc: 0xa8a0c107
@@ -10035,13 +9906,7 @@ plugins:
         util: *dirtyUtil
         itm: 7
   - name: 'RingOfTalos.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'RIP88_Pool_Furniture_Sample.esp'
     dirty:
       - crc: 0x70ee4672
@@ -10093,15 +9958,7 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'Sauron Armor.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'ScarabSilentArchery.esp'
     msg: [ *obsolete ]
   - name: 'Scoiatael Weapons.esp'
@@ -10304,15 +10161,7 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe Chinese General Set.esp")'
   - name: 'SophitiaByNausicaa.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Sovereign Armor Set.esp'
     dirty:
       - crc: 0xb88ba7
@@ -21179,21 +21028,9 @@ plugins:
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Headbomb''s Better Sorting -- DE (by sheijian) v1.03.esp",BC4FACB7)'
   - name: 'BetterStaffofCorruption.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'BetterStaffofCorruptionMED.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'BetterStaffofMagnusMedium.esp'
     msg:
       - type: warn
@@ -21310,27 +21147,11 @@ plugins:
         itm: 1
         udr: 5
   - name: 'CandleLight-Medium.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'CandleLight-Minimum.esp'
     inc:
       - 'CandleLight-Medium.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'CCO - Permanent Birthsigns.esp'
     dirty:
       - crc: 0x9cb120ee
@@ -22051,13 +21872,7 @@ plugins:
         content: 'This mod is not properly mastered to Skyrim.esm.  It will not change or add anything in your game.'
         condition: 'checksum("increaseddifficulty.esp",DFD6D81E)'
   - name: 'Intense Difficulty 2x to player.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'Invisible Aetherial Crown.esp'
     dirty:
       - crc: 0x12f27709
@@ -22249,13 +22064,7 @@ plugins:
     tag:
       - Relev
   - name: 'LFox No Standing Stone Power Cooldown.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'Logical Civil War Armor.esp'
     dirty:
       - crc: 0xdcb1078b
@@ -22287,13 +22096,7 @@ plugins:
           - lang: es
             str: 'Utilizar solo un LZA Incremental Difficulty_*.esp.'
   - name: 'MageFriendlyDiademOfTheSavant.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'DragonPriestMaskQuestMarkers.esp'
     dirty:
       - crc: 0xb9218834
@@ -22309,13 +22112,7 @@ plugins:
             str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'not checksum("MageFriendlyDragonPriestMasks.esp",D1755B5B)'
   - name: 'MageFriendlyDragonPriestMasks_hidden.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'Magnify Spell Enchantments.esp'
     msg:
       - type: say
@@ -26541,15 +26338,7 @@ plugins:
             str: 'Utilizar solo un Skyrim Improved Magic System esp.'
         condition: 'file("Skyrim Improved Magic System.esp") and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
   - name: 'tSSSSS.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Vampiric_Drain_Fix.esp'
     inc:
       - 'Vampire Lord Serana Fixed.esp'
@@ -27615,15 +27404,7 @@ plugins:
         util: *dirtyUtil
         itm: 3
   - name: 'Perk_Deft_Movement_All_(100|25|50)?\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp'
     msg:
       - type: warn
@@ -28130,13 +27911,7 @@ plugins:
     tag:
       - Delev
   - name: 'Summoning.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'Vampirelordroyal.esp'
     dirty:
       - crc: 0x520f0ef2
@@ -28763,15 +28538,7 @@ plugins:
   - name: 'kuerteeSimpleMultipleFollowers.esp'
     req: [ *SKSE ]
   - name: 'Akasha.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'ApprenticeOfThuum.esp'
     dirty:
       - crc: 0xf12ccb3a
@@ -29317,15 +29084,7 @@ plugins:
             str: 'Requiere: [The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722).'
         condition: 'checksum("AlvhildeLycan.esp",BE4CD149)'
   - name: 'Amina.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Angelina Jolie.esp'
     msg:
       - type: say
@@ -29383,15 +29142,7 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Balimund.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Barsukov.esp'
     dirty:
       - crc: 0xf191d03b
@@ -29481,14 +29232,7 @@ plugins:
             str: 'Требуется: [Human Eyes for Elves](http://www.nexusmods.com/skyrim/mods/195).'
           - lang: es
             str: 'Requiere: [Human Eyes for Elves](http://www.nexusmods.com/skyrim/mods/195).'
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - *corrupt
   - name: 'BrandShei.esp'
     dirty:
       - crc: 0xf5a4acbe
@@ -29525,15 +29269,7 @@ plugins:
           - lang: es
             str: 'Requiere: [Nude Male with Roberts New Vegas male](http://www.nexusmods.com/skyrim/mods/3421)'
   - name: 'CleanBalimund.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Companion_Ria.esp'
     dirty:
       - crc: 0x24989bbb
@@ -29637,15 +29373,7 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Dova''s Angels - (Iona|Jordis|Lydia|Mjoll|Saadia|Sylgja|Uthgerd)?\ - V(4|5)?\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Dragoon.esp'
     dirty:
       - crc: 0xb683cacb
@@ -29717,15 +29445,7 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'EncHorse(Black|BlackAndWhite|Brown|Grey|Palomino|SaddledBlack|SaddledBlackAndWhite|SaddledBrown|SaddledGrey|SaddledPalomino)?\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Erik.esp'
     msg:
       - type: say
@@ -29949,15 +29669,7 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'FTBS_.+\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'GaiusMaro.esp'
     dirty:
       - crc: 0xdcbbff4d
@@ -30133,15 +29845,7 @@ plugins:
         util: *dirtyUtil
         itm: 49
   - name: 'inathesorceress.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Iona_CombatRanger.esp'
     inc:
       - 'Iona_CombatDual.esp'
@@ -30188,17 +29892,8 @@ plugins:
       - crc: 0x208e7086
         util: *dirtyUtil
         itm: 8
-  - name: 'Kashi(m|m - Ahtar Replacer)\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
-        condition: 'file("Kashim.esp") or file("Kashim - Ahtar Replacer.esp")'
+  - name: 'Kashim( - Ahtar Replacer)?\.esp'
+    msg: [ *corrupt ]
   - name: 'Kate.esp'
     req:
       - *SKSE
@@ -30227,15 +29922,7 @@ plugins:
     inc:
       - 'KCustom_ALL_FHC_NDO.esp'
   - name: 'Khagra.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Khagra - Ghorbash Replacer.esp'
     inc:
       - 'Khagra.esp'
@@ -30335,15 +30022,7 @@ plugins:
         util: *dirtyUtil
         udr: 1
   - name: 'Beauty Lydia.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'iLoveLydia.esp'
     msg:
       - type: warn
@@ -30387,14 +30066,7 @@ plugins:
             str: 'Требуется: [Human eyes for Elves](http://www.nexusmods.com/skyrim/mods/195)'
           - lang: es
             str: 'Requiere: [Human eyes for Elves](http://www.nexusmods.com/skyrim/mods/195)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - *corrupt
   - name: 'Maven.esp'
     dirty:
       - crc: 0x87e58a02
@@ -30479,15 +30151,7 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Morella the Cursed.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'My_Little_hatchling_K.esp'
     inc:
       - 'My_Little_hatchling.esp'
@@ -30562,15 +30226,7 @@ plugins:
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Human Onmund.esp",5A191ACA)'
   - name: 'Otrera.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Pluto.esp'
     msg:
       - type: warn
@@ -30603,15 +30259,7 @@ plugins:
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Ral-Kur1.1.1.esp",3EB078AF)'
   - name: 'Rowena Frostmoor.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'SaraliFollower.esp'
     dirty:
       - crc: 0xa280fcc8
@@ -30657,15 +30305,7 @@ plugins:
   - name: 'Sexy Housecarls V 2.1.esp'
     msg: [ *obsolete ]
   - name: 'A Sexy Lydia Replacer CBBE B_02.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Sigrid.esp'
     dirty:
       - crc: 0x72f4f16e
@@ -30749,15 +30389,7 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'Sura the Lioness of Persia.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Sven.esp'
     dirty:
       - crc: 0x4060cc94
@@ -31030,15 +30662,7 @@ plugins:
         itm: 2
 # Must load after CerwidenCompanion.esp
   - name: 'Selene.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Tauriel original de Standalone_v1_0.esp'
     inc:
       - 'Tauriel Original Standalone_v1_0.esp'
@@ -31129,15 +30753,7 @@ plugins:
     inc:
       - 'Followers Stop Fighting Each Other 2.0.esp'
   - name: 'Khaliza of Gilane.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'move.?it(LWT)?\.esp'
     msg:
       - type: say
@@ -31369,25 +30985,9 @@ plugins:
             str: 'Usar Better Racials- Altmer Edition.esp o Better Racials- Altmer Edition - NW.esp, no ambos.'
         condition: 'file("Better Racials- Altmer Edition.esp") and file("Better Racials- Altmer Edition - NW.esp")'
   - name: 'BVLT - (Argonian|Ashen|Dark Elf|High Elf|Human|Khajiit|Wood Elf)?\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Vampire Lord - Transformation Overhaul Female.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'CharacterMakingExtender.esp'
     req:
       - *SKSE
@@ -31444,13 +31044,7 @@ plugins:
             str: 'Utilizar solo un Extended Colors - *.esp.'
       - *obsolete
   - name: 'fjAshenVampires.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'Forsworn Children.esp'
     dirty:
       - crc: 0x722a5413
