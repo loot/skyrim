@@ -135,7 +135,7 @@ globals:
         str: '你的SKSE是最新的。'
 # Other
   - type: say
-    condition: '( regex("ASIS(-Dependency)?\.esp") ) or regex("Automatic (Spells|Variations|Variants)\.esp")'
+    condition: 'regex("ASIS(-Dependency)?\.esp") or regex("Automatic (Spells|Variations|Variants)\.esp")'
     content:
       - lang: en
         str: 'A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.'
@@ -841,7 +841,7 @@ plugins:
             str: 'Используйте только один GuardedHouse*.esm.'
           - lang: es
             str: 'Utilizar solo un GuardedHouse*.esm.'
-        condition: '( file("GuardedHouseImperial.esm") ) or file("GuardedHouseStormcloak.esm")'
+        condition: 'file("GuardedHouseImperial.esm") or file("GuardedHouseStormcloak.esm")'
     tag:
       - Relev
     dirty:
@@ -867,7 +867,7 @@ plugins:
             str: 'Используйте только один GuardedHouse*.esm.'
           - lang: es
             str: 'Utilizar solo un GuardedHouse*.esm.'
-        condition: '( file("GuardedHouse.esm") ) or file("GuardedHouseStormcloak.esm")'
+        condition: 'file("GuardedHouse.esm") or file("GuardedHouseStormcloak.esm")'
     tag:
       - Relev
     dirty:
@@ -893,7 +893,7 @@ plugins:
             str: 'Используйте только один GuardedHouse*.esm.'
           - lang: es
             str: 'Use only one GuardedHouse*.esm.'
-        condition: '( file("GuardedHouseImperial.esm") ) or file("GuardedHouse.esm")'
+        condition: 'file("GuardedHouseImperial.esm") or file("GuardedHouse.esm")'
     tag:
       - Relev
     dirty:
@@ -1005,7 +1005,7 @@ plugins:
     msg:
       - type: warn
         content: 'This is the wrong esm for LB_MuchAdoSnowElves_WeaponsOnly.esp'
-        condition: '( file("LB_MuchAdoSnowElves_WeaponsOnly.esp") ) and checksum("LB_MuchAdoSnowElves.esm",9E22BEF7)'
+        condition: 'file("LB_MuchAdoSnowElves_WeaponsOnly.esp") and checksum("LB_MuchAdoSnowElves.esm",9E22BEF7)'
   - name: 'LevelersTower.esm'
     dirty:
       - crc: 0xf22b5be
@@ -1675,7 +1675,7 @@ plugins:
             str: 'Удалите. Уже включено в SkyRe_main.esp вер.0.99.18.'
           - lang: es
             str: 'Borrar. Ya esta incluido en SkyRe_main.esp v0.99.18.'
-        condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
   - name: 'breezehomelightfix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'BreezehomeLadderFix.esp'
@@ -2856,7 +2856,7 @@ plugins:
             str: 'Используйте только один MoreSnow *.esp.'
           - lang: es
             str: 'Utilizar solo un MoreSnow *.esp.'
-        condition: '( file("MoreSnow.esp") ) or file("MoreSnowWindy.esp")'
+        condition: 'file("MoreSnow.esp") or file("MoreSnowWindy.esp")'
     dirty:
       - crc: 0x7ed853ee
         util: *dirtyUtil
@@ -2933,7 +2933,7 @@ plugins:
             str: 'Dawnguard.esm found. Use the Dawnguard version of ExpandedSnowSystems.esp instead to have mod work as intended.'
           - lang: es
             str: 'Dawnguard.esm esta siencdo utilizado. Usa la versión de ExpandedSnowSystems.esp para Dawnguard.'
-        condition: '( ( checksum("ExpandedSnowSystems.esp",03A9B612) ) or checksum("ExpandedSnowSystems.esp",72CC3B0C) ) and active("Dawnguard.esm")'
+        condition: 'active("Dawnguard.esm") and ( checksum("ExpandedSnowSystems.esp",03A9B612) or checksum("ExpandedSnowSystems.esp",72CC3B0C) )'
       - type: warn
         content: 'ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.'
         condition: 'active("ClimatesOfTamriel.esm")'
@@ -3408,7 +3408,7 @@ plugins:
             str: 'Используйте только один jumpheight esp.'
           - lang: es
             str: 'Utilizar solo un jumpheight esp.'
-        condition: '( file("jumpHeightOnly.esp") ) or file("jumpHeightThird.esp")'
+        condition: 'file("jumpHeightOnly.esp") or file("jumpHeightThird.esp")'
 # Removed REGEX because specific load order is needed
   - name: 'Weapons and Armor fixes.esp'
     msg:
@@ -3585,7 +3585,7 @@ plugins:
             str: 'Удалите. Уже включено в Skyrim Immersive Creatures.esp.'
           - lang: es
             str: 'Borrar. Ya esta incluido en Skyrim Immersive Creatures.esp.'
-        condition: '( active("Skyrim Immersive Creatures.esp") ) or active("Skyrim Immersive Creatures.esm")'
+        condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
     tag:
       - Relev
   - name: 'ArmorRatingTweak.esp'
@@ -3869,7 +3869,7 @@ plugins:
     msg:
       - type: error
         content: 'Use non-Dawnguard version, DV Better Sleep.esp'
-        condition: '( not active("Dawnguard.esm") ) and file("DV Better Sleep Dawnguard.esp")'
+        condition: 'not active("Dawnguard.esm") and file("DV Better Sleep Dawnguard.esp")'
   - name: 'DV Better Sleep.esp'
     msg:
       - type: error
@@ -4003,10 +4003,10 @@ plugins:
     msg:
       - type: error
         content: 'Use non-Dawnguard version.'
-        condition: '( not active("Dawnguard.esm") ) and checksum("Bloody Cannibalism.esp",75D6B87E)'
+        condition: 'not active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",75D6B87E)'
       - type: error
         content: 'Use Dawnguard version.'
-        condition: '( active("Dawnguard.esm") ) and checksum("Bloody Cannibalism.esp",A220A80B)'
+        condition: 'active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",A220A80B)'
     dirty:
       - crc: 0xa220a80b
         util: *dirtyUtil
@@ -4087,7 +4087,7 @@ plugins:
             str: 'Используйте только один cao_DweSchematics esp.'
           - lang: es
             str: 'Utilizar solo un cao_DweSchematics esp.'
-        condition: '( file("cao_DweSchematicsBuy.esp") ) or file("cao_DweSchematicsCheat.esp")'
+        condition: 'file("cao_DweSchematicsBuy.esp") or file("cao_DweSchematicsCheat.esp")'
   - name: 'cao_goldbrand.esp'
     msg:
       - type: say
@@ -4159,7 +4159,7 @@ plugins:
             str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp''.'
           - lang: es
             str: 'Borrar. Ya esta incluido en ''Skyrim Immersive Creatures.esp''.'
-        condition: '( active("Skyrim Immersive Creatures.esp") ) or active("Skyrim Immersive Creatures.esm")'
+        condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
   - name: 'Conjuration & Summoning fixes.esp'
     msg:
       - type: warn
@@ -4291,7 +4291,7 @@ plugins:
             str: 'Несовместим с: Use Dawnguard version.'
           - lang: es
             str: 'Incompatible: Utilizar la versión para Dawnguard.'
-        condition: '( checksum("Cumulable Blessings.esp",DA1971DC) ) and active("Dawnguard.esm")'
+        condition: 'checksum("Cumulable Blessings.esp",DA1971DC) and active("Dawnguard.esm")'
     dirty:
       - crc: 0xbcc10635
         util: *dirtyUtil
@@ -4695,10 +4695,10 @@ plugins:
     msg:
       - type: error
         content: 'Use Hearthfires version.'
-        condition: '( active("Hearthfires.esm") ) and checksum("Grind_stuff.esp",31CCFA29)'
+        condition: 'active("Hearthfires.esm") and checksum("Grind_stuff.esp",31CCFA29)'
       - type: error
         content: 'Use non-Hearthfires version.'
-        condition: '( not active("Hearthfires.esm") ) and checksum("Grind_stuff.esp",5E014754)'
+        condition: 'not active("Hearthfires.esm") and checksum("Grind_stuff.esp",5E014754)'
   - name: 'Guard Build (HF) 1.esp'
     dirty:
       - crc: 0x374c0a09
@@ -5044,7 +5044,7 @@ plugins:
   - name: 'Lady Body.esp'
     msg:
       - type: warn
-        condition: '( version("..\TESV.exe","1.7.7",<) ) and not active("Dawnguard.esm")'
+        condition: 'version("..\TESV.exe","1.7.7",<) and not active("Dawnguard.esm")'
         content:
           - lang: en
             str: 'For Lady Body 1.5 and highter Skyrim 1.7.7 and DLC Dawnguard are required.'
@@ -5740,7 +5740,7 @@ plugins:
             str: 'Требуется: Realistic Wildlife Loot, Realistic needs and diseases & the compatability patch to run them together'
           - lang: es
             str: 'Requiere: Realistic Wildlife Loot, Realistic needs and diseases & the compatability patch to run them together'
-        condition: '( not active("Realistic Wildlife Loot - Realistic.esp") ) or not active("Realistic Wildlife Loot - Reduced.esp")'
+        condition: 'not active("Realistic Wildlife Loot - Realistic.esp") or not active("Realistic Wildlife Loot - Reduced.esp")'
   - name: 'RPChoppingAndMining.esp'
     dirty:
       - crc: 0xfd51136d
@@ -5920,7 +5920,7 @@ plugins:
             str: 'Используйте любой или Skyrim Immersive Creatures.esm или Skyrim Immersive Creatures.esp, не обa.'
           - lang: es
             str: 'Usar Skyrim Immersive Creatures.esm or Skyrim Immersive Creatures.esp, no ambos.'
-        condition: '( not checksum("Skyrim Immersive Creatures.esp",2EEAD88A) ) and active("Skyrim Immersive Creatures.esm")'
+        condition: 'not checksum("Skyrim Immersive Creatures.esp",2EEAD88A) and active("Skyrim Immersive Creatures.esm")'
     tag:
       - Delev
       - Relev
@@ -5938,7 +5938,7 @@ plugins:
     msg:
       - type: error
         content: 'This addon is for use with Skyrim Immersive Creatures.esm, not Skyrim Immersive Creatures.esp'
-        condition: '( checksum("Skyrim Immersive Creatures - DLC2.esp",C64CF88A) ) and not active("Skyrim Immersive Creatures.esm")'
+        condition: 'checksum("Skyrim Immersive Creatures - DLC2.esp",C64CF88A) and not active("Skyrim Immersive Creatures.esm")'
     tag:
       - Delev
       - Relev
@@ -6135,10 +6135,10 @@ plugins:
     msg:
       - type: error
         content: 'Use Hearthfires version.'
-        condition: '( active("Hearthfires.esm") ) and checksum("Statues.esp",C08BE2C5)'
+        condition: 'active("Hearthfires.esm") and checksum("Statues.esp",C08BE2C5)'
       - type: error
         content: 'Use Vanilla version.'
-        condition: '( not active("Hearthfires.esm") ) and checksum("Statues.esp",5081E67A)'
+        condition: 'not active("Hearthfires.esm") and checksum("Statues.esp",5081E67A)'
   - name: 'SteamAchievementUnlocker.esp'
     dirty:
       - crc: 0x67cb652
@@ -6319,7 +6319,7 @@ plugins:
             str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: es
             str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-        condition: '( not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) ) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
+        condition: 'not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     msg:
       - type: warn
@@ -6467,7 +6467,7 @@ plugins:
             str: 'Используйте только один Zira''s Skyrim Horse Base esp.'
           - lang: es
             str: 'Utilizar solo un Zira''s Skyrim Horse Base esp.'
-        condition: '( file("Zira''s Skyrim Horse Base - Armored.esp") ) or file("Zira''s Skyrim Horse Base - Bareback Riding.esp")'
+        condition: 'file("Zira''s Skyrim Horse Base - Armored.esp") or file("Zira''s Skyrim Horse Base - Bareback Riding.esp")'
     dirty:
       - crc: 0xf93cd5d0
         util: *dirtyUtil
@@ -6539,7 +6539,7 @@ plugins:
             str: 'Does not work with Skyrim version 1.8.151.0.7 and beyond. Use the [Unofficial patches](http://modgames.net/load/247-1-0-13970) to fix.'
           - lang: ru
             str: 'Не работает с версиями Скайрим 1.8.151.0.7 и выше. Используйте вместо этого альтернативную версию - CWND-UnofficialPatches.esp'
-        condition: '( not file("CWND-UnofficialPatches.esp") ) and version("..\TESV.exe","1.8.151.0.7",==)'
+        condition: 'not file("CWND-UnofficialPatches.esp") and version("..\TESV.exe","1.8.151.0.7",==)'
   - name: 'CWND-UnofficialPatches.esp'
     inc:
       - 'CWND-Basic.esp'
@@ -7001,7 +7001,7 @@ plugins:
             str: 'Используйте только один AngisBetterBow esp.'
           - lang: es
             str: 'Utilizar solo un AngisBetterBow esp.'
-        condition: '( file("AngisBetterBow.esp") ) or file("AngisEvenBetterBow.esp")'
+        condition: 'file("AngisBetterBow.esp") or file("AngisEvenBetterBow.esp")'
   - name: 'Arcania_armory( \(base\))?\.esp'
     msg:
       - type: warn
@@ -7064,7 +7064,7 @@ plugins:
             str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp''.'
           - lang: es
             str: 'Borrar. Esta incluido en ''Skyrim Immersive Creatures.esp''.'
-        condition: '( active("Skyrim Immersive Creatures.esp") ) or active("Skyrim Immersive Creatures.esm")'
+        condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
     dirty:
       - crc: 0x267783d2
         util: *dirtyUtil
@@ -7080,7 +7080,7 @@ plugins:
             str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp''.'
           - lang: es
             str: 'Borrar. Esta incluido en ''Skyrim Immersive Creatures.esp''.'
-        condition: '( active("Skyrim Immersive Creatures.esp") ) or active("Skyrim Immersive Creatures.esm")'
+        condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
     dirty:
       - crc: 0x77a605c4
         util: *dirtyUtil
@@ -7121,7 +7121,7 @@ plugins:
   - name: 'BaratheonArmor.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_BaratheonArmor_1.esp") ) or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_BaratheonArmor_1.esp") or file("SG_HothTrooper.esp")'
   - name: 'Battledress Armor.esp'
     dirty:
       - crc: 0x68ce399f
@@ -7414,7 +7414,7 @@ plugins:
             str: 'Используйте только один cloaks*esp.'
           - lang: es
             str: 'Utilizar solo un cloaks*esp.'
-        condition: '( file("Cloaks - No Imperial.esp") ) or file("Cloaks - Player Only.esp")'
+        condition: 'file("Cloaks - No Imperial.esp") or file("Cloaks - Player Only.esp")'
     dirty:
       - crc: 0x35c871de
         util: *dirtyUtil
@@ -7432,7 +7432,7 @@ plugins:
             str: 'Используйте только один cloaks*esp.'
           - lang: es
             str: 'Utilizar solo un cloaks*esp.'
-        condition: '( file("Cloaks.esp") ) or file("Cloaks - Player Only.esp")'
+        condition: 'file("Cloaks.esp") or file("Cloaks - Player Only.esp")'
     dirty:
       - crc: 0x1c6298ce
         util: *dirtyUtil
@@ -7450,7 +7450,7 @@ plugins:
             str: 'Используйте только один cloaks*esp.'
           - lang: es
             str: 'Utilizar solo un cloaks*esp.'
-        condition: '( file("Cloaks.esp") ) or file("Cloaks - No Imperial.esp")'
+        condition: 'file("Cloaks.esp") or file("Cloaks - No Imperial.esp")'
     dirty:
       - crc: 0x2453c2e4
         util: *dirtyUtil
@@ -7468,7 +7468,7 @@ plugins:
             str: 'Используйте только один cloaks*Dawnguard.esp.'
           - lang: es
             str: 'Utilizar solo un cloaks*Dawnguard.esp.'
-        condition: '( file("Cloaks - No Imperial - Dawnguard.esp") ) or file("Cloaks - Player Only - Dawnguard.esp")'
+        condition: 'file("Cloaks - No Imperial - Dawnguard.esp") or file("Cloaks - Player Only - Dawnguard.esp")'
   - name: 'Cloaks - No Imperial - Dawnguard.esp'
     msg:
       - type: warn
@@ -7479,7 +7479,7 @@ plugins:
             str: 'Используйте только один cloaks*Dawnguard.esp.'
           - lang: es
             str: 'Utilizar solo un cloaks*Dawnguard.esp.'
-        condition: '( file("Cloaks - Dawnguard.esp") ) or file("Cloaks - Player Only - Dawnguard.esp")'
+        condition: 'file("Cloaks - Dawnguard.esp") or file("Cloaks - Player Only - Dawnguard.esp")'
   - name: 'Cloaks - Player Only - Dawnguard.esp'
     msg:
       - type: warn
@@ -7490,7 +7490,7 @@ plugins:
             str: 'Используйте только один cloaks*Dawnguard.esp.'
           - lang: es
             str: 'Utilizar solo un cloaks*Dawnguard.esp.'
-        condition: '( file("Cloaks - Dawnguard.esp") ) or file("Cloaks - No Imperial - Dawnguard.esp")'
+        condition: 'file("Cloaks - Dawnguard.esp") or file("Cloaks - No Imperial - Dawnguard.esp")'
   - name: 'Lorecraft - Cloaks(\d{1,3})( No Imperial| PlayerOnly)?\.esp'
     msg:
       - type: say
@@ -7525,7 +7525,7 @@ plugins:
             str: 'Используйте только один WICCloaks esp.'
           - lang: es
             str: 'Utilizar solo un WICCloaks esp.'
-        condition: '( file("1nivWICCloaksCRAFT.esp") ) or file("1nivWICCloaksNoGuards.esp")'
+        condition: 'file("1nivWICCloaksCRAFT.esp") or file("1nivWICCloaksNoGuards.esp")'
       - type: say
         content:
           - lang: en
@@ -7552,7 +7552,7 @@ plugins:
             str: 'Используйте только один WICCloaks esp.'
           - lang: es
             str: 'Utilizar solo un WICCloaks esp.'
-        condition: '( file("1nivWICCloaks.esp") ) or file("1nivWICCloaksNoGuards.esp")'
+        condition: 'file("1nivWICCloaks.esp") or file("1nivWICCloaksNoGuards.esp")'
   - name: '1nivWICCloaksNoGuards.esp'
     msg:
       - type: warn
@@ -7563,7 +7563,7 @@ plugins:
             str: 'Используйте только один WICCloaks esp.'
           - lang: es
             str: 'Utilizar solo un WICCloaks esp.'
-        condition: '( file("1nivWICCloaksCRAFT.esp") ) or file("1nivWICCloaks.esp")'
+        condition: 'file("1nivWICCloaksCRAFT.esp") or file("1nivWICCloaks.esp")'
     tag:
       - Relev
   - name: '1nivWICSkyCloaksPatch.esp'
@@ -7681,7 +7681,7 @@ plugins:
   - name: 'DaggerCraft.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_DaggerCraft_1.3.esp") ) or file("SkyRe_Plugin_DaggerCraft.esp")'
+        condition: 'file("SkyRe_Plugin_DaggerCraft_1.3.esp") or file("SkyRe_Plugin_DaggerCraft.esp")'
   - name: 'Dalls_Skelos_Weapons.esp'
     tag:
       - Relev
@@ -7713,7 +7713,7 @@ plugins:
         condition: 'not checksum("DarkNemesis.esp",CE5E555B)'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe Dark Nemesis.esp") ) and not checksum("DarkNemesis.esp",CE5E555B)'
+        condition: 'file("SkyRe Dark Nemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
   - name: 'DarkPaladinArmor.esp'
     msg: [ *obsolete ]
   - name: 'DarkPaladinArmorV2.esp'
@@ -7957,7 +7957,7 @@ plugins:
   - name: 'Dread Knight Weapon Set.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe  - Jojjo''s Dreadknight Patch.esp") ) or regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
+        condition: 'file("SkyRe  - Jojjo''s Dreadknight Patch.esp") or regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
   - name: 'DreamBurrowSageRetexture.esp'
     msg: [ *obsolete ]
   - name: 'Drow Armor Set.esp'
@@ -8119,7 +8119,7 @@ plugins:
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-        condition: '( version("..\TESV.exe","1.8",>) ) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
+        condition: 'version("..\TESV.exe","1.8",>) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Equipment of Eternal Shine.esp")'
@@ -8200,7 +8200,7 @@ plugins:
             str: 'Используйте только один Flare Arrow *.esp.'
           - lang: es
             str: 'Utilizar solo un Flare Arrow *.esp.'
-        condition: '( file("Flare Arrow Brighter.esp") ) or file("Flare Arrow Explosive.esp")'
+        condition: 'file("Flare Arrow Brighter.esp") or file("Flare Arrow Explosive.esp")'
   - name: 'Fitness Outfit OE.esp'
     msg:
       - type: say
@@ -8371,7 +8371,7 @@ plugins:
   - name: 'HBetterBows.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_BetterBows_1.4.1.esp") ) or file("SkyRe_Plugin_BetterBows.esp")'
+        condition: 'file("SkyRe_Plugin_BetterBows_1.4.1.esp") or file("SkyRe_Plugin_BetterBows.esp")'
   - name: 'headtaker.esp'
     dirty:
       - crc: 0xd43e7148
@@ -8385,7 +8385,7 @@ plugins:
   - name: 'HedgeKnight.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_HedgeKnightArmor_1.esp") ) or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_HedgeKnightArmor_1.esp") or file("SG_HothTrooper.esp")'
     dirty:
       - crc: 0xa7a55ab3
         util: *dirtyUtil
@@ -8616,7 +8616,7 @@ plugins:
   - name: 'InsanitysCelticKatana.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_InsanitysCelticKatana_1.2.esp") ) or file("SkyRe_Plugin_InsanitysCelticKatana.esp")'
+        condition: 'file("SkyRe_Plugin_InsanitysCelticKatana_1.2.esp") or file("SkyRe_Plugin_InsanitysCelticKatana.esp")'
   - name: 'Insanity''s Craftable Dragonbane.esp'
     tag:
       - name: Deactivate
@@ -8624,11 +8624,11 @@ plugins:
   - name: 'Insanity''s Dragon Katana.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") ) or file("SkyRe_Plugin_InsanitysDragonKatana.esp")'
+        condition: 'file("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") or file("SkyRe_Plugin_InsanitysDragonKatana.esp")'
   - name: 'InsanitysDragonKatana.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") ) or file("SkyRe_Plugin_InsanitysDragonKatana.esp")'
+        condition: 'file("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") or file("SkyRe_Plugin_InsanitysDragonKatana.esp")'
   - name: 'Insanity''s Sorrow.esp'
     dirty:
       - crc: 0x872acbc
@@ -9335,7 +9335,7 @@ plugins:
   - name: 'Malo_Waffen.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_Malo_Waffen.esp") ) or file("SG_Malo_Waffen.esp")'
+        condition: 'file("SkyRe_Plugin_Malo_Waffen.esp") or file("SG_Malo_Waffen.esp")'
   - name: 'SG_Malo_Waffen.esp'
     inc:
       - 'SkyRe_Plugin_Malo_Waffen.esp'
@@ -9761,7 +9761,7 @@ plugins:
   - name: 'Nordic Conqueror Armor.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe Nordic Conqueror Armor.esp") ) or file("SkyRe Nordic Conqueror Armor - Realistic.esp")'
+        condition: 'file("SkyRe Nordic Conqueror Armor.esp") or file("SkyRe Nordic Conqueror Armor - Realistic.esp")'
     dirty:
       - crc: 0x2dfebd42
         util: *dirtyUtil
@@ -9925,7 +9925,7 @@ plugins:
             str: 'Удалите. Уже включено в SkyRe_Main.esp.'
           - lang: es
             str: 'Borrar. Esta incluido en SkyRe_Main.esp.'
-        condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
     tag:
       - Relev
   - name: 'PrvtI_HeavyArmory_DG_Addon.esp'
@@ -9967,7 +9967,7 @@ plugins:
             str: 'Используйте только один RagnvaldBook *.esp.'
           - lang: es
             str: 'Utilizar solo un RagnvaldBook *.esp.'
-        condition: '( file("RagnvaldBook.esp") ) or file("RagnvaldBookFarengar+Ragnvald.esp")'
+        condition: 'file("RagnvaldBook.esp") or file("RagnvaldBookFarengar+Ragnvald.esp")'
   - name: 'RaestlozArmorReplace.esp'
     msg: [ *obsolete ]
   - name: 'Reaper''s Necroxym Greatsword.esp'
@@ -9990,7 +9990,7 @@ plugins:
   - name: 'RedguardKnight.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_RedguardKnightArmor_3.esp") ) or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_RedguardKnightArmor_3.esp") or file("SG_HothTrooper.esp")'
     dirty:
       - crc: 0x8d48f1c3
         util: *dirtyUtil
@@ -10028,7 +10028,7 @@ plugins:
             str: 'Используйте только один Hircine - No Disease Werewolf AND Totem Selection esp.'
           - lang: es
             str: 'Utilizar solo un Ring of Hircine - No Disease Werewolf AND Totem Selection esp.'
-        condition: '( file("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") ) or file("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp")'
+        condition: 'file("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") or file("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp")'
   - name: 'RingOFNighteye.esp'
     dirty:
       - crc: 0xb28a5287
@@ -10215,7 +10215,7 @@ plugins:
             str: 'Удалите. Уже включено в SkyRe_Main.esp.'
           - lang: es
             str: 'Borrar. Esta incluido en SkyRe_Main.esp.'
-        condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
     tag:
       - Delev
       - Relev
@@ -10812,7 +10812,7 @@ plugins:
   - name: 'VagabondArmor.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_VagabondArmor_5.esp") ) or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_VagabondArmor_5.esp") or file("SG_HothTrooper.esp")'
   - name: 'Vampguard.esp'
     dirty:
       - crc: 0xfdb0b379
@@ -10826,7 +10826,7 @@ plugins:
   - name: 'VanguardArmor.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_VanguardArmor_3.esp") ) or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_VanguardArmor_3.esp") or file("SG_HothTrooper.esp")'
   - name: 'ViceroyInquisitor.esp'
     msg:
       - type: say
@@ -10848,7 +10848,7 @@ plugins:
   - name: 'WarchiefArmor.esp'
     tag:
       - name: Deactivate
-        condition: '( file("SkyRe_Plugin_WarchiefArmor_4.esp") ) or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_WarchiefArmor_4.esp") or file("SG_HothTrooper.esp")'
   - name: 'Lorecraft - hothtrooper44 armors.esp'
     msg:
       - type: say
@@ -10892,7 +10892,7 @@ plugins:
             str: 'Удалите. Уже входит в SkyRe_Main.esp'
           - lang: es
             str: 'Eliminar. Ya se encuentra en ''SkyRe_Main.esp'''
-        condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
     tag:
       - Relev
   - name: 'WeaponsOf3E - No Leveled Lists.esp'
@@ -10924,7 +10924,7 @@ plugins:
             str: 'Удалите. WeaponsOf3E уже включен в SkyRe_Main.esp.'
           - lang: es
             str: 'Borrar. WeaponsOf3E se encuentra en SkyRe_Main.esp'
-        condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
       - type: say
         content: 'Incompatible with: WeaponsOf3E*.esp'
         condition: 'regex("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp")'
@@ -11096,7 +11096,7 @@ plugins:
         condition: 'checksum("XAC.esp",7BD34BA7)'
       - type: warn
         content: 'Requires bsa or loose files from original version or this mod will not work.'
-        condition: '( checksum("XAC.esp",7BD34BA7) ) and not file("XAC.bsa")'
+        condition: 'checksum("XAC.esp",7BD34BA7) and not file("XAC.bsa")'
     tag:
       - name: Deactivate
         condition: 'regex("SkyRe XAC Stat (Original|Swap)( Classic)?\.esp")'
@@ -11166,10 +11166,10 @@ plugins:
     msg:
       - type: error
         content: 'Use Dawnguard version.'
-        condition: '( checksum("BandolierForNPCMasterFile.esp",112359C0) or checksum("BandolierForNPCMasterFile.esp",76E11697) or checksum("BandolierForNPCMasterFile.esp",0146A38B) ) and active("Dawnguard.esm")'
+        condition: 'active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",112359C0) or checksum("BandolierForNPCMasterFile.esp",76E11697) or checksum("BandolierForNPCMasterFile.esp",0146A38B) )'
       - type: error
         content: 'Use non-Dawnguard version.'
-        condition: '( checksum("BandolierForNPCMasterFile.esp",882FDEA5) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) ) and not active("Dawnguard.esm")'
+        condition: 'not active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",882FDEA5) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) )'
   - name: 'BandolierForNPCsWinterIsComing.esp'
     msg: [ *obsolete ]
   - name: 'BandolierForNPCsCheaperBandoliers.esp'
@@ -11349,7 +11349,7 @@ plugins:
             str: 'Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
             str: 'Не содержит неверных записей, как было найдено в других модах от разных авторов, однако новый esp, исправленный и очищенный в Tes5Edit вы можене найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). Исправленный esp добавит больше стабильности. Если вы уже используете русифицированную-исправленную версию, то вам не о чем беспокоиться.'
-        condition: '( not checksum("Smithing Perks Overhaul.esp",92158BE3) ) and not checksum("Smithing Perks Overhaul - Balanced.esp",80AAE7FF)'
+        condition: 'not checksum("Smithing Perks Overhaul.esp",92158BE3) and not checksum("Smithing Perks Overhaul - Balanced.esp",80AAE7FF)'
       - type: warn
         content:
           - lang: en
@@ -11378,7 +11378,7 @@ plugins:
             str: 'Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
             str: 'Не содержит неверных записей, как было найдено в других модах от разных авторов, однако новый esp, исправленный и очищенный в Tes5Edit вы можене найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). Исправленный esp добавит больше стабильности. Если вы уже используете русифицированную-исправленную версию, то вам не о чем беспокоиться.'
-        condition: '( not checksum("Complete Crafting Overhaul.esp",8534CD3C) ) and not checksum("Complete Crafting Overhaul - BS version.esp",193D9214)'
+        condition: 'not checksum("Complete Crafting Overhaul.esp",8534CD3C) and not checksum("Complete Crafting Overhaul - BS version.esp",193D9214)'
       - type: warn
         content:
           - lang: en
@@ -11401,7 +11401,7 @@ plugins:
             str: 'Skyre mod is detected. Possible doubles in crafting menu'
           - lang: ru
             str: 'Обнаружен мод SkyRe. Возможны дубликаты в меню крафтинга.'
-        condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
       - type: say
         content:
           - lang: en
@@ -11665,7 +11665,7 @@ plugins:
             str: 'Используйте только один TrainUnitsPerLevel*.esp.'
           - lang: es
             str: 'Utilizar solo un TrainUnitsPerLevel*.esp.'
-        condition: '( file("Requiem - TrainUnitsPerLevel10.esp") ) or file("Requiem - TrainUnitsPerLevel0.esp")'
+        condition: 'file("Requiem - TrainUnitsPerLevel10.esp") or file("Requiem - TrainUnitsPerLevel0.esp")'
   - name: 'Requiem - TrainUnitsPerLevel5.esp'
     msg:
       - type: warn
@@ -12840,7 +12840,7 @@ plugins:
             str: 'Remember not to load (or to simply delete) Dread Knight Weapon Set mod'
           - lang: ru
             str: 'Не забудьте отключить или удалить мод Dread Knight Weapon Set.'
-        condition: '( active("DreadKnightWeaponSet.\esp") ) or active("Dread Knight Weapon Set.esp")'
+        condition: 'active("DreadKnightWeaponSet.\esp") or active("Dread Knight Weapon Set.esp")'
   - name: 'SkyRe_Plugin_DwemerAutoBlade.esp'
     msg:
       - type: warn
@@ -12952,7 +12952,7 @@ plugins:
             str: 'Remember not to load (or to simply delete) Insanitys Dragon Katana mod'
           - lang: ru
             str: 'Не забудьте отключить или удалить мод Insanitys Dragon Katana'
-        condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
+        condition: 'file("InsanitysDragonKatana.esp") or file("Insanity''s Dragon Katana.esp")'
   - name: 'SkyRe_Plugin_InsanitysDragonKatana.esp'
     msg:
       - type: say
@@ -12967,7 +12967,7 @@ plugins:
             str: 'Remember not to load (or to simply delete) Insanitys Dragon Katana mod'
           - lang: ru
             str: 'Не забудьте отключить или удалить мод Insanitys Dragon Katana'
-        condition: '( file("InsanitysDragonKatana.esp") ) or file("Insanity''s Dragon Katana.esp")'
+        condition: 'file("InsanitysDragonKatana.esp") or file("Insanity''s Dragon Katana.esp")'
   - name: 'SkyRe_Plugin_isilNarsil.esp'
     msg:
       - type: say
@@ -13407,7 +13407,7 @@ plugins:
             str: 'Remember not to load (or to simply delete) DarkNemesis.esp'
           - lang: ru
             str: 'Не забудьте отключить или удалить DarkNemesis.esp'
-        condition: '( active("DarkNemesis.esp") ) and not checksum("DarkNemesis.esp",CE5E555B)'
+        condition: 'active("DarkNemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
   - name: 'SkyRe Divine Aegis.esp'
     msg:
       - type: say
@@ -13422,7 +13422,7 @@ plugins:
             str: 'Remember not to load (or to simply delete) DarkNemesis.esp'
           - lang: ru
             str: 'Не забудьте отключить или удалить DarkNemesis.esp'
-        condition: '( active("Divine Aegis.esp") ) and not checksum("DarkNemesis.esp",CE5E555B)'
+        condition: 'active("Divine Aegis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
   - name: 'SkyRe Equipment of Eternal Shine.esp'
     msg:
       - type: warn
@@ -15076,7 +15076,7 @@ plugins:
             str: 'Используйте только один Briar''sEnd esp.'
           - lang: es
             str: 'Utilizar solo un Briar''sEnd esp.'
-        condition: '( file("Briar''sEndCourierQuest.esp") ) or file("Briar''sEndInstantQuest.esp")'
+        condition: 'file("Briar''sEndCourierQuest.esp") or file("Briar''sEndInstantQuest.esp")'
       - type: warn
         content:
           - lang: en
@@ -15806,7 +15806,7 @@ plugins:
             str: 'Используйте только один DovahkiinSpeech esp.'
           - lang: es
             str: 'Utilizar solo un DovahkiinSpeech esp.'
-        condition: '( file("DovahkiinSpeech - HigherReq.esp") ) or file("DovahkiinSpeech - HigherReqNerfed.esp")'
+        condition: 'file("DovahkiinSpeech - HigherReq.esp") or file("DovahkiinSpeech - HigherReqNerfed.esp")'
     dirty:
       - crc: 0x6179f01d
         util: *dirtyUtil
@@ -16076,7 +16076,7 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( not checksum("EBM.esp",2CBBAEC7) ) and not checksum("EBM.esp",ADA00DD0)'
+        condition: 'not checksum("EBM.esp",2CBBAEC7) and not checksum("EBM.esp",ADA00DD0)'
       - type: warn
         content:
           - lang: en
@@ -16457,7 +16457,7 @@ plugins:
     msg:
       - type: error
         content: 'Use Freedom of Speech -- Dawnguard.esp'
-        condition: '( active("Dawnguard.esm") ) and checksum("Freedom of Speech.esp",48DA06FC)'
+        condition: 'active("Dawnguard.esm") and checksum("Freedom of Speech.esp",48DA06FC)'
     dirty:
       - crc: 0x251fdaed
         util: *dirtyUtil
@@ -19549,7 +19549,7 @@ plugins:
     msg:
       - type: error
         content: 'Dawnguard version required.'
-        condition: '( checksum("towHarvest.esp",A3654F92) ) and active("Dawnguard.esm")'
+        condition: 'checksum("towHarvest.esp",A3654F92) and active("Dawnguard.esm")'
   - name: 'TQContest_Agamashi.esp'
     dirty:
       - crc: 0xe053a0c5
@@ -20067,7 +20067,7 @@ plugins:
             str: 'Delete. Already included in ''Skyrim Immersive Creatures.esp'''
           - lang: ru
             str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp'''
-        condition: '( active("Skyrim Immersive Creatures.esp") ) or active("Skyrim Immersive Creatures.esm")'
+        condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
     dirty:
       - crc: 0x51b93513
         util: *dirtyUtil
@@ -20334,7 +20334,7 @@ plugins:
             str: 'Author states SkyRe will overlap this mod, rendering it useless.'
           - lang: ru
             str: 'Автор утверждает, что SkyRe будет перезаписывать этот мод, делая его бесполезным.'
-        condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
   - name: 'Dragon Drop - B.*\.esp'
     msg:
       - type: say
@@ -20393,10 +20393,10 @@ plugins:
     msg:
       - type: say
         content: 'Use Dawnguard version if you want Dawnguard items to be adjusted by this mod.'
-        condition: '( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
+        condition: 'active("Dawnguard.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) )'
       - type: say
         content: 'Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.'
-        condition: '( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm") and active("Hearthfires.esm")'
+        condition: 'active("Hearthfires.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
     dirty:
       - crc: 0x770f0bb8
         util: *dirtyUtil
@@ -20651,7 +20651,7 @@ plugins:
             str: 'Используйте только один Arvak_*.esp.'
           - lang: es
             str: 'Utilizar solo un Arvak_*.esp.'
-        condition: '( file("Arvak_Fire.esp") ) or file("Arvak_Frost.esp")'
+        condition: 'file("Arvak_Fire.esp") or file("Arvak_Frost.esp")'
     dirty:
       - crc: 0xa3fadf0f
         util: *dirtyUtil
@@ -20817,7 +20817,7 @@ plugins:
             str: 'Требуется: [Better Skill and Quest Books Names](http://www.nexusmods.com/skyrim/mods/10125)'
           - lang: es
             str: 'Requiere: [Better Skill and Quest Books Names](http://www.nexusmods.com/skyrim/mods/10125)'
-        condition: '( not file("Better Skill and Quest Books Names.esp") ) or not file("Better Skill and Quest Books Names - BS.esp")'
+        condition: 'not file("Better Skill and Quest Books Names.esp") or not file("Better Skill and Quest Books Names - BS.esp")'
   - name: 'BetterQuestObjectives-BSaQB-BSPatch.esp'
     msg:
       - type: error
@@ -20844,7 +20844,7 @@ plugins:
             str: 'Удалите. Уже включено в Book Covers Skyrim.esp.'
           - lang: es
             str: 'Borrar. Esta incluido en Book Covers Skyrim.esp.'
-        condition: '( file("Book Covers Skyrim.esp") ) and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
+        condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
   - name: 'Book Covers Hearthfire.esp'
     msg:
       - type: warn
@@ -20855,7 +20855,7 @@ plugins:
             str: 'Удалите. Уже включено в Book Covers Skyrim.esp.'
           - lang: es
             str: 'Borrar. Esta incluido en Book Covers Skyrim.esp.'
-        condition: '( file("Book Covers Skyrim.esp") ) and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
+        condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
   - name: 'Headbomb''s Better Sorting - Ammo.esp'
     msg:
       - type: warn
@@ -20930,7 +20930,7 @@ plugins:
             str: 'Используйте только один Headbomb''s Better Sorting - Food esp.'
           - lang: es
             str: 'Utilizar solo un Headbomb''s Better Sorting - Food esp.'
-        condition: '( file("Headbomb''s Better Sorting - Food (Normal Weight).esp") ) or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
+        condition: 'file("Headbomb''s Better Sorting - Food (Normal Weight).esp") or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", >=)'
@@ -21029,7 +21029,7 @@ plugins:
             str: 'Используйте только один Headbomb''s Better Sorting - Potions esp.'
           - lang: es
             str: 'Utilizar solo un Headbomb''s Better Sorting - Potions esp.'
-        condition: '( file("Headbomb''s Better Sorting - Potions (Light Weight).esp") ) or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
+        condition: 'file("Headbomb''s Better Sorting - Potions (Light Weight).esp") or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", >=)'
@@ -21244,7 +21244,7 @@ plugins:
             str: 'Используйте только один Binocular Vision esp.'
           - lang: es
             str: 'Utilizar solo un Binocular Vision esp.'
-        condition: '( file("Binocular Vision Game Settings 150.esp") ) or file("Binocular Vision Game Settings 135.esp")'
+        condition: 'file("Binocular Vision Game Settings 150.esp") or file("Binocular Vision Game Settings 135.esp")'
     dirty:
       - crc: 0xd1707318
         util: *dirtyUtil
@@ -21259,7 +21259,7 @@ plugins:
             str: 'Используйте только один Killable Leaders esp.'
           - lang: es
             str: 'Utilizar solo un Killable Leaders esp.'
-        condition: '( file("Both Imp and SC-With Respawn.esp") ) or file("Fullcamprespawn.esp")'
+        condition: 'file("Both Imp and SC-With Respawn.esp") or file("Fullcamprespawn.esp")'
   - name: 'Both Imp and SC-With Respawn.esp'
     msg:
       - type: warn
@@ -21270,7 +21270,7 @@ plugins:
             str: 'Используйте только один Killable Leaders esp.'
           - lang: es
             str: 'Utilizar solo un Killable Leaders esp.'
-        condition: '( file("Both Imp and SC-No respawn.esp") ) or file("Fullcamprespawn.esp")'
+        condition: 'file("Both Imp and SC-No respawn.esp") or file("Fullcamprespawn.esp")'
   - name: 'bow x\d\d?\.esp'
     msg: [ *obsolete ]
   - name: 'BUE.esp'
@@ -21440,7 +21440,7 @@ plugins:
             str: 'Используйте только один dangerous animals esp.'
           - lang: es
             str: 'Utilizar solo un dangerous animals esp.'
-        condition: '( file("dangerous animals - german.esp") ) or file("dangerous animals.esp")'
+        condition: 'file("dangerous animals - german.esp") or file("dangerous animals.esp")'
     dirty:
       - crc: 0x1386fa38
         util: *dirtyUtil
@@ -21842,7 +21842,7 @@ plugins:
             str: 'Используйте только один Killable Leaders esp.'
           - lang: es
             str: 'Utilizar solo un Killable Leaders esp.'
-        condition: '( file("Both Imp and SC-With Respawn.esp") ) or file("Both Imp and SC-No respawn.esp")'
+        condition: 'file("Both Imp and SC-With Respawn.esp") or file("Both Imp and SC-No respawn.esp")'
   - name: 'Ghostly Shadowmere.*\.esp'
     msg:
       - type: say
@@ -22115,7 +22115,7 @@ plugins:
             str: 'Используйте только один Item Prices *.esp.'
           - lang: es
             str: 'Utilizar solo un Item Prices *.esp.'
-        condition: '( file("Item Prices.esp") ) or file("Item Prices V2.esp")'
+        condition: 'file("Item Prices.esp") or file("Item Prices V2.esp")'
   - name: 'JanusForbeare''s Fighting Words.esp'
     dirty:
       - crc: 0xeaf4398b
@@ -23942,7 +23942,7 @@ plugins:
             str: 'Используйте только один Riverwood Enhanced *.esp.'
           - lang: es
             str: 'Utilizar solo un Riverwood Enhanced *.esp.'
-        condition: '( file("Riverwood Enhanced.esp") ) or file("Riverwood Enhanced - Detailed Cities.esp")'
+        condition: 'file("Riverwood Enhanced.esp") or file("Riverwood Enhanced - Detailed Cities.esp")'
     dirty:
       - crc: 0x73840440
         util: *dirtyUtil
@@ -24195,7 +24195,7 @@ plugins:
     msg:
       - type: say
         content: 'Incompatible with: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.'
-        condition: '( checksum("LakeExpanded01.esp",43AEF0BF) ) or checksum("LakeExpanded01.esp",843EB3FC) and active("Hearthfires.esm")'
+        condition: 'active("Hearthfires.esm") and ( checksum("LakeExpanded01.esp",43AEF0BF) or checksum("LakeExpanded01.esp",843EB3FC) )'
     dirty:
       - crc: 0x43aef0bf
         util: *dirtyUtil
@@ -25229,10 +25229,10 @@ plugins:
     msg:
       - type: error
         content: 'Use Dawnguard version.'
-        condition: '( active("Dawnguard.esm") ) and checksum("WerewolfMastery.esp",57E4BC0F)'
+        condition: 'active("Dawnguard.esm") and checksum("WerewolfMastery.esp",57E4BC0F)'
       - type: error
         content: 'Use non-Dawnguard version.'
-        condition: '( not active("Dawnguard.esm") ) and checksum("WerewolfMastery.esp",73AC0648)'
+        condition: 'not active("Dawnguard.esm") and checksum("WerewolfMastery.esp",73AC0648)'
     dirty:
       - crc: 0x73ac0648
         util: *dirtyUtil
@@ -25411,7 +25411,7 @@ plugins:
             str: 'Используйте только один ArcaneFist *.esp.'
           - lang: es
             str: 'Utilizar solo un ArcaneFist *.esp.'
-        condition: '( file("ArcaneFist - Expert to Master NS.esp") ) or file("ArcaneFist - Expert to Master.esp")'
+        condition: 'file("ArcaneFist - Expert to Master NS.esp") or file("ArcaneFist - Expert to Master.esp")'
     dirty:
       - crc: 0xffc9195d
         util: *dirtyUtil
@@ -25682,10 +25682,10 @@ plugins:
     msg:
       - type: error
         content: 'Use non-Dawnguard version.'
-        condition: '( not active("Dawnguard.esm") ) and checksum("Evilbass Light and Dark Spells.esp",4E1181E9)'
+        condition: 'not active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",4E1181E9)'
       - type: error
         content: 'Use Dawnguard version.'
-        condition: '( active("Dawnguard.esm") ) and checksum("Evilbass Light and Dark Spells.esp",248F5114)'
+        condition: 'active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",248F5114)'
     dirty:
       - crc: 0x248f5114
         util: *dirtyUtil
@@ -25928,7 +25928,7 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( not checksum("Nature of the beast.esp",7EDCD683) ) and not checksum("Nature of the beast.esp",E20D43CA)'
+        condition: 'not checksum("Nature of the beast.esp",7EDCD683) and not checksum("Nature of the beast.esp",E20D43CA)'
     dirty:
       - crc: 0x7edcd683
         util: *dirtyUtil
@@ -26180,7 +26180,7 @@ plugins:
             str: 'Используйте только один Voidmagic esp.'
           - lang: es
             str: 'Utilizar solo un Voidmagic esp.'
-        condition: '( file("Light Voidmagic.esp") ) or file("Medium Voidmagic.esp")'
+        condition: 'file("Light Voidmagic.esp") or file("Medium Voidmagic.esp")'
   - name: 'TotalConjuration.esp'
     tag:
       - Relev
@@ -26296,10 +26296,10 @@ plugins:
     msg:
       - type: error
         content: 'Remove and use the Dawnguard version.'
-        condition: '( checksum("MorePowerfulShouts.esp",F1EDB543) ) and active("Dawnguard.esm")'
+        condition: 'checksum("MorePowerfulShouts.esp",F1EDB543) and active("Dawnguard.esm")'
       - type: error
         content: 'Remove and use the non-Dawnguard version.'
-        condition: '( checksum("MorePowerfulShouts.esp",E845AEC7) ) and not active("Dawnguard.esm")'
+        condition: 'checksum("MorePowerfulShouts.esp",E845AEC7) and not active("Dawnguard.esm")'
     dirty:
       - crc: 0xe845aec7
         util: *dirtyUtil
@@ -26929,7 +26929,7 @@ plugins:
             str: 'Требуется: [AdvancedKillMoves_English_2-0b_Dawnguard](http://www.nexusmods.com/skyrim/mods/21226)'
           - lang: es
             str: 'Requiere: [AdvancedKillMoves_English_2-0b_Dawnguard](http://www.nexusmods.com/skyrim/mods/21226)'
-        condition: '( active("Dawnguard.esm") ) and not checksum("AdvancedKillMoves.esp",97C9E8CC)'
+        condition: 'active("Dawnguard.esm") and not checksum("AdvancedKillMoves.esp",97C9E8CC)'
   - name: 'The Dance of Death V.+\.esp'
     after:
       - 'DragonCombatOverhaul.esp'
@@ -27203,7 +27203,7 @@ plugins:
             str: 'Требуется: Dawnguard (Official Bethesda DLC)'
           - lang: es
             str: 'Requiere: Dawnguard (Official Bethesda DLC)'
-        condition: '( not active("Dawnguard.esm") ) and regex("ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp")'
+        condition: 'not active("Dawnguard.esm") and regex("ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp")'
   - name: 'cao_PerkRanks.esp'
     msg:
       - type: warn
@@ -27434,7 +27434,7 @@ plugins:
             str: 'Требуется: Skyrim Redone'
           - lang: es
             str: 'Requiere: Skyrim Redone'
-        condition: '( not file("SkyRe_Main.esp") ) and not file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'not file("SkyRe_Main.esp") and not file("SkyRe_Main_NoDawnguard.esp")'
       - type: warn
         content: 'Delete. Not to be used if using the SkyRe Reproccer.'
         condition: 'file("ReProccer.esp")'
@@ -27862,7 +27862,7 @@ plugins:
     msg:
       - type: warn
         content: 'Conflicts with SkyRe, as both make changes to perks. Unintended changes may occur if both are active.'
-        condition: '( file("SkyRe_Main.esp") ) or file("SkyRe_Main_NoDawnguard.esp")'
+        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
   - name: 'PPE_Perk-.+\.esp'
     msg:
       - type: say
@@ -28301,7 +28301,7 @@ plugins:
             str: 'Устарело. Обновите до последней версии.'
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión.'
-        condition: '( not checksum("NoMoreVanillaHair.esp",A31830F1) ) and not checksum("NoMoreVanillaHair.esp",7F9635D9)'
+        condition: 'not checksum("NoMoreVanillaHair.esp",A31830F1) and not checksum("NoMoreVanillaHair.esp",7F9635D9)'
       - type: say
         content:
           - lang: en
@@ -28421,7 +28421,7 @@ plugins:
             str: 'Delete. Already included in ''Skyrim Immersive Creatures.esp'''
           - lang: ru
             str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp'''
-        condition: '( active("Skyrim Immersive Creatures.esp") ) or active("Skyrim Immersive Creatures.esm")'
+        condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
     dirty:
       - crc: 0xb45fc825
         util: *dirtyUtil
@@ -29203,10 +29203,10 @@ plugins:
     msg:
       - type: error
         content: 'Use UFO version of KTNUlfric.esp'
-        condition: '( checksum("KTNUlfric.esp",8CF90F55) ) and file("UFO - Ultimate Follower Overhaul.esp")'
+        condition: 'checksum("KTNUlfric.esp",8CF90F55) and file("UFO - Ultimate Follower Overhaul.esp")'
       - type: error
         content: 'Use UFO version of KTNUlfric.esp'
-        condition: '( checksum("KTNUlfric.esp",35CB3586) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
+        condition: 'checksum("KTNUlfric.esp",35CB3586) and not file("UFO - Ultimate Follower Overhaul.esp")'
     dirty:
       - crc: 0x35cb3586
         util: *dirtyUtil
@@ -30198,7 +30198,7 @@ plugins:
             str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
           - lang: es
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
-        condition: '( file("Kashim.esp") ) or file("Kashim - Ahtar Replacer.esp")'
+        condition: 'file("Kashim.esp") or file("Kashim - Ahtar Replacer.esp")'
   - name: 'Kate.esp'
     req:
       - *SKSE
@@ -30534,7 +30534,7 @@ plugins:
             str: 'Требуется: [Hair packs of TESIV Oblivion esm](http://www.nexusmods.com/skyrim/mods/18110) and [Additional Vanilla Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)'
           - lang: es
             str: 'Requiere: [Hair packs of TESIV Oblivion esm](http://www.nexusmods.com/skyrim/mods/18110) and [Additional Vanilla Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)'
-        condition: '( not file("AdditionalNPCFollwerVoices.esp") ) and not file("oblivion hair.esm")'
+        condition: 'not file("AdditionalNPCFollwerVoices.esp") and not file("oblivion hair.esm")'
   - name: 'SFR_Onmund.esp'
     dirty:
       - crc: 0xf8df7340
@@ -31605,7 +31605,7 @@ plugins:
       - 'XCES.esp'
     msg:
       - type: say
-        condition: '( ( ( file("SkyRe_Races.esp") ) and not file("PreASISPatchEEO.esp") ) and not file("EEO patch.esp") ) and not checksum("ethereal_elven_overhaul.esp",38515FFF)'
+        condition: 'file("SkyRe_Races.esp") and not file("PreASISPatchEEO.esp") and not file("EEO patch.esp") and not checksum("ethereal_elven_overhaul.esp",38515FFF)'
         content:
           - lang: en
             str: 'Incompatible with: SkyRe Races.  A compatibility patch is available [here](http://www.nexusmods.com/skyrim/mods/29185).'
@@ -31721,7 +31721,7 @@ plugins:
             str: 'Используйте только один NoCellRespawn *.esp.'
           - lang: es
             str: 'Utilizar solo un NoCellRespawn esp.'
-        condition: '( file("NoCellRespawn.esp") ) or file("NoClearedCellRespawn.esp")'
+        condition: 'file("NoCellRespawn.esp") or file("NoClearedCellRespawn.esp")'
   - name: 'Skyrim Timescale \d+\.esp'
     msg:
       - type: say
@@ -32136,7 +32136,7 @@ plugins:
             str: 'Требуется: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
           - lang: es
             str: 'Requiere: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
-        condition: '( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")'
+        condition: 'not file("rcrnShaders.esp") or not file("rcrnPlus.esp")'
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN - Lanterns Of Skyrim.esp'
     msg:
       - type: say
@@ -32147,7 +32147,7 @@ plugins:
             str: 'Требуется: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
           - lang: es
             str: 'Requiere: [RCRN](http://www.nexusmods.com/skyrim/mods/1875)'
-        condition: '( not file("rcrnShaders.esp") ) or not file("rcrnPlus.esp")'
+        condition: 'not file("rcrnShaders.esp") or not file("rcrnPlus.esp")'
   - name: 'Volrath - Dragonreach - Brazier fix( - 1\.1)\.esp'
     msg:
       - type: error
@@ -32156,7 +32156,7 @@ plugins:
             str: 'If using V1.1 [RCRN](http://www.nexusmods.com/skyrim/mods/1875) is required, otherwise your game will crash.'
           - lang: ru
             str: 'Если используется версия 1.1, тогда требуется мод [RCRN](http://www.nexusmods.com/skyrim/mods/1875), иначе ваша игра может вылетать.'
-        condition: '( not file("rcrnShaders.esp") ) and not regex("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp")'
+        condition: 'not file("rcrnShaders.esp") and not regex("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp")'
   - name: 'Alternate Visuals for Spell Effects.esp'
     dirty:
       - crc: 0x42df8ddf
@@ -32610,7 +32610,7 @@ plugins:
             str: 'Используйте только один smakit_house_markers esp.'
           - lang: es
             str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: '( file("smakit_house_markers.esp") ) or file("smakit_house_markers_french.esp")'
+        condition: 'file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x2b4220e5
         util: *dirtyUtil
@@ -32760,7 +32760,7 @@ plugins:
             str: 'Используйте только один патч SSS Deadly Dragons Patch esp.'
           - lang: es
             str: 'Utilizar solo un SSS Deadly Dragons Patch esp.'
-        condition: '( file("SSS Deadly Dragons Patch A.esp") ) or file("SSS Deadly Dragons Patch B.esp")'
+        condition: 'file("SSS Deadly Dragons Patch A.esp") or file("SSS Deadly Dragons Patch B.esp")'
   - name: 'PC Exclusive Animation Path.esp'
     inc:
       - 'AP Skyrim.esp'
@@ -32828,14 +32828,14 @@ plugins:
             str: 'UFO detected.  Use the UFO version to have the mod work as intended.'
           - lang: ru
             str: 'При наличии UFO используйте UFO-версию этого мода.'
-        condition: '( ( checksum("HM_HotkeyMod.esp",374C564C) ) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and file("UFO - Ultimate Follower Overhaul.esp")'
+        condition: '( checksum("HM_HotkeyMod.esp",374C564C) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and file("UFO - Ultimate Follower Overhaul.esp")'
       - type: error
         content:
           - lang: en
             str: 'UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.'
           - lang: ru
             str: 'При отсутствии UFO используйте обычную НЕ UFO-версию этого мода.'
-        condition: '( ( checksum("HM_HotkeyMod.esp",676790BF) ) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
+        condition: '( checksum("HM_HotkeyMod.esp",676790BF) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
     dirty:
       - crc: 0x374c564c
         util: *dirtyUtil
