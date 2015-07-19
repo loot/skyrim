@@ -85,10 +85,10 @@ globals:
   - type: say
     content:
       - lang: en
-        str: 'A [new release](https://github.com/loot/loot/releases/tag/v0.7.0) of LOOT is available.'
+        str: 'A [new release](https://github.com/loot/loot/releases/tag/v0.7.1) of LOOT is available.'
       - lang: zh_CN
-        str: '一个[新版本](https://github.com/loot/loot/releases/tag/v0.7.0)的LOOT已发布。'
-    condition: 'version("LOOT", "0.7.0.0", <)'
+        str: '一个[新版本](https://github.com/loot/loot/releases/tag/v0.7.1)的LOOT已发布。'
+    condition: 'version("LOOT", "0.7.1.0", <)'
   - type: say
     content:
       - lang: en
@@ -325,6 +325,7 @@ plugins:
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
       - 'SMPC_DG.esp'
       - 'SCO Winter Landscape Decoloration.esp'
+      - '[JmV]LTTF.esm'
     tag:
       - C.Location
       - Graphics
@@ -17935,6 +17936,11 @@ plugins:
         util: *dirtyUtil
         itm: 3
         udr: 49
+  - name: 'Proudspire Manor Refurbished - Multiple Adoptions Support.esp'
+    dirty:
+      - crc: 0xBFE39B85
+        util: *dirtyUtil
+        itm: 1
   - name: 'proudspiregarden.esp'
     dirty:
       - crc: 0x1e2d0b39
@@ -32960,6 +32966,10 @@ plugins:
     tag:
       - name: -Relev
         condition: 'file("PerkusMaximus_Master.esp")'
+    dirty:
+      - crc: 0xD2C71E94
+        util: *dirtyUtil
+        itm: 5
 
   - name: 'Pre PaMa WAFR Patch.esp'
     priority: 990500
@@ -33088,3 +33098,21 @@ plugins:
       - crc: 0x9C6761F3
         util: *dirtyUtil
         nav: 2
+  - name: 'PMR - ELFX Compatibility Patch.esp'
+    dirty:
+      - crc: 0x456046F7
+        util: *dirtyUtil
+        udr: 24
+    msg:
+      - type: warn
+        content: 'This plugin contains 1 deleted reference that cannot be automatically undeleted.'
+  - name: 'Stronger Daedric Artifacts.esp'
+    dirty:
+      - crc: 0xC2653B1F
+        util: *dirtyUtil
+        itm: 1
+  - name: 'hearthfireextended.esp'
+    dirty:
+      - crc: 0x1F024AC9
+        util: *dirtyUtil
+        itm: 1
