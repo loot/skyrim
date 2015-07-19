@@ -1,16 +1,41 @@
 sudo: false
-language: ruby
-rvm: 2.2.0
-install: gem install kwalify
-before_install: wget https://loot.github.io/masterlist.schema.yaml
-script:
-  ### Check for basic coding style, but failure here won't fail the build.
-  - 'grep --line-number --perl-regexp "name: (?!(''|-?(Delev|Relev|Deactivate|NoMerge)$))" masterlist.yaml || true'
-  ### Check masterlist against the Kwalify schema
-  # The `return` addition is a hack as `kwalify` doesn't return with a
-  # non-zero exist code when the "kwalification" fails, so this forces an
-  # error if anything fails the validation.
-  - kwalify -f masterlist.schema.yaml masterlist.yaml && return $(kwalify -q -f masterlist.schema.yaml masterlist.yaml|wc -l)
+language: cpp
+compiler: gcc
+
+# Need Boost 1.54+, which isn't in the 12.04 repositories - install from a PPA.
+# Also need the OpenSSL dev package, for git clone from HTTPS URLs support.
+addons:
+  apt:
+    sources:
+      - boost-latest
+      - ubuntu-toolchain-r-test
+    packages:
+      - libboost-log1.55-dev
+      - libboost-date-time1.55-dev
+      - libboost-thread1.55-dev
+      - libboost-filesystem1.55-dev
+      - libboost-locale1.55-dev
+      - libboost-iostreams1.55-dev
+      - libssl-dev
+      - gcc-5
+      - g++-5
+
+install:
+  # Use GCC 5.
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
+  # Currently inside the cloned repo path.
+  - cd ..
+  # The masterlist validator needs to be compiled from source before it can be
+  # used.
+  - wget https://github.com/loot/loot/archive/dev.tar.gz -O - | tar -xz
+  - mv loot-dev loot && cd loot
+  - chmod +x install-step.travis.sh && ./install-step.travis.sh
+  - cd build
+  # Travis machines are 64 bit, and the deps use dynamic linking.
+  - cmake .. -DPROJECT_ARCH=64 -DPROJECT_STATIC_RUNTIME=OFF -DBUILD_SHARED_LIBS=OFF
+  - make metadata-validator
+
+script: ./metadata-validator $TRAVIS_BUILD_DIR/masterlist.yaml
 
 notifications:
   irc:
