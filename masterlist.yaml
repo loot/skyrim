@@ -76,6 +76,19 @@ common:
         str: 'Файл испорчен и не должен использоваться.'
       - lang: es
         str: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+  - &useOnlyOneX
+    type: error
+    content:
+      - lang: en
+        str: 'Use only one %1%.'
+      - lang: ru
+        str: 'Используйте только один %1%.'
+      - lang: es
+        str: 'Utilizar solo un %1%.'
+      - lang: ko
+        str: '%1%을 한개만 사용하십시오.'
+      - lang: zh_CN
+        str: '只使用一个%1%。'
 
 # Other Strings
   - &dirtyUtil
@@ -542,19 +555,10 @@ plugins:
       - *SKSE
   - name: 'alchstone(1pt5x|2x|3x|x3|4x|x4x2|5x)\.esm'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one alchstone esm.'
-          - lang: ru
-            str: 'Используйте только один alchstone esm.'
-          - lang: es
-            str: 'Utilizar solo un alchstone esm.'
-          - lang: ko
-            str: 'alchstone esm을 한개만 사용하십시오.'
-            # SteamB23's Korean Translation Bookmark
-          - lang: zh_CN
-            str: '只使用一个alchstone esm。'
+      - <<: *useOnlyOneX
+        condition: 'many("alchstone(1pt5x|2x|3x|x3|4x|x4x2|5x)\.esm")'
+        subs: [ 'Alchstone .esm file' ]
+# SteamB23's Korean Translation Bookmark
   - name: 'All Star Animations.esm'
     req: [ *FNIS ]
   - name: 'Ambience Music Overhaul.esm'
@@ -621,16 +625,9 @@ plugins:
         itm: 26
   - name: 'Blood \(\w+\)\.ESM'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Blood (*).ESM.'
-          - lang: ru
-            str: 'Используйте только один Blood (*).ESM.'
-          - lang: es
-            str: 'Utilizar solo un Blood (*).ESM.'
-          - lang: zh_CN
-            str: '只使用一个Blood (*).ESM。'
+      - <<: *useOnlyOneX
+        condition: 'many("Blood \(\w+\)\.ESM")'
+        subs: [ 'Blood .esm file' ]
 # Silentdark's Chinese Translation Bookmark
   - name: 'BoogyManLair.esm'
     dirty:
@@ -761,14 +758,9 @@ plugins:
     msg: [ *obsolete ]
   - name: 'EagleEyePerk(_defStamina|_half_stamina)?\.esm'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one EagleEyePerk esm.'
-          - lang: ru
-            str: 'Используйте только один EagleEyePerk esm.'
-          - lang: es
-            str: 'Utilizar solo un EagleEyePerk esm.'
+      - <<: *useOnlyOneX
+        condition: 'many("EagleEyePerk(_defStamina|_half_stamina)?\.esm")'
+        subs: [ 'EagleEyePerk .esm file' ]
       - type: warn
         condition: 'file("PerkUP-Archery.esp")'
         content:
@@ -833,6 +825,11 @@ plugins:
         util: *dirtyUtil
         itm: 0
         udr: 8
+  - name: 'GuardedHouse(Imperial|Stormcloak)?\.esm'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("GuardedHouse(Imperial|Stormcloak)?\.esm")'
+        subs: [ 'GuardedHouse .esm file' ]
   - name: 'GuardedHouse.esm'
     msg:
       - type: warn
@@ -843,15 +840,6 @@ plugins:
             str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: es
             str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one GuardedHouse*.esm.'
-          - lang: ru
-            str: 'Используйте только один GuardedHouse*.esm.'
-          - lang: es
-            str: 'Utilizar solo un GuardedHouse*.esm.'
-        condition: 'file("GuardedHouseImperial.esm") or file("GuardedHouseStormcloak.esm")'
     tag:
       - Relev
     dirty:
@@ -869,15 +857,6 @@ plugins:
             str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: es
             str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one GuardedHouse*.esm.'
-          - lang: ru
-            str: 'Используйте только один GuardedHouse*.esm.'
-          - lang: es
-            str: 'Utilizar solo un GuardedHouse*.esm.'
-        condition: 'file("GuardedHouse.esm") or file("GuardedHouseStormcloak.esm")'
     tag:
       - Relev
     dirty:
@@ -895,15 +874,6 @@ plugins:
             str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: es
             str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one GuardedHouse*.esm.'
-          - lang: ru
-            str: 'Используйте только один GuardedHouse*.esm.'
-          - lang: es
-            str: 'Use only one GuardedHouse*.esm.'
-        condition: 'file("GuardedHouseImperial.esm") or file("GuardedHouse.esm")'
     tag:
       - Relev
     dirty:
@@ -2762,18 +2732,13 @@ plugins:
     inc:
       - 'ClimatesOfTamriel.esm'
       - 'Realistic Lighting.esp'
-  - name: 'enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp'
+  - name: 'enhanceddynamicweathersystem(normal|snowy|rainy|sunny)?\.esp'
     inc:
       - 'Realistic Lighting.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one enhanceddynamicweathersystem esp.'
-          - lang: ru
-            str: 'Используйте только один enhanceddynamicweathersystem esp.'
-          - lang: es
-            str: 'Utilizar solo un enhanceddynamicweathersystem esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp")'
+        subs: [ 'enhanceddynamicweathersystem .esp file' ]
   - name: 'Fewer Snowstorms.esp'
     dirty:
       - crc: 0x88cb9260
@@ -2796,6 +2761,11 @@ plugins:
       - crc: 0xb1cc90a4
         util: *dirtyUtil
         itm: 2
+  - name: 'MoreSnow(Windy)?(and(75|150)percentLessView)?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("MoreSnow(Windy)?(and(75|150)percentLessView)?\.esp")'
+        subs: [ 'MoreSnow .esp file' ]
   - name: 'MoreSnowWindyand150percentLessView.esp'
     msg:
       - type: say
@@ -2806,15 +2776,6 @@ plugins:
             str: 'Несовместим с: Все моды, модифицирующие освещение.'
           - lang: es
             str: 'Incompatible con: Cualquier mod que modifique el clima.'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one MoreSnow *.esp.'
-          - lang: ru
-            str: 'Используйте только один MoreSnow *.esp.'
-          - lang: es
-            str: 'Utilizar solo un MoreSnow *.esp.'
-        condition: 'file("MoreSnow.esp") or file("MoreSnowWindy.esp")'
     dirty:
       - crc: 0x7ed853ee
         util: *dirtyUtil
@@ -2829,15 +2790,6 @@ plugins:
             str: 'Несовместим с: Все моды, модифицирующие освещение.'
           - lang: es
             str: 'Incompatible con: Cualquier mod que modifique el clima.'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one MoreSnow *.esp.'
-          - lang: ru
-            str: 'Используйте только один MoreSnow *.esp.'
-          - lang: es
-            str: 'Utilizar solo un MoreSnow *.esp.'
-        condition: 'file("MoreSnow.esp") or file("MoreSnowWindy.esp") or file("MoreSnowWindyand150percentLessView.esp")'
     dirty:
       - crc: 0x4a595497
         util: *dirtyUtil
@@ -3047,14 +2999,9 @@ plugins:
         udr: 5
   - name: 'CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one LightAdjuster esp.'
-          - lang: ru
-            str: 'Используйте только один LightAdjuster esp.'
-          - lang: es
-            str: 'Utilizar solo un LightAdjuster esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp")'
+        subs: [ 'LightAdjuster .esp file' ]
       - *obsolete
   - name: 'Darker_Caves_Dungeons_Ruins_Nights.esp'
     dirty:
@@ -3140,16 +3087,6 @@ plugins:
       - crc: 0x4FD63CD3
         util: *dirtyUtil
         itm: 3
-  - name: 'enhanceddynamicweathersystem.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one enhanceddynamicweathersystem esp.'
-          - lang: ru
-            str: 'Используйте только один enhanceddynamicweathersystem esp.'
-          - lang: es
-            str: 'Utilizar solo un enhanceddynamicweathersystem esp.'
 # ## Natural Skyrim Rain.esp
 # ## Bethsoft6.118,128and9.187,193
   - name: 'Warmer Magic Lights v2.esp'
@@ -3203,14 +3140,9 @@ plugins:
       - 'ClimatesOfTamriel.esm'
   - name: 'KatuLights.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one KatuLights*.esp.'
-          - lang: ru
-            str: 'Используйте только один KatuLights*.esp.'
-          - lang: es
-            str: 'Utilizar solo un KatuLights*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("KatuLights.*\.esp")'
+        subs: [ 'KatuLights .esp file' ]
 # Darker Dungeons
   - name: 'Further Dark Dungeons for ENB.esp'
     inc:
@@ -3264,15 +3196,9 @@ plugins:
 # ## should load after fantasy music overhaul
   - name: 'Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Del_ConditionalCombatMusic esp.'
-          - lang: ru
-            str: 'Используйте только один Del_ConditionalCombatMusic esp.'
-          - lang: es
-            str: 'Utilizar solo un Del_ConditionalCombatMusic esp.'
-        condition: 'regex("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp")'
+        subs: [ 'Del_ConditionalCombatMusic .esp file' ]
   - name: 'skyrimsoundtrackexpansion.esp'
     dirty:
       - crc: 0x6fa5890
@@ -3349,28 +3275,11 @@ plugins:
       - crc: 0x34a1e261
         util: *dirtyUtil
         itm: 3
-  - name: 'jumpHeightThird.esp'
+  - name: '(lower)?jumpHeight(Third|only)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one jumpheight esp.'
-          - lang: ru
-            str: 'Используйте только один jumpheight esp.'
-          - lang: es
-            str: 'Utilizar solo un jumpheight esp.'
-        condition: 'file("jumpHeightOnly.esp")'
-  - name: 'lowerJumpHeight.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one jumpheight esp.'
-          - lang: ru
-            str: 'Используйте только один jumpheight esp.'
-          - lang: es
-            str: 'Utilizar solo un jumpheight esp.'
-        condition: 'file("jumpHeightOnly.esp") or file("jumpHeightThird.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("(lower)?jumpHeight(Third|only)?\.esp")'
+        subs: [ 'jumpheight .esp file' ]
 # Removed REGEX because specific load order is needed
   - name: 'Weapons and Armor fixes.esp'
     msg:
@@ -3564,14 +3473,9 @@ plugins:
 # ## NoRestorationExploit.esp
   - name: 'ArmorRatingTweak_(\d{8}|U)?.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ArmorRatingTweak esp.'
-          - lang: ru
-            str: 'Используйте только один ArmorRatingTweak esp.'
-          - lang: es
-            str: 'Utilizar solo un ArmorRatingTweak esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ArmorRatingTweak_(\d{8}|U)?.+\.esp")'
+        subs: [ 'ArmorRatingTweak .esp file' ]
   - name: 'ArmorSets.esp'
     req:
       - *SKSE
@@ -3639,14 +3543,9 @@ plugins:
         itm: 8
   - name: 'Arrows of Magicka.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Arrows of Magicka*.esp.'
-          - lang: ru
-            str: 'Используйте только один Arrows of Magicka*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Arrows of Magicka*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Arrows of Magicka.*\.esp")'
+        subs: [ 'Arrows of Magicka .esp file' ]
   - name: 'ARTOFMAGIC.esp'
     msg: [ *obsolete ]
   - name: 'AsharaMerchants.esp'
@@ -3769,14 +3668,9 @@ plugins:
         condition: 'file("Back off, Barbas!.esp")'
   - name: 'BagofTrash\w*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one BagofTrash*.esp.'
-          - lang: ru
-            str: 'Используйте только один BagofTrash*.esp.'
-          - lang: es
-            str: 'Utilizar solo un BagofTrash*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("BagofTrash\w*\.esp")'
+        subs: [ 'BagofTrash .esp file' ]
   - name: 'BanditsEyepatch.esp'
     msg:
       - type: warn
@@ -4002,6 +3896,11 @@ plugins:
           - lang: es
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("cao_DweSchematicsBuy.esp",7E85692A)'
+  - name: 'cao_DweSchematics(Buy|Cheat|Search)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("cao_DweSchematics(Buy|Cheat|Search)\.esp")'
+        subs: [ 'cao_DweSchematics .esp file' ]
   - name: 'cao_DweSchematicsCheat.esp'
     msg:
       - type: warn
@@ -4013,15 +3912,6 @@ plugins:
           - lang: es
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("cao_DweSchematicsCheat.esp",7E7B9B1A)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one cao_DweSchematics esp.'
-          - lang: ru
-            str: 'Используйте только один cao_DweSchematics esp.'
-          - lang: es
-            str: 'Utilizar solo un cao_DweSchematics esp.'
-        condition: 'file("cao_DweSchematicsBuy.esp")'
   - name: 'cao_DweSchematicsSearch.esp'
     msg:
       - type: warn
@@ -4033,15 +3923,6 @@ plugins:
           - lang: es
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("cao_DweSchematicsSearch.esp",A655AB19)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one cao_DweSchematics esp.'
-          - lang: ru
-            str: 'Используйте только один cao_DweSchematics esp.'
-          - lang: es
-            str: 'Utilizar solo un cao_DweSchematics esp.'
-        condition: 'file("cao_DweSchematicsBuy.esp") or file("cao_DweSchematicsCheat.esp")'
   - name: 'cao_goldbrand.esp'
     msg:
       - type: say
@@ -4251,14 +4132,9 @@ plugins:
       - *SKSE
   - name: 'DBCallingCard.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one DBCallingCard*.esp.'
-          - lang: ru
-            str: 'Используйте только один DBCallingCard*.esp.'
-          - lang: es
-            str: 'Utilizar solo un DBCallingCard*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("DBCallingCard.+\.esp")'
+        subs: [ 'DBCallingCard .esp file' ]
   - name: 'DawnsPoshPonies.esp'
     dirty:
       - crc: 0x33539c8d
@@ -4269,14 +4145,9 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Decorator Assistant.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Decorator Assistant*.esp.'
-          - lang: ru
-            str: 'Используйте только один Decorator Assistant*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Decorator Assistant*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Decorator Assistant.+\.esp")'
+        subs: [ 'Decorator Assistant .esp file' ]
   - name: 'DecorativeTrophies.esp'
     tag:
       - Relev
@@ -4427,14 +4298,9 @@ plugins:
             str: 'Obsoleto. Actualizar a la última versión, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
   - name: 'Eternal Bunny Pet (Dark Silent)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Eternal Bunny Pet esp.'
-          - lang: ru
-            str: 'Используйте только один Eternal Bunny Pet esp.'
-          - lang: es
-            str: 'Utilizar solo un Eternal Bunny Pet esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Eternal Bunny Pet (Dark Silent)?\.esp")'
+        subs: [ 'Eternal Bunny Pet .esp file' ]
   - name: 'ExpandedJailCells.esp'
     dirty:
       - crc: 0xba5a6f28
@@ -4484,14 +4350,9 @@ plugins:
         itm: 6
   - name: 'Faster Bolts (100|25|50|75).*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Faster Bolts esp.'
-          - lang: ru
-            str: 'Используйте только один Faster Bolts esp.'
-          - lang: es
-            str: 'Utilizar solo un Faster Bolts esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Faster Bolts (100|25|50|75).*\.esp")'
+        subs: [ 'Faster Bolts .esp file' ]
   - name: 'FCC- Main.esp'
     req: [ *SKSE ]
     dirty:
@@ -4510,14 +4371,9 @@ plugins:
         itm: 4
   - name: 'FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one FollowerHuntingBow*.esp.'
-          - lang: ru
-            str: 'Используйте только один FollowerHuntingBow*.esp.'
-          - lang: es
-            str: 'Utilizar solo un FollowerHuntingBow*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp")'
+        subs: [ 'FollowerHuntingBow .esp file' ]
   - name: 'Forge In Every House.esp'
     dirty:
       - crc: 0x986a1c0c
@@ -4532,14 +4388,9 @@ plugins:
         udr: 1
   - name: 'FurnitureLootOverhaul(_3.0)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Furniture Loot Overhaul esp.'
-          - lang: ru
-            str: 'Используйте только один Furniture Loot Overhaul esp.'
-          - lang: es
-            str: 'Utilizar solo un Furniture Loot Overhaul esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("FurnitureLootOverhaul(_3.0)?\.esp")'
+        subs: [ 'FurnitureLootOverhaul .esp file' ]
   - name: 'fx_eye_candy_rings.esp'
     dirty:
       - crc: 0x94dc5e7b
@@ -4584,58 +4435,19 @@ plugins:
       - Relev
   - name: 'GM-Fletching(Harder|Standard)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one GM-Fletching*.esp.'
-          - lang: ru
-            str: 'Используйте только один GM-Fletching*.esp.'
-          - lang: es
-            str: 'Utilizar solo un GM-Fletching*.esp.'
-  - name: 'GM-ForgeAdditions.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("GM-Fletching(Harder|Standard)\.esp")'
+        subs: [ 'GM-Fletching .esp file' ]
+  - name: 'GM-ForgeAdditions(LAotB)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp.'
-          - lang: ru
-            str: 'Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp.'
-          - lang: es
-            str: 'Utilizar solo un GM-ForgeAdditions.esp o GM-ForgeAdditionsLAotB.esp.'
-        condition: 'file("GM-ForgeAdditions.esp") and file("GM-ForgeAdditionsLAotB.esp")'
-  - name: 'GM-ForgeAdditionsLevelledOutfits.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("GM-ForgeAdditions(LAotB)?.esp")'
+        subs: [ 'GM-ForgeAdditions .esp file' ]
+  - name: 'GM-ForgeAdditions(LAotB)?LevelledOutfits\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-          - lang: ru
-            str: 'Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLevelledOutfits.esp.'
-          - lang: es
-            str: 'Utilizar solo un GM-ForgeAdditionsLevelledOutfits.esp o GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-        condition: 'file("GM-ForgeAdditionsLevelledOutfits.esp") and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
-  - name: 'GM-ForgeAdditionsLAotB.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp.'
-          - lang: ru
-            str: 'Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp.'
-          - lang: es
-            str: 'Utilizar solo un GM-ForgeAdditions.esp o GM-ForgeAdditionsLAotB.esp.'
-        condition: 'file("GM-ForgeAdditions.esp") and file("GM-ForgeAdditionsLAotB.esp")'
-  - name: 'GM-ForgeAdditionsLAotBLevelledOutfits.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-          - lang: ru
-            str: 'Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-          - lang: es
-            str: 'Utilizar solo un GM-ForgeAdditionsLevelledOutfits.esp o GM-ForgeAdditionsLAotBLevelledOutfits.esp.'
-        condition: 'file("GM-ForgeAdditionsLevelledOutfits.esp") and file("GM-ForgeAdditionsLAotBLevelledOutfits.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("GM-ForgeAdditions(LAotB)?LevelledOutfits\.esp")'
+        subs: [ 'GM-ForgeAdditions Levelled Outfits .esp file' ]
   - name: 'Grab Moveable Statics.esp'
     msg: [ *obsolete ]
   - name: 'Grind_stuff.esp'
@@ -4824,25 +4636,14 @@ plugins:
         itm: 9
   - name: 'Invisibility_Spells(_Plus)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Invisibility_Spells esp.'
-          - lang: ru
-            str: 'Используйте только один Invisibility_Spells esp.'
-          - lang: es
-            str: 'Utilizar solo un Invisibility_Spells esp.'
-  - name: 'Invulnerable Horses.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("Invisibility_Spells(_Plus)?\.esp")'
+        subs: [ 'Invisibility_Spells .esp file' ]
+  - name: 'Invulnerable Horses( - Brave)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Invulnerable Horses esp.'
-          - lang: ru
-            str: 'Используйте только один Invulnerable Horses esp.'
-          - lang: es
-            str: 'Utilizar solo un Invulnerable Horses esp.'
-        condition: 'file("Invulnerable Horses - Brave.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Invulnerable Horses( - Brave)?\.esp")'
+        subs: [ 'Invulnerable Horses .esp file' ]
   - name: 'Ish''s Respec Mod.esp'
     after:
       - 'Perky.esp'
@@ -4975,14 +4776,9 @@ plugins:
         condition: 'checksum("Langsam wirkende Tränke.esp",163A3470)'
   - name: 'Lanterns Of Skyrim - All In One - (Vivida ENB)?(The Goddess ENB|The Goddess v2dot2)?(Somber ENB)?(RLO)?(Cold Skyrim ENB)?(Climates of Tamriel - )?(1_5x Brighter|2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?(Skylight)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Lanterns Of Skyrim - All In One esp.'
-          - lang: ru
-            str: 'Используйте только один Lanterns Of Skyrim - All In One esp.'
-          - lang: es
-            str: 'Utilizar solo un Lanterns Of Skyrim - All In One esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Lanterns Of Skyrim - All In One - (Vivida ENB)?(The Goddess ENB|The Goddess v2dot2)?(Somber ENB)?(RLO)?(Cold Skyrim ENB)?(Climates of Tamriel - )?(1_5x Brighter|2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?(Skylight)?\.esp")'
+        subs: [ 'Lanterns Of Skyrim - All In One .esp file' ]
   - name: 'leazeropenlock.esp'
     dirty:
       - crc: 0x952ceb17
@@ -5300,17 +5096,12 @@ plugins:
       - crc: 0x11202a14
         util: *dirtyUtil
         itm: 2
-  - name: 'No Warning - Double Attack Radius.esp'
+  - name: 'No Warning - (Default|Double) Attack Radius\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one No Warning - * Attack Radius.esp.'
-          - lang: ru
-            str: 'Используйте только один No Warning - * Attack Radius.esp.'
-          - lang: es
-            str: 'Utilizar solo un No Warning - * Attack Radius.esp.'
-        condition: 'file("No Warning - Default Attack Radius.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("No Warning - (Default|Double) Attack Radius\.esp")'
+        subs: [ 'No Warning Attack Radius .esp file' ]
+  - name: 'No Warning - Double Attack Radius.esp'
     dirty:
       - crc: 0xb79d2ccd
         util: *dirtyUtil
@@ -5364,14 +5155,9 @@ plugins:
         itm: 1
   - name: 'Oblivious Horses.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Oblivious Horses esp.'
-          - lang: ru
-            str: 'Используйте только один Oblivious Horses esp.'
-          - lang: es
-            str: 'Utilizar solo un Oblivious Horses esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Oblivious Horses.*\.esp")'
+        subs: [ 'Oblivious Horses .esp file' ]
   - name: 'Omega Death.esp'
     dirty:
       - crc: 0xaf7b99c2
@@ -5523,14 +5309,9 @@ plugins:
         itm: 13
   - name: 'Realistic Wildlife Loot V.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Realistic Wildlife Loot V*.esp.'
-          - lang: ru
-            str: 'Используйте только один Realistic Wildlife Loot V*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Realistic Wildlife Loot V*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Realistic Wildlife Loot V.+\.esp")'
+        subs: [ 'Realistic Wildlife Loot V .esp file' ]
     tag:
       - Delev
       - Relev
@@ -5546,14 +5327,9 @@ plugins:
             str: 'Utilizar solo un Realistic Wildlife Loot esp.'
   - name: 'Realistic Wildlife Loot -( IMCN)?( Realistic| Reduced)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Realistic Wildlife Loot - *.esp.'
-          - lang: ru
-            str: 'Используйте только один Realistic Wildlife Loot - *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Realistic Wildlife Loot - *.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Realistic Wildlife Loot -( IMCN)?( Realistic| Reduced)\.esp")'
+        subs: [ 'Realistic Wildlife Loot .esp file' ]
     tag:
       - Delev
       - Relev
@@ -5914,14 +5690,9 @@ plugins:
       - 'SkyMoMod_lists.esp'
       - 'SkyMo-Dawn.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one SkyMoMod Lore esp.'
-          - lang: ru
-            str: 'Используйте только один SkyMoMod Lore esp.'
-          - lang: es
-            str: 'Utilizar solo un SkyMoMod Lore esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("SkyMoMod Lore.+\.esp")'
+        subs: [ 'SkyMoMod Lore .esp file' ]
       - type: say
         content:
           - lang: en
@@ -6016,14 +5787,9 @@ plugins:
         udr: 48
   - name: 'SkyrimImprovedPuddles(.+)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one SkyrimImprovedPuddles esp.'
-          - lang: ru
-            str: 'Используйте только один SkyrimImprovedPuddles esp.'
-          - lang: es
-            str: 'Utilizar solo un SkyrimImprovedPuddles esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("SkyrimImprovedPuddles(.+)?\.esp")'
+        subs: [ 'SkyrimImprovedPuddles .esp file' ]
   - name: 'SlotMachine.esp'
     dirty:
       - crc: 0xc651adb4
@@ -6080,14 +5846,9 @@ plugins:
         itm: 3
   - name: 'StormcloakArmorVariety(OPTION\d)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one StormcloakArmorVariety esp.'
-          - lang: ru
-            str: 'Используйте только один StormcloakArmorVariety esp.'
-          - lang: es
-            str: 'Utilizar solo un StormcloakArmorVariety esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("StormcloakArmorVariety(OPTION\d)?\.esp")'
+        subs: [ 'StormcloakArmorVariety .esp file' ]
   - name: 'susi!!.esp'
     dirty:
       - crc: 0x61d8423
@@ -6162,14 +5923,9 @@ plugins:
         itm: 13
   - name: 'TorchesForSkyrim(_x1.5|_x2|_x2.5|_x3)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one TorchesForSkyrim esp.'
-          - lang: ru
-            str: 'Используйте только один TorchesForSkyrim esp.'
-          - lang: es
-            str: 'Utilizar solo un TorchesForSkyrim esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("TorchesForSkyrim(_x1.5|_x2|_x2.5|_x3)?\.esp")'
+        subs: [ 'TorchesForSkyrim .esp file' ]
   - name: 'TorchesForSkyrim.esp'
     dirty:
       - crc: 0x2ded0382
@@ -6318,14 +6074,9 @@ plugins:
         udr: 6
   - name: 'WiS IV - Heroes & Villains( insane| Easy| Hard)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one WiS IV - Heroes & villains esp.'
-          - lang: ru
-            str: 'Используйте только один WiS IV - Heroes & villains esp.'
-          - lang: es
-            str: 'Utilizar solo un WiS IV - Heroes & villains esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("WiS IV - Heroes & Villains( insane| Easy| Hard)?\.esp")'
+        subs: [ 'WiS IV - Heroes & villains .esp file' ]
   - name: 'Wolfs_Buff_Recipes_Rus.esp'
     inc:
       - 'Wolfs_Buff_Recipes.esp'
@@ -6369,6 +6120,11 @@ plugins:
       - crc: 0xb56a25c1
         util: *dirtyUtil
         itm: 4
+  - name: 'Zira''s Skyrim Horse Base( - (Armored|Bareback Riding|No Tack))?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Zira''s Skyrim Horse Base - (Armored|Bareback Riding|No Tack)\.esp")'
+        subs: [ 'Zira''s Skyrim Horse Base .esp file' ]
   - name: 'Zira''s Skyrim Horse Base - Armored.esp'
     dirty:
       - crc: 0x421df75a
@@ -6376,48 +6132,18 @@ plugins:
         itm: 3
         udr: 47
   - name: 'Zira''s Skyrim Horse Base - Bareback Riding.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Zira''s Skyrim Horse Base esp.'
-          - lang: ru
-            str: 'Используйте только один Zira''s Skyrim Horse Base esp.'
-          - lang: es
-            str: 'Utilizar solo un Zira''s Skyrim Horse Base esp.'
-        condition: 'file("Zira''s Skyrim Horse Base - Armored.esp")'
     dirty:
       - crc: 0xa2dd658d
         util: *dirtyUtil
         itm: 3
         udr: 47
   - name: 'Zira''s Skyrim Horse Base - No Tack.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Zira''s Skyrim Horse Base esp.'
-          - lang: ru
-            str: 'Используйте только один Zira''s Skyrim Horse Base esp.'
-          - lang: es
-            str: 'Utilizar solo un Zira''s Skyrim Horse Base esp.'
-        condition: 'file("Zira''s Skyrim Horse Base - Armored.esp") or file("Zira''s Skyrim Horse Base - Bareback Riding.esp")'
     dirty:
       - crc: 0xf93cd5d0
         util: *dirtyUtil
         itm: 3
         udr: 47
   - name: 'Zira''s Skyrim Horse Base.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Zira''s Skyrim Horse Base esp.'
-          - lang: ru
-            str: 'Используйте только один Zira''s Skyrim Horse Base esp.'
-          - lang: es
-            str: 'Utilizar solo un Zira''s Skyrim Horse Base esp.'
-        condition: 'file("Zira''s Skyrim Horse Base - Armored.esp") or file("Zira''s Skyrim Horse Base - Bareback Riding.esp") or file("Zira''s Skyrim Horse Base - No Tack.esp")'
     dirty:
       - crc: 0x86d08fb5
         util: *dirtyUtil
@@ -6425,14 +6151,9 @@ plugins:
         udr: 47
   - name: 'KoS_Outcast(_Lite)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one KoS_Outcast*.esp.'
-          - lang: ru
-            str: 'Используйте только один KoS_Outcast*.esp.'
-          - lang: es
-            str: 'Utilizar solo unKoS_Outcast*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("KoS_Outcast(_Lite)?\.esp")'
+        subs: [ 'KoS_Outcast .esp file' ]
   - name: 'CiviliansWillNotDie.esp'
     msg: [ *obsolete ]
   - name: 'CiviliansWillNotDieChild.esp'
@@ -6530,14 +6251,9 @@ plugins:
         itm: 3
   - name: 'more_Travelers(_light)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one more_Travelers*.esp.'
-          - lang: ru
-            str: 'Используйте только один more_Travelers*.esp.'
-          - lang: es
-            str: 'Utilizar solo un  more_Travelers*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("more_Travelers(_light)?\.esp")'
+        subs: [ 'more_Travelers .esp file' ]
   - name: 'more_Travelers-light.esp'
     dirty:
       - crc: 0xfb560796
@@ -6877,14 +6593,9 @@ plugins:
         udr: 8
   - name: '(alldlcshared|sharedplayer)chest\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Shared Chest esp.'
-          - lang: ru
-            str: 'Используйте только один Shared Chest esp.'
-          - lang: es
-            str: 'Utilizar solo un Shared Chest esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("(alldlcshared|sharedplayer)chest\.esp")'
+        subs: [ 'Shared Chest .esp file' ]
   - name: 'Althirs Camping Tools English.esp'
     dirty:
       - crc: 0xc5346be3
@@ -6906,39 +6617,16 @@ plugins:
       - crc: 0x5625fc4f
         util: *dirtyUtil
         itm: 1
-  - name: 'AngisEvenBetterBow.esp'
+  - name: 'Angis(Even)?(Better){1,2}Bow\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one AngisBetterBow esp.'
-          - lang: ru
-            str: 'Используйте только один AngisBetterBow esp.'
-          - lang: es
-            str: 'Utilizar solo un AngisBetterBow esp.'
-        condition: 'file("AngisBetterBow.esp")'
-  - name: 'AngisEvenBetterBetterBow.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one AngisBetterBow esp.'
-          - lang: ru
-            str: 'Используйте только один AngisBetterBow esp.'
-          - lang: es
-            str: 'Utilizar solo un AngisBetterBow esp.'
-        condition: 'file("AngisBetterBow.esp") or file("AngisEvenBetterBow.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Angis(Even)?(Better){1,2}Bow\.esp")'
+        subs: [ 'Angis Better Bow .esp file' ]
   - name: 'Arcania_armory( \(base\))?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Arcania_armory*.esp.'
-          - lang: ru
-            str: 'Используйте только один Arcania_armory*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Arcania_armory*.esp.'
-        condition: 'file("Arcania_armory.esp") and file("Arcania_armory (base).esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Arcania_armory( \(base\))?\.esp")'
+        subs: [ 'Arcania_armory .esp file' ]
     tag:
       - Relev
   - name: 'ArcaneArchery.esp'
@@ -7068,14 +6756,9 @@ plugins:
       - Relev
   - name: 'Berserk Black Swordsman Armor( - No Arm)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Berserk Black Swordsman Armor esp.'
-          - lang: ru
-            str: 'Используйте только один Berserk Black Swordsman Armor esp.'
-          - lang: es
-            str: 'Utilizar solo un Berserk Black Swordsman Armor esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Berserk Black Swordsman Armor( - No Arm)?\.esp")'
+        subs: [ 'Berserk Black Swordsman Armor .esp file' ]
   - name: 'Berserk Greatsword.esp'
     req: [ *SKSE ]
   - name: 'betterbladesgear.esp'
@@ -7085,14 +6768,9 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Better Bond of Matrimony .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Better Bond of Matrimony esp.'
-          - lang: ru
-            str: 'Используйте только один Better Bond of Matrimony esp.'
-          - lang: es
-            str: 'Utilizar solo un Better Bond of Matrimony esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Better Bond of Matrimony .+\.esp")'
+        subs: [ 'Better Bond of Matrimony .esp file' ]
   - name: 'Bikini Clothes.esp'
     msg:
       - type: say
@@ -7189,14 +6867,9 @@ plugins:
         itm: 2
   - name: 'bouncy_bodices.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one bouncy_bodices esp.'
-          - lang: ru
-            str: 'Используйте только один bouncy_bodices esp.'
-          - lang: es
-            str: 'Utilizar solo un bouncy_bodices esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("bouncy_bodices.*\.esp")'
+        subs: [ 'bouncy_bodices .esp file' ]
       - type: say
         content:
           - lang: en
@@ -7314,17 +6987,12 @@ plugins:
       - crc: 0x741c7c7c
         util: *dirtyUtil
         udr: 1
-  - name: 'Cloaks.esp'
+  - name: 'Cloaks( - (No Imperial|Player Only))?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one cloaks*esp.'
-          - lang: ru
-            str: 'Используйте только один cloaks*esp.'
-          - lang: es
-            str: 'Utilizar solo un cloaks*esp.'
-        condition: 'file("Cloaks - No Imperial.esp") or file("Cloaks - Player Only.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Cloaks( - (No Imperial|Player Only))?\.esp")'
+        subs: [ 'Cloaks .esp file' ]
+  - name: 'Cloaks.esp'
     dirty:
       - crc: 0x35c871de
         util: *dirtyUtil
@@ -7333,16 +7001,6 @@ plugins:
         util: *dirtyUtil
         itm: 2
   - name: 'Cloaks - No Imperial.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one cloaks*esp.'
-          - lang: ru
-            str: 'Используйте только один cloaks*esp.'
-          - lang: es
-            str: 'Utilizar solo un cloaks*esp.'
-        condition: 'file("Cloaks.esp") or file("Cloaks - Player Only.esp")'
     dirty:
       - crc: 0x1c6298ce
         util: *dirtyUtil
@@ -7351,16 +7009,6 @@ plugins:
         util: *dirtyUtil
         itm: 14
   - name: 'Cloaks - Player Only.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one cloaks*esp.'
-          - lang: ru
-            str: 'Используйте только один cloaks*esp.'
-          - lang: es
-            str: 'Utilizar solo un cloaks*esp.'
-        condition: 'file("Cloaks.esp") or file("Cloaks - No Imperial.esp")'
     dirty:
       - crc: 0x2453c2e4
         util: *dirtyUtil
@@ -7368,49 +7016,16 @@ plugins:
       - crc: 0x317b2066
         util: *dirtyUtil
         itm: 50
-  - name: 'Cloaks - Dawnguard.esp'
+  - name: 'Cloaks( - (No Imperial|Player Only))? - Dawnguard\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one cloaks*Dawnguard.esp.'
-          - lang: ru
-            str: 'Используйте только один cloaks*Dawnguard.esp.'
-          - lang: es
-            str: 'Utilizar solo un cloaks*Dawnguard.esp.'
-        condition: 'file("Cloaks - No Imperial - Dawnguard.esp") or file("Cloaks - Player Only - Dawnguard.esp")'
-  - name: 'Cloaks - No Imperial - Dawnguard.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one cloaks*Dawnguard.esp.'
-          - lang: ru
-            str: 'Используйте только один cloaks*Dawnguard.esp.'
-          - lang: es
-            str: 'Utilizar solo un cloaks*Dawnguard.esp.'
-        condition: 'file("Cloaks - Dawnguard.esp") or file("Cloaks - Player Only - Dawnguard.esp")'
-  - name: 'Cloaks - Player Only - Dawnguard.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one cloaks*Dawnguard.esp.'
-          - lang: ru
-            str: 'Используйте только один cloaks*Dawnguard.esp.'
-          - lang: es
-            str: 'Utilizar solo un cloaks*Dawnguard.esp.'
-        condition: 'file("Cloaks - Dawnguard.esp") or file("Cloaks - No Imperial - Dawnguard.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Cloaks( - (No Imperial|Player Only))? - Dawnguard\.esp")'
+        subs: [ 'Cloaks Dawnguard .esp file' ]
   - name: 'Lorecraft - Cloaks(\d{1,3})( No Imperial| PlayerOnly)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Lorecraft - Cloaks esp.'
-          - lang: ru
-            str: 'Используйте только один Lorecraft - Cloaks esp.'
-          - lang: es
-            str: 'Utilizar solo un Lorecraft - Cloaks esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Lorecraft - Cloaks(\d{1,3})( No Imperial| PlayerOnly)?\.esp")'
+        subs: [ 'Lorecraft - Cloaks .esp file' ]
     tag:
       - Relev
   - name: 'Lorecraft - Cloaks( No Imperial| Player Only)?\.esp'
@@ -7425,17 +7040,15 @@ plugins:
             str: 'Actualizar a Cloaks 09.'
     tag:
       - Relev
+  - name: '1nivWICCloaks(CRAFT|NoGuards)?.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("1nivWICCloaks(CRAFT|NoGuards)?.esp")'
+        subs: [ 'WICCloaks .esp file' ]
+    tag:
+      - Relev
   - name: '1nivWICCloaks.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one WICCloaks esp.'
-          - lang: ru
-            str: 'Используйте только один WICCloaks esp.'
-          - lang: es
-            str: 'Utilizar solo un WICCloaks esp.'
-        condition: 'file("1nivWICCloaksCRAFT.esp") or file("1nivWICCloaksNoGuards.esp")'
       - type: say
         content:
           - lang: en
@@ -7450,32 +7063,6 @@ plugins:
           - lang: ru
             str: 'Несовместим с: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.'
         condition: 'file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
-    tag:
-      - Relev
-  - name: '1nivWICCloaksCRAFT.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one WICCloaks esp.'
-          - lang: ru
-            str: 'Используйте только один WICCloaks esp.'
-          - lang: es
-            str: 'Utilizar solo un WICCloaks esp.'
-        condition: 'file("1nivWICCloaks.esp") or file("1nivWICCloaksNoGuards.esp")'
-  - name: '1nivWICCloaksNoGuards.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one WICCloaks esp.'
-          - lang: ru
-            str: 'Используйте только один WICCloaks esp.'
-          - lang: es
-            str: 'Utilizar solo un WICCloaks esp.'
-        condition: 'file("1nivWICCloaksCRAFT.esp") or file("1nivWICCloaks.esp")'
-    tag:
-      - Relev
   - name: '1nivWICSkyCloaksPatch.esp'
     dirty:
       - crc: 0x2a8cad17
@@ -7510,14 +7097,9 @@ plugins:
     msg: [ *obsolete ]
   - name: 'craftable gold coins \d?.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one craftable gold coins esp.'
-          - lang: ru
-            str: 'Используйте только один craftable gold coins esp.'
-          - lang: es
-            str: 'Utilizar solo un craftable gold coins esp esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("craftable gold coins \d?.+\.esp")'
+        subs: [ 'craftable gold coins .esp file' ]
   - name: 'craftableboundweapons.esp'
     dirty:
       - crc: 0x1c2fae4
@@ -8083,28 +7665,11 @@ plugins:
             str: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
           - lang: es
             str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-  - name: 'Flare Arrow Explosive.esp'
+  - name: 'Flare Arrow( Brighter| Explosive)?.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Flare Arrow *.esp.'
-          - lang: ru
-            str: 'Используйте только один Flare Arrow *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Flare Arrow *.esp.'
-        condition: 'file("Flare Arrow Brighter.esp")'
-  - name: 'Flare Arrow.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Flare Arrow *.esp.'
-          - lang: ru
-            str: 'Используйте только один Flare Arrow *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Flare Arrow *.esp.'
-        condition: 'file("Flare Arrow Brighter.esp") or file("Flare Arrow Explosive.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Flare Arrow( Brighter| Explosive)?.esp")'
+        subs: [ 'Flare Arrow .esp file' ]
   - name: 'Fitness Outfit OE.esp'
     msg:
       - type: say
@@ -8230,14 +7795,9 @@ plugins:
       - 'GM-ForgeAdditionsLAotB.esp'
   - name: 'Gold Ingot \d?.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Gold Ingot esp.'
-          - lang: ru
-            str: 'Используйте только один Gold Ingot esp.'
-          - lang: es
-            str: 'Utilizar solo un Gold Ingot esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Gold Ingot \d?.+\.esp")'
+        subs: [ 'Gold Ingot .esp file' ]
   - name: 'GoldButterfly1.1.esp'
     msg:
       - type: warn
@@ -9022,44 +8582,24 @@ plugins:
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LeatherBackpackBlack.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one LeatherBackPack Black esp.'
-          - lang: ru
-            str: 'Используйте только один LeatherBackPack Black esp.'
-          - lang: es
-            str: 'Utilizar solo un LeatherBackPack Black esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("LeatherBackpackBlack.*\.esp")'
+        subs: [ 'LeatherBackPack Black .esp file' ]
   - name: 'LeatherBackpackBrown.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one LeatherBackPack Brown esp.'
-          - lang: ru
-            str: 'Используйте только один LeatherBackPack Brown esp.'
-          - lang: es
-            str: 'Utilizar solo un LeatherBackPack Brown esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("LeatherBackpackBrown.*\.esp")'
+        subs: [ 'LeatherBackPack Brown .esp file' ]
   - name: 'LeatherBackpackDarkBrown.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one LeatherBackPack DarkBrown esp.'
-          - lang: ru
-            str: 'Используйте только один LeatherBackPack DarkBrow esp.'
-          - lang: es
-            str: 'Utilizar solo un nnn esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("LeatherBackpackDarkBrown.*\.esp")'
+        subs: [ 'LeatherBackPack DarkBrown .esp file' ]
   - name: 'LeatherBackpack(-|W)?.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one LeatherBackPack Original esp.'
-          - lang: ru
-            str: 'Используйте только один LeatherBackPack Original esp.'
-          - lang: es
-            str: 'Utilizar solo un LeatherBackPack Original esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("LeatherBackpack(-|W)?.*\.esp")'
+        subs: [ 'LeatherBackPack Original .esp file' ]
   - name: 'LeiFangAndChristieByNausicaa.esp'
     msg:
       - type: say
@@ -9684,12 +9224,9 @@ plugins:
       - Relev
   - name: '(High|Medium|Standard|Uber)-..Percent(\+Random)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one optional leveled list. (High, Medium, Standard or Uber)'
-          - lang: ru
-            str: 'Используйте только один опциональный файл уровневых списков. (High, Medium, Standard или Uber)'
+      - <<: *useOnlyOneX
+        condition: 'many("(High|Medium|Standard|Uber)-..Percent(\+Random)?\.esp")'
+        subs: [ 'optional leveled list. (High, Medium, Standard or Uber)' ]
     tag:
       - Relev
   - name: 'Omegared99-Compilation-NPC Plugin.esp'
@@ -9836,17 +9373,11 @@ plugins:
           - lang: es
             str: 'Usar RagnvaldBook.esp o RagnvaldBookFarengar+Ragnvald.esp, no ambos.'
         condition: 'file("RagnvaldBook.esp")'
-  - name: 'RagnvaldBookFarengar.esp'
+  - name: 'RagnvaldBook(Farengar(+Ragnvald)?)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one RagnvaldBook *.esp.'
-          - lang: ru
-            str: 'Используйте только один RagnvaldBook *.esp.'
-          - lang: es
-            str: 'Utilizar solo un RagnvaldBook *.esp.'
-        condition: 'file("RagnvaldBook.esp") or file("RagnvaldBookFarengar+Ragnvald.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("RagnvaldBook(Farengar(+Ragnvald)?)?\.esp")'
+        subs: [ 'RagnvaldBook .esp file' ]
   - name: 'RaestlozArmorReplace.esp'
     msg: [ *obsolete ]
   - name: 'Reaper''s Necroxym Greatsword.esp'
@@ -9897,17 +9428,11 @@ plugins:
   - name: 'Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp'
     inc:
       - 'Ring of Hircine - No Disease Werewolf AND Totem Selection.esp'
-  - name: 'RoH - No Disease And Selection.esp'
+  - name: '(RoH|Ring of Hircine) - No Disease( Werewolf)? And( Totem)? Selection( \[NoEquipeSlot\])?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Ring of Hircine - No Disease Werewolf AND Totem Selection esp.'
-          - lang: ru
-            str: 'Используйте только один Hircine - No Disease Werewolf AND Totem Selection esp.'
-          - lang: es
-            str: 'Utilizar solo un Ring of Hircine - No Disease Werewolf AND Totem Selection esp.'
-        condition: 'file("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") or file("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("(RoH|Ring of Hircine) - No Disease( Werewolf)? And( Totem)? Selection( \[NoEquipeSlot\])?\.esp")'
+        subs: [ 'Ring of Hircine - No Disease and Selection .esp file' ]
   - name: 'RingOFNighteye.esp'
     dirty:
       - crc: 0xb28a5287
@@ -11334,66 +10859,29 @@ plugins:
     msg: [ *obsolete ]
   - name: 'HarvestOverhaulCreaturesDogMeatFree.esp'
     msg: [ *obsolete ]
-  - name: 'MoM - Mastery of Magicka.esp'
+  - name: 'MoM - (Only Mastery Perks|Mastery of Magicka|No (Alchemy( & Enchanting)?|Enchanting))\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one MoM esp.'
-          - lang: ru
-            str: 'Используйте только один MoM esp.'
-          - lang: es
-            str: 'Utilizar solo un MoM esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("MoM - (Only Mastery Perks|Mastery of Magicka|No (Alchemy( & Enchanting)?|Enchanting))\.esp")'
+        subs: [ 'Mastery of Magicka .esp file' ]
     tag:
       - Delev
+  - name: 'MoM - Mastery of Magicka.esp'
     dirty:
       - crc: 0xaddf2a6d
         util: *dirtyUtil
         itm: 13
   - name: 'MoM - No Alchemy & Enchanting.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one MoM esp.'
-          - lang: ru
-            str: 'Используйте только один MoM esp.'
-          - lang: es
-            str: 'Utilizar solo un MoM esp.'
-    tag:
-      - Delev
     dirty:
       - crc: 0x3c26874d
         util: *dirtyUtil
         itm: 13
   - name: 'MoM - No Alchemy.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one MoM esp.'
-          - lang: ru
-            str: 'Используйте только один MoM esp.'
-          - lang: es
-            str: 'Utilizar solo un MoM esp.'
-    tag:
-      - Delev
     dirty:
       - crc: 0x658c9f93
         util: *dirtyUtil
         itm: 13
   - name: 'MoM - No Enchanting.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one MoM esp.'
-          - lang: ru
-            str: 'Используйте только один MoM esp.'
-          - lang: es
-            str: 'Utilizar solo un MoM esp.'
-    tag:
-      - Delev
     dirty:
       - crc: 0xa51af24c
         util: *dirtyUtil
@@ -11512,39 +11000,16 @@ plugins:
           - lang: es
             str: 'Usar Requiem - TrainUnitsPerLevel0.esp o Requiem - TrainUnitsPerLevel10.esp, no ambos.'
         condition: 'file("Requiem - TrainUnitsPerLevel0.esp")'
-  - name: 'Requiem - TrainUnitsPerLevel100.esp'
+  - name: 'Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one TrainUnitsPerLevel*.esp.'
-          - lang: ru
-            str: 'Используйте только один TrainUnitsPerLevel*.esp.'
-          - lang: es
-            str: 'Utilizar solo un TrainUnitsPerLevel*.esp.'
-        condition: 'file("Requiem - TrainUnitsPerLevel10.esp") or file("Requiem - TrainUnitsPerLevel0.esp")'
-  - name: 'Requiem - TrainUnitsPerLevel5.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp")'
+        subs: [ 'TrainUnitsPerLevel .esp file' ]
+  - name: 'Requiem - Weapon Damage Modifier (2|3)x Vanilla.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one TrainUnitsPerLevel*.esp.'
-          - lang: ru
-            str: 'Используйте только один TrainUnitsPerLevel*.esp.'
-          - lang: es
-            str: 'Utilizar solo un TrainUnitsPerLevel*.esp.'
-        condition: 'file("Requiem - TrainUnitsPerLevel100.esp") or file("Requiem - TrainUnitsPerLevel10.esp") or file("Requiem - TrainUnitsPerLevel0.esp")'
-  - name: 'Requiem - Weapon Damage Modifier 3x Vanilla.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either Requiem - Weapon Damage Modifier 2x Vanilla.esp or Requiem - Weapon Damage Modifier 3x Vanilla.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой или Requiem - Weapon Damage Modifier 2x Vanilla.esp или Requiem - Weapon Damage Modifier 3x Vanilla.esp, не обa.'
-          - lang: es
-            str: 'Usar Requiem - Weapon Damage Modifier 2x Vanilla.esp o Requiem - Weapon Damage Modifier 3x Vanilla.esp, no ambos.'
-        condition: 'file("Requiem - Weapon Damage Modifier 2x Vanilla.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp")'
+        subs: [ 'Requiem - Weapon Damage Modifier .esp file' ]
   - name: 'NRM Dragonborn - Requiem Patch.esp'
     after:
       - 'Requiem - USKP + UDGP.esp'
@@ -11761,14 +11226,9 @@ plugins:
       - Relev
   - name: 'WiS IV - (Rainbow mode|Normal mode|Golden Age|Dark Rainbow( II)?|Dark Age|Lore Friendly|Dark Age Nightmare)( & Plugins)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one WiS IV - (Rainbow mode, Normal mode, Golden Age, Dark Rainbow, Dark Age, Lore Friendly) esp.'
-          - lang: ru
-            str: 'Используйте только один WiS IV - (Rainbow mode, Normal mode, Golden Age, Dark Rainbow, Dark Age, Lore Friendly) esp.'
-          - lang: es
-            str: 'Utilizar solo un WiS IV - (Rainbow mode, Normal mode, Golden Age, Dark Rainbow, Dark Age, Lore Friendly) esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("WiS IV - (Rainbow mode|Normal mode|Golden Age|Dark Rainbow( II)?|Dark Age|Lore Friendly|Dark Age Nightmare)( & Plugins)?\.esp")'
+        subs: [ 'WiS IV Rainbow mode, Normal mode, Golden Age, Dark Rainbow, Dark Age or Lore Friendly .esp file' ]
     tag:
       - Delev
       - Relev
@@ -11778,48 +11238,18 @@ plugins:
 # old name
   - name: 'ERSO 01 - Vanilla Race Redone v.1.4.esp'
     msg: [ *obsolete ]
-  - name: 'ERSO 01 - Vanilla Races Redone.esp'
+  - name: 'ERSO 01 - (Vanilla Races Redone|VRR.+)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 01 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 01 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 01 esp.'
-  - name: 'ERSO 01 - VRR.+\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 01 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 01 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 01 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 01 - (Vanilla Races Redone|VRR.+)\.esp")'
+        subs: [ 'ERSO 01 .esp file' ]
   - name: 'ERSO 02 - Enhanced Fauna and Monsters for Skyrim v.2.0.esp'
     msg: [ *obsolete ]
-  - name: 'ERSO 02 - Enhanced Fauna and Monsters for Skyrim.esp'
+  - name: 'ERSO 02 - (Enhanced Fauna and Monsters for Skyrim|EFMS very bigger giant mammoths)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 02 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 02 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 02 esp.'
-  - name: 'ERSO 02 - EFMS very bigger giant mammoths.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 02 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 02 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 02 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 02 - (Enhanced Fauna and Monsters for Skyrim|EFMS very bigger giant mammoths)\.esp")'
+        subs: [ 'ERSO 02 .esp file' ]
   - name: 'DeadlyDiversifiedDragonsPatch.esp'
     after:
       - 'DeadlyDragons.esp'
@@ -11888,24 +11318,14 @@ plugins:
             str: 'ERSO 03.2 plugins are no longer recommended or supported by the mod author.'
   - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DG\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 03 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 03 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 03 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DG\.esp")'
+        subs: [ 'ERSO 03 Dawnguard .esp file' ]
   - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DB\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 03 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 03 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 03 espp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DB\.esp")'
+        subs: [ 'ERSO 03 Dragonborn .esp file' ]
   - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DD\.esp'
     msg:
       - type: say
@@ -11917,54 +11337,29 @@ plugins:
           - lang: es
             str: 'Requiere: [Deadly Dragons](http://www.nexusmods.com/skyrim/mods/3829) (6.3.5)'
         condition: 'not regex("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 03 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 03 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 03 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DD\.esp")'
+        subs: [ 'ERSO 03 Deadly Dragons .esp file' ]
   - name: 'ERSO 03.1a - .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 03.1a esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 03.1a esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 03.1a esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 03.1a - .+\.esp")'
+        subs: [ 'ERSO 03.1a .esp file' ]
   - name: 'ERSO 03.1b - .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 03.1b esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 03.1b esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 03.1b esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 03.1b - .+\.esp")'
+        subs: [ 'ERSO 03.1b .esp file' ]
   - name: 'ERSO 03.3 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dawnguard Dragons\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 03.3 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 03.3 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 03.3 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 03.3 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dawnguard Dragons\.esp")'
+        subs: [ 'ERSO 03.3 .esp file' ]
   - name: 'ERSO 03.4 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dragonborn Dragons\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 03.4 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 03.4 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 03.4 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 03.4 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dragonborn Dragons\.esp")'
+        subs: [ 'ERSO 03.4 .esp file' ]
   - name: 'DeadlyMonsters.esp'
     req:
       - *SKSE
@@ -11977,29 +11372,11 @@ plugins:
             str: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
         condition: 'not active("SkyUI.esp")'
 # Note that some ERSO files are in the "Deadly and Mighty" Dragons group
-  - name: 'ERSO 03.5 - New Dragon Loots.esp'
+  - name: 'ERSO 03.5 - New Dragon( Super)? Loots\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 03.5 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 03.5 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 03.5 esp.'
-    tag:
-      - Delev
-      - Relev
-  - name: 'ERSO 03.5 - New Dragon Super Loots.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 03.5 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 03.5 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 03.5 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 03.5 - New Dragon( Super)? Loots\.esp")'
+        subs: [ 'ERSO 03.5 .esp file' ]
     tag:
       - Delev
       - Relev
@@ -12011,289 +11388,135 @@ plugins:
     msg: [ *obsolete ]
   - name: 'ERSO 07 - (Super )?(Slighty )?(Mighty )?(Nightmare )?Dragon Priests\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 07 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 07 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 07 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 07 - (Super )?(Slighty )?(Mighty )?(Nightmare )?Dragon Priests\.esp")'
+        subs: [ 'ERSO 07 .esp file' ]
   - name: 'ERSO 08 - RUS-00 Main( plus Dawnguard)?( Dragonborn)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 08 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 08 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 08 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 08 - RUS-00 Main( plus Dawnguard)?( Dragonborn)?\.esp")'
+        subs: [ 'ERSO 08 .esp file' ]
   - name: 'ERSO 09 - RUS-Npcs.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 09 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 09 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 09 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 09 - RUS-Npcs.*\.esp")'
+        subs: [ 'ERSO 09 .esp file' ]
   - name: 'ERSO 09 - Vendor Trainer Quest-giver protected( USKP)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 09 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 09 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 09 esp.'
-  - name: 'ERSO 13 - MD - A Better Level Progression.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 09 - Vendor Trainer Quest-giver protected( USKP)?\.esp")'
+        subs: [ 'ERSO 09 Vendor Trainer .esp file' ]
+  - name: 'ERSO 13 - MD - (A Better Level Progression|ABLP 50 Hardcore)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 13 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 13 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 13 esp.'
-  - name: 'ERSO 13 - MD - ABLP 50 Hardcore.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 13 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 13 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 13 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 13 - MD - (A Better Level Progression|ABLP 50 Hardcore)\.esp")'
+        subs: [ 'ERSO 13 .esp file' ]
   - name: 'ERSO 13.02 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 13.02 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 13.02 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 13.02 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 13.02 .*\.esp")'
+        subs: [ 'ERSO 13.02 .esp file' ]
   - name: 'ERSO 13.03 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 13.03 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 13.03 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 13.03 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 13.03 .*\.esp")'
+        subs: [ 'ERSO 13.03 .esp file' ]
   - name: 'ERSO 14 - Vendors richer and Inns more expensive.esp'
     tag:
       - Relev
   - name: 'ERSO 14.02 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 14.02 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 14.02 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 14.02 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 14.02 .*\.esp")'
+        subs: [ 'ERSO 14.02 .esp file' ]
   - name: 'ERSO 14.03 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 14.03 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 14.03 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 14.03 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 14.03 .*\.esp")'
+        subs: [ 'ERSO 14.03 .esp file' ]
   - name: 'ERSO 14.04 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 14.04 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 14.04 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 14.04 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 14.04 .*\.esp")'
+        subs: [ 'ERSO 14.04 .esp file' ]
   - name: 'ERSO 14.05 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 14.05 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 14.05 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 14.05 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 14.05 .*\.esp")'
+        subs: [ 'ERSO 14.05 .esp file' ]
   - name: 'ERSO 14.06 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 14.06 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 14.06 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 14.06 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 14.06 .*\.esp")'
+        subs: [ 'ERSO 14.06 .esp file' ]
   - name: 'ERSO 14.07 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 14.07 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 14.07 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 14.07 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 14.07 .*\.esp")'
+        subs: [ 'ERSO 14.07 .esp file' ]
   - name: 'ERSO 14.08 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 14.08 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 14.08 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 14.08 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 14.08 .*\.esp")'
+        subs: [ 'ERSO 14.08 .esp file' ]
   - name: 'ERSO 15 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 15 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 15 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 15 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 15 .*\.esp")'
+        subs: [ 'ERSO 15 .esp file' ]
   - name: 'ERSO 16 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 16 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 16 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 16 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 16 .*\.esp")'
+        subs: [ 'ERSO 16 .esp file' ]
   - name: 'ERSO 17 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 17 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 17 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 17 esp.'
-  - name: 'ERSO 18 - Legendary Armors and Weapons Enhanced.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 17 .*\.esp")'
+        subs: [ 'ERSO 17 .esp file' ]
+  - name: 'ERSO 18 - (Legendary Armors and Weapons Enhanced|LAWE Hardcore)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 18 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 18 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 18 esp.'
-  - name: 'ERSO 18 - LAWE Hardcore.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 18 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 18 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 18 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 18 - (Legendary Armors and Weapons Enhanced|LAWE Hardcore)\.esp")'
+        subs: [ 'ERSO 18 .esp file' ]
   - name: 'ERSO 19 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 19 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 19 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 19 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 19 .*\.esp")'
+        subs: [ 'ERSO 19 .esp file' ]
   - name: 'ERSO 20 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 20 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 20 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 20 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 20 .*\.esp")'
+        subs: [ 'ERSO 20 .esp file' ]
   - name: 'ERSO 22 - Better Necromancy Spells.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either ERSO 22 - Better Necromancy Spells.esp or Lord of the Dead.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или ERSO 22 - Better Necromancy Spells.esp или Lord of the Dead.esp, не оба.'
-          - lang: es
-            str: 'Usar ERSO 22 - Better Necromancy Spells.esp o Lord of the Dead.esp, no ambos.'
-        condition: 'file("Lord of the Dead.esp")'
+    inc:
+      - 'Lord of the Dead.esp'
   - name: 'ERSO 26 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 26 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 26 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 26 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 26 .*\.esp")'
+        subs: [ 'ERSO 26 .esp file' ]
   - name: 'ERSO 27 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 27 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 27 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 27 esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 27 .*\.esp")'
+        subs: [ 'ERSO 27 .esp file' ]
   - name: 'ERSO 28 .*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 28 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 28 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 28 esp.'
-  - name: 'ERSO 30 - Better Enemy AI redux.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 28 .*\.esp")'
+        subs: [ 'ERSO 28 .esp file' ]
+  - name: 'ERSO 30 - Better Enemy AI( Dawnguard&Dragonborn)? redux\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 30 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 30 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 30 esp.'
-  - name: 'ERSO 30 - Better Enemy AI Dawnguard&Dragonborn Redux.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 30 - Better Enemy AI( Dawnguard&Dragonborn)? redux\.esp")'
+        subs: [ 'ERSO 30 .esp file' ]
+  - name: 'ERSO 32 - Lord of the Dead( for S(PERG|KYRE))?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 30 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 30 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 30 esp.'
-  - name: 'ERSO 32 - Lord of the Dead.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("ERSO 32 - Lord of the Dead( for S(PERG|KYRE))?\.esp")'
+        subs: [ 'ERSO 32 .esp file' ]
     tag:
       - Delev
       - Relev
@@ -12468,10 +11691,6 @@ plugins:
         content: 'fMagnetismStrafeHeadingMult=0.0'
       - type: say
         content: 'fMagnetismLookingMult=0.0'
-    tag:
-      - Delev
-      - Relev
-  - name: 'ERSO 32 - Lord of the Dead for SKYRE.esp'
     tag:
       - Delev
       - Relev
@@ -13156,17 +12375,13 @@ plugins:
           - lang: ru
             str: 'Не забудьте отключить или удалить warchiefarmor.esp'
         condition: 'active("warchiefarmor.esp")'
+  - name: 'SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
+        subs: [ 'SkyRe Dreadknight .esp file' ]
   - name: 'SkyRe  - Jojjo''s Dreadknight Patch.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Skyre Dreadknight.'
-          - lang: ru
-            str: 'Используйте только один SkyRe Dreadknight.'
-          - lang: es
-            str: 'Utilizar solo un Skyre Dreadknight.'
-        condition: 'regex("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
       - type: say
         content:
           - lang: en
@@ -14754,17 +13969,13 @@ plugins:
             str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: es
             str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+  - name: 'BreezehomeRenovation(Fem|JP|FemJP|FSW|FSWJP)?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("BreezehomeRenovation(Fem|JP|FemJP|FSW|FSWJP)?\.esp")'
+        subs: [ 'BreezehomeRenovation .esp file' ]
   - name: 'BreezehomeRenovationFemJP.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one BreezehomeRenovation*.esp.'
-          - lang: ru
-            str: 'Используйте только один BreezehomeRenovation*.esp.'
-          - lang: es
-            str: 'Utilizar solo un BreezehomeRenovation*.esp.'
-        condition: 'regex("BreezehomeRenovation(Fem|JP|FSW|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: en
@@ -14782,15 +13993,6 @@ plugins:
       - type: warn
         content:
           - lang: en
-            str: 'Use only one BreezehomeRenovation*.esp.'
-          - lang: ru
-            str: 'Используйте только один BreezehomeRenovation*.esp.'
-          - lang: es
-            str: 'Utilizar solo un BreezehomeRenovation*.esp.'
-        condition: 'regex("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp")'
-      - type: warn
-        content:
-          - lang: en
             str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: ru
             str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
@@ -14805,15 +14007,6 @@ plugins:
       - type: warn
         content:
           - lang: en
-            str: 'Use only one BreezehomeRenovation*.esp.'
-          - lang: ru
-            str: 'Используйте только один BreezehomeRenovation*.esp.'
-          - lang: es
-            str: 'Utilizar solo un BreezehomeRenovation*.esp.'
-        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp")'
-      - type: warn
-        content:
-          - lang: en
             str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: ru
             str: 'Этот файл содержит 1x удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
@@ -14823,15 +14016,6 @@ plugins:
         udr: 29
   - name: 'BreezehomeRenovationFSW.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one BreezehomeRenovation*.esp.'
-          - lang: ru
-            str: 'Используйте только один BreezehomeRenovation*.esp.'
-          - lang: es
-            str: 'Utilizar solo un BreezehomeRenovation*.esp.'
-        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp")'
       - type: warn
         content:
           - lang: en
@@ -14849,15 +14033,6 @@ plugins:
       - type: warn
         content:
           - lang: en
-            str: 'Use only one BreezehomeRenovation*.esp.'
-          - lang: ru
-            str: 'Используйте только один BreezehomeRenovation*.esp.'
-          - lang: es
-            str: 'Utilizar solo un BreezehomeRenovation*.esp.'
-        condition: 'regex("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp")'
-      - type: warn
-        content:
-          - lang: en
             str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: ru
             str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
@@ -14872,15 +14047,6 @@ plugins:
       - type: warn
         content:
           - lang: en
-            str: 'Use only one BreezehomeRenovation*.esp.'
-          - lang: ru
-            str: 'Используйте только один BreezehomeRenovation*.esp.'
-          - lang: es
-            str: 'Utilizar solo un BreezehomeRenovation*.esp.'
-        condition: 'regex("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp")'
-      - type: warn
-        content:
-          - lang: en
             str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: ru
             str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
@@ -14892,14 +14058,9 @@ plugins:
         udr: 19
   - name: 'Breezehome Revised.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Breezehome Revised*.esp.'
-          - lang: ru
-            str: 'Используйте только один Breezehome Revised*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Breezehome Revised*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Breezehome Revised.*\.esp")'
+        subs: [ 'Breezehome Revised .esp file' ]
   - name: 'BreezehomeEnchantingTable.esp'
     dirty:
       - crc: 0x17ab3f3a
@@ -14928,19 +14089,15 @@ plugins:
         util: *dirtyUtil
         itm: 48
         udr: 10
+  - name: 'Briar''sEnd(Instant|Courier|No)Quest\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Briar''sEnd(Instant|Courier|No)Quest\.esp")'
+        subs: [ 'Briar''s End .esp file' ]
   - name: 'Briar''sEndInstantQuest.esp'
     inc:
       - 'Fleetford.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Briar''sEnd esp.'
-          - lang: ru
-            str: 'Используйте только один Briar''sEnd esp.'
-          - lang: es
-            str: 'Utilizar solo un Briar''sEnd esp.'
-        condition: 'file("Briar''sEndCourierQuest.esp")'
       - type: warn
         content:
           - lang: en
@@ -14958,15 +14115,6 @@ plugins:
     inc:
       - 'Fleetford.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Briar''sEnd esp.'
-          - lang: ru
-            str: 'Используйте только один Briar''sEnd esp.'
-          - lang: es
-            str: 'Utilizar solo un Briar''sEnd esp.'
-        condition: 'file("Briar''sEndCourierQuest.esp") or file("Briar''sEndInstantQuest.esp")'
       - type: warn
         content:
           - lang: en
@@ -15665,20 +14813,16 @@ plugins:
       - crc: 0xe1870dc5
         util: *dirtyUtil
         itm: 8
+  - name: 'DovahkiinSpeech( - (Higher|Mid(NoPerk)?)Req(Nerfed)?)?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("DovahkiinSpeech( - (Higher|Mid(NoPerk)?)Req(Nerfed)?)?\.esp")'
+        subs: [ 'DovahkiinSpeech .esp file' ]
   - name: 'DovahkiinSpeech - HigherReqNerfed.esp'
     msg:
       - type: warn
         content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
         condition: 'checksum("DovahkiinSpeech - HigherReqNerfed.esp",4B15F923)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one DovahkiinSpeech esp.'
-          - lang: ru
-            str: 'Используйте только один DovahkiinSpeech esp.'
-          - lang: es
-            str: 'Utilizar solo un DovahkiinSpeech esp.'
-        condition: 'file("DovahkiinSpeech - HigherReq.esp")'
     dirty:
       - crc: 0x4b15f923
         util: *dirtyUtil
@@ -15688,15 +14832,6 @@ plugins:
       - type: warn
         content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
         condition: 'checksum("DovahkiinSpeech - MidNoPerkReq.esp",6179F01D)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one DovahkiinSpeech esp.'
-          - lang: ru
-            str: 'Используйте только один DovahkiinSpeech esp.'
-          - lang: es
-            str: 'Utilizar solo un DovahkiinSpeech esp.'
-        condition: 'file("DovahkiinSpeech - HigherReq.esp") or file("DovahkiinSpeech - HigherReqNerfed.esp")'
     dirty:
       - crc: 0x6179f01d
         util: *dirtyUtil
@@ -15706,15 +14841,6 @@ plugins:
       - type: warn
         content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
         condition: 'checksum("DovahkiinSpeech - MidReq.esp",FFFCDA31)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one DovahkiinSpeech esp.'
-          - lang: ru
-            str: 'Используйте только один DovahkiinSpeech esp.'
-          - lang: es
-            str: 'Utilizar solo un DovahkiinSpeech esp.'
-        condition: 'file("DovahkiinSpeech - HigherReq.esp") or file("DovahkiinSpeech - HigherReqNerfed.esp") or file("DovahkiinSpeech - MidNoPerkReq.esp")'
     dirty:
       - crc: 0xfffcda31
         util: *dirtyUtil
@@ -15724,15 +14850,6 @@ plugins:
       - type: warn
         content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
         condition: 'checksum("DovahkiinSpeech.esp",27656479)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one DovahkiinSpeech esp.'
-          - lang: ru
-            str: 'Используйте только один DovahkiinSpeech esp.'
-          - lang: es
-            str: 'Utilizar solo un DovahkiinSpeech esp.'
-        condition: 'file("DovahkiinSpeech - HigherReq.esp") or file("DovahkiinSpeech - HigherReqNerfed.esp") or file("DovahkiinSpeech - MidNoPerkReq.esp") or file("DovahkiinSpeech - MidReq.esp")'
     dirty:
       - crc: 0x27656479
         util: *dirtyUtil
@@ -15832,14 +14949,9 @@ plugins:
         udr: 177
   - name: 'DragonsReach_Hideout_(Plus|Assassin|Nightingale)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one DragonsReach_Hideout_*.esp.'
-          - lang: ru
-            str: 'ИСпользуйте только один DragonsReach_Hideout_*.esp.'
-          - lang: es
-            str: 'Utilizar solo un DragonsReach_Hideout_*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("DragonsReach_Hideout_(Plus|Assassin|Nightingale)\.esp")'
+        subs: [ 'Dragons Reach Hideout  .esp file' ]
   - name: 'dragonstaffofdomination001.esp'
     dirty:
       - crc: 0xfd198303
@@ -19696,86 +18808,37 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Vault of the Dovahkiin - Warrior.esp'
     msg: [ *obsolete ]
-  - name: 'Vault of the Dovahkiin 1.1 - Assassin.esp'
+  - name: 'Vault of the Dovahkiin 1.1 - (Assassin|Imperial|Mage|Stormcloak|Thief|Warrior)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Vault of the Dovahkiin esp.'
-          - lang: ru
-            str: 'Используйте только один Vault of the Dovahkiin esp.'
-          - lang: es
-            str: 'Utilizar solo un Vault of the Dovahkiin esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Vault of the Dovahkiin 1.1 - (Assassin|Imperial|Mage|Stormcloak|Thief|Warrior)\.esp")'
+        subs: [ 'Vault of the Dovahkiin .esp file' ]
+  - name: 'Vault of the Dovahkiin 1.1 - Assassin.esp'
     dirty:
       - crc: 0x44965600
         util: *dirtyUtil
         udr: 4
   - name: 'Vault of the Dovahkiin 1.1 - Imperial.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Vault of the Dovahkiin esp.'
-          - lang: ru
-            str: 'Используйте только один Vault of the Dovahkiin esp.'
-          - lang: es
-            str: 'Utilizar solo un Vault of the Dovahkiin espp.'
     dirty:
       - crc: 0x94246301
         util: *dirtyUtil
         udr: 4
   - name: 'Vault of the Dovahkiin 1.1 - Mage.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Vault of the Dovahkiin esp.'
-          - lang: ru
-            str: 'Используйте только один Vault of the Dovahkiin esp.'
-          - lang: es
-            str: 'Utilizar solo un Vault of the Dovahkiin esp.'
     dirty:
       - crc: 0x864f774a
         util: *dirtyUtil
         udr: 4
   - name: 'Vault of the Dovahkiin 1.1 - Stormcloak.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Vault of the Dovahkiin esp.'
-          - lang: ru
-            str: 'Используйте только один Vault of the Dovahkiin esp.'
-          - lang: es
-            str: 'Utilizar solo un Vault of the Dovahkiin esp.'
     dirty:
       - crc: 0x32b3e560
         util: *dirtyUtil
         udr: 4
   - name: 'Vault of the Dovahkiin 1.1 - Thief.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Vault of the Dovahkiin esp.'
-          - lang: ru
-            str: 'Используйте только один Vault of the Dovahkiin esp.'
-          - lang: es
-            str: 'Utilizar solo un Vault of the Dovahkiin esp.'
     dirty:
       - crc: 0xf48c29c4
         util: *dirtyUtil
         udr: 4
   - name: 'Vault of the Dovahkiin 1.1 - Warrior.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Vault of the Dovahkiin esp.'
-          - lang: ru
-            str: 'Используйте только один Vault of the Dovahkiin esp.'
-          - lang: es
-            str: 'Utilizar solo un Vault of the Dovahkiin esp.'
     dirty:
       - crc: 0x7f8b0754
         util: *dirtyUtil
@@ -20224,24 +19287,14 @@ plugins:
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
   - name: 'Dragon Drop - B.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ''Bone'' esp.'
-          - lang: ru
-            str: 'Используйте только один ''Bone'' esp.'
-          - lang: es
-            str: 'Utilizar solo un ''Bone'' esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Dragon Drop - B.*\.esp")'
+        subs: [ 'Dragon Drop Bone .esp file' ]
   - name: 'Dragon Drop - S.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ''Scales'' esp.'
-          - lang: ru
-            str: 'Используйте только один ''Scales'' esp.'
-          - lang: es
-            str: 'Utilizar solo un ''Scales'' esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Dragon Drop - S.*\.esp")'
+        subs: [ 'Dragon Drop Scales .esp file' ]
   - name: 'KTGold0.005.esp'
     inc:
       - 'KTGold.esp'
@@ -20296,37 +19349,22 @@ plugins:
         itm: 5
   - name: 'WeightedArrows(Heavy|Light|Medium)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one WeightedArrows *.esp.'
-          - lang: ru
-            str: 'Используйте только один WeightedArrows *.esp.'
-          - lang: es
-            str: 'Utilizar solo un WeightedArrows *.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("WeightedArrows(Heavy|Light|Medium)?\.esp")'
+        subs: [ 'Weighted Arrows .esp file' ]
       - type: say
         content: 'Use Dawnguard version to include weighted crossbow bolts.'
         condition: 'active("Dawnguard.esm")'
   - name: 'WeightedArrowsDLC1(Heavy|Light|Medium)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one WeightedArrows *.esp.'
-          - lang: ru
-            str: 'Используйте только один WeightedArrows *.esp.'
-          - lang: es
-            str: 'Utilizar solo un WeightedArrows *.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("WeightedArrowsDLC1(Heavy|Light|Medium)?\.esp")'
+        subs: [ 'Weighted Arrows DLC1 .esp file' ]
   - name: 'Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Imperial Soldiers*.esp.'
-          - lang: ru
-            str: 'Используйте только один Imperial Soldiers*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Imperial Soldiers*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp")'
+        subs: [ 'Imperial Soldiers .esp file' ]
   - name: 'dlc_armor_crafting.esp'
     msg:
       - type: say
@@ -20375,54 +19413,19 @@ plugins:
       - 'NoEnchAll.esp'
   - name: 'zzALittleSexyApparelReplacer.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one zzALittleSexyApparelReplacer esp.'
-          - lang: ru
-            str: 'Используйте только один zzALittleSexyApparelReplacer esp.'
-          - lang: es
-            str: 'Utilizar solo un zzALittleSexyApparelReplacer esp.'
-  - name: '.?.?.?.? magickaregen\.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("zzALittleSexyApparelReplacer.*\.esp")'
+        subs: [ 'zzALittleSexyApparelReplacer .esp file' ]
+  - name: '(.{0,4}|30?x slower) magickaregen\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one *magickaregen.esp.'
-          - lang: ru
-            str: 'Используйте только один *magickaregen.esp'
-          - lang: es
-            str: 'Utilizar solo un *magickaregen.esp'
-  - name: '3x slower magickaregen.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("(.{0,4}|30?x slower) magickaregen\.esp")'
+        subs: [ 'magickaregen .esp file' ]
+  - name: '.{0,4} staminaregen\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one *magickaregen.esp.'
-          - lang: ru
-            str: 'Используйте только один *magickaregen.esp.'
-          - lang: es
-            str: 'Utilizar solo un *magickaregen.esp.'
-  - name: '30x slowermagickaregen.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one *magickaregen.esp.'
-          - lang: ru
-            str: 'Используйте только один *magickaregen.esp.'
-          - lang: es
-            str: 'Utilizar solo un *magickaregen.esp.'
-  - name: '.?.?.?.? staminaregen\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one *staminaregen.esp.'
-          - lang: ru
-            str: 'Используйте только один *staminaregen.esp.'
-          - lang: es
-            str: 'Utilizar solo un *staminaregen.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many(".{0,4} staminaregen\.esp")'
+        subs: [ 'staminaregen .esp file' ]
   - name: 'AccessibleMerchantStorage.esp'
     dirty:
       - crc: 0xf3a600aa
@@ -20470,14 +19473,9 @@ plugins:
         udr: 0
   - name: 'ArmorCap9.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ArmorCap esp.'
-          - lang: ru
-            str: 'Используйте только один ArmorCap esp.'
-          - lang: es
-            str: 'Utilizar solo un ArmorCap esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ArmorCap9.*\.esp")'
+        subs: [ 'ArmorCap .esp file' ]
   - name: 'armorLegion.esp'
     tag:
       - Delev
@@ -20497,48 +19495,27 @@ plugins:
           - lang: es
             str: 'Usar Arvak Dark Power.esp o Arvak Dark Power Voice power version.esp, no ambos.'
         condition: 'file("Arvak Dark Power.esp")'
-  - name: 'Arvak, Shadowmere''s Body - No Saddle.esp'
+  - name: 'Arvak, Shadowmere''s Body - (DB|No) Saddle\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Arvak esp.'
-          - lang: ru
-            str: 'Используйте только один Arvak esp.'
-          - lang: es
-            str: 'Utilizar solo un Arvak esp.'
-        condition: 'file("Arvak, Shadowmere''s Body - DB Saddle.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Arvak, Shadowmere''s Body - (DB|No) Saddle\.esp")'
+        subs: [ 'Arvak, Shadowmere''s Body .esp file' ]
+  - name: 'Arvak_(Fire|Frost|Storm)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Arvak_(Fire|Frost|Storm)\.esp")'
+        subs: [ 'Arvak_ .esp file' ]
   - name: 'Arvak_Fire.esp'
     dirty:
       - crc: 0x8b83fc98
         util: *dirtyUtil
         itm: 3
   - name: 'Arvak_Frost.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either Arvak_Fire.esp or Arvak_Frost.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или Arvak_Fire.esp или Arvak_Frost.esp, не оба.'
-          - lang: es
-            str: 'Usar Arvak_Fire.esp o Arvak_Frost.esp, no ambos.'
-        condition: 'file("Arvak_Fire.esp")'
     dirty:
       - crc: 0x21746ca3
         util: *dirtyUtil
         itm: 3
   - name: 'Arvak_Storm.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Arvak_*.esp.'
-          - lang: ru
-            str: 'Используйте только один Arvak_*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Arvak_*.esp.'
-        condition: 'file("Arvak_Fire.esp") or file("Arvak_Frost.esp")'
     dirty:
       - crc: 0xa3fadf0f
         util: *dirtyUtil
@@ -20665,17 +19642,11 @@ plugins:
       - crc: 0x3ce8fa06
         util: *dirtyUtil
         itm: 3
-  - name: 'BetterGhostbladeV1glass.esp'
+  - name: 'BetterGhostbladeV1(glass)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one BetterGhostbladeV1 esp.'
-          - lang: ru
-            str: 'Используйте только один BetterGhostbladeV1 esp.'
-          - lang: es
-            str: 'Utilizar solo un BetterGhostbladeV1 esp.'
-        condition: 'file("BetterGhostbladeV1.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("BetterGhostbladeV1(glass)?\.esp")'
+        subs: [ 'BetterGhostbladeV1 .esp file' ]
   - name: 'BetterNordHeroWeapons.esp'
     msg:
       - type: warn
@@ -20767,6 +19738,11 @@ plugins:
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", >=)'
+  - name: 'Headbomb''s Better Sorting - Food \(((Light|Normal|Reduced) Weight|Weightless)\)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Headbomb''s Better Sorting - Food \(((Light|Normal|Reduced) Weight|Weightless)\)\.esp")'
+        subs: [ 'Headbomb''s Better Sorting - Food .esp file' ]
   - name: 'Headbomb''s Better Sorting - Food (Light Weight).esp'
     msg:
       - type: warn
@@ -20788,15 +19764,6 @@ plugins:
           - lang: ru
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Headbomb''s Better Sorting - Food esp.'
-          - lang: ru
-            str: 'Используйте только один Headbomb''s Better Sorting - Food esp.'
-          - lang: es
-            str: 'Utilizar solo un Headbomb''s Better Sorting - Food esp.'
-        condition: 'file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", >=)'
@@ -20809,15 +19776,6 @@ plugins:
           - lang: ru
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Headbomb''s Better Sorting - Food esp.'
-          - lang: ru
-            str: 'Используйте только один Headbomb''s Better Sorting - Food esp.'
-          - lang: es
-            str: 'Utilizar solo un Headbomb''s Better Sorting - Food esp.'
-        condition: 'file("Headbomb''s Better Sorting - Food (Normal Weight).esp") or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", >=)'
@@ -20830,15 +19788,6 @@ plugins:
           - lang: ru
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Headbomb''s Better Sorting - Food esp.'
-          - lang: ru
-            str: 'Используйте только один Headbomb''s Better Sorting - Food esp.'
-          - lang: es
-            str: 'Utilizar solo un Headbomb''s Better Sorting - Food esp.'
-        condition: 'file("Headbomb''s Better Sorting - Food (Reduced Weight).esp") or file("Headbomb''s Better Sorting - Food (Normal Weight).esp") or file("Headbomb''s Better Sorting - Food (Light Weight).esp")'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", >=)'
@@ -20878,6 +19827,11 @@ plugins:
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", >=)'
+  - name: 'Headbomb''s Better Sorting - Potions \(((Light|Half|Normal) Weight|Weightless)\)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Headbomb''s Better Sorting - Potions \(((Light|Half|Normal) Weight|Weightless)\)\.esp")'
+        subs: [ 'Headbomb''s Better Sorting - Potions .esp file' ]
   - name: 'Headbomb''s Better Sorting - Potions (Light Weight).esp'
     msg:
       - type: warn
@@ -20887,15 +19841,6 @@ plugins:
           - lang: ru
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Headbomb''s Better Sorting - Potions esp.'
-          - lang: ru
-            str: 'Используйте только один Headbomb''s Better Sorting - Potions esp.'
-          - lang: es
-            str: 'Utilizar solo un Headbomb''s Better Sorting - Potions esp.'
-        condition: 'file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", >=)'
@@ -20908,15 +19853,6 @@ plugins:
           - lang: ru
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Headbomb''s Better Sorting - Potions esp.'
-          - lang: ru
-            str: 'Используйте только один Headbomb''s Better Sorting - Potions esp.'
-          - lang: es
-            str: 'Utilizar solo un Headbomb''s Better Sorting - Potions esp.'
-        condition: 'file("Headbomb''s Better Sorting - Potions (Light Weight).esp") or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", >=)'
@@ -20929,15 +19865,6 @@ plugins:
           - lang: ru
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Headbomb''s Better Sorting - Potions esp.'
-          - lang: ru
-            str: 'Используйте только один Headbomb''s Better Sorting - Potions esp.'
-          - lang: es
-            str: 'Utilizar solo un Headbomb''s Better Sorting - Potions esp.'
-        condition: 'file("Headbomb''s Better Sorting - Potions (Normal Weight).esp") or file("Headbomb''s Better Sorting - Potions (Light Weight).esp") or file("Headbomb''s Better Sorting - Potions (Half Weight).esp")'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", >=)'
@@ -20953,6 +19880,11 @@ plugins:
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", >=)'
+  - name: 'Headbomb''s Better Sorting - Soul Gems \((Ranked|PseudoVanilla)\)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Headbomb''s Better Sorting - Soul Gems \((Ranked|PseudoVanilla)\)\.esp")'
+        subs: [ 'Headbomb''s Better Sorting - Soul Gems .esp file' ]
   - name: 'Headbomb''s Better Sorting - Soul Gems (Ranked).esp'
     msg:
       - type: warn
@@ -20962,15 +19894,6 @@ plugins:
           - lang: ru
             str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Headbomb''s Better Sorting - Soul Gems esp.'
-          - lang: ru
-            str: 'Используйте только один Headbomb''s Better Sorting - Soul Gems esp.'
-          - lang: es
-            str: 'Utilizar solo un Headbomb''s Better Sorting - Soul Gems esp.'
-        condition: 'file("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp")'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", >=)'
@@ -21069,17 +19992,11 @@ plugins:
     msg: [ *corrupt ]
   - name: 'BetterStaffofCorruptionMED.esp'
     msg: [ *corrupt ]
-  - name: 'BetterStaffofMagnusMedium.esp'
+  - name: 'BetterStaffofMagnus(Medium)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one BetterStafofMagnus esp.'
-          - lang: ru
-            str: 'Используйте только один BetterStafofMagnus esp.'
-          - lang: es
-            str: 'Utilizar solo un BetterStafofMagnus esp.'
-        condition: 'file("BetterStaffofMagnus.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("BetterStaffofMagnus(Medium)?\.esp")'
+        subs: [ 'BetterStaffofMagnus .esp file' ]
   - name: 'ME_BetterWards.esp'
     msg: [ *obsolete ]
   - name: 'betterwards-nostagger.esp'
@@ -21089,63 +20006,31 @@ plugins:
     msg: [ *obsolete ]
     url:
       - 'http://www.nexusmods.com/skyrim/mods/8719/'
+  - name: 'Binocular Vision Game Settings 1(35|50|65)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Binocular Vision Game Settings 1(35|50|65)\.esp")'
+        subs: [ 'Binocular Vision Game Settings .esp file' ]
   - name: 'Binocular Vision Game Settings 135.esp'
     dirty:
       - crc: 0x9c56e282
         util: *dirtyUtil
         itm: 2
   - name: 'Binocular Vision Game Settings 150.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Binocular Vision esp.'
-          - lang: ru
-            str: 'Используйте только один Binocular Vision esp.'
-          - lang: es
-            str: 'Utilizar solo un Binocular Vision esp.'
-        condition: 'file("Binocular Vision Game Settings 135.esp")'
     dirty:
       - crc: 0xa7604633
         util: *dirtyUtil
         itm: 2
   - name: 'Binocular Vision Game Settings 165.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Binocular Vision esp.'
-          - lang: ru
-            str: 'Используйте только один Binocular Vision esp.'
-          - lang: es
-            str: 'Utilizar solo un Binocular Vision esp.'
-        condition: 'file("Binocular Vision Game Settings 150.esp") or file("Binocular Vision Game Settings 135.esp")'
     dirty:
       - crc: 0xd1707318
         util: *dirtyUtil
         itm: 2
-  - name: 'Both Imp and SC-No respawn.esp'
+  - name: '(Both Imp and SC-(No|With) |Fullcamp)respawn\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Killable Leaders esp.'
-          - lang: ru
-            str: 'Используйте только один Killable Leaders esp.'
-          - lang: es
-            str: 'Utilizar solo un Killable Leaders esp.'
-        condition: 'file("Both Imp and SC-With Respawn.esp") or file("Fullcamprespawn.esp")'
-  - name: 'Both Imp and SC-With Respawn.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Killable Leaders esp.'
-          - lang: ru
-            str: 'Используйте только один Killable Leaders esp.'
-          - lang: es
-            str: 'Utilizar solo un Killable Leaders esp.'
-        condition: 'file("Both Imp and SC-No respawn.esp") or file("Fullcamprespawn.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("(Both Imp and SC-(No|With) |Fullcamp)respawn\.esp")'
+        subs: [ 'Killable Leaders .esp file' ]
   - name: 'bow x\d\d?\.esp'
     msg: [ *obsolete ]
   - name: 'BUE.esp'
@@ -21269,37 +20154,22 @@ plugins:
           - lang: es
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("Daedric Light Armor - Rebalanced.esp",BA0A6590)'
+  - name: 'dangerous animals( - (german|light))?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("dangerous animals( - (german|light))?\.esp")'
+        subs: [ 'dangerous animals .esp file' ]
   - name: 'dangerous animals.esp'
     dirty:
       - crc: 0xd2e559a6
         util: *dirtyUtil
         itm: 2
   - name: 'dangerous animals - german.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one dangerous animals esp.'
-          - lang: ru
-            str: 'Используйте только один dangerous animals esp.'
-          - lang: es
-            str: 'Utilizar solo un dangerous animals esp.'
-        condition: 'file("dangerous animals.esp")'
     dirty:
       - crc: 0xee98a386
         util: *dirtyUtil
         itm: 5
   - name: 'dangerous animals - light.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one dangerous animals esp.'
-          - lang: ru
-            str: 'Используйте только один dangerous animals esp.'
-          - lang: es
-            str: 'Utilizar solo un dangerous animals esp.'
-        condition: 'file("dangerous animals - german.esp") or file("dangerous animals.esp")'
     dirty:
       - crc: 0x1386fa38
         util: *dirtyUtil
@@ -21315,26 +20185,11 @@ plugins:
   - name: 'DawnguardArmorLaup26.esp'
     after:
       - 'LorebalanceArtifacts.esp'
-  - name: 'DawnguardDawnbreaker_(FireEd|FireED_ST)?\.esp'
+  - name: 'DawnguardDawnbreaker_((Sun|Holy)?(Fire)?Ed(_ST)?)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one DawnguardDawnbreaker esp.'
-          - lang: ru
-            str: 'Используйте только один DawnguardDawnbreaker esp.'
-          - lang: es
-            str: 'Utilizar solo un DawnguardDawnbreaker esp.'
-  - name: 'DawnguardDawnbreaker_(SunEd|SunFireED|HolyFireEd)?\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one DawnguardDawnbreaker esp.'
-          - lang: ru
-            str: 'Используйте только один DawnguardDawnbreaker esp.'
-          - lang: es
-            str: 'Utilizar solo un DawnguardDawnbreaker esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("DawnguardDawnbreaker_((Sun|Holy)?(Fire)?Ed(_ST)?)?\.esp")'
+        subs: [ 'Dawnguard Dawnbreaker .esp file' ]
   - name: 'DescaledUniques.esp'
     tag:
       - Delev
@@ -21400,34 +20255,19 @@ plugins:
         condition: 'file("BarenziahQuestMarkers_Droppable.esp")'
   - name: 'Dual Casting - Cost - .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Dual Casting - Cost esp.'
-          - lang: ru
-            str: 'Используйте только один Dual Casting - Cost esp.'
-          - lang: es
-            str: 'Utilizar solo un Dual Casting - Cost esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Dual Casting - Cost - .+\.esp")'
+        subs: [ 'Dual Casting - Cost .esp file' ]
   - name: 'Dual Casting - Effectiveness - .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Dual Casting - Effectiveness esp.'
-          - lang: ru
-            str: 'Используйте только один Dual Casting - Effectiveness esp.'
-          - lang: es
-            str: 'Utilizar solo un Dual Casting - Effectiveness esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Dual Casting - Effectiveness - .+\.esp")'
+        subs: [ 'Dual Casting - Effectiveness .esp file' ]
   - name: 'Dual Casting - Time - .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Dual Casting - Time esp.'
-          - lang: ru
-            str: 'Используйте только один Dual Casting - Time esp.'
-          - lang: es
-            str: 'Utilizar solo un Dual Casting - Time esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Dual Casting - Time - .+\.esp")'
+        subs: [ 'Dual Casting - Time .esp file' ]
   - name: 'DwarvenResistanceRevised.esp'
     dirty:
       - crc: 0x2d7849d0
@@ -21606,14 +20446,9 @@ plugins:
       - Relev
   - name: 'fasterdragonbonearrows.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one fasterdragonbonearrows*.esp.'
-          - lang: ru
-            str: 'Используйте только один fasterdragonbonearrows*.esp.'
-          - lang: es
-            str: 'Utilizar solo un fasterdragonbonearrows*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("fasterdragonbonearrows.+\.esp")'
+        subs: [ 'fasterdragonbonearrows .esp file' ]
   - name: 'FasterNordHeroWeps.esp'
     msg:
       - type: warn
@@ -21627,14 +20462,9 @@ plugins:
         condition: 'checksum("FasterNordHeroWeps.esp",4F2396EA)'
   - name: 'FemaleMannequins(Argonian|Breton|DarkElf|HighElf|Imperial|Kajiit|Nord|Orc|Redguard|WoodElf)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one FemaleMannequins esp.'
-          - lang: ru
-            str: 'Используйте только один FemaleMannequins esp.'
-          - lang: es
-            str: 'Utilizar solo un FemaleMannequins esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("FemaleMannequins(Argonian|Breton|DarkElf|HighElf|Imperial|Kajiit|Nord|Orc|Redguard|WoodElf)\.esp")'
+        subs: [ 'Female Mannequins .esp file' ]
   - name: 'ForceEnchantment.esp'
     dirty:
       - crc: 0x318fb954
@@ -21691,27 +20521,11 @@ plugins:
   - name: 'FSS-No pause between lines.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
-  - name: 'Fullcamprespawn.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Killable Leaders esp.'
-          - lang: ru
-            str: 'Используйте только один Killable Leaders esp.'
-          - lang: es
-            str: 'Utilizar solo un Killable Leaders esp.'
-        condition: 'file("Both Imp and SC-With Respawn.esp") or file("Both Imp and SC-No respawn.esp")'
   - name: 'Ghostly Shadowmere.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Ghostly Shadowmere*.esp.'
-          - lang: ru
-            str: 'Используйте только один Ghostly Shadowmere*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Ghostly Shadowmere*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Ghostly Shadowmere.*\.esp")'
+        subs: [ 'Ghostly Shadowmere .esp file' ]
   - name: 'GiantClubNerfed.esp'
     inc:
       - 'GiantClub.esp'
@@ -21773,14 +20587,9 @@ plugins:
         itm: 2
   - name: 'Hellspawn Shadowmere.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Hellspawn Shadowmere esp.'
-          - lang: ru
-            str: 'Используйте только один Hellspawn Shadowmere esp.'
-          - lang: es
-            str: 'Utilizar solo un Hellspawn Shadowmere esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Hellspawn Shadowmere.*\.esp")'
+        subs: [ 'Hellspawn Shadowmere .esp file' ]
   - name: 'Helms and Circlets.esp'
     dirty:
       - crc: 0x36521312
@@ -21916,59 +20725,20 @@ plugins:
       - crc: 0x12f27709
         util: *dirtyUtil
         itm: 3
+  - name: 'Isharas_MLLY_((FEMALES|MALES)(_SKSE)?|RESET)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Isharas_MLLY_((FEMALES|MALES)(_SKSE)?|RESET)\.esp")'
+        subs: [ 'Isharas_MLLY_ .esp file' ]
   - name: 'Isharas_MLLY_FEMALES_SKSE.esp'
-    inc:
-      - 'Isharas_MLLY_FEMALES.esp'
     req: [ *SKSE ]
-  - name: 'Isharas_MLLY_MALES.esp'
-    inc:
-      - 'Isharas_MLLY_FEMALES.esp'
-      - 'Isharas_MLLY_FEMALES_SKSE.esp'
   - name: 'Isharas_MLLY_MALES_SKSE.esp'
     req: [ *SKSE ]
+  - name: 'Item Prices( V(2|3))?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Isharas_MLLY_* esp.'
-          - lang: ru
-            str: 'Используйте только один Isharas_MLLY_* esp.'
-          - lang: es
-            str: 'Utilizar solo un Isharas_MLLY_* esp.'
-        condition: 'file("Isharas_MLLY_FEMALES.esp") or file("Isharas_MLLY_FEMALES_SKSE.esp") or file("Isharas_MLLY_MALES.esp")'
-  - name: 'Isharas_MLLY_RESET.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Isharas_MLLY_* esp.'
-          - lang: ru
-            str: 'Используйте только один Isharas_MLLY_* esp.'
-          - lang: es
-            str: 'Utilizar solo un Isharas_MLLY_* esp.'
-        condition: 'file("Isharas_MLLY_FEMALES.esp") or file("Isharas_MLLY_FEMALES_SKSE.esp") or file("Isharas_MLLY_MALES.esp") or file("Isharas_MLLY_MALES_SKSE.esp")'
-  - name: 'Item Prices V2.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Item Prices *.esp.'
-          - lang: ru
-            str: 'Используйте только один Item Prices *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Item Prices *.esp.'
-        condition: 'file("Item Prices.esp")'
-  - name: 'Item Prices V3.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Item Prices *.esp.'
-          - lang: ru
-            str: 'Используйте только один Item Prices *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Item Prices *.esp.'
-        condition: 'file("Item Prices.esp") or file("Item Prices V2.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Item Prices( V(2|3))?\.esp")'
+        subs: [ 'Item Prices .esp file' ]
   - name: 'JanusForbeare''s Fighting Words.esp'
     dirty:
       - crc: 0xeaf4398b
@@ -22054,14 +20824,9 @@ plugins:
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LegionArmorVariety(OPTIONA?L?\d)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one LegionArmorVariety esp.'
-          - lang: ru
-            str: 'Используйте только один LegionArmorVariety esp.'
-          - lang: es
-            str: 'Utilizar solo un LegionArmorVariety esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("LegionArmorVariety(OPTIONA?L?\d)?\.esp")'
+        subs: [ 'LegionArmorVariety .esp file' ]
   - name: 'kuerteeGoldAjustment MCM.esp'
     msg:
       - type: warn
@@ -22082,14 +20847,9 @@ plugins:
         condition: 'not active("SkyUI.esp")'
   - name: 'Less Talkative NPCs Release.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Less Talkative NPCs Release esp.'
-          - lang: ru
-            str: 'Используйте только один Less Talkative NPCs Release esp.'
-          - lang: es
-            str: 'Utilizar solo un Less Talkative NPCs Release esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Less Talkative NPCs Release.+\.esp")'
+        subs: [ 'Less Talkative NPCs Release .esp file' ]
   - name: 'Leveled Smithing.esp'
     tag:
       - Delev
@@ -22125,14 +20885,9 @@ plugins:
       - Relev
   - name: 'LZA Incremental Difficulty_.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one LZA Incremental Difficulty_*.esp.'
-          - lang: ru
-            str: 'Используйте только один LZA Incremental Difficulty_*.esp.'
-          - lang: es
-            str: 'Utilizar solo un LZA Incremental Difficulty_*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("LZA Incremental Difficulty_.*\.esp")'
+        subs: [ 'LZA Incremental Difficulty .esp file' ]
   - name: 'MageFriendlyDiademOfTheSavant.esp'
     msg: [ *corrupt ]
   - name: 'DragonPriestMaskQuestMarkers.esp'
@@ -22219,14 +20974,9 @@ plugins:
         itm: 2
   - name: 'EnchantPowerX.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one EnchantPowerX*.esp.'
-          - lang: ru
-            str: 'Используйте только один EnchantPowerX*.esp.'
-          - lang: es
-            str: 'Utilizar solo un EnchantPowerX*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("EnchantPowerX.*\.esp")'
+        subs: [ 'EnchantPowerX .esp file' ]
   - name: 'MD - EFCS with heights.esp'
     msg: [ *obsolete ]
   - name: 'MD - EFCS with heights also for mammoths.esp'
@@ -22559,14 +21309,9 @@ plugins:
         itm: 2
   - name: 'RealNightEye(Red|Green|Colorless|Blue|Yellow)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one RealNightEye*.esp.'
-          - lang: ru
-            str: 'Используйте только один RealNightEye*.esp.'
-          - lang: es
-            str: 'Utilizar solo un RealNightEye*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("RealNightEye(Red|Green|Colorless|Blue|Yellow)?\.esp")'
+        subs: [ 'RealNightEye .esp file' ]
   - name: 'RebalancedWeapons.esp'
     dirty:
       - crc: 0x941ffb02
@@ -22782,8 +21527,6 @@ plugins:
             str: 'Incompatible with: Other Dragon override mods, use only one.'
           - lang: ru
             str: 'Несовместим с: Другие, изменяющие драконов моды, используйте только один.'
-          - lang: ru
-            str: 'Несовместим с: Other Dragon override mods, use only one.'
     tag:
       - Delev
       - Relev
@@ -22792,14 +21535,9 @@ plugins:
       - Delev
   - name: 'Sinister Shadowmere.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Sinister Shadowmere*.esp.'
-          - lang: ru
-            str: 'Используйте только один Sinister Shadowmere*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Sinister Shadowmere*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Sinister Shadowmere.*\.esp")'
+        subs: [ 'Sinister Shadowmere .esp file' ]
   - name: 'SkyRe.esp'
     msg: [ *obsolete ]
   - name: 'SkyReBaratheonArmorPlugin.esp'
@@ -23035,17 +21773,11 @@ plugins:
           - lang: es
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("spellbreaker_150.esp",EB334104)'
-  - name: 'Stickier_Arrows V2.esp'
+  - name: '-?Stickier_Arrows-? (V2|Fix)\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one nnn esp.'
-          - lang: ru
-            str: 'Используйте только один nnn esp.'
-          - lang: es
-            str: 'Utilizar solo un Stickier Arrows esp.'
-        condition: 'file("-Stickier_Arrows- Fix.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("-?Stickier_Arrows-? (V2|Fix)\.esp")'
+        subs: [ 'Stickier Arrows .esp file' ]
   - name: 'StrongerArrows&BoltsDAWNGUARD.esp'
     dirty:
       - crc: 0x2fffbe67
@@ -23058,14 +21790,9 @@ plugins:
         itm: 2
   - name: 'The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one The Skyrim conflict *.esp.'
-          - lang: ru
-            str: 'Используйте только один The Skyrim conflict *.esp.'
-          - lang: es
-            str: 'Utilizar solo un The Skyrim conflict *.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp")'
+        subs: [ 'The Skyrim conflict .esp file' ]
   - name: 'TheChoiceIsYours.esp'
     after:
       - 'BetterQuestObjectives.esp'
@@ -23209,17 +21936,11 @@ plugins:
           - lang: ru
             str: 'Используйте вместо этого vanillaarcheryimproveddawnguard.esp'
         condition: 'active("Dawnguard.esm") and not file("vanillaarcheryimproveddawnguard.esp")'
-  - name: 'vanillaarcheryimproveddawnguard.esp'
+  - name: 'vanillaarcheryimproved(dawnguard)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one vanillaarcheryimproved esp.'
-          - lang: ru
-            str: 'Используйте только один vanillaarcheryimproved esp.'
-          - lang: es
-            str: 'Utilizar solo un vanillaarcheryimproved esp.'
-        condition: 'file("vanillaarcheryimproved.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("vanillaarcheryimproved(dawnguard)?\.esp")'
+        subs: [ 'vanillaarcheryimproved .esp file' ]
   - name: 'VanillaMonsterLootV1_5.esp'
     msg: [ *obsolete ]
     tag:
@@ -23276,17 +21997,11 @@ plugins:
       - crc: 0xf7850589
         util: *dirtyUtil
         itm: 1
-  - name: 'WerewolvesOccurringNaturally.esp'
+  - name: 'Werewolves(Occurring|Invading)Naturally\.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Use only one Werewolves * Naturally.esp.'
-          - lang: ru
-            str: 'Используйте только один Werewolves * Naturally.esp.'
-          - lang: es
-            str: 'Utilizar solo un Werewolves * Naturally.esp.'
-        condition: 'file("WerewolvesInvadingNaturally.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Werewolves(Occurring|Invading)Naturally\.esp")'
+        subs: [ 'Werewolves * Naturally .esp file' ]
     tag:
       - Delev
   - name: 'WiS IV - Double ArrowDamage.esp'
@@ -23735,6 +22450,11 @@ plugins:
         util: *dirtyUtil
         itm: 28
         udr: 31
+  - name: 'Riverwood Enhanced( - (Detailed Cities|NO NPC))?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Riverwood Enhanced( - (Detailed Cities|NO NPC))?\.esp")'
+        subs: [ 'Riverwood Enhanced .esp file' ]
   - name: 'Riverwood Enhanced - Detailed Cities.esp'
     msg:
       - type: warn
@@ -23745,15 +22465,6 @@ plugins:
             str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: es
             str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Riverwood Enhanced *.esp.'
-          - lang: ru
-            str: 'Используйте только один Riverwood Enhanced *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Riverwood Enhanced *.esp.'
-        condition: 'file("Riverwood Enhanced.esp")'
     dirty:
       - crc: 0x46637208
         util: *dirtyUtil
@@ -23769,15 +22480,6 @@ plugins:
             str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: es
             str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Riverwood Enhanced *.esp.'
-          - lang: ru
-            str: 'Используйте только один Riverwood Enhanced *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Riverwood Enhanced *.esp.'
-        condition: 'file("Riverwood Enhanced.esp") or file("Riverwood Enhanced - Detailed Cities.esp")'
     dirty:
       - crc: 0x73840440
         util: *dirtyUtil
@@ -23964,16 +22666,11 @@ plugins:
         util: *dirtyUtil
         itm: 234
         udr: 21
-  - name: 'CampingKitNorthernRanger( - Without Amberwood| - Tent Not For Sale| - Free Kits)?\.esp'
+  - name: 'CampingKitNorthernRanger( - (Without Amberwood|Tent Not For Sale|Free Kits))?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one CampingKitNorthernRanger esp.'
-          - lang: ru
-            str: 'Используйте только один CampingKitNorthernRanger esp.'
-          - lang: es
-            str: 'Utilizar solo un CampingKitNorthernRanger esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("CampingKitNorthernRanger( - (Without Amberwood|Tent Not For Sale|Free Kits))?\.esp")'
+        subs: [ 'CampingKitNorthernRanger .esp file' ]
   - name: 'CityForestv2.esp'
     msg: [ *obsolete ]
   - name: 'City Forest and Landscape V2 trees whiterun light fix.esp'
@@ -24018,14 +22715,9 @@ plugins:
         itm: 4
   - name: 'Immersive Gras.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Immersive Grass esp.'
-          - lang: ru
-            str: 'Используйте только один Immersive Grass esp.'
-          - lang: es
-            str: 'Utilizar solo un Immersive Grass esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Immersive Gras.*\.esp")'
+        subs: [ 'Immersive Grass .esp file' ]
   - name: 'LakeExpanded01.esp'
     msg:
       - type: say
@@ -24313,12 +23005,9 @@ plugins:
         itm: 1
   - name: 'Realistic Lighting( - Full| - Addon)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one LightAdjuster esp'
-          - lang: ru
-            str: 'Используйте только один LightAdjuster esp'
+      - <<: *useOnlyOneX
+        condition: 'many("Realistic Lighting( - Full| - Addon)\.esp")'
+        subs: [ 'Realistic Lighting .esp file' ]
       - *obsolete
   - name: 'RL - .*\.esp'
     msg: [ *obsolete ]
@@ -24564,24 +23253,14 @@ plugins:
 # Patches for The Dungeons
   - name: 'SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Sounds of Skyrim - The Wilds and CoT patch.'
-          - lang: ru
-            str: 'Используйте только один Sounds of Skyrim-CoT patch.'
-          - lang: es
-            str: 'Utilizar solo un Sounds of Skyrim - The Wilds and CoT patch.'
+      - <<: *useOnlyOneX
+        condition: 'many("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        subs: [ 'Sounds of Skyrim - The Wilds and CoT patch' ]
   - name: 'SoS - Civilization( -|-| - )PatchCoT(Sounds)?(WinterEdition)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Sounds of Skyrim - Civilization and CoT patch.'
-          - lang: ru
-            str: 'Используйте только один Sounds of Skyrim-CoT patch.'
-          - lang: es
-            str: 'Utilizar solo un Sounds of Skyrim - Civilization and CoT patch.'
+      - <<: *useOnlyOneX
+        condition: 'many("SoS - Civilization( -|-| - )PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        subs: [ 'Sounds of Skyrim - Civilization and CoT patch' ]
   - name: 'SoS - The Dungeons-PatchELFX.esp'
     after:
       - 'rcrnShaders.esp'
@@ -25090,16 +23769,6 @@ plugins:
             str: 'Этот патч используется только совместимой с Moonlight Tales версией Werewolf Mastery.'
           - lang: es
             str: 'This patch is only usable with the Moonlight Tales compatible version of Werewolf Mastery.'
-  - name: 'WerewolfNigtheyeHowl.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one WerewolfNighteyeHowl.esp.'
-          - lang: ru
-            str: 'Используйте только один WerewolfNighteyeHowl.esp.'
-          - lang: es
-            str: 'Utilizar solo un WerewolfNighteyeHowl.esp.'
   - name: 'WerewolfPerksExpanded_1.6.esp'
     dirty:
       - crc: 0x5653abb0
@@ -25117,14 +23786,9 @@ plugins:
     inc:
       - 'DG-NoAttacks.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one DawnguardDelayedStart esp.'
-          - lang: ru
-            str: 'Используйте только один DawnguardDelayedStart esp.'
-          - lang: es
-            str: 'Utilizar solo un nnn esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("DawnguardDelayedStart(20|30|40|50|999)\.esp")'
+        subs: [ 'DawnguardDelayedStart .esp file' ]
   - name: 'DelayDawnguardQuestStart.esp'
     dirty:
       - crc: 0x81bb9cff
@@ -25216,52 +23880,27 @@ plugins:
         itm: 9
   - name: 'ArcaneFist.esp'
     msg: [ *obsolete ]
+  - name: 'ArcaneFist - (Expert to Master|Nerf Version)( NS)?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("ArcaneFist - (Expert to Master|Nerf Version)( NS)?\.esp")'
+        subs: [ 'ArcaneFist .esp file' ]
   - name: 'ArcaneFist - Expert to Master NS.esp'
     dirty:
       - crc: 0xffe7979b
         util: *dirtyUtil
         itm: 12
   - name: 'ArcaneFist - Expert to Master.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either ArcaneFist - Expert to Master NS.esp or ArcaneFist - Expert to Master.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой или ArcaneFist - Expert to Master NS.esp или ArcaneFist - Expert to Master.esp, не обa.'
-          - lang: es
-            str: 'Usar ArcaneFist - Expert to Master NS.esp o ArcaneFist - Expert to Master.esp, no ambos.'
-        condition: 'file("ArcaneFist - Expert to Master NS.esp")'
     dirty:
       - crc: 0xe4723f8
         util: *dirtyUtil
         itm: 17
   - name: 'ArcaneFist - Nerf Version NS.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one ArcaneFist *.esp.'
-          - lang: ru
-            str: 'Используйте только один ArcaneFist *.esp.'
-          - lang: es
-            str: 'Utilizar solo un ArcaneFist *.esp.'
-        condition: 'file("ArcaneFist - Expert to Master NS.esp") or file("ArcaneFist - Expert to Master.esp")'
     dirty:
       - crc: 0xffc9195d
         util: *dirtyUtil
         itm: 11
   - name: 'ArcaneFist - Nerf Version.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one ArcaneFist *.esp.'
-          - lang: ru
-            str: 'Используйте только один ArcaneFist *.esp.'
-          - lang: es
-            str: 'Utilizar solo un ArcaneFist *.esp.'
-        condition: 'file("ArcaneFist - Nef Version NS.esp") or file("ArcaneFist - Expert to Master NS.esp") or file("ArcaneFist - Expert to Master.esp")'
     dirty:
       - crc: 0x7b8ef9c
         util: *dirtyUtil
@@ -25442,14 +24081,9 @@ plugins:
         itm: 4
   - name: 'CW - 0(.\d)? weight potions\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Customizable weight potions esp.'
-          - lang: ru
-            str: 'Используйте только один Customizable weight potions esp.'
-          - lang: es
-            str: 'Utilizar solo un Customizable weight potions esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("CW - 0(.\d)? weight potions\.esp")'
+        subs: [ 'Customizable weight potions .esp file' ]
   - name: 'Darkness.esp'
     msg: [ *obsolete ]
   - name: 'DarkBrotherhoodAstrid.esp'
@@ -25690,17 +24324,11 @@ plugins:
       - crc: 0xc32007ed
         util: *dirtyUtil
         itm: 3
-  - name: 'Medium Voidmagic.esp'
+  - name: '(Light|Medium|Total) Voidmagic\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Voidmagic esp.'
-          - lang: ru
-            str: 'Используйте только один Voidmagic esp.'
-          - lang: es
-            str: 'Utilizar solo un Voidmagic esp.'
-        condition: 'file("Light Voidmagic.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("(Light|Medium|Total) Voidmagic\.esp")'
+        subs: [ 'Voidmagic .esp file' ]
   - name: 'Milestone Memoirs -.+\.esp'
     msg: [ *obsolete ]
   - name: 'Milestone Memoirs.esp'
@@ -25805,14 +24433,9 @@ plugins:
         itm: 2
   - name: 'Phenderix''s Magic Evolved -( Cleaned)?( - No Perks)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Phenderix''s Magic Evolved esp.'
-          - lang: ru
-            str: 'Используйте только один Phenderix''s Magic Evolved esp.'
-          - lang: es
-            str: 'Utilizar solo un Phenderix''s Magic Evolved esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Phenderix''s Magic Evolved -( Cleaned)?( - No Perks)?\.esp")'
+        subs: [ 'Phenderix''s Magic Evolved .esp file' ]
   - name: 'Phenderix''s Ultimate Magic System.esp'
     dirty:
       - crc: 0x87aca9ae
@@ -26005,17 +24628,6 @@ plugins:
       - crc: 0x1595af04
         util: *dirtyUtil
         itm: 6
-  - name: 'Total Voidmagic.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Voidmagic esp.'
-          - lang: ru
-            str: 'Используйте только один Voidmagic esp.'
-          - lang: es
-            str: 'Utilizar solo un Voidmagic esp.'
-        condition: 'file("Light Voidmagic.esp") or file("Medium Voidmagic.esp")'
   - name: 'TotalConjuration.esp'
     tag:
       - Relev
@@ -26363,15 +24975,9 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Skyrim Improved Magic System( - No Race Spell Removal)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Skyrim Improved Magic System esp.'
-          - lang: ru
-            str: 'Используйте только один Skyrim Improved Magic System esp.'
-          - lang: es
-            str: 'Utilizar solo un Skyrim Improved Magic System esp.'
-        condition: 'file("Skyrim Improved Magic System.esp") and file("Skyrim Improved Magic System - No Race Spell Removal.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("Skyrim Improved Magic System( - No Race Spell Removal)?\.esp")'
+        subs: [ 'Skyrim Improved Magic System .esp file' ]
   - name: 'tSSSSS.esp'
     msg: [ *corrupt ]
   - name: 'Vampiric_Drain_Fix.esp'
@@ -26385,14 +24991,9 @@ plugins:
       - 'Serana Fixed.esp'
   - name: 'WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one WiS IV - AI & Spells for NPC esp.'
-          - lang: ru
-            str: 'Используйте только один WiS IV - AI & Spells for NPC esp.'
-          - lang: es
-            str: 'Utilizar solo un WiS IV - AI & Spells for NPC esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp")'
+        subs: [ 'WiS IV - AI & Spells for NPC .esp file' ]
   - name: 'Alchemy Fixed Beta 0.02.esp'
     msg: [ *obsolete ]
   - name: 'alchemyoverhaul.esp'
@@ -26441,56 +25042,11 @@ plugins:
       - crc: 0x7e5c597d
         util: *dirtyUtil
         itm: 14
-  - name: 'PTAlchemyFoodOverhaul.esp'
+  - name: 'PT(Alchemy)?(Food)?Overhaul(_ONLY)?(_BetterSorting)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one PT Alchemy / Food Overhaul esp.'
-          - lang: ru
-            str: 'Используйте только один PT Alchemy / Food Overhaul esp.'
-          - lang: es
-            str: 'Utilizar solo un PT Alchemy / Food Overhaul esp.'
-  - name: 'PTAlchemyFoodOverhaul_BetterSorting.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one PT Alchemy / Food Overhaul esp.'
-          - lang: ru
-            str: 'Используйте только один PT Alchemy / Food Overhaul esp.'
-          - lang: es
-            str: 'Utilizar solo un PT Alchemy / Food Overhaul esp.'
-  - name: 'PTAlchemyOverhaul_ONLY.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one PT Alchemy / Food Overhaul esp.'
-          - lang: ru
-            str: 'Используйте только один PT Alchemy / Food Overhaul esp.'
-          - lang: es
-            str: 'Utilizar solo un PT Alchemy / Food Overhaul esp.'
-  - name: 'PTAlchemyOverhaul_ONLY_BetterSorting.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one PT Alchemy / Food Overhaul esp.'
-          - lang: ru
-            str: 'Используйте только один PT Alchemy / Food Overhaul esp.'
-          - lang: es
-            str: 'Utilizar solo un PT Alchemy / Food Overhaul esp.'
-  - name: 'PTFoodOverhaul_ONLY.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one PT Alchemy / Food Overhaul esp.'
-          - lang: ru
-            str: 'Используйте только один PT Alchemy / Food Overhaul esp.'
-          - lang: es
-            str: 'Utilizar solo un PT Alchemy / Food Overhaul esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("PT(Alchemy)?(Food)?Overhaul(_ONLY)?(_BetterSorting)?\.esp")'
+        subs: [ 'PT Alchemy / Food Overhaul .esp file' ]
   - name: 'Dark Brotherhood Enchantment.esp'
     dirty:
       - crc: 0x3aab054a
@@ -26558,14 +25114,9 @@ plugins:
 # Overrides overhauls.
   - name: 'Realistic crime report radius( zero)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Realistic crime report radius esp.'
-          - lang: ru
-            str: 'Используйте только один Realistic crime report radius esp.'
-          - lang: es
-            str: 'Utilizar solo un Realistic crime report radius esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Realistic crime report radius( zero)?\.esp")'
+        subs: [ 'Realistic crime report radius .esp file' ]
   - name: 'Stealth AI for Followers_Standard.esp'
     dirty:
       - crc: 0x9b5a3dee
@@ -26635,14 +25186,9 @@ plugins:
         display: '[Script Dragon](http://alexander.sannybuilder.com/?altname=skyrim_script_dragon)'
         condition: 'file("Dual Wield Parrying_ScriptDragon.esp") and not file("..\ScriptDragon.dll")'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Dual Wield Parrying*.esp.'
-          - lang: ru
-            str: 'Используйте только один Dual Wield Parrying*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Dual Wield Parrying*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Dual Wield Parrying.*\.esp")'
+        subs: [ 'Dual Wield Parrying .esp file' ]
   - name: 'Duel2_ArmorRating.esp'
     inc:
       - 'Duel_Master.esp'
@@ -26698,44 +25244,24 @@ plugins:
     msg: [ *obsolete ]
   - name: 'killmoverandom-(\d{1,3})(-)?(P)?(-)?(L)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one killmoverandom-*.esp.'
-          - lang: ru
-            str: 'Используйте только один killmoverandom-*.esp.'
-          - lang: es
-            str: 'Utilizar solo un killmoverandom-*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("killmoverandom-(\d{1,3})(-)?(P)?(-)?(L)?\.esp")'
+        subs: [ 'killmoverandom .esp file' ]
   - name: 'No_3rd_Person_killcam(-)?(3rd_Person_only)?(-)?(Above-Behind|leftsideclose|rightsideclose)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one No_3rd_Person_killcam*.esp.'
-          - lang: ru
-            str: 'Используйте только один No_3rd_Person_killcam*.esp.'
-          - lang: es
-            str: 'Utilizar solo un No_3rd_Person_killcam*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("No_3rd_Person_killcam(-)?(3rd_Person_only)?(-)?(Above-Behind|leftsideclose|rightsideclose)?\.esp")'
+        subs: [ 'No_3rd_Person_killcam .esp file' ]
   - name: 'Added_Slow_Motion_to_1stPerson(_with_1st_Person_Only)?(-slower_version)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Added_Slow_Motion_to_1stPerson*.esp.'
-          - lang: ru
-            str: 'Используйте только один Added_Slow_Motion_to_1stPerson*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Added_Slow_Motion_to_1stPerson*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Added_Slow_Motion_to_1stPerson(_with_1st_Person_Only)?(-slower_version)?\.esp")'
+        subs: [ 'Added_Slow_Motion_to_1stPerson .esp file' ]
   - name: 'decap_chance_(\d{1,3})\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one decap_chance_*.esp.'
-          - lang: ru
-            str: 'Используйте только один decap_chance_*.esp.'
-          - lang: es
-            str: 'Utilizar solo un decap_chance_*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("decap_chance_(\d{1,3})\.esp")'
+        subs: [ 'decap_chance_ .esp file' ]
   - name: 'AdvancedKillMoves.esp'
     msg:
       - type: say
@@ -26827,74 +25353,39 @@ plugins:
         itm: 21
   - name: 'ACE BYOG Carry Weight ([Dd]+\d{1,3})\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ACE BYOG Carry Weight*esp.'
-          - lang: ru
-            str: 'Используйте только один ACE BYOG Carry Weight*esp.'
-          - lang: es
-            str: 'Utilizar solo un ACE BYOG Carry Weight*esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ACE BYOG Carry Weight ([Dd]+\d{1,3})\.esp")'
+        subs: [ 'ACE BYOG Carry Weight .esp file' ]
   - name: 'ACE BYOG - Attack Range ([du]+\d{1,3})\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ACE BYOG Attack Range*esp.'
-          - lang: ru
-            str: 'Используйте только один ACE BYOG Attack Range*esp.'
-          - lang: es
-            str: 'Utilizar solo un ACE BYOG Attack Range*esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ACE BYOG - Attack Range ([du]+\d{1,3})\.esp")'
+        subs: [ 'ACE BYOG Attack Range .esp file' ]
   - name: 'ACE BYOG - Enemy lvl ([du]+\d{1,3})\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ACE BYOG Enemy lvl*esp.'
-          - lang: ru
-            str: 'Используйте только один ACE BYOG Enemy lvl*esp.'
-          - lang: es
-            str: 'Utilizar solo un ACE BYOG Enemy lvl*esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ACE BYOG - Enemy lvl ([du]+\d{1,3})\.esp")'
+        subs: [ 'ACE BYOG Enemy lvl .esp file' ]
   - name: 'ACE BYOG - Jump Height (u\d{1,3})\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ACE BYOG Jump Height*esp.'
-          - lang: ru
-            str: 'Используйте только один ACE BYOG Jump Height*esp.'
-          - lang: es
-            str: 'Utilizar solo un ACE BYOG Jump Height*esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("AACE BYOG - Jump Height (u\d{1,3})\.esp")'
+        subs: [ 'ACE BYOG Jump Height .esp file' ]
   - name: 'ACE BYOG - Max Damage Resist (\d{1,3})\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ACE BYOG Max Damage Resist*esp.'
-          - lang: ru
-            str: 'Используйте только один ACE BYOG Max Damage Resist*esp.'
-          - lang: es
-            str: 'Utilizar solo un ACE BYOG Max Damage Resist*esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ACE BYOG - Max Damage Resist (\d{1,3})\.esp")'
+        subs: [ 'ACE BYOG Max Damage Resist .esp file' ]
   - name: 'ACE BYOG - Starting Skills (\d{1,3})\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ACE BYOG Starting Skills*esp.'
-          - lang: ru
-            str: 'Используйте только один ACE BYOG Starting Skills*esp.'
-          - lang: es
-            str: 'Utilizar solo un ACE BYOG Starting Skills*esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ACE BYOG - Starting Skills (\d{1,3})\.esp")'
+        subs: [ 'ACE BYOG Starting Skills .esp file' ]
   - name: 'ACE BYOG NPC Archers Miss-Rate ([du]+\d{1,3})\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ACE BYOG NPC Archers Miss-Rate*esp.'
-          - lang: ru
-            str: 'Используйте только один ACE BYOG NPC Archers Miss-Rate*esp.'
-          - lang: es
-            str: 'Utilizar solo un ACE BYOG NPC Archers Miss-Rate*esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("ACE BYOG NPC Archers Miss-Rate ([du]+\d{1,3})\.esp")'
+        subs: [ 'ACE BYOG NPC Archers Miss-Rate .esp file' ]
   - name: 'ArcheryExtended200.esp'
     msg:
       - type: warn
@@ -26978,14 +25469,9 @@ plugins:
         condition: 'not regex("(Headbomb''s )?Better Sorting.*\.esp")'
   - name: 'New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one New Leveled Encounter Levels*.esp.'
-          - lang: ru
-            str: 'Используйте только один New Leveled Encounter Levels*.esp.'
-          - lang: es
-            str: 'Utilizar solo un New Leveled Encounter Levels*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp")'
+        subs: [ 'New Leveled Encounter Levels .esp file' ]
   - name: 'Crimson Tide - Blood.esp'
     inc:
       - 'dD - Enhanced Blood Main.esp'
@@ -27042,14 +25528,9 @@ plugins:
       - *SKSE
   - name: 'Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Deadly Torches - *.esp.'
-          - lang: ru
-            str: 'Используйте только один Deadly Torches - *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Deadly Torches - *.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp")'
+        subs: [ 'Deadly Torches .esp file' ]
   - name: 'EpicGlory-SkillsStartAtZeroByMadmole.esp'
     inc:
       - 'EpicGloryByMadmole.esp'
@@ -27138,14 +25619,9 @@ plugins:
         itm: 3
   - name: 'MR_(FasterDualcasting|MagickaRevisited|PowerfulDualcasting)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one MR_*.esp.'
-          - lang: ru
-            str: 'Используйте только один MR_*.esp.'
-          - lang: es
-            str: 'Utilizar solo un MR_*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("MR_(FasterDualcasting|MagickaRevisited|PowerfulDualcasting)\.esp")'
+        subs: [ 'MR_ .esp file' ]
   - name: 'Path of Shadows - Sneak Settings.esp'
     dirty:
       - crc: 0x33a55a9b
@@ -27162,14 +25638,9 @@ plugins:
         condition: 'file("levelingperkslite.esp")'
   - name: 'PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one PTAlchemyOverhaul_SkillRate esp.'
-          - lang: ru
-            str: 'Используйте только один PTAlchemyOverhaul_SkillRate esp.'
-          - lang: es
-            str: 'Utilizar solo un PTAlchemyOverhaul_SkillRate esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp")'
+        subs: [ 'PTAlchemyOverhaul_SkillRate .esp file' ]
   - name: 'ReadAndLearnSpeechcraft1_1.esp'
     msg: [ *obsolete ]
   - name: 'RPGArmor.esp'
@@ -27237,14 +25708,9 @@ plugins:
         display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
   - name: 'WiS IV - leveld World X\d+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one WiS IV - leveld World esp.'
-          - lang: ru
-            str: 'Используйте только один WiS IV - leveld World esp.'
-          - lang: es
-            str: 'Utilizar solo un WiS IV - leveld World esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("WiS IV - leveld World X\d+\.esp")'
+        subs: [ 'WiS IV - leveld World .esp file' ]
   - name: 'GDO_Plugin_SkyRe.esp'
     req:
       - name: 'SPIKE.esm'
@@ -27403,26 +25869,11 @@ plugins:
       - crc: 0x2711a049
         util: *dirtyUtil
         itm: 5
-  - name: 'MoM - Only Mastery Perks.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one MoM esp.'
-          - lang: ru
-            str: 'Используйте только один MoM esp.'
-          - lang: es
-            str: 'Utilizar solo un MoM esp.'
   - name: 'More Useful(l)? Soul Siphon(10|25|50|75|100)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one More Useful Soul Siphon esp.'
-          - lang: ru
-            str: 'Используйте только один More Useful Soul Siphon esp.'
-          - lang: es
-            str: 'Utilizar solo un More Useful Soul Siphon esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("More Useful(l)? Soul Siphon(10|25|50|75|100)\.esp")'
+        subs: [ 'More Useful Soul Siphon .esp file' ]
   - name: 'MoreWerewolfPerks.esp'
     dirty:
       - crc: 0xdecfc212
@@ -27696,14 +26147,9 @@ plugins:
         itm: 8
   - name: 'Shars Signs - The Lover (5%|10%|30%|50%)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Shars Signs - The Lover *.esp.'
-          - lang: ru
-            str: 'Используйте только один Shars Signs - The Lover *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Shars Signs - The Lover *.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Shars Signs - The Lover (5%|10%|30%|50%)?\.esp")'
+        subs: [ 'Shars Signs - The Lover .esp file' ]
   - name: 'Skype.esp'
     dirty:
       - crc: 0xc09abba9
@@ -27913,19 +26359,6 @@ plugins:
     msg: [ *doNotClean ]
   - name: 'Override TwoHanded.esp'
     msg: [ *doNotClean ]
-  - name: 'ERSO 32 - Lord of the Dead for SPERG.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one ERSO 32 esp.'
-          - lang: ru
-            str: 'Используйте только один ERSO 32 esp.'
-          - lang: es
-            str: 'Utilizar solo un ERSO 32 esp.'
-    tag:
-      - Delev
-      - Relev
   - name: 'SPERG.esp'
     after:
       - 'EnchantingAwakened.esp'
@@ -28742,10 +27175,8 @@ plugins:
         util: *dirtyUtil
         itm: 4
   - name: 'Ja´dirr + Kharjo Makeover.esp'
-    msg:
-      - type: say
-        content: 'Use only one of Ja´dirr + Kharjo Makeover.esp or Only Kharjo.esp, not both.'
-        condition: 'file("Only Kharjo.esp")'
+    inc:
+      - '"Only Kharjo.esp'
     dirty:
       - crc: 0xc21a23e1
         util: *dirtyUtil
@@ -28783,10 +27214,7 @@ plugins:
     inc:
       - 'Kharjo.esp'
       - 'Better Kharjo.esp'
-    msg:
-      - type: say
-        content: 'Use only one of Ja´dirr + Kharjo Makeover.esp or Only Kharjo.esp, not both.'
-        condition: 'file("Ja´dirr + Kharjo Makeover.esp")'
+      - 'Ja´dirr + Kharjo Makeover.esp'
     dirty:
       - crc: 0xb0cdab38
         util: *dirtyUtil
@@ -29520,14 +27948,9 @@ plugins:
     msg: [ *obsolete ]
   - name: 'UniqueFaendal(Specialized)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one UniqueFaendal esp.'
-          - lang: ru
-            str: 'Используйте только один UniqueFaendal esp.'
-          - lang: es
-            str: 'Utilizar solo un UniqueFaendal esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("UniqueFaendal(Specialized)?\.esp")'
+        subs: [ 'UniqueFaendal .esp file' ]
   - name: 'Faida.esp'
     dirty:
       - crc: 0x8f0ad003
@@ -30083,14 +28506,9 @@ plugins:
       - 'Lydia_edited.esp'
   - name: 'UniqueLydia(Armor|SF|SFArmor|ArmorNoCloak|NoOutfit|SFArmorNoCloak|SFNoOutfit)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one UniqueLydia esp.'
-          - lang: ru
-            str: 'Используйте только один UniqueLydia esp.'
-          - lang: es
-            str: 'Utilizar solo un UniqueLydia esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("UniqueLydia(Armor|SF|SFArmor|ArmorNoCloak|NoOutfit|SFArmorNoCloak|SFNoOutfit)?\.esp")'
+        subs: [ 'UniqueLydia .esp file' ]
   - name: 'Maerwen Briaerthorne.esp'
     msg:
       - type: say
@@ -30379,14 +28797,9 @@ plugins:
         itm: 2
   - name: 'SprigganFollower(_lvl\d)?\d?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one SprigganFollower esp.'
-          - lang: ru
-            str: 'Используйте только один SprigganFollower esp.'
-          - lang: es
-            str: 'Utilizar solo un SprigganFollower esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("SprigganFollower(_lvl\d)?\d?\.esp")'
+        subs: [ 'SprigganFollower .esp file' ]
   - name: 'SprigganFollower.esp'
     dirty:
       - crc: 0x1179651
@@ -30568,14 +28981,9 @@ plugins:
           - lang: ru
             str: 'Требуется: Better Followers - Armor Pack I & II, вы можете их загрузить на странице Better Followers.'
         condition: 'regex("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Better Followers - *.esp.'
-          - lang: ru
-            str: 'Используйте только один Better Followers - *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Better Followers - *.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Better Followers - [SBNP].*\.esp")'
+        subs: [ 'Better Followers .esp file' ]
   - name: 'Better Followers - P.esp'
     dirty:
       - crc: 0x7514fa0b
@@ -30798,15 +29206,9 @@ plugins:
           - lang: ru
             str: 'Несовместим с: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.'
         condition: 'file("Better Follower Improvements.esp") and regex("Better Followers - [SBNP].*\.esp")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one move it esp.'
-          - lang: ru
-            str: 'Используйте только один nnn esp.'
-          - lang: es
-            str: 'Utilizar solo un move it esp.'
-        condition: 'regex("move.?it\.esp") and file("moveitLWT.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("move.?it(LWT)?\.esp")'
+        subs: [ 'move it .esp file' ]
   - name: 'HugMe.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
@@ -30919,14 +29321,9 @@ plugins:
         itm: 3
   - name: 'QuickStart3_.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one QuickStart3_*.esp.'
-          - lang: ru
-            str: 'Используйте только один QuickStart3_*.esp.'
-          - lang: es
-            str: 'Utilizar solo un QuickStart3_*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("QuickStart3_.+\.esp")'
+        subs: [ 'QuickStart3 .esp file' ]
   - name: 'Random Alternate Start.esp'
     inc:
       - 'Alternate Start - Live Another Life.esp'
@@ -30952,52 +29349,29 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Height Adjusted Races( .+)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Height Adjusted Races*.esp.'
-          - lang: ru
-            str: 'Используйте только один Height Adjusted Races*.esp.'
-          - lang: es
-            str: 'Utilizar solo un Height Adjusted Races*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Height Adjusted Races( .+)?\.esp")'
+        subs: [ 'Height Adjusted Races .esp file' ]
   - name: 'True Giants( v\d)?\.esp'
     msg:
       - type: say
         content: 'Incompatible with: Height Adjusted Races with True Giants'
         condition: 'regex("Height Adjusted Races(.+)True Giants(.+)?\.esp")'
-  - name: 'AROP- Altmer.+\.esp'
+  - name: 'AROP- Altmer Edition( - NW)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either AROP- Altmer Edition.esp or AROP- Altmer Edition - NW.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или Altmer Edition.esp или AROP- Altmer Edition - NW.esp, не оба.'
-          - lang: es
-            str: 'Usar AROP- Altmer Edition.esp o AROP- Altmer Edition - NW.esp, no ambos.'
-        condition: 'file("AROP- Altmer Edition.esp") and file("AROP- Altmer Edition - NW.esp")'
-  - name: 'AROP- Argonian.+\.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("AROP- Altmer Edition( - NW)?\.esp")'
+        subs: [ 'AROP- Altmer Edition .esp file' ]
+  - name: 'AROP- Argonian Edition( - Poison)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either AROP- Argonian Edition.esp or AROP- Argonian Edition - Poison.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или Argonian Edition.esp или AROP- Argonian Edition - Poison.esp, не оба.'
-          - lang: es
-            str: 'Usar AROP- Argonian Edition.esp o AROP- Argonian Edition - Poison.esp, no ambos.'
-        condition: 'file("AROP- Argonian Edition.esp") and file("AROP- Argonian Edition - Poison.esp")'
-  - name: 'AROP- Redguard.+\.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("AROP- Argonian Edition( - Poison)?\.esp")'
+        subs: [ 'AROP- Argonian Edition .esp file' ]
+  - name: 'AROP- Redguard Edition( - SS)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either AROP- Redguard Edition.esp or AROP- Redguard Edition - SS.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или AROP- Redguard Edition.esp или AROP- Redguard Edition - SS.esp, не оба.'
-          - lang: es
-            str: 'Usar AROP- Redguard Edition.esp o AROP- Redguard Edition - SS.esp, no ambos.'
-        condition: 'file("AROP- Redguard Edition.esp") and file("AROP- Redguard Edition - SS.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("AROP- Redguard Edition( - SS)?\.esp")'
+        subs: [ 'AROP- Redguard Edition .esp file' ]
   - name: 'AutoCastPowers.esp'
     dirty:
       - crc: 0xea872e4c
@@ -31065,19 +29439,14 @@ plugins:
     req:
       - name: 'SKSE\Plugins\chargen.dll'
         display: '[CharGen Core](http://www.nexusmods.com/skyrim/mods/36925)'
-  - name: 'Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp'
-    msg: [ *obsolete ]
-  - name: 'Expanded Eye Color Selection.esp'
+  - name: 'Extended Colors - ((Less|Lite)? Selection|Hair Only)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Extended Colors - *.esp.'
-          - lang: ru
-            str: 'Используйте только один Extended Colors - *.esp.'
-          - lang: es
-            str: 'Utilizar solo un Extended Colors - *.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Extended Colors - ((Less|Lite)? Selection|Hair Only)?\.esp")'
+        subs: [ 'Extended Colors .esp file' ]
       - *obsolete
+  - name: 'Expanded Eye Color Selection.esp'
+    msg: [ *obsolete ]
   - name: 'fjAshenVampires.esp'
     msg: [ *corrupt ]
   - name: 'Forsworn Children.esp'
@@ -31190,14 +29559,9 @@ plugins:
         itm: 2
   - name: 'Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Serana-ish esp.'
-          - lang: ru
-            str: 'Используйте только один Serana-ish esp.'
-          - lang: es
-            str: 'Utilizar solo un Serana-ish esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")'
+        subs: [ 'Serana-ish Vampires .esp file' ]
   - name: 'SVPaleVampires.esp'
     msg:
       - type: say
@@ -31273,37 +29637,21 @@ plugins:
         condition: 'regex("Bashed Patch.*\.esp")'
   - name: 'WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one Blood Coins esp.'
-          - lang: ru
-            str: 'Используйте только один Blood Coins esp.'
-          - lang: es
-            str: 'Utilizar solo un Blood Coins esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp")'
+        subs: [ 'Blood Coins .esp file' ]
   - name: 'ChickenNestFix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'MD - WMTBNDE .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one WMTBNDE esp.'
-          - lang: ru
-            str: 'Используйте только один WMTBNDE esp.'
-          - lang: es
-            str: 'Utilizar solo un WMTBNDE esp.'
-  - name: 'NoClearedCellRespawn.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("MD - WMTBNDE .+\.esp")'
+        subs: [ 'MD - WMTBNDE .esp file' ]
+  - name: '(SlowRespawn_)?No(Cleared)?CellRespawn\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either NoCellRespawn.esp or NoClearedCellRespawn.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или NoCellRespawn.esp или NoClearedCellRespawn.esp, не оба.'
-          - lang: es
-            str: 'Usar NoCellRespawn.esp o NoClearedCellRespawn.esp, no ambos.'
-        condition: 'file("NoCellRespawn.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("(SlowRespawn_)?No(Cleared)?CellRespawn\.esp")'
+        subs: [ 'No Cell Respawn .esp file' ]
   - name: 'Respawn\w{3,5}Days{0,1}\.esp'
     msg:
       - type: say
@@ -31340,17 +29688,6 @@ plugins:
           - lang: ru
             str: 'Используйте вместо этого настройку башед патча.'
         condition: 'regex("Bashed Patch.*\.esp")'
-  - name: 'SlowRespawn_NoClearedCellRespawn.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one NoCellRespawn *.esp.'
-          - lang: ru
-            str: 'Используйте только один NoCellRespawn *.esp.'
-          - lang: es
-            str: 'Utilizar solo un NoCellRespawn esp.'
-        condition: 'file("NoCellRespawn.esp") or file("NoClearedCellRespawn.esp")'
   - name: 'Skyrim Timescale \d+\.esp'
     msg:
       - type: say
@@ -31807,14 +30144,9 @@ plugins:
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedAWEPatch.esp")'
   - name: 'DTHSpellMageArmorEffectReplacer.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one DTHSpellMageArmorEffectReplacer*.esp.'
-          - lang: ru
-            str: 'Используйте только один DTHSpellMageArmorEffectReplacer*.esp.'
-          - lang: es
-            str: 'Utilizar solo un DTHSpellMageArmorEffectReplacer*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("DTHSpellMageArmorEffectReplacer.+\.esp")'
+        subs: [ 'DTHSpellMageArmorEffectReplacer .esp file' ]
   - name: 'RealShelter.esp'
     dirty:
       - crc: 0x47b98821
@@ -31977,16 +30309,8 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'WATER DB Waves.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one WATER DB esp.'
-          - lang: ru
-            str: 'Используйте только один WATER DB esp.'
-          - lang: es
-            str: 'Utilizar solo un WATER DB esp.'
-        condition: 'file("WATER DB.esp")'
+    inc:
+      - 'WATER DB.esp'
   - name: 'Water FX - Get Wet.esp'
     tag:
       - name: Deactivate
@@ -32068,14 +30392,9 @@ plugins:
         condition: 'file("BarenziahQuestMarkers_Droppable.esp")'
   - name: 'BBLS_MM .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one BBLS_MM *.esp.'
-          - lang: ru
-            str: 'Используйте только один BBLS_MM *.esp.'
-          - lang: es
-            str: 'Utilizar solo un BBLS_MM *.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("BBLS_MM .+\.esp")'
+        subs: [ 'BBLS_MM .esp file' ]
   - name: 'cartographers map markers.esp'
     dirty:
       - crc: 0x3a361e6d
@@ -32213,127 +30532,52 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Secondary Locations Dawnguard.esp'
     msg: [ *obsolete ]
+  - name: 'smakit_house_markers(_plus)?(_(french|german|italian|russian|polish|spanish))?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("smakit_house_markers(_plus)?(_(french|german|italian|russian|polish|spanish))?\.esp")'
+        subs: [ 'smakit_house_markers .esp file' ]
   - name: 'smakit_house_markers.esp'
     dirty:
       - crc: 0xcdb6a10b
         util: *dirtyUtil
         itm: 11
   - name: 'smakit_house_markers_french.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one smakit_house_markers esp.'
-          - lang: ru
-            str: 'Используйте только один smakit_house_markers esp.'
-          - lang: es
-            str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers.esp")'
     dirty:
       - crc: 0xdbee7cc8
         util: *dirtyUtil
         itm: 9
   - name: 'smakit_house_markers_german.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one smakit_house_markers esp.'
-          - lang: ru
-            str: 'Используйте только один smakit_house_markers esp.'
-          - lang: es
-            str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x2b4220e5
         util: *dirtyUtil
         itm: 13
   - name: 'smakit_house_markers_italian.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one smakit_house_markers esp.'
-          - lang: ru
-            str: 'Используйте только один smakit_house_markers esp.'
-          - lang: es
-            str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0xffd1b168
         util: *dirtyUtil
         itm: 9
   - name: 'smakit_house_markers_plus.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one smakit_house_markers esp.'
-          - lang: ru
-            str: 'Используйте только один smakit_house_markers esp.'
-          - lang: es
-            str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x6fdbd6b9
         util: *dirtyUtil
         itm: 12
   - name: 'smakit_house_markers_plus_russian.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one smakit_house_markers esp.'
-          - lang: ru
-            str: 'Используйте только один smakit_house_markers esp.'
-          - lang: es
-            str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x34bbd145
         util: *dirtyUtil
         itm: 11
   - name: 'smakit_house_markers_polish.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one smakit_house_markers esp.'
-          - lang: ru
-            str: 'Используйте только один smakit_house_markers esp.'
-          - lang: es
-            str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_plus_russian.esp") or file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x4bd3a2a0
         util: *dirtyUtil
         itm: 9
   - name: 'smakit_house_markers_russian.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one smakit_house_markers esp.'
-          - lang: ru
-            str: 'Используйте только один smakit_house_markers esp.'
-          - lang: es
-            str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_polish.esp") or file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0x3077b684
         util: *dirtyUtil
         itm: 7
   - name: 'smakit_house_markers_spanish.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one smakit_house_markers esp.'
-          - lang: ru
-            str: 'Используйте только один smakit_house_markers esp.'
-          - lang: es
-            str: 'Utilizar solo un smakit_house_markers esp.'
-        condition: 'file("smakit_house_markers_russian.esp") or file("smakit_house_markers_polish.esp") or file("smakit_house_markers_plus.esp") or file("smakit_house_markers_italian.esp") or file("smakit_house_markers_german.esp") or file("smakit_house_markers.esp") or file("smakit_house_markers_french.esp")'
     dirty:
       - crc: 0xcd86d7b9
         util: *dirtyUtil
@@ -32372,28 +30616,11 @@ plugins:
       - crc: 0x32da1d52
         util: *dirtyUtil
         itm: 1
-  - name: 'SSS Deadly Dragons Patch B.esp'
+  - name: 'SSS Deadly Dragons Patch (A|B|C)\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one SSS Deadly Dragons Patch esp.'
-          - lang: ru
-            str: 'Используйте только один патч SSS Deadly Dragons Patch esp.'
-          - lang: es
-            str: 'Utilizar solo un SSS Deadly Dragons Patch esp.'
-        condition: 'file("SSS Deadly Dragons Patch A.esp") and not file("SSS Deadly Dragons Patch C.esp")'
-  - name: 'SSS Deadly Dragons Patch C.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one SSS Deadly Dragons Patch esp.'
-          - lang: ru
-            str: 'Используйте только один патч SSS Deadly Dragons Patch esp.'
-          - lang: es
-            str: 'Utilizar solo un SSS Deadly Dragons Patch esp.'
-        condition: 'file("SSS Deadly Dragons Patch A.esp") or file("SSS Deadly Dragons Patch B.esp")'
+      - <<: *useOnlyOneX
+        condition: 'many("SSS Deadly Dragons Patch (A|B|C)\.esp")'
+        subs: [ 'SSS Deadly Dragons Patch .esp file' ]
   - name: 'PC Exclusive Animation Path.esp'
     inc:
       - 'AP Skyrim.esp'
@@ -32502,16 +30729,8 @@ plugins:
     req:
       - *SKSE
   - name: 'Skyrim Performance MOD 5min.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use only one Skyrim performance Mod esp.'
-          - lang: ru
-            str: 'Используйте только один Skyrim performance Mod esp.'
-          - lang: es
-            str: 'Utilizar solo un Skyrim performance Mod esp.'
-        condition: 'file("Skyrim Performance MOD.esp")'
+    inc:
+      - 'Skyrim Performance MOD.esp'
 ## STEP
   - name: 'STEP Core Patch.esp'
     priority: 1980000
@@ -32529,124 +30748,13 @@ plugins:
     priority: 1980000
   - name: 'STEP Combined PluginHF.esp'
     priority: 1980000
-  - name: 'World_Map_Height_Pitch_Tweak.esp'
+  - name: 'World_Map_Height_Pitch_Tweak(_(130|170|200|250|Vanilla_pitch))?(_50|_90)?\.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
+    priority: 1990000
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Use only one World_Map_Height_Pitch_Tweak esp.'
-          - lang: ru
-            str: 'Используйте только один World_Map_Height_Pitch_Tweak esp.'
-          - lang: es
-            str: 'Utilizar solo un World_Map_Height_Pitch_Tweak esp.'
-  - name: 'World_Map_Height_Pitch_Tweak_130.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    priority: 1990000
-    inc:
-      - 'World_Map_Height_Pitch_Tweak_130_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_170.esp'
-      - 'World_Map_Height_Pitch_Tweak_170_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_200.esp'
-      - 'World_Map_Height_Pitch_Tweak_200_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_250.esp'
-      - 'World_Map_Height_Pitch_Tweak_250_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_Vanilla_pitch_90.esp'
-  - name: 'World_Map_Height_Pitch_Tweak_130_50.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    priority: 1990000
-    inc:
-      - 'World_Map_Height_Pitch_Tweak_130.esp'
-      - 'World_Map_Height_Pitch_Tweak_170.esp'
-      - 'World_Map_Height_Pitch_Tweak_170_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_200.esp'
-      - 'World_Map_Height_Pitch_Tweak_200_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_250.esp'
-      - 'World_Map_Height_Pitch_Tweak_250_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_Vanilla_pitch_90.esp'
-  - name: 'World_Map_Height_Pitch_Tweak_170.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    priority: 1990000
-    inc:
-      - 'World_Map_Height_Pitch_Tweak_130.esp'
-      - 'World_Map_Height_Pitch_Tweak_130_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_170_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_200.esp'
-      - 'World_Map_Height_Pitch_Tweak_200_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_250.esp'
-      - 'World_Map_Height_Pitch_Tweak_250_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_Vanilla_pitch_90.esp'
-  - name: 'World_Map_Height_Pitch_Tweak_170_50.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    priority: 1990000
-    inc:
-      - 'World_Map_Height_Pitch_Tweak_130.esp'
-      - 'World_Map_Height_Pitch_Tweak_130_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_170.esp'
-      - 'World_Map_Height_Pitch_Tweak_200.esp'
-      - 'World_Map_Height_Pitch_Tweak_200_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_250.esp'
-      - 'World_Map_Height_Pitch_Tweak_250_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_Vanilla_pitch_90.esp'
-  - name: 'World_Map_Height_Pitch_Tweak_200.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    priority: 1990000
-    inc:
-      - 'World_Map_Height_Pitch_Tweak_130.esp'
-      - 'World_Map_Height_Pitch_Tweak_130_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_170.esp'
-      - 'World_Map_Height_Pitch_Tweak_170_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_200_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_250.esp'
-      - 'World_Map_Height_Pitch_Tweak_250_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_Vanilla_pitch_90.esp'
-  - name: 'World_Map_Height_Pitch_Tweak_200_50.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    priority: 1990000
-    inc:
-      - 'World_Map_Height_Pitch_Tweak_130.esp'
-      - 'World_Map_Height_Pitch_Tweak_130_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_170.esp'
-      - 'World_Map_Height_Pitch_Tweak_170_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_200.esp'
-      - 'World_Map_Height_Pitch_Tweak_250.esp'
-      - 'World_Map_Height_Pitch_Tweak_250_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_Vanilla_pitch_90.esp'
-  - name: 'World_Map_Height_Pitch_Tweak_250.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    priority: 1990000
-    inc:
-      - 'World_Map_Height_Pitch_Tweak_130.esp'
-      - 'World_Map_Height_Pitch_Tweak_130_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_170.esp'
-      - 'World_Map_Height_Pitch_Tweak_170_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_200.esp'
-      - 'World_Map_Height_Pitch_Tweak_200_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_250_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_Vanilla_pitch_90.esp'
-  - name: 'World_Map_Height_Pitch_Tweak_250_50.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    priority: 1990000
-    inc:
-      - 'World_Map_Height_Pitch_Tweak_130.esp'
-      - 'World_Map_Height_Pitch_Tweak_130_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_170.esp'
-      - 'World_Map_Height_Pitch_Tweak_170_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_200.esp'
-      - 'World_Map_Height_Pitch_Tweak_200_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_250.esp'
-      - 'World_Map_Height_Pitch_Tweak_Vanilla_pitch_90.esp'
-  - name: 'World_Map_Height_Pitch_Tweak_Vanilla_pitch_90.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    priority: 1990000
-    inc:
-      - 'World_Map_Height_Pitch_Tweak_130.esp'
-      - 'World_Map_Height_Pitch_Tweak_130_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_170.esp'
-      - 'World_Map_Height_Pitch_Tweak_170_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_200.esp'
-      - 'World_Map_Height_Pitch_Tweak_200_50.esp'
-      - 'World_Map_Height_Pitch_Tweak_250.esp'
-      - 'World_Map_Height_Pitch_Tweak_250_50.esp'
+      - <<: *useOnlyOneX
+        condition: 'many("World_Map_Height_Pitch_Tweak(_(130|170|200|250|Vanilla_pitch))?(_50|_90)?\.esp")'
+        subs: [ 'World_Map_Height_Pitch_Tweak .esp file' ]
   - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
     priority: 1990000
     inc:
