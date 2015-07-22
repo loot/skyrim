@@ -89,6 +89,20 @@ common:
         str: '%1%을 한개만 사용하십시오.'
       - lang: zh_CN
         str: '只使用一个%1%。'
+  - &installOriginalResources
+    type: say
+    content:
+      - lang: en
+        str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
+      - lang: ru
+        str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+  - &deleteOrDeactivateX
+    type: error
+    content:
+      - lang: en
+        str: 'Delete or deactivate %1%.'
+      - lang: ru
+        str: 'Не забудьте отключить или удалить %1%.'
 
 # Other Strings
   - &dirtyUtil
@@ -7924,13 +7938,7 @@ plugins:
         util: *dirtyUtil
         itm: 7
   - name: 'SkyRe_Plugin_ImmersiveArmor_2.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+    msg: [ *installOriginalResources ]
   - name: 'Level List - Immersive Armor.esp'
     tag:
       - Delev
@@ -8768,19 +8776,10 @@ plugins:
     inc:
       - 'SkyRe_Plugin_Malo_Waffen.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Malo_Waffen.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Malo_Waffen.esp'
+      - <<: *deleteOrDeactivateX
         condition: 'active("Malo_Waffen.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Malo_Waffen.esp' ]
+      - *installOriginalResources
     dirty:
       - crc: 0x3790213b
         util: *dirtyUtil
@@ -10640,56 +10639,25 @@ plugins:
       - 'SkyRe_Plugin_VanguardArmor_3.esp'
       - 'SkyRe_Plugin_WarchiefArmor_4.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install ALL 6 original mods before activating this patch or Skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить все 6 оригинальных модов перед активацией этого патча или Skyrim будет вылетать, когда не найдет поддерживаемых файлов.'
-          - lang: es
-            str: 'Remember to install ALL 6 original mods before activating this patch or Skyrim will crash when it can''t find the supporting files.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) BaratheonArmor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить BaratheonArmor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("BaratheonArmor.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) HedgeKnight.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить HedgeKnight.esp'
+        subs: [ 'BaratheonArmor.esp' ]
+      - <<: *deleteOrDeactivateX
         condition: 'active("HedgeKnight.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) RedguardKnight.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить RedguardKnight.esp'
+        subs: [ 'HedgeKnight.esp' ]
+      - <<: *deleteOrDeactivateX
         condition: 'active("RedguardKnight.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) VagabondArmor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить VagabondArmor.esp'
+        subs: [ 'RedguardKnight.esp' ]
+      - <<: *deleteOrDeactivateX
         condition: 'active("VagabondArmor.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) VanguardArmor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить VanguardArmor.esp'
+        subs: [ 'VagabondArmor.esp' ]
+      - <<: *deleteOrDeactivateX
         condition: 'active("VanguardArmor.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) warchiefarmor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить warchiefarmor.esp'
+        subs: [ 'VanguardArmor.esp' ]
+      - <<: *deleteOrDeactivateX
         condition: 'active("warchiefarmor.esp")'
+        subs: [ 'warchiefarmor.esp' ]
     dirty:
       - crc: 0xc7b7e357
         util: *dirtyUtil
@@ -11752,13 +11720,9 @@ plugins:
       - 'Drakian race.esp'
       - 'Signs and Guardians.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) StaRe.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить StaRe.esp'
-        condition: 'file("StaRe.esp")'
+      - <<: *deleteOrDeactivateX
+        condition: 'active("StaRe.esp")'
+        subs: [ 'StaRe.esp' ]
   - name: 'SkyRe_StandingStones_Fix.esp'
     msg:
       - type: say
@@ -11793,64 +11757,28 @@ plugins:
         itm: 7
   - name: 'SkyRe_Plugin_BaratheonArmor_1.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) BaratheonArmor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить BaratheonArmor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("BaratheonArmor.esp")'
+        subs: [ 'BaratheonArmor.esp' ]
   - name: 'SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) blackswordsman.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить blackswordsman.esp .'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("blackswordsman.esp")'
+        subs: [ 'blackswordsman.esp' ]
   - name: 'SkyRe_Plugin_BetterBows_1.4.1.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) HBetterBows.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить HBetterBows.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("HBetterBows.esp")'
+        subs: [ 'HBetterBows.esp' ]
   - name: 'SkyRe_Plugin_BetterBows.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) HBetterBows.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить HBetterBows.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("HBetterBows.esp")'
+        subs: [ 'HBetterBows.esp' ]
   - name: 'Scoped Bows - SkyRe Patch.esp'
     after:
       - 'SkyRe_Main.esp'
@@ -11860,57 +11788,24 @@ plugins:
       - 'SkyRe_Plugin_BetterBows_1.4.1.esp'
   - name: 'SkyRe_Plugin_BowofIorveth_1.2.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) BowofIorveth.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить BowofIorveth.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("BowofIorveth.esp")'
+        subs: [ 'BowofIorveth.esp' ]
   - name: 'SkyRe_Plugin_DaggerCraft_1.3.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) DaggerCraft.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить DaggerCraft.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("DaggerCraft.esp")'
+        subs: [ 'DaggerCraft.esp' ]
   - name: 'SkyRe_Plugin_DaggerCraft.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) DaggerCraft.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить DaggerCraft.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("DaggerCraft.esp")'
+        subs: [ 'DaggerCraft.esp' ]
   - name: 'SkyRe_Plugin_DragonBoneWeaponsComplete_1.03.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+    msg: [ *installOriginalResources ]
   - name: 'SkyRe_Plugin_DragonBoneWeaponsComplete.esp'
     msg:
       - type: warn
@@ -11920,34 +11815,16 @@ plugins:
           - lang: ru
             str: 'Вам нужно переименовать "DragonBoneWeaponsComplete.bsa" в "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" для подключения ресурсов мода..'
         condition: 'not file("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) ''Dragonbone Weapons Complete.esp'''
-          - lang: ru
-            str: 'Не забудьте отключить или удалить ''Dragonbone Weapons Complete.esp'''
+      - <<: *deleteOrDeactivateX
         condition: 'active("Dragonbone Weapons Complete.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Dragonbone Weapons Complete.esp' ]
+      - *installOriginalResources
   - name: 'SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Dread Knight Weapon Set mod'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить мод Dread Knight Weapon Set.'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("DreadKnightWeaponSet.\esp") or active("Dread Knight Weapon Set.esp")'
+        subs: [ 'the Dread Knight Weapon Set plugin' ]
   - name: 'SkyRe_Plugin_DwemerAutoBlade.esp'
     msg:
       - type: warn
@@ -11957,139 +11834,58 @@ plugins:
           - lang: ru
             str: 'Вам нужно переименовать "DwemerAutoBlade.bsa" в "SkyRe_Plugin_DwemerAutoBlade.bsa" или этот мод не будет работать.'
         condition: 'not file("SkyRe_Plugin_DwemerAutoBlade.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) DwemerAutoBlade.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить DwemerAutoBlade.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("DwemerAutoBlade.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'DwemerAutoBlade.esp' ]
   - name: 'SkyRe_Plugin_HedgeKnightArmor_1.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) HedgeKnight.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить HedgeKnight.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("HedgeKnight.esp")'
+        subs: [ 'HedgeKnight.esp' ]
   - name: 'SkyRe_Plugin_ImmersiveArmor_.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) hothtrooper44_ArmorCompilation.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить hothtrooper44_ArmorCompilation.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("hothtrooper44_ArmorCompilation.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'hothtrooper44_ArmorCompilation.esp' ]
   - name: 'SkyRe_Plugin_InsanitysCelticKatana_1.2.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) InsanitysCelticKatana.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить InsanitysCelticKatana.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("InsanitysCelticKatana.esp")'
+        subs: [ 'InsanitysCelticKatana.esp' ]
   - name: 'SkyRe_Plugin_InsanitysCelticKatana.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) nsanitysCelticKatana.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить nsanitysCelticKatana.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("nsanitysCelticKatana.esp")'
+        subs: [ 'nsanitysCelticKatana.esp' ]
   - name: 'SkyRe_Plugin_InsanitysCraftableDragonbane.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Insanity''s Craftable Dragonbane.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Insanity''s Craftable Dragonbane.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Insanity''s Craftable Dragonbane.esp")'
+        subs: [ 'Insanity''s Craftable Dragonbane.esp' ]
   - name: 'SkyRe_Plugin_InsanitysDragonKatana_1.2.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Insanitys Dragon Katana mod'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить мод Insanitys Dragon Katana'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'file("InsanitysDragonKatana.esp") or file("Insanity''s Dragon Katana.esp")'
+        subs: [ 'the Insanity''s Dragon Katana plugin' ]
   - name: 'SkyRe_Plugin_InsanitysDragonKatana.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Insanitys Dragon Katana mod'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить мод Insanitys Dragon Katana'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'file("InsanitysDragonKatana.esp") or file("Insanity''s Dragon Katana.esp")'
+        subs: [ 'the Insanity''s Dragon Katana plugin' ]
   - name: 'SkyRe_Plugin_isilNarsil.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) isilNarsil.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить isilNarsil.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("isilNarsil.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'isilNarsil.esp' ]
   - name: 'SkyRe_Plugin_JaySuSSwords_1.3D.esp'
     msg:
       - type: error
@@ -12137,42 +11933,18 @@ plugins:
         itm: 4
   - name: 'SkyRe_Plugin_Malo_Waffen_V3Bugfix.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Malo_Waffen.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Malo_Waffen.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Malo_Waffen.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Malo_Waffen.esp' ]
   - name: 'SkyRe_Plugin_Morrowloot.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+    msg: [ *installOriginalResources ]
   - name: 'SkyRe_Plugin_NicoroshiCreations.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Nicoroshi Creations.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Nicoroshi Creations.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Nicoroshi Creations.esp")'
+        subs: [ 'Nicoroshi Creations.esp' ]
   - name: 'SkyRe_Plugin_NordicHunterLightArmor_1.2.esp'
     msg:
       - type: say
@@ -12182,162 +11954,65 @@ plugins:
           - lang: ru
             str: 'Возможно уже включено в hunterarmorv1.2.esp'
         condition: 'file("hunterarmorv1.2.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - *installOriginalResources
   - name: 'SkyRe_Plugin_Omegared99-WeaponSets.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Omegared99-WeaponSets.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Omegared99-WeaponSets.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Omegared99-WeaponSets.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Omegared99-WeaponSets.esp' ]
   - name: 'SkyRe_Plugin_Omegared99sACv3_6.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'You still need Omegared99-Compilation.esm'
-          - lang: ru
-            str: 'Вам все еще нужен Omegared99-Compilation.esm'
-        condition: 'not file("Omegared99-Compilation.esm")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+    req:
+      - 'Omegared99-Compilation.esm'
+    msg: [ *installOriginalResources ]
   - name: 'SkyRe_Plugin_Omegared99sArmorCompilation.esp'
+    req:
+      - 'Omegared99-Compilation.esm'
     msg:
       - *obsolete
-      - type: error
-        content:
-          - lang: en
-            str: 'You still need Omegared99-Compilation.esm'
-          - lang: ru
-            str: 'Вам все еще нужен Omegared99-Compilation.esm'
-        condition: 'not file("Omegared99-Compilation.esm")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - *installOriginalResources
   - name: 'SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp'
+    req:
+      - 'Omegared99-Compilation.esm'
     msg:
       - *obsolete
-      - type: error
-        content:
-          - lang: en
-            str: 'You still need Omegared99-Compilation.esm'
-        condition: 'not file("Omegared99-Compilation.esm")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - *installOriginalResources
   - name: 'SkyRe_Plugin_Oriental Weapon&Armor.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Oriental Weapon&Armor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Oriental Weapon&Armor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Oriental Weapon&Armor.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Oriental Weapon&Armor.esp' ]
   - name: 'SkyRe_Plugin_RedguardKnightArmor_3.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) RedguardKnight.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить RedguardKnight.esp'
-        condition: 'file("RedguardKnight.esp")'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
+        condition: 'active("RedguardKnight.esp")'
+        subs: [ 'RedguardKnight.esp' ]
   - name: 'SkyRe_Plugin_RegentSwords.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) RegentSword.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить RegentSword.esp'
-        condition: 'file("RegentSword.esp")'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
+        condition: 'active("RegentSword.esp")'
+        subs: [ 'RegentSword.esp' ]
   - name: 'SkyRe_Plugin_Scoiatael Weapons.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Scoiatael Weapons.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Scoiatael Weapons.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Scoiatael Weapons.esp")'
+        subs: [ 'Scoiatael Weapons.esp' ]
   - name: 'SkyRe_Plugin_VagabondArmor_5.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) VagabondArmor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить VagabondArmor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("VagabondArmor.esp")'
+        subs: [ 'VagabondArmor.esp' ]
   - name: 'SkyRe_Plugin_VanguardArmor_3.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) VanguardArmor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить VanguardArmor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("VanguardArmor.esp")'
+        subs: [ 'VanguardArmor.esp' ]
   - name: 'SkyRe_Plugin_viciousdawnbreaker.esp'
     msg:
       - type: warn
@@ -12347,34 +12022,16 @@ plugins:
           - lang: ru
             str: 'Вам нужно переименовать "viciousdawnbreaker.bsa" в "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" или этот мод не будет работать.'
         condition: 'not file("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) viciousdawnbreaker.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить viciousdawnbreaker.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("viciousdawnbreaker.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'viciousdawnbreaker.esp' ]
   - name: 'SkyRe_Plugin_WarchiefArmor_4.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) warchiefarmor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить warchiefarmor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("warchiefarmor.esp")'
+        subs: [ 'warchiefarmor.esp' ]
   - name: 'SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -12382,111 +12039,48 @@ plugins:
         subs: [ 'SkyRe Dreadknight .esp file' ]
   - name: 'SkyRe  - Jojjo''s Dreadknight Patch.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Dread Knight Weapon Set.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить мод Dread Knight Weapon.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Dread Knight Weapon Set.esp")'
+        subs: [ 'Dread Knight Weapon Set.esp' ]
   - name: 'SkyRe Avatar of Baltazar.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Avatar of Baltazar.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Avatar of Baltazar.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Avatar of Baltazar.esp")'
+        subs: [ 'Avatar of Baltazar.esp' ]
   - name: 'SkyRe Avatar of Grenth.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Avatar of Grenth.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Avatar of Grenth.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Avatar of Grenth.esp")'
+        subs: [ 'Avatar of Grenth.esp' ]
   - name: 'SkyRe Black Mage Armor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Black Mage Armor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Black Mage Armor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Black Mage Armor.esp")'
+        subs: [ 'Black Mage Armor.esp' ]
   - name: 'SkyRe Chainmail Hauberks.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Chainmailhauberks 1.1.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Chainmailhauberks 1.1.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Chainmailhauberks 1.1.esp")'
+        subs: [ 'Chainmailhauberks 1.1.esp' ]
   - name: 'SkyRe Chinese General Armor and Weapon.esp'
     msg: [ *obsolete ]
   - name: 'SkyRe Chinese General Set.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Song General Armor&weapon.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Song General Armor&weapon.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Song General Armor&weapon.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Song General Armor&weapon.esp' ]
   - name: 'SkyRe Chinese General Set - Realistic.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Song General Armor&weapon.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Song General Armor&weapon.esp'
-        condition: 'active("SkyRe Chinese General Set - Realistic.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
+        condition: 'active("Song General Armor&weapon.esp")'
+        subs: [ 'Song General Armor&weapon.esp' ]
   - name: 'SkyRe Dark Nemesis.esp'
     msg:
       - type: warn
@@ -12498,34 +12092,16 @@ plugins:
           - lang: es
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("SkyRe Dark Nemesis.esp",FBBC3828)'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) DarkNemesis.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить DarkNemesis.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("DarkNemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
+        subs: [ 'DarkNemesis.esp' ]
   - name: 'SkyRe Divine Aegis.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) DarkNemesis.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить DarkNemesis.esp'
-        condition: 'active("Divine Aegis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
+        condition: 'active("DarkNemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
+        subs: [ 'DarkNemesis.esp' ]
   - name: 'SkyRe Equipment of Eternal Shine.esp'
     msg:
       - type: warn
@@ -12537,94 +12113,40 @@ plugins:
           - lang: es
             str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
         condition: 'checksum("SkyRe Equipment of Eternal Shine.esp",C47F2C45)'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete)'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("EternalShineArmorAndWeapons.esp")'
+        subs: [ 'EternalShineArmorAndWeapons.esp' ]
   - name: 'Skyre Guardian Plate Armor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Guardian Plate Armor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Guardian Plate Armor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Guardian Plate Armor.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Guardian Plate Armor.esp' ]
   - name: 'SkyRe Heroic Dwarven Armor and Weapon Set.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) HeroicDwarven.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить HeroicDwarven.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("HeroicDwarven.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'HeroicDwarven.esp' ]
   - name: 'SkyRe Iron Armor Chainmail.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) dfnkt-IronArmorSleeves-Craftable.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить dfnkt-IronArmorSleeves-Craftable.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("dfnkt-IronArmorSleeves-Craftable.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'dfnkt-IronArmorSleeves-Craftable.esp' ]
   - name: 'SkyRe Masters of Death Sicarius Armor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Masters of Death - Sicarius Armor (Standalone).esp' ]
   - name: 'SkyRe Masters of Death - Sicarius Armor (Standalone).esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Masters of Death - Sicarius Armor (Standalone).esp' ]
   - name: 'SkyRe Mithril Armor.esp'
     msg:
       - type: warn
@@ -12634,88 +12156,36 @@ plugins:
           - lang: ru
             str: 'Вам нужно переименовать "Matys Mithril armor Enhanced.bsa" в "SkyRe Mithril Armor.bsa" или этот мод не будет работать.'
         condition: 'not file("SkyRe Mithril Armor.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Matys Mithril armor Enhanced.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Matys Mithril armor Enhanced.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Matys Mithril armor Enhanced.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Matys Mithril armor Enhanced.esp' ]
   - name: 'SkyRe Mystic Armor and Weapon Set.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Mystic.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Mystic.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Mystic.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Mystic.esp' ]
   - name: 'SkyRe Nordic Conqueror Armor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Nordic Conqueror Armor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Nordic Conqueror Armor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Nordic Conqueror Armor.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Nordic Conqueror Armor.esp' ]
   - name: 'SkyRe Nordic Conqueror Armor - Realistic.esp'
+    inc:
+      - 'SkyRe Nordic Conqueror Armor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either SkyRe Nordic Conqueror Armor.esp or SkyRe Nordic Conqueror Armor - Realistic.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой или SkyRe Nordic Conqueror Armor.esp или SkyRe Nordic Conqueror Armor - Realistic.esp, не обa.'
-          - lang: es
-            str: 'Usar xxx o yyy, no ambos.'
-        condition: 'file("xxx")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) Nordic Conqueror Armor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить Nordic Conqueror Armor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("Nordic Conqueror Armor.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'Nordic Conqueror Armor.esp' ]
   - name: 'SkyRe Rogue Sorceress.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) theRoadstrokersRogueSorceress.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить theRoadstrokersRogueSorceress.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("theRoadstrokersRogueSorceress.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'theRoadstrokersRogueSorceress.esp' ]
   - name: 'SkyRe SeraticDark.esp'
     msg:
       - type: warn
@@ -12725,19 +12195,10 @@ plugins:
           - lang: ru
             str: 'Вам нужно переименовать "SeraticHeavyArmorDark.bsa" в "SkyRe SeraticDark.bsa" или этот мод не будет работать.'
         condition: 'not file("SkyRe SeraticDark.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) SeraticHeavyArmorDark.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить SeraticHeavyArmorDark.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("SeraticHeavyArmorDark.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'SeraticHeavyArmorDark.esp' ]
   - name: 'SkyRe SeraticGray.esp'
     msg:
       - type: warn
@@ -12747,19 +12208,10 @@ plugins:
           - lang: ru
             str: 'Вам нужно переименовать "SeraticHeavyArmorGray.bsa" в "SkyRe SeraticGray.bsa" или этот мод не будет работать.'
         condition: 'not file("SkyRe SeraticGray.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) SeraticHeavyArmorGray.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить SeraticHeavyArmorGray.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("SeraticHeavyArmorGray.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'SeraticHeavyArmorGray.esp' ]
   - name: 'SkyRe SeraticLight.esp'
     msg:
       - type: warn
@@ -12769,19 +12221,10 @@ plugins:
           - lang: ru
             str: 'Вам нужно переименовать "SeraticArmor.bsa" в "SkyRe SeraticLight.bsa" или этот мод не будет работать.'
         condition: 'not file("SkyRe SeraticLight.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) SeraticArmor.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить SeraticArmor.esp'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
         condition: 'active("SeraticArmor.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+        subs: [ 'SeraticArmor.esp' ]
   - name: 'SkyRe XAC Original Classic.esp'
     msg:
       - *obsolete
@@ -12792,19 +12235,10 @@ plugins:
           - lang: ru
             str: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Original Classic.bsa" или этот мод работать не будет.'
         condition: 'not file("SkyRe XAC Original Classic.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) XAC.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить XAC.esp'
-        condition: 'active("SkyRe XAC Original Classic.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
+        condition: 'active("XAC.esp")'
+        subs: [ 'XAC.esp' ]
     url:
       - 'http://www.nexusmods.com/skyrim/mods/23231'
   - name: 'SkyRe XAC Original.esp'
@@ -12817,19 +12251,10 @@ plugins:
           - lang: ru
             str: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Original.bsa" или этот мод работать не будет.'
         condition: 'not file("SkyRe XAC Original.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) XAC.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить XAC.esp'
-        condition: 'active("SkyRe XAC Original.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
+        condition: 'active("XAC.esp")'
+        subs: [ 'XAC.esp' ]
     url:
       - 'http://www.nexusmods.com/skyrim/mods/23231'
   - name: 'SkyRe XAC Stat Swap Classic.esp'
@@ -12842,19 +12267,10 @@ plugins:
           - lang: ru
             str: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Stat Swap Classic.bsa" или этот мод работать не будет.'
         condition: 'not file("SkyRe XAC Stat Swap Classic.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) XAC.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить XAC.esp'
-        condition: 'active("SkyRe XAC Stat Swap Classic.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
+        condition: 'active("XAC.esp")'
+        subs: [ 'XAC.esp' ]
     url:
       - 'http://www.nexusmods.com/skyrim/mods/23231'
   - name: 'SkyRe XAC Stat Swap.esp'
@@ -12867,34 +12283,20 @@ plugins:
           - lang: ru
             str: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Stat Swap.bsa" или этот мод работать не будет.'
         condition: 'not file("SkyRe XAC Stat Swap.bsa")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember not to load (or to simply delete) XAC.esp'
-          - lang: ru
-            str: 'Не забудьте отключить или удалить XAC.esp'
-        condition: 'active("SkyRe XAC Stat Swap.esp")'
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - *installOriginalResources
+      - <<: *deleteOrDeactivateX
+        condition: 'active("XAC.esp")'
+        subs: [ 'XAC.esp' ]
     url:
       - 'http://www.nexusmods.com/skyrim/mods/23231'
   - name: 'REQ Tribunal Robes by Zairaam.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            str: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - *installOriginalResources
   - name: 'ExplosiveBoltsVisualized-SkyRe.esp'
     msg:
-      - type: error
-        content: 'Deactivate ExplosiveBoltsVisualized.esp. This ESP is completly standalone.'
+      - <<: *deleteOrDeactivateX
         condition: 'active("ExplosiveBoltsVisualized.esp")'
+        subs: [ 'ExplosiveBoltsVisualized.esp' ]
 #
 # All mods that add or change quests,
 # add player houses,
