@@ -9122,10 +9122,10 @@ plugins:
           - lang: es
             str: 'Usar RagnvaldBook.esp o RagnvaldBookFarengar+Ragnvald.esp, no ambos.'
         condition: 'file("RagnvaldBook.esp")'
-  - name: 'RagnvaldBook(Farengar(+Ragnvald)?)?\.esp'
+  - name: 'RagnvaldBook(Farengar(\+Ragnvald)?)?\.esp'
     msg:
       - <<: *useOnlyOneX
-        condition: 'many("RagnvaldBook(Farengar(+Ragnvald)?)?\.esp")'
+        condition: 'many("RagnvaldBook(Farengar(\+Ragnvald)?)?\.esp")'
         subs: [ 'RagnvaldBook .esp file' ]
   - name: 'RaestlozArmorReplace.esp'
     msg: [ *obsolete ]
