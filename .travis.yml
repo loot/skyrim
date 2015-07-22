@@ -1,9 +1,7 @@
 sudo: false
-language: cpp
-compiler: gcc
+language: ruby
 
-# Need Boost 1.54+, which isn't in the 12.04 repositories - install from a PPA.
-# Also need the OpenSSL dev package, for git clone from HTTPS URLs support.
+# Need Boost 1.55, which isn't in the 12.04 repositories - install from a PPA.
 addons:
   apt:
     sources:
@@ -16,24 +14,9 @@ addons:
       - libboost-filesystem1.55-dev
       - libboost-locale1.55-dev
       - libboost-iostreams1.55-dev
-      - libssl-dev
-      - gcc-5
       - g++-5
 
-install:
-  # Use GCC 5.
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
-  # Currently inside the cloned repo path.
-  - cd ..
-  # The masterlist validator needs to be compiled from source before it can be
-  # used.
-  - wget https://github.com/loot/loot/archive/dev.tar.gz -O - | tar -xz
-  - mv loot-dev loot && cd loot
-  - chmod +x install-step.travis.sh && ./install-step.travis.sh
-  - cd build
-  # Travis machines are 64 bit, and the deps use dynamic linking.
-  - cmake .. -DPROJECT_ARCH=64 -DPROJECT_STATIC_RUNTIME=OFF -DBUILD_SHARED_LIBS=OFF
-  - make metadata-validator
+install: wget https://github.com/loot/loot/releases/download/v0.8.0/metadata-validator.tar.gz -O - | tar -xz
 
 script: ./metadata-validator $TRAVIS_BUILD_DIR/masterlist.yaml
 
