@@ -1912,14 +1912,7 @@ plugins:
         udr: 4
   - name: 'Hjerimfix.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file is corrupted and should be removed as soon as possible.'
-          - lang: ru
-            str: 'Файл испорчен и не должен использоваться.'
-          - lang: es
-            str: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - *corrupt
       - *AlreadyInUSKP
     dirty:
       - crc: 0x9b9b0581
@@ -2615,14 +2608,7 @@ plugins:
 # removed apachii req- not all matching mods have the req. Add back req by checksum as needed.
   - name: 'Faendal.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Faendal.esp",60930CE6)'
     dirty:
       - crc: 0x5d38c4e9
@@ -2650,12 +2636,7 @@ plugins:
     msg: [ *corrupt ]
   - name: 'Less Fugly Female NPCs.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This mod contains numerous corrupted records generated with TESVSmip. It is strongly advised you remove this from your load order to avoid damage to your saves.'
-          - lang: es
-            str: 'Este mod contiene varios meshes corruptos. Es fuertemente recomendado que lo remouevos para evitar daños a tu juego.'
+      - <<: *corrupt
         condition: 'checksum("Less Fugly Female NPCs.esp",93FE07E6)'
   - name: 'marcurio1.1.esp'
     msg: [ *obsolete ]
@@ -2680,14 +2661,7 @@ plugins:
 # SupermodelSkyrim.esp moved back to npc faces because it''s npc faces overhaul (too many conflicts)
   - name: 'Tonilia.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Tonilia.esp",1AEB51FC)'
     dirty:
       - crc: 0x926deea0
@@ -2699,25 +2673,11 @@ plugins:
 # removed apachii req- not all matching mods have the req. Add back req by checksum as needed.
   - name: 'Vex.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Vex.esp",CFCE4434)'
   - name: 'Vilkas.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Vilkas.esp",BF4211DE)'
 # Includes nearly all new items (except weapons and armor).
 # Low priority mods.
@@ -3402,14 +3362,7 @@ plugins:
 # ## Estimate for correct position. Mod file no longer on Nexus.
   - name: '_pocketempirebuilder.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de lugar y debería ser removido.'
+      - <<: *corrupt
         condition: 'checksum("_pocketempirebuilder.esp",CCC24004)'
   - name: 'ADV HB-Style.esp'
     dirty:
@@ -3592,14 +3545,7 @@ plugins:
         itm: 1
   - name: 'AvengersBosses.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("AvengersBosses.esp",806151D5)'
   - name: 'Babettes Feast v1_2.esp'
     msg: [ *obsolete ]
@@ -3901,14 +3847,7 @@ plugins:
       - 'ModernDayCalenderNames DV.esp'
   - name: 'cao_DweSchematicsBuy.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("cao_DweSchematicsBuy.esp",7E85692A)'
   - name: 'cao_DweSchematics(Buy|Cheat|Search)\.esp'
     msg:
@@ -3917,25 +3856,11 @@ plugins:
         subs: [ 'cao_DweSchematics .esp file' ]
   - name: 'cao_DweSchematicsCheat.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("cao_DweSchematicsCheat.esp",7E7B9B1A)'
   - name: 'cao_DweSchematicsSearch.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("cao_DweSchematicsSearch.esp",A655AB19)'
   - name: 'cao_goldbrand.esp'
     msg:
@@ -4569,14 +4494,7 @@ plugins:
         udr: 205
   - name: 'HoodlessArchmageWithFixedStats.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("HoodlessArchmageWithFixedStats.esp",2DFEA856)'
   - name: 'Houses_german.esp'
     msg:
@@ -4779,14 +4697,7 @@ plugins:
         condition: 'file("Kuun''s angels drop armor.esp")'
   - name: 'Langsam wirkende Tränke.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Langsam wirkende Tränke.esp",163A3470)'
   - name: 'Lanterns Of Skyrim - All In One - (Vivida ENB)?(The Goddess ENB|The Goddess v2dot2)?(Somber ENB)?(RLO)?(Cold Skyrim ENB)?(Climates of Tamriel - )?(1_5x Brighter|2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?(Skylight)?\.esp'
     msg:
@@ -4988,14 +4899,7 @@ plugins:
     msg: [ *corrupt ]
   - name: 'marader.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("marader.esp",AAC47B36)'
   - name: 'Marco''s Integrated Leveled Lists.esp'
     tag:
@@ -6232,14 +6136,7 @@ plugins:
         condition: 'not active("Dragonborn.esm")'
   - name: 'Destructible_bottles.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Destructible_bottles.esp",33A7D490)'
       - type: say
         content:
@@ -6673,14 +6570,7 @@ plugins:
       - Relev
   - name: 'Armures traditionnelles de Bordeciel I.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Armures traditionnelles de Bordeciel I.esp",2AC9BE08)'
   - name: 'AronsHybrid.esp'
     msg:
@@ -7098,12 +6988,7 @@ plugins:
         condition: 'not checksum("CompanionsShields.esp",75F460D6)'
   - name: 'CoolItems1_2.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'This file has a large amount of corrupted records. Remove and use latest fixed version.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
+      - <<: *corrupt
         condition: 'checksum("CoolItems1_2.esp",8E310144)'
   - name: 'CopperPaladinArmorV1.esp'
     msg: [ *obsolete ]
@@ -7406,25 +7291,11 @@ plugins:
         itm: 1
   - name: 'DragonIron.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("DragonIron.esp",0C4425D4)'
   - name: 'DragonIronReplacer.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("DragonIron.esp",0C4425D4)'
   - name: 'DragonplateHelmFix.esp'
     msg: [ *corrupt ]
@@ -7445,14 +7316,7 @@ plugins:
         itm: 2
   - name: 'dragonweapons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("dragonweapons.esp",7516E4CE)'
   - name: 'Dread Knight Weapon Set.esp'
     tag:
@@ -7814,14 +7678,7 @@ plugins:
         subs: [ 'Gold Ingot .esp file' ]
   - name: 'GoldButterfly1.1.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("GoldButterfly1.1.esp",B94A3CA8)'
   - name: 'GoldenPaladinArmorV1.esp'
     msg: [ *obsolete ]
@@ -7945,14 +7802,7 @@ plugins:
       - Relev
   - name: 'HotBloodStandalone.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("HotBloodStandalone.esp",39A400A1)'
   - name: 'HotProperty.esp'
     dirty:
@@ -7967,14 +7817,7 @@ plugins:
         itm: 1
   - name: 'HunEbonyArmorStandalone.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("HunEbonyArmorStandalone.esp",F7132DAC)'
   - name: 'HunEbonyWeaponsStandalone.esp'
     dirty:
@@ -7983,14 +7826,7 @@ plugins:
         itm: 11
   - name: 'hunnicarmors.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("hunnicarmors.esp",D968FD8E)'
   - name: 'hunterarmor.esp'
     msg: [ *obsolete ]
@@ -8113,14 +7949,7 @@ plugins:
         itm: 3
   - name: 'Invisible_Helm.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Invisible_Helm.esp",3EE48471)'
   - name: 'Ironman5000 Weapon Overhaul.esp'
     msg: [ *obsolete ]
@@ -8853,25 +8682,11 @@ plugins:
         itm: 2
   - name: 'Mods247Helf16.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Mods247Helf16.esp",8855F757)'
   - name: 'MongolArmor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("MongolArmor.esp",7A153783) or checksum("MongolArmor.esp",7A153783)'
   - name: 'monster_hunter.esp'
     dirty:
@@ -8880,14 +8695,7 @@ plugins:
         itm: 1
   - name: 'Monys Portable Crafting Equipment.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Monys Portable Crafting Equipment.esp",9B33A305)'
   - name: 'MorrowindArmor.esp'
     msg:
@@ -8911,38 +8719,17 @@ plugins:
           - lang: es
             str: 'Usar MorrowindArmor.esp o MorrowindGlass.esp, no ambos.'
         condition: 'file("MorrowindArmor.esp")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("MorrowindGlass.esp",9099DB14)'
   - name: 'MorrowindSmithingVanilla.esp'
     inc:
       - 'Dawnguard.esm'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("MorrowindSmithingVanilla.esp",62CFEEB0)'
   - name: 'matys mithril armor enhanced.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("matys mithril armor enhanced.esp",A71FA4F0)'
     tag:
       - name: Deactivate
@@ -9155,14 +8942,7 @@ plugins:
         itm: 3
   - name: 'NiuNiu.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de lugar y debería ser removido.'
+      - <<: *corrupt
         condition: 'checksum("NiuNiu.esp",8E62670B)'
   - name: 'NobleFemaleClothes.esp'
     dirty:
@@ -9199,14 +8979,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'numenume elf ear.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("numenume elf ear.esp",2112184A)'
   - name: 'OdemsSakabato.esp'
     dirty:
@@ -9295,14 +9068,7 @@ plugins:
             str: 'Requiere: [Nudes - FavoredSoulMeshes - ErectVersion](http://www.nexusmods.com/skyrim/mods/2488)'
   - name: 'PhoenixBlade.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PhoenixBlade.esp",227F81AF)'
   - name: 'PIVariety.esp'
     tag:
@@ -9415,14 +9181,7 @@ plugins:
         itm: 7
   - name: 'ringofhircine.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("ringofhircine.esp",BE953E6C)'
   - name: 'Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp'
     inc:
@@ -9660,14 +9419,7 @@ plugins:
         itm: 11
   - name: 'SkyHeels.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("SkyHeels.esp",9816BAE4)'
   - name: 'Skyrim Knights.esp'
     dirty:
@@ -9839,25 +9591,11 @@ plugins:
             str: 'Requiere: [UNPB](http://www.nexusmods.com/skyrim/mods/14899)'
   - name: 'SummoningRings1_2.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("SummoningRings1_2.esp",5608097D)'
   - name: 'SUNMagicArmor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("SUNMagicArmor.esp",EAB06AA4)'
   - name: 'sunnydawnbreaker.esp'
     after:
@@ -10343,14 +10081,7 @@ plugins:
         condition: 'not regex("Weapons of the Third Era.+\.esp")'
   - name: 'WereWolfRing.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("WereWolfRing.esp",730A89B3)'
   - name: 'winterhold_robes.esp'
     dirty:
@@ -12083,14 +11814,7 @@ plugins:
         subs: [ 'Song General Armor&weapon.esp' ]
   - name: 'SkyRe Dark Nemesis.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("SkyRe Dark Nemesis.esp",FBBC3828)'
       - *installOriginalResources
       - <<: *deleteOrDeactivateX
@@ -12104,14 +11828,7 @@ plugins:
         subs: [ 'DarkNemesis.esp' ]
   - name: 'SkyRe Equipment of Eternal Shine.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("SkyRe Equipment of Eternal Shine.esp",C47F2C45)'
       - *installOriginalResources
       - <<: *deleteOrDeactivateX
@@ -18940,14 +18657,7 @@ plugins:
       - 'BetterQuestObjectives.esp'
   - name: 'Babette.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Babette.esp",32DB97E2)'
     dirty:
       - crc: 0x6596e3cf
@@ -18955,14 +18665,7 @@ plugins:
         itm: 8
   - name: 'BalancedHeroWeps.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("BalancedHeroWeps.esp",1A21ED10)'
   - name: 'BarbasLessAnnoying.esp'
     msg:
@@ -19051,14 +18754,7 @@ plugins:
         subs: [ 'BetterGhostbladeV1 .esp file' ]
   - name: 'BetterNordHeroWeapons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("BetterNordHeroWeapons.esp",0B39EBC1)'
   - name: 'BetterQuestObjectives.esp'
     msg:
@@ -19315,80 +19011,31 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Better Sorting 1.12 Sboub édition.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Better Sorting 1.12 Sboub édition.esp",E52FC50D)'
   - name: 'Better Sorting FR A 1.12.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Better Sorting FR A 1.12.esp",A6455DB3)'
   - name: 'Better Sorting FR B 1.12.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Better Sorting FR B 1.12.esp",4F254127)'
   - name: 'Better Sorting FR EA 1.12.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Better Sorting FR EA 1.12.esp",39FB7D5C)'
   - name: 'Better Sorting FR EB 1.12.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Better Sorting FR EB 1.12.esp",097D3033)'
   - name: 'Better Sorting_DV v1.3.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Better Sorting_DV v1.3.esp",95CEEFCB)'
   - name: 'Headbomb''s Better Sorting -- DE (by sheijian) v1.03.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Headbomb''s Better Sorting -- DE (by sheijian) v1.03.esp",BC4FACB7)'
   - name: 'BetterStaffofCorruption.esp'
     msg: [ *corrupt ]
@@ -19853,14 +19500,7 @@ plugins:
         subs: [ 'fasterdragonbonearrows .esp file' ]
   - name: 'FasterNordHeroWeps.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("FasterNordHeroWeps.esp",4F2396EA)'
   - name: 'FemaleMannequins(Argonian|Breton|DarkElf|HighElf|Imperial|Kajiit|Nord|Orc|Redguard|WoodElf)\.esp'
     msg:
@@ -21166,14 +20806,7 @@ plugins:
         condition: 'file("PerkUP-Archery.esp")'
   - name: 'spellbreaker_150.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("spellbreaker_150.esp",EB334104)'
   - name: '-?Stickier_Arrows-? (V2|Fix)\.esp'
     msg:
@@ -22688,14 +22321,7 @@ plugins:
       - *SKSE
   - name: 'Fatigue_Effects.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Fatigue_Effects.esp",A4C14B80)'
   - name: 'Imp''s More Complex Needs.esp'
     msg:
@@ -23656,14 +23282,7 @@ plugins:
         condition: 'not file("..\skse_loader.exe")'
   - name: 'KodlakWhitemane.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("KodlakWhitemane.esp",C68252A0)'
   - name: 'LeazersOpenLock2_0.esp'
     dirty:
@@ -24106,14 +23725,7 @@ plugins:
         itm: 1
   - name: 'Excalibur _firebreath_IMBA ver.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Excalibur _firebreath_IMBA ver.esp",C513B76D)'
       - type: warn
         content:
@@ -24426,14 +24038,7 @@ plugins:
         condition: 'version("..\skse_loader.exe", "0.1.7.0", <)'
   - name: 'Eld-combinePotions.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Eld-combinePotions.esp",B44CC974)'
   - name: 'PISE-Reduced Potions.esp'
     tag:
@@ -25306,14 +24911,7 @@ plugins:
         condition: 'file("Perk_Heavy_Armor_Tree_Redone.esp")'
   - name: 'PerkUP-Alchemy.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-Alchemy.esp",78B29460)'
   - name: 'PerkUP-Alteration.esp'
     dirty:
@@ -25322,25 +24920,11 @@ plugins:
         itm: 4
   - name: 'PerkUP-Archery.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-Archery.esp",7DE1869B)'
   - name: 'PerkUP-Block.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-Block.esp",BA505A27)'
   - name: 'PerkUP-Conjuration.esp'
     dirty:
@@ -25354,14 +24938,7 @@ plugins:
         itm: 9
   - name: 'PerkUP-Enchanting.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-Enchanting.esp",44A1D95B)'
   - name: 'PerkUP-HeavyArmor.esp'
     dirty:
@@ -25375,47 +24952,19 @@ plugins:
         itm: 9
   - name: 'PerkUP-LightArmor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-LightArmor.esp",B06368FC)'
   - name: 'PerkUP-Lockpicking.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-Lockpicking.esp",84E156CF)'
   - name: 'PerkUP-OneHanded.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-OneHanded.esp",537E45D7)'
   - name: 'PerkUP-Pickpocket.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-Pickpocket.esp",C499715D)'
   - name: 'PerkUP-Restoration.esp'
     dirty:
@@ -25424,80 +24973,31 @@ plugins:
         itm: 5
   - name: 'PerkUP-Smithing.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-Smithing.esp",F607DBD3)'
   - name: 'PerkUP-Sneak.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-Sneak.esp",5B3B0E3A)'
   - name: 'PerkUP-Speech.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-Speech.esp",8E72AE48)'
   - name: 'PerkUP-TwoHanded.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-TwoHanded.esp",2EC31219)'
   - name: 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp",32EC46AD)'
   - name: 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-zOptional_LightArmor_NoHelmsReq.esp",C519978E)'
   - name: 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("PerkUP-zOptional-Pickpocket_CarryMore100.esp",C7001A4E)'
   - name: 'MXMaxAllSkills.esp'
     req:
@@ -26896,25 +26396,11 @@ plugins:
         itm: 3
   - name: 'AelaTheHuntress.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("AelaTheHuntress.esp",826D7A86)'
   - name: 'JNPC_AelaTheHuntress.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("JNPC_AelaTheHuntress.esp",70FF9A16)'
   - name: 'Ahlam.esp'
     dirty:
@@ -26982,14 +26468,7 @@ plugins:
         itm: 3
   - name: 'DA01Aranea.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("DA01Aranea.esp",AE596700)'
   - name: 'Arcadia.esp'
     dirty:
@@ -27202,25 +26681,11 @@ plugins:
             str: 'Be sure you have the correct esp for the body type installed.'
   - name: 'Consuelo de Montoya.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Consuelo de Montoya.esp",684257A3) or checksum("Consuelo de Montoya.esp",7B137E96)'
   - name: 'Damsella.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Damsella.esp",D21DE993)'
   - name: 'DanicaPureSpring.esp'
     dirty:
@@ -27370,14 +26835,7 @@ plugins:
         itm: 1
   - name: 'Farkas.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Farkas.esp",817EF15F)'
   - name: 'FaseleTheCompanion.esp'
     dirty:
@@ -27409,14 +26867,7 @@ plugins:
             str: 'Requiere: [Pretty Eyes](http://www.nexusmods.com/skyrim/mods/3424)'
   - name: 'Fezzik the Giant.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Fezzik the Giant.esp",3D97A0E0) or checksum("Fezzik the Giant.esp",9ED962E7)'
   - name: 'FFDogs.esp'
     msg:
@@ -27545,14 +26996,7 @@ plugins:
             str: 'Этот файл содержит <x> удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
   - name: 'Grandies_Companion_by_kill.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Grandies_Companion_by_kill.esp",F1E5D380) or checksum("Grandies_Companion_by_kill.esp",03490D91) or checksum("Grandies_Companion_by_kill.esp",B59E33FE)'
   - name: 'Haeli.esp'
     dirty:
@@ -27587,14 +27031,7 @@ plugins:
         condition: 'file("Sexier Housecarls.esp")'
   - name: 'HousecarlRiften Sexy Iona v0.2.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("HousecarlRiften Sexy Iona v0.2.esp",F01CB142)'
   - name: 'HousecarlSolitude.esp'
     msg:
@@ -27607,14 +27044,7 @@ plugins:
         condition: 'file("Sexier Housecarls.esp")'
   - name: 'HousecarlSolitude  A Jordis the Sword-Maiden v0.2.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("HousecarlSolitude  A Jordis the Sword-Maiden v0.2.esp",DAAD5080)'
   - name: 'HousecarlWhiterun.esp'
     msg:
@@ -27646,14 +27076,7 @@ plugins:
             str: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
           - lang: es
             str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("HousecarlWhiterun Sexy Lydia v0.5.esp",7C29388F)'
   - name: 'Hroki.esp'
     dirty:
@@ -27662,25 +27085,11 @@ plugins:
         itm: 4
   - name: 'Illdi.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Illdi.esp",B941754D)'
   - name: 'Illia.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Illdi.esp",B941754D)'
       - type: say
         content:
@@ -27690,14 +27099,7 @@ plugins:
             str: 'Убедитесь, что используете корректный реплейсер тел для этого esp. [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) или [CBBE](http://www.nexusmods.com/skyrim/mods/2666).'
   - name: 'ImaniSuda.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("ImaniSuda.esp",4813304B)'
   - name: 'improved followers.esp'
     dirty:
@@ -27725,27 +27127,13 @@ plugins:
         itm: 2
   - name: 'Jezebel.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Jezebel.esp",77C303DF)'
   - name: 'Jezebel Simon.esp'
     inc:
       - 'Jezebel.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Jezebel Simon.esp",C75CAB33) or checksum("Jezebel Simon.esp",E8D86949) or checksum("Jezebel Simon.esp",35728E70)'
   - name: 'Jhaz.esp'
     dirty:
@@ -27787,14 +27175,7 @@ plugins:
     inc:
       - 'Khagra.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Khagra - Ghorbash Replacer.esp",A3528322)'
   - name: 'KhajiitChildren.esp'
     dirty:
@@ -27819,14 +27200,7 @@ plugins:
         itm: 3
   - name: 'Kitana.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Kitana.esp",BCF5969B) or checksum("Kitana.esp",2077B972)'
   - name: 'KMM_2a.esp'
     msg: [ *obsolete ]
@@ -27956,14 +27330,7 @@ plugins:
         itm: 2
   - name: 'Meesei.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Meesei.esp",9B5C5318)'
   - name: 'MHBArganna.esp'
     inc:
@@ -28026,14 +27393,7 @@ plugins:
         condition: 'checksum("MyStenvar.esp",A9A71270)'
   - name: 'NjadaStonearm.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("NjadaStonearm.esp",FC82DA23)'
   - name: 'Follower_Addon_V2_.esp'
     inc:
@@ -28071,27 +27431,13 @@ plugins:
             str: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/20729).'
   - name: 'Human Onmund.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Human Onmund.esp",5A191ACA)'
   - name: 'Otrera.esp'
     msg: [ *corrupt ]
   - name: 'Pluto.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Pluto.esp",93C03B35)'
   - name: 'Pretty Brelyna.esp'
     msg:
@@ -28104,14 +27450,7 @@ plugins:
         condition: 'file("Pretty Followers.esp")'
   - name: 'Ral-Kur1.1.1.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Ral-Kur1.1.1.esp",3EB078AF)'
   - name: 'Rowena Frostmoor.esp'
     msg: [ *corrupt ]
@@ -28168,14 +27507,7 @@ plugins:
         itm: 4
   - name: 'Skjor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Skjor.esp",C892B655)'
   - name: 'Skjor II.esp'
     req:
@@ -28277,14 +27609,7 @@ plugins:
         itm: 4
   - name: 'timek_Yumi.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("timek_Yumi.esp",EC1F1979)'
   - name: 'Tougher guards v2.esp'
     dirty:
@@ -28303,25 +27628,11 @@ plugins:
         itm: 3
   - name: 'Uthgerd Kriegswolfe.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("pluginUthgerd Kriegswolfe.esp",A83E8A5E)'
   - name: 'Uthgerd von Wölfe.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("pluginUthgerd von Wölfe.esp",016D9774)'
   - name: 'Vorstag.esp'
     msg:
@@ -28335,14 +27646,7 @@ plugins:
             str: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/20729).'
   - name: 'WalksInShadows.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("WalksInShadows.esp",E459265B)'
   - name: 'Wolf Companion.esp'
     dirty:
@@ -28356,14 +27660,7 @@ plugins:
         itm: 3
   - name: 'Zeeri.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Zeeri.esp",DDD4D989)'
   - name: 'Better Followers - [SBNP].*\.esp'
     inc:
@@ -28706,13 +28003,7 @@ plugins:
         util: *dirtyUtil
         itm: 9
   - name: 'Live Another Life.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This version is not supported due to corruption caused by TESVSnip. Please upgrade as soon as possible to version 2.0+'
-          - lang: ru
-            str: 'Эта версия не поддерживается из за нарушений, вызванных программой TESVSnip. Пожалуйста, обновите так быстро как возможно до версии 2.0 или выше.'
+    msg: [ *corrupt ]
   - name: 'Necromancer Start.esp'
     dirty:
       - crc: 0xdb6b67c7
