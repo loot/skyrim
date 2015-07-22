@@ -4498,13 +4498,11 @@ plugins:
         condition: 'checksum("HoodlessArchmageWithFixedStats.esp",2DFEA856)'
   - name: 'Houses_german.esp'
     msg:
-      - type: warn
-        content: 'This file is missing records and should NOT be used'
+      - <<: *corrupt
         condition: 'checksum("Houses_german.esp",D44E0189)'
   - name: 'Necessary Markers_german.esp'
     msg:
-      - type: warn
-        content: 'This file is missing records and should NOT be used'
+      - <<: *corrupt
         condition: 'checksum("Necessary Markers_german.esp",58DB7A80)'
   - name: 'Hunterborn.esp'
     req:
@@ -7976,14 +7974,7 @@ plugins:
         itm: 1
   - name: 'Jack of All Trades.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records. It should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Jack of All Trades.esp",B66866A6)'
   - name: 'Jack of Blades'' Armour.esp'
     dirty:
@@ -8493,14 +8484,7 @@ plugins:
         itm: 5
   - name: 'Lightning Blaze Edge.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records. It should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Lightning Blaze Edge.esp",6B2B704B)'
   - name: 'Lightning''s Latex Mask.esp'
     msg: [ *corrupt ]
@@ -9383,12 +9367,7 @@ plugins:
             str: 'Contains wild edit. Remove DLC2SkaalAmulet from the ESP using TES5Edit.'
   - name: 'Skeleton Key Recipe.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+      - <<: *corrupt
         condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
   - name: 'Skimpy Plate Armor.esp'
     msg:
@@ -9571,14 +9550,7 @@ plugins:
             str: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
           - lang: es
             str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - *corrupt
   - name: 'SuccubusUNPByNausicaa.esp'
     msg:
       - type: say
@@ -9766,14 +9738,7 @@ plugins:
       - Delev
   - name: 'Thanes Clothes.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records. It should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Thanes Clothes.esp",7C23231E)'
   - name: 'CALLOFTHENORTH_COMPLEMENT.esp'
     msg: [ *obsolete ]
@@ -12099,15 +12064,7 @@ plugins:
         itm: 21
         udr: 51
   - name: 'Abadonedshack_0.5b.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'AdalMatar.esp'
     msg:
       - type: warn
@@ -18720,15 +18677,7 @@ plugins:
     tag:
       - Relev
   - name: 'Better Jorrvaskr.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'BetterBreezehomeBedsNoble.esp'
     inc:
       - 'BetterBreezehomeBeds.esp'
@@ -19194,14 +19143,7 @@ plugins:
             str: 'A required file, VampireHuntersCoat.esp, has been updated and renamed to InquisitorGear.esp. Updating may break this mod.'
   - name: 'Daedric Light Armor - Rebalanced.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.'
-          - lang: ru
-            str: 'Этот файл содержит неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Daedric Light Armor - Rebalanced.esp",BA0A6590)'
   - name: 'dangerous animals( - (german|light))?\.esp'
     msg:
@@ -19285,14 +19227,7 @@ plugins:
         itm: 3
   - name: 'Dragonbane Enchantment.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
   - name: 'droppablebarenziah.esp'
     msg:
       - type: warn
@@ -19346,144 +19281,55 @@ plugins:
       - 'Brevi_MoonlightTales.esp'
   - name: 'Essential Frost.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Frost.esp",D44409A0)'
   - name: 'Essential horses - all horses.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential horses - all horses.esp",C89FBE27)'
   - name: 'Essential horses v2.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential horses v2.esp",C89FBE27)'
   - name: 'Essential horses.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+      - <<: *corrupt
         condition: 'checksum("Essential horses.esp",9B9E748D)'
   - name: 'Essential Karinda.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Karinda.esp",76726DC5)'
   - name: 'Essential Markarth horses.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Markarth horses.esp",8FF75D36)'
   - name: 'Essential Riften horses.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Riften horses.esp",7BBB11F3)'
   - name: 'Essential Shadowmere and Frost.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Shadowmere and Frost.esp",7811F09F)'
   - name: 'Essential Shadowmere v2.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Shadowmere v2.esp",A381200F)'
   - name: 'Essential Shadowmere.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Shadowmere.esp",A381200F)'
   - name: 'Essential Solitude horses.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Solitude horses.esp",545A07B5)'
   - name: 'Essential Whiterun horses.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Whiterun horses.esp",5975BB9B)'
   - name: 'Essential Windhelm horses.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Essential Windhelm horses.esp",FBD393F5)'
   - name: 'ExpandedCarriageService.esp'
     dirty:
@@ -19699,14 +19545,7 @@ plugins:
             str: 'Это просто параметр iMaxPlayerRunes из настроек игры - вы можете просто поменять его значение в .ini файле и не использовать этот плагин.'
   - name: 'Improved blessing.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records. It should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Improved blessing.esp",BF08EFFE)'
   - name: 'improved final battle.esp'
     dirty:
@@ -20080,25 +19919,11 @@ plugins:
         itm: 20
   - name: 'More Powerful Dragons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("More Powerful Dragons.esp",48A18FE5)'
   - name: 'More Powerful Dragons Leveled Dragons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("More Powerful Dragons Leveled Dragons.esp",CEF8347C)'
   - name: 'MoreSalt.esp'
     tag:
@@ -22559,13 +22384,7 @@ plugins:
   - name: 'Longer springting v2.esp'
     msg: [ *obsolete ]
   - name: 'Sprint\d\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
+    msg: [ *corrupt ]
   - name: 'Transportato - Ships.esp'
     dirty:
       - crc: 0x998cf48f
@@ -22749,14 +22568,7 @@ plugins:
         itm: 1
   - name: 'Vampires hate the sun.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Vampires hate the sun.esp.esp",820C3864)'
   - name: 'VLW_Hybrid.esp'
     after:
@@ -23166,15 +22978,7 @@ plugins:
         util: *dirtyUtil
         udr: 1
   - name: 'Epic Potent Flame Thrall.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+    msg: [ *corrupt ]
   - name: 'Evilbass Light and Dark Spells.esp'
     msg:
       - type: error
@@ -23528,14 +23332,7 @@ plugins:
         itm: 1
   - name: 'Star Wars Force Abilities.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.'
-          - lang: ru
-            str: 'Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de orden y debe ser removido.'
+      - <<: *corrupt
         condition: 'checksum("Star Wars Force Abilities.esp",FD5D302E)'
   - name: 'Starbomb.esp'
     dirty:
@@ -24395,45 +24192,27 @@ plugins:
         subs: [ 'ACE BYOG NPC Archers Miss-Rate .esp file' ]
   - name: 'ArcheryExtended200.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.'
+      - <<: *corrupt
         condition: 'checksum("ArcheryExtended200.esp",BF90CF33)'
   - name: 'BlockExtended200.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.'
+      - <<: *corrupt
         condition: 'checksum("BlockExtended200.esp",A4BC2675)'
   - name: 'HeavyArmorExtended200.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.'
+      - <<: *corrupt
         condition: 'checksum("HeavyArmorExtended200.esp",EE2865BA)'
   - name: 'OnehandedExtended200.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.'
+      - <<: *corrupt
         condition: 'checksum("OnehandedExtended200.esp",8AFA7162)'
   - name: 'SmithingExtended200.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.'
+      - <<: *corrupt
         condition: 'checksum("SmithingExtended200.esp",4CE06258)'
   - name: 'TwoHandedExtended200.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.'
+      - <<: *corrupt
         condition: 'checksum("TwoHandedExtended200.esp",D196971F)'
   - name: 'ArcheryDummyXP.esp'
     dirty:
