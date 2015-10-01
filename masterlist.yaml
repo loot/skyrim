@@ -25,6 +25,19 @@ common:
       - lang: zh_CN
         str: '删除。已包含在Unofficial Skyrim Patch.esp中。'
     condition: 'active("Unofficial Skyrim Patch.esp")'
+  - &AlreadyInMod
+    type: error
+    content:
+      - lang: en
+        str: 'Delete. Already included in %1%.'
+      - lang: ru
+        str: 'Удалите. Уже включено в %1%.'
+      - lang: es
+        str: 'Borrar. Esta incluido en %1%.'
+      - lang: ko
+        str: '삭제하십시오. 이미 %1%에 포함되어 있습니다.'
+      - lang: zh_CN
+        str: '删除。已包含在%1%中。'
   - &doNotClean
     type: say
     content:
@@ -112,10 +125,11 @@ globals:
   - type: say
     content:
       - lang: en
-        str: 'A [new release](https://github.com/loot/loot/releases/tag/v0.7.1) of LOOT is available.'
+        str: 'A [new release](%1%) of LOOT is available.'
       - lang: zh_CN
-        str: '一个[新版本](https://github.com/loot/loot/releases/tag/v0.7.1)的LOOT已发布。'
-    condition: 'version("LOOT", "0.7.1.0", <)'
+        str: '一个[新版本](%1%)的LOOT已发布。'
+    subs: [ 'https://github.com/loot/loot/releases/latest' ]
+    condition: 'version("LOOT", "0.8.1.0", <)'
   - type: say
     content:
       - lang: en
@@ -816,15 +830,9 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("EagleEyePerk(_defStamina|_half_stamina)?\.esm")'
         subs: [ 'EagleEyePerk .esm file' ]
-      - type: warn
+      - <<: *AlreadyInMod
         condition: 'file("PerkUP-Archery.esp")'
-        content:
-          - lang: en
-            str: 'Delete. Already included in PerkUP-Archery.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в PerkUP-Archery.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en PerkUP-Archery.esp.'
+        subs: [ 'PerkUP-Archery.esp' ]
   - name: 'EASamhair.esm'
     msg: [ *obsolete ]
   - name: 'EASamhairE_1_1.esm'
@@ -1010,7 +1018,7 @@ plugins:
     msg:
       - type: warn
         condition: 'version("JSwords.esm","14.0",<)'
-        content: Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained "http://www.nexusmods.com/skyrim/mods/26230 here".
+        content: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
       - type: warn
         condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
         content:
@@ -1065,25 +1073,13 @@ plugins:
 # ## Lighting.esm is a companion mod for Lightsabers.esm?
   - name: 'Liliath.esm'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Pretty Followers.esm.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Pretty Followers.esm.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Pretty Followers.esm.'
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esm' ]
         condition: 'file("Pretty Followers.esm")'
   - name: 'lilyelf.esm'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Pretty Followers.esm.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Pretty Followers.esm.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Pretty Followers.esm.'
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esm' ]
         condition: 'file("Pretty Followers.esm")'
   - name: 'LunariRace.esm'
     msg: [ *obsolete ]
@@ -1234,14 +1230,8 @@ plugins:
         udr: 25
   - name: 'Pretty Brelyna.esm'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Pretty Followers.esm.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Pretty Followers.esm.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en Pretty Followers.esm.'
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esm' ]
         condition: 'file("Pretty Followers.esm")'
   - name: 'Prison.esm'
     dirty:
@@ -1702,14 +1692,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Brawl Bugs CE.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in SkyRe_main.esp v0.99.18.'
-          - lang: ru
-            str: 'Удалите. Уже включено в SkyRe_main.esp вер.0.99.18.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en SkyRe_main.esp v0.99.18.'
+      - <<: *AlreadyInMod
+        subs: [ 'SkyRe' ]
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
   - name: 'breezehomelightfix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -1787,15 +1771,9 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'Chesko_MatchingSetPerkFix.esp'
     msg:
-      - type: error
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.9' ]
         condition: 'version("../TESV.exe", "1.9", >)'
-        content:
-          - lang: en
-            str: 'Delete. Fixed in Official Patch 1.9.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.9.'
-          - lang: es
-            str: 'Borrar. Incluido en el patch oficial 1.9.'
   - name: 'Cloak Fix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'CombatMusicFix.esp'
@@ -1814,14 +1792,8 @@ plugins:
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión.'
         condition: 'not checksum("CriticalChargeFix.esp",A35E7560)'
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in PerkUP-TwoHanded.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в PerkUP-TwoHanded.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en PerkUP-TwoHanded.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'PerkUP-TwoHanded.esp' ]
         condition: 'file("PerkUP-TwoHanded.esp")'
   - name: 'CTD Fellglow Keep Dungeon Fix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -1829,14 +1801,8 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'DaedricShieldHiResFix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial High Resolution Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial High Resolution Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial High Resolution Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial High Resolution Patch.esp' ]
         condition: 'active("Unofficial High Resolution Patch.esp")'
   - name: 'Daggers acts like blades.esp'
     msg: [ *AlreadyInUSKP ]
@@ -1844,14 +1810,8 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'Deflect Arrows Perk Fix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.5.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.5.'
-          - lang: es
-            str: 'Borrar. Incluido en el patch oficial 1.5.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.5' ]
         condition: 'version("..\TESV.exe","1.4.27",>)'
   - name: 'Derkeethus_fix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -1886,23 +1846,11 @@ plugins:
   - name: 'followerhuntingbowfix.esp'
     msg:
       - *AlreadyInUSKP
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in BDO.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в BDO.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en BDO.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'BDO.esp' ]
         condition: 'file("BDO.esp")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Better followers.'
-          - lang: ru
-            str: 'Удалите. Уже включено в мод Better followers.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Better followers.'
+      - <<: *AlreadyInMod
+        subs: [ 'Better Followers' ]
         condition: 'regex("Better Followers - [SBNP].*\.esp")'
   - name: 'FollowerHuntingBow12.esp'
     msg: [ *AlreadyInUSKP ]
@@ -1918,14 +1866,8 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'GiantPhysicsFix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed in Official Patch 1.4.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.4.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.4.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.4' ]
         condition: 'version("..\TESV.exe","1.4",>)'
   - name: 'GM-KhajiitDSHFix.esp'
     msg:
@@ -1983,25 +1925,13 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'LCBM.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.5.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.5.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.5.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.5' ]
         condition: 'version("..\TESV.exe","1.4.27",>)'
   - name: 'Letrush Fix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed in Official Patch 1.8.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.8.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.8.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.8' ]
         condition: 'version("..\TESV.exe","1.7.7",>)'
   - name: 'lightplacement.esp'
     msg: [ *obsolete ]
@@ -2036,14 +1966,8 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'Magnus20.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.4.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.4.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.4.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.4' ]
         condition: 'version("..\TESV.exe","1.4",>)'
       - type: warn
         content:
@@ -2056,14 +1980,8 @@ plugins:
         condition: 'not checksum("Magnus20.esp",DE1D22AC)'
   - name: 'Magnus50.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.4.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.4.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.4.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.4' ]
         condition: 'version("..\TESV.exe","1.4",>)'
       - type: warn
         content:
@@ -2076,14 +1994,8 @@ plugins:
         condition: 'not checksum("Magnus50.esp",1003FA02)'
   - name: 'Magnus100.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.4.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.4.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.4.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.4' ]
         condition: 'version("..\TESV.exe","1.4",>)'
       - type: warn
         content:
@@ -2100,15 +2012,9 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'MatchingSetFixes.esp'
     msg:
-      - type: error
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.9' ]
         condition: 'version("../TESV.exe", "1.9", >)'
-        content:
-          - lang: en
-            str: 'Delete. Fixed in Official Patch 1.9.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.9.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.9.'
   - name: 'Miner''s Clothes Variant Fix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'Minor Miner Fixes.esp'
@@ -2129,15 +2035,9 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'NordHeroBowTemperFix.esp'
     msg:
-      - type: error
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.9.26' ]
         condition: 'version("..\TESV.exe","1.9",>)'
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.9.26.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.9.26.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.9.26.'
   - name: 'onehandeddagger.esp'
     msg: [ *AlreadyInUSKP ]
 # ## Orc&ElfFix4TBBP.esp
@@ -2147,25 +2047,13 @@ plugins:
   - name: 'Proudspire Manor Bug Fixes.esp'
     msg:
       - *AlreadyInUSKP
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ProudspireManorImprovements.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в ProudspireManorImprovements.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en ProudspireManorImprovements.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'ProudspireManorImprovements.esp' ]
         condition: 'file("ProudspireManorImprovements.esp")'
   - name: 'Proudspire Manor Weapon Rack Fixes.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.5.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.5.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.5.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.5' ]
         condition: 'version("..\TESV.exe","1.4.27",>)'
   - name: 'Prowler.esp'
     msg: [ *AlreadyInUSKP ]
@@ -2181,38 +2069,20 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'RiverwoodTraderInvestorFix.esp'
     msg:
-      - type: error
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.9.26' ]
         condition: 'version("..\TESV.exe","1.9",>)'
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.9.26.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.9.26.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.9.26.'
   - name: 'SanguineRoseFix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.5.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.5.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.5.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.5' ]
         condition: 'version("..\TESV.exe","1.4.27",>)'
   - name: 'sapphire_speak_fix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'Severin Manor Music.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dragonborn Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dragonborn Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dragonborn Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dragonborn Patch.esp' ]
         condition: 'active("Unofficial Dragonborn Patch.esp")'
   - name: 'Shrine of Azura LOD Fix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -2225,52 +2095,28 @@ plugins:
   - name: 'Spell Absorb Fix.esp'
     msg:
       - *AlreadyInUSKP
-      - type: warn
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp' ]
         condition: 'file("Unofficial Dawnguard Patch.esp")'
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
   - name: 'SolitudeProudspireManorFix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'StaggerFix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'StaffOfMagnusFix.esp'
     msg:
-      - type: error
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.4.26' ]
         condition: 'version("..\TESV.exe","1.4",>)'
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.4.26.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.4.26.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.4.26.'
   - name: 'stormcloak boot fix.esp'
     msg:
-      - type: error
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.9.26' ]
         condition: 'version("..\TESV.exe","1.9",>)'
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.9.26.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.9.26.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.9.26.'
   - name: 'StuddedArmorFixes.esp'
     msg:
-      - type: error
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.9.26' ]
         condition: 'version("..\TESV.exe","1.9",>)'
-        content:
-          - lang: en
-            str: 'Delete. Fixed by Official Patch 1.9.26.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном патче 1.9.26.'
-          - lang: es
-            str: 'Borrar. Esta incluido en el patch oficial 1.9.26.'
   - name: 'SybilleStentorFix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'TalosShrineFix.esp'
@@ -2304,15 +2150,9 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'vampirelorddrainlifefix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in [Unofficial Dawnguard Patch](http://www.nexusmods.com/skyrim/mods/23491).'
-          - lang: ru
-            str: 'Удалите. Уже включено в [Unofficial Dawnguard Patch](http://www.nexusmods.com/skyrim/mods/23491).'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en [Unofficial Dawnguard Patch](http://www.nexusmods.com/skyrim/mods/23491).'
-        condition: 'active("Unofficial Dawnguard Patch.esp")'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dragonborn Patch.esp' ]
+        condition: 'active("Unofficial Dragonborn Patch.esp")'
   - name: 'Vampire Orcs Welcome in Strongholds.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'VampireRaceDetection.esp'
@@ -2359,70 +2199,35 @@ plugins:
 # ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
   - name: 'ancient-nordic-pickaxe-smith-fix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dragonborn Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dragonborn Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dragonborn Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dragonborn Patch.esp' ]
         condition: 'active("Unofficial Dragonborn Patch.esp")'
   - name: 'BoundDaggerFix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dragonborn Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dragonborn Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dragonborn Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dragonborn Patch.esp.' ]
         condition: 'active("Unofficial Dragonborn Patch.esp")'
   - name: 'BreezhomeAlchemyLabFix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp.' ]
         condition: 'active("Unofficial Dawnguard Patch.esp")'
   - name: 'chopping_block_wood_fires.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed in Bethesda''s official update February 2013.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном обновлении от Bethesda, февраль 2013.'
-          - lang: es
-            str: 'Borrar. Includido en el update official de febrero 2013.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.9' ]
+        condition: 'version("../TESV.exe", "1.9", >)'
 # ## correctdoucebriseALCH.esp
 # ## french patch to allow the purchase of alchemy lab in Breezehome under DG
   - name: 'CraftableBoneHawkRings.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp' ]
         condition: 'active("Unofficial Dawnguard Patch.esp")'
   - name: 'Dawnguard Breezehome Fix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp.' ]
         condition: 'active("Unofficial Dawnguard Patch.esp")'
     dirty:
       - crc: 0x330aed25
@@ -2430,68 +2235,33 @@ plugins:
         itm: 2
   - name: 'Dawnguard Summons Fixed.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp.' ]
         condition: 'active("Unofficial Dawnguard Patch.esp")'
   - name: 'DawnguardDrainVitalityFix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp.' ]
         condition: 'active("Unofficial Dawnguard Patch.esp")'
   - name: 'dghorsepatch.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp.' ]
         condition: 'active("Unofficial Dawnguard Patch.esp")'
   - name: 'Dragonborn Spell Absorb Fix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dragonborn Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dragonborn Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dragonborn Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dragonborn Patch.esp.' ]
         condition: 'active("Unofficial Dragonborn Patch.esp")'
   - name: 'HDtextures01.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Fixed in Bethesda''s official update February 2013.'
-          - lang: ru
-            str: 'Удалите. Исправлено в официальном обновлении от Bethesda, февраль 2013.'
-          - lang: es
-            str: 'Borrar. Includido en el update official de febrero 2013.'
+      - <<: *AlreadyInMod
+        subs: [ 'Official Patch 1.9' ]
+        condition: 'version("../TESV.exe", "1.9", >)'
   - name: 'Headtracking Fix - Dawnguard.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp.' ]
         condition: 'active("Unofficial Dawnguard Patch.esp")'
   - name: 'HF-MoveSpouse.esp'
     msg: [ *corrupt ]
@@ -2501,38 +2271,20 @@ plugins:
         itm: 15
   - name: 'HighResTexturePackFix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial High Resolution Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial High Resolution Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial High Resolution Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial High Resolution Patch.esp.' ]
         condition: 'active("Unofficial High Resolution Patch.esp")'
   - name: 'invisible_shield_fix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'Krill_AurielsBowFix.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp.' ]
         condition: 'active("Unofficial Dawnguard Patch.esp")'
   - name: 'Prodspire Cooking pot hearthfire bugfix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Hearthfire Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Hearthfire Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Hearthfire Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Hearthfire Patch.esp.' ]
         condition: 'active("Unofficial Hearthfire Patch.esp")'
     dirty:
       - crc: 0x91aa4e51
@@ -2546,14 +2298,8 @@ plugins:
         condition: 'not file("HighResTexturePack01.esp")'
   - name: 'Stahlrim Arrow Projectile Fix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dragonborn Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dragonborn Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dragonborn Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dragonborn Patch.esp.' ]
         condition: 'active("Unofficial Dragonborn Patch.esp")'
   - name: 'Vampire Face Fixes.esp'
     msg:
@@ -2568,14 +2314,8 @@ plugins:
 # ## Unofficial DLC Patches
   - name: 'USKP Dawnguard vampire face & eye fix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Unofficial Dawnguard Patch.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Unofficial Dawnguard Patch.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Unofficial Dawnguard Patch.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Unofficial Dawnguard Patch.esp.' ]
         condition: 'active("Unofficial Dawnguard Patch.esp")'
 # ## Unofficial Dawnguard Patch that is not false flagged
 # ## IFNOT VAR(UDGP20) MOD: Unofficial Dawnguard Patch.esp
@@ -3456,14 +3196,8 @@ plugins:
         itm: 1
   - name: 'Armored Skeleton.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Skyrim Immersive Creatures.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Skyrim Immersive Creatures.esp.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en Skyrim Immersive Creatures.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Skyrim Immersive Creatures.esp.' ]
         condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
     tag:
       - Relev
@@ -3500,46 +3234,22 @@ plugins:
         condition: 'checksum("arrowcrafting.esp",8E307ED0) or checksum("arrowcrafting.esp",D15AE0C5)'
   - name: 'Arrowsmith\w{0,2}\.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in SkyRe_Main.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включен в SkyRe_Main.esp.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en SkyRe_Main.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'SkyRe' ]
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Complete Crafting Overhaul.'
-          - lang: ru
-            str: 'Удалите. Уже включен в мод Complete Crafting Overhaul.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en Complete Crafting Overhaul.'
+      - <<: *AlreadyInMod
+        subs: [ 'Complete Crafting Overhaul.' ]
         condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
 # Not sure but SkyRe_Main.esp is requires the Dawnguard DLC and includes Arrowsmith.esp
   - name: 'arrowsmith-dawnguard.esp'
     inc:
       - 'Arrowsmith.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Arrowsmith.esp already included in SkyRe_Main.esp.'
-          - lang: ru
-            str: 'Удалите. Arrowsmith.esp уже включен в SkyRe_Main.esp.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en Complete SkyRe_Main.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'SkyRe' ]
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. arrowsmith-dawnguard.esp already included in Complete Crafting Overhaul.'
-          - lang: ru
-            str: 'Удалите. arrowsmith-dawnguard.esp уже включен в мод Complete Crafting Overhaul.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en Complete Crafting Overhaul.'
+      - <<: *AlreadyInMod
+        subs: [ 'Complete Crafting Overhaul.' ]
         condition: 'regex("Complete Crafting Overhaul( - BS version)?\.esp")'
   - name: 'arrowboltupgrades.esp'
     tag:
@@ -3568,14 +3278,8 @@ plugins:
             str: 'Certain version(s) of this mod require active Dawnguard, Hearthfire and/or Dragonborn. See [author''s instructions.](http://www.nexusmods.com/skyrim/mods/28996)'
   - name: 'Auto Unequip Arrows.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in [Auto Unequip Ammo](http://www.nexusmods.com/skyrim/mods/10753).'
-          - lang: ru
-            str: 'Удалите. Уже включено в [Auto Unequip Ammo](http://www.nexusmods.com/skyrim/mods/10753).'
-          - lang: es
-            str: 'Borrar. Esta incluido en [Auto Unequip Ammo](http://www.nexusmods.com/skyrim/mods/10753).'
+      - <<: *AlreadyInMod
+        subs: [ 'Auto Unequip Ammo' ]
         condition: 'file("Auto Unequip Ammo.esp")'
   - name: 'autotravel.esp'
     req: [ *SKSE ]
@@ -3966,27 +3670,15 @@ plugins:
     req: [ *SKSE ]
   - name: 'Cliffracers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''Skyrim Immersive Creatures.esp''.'
-          - lang: ru
-            str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp''.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en ''Skyrim Immersive Creatures.esp''.'
+      - <<: *AlreadyInMod
+        subs: [ 'Skyrim Immersive Creatures.esp' ]
         condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
   - name: 'Conjuration & Summoning fixes.esp'
     msg:
       - *corrupt
       - *AlreadyInUSKP
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in SpellFix.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в SpellFix.esp.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en SpellFix.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'SpellFix.esp' ]
         condition: 'file("SpellFix.esp")'
   - name: 'Console Books.esp'
     dirty:
@@ -4009,14 +3701,8 @@ plugins:
         udr: 1
   - name: 'CRAFT - Salvage Material.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Craft, Temper, Smelt.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Craft, Temper, Smelt.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Craft, Temper, Smelt.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Craft, Temper, Smelt.esp' ]
         condition: 'file("Craft, Temper, Smelt.esp")'
       - type: say
         content:
@@ -4028,14 +3714,8 @@ plugins:
             str: 'Obsoleto. Actualizar a la última versión, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
   - name: 'CRAFT - Forge Equipment.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Craft, Temper, Smelt.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Craft, Temper, Smelt.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Craft, Temper, Smelt.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Craft, Temper, Smelt.esp' ]
         condition: 'file("Craft, Temper, Smelt.esp")'
       - type: say
         content:
@@ -4259,14 +3939,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'EQUIPMENT - Unarmed Spiked Gauntlets.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Craft, Temper, Smelt.esp'
-          - lang: ru
-            str: 'Удалите. Уже включено в Craft, Temper, Smelt.esp'
-          - lang: es
-            str: 'Borrar. Esta incluido en Craft, Temper, Smelt.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Craft, Temper, Smelt.esp' ]
         condition: 'file("Craft, Temper, Smelt.esp")'
       - type: say
         content:
@@ -4791,28 +4465,16 @@ plugins:
         itm: 270
   - name: 'LFox Alchemists Have Poisons.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LFox Alchemists Have Potions and Poisons.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в LFox Alchemists Have Potions and Poisons.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LFox Alchemists Have Potions and Poisons.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LFox Alchemists Have Potions and Poisons.esp.' ]
         condition: 'file("LFox Alchemists Have Potions and Poisons")'
     tag:
       - Delev
       - Relev
   - name: 'LFox Alchemists Have Potions.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LFox Alchemists Have Potions and Poisons.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в LFox Alchemists Have Potions and Poisons.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LFox Alchemists Have Potions and Poisons.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LFox Alchemists Have Potions and Poisons.esp.' ]
         condition: 'file("LFox Alchemists Have Potions and Poisons")'
     tag:
       - Delev
@@ -5494,14 +5156,8 @@ plugins:
         itm: 11
   - name: 'SimpleBleeding.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in dD - Enhanced Blood Main.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в dD - Enhanced Blood Main.esp.'
-          - lang: es
-            str: 'Borrar. Ya esta incluido en dD - Enhanced Blood Main.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'dD - Enhanced Blood Main.esp.' ]
         condition: 'active("dD - Enhanced Blood Main.esp")'
   - name: 'simple_crafter_breakdown.esp'
     dirty:
@@ -5974,14 +5630,8 @@ plugins:
         condition: 'not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete ''Valdacil''s Item Sorting - Smithing Smelter Categories.esp'' or use instead.'
-          - lang: ru
-            str: 'Удалите ''Valdacil''s Item Sorting - Smithing Smelter Categories.esp'' или используйте вместо этого.'
-          - lang: es
-            str: 'Borrar ''Valdacil''s Item Sorting - Smithing Smelter Categories.esp'' o utilizar en vez.'
+      - <<: *AlreadyInMod
+        subs: [ 'Valdacil''s Item Sorting - Smithing Smelter Categories.esp' ]
         condition: 'file("Valdacil''s Item Sorting - Smithing Smelter Categories.esp")'
   - name: 'VinillaSnowWindyand.+percentLessView\.esp'
     msg:
@@ -6146,7 +5796,7 @@ plugins:
           - lang: en
             str: 'Outdated, upgrade to [version 0.6 or above](http://modgames.net/load/247-1-0-13970).'
           - lang: ru
-            str: 'Устарело. Обновите до "http://modgames.net/load/247-1-0-13970 CiviliansWillNotDiePatches.esp" 0.6+'
+            str: 'Устарело. Обновите до [CiviliansWillNotDiePatches.esp](http://modgames.net/load/247-1-0-13970) 0.6+'
         condition: 'checksum("CiviliansWillNotDiePatches.esp",C0754EA7)'
   - name: 'CWND-Basic.esp'
     msg:
@@ -6494,15 +6144,9 @@ plugins:
       - 'AdvancedGlassWeapons.esp'
   - name: 'AetheriumSwords.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in AetheriumSwordsnArmor.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в AetheriumSwordsnArmor.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en AetheriumSwordsnArmor.esp.'
-        condition: 'file("AetheriumSwordsnArmor.esp.")'
+      - <<: *AlreadyInMod
+        subs: [ 'AetheriumSwordsnArmor.esp' ]
+        condition: 'file("AetheriumSwordsnArmor.esp")'
   - name: 'AetheriumSwordsnArmor.esp'
     dirty:
       - crc: 0x9bcbbaf0
@@ -6618,14 +6262,8 @@ plugins:
         condition: 'checksum("Armures traditionnelles de Bordeciel I.esp",2AC9BE08)'
   - name: 'AronsHybrid.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''Skyrim Immersive Creatures.esp''.'
-          - lang: ru
-            str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp''.'
-          - lang: es
-            str: 'Borrar. Esta incluido en ''Skyrim Immersive Creatures.esp''.'
+      - <<: *AlreadyInMod
+        subs: [ 'Skyrim Immersive Creatures.esp' ]
         condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
     dirty:
       - crc: 0x267783d2
@@ -6634,14 +6272,8 @@ plugins:
         udr: 1
   - name: 'AronsMechaDragons.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''Skyrim Immersive Creatures.esp''.'
-          - lang: ru
-            str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp''.'
-          - lang: es
-            str: 'Borrar. Esta incluido en ''Skyrim Immersive Creatures.esp''.'
+      - <<: *AlreadyInMod
+        subs: [ 'Skyrim Immersive Creatures.esp' ]
         condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
     dirty:
       - crc: 0x77a605c4
@@ -6923,12 +6555,8 @@ plugins:
             str: 'Requiere: [Elaborate Textiles](http://www.nexusmods.com/skyrim/mods/19826)'
   - name: 'ChitinGoggles.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in WetandCold - Ashes.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в WetandCold - Ashes.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'WetandCold - Ashes.esp.' ]
         condition: 'file("WetandCold - Ashes.esp")'
   - name: 'Chrysamere.esp'
     dirty:
@@ -7393,12 +7021,8 @@ plugins:
         udr: 3
   - name: 'DwarvenPowerArmor.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in AetheriumSwordsnArmor.esp'
-          - lang: ru
-            str: 'Удалите. Уже включено в AetheriumSwordsnArmor.esp'
+      - <<: *AlreadyInMod
+        subs: [ 'AetheriumSwordsnArmor.esp' ]
         condition: 'file("AetheriumSwordsnArmor.esp")'
   - name: 'j3x-autocrossbows.esp'
     after:
@@ -7506,8 +7130,8 @@ plugins:
         itm: 2
   - name: 'EngineerOutfit.esp'
     msg:
-      - type: error
-        content: 'Delete. Already included in Ellyfollower.esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Ellyfollower.esp' ]
         condition: 'file("Ellyfollower.esp")'
   - name: 'epicweapons.esp'
     dirty:
@@ -7619,14 +7243,8 @@ plugins:
             str: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
   - name: 'fox\d\d? Armor\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in FoxMerged.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в FoxMerged.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en FoxMerged.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'FoxMerged.esp' ]
         condition: 'file("FoxMerged.esp")'
   - name: 'frost armour.esp'
     msg:
@@ -8029,14 +7647,8 @@ plugins:
         itm: 5
   - name: 'Jacksh.+\.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in JackshShop.esm.'
-          - lang: ru
-            str: 'Удалите. Уже включено в JackshShop.esm.'
-          - lang: es
-            str: 'Borrar. Esta incluido en JackshShop.esm.'
+      - <<: *AlreadyInMod
+        subs: [ 'JackshShop.esm' ]
         condition: 'file("JackshShop.esm") and regex("Jacksh(BabyDoll|Zephie|Secretary|SailorV|BlackCrusaders)\.esp")'
   - name: 'Jaredschons&D13AdvancedDwarvenBowv2.esp'
     msg: [ *obsolete ]
@@ -8050,7 +7662,7 @@ plugins:
   - name: 'JSwordsDistributionBalancePlugin.esp'
     msg:
       - type: warn
-        content: Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained "http://www.nexusmods.com/skyrim/mods/26230 here".
+        content: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("JSwordsDistributionBalancePlugin.esp","14.0",<)'
     tag:
       - Delev
@@ -8788,21 +8400,13 @@ plugins:
         condition: 'file("SkyRe Mystic Armor and Weapon Set.esp")'
   - name: 'NA_BipolarBlade_(Eng|Rus|Deu)\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Noble_Artifacts_For_Skyrim.esp' ]
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_CleaverFelms_Eng.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Noble_Artifacts_For_Skyrim.esp' ]
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
     dirty:
       - crc: 0xc40354d2
@@ -8810,12 +8414,8 @@ plugins:
         udr: 1
   - name: 'NA_CleaverFelms_Rus.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Noble_Artifacts_For_Skyrim.esp' ]
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
     dirty:
       - crc: 0x3ef8d4b9
@@ -8823,60 +8423,36 @@ plugins:
         udr: 1
   - name: 'NA_Chrysamere_(Eng|Rus|Deu)\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Noble_Artifacts_For_Skyrim.esp' ]
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_Goldbrand_(Eng|Rus|Deu)\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Noble_Artifacts_For_Skyrim.esp' ]
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_IBOTM_(Eng|Rus|Deu)\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Noble_Artifacts_For_Skyrim.esp' ]
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_Scourge_(Eng|Rus|Deu)\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Noble_Artifacts_For_Skyrim.esp' ]
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_Trueflame_(Eng|Rus)\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Noble_Artifacts_For_Skyrim.esp' ]
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NA_Trueflame_Unenchanted_(Eng|Rus)\.esp'
     msg:
       - type: say
         content: 'Incompatible with: NA_Trueflame_Eng or Rus esp'
         condition: 'regex("NA_Trueflame_(Eng|Rus)\.esp")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
+      - <<: *AlreadyInMod
+        subs: [ 'Noble_Artifacts_For_Skyrim.esp' ]
         condition: 'regex("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
   - name: 'NobleArtifactsForSkyrim.esp'
     dirty:
@@ -9128,14 +8704,8 @@ plugins:
         itm: 3
   - name: 'PrvtI_HeavyArmory.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in SkyRe_Main.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в SkyRe_Main.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en SkyRe_Main.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'SkyRe' ]
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
     tag:
       - Relev
@@ -9376,23 +8946,13 @@ plugins:
       - Relev
   - name: 'ShreddedTrissHat.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''DBShreddedTriss.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''DBShreddedTriss.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'DBShreddedTriss.esp' ]
         condition: 'file("DBShreddedTriss.esp")'
   - name: 'ShShortswords.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in SkyRe_Main.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в SkyRe_Main.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en SkyRe_Main.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'SkyRe' ]
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
     tag:
       - Delev
@@ -9580,14 +9140,9 @@ plugins:
         condition: 'checksum("stoutheartarmor.esp",7E65336D)'
   - name: 'Strapless Bikinis.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Obsolete. Included in Sharlikran''s Compatability Patch.'
-          - lang: ru
-            str: 'Устарело. Уже включено в Sharlikran''s Compatability Patch.'
-          - lang: es
-            str: 'Obsoleto. Esta incluido en Sharlikran''s Compatability Patch.'
+      - <<: *AlreadyInMod
+        subs: [ 'Sharlikran''s Compatability Patch' ]
+        
       - type: say
         content:
           - lang: en
@@ -10014,14 +9569,8 @@ plugins:
           - lang: es
             str: 'Usar WeaponsOf3E o 3rdEraWeaponsMoS, no ambos.'
         condition: 'file("3rdEraWeaponsMoS.esp")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''SkyRe_Main.esp'''
-          - lang: ru
-            str: 'Удалите. Уже входит в SkyRe_Main.esp'
-          - lang: es
-            str: 'Eliminar. Ya se encuentra en ''SkyRe_Main.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'SkyRe' ]
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
     tag:
       - Relev
@@ -10046,14 +9595,8 @@ plugins:
             str: 'Устарело. Обновите до последней версии, Weapons of the Third Era MoS.'
           - lang: es
             str: 'Obsoleto. Actualizar a la última versión, Weapons of the Third Era MoS.'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. WeaponsOf3E included in SkyRe_Main.esp.'
-          - lang: ru
-            str: 'Удалите. WeaponsOf3E уже включен в SkyRe_Main.esp.'
-          - lang: es
-            str: 'Borrar. WeaponsOf3E se encuentra en SkyRe_Main.esp'
+      - <<: *AlreadyInMod
+        subs: [ 'SkyRe' ]
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
       - type: say
         content: 'Incompatible with: WeaponsOf3E*.esp'
@@ -10063,15 +9606,9 @@ plugins:
       - Relev
   - name: '3rdEraWeapMoS-lvlList.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Skyrim unleashed Xtra_items.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Skyrim unleashed Xtra_items.esp.'
-          - lang: es
-            str: 'Borrar. Ya se encuentra en Skyrim unleashed Xtra_items.esp.'
-        condition: 'file("Skyrim unleashed Xtra_items.esp")'
+      - <<: *AlreadyInMod
+        subs: [ 'Skyrim unleashed Xtra_items.esp' ]
+        condition: 'file("Skyrim unleashed Xtra_items.esp")
     tag:
       - Delev
       - Relev
@@ -12561,7 +12098,7 @@ plugins:
     dirty:
       - crc: 0x17257c94
         util: *dirtyUtil
-        itm: 79
+        itm: 86
         udr: 2
   - name: 'BecomeKingOfRiverHelm.esp'
     msg:
@@ -16747,12 +16284,8 @@ plugins:
         udr: 103
   - name: 'SharedStorage.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''WyvernCliff.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''WyvernCliff.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'WyvernCliff.esp' ]
         condition: 'file("WyvernCliff.esp")'
   - name: 'Sharks.esp'
     dirty:
@@ -18133,12 +17666,8 @@ plugins:
         itm: 5
   - name: 'WerewolfKing.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''Skyrim Immersive Creatures.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'Skyrim Immersive Creatures.esp' ]
         condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
     dirty:
       - crc: 0x51b93513
@@ -18400,12 +17929,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'A&P weight change only.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Author states SkyRe will overlap this mod, rendering it useless.'
-          - lang: ru
-            str: 'Автор утверждает, что SkyRe будет перезаписывать этот мод, делая его бесполезным.'
+      - <<: *AlreadyInMod
+        subs: [ 'SkyRe' ]
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
   - name: 'Dragon Drop - B.*\.esp'
     msg:
@@ -18688,12 +18213,8 @@ plugins:
         itm: 1
   - name: 'BasicHorseRidingAI.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead'
-          - lang: ru
-            str: 'Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'better artifacts.esp'
     dirty:
@@ -18787,25 +18308,13 @@ plugins:
       - 'BetterQuestObjectives.esp'
   - name: 'Book Covers Dawnguard.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Book Covers Skyrim.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Book Covers Skyrim.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Book Covers Skyrim.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Book Covers Skyrim.esp' ]
         condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
   - name: 'Book Covers Hearthfire.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Book Covers Skyrim.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в Book Covers Skyrim.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en Book Covers Skyrim.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Book Covers Skyrim.esp' ]
         condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
   - name: 'Headbomb''s Better Sorting - Ammo.esp'
     msg:
@@ -19276,12 +18785,8 @@ plugins:
       - <<: *corrupt
   - name: 'droppablebarenziah.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in BarenziahQuestMarkers_Droppable.esp'
-          - lang: ru
-            str: 'Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp'
+      - <<: *AlreadyInMod
+        subs: [ 'BarenziahQuestMarkers_Droppable.esp' ]
         condition: 'file("BarenziahQuestMarkers_Droppable.esp")'
   - name: 'Dual Casting - Cost - .+\.esp'
     msg:
@@ -19483,8 +18988,6 @@ plugins:
       - crc: 0x745dbcc
         util: *dirtyUtil
         itm: 20
-  - name: 'Guard Dialogue Overhaul.esp'
-    msg: [ *doNotClean ]
   - name: 'WeaponsArmorFixes_GuardDialogueOverhaul_Patch.esp'
     req:
       - name: 'Weapons & Armor Fixes_Remade.esp'
@@ -20006,30 +19509,18 @@ plugins:
       - Relev
   - name: 'No Perk Prereqs.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''PerkUP esps'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''PerkUP esps'''
+      - <<: *AlreadyInMod
+        subs: [ 'PerkUP ESPs' ]
         condition: 'regex("PerkUP.+\.esp")'
   - name: 'No Perk Prereqs - No Helmets Required.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''PerkUP esps'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''PerkUP esps'''
+      - <<: *AlreadyInMod
+        subs: [ 'PerkUP ESPs' ]
         condition: 'regex("PerkUP.+\.esp")'
   - name: 'No Perk Prereqs - Smithing Excluded.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''PerkUP esps'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''PerkUP esps'''
+      - <<: *AlreadyInMod
+        subs: [ 'PerkUP ESPs' ]
         condition: 'regex("PerkUP.+\.esp")'
   - name: 'NoAutoQuestStart_ThievesGuild_(High|Med|Reg|regular)\.esp'
     msg: [ *obsolete ]
@@ -20270,36 +19761,18 @@ plugins:
         condition: 'file("Serana Vampire Lord Bloodcursed After Cure Early.esp")'
   - name: 'SIDT - Skyrim.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in SIDT - Complete.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в SIDT - Complete.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en SIDT - Complete.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'SIDT - Complete.esp' ]
         condition: 'file("SIDT - Complete.esp")'
   - name: 'SIDT - Dawnguard.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in SIDT - Complete.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в SIDT - Complete.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en SIDT - Complete.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'SIDT - Complete.esp' ]
         condition: 'file("SIDT - Complete.esp")'
   - name: 'SIDT - Dragonborn.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in SIDT - Complete.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в SIDT - Complete.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en SIDT - Complete.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'SIDT - Complete.esp' ]
         condition: 'file("SIDT - Complete.esp")'
   - name: 'SilentRuneSpellsUncap_v100.esp'
     inc:
@@ -20666,14 +20139,8 @@ plugins:
         condition: 'file("Skyrim Immersive Creatures.esp")'
   - name: 'sneaky bow x\d\d?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''PerkUP-Archery.esp''.'
-          - lang: ru
-            str: 'Удалите. Уже включено в ''PerkUP-Archery.esp''.'
-          - lang: es
-            str: 'Borrar. Esta incluido en ''PerkUP-Archery.esp''.'
+      - <<: *AlreadyInMod
+        subs: [ 'PerkUP-Archery.esp' ]
         condition: 'file("PerkUP-Archery.esp")'
   - name: 'spellbreaker_150.esp'
     msg:
@@ -21139,6 +20606,8 @@ plugins:
     url:
       - 'http://www.nexusmods.com/skyrim/mods/13608'
   - name: 'ETaC - Complete.esp'
+    after:
+      - 'Tamriel Reloaded HD.esp'
     msg:
       - type: say
         content: 'It is recommended to also install the [3DNPC patch](http://www.nexusmods.com/skyrim/mods/13608) for Expanded Towns and Cities.'
@@ -22215,7 +21684,7 @@ plugins:
   - name: 'BabettesFeast - IMCN.esp'
     msg:
       - type: warn
-        content: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://www.nexusmods.com/skyrim/mods/26230 Compatibility Patch")'
+        content: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("BabettesFeast - IMCN.esp","0.31",<)'
   - name: 'kuerteeEncumberingLootArmourAndWeapons.esp'
     req:
@@ -22280,12 +21749,8 @@ plugins:
     after:
       - '3DNPC.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Remove. Use RND_BabettesFeast-FAMP.esp instead.'
-          - lang: ru
-            str: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
+      - <<: *AlreadyInMod
+        subs: [ 'RND_BabettesFeast-FAMP.esp.esp' ]
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_Cliffracers-Patch.esp'
     after:
@@ -22294,12 +21759,8 @@ plugins:
     after:
       - '3DNPC.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Remove. Use RND_DestructibleBottles-FAMP.esp instead.'
-          - lang: ru
-            str: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
+      - <<: *AlreadyInMod
+        subs: [ 'RND_DestructibleBottles-FAMP.esp' ]
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_DrinkingFountains-Patch.esp'
     after:
@@ -22317,12 +21778,8 @@ plugins:
     after:
       - '3DNPC.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Remove. Use RND_NCVE-FAMP.esp instead.'
-          - lang: ru
-            str: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
+      - <<: *AlreadyInMod
+        subs: [ 'RND_NCVE-FAMP.esp' ]
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_NerniesRangerPack-Patch.esp'
     after:
@@ -22337,23 +21794,15 @@ plugins:
     after:
       - '3DNPC.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Remove. Use RND_RWL-FAMP.esp instead.'
-          - lang: ru
-            str: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
+      - <<: *AlreadyInMod
+        subs: [ 'RND_RWL-FAMP.esp' ]
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_RWS-Patch.esp'
     after:
       - '3DNPC.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Remove. Use RND_RWS-FAMP.esp instead.'
-          - lang: ru
-            str: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
+      - <<: *AlreadyInMod
+        subs: [ 'RND_RWS-FAMP.esp' ]
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_SkyMoMod-Patch.esp'
     after:
@@ -22530,12 +21979,8 @@ plugins:
         itm: 5
   - name: 'LFox No Werewolf Form Cooldown.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Disable and remove it. Already included in ''LFox Werewolf Improvements.esp'''
-          - lang: ru
-            str: 'Отключите или удалите это. Уже включено в ''LFox Werewolf Improvements.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'LFox Werewolf Improvements.esp' ]
         condition: 'file("LFox Werewolf Improvements.esp")'
   - name: 'mslVampiricThirst.esp'
     req: [ *SKSE ]
@@ -22687,14 +22132,8 @@ plugins:
 # Overrides overhauls. New spells and magic systems go here for convenience.
   - name: 'AdoringFanSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x583bb026
@@ -22702,14 +22141,8 @@ plugins:
         itm: 13
   - name: 'AlikrKematuSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x6d6b36b6
@@ -22808,14 +22241,8 @@ plugins:
         itm: 16
   - name: 'BardSvaknirSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x804a34e
@@ -22823,14 +22250,8 @@ plugins:
         itm: 12
   - name: 'BladesBaurusSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x87c1bd13
@@ -22838,14 +22259,8 @@ plugins:
         itm: 4
   - name: 'BladesBolarSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
   - name: 'MidasSkyrim.esp'
     msg:
@@ -22893,14 +22308,8 @@ plugins:
             str: 'This mod requires you to enter a cosole command to add enough Magicka to cast the spell - player.modav magicka 999999999 or player.setav magicka 999999999'
   - name: 'CompanionSkjorSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x67e339e3
@@ -22908,14 +22317,8 @@ plugins:
         itm: 6
   - name: 'CompanionKodlakSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
   - name: 'Conjure_Armored_Husky.esp'
     msg:
@@ -22974,14 +22377,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'DarkBrotherhoodAstrid.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x20a8055d
@@ -22999,14 +22396,8 @@ plugins:
         itm: 1
   - name: 'DismissSpell.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
   - name: 'divine_intervention.esp'
     dirty:
@@ -23042,14 +22433,8 @@ plugins:
         itm: 20
   - name: 'FalmerSnowElf.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x98d86b17
@@ -23062,14 +22447,8 @@ plugins:
         itm: 2
   - name: 'ForswornFaolanSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x4af28309
@@ -23077,14 +22456,8 @@ plugins:
         itm: 7
   - name: 'GamblerVashaSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0xec3b6a2a
@@ -23092,14 +22465,8 @@ plugins:
         itm: 9
   - name: 'GreybeardJurgenSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x4a9199ed
@@ -23107,14 +22474,8 @@ plugins:
         itm: 5
   - name: 'HeroYsgramorSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0xaa174ff
@@ -23144,25 +22505,13 @@ plugins:
       - *SKSE
   - name: 'LucienLaChanceSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
   - name: 'MagesArnielSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x9c386d04
@@ -23170,14 +22519,8 @@ plugins:
         itm: 2
   - name: 'MagesSavosSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x5ce9ec31
@@ -23269,14 +22612,8 @@ plugins:
         itm: 3
   - name: 'NightingaleGallusSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0xb93f275a
@@ -23284,14 +22621,8 @@ plugins:
         itm: 2
   - name: 'OblivionMankarSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0xd62798d4
@@ -23327,25 +22658,13 @@ plugins:
         udr: 1
   - name: 'PsijicIachesisSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
   - name: 'QueenPotemaSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0xb3f2fcd8
@@ -23389,14 +22708,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'SummersetLinweSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
   - name: 'Summon Behemot Dragon.esp'
     msg:
@@ -23439,14 +22752,8 @@ plugins:
         itm: 4
   - name: 'SynodSeptimusSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x259814e3
@@ -23459,14 +22766,8 @@ plugins:
         itm: 11
   - name: 'ThalmorAncanoSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0xc8407cda
@@ -23479,14 +22780,8 @@ plugins:
         itm: 3
   - name: 'ThievesGreyFoxSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0x1595af04
@@ -23518,14 +22813,8 @@ plugins:
         udr: 3
   - name: 'WhispersCallerSummon.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in LegendarySouls.esp.'
-          - lang: ru
-            str: 'Удалите. Включено в LegendarySouls.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en LegendarySouls.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'LegendarySouls.esp' ]
         condition: 'file("LegendarySouls.esp")'
     dirty:
       - crc: 0xcd6e13f0
@@ -24404,15 +23693,6 @@ plugins:
       - crc: 0x1774bfd2
         util: *dirtyUtil
         itm: 1
-  - name: 'levelingperkslite.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in perksbymatope.esp'
-          - lang: ru
-            str: 'Удалите. Уже включено в perksbymatope.esp'
-        condition: 'file("perksbymatope.esp")'
   - name: 'MartialArtist.esp'
     dirty:
       - crc: 0xa137e4f5
@@ -24420,25 +23700,13 @@ plugins:
         itm: 15
   - name: 'MBDaggerAlone.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Dragonborn DLC'
-          - lang: ru
-            str: 'Удалите. Уже включено в Dragonborn DLC'
-          - lang: es
-            str: 'Borrar. Esta incluido en Dragonborn DLC'
+      - <<: *AlreadyInMod
+        subs: [ 'Dragonborn.esm' ]
         condition: 'active("Dragonborn.esm")'
   - name: 'MBDagger.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in Dragonborn DLC'
-          - lang: ru
-            str: 'Удалите. Уже включено в Dragonborn DLC'
-          - lang: es
-            str: 'Borrar. Esta incluido en Dragonborn DLC'
+      - <<: *AlreadyInMod
+        subs: [ 'Dragonborn.esm' ]
         condition: 'active("Dragonborn.esm")'
   - name: 'MergedThieverySkill.esp'
     msg:
@@ -24461,12 +23729,8 @@ plugins:
         itm: 4
   - name: 'perksbymatope.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in levelingperkslite.esp'
-          - lang: ru
-            str: 'Удалите. Уже включено в levelingperkslite.esp'
+      - <<: *AlreadyInMod
+        subs: [ 'levelingperkslite.esp' ]
         condition: 'file("levelingperkslite.esp")'
   - name: 'PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp'
     msg:
@@ -24600,23 +23864,15 @@ plugins:
         itm: 11
   - name: '10 extra effect.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''PerkUP-Enchanting.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''PerkUP-Enchanting.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'PerkUP-Enchanting.esp' ]
         condition: 'file("PerkUP-Enchanting.esp")'
   - name: '12 extra effect.esp'
     inc:
       - '10 extra effect.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''PerkUP-Enchanting.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''PerkUP-Enchanting.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'PerkUP-Enchanting.esp' ]
         condition: 'file("PerkUP-Enchanting.esp")'
   - name: 'Alteration and Restoration redux.esp'
     dirty:
@@ -24656,21 +23912,13 @@ plugins:
         itm: 1
   - name: 'cao_extrapockets_D.+\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''PerkUP-Pickpocket.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''PerkUP-Pickpocket.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'PerkUP-Pickpocket.esp' ]
         condition: 'file("PerkUP-Pickpocket.esp")'
   - name: 'concentrated10.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''PerkUP-Alchemy.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''PerkUP-Alchemy.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'PerkUP-Alchemy.esp' ]
         condition: 'file("PerkUP-Alchemy.esp")'
   - name: 'dawnguardwolfbuff.esp'
     dirty:
@@ -25385,13 +24633,9 @@ plugins:
         itm: 20
   - name: 'Draman Skeleton Mod.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''Skyrim Immersive Creatures.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''Skyrim Immersive Creatures.esp'''
-        condition: 'active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")'
+      - <<: *AlreadyInMod
+        subs: [ 'Skyrim Immersive Creatures.esp' ]
+        condition: 'active("Skyrim Immersive Creatures.esp")'
     dirty:
       - crc: 0xb45fc825
         util: *dirtyUtil
@@ -25792,51 +25036,33 @@ plugins:
         itm: 3
   - name: 'DFB - Disable Hidden Follower Bows & Arrows.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can remove all default followers equpment with UFO.'
-          - lang: ru
-            str: 'Этот мод избыточен для ''UFO - Ultimate Follower Overhaul.esp''. Вы можете удалить весь скрытый инвентарь у компаньонов с помощью UFO.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'EASamhairNE_1_1.esp'
     inc:
       - 'EASamhairE_1_1.esp'
   - name: 'Essential followers - all followers.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: ru
-            str: 'Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'essential followers.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: ru
-            str: 'Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'essentialfollowers.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: ru
-            str: 'Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'Essential Vigilance.esp'
     msg:
       - type: say
         content:
-          - lang: en
-            str: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: ru
-            str: 'Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'follower pack orcs.esp'
     dirty:
@@ -25855,21 +25081,13 @@ plugins:
             str: 'Requiere: [Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)'
   - name: 'HorseCompanions.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'HorseCompanions.es is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: ru
-            str: 'HorseCompanions.es уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: '.*HorseRidingFollowers\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: ru
-            str: 'HorseRidingFollowers уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'Inigo.esp'
     dirty:
@@ -25977,12 +25195,8 @@ plugins:
         condition: 'checksum("PetBearOslo.esp",7614B5F9) or checksum("PetBearOslo.esp",EA58D0C9)'
   - name: 'TCG.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: ru
-            str: 'Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'VendorSaleDelay-Gone.esp'
     dirty:
@@ -25997,19 +25211,11 @@ plugins:
         udr: 3
   - name: 'voidMountedFollowers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO.'
-          - lang: ru
-            str: 'Включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in BDO.esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в BDO.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'BDO.esp' ]
         condition: 'file("BDO.esp")'
   - name: 'FCKaraThePathfinder.esp'
     dirty:
@@ -26202,12 +25408,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'SpecializedFollowers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Use Better Followers - S*.esp instead.'
-          - lang: ru
-            str: 'Удалите. Используйте вместо этого Better Followers - S*.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Better Followers - S*.esp' ]
         condition: 'regex("Better Followers - .+\.esp")'
   - name: 'Better Followers - Specialized( - Not E)?\.esp'
     msg: [ *obsolete ]
@@ -26322,21 +25524,13 @@ plugins:
       - 'CompilationV1.esp'
   - name: 'pack\d\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in CompilationV1.esp.'
-          - lang: ru
-            str: 'Удалите. Уже входит в CompilationV1.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'CompilationV1.esp' ]
         condition: 'file("CompilationV1.esp")'
   - name: 'pack\d-clean\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in Compilationv1-clean.esp.'
-          - lang: ru
-            str: 'Удалите. Уже входит в Compilationv1-clean.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'Compilationv1-clean.esp' ]
         condition: 'file("Compilationv1-clean.esp")'
       - type: warn
         content:
@@ -26461,12 +25655,8 @@ plugins:
         udr: 16
   - name: 'CMCompanionLevel.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. This mod is no longer necessary, since Skyrim Patch v.1.6 has fixed the bug. Companions will now level their skills every time the Player levels up.'
-          - lang: ru
-            str: 'Удалите. Этот мод больше не важен. Поскольку патч 1.6+ исправляет баг.  Компаньоны теперь будут повышать свои навыки, каждый раз, при поднятии уровня игрока.'
+      - <<: *AlreadyInMod
+        subs: [ 'TESV 1.6' ]
         condition: 'version("..\TESV.exe","1.5.26",>)'
   - name: 'Companion_Crea.esp'
     msg:
@@ -26706,75 +25896,45 @@ plugins:
         itm: 3
   - name: 'FFNordDawsyn.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in FFNords.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в FFNords.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en FFNords.esp.'
-        condition: 'file("FFNords.esp")'
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esp' ]
+        condition: 'file("Pretty Followers.esp")'
     dirty:
       - crc: 0x77750ed7
         util: *dirtyUtil
         itm: 9
   - name: 'FFNordKaadi.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in FFNords.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в FFNords.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en FFNords.esp.'
-        condition: 'file("FFNords.esp")'
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esp' ]
+        condition: 'file("Pretty Followers.esp")'
     dirty:
       - crc: 0x45cb5aef
         util: *dirtyUtil
         itm: 8
   - name: 'FFNordLiann.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in FFNords.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в FFNords.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en FFNords.esp.'
-        condition: 'file("FFNords.esp")'
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esp' ]
+        condition: 'file("Pretty Followers.esp")'
     dirty:
       - crc: 0x3d826908
         util: *dirtyUtil
         itm: 8
   - name: 'FFNordNatilde.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in FFNords.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в FFNords.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en FFNords.esp.'
-        condition: 'file("FFNords.esp")'
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esp' ]
+        condition: 'file("Pretty Followers.esp")'
     dirty:
       - crc: 0x457c74e3
         util: *dirtyUtil
         itm: 9
   - name: 'FFNordYsilia.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in FFNords.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в FFNords.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en FFNords.esp.'
-        condition: 'file("FFNords.esp")'
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esp' ]
+        condition: 'file("Pretty Followers.esp")'
     dirty:
       - crc: 0x555c9d09
         util: *dirtyUtil
@@ -27055,25 +26215,13 @@ plugins:
         itm: 2
   - name: 'liliath.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''Pretty Followers.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''Pretty Followers.esp'''
-          - lang: es
-            str: 'Borrar. Esta incluido en ''Pretty Followers.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esp' ]
         condition: 'file("Pretty Followers.esp")'
   - name: 'lilyelf.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''Pretty Followers.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''Pretty Followers.esp'''
-          - lang: es
-            str: 'Borrar. Esta incluido en ''Pretty Followers.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esp' ]
         condition: 'file("Pretty Followers.esp")'
   - name: 'LtH_Argonian_Ria.esp'
     dirty:
@@ -27266,12 +26414,8 @@ plugins:
         condition: 'checksum("Pluto.esp",93C03B35)'
   - name: 'Pretty Brelyna.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in ''Pretty Followers.esp'''
-          - lang: ru
-            str: 'Удалите. Уже включено в ''Pretty Followers.esp'''
+      - <<: *AlreadyInMod
+        subs: [ 'Pretty Followers.esp' ]
         condition: 'file("Pretty Followers.esp")'
   - name: 'Ral-Kur1.1.1.esp'
     msg:
@@ -27516,19 +26660,11 @@ plugins:
   - name: 'Better Follower(s -)? Dialogue-?(All|Dog|Reorder|Thane|Remove)?\.esp'
     msg:
       - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in BDO.esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в BDO.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'BDO.esp' ]
         condition: 'file("BDO.esp")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Use UFO - Ultimate Follower Overhaul.esp instead'
-          - lang: ru
-            str: 'Удалите. Используйте вместо этого UFO - Ultimate Follower Overhaul.esp'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'Better NPC - Faction Pack.esp'
     msg:
@@ -27550,55 +26686,29 @@ plugins:
         condition: 'not regex("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
   - name: 'AskFollowerSkills.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in BDO.esp.'
-          - lang: ru
-            str: 'Удалите. Уже входит в BDO.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'BDO.esp' ]
         condition: 'file("BDO.esp")'
   - name: 'FollowerWander2.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'XFLMain.esm has the same functional, but you can use FollowerWander2.esp on your choice.'
-          - lang: ru
-            str: 'XFLMain.esm имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.'
+      - <<: *AlreadyInMod
+        subs: [ 'XFLMain.esm' ]
         condition: 'file("XFLMain.esm")'
-      - type: say
-        content:
-          - lang: en
-            str: 'UFO - Ultimate Follower Overhaul.esp has the same functional, but you can use FollowerWander2.esp on your choice.'
-          - lang: ru
-            str: 'UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in BDO.esp'
-          - lang: ru
-            str: 'Удалите. Уже входит в BDO.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'BDO.esp' ]
         condition: 'file("BDO.esp")'
   - name: 'Followers Unlimited 11.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in UFO - Ultimate Follower Overhaul.esp.'
-          - lang: ru
-            str: 'Удалите. Уже включено в UFO - Ultimate Follower Overhaul.esp.'
-          - lang: es
-            str: 'Borrar. Esta incluido en UFO - Ultimate Follower Overhaul.esp.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'MultipleFollowers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: ru
-            str: 'Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
       - type: say
         content:
@@ -27608,12 +26718,8 @@ plugins:
     inc:
       - 'Better Follower Improvements.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: ru
-            str: 'Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.'
+      - <<: *AlreadyInMod
+        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
 # Must load after Unlimited companions mods
 # multimarriage.esp
@@ -28795,14 +27901,8 @@ plugins:
       - 'Tropical Skyrim.esp'
   - name: 'RealisticWaterTextures.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'DELETE. Use WATER.esp instead'
-          - lang: ru
-            str: 'Удалите. Используйте WATER.esp вместо этого.'
-          - lang: es
-            str: 'Borrar. Utilizar WATER.esp en lugar.'
+      - <<: *AlreadyInMod
+        subs: [ 'WATER.esp' ]
         condition: 'file("WATER.esp")'
       - type: warn
         content:
@@ -28846,14 +27946,8 @@ plugins:
         itm: 189
   - name: 'kerplunk.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'Delete. Already included in WATER.esp'
-          - lang: ru
-            str: 'Удалите входит в WATER.esp'
-          - lang: es
-            str: 'Borrar. Esta incluido en WATER.esp'
+      - <<: *AlreadyInMod
+        subs: [ 'WATER.esp' ]
         condition: 'file("WATER.esp")'
   - name: 'waterfxgetwet.esp'
     msg:
@@ -28899,14 +27993,8 @@ plugins:
         itm: 17
   - name: 'BarenziahQuestMarkers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Delete. Already included in BarenziahQuestMarkers_Droppable.esp'
-          - lang: ru
-            str: 'Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp'
-          - lang: es
-            str: 'Borrar. Esta incluido en BarenziahQuestMarkers_Droppable.esp'
+      - <<: *AlreadyInMod
+        subs: [ 'BarenziahQuestMarkers_Droppable.esp' ]
         condition: 'file("BarenziahQuestMarkers_Droppable.esp")'
   - name: 'BBLS_MM .+\.esp'
     msg:
@@ -29582,8 +28670,6 @@ plugins:
       - Relev
 
   - name: 'PerkusMaximus_Master.esp'
-    after:
-      - Complete Crafting Overhaul_Remade.esp
     tag:
       - Names
     msg:
@@ -29691,7 +28777,7 @@ plugins:
         udr: 20
   - name: 'Skyrim_Ice_Shader_Fix.esp'
     dirty:
-      - crc: 0xE44C980C
+      - crc: 0xE44C9B0C
         util: *dirtyUtil
         itm: 1
         udr: 1
@@ -29770,6 +28856,9 @@ plugins:
       - crc: 0x1F024AC9
         util: *dirtyUtil
         itm: 1
+      - crc: 0xCDADF5BC
+        util: *dirtyUtil
+        itm: 1
   - name: 'Purity.esp'
     dirty:
       - crc: 0xA466C02D
@@ -29829,7 +28918,7 @@ plugins:
       - crc: 0xA5912188
         util: *dirtyUtil
         itm: 48
-    url: [ 'http://www.nexusmods.com/skyrim/mods/43409' ]	
+    url: [ 'http://www.nexusmods.com/skyrim/mods/43409' ]
   - name: 'WerebearsFoundInSkyrim.esp'
     dirty:
       - crc: 0xF1E9F368
@@ -29842,3 +28931,34 @@ plugins:
         util: *dirtyUtil
         itm: 2
     url: [ 'http://www.nexusmods.com/skyrim/mods/39555' ]
+  - name: 'BlackreachOverhaul.esp'
+    dirty:
+      - crc: 0x1C59B53A
+        util: *dirtyUtil
+        itm: 17
+    url: [ 'http://www.nexusmods.com/skyrim/mods/62886' ]
+  - name: 'MoreBanditCamps(Explorer''sEdition).esp'
+    dirty:
+      - crc: 0xB340A6EB
+        util: *dirtyUtil
+        itm: 176
+    url: [ 'http://www.nexusmods.com/skyrim/mods/27574' ]
+  - name: 'mannyDragonhead.esm'
+    dirty:
+      - crc: 0x0B197331
+        util: *dirtyUtil
+        nav: 1
+    url: [ 'http://www.nexusmods.com/skyrim/mods/16197' ]
+  - name: 'Brows.esp'
+    dirty:
+      - crc: 0xAC68717A
+        util: *dirtyUtil
+        itm: 1
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30411' ]
+# Load Ordinator after other perk mods so it has precedence.
+  - name: 'Ordinator - Perks of Skyrim.esp'
+    priority: 1
+  - name: 'Darkend.esp'
+    after:
+      - 'AOS.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/67559' ]
