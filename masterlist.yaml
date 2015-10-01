@@ -777,7 +777,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'BertsBreezeCellar.v.1.0(esm).esm'
     msg:
-      - *obsolete
+      - <<: *obsolete
     dirty:
       - crc: 0x9fd43df3
         util: *dirtyUtil
@@ -2620,7 +2620,7 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp")'
         subs: [ 'LightAdjuster .esp file' ]
-      - *obsolete
+      - <<: *obsolete
   - name: 'Darker_Caves_Dungeons_Ruins_Nights.esp'
     dirty:
       - crc: 0xe46b4df1
@@ -3019,7 +3019,8 @@ plugins:
     req:
       - *SKSE
   - name: 'arrowcrafting.esp'
-    msg: [ *obsolete ]
+    msg:
+      - <<: *obsolete
         condition: 'checksum("arrowcrafting.esp",8E307ED0) or checksum("arrowcrafting.esp",D15AE0C5)'
   - name: 'Arrowsmith\w{0,2}\.esp'
     msg:
@@ -4868,7 +4869,8 @@ plugins:
     req:
       - name: 'SkyMoMod.esm'
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/9694)'
-    msg: [ *obsolete ]
+    msg: 
+      - <<: *obsolete
         condition: 'not file("Deleveled Skyrim - SkyMoMod_list.esp")'
       - type: say
         content: 'Incompatible with: SkyMoMod Lore * v10.esp''s'
@@ -4926,7 +4928,8 @@ plugins:
       - Delev
       - Relev
   - name: 'Skyrim Expanded Loot Tables.esp'
-    msg: [ *obsolete ]
+    msg:
+      - <<: *obsolete
         condition: 'checksum("Skyrim Expanded Loot Tables.esp",24E08D9F)'
   - name: 'Skyrim Expanded Loot Tables - Lower Drop Rate.esp'
     inc:
@@ -5308,7 +5311,7 @@ plugins:
     inc:
       - 'CiviliansWillNotDie.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - type: say
         content:
           - lang: en
@@ -5358,7 +5361,7 @@ plugins:
       - 'Dragonborn.esm'
   - name: 'Destructible_bottles.esp'
     msg:
-      - [ *obsolete ]
+      - <<: *obsolete
         condition: 'checksum("Destructible_bottles.esp",BF5ED5A9) or checksum("Destructible_bottles.esp",0900B364) or checksum("Destructible_bottles.esp",48639563) or checksum("Destructible_bottles.esp",078C74DD) or checksum("Destructible_bottles.esp",5BE52467) or checksum("Destructible_bottles.esp",D59FAF05) or checksum("Destructible_bottles.esp",D80876E8)'
       - <<: *corrupt
         condition: 'checksum("Destructible_bottles.esp",33A7D490)'
@@ -6242,7 +6245,7 @@ plugins:
     msg: [ *UNP ]
   - name: 'DLE_en.esp'
     msg:
-      - *obsolete 
+      - <<: *obsolete 
         condition: 'checksum("DLE_en.esp",3F26B1FA)'
   - name: 'DME_Light.esp'
     inc:
@@ -7052,7 +7055,7 @@ plugins:
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LC_ArcherEliteArmor.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("LC_ArcherEliteArmor.esp",1651D217)'
     dirty:
       - crc: 0x9a81fb2e
@@ -7224,7 +7227,7 @@ plugins:
         itm: 1
   - name: 'MapTomes.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("MapTomes.esp",13ACEB01)'
   - name: 'Masters of Death - Sicarius Armor (Standalone).esp'
     tag:
@@ -7515,7 +7518,7 @@ plugins:
       - Relev
   - name: '1HDragonboneGreatsword.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("1HDragonboneGreatsword.esp",0AB9B894) or checksum("1HDragonboneGreatsword.esp",1159E2EA)'
   - name: 'Orc Cresent Shield.esp'
     tag:
@@ -7883,7 +7886,8 @@ plugins:
     tag:
       - Relev
   - name: 'stoutheartarmor.esp'
-    msg: [ *obsolete ]
+    msg: 
+      - <<: *obsolete
         condition: 'checksum("stoutheartarmor.esp",7E65336D)'
   - name: 'Strapless Bikinis.esp'
     msg:
@@ -8149,7 +8153,7 @@ plugins:
         condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
   - name: '3rdEraWeaponsMoS.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - <<: *AlreadyInMod
         subs: [ 'SkyRe_Main.esp.' ]
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
@@ -8195,7 +8199,7 @@ plugins:
             str: 'На странице загрузки автор утверждает, что броня может вызвать вылет игры, но не уточняет, какой esp вызывает его.'
           - lang: es
             str: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
-      - *obsolete
+      - <<: *obsolete
     dirty:
       - crc: 0x6f9af605
         util: *dirtyUtil
@@ -8401,7 +8405,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'CraftableODPM.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("CraftableODPM.esp",4804B647)'
     dirty:
       - crc: 0xb19b9231
@@ -8635,7 +8639,7 @@ plugins:
         itm: 13
   - name: 'T3nd0sOverhaul.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - type: say
         content:
           - lang: en
@@ -8646,7 +8650,7 @@ plugins:
     inc:
       - 'T3nd0sOverhaul.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - type: say
         content:
           - lang: en
@@ -9740,13 +9744,13 @@ plugins:
     req:
       - 'Omegared99-Compilation.esm'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - *installOriginalResources
   - name: 'SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp'
     req:
       - 'Omegared99-Compilation.esm'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - *installOriginalResources
   - name: 'SkyRe_Plugin_Oriental Weapon&Armor.*\.esp'
     msg:
@@ -9984,7 +9988,7 @@ plugins:
         subs: [ 'SeraticArmor.esp' ]
   - name: 'SkyRe XAC Original Classic.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - type: warn
         content:
           - lang: en
@@ -10000,7 +10004,7 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/23231'
   - name: 'SkyRe XAC Original.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - type: warn
         content:
           - lang: en
@@ -10016,7 +10020,7 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/23231'
   - name: 'SkyRe XAC Stat Swap Classic.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - type: warn
         content:
           - lang: en
@@ -10032,7 +10036,7 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/23231'
   - name: 'SkyRe XAC Stat Swap.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - type: warn
         content:
           - lang: en
@@ -10087,7 +10091,7 @@ plugins:
           - lang: ru
             str: 'Не используйте одновременно ''28 Days and a Bit 5.esp'' и ''28 Days and a Bit 5.esm''.'
         condition: 'file("28 Days and a Bit 5.esm")'
-      - *obsolete
+      - <<: *obsolete
   - name: '7th heaven home.esp'
     dirty:
       - crc: 0x6055640f
@@ -10150,7 +10154,7 @@ plugins:
         itm: 1
   - name: 'Aella.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Aella.esp",01D57553)'
     dirty:
       - crc: 0x91e4fbb5
@@ -10251,7 +10255,7 @@ plugins:
         itm: 5
   - name: 'Ancient Knowledge Armour.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Ancient Knowledge Armour.esp",C3251F91) or checksum("Ancient Knowledge Armour.esp",DF1111AD)'
     dirty:
       - crc: 0x65b6427e
@@ -10473,7 +10477,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'BertsBreezeCellar(esp.V2.0).esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
     dirty:
       - crc: 0x3edc9220
         util: *dirtyUtil
@@ -10639,7 +10643,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'BetterNordicRuins.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("BetterNordicRuins.esp",22F42319)'
     dirty:
       - crc: 0x6c176f16
@@ -10673,7 +10677,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'BlackMoor.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("BlackMoor.esp",997436A7) or checksum("BlackMoor.esp",6CF48D16)'
     dirty:
       - crc: 0x8a8b45df
@@ -10704,7 +10708,7 @@ plugins:
         itm: 20
   - name: 'BlackwoodCompanyHall.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("BlackwoodCompanyHall.esp",BFBCB393) or checksum("BlackwoodCompanyHall.esp",9E17E71E) or checksum("BlackwoodCompanyHall.esp",0970AA3E)'
     dirty:
       - crc: 0x848a0e9a
@@ -10765,13 +10769,13 @@ plugins:
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
-      - *obsolete
+      - <<: *obsolete
   - name: 'Breezehome_Fully_Upgradeable.esp'
     msg:
       - type: say
         content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
-      - *obsolete
+      - <<: *obsolete
   - name: 'Breezehome_Fully_Upgradable.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/11158' ]
     msg:
@@ -10935,7 +10939,7 @@ plugins:
       - 'Bridge Farm.esp'
   - name: 'Brothel.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Brothel.esp",029D1CAC) or checksum("Brothel.esp",5AFFF047) or checksum("Brothel.esp",9C382042)'
     dirty:
       - crc: 0xb5592f06
@@ -10993,13 +10997,13 @@ plugins:
         udr: 2
   - name: 'Candle Pond Ranch Default Mannequin.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Candle Pond Ranch Default Mannequin.esp",BDD2E234)'
   - name: 'Candle Pond Ranch.esp'
     inc:
       - 'Candle Pond Ranch Default Mannequin.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Candle Pond Ranch.esp",8B643328)'
   - name: 'Castle Brennenburgh.esp'
     dirty:
@@ -11213,7 +11217,7 @@ plugins:
     req: [ *SKSE ]
   - name: 'Creeks.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Creeks.esp",CEA19788) or checksum("Creeks.esp",B0022758) or checksum("Creeks.esp",152E225F) or checksum("Creeks.esp",27D75BC4) or checksum("Creeks.esp",FBB0A123)'
     dirty:
       - crc: 0x4b535d88
@@ -11374,7 +11378,7 @@ plugins:
         itm: 3
   - name: 'DisintegratingAxe.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("DisintegratingAxe.esp",70970745)'
   - name: 'DoggyDoors.esp'
     dirty:
@@ -11393,7 +11397,7 @@ plugins:
         udr: 14
   - name: 'Domino_MudcrabMerchant.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Domino_MudcrabMerchant.esp",2F466C70)'
     dirty:
       - crc: 0x57bda449
@@ -11657,7 +11661,7 @@ plugins:
             str: 'Плагин является частично дружественным к компаньонам. Компаньоны не смогут проходить через двери.'
   - name: 'EBM.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'not checksum("EBM.esp",2CBBAEC7) and not checksum("EBM.esp",ADA00DD0)'
     dirty:
       - crc: 0x2cbbaec7
@@ -11715,7 +11719,7 @@ plugins:
         udr: 2
   - name: 'expanded basement.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("expanded basement.esp",77B3D0AF) or checksum("expanded basement.esp",05D3BC5E) or checksum("expanded basement.esp",AF1BA96C) or checksum("expanded basement.esp",F7137B70) or checksum("expanded basement.esp",C8B1446D)'
     dirty:
       - crc: 0x27c7711a
@@ -11764,7 +11768,7 @@ plugins:
         udr: 70
   - name: 'farmeve-unlimited.esp'
     msg:
-      - *obsoleteVersion
+      - <<: *obsoleteVersion
         subs: [ '[JobsofSkyrim.esp](http://www.nexusmods.com/skyrim/mods/25020)' ]
   - name: 'fishchickenlodge.esp'
     dirty:
@@ -12027,7 +12031,7 @@ plugins:
         udr: 1
   - name: 'GreatTalosHunt.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("GreatTalosHunt.esp",6C0CFBE4) or checksum("GreatTalosHunt.esp",E1A53EA5) or checksum("GreatTalosHunt.esp",A174E77C) or checksum("GreatTalosHunt.esp",3A1727DF) or checksum("GreatTalosHunt.esp",4566C395) or checksum("GreatTalosHunt.esp",18250375)'
     dirty:
       - crc: 0x10e82562
@@ -12049,7 +12053,7 @@ plugins:
         udr: 1
   - name: 'GuildmastersQuarters.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("GuildmastersQuarters.esp",BD42388D) or checksum("GuildmastersQuarters.esp",178FBECE) or checksum("GuildmastersQuarters.esp",2D8FB51E) or checksum("GuildmastersQuarters.esp",372DF4C0)'
     dirty:
       - crc: 0x69b5b053
@@ -12112,7 +12116,7 @@ plugins:
       - 'SkyRe_Main.esp'
       - 'SkyRe_Main_NoDawnguard.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("HeartOfThunder.esp",CE970887) or checksum("HeartOfThunder.esp",65EB962D) or checksum("HeartOfThunder.esp",1A6E4211)'
     dirty:
       - crc: 0x2ca96833
@@ -12163,7 +12167,7 @@ plugins:
         itm: 1
   - name: 'hellaylegacydungeon02.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("hellaylegacydungeon02.esp",CAB6DC90) or checksum("hellaylegacydungeon02.esp",30690487)'
     dirty:
       - crc: 0x2b3e69e2
@@ -12505,7 +12509,7 @@ plugins:
         udr: 4
   - name: 'KatixasBeerBrewery.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("KatixasBeerBrewery.esp",F7327160) or checksum("KatixasBeerBrewery.esp",6D656E96)'
     dirty:
       - crc: 0x331edc48
@@ -12602,7 +12606,7 @@ plugins:
         itm: 14
   - name: 'LawnDaveTheDragon.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("LawnDaveTheDragon.esp",3E9A8B77) or checksum("LawnDaveTheDragon.esp",B07C823E) or checksum("LawnDaveTheDragon.esp",7CB32A45)'
     dirty:
       - crc: 0x43e87d04
@@ -12832,7 +12836,7 @@ plugins:
         itm: 145
   - name: 'markarthbookstore.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("markarthbookstore.esp",9857C0D6) or checksum("markarthbookstore.esp",2939E245) or checksum("markarthbookstore.esp",08797C3E)'
     dirty:
       - crc: 0xbc184e23
@@ -12922,7 +12926,7 @@ plugins:
         nav: 5
   - name: 'Mistwatch.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Mistwatch.esp",0C96269C)'
     dirty:
       - crc: 0x21e66a86
@@ -12948,7 +12952,7 @@ plugins:
         itm: 5
   - name: 'Moar Arrows.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Moar Arrows.esp",8D27C06A) or checksum("Moar Arrows.esp",17179139)'
     dirty:
       - crc: 0xcf22aa26
@@ -13053,7 +13057,7 @@ plugins:
         itm: 2
   - name: 'niflheim1.esp'
     msg:
-      - *obsoleteVersion
+      - <<: *obsoleteVersion
         subs: [ '[Forfeoranna Heim](http://www.nexusmods.com/skyrim/mods/13351)' ]
   - name: 'Nirn Falls Manor.esp'
     dirty:
@@ -13286,7 +13290,7 @@ plugins:
         nav: 1
   - name: 'Rashiik.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Rashiik.esp",E5ED0B07)'
     dirty:
       - crc: 0x7948d345
@@ -13467,7 +13471,7 @@ plugins:
         itm: 3
   - name: 'Rudale.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Rudale.esp",69ECFBC4)'
     dirty:
       - crc: 0x5a0a771
@@ -13550,7 +13554,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Secretentrances.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Secretentrances.esp",BBA06CBF)'
     dirty:
       - crc: 0xadda81b2
@@ -13558,7 +13562,7 @@ plugins:
         itm: 16
   - name: 'SecretOfTheDwemer.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("SecretOfTheDwemer.esp",E6E3A0BB) or checksum("SecretOfTheDwemer.esp",C02B0A73)'
     dirty:
       - crc: 0x751a6b97
@@ -13757,7 +13761,7 @@ plugins:
         itm: 7
   - name: 'skyrimdefenders.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("skyrimdefenders.esp",93DBD7FE)'
     dirty:
       - crc: 0x6d3cd439
@@ -13865,7 +13869,7 @@ plugins:
             str: 'Этот мод не совместим с последним квестом в основной цепочке квестов. Либо отключите .esp, прежде чем сделать это, либо дождитесь, пока вы не завершите главный квест.'
   - name: 'SovngardeNordHeroes.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'version("SovngardeNordHeroes.esp", "1.3", <)'
   - name: 'SovngardeQuest.esp'
     dirty:
@@ -13894,7 +13898,7 @@ plugins:
         itm: 13
   - name: 'Stegdon''s Book Collection.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Stegdon''s Book Collection.esp",A53FC583)'
     dirty:
       - crc: 0xd87b6464
@@ -14254,7 +14258,7 @@ plugins:
     msg: [ *doNotClean ]
   - name: 'tinyalchemisthut.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("tinyalchemisthut.esp",4D9F38F8) or checksum("tinyalchemisthut.esp",A0FAF929)'
     dirty:
       - crc: 0xc7bb600c
@@ -14269,7 +14273,7 @@ plugins:
         itm: 2
   - name: 'tinymagetower.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("tinymagetower.esp",33ADB458) or checksum("tinymagetower.esp",4536712D)'
     dirty:
       - crc: 0x52753b88
@@ -14278,7 +14282,7 @@ plugins:
         nav: 1
   - name: 'tinymagetowernopainnogain.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("tinymagetowernopainnogain.esp",04DD015D)'
   - name: 'tinymagetowernpainnogain.esp'
     msg:
@@ -14334,7 +14338,7 @@ plugins:
         itm: 25
   - name: 'TruePeopleOfSkyrim.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("TruePeopleOfSkyrim.esp",487C296B)'
     dirty:
       - crc: 0xedfb3782
@@ -14418,7 +14422,7 @@ plugins:
         udr: 170
   - name: 'UDO.esm'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - type: say
         content:
           - lang: en
@@ -14652,7 +14656,7 @@ plugins:
         udr: 3
   - name: 'WARZONES - Civil Unrest.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'version("WARZONES - Civil Unrest.esp", "2015.2", <)'
   - name: 'Better Warzones Soldier Uniforms.esp'
     msg:
@@ -14720,7 +14724,7 @@ plugins:
       - 'Unique Grasses_clippingfixer.esp'
   - name: 'Western Watchtower Rebuilt.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Western Watchtower Rebuilt.esp",49E528EE)'
     dirty:
       - crc: 0x27b7618e
@@ -14749,7 +14753,7 @@ plugins:
             str: 'Это не настоящий esm-файл.  Неверно назван.'
   - name: 'Whiterun Trees.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Whiterun Trees.esp",226D7357)'
     dirty:
       - crc: 0xd2995274
@@ -14942,7 +14946,7 @@ plugins:
       - 'KTGold0.005.esp'
   - name: 'Lighter Tools.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Lighter Tools.esp",6DD49F50)'
   - name: 'lighter_ingr_mats_pots.esp'
     dirty:
@@ -15018,7 +15022,7 @@ plugins:
     inc: 
       - 'Dawnguard.esm'
         condition: 'active("Dawnguard.esm") and not checksum("no_quest_items.esp",47CDC33D)'
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("no_quest_items.esp",8CAAD195) or checksum("no_quest_items.esp",639770A2)'
   - name: 'no_quest_items_DG.esp'
     msg: [ *obsolete ]
@@ -15173,7 +15177,7 @@ plugins:
         condition: 'checksum("BalancedHeroWeps.esp",1A21ED10)'
   - name: 'BarbasLessAnnoying.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("BarbasLessAnnoying.esp",9E39BF7F)'
   - name: 'Bards attend Classes.esp'
     dirty:
@@ -15265,7 +15269,7 @@ plugins:
         condition: 'not file("Better Skill and Quest Books Names.esp") or not file("Better Skill and Quest Books Names - BS.esp")'
   - name: 'BetterQuestObjectives-BSaQB-BSPatch.esp'
     msg:
-      - *obsoleteVersion
+      - <<: *obsoleteVersion
         subs: [ '(http://www.nexusmods.com/skyrim/mods/32695)' ]
   - name: 'BetterQuestObjectives-RequiemPatch.esp'
     after:
@@ -15658,7 +15662,7 @@ plugins:
         itm: 359
   - name: 'Dragon Souls To Attributes.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Dragon Souls To Attributes.esp",4A52794E) or checksum("Dragon Souls To Attributes.esp",646A5BB8)'
     dirty:
       - crc: 0xec31c990
@@ -15931,7 +15935,7 @@ plugins:
         itm: 16
   - name: 'HjerimArmory.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("HjerimArmory.esp",68BDC62D)'
     dirty:
       - crc: 0x68bdc62d
@@ -16203,7 +16207,7 @@ plugins:
     msg: [ *corrupt ]
   - name: 'Magnify Spell Enchantments.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Magnify Spell Enchantments.esp",74C76DD8)'
   - name: 'Magnify Spell Enchantments - Disenchant.esp'
     inc:
@@ -16276,7 +16280,7 @@ plugins:
       - 'MD 07 - EFCS.esp'
   - name: 'MECR_MythicDawnCommentaries_are_Skill_Books.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("MECR_MythicDawnCommentaries_are_Skill_Books.esp",A3A58E7D)'
     dirty:
       - crc: 0x8dab779c
@@ -16523,7 +16527,7 @@ plugins:
             str: 'Requiere: [DreamBurrows Sage Outfit Retexture Standalone](http://www.nexusmods.com/skyrim/mods/17699)'
   - name: 'Realistic Animal Behaviour.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Realistic Animal Behaviour.esp",BAAA3FD3) or checksum("Realistic Animal Behaviour.esp",68D49ED7) or checksum("Realistic Animal Behaviour.esp",D4718D13)'
     dirty:
       - crc: 0x5cc5de01
@@ -17104,7 +17108,7 @@ plugins:
         condition: 'file("valkiirs_tastier_food.esp")'
   - name: 'valuablecoins.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("valuablecoins.esp",80A41AE4)'
     dirty:
       - crc: 0x325f41cc
@@ -17159,13 +17163,13 @@ plugins:
     msg: [ *obsolete ]
   - name: 'wabba-ori_proj.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("wabba-ori_proj.esp",920BFEAC) or checksum("wabba-ori_proj.esp",C0BCC465) or checksum("wabba-ori_proj.esp",C4D440F8)'
   - name: 'wabba-unrel_proj.esp'
     inc:
       - 'wabba-ori_proj.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("wabba-unrel_proj.esp",F1E2BBDE) or checksum("wabba-unrel_proj.esp",7F102922) or checksum("wabba-unrel_proj.esp",285D704B)'
   - name: 'WeaponSmith.esp'
     dirty:
@@ -17370,7 +17374,7 @@ plugins:
         subs: [ '(http://www.nexusmods.com/skyrim/mods/20700)' ]
   - name: 'Drinking Fountains of Skyrim.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Drinking Fountains of Skyrim.esp",5A348F0C)'
     dirty:
       - crc: 0x1a86291b
@@ -17514,7 +17518,7 @@ plugins:
         itm: 1
   - name: 'Log Cabin Riften.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Log Cabin Riften.esp",CB696C6C)'
   - name: 'MerchantsGuild.esp'
     dirty:
@@ -17713,7 +17717,7 @@ plugins:
         nav: 2
   - name: 'UniqueTavernsFalkwreath.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - type: error
         content: 'Included in UniqueTaverns.esp'
         condition: 'file("UniqueTaverns.esp")'
@@ -18066,7 +18070,7 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Realistic Lighting( - Full| - Addon)\.esp")'
         subs: [ 'Realistic Lighting .esp file' ]
-      - *obsolete
+      - <<: *obsolete
   - name: 'RL - .*\.esp'
     msg: [ *obsolete ]
   - name: 'EnhancedLightsandFX.esp'
@@ -19015,7 +19019,7 @@ plugins:
         condition: 'file("LegendarySouls.esp")'
   - name: 'Conjure_Armored_Husky.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Conjure_Armored_Husky.esp",F0E45BC9)'
     dirty:
       - crc: 0xf3a51e21
@@ -19023,11 +19027,11 @@ plugins:
         itm: 1
   - name: 'Conjure_Armored_Troll.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Conjure_Armored_Troll.esp",4BE3E42F) or checksum("Conjure_Armored_Troll.esp",6B09974A)'
   - name: 'Conjure_Death_Hound.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Conjure_Death_Hound.esp",9207A5B2) or checksum("Conjure_Death_Hound.esp",98298BAD) or checksum("Conjure_Death_Hound.esp",15417CD3) or checksum("Conjure_Death_Hound.esp",BDD73A1A)'
     dirty:
       - crc: 0xf273f759
@@ -19269,7 +19273,7 @@ plugins:
         itm: 2
   - name: 'Nature of the beast.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'not checksum("Nature of the beast.esp",7EDCD683) and not checksum("Nature of the beast.esp",E20D43CA)'
     dirty:
       - crc: 0x7edcd683
@@ -19392,7 +19396,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'SummonableCreatures.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("SummonableCreatures.esp",442DF73F) or checksum("SummonableCreatures.esp",86FBDC8B)'
     dirty:
       - crc: 0x5e074043
@@ -19480,7 +19484,7 @@ plugins:
         itm: 6
   - name: 'wkyddUnlockingSpell.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("wkyddUnlockingSpell.esp",AAA13CE3) or checksum("wkyddUnlockingSpell.esp",73D0DE92)'
     dirty:
       - crc: 0xf4d4c951
@@ -19557,7 +19561,7 @@ plugins:
         itm: 5
   - name: 'Shout-tastic.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Shout-tastic.esp",7BE79CD0) or checksum("Shout-tastic.esp",96544986)'
     dirty:
       - crc: 0x8420cd21
@@ -19978,7 +19982,7 @@ plugins:
       - 'Duel_Master.esp'
   - name: 'duel weild 2 hand.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("duel weild 2 hand.esp",3B654AD9)'
     dirty:
       - crc: 0x546fcea3
@@ -20178,7 +20182,7 @@ plugins:
             str: 'Выберете только один из нижестледующих, если вы предпочитаете ванильные настройки или другие моды, которые регулируют эти значения.'
   - name: 'betterskillgains.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("betterskillgains.esp",D1DF377A) or checksum("betterskillgains.esp",2A4DE483) or checksum("betterskillgains.esp",7D6A1243)'
     dirty:
       - crc: 0x750982fc
@@ -20472,7 +20476,7 @@ plugins:
         itm: 18
   - name: 'Archery Perk Mods.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Archery Perk Mods.esp",47EBBE8F)'
     dirty:
       - crc: 0x38daf655
@@ -20671,7 +20675,7 @@ plugins:
         condition: 'not regex("PerkUP-.*\.esp")'
   - name: 'Perky.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Perky.esp",EE1F755B) or checksum("Perky.esp",469D04CE)'
     dirty:
       - crc: 0xdfa3acce
@@ -21078,7 +21082,7 @@ plugins:
       - 'LovelyHairstyles.esp'
   - name: 'NoMoreVanillaHair.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'not checksum("NoMoreVanillaHair.esp",A31830F1) and not checksum("NoMoreVanillaHair.esp",7F9635D9)'
       - type: say
         content:
@@ -21153,7 +21157,7 @@ plugins:
     inc:
       - 'ethereal_elven_overhaul.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("XCES.esp",0D760898)'
   - name: 'BHWarPaints.esp'
     req: [ *SKSE ]
@@ -21478,7 +21482,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Kawaii Face Presets.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Kawaii Face Presets.esp",2774F3D6)'
   - name: 'Kawaii Face Presets2.esp'
     req:
@@ -21747,7 +21751,7 @@ plugins:
         itm: 4
   - name: 'PetBearOslo.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("PetBearOslo.esp",7614B5F9) or checksum("PetBearOslo.esp",EA58D0C9)'
   - name: 'TCG.esp'
     msg:
@@ -21996,7 +22000,7 @@ plugins:
         itm: 3
   - name: 'AkaviriRebornbeta1.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("AkaviriRebornbeta1.esp",92CB7FEA)'
   - name: 'Alexina.esp'
     dirty:
@@ -23019,7 +23023,7 @@ plugins:
         itm: 4
   - name: 'Thieves Guild Followers.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
         condition: 'checksum("Thieves Guild Followers.esp",F6ADA4DE) or checksum("Thieves Guild Followers.esp",355D31EE) or checksum("Thieves Guild Followers.esp",4B1DC5DF)'
     dirty:
       - crc: 0xa533dc5e
@@ -23107,7 +23111,7 @@ plugins:
         itm: 4
   - name: 'Better Follower(s -)? Dialogue-?(All|Dog|Reorder|Thane|Remove)?\.esp'
     msg:
-      - *obsolete
+      - <<: *obsolete
       - <<: *AlreadyInMod
         subs: [ 'BDO.esp' ]
         condition: 'file("BDO.esp")'
@@ -23518,7 +23522,7 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Extended Colors - ((Less|Lite)? Selection|Hair Only)?\.esp")'
         subs: [ 'Extended Colors .esp file' ]
-      - *obsolete
+      - <<: *obsolete
   - name: 'Expanded Eye Color Selection.esp'
     msg: [ *obsolete ]
   - name: 'fjAshenVampires.esp'
