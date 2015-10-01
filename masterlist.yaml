@@ -4159,7 +4159,8 @@ plugins:
   - name: 'LIAT - (AI Packages|Crowded|Less Visitors|Lively Inns and Taverns|More Visitors)?\.esp'
     msg: [ *obsolete ]
   - name: 'LIAT - NPCs.esp'
-    msg: [ *obsolete ]
+    msg:
+      - <<: *obsolete
         condition: 'checksum("LIAT - NPCs.esp",5887EDBA)'
     dirty:
       - crc: 0x8efd5f95
