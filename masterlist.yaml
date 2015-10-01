@@ -1034,7 +1034,7 @@ plugins:
 # ## Chinese-language followers
   - name: 'JSwords.esm'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: '( checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83) or version("JSwords.esm","14.0",<) )'
   - name: 'kuerteeInventoryAndWeight.esm'
@@ -2857,7 +2857,7 @@ plugins:
   - name: 'Weapons and Armor fixes.esp'
     msg:
       - *AlreadyInUSKP
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("Weapons and Armor fixes.esp",D27D2F2)'
       - type: say
@@ -5847,7 +5847,7 @@ plugins:
   - name: 'Bikini Clothes.esp'
     msg: 
       - *CBBE
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
   - name: 'bikiniADEC.esp'
@@ -6077,7 +6077,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'CompanionsShields.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("CompanionsShields.esp",75F460D6)'
   - name: 'CoolItems1_2.esp'
@@ -6138,7 +6138,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Daedric Extra Armor.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("Daedric Extra Armor.esp",8DDD039)'
   - name: 'DaedricCrossbow.esp'
@@ -6165,7 +6165,7 @@ plugins:
     msg: [ *UNPB ]
   - name: 'DarkNemesis.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("DarkNemesis.esp",CE5E555B)'
     tag:
@@ -6254,7 +6254,7 @@ plugins:
     msg: [ *CBBE ]
   - name: 'Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
   - name: 'DPArmor.esp'
@@ -6477,7 +6477,7 @@ plugins:
         itm: 11
   - name: 'EternalShineArmorAndWeapons.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("..\TESV.exe","1.8",>) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
     tag:
@@ -6552,7 +6552,7 @@ plugins:
         condition: 'file("FoxMerged.esp")'
   - name: 'Frostmourne.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
   - name: 'Frostmourne 1.0.1.esp'
     msg: [ *obsolete ]
@@ -7100,7 +7100,7 @@ plugins:
         subs: [ '[Lady Head](http://modgames.net/load/256-1-0-15866)' ]
   - name: 'Lich King''s Armor.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'checksum("Lich King''s Armor.esp",5C5EB4D7)'
   - name: 'light daedric armor.esp'
@@ -7142,7 +7142,7 @@ plugins:
         itm: 8
   - name: 'loners_sword.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("loners_sword.esp",246E1CBB)'
   - name: 'Longbows.esp'
@@ -7282,7 +7282,7 @@ plugins:
         condition: 'checksum("Monys Portable Crafting Equipment.esp",9B33A305)'
   - name: 'MorrowindArmor.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'checksum("MorrowindArmor.esp",7DDD7CAC)'
   - name: 'MorrowindGlass.esp'
@@ -7706,7 +7706,7 @@ plugins:
     msg: [ *UNPB ]
   - name: 'SeraphimStandAlone.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("SeraphimStandAlone.esp",556E0B68)'
   - name: 'SeraphineHuntedArmor.esp'
@@ -7771,7 +7771,7 @@ plugins:
         condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
   - name: 'Skimpy Plate Armor.esp'
     msg: [ *CBBE ]
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
   - name: 'skinripper essentials kit.esp'
@@ -7798,7 +7798,7 @@ plugins:
         itm: 2
   - name: 'SnowyNightingale.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("SnowyNightingale.esp",83B46ABF)'
   - name: 'Song General Armor&weapon.esp'
@@ -7814,7 +7814,7 @@ plugins:
         itm: 1
   - name: 'Sovngarde Steel Armor and Weapons.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("Sovngarde Steel Armor and Weapons.esp",B84EB4CE)'
   - name: 'Space Wiking''s Dwemer Exoskeleton.esp'
@@ -7962,7 +7962,7 @@ plugins:
       - Relev
   - name: 'TemplarArmor.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("TemplarArmor.esp",EE0395E4)'
   - name: 'TERAArmors_CBBE.esp'
@@ -8134,7 +8134,7 @@ plugins:
       - Relev
   - name: 'WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("WeaponsOf3E.esp",67F338A1)'
       - <<: *useOnlyOneX
@@ -8147,7 +8147,7 @@ plugins:
       - Relev
   - name: 'WeaponsOf3E - No Leveled Lists.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
   - name: '3rdEraWeaponsMoS.esp'
@@ -15288,7 +15288,7 @@ plugins:
         condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
   - name: 'Headbomb''s Better Sorting - Ammo.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
       - type: say
@@ -15296,7 +15296,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
       - type: say
@@ -15309,7 +15309,7 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Food .esp file' ]
   - name: 'Headbomb''s Better Sorting - Food (Light Weight).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
       - type: say
@@ -15317,7 +15317,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
       - type: say
@@ -15325,7 +15325,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
       - type: say
@@ -15333,7 +15333,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
       - type: say
@@ -15341,7 +15341,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
       - type: say
@@ -15349,7 +15349,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
       - type: say
@@ -15357,7 +15357,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
       - type: say
@@ -15370,7 +15370,7 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Potions .esp file' ]
   - name: 'Headbomb''s Better Sorting - Potions (Light Weight).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
       - type: say
@@ -15378,7 +15378,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
       - type: say
@@ -15386,7 +15386,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
       - type: say
@@ -15394,7 +15394,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
       - type: say
@@ -15407,7 +15407,7 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Soul Gems .esp file' ]
   - name: 'Headbomb''s Better Sorting - Soul Gems (Ranked).esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
       - type: say
@@ -15415,7 +15415,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
       - type: say
@@ -16407,7 +16407,7 @@ plugins:
       - 'OpenFaceGuardHelmets.esp'
   - name: 'OpenFaceHelmets.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("OpenFaceHelmets.esp",D695AB86)'
   - name: 'Organized Books v(0.1|1.0)?\.esp'
@@ -19867,7 +19867,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Fortify Enchanting necklace.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("Fortify Enchanting necklace.esp",E170C251)'
   - name: 'HasteEnchantment.esp'
@@ -20239,7 +20239,7 @@ plugins:
       - 'Dawnguard.esm'
   - name: 'cao_PerkRanks.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'not checksum("cao_PerkRanks.esp",B2A7936F)'
   - name: 'Character_Generation.esp'
@@ -23767,7 +23767,7 @@ plugins:
 # Need to go after new items to affect them.
   - name: 'Duns_Inc_Shaders_Begone.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ 'http://www.nexusmods.com/skyrim/mods/6566)' ]
         condition: 'checksum("Duns_Inc_Shaders_Begone.esp",B0D9FEDA)'
       - <<: *obsoleteVersion
@@ -23779,7 +23779,7 @@ plugins:
         itm: 1
   - name: 'Duns_Inc_Shaders_Begone_xWeapons.esp'
     msg:
-      - *patchOutSub
+      - <<: *patchOutSub
         subs: [ 'http://www.nexusmods.com/skyrim/mods/6566)' ]
         condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",4928C96B)'
       - <<: *obsoleteVersion
