@@ -3128,7 +3128,7 @@ plugins:
     msg:
       - <<: *useOnlyOneX
         condition: 'many("Back off, (Barbas|Subject name here)!?/.esp")'
-        subs:[ 'Back off .esp' ]
+        subs: [ 'Back off, .esp' ]
   - name: 'BagofTrash\w*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -3428,7 +3428,7 @@ plugins:
     msg:
       - <<: useOnlyOneX
         condition: 'many("(Crafting|Recettes)+Material(Recipies|Fabrication).+?/.esp")'
-        subs:[ ' Materials .esp' ]
+        subs: [ ' Materials .esp' ]
   - name: 'Creepy Dungeons.esp'
     msg:
       - type: warn
@@ -14288,7 +14288,7 @@ plugins:
     msg:
       - <<: useOnlyOneX
         condition: 'many("tinymagetower(npainnogain)?/.esp")'
-        subs:[ 'tinymagetower .esp' ]
+        subs: [ 'tinymagetower .esp' ]
     dirty:
       - crc: 0x33fe7dae
         util: *dirtyUtil
