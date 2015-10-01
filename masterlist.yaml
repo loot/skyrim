@@ -1679,7 +1679,7 @@ plugins:
   - name: 'CriticalChargeFix.esp'
     msg:
       - *AlreadyInUSKP
-      - *obsolete
+      - <<: *obsolete
         condition: 'not checksum("CriticalChargeFix.esp",A35E7560)'
       - <<: *AlreadyInMod
         subs: [ 'PerkUP-TwoHanded.esp' ]
