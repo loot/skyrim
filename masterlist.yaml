@@ -14715,15 +14715,10 @@ plugins:
         content: 'Different mod with same name. Probably incompatible.'
         condition: 'checksum("Whiterun Trees.esp",D2995274)'
   - name: 'ICP Whiterun Exterior.esp'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Use either ICP Whiterun Exterior.esp or ImmersiveCitiesProjectPart2.esp, not both.'
-          - lang: ru
-            str: 'Используйте любой, или ICP Whiterun Exterior.esp или ImmersiveCitiesProjectPart2.esp, не оба.'
-          - lang: es
-            str: 'Usar ICP Whiterun Exterior.esp o ImmersiveCitiesProjectPart2.esp, no ambos.'
-        condition: 'file("ImmersiveCitiesProjectPart2.esp")'
+    msg:
+      - <<: useOnlyOneX
+        condition: 'many("(ICP Whiterun Exterior|ImmersiveCitiesProjectPart2)?/.esp")'
+        subs: [ 'ICP Whiterun Exterior.esp | ImmersiveCitiesProjectPart2.esp' ]
     dirty:
       - crc: 0x58a7f24e
         util: *dirtyUtil
