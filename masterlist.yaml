@@ -14965,8 +14965,8 @@ plugins:
       - Relev
   - name: 'no_quest_items.esp'
     inc: 
-      - 'Dawnguard.esm'
-        condition: 'active("Dawnguard.esm") and not checksum("no_quest_items.esp",47CDC33D)'
+      - <<: 'Dawnguard.esm'
+        condition: 'not checksum("no_quest_items.esp",47CDC33D)'
       - <<: *obsolete
         condition: 'checksum("no_quest_items.esp",8CAAD195) or checksum("no_quest_items.esp",639770A2)'
   - name: 'no_quest_items_DG.esp'
