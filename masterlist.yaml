@@ -53,20 +53,20 @@ common:
     type: warn
     content:
       - lang: en
-        str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here] %1%.'
+        str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](%1%).'
       - lang: ru
-        str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь] %1%. Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+        str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](%1%). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
       - lang: es
-        str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí] %1%'
+        str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](%1%).'
   - &patchB4CK
     type: warn
     content:
       - lang: en
-        str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here] %1%.'
+        str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](%1%).'
       - lang: ru
-        str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь] %1%. Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+        str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](%1%). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
       - lang: es
-        str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí] %1%.'
+        str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](%1%).'
   - &obsolete
     type: say
     content:
@@ -80,19 +80,33 @@ common:
         str: '사용되지 않습니다. 최신 버전으로 업데이트하십시오.'
       - lang: zh_CN
         str: '已过时。请升级到最新版本。'
+
   - &obsoleteVersion
     type: say
     content:
       - lang: en
-        str: 'Obsolete. Update to latest version [here] %1%.'
+        str: 'Obsolete. Update to latest version [here](%1%).'
       - lang: ru
-        str: 'Устарело. Обновите до последней версии [здесь] %1%.'
+        str: 'Устарело. Обновите до последней версии [здесь](%1%).'
       - lang: es
-        str: 'Obsoleto. Actualizar a la última versión [aquí] %1%.'
+        str: 'Obsoleto. Actualizar a la última versión [aquí](%1%).'
       - lang: ko
-        str: '사용되지 않습니다. [ 여기 ] 최신 버전 으로 업데이트 %1%.'
+        str: '사용되지 않습니다. 최신 버전 으로 업데이트 [여기](%1%)'
       - lang: zh_CN
-        str: '已過時。更新到最新版本[點擊這裡] %1%。'
+        str: '已过时。更新到最新版本[点击这里]（％1％）'
+  - &deletedNavMesh
+    type: warn
+    content:
+      - lang: en
+        str: 'This file contains %1% deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+      - lang: ru
+        str: 'Этот файл содержит %1% удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+      - lang: es
+        str: 'Este archivo contiene %1% entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+      - lang: ko
+        str: '이 파일은 % 1 % 삭제 NavMesh 레코드 ( 들) 이 TES5Edit 가 자동으로 복구 할 수 있으며 이 게임 에 문제가 발생할 수 있습니다 포함되어 있습니다. NavMesh 의 삭제 는 모드 저자 에보고 해야한다. [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)  와 NavMesh 의 삭제 복구 에 대한 가이드는 [여기](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html) .'
+      - lang: zh_CN
+        str: '此文件包含％ 1 ％删除导航网格结果的TES5Edit无法自动修复，这可能会导致问题与你的游戏。导航网格缺失，应报告给国防部作者。指南以修复导航网格缺失与[TES5Edit]（http://www.nexusmods.com/skyrim/mods/25859）位于[这里](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html) .'
   - &corrupt
     type: warn
     content:
@@ -129,19 +143,6 @@ common:
         str: 'Delete or deactivate %1%.'
       - lang: ru
         str: 'Не забудьте отключить или удалить %1%.'
-  - &deletedNavMesh
-    type: warn
-    content:
-      - lang: en
-        str: 'This file contains %1% deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-      - lang: ru
-        str: 'Этот файл содержит %1% удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-      - lang: es
-        str: 'Este archivo contiene %1% entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-      - lang: ko
-        str: '이 파일은 % 1 % 삭제 NavMesh 레코드 ( 들) 이 TES5Edit 가 자동으로 복구 할 수 있으며 이 게임 에 문제가 발생할 수 있습니다 포함되어 있습니다. NavMesh 의 삭제 는 모드 저자 에보고 해야한다. [ TES5Edit ( http://www.nexusmods.com/skyrim/mods/25859 ) 와 NavMesh 의 삭제 복구 에 대한 가이드는 http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion [ 여기 ] ( 위치 -Using - TES5Edit - 511.html ) .'
-      - lang: zh_CN
-        str: 此文件包含％ 1 ％删除导航网格结果的TES5Edit无法自动修复，这可能会导致问题与你的游戏。导航网格缺失，应报告给国防部作者。指南以修复导航网格缺失与[ TES5Edit ] （ http://www.nexusmods.com/skyrim/mods/25859 ）位于[这里] （ http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion - 使用 - TES5Edit - 511.html ） 。'
 
 # only use for texture/mesh replacers, otherwise use 'req:'
   - &ReqTextureMesh
@@ -153,6 +154,7 @@ common:
         str: 'Требуется %1%.'
       - lang: es
         str: 'Requiere %1%.'
+
 # Popular Body/Skin Mods
   - &CBBE
     type: say
@@ -244,6 +246,7 @@ common:
         str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
       - lang: es
         str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+
 # Other Strings
   - &dirtyUtil
     '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
@@ -311,6 +314,7 @@ globals:
         str: 'SKSE가 최신버전입니다.'
       - lang: zh_CN
         str: '你的SKSE是最新的。'
+ 
 # Other
   - type: say
     condition: 'regex("ASIS(-Dependency)?\.esp") or regex("Automatic (Spells|Variations|Variants)*\.esp")'
