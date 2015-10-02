@@ -102,7 +102,7 @@ common:
         str: 'Файл испорчен и не должен использоваться.'
       - lang: es
         str: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
-  - &useOnlyOneX
+  - &*useOnlyOneX
     type: error
     content:
       - lang: en
@@ -3426,7 +3426,7 @@ plugins:
       - Relev
   - name: 'RecettesMaterielFabrication.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("(Crafting|Recettes)+Material(Recipies|Fabrication).+?/.esp")'
         subs: [ ' Materials .esp' ]
   - name: 'Creepy Dungeons.esp'
@@ -4079,7 +4079,7 @@ plugins:
         itm: 2
   - name: 'Kuun''s angels drop worn armor.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("Kuun''s angels drop(worn)armor?/.esp")'
         subs: [ 'Kuun''s angels armor.esp' ]
   - name: 'Langsam wirkende Tränke.esp'
@@ -4235,7 +4235,7 @@ plugins:
     inc:
       - 'Ars Metallica.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("MAD Ingots & Leather(Ars Metallica Compatible)?/.esp")'
         subs: [ 'MAD Ingots & Leather .esp' ]
   - name: 'Magecraft.esp'
@@ -4282,7 +4282,7 @@ plugins:
         udr: 2
   - name: 'Monster Mounts Dawnguard.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("(Montures Monstres|Monster Mounts Dawnguard)?/.esp")'
         subs: [ 'Montster Mounts .esp' ]
     dirty:
@@ -4385,7 +4385,7 @@ plugins:
         display: '[NordNeeds](http://www.nexusmods.com/skyrim/mods/21384)'
   - name: 'RecettesSansSel.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("(NoSaltRecipes|RecettesSansSel)?/.esp")'
         subs: [ 'NoSaltRecipes .esp' ]
   - name: 'NPCPerked.esp'
@@ -4433,7 +4433,7 @@ plugins:
       - type: say
         content: 'If this file is not higher than v1.2.2, update to the latest version.'
         condition: 'not checksum("People Have Torches.esp",7E5D2415)'
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("People Have (Lanterns|Torches)?/.esp")'
         subs: [ 'People Have .esp' ]
   - name: 'PerkReset.esp'
@@ -4453,7 +4453,7 @@ plugins:
         condition: 'file("Perks Unbound - Dragonborn.esp") and file("Perks Unbound - Dawnguard.esp")'
   - name: 'Perks Unbound - Helmless Warrior.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("Perks Unbound( - Helmless Warrior)?/.esp")'
         subs: [ 'Perks Unbound .esp' ]
   - name: 'pf_removeenchantingrestrictions.esp'
@@ -4682,7 +4682,7 @@ plugins:
         itm: 1
   - name: 'rt_Animal - Processing.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("rt_(AutoHarvest|Animal - Processing)?/.esp")'
         subs: [ 'rt_ .esp' ]
   - name: 'rt_AutoHarvest.esp'
@@ -4834,7 +4834,7 @@ plugins:
       - type: say
         content: 'This is the Lore-Friendly version by jackstarr.  Do not use the original esp or esm by lifestorock.'
         condition: 'checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("Skyrim Immersive Creatures?/.es(p|m)")'
         subs: [ 'Skyrim Immersive Creatures' ]
     tag:
@@ -5055,7 +5055,7 @@ plugins:
           - lang: es
             str: 'SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
         condition: 'not active("SkyUI.esp")'
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("(Chesko_)?SwiftPotion.esp")'
         subs: [ ' SwiftPotion.esp' ]
   - name: 'Syynx Stubborn Skeletons.esp'
@@ -5071,7 +5071,7 @@ plugins:
         udr: 32
   - name: 'Tailoring No Perks.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("Tailoring( No Perks).esp")'
         subs: [ 'Tailoring .esp' ]
     dirty:
@@ -5214,7 +5214,7 @@ plugins:
       - 'SKSE Hotkeys.esp'
   - name: 'Where''s My Horse Gone Essential Horses.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("Where''s My Horse Gone( Essential Horses).esp")'
         subs: [ 'Where''s My Horse Gone .esp' ]
   - name: 'Wild Horses of Skyrim.esp'
@@ -6107,7 +6107,7 @@ plugins:
         itm: 2
   - name: 'Crossbows_Basic_Collection_EN.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("Crossbows_Basic_Collection_(DE|EN)?/.esp")'
         subs: [ 'Crossbows_Basic_Collection.esp' ]
     dirty:
@@ -6428,7 +6428,7 @@ plugins:
         udr: 1
   - name: 'Enchanting Scrolls.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("Enchanting Scrolls?/.es(p|m)")'
         subs: [ 'Enchanting Scrolls' ]
     dirty:
@@ -6544,7 +6544,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'frostmournebladeNoEnchant.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("frostmourneblade(NoEnchant)?/.esp")'
         subs: [ 'frostmourneblade .esp' ]
   - name: 'FullBootForKKSA.esp'
@@ -7256,7 +7256,7 @@ plugins:
         condition: 'checksum("MorrowindArmor.esp",7DDD7CAC)'
   - name: 'MorrowindGlass.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("Morrowind(Armor|Glass)?/.esp")'
         subs: [ 'Morrowind .esp' ]
       - <<: *corrupt
@@ -14236,7 +14236,7 @@ plugins:
         condition: 'checksum("tinymagetowernopainnogain.esp",04DD015D)'
   - name: 'tinymagetowernpainnogain.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("tinymagetower(npainnogain)?/.esp")'
         subs: [ 'tinymagetower .esp' ]
     dirty:
@@ -14716,7 +14716,7 @@ plugins:
         condition: 'checksum("Whiterun Trees.esp",D2995274)'
   - name: 'ICP Whiterun Exterior.esp'
     msg:
-      - <<: useOnlyOneX
+      - <<: *useOnlyOneX
         condition: 'many("(ICP Whiterun Exterior|ImmersiveCitiesProjectPart2)?/.esp")'
         subs: [ 'ICP Whiterun Exterior.esp | ImmersiveCitiesProjectPart2.esp' ]
     dirty:
