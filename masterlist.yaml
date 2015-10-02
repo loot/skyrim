@@ -7728,7 +7728,8 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
   - name: 'Skimpy Plate Armor.esp'
-    msg: [ *CBBE ]
+    msg:  
+      - *CBBE
       - <<: *patchOutSub
         subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
         condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
