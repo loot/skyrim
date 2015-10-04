@@ -53,20 +53,33 @@ common:
     type: warn
     content:
       - lang: en
-        str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+        str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](%1%).'
       - lang: ru
-        str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+        str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](%1%). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
       - lang: es
-        str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+        str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](%1%).'
   - &patchB4CK
     type: warn
     content:
       - lang: en
-        str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+        str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](%1%).'
       - lang: ru
-        str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+        str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](%1%). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
       - lang: es
-        str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+        str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](%1%).'
+  - &deletedNavMesh
+    type: warn
+    content:
+      - lang: en
+        str: 'This file contains %1% deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+      - lang: ru
+        str: 'Этот файл содержит %1% удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+      - lang: es
+        str: 'Este archivo contiene %1% entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+      - lang: ko
+        str: '이 파일은 % 1 % 삭제 NavMesh 레코드 ( 들) 이 TES5Edit 가 자동으로 복구 할 수 있으며 이 게임 에 문제가 발생할 수 있습니다 포함되어 있습니다. NavMesh 의 삭제 는 모드 저자 에보고 해야한다. [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)  와 NavMesh 의 삭제 복구 에 대한 가이드는 [여기](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html) .'
+      - lang: zh_CN
+        str: '此文件包含％ 1 ％删除导航网格结果的TES5Edit无法自动修复，这可能会导致问题与你的游戏。导航网格缺失，应报告给国防部作者。指南以修复导航网格缺失与[TES5Edit]（http://www.nexusmods.com/skyrim/mods/25859）位于[这里](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html) .'
   - &obsolete
     type: say
     content:
@@ -80,6 +93,19 @@ common:
         str: '사용되지 않습니다. 최신 버전으로 업데이트하십시오.'
       - lang: zh_CN
         str: '已过时。请升级到最新版本。'
+  - &obsoleteVersion
+    type: say
+    content:
+      - lang: en
+        str: 'Obsolete. Update to latest version %1%.'
+      - lang: ru
+        str: 'Устарело. Обновите до последней версии %1%.'
+      - lang: es
+        str: 'Obsoleto. Actualizar a la última versión %1%.'
+      - lang: ko
+        str: '사용되지 않습니다. 최신 버전 으로 업데이트 %1%'
+      - lang: zh_CN
+        str: '已过时。更新到最新版本 ％1％'
   - &corrupt
     type: warn
     content:
@@ -116,6 +142,109 @@ common:
         str: 'Delete or deactivate %1%.'
       - lang: ru
         str: 'Не забудьте отключить или удалить %1%.'
+# only use for texture/mesh replacers not listed below, otherwise use 'req:'
+  - &ReqTextureMesh
+    type: say
+    content:
+      - lang: en
+        str: 'Requires %1%.'
+      - lang: ru
+        str: 'Требуется %1%.'
+      - lang: es
+        str: 'Requiere %1%.'
+# For mods with 2 texture/mesh options. Also can be used for mods made for 2 body mods.
+  - &ReqTextureMeshXY
+    type: say
+    content:
+      - lang: en
+        str: 'Requires %1% or %2%.'
+      - lang: ru
+        str: 'Требуется %1% или %2%.'
+      - lang: es
+        str: 'Requiere %1% o %2%.'
+# For mods with 3 texture/mesh options. Also can be used for mods made for 3 body mods.
+  - &ReqTextureMeshXYZ
+    type: say
+    content:
+      - lang: en
+        str: 'Requires %1% or %2% or %3%.'
+      - lang: ru
+        str: 'Требуется %1% или %2% или %3%.'
+      - lang: es
+        str: 'Requiere %1% o %2% o %3%.'
+# Popular Body/Skin Mods
+  - &CBBE
+    type: say
+    content:
+      - lang: en
+        str: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - lang: ru
+        str: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - lang: es
+        str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+  - &UNP
+    type: say
+    content:
+      - lang: en
+        str: 'Requires: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+      - lang: ru
+        str: 'Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+      - lang: es
+        str: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+  - &UNPB
+    type: say
+    content:
+      - lang: en
+        str: 'Requires: [UNPB](http://www.nexusmods.com/skyrim/mods/14899)'
+      - lang: ru
+        str: 'Требуется: [UNPB](http://www.nexusmods.com/skyrim/mods/14899)'
+      - lang: es
+        str: 'Requiere: [UNPB](http://www.nexusmods.com/skyrim/mods/14899)'
+  - &CHSBHC
+    type: say
+    content:
+      - lang: en
+        str: 'Requires: [CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)'
+      - lang: ru
+        str: 'Требуется: [CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)'
+      - lang: es
+        str: 'Requiere: [CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)'
+  - &ADEC
+    type: say
+    content:
+      - lang: en
+        str: 'Requires: [ADEC - Acdale EyeCandy Body](http://www.nexusmods.com/skyrim/mods/5390)'
+      - lang: ru
+        str: 'Требуется: [ADEC - Acdale EyeCandy Body](http://www.nexusmods.com/skyrim/mods/5390)'
+      - lang: es
+        str: 'Requiere: [ADEC - Acdale EyeCandy Body](http://www.nexusmods.com/skyrim/mods/5390)'
+  - &BetterFemales
+    type: say
+    content:
+      - lang: en
+        str: 'Requires: [Better Females] (http://www.nexusmods.com/skyrim/mods/2812)'
+      - lang: ru
+        str: 'Требуется: [Better Females](http://www.nexusmods.com/skyrim/mods/2812)'
+      - lang: es
+        str: 'Requiere: [Better Females](http://www.nexusmods.com/skyrim/mods/2812)'
+  - &BetterMales
+    type: say
+    content:
+      - lang: en
+        str: 'Requires: [Better Males] (http://www.nexusmods.com/skyrim/mods/2488)'
+      - lang: ru
+        str: 'Требуется: [Better Males](http://www.nexusmods.com/skyrim/mods/2488)'
+      - lang: es
+        str: 'Requiere: [Better Males](http://www.nexusmods.com/skyrim/mods/2488)'
+  - &LadyBody
+    type: say
+    content:
+      - lang: en
+        str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - lang: ru
+        str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - lang: es
+        str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
 
 # Other Strings
   - &dirtyUtil
@@ -536,23 +665,11 @@ plugins:
           - lang: zh_CN
             str: '这个esm文件会破坏你的游戏。我们强烈建议你使用官方版本的[Unofficial Skyrim Patch](http://www.nexusmods.com/skyrim/mods/19)。不要做任何修改。'
   - name: 'MoT_First_LoadOrder_File_After_Skyrim.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ko
-            str: '이 파일에는 TES5Edit이 자동으로 복구할 수 없는 1개의 삭제된 NavMesh 레코드가 포함되어 있으며 이는 게임에 문제가 발생 할 수도 있습니다. NavMesh의 삭제는 모드 제작자에게 보고해야합니다. [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)으로 NavMesh의 삭제를 복구하는 방법은 [여기](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html)에 있습니다.'
-          - lang: zh_CN
-            str: '这个文件包含1个已删除的导航记录，TES5Edit无法自动修复，它可能导致你的游戏出现问题。导航缺失应该报告给mod作者。这里有一份使用[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)修复导航缺失的[教程](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html)。'
     dirty:
       - crc: 0x6d3163ad
         util: *dirtyUtil
         itm: 22
+        nav: 1
   - name: 'Skyrim Project Optimization.esm'
     priority: -1998000
   - name: 'Skyrim Project Optimization - No Homes.esm'
@@ -649,17 +766,8 @@ plugins:
         udr: 11
   - name: 'AP Skyrim.esm'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Obsolete. Update to latest version. (The esm version produces a massive conflict error which can result in having no dialog.)'
-          - lang: ru
-            str: 'Устарело. Обновите до последней версии. (Esm-версия приводит к многочисленным ошибкам, которые могут привести к отсутствию диалогов.)'
-          - lang: es
-            str: 'Obsoleto. Actualizar a la última versión.'
-          - lang: zh_CN
-            str: '已过时。请升级到最新版本。'
-        condition: 'checksum("AP Skyrim.esm",857D5AAC) or checksum("AP Skyrim.esm",CBE8B5C2)'
+      - <<: *obsolete
+        condition: '( checksum("AP Skyrim.esm",857D5AAC) or checksum("AP Skyrim.esm",CBE8B5C2) )'
   - name: 'archmageTrophyhall.esm'
     dirty:
       - crc: 0xf788fdf0
@@ -672,21 +780,12 @@ plugins:
   - name: 'BertsBreezeCellar.v.1.0(esm).esm'
     msg:
       - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 2 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: zh_CN
-            str: '这个文件包含2个已删除的导航记录，TES5Edit无法自动修复，它可能导致你的游戏出现问题。导航缺失应该报告给mod作者。这里有一份使用[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)修复导航缺失的[教程](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html)。'
     dirty:
       - crc: 0x9fd43df3
         util: *dirtyUtil
         itm: 53
         udr: 12
+        nav: 2
   - name: '0001BertsBreezehomeRemodel.V.2(esm).esm'
     dirty:
       - crc: 0xdee46a0b
@@ -705,45 +804,23 @@ plugins:
         itm: 42
   - name: 'breezehomebasement.esm'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Obsolete. Update to Breezehome_Basement.esp at [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            str: 'Устарело. Обновите до Breezehome_Basement.esp на [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: es
-            str: 'Obsoleto. Actualizar a la Breezehome_Basement.esp en [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
+      - <<: *obsoleteVersion
+        subs: [ '[Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593)' ]
   - name: 'Castle Draco Master File Load First.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 28 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 28 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 28 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     tag:
       - Delev
     dirty:
       - crc: 0x39bc4317
         util: *dirtyUtil
         itm: 1451
+        nav: 28
   - name: 'CastleDrakhur_masterfle.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 6 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 6 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     dirty:
       - crc: 0x7bc1ae65
         util: *dirtyUtil
         itm: 23
         udr: 7
+        nav: 6
   - name: 'Celestial-Hairstyles.esm'
     dirty:
       - crc: 0x9e4d41f9
@@ -762,7 +839,7 @@ plugins:
         itm: 4
         udr: 0
     msg:
-      - type: warn
+      - 
         condition: 'checksum("ClimatesOfTamriel.esm",C30AB34E)'
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the [updated plugin](http://www.nexusmods.com/skyrim/mods/17802).'
       - type: warn
@@ -856,19 +933,11 @@ plugins:
   - name: 'Expanded Towns.*\.esm'
     msg: [ *obsolete ]
   - name: 'ExplorerDungeonPack.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     dirty:
       - crc: 0xf28e0e3c
         util: *dirtyUtil
         itm: 9
+        nav: 1
   - name: 'Extended Colors.esm'
     msg: [ *obsolete ]
   - name: 'Unofficial High Resolution Patch.esp'
@@ -894,15 +963,6 @@ plugins:
         condition: 'many("GuardedHouse(Imperial|Stormcloak)?\.esm")'
         subs: [ 'GuardedHouse .esm file' ]
   - name: 'GuardedHouse.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 2 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     tag:
       - Relev
     dirty:
@@ -910,16 +970,8 @@ plugins:
         util: *dirtyUtil
         itm: 475
         udr: 50
+        nav: 2
   - name: 'GuardedHouseImperial.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 2 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     tag:
       - Relev
     dirty:
@@ -927,16 +979,8 @@ plugins:
         util: *dirtyUtil
         itm: 469
         udr: 60
+        nav: 2
   - name: 'GuardedHouseStormcloak.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 2 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     tag:
       - Relev
     dirty:
@@ -944,44 +988,20 @@ plugins:
         util: *dirtyUtil
         itm: 469
         udr: 58
+        nav: 2
   - name: 'hideout.esm'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Obsolete. Update to Hideout_Main.esp at [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            str: 'Устарело. Обновите до Hideout_Main.esp на [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: es
-            str: 'Obsoleto. Actualizar a la Hideout_Main.esp en [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-      - type: warn
-        condition: 'version("hideout.esm","10.2",<)'
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
+      - <<: *obsoleteVersion
+        subs: [ '[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593)' ]
+      - <<: *patchB4CK
+        subs: [ '(http://www.nexusmods.com/skyrim/mods/43593)' ]
   - name: 'retreat.esm'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Obsolete. Update to Dovahkiin_Retreat.esp at [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: ru
-            str: 'Устарело. Обновите до Dovahkiin_Retreat.esp на [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: es
-            str: 'Obsoleto. Actualizar a la Dovahkiin_Retreat.esp en [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-      - type: warn
+      - <<: *obsoleteVersion
+        subs: [ '[Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522)' ]
+      - <<: *patchB4CK
+        subs: [ '(http://www.nexusmods.com/skyrim/mods/59522)' ]
         condition: 'version("retreat.esm","1.0",<)'
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
   - name: 'Riftrun_HF_v_2_0.esp'
     after:
       - 'Hideout_Main.esp'
@@ -1016,18 +1036,9 @@ plugins:
 # ## Chinese-language followers
   - name: 'JSwords.esm'
     msg:
-      - type: warn
-        condition: 'version("JSwords.esm","14.0",<)'
-        content: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-      - type: warn
-        condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
-        content:
-          - lang: en
-            str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchOutSub
+        subs: [ '(http://www.nexusmods.com/skyrim/mods/26230)' ]
+        condition: '( checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83) or version("JSwords.esm","14.0",<) )'
   - name: 'kuerteeInventoryAndWeight.esm'
     msg: [ *obsolete ]
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
@@ -1059,14 +1070,8 @@ plugins:
         itm: 7
   - name: 'LiFE.esm'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: ru
-            str: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: es
-            str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+      - <<: ReqTextureMeshXY
+        subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666)' '[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
 # ## Lighting.esm
 # ## this is a companion mod
 # ## Lightsabers.esm
@@ -1087,15 +1092,7 @@ plugins:
     inc:
       - 'MagicDuel.esm'
   - name: 'Malise - A Companion By Joseph Anthony.esm'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Better Females](http://www.nexusmods.com/skyrim/mods/2812)'
-          - lang: ru
-            str: 'Требуется: [Better Females](http://www.nexusmods.com/skyrim/mods/2812)'
-          - lang: es
-            str: 'Requiere: [Better Females](http://www.nexusmods.com/skyrim/mods/2812)'
+    msg: [ *BetterFemales ]
   - name: 'MiniLoversSound.esm'
     req: [ *FNIS ]
   - name: 'MjanasLabyrinth.esm'
@@ -1121,20 +1118,12 @@ plugins:
         util: *dirtyUtil
         itm: 1
   - name: 'motTome2.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 16 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 16 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 16 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     dirty:
       - crc: 0x5a0212ce
         util: *dirtyUtil
         itm: 104
         udr: 31
+        nav: 16
   - name: 'MTAutoStorage.esm'
     dirty:
       - crc: 0x7c0f98ca
@@ -1152,19 +1141,11 @@ plugins:
             str: 'Si utilizas este mod, MTOH.esp debe ser desactivado.'
   - name: 'Murder01.esm'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Obsolete. Update to latest version, Hjakhtraevarr Tomb.'
-          - lang: ru
-            str: 'Устарело. Обновите до последней версии, Hjakhtraevarr Tomb.'
-          - lang: es
-            str: 'Obsoleto. Actualizar a la última versión, Hjakhtraevarr Tomb.'
+      - <<: *obsoleteVersion
+        subs: [ 'Hjakhtraevarr Tomb' ]
   - name: 'Natural Characters and Companions.esm'
-    msg:
-      - type: warn
-        content: 'LovelyHairstyles.esp is not active in your load order. LovelyHairstyles.esp is required for this mod to function correctly.'
-        condition: 'not active("LovelyHairstyles.esp")'
+    req:
+      - 'LovelyHairstyles.esp'
   - name: 'NeV-P_ExtremeMaterials.esm'
     tag:
       - Delev
@@ -1217,10 +1198,7 @@ plugins:
   - name: 'Perk-Reset-MCM.esm'
     req:
       - *SKSE
-    msg:
-      - type: warn
-        content: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for this mod to be fully functional.'
-        condition: 'not active("SkyUI.esp")'
+      - *SkyUI
   - name: 'pinewoodvillage.esm'
     msg: [ *obsolete ]
     dirty:
@@ -1239,51 +1217,27 @@ plugins:
         util: *dirtyUtil
         itm: 17
   - name: 'PrisonUpdate.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 3 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 3 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 3 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     dirty:
       - crc: 0x41a40641
         util: *dirtyUtil
         itm: 167
         udr: 77
+        nav: 3
   - name: 'Populated Cities NPCListMaster.esm'
     msg: [ *obsolete ]
   - name: 'Ranger Ridge.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     dirty:
       - crc: 0x98145fb5
         util: *dirtyUtil
         itm: 274
+        nav: 1
   - name: 'RiverHelm.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 50 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 50 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 50 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     dirty:
       - crc: 0x41b8b722
         util: *dirtyUtil
         itm: 3700
         udr: 192
+        nav: 50
 # ## MOD: S´Drass follower.esm
 # ## Removing the MOD: tag from this seems to cause crashes.
   - name: 'SC_Drow Race.esm'
@@ -1296,10 +1250,7 @@ plugins:
     req:
       - *SKSE
       - *FNIS
-    msg:
-      - type: warn
-        content: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for this mod to be fully functional.'
-        condition: 'not active("SkyUI.esp")'
+      - *SkyUI
       - type: error
         content:
           - lang: en
@@ -1310,29 +1261,15 @@ plugins:
             str: 'FNIS_SexLab_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise ''Override Skips'' option for archive of this mod in the ''Installers'' tab.'
         condition: 'not file("meshes\actors\character\animations\SexLab\FNIS_SexLab_List.txt")'
   - name: 'SG_BlacksmithsCavern.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     dirty:
       - crc: 0x564d3a3b
         util: *dirtyUtil
         itm: 20
+        nav: 1
   - name: 'Sirenia.esm'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Amazing Smooth Females Complete](http://www.nexusmods.com/skyrim/mods/140) texture addon.'
-          - lang: ru
-            str: 'Требуется: [Amazing Smooth Females Complete](http://www.nexusmods.com/skyrim/mods/140) texture addon.'
-          - lang: es
-            str: 'Requiere: [Amazing Smooth Females Complete](http://www.nexusmods.com/skyrim/mods/140) texture addon.'
+      - <<: *ReqTextureMesh
+        subs: [ '[Amazing Smooth Females Complete](http://www.nexusmods.com/skyrim/mods/140)' ]
 # ## Skyrim Immersive Creatures.esm
 # ## TAG: {{BASH: Delev, Relev}}
 # ## Note that users of versions below 5.1.1 should also include the Relev tag. Added to tags(no problems with it).
@@ -1374,24 +1311,17 @@ plugins:
 # ## SmithBornMaterials.esm
 # ## Must load after SmithBornPerks.esm
   - name: 'Solitude A City Of Trade.esm'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 2 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
     dirty:
       - crc: 0x89696ea3
         util: *dirtyUtil
         itm: 10
         udr: 0
+        nav: 2
       - crc: 0xfb48bbe3
         util: *dirtyUtil
         itm: 9
         udr: 4
+        nav: 2
   - name: 'SpecializedFollowers.esm'
     msg: [ *obsolete ]
   - name: 'SPTDiverseGuardsSkyrimResources.esm'
@@ -1431,13 +1361,9 @@ plugins:
         udr: 0
   - name: 'The Spice of Life.esm'
     msg:
-      - type: warn
+      - <<: *patchB4CK
+        subs: [ '(http://www.nexusmods.com/skyrim/mods/16668/).' ]
         condition: 'checksum("The Spice of Life.esm",A75F2F6D)'
-        content:
-          - lang: en
-            str: 'File not created with Creation Kit.'
-          - lang: es
-            str: 'Archivo no creado con el Creation Kit.'
   - name: 'TRO_BasicNeeds.esm'
     msg: [ *obsolete ]
   - name: 'Ultimate Witcher MOD.esm'
@@ -1502,16 +1428,6 @@ plugins:
             str: 'Para desisntalar de manera segura por favor ve la [página del mod](http://www.nexusmods.com/skyrim/mods/12933).'
   - name: 'ZaZAnimationPack.esm'
     req: [ *FNIS ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            str: 'FNIS_ZaZAnimationPack_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise ''Override Skips'' option for archive of this mod in the ''Installers'' tab.'
-          - lang: ru
-            str: 'FNIS_ZaZAnimationPack_List.txt не установлен. Анимации мода не будут добавлены в список FNIS и не будут работать в игре. Перед установкой через Wrye Bash Bain вам необходимо выбрать опцию "Не пропускать ничего" для архива этого мода на вкладке ''Установщики''.'
-          - lang: es
-            str: 'FNIS_ZaZAnimationPack_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise ''Override Skips'' option for archive of this mod in the ''Installers'' tab.'
-        condition: 'not file("meshes\actors\character\animations\ZaZAnimationPack\FNIS_ZaZAnimationPack_List.txt")'
   - name: 'ZZZ_Stenvar_Replacer_THAIDEN.esm'
     msg: [ *obsolete ]
 # Low priority .esp's
@@ -1697,48 +1613,14 @@ plugins:
         condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
   - name: 'breezehomelightfix.esp'
     msg: [ *AlreadyInUSKP ]
-  - name: 'BreezehomeLadderFix.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 2 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-        condition: 'checksum("BreezehomeLadderFixJP.esp",94D3C2C0)'
-      # leave navmesh checksums 7CA22630 in this one given disparity
-      - type: warn
-        content:
-          - lang: en
-            str: 'This file contains 32 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 32 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 32 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-        condition: 'checksum("BreezehomeLadderFixJP.esp",94D3C2C0)'
   - name: 'BreezehomeLadderFixJP.esp'
-    msg:
-      - type: warn
-        condition: 'checksum("BreezehomeLadderFixJP.esp",F2BAA689)'
-        content:
-          - lang: en
-            str: 'This file contains 2 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-      - type: warn
-        condition: 'checksum("BreezehomeLadderFixJP.esp",94D3C2C0)'
-      # leave navmesh checksums 7CA22630 in this one given disparity
-        content:
-          - lang: en
-            str: 'This file contains 32 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) is located [here](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: ru
-            str: 'Этот файл содержит 32 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-          - lang: es
-            str: 'Este archivo contiene 32 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
+    dirty:
+      - crc: 0xF2BAA689
+        util: *dirtyUtil
+        nav: 2
+      - crc: 0x94D3C2C0
+        util: *dirtyUtil
+        nav: 32
     inc:
       - 'BreezehomeLadderFix.esp'
   - name: 'BreezehomeLightingFix.esp'
@@ -1783,14 +1665,7 @@ plugins:
   - name: 'CriticalChargeFix.esp'
     msg:
       - *AlreadyInUSKP
-      - type: say
-        content:
-          - lang: en
-            str: 'Obsolete. Update to latest version.'
-          - lang: ru
-            str: 'Устарело. Обновите до последней версии.'
-          - lang: es
-            str: 'Obsoleto. Actualizar a la última versión.'
+      - <<: *obsolete
         condition: 'not checksum("CriticalChargeFix.esp",A35E7560)'
       - <<: *AlreadyInMod
         subs: [ 'PerkUP-TwoHanded.esp' ]
@@ -1952,14 +1827,8 @@ plugins:
 # From V2 Masterlist placed just above Relighting Skyrim - Dawnguard.esp
 # moved as suggested in bsg thread 28 post 105
   - name: 'Relighting Skyrim - Dawnguard.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Using lightingfix.esp along with Relighting Skyrim - Dawnguard.esp is likely to cause lighting inconsistencies.'
-          - lang: ru
-            str: 'Использование lightingfix.esp вместе с Relighting Skyrim - Dawnguard.esp может вызвать несоответствия освещения.'
-        condition: 'file("lightingfix.esp")'
+    inc: 
+      - 'lightingfix.esp'
   - name: 'lydia chair fix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'MageRobesCommentFix.esp'
@@ -1969,42 +1838,24 @@ plugins:
       - <<: *AlreadyInMod
         subs: [ 'Official Patch 1.4' ]
         condition: 'version("..\TESV.exe","1.4",>)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
+        subs: [' (http://www.nexusmods.com/skyrim/mods/26230). ']
         condition: 'not checksum("Magnus20.esp",DE1D22AC)'
   - name: 'Magnus50.esp'
     msg:
       - <<: *AlreadyInMod
         subs: [ 'Official Patch 1.4' ]
         condition: 'version("..\TESV.exe","1.4",>)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
+        subs: [' (http://www.nexusmods.com/skyrim/mods/26230). ']
         condition: 'not checksum("Magnus50.esp",1003FA02)'
   - name: 'Magnus100.esp'
     msg:
       - <<: *AlreadyInMod
         subs: [ 'Official Patch 1.4' ]
         condition: 'version("..\TESV.exe","1.4",>)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+       - <<: *patchB4CK
+        subs: [' (http://www.nexusmods.com/skyrim/mods/26230). ']
         condition: 'not checksum("Magnus100.esp",37C6B07A)'
   - name: 'Mannequinfix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -9612,7 +9463,7 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'Deleveled Skyrim - 3rdEraWeaponsMoS.esp'
+  - name: 'Deleveled Skyrim "-" 3rdEraWeaponsMoS.esp'
     tag:
       - Delev
       - Relev
