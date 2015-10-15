@@ -14400,11 +14400,6 @@ plugins:
             str: 'Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859), может быть найдена [здесь](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
           - lang: es
             str: 'Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) se puede encontrar [aquí](http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html).'
-  - name: 'betterbreezehome.esp'
-    msg:
-      - type: say
-        content: 'Incompatible with: BertsBreezeRemodel'
-        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'bettercitiesdocksolitude.esp'
     dirty:
       - crc: 0x953f6085
@@ -16082,6 +16077,10 @@ plugins:
   - name: 'BetterBreezehome.esp'
     after:
       - 'FalkreathCastle.esp'
+    msg:
+      - type: say
+        content: 'Incompatible with: BertsBreezeRemodel'
+        condition: 'regex("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Falkreath Home.esp'
     dirty:
       - crc: 0x671dcfb3
