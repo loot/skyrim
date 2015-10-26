@@ -1096,16 +1096,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'OblHairs(\d\d)?\.esm'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Too many hair packs may cause stability issues; see [author''s notes](http://www.nexusmods.com/skyrim/mods/18110).'
-          - lang: ru
-            str: 'Слишком много наборов причесок могут вызвать проблемы со стабильностью. Смотрите [заметки автора](http://www.nexusmods.com/skyrim/mods/18110).'
-          - lang: es
-            str: 'Demasiados mods de peinados pueden causar inestabilidad; ver [notas del autor](http://www.nexusmods.com/skyrim/mods/18110).'
   - name: 'OrientalRace.esm'
     msg: [ *obsolete ]
   - name: 'ORS_MorthalPain.esm'
@@ -23768,14 +23758,7 @@ plugins:
       - 'LovelyHairstyles.esp'
   - name: 'NoMoreVanillaHair.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Obsolete. Update to latest version.'
-          - lang: ru
-            str: 'Устарело. Обновите до последней версии.'
-          - lang: es
-            str: 'Obsoleto. Actualizar a la última versión.'
+      - <<: *obsolete
         condition: 'not checksum("NoMoreVanillaHair.esp",A31830F1) and not checksum("NoMoreVanillaHair.esp",7F9635D9)'
       - type: say
         content:
@@ -23793,30 +23776,8 @@ plugins:
             str: 'Требуется: [Hair Pack](http://www.nexusmods.com/skyrim/mods/3809)'
           - lang: es
             str: 'Requiere: [Hair Pack](http://www.nexusmods.com/skyrim/mods/3809)'
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Hair packs of TES IV Oblivion](http://www.nexusmods.com/skyrim/mods/18110)'
-          - lang: ru
-            str: 'Требуется: [Hair packs of TES IV Oblivion](http://www.nexusmods.com/skyrim/mods/18110)'
-          - lang: es
-            str: 'Requiere: [Hair packs of TES IV Oblivion](http://www.nexusmods.com/skyrim/mods/18110)'
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Hair packs of Fallout3](http://www.nexusmods.com/skyrim/mods/17993)'
-          - lang: ru
-            str: 'Требуется: [Hair packs of Fallout3](http://www.nexusmods.com/skyrim/mods/17993)'
-          - lang: es
-            str: 'Requiere: [Hair packs of Fallout3](http://www.nexusmods.com/skyrim/mods/17993)'
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Hair packs of Fallout3 Patch](http://www.nexusmods.com/skyrim/mods/18220)'
-          - lang: ru
-            str: 'Требуется: [Hair packs of Fallout3 Patch](http://www.nexusmods.com/skyrim/mods/18220)'
-          - lang: es
-            str: 'Requiere: [Hair packs of Fallout3 Patch](http://www.nexusmods.com/skyrim/mods/18220)'
+      - type: warn
+        content: 'Requires Hair packs of TEST IV Oblivion and Hair packs of Fallout3, which are no longer available.'
     dirty:
       - crc: 0xa31830f1
         util: *dirtyUtil
@@ -25725,17 +25686,6 @@ plugins:
       - crc: 0xfd8a3158
         util: *dirtyUtil
         itm: 1
-  - name: 'Onmeya.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Hair packs of TESIV Oblivion esm](http://www.nexusmods.com/skyrim/mods/18110) and [Additional Vanilla Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)'
-          - lang: ru
-            str: 'Требуется: [Hair packs of TESIV Oblivion esm](http://www.nexusmods.com/skyrim/mods/18110) and [Additional Vanilla Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)'
-          - lang: es
-            str: 'Requiere: [Hair packs of TESIV Oblivion esm](http://www.nexusmods.com/skyrim/mods/18110) and [Additional Vanilla Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266)'
-        condition: 'not file("AdditionalNPCFollwerVoices.esp") and not file("oblivion hair.esm")'
   - name: 'SFR_Onmund.esp'
     dirty:
       - crc: 0xf8df7340
@@ -26139,22 +26089,10 @@ plugins:
       - 'Tauriel Original Standalone_v1_0.esp'
       - 'Tauriel original de Standalone_v1_0.esp'
       - 'Tauriel Standalone_v1_1.esp'
-  - name: 'Taleya.esp'
-    req:
-      - name: 'oblivion hair.esm'
-        display: '[Hair packs of TES IV Oblivion](http://www.nexusmods.com/skyrim/mods/18110).'
-      - name: 'AdditionalNPCFollwerVoices.esp'
-        display: '[Additional Vanilla NPC Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266).'
   - name: 'TTS - Lydia.esp'
     req:
       - name: 'TheEyesOfBeauty.esp'
         display: '[The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722).'
-  - name: 'VizerinChronicles.esp'
-    req:
-      - name: 'FallOut3Hairs.esm'
-        display: '[Hair packs of Fallout 3](http://www.nexusmods.com/skyrim/mods/17993).'
-      - name: 'AdditionalNPCFollwerVoices.esp'
-        display: '[Additional Vanilla NPC Follower Voice Types](http://www.nexusmods.com/skyrim/mods/16266).'
 # Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
   - name: 'Childclothes_For_AdultBased_Children.esp'
     dirty:
