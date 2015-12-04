@@ -706,14 +706,14 @@ plugins:
         condition: 'checksum("ClimatesOfTamriel.esm",C30AB34E)'
         content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the [updated plugin](http://www.nexusmods.com/skyrim/mods/17802).'
       - type: warn
-        condition: 'file("SoS - Civilization.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        condition: 'file("SoS - Civilization.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
         content:
           - lang: en
             str: 'Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
           - lang: ru
             str: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
       - type: warn
-        condition: 'file("SoS - The Wilds.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        condition: 'file("SoS - The Wilds.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp") and not regex("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
         content:
           - lang: en
             str: 'Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
@@ -20202,6 +20202,8 @@ plugins:
 # more like addons, move elsewhere if necessary:
 # Patches for The Dungeons
   - name: 'SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp'
+    inc:
+      - 'WAO-WeatherAndAmbienceOverhaul.esp'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
@@ -27731,3 +27733,10 @@ plugins:
     after:
       - 'AOS.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/67559' ]
+  - name: 'WAO-WeatherAndAmbienceOverhaul.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/55705' ]
+    inc:
+      - 'SoS - The Wilds-PatchCoTSoundsWinterEdition.esp'
+      - 'SoS - The Wilds-PatchCoTSounds.esp'
+      - 'SoS - The Wilds-PatchCoTWinterEdition.esp'
+      - 'SoS - The Wilds-PatchCoT.esp'
