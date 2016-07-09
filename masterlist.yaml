@@ -27672,10 +27672,7 @@ plugins:
         itm: 2
     url: [ 'http://www.nexusmods.com/skyrim/mods/13166' ]
   - name: 'HearthfireMultiKid.esp'
-    dirty:
-      - crc: 0x534F45A6
-        util: *dirtyUtil
-        itm: 2
+    msg: [ *doNotClean ]
     url: [ 'http://www.nexusmods.com/skyrim/mods/29249' ]
   - name: 'QaxeWinterholdRebuild.esp'
     dirty:
@@ -27778,3 +27775,37 @@ plugins:
         util: *dirtyUtil
         itm: 1
         udr: 178
+  - name: 'Man Those Borders!.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/74304' ]
+    dirty:
+      - crc: 0xb0783a1c
+        util: *dirtyUtil
+        itm: 92
+        udr: 86
+        nav: 8
+  - name: 'hold guard.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/62735' ]
+    dirty:
+      - crc: 0x8ec86dbd
+        util: *dirtyUtil
+        itm: 6
+        udr: 1
+  - name: 'MLU.esp'
+    priority: 1985000
+    url: [ 'http://www.nexusmods.com/skyrim/mods/66105' ]
+  - name: 'DynDOLOD.esp'
+    priority: 1997000
+    url: [ 'http://www.nexusmods.com/skyrim/mods/59721' ]
+  - name: 'Dynamic Dialogue Followers.esp'
+    after:
+      - 'EFFDialogue.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/69541' ]
+  - name: 'GuardAnimationsGDO.esp'
+    after:
+      - 'Guard Dialogue Overhaul.esp'
+  - name: 'GuardAnimations.esp'
+    msg:
+      - type: warn
+        condition: 'active("Guard Dialogue Overhaul.esp")'
+        content: 'Guard Dialogue Overhaul detected.  Use the Guard Dialogue Overhaul version to have both mods work as intended.'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/52326' ]
