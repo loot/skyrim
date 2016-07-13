@@ -132,6 +132,7 @@ bash_tags:
   - 'Body-Size-M'
   - 'C.Acoustic'
   - 'C.Climate'
+  - 'C.Encounter'
   - 'C.ImageSpace'
   - 'C.Light'
   - 'C.Location'
@@ -280,10 +281,12 @@ plugins:
   - name: 'Update.esm'
     priority: -1999999
     tag:
+      - C.Encounter
       - C.Location
+      - C.RecordFlags
       - Delev
-      - Invent
-      - Relev
+      - Names
+      - Stats
     dirty:
       - util: *dirtyUtil
         crc: 0x412d96fb
@@ -373,11 +376,15 @@ plugins:
       - 'SMPC.esp'
     tag:
       - C.Location
+      - C.RecordFlags
+      - C.Regions
       - Delev
       - Graphics
       - Invent
       - Names
-      - Sound
+      - Relations
+      - Relev
+      - Stats
     dirty:
     # TES5Edit 3.0.30
       - util: *dirtyUtil
@@ -440,8 +447,10 @@ plugins:
       - '[JmV]LTTF.esm'
     tag:
       - C.Location
+      - C.RecordFlags
       - Graphics
       - Invent
+      - Sound
     dirty:
     # TES5Edit 3.0.30
       - util: *dirtyUtil
@@ -506,10 +515,14 @@ plugins:
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
       - 'SMPC_HF.esp'
     tag:
+      - C.Light
       - C.Location
+      - C.RecordFlags
       - Graphics
       - Invent
       - Names
+      - Relev
+      - Stats
     dirty:
     # TES5Edit 3.0.30
       - util: *dirtyUtil
