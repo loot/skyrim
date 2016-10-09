@@ -587,9 +587,15 @@ plugins:
       - Relev
       - Sound
       - Stats
+    clean:
+      - crc: 0x72A342FD
+        utility: TES5Edit v3.1.3
 # Falskaar is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
   - name: 'Falskaar.esm'
     global_priority: -98
+    clean:
+      - crc: 0xDDFDBEDE
+        utility: TES5Edit v3.1.3
 # Wyrmstooth to load very early around Falskaar
   - name: 'Wyrmstooth.esp'
     global_priority: -98
@@ -652,6 +658,9 @@ plugins:
       - 'Skyrim Project Optimization - No Homes - Full Version.esm'
       - 'Skyrim Project Optimization - No Homes.esm'
       - 'Skyrim Project Optimization - Full Version.esp'
+    clean:
+      - crc: 0xFE33A011
+        utility: TES5Edit v3.1.3
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
     global_priority: -98
     inc:
@@ -1034,6 +1043,9 @@ plugins:
             text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: es
             text: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+    clean:
+      - crc: 0x142A34B6
+        utility: TES5Edit v3.1.3
   - name: 'kuerteeInventoryAndWeight.esm'
     msg: [ *obsolete ]
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
@@ -3183,6 +3195,9 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x6A765402
         itm: 4
+    clean:
+      - crc: 0xB095E590
+        utility: TES5Edit v3.1.3
   - name: 'BeastModels.esp'
     msg: [ *obsolete ]
   - name: 'BorderRegionsDisabled(EV)?\.esp'
@@ -5855,9 +5870,15 @@ plugins:
   - name: 'WetandCold.esp'
     after:
       - 'SKSE Hotkeys.esp'
+    clean:
+      - crc: 0x762DC693
+        utility: TES5Edit v3.1.3
   - name: 'WetandCold - Ashes.esp'
     after:
       - 'SKSE Hotkeys.esp'
+    clean:
+      - crc: 0x3D7CC687
+        utility: TES5Edit v3.1.3
   - name: 'Where''s My Horse Gone Essential Horses.esp'
     msg:
       - type: warn
@@ -6184,8 +6205,14 @@ plugins:
     after:
       - name: 'Fhaarkas Font Mod - SkyUI.esp'
         condition: 'version("SkyUI.esp", "4", >=) and version("Fhaarkas Font Mod - SkyUI.esp", "4.0", ==)'
+    clean:
+      - crc: 0xBEA2DC76
+        utility: TES5Edit v3.1.3
   - name: 'iHUD.esp'
     req: [ *SKSE ]
+    clean:
+      - crc: 0x6098B756
+        utility: TES5Edit v3.1.3
   - name: 'LessIntrusiveHUD.esp'
     req:
       - *SKSE
@@ -17105,6 +17132,9 @@ plugins:
   - name: 'Book Covers Skyrim.esp'
     after:
       - 'BetterQuestObjectives.esp'
+    clean:
+      - crc: 0x18343B2E
+        utility: TES5Edit v3.1.3
   - name: 'Book Covers Dawnguard.esp'
     msg:
       - type: warn
@@ -17127,6 +17157,10 @@ plugins:
           - lang: es
             text: 'Borrar. Esta incluido en Book Covers Skyrim.esp.'
         condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
+  - name: 'Book Covers Skyrim - Lost Library.esp'
+    clean:
+      - crc: 0x8F56DE23
+        utility: TES5Edit v3.1.3
   - name: 'Headbomb''s Better Sorting - Ammo.esp'
     msg:
       - type: warn
@@ -23744,6 +23778,9 @@ plugins:
       - crc: 0x8e88023f
         <<: *dirtyPlugin
         itm: 6
+    clean:
+      - crc: 0x837C53D0
+        utility: TES5Edit v3.1.3
   - name: 'AlmostEveryoneIsAnAdventurer.esp'
     req: [ *SKSE ]
   - name: 'kuerteeSimpleMultipleFollowers MCM.esp'
@@ -27656,6 +27693,9 @@ plugins:
       - crc: 0xA04BFEF0
         <<: *dirtyPlugin
         itm: 1
+    clean:
+      - crc: 0xB69368F3
+        utility: TES5Edit v3.1.3
   - name: 'ETaC - Complete ELFX Patch.esp'
     dirty:
       - crc: 0x352FE2A2
@@ -27719,6 +27759,9 @@ plugins:
       - crc: 0xA466C02D
         <<: *dirtyPlugin
         itm: 2
+    clean:
+      - crc: 0xAC8EE7AD
+        utility: TES5Edit v3.1.3
     url: [ 'http://www.nexusmods.com/skyrim/mods/65242' ]
   - name: 'More Draconic Dragon Aspect - (Wings|Tail|Wings and Tail)\.esp'
     after:
@@ -27894,3 +27937,35 @@ plugins:
         condition: 'active("Guard Dialogue Overhaul.esp")'
         content: 'Guard Dialogue Overhaul detected.  Use the Guard Dialogue Overhaul version to have both mods work as intended.'
     url: [ 'http://www.nexusmods.com/skyrim/mods/52326' ]
+  - name: 'Campfire.esm'
+    clean:
+      - crc: 0xB536FDD0
+        utility: TES5Edit v3.1.3
+  - name: 'CompanionArissa.esm'
+    clean:
+      - crc: 0xC4AE95C0
+        utility: TES5Edit v3.1.3
+  - name: 'Gray Fox Cowl.esm'
+    clean:
+      - crc: 0x80B017F9
+        utility: TES5Edit v3.1.3
+  - name: 'HeljarchenFarm.esp'
+    clean:
+      - crc: 0xFB523A92
+        utility: TES5Edit v3.1.3
+  - name: 'garm_white.esp'
+    clean:
+      - crc: 0x0AC6F994
+        utility: TES5Edit v3.1.3
+  - name: 'KS Hairdo''s.esp'
+    clean:
+      - crc: 0xA2139F9F
+        utility: TES5Edit v3.1.3
+  - name: 'UsefulDogs.esp'
+    clean:
+      - crc: 0x1CF6B89B
+        utility: TES5Edit v3.1.3
+  - name: 'HoamaiiClearskyHideout.esp'
+    clean:
+      - crc: 0x803DB5D7
+        utility: TES5Edit v3.1.3
