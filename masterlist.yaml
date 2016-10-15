@@ -42,7 +42,7 @@ common:
       - lang: en
         str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
       - lang: ru
-        str: 'Содержит содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
+        str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
       - lang: es
         str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - &patchB4CK
@@ -51,7 +51,7 @@ common:
       - lang: en
         str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
       - lang: ru
-        str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+        str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
       - lang: es
         str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - &obsolete
@@ -110,6 +110,8 @@ common:
         str: 'Can be used with a %1% but would require additional work. A Smashed Patch or Bash Patch should be used independently of one another.'
       - lang: es
         str: 'Se puede utilizar con un %1% pero requeriría un trabajo adicional. Deben de estar utilizado un Smashed Patch o un Bash Patch independiente del uno el otro.'
+      - lang: ru
+        str: 'Может быть использовано совместно с %1% но возможно потребуется дополнительная работа. Smashed Patch или Bash Patch должны быть использованы независимо друг от друга.'
 
 # Other Strings
   - &dirtyUtil '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859). A cleaning guide is available [here](http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit)'
@@ -193,6 +195,8 @@ globals:
         str: 'A [new release](%1%) of LOOT is available.'
       - lang: zh_CN
         str: '一个[新版本](%1%)的LOOT已发布。'
+      - lang: ru
+        str: 'Доступна [новая версия](%1%) LOOT.'
     subs: [ 'https://github.com/loot/loot/releases/latest' ]
     condition: 'version("LOOT", "0.9.2.0", <)'
   - type: say
@@ -229,7 +233,7 @@ globals:
       - lang: en
         str: 'It appears you do not have the [latest version of SKSE](http://skse.silverlock.org). Some mods may require functionality added in the latest version of SKSE to work.'
       - lang: ru
-        str: 'Возможно, что вы используете НЕ [самую последнюю версию SKSE](http://skse.silverlock.org). Для работы некоторых модов может требоваться функционал, добавленный в последнюю версию SKSE'
+        str: 'Возможно у вас не установлена [новейшая версия SKSE](http://skse.silverlock.org). Для работы некоторых модов может требоваться функционал, добавленный в последней версии SKSE'
       - lang: es
         str: 'Parece que no tienes la última versión de SKSE. la nueva versión se puede encontrar [aquí](http://skse.silverlock.org/).'
       - lang: ko
@@ -242,7 +246,7 @@ globals:
       - lang: en
         str: 'Your SKSE is up-to-date.'
       - lang: ru
-        str: 'Ваш SKSE имеет последнюю версию.'
+        str: 'Ваш SKSE обновлен.'
       - lang: es
         str: 'Tienes la última versión de SKSE'
       - lang: ko
@@ -256,7 +260,7 @@ globals:
       - lang: en
         str: 'A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.'
       - lang: ru
-        str: 'Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.'
+        str: 'Установлен динамически созданный плагин. Смотрите заметки авторов, для получения подробной информации и определения лучшего порядка загрузки для таких плагинов.'
       - lang: es
         str: 'Tienes un plugin dinamicamente creado. Por favor, consulta las notas de autor para obtener más información sobre cómo determinar el mejor orden.'
       - lang: ko
@@ -367,7 +371,11 @@ plugins:
       - 'Unofficial Skyrim Patch.esp'
     msg:
       - type: warn
-        content: 'This plugin is now considered harmful and should not be used.'
+        content:
+          - lang: en
+            str: 'This plugin is now considered harmful and should not be used.'
+          - lang: ru
+            str: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
   - name: 'Dawnguard.esm'
     priority: -1999000
     after:
@@ -421,7 +429,11 @@ plugins:
       - 'Unofficial Dawnguard Patch.esp'
     msg:
       - type: warn
-        content: 'This plugin is now considered harmful and should not be used.'
+        content:
+          - lang: en
+            str: 'This plugin is now considered harmful and should not be used.'
+          - lang: ru
+            str: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
   - name: 'SCO Winter Landscape Decoloration.esp'
     priority: -1999000
   - name: 'SCO Winter Landscape Decoloration - Solstheim.esp'
@@ -499,7 +511,11 @@ plugins:
       - 'Unofficial Hearthfire Patch.esp'
     msg:
       - type: warn
-        content: 'This plugin is now considered harmful and should not be used.'
+        content:
+          - lang: en
+            str: 'This plugin is now considered harmful and should not be used.'
+          - lang: ru
+            str: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
   - name: 'Dragonborn.esm'
     priority: -1999000
     after:
@@ -557,7 +573,11 @@ plugins:
       - 'Unofficial Dragonborn Patch.esp'
     msg:
       - type: warn
-        content: 'This plugin is now considered harmful and should not be used.'
+        content:
+          - lang: en
+            str: 'This plugin is now considered harmful and should not be used.'
+          - lang: ru
+            str: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
   - name: 'Unofficial Skyrim Legendary Edition Patch.esp'
     priority: -1999000
     after:
@@ -1023,14 +1043,18 @@ plugins:
     msg:
       - type: warn
         condition: 'version("JSwords.esm","14.0",<)'
-        content: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+        content:
+          - lang: en
+            str: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+          - lang: ru
+            str: 'Совместимый с версией 14.0 очищенный и исправленный патч совместимости в TES5Edit может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
       - type: warn
         condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
         content:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: es
             str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - name: 'kuerteeInventoryAndWeight.esm'
@@ -1172,7 +1196,11 @@ plugins:
   - name: 'Natural Characters and Companions.esm'
     msg:
       - type: warn
-        content: 'LovelyHairstyles.esp is not active in your load order. LovelyHairstyles.esp is required for this mod to function correctly.'
+        content:
+          - lang: en
+            str: 'LovelyHairstyles.esp is not active in your load order. LovelyHairstyles.esp is required for this mod to function correctly.'
+          - lang: ru
+            str: 'LovelyHairstyles.esp не подключен, но требуется для правильного функционирования.'
         condition: 'not active("LovelyHairstyles.esp")'
   - name: 'NeV-P_ExtremeMaterials.esm'
     tag:
@@ -3213,7 +3241,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: es
             str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("Weapons and Armor fixes.esp",D27D2F2)'
@@ -3236,7 +3264,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: es
             str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("Weapons and Armor fixes - Hacks.esp",119BC97C)'
@@ -3573,7 +3601,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: es
             str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("BanditsEyepatch.esp",43DE0DBC)'
@@ -5269,7 +5297,7 @@ plugins:
           - lang: en
             str: 'Requires: Realistic Wildlife Loot, Realistic needs and diseases & the compatability patch to run them together'
           - lang: ru
-            str: 'Требуется: Realistic Wildlife Loot, Realistic needs and diseases & the compatability patch to run them together'
+            str: 'Требуется: Realistic Wildlife Loot, Realistic needs and diseases & патч совместимости для совместного запуска'
           - lang: es
             str: 'Requiere: Realistic Wildlife Loot, Realistic needs and diseases & the compatability patch to run them together'
         condition: 'not active("Realistic Wildlife Loot - Realistic.esp") or not active("Realistic Wildlife Loot - Reduced.esp")'
@@ -6152,7 +6180,7 @@ plugins:
           - lang: en
             str: 'RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.'
           - lang: ru
-            str: 'RaceMenuPlugin опционален и предоставляет поддержку альтернативного роста, груди, ягодиц и бицепсов. Если у вас возникают проблемы с этим, отключите RaceMenuPlugin.esp и проинформируйте автора.'
+            str: 'RaceMenuPlugin опционален и позволяет измененять рост, размеры груди, ягодиц, бицепсов и т.п. Если у вас возникают проблемы с ним, отключите RaceMenuPlugin.esp и проинформируйте автора.'
           - lang: es
             str: 'RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.'
   - name: 'SkyRealism - Simple Save System.+\.esp'
@@ -6567,7 +6595,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
   - name: 'bikiniADEC.esp'
     msg:
@@ -6854,7 +6882,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("CompanionsShields.esp",75F460D6)'
   - name: 'CoolItems1_2.esp'
     msg:
@@ -6931,7 +6959,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("Daedric Extra Armor.esp",8DDD039)'
   - name: 'DaedricCrossbow.esp'
     dirty:
@@ -6970,7 +6998,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("DarkNemesis.esp",CE5E555B)'
     tag:
       - name: Deactivate
@@ -7101,7 +7129,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
   - name: 'DPArmor.esp'
     msg:
@@ -7345,7 +7373,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("..\TESV.exe","1.8",>) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
     tag:
       - name: Deactivate
@@ -7550,7 +7578,7 @@ plugins:
           - lang: en
             str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("Hana.esp",C86C77D9)'
   - name: 'HartherzEnglish.esp'
     dirty:
@@ -8285,7 +8313,7 @@ plugins:
           - lang: en
             str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("LFArmors.esp",EF8F74B6)'
   - name: 'LH Jewel Collection.esp'
     msg:
@@ -8313,7 +8341,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: es
             str: 'Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'checksum("Lich King''s Armor.esp",5C5EB4D7)'
@@ -8361,7 +8389,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("loners_sword.esp",246E1CBB)'
   - name: 'Longbows.esp'
     tag:
@@ -8521,7 +8549,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: es
             str: 'Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'checksum("MorrowindArmor.esp",7DDD7CAC)'
@@ -9117,7 +9145,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("SeraphimStandAlone.esp",556E0B68)'
   - name: 'SeraphineHuntedArmor.esp'
     msg:
@@ -9210,7 +9238,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: es
             str: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
@@ -9243,7 +9271,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("SnowyNightingale.esp",83B46ABF)'
   - name: 'Song General Armor&weapon.esp'
     tag:
@@ -9263,7 +9291,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("Sovngarde Steel Armor and Weapons.esp",B84EB4CE)'
   - name: 'Space Wiking''s Dwemer Exoskeleton.esp'
     dirty:
@@ -9472,7 +9500,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("TemplarArmor.esp",EE0395E4)'
   - name: 'TERAArmors_CBBE.esp'
     msg:
@@ -9764,7 +9792,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: es
             str: 'Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("WeaponsOf3E.esp",67F338A1)'
@@ -9795,7 +9823,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: es
             str: 'Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
@@ -17133,7 +17161,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17145,7 +17173,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17162,7 +17190,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17174,7 +17202,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17186,7 +17214,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17198,7 +17226,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17210,7 +17238,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17222,7 +17250,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17234,7 +17262,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17251,7 +17279,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17263,7 +17291,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17275,7 +17303,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17287,7 +17315,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17304,7 +17332,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17316,7 +17344,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -18370,7 +18398,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("OpenFaceHelmets.esp",D695AB86)'
   - name: 'Organized Books v(0.1|1.0)?\.esp'
     msg: [ *obsolete ]
@@ -22055,7 +22083,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("Fortify Enchanting necklace.esp",E170C251)'
   - name: 'HasteEnchantment.esp'
     dirty:
@@ -22427,7 +22455,7 @@ plugins:
           - lang: en
             str: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            str: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("cao_PerkRanks.esp",B2A7936F)'
   - name: 'Character_Generation.esp'
     req:
@@ -25901,7 +25929,7 @@ plugins:
           - lang: en
             str: 'Ragdolls will conflict with other mods that change the skeleton.nif. Check [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712) for compatibly with other skeleton.nif.'
           - lang: ru
-            str: 'Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712), для поддержки других версий skeleton.nif.'
+            str: 'Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712), для поддержки других версий skeleton.nif или попробуйте использовать [XP32 Maximum Skeleton Extended - XPMSE](http://www.nexusmods.com/skyrim/mods/68000).'
   - name: 'driveableboat.esp'
     dirty:
       - crc: 0x920c6e44
