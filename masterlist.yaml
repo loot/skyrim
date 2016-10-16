@@ -51,7 +51,7 @@ common:
       - lang: en
         str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
       - lang: ru
-        str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
+        str: 'Оригинальный файл был выпущен до выхода Creation Kit (07 фев. 2012). Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)' #added additional info about localized fixed versions because message also can be displayed for any localisation of fixed version.'
       - lang: es
         str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - &obsolete
@@ -130,7 +130,17 @@ common:
         str: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
       - lang: es
         str: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) o [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-
+  - &ReqLBreplacer
+    type: say
+    content:
+      - lang: en
+        str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - lang: ru
+        str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - lang: es
+        str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+		
+		
 # Other Strings
   - &dirtyUtil '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859). A cleaning guide is available [here](http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit)'
 
@@ -1003,7 +1013,7 @@ plugins:
           - lang: en
             str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
           - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден по ссылке: [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: es
             str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
   - name: 'retreat.esm'
@@ -1022,7 +1032,7 @@ plugins:
           - lang: en
             str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
           - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден по ссылке: [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: es
             str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
   - name: 'Riftrun_HF_v_2_0.esp'
@@ -1992,14 +2002,7 @@ plugins:
           - lang: es
             str: 'Borrar. Esta incluido en el patch oficial 1.4.'
         condition: 'version("..\TESV.exe","1.4",>)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Magnus20.esp",DE1D22AC)'
   - name: 'Magnus50.esp'
     msg:
@@ -2012,14 +2015,7 @@ plugins:
           - lang: es
             str: 'Borrar. Esta incluido en el patch oficial 1.4.'
         condition: 'version("..\TESV.exe","1.4",>)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Magnus50.esp",1003FA02)'
   - name: 'Magnus100.esp'
     msg:
@@ -2032,14 +2028,7 @@ plugins:
           - lang: es
             str: 'Borrar. Esta incluido en el patch oficial 1.4.'
         condition: 'version("..\TESV.exe","1.4",>)'
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Magnus100.esp",37C6B07A)'
   - name: 'Mannequinfix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -3046,47 +3035,19 @@ plugins:
 # ## Bethsoft6.118,128and9.187,193
   - name: 'Warmer Magic Lights v2.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Warmer Magic Lights v2.esp",2A1E2810)'
   - name: 'Warmer Magic Lights v2 - White.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Warmer Magic Lights v2 - White.esp",B5571C09)'
   - name: 'Warmer Magic Lights v2 - White - Big.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Warmer Magic Lights v2 - White - Big.esp",ACAE3F31)'
   - name: 'Warmer Magic Lights v2 - Big.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Warmer Magic Lights v2 - Big.esp",DE4F928D)'
 # ## NoTint.esp
 # ## Moved ClimatesOfTamriel From Here
@@ -3491,14 +3452,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'BabettesFeastBalanced.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'version("BabettesFeastBalanced.esp","1.2",<)'
       - type: warn
         content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
@@ -3508,14 +3462,7 @@ plugins:
       - 'BabettesFeastWeakerEffects.esp'
   - name: 'BabettesFeastOverpowered.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'version("BabettesFeastOverpowered.esp","1.2",<)'
       - type: warn
         content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
@@ -3525,14 +3472,7 @@ plugins:
       - 'BabettesFeastWeakerEffects.esp'
   - name: 'BabettesFeastWeakerEffects.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'version("BabettesFeastWeakerEffects.esp","1.2",<)'
       - type: warn
         content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
@@ -3656,7 +3596,7 @@ plugins:
           - lang: en
             str: 'Incompatible with: Hearthfires.esm. Use either BirdsHF.esp or BirdsHFclean.esp.'
           - lang: ru
-            str: 'Несовместим с: Hearthfires.esm. Используйте любой, или BirdsHF.esp или BirdsHFclean.esp.'
+            str: 'Несовместим с: Hearthfires.esm. Используйте BirdsHF.esp или BirdsHFclean.esp.'
           - lang: es
             str: 'Incompatible con: Hearthfires.esm. Usar BirdsHF.esp o BirdsHFclean.esp.'
         condition: 'active("Hearthfires.esm")'
@@ -3672,7 +3612,7 @@ plugins:
           - lang: en
             str: 'Incompatible with: Hearthfires.esm. Use either BirdsHF.esp or BirdsHFclean.esp.'
           - lang: ru
-            str: 'Несовместим с: Hearthfires.esm. Используйте любой, или BirdsHF.esp или BirdsHFclean.esp.'
+            str: 'Несовместим с: Hearthfires.esm. Используйте BirdsHF.esp или BirdsHFclean.esp.'
           - lang: es
             str: 'Incompatible con: Hearthfires.esm. Usar BirdsHF.esp o BirdsHFclean.esp.'
         condition: 'active("Hearthfires.esm")'
@@ -3681,7 +3621,7 @@ plugins:
           - lang: en
             str: 'Use either Birds.esp or Birdsclean.esp, not both.'
           - lang: ru
-            str: 'Используйте любой или Birds.esp или Birdsclean.esp, не обa.'
+            str: 'Используйте Birds.esp или Birdsclean.esp, не обa.'
           - lang: es
             str: 'Usar Birds.esp o Birdsclean.esp, no ambos.'
         condition: 'file("Birds.esp")'
@@ -3785,25 +3725,11 @@ plugins:
         content: 'Original file was released before the Creation Kit (07 Feb. 2012). It is recommended to download [Caos Quest for Goldbrand](http://www.nexusmods.com/skyrim/mods/5830) because a compatibility patch fixed and cleaned with TES5Edit is available.'
   - name: 'cao_goldbrand_WT.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'version("cao_goldbrand_WT.esp", "1.0", <)'
   - name: 'cao_ToolsTrade_BuyRL.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'checksum("cao_ToolsTrade_BuyRL.esp",3979D654)'
   - name: 'CarryWeightSpells.esp'
     dirty:
@@ -4738,14 +4664,7 @@ plugins:
         udr: 59
   - name: 'Lost Art of the Blacksmith.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Lost Art of the Blacksmith.esp",1720F631)'
   - name: 'LoversComfort.esp'
     req:
@@ -5793,14 +5712,7 @@ plugins:
       - Relev
   - name: 'ValsCraftingMeltdownAlpha.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     msg:
@@ -6423,14 +6335,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'ArmoredNocturnal.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'armorkits.esp'
     tag:
@@ -7042,15 +6947,9 @@ plugins:
         condition: 'not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
   - name: 'DPArmor.esp'
     msg:
-      - type: warn
+      - <<: *patchB4CK
         condition: 'version("DPArmor.esp","0.3",<)'
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+
   - name: 'DragonboneCrossbow.esp'
     dirty:
       - crc: 0x294218c5
@@ -7803,127 +7702,50 @@ plugins:
       - *ReqCBBE
   - name: 'LBArmorPack.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Blood Mage.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'Blood Mage.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Ярл Clothes.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Blood of the Divines.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Dark Lady.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Dragon Princess.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Dwemer Fury Heavy Set.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB_EnemiesEssplode!.esp'
     tag:
       - Relev
   - name: 'LB GoldLeopardRobe.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Jarl Clothes.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Lady Bat.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
     dirty:
       - crc: 0xcb996b7d
@@ -7931,190 +7753,71 @@ plugins:
         udr: 1
   - name: 'LB Lady Keaira.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Lady .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Lustmord Vampire.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Lydia Armor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Mandu Armor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Medusa Armor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB_MuchAdoSnowElves.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Necromance Robe.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Pantie & Boots.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Jewelry.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB RobeExperiencedMagician.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Santa Babe.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Underworld.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB Valkyrie.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LB VampLord.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LBClosetMagician.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LBGoldArmoredBikini.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LC_ArcherEliteArmor.esp'
     msg:
@@ -8126,14 +7829,7 @@ plugins:
         itm: 5
   - name: 'LC_AssassinOfShadownArmor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LeatherBackpackBlack.*\.esp'
     msg:
@@ -8169,14 +7865,7 @@ plugins:
         condition: 'not checksum("LFArmors.esp",EF8F74B6)'
   - name: 'LH Jewel Collection.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
       - type: say
         content:
@@ -8578,14 +8267,7 @@ plugins:
             str: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [UNP Blessed Body (UNPB)](http://www.nexusmods.com/skyrim/mods/37900).'
   - name: 'Niagras Bleach Pack.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Niagras Bleach Pack.esp",32E5FB23)'
   - name: 'Nicoroshi Creations.esp'
     tag:
@@ -8824,15 +8506,8 @@ plugins:
         udr: 3
   - name: 'Redguard Shield.esp'
     msg:
-      - type: warn
+      - <<: *patchB4CK
         condition: 'version("Redguard Shield.esp","1.2",<)'
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - name: 'RedguardKnight.esp'
     tag:
       - name: Deactivate
@@ -17722,14 +17397,7 @@ plugins:
             str: 'Несовместим с: Другие, меняющие драконов,  моды(Deadly Dragons и т.п.)'
   - name: 'LB Yarl Clothes.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            str: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            str: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            str: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - <<: *patchB4CK
         condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - name: 'LegionArmorVariety(OPTIONA?L?\d)?\.esp'
     msg:
@@ -21595,14 +21263,7 @@ plugins:
       - 'Skyrim_Best Voise Magic.esp'
   - name: 'SkyrimBalancedMagicSystem.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            str: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            str: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            str: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'checksum("SkyrimBalancedMagicSystem.esp",B3A41B23)'
   - name: 'SkyrimBalancedMagicSystem - spells.esp'
     msg: [ *obsolete ]
