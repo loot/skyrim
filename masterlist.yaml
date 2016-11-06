@@ -42,7 +42,7 @@ common:
       - lang: en
         text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
       - lang: ru
-        text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+        text: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)' #added additional info about localized fixed versions because condition for this message it is show message for espm with different checksum from fixed english version and message also will be displayed for any localisation of fixed version.
       - lang: es
         text: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - &patchB4CK
@@ -51,7 +51,7 @@ common:
       - lang: en
         text: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
       - lang: ru
-        text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+        text: 'Оригинальный файл был выпущен до выхода Creation Kit (07 фев. 2012). Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)' #added additional info about localized fixed versions because message also can be displayed for any localisation of fixed version.
       - lang: es
         text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - &obsolete
@@ -76,6 +76,13 @@ common:
         text: 'Файл испорчен и не должен использоваться.'
       - lang: es
         text: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+  - &harmful
+    type: warn
+    content:
+      - lang: en
+        text: 'This plugin is now considered harmful and should not be used.'
+      - lang: ru
+        text: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
   - &useOnlyOneX
     type: error
     content:
@@ -110,6 +117,37 @@ common:
         text: 'Can be used with a %1% but would require additional work. A Smashed Patch or Bash Patch should be used independently of one another.'
       - lang: es
         text: 'Se puede utilizar con un %1% pero requeriría un trabajo adicional. Deben de estar utilizado un Smashed Patch o un Bash Patch independiente del uno el otro.'
+      - lang: ru
+        text: 'Может быть использовано совместно с %1% но возможно потребуется дополнительная работа. Smashed Patch или Bash Patch должны быть использованы независимо друг от друга.'
+  - &ReqCBBE
+    type: say
+    content:
+      - lang: en
+        text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - lang: ru
+        text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - lang: es
+        text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+  - &ReqCBBEorDemUNP
+    type: say
+    content:
+      - lang: en
+        text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+      - lang: ru
+        text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+      - lang: es
+        text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) o [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+  - &ReqLBreplacer
+    type: say
+    content:
+      - lang: en
+        text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - lang: ru
+        text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+      - lang: es
+        text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
+        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+
 # Cleaning data
   - &dirtyPlugin
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
@@ -222,7 +260,7 @@ globals:
       - lang: en
         text: 'It appears you do not have the [latest version of SKSE](http://skse.silverlock.org). Some mods may require functionality added in the latest version of SKSE to work.'
       - lang: ru
-        text: 'Возможно, что вы используете НЕ [самую последнюю версию SKSE](http://skse.silverlock.org). Для работы некоторых модов может требоваться функционал, добавленный в последнюю версию SKSE'
+        text: 'Возможно у вас не установлена [новейшая версия SKSE](http://skse.silverlock.org). Для работы некоторых модов может требоваться функционал, добавленный в последней версии SKSE'
       - lang: es
         text: 'Parece que no tienes la última versión de SKSE. la nueva versión se puede encontrar [aquí](http://skse.silverlock.org/).'
       - lang: ko
@@ -235,7 +273,7 @@ globals:
       - lang: en
         text: 'Your SKSE is up-to-date.'
       - lang: ru
-        text: 'Ваш SKSE имеет последнюю версию.'
+        text: 'Ваш SKSE обновлен.'
       - lang: es
         text: 'Tienes la última versión de SKSE'
       - lang: ko
@@ -249,7 +287,7 @@ globals:
       - lang: en
         text: 'A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.'
       - lang: ru
-        text: 'Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.'
+        text: 'Установлен динамически созданный плагин. Смотрите заметки авторов, для получения подробной информации и определения лучшего порядка загрузки для таких плагинов.'
       - lang: es
         text: 'Tienes un plugin dinamicamente creado. Por favor, consulta las notas de autor para obtener más información sobre cómo determinar el mejor orden.'
       - lang: ko
@@ -358,9 +396,7 @@ plugins:
     global_priority: -120
     after:
       - 'Unofficial Skyrim Patch.esp'
-    msg:
-      - type: warn
-        content: 'This plugin is now considered harmful and should not be used.'
+    msg: [ *harmful ]
   - name: 'Dawnguard.esm'
     global_priority: -120
     after:
@@ -412,9 +448,7 @@ plugins:
     after:
       - 'Dawnguard.esm'
       - 'Unofficial Dawnguard Patch.esp'
-    msg:
-      - type: warn
-        content: 'This plugin is now considered harmful and should not be used.'
+    msg: [ *harmful ]
   - name: 'SCO Winter Landscape Decoloration.esp'
     global_priority: -120
   - name: 'SCO Winter Landscape Decoloration - Solstheim.esp'
@@ -490,9 +524,7 @@ plugins:
     after:
       - 'Hearthfires.esm'
       - 'Unofficial Hearthfire Patch.esp'
-    msg:
-      - type: warn
-        content: 'This plugin is now considered harmful and should not be used.'
+    msg: [ *harmful ]
   - name: 'Dragonborn.esm'
     global_priority: -120
     after:
@@ -548,9 +580,7 @@ plugins:
     after:
       - 'Dragonborn.esm'
       - 'Unofficial Dragonborn Patch.esp'
-    msg:
-      - type: warn
-        content: 'This plugin is now considered harmful and should not be used.'
+    msg: [ *harmful ]
   - name: 'Unofficial Skyrim Legendary Edition Patch.esp'
     global_priority: -120
     after:
@@ -967,7 +997,7 @@ plugins:
           - lang: en
             text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
           - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден по ссылке: [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: es
             text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
   - name: 'retreat.esm'
@@ -986,7 +1016,7 @@ plugins:
           - lang: en
             text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
           - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден по ссылке: [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
           - lang: es
             text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
   - name: 'Riftrun_HF_v_2_0.esp'
@@ -1025,16 +1055,13 @@ plugins:
     msg:
       - type: warn
         condition: 'version("JSwords.esm","14.0",<)'
-        content: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-      - type: warn
-        condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
         content:
           - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+            text: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+            text: 'Совместимый с версией 14.0 очищенный и исправленный патч совместимости в TES5Edit может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchOutSub
+        condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
     clean:
       - crc: 0x142A34B6
         util: TES5Edit v3.1.3
@@ -1069,14 +1096,7 @@ plugins:
         itm: 7
   - name: 'LiFE.esm'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+      - *ReqCBBEorDemUNP
 # ## Lighting.esm
 # ## this is a companion mod
 # ## Lightsabers.esm
@@ -1177,7 +1197,11 @@ plugins:
   - name: 'Natural Characters and Companions.esm'
     msg:
       - type: warn
-        content: 'LovelyHairstyles.esp is not active in your load order. LovelyHairstyles.esp is required for this mod to function correctly.'
+        content:
+          - lang: en
+            text: 'LovelyHairstyles.esp is not active in your load order. LovelyHairstyles.esp is required for this mod to function correctly.'
+          - lang: ru
+            text: 'LovelyHairstyles.esp не подключен, но требуется для правильного функционирования.'
         condition: 'not active("LovelyHairstyles.esp")'
   - name: 'NeV-P_ExtremeMaterials.esm'
     tag:
@@ -1965,14 +1989,7 @@ plugins:
           - lang: es
             text: 'Borrar. Esta incluido en el patch oficial 1.4.'
         condition: 'version("../TESV.exe","1.4",>)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Magnus20.esp",DE1D22AC)'
   - name: 'Magnus50.esp'
     msg:
@@ -1985,14 +2002,7 @@ plugins:
           - lang: es
             text: 'Borrar. Esta incluido en el patch oficial 1.4.'
         condition: 'version("../TESV.exe","1.4",>)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Magnus50.esp",1003FA02)'
   - name: 'Magnus100.esp'
     msg:
@@ -2005,14 +2015,7 @@ plugins:
           - lang: es
             text: 'Borrar. Esta incluido en el patch oficial 1.4.'
         condition: 'version("../TESV.exe","1.4",>)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Magnus100.esp",37C6B07A)'
   - name: 'Mannequinfix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -3019,47 +3022,19 @@ plugins:
 # ## Bethsoft6.118,128and9.187,193
   - name: 'Warmer Magic Lights v2.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Warmer Magic Lights v2.esp",2A1E2810)'
   - name: 'Warmer Magic Lights v2 - White.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Warmer Magic Lights v2 - White.esp",B5571C09)'
   - name: 'Warmer Magic Lights v2 - White - Big.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Warmer Magic Lights v2 - White - Big.esp",ACAE3F31)'
   - name: 'Warmer Magic Lights v2 - Big.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Warmer Magic Lights v2 - Big.esp",DE4F928D)'
 # ## NoTint.esp
 # ## Moved ClimatesOfTamriel From Here
@@ -3140,34 +3115,13 @@ plugins:
 # assorted k dds below from bugzilla are likely due to steam packaging reqs -LD
   - name: 'calientevanillaarmor - banditpack curvy.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'calientesvanillaarmor - banditpack slim.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'cbbev3_vanillapack.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'TouringCarriages.esp'
     global_priority: -90
   - name: 'Cutting Room Floor.esp'
@@ -3216,14 +3170,7 @@ plugins:
   - name: 'Weapons and Armor fixes.esp'
     msg:
       - *AlreadyInUSKP
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchOutSub
         condition: 'not checksum("Weapons and Armor fixes.esp",D27D2F2)'
       - type: say
         content:
@@ -3239,14 +3186,7 @@ plugins:
 # with other mods in Base group.
   - name: 'Weapons and Armor fixes - Hacks.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchOutSub
         condition: 'not checksum("Weapons and Armor fixes - Hacks.esp",119BC97C)'
   - name: 'sh_HF_goat_fix.esp'
     tag:
@@ -3502,14 +3442,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'BabettesFeastBalanced.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'version("BabettesFeastBalanced.esp","1.2",<)'
       - type: warn
         content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
@@ -3519,14 +3452,7 @@ plugins:
       - 'BabettesFeastWeakerEffects.esp'
   - name: 'BabettesFeastOverpowered.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'version("BabettesFeastOverpowered.esp","1.2",<)'
       - type: warn
         content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
@@ -3536,14 +3462,7 @@ plugins:
       - 'BabettesFeastWeakerEffects.esp'
   - name: 'BabettesFeastWeakerEffects.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'version("BabettesFeastWeakerEffects.esp","1.2",<)'
       - type: warn
         content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
@@ -3576,14 +3495,7 @@ plugins:
         subs: [ 'BagofTrash .esp file' ]
   - name: 'BanditsEyepatch.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchOutSub
         condition: 'not checksum("BanditsEyepatch.esp",43DE0DBC)'
   - name: 'Bandits Wear Helmets.esp'
     tag:
@@ -3674,7 +3586,7 @@ plugins:
           - lang: en
             text: 'Incompatible with: Hearthfires.esm. Use either BirdsHF.esp or BirdsHFclean.esp.'
           - lang: ru
-            text: 'Несовместим с: Hearthfires.esm. Используйте любой, или BirdsHF.esp или BirdsHFclean.esp.'
+            text: 'Несовместим с: Hearthfires.esm. Используйте BirdsHF.esp или BirdsHFclean.esp.'
           - lang: es
             text: 'Incompatible con: Hearthfires.esm. Usar BirdsHF.esp o BirdsHFclean.esp.'
         condition: 'active("Hearthfires.esm")'
@@ -3690,7 +3602,7 @@ plugins:
           - lang: en
             text: 'Incompatible with: Hearthfires.esm. Use either BirdsHF.esp or BirdsHFclean.esp.'
           - lang: ru
-            text: 'Несовместим с: Hearthfires.esm. Используйте любой, или BirdsHF.esp или BirdsHFclean.esp.'
+            text: 'Несовместим с: Hearthfires.esm. Используйте BirdsHF.esp или BirdsHFclean.esp.'
           - lang: es
             text: 'Incompatible con: Hearthfires.esm. Usar BirdsHF.esp o BirdsHFclean.esp.'
         condition: 'active("Hearthfires.esm")'
@@ -3699,7 +3611,7 @@ plugins:
           - lang: en
             text: 'Use either Birds.esp or Birdsclean.esp, not both.'
           - lang: ru
-            text: 'Используйте любой или Birds.esp или Birdsclean.esp, не обa.'
+            text: 'Используйте Birds.esp или Birdsclean.esp, не обa.'
           - lang: es
             text: 'Usar Birds.esp o Birdsclean.esp, no ambos.'
         condition: 'file("Birds.esp")'
@@ -3803,25 +3715,11 @@ plugins:
         content: 'Original file was released before the Creation Kit (07 Feb. 2012). It is recommended to download [Caos Quest for Goldbrand](http://www.nexusmods.com/skyrim/mods/5830) because a compatibility patch fixed and cleaned with TES5Edit is available.'
   - name: 'cao_goldbrand_WT.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'version("cao_goldbrand_WT.esp", "1.0", <)'
   - name: 'cao_ToolsTrade_BuyRL.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'checksum("cao_ToolsTrade_BuyRL.esp",3979D654)'
   - name: 'CarryWeightSpells.esp'
     dirty:
@@ -4756,14 +4654,7 @@ plugins:
         udr: 59
   - name: 'Lost Art of the Blacksmith.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Lost Art of the Blacksmith.esp",1720F631)'
   - name: 'LoversComfort.esp'
     req:
@@ -5277,7 +5168,7 @@ plugins:
           - lang: en
             text: 'Requires: Realistic Wildlife Loot, Realistic needs and diseases & the compatability patch to run them together'
           - lang: ru
-            text: 'Требуется: Realistic Wildlife Loot, Realistic needs and diseases & the compatability patch to run them together'
+            text: 'Требуется: Realistic Wildlife Loot, Realistic needs and diseases & патч совместимости для совместного запуска'
           - lang: es
             text: 'Requiere: Realistic Wildlife Loot, Realistic needs and diseases & the compatability patch to run them together'
         condition: 'not active("Realistic Wildlife Loot - Realistic.esp") or not active("Realistic Wildlife Loot - Reduced.esp")'
@@ -5811,14 +5702,7 @@ plugins:
       - Relev
   - name: 'ValsCraftingMeltdownAlpha.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     msg:
@@ -6166,7 +6050,7 @@ plugins:
           - lang: en
             text: 'RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.'
           - lang: ru
-            text: 'RaceMenuPlugin опционален и предоставляет поддержку альтернативного роста, груди, ягодиц и бицепсов. Если у вас возникают проблемы с этим, отключите RaceMenuPlugin.esp и проинформируйте автора.'
+            text: 'RaceMenuPlugin опционален и позволяет измененять рост, размеры груди, ягодиц, бицепсов и т.п. Если у вас возникают проблемы с ним, отключите RaceMenuPlugin.esp и проинформируйте автора.'
           - lang: es
             text: 'RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.'
   - name: 'SkyRealism - Simple Save System.+\.esp'
@@ -6452,16 +6336,7 @@ plugins:
   - name: 'ArmoredAlikrHoods.esp'
     msg: [ *obsolete ]
   - name: 'ArmoredNocturnal.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'armorkits.esp'
     tag:
       - Relev
@@ -6574,20 +6449,8 @@ plugins:
         subs: [ 'Better Bond of Matrimony .esp file' ]
   - name: 'Bikini Clothes.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - *ReqCBBE
+      - <<: *patchOutSub
         condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
   - name: 'bikiniADEC.esp'
     msg:
@@ -6869,12 +6732,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'CompanionsShields.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("CompanionsShields.esp",75F460D6)'
   - name: 'CoolItems1_2.esp'
     msg:
@@ -6946,12 +6804,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Daedric Extra Armor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("Daedric Extra Armor.esp",8DDD039)'
   - name: 'DaedricCrossbow.esp'
     dirty:
@@ -6985,12 +6838,7 @@ plugins:
             text: 'Requiere: [UNPB](http://www.nexusmods.com/skyrim/mods/37900)'
   - name: 'DarkNemesis.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("DarkNemesis.esp",CE5E555B)'
     tag:
       - name: Deactivate
@@ -7051,14 +6899,7 @@ plugins:
             text: 'Убедитесь что у вас установлена корректная версия типа тел: [DIMONIZED женское тело UNP](http://www.nexusmods.com/skyrim/mods/6709) или [женское тело CBBE](http://www.nexusmods.com/skyrim/mods/2666).'
   - name: 'DemonHunterV2armor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'detectbeing.esp'
     dirty:
       - crc: 0x120f41f1
@@ -7077,14 +6918,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'DHuntress.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'diamondweapons1\.[02]\.esp'
     msg: [ *obsolete ]
   - name: 'DIMclothes1.esp'
@@ -7106,34 +6940,15 @@ plugins:
       - 'DME.esp'
   - name: 'Doom Heavy Set.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
   - name: 'DPArmor.esp'
     msg:
-      - type: warn
+      - <<: *patchB4CK
         condition: 'version("DPArmor.esp","0.3",<)'
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - name: 'DragonboneCrossbow.esp'
     dirty:
       - crc: 0x294218c5
@@ -7360,13 +7175,8 @@ plugins:
         itm: 11
   - name: 'EternalShineArmorAndWeapons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-        condition: 'version("../TESV.exe","1.8",>) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
+      - <<: *patchOutSub
+        condition: 'version("..\TESV.exe","1.8",>) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Equipment of Eternal Shine.esp")'
@@ -7418,14 +7228,7 @@ plugins:
         itm: 2
   - name: 'FlameAtronachArmor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'Flare Arrow( Brighter| Explosive)?.esp'
     msg:
       - <<: *useOnlyOneX
@@ -7456,7 +7259,7 @@ plugins:
             text: 'Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
           - lang: es
             text: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-  - name: 'fox\d\d? Armor\.esp'
+  - name: 'fox(\d\d?)[^51-56] Armor\.esp' #up to fox50 for FoxMergedv2.6(checksumofesp,2E996104)
     msg:
       - type: warn
         content:
@@ -7469,11 +7272,8 @@ plugins:
         condition: 'file("FoxMerged.esp")'
   - name: 'Frostmourne.esp'
     msg:
-      - type: warn
-        condition: 'not checksum("Frostmourne.esp",428F46D4) and not checksum("Frostmourne.esp",51F43BA4) and version("../TESV.exe","1.8",>)'
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
+      - <<: *patchOutSub
+        condition: 'not checksum("Frostmourne.esp",428F46D4) and not checksum("Frostmourne.esp",51F43BA4) and version("..\TESV.exe","1.8",>)'
   - name: 'Frostmourne 1.0.1.esp'
     msg: [ *obsolete ]
   - name: 'Frostmourne 1.2.esp'
@@ -7491,44 +7291,16 @@ plugins:
         condition: 'file("frostmourneblade.esp")'
   - name: 'FullBootForKKSA.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'NordicSkaalHeavyFalmerWeightFix.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'GattiBondage0.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'GattiBondage1.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'Ghosu - Project Flintlock.esp'
     dirty:
       - crc: 0xee1910e
@@ -7570,7 +7342,7 @@ plugins:
           - lang: en
             text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            text: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("Hana.esp",C86C77D9)'
   - name: 'HartherzEnglish.esp'
     dirty:
@@ -7926,329 +7698,68 @@ plugins:
         condition: 'file("DIMclothes1.esp")'
   - name: 'Lady of Death.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'LBArmorPack.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Blood Mage.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'Blood Mage.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
-  - name: 'LB Ярл Clothes.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
+  - name: 'LB Jarl Clothes.esp'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Blood of the Divines.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Dark Lady.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Dragon Princess.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Dwemer Fury Heavy Set.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB_EnemiesEssplode!.esp'
     tag:
       - Relev
   - name: 'LB GoldLeopardRobe.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
-  - name: 'LB Jarl Clothes.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Lady Bat.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
     dirty:
       - crc: 0xcb996b7d
         <<: *dirtyPlugin
         udr: 1
   - name: 'LB Lady Keaira.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Lady .+\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Lustmord Vampire.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Lydia Armor.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Mandu Armor.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Medusa Armor.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB_MuchAdoSnowElves.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Necromance Robe.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Pantie & Boots.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Jewelry.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB RobeExperiencedMagician.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Santa Babe.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Underworld.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB Valkyrie.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LB VampLord.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LBClosetMagician.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LBGoldArmoredBikini.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LC_ArcherEliteArmor.esp'
     msg:
       - <<: *obsolete
@@ -8258,16 +7769,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 5
   - name: 'LC_AssassinOfShadownArmor.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LeatherBackpackBlack.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -8290,14 +7792,7 @@ plugins:
         subs: [ 'LeatherBackPack Original .esp file' ]
   - name: 'LeiFangAndChristieByNausicaa.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'LFArmors.esp'
     msg:
       - type: warn
@@ -8305,19 +7800,11 @@ plugins:
           - lang: en
             text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
           - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+            text: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
         condition: 'not checksum("LFArmors.esp",EF8F74B6)'
   - name: 'LH Jewel Collection.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+      - *ReqLBreplacer
       - type: say
         content:
           - lang: en
@@ -8328,14 +7815,7 @@ plugins:
             text: 'Requiere: [Lady Head](http://modgames.net/load/256-1-0-15866).'
   - name: 'Lich King''s Armor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchOutSub
         condition: 'checksum("Lich King''s Armor.esp",5C5EB4D7)'
   - name: 'light daedric armor.esp'
     dirty:
@@ -8376,12 +7856,7 @@ plugins:
         itm: 8
   - name: 'loners_sword.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("loners_sword.esp",246E1CBB)'
   - name: 'Longbows.esp'
     tag:
@@ -8536,14 +8011,7 @@ plugins:
         condition: 'checksum("Monys Portable Crafting Equipment.esp",9B33A305)'
   - name: 'MorrowindArmor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchOutSub
         condition: 'checksum("MorrowindArmor.esp",7DDD7CAC)'
   - name: 'MorrowindGlass.esp'
     msg:
@@ -8737,14 +8205,7 @@ plugins:
             text: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [UNP Blessed Body (UNPB)](http://www.nexusmods.com/skyrim/mods/37900).'
   - name: 'Niagras Bleach Pack.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'not checksum("Niagras Bleach Pack.esp",32E5FB23)'
   - name: 'Nicoroshi Creations.esp'
     tag:
@@ -8983,15 +8444,8 @@ plugins:
         udr: 3
   - name: 'Redguard Shield.esp'
     msg:
-      - type: warn
+      - <<: *patchB4CK
         condition: 'version("Redguard Shield.esp","1.2",<)'
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
   - name: 'RedguardKnight.esp'
     tag:
       - name: Deactivate
@@ -9045,14 +8499,7 @@ plugins:
       - Delev
   - name: 'RogueOutfit.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'romulusarmor.esp'
     dirty:
       - crc: 0x355fe880
@@ -9092,24 +8539,10 @@ plugins:
         itm: 1
   - name: 'seducesets.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'SED7-CBBE3.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'SED7-BettermalesFLACID_SILVEREDITION_malePiercing_PA.esp'
     msg:
       - type: say
@@ -9132,12 +8565,7 @@ plugins:
             text: 'Requiere: [UNPB](http://www.nexusmods.com/skyrim/mods/37900)'
   - name: 'SeraphimStandAlone.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("SeraphimStandAlone.esp",556E0B68)'
   - name: 'SeraphineHuntedArmor.esp'
     msg:
@@ -9217,22 +8645,8 @@ plugins:
         condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
   - name: 'Skimpy Plate Armor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+      - *ReqCBBE
+      - <<: *patchOutSub
         condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
   - name: 'skinripper essentials kit.esp'
     tag:
@@ -9258,12 +8672,7 @@ plugins:
         itm: 2
   - name: 'SnowyNightingale.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("SnowyNightingale.esp",83B46ABF)'
   - name: 'Song General Armor&weapon.esp'
     tag:
@@ -9278,12 +8687,7 @@ plugins:
         itm: 1
   - name: 'Sovngarde Steel Armor and Weapons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("Sovngarde Steel Armor and Weapons.esp",B84EB4CE)'
   - name: 'Space Wiking''s Dwemer Exoskeleton.esp'
     dirty:
@@ -9326,14 +8730,7 @@ plugins:
         itm: 3
   - name: 'Spriggan Armor 2.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
     dirty:
       - crc: 0xc5e7b65b
         <<: *dirtyPlugin
@@ -9381,14 +8778,7 @@ plugins:
             text: 'Устарело. Уже включено в Sharlikran''s Compatability Patch.'
           - lang: es
             text: 'Obsoleto. Esta incluido en Sharlikran''s Compatability Patch.'
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
       - *corrupt
   - name: 'SuccubusUNPByNausicaa.esp'
     msg:
@@ -9487,33 +8877,14 @@ plugins:
       - Relev
   - name: 'TemplarArmor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("TemplarArmor.esp",EE0395E4)'
   - name: 'TERAArmors_CBBE.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'TeraArmors-CBBEByNausicaa.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'TERAArmors.esp'
     msg:
       - type: say
@@ -9742,14 +9113,7 @@ plugins:
         condition: 'file("SkyRe_Plugin_VanguardArmor_3.esp") or file("SG_HothTrooper.esp")'
   - name: 'ViceroyInquisitor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'viciousdawnbreaker.esp'
     tag:
       - name: Deactivate
@@ -9779,14 +9143,7 @@ plugins:
       - Relev
   - name: 'WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchOutSub
         condition: 'not checksum("WeaponsOf3E.esp",67F338A1)'
       - type: warn
         content:
@@ -9810,14 +9167,7 @@ plugins:
       - Relev
   - name: 'WeaponsOf3E - No Leveled Lists.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchOutSub
         condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
   - name: '3rdEraWeaponsMoS.esp'
     msg:
@@ -15752,14 +15102,7 @@ plugins:
         itm: 9
   - name: 'Sweet&Sexy Lingerie.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
     dirty:
       - crc: 0x7bb104b9
         <<: *dirtyPlugin
@@ -17155,24 +16498,14 @@ plugins:
         util: TES5Edit v3.1.3
   - name: 'Headbomb''s Better Sorting - Ammo.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17184,84 +16517,49 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Food .esp file' ]
   - name: 'Headbomb''s Better Sorting - Food (Light Weight).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17273,48 +16571,28 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Potions .esp file' ]
   - name: 'Headbomb''s Better Sorting - Potions (Light Weight).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -17326,24 +16604,14 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Soul Gems .esp file' ]
   - name: 'Headbomb''s Better Sorting - Soul Gems (Ranked).esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
       - type: say
         content: 'Do not clean the file further with TES5Edit.'
@@ -18073,16 +17341,7 @@ plugins:
           - lang: ru
             text: 'Несовместим с: Другие, меняющие драконов,  моды(Deadly Dragons и т.п.)'
   - name: 'LB Yarl Clothes.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: ru
-            text: 'Требуется: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-          - lang: es
-            text: 'Requiere: [Lady Body](http://modgames.net/load/256-1-0-11011).'
-        condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+    msg: [ *ReqLBreplacer ]
   - name: 'LegionArmorVariety(OPTIONA?L?\d)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -18392,12 +17651,7 @@ plugins:
       - 'OpenFaceGuardHelmets.esp'
   - name: 'OpenFaceHelmets.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("OpenFaceHelmets.esp",D695AB86)'
   - name: 'Organized Books v(0.1|1.0)?\.esp'
     msg: [ *obsolete ]
@@ -21952,14 +21206,7 @@ plugins:
       - 'Skyrim_Best Voise Magic.esp'
   - name: 'SkyrimBalancedMagicSystem.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *patchB4CK
         condition: 'checksum("SkyrimBalancedMagicSystem.esp",B3A41B23)'
   - name: 'SkyrimBalancedMagicSystem - spells.esp'
     msg: [ *obsolete ]
@@ -22077,12 +21324,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Fortify Enchanting necklace.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("Fortify Enchanting necklace.esp",E170C251)'
   - name: 'HasteEnchantment.esp'
     dirty:
@@ -22449,12 +21691,7 @@ plugins:
         condition: 'not active("Dawnguard.esm") and file("ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp")'
   - name: 'cao_PerkRanks.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *patchOutSub
         condition: 'not checksum("cao_PerkRanks.esp",B2A7936F)'
   - name: 'Character_Generation.esp'
     req:
@@ -24296,14 +23533,7 @@ plugins:
     msg: [ *corrupt ]
   - name: 'Angelina Jolie.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
   - name: 'Angelina Jolie UNP.esp'
     msg:
       - type: say
@@ -24503,14 +23733,7 @@ plugins:
         condition: 'version("../TESV.exe","1.5.26",>)'
   - name: 'Companion_Crea.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+      - *ReqCBBEorDemUNP
       - type: say
         content:
           - lang: en
@@ -24521,14 +23744,7 @@ plugins:
             text: 'Be sure you have the correct esp for the body type installed.'
   - name: 'Companion_Lese.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+      - *ReqCBBEorDemUNP
       - type: say
         content:
           - lang: en
@@ -24918,14 +24134,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'HousecarlWhiterun Sexy Lydia v0.5.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666)'
+      - *ReqCBBE
       - <<: *corrupt
         condition: 'checksum("HousecarlWhiterun Sexy Lydia v0.5.esp",7C29388F)'
   - name: 'Hroki.esp'
@@ -25931,7 +25140,7 @@ plugins:
           - lang: en
             text: 'Ragdolls will conflict with other mods that change the skeleton.nif. Check [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712) for compatibly with other skeleton.nif.'
           - lang: ru
-            text: 'Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712), для поддержки других версий skeleton.nif.'
+            text: 'Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712), для поддержки других версий skeleton.nif или попробуйте использовать [XP32 Maximum Skeleton Extended - XPMSE](http://www.nexusmods.com/skyrim/mods/68000).'
   - name: 'driveableboat.esp'
     dirty:
       - crc: 0x920c6e44
@@ -26023,14 +25232,7 @@ plugins:
     inc:
       - 'LiFE.esm'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: ru
-            text: 'Требуется: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: es
-            text: 'Requiere: [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+      - *ReqCBBEorDemUNP
   - name: 'nord_nightseye01.esp'
     dirty:
       - crc: 0xbb8b06a8
