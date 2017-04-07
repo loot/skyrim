@@ -10752,12 +10752,8 @@ plugins:
             text: 'T3nd0 прекратил предоставлять отдельные патчи, с тех пор, как он создал SkyProc патчер, для динамического создания патчей. Удалите этот файл и используйте его патчер, как и задумывал патчер. Патчер некорректно работает с русскими модами.'
           - lang: es
             text: 'T3nd0 stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.'
-      - type: error
-        content:
-          - lang: en
-            text: 'The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            text: 'Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - <<: *installOriginalResources
+        type: error
         condition: 'not file("JSwords(DV)?\.esm")'
     tag:
       - Delev
@@ -10771,12 +10767,8 @@ plugins:
             text: 'T3nd0 сообщил команде LOOT, что он не помнит, что создавал этот патч, так что это вероятно не его.  Однако, T3nd0 прекратил предоставлять отдельные патчи, с тех пор, как он создал SkyProc патчер, для динамического создания патчей. Удалите этот файл и используйте его патчер, как и задумывал патчер. Патчер некорректно работает с русскими модами.'
           - lang: es
             text: 'T3nd0 has informed the LOOT team that he does not remember making the file so it''s probably not his.  However, he stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.'
-      - type: error
-        content:
-          - lang: en
-            text: 'The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-          - lang: ru
-            text: 'Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+      - <<: *installOriginalResources
+        type: error
         condition: 'not file("JSwords(DV)?\.esm")'
     tag:
       - Delev
