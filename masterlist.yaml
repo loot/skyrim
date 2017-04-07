@@ -89,6 +89,17 @@ common:
     condition: 'file("Sexier Housecarls.esp")'
     subs: [ 'Sexier Housecarls.esp' ]
 
+  - &fixedInOfficialPatchX
+    type: error
+    content:
+      - lang: en
+        text: 'Delete. Fixed in Official Patch %1%.'
+      - lang: ru
+        text: 'Удалите. Исправлено в официальном патче %1%.'
+      - lang: es
+        text: 'Borrar. Incluido en el patch oficial %1%.'
+
+
   - &doNotClean
     type: say
     content:
@@ -1759,15 +1770,9 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'Chesko_MatchingSetPerkFix.esp'
     msg:
-      - type: error
-        condition: 'version("../TESV.exe", "1.9", >)'
-        content:
-          - lang: en
-            text: 'Delete. Fixed in Official Patch 1.9.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.9.'
-          - lang: es
-            text: 'Borrar. Incluido en el patch oficial 1.9.'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.9", >=)'
+        subs: [ '1.9' ]
   - name: 'Cloak Fix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'CombatMusicFix.esp'
@@ -1794,15 +1799,9 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'Deflect Arrows Perk Fix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.5.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.5.'
-          - lang: es
-            text: 'Borrar. Incluido en el patch oficial 1.5.'
-        condition: 'version("../TESV.exe","1.4.27",>)'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.5", >=)'
+        subs: [ '1.5' ]
   - name: 'Derkeethus_fix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'DialogueWithAVampireOrWhatever.esp'
@@ -1854,15 +1853,9 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'GiantPhysicsFix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed in Official Patch 1.4.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.4.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.4.'
-        condition: 'version("../TESV.exe","1.4",>)'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.4", >=)'
+        subs: [ '1.4' ]
   - name: 'GM-KhajiitDSHFix.esp'
     msg:
       - *corrupt
@@ -1919,26 +1912,14 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'LCBM.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.5.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.5.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.5.'
-        condition: 'version("../TESV.exe","1.4.27",>)'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.5", >=)'
+        subs: [ '1.5' ]
   - name: 'Letrush Fix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed in Official Patch 1.8.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.8.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.8.'
-        condition: 'version("../TESV.exe","1.7.7",>)'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.8", >=)'
+        subs: [ '1.8' ]
   - name: 'lightplacement.esp'
     msg: [ *obsolete ]
   - name: 'lightingfix.esp'
@@ -1972,41 +1953,23 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'Magnus20.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.4.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.4.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.4.'
-        condition: 'version("../TESV.exe","1.4",>)'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.4", >=)'
+        subs: [ '1.4' ]
       - <<: *patchB4CK
         condition: 'not checksum("Magnus20.esp",DE1D22AC)'
   - name: 'Magnus50.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.4.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.4.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.4.'
-        condition: 'version("../TESV.exe","1.4",>)'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.4", >=)'
+        subs: [ '1.4' ]
       - <<: *patchB4CK
         condition: 'not checksum("Magnus50.esp",1003FA02)'
   - name: 'Magnus100.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.4.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.4.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.4.'
-        condition: 'version("../TESV.exe","1.4",>)'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.4", >=)'
+        subs: [ '1.4' ]
       - <<: *patchB4CK
         condition: 'not checksum("Magnus100.esp",37C6B07A)'
   - name: 'Mannequinfix.esp'
@@ -2015,15 +1978,9 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'MatchingSetFixes.esp'
     msg:
-      - type: error
-        condition: 'version("../TESV.exe", "1.9", >)'
-        content:
-          - lang: en
-            text: 'Delete. Fixed in Official Patch 1.9.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.9.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.9.'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.9", >=)'
+        subs: [ '1.9' ]
   - name: 'Miner''s Clothes Variant Fix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'Minor Miner Fixes.esp'
@@ -2044,15 +2001,9 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'NordHeroBowTemperFix.esp'
     msg:
-      - type: error
-        condition: 'version("../TESV.exe","1.9",>)'
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.9.26.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.9.26.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.9.26.'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.9", >=)'
+        subs: [ '1.9.26' ]
   - name: 'onehandeddagger.esp'
     msg: [ *AlreadyInUSKP ]
 # ## Orc&ElfFix4TBBP.esp
@@ -2067,15 +2018,9 @@ plugins:
         subs: [ 'ProudspireManorImprovements.esp' ]
   - name: 'Proudspire Manor Weapon Rack Fixes.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.5.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.5.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.5.'
-        condition: 'version("../TESV.exe","1.4.27",>)'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.5", >=)'
+        subs: [ '1.5' ]
   - name: 'Prowler.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'Quick Orc Fixes.esp'
@@ -2090,26 +2035,14 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'RiverwoodTraderInvestorFix.esp'
     msg:
-      - type: error
-        condition: 'version("../TESV.exe","1.9",>)'
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.9.26.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.9.26.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.9.26.'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.9", >=)'
+        subs: [ '1.9.26' ]
   - name: 'SanguineRoseFix.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.5.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.5.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.5.'
-        condition: 'version("../TESV.exe","1.4.27",>)'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.5", >=)'
+        subs: [ '1.5' ]
   - name: 'sapphire_speak_fix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'Severin Manor Music.esp'
@@ -2132,37 +2065,19 @@ plugins:
     msg: [ *AlreadyInUSKP ]
   - name: 'StaffOfMagnusFix.esp'
     msg:
-      - type: error
-        condition: 'version("../TESV.exe","1.4",>)'
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.4.26.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.4.26.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.4.26.'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.4", >=)'
+        subs: [ '1.4.26' ]
   - name: 'stormcloak boot fix.esp'
     msg:
-      - type: error
-        condition: 'version("../TESV.exe","1.9",>)'
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.9.26.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.9.26.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.9.26.'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.9", >=)'
+        subs: [ '1.9.26' ]
   - name: 'StuddedArmorFixes.esp'
     msg:
-      - type: error
-        condition: 'version("../TESV.exe","1.9",>)'
-        content:
-          - lang: en
-            text: 'Delete. Fixed by Official Patch 1.9.26.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном патче 1.9.26.'
-          - lang: es
-            text: 'Borrar. Esta incluido en el patch oficial 1.9.26.'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.9", >=)'
+        subs: [ '1.9.26' ]
   - name: 'SybilleStentorFix.esp'
     msg: [ *AlreadyInUSKP ]
   - name: 'TalosShrineFix.esp'
@@ -2248,14 +2163,9 @@ plugins:
     msg: [ *alreadyInUDGP ]
   - name: 'chopping_block_wood_fires.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed in Bethesda''s official update February 2013.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном обновлении от Bethesda, февраль 2013.'
-          - lang: es
-            text: 'Borrar. Includido en el update official de febrero 2013.'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.8", >=)'
+        subs: [ '1.8' ]
 # ## correctdoucebriseALCH.esp
 # ## french patch to allow the purchase of alchemy lab in Breezehome under DG
   - name: 'CraftableBoneHawkRings.esp'
@@ -2276,14 +2186,9 @@ plugins:
     msg: [ *alreadyInUDBP ]
   - name: 'HDtextures01.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. Fixed in Bethesda''s official update February 2013.'
-          - lang: ru
-            text: 'Удалите. Исправлено в официальном обновлении от Bethesda, февраль 2013.'
-          - lang: es
-            text: 'Borrar. Includido en el update official de febrero 2013.'
+      - <<: *fixedInOfficialPatchX
+        condition: 'version("../TESV.exe", "1.8", >=)'
+        subs: [ '1.8' ]
   - name: 'Headtracking Fix - Dawnguard.esp'
     msg: [ *alreadyInUDGP ]
   - name: 'HF-MoveSpouse.esp'
