@@ -2938,16 +2938,8 @@ plugins:
         itm: 62
         udr: 60
   - name: 'SI_VanillaPrizes.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either SI_PrizesDoubled.esp or SI_VanillaPrizes.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или SI_PrizesDoubled.esp или SI_VanillaPrizes.esp, не оба.'
-          - lang: es
-            text: 'Usar SI_PrizesDoubled.esp o SI_VanillaPrizes.esp, no ambos.'
-        condition: 'file("SI_PrizesDoubled.esp")'
+    inc:
+      - 'SI_PrizesDoubled.esp'
   - name: 'SIRW.esp'
     tag:
       - Delev
@@ -3148,16 +3140,8 @@ plugins:
         udr: 51
         nav: 13
   - name: 'Back off, [Subject Name Here]!.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Back off, Barbas!.esp or Back off, [Subject Name Here]!.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Back off, Barbas!.esp или Back off, [Subject Name Here]!.esp, не оба.'
-          - lang: es
-            text: 'Usar Back off, Barbas!.esp o Back off, [Subject Name Here]!.esp, no ambos.'
-        condition: 'file("Back off, Barbas!.esp")'
+    inc:
+      - 'Back off, Barbas!.esp'
   - name: 'BagofTrash\w*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -3250,41 +3234,17 @@ plugins:
         itm: 117
         udr: 3
   - name: 'Birds.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Hearthfires.esm. Use either BirdsHF.esp or BirdsHFclean.esp.'
-          - lang: ru
-            text: 'Несовместим с: Hearthfires.esm. Используйте BirdsHF.esp или BirdsHFclean.esp.'
-          - lang: es
-            text: 'Incompatible con: Hearthfires.esm. Usar BirdsHF.esp o BirdsHFclean.esp.'
-        condition: 'active("Hearthfires.esm")'
+    inc:
+      - 'Hearthfires.esm'
     dirty:
       - crc: 0x200672c3
         <<: *dirtyPlugin
         itm: 376
         udr: 2
   - name: 'Birdsclean.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Hearthfires.esm. Use either BirdsHF.esp or BirdsHFclean.esp.'
-          - lang: ru
-            text: 'Несовместим с: Hearthfires.esm. Используйте BirdsHF.esp или BirdsHFclean.esp.'
-          - lang: es
-            text: 'Incompatible con: Hearthfires.esm. Usar BirdsHF.esp o BirdsHFclean.esp.'
-        condition: 'active("Hearthfires.esm")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Birds.esp or Birdsclean.esp, not both.'
-          - lang: ru
-            text: 'Используйте Birds.esp или Birdsclean.esp, не обa.'
-          - lang: es
-            text: 'Usar Birds.esp o Birdsclean.esp, no ambos.'
-        condition: 'file("Birds.esp")'
+    inc:
+      - 'Hearthfires.esm'
+      - 'Birds.esp'
     dirty:
       - crc: 0xdcf07465
         <<: *dirtyPlugin
@@ -3481,16 +3441,8 @@ plugins:
       - Delev
       - Relev
   - name: 'RecettesMaterielFabrication.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either CraftingMaterialsRecipes.esp or RecettesMaterielFabrication.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или CraftingMaterialsRecipes.esp или RecettesMaterielFabrication.esp, не оба.'
-          - lang: es
-            text: 'Usar CraftingMaterialsRecipes.esp o RecettesMaterielFabrication.esp, no ambos.'
-        condition: 'file("CraftingMaterialsRecipes.esp")'
+    inc:
+      - 'CraftingMaterialsRecipes.esp'
   - name: 'Creepy Dungeons.esp'
     msg:
       - type: warn
@@ -3521,16 +3473,9 @@ plugins:
       - Delev
       - Relev
   - name: 'Cumulable Blessings.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible: Use Dawnguard version.'
-          - lang: ru
-            text: 'Несовместим с: Use Dawnguard version.'
-          - lang: es
-            text: 'Incompatible: Utilizar la versión para Dawnguard.'
-        condition: 'checksum("Cumulable Blessings.esp",DA1971DC) and active("Dawnguard.esm")'
+    inc:
+      - name: 'Dawnguard.esm'
+        condition: 'checksum("Cumulable Blessings.esp",DA1971DC)'
     dirty:
       - crc: 0xbcc10635
         <<: *dirtyPlugin
@@ -4077,16 +4022,7 @@ plugins:
     inc:
       - 'JBS_overhaul.esp'
       - 'JBS_overhaul_thalmor.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: jbs_smithing_overhaul.esp use More Realistic Recipes [revised] instead.'
-          - lang: ru
-            text: 'Несовместим с: jbs_smithing_overhaul.esp используйте вместо этого мод  More Realistic Recipes [revised].'
-          - lang: es
-            text: 'Incompatible con: jbs_smithing_overhaul.esp utilizar More Realistic Recipes [revised] en vez.'
-        condition: 'file("jbs_smithing_overhaul.esp")'
+      - 'jbs_smithing_overhaul.esp'
   - name: 'jbs_item_breakdown.esp'
     inc:
       - 'JBS_overhaul.esp'
@@ -4152,16 +4088,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Kuun''s angels drop worn armor.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Kuun''s angels drop armor.esp or Kuun''s angels drop worn armor.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Kuun''s angels drop armor.esp или Kuun''s angels drop worn armor.esp, не оба.'
-          - lang: es
-            text: 'Usar Kuun''s angels drop armor.esp o Kuun''s angels drop worn armor.esp, no ambos.'
-        condition: 'file("Kuun''s angels drop armor.esp")'
+    inc:
+      - 'Kuun''s angels drop armor.esp'
   - name: 'Langsam wirkende Tränke.esp'
     msg:
       - <<: *corrupt
@@ -4313,16 +4241,7 @@ plugins:
   - name: 'MAD Ingots & Leather.esp'
     inc:
       - 'Ars Metallica.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either MAD Ingots & Leather.esp or MAD Ingots & Leather Ars Metallica Compatible.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или MAD Ingots & Leather.esp или MAD Ingots & Leather Ars Metallica Compatible.esp, не оба.'
-          - lang: es
-            text: 'Usar MAD Ingots & Leather.esp o MAD Ingots & Leather Ars Metallica Compatible.esp, no ambos.'
-        condition: 'file("MAD Ingots & Leather Ars Metallica Compatible.esp")'
+      - 'MAD Ingots & Leather Ars Metallica Compatible.esp'
   - name: 'Magecraft.esp'
     dirty:
       - crc: 0x8cd7efba
@@ -4366,16 +4285,8 @@ plugins:
         itm: 5
         udr: 2
   - name: 'Monster Mounts Dawnguard.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Montures Monstres.esp or Monster Mounts Dawnguard.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой Montures Monstres.esp или Monster Mounts Dawnguard.esp, не оба.'
-          - lang: es
-            text: 'Usar Montures Monstres.esp o Monster Mounts Dawnguard.esp, no ambos.'
-        condition: 'file("Montures Monstres.esp")'
+    inc:
+      - 'Montures Monstres.esp'
     dirty:
       - crc: 0x261535fb
         <<: *dirtyPlugin
@@ -4458,16 +4369,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Nocturnal Craftable Armors.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Author states in Nexus description that Royal Bloodlines (Vampirelordroyal.esp) will break this mod.'
-          - lang: ru
-            text: 'Автор сообщает в описании на нексусе, что Royal Bloodlines (Vampirelordroyal.esp) может портить этот мод.'
-          - lang: es
-            text: 'Según el autor Royal Bloodlines (Vampirelordroyal.esp) no funcionará con este mod.'
-        condition: 'file("Vampirelordroyal.esp")'
+    inc:
+      - 'Vampirelordroyal.esp'
   - name: 'Nord Needs + Cooking Expanded patch.esp'
     req:
       - name: 'CookingExpanded.esp'
@@ -4475,16 +4378,8 @@ plugins:
       - name: 'NordNeeds.esp'
         display: '[NordNeeds](http://www.nexusmods.com/skyrim/mods/21384)'
   - name: 'RecettesSansSel.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either NoSaltRecipes.esp or RecettesSansSel.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или NoSaltRecipes.esp или RecettesSansSel.esp, не оба.'
-          - lang: es
-            text: 'Usar NoSaltRecipes.esp o RecettesSansSel.esp, no ambos.'
-        condition: 'file("NoSaltRecipes.esp")'
+    inc:
+      - 'NoSaltRecipes.esp'
   - name: 'NPCPerked.esp'
     msg:
       - type: say
@@ -4526,19 +4421,12 @@ plugins:
         content: 'If this file is not higher than v1.2.2, update to the latest version.'
         condition: 'not checksum("People Have Lanterns.esp",DC3B2BAE)'
   - name: 'People Have Torches.esp'
+    inc:
+      - 'People Have Lanterns.esp'
     msg:
       - type: say
         content: 'If this file is not higher than v1.2.2, update to the latest version.'
         condition: 'not checksum("People Have Torches.esp",7E5D2415)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either People Have Lanterns.esp or People Have Torches.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или People Have Lanterns.esp или People Have Torches.esp, не обa.'
-          - lang: es
-            text: 'Usar People Have Lanterns.esp o People Have Torches.esp, no ambos.'
-        condition: 'file("People Have Lanterns.esp")'
   - name: 'PerkReset.esp'
     msg:
       - type: warn
@@ -4555,16 +4443,8 @@ plugins:
         content: 'Update (PU,PU-DG,PU-DB) to Perks Unbound - Merged.esp'
         condition: 'file("Perks Unbound - Dragonborn.esp") and file("Perks Unbound - Dawnguard.esp")'
   - name: 'Perks Unbound - Helmless Warrior.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Perks Unbound.esp or Perks Unbound - Helmless Warrior.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Perks Unbound.esp или Perks Unbound - Helmless Warrior.esp, не обa.'
-          - lang: es
-            text: 'Usar Perks Unbound.esp or Perks Unbound - Helmless Warrior.esp, no ambos.'
-        condition: 'file("Perks Unbound.esp")'
+    inc:
+      - 'Perks Unbound.esp'
   - name: 'pf_removeenchantingrestrictions.esp'
     msg: [ *corrupt ]
   - name: 'phiNoFF.esp'
@@ -4791,16 +4671,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'rt_Animal - Processing.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use either rt_AutoHarvest.esp or rt_Animal - Processing.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или rt_AutoHarvest.esp или rt_Animal - Processing.esp, не оба.'
-          - lang: es
-            text: 'Usar rt_AutoHarvest.esp o rt_Animal - Processing.esp, no ambos.'
-        condition: 'file("rt_AutoHarvest.esp")'
+    inc:
+      - 'rt_AutoHarvest.esp'
   - name: 'rt_AutoHarvest.esp'
     req:
       - name: '../skse_loader.exe'
@@ -4946,19 +4818,13 @@ plugins:
     after:
       - 'Sleeping Dangers - Sands of Time.esp'
       - 'SleepingDangers-SandsofTime.esp'
+    inc:
+      - name: 'Skyrim Immersive Creatures.esm'
+        condition: 'not checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
     msg:
       - type: say
         content: 'This is the Lore-Friendly version by jackstarr.  Do not use the original esp or esm by lifestorock.'
         condition: 'checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Skyrim Immersive Creatures.esm or Skyrim Immersive Creatures.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Skyrim Immersive Creatures.esm или Skyrim Immersive Creatures.esp, не обa.'
-          - lang: es
-            text: 'Usar Skyrim Immersive Creatures.esm or Skyrim Immersive Creatures.esp, no ambos.'
-        condition: 'not checksum("Skyrim Immersive Creatures.esp",2EEAD88A) and active("Skyrim Immersive Creatures.esm")'
     tag:
       - Delev
       - Relev
@@ -5170,6 +5036,8 @@ plugins:
   - name: 'SwiftPotion.esp'
     req:
       - *SKSE
+    inc:
+      - 'Chesko_SwiftPotion.esp'
     msg:
       - type: warn
         content:
@@ -5180,15 +5048,6 @@ plugins:
           - lang: es
             text: 'SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
         condition: 'not active("SkyUI.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Chesko_SwiftPotion.esp or SwiftPotion.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Chesko_SwiftPotion.esp или SwiftPotion.esp, не обa.'
-          - lang: es
-            text: 'Usar Chesko_SwiftPotion.esp or SwiftPotion.esp, no ambos.'
-        condition: 'file("Chesko_SwiftPotion.esp")'
   - name: 'Syynx Stubborn Skeletons.esp'
     dirty:
       - crc: 0xd1641b6b
@@ -5201,16 +5060,8 @@ plugins:
         itm: 15
         udr: 32
   - name: 'Tailoring No Perks.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Tailoring.esp or Tailoring No Perks.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Tailoring.esp или Tailoring No Perks.esp, не оба.'
-          - lang: es
-            text: 'Usar Tailoring.esp o Tailoring No Perks.esp, no ambos.'
-        condition: 'file("Tailoring.esp")'
+    inc:
+      - 'Tailoring.esp'
     dirty:
       - crc: 0x49889e2d
         <<: *dirtyPlugin
@@ -5312,16 +5163,8 @@ plugins:
       - <<: *preCKSharlikranPatch
         condition: 'not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete ''Valdacil''s Item Sorting - Smithing Smelter Categories.esp'' or use instead.'
-          - lang: ru
-            text: 'Удалите ''Valdacil''s Item Sorting - Smithing Smelter Categories.esp'' или используйте вместо этого.'
-          - lang: es
-            text: 'Borrar ''Valdacil''s Item Sorting - Smithing Smelter Categories.esp'' o utilizar en vez.'
-        condition: 'file("Valdacil''s Item Sorting - Smithing Smelter Categories.esp")'
+    inc:
+      - 'Valdacil''s Item Sorting - Smithing Smelter Categories.esp'
   - name: 'VinillaSnowWindyand.+percentLessView\.esp'
     msg:
       - type: say
@@ -5363,16 +5206,8 @@ plugins:
       - crc: 0x3D7CC687
         util: TES5Edit v3.1.3
   - name: 'Where''s My Horse Gone Essential Horses.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Where''s My Horse Gone.esp or Where''s My Horse Gone Essential Horses.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Where''s My Horse Gone.esp или Where''s My Horse Gone Essential Horses.esp, не оба.'
-          - lang: es
-            text: 'Usar Where''s My Horse Gone.esp o Where''s My Horse Gone Essential Horses.esp, no ambos.'
-        condition: 'file("Where''s My Horse Gone.esp")'
+    inc:
+      - 'Where''s My Horse Gone.esp'
   - name: 'Wild Horses of Skyrim.esp'
     dirty:
       - crc: 0x81afca9f
@@ -6352,16 +6187,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Crossbows_Basic_Collection_EN.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Crossbows_Basic_Collection_DE.esp or Crossbows_Basic_Collection_EN.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Crossbows_Basic_Collection_DE.esp или Crossbows_Basic_Collection_EN.esp, не обa.'
-          - lang: es
-            text: 'Usar Crossbows_Basic_Collection_DE.esp o Crossbows_Basic_Collection_EN.esp, no ambos.'
-        condition: 'file("Crossbows_Basic_Collection_DE.esp")'
+    inc:
+      - 'Crossbows_Basic_Collection_DE.esp'
     dirty:
       - crc: 0xe4a653b4
         <<: *dirtyPlugin
@@ -6709,16 +6536,8 @@ plugins:
         <<: *dirtyPlugin
         udr: 1
   - name: 'Enchanting Scrolls.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Enchanting Scrolls.esp or Enchanting Scrolls.esm, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Enchanting Scrolls.esp или Enchanting Scrolls.esm, не оба.'
-          - lang: es
-            text: 'Usar Enchanting Scrolls.esp o Enchanting Scrolls.esm, no ambos.'
-        condition: 'file("Enchanting Scrolls.esm")'
+    inc:
+      - 'Enchanting Scrolls.esm'
     dirty:
       - crc: 0x95eda249
         <<: *dirtyPlugin
@@ -6848,16 +6667,8 @@ plugins:
   - name: 'Frostmourne 1.2.esp'
     msg: [ *obsolete ]
   - name: 'frostmournebladeNoEnchant.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either frostmourneblade.esp or frostmournebladeNoEnchant.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или frostmourneblade.esp или frostmournebladeNoEnchant.esp, не оба.'
-          - lang: es
-            text: 'Usar frostmourneblade.esp o frostmournebladeNoEnchant.esp, no ambos.'
-        condition: 'file("frostmourneblade.esp")'
+    inc:
+      - 'frostmourneblade.esp'
   - name: 'FullBootForKKSA.esp'
     msg:
       - *ReqCBBE
@@ -7567,16 +7378,9 @@ plugins:
       - <<: *patchOutSub
         condition: 'checksum("MorrowindArmor.esp",7DDD7CAC)'
   - name: 'MorrowindGlass.esp'
+    inc:
+      - 'MorrowindArmor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either MorrowindArmor.esp or MorrowindGlass.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или MorrowindArmor.esp или MorrowindGlass.esp, не обa.'
-          - lang: es
-            text: 'Usar MorrowindArmor.esp o MorrowindGlass.esp, no ambos.'
-        condition: 'file("MorrowindArmor.esp")'
       - <<: *corrupt
         condition: 'checksum("MorrowindGlass.esp",9099DB14)'
   - name: 'MorrowindSmithingVanilla.esp'
@@ -7811,16 +7615,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'NordLederruestung.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either NordLeatherArmor.esp or NordLederruestung.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или NordLeatherArmor.esp или NordLederruestung.esp, не оба.'
-          - lang: es
-            text: 'Usar NordLeatherArmor.esp o NordLederruestung.esp, no ambos.'
-        condition: 'file("NordLeatherArmor.esp")'
+    inc:
+      - 'NordLeatherArmor.esp'
   - name: 'Northman - Credo.esp'
     msg: [ *obsolete ]
   - name: 'numenume elf ear.esp'
@@ -7920,16 +7716,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 6
   - name: 'PocketProtectorsStarter.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either PocketProtectorsStarter.esp or PocketProtectors.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или PocketProtectorsStarter.esp или PocketProtectors.esp, не оба.'
-          - lang: es
-            text: 'Usar PocketProtectorsStarter.esp o PocketProtectors.esp, no ambos.'
-        condition: 'file("PocketProtectorsStarter.esp")'
+    inc:
+      - 'PocketProtectors.esp'
   - name: 'PotemasWolfblade.esp'
     dirty:
       - crc: 0x2559f5c8
@@ -7958,16 +7746,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'RagnvaldBookFarengar+Ragnvald.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either RagnvaldBook.esp or RagnvaldBookFarengar+Ragnvald.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или RagnvaldBook.esp или RagnvaldBookFarengar+Ragnvald.esp, не обa.'
-          - lang: es
-            text: 'Usar RagnvaldBook.esp o RagnvaldBookFarengar+Ragnvald.esp, no ambos.'
-        condition: 'file("RagnvaldBook.esp")'
+    inc:
+      - 'RagnvaldBook.esp'
   - name: 'RagnvaldBook(Farengar(\+Ragnvald)?)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -8240,16 +8020,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'SpellbreakersLOREFRIENDLY.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Spellbreakers.esp or SpellbreakersLOREFRIENDLY.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Spellbreakers.esp или SpellbreakersLOREFRIENDLY.esp, не оба.'
-          - lang: es
-            text: 'Usar Spellbreakers.esp o SpellbreakersLOREFRIENDLY.esp, no ambos.'
-        condition: 'file("Spellbreakers.esp")'
+    inc:
+      - 'Spellbreakers.esp'
     dirty:
       - crc: 0xd355a267
         <<: *dirtyPlugin
@@ -8333,16 +8105,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 8
   - name: 'Tales of Tamriel - Merchants.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Tales of Tamriel - Console Needed.esp or Tales of Tamriel - Merchants.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Tales of Tamriel - Console Needed.esp или Tales of Tamriel - Merchants.esp, не обa.'
-          - lang: es
-            text: 'Usar Tales of Tamriel - Console Needed.esp or Tales of Tamriel - Merchants.esp, no ambos.'
-        condition: 'file("Tales of Tamriel - Console Needed.esp")'
+    inc:
+      - 'Tales of Tamriel - Console Needed.esp'
   - name: 'Tamrielic Artifacts - Goldbrand - Eltonbrand.esp'
     dirty:
       - crc: 0x496766f9
@@ -8668,18 +8432,11 @@ plugins:
     tag:
       - Relev
   - name: 'WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp'
+    inc:
+      - '3rdEraWeaponsMoS.esp'
     msg:
       - <<: *patchOutSub
         condition: 'not checksum("WeaponsOf3E.esp",67F338A1)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either WeaponsOf3E or 3rdEraWeaponsMoS, not both.'
-          - lang: ru
-            text: 'Используйте любой, или WeaponsOf3E или 3rdEraWeaponsMoS, не оба.'
-          - lang: es
-            text: 'Usar WeaponsOf3E o 3rdEraWeaponsMoS, no ambos.'
-        condition: 'file("3rdEraWeaponsMoS.esp")'
       - *alreadyInSkyRe
     tag:
       - Relev
@@ -9073,15 +8830,10 @@ plugins:
           - lang: ru
             text: 'Не содержит неверных записей, как было найдено в других модах от разных авторов, однако новый esp, исправленный и очищенный в Tes5Edit вы можене найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). Исправленный esp добавит больше стабильности. Если вы уже используете русифицированную-исправленную версию, то вам не о чем беспокоиться.'
         condition: 'not checksum("Smithing Perks Overhaul.esp",92158BE3) and not checksum("Smithing Perks Overhaul - Balanced.esp",80AAE7FF)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Smithing Perks Overhaul.esp or Smithing Perks Overhaul - Balanced.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Smithing Perks Overhaul.esp или Smithing Perks Overhaul - Balanced.esp, не оба.'
-          - lang: es
-            text: 'Usar Smithing Perks Overhaul.esp o Smithing Perks Overhaul - Balanced.esp, no ambos.'
-        condition: 'file("Smithing Perks Overhaul - Balanced.esp") and file("Smithing Perks Overhaul.esp")'
+  - name: 'Smithing Perks Overhaul.esp'
+    inc:
+      - 'Smithing Perks Overhaul - Balanced.esp'
+    msg:
       - type: say
         content:
           - lang: en
@@ -9105,15 +8857,6 @@ plugins:
       - type: warn
         content:
           - lang: en
-            text: 'Use either Complete Crafting Overhaul.esp or Complete Crafting Overhaul - BS version.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Complete Crafting Overhaul.esp или Complete Crafting Overhaul - BS version.esp, не оба.'
-          - lang: es
-            text: 'Usar Complete Crafting Overhaul.esp o Complete Crafting Overhaul - BS version.esp, no ambos.'
-        condition: 'file("Complete Crafting Overhaul - BS version.esp") and file("Complete Crafting Overhaul.esp")'
-      - type: warn
-        content:
-          - lang: en
             text: 'Use only BS-version for Better Sorting.'
           - lang: ru
             text: 'Для Better Sorting используйте только BS-версию.'
@@ -9131,6 +8874,9 @@ plugins:
             text: 'Will conflict with mods that modify existing recipes.'
           - lang: ru
             text: 'Возможны конфликты с модами, модифицирующими существующие рецепты.'
+  - name: 'Complete Crafting Overhaul.esp'
+    inc:
+      - 'Complete Crafting Overhaul - BS version.esp'
   - name: 'Complete Crafting Overhaul_Remade.esp'
     after:
       - 'Weapons & Armor Fixes_Remade.esp'
@@ -9154,16 +8900,8 @@ plugins:
     tag:
       - Relev
   - name: 'Bouilleur de cru.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Use Distiller.esp or Bouilleur de cru.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Distiller.esp или Bouilleur de cru.esp, не оба.'
-          - lang: es
-            text: 'Usar Use Distiller.esp o Bouilleur de cru.esp, no ambos.'
-        condition: 'file("Distiller.esp")'
+    inc:
+      - 'Distiller.esp'
     tag:
       - Relev
   - name: 'egp2.esp'
@@ -9309,38 +9047,11 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'Requiem - Difficulty Bar Restored.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Requiem - Difficulty Bar Restored - Nightmare.esp or Requiem - Difficulty Bar Restored.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Requiem - Difficulty Bar Restored - Nightmare.esp или Requiem - Difficulty Bar Restored.esp, не обa.'
-          - lang: es
-            text: 'Usar Requiem - Difficulty Bar Restored - Nightmare.esp o Requiem - Difficulty Bar Restored.esp, no ambos.'
-        condition: 'file("Requiem - Difficulty Bar Restored - Nightmare.esp")'
+    inc:
+      - 'Requiem - Difficulty Bar Restored - Nightmare.esp'
   - name: 'Requiem - No Overencumbered Messages.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Requiem - No Overencumbered Messages.esp or Requiem - No messages.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Requiem - No Overencumbered Messages.esp или Requiem - No messages.esp, не обa.'
-          - lang: es
-            text: 'Usar Requiem - No Overencumbered Messages.esp o Requiem - No messages.esp, no ambos.'
-        condition: 'file("Requiem - No Messages.esp")'
-  - name: 'Requiem - TrainUnitsPerLevel10.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Requiem - TrainUnitsPerLevel0.esp or Requiem - TrainUnitsPerLevel10.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Requiem - TrainUnitsPerLevel0.esp или Requiem - TrainUnitsPerLevel10.esp, не обa.'
-          - lang: es
-            text: 'Usar Requiem - TrainUnitsPerLevel0.esp o Requiem - TrainUnitsPerLevel10.esp, no ambos.'
-        condition: 'file("Requiem - TrainUnitsPerLevel0.esp")'
+    inc:
+      - 'Requiem - No Messages.esp'
   - name: 'Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -9449,8 +9160,6 @@ plugins:
             text: 'If installing optional files, use either YASH.esp + YASH_AllOptionals.esp OR YASH.esp + one or more of the optional ESPs.'
           - lang: ru
             text: 'Если установлены опциональные файлы, используйте любой YASH.esp + YASH_AllOptionals.esp или YASH.esp + один или более опциональных ESP.'
-          - lang: es
-            text: 'If installing optional files, use either YASH.esp + YASH_AllOptionals.esp OR YASH.esp + one or more of the optional ESPs.'
   - name: 'DragonSwarms.esp'
     inc:
       - 'DS-MoreAgressionForRemover.esp'
@@ -9882,6 +9591,8 @@ plugins:
       - 'ACE Speech.esp'
       - 'Perky.esp'
       - 'Crafting300.esp'
+      - 'Complete Crafting Overhaul.esp'
+      - 'Complete Crafting Overhaul - BS version.esp'
     after:
       - 'Scoped Bows.esp'
     msg:
@@ -9891,15 +9602,6 @@ plugins:
       - type: say
         content: 'Incompatible with: Uncapped perks'
         condition: 'file("Uncapped Perks.*\.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Complete Crafting Overhaul (doubles in crafting).'
-          - lang: ru
-            text: 'Несовместим с: Complete Crafting Overhaul (дубликаты в меню крафтинга).'
-          - lang: es
-            text: 'Incompatible con: Complete Crafting Overhaul (doubles in crafting).'
-        condition: 'file("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: say
         content:
           - lang: en
@@ -9962,6 +9664,8 @@ plugins:
       - 'ACE Speech.esp'
       - 'Perky.esp'
       - 'Crafting300.esp'
+      - 'Complete Crafting Overhaul.esp'
+      - 'Complete Crafting Overhaul - BS version.esp'
     msg:
       - type: say
         content: 'Incompatible with: PerkUP'
@@ -9969,15 +9673,6 @@ plugins:
       - type: say
         content: 'Incompatible with: Uncapped perks'
         condition: 'file("Uncapped Perks.*\.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Complete Crafting Overhaul (doubles in crafting).'
-          - lang: ru
-            text: 'Несовместим с: Complete Crafting Overhaul (дубликаты в меню крафтинга).'
-          - lang: es
-            text: 'Incompatible con: Complete Crafting Overhaul (doubles in crafting).'
-        condition: 'file("Complete Crafting Overhaul( - BS version)?\.esp")'
       - type: warn
         content:
           - lang: en
@@ -10008,6 +9703,7 @@ plugins:
         content:
           - lang: en
             text: 'To make aiming easier, recommend to add the following lines to Skyrim.ini:'
+            text: 'To make aiming easier add the following lines to Skyrim.ini: %1%'
           - lang: ru
             text: 'Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки:'
       - type: say
@@ -10671,14 +10367,9 @@ plugins:
         udr: 434
         nav: 7
   - name: '28 Days and a Bit 5.esp'
+    inc:
+      - '28 Days and a Bit 5.esm'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Do not use ''28 Days and a Bit 5.esp'' and ''28 Days and a Bit 5.esm'' at the same time.'
-          - lang: ru
-            text: 'Не используйте одновременно ''28 Days and a Bit 5.esp'' и ''28 Days and a Bit 5.esm''.'
-        condition: 'file("28 Days and a Bit 5.esm")'
       - *obsolete
   - name: '7th heaven home.esp'
     dirty:
@@ -10766,16 +10457,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'AGameOfThronesEnglish.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either AGameOfThrones.esp or AGameOfThronesEnglish.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или AGameOfThrones.esp или AGameOfThronesEnglish.esp, не оба.'
-          - lang: es
-            text: 'Usar AGameOfThrones.esp o AGameOfThronesEnglish.esp, no ambos.'
-        condition: 'file("AGameOfThrones.esp")'
+    inc:
+      - 'AGameOfThrones.esp'
     dirty:
       - crc: 0x86878bda
         <<: *dirtyPlugin
@@ -11644,16 +11327,8 @@ plugins:
         udr: 16
         nav: 2
   - name: 'Burg Flusswald.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Castle Riverwood.esp or Burg Flusswald.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Castle Riverwood.esp или Burg Flusswald.esp, не обa.'
-          - lang: es
-            text: 'Usar Castle Riverwood.esp o Burg Flusswald.esp, no ambos.'
-        condition: 'file("Castle Riverwood.esp")'
+    inc:
+      - 'Castle Riverwood.esp'
     dirty:
       - crc: 0x5a7d4171
         <<: *dirtyPlugin
@@ -12195,16 +11870,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'DVCLight.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either DVC.esp or DVCLight.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или DVC.esp или DVCLight.esp, не оба.'
-          - lang: es
-            text: 'Usar DVC.esp o DVCLight.esp, no ambos.'
-        condition: 'file("DVC.esp")'
+    inc:
+      - 'DVC.esp'
     dirty:
       - crc: 0xb81a8cb5
         <<: *dirtyPlugin
@@ -12909,16 +12576,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'Houses Free and Furnished but Not Hjerim.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Houses Free and Furnished.esp or Houses Free and Furnished but Not Hjerim.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Houses Free and Furnished.esp или Houses Free and Furnished but Not Hjerim.esp, не обa.'
-          - lang: es
-            text: 'Usar Houses Free and Furnished.esp o Houses Free and Furnished but Not Hjerim.esp, no ambos.'
-        condition: 'file("Houses Free and Furnished.esp")'
+    inc:
+      - 'Houses Free and Furnished.esp'
   - name: 'HousesofSkyrimConnected.esp'
     dirty:
       - crc: 0xc5ed1a95
@@ -12973,16 +12632,8 @@ plugins:
   - name: 'Immersive Cities Project.esp'
     msg: [ *obsolete ]
   - name: 'ImmersiveCitiesProjectPart2.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either ICP Whiterun Exterior.esp or ImmersiveCitiesProjectPart2.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или ICP Whiterun Exterior.esp или ImmersiveCitiesProjectPart2.esp, не оба.'
-          - lang: es
-            text: 'Usar ICP Whiterun Exterior.esp o ImmersiveCitiesProjectPart2.esp, no ambos.'
-        condition: 'file("ICP Whiterun Exterior.esp")'
+    inc:
+      - 'ICP Whiterun Exterior.esp'
     dirty:
       - crc: 0x1d6c7360
         <<: *dirtyPlugin
@@ -13255,16 +12906,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'LevelersTowerRemod.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either LevelersTower.esp or LevelersTowerRemod.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или LevelersTower.esp или LevelersTowerRemod.esp, не оба.'
-          - lang: es
-            text: 'Usar LevelersTower.esp o LevelersTowerRemod.esp, no ambos.'
-        condition: 'file("LevelersTower.esp")'
+    inc:
+      - 'LevelersTower.esp'
     dirty:
       - crc: 0x5f1fcd8c
         <<: *dirtyPlugin
@@ -13373,14 +13016,8 @@ plugins:
         itm: 22
         udr: 1
   - name: 'Mage Tower Battle Mage Edition.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Mage Tower.esp or Mage Tower Battle Mage Edition.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Mage Tower.esp или Mage Tower Battle Mage Edition.esp, не оба.'
-        condition: 'file("Mage Tower.esp")'
+    inc:
+      - 'Mage Tower.esp'
     dirty:
       - crc: 0x6e2cca18
         <<: *dirtyPlugin
@@ -13398,23 +13035,11 @@ plugins:
         itm: 10
         udr: 3
   - name: 'mannyBlackRock.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use either mannyBlackRock.esm or mannyBlackRock.esp'
-          - lang: ru
-            text: 'Используйте или mannyBlackRock.esm или mannyBlackRock.esp'
-        condition: 'file("mannyBlackRock.esm")'
+    inc:
+      - 'mannyBlackRock.esm'
   - name: 'mannyDragonhead.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use either mannyDragonhead.esm or mannyDragonhead.esp'
-          - lang: ru
-            text: 'Используйте или mannyDragonhead.esm или mannyDragonhead.esp'
-        condition: 'file("mannyDragonhead.esm")'
+    inc:
+      - 'mannyDragonhead.esm'
   - name: 'Mapseller.esp'
     dirty:
       - crc: 0xed585b65
@@ -13653,16 +13278,8 @@ plugins:
         itm: 12
         udr: 5
   - name: 'N70MountainsideHomeStuds.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either N70MountainsideHomeManne.esp or N70MountainsideHomeStuds.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или N70MountainsideHomeManne.esp или N70MountainsideHomeStuds.esp, не обa.'
-          - lang: es
-            text: 'Usar N70MountainsideHomeManne.esp o N70MountainsideHomeStuds.esp, no ambos.'
-        condition: 'file("N70MountainsideHomeManne.esp")'
+    inc:
+      - 'N70MountainsideHomeManne.esp'
     dirty:
       - crc: 0x67856b7
         <<: *dirtyPlugin
@@ -14137,16 +13754,8 @@ plugins:
         udr: 73
         nav: 7
   - name: 'Sanc CastleNoLock.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Sanc Castle.esp or Sanc CastleNoLock.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Sanc Castle.esp или Sanc CastleNoLock.esp, не обa.'
-          - lang: es
-            text: 'Usar Sanc Castle.esp o Sanc CastleNoLock.esp, no ambos.'
-        condition: 'file("Sanc Castle.esp")'
+    inc:
+      - 'Sanc Castle.esp'
     dirty:
       - crc: 0x2d6eebf5
         <<: *dirtyPlugin
@@ -14200,16 +13809,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 6
   - name: 'secretroom-bh-en.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either The Secret Room of Breezehome.esp or secretroom-bh-en.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или The Secret Room of Breezehome.esp или secretroom-bh-en.esp, не оба.'
-          - lang: es
-            text: 'Usar The Secret Room of Breezehome.esp o secretroom-bh-en.esp, no ambos.'
-        condition: 'file("The Secret Room of Breezehome.esp")'
+    inc:
+      - 'The Secret Room of Breezehome.esp'
   - name: 'SejhPlayerHouses2.esp'
     dirty:
       - crc: 0x4c6a97fb
@@ -14438,16 +14039,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 11
   - name: 'SolitudeBetterDocks-SoG-Compatible Version.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either SolitudeBetterDocks.esp or SolitudeBetterDocks-SoG-Compatible Version.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или SolitudeBetterDocks.esp или SolitudeBetterDocks-SoG-Compatible Version.esp, не оба.'
-          - lang: es
-            text: 'Usar SolitudeBetterDocks.esp o SolitudeBetterDocks-SoG-Compatible Version.esp, no ambos.'
-        condition: 'file("SolitudeBetterDocks.esp")'
+    inc:
+      - 'SolitudeBetterDocks.esp'
   - name: 'UAL002_solitude_smelter01.esp'
     dirty:
       - crc: 0xbaa337a
@@ -14634,16 +14227,8 @@ plugins:
   - name: 'Terramis_DungeonChild.esp'
     msg: [ *obsolete ]
   - name: 'Terramis_Dungeon_01.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Terramis_Dungeon_01.esm or Terramis_Dungeon_01.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Terramis_Dungeon_01.esm или Terramis_Dungeon_01.esp, не оба.'
-          - lang: es
-            text: 'Usar Terramis_Dungeon_01.esm o Terramis_Dungeon_01.esp, no ambos.'
-        condition: 'file("Terramis_Dungeon_01.esm")'
+    inc:
+      - 'Terramis_Dungeon_01.esm'
     dirty:
       - crc: 0x300a1d3
         <<: *dirtyPlugin
@@ -14734,16 +14319,8 @@ plugins:
         udr: 24
         nav: 5
   - name: 'The Descent_rus.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either The Descent.esp or The Descent_rus.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или The Descent.esp или The Descent_rus.esp, не обa.'
-          - lang: es
-            text: 'Usar The Descent.esp o The Descent_rus.esp, no ambos.'
-        condition: 'file("The Descent.esp")'
+    inc:
+      - 'The Descent.esp'
     dirty:
       - crc: 0x6a9d98b6
         <<: *dirtyPlugin
@@ -14822,16 +14399,8 @@ plugins:
         itm: 10
         udr: 1
   - name: 'The Secret Room of Breezehome.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either The Secret Room of Breezehome.esp or secretroom-bh-en.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или The Secret Room of Breezehome.esp или secretroom-bh-en.esp, не оба.'
-          - lang: es
-            text: 'Usar The Secret Room of Breezehome.esp o secretroom-bh-en.esp, no ambos.'
-        condition: 'file("secretroom-bh-en.esp")'
+    inc:
+      - 'secretroom-bh-en.esp'
   - name: 'TheTownIsSafe.esp'
     inc:
       - 'When Vampires Attack.esp'
@@ -14911,16 +14480,8 @@ plugins:
       - <<: *obsolete
         condition: 'checksum("tinymagetowernopainnogain.esp",04DD015D)'
   - name: 'tinymagetowernpainnogain.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either tinymagetower.esp or tinymagetowernpainnogain.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или tinymagetower.esp или tinymagetowernpainnogain.esp, не обa.'
-          - lang: es
-            text: 'either tinymagetower.esp or tinymagetowernpainnogain.esp, no ambos.'
-        condition: 'file("tinymagetower.esp")'
+    inc:
+      - 'tinymagetower.esp'
     dirty:
       - crc: 0x33fe7dae
         <<: *dirtyPlugin
@@ -14932,16 +14493,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 10
   - name: 'tinytreehomebarebones.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either tinytreehome.esp or tinytreehomebarebones.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или tinytreehome.esp или tinytreehomebarebones.esp, не обa.'
-          - lang: es
-            text: 'Usar tinytreehome.esp o tinytreehomebarebones.esp, no ambos.'
-        condition: 'file("tinytreehome.esp")'
+    inc:
+      - 'tinytreehome.esp'
     dirty:
       - crc: 0x2713befa
         <<: *dirtyPlugin
@@ -15129,16 +14682,8 @@ plugins:
         udr: 1
         nav: 2
   - name: 'unicorncave.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either UnicornCave.esm or unicorncave.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или UnicornCave.esm или unicorncave.esp, не оба.'
-          - lang: es
-            text: 'Usar UnicornCave.esm o unicorncave.esp, no ambos.'
-        condition: 'file("UnicornCave.esm")'
+    inc:
+      - 'UnicornCave.esm'
     dirty:
       - crc: 0x40169648
         <<: *dirtyPlugin
@@ -15428,16 +14973,8 @@ plugins:
         content: 'Different mod with same name. Probably incompatible.'
         condition: 'checksum("Whiterun Trees.esp",D2995274)'
   - name: 'ICP Whiterun Exterior.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either ICP Whiterun Exterior.esp or ImmersiveCitiesProjectPart2.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или ICP Whiterun Exterior.esp или ImmersiveCitiesProjectPart2.esp, не оба.'
-          - lang: es
-            text: 'Usar ICP Whiterun Exterior.esp o ImmersiveCitiesProjectPart2.esp, no ambos.'
-        condition: 'file("ImmersiveCitiesProjectPart2.esp")'
+    inc:
+      - 'ImmersiveCitiesProjectPart2.esp'
     dirty:
       - crc: 0x58a7f24e
         <<: *dirtyPlugin
@@ -15733,12 +15270,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'AethEbonyCrownReplacer.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either AethEbonyCircletReplacer.esp or AethEbonyCrownReplacer.esp, not both.'
-        condition: 'file("AethEbonyCircletReplacer.esp")'
+    inc:
+      - 'AethEbonyCircletReplacer.esp'
   - name: 'AlchemyPlus.esp'
     tag:
       - Relev
@@ -15777,16 +15310,8 @@ plugins:
   - name: 'ArtifactRebalance.esp'
     msg: [ *obsolete ]
   - name: 'Arvak Dark Power Voice power version.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Arvak Dark Power.esp or Arvak Dark Power Voice power version.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Arvak Dark Power.esp или Arvak Dark Power Voice power version.esp, не обa.'
-          - lang: es
-            text: 'Usar Arvak Dark Power.esp o Arvak Dark Power Voice power version.esp, no ambos.'
-        condition: 'file("Arvak Dark Power.esp")'
+    inc:
+      - 'Arvak Dark Power.esp'
   - name: 'Arvak, Shadowmere''s Body - (DB|No) Saddle\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -15869,14 +15394,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 29
   - name: 'mod1.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use either Better Bone Armor.esp or mod1.esp'
-          - lang: ru
-            text: 'Используйте или Better Bone Armor.esp или mod1.esp'
-        condition: 'file("Better Bone Armor.esp")'
+    inc:
+      - 'Better Bone Armor.esp'
   - name: 'Better Deadly Bandits.esp'
     tag:
       - Relev
@@ -16740,16 +16259,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'Jarls sit up straight.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Jarls sit up straight except Falkreath jarl.esp or Jarls sit up straight.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Jarls sit up straight except Falkreath jarl.esp или Jarls sit up straight.esp, не оба.'
-          - lang: es
-            text: 'Usar Jarls sit up straight except Falkreath jarl.esp o Jarls sit up straight.esp, no ambos.'
-        condition: 'file("Jarls sit up straight except Falkreath jarl.esp")'
+    inc:
+      - 'Jarls sit up straight except Falkreath jarl.esp'
   - name: 'JM_BetterAlchemySatchel.esp'
     dirty:
       - crc: 0x12150030
@@ -17026,16 +16537,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 8
   - name: 'No Falling Damage.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Less Falling Damage.esp or No Falling Damage.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Less Falling Damage.esp или No Falling Damage.esp, не оба.'
-          - lang: es
-            text: 'Usar Less Falling Damage.esp o No Falling Damage.esp, no ambos.'
-        condition: 'file("Less Falling Damage.esp")'
+    inc:
+      - 'Less Falling Damage.esp'
   - name: 'No Lootless goats.esp'
     tag:
       - Relev
@@ -17053,16 +16556,8 @@ plugins:
   - name: 'NoAutoSkillBooks.esp'
     msg: [ *obsolete ]
   - name: 'NoAutoSkillBooks(Better).esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either NoAutoSkillBooks(Normal).esp or NoAutoSkillBooks(Better).esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или NoAutoSkillBooks(Normal).esp или NoAutoSkillBooks(Better).esp, не оба.'
-          - lang: es
-            text: 'Usar NoAutoSkillBooks(Normal).esp o NoAutoSkillBooks(Better).esp, no ambos.'
-        condition: 'file("NoAutoSkillBooks(Normal).esp")'
+    inc:
+      - 'NoAutoSkillBooks(Normal).esp'
   - name: 'NoLeveledItemRewards.esp'
     tag:
       - Delev
@@ -17147,16 +16642,8 @@ plugins:
     inc:
       - 'Paralyze.esp'
   - name: 'Passive Dragons (non-aggressive to all potentially friendly factions).esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Passive dragons.esp or Passive Dragons (non-aggressive to all potentially friendly factions).esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Passive dragons.esp или Passive Dragons (non-aggressive to all potentially friendly factions).esp, не оба.'
-          - lang: es
-            text: 'Usar Passive dragons.esp o Passive Dragons (non-aggressive to all potentially friendly factions).esp, no ambos.'
-        condition: 'file("Passive dragons.esp")'
+    inc:
+      - 'Passive dragons.esp'
   - name: 'PalistovSpinningArrows_CloserQuiversLongerArrows.esp'
     msg:
       - type: say
@@ -17182,12 +16669,8 @@ plugins:
     inc:
       - 'AutoAim.esp'
   - name: 'RangerNightingale.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either BowAssassin.esp or RangerNightingale.esp, not both.'
-        condition: 'file("BowAssassin.esp")'
+    inc:
+      - 'BowAssassin.esp'
   - name: 'Real 1st Person View alpha 03c.esp'
     msg: [ *obsolete ]
   - name: 'Real 1st Person View alpha 04b.esp'
@@ -17260,16 +16743,8 @@ plugins:
   - name: 'Safely Thrall.esp'
     msg: [ *obsolete ]
   - name: 'Serana Vampire Lord Bloodcursed After Cure.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Serana Vampire Lord Bloodcursed After Cure Early.esp or Serana Vampire Lord Bloodcursed After Cure.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Serana Vampire Lord Bloodcursed After Cure Early.esp или Serana Vampire Lord Bloodcursed After Cure.esp, не оба.'
-          - lang: es
-            text: 'Usar Serana Vampire Lord Bloodcursed After Cure Early.esp o Serana Vampire Lord Bloodcursed After Cure.esp, no ambos.'
-        condition: 'file("Serana Vampire Lord Bloodcursed After Cure Early.esp")'
+    inc:
+      - 'Serana Vampire Lord Bloodcursed After Cure Early.esp'
   - name: 'SIDT - Skyrim.esp'
     msg: [ *alreadyInSIDTComplete ]
   - name: 'SIDT - Dawnguard.esp'
@@ -17715,16 +17190,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Uncle Sheo does JaySuS NO TITLE.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Uncle Sheo does JaySus.esp or Uncle Sheo does JaySuS NO TITLE.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Uncle Sheo does JaySus.esp или Uncle Sheo does JaySuS NO TITLE.esp, не оба.'
-          - lang: es
-            text: 'Usar Uncle Sheo does JaySus.esp o Uncle Sheo does JaySuS NO TITLE.esp, no ambos.'
-        condition: 'file("Uncle Sheo does JaySus.esp")'
+    inc:
+      - 'Uncle Sheo does JaySus.esp'
   - name: 'Unlevelled World.esp'
     tag:
       - Delev
@@ -17759,16 +17226,8 @@ plugins:
         content: 'Use Hearthfires version to get changes made to Hearthfires food.'
         condition: 'active("Hearthfires.esm")'
   - name: 'valkiirs_tastier_food_hearthfire.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either valkiirs_tastier_food.esp or valkiirs_tastier_food_hearthfire.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или valkiirs_tastier_food.esp или valkiirs_tastier_food_hearthfire.esp, не оба.'
-          - lang: es
-            text: 'Usar valkiirs_tastier_food.esp o valkiirs_tastier_food_hearthfire.esp, no ambos.'
-        condition: 'file("valkiirs_tastier_food.esp")'
+    inc:
+      - 'valkiirs_tastier_food.esp'
   - name: 'valuablecoins.esp'
     msg:
       - <<: *obsolete
@@ -18516,16 +17975,8 @@ plugins:
   - name: 'MoreForestsLOD.esp'
     msg: [ *obsolete ]
   - name: 'MoreForestsLODckm - Copy.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either MoreForests.esp or MoreForestsLODckm - Copy.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или MoreForests.esp или MoreForestsLODckm - Copy.esp, не обa.'
-          - lang: es
-            text: 'Usar MoreForests.esp o MoreForestsLODckm - Copy.esp, no ambos.'
-        condition: 'file("MoreForests.esp")'
+    inc:
+      - 'MoreForests.esp'
     dirty:
       - crc: 0x93dc72e9
         <<: *dirtyPlugin
@@ -19054,19 +18505,12 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("Fatigue_Effects.esp",A4C14B80)'
   - name: 'Imp''s More Complex Needs.esp'
+    inc:
+      - 'Imp''s More Complex Needs.esm'
     msg:
       - type: say
         content: 'It is recommended that you unsubscribe from and delete this mod, then install the [SkyrimNexus version](http://www.nexusmods.com/skyrim/mods/10639) for more compatibility with other mods.'
         condition: 'checksum("imp''s more complex needs.esp",DAADC533) or checksum("imp''s more complex needs.esp",59466F1E)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either imp''s more complex needs.esm or imp''s more complex needs.esp, not both.'
-          - lang: ru
-            text: 'Используйте любую imp''s more complex needs.esm или imp''s more complex needs.esp версию, не оба.'
-          - lang: es
-            text: 'Usar imp''s more complex needs.esm o imp''s more complex needs.esp, no ambos.'
-        condition: 'file("Imp''s More Complex Needs.esm")'
     dirty:
       - crc: 0xdaadc533
         <<: *dirtyPlugin
@@ -19657,23 +19101,13 @@ plugins:
   - name: 'BladesBolarSummon.esp'
     msg: [ *alreadyInLegendarySouls ]
   - name: 'MidasSkyrim.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: MiningFlames.esp, BoundTools.esp, ExtractOreSpell.esp. You can have more than one mod enabled, but only one of the added methods will be able to "mine" ore.'
-          - lang: ru
-            text: 'Несовместим с: MiningFlames.esp, BoundTools.esp, ExtractOreSpell.esp. Вы можете подключить данные моды вместе, но только один из добавленных методов добычи руды будет работать, тот, который добавлен нижестоящим модом.'
-        condition: 'file("MiningFlames.esp") or file("BoundTools.esp") or file("ExtractOreSpell.esp")'
+    inc:
+      - 'MiningFlames.esp'
+      - 'BoundTools.esp'
+      - 'ExtractOreSpell.esp'
   - name: 'MiningFlames.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: MidasSkyrim.esp (Spell ''Bound Pickaxe'')'
-          - lang: ru
-            text: 'Несовместим с: Midas Magic.esp (Заклинание ''Призыв кирки'')'
-        condition: 'file("MidasSkyrim.esp")'
+    inc:
+      - 'MidasSkyrim.esp'
   - name: 'BoundTools.esp'
     inc:
       - 'MiningFlames.esp'
@@ -20145,18 +19579,11 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'Excalibur _firebreath_IMBA ver.esp'
+    inc:
+      - 'Excalibur _powerfirebreath.esp'
     msg:
       - <<: *corrupt
         condition: 'checksum("Excalibur _firebreath_IMBA ver.esp",C513B76D)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Excalibur _powerfirebreath.esp or Excalibur _firebreath_IMBA ver.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Excalibur _powerfirebreath.esp или Excalibur _firebreath_IMBA ver.esp, не оба.'
-          - lang: es
-            text: 'Usar Excalibur _powerfirebreath.esp o Excalibur _firebreath_IMBA ver.esp, no ambos.'
-        condition: 'file("Excalibur _powerfirebreath.esp")'
   - name: 'Improved Dragon Shouts.esp'
     inc:
       - 'DragonbornAscendant.esp'
@@ -20209,16 +19636,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 11
   - name: 'Shout-tastic_no CD.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Shout-tastic.esp or Shout-tastic_no CD.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Shout-tastic.esp или Shout-tastic_no CD.esp, не обa.'
-          - lang: es
-            text: 'Usar Shout-tastic.esp o Shout-tastic_no CD.esp, no ambos.'
-        condition: 'file("Shout-tastic.esp")'
+    inc:
+      - 'Shout-tastic.esp'
     dirty:
       - crc: 0x8453f97a
         <<: *dirtyPlugin
@@ -20238,16 +19657,8 @@ plugins:
       - 'candlelightandmagelight10minute.esp'
       - 'Candlelightspelllasts15min.esp'
   - name: 'Clear Skies Fix - CoT version.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Clear Skies Fix.esp or Clear Skies Fix - CoT version.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Clear Skies Fix.esp или Clear Skies Fix - CoT version.esp, не обa.'
-          - lang: es
-            text: 'Usar Clear Skies Fix.esp o Clear Skies Fix - CoT version.esp, no ambos.'
-        condition: 'file("Clear Skies Fix.esp")'
+    inc:
+      - 'Clear Skies Fix.esp'
   - name: 'DeadlySpellImpacts.esp'
     after:
       - 'balanceddestructionv4.esp'
@@ -20318,16 +19729,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'ForgottenMagic_Redone.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either ForgottenMagic or ForgottenMagic_Redone, not both.'
-          - lang: ru
-            text: 'Используйте любой, или ForgottenMagic или ForgottenMagic_Redone, не оба.'
-          - lang: es
-            text: 'Usar ForgottenMagic o ForgottenMagic_Redone, no ambos.'
-        condition: 'file("ForgottenMagic.esp")'
+    inc:
+      - 'ForgottenMagic.esp'
   - name: 'Improved Soultrap.esp'
     msg:
       - type: error
@@ -20347,16 +19750,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'More Accessible Magicka.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either More Accessible Magicka no buyable masters.esp or More Accessible Magicka.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или More Accessible Magicka no buyable masters.esp или More Accessible Magicka.esp, не оба.'
-          - lang: es
-            text: 'Usar More Accessible Magicka no buyable masters.esp o More Accessible Magicka.esp, no ambos.'
-        condition: 'file("More Accessible Magicka no buyable masters.esp")'
+    inc:
+      - 'More Accessible Magicka no buyable masters.esp'
     dirty:
       - crc: 0x1230b90
         <<: *dirtyPlugin
@@ -20544,16 +19939,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 51
   - name: 'BalancedCombat2.5.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either BalancedCombat.esp or BalancedCombat2.5.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или BalancedCombat.esp или BalancedCombat2.5.esp, не оба.'
-          - lang: es
-            text: 'Usar BalancedCombat.esp o BalancedCombat2.5.esp, no ambos.'
-        condition: 'file("BalancedCombat.esp")'
+    inc:
+      - 'BalancedCombat.esp'
     dirty:
       - crc: 0x523e7956
         <<: *dirtyPlugin
@@ -20564,16 +19951,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'CombatMoraleNoLootBag.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either CombatMorale.esp or CombatMoraleNoLootBag.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или CombatMorale.esp или CombatMoraleNoLootBag.esp, не оба.'
-          - lang: es
-            text: 'Usar CombatMorale.esp o CombatMoraleNoLootBag.esp, no ambos.'
-        condition: 'file("CombatMorale.esp")'
+    inc:
+      - 'CombatMorale.esp'
   - name: 'DeadlyCombat_NoDamageChanges.esp'
     inc:
       - 'DeadlyCombat_HardcoreDamage.esp'
@@ -20683,16 +20062,8 @@ plugins:
       - 'DragonCombatOverhaulDragonborn.esp'
       - 'DragonCombatOverhaulDragonborn - Requiem Patch.esp'
       - 'Dragon Combat Overhaul.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either The Dance of Death.esp or The Dance of Death - Dawnguard Edition.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или The Dance of Death.esp или The Dance of Death - Dawnguard Edition.esp, не обa.'
-          - lang: es
-            text: 'Usar The Dance of Death.esp o The Dance of Death - Dawnguard Edition.esp, no ambos.'
-        condition: 'file("The Dance of Death.esp")'
+    inc:
+      - 'The Dance of Death.esp'
     dirty:
       - crc: 0x564a52ef
         <<: *dirtyPlugin
@@ -20844,16 +20215,8 @@ plugins:
         content: 'This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.'
         condition: 'checksum("ACE Archery-Weapons of the Third Era Patch.esp",873EAB94)'
   - name: 'LB_MuchAdoSnowElves_ACE_Patch_Long.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either LB_MuchAdoSnowElves_ACE_Patch_Light.esp or LB_MuchAdoSnowElves_ACE_Patch_Long.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или LB_MuchAdoSnowElves_ACE_Patch_Light.esp или LB_MuchAdoSnowElves_ACE_Patch_Long.esp, не оба.'
-          - lang: es
-            text: 'Usar LB_MuchAdoSnowElves_ACE_Patch_Light.esp o LB_MuchAdoSnowElves_ACE_Patch_Long.esp, no ambos.'
-        condition: 'file("LB_MuchAdoSnowElves_ACE_Patch_Light.esp")'
+    inc:
+      - 'LB_MuchAdoSnowElves_ACE_Patch_Light.esp'
   - name: 'AB?T - Faster (Arrows)?(Bolts)? Improved (\+\d{1,3}%)\.esp'
     msg:
       - type: say
@@ -21192,16 +20555,8 @@ plugins:
   - name: 'Perk_Deft_Movement_All_(100|25|50)?\.esp'
     msg: [ *corrupt ]
   - name: 'Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Perk_Heavy_Armor_Tree_Redone.esp or Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Perk_Heavy_Armor_Tree_Redone.esp или Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp, не оба.'
-          - lang: es
-            text: 'Usar Perk_Heavy_Armor_Tree_Redone.esp o Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp, no ambos.'
-        condition: 'file("Perk_Heavy_Armor_Tree_Redone.esp")'
+    inc:
+      - 'Perk_Heavy_Armor_Tree_Redone.esp'
   - name: 'PerkUP-Alchemy.esp'
     msg:
       - <<: *corrupt
@@ -21314,10 +20669,9 @@ plugins:
         <<: *dirtyPlugin
         itm: 35
   - name: 'perk tweak.esp'
-    msg:
-      - type: warn
-        content: 'Conflicts with SkyRe, as both make changes to perks. Unintended changes may occur if both are active.'
-        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
+    inc:
+      - 'SkyRe_Main.esp'
+      - 'SkyRe_Main_NoDawnguard.esp'
   - name: 'PPE_Perk-.+\.esp'
     msg:
       - type: say
@@ -21459,32 +20813,18 @@ plugins:
     tag:
       - Delev
   - name: 'Stealth Skills Rebalanced_LOCKPICKING.esp'
+    inc:
+      - 'Stealth Skills Rebalanced_COMPLETE.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_LOCKPICKING.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_LOCKPICKING.esp, не обa.'
-          - lang: es
-            text: 'Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_LOCKPICKING.esp, no ambos.'
-        condition: 'file("Stealth Skills Rebalanced_COMPLETE.esp")'
       - type: say
         content: 'Requires a [patch](http://www.nexusmods.com/skyrim/mods/42796) when used with Enchanting Awakened.'
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSSRPatch.esp")'
     tag:
       - Delev
   - name: 'Stealth Skills Rebalanced_PICKPOCKET.esp'
+    inc:
+      - 'Stealth Skills Rebalanced_COMPLETE.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_PICKPOCKET.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_PICKPOCKET.esp, не обa.'
-          - lang: es
-            text: 'Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_PICKPOCKET.esp, no ambos.'
-        condition: 'file("Stealth Skills Rebalanced_COMPLETE.esp")'
       - type: say
         content: 'Requires a [patch](http://www.nexusmods.com/skyrim/mods/42796) when used with Enchanting Awakened.'
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSSRPatch.esp")'
@@ -21493,16 +20833,8 @@ plugins:
   - name: 'Stealth Skills Rebalanced_SNEAK.esp'
     after:
       - 'EnchantingAwakened.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_SNEAK.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_SNEAK.esp, не обa.'
-          - lang: es
-            text: 'Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_SNEAK.esp, no ambos.'
-        condition: 'file("Stealth Skills Rebalanced_COMPLETE.esp")'
+    inc:
+      - 'Stealth Skills Rebalanced_COMPLETE.esp'
   - name: 'Skyrim Perk Enhancements.esp'
     dirty:
       - crc: 0xf2b16be
@@ -21554,16 +20886,8 @@ plugins:
     tag:
       - Delev
   - name: 'SmithingTreeDG.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either SmithingTree.esp or SmithingTreeDG.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой или SmithingTree.esp или SmithingTreeDG.esp, не обa.'
-          - lang: es
-            text: 'Usar SmithingTree.esp o SmithingTreeDG.esp, no ambos.'
-        condition: 'file("SmithingTree.esp")'
+    inc:
+      - 'SmithingTree.esp'
     tag:
       - Delev
   - name: 'Summoning.esp'
@@ -22717,42 +22041,18 @@ plugins:
       - <<: *alreadyInX
         condition: 'file("Compilationv1-clean.esp")'
         subs: [ 'Compilationv1-clean.esp' ]
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either pack1.esp or Pack1-clean.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или pack1.esp или Pack1-clean.esp, не оба.'
-          - lang: es
-            text: 'Usar pack1.esp o Pack1-clean.esp, no ambos.'
-        condition: 'file("pack1-clean.esp") and file("pack1.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either pack2.esp or Pack2-clean.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или pack2.esp или Pack2-clean.esp, не оба.'
-          - lang: es
-            text: 'Usar pack2.esp o Pack2-clean.esp, no ambos.'
-        condition: 'file("pack2-clean.esp") and file("pack2.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either pack3.esp or Pack3-clean.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или pack3.esp или Pack3-clean.esp, не оба.'
-          - lang: es
-            text: 'Usar pack3.esp o Pack3-clean.esp, no ambos.'
-        condition: 'file("pack3-clean.esp") and file("pack3.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either pack4.esp or Pack4-clean.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или pack4.esp или Pack4-clean.esp, не оба.'
-          - lang: es
-            text: 'Usar pack4.esp o Pack4-clean.esp, no ambos.'
-        condition: 'file("pack4-clean.esp") and file("pack4.esp")'
+  - name: 'pack1.esp'
+    inc:
+      - 'pack1-clean.esp'
+  - name: 'pack2.esp'
+    inc:
+      - 'pack2-clean.esp'
+  - name: 'pack3.esp'
+    inc:
+      - 'pack3-clean.esp'
+  - name: 'pack4.esp'
+    inc:
+      - 'pack4-clean.esp'
   - name: 'beanshousecarls.esp'
     msg: [ *obsolete ]
   - name: 'Betrid.esp'
@@ -23525,16 +22825,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 6
   - name: 'JNPC_SeranaB.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either JNPC_Serana.esp or JNPC_SeranaB.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или JNPC_Serana.esp или JNPC_SeranaB.esp, не оба.'
-          - lang: es
-            text: 'Usar JNPC_Serana.esp o JNPC_SeranaB.esp, no ambos.'
-        condition: 'file("JNPC_Serana.esp")'
+    inc:
+      - 'JNPC_Serana.esp'
   - name: 'JNPC_Serana_alt.esp'
     msg: [ *obsolete ]
   - name: 'Serana_Revised.esp'
@@ -24096,17 +23388,9 @@ plugins:
       - crc: 0xd301ae7b
         <<: *dirtyPlugin
         itm: 2
-  - name: 'Better Racials- .+\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either Better Racials- Altmer Edition.esp or Better Racials- Altmer Edition - NW.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или Better Racials- Altmer Edition.esp или Better Racials- Altmer Edition - NW.esp, не оба.'
-          - lang: es
-            text: 'Usar Better Racials- Altmer Edition.esp o Better Racials- Altmer Edition - NW.esp, no ambos.'
-        condition: 'file("Better Racials- Altmer Edition.esp") and file("Better Racials- Altmer Edition - NW.esp")'
+  - name: 'Better Racials- Altmer Edition.esp'
+    inc:
+      - 'Better Racials- Altmer Edition - NW.esp'
   - name: 'BVLT - (Argonian|Ashen|Dark Elf|High Elf|Human|Khajiit|Wood Elf)?\.esp'
     msg: [ *corrupt ]
   - name: 'Vampire Lord - Transformation Overhaul Female.esp'
@@ -25103,40 +24387,16 @@ plugins:
         itm: 5
         udr: 1
   - name: 'EnableBlackreachMap+M.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either EnableBlackreachMap.esp or EnableBlackreachMap+M.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или EnableBlackreachMap.esp или EnableBlackreachMap+M.esp, не оба.'
-          - lang: es
-            text: 'Usar EnableBlackreachMap.esp o EnableBlackreachMap+M.esp, no ambos.'
-        condition: 'file("EnableBlackreachMap.esp")'
+    inc:
+      - 'EnableBlackreachMap.esp'
   - name: 'EnableForgottenValeMap.esp'
     msg: [ *obsolete ]
   - name: 'EnableForgottenValeMap+M+EA.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either EnableForgottenValeMap+M.esp or EnableForgottenValeMap+M+EA.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или EnableForgottenValeMap+M.esp или EnableForgottenValeMap+M+EA.esp, не оба.'
-          - lang: es
-            text: 'Usar EnableForgottenValeMap+M.esp o EnableForgottenValeMap+M+EA.esp, no ambos.'
-        condition: 'file("EnableForgottenValeMap+M.esp")'
+    inc:
+      - 'EnableForgottenValeMap+M.esp'
   - name: 'EnableSoulCairnMap+M.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use either EnableSoulCairnMap.esp or EnableSoulCairnMap+M.esp, not both.'
-          - lang: ru
-            text: 'Используйте любой, или EnableSoulCairnMap.esp или EnableSoulCairnMap+M.esp, не оба.'
-          - lang: es
-            text: 'Usar EnableSoulCairnMap.esp o EnableSoulCairnMap+M.esp, no ambos.'
-        condition: 'file("EnableSoulCairnMap.esp")'
+    inc:
+      - 'EnableSoulCairnMap.esp'
   - name: 'housemarkerfasttravel.esp'
     dirty:
       - crc: 0x2181fade
