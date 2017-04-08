@@ -229,6 +229,11 @@ common:
     <<: *reqModX
     subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)' ]
 
+  - &reqSkyUI # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
+    type: warn
+    content: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for this mod to be fully functional.'
+    condition: 'not active("SkyUI.esp")'
+
 # Cleaning data
   - &dirtyPlugin
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
@@ -1276,7 +1281,7 @@ plugins:
   - name: 'Perk-Reset-MCM.esm'
     req:
       - *SKSE
-      - *SkyUI
+    msg: [ *reqSkyUI ]
   - name: 'pinewoodvillage.esm'
     msg: [ *obsolete ]
     dirty:
@@ -1324,7 +1329,7 @@ plugins:
     req:
       - *SKSE
       - *FNIS
-      - *SkyUI
+      - *reqSkyUI
     msg:
       - type: error
         content:
