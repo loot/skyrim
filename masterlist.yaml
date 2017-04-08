@@ -8447,15 +8447,7 @@ plugins:
   - name: '3rdEraWeaponsMoS.esp'
     msg:
       - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete. WeaponsOf3E included in SkyRe_Main.esp.'
-          - lang: ru
-            text: 'Удалите. WeaponsOf3E уже включен в SkyRe_Main.esp.'
-          - lang: es
-            text: 'Borrar. WeaponsOf3E se encuentra en SkyRe_Main.esp'
-        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
+      - *alreadyInSkyRe
       - type: say
         content: 'Incompatible with: WeaponsOf3E*.esp'
         condition: 'file("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp")'
@@ -15119,14 +15111,7 @@ plugins:
   - name: 'A&P weight change only..esp'
     msg: [ *obsolete ]
   - name: 'A&P weight change only.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Author states SkyRe will overlap this mod, rendering it useless.'
-          - lang: ru
-            text: 'Автор утверждает, что SkyRe будет перезаписывать этот мод, делая его бесполезным.'
-        condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
+    msg: [ *alreadyInSkyRe ]
   - name: 'Dragon Drop - B.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -20301,10 +20286,10 @@ plugins:
         condition: 'active("Dragonborn.esm")'
         subs: [ 'Dragonborn DLC' ]
   - name: 'MergedThieverySkill.esp'
-    msg:
-      - type: error
-        content: 'Will conflict with SkyRe, as both mods alter the skill trees. Please pick only one.'
-        condition: 'active("SkyRe_Main.esm") or file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
+    inc:
+      - 'SkyRe_Main.esm'
+      - 'SkyRe_Main.esp'
+      - 'SkyRe_Main_NoDawnguard.esp'
     dirty:
       - crc: 0x1617a10d
         <<: *dirtyPlugin
