@@ -120,15 +120,18 @@ common:
         text: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)' #added additional info about localized fixed versions because condition for this message it is show message for espm with different checksum from fixed english version and message also will be displayed for any localisation of fixed version.
       - lang: es
         text: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
-  - &patchB4CK
+  - &preCKUseXInstead
     type: warn
     content:
       - lang: en
-        text: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+        text: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](%1%).'
       - lang: ru
-        text: 'Оригинальный файл был выпущен до выхода Creation Kit (07 фев. 2012). Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)' #added additional info about localized fixed versions because message also can be displayed for any localisation of fixed version.
+        text: 'Оригинальный файл был выпущен до выхода Creation Kit (07 фев. 2012). Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](%1%). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)' #added additional info about localized fixed versions because message also can be displayed for any localisation of fixed version.
       - lang: es
-        text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](http://www.nexusmods.com/skyrim/mods/26230).'
+        text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](%1%).'
+  - &preCKSharlikranPatch
+    <<: *preCKUseXInstead
+    subs: [ 'http://www.nexusmods.com/skyrim/mods/26230' ]
   - &obsolete
     type: say
     content:
@@ -1058,15 +1061,9 @@ plugins:
             text: 'Устарело. Обновите до Hideout_Main.esp на [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
           - lang: es
             text: 'Obsoleto. Actualizar a la Hideout_Main.esp en [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-      - type: warn
+      - <<: *preCKUseXInstead
         condition: 'version("hideout.esm","10.2",<)'
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден по ссылке: [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
+        subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
   - name: 'retreat.esm'
     msg:
       - type: warn
@@ -1077,15 +1074,9 @@ plugins:
             text: 'Устарело. Обновите до Dovahkiin_Retreat.esp на [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
           - lang: es
             text: 'Obsoleto. Actualizar a la Dovahkiin_Retreat.esp en [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-      - type: warn
+      - <<: *preCKUseXInstead
         condition: 'version("retreat.esm","1.0",<)'
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден по ссылке: [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
+        subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
   - name: 'Riftrun_HF_v_2_0.esp'
     after:
       - 'Hideout_Main.esp'
@@ -1956,21 +1947,21 @@ plugins:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.4", >=)'
         subs: [ '1.4' ]
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Magnus20.esp",DE1D22AC)'
   - name: 'Magnus50.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.4", >=)'
         subs: [ '1.4' ]
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Magnus50.esp",1003FA02)'
   - name: 'Magnus100.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.4", >=)'
         subs: [ '1.4' ]
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Magnus100.esp",37C6B07A)'
   - name: 'Mannequinfix.esp'
     msg: [ *AlreadyInUSKP ]
@@ -2748,19 +2739,19 @@ plugins:
 # ## Bethsoft6.118,128and9.187,193
   - name: 'Warmer Magic Lights v2.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Warmer Magic Lights v2.esp",2A1E2810)'
   - name: 'Warmer Magic Lights v2 - White.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Warmer Magic Lights v2 - White.esp",B5571C09)'
   - name: 'Warmer Magic Lights v2 - White - Big.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Warmer Magic Lights v2 - White - Big.esp",ACAE3F31)'
   - name: 'Warmer Magic Lights v2 - Big.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Warmer Magic Lights v2 - Big.esp",DE4F928D)'
 # ## NoTint.esp
 # ## Moved ClimatesOfTamriel From Here
@@ -3121,7 +3112,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'BabettesFeastBalanced.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'version("BabettesFeastBalanced.esp","1.2",<)'
       - type: warn
         content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
@@ -3131,7 +3122,7 @@ plugins:
       - 'BabettesFeastWeakerEffects.esp'
   - name: 'BabettesFeastOverpowered.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'version("BabettesFeastOverpowered.esp","1.2",<)'
       - type: warn
         content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
@@ -3141,7 +3132,7 @@ plugins:
       - 'BabettesFeastWeakerEffects.esp'
   - name: 'BabettesFeastWeakerEffects.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'version("BabettesFeastWeakerEffects.esp","1.2",<)'
       - type: warn
         content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
@@ -3390,15 +3381,15 @@ plugins:
         condition: 'checksum("cao_DweSchematicsSearch.esp",A655AB19)'
   - name: 'cao_goldbrand.esp'
     msg:
-      - type: say
-        content: 'Original file was released before the Creation Kit (07 Feb. 2012). It is recommended to download [Caos Quest for Goldbrand](http://www.nexusmods.com/skyrim/mods/5830) because a compatibility patch fixed and cleaned with TES5Edit is available.'
+      - <<: *preCKUseXInstead
+        subs: [ 'http://www.nexusmods.com/skyrim/mods/5830' ]
   - name: 'cao_goldbrand_WT.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'version("cao_goldbrand_WT.esp", "1.0", <)'
   - name: 'cao_ToolsTrade_BuyRL.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'checksum("cao_ToolsTrade_BuyRL.esp",3979D654)'
   - name: 'CarryWeightSpells.esp'
     dirty:
@@ -4282,7 +4273,7 @@ plugins:
         udr: 59
   - name: 'Lost Art of the Blacksmith.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Lost Art of the Blacksmith.esp",1720F631)'
   - name: 'LoversComfort.esp'
     req:
@@ -5318,7 +5309,7 @@ plugins:
       - Relev
   - name: 'ValsCraftingMeltdownAlpha.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     msg:
@@ -6535,7 +6526,7 @@ plugins:
         condition: 'not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
   - name: 'DPArmor.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'version("DPArmor.esp","0.3",<)'
   - name: 'DragonboneCrossbow.esp'
     dirty:
@@ -6915,12 +6906,7 @@ plugins:
         itm: 6
   - name: 'Hana.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Hana.esp",C86C77D9)'
   - name: 'HartherzEnglish.esp'
     dirty:
@@ -7367,12 +7353,7 @@ plugins:
       - *ReqCBBE
   - name: 'LFArmors.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("LFArmors.esp",EF8F74B6)'
   - name: 'LH Jewel Collection.esp'
     msg:
@@ -7623,12 +7604,7 @@ plugins:
             text: 'Be sure to use the correct esp for [CBBE](http://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
   - name: 'Mystic.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Mystic.esp",67CBB5B2)'
     tag:
       - name: Deactivate
@@ -7777,7 +7753,7 @@ plugins:
             text: 'Requiere: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) or [CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [UNP Blessed Body (UNPB)](http://www.nexusmods.com/skyrim/mods/37900).'
   - name: 'Niagras Bleach Pack.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Niagras Bleach Pack.esp",32E5FB23)'
   - name: 'Nicoroshi Creations.esp'
     tag:
@@ -8007,7 +7983,7 @@ plugins:
         udr: 3
   - name: 'Redguard Shield.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'version("Redguard Shield.esp","1.2",<)'
   - name: 'RedguardKnight.esp'
     tag:
@@ -12805,15 +12781,9 @@ plugins:
             text: 'Устарело. Обновите до Hideout_Main.esp на [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
           - lang: es
             text: 'Obsoleto. Actualizar a la Hideout_Main.esp en [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-      - type: warn
+      - <<: *preCKUseXInstead
         condition: 'version("hideout.esp","10.2",<)'
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
+        subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
   - name: 'hideout - hearthfires.esp'
     msg:
       - type: warn
@@ -12853,15 +12823,9 @@ plugins:
             text: 'Устарело. Обновите до Dovahkiin_Retreat.esp на [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
           - lang: es
             text: 'Obsoleto. Actualizar a la Dovahkiin_Retreat.esp en [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-      - type: warn
+      - <<: *preCKUseXInstead
         condition: 'version("retreat.esp","1.0",<)'
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-          - lang: es
-            text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
+        subs: [ 'http://www.nexusmods.com/skyrim/mods/59522' ]
   - name: 'HighlandFarmMilk.esp'
     dirty:
       - crc: 0x1258e09a
@@ -16919,12 +16883,7 @@ plugins:
         itm: 6
   - name: 'MageFriendlyDragonPriestMasks.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("MageFriendlyDragonPriestMasks.esp",D1755B5B)'
   - name: 'MageFriendlyDragonPriestMasks_hidden.esp'
     msg: [ *corrupt ]
@@ -16937,12 +16896,7 @@ plugins:
       - 'Magnify Spell Enchantments.esp'
   - name: 'Magnus100_50.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Compatibility Patch](http://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+      - <<: *preCKSharlikranPatch
         condition: 'not checksum("Magnus100_50.esp",6243CC49)'
   - name: 'MasculinizedLevelLists.esp'
     tag:
@@ -19119,8 +19073,7 @@ plugins:
         itm: 10
   - name: 'BabettesFeast - IMCN.esp'
     msg:
-      - type: warn
-        content: 'Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+      - <<: *preCKSharlikranPatch
         condition: 'version("BabettesFeast - IMCN.esp","0.31",<)'
   - name: 'kuerteeEncumberingLootArmourAndWeapons.esp'
     req:
@@ -20429,7 +20382,7 @@ plugins:
       - 'Skyrim_Best Voise Magic.esp'
   - name: 'SkyrimBalancedMagicSystem.esp'
     msg:
-      - <<: *patchB4CK
+      - <<: *preCKSharlikranPatch
         condition: 'checksum("SkyrimBalancedMagicSystem.esp",B3A41B23)'
   - name: 'SkyrimBalancedMagicSystem - spells.esp'
     msg: [ *obsolete ]
