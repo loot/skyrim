@@ -1326,8 +1326,6 @@ plugins:
         itm: 3700
         udr: 192
         nav: 50
-# ## MOD: S´Drass follower.esm
-# ## Removing the MOD: tag from this seems to cause crashes.
   - name: 'SC_Drow Race.esm'
     msg: [ *obsolete ]
   - name: 'SexiS.esm'
@@ -1379,15 +1377,11 @@ plugins:
       - crc: 0xbc06197f
         <<: *dirtyPlugin
         itm: 2
-# ## SkyMoMod.esm
-# ## TAG: {{BASH: Delev, Relev}}
-# ## for latest version 3.2
-# ## IF CHECKSUM("SkyMoMod.esm", 6D2AD8B5) || IF CHECKSUM("SkyMoMod.esm", 53F297BE) TAG: {{BASH: Delev}}
-# ## This is the Original SkyMoMod - v9
   - name: 'SkyMoMod.esm'
     tag:
       - Delev
-      - Relev
+      - name: Relev
+        condition: 'not checksum("SkyMoMod.esm", 6D2AD8B5) and not checksum("SkyMoMod.esm", 53F297BE)'
     dirty:
       - crc: 0x4d3619d8
         <<: *dirtyPlugin
@@ -1395,8 +1389,7 @@ plugins:
       - crc: 0x6d2ad8b5
         <<: *dirtyPlugin
         itm: 2
-# ## crc: 0xbe817a8c This is the esm provided with Skyrim Immersive Creatures.
-      - crc: 0xbe817a8c
+      - crc: 0xbe817a8c # This is the esm provided with Skyrim Immersive Creatures.
         <<: *dirtyPlugin
         itm: 2
   - name: 'SleepingTreeSanctuary_FollowerFriendly.esp'
@@ -1405,8 +1398,9 @@ plugins:
         <<: *dirtyPlugin
         itm: 5
         udr: 2
-# ## SmithBornMaterials.esm
-# ## Must load after SmithBornPerks.esm
+  - name: 'SmithBornMaterials.esm'
+    after:
+      - 'SmithBornPerks.esm'
   - name: 'Solitude A City Of Trade.esm'
     dirty:
       - crc: 0x89696ea3
