@@ -6886,13 +6886,9 @@ plugins:
   - name: 'KURESE Gloria conversion.esp'
     msg:
       - *reqDimonizedUNP
-      - type: warn
-        content:
-          - lang: en
-            text: 'Redundant. Included in "DIMONIZED UNP clothing resources".'
-          - lang: ru
-            text: 'Избыточно. Уже включено в "DIMONIZED UNP clothing resources".'
+      - <<: *alreadyInX
         condition: 'file("DIMclothes1.esp")'
+        subs: [ 'DIMONIZED UNP clothing resources' ]
   - name: 'Lady of Death.esp'
     msg:
       - *ReqCBBE
