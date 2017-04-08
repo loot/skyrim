@@ -20379,6 +20379,8 @@ plugins:
         condition: 'many("WiS IV - leveld World X\d+\.esp")'
         subs: [ 'WiS IV - leveld World .esp file' ]
   - name: 'GDO_Plugin_SkyRe.esp'
+    inc:
+      - 'ReProccer.esp'
     req:
       - name: 'SPIKE.esm'
         display: 'Guard Dialogue Overhaul'
@@ -20392,9 +20394,7 @@ plugins:
           - lang: es
             text: 'Requiere: Skyrim Redone'
         condition: 'not file("SkyRe_Main.esp") and not file("SkyRe_Main_NoDawnguard.esp")'
-      - type: warn
-        content: 'Delete. Not to be used if using the SkyRe Reproccer.'
-        condition: 'file("ReProccer.esp")'
+        subs: [ 'Skyrim Redone' ]
   - name: 'StavesofSkyrim.esp'
     dirty:
       - crc: 0x5924d476
