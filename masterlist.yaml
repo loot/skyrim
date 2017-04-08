@@ -24634,3 +24634,16 @@ plugins:
   - name: 'CFTO.esp'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'Immersive Ingestibles.esp'
+    after:
+      - 'ETaC - RESOURCES.esm'
+      - 'Hunterborn.esp'
+      - 'Requiem.esp'
+      - 'NRM_Dragonborn_Reqtified.esp'
+    req:
+      - name: 'II EaTC Patch.esp'
+        condition: 'active("ETaC - RESOURCES.esm")'
+    msg:
+      - <<: *reqModX
+        condition: 'active("Requiem.esp") and not active("II Requiem patch.esp") and not active("II Requiem C2H6O patch.esp")'
+        subs: [ 'II Requiem patch.esp or II Requiem C2H6O patch.esp' ]
