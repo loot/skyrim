@@ -8671,16 +8671,17 @@ plugins:
         <<: *dirtyPlugin
         itm: 306
         udr: 10
-  - name: 'Requiem - Dragonborn.esp'
-    dirty:
-      - crc: 0x740bb9f0
-        <<: *dirtyPlugin
-        itm: 3
-  - name: 'Requiem - Hearthfires.esp'
-    dirty:
-      - crc: 0xa3a78f22
-        <<: *dirtyPlugin
-        itm: 1
+  # must be loaded directly after Requiem.esp
+  - name: 'Requiem - Bugsmasher Edition.esp'
+    priority: -127
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Hello'
+  # must be loaded directly after Requiem.esp
+  - name: 'Requiem - Legendary Bugsmasher Edition.esp'
+    priority: -127
   - name: 'Requiem - Difficulty Bar Restored.esp'
     inc:
       - 'Requiem - Difficulty Bar Restored - Nightmare.esp'
@@ -8697,37 +8698,21 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp")'
         subs: [ 'Requiem - Weapon Damage Modifier .esp file' ]
-  - name: 'NRM Dragonborn - Requiem Patch.esp'
-    after:
-      - 'Requiem - USKP + UDGP.esp'
-      - 'Requiem - Bring Out Your Dead.esp'
-      - 'Requiem - Hearthfire.esp'
-  - name: 'Requiem - Kryptopyr''s Fixes Reqtified.esp'
-    after:
-      - 'Requiem - USKP + UDGP.esp'
-      - 'Requiem - Bring Out Your Dead.esp'
-      - 'Requiem - Hearthfire.esp'
-      - 'Requiem - Height Adjusted Races with True Giants.esp'
-  - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
-    after:
-      - 'Requiem - USKP + UDGP.esp'
-      - 'Requiem - Bring Out Your Dead.esp'
-      - 'Requiem - Hearthfire.esp'
-      - 'Requiem - Height Adjusted Races with True Giants.esp'
-  - name: 'Requiem - Crafting Overhaul Reqtified.esp'
-    after:
-      - 'Requiem - USKP + UDGP.esp'
-      - 'Requiem - Bring Out Your Dead.esp'
-      - 'Requiem - Hearthfire.esp'
-      - 'Requiem - Height Adjusted Races with True Giants.esp'
-      - 'NRM Dragonborn - Requiem Patch.esp'
-  - name: 'COR-CraftingOverhaulReqtified.esp'
-    after:
-      - 'Requiem - USKP + UDGP.esp'
-      - 'Requiem - Bring Out Your Dead.esp'
-      - 'Requiem - Hearthfire.esp'
-      - 'Requiem - Height Adjusted Races with True Giants.esp'
-      - 'NRM Dragonborn - Requiem Patch.esp'
+  - name: 'Requiem - Hearthfires.esp'
+    dirty:
+      - crc: 0xa3a78f22
+        <<: *dirtyPlugin
+        itm: 1
+    url:
+      - 'http://www.nexusmods.com/skyrim/mods/58121/?'
+  # this is the old dragonborn patch by azirok
+  - name: 'Requiem - Dragonborn.esp'
+    dirty:
+      - crc: 0x740bb9f0
+        <<: *dirtyPlugin
+        itm: 3
+    url:
+      - 'http://www.nexusmods.com/skyrim/mods/54562/?'
   - name: 'Skyrim Hardcore Overhaul.esp'
     tag:
       - Delev
