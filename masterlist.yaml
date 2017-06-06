@@ -2534,9 +2534,38 @@ plugins:
         <<: *dirtyPlugin
         itm: 7
         udr: 0
+  - name: 'AOS2_DD Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("AOS2_DD Patch.esp") and active("Requiem - Deadly Dragons - AOS.esp")'
+        subs: [ 'Requiem - Deadly Dragons - AOS.esp' ]
+  - name: 'AOS2_FIO Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("AOS2_FIO Patch.esp") and active("Requiem - Fire and Ice Overhaul - AOS.esp")'
+        subs: [ 'Requiem - Fire and Ice Overhaul - AOS.esp' ]
+  - name: 'AOS2_GDO Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("AOS2_GDO Patch.esp") and active("Requiem - Audio Overhaul for Skyrim.esp")'
+        subs: [ 'Requiem - Audio Overhaul for Skyrim.esp' ]
+  - name: 'AOS2_Unique Uniques Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("AOS2_Unique Uniques Patch.esp") and active("Requiem - Unique Uniques - AOS.esp")'
+        subs: [ 'Requiem - Unique Uniques - AOS.esp' ]
   - name: 'AOS2_WAF Patch.esp'
     after:
       - name: 'AOS2_GDO Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("AOS2_WAF Patch.esp") and active("Requiem - Audio Overhaul for Skyrim.esp")'
+        subs: [ 'Requiem - Audio Overhaul for Skyrim.esp' ]
+  - name: 'AOS2_Requiem Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("AOS2_Requiem Patch.esp") and active("Requiem - Audio Overhaul for Skyrim.esp")'
+        subs: [ 'Requiem - Audio Overhaul for Skyrim.esp' ]
 # ## AOS_DG Patch.esp
 # ## AOS_DB Patch.esp
 # ## these should sort up here; regex: AOS_.+ down in compat patches section was unfortunately too broad -LD
@@ -6080,6 +6109,10 @@ plugins:
             text: 'Несовместим с: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.'
         condition: 'file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
   - name: '1nivWICSkyCloaksPatch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("1nivWICSkyCloaksPatch.esp") and active("CFR-CloaksForRequiem.esp")'
+        subs: [ 'CFR-CloaksForRequiem.esp' ]
     dirty:
       - crc: 0x2a8cad17
         <<: *dirtyPlugin
@@ -8839,6 +8872,12 @@ plugins:
     after:
       - 'Requiem - Immersive Horses.esp'
       - 'Requiem - Immersive Horses - SkyTEST.esp'
+  - name: 'Requiem - WAF+Clothing and Clutter Fixes Patch.esp'
+    inc:
+      - 'KFR-Kryptopyr''sFixesReqtified.esp")'
+  - name: 'Requiem - WAF+CCF+TrueWeapons Patch.esp'
+    inc:
+      - 'KFR-Kryptopyr''sFixesReqtified.esp")'
   - name: 'Requiem for the Indifferent.esp'
     global_priority: 95
 # mods that go after Requiem
@@ -15180,6 +15219,16 @@ plugins:
         condition: 'checksum("BetterQuestObjectives.esp",BCD35920)'
     tag:
       - NoMerge
+  - name: 'BetterQuestObjectives-AlternateStartPatch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("BetterQuestObjectives-AlternateStartPatch.esp") and active("Requiem - Live Another Life.esp")'
+        subs: [ 'Requiem - Live Another Life.esp' ]
+  - name: 'BetterQuestObjectives-CRFPatch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("BetterQuestObjectives-CRFPatch.esp") and active("Requiem - Cutting Room Floor.esp")'
+        subs: [ 'Requiem - Cutting Room Floor.esp' ]
   - name: 'BetterQuestObjectives-BSaQBPatch.esp'
     msg:
       - <<: *reqModX
@@ -17039,9 +17088,17 @@ plugins:
       - name: 'Guard Dialogue Overhaul.esp'
         display: '[Guard Dialouge Overhaul](http://www.nexusmods.com/skyrim/mods/23390)'
   - name: 'Weapons & Armor_TrueDaedricWeapons.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Weapons & Armor_TrueDaedricWeapons.esp") and active("KFR-Kryptopyr''sFixesReqtified.esp")'
+        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
     tag:
       - Stats
   - name: 'Weapons & Armor_TrueOrcishWeapons.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Weapons & Armor_TrueOrcishWeapons.esp") and active("KFR-Kryptopyr''sFixesReqtified.esp")'
+        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
     tag:
       - Delev
       - Relev
@@ -17049,10 +17106,34 @@ plugins:
   - name: 'Weapons & Armor_TrueOrcish&DaedricWeapons.esp'
     after:
       - 'Weapons & Armor Fixes_Remade.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Weapons & Armor_TrueOrcish&DaedricWeapons.esp") and active("KFR-Kryptopyr''sFixesReqtified.esp")'
+        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
     tag:
       - Delev
       - Relev
       - Stats
+  - name: 'Weapons & Armor_TrueWeaponsLvlLists.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Weapons & Armor_TrueWeaponsLvlLists.esp") and active("KFR-Kryptopyr''sFixesReqtified.esp")'
+        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
+  - name: 'Weapons & Armor_DragonPriestMasks.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Weapons & Armor_DragonPriestMasks.esp") and active("KFR-Kryptopyr''sFixesReqtified.esp")'
+        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
+  - name: 'Weapons & Armor_FasterArrows.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Weapons & Armor_FasterArrows.esp") and active("KFR-Kryptopyr''sFixesReqtified.esp")'
+        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
+  - name: 'WeaponsArmorFixes_ImmersiveWeapons_Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("WeaponsArmorFixes_ImmersiveWeapons_Patch.esp") and active("Requiem - Immersive Weapons.esp")'
+        subs: [ 'Requiem - Immersive Weapons.esp' ]
   - name: 'Skyrim unleashed_items.esp'
     tag:
       - Delev
@@ -25104,3 +25185,70 @@ plugins:
     msg:
       - <<: *needsRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Dawnguard Arsenal.esp")'
+
+
+  - name: 'ISC WAFR Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("ISC WAFR Patch.esp") and active("Requiem - Immersive Sounds Compendium.esp")'
+        subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
+  - name: 'ISC CCF Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("ISC CCF Patch.esp") and active("Requiem - Immersive Sounds Compendium.esp")'
+        subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
+  - name: 'ISCompendium CCO Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("ISCompendium CCO Patch.esp") and active("Requiem - Immersive Sounds Compendium.esp")'
+        subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
+  - name: 'ISC Requiem Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("ISC Requiem Patch.esp") and active("Requiem - Immersive Sounds Compendium.esp")'
+        subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
+  - name: 'Requiem - Dragonborn - CCOR Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Requiem - Dragonborn - CCOR Patch.esp") and active("COR-CraftingOverhaulReqtified.esp")'
+        subs: [ 'COR-CraftingOverhaulReqtified.esp' ]
+  - name: 'CCO_WAFTrueWeapons_Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("CCO_WAFTrueWeapons_Patch.esp") and active("COR-CraftingOverhaulReqtified.esp")'
+        subs: [ 'COR-CraftingOverhaulReqtified.esp' ]
+  - name: 'Cloaks - Dawnguard.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Cloaks - Dawnguard.esp") and active("CFR-CloaksForRequiem.esp")'
+        subs: [ 'CFR-CloaksForRequiem.esp' ]
+  - name: 'COS_WIC_CCO_patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("COS_WIC_CCO_patch.esp") and active("CFR-CloaksForRequiem.esp")'
+        subs: [ 'CFR-CloaksForRequiem.esp' ]
+  - name: 'Requiem - Cloaks.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Requiem - Cloaks.esp") and active("CFR-CloaksForRequiem.esp")'
+        subs: [ 'CFR-CloaksForRequiem.esp' ]
+  - name: 'Requiem - Cloaks of Skyrim.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Requiem - Cloaks of Skyrim.esp") and active("CFR-CloaksForRequiem.esp")'
+        subs: [ 'CFR-CloaksForRequiem.esp' ]
+  - name: 'Requiem - Cloaks of Skyrim Hard - Times.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Requiem - Cloaks of Skyrim Hard - Times.esp") and active("CFR-CloaksForRequiem.esp")'
+        subs: [ 'CFR-CloaksForRequiem.esp' ]
+  - name: 'Requiem - Cloaks of Skyrim Patch.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Requiem - Cloaks of Skyrim Patch.esp") and active("CFR-CloaksForRequiem.esp")'
+        subs: [ 'CFR-CloaksForRequiem.esp' ]
+  - name: 'Requiem - Cloaks WICCloaks CCFR USKP.esp'
+    msg:
+      - <<: *redundantPluginX
+        condition: 'active("Requiem - Cloaks WICCloaks CCFR USKP.esp") and active("CFR-CloaksForRequiem.esp")'
+        subs: [ 'CFR-CloaksForRequiem.esp' ]
