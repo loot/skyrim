@@ -8716,6 +8716,7 @@ plugins:
       - 'EpicGloryByMadmole.esp'
   - name: 'FactionOverhaulV25.esp'
     msg: [ *obsolete ]
+### Rules for Requiem and its patches ###
   - name: 'Requiem.esp'
     global_priority: 75
     inc:
@@ -8741,15 +8742,11 @@ plugins:
           - lang: en
             text: 'Delete MineOreScript.pex from Requiem. [CCOR](http://www.nexusmods.com/skyrim/mods/49791)''s script must take precedence.'
         condition: 'active("Complete Crafting Overhaul_Remade.esp") and checksum("Scripts/MineOreScript.pex", 82F96995)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Hello1'
     tag:
       - Delev
       - Relev
     url:
-      - 'http://www.nexusmods.com/skyrim/mods/19281'
+      - 'http://www.nexusmods.com/skyrim/mods/19281/?'
     dirty:
       - crc: 0x3b5fc1df
         <<: *dirtyPlugin
@@ -8763,10 +8760,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 306
         udr: 10
-  # must be loaded directly after Requiem.esp
+  # Must be loaded directly after Requiem.esp
   - name: 'Requiem - Bugsmasher Edition.esp'
     priority: -127
-  # must be loaded directly after Requiem.esp
+  # Must be loaded directly after Requiem.esp
   - name: 'Requiem - Legendary Bugsmasher Edition.esp'
     priority: -127
   - name: 'Requiem - Difficulty Bar Restored.esp'
@@ -8792,7 +8789,7 @@ plugins:
         itm: 1
     url:
       - 'http://www.nexusmods.com/skyrim/mods/58121/?'
-  # this is the old dragonborn patch by azirok
+  # This is the old dragonborn patch by azirok
   - name: 'Requiem - Dragonborn.esp'
     dirty:
       - crc: 0x740bb9f0
@@ -8800,27 +8797,27 @@ plugins:
         itm: 3
     url:
       - 'http://www.nexusmods.com/skyrim/mods/54562/?'
-  # should be loaded directly after Requiem.esp and the bugsmasher
+  # Should be loaded directly after Requiem.esp and the bugsmasher
   - name: 'Requiem - Hearthfire.esp'
     priority: -127
     after:
       - 'Requiem - Bugsmasher Edition.esp'
       - 'Requiem - Legendary Bugsmasher Edition.esp'
-  # should lose conflicts because other patches may make important edits to Dragonborn content
+  # Should lose conflicts because other patches may make important edits to Dragonborn content
   - name: 'NRM_Dragonborn_Reqtified.esp'
     priority: -75
     inc:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
-  # should lose conflicts because other patches may make important edits to Dragonborn content
+  # Should lose conflicts because other patches may make important edits to Dragonborn content
   - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
     priority: -75
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
       - 'COR-CraftingOverhaulReqtified.esp'
-  # should lose conflicts because other patches may make important edits to the races
+  # Should lose conflicts because other patches may make important edits to the races
   - name: 'Requiem - Height Adjusted Races with True Giants.esp'
     priority: -50
-  # should lose conflicts because other patches may make important edits to something touched by AOS
+  # Should lose conflicts because other patches may make important edits to something touched by AOS
   - name: 'Requiem - Audio Overhaul for Skyrim.esp'
     priority: -50
     after:
@@ -8848,7 +8845,7 @@ plugins:
       - 'Requiem - Immersive Spells.esp'
       - 'Open Face Guard Helmets.esp'
       - 'Requiem - Civil War Overhaul Patch.esp'
-  # must be loaded directly after Minor Arcana
+  # Must be loaded directly after Minor Arcana
   - name: 'Requiem - Minor Arcana - USLEEP patch.esp'
     priority: -127
   - name: 'Requiem - ESF Companions.esp'
@@ -8878,13 +8875,20 @@ plugins:
   - name: 'Requiem - WAF+CCF+TrueWeapons Patch.esp'
     inc:
       - 'KFR-Kryptopyr''sFixesReqtified.esp")'
-  - name: 'Requiem for the Indifferent.esp'
-    global_priority: 95
-# mods that go after Requiem
+# Mods that must be loaded after Requiem
   - name: 'Bounty Gold.esp'
     after:
       - 'Requiem.esp'
-  # realistic ragdoll
+  - name: 'dD.?- Realistic Ragdoll Force.*\.esp'
+    after:
+      - 'Requiem.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Ragdolls will conflict with other mods that change the skeleton.nif. Check [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712) for compatibly with other skeleton.nif.'
+          - lang: ru
+            text: 'Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712), для поддержки других версий skeleton.nif или попробуйте использовать [XP32 Maximum Skeleton Extended - XPMSE](http://www.nexusmods.com/skyrim/mods/68000).'
   - name: 'XPMSE.esp'
     after:
       - 'Requiem.esp'
@@ -8897,11 +8901,12 @@ plugins:
   - name: 'WerewolfPerksExpanded.esp'
     after:
       - 'Requiem.esp'
-  # RealisticWaterTwo.esp
   - name: 'No Vendor or Loot Spells - Riverwood Trader Requiem.esp'
     req:
       - 'Requiem.esp'
-
+  # other mods that must be loaded after Requiem but are listed somewhere else in LOOT's rules:
+  # - RealisticWaterTwo.esp
+### End of Requiem's rules ###
   - name: 'Skyrim Hardcore Overhaul.esp'
     tag:
       - Delev
@@ -22956,16 +22961,6 @@ plugins:
           - lang: es
             text: 'SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
         condition: 'not active("SkyUI.esp")'
-  - name: 'dD.?- Realistic Ragdoll Force.*\.esp'
-    after:
-      - 'Requiem.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Ragdolls will conflict with other mods that change the skeleton.nif. Check [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712) for compatibly with other skeleton.nif.'
-          - lang: ru
-            text: 'Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712), для поддержки других версий skeleton.nif или попробуйте использовать [XP32 Maximum Skeleton Extended - XPMSE](http://www.nexusmods.com/skyrim/mods/68000).'
   - name: 'driveableboat.esp'
     dirty:
       - crc: 0x920c6e44
@@ -24357,6 +24352,8 @@ plugins:
     global_priority: 95
   - name: 'ReProccer.esp'
     global_priority: 95
+  - name: 'Requiem for the Indifferent.esp'
+    global_priority: 95
   - name: 'ScrollProccer.esp'
     global_priority: 95
   - name: 'The Staff Machine.esp'
@@ -24977,7 +24974,7 @@ plugins:
     after:
       - 'AuroraVillage.esp'
   - name: 'No Vendor or Loot Spells.esp'
-    global_priority: 100
+    global_priority: 105
   - name: 'Skyrim Unlocked.esp'
     global_priority: 90
     inc:
