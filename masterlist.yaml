@@ -242,7 +242,7 @@ common:
     type: warn
     content:
       - lang: en
-        text: 'This mod is incompatible with Requiem. You should install a compatibility patch.'
+        text: 'Incompatible with: Requiem. You must install a compatibility patch.'
 
 # Cleaning data
   - &dirtyPlugin
@@ -24976,16 +24976,19 @@ plugins:
   - name: 'MoonAndStar_MAS.esp'
     after:
       - 'AuroraVillage.esp'
-
   - name: 'No Vendor or Loot Spells.esp'
     global_priority: 100
-
-# Mods that are incompatible with Requiem but have compatibility patches available
-  - name: 'Hypothermia.esp'
+  - name: 'Skyrim Unlocked.esp'
+    global_priority: 90
+    inc:
+      - name: "Open Cities Skyrim.esp"
+        condition: 'not active("Open Cities Skyrim - Skyrim Unlocked Patch.esp")'
     msg:
+      - type: warn
+        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities Skyrim - Skyrim Unlocked Patch.esp")'
+        content: 'Incompatible with: Open Cities Skyrim. You must install the compatibility patch.'
       - <<: *needsRequiemPatch
-        condition: 'file("Requiem.esp") and not active("Requiem - Realistic Needs & Hypothermia.esp")'
-  # Requiem patches provided by thetrader
+        condition: 'file("Requiem.esp") and not active("Requiem - Skyrim Unlocked.esp") and not active("Requiem - Skyrim Unlocked - OCS.esp")'
   - name: '83Willows_101BUGS_V4_HighRes_HighSpawn.esp' 
     msg:
       - <<: *needsRequiemPatch
@@ -25119,6 +25122,10 @@ plugins:
     msg:
       - <<: *needsRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Hoth.esp")'
+  - name: 'Hypothermia.esp'
+    msg:
+      - <<: *needsRequiemPatch
+        condition: 'file("Requiem.esp") and not active("Requiem - Realistic Needs & Hypothermia.esp")'
   - name: 'Immersive Horses.esp'
     msg:
       - <<: *needsRequiemPatch
@@ -25148,27 +25155,19 @@ plugins:
       - <<: *needsRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Rustic Soulgems.esp") and not active("Requiem - Rustic Soulgems - ISC.esp")'
       - <<: *redundantPluginX
-        condition: 'active("RUSTIC SOULGEMS - Sorted.esp") and active("Requiem - Rustic Soulgems.esp")'
+        condition: 'active("RUSTIC SOULGEMS - Sorted.esp") and active("Requiem - Rustic Soulgems.esp") or active("RUSTIC SOULGEMS - Sorted.esp") and active("Requiem - Rustic Soulgems - ISC.esp")'
         subs: [ 'Requiem - Rustic Soulgems.esp' ]
   - name: 'RUSTIC SOULGEMS - Unsorted.esp'
     msg:
       - <<: *needsRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Rustic Soulgems.esp") and not active("Requiem - Rustic Soulgems - ISC.esp")'
       - <<: *redundantPluginX
-        condition: 'active("RUSTIC SOULGEMS - Unsorted.esp") and active("Requiem - Rustic Soulgems.esp")'
+        condition: 'active("RUSTIC SOULGEMS - Unsorted.esp") and active("Requiem - Rustic Soulgems.esp") or active("RUSTIC SOULGEMS - Sorted.esp") and active("Requiem - Rustic Soulgems - ISC.esp")'
         subs: [ 'Requiem - Rustic Soulgems.esp' ]
   - name: 'ScopedBows.esp'
     msg:
       - <<: *needsRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Scoped Bows.esp")'
-  - name: 'Skyrim Unlocked.esp'
-    global_priority: 90
-    inc:
-      - name: "Open Cities Skyrim.esp"
-        condition: 'not active("Open Cities Skyrim - Skyrim Unlocked Patch.esp")'
-    msg:
-      - <<: *needsRequiemPatch
-        condition: 'file("Requiem.esp") and not active("Requiem - Skyrim Unlocked.esp") and not active("Requiem - Skyrim Unlocked - OCS.esp")'
   - name: 'Unique Uniques.esp'
     msg:
       - <<: *needsRequiemPatch
@@ -25185,8 +25184,6 @@ plugins:
     msg:
       - <<: *needsRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Dawnguard Arsenal.esp")'
-
-
   - name: 'ISC WAFR Patch.esp'
     msg:
       - <<: *redundantPluginX
