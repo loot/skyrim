@@ -8803,6 +8803,27 @@ plugins:
       - 'Requiem - Immersive Horses - SkyTEST.esp'
   - name: 'Requiem for the Indifferent.esp'
     global_priority: 95
+# mods that go after Requiem
+  - name: 'Bounty Gold.esp'
+    after:
+      - 'Requiem.esp'
+  # realistic ragdoll
+  - name: 'XPMSE.esp'
+    after:
+      - 'Requiem.esp'
+  - name: 'RealisticRoomRental(-Basic)?.esp'
+    after:
+      - 'Requiem.esp'
+  - name: 'Unlimited Training.esp'
+    after:
+      - 'Requiem.esp'
+  - name: 'WerewolfPerksExpanded.esp'
+    after:
+      - 'Requiem.esp'
+  # RealisticWaterTwo.esp
+  - name: 'No Vendor or Loot Spells - Riverwood Trader Requiem.esp'
+    req:
+      - 'Requiem.esp'
 
   - name: 'Skyrim Hardcore Overhaul.esp'
     tag:
@@ -22747,6 +22768,8 @@ plugins:
             text: 'SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
         condition: 'not active("SkyUI.esp")'
   - name: 'dD.?- Realistic Ragdoll Force.*\.esp'
+    after:
+      - 'Requiem.esp'
     msg:
       - type: say
         content:
@@ -23522,6 +23545,7 @@ plugins:
       - 'Ducks and Swans.esp'
       - 'Helgen Reborn.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Requiem.esp'
   - name: 'RealisticWaterTwo - Legendary.esp'
     after:
       - 'SkyFalls + SkyMills.esp'
@@ -24757,3 +24781,14 @@ plugins:
   - name: 'MoonAndStar_MAS.esp'
     after:
       - 'AuroraVillage.esp'
+
+  - name: 'No Vendor or Loot Spells.esp'
+    global_priority: 100
+  - name: 'ELE_Legendary_Lite.esp'
+    priority: 110
+  - name: 'ELE_Legendary_Fs_Wt_Lite.esp'
+    priority: 110
+  - name: 'ELE_S_DG_DB_Lite.esp'
+    priority: 110
+  - name: 'ELE_S_Lite.esp'
+    priority: 110
