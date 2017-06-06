@@ -8629,18 +8629,35 @@ plugins:
   - name: 'FactionOverhaulV25.esp'
     msg: [ *obsolete ]
   - name: 'Requiem.esp'
+    global_priority: 75
+    inc:
+      - 'Requiem plus PCEA 3-5.esp'
+      - 'Ordinator - Perks of Skyrim.esp'
+      - 'PerkusMaximus_Mage.esp'
+      - 'PerkusMaximus_Master.esp'
+      - 'PerkusMaximus_Thief.esp'
+      - 'PerkusMaximus_Warrior.esp'
+      - 'SkyRe_Main.esp'
+      - name: 'Requiem - Hard Times.esp'
+        condition: 'version("Requiem.esp", "1.8", >=) and checksum("Requiem - Hard Times.esp", A393D1E3)'
     msg:
-      - type: say
+      - <<: *doNotClean
+        condition: 'version("Requiem.esp", "1.9.3", >=)'
+      - type: warn
         content:
           - lang: en
-            text: 'Requiem makes a LOT of changes. You may want to consider creating and using a Userlist based on your particular mod loadout.'
-          - lang: ru
-            text: 'Requiem вносит в игру большое количество изменений. Возможно вам потребуется использование создание пользовательских правил для вашего конкретного набора модов или использование других средств, для дополнительной корректировки порядка загрузки установленных модов.'
-          - lang: es
-            text: 'Requiem makes a LOT of changes. You may want to consider creating and using a Userlist based on your particular mod loadout.'
+            text: 'Your load order does not contain the extra plugin called Bugsmasher, which includes all fixes from the Unofficial Patches that require an explicit dependence on their plugins.'
+        condition: 'not active("Requiem - Bugsmasher Edition.esp") and not active("Requiem - Legendary Bugsmasher Edition.esp")'
+      - type: error
+        content:
+          - lang: en
+            text: 'Delete MineOreScript.pex from Requiem. [CCOR](http://www.nexusmods.com/skyrim/mods/49791)''s script must take precedence.'
+        condition: 'active("Complete Crafting Overhaul_Remade.esp") and checksum("Scripts/MineOreScript.pex", 82F96995)'
     tag:
       - Delev
       - Relev
+    url:
+      - 'http://www.nexusmods.com/skyrim/mods/19281'
     dirty:
       - crc: 0x3b5fc1df
         <<: *dirtyPlugin
