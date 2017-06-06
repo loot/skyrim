@@ -8653,6 +8653,10 @@ plugins:
           - lang: en
             text: 'Delete MineOreScript.pex from Requiem. [CCOR](http://www.nexusmods.com/skyrim/mods/49791)''s script must take precedence.'
         condition: 'active("Complete Crafting Overhaul_Remade.esp") and checksum("Scripts/MineOreScript.pex", 82F96995)'
+      - type: say
+        content:
+          - lang: en
+            text: 'Hello1'
     tag:
       - Delev
       - Relev
@@ -8674,11 +8678,6 @@ plugins:
   # must be loaded directly after Requiem.esp
   - name: 'Requiem - Bugsmasher Edition.esp'
     priority: -127
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Hello'
   # must be loaded directly after Requiem.esp
   - name: 'Requiem - Legendary Bugsmasher Edition.esp'
     priority: -127
@@ -8713,6 +8712,88 @@ plugins:
         itm: 3
     url:
       - 'http://www.nexusmods.com/skyrim/mods/54562/?'
+  # should be loaded directly after Requiem.esp and the bugsmasher
+  - name: 'Requiem - Hearthfire.esp'
+    priority: -127
+    after:
+      - 'Requiem - Bugsmasher Edition.esp'
+      - 'Requiem - Legendary Bugsmasher Edition.esp'
+  # should lose conflicts because other patches may make important edits to Dragonborn content
+  - name: 'NRM_Dragonborn_Reqtified.esp'
+    priority: -75
+    inc:
+      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+  # should lose conflicts because other patches may make important edits to Dragonborn content
+  - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+    priority: -75
+    after:
+      - 'KFR-Kryptopyr''sFixesReqtified.esp'
+      - 'COR-CraftingOverhaulReqtified.esp'
+  # should lose conflicts because other patches may make important edits to quests
+  - name: BetterQuestObjectives-RequiemPatch.esp
+    priority: -50
+    msg:
+      - <<: *redundantPluginX
+        condition: 'version("Requiem.esp", "2.0", >=) and active("BetterQuestObjectives-RequiemPatch.esp")'
+        subs: [ 'Requiem.esp' ]
+  # should lose conflicts because other patches may make important edits to the races
+  - name: 'Requiem - Height Adjusted Races with True Giants.esp'
+    priority: -50
+  # should lose conflicts because other patches may make important edits to something touched by AOS
+  - name: 'Requiem - Audio Overhaul for Skyrim.esp'
+    priority: -50
+    after:
+      - 'KFR-Kryptopyr''sFixesReqtified.esp'
+      - 'COR-CraftingOverhaulReqtified.esp'
+  - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
+    after:
+      - 'NRM_Dragonborn_Reqtified.esp'
+  - name: 'COR-CraftingOverhaulReqtified.esp'
+    after:
+      - 'KFR-Kryptopyr''sFixesReqtified.esp'
+  - name: 'COR-Campfire.esp'
+    req:
+      - 'COR-CraftingOverhaulReqtified.esp'
+  - name: 'COR-WetAndCold.esp'
+    req:
+      - 'COR-CraftingOverhaulReqtified.esp'
+  - name: 'Open Face Guard Helmets.esp'
+    after:
+      - 'KFR-Kryptopyr''sFixesReqtified.esp'
+  - name: 'Requiem_Minor_Arcana.esp'
+    after:
+      - 'KFR-Kryptopyr''sFixesReqtified.esp'
+      - 'COR-CraftingOverhaulReqtified.esp'
+      - 'Requiem - Immersive Spells.esp'
+      - 'Open Face Guard Helmets.esp'
+      - 'Requiem - Civil War Overhaul Patch.esp'
+  # must be loaded directly after Minor Arcana
+  - name: 'Requiem - Minor Arcana - USLEEP patch.esp'
+    priority: -127
+  - name: 'Requiem - ESF Companions.esp'
+    after:
+      - 'Requiem_Minor_Arcana.esp'
+  - name: 'Requiem - WRF_MinorArcana_MortalEnemies_TG.esp'
+    after:
+      - 'Requiem_Minor_Arcana.esp'
+  - name: 'Requiem - Immersive Creatures.esp'
+    after:
+      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+  - name: 'Requiem - Immersive Horses.esp'
+    after:
+      - 'REQMOD.esp'
+  - name: 'Requiem - Immersive Horses - SkyTEST.esp'
+    req:
+      - 'Requiem - SkyTEST.esp'
+    after:
+      - 'REQMOD.esp'
+  - name: 'Requiem - Craftable Horse Barding.esp'
+    after:
+      - 'Requiem - Immersive Horses.esp'
+      - 'Requiem - Immersive Horses - SkyTEST.esp'
+  - name: 'Requiem for the Indifferent.esp'
+    global_priority: 95
+
   - name: 'Skyrim Hardcore Overhaul.esp'
     tag:
       - Delev
