@@ -2561,11 +2561,11 @@ plugins:
       - <<: *redundantPluginX
         condition: 'active("AOS2_WAF Patch.esp") and active("Requiem - Audio Overhaul for Skyrim.esp")'
         subs: [ 'Requiem - Audio Overhaul for Skyrim.esp' ]
-  - name: 'AOS2_Requiem Patch.esp'
+  - name: '(AOS2_Requiem Patch|Requiem - Audio Overhaul for Skyrim)\.esp'
     msg:
-      - <<: *redundantPluginX
-        condition: 'active("AOS2_Requiem Patch.esp") and active("Requiem - Audio Overhaul for Skyrim.esp")'
-        subs: [ 'Requiem - Audio Overhaul for Skyrim.esp' ]
+      - <<: *useOnlyOneX
+        condition: 'many("(AOS2_Requiem Patch|Requiem - Audio Overhaul for Skyrim)\.esp")'
+        subs: [ 'Requiem patch for Audio Overhaul for Skyrim' ]
 # ## AOS_DG Patch.esp
 # ## AOS_DB Patch.esp
 # ## these should sort up here; regex: AOS_.+ down in compat patches section was unfortunately too broad -LD
@@ -8746,7 +8746,7 @@ plugins:
       - Delev
       - Relev
     url:
-      - 'http://www.nexusmods.com/skyrim/mods/19281/?'
+      - 'http://www.nexusmods.com/skyrim/mods/19281'
     dirty:
       - crc: 0x3b5fc1df
         <<: *dirtyPlugin
@@ -8788,7 +8788,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
     url:
-      - 'http://www.nexusmods.com/skyrim/mods/58121/?'
+      - 'http://www.nexusmods.com/skyrim/mods/58121'
   # This is the old dragonborn patch by azirok
   - name: 'Requiem - Dragonborn.esp'
     dirty:
@@ -8796,7 +8796,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
     url:
-      - 'http://www.nexusmods.com/skyrim/mods/54562/?'
+      - 'http://www.nexusmods.com/skyrim/mods/54562'
   # Should be loaded directly after Requiem.esp and the bugsmasher
   - name: 'Requiem - Hearthfire.esp'
     priority: -127
@@ -25196,11 +25196,11 @@ plugins:
       - <<: *redundantPluginX
         condition: 'active("ISCompendium CCO Patch.esp") and active("Requiem - Immersive Sounds Compendium.esp")'
         subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
-  - name: 'ISC Requiem Patch.esp'
+ - name: '(ISC Requiem Patch|Requiem - Immersive Sounds Compendium)\.esp'
     msg:
-      - <<: *redundantPluginX
-        condition: 'active("ISC Requiem Patch.esp") and active("Requiem - Immersive Sounds Compendium.esp")'
-        subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
+      - <<: *useOnlyOneX
+        condition: 'many("(ISC Requiem Patch|Requiem - Immersive Sounds Compendium)\.esp")'
+        subs: [ 'Requiem patch for Immersive Sounds Compendium' ]
   - name: 'Requiem - Dragonborn - CCOR Patch.esp'
     msg:
       - <<: *redundantPluginX
@@ -25221,28 +25221,8 @@ plugins:
       - <<: *redundantPluginX
         condition: 'active("COS_WIC_CCO_patch.esp") and active("CFR-CloaksForRequiem.esp")'
         subs: [ 'CFR-CloaksForRequiem.esp' ]
-  - name: 'Requiem - Cloaks.esp'
+  - name: '(CFR-CloaksForRequiem|Requiem - Cloaks( of Skyrim| of Skyrim Hard - Times| of Skyrim Patch| WICCloaks CCFR USKP)?)\.esp'
     msg:
-      - <<: *redundantPluginX
-        condition: 'active("Requiem - Cloaks.esp") and active("CFR-CloaksForRequiem.esp")'
-        subs: [ 'CFR-CloaksForRequiem.esp' ]
-  - name: 'Requiem - Cloaks of Skyrim.esp'
-    msg:
-      - <<: *redundantPluginX
-        condition: 'active("Requiem - Cloaks of Skyrim.esp") and active("CFR-CloaksForRequiem.esp")'
-        subs: [ 'CFR-CloaksForRequiem.esp' ]
-  - name: 'Requiem - Cloaks of Skyrim Hard - Times.esp'
-    msg:
-      - <<: *redundantPluginX
-        condition: 'active("Requiem - Cloaks of Skyrim Hard - Times.esp") and active("CFR-CloaksForRequiem.esp")'
-        subs: [ 'CFR-CloaksForRequiem.esp' ]
-  - name: 'Requiem - Cloaks of Skyrim Patch.esp'
-    msg:
-      - <<: *redundantPluginX
-        condition: 'active("Requiem - Cloaks of Skyrim Patch.esp") and active("CFR-CloaksForRequiem.esp")'
-        subs: [ 'CFR-CloaksForRequiem.esp' ]
-  - name: 'Requiem - Cloaks WICCloaks CCFR USKP.esp'
-    msg:
-      - <<: *redundantPluginX
-        condition: 'active("Requiem - Cloaks WICCloaks CCFR USKP.esp") and active("CFR-CloaksForRequiem.esp")'
-        subs: [ 'CFR-CloaksForRequiem.esp' ]
+      - <<: *useOnlyOneX
+        condition: 'many("(CFR-CloaksForRequiem|Requiem - Cloaks( of Skyrim| of Skyrim Hard - Times| of Skyrim Patch| WICCloaks CCFR USKP)?)\.esp")'
+        subs: [ 'Requiem patch for Cloaks of Skyrim' ]
