@@ -243,6 +243,9 @@ common:
     content:
       - lang: en
         text: 'Incompatible with: Requiem. You must install a compatibility patch.'
+  - &reqPatchForX
+    type: warn
+    content: 'Incompatible with: %1%. You must install the compatibility patch from the mod page.'
 
 # Cleaning data
   - &dirtyPlugin
@@ -8846,15 +8849,17 @@ plugins:
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
       - 'COR-CraftingOverhaulReqtified.esp'
-      - 'Requiem - Immersive Spells.esp'
       - 'Open Face Guard Helmets.esp'
+      - 'Requiem - Immersive Spells.esp'
       - 'Requiem - Civil War Overhaul Patch.esp'
+      - 'Requiem - ESF Companions.esp'
+    msg:
+      - <<: *reqPatchForX
+        condition: 'file("ESFCompanions.esp") and not active("Requiem_Minor_Arcana - ESF Companions.esp")'
+        subs: [ 'ESFCompanions.esp' ]
   # Must be loaded directly after Minor Arcana
   - name: 'Requiem - Minor Arcana - USLEEP patch.esp'
     priority: -127
-  - name: 'Requiem - ESF Companions.esp'
-    after:
-      - 'Requiem_Minor_Arcana.esp'
   - name: 'Requiem - WRF_MinorArcana_MortalEnemies_TG.esp'
     after:
       - 'Requiem_Minor_Arcana.esp'
@@ -15750,7 +15755,6 @@ plugins:
     after:
       - 'Brevi_MoonlightTales.esp'
       - 'BetterQuestObjectives.esp'
-      - 'Requiem_Minor_Arcana.esp'
     msg:
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - ESF Companions.esp")'
@@ -16151,6 +16155,11 @@ plugins:
     inc:
       - 'RSChildren - Complete.esp'
       - 'RSChildren_PatchUSKP.esp'
+  - name: 'RSChildren Patch - USLEEP.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Requiem - RS Children Overhaul.esp")'
+        subs: [ 'Requiem - RS Children Overhaul.esp' ]
   - name: 'Killable Children - Quest Important Protected.esp'
     dirty:
       - crc: 0x4231901c
@@ -25043,13 +25052,10 @@ plugins:
     global_priority: 105
   - name: 'Skyrim Unlocked.esp'
     global_priority: 70
-    inc:
-      - name: "Open Cities Skyrim.esp"
-        condition: 'not active("Open Cities Skyrim - Skyrim Unlocked Patch.esp")'
     msg:
-      - type: warn
-        condition: 'active("Open Cities Skyrim.esp") and not active("Open Cities Skyrim - Skyrim Unlocked Patch.esp")'
-        content: 'Incompatible with: Open Cities Skyrim. You must install the compatibility patch.'
+      - <<: *reqPatchForX
+        condition: 'file("Open Cities Skyrim.esp") and not active("Open Cities Skyrim - Skyrim Unlocked Patch.esp")'
+        subs: [ 'Open Cities Skyrim.esp' ]
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Skyrim Unlocked.esp") and not active("Requiem - Skyrim Unlocked - OCS.esp")'
   - name: 'Craftable Horse Barding.esp'
@@ -25112,6 +25118,9 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Inconsequential NPCs - Enhancement.esp")'
+      - <<: *alreadyInX
+        condition: 'active("Requiem - Inconsequential NPCs - Enhancement.esp")'
+        subs: [ 'Requiem - Inconsequential NPCs - Enhancement.esp' ]
   - name: 'RUSTIC SOULGEMS - (Uns|S)orted\.esp'
     msg:
       - <<: *reqRequiemPatch
@@ -25136,6 +25145,14 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Dawnguard Arsenal.esp")'
+  - name: 'One With Nature.*\.esp'
+    msg:
+      - <<: *reqRequiemPatch
+        condition: 'file("Requiem.esp") and not active("Requiem - One With Nature.esp")'
+  - name: 'Immersive Jewelry.esp'
+    msg:
+      - <<: *reqRequiemPatch
+        condition: 'file("Requiem.esp") and not active("Requiem - Immersive Jewelry( BTC| ISC)?\.esp")'
   - name: 'ISC WAFR Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -25181,3 +25198,16 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("(CFR-CloaksForRequiem|Requiem - Cloaks( of Skyrim| of Skyrim Hard - Times| of Skyrim Patch| WICCloaks CCFR USKP)?)\.esp")'
         subs: [ 'Requiem patch for Cloaks of Skyrim' ]
+  - name: 'Requiem - Immersive Jewelry( BTC| ISC)?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("Requiem - Immersive Jewelry( BTC| ISC)?\.esp")'
+        subs: [ 'Requiem patch for Immersive Jewelry' ]
+  - name: 'Requiem - Immersive Jewelry.esp'
+    msg:
+      - <<: *reqPatchForX
+        condition: 'file("Requiem - Behind the Curtain.esp") and not active("Requiem - Immersive Jewelry BTC.esp")'
+        subs: [ 'Requiem - Behind the Curtain.esp' ]
+      - <<: *reqPatchForX
+        condition: 'file("Immersive Sounds - Compendium.esp") and not active("Requiem - Immersive Jewelry ISC.esp")'
+        subs: [ 'Immersive Sounds - Compendium.esp' ]
