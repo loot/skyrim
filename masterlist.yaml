@@ -8972,6 +8972,9 @@ plugins:
   - name: 'WerewolfPerksExpanded.esp'
     after:
       - 'Requiem.esp'
+  - name: 'Religion.esp'
+    after:
+      - 'Requiem.esp'
   - name: 'No Vendor or Loot Spells - Riverwood Trader Requiem.esp'
     req:
       - 'Requiem.esp'
@@ -18259,6 +18262,7 @@ plugins:
         condition: 'checksum("ClimatesOfTamriel-WinterEdition.esp",74DF3C5)'
   - name: 'ELFXEnhancer.esp'
     ## loaded after COT as it is more specialized
+    global_priority: 75
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
@@ -18272,9 +18276,10 @@ plugins:
         itm: 1
         udr: 0
   - name: 'ELFX - Hardcore.esp'
+    global_priority: 75
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'ELE_Legendary_Lite.esp'
+  - name: 'ELE_.+_Lite\.esp'
     global_priority: 75
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
@@ -18284,18 +18289,6 @@ plugins:
       - 'RelightingSkyrim_DG.esp'
       - 'RelightingSkyrim_HF.esp'
       - 'RelightingSkyrim_DB.esp'
-  - name: 'ELE_Legendary_Fs_Wt_Lite.esp'
-    global_priority: 75
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'ELE_S_DG_DB_Lite.esp'
-    global_priority: 75
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
-  - name: 'ELE_S_Lite.esp'
-    global_priority: 75
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'SV - The Indoors.esp'
     dirty:
       - crc: 0x51b712e6
@@ -24447,6 +24440,8 @@ plugins:
           - lang: es
             text: 'May need [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning. Several test generations of this SkyProc Patch included ITMs. Puedes encontra una guía [aquí](https://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit).'
   - name: 'ZF Primary Needs Patcher.esp'
+    global_priority: 95
+  - name: 'RSPatch.esp'
     global_priority: 95
 # Needs to load last.  If other plugins need to load this low, please adjust metadata so this always remains last.
   - name: 'SUM.esp'
