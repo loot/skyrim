@@ -264,7 +264,11 @@ common:
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
   - &reqSkyUI
     type: warn
-    content: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for this mod to be fully functional.'
+    content:
+      - lang: en
+        text: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for this mod to be fully functional.'
+      - lang: ja
+        text: 'SkyUI.espがアクティブになっていません。このModを完全に機能させるには[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)が必要です。'
     condition: 'not active("SkyUI.esp")'
   - &reqRequiemPatch
     type: warn
@@ -275,7 +279,11 @@ common:
         text: '競合: Requiem（互換パッチをインストールしてください）'
   - &reqPatchForX
     type: warn
-    content: 'Incompatible with: %1%. You must install the compatibility patch from the mod page.'
+    content:
+      - lang: en
+        text: 'Incompatible with: %1%. You must install the compatibility patch from the mod page.'
+      - lang: ja
+        text: '競合: %1%. Modの公開ページから互換パッチをインストールしてください。'
 
 # Cleaning data
   - &dirtyPlugin
@@ -447,7 +455,7 @@ globals:
       - lang: zh_CN
         text: '你安装了[FNIS](http://www.nexusmods.com/skyrim/mods/11811)。每次安装或卸载基于FNIS的mod时记得运行GenerateFNISforUsers.exe。'
       - lang: ja
-        text: '[Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする場合は、必ずGenerateFNISforUsers.exeを実行するようにしてください。'
+        text: '[Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
 
 plugins:
   - name: 'Update.esm'
@@ -990,7 +998,11 @@ plugins:
     msg:
       - type: warn
         condition: 'checksum("ClimatesOfTamriel.esm",C30AB34E)'
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the [updated plugin](http://www.nexusmods.com/skyrim/mods/17802).'
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the [updated plugin](http://www.nexusmods.com/skyrim/mods/17802).'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。[最新版のプラグイン](http://www.nexusmods.com/skyrim/mods/17802)を使用してください。'
       - type: warn
         condition: 'file("SoS - Civilization.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp") and not file("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
         content:
@@ -999,7 +1011,7 @@ plugins:
           - lang: ru
             text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
           - lang: ja
-            text: 'Sounds of Skyrim - CivilizationはClimatesOfTamriel.esmと競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)にある適切な互換パッチを使用することをお勧めします。'
+            text: 'Sounds of Skyrim - CivilizationはClimatesOfTamriel.esmと競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
       - type: warn
         condition: 'file("SoS - The Wilds.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp") and not file("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
         content:
@@ -1008,7 +1020,7 @@ plugins:
           - lang: ru
             text: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/10886)'
           - lang: ja
-            text: 'Sounds of Skyrim - The WildsはClimatesOfTamriel.esmと競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)にある適切な互換パッチを使用することをお勧めします。'
+            text: 'Sounds of Skyrim - The WildsはClimatesOfTamriel.esmと競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)から適切な互換パッチを探すことをお勧めします。'
   - name: 'CoT-WeatherPatch.esp'
     dirty:
       - crc: 0x2fea325d
@@ -1220,7 +1232,11 @@ plugins:
     msg:
       - type: say
         condition: 'active("Dawnguard.esm") and checksum("Lanterns Of Skyrim - All In One - Main.esm",042A3DE0)'
-        content: 'Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.'
+        content:
+          - lang: en
+            text: 'Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.'
+          - lang: ja
+            text: 'Dawnguardへの変更を加えるにはDawnguardバージョンのLanterns Of Skyrim - All In One - Main.esmを使用してください。'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xDA6791AC
@@ -1233,7 +1249,11 @@ plugins:
   - name: 'LB_MuchAdoSnowElves.esm'
     msg:
       - type: warn
-        content: 'This is the wrong esm for LB_MuchAdoSnowElves_WeaponsOnly.esp'
+        content:
+          - lang: en
+            text: 'This is the wrong esm for LB_MuchAdoSnowElves_WeaponsOnly.esp'
+          - lang: ja
+            text: 'LB_MuchAdoSnowElves_WeaponsOnly.esp用のEsmとは異なります。'
         condition: 'file("LB_MuchAdoSnowElves_WeaponsOnly.esp") and checksum("LB_MuchAdoSnowElves.esm",9E22BEF7)'
   - name: 'LevelersTower.esm'
     dirty:
@@ -1741,7 +1761,7 @@ plugins:
           - lang: es
             text: 'Necesita ser cargado antes de cualquier mod que modifique NPCs. Este mod cambia el statatus de los NPCs a esencial.'
           - lang: ja
-            text: 'NPCに変更を加えるModより前にロードする必要があります。このModはNPCにEssential(不死)フラグを加えるだけでなく、それ以外のデータをバニラの値にセットします。'
+            text: 'NPCに変更を加えるModより前にロードする必要があります。このModはNPCにEssential(不死)フラグを加えるだけでなく、それ以外のデータをVanillaの値にセットします。'
 # ## Xvision Children - DB.esp
 # ## some elements of xvision children are specified to load pre-USKP; also note 2 parallel releases with different naming schemes; rest appear to be various compat patches, so put in that section for now -LD
   - name: 'AbsentAuCombat_Fix_FR.esp'
@@ -2570,7 +2590,11 @@ plugins:
   - name: 'PNENB.esp'
     msg:
       - type: say
-        content: 'Use non-Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use non-Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョン以外を使用してください。'
         condition: 'checksum("PNENB.esp",B8865296) and not file("Dawnguard.esm")'
   - name: 'RevampedExteriorFog.esp'
     inc:
@@ -2606,7 +2630,11 @@ plugins:
             text: 'Dawnguard.esmが見つかりました。本来の動作をさせるにはDawnguardバージョンのExpandedSnowSystems.espを使用する必要があります。'
         condition: 'active("Dawnguard.esm") and ( checksum("ExpandedSnowSystems.esp",03A9B612) or checksum("ExpandedSnowSystems.esp",72CC3B0C) )'
       - type: warn
-        content: 'ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.'
+        content:
+          - lang: en
+            text: 'ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.'
+          - lang: ja
+            text: 'ClimatesOfTamriel.esmが存在するかアクティブになっています。代わりにExpandedSnowSystems-CoT.espを使用しなければ正しく動作しません。'
         condition: 'active("ClimatesOfTamriel.esm")'
     dirty:
       - crc: 0x3a9b612
@@ -2696,7 +2724,11 @@ plugins:
   - name: 'ClimatesOfTamriel-Sound.esp'
     msg:
       - type: warn
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
         condition: 'checksum("ClimatesOfTamriel-Sound.esp",47AF2A0B)'
   - name: 'IceBreaker''s Improved Reverb.esp'
     msg: [ *obsolete ]
@@ -2730,7 +2762,11 @@ plugins:
   - name: 'better_torches.esp'
     msg:
       - type: warn
-        content: 'This mod appears to have a duplicated cell. You may encounter ''weirdness'' in the Riften Ratway.'
+        content:
+          - lang: en
+            text: 'This mod appears to have a duplicated cell. You may encounter ''weirdness'' in the Riften Ratway.'
+          - lang: ja
+            text: 'このModには重複したセルが存在するようです。リフテンのラットウェイがおかしなことになっているかもしれません。'
         condition: 'checksum("better_torches.esp",9F5EA6E6) or checksum("better_torches.esp",96F75656)'
     dirty:
       - crc: 0x9f5ea6e6
@@ -2741,7 +2777,11 @@ plugins:
       - 'better_torches.esp'
     msg:
       - type: warn
-        content: 'This mod appears to have a duplicated cell. You may encounter ''weirdness'' in the Riften Ratway.'
+        content:
+          - lang: en
+            text: 'This mod appears to have a duplicated cell. You may encounter ''weirdness'' in the Riften Ratway.'
+          - lang: ja
+            text: 'このModには重複したセルが存在するようです。リフテンのラットウェイがおかしなことになっているかもしれません。'
         condition: 'checksum("better_torches_brighter_torchlight.esp",9BEBAD4D) or checksum("better_torches_brighter_torchlight.esp",CB5777CE)'
     dirty:
       - crc: 0x9bebad4d
@@ -2803,7 +2843,11 @@ plugins:
   - name: 'ImmersiveContentExteriorLighting.esp'
     msg:
       - type: warn
-        content: 'Incompatible with: CLARALUX lighting mods'
+        content:
+          - lang: en
+            text: 'Incompatible with: CLARALUX lighting mods'
+          - lang: ja
+            text: '競合: CLARALUX系の光源Mod'
         condition: 'file("CLARALU.*\.esp")'
     dirty:
       - crc: 0xf2a7a8bd
@@ -2866,15 +2910,27 @@ plugins:
       - 'RemoveAmbientInteriorFog.esp'
     msg:
       - type: say
-        content: 'Use Remove Interior Fog V2 - Dawnguard.esp in addition to include Dawnguard locations.'
+        content:
+          - lang: en
+            text: 'Use Remove Interior Fog V2 - Dawnguard.esp in addition to include Dawnguard locations.'
+          - lang: ja
+            text: 'Dawnguardのロケーションに対応させるためにRemove Interior Fog V2 - Dawnguard.espを使用してください。'
         condition: 'file("Dawnguard.esm")'
       - type: say
-        content: 'Use Remove Interior Fog V2 - Hearthfire.esp in addition to include Hearthfires locations.'
+        content:
+          - lang: en
+            text: 'Use Remove Interior Fog V2 - Hearthfire.esp in addition to include Hearthfires locations.'
+          - lang: ja
+            text: 'Hearthfiresのロケーションに対応させるためにRemove Interior Fog V2 - Hearthfire.espを使用してください。'
         condition: 'file("Hearthfires.esm")'
   - name: 'Remove Interior Fog V2 - Full Version.esp'
     msg:
       - type: error
-        content: 'Do not use the modular versions of Remove Interior Fog V2 with the Full version.'
+        content:
+          - lang: en
+            text: 'Do not use the modular versions of Remove Interior Fog V2 with the Full version.'
+          - lang: ja
+            text: 'Full版のRemove Interior Fog V2を使用する場合は個別インストール版を使用しないでください。'
         condition: 'file("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp")'
     dirty:
       - crc: 0x4FD63CD3
@@ -3266,7 +3322,11 @@ plugins:
       - <<: *preCKSharlikranPatch
         condition: 'version("BabettesFeastBalanced.esp","1.2",<)'
       - type: warn
-        content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
+        content:
+          - lang: en
+            text: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
+          - lang: ja
+            text: 'スペース付きのEsp（Babettes Feast Balanced.esp、Babettes Feast Overpowered.esp、Babettes Feast Weaker Effects.esp）が存在する場合、現在は使用されていませんので削除してください。'
         condition: 'file("Babettes Feast Balanced.esp") or file("Babettes Feast Overpowered.esp") or file("Babettes Feast Weaker Effects.esp")'
     inc:
       - 'BabettesFeastOverpowered.esp'
@@ -3276,7 +3336,11 @@ plugins:
       - <<: *preCKSharlikranPatch
         condition: 'version("BabettesFeastOverpowered.esp","1.2",<)'
       - type: warn
-        content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
+        content:
+          - lang: en
+            text: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
+          - lang: ja
+            text: 'スペース付きのEsp（Babettes Feast Balanced.esp、Babettes Feast Overpowered.esp、Babettes Feast Weaker Effects.esp）が存在する場合、現在は使用されていませんので削除してください。'
         condition: 'file("Babettes Feast Balanced.esp") or file("Babettes Feast Overpowered.esp") or file("Babettes Feast Weaker Effects.esp")'
     inc:
       - 'BabettesFeastBalanced.esp'
@@ -3286,7 +3350,11 @@ plugins:
       - <<: *preCKSharlikranPatch
         condition: 'version("BabettesFeastWeakerEffects.esp","1.2",<)'
       - type: warn
-        content: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
+        content:
+          - lang: en
+            text: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
+          - lang: ja
+            text: 'スペース付きのEsp（Babettes Feast Balanced.esp、Babettes Feast Overpowered.esp、Babettes Feast Weaker Effects.esp）が存在する場合、現在は使用されていませんので削除してください。'
         condition: 'file("Babettes Feast Balanced.esp") or file("Babettes Feast Overpowered.esp") or file("Babettes Feast Weaker Effects.esp")'
     inc:
       - 'BabettesFeastBalanced.esp'
@@ -3319,7 +3387,11 @@ plugins:
   - name: 'PrometheusBeastSkeletons.esp'
     msg:
       - type: warn
-        content: 'Plugin has some corruption.'
+        content:
+          - lang: en
+            text: 'Plugin has some corruption.'
+          - lang: ja
+            text: 'プラグインの一部が破損しています。'
         condition: 'checksum("Prometheus_BeastSkeletons.esp",42EE9442)'
   - name: 'Beauties of Skyrim.esp'
     dirty:
@@ -3344,7 +3416,11 @@ plugins:
   - name: 'DV Better Sleep Dawnguard.esp'
     msg:
       - type: error
-        content: 'Use non-Dawnguard version, DV Better Sleep.esp'
+        content:
+          - lang: en
+            text: 'Use non-Dawnguard version, DV Better Sleep.esp'
+          - lang: ja
+            text: '非Dawnguardバージョン（DV Better Sleep.esp）を使用してください。'
         condition: 'not active("Dawnguard.esm") and file("DV Better Sleep Dawnguard.esp")'
   - name: 'DV Better Sleep.esp'
     msg:
@@ -3357,7 +3433,7 @@ plugins:
           - lang: es
             text: 'Utilizar la versión para Dawnguard, DV Better Sleep Dawnguard.esp'
           - lang: ja
-            text: 'Dawnguard版（DV Better Sleep Dawnguard.esp）を使用してください。'
+            text: 'Dawnguardバージョン（DV Better Sleep Dawnguard.esp）を使用してください。'
         condition: 'active("Dawnguard.esm") and file("DV Better Sleep.esp")'
   - name: 'BetterFishAdded.esp'
     tag:
@@ -3448,10 +3524,18 @@ plugins:
   - name: 'Bloody Cannibalism.esp'
     msg:
       - type: error
-        content: 'Use non-Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use non-Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョン以外を使用してください。'
         condition: 'not active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",75D6B87E)'
       - type: error
-        content: 'Use Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョンを使用してください。'
         condition: 'active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",A220A80B)'
     dirty:
       - crc: 0xa220a80b
@@ -3621,7 +3705,7 @@ plugins:
           - lang: es
             text: 'No funcionará con mods que alteren los dungeons.'
           - lang: ja
-            text: 'ダンジョン内の不自然な光源および環境光をすべて削除するため、バニラのダンジョンを改変するModとほとんどの場合競合します。'
+            text: 'ダンジョン内の不自然な光源および環境光をすべて削除するため、Vanillaのダンジョンを改変するModとほとんどの場合競合します。'
     dirty:
       - crc: 0x4b3f9bd5
         <<: *dirtyPlugin
@@ -3763,7 +3847,11 @@ plugins:
       - 'Skyrealism - Feast and Famine.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Headbomb''s Better Sorting - Food *.esp'
+        content:
+          - lang: en
+            text: 'Incompatible with: Headbomb''s Better Sorting - Food *.esp'
+          - lang: ja
+            text: '競合: Headbomb''s Better Sorting - Food *.esp'
         condition: 'file("Headbomb''s Better Sorting - Food.+\.esp")'
   - name: 'DropThatGold.esp'
     req: [ *SKSE ]
@@ -3970,10 +4058,18 @@ plugins:
   - name: 'Grind_stuff.esp'
     msg:
       - type: error
-        content: 'Use Hearthfires version.'
+        content:
+          - lang: en
+            text: 'Use Hearthfires version.'
+          - lang: ja
+            text: 'Hearthfiresバージョンを使用してください。'
         condition: 'active("Hearthfires.esm") and checksum("Grind_stuff.esp",31CCFA29)'
       - type: error
-        content: 'Use non-Hearthfires version.'
+        content:
+          - lang: en
+            text: 'Use non-Hearthfires version.'
+          - lang: ja
+            text: 'Hearthfiresバージョン以外を使用してください。'
         condition: 'not active("Hearthfires.esm") and checksum("Grind_stuff.esp",5E014754)'
   - name: 'Guard Build (HF) 1.esp'
     dirty:
@@ -4604,14 +4700,22 @@ plugins:
   - name: 'People Have Lanterns.esp'
     msg:
       - type: say
-        content: 'If this file is not higher than v1.2.2, update to the latest version.'
+        content:
+          - lang: en
+            text: 'If this file is not higher than v1.2.2, update to the latest version.'
+          - lang: ja
+            text: 'バージョンが1.2.2未満の場合は最新版に更新してください。'
         condition: 'not checksum("People Have Lanterns.esp",DC3B2BAE)'
   - name: 'People Have Torches.esp'
     inc:
       - 'People Have Lanterns.esp'
     msg:
       - type: say
-        content: 'If this file is not higher than v1.2.2, update to the latest version.'
+        content:
+          - lang: en
+            text: 'If this file is not higher than v1.2.2, update to the latest version.'
+          - lang: ja
+            text: 'バージョンが1.2.2未満の場合は最新版に更新してください。'
         condition: 'not checksum("People Have Torches.esp",7E5D2415)'
   - name: 'PerkReset.esp'
     msg:
@@ -4628,7 +4732,11 @@ plugins:
   - name: 'Perks Unbound.esp'
     msg:
       - type: say
-        content: 'Update (PU,PU-DG,PU-DB) to Perks Unbound - Merged.esp'
+        content:
+          - lang: en
+            text: 'Update (PU,PU-DG,PU-DB) to Perks Unbound - Merged.esp'
+          - lang: ja
+            text: 'Perks Unbound.esp（- Dawnguard & Dragonborn）をPerks Unbound - Merged.espに更新してください。'
         condition: 'file("Perks Unbound - Dragonborn.esp") and file("Perks Unbound - Dawnguard.esp")'
   - name: 'Perks Unbound - Helmless Warrior.esp'
     inc:
@@ -5019,7 +5127,11 @@ plugins:
         condition: 'not checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
     msg:
       - type: say
-        content: 'This is the Lore-Friendly version by jackstarr.  Do not use the original esp or esm by lifestorock.'
+        content:
+          - lang: en
+            text: 'This is the Lore-Friendly version by jackstarr.  Do not use the original esp or esm by lifestorock.'
+          - lang: ja
+            text: 'このEspはjackstarr氏によるロアフレンドリーバージョンです。lifestorock氏によるオリジナル版のEspもしくはEsmは使用しないでください。'
         condition: 'checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Immersive Creatures.esp")'
@@ -5042,7 +5154,11 @@ plugins:
   - name: 'Skyrim Immersive Creatures - DLC2.esp'
     msg:
       - type: error
-        content: 'This addon is for use with Skyrim Immersive Creatures.esm, not Skyrim Immersive Creatures.esp'
+        content:
+          - lang: en
+            text: 'This addon is for use with Skyrim Immersive Creatures.esm, not Skyrim Immersive Creatures.esp'
+          - lang: ja
+            text: 'Skyrim Immersive Creatures.esm用のアドオンです。Skyrim Immersive Creatures.esp用ではありません。'
         condition: 'checksum("Skyrim Immersive Creatures - DLC2.esp",C64CF88A) and not active("Skyrim Immersive Creatures.esm")'
     tag:
       - Delev
@@ -5057,7 +5173,11 @@ plugins:
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
     msg:
       - type: say
-        content: 'Incompatible with: SkyMoMod Lore * v10.esp''s'
+        content:
+          - lang: en
+            text: 'Incompatible with: SkyMoMod Lore * v10.esp''s'
+          - lang: ja
+            text: '競合: SkyMoMod Lore * v10.esp'
         condition: 'file("SkyMoMod Lore.+\.esp")'
       - <<: *obsolete
         condition: 'not file("Deleveled Skyrim - SkyMoMod_list.esp") or not file("SkyMoMod Lore.+\.esp") or not file("skymo-dawn.esp")'
@@ -5094,7 +5214,11 @@ plugins:
             text: '旧式のプラグインです。SkyMoMod Lore-Friendly * v10.espの最新版に更新してください。'
         condition: 'file("SkyMoMod Lore-Friendly .+\.esp")'
       - type: say
-        content: 'Incompatible with: SkyMoMod Lore-Friendly * v10.esp''s'
+        content:
+          - lang: en
+            text: 'Incompatible with: SkyMoMod Lore-Friendly * v10.esp''s'
+          - lang: ja
+            text: '競合: SkyMoMod Lore-Friendly * v10.esp'
         condition: 'file("SkyMoMod Lore-Friendly .+\.esp")'
     tag:
       - Delev
@@ -5204,10 +5328,18 @@ plugins:
   - name: 'Statues.esp'
     msg:
       - type: error
-        content: 'Use Hearthfires version.'
+        content:
+          - lang: en
+            text: 'Use Hearthfires version.'
+          - lang: ja
+            text: 'Hearthfiresバージョンを使用してください。'
         condition: 'active("Hearthfires.esm") and checksum("Statues.esp",C08BE2C5)'
       - type: error
-        content: 'Use Vanilla version.'
+        content:
+          - lang: en
+            text: 'Use Vanilla version.'
+          - lang: ja
+            text: 'Vanillaバージョンを使用してください。'
         condition: 'not active("Hearthfires.esm") and checksum("Statues.esp",5081E67A)'
   - name: 'SteamAchievementUnlocker.esp'
     dirty:
@@ -5455,7 +5587,11 @@ plugins:
       - 'xgfpferdekarren.esp'
     msg:
       - type: say
-        content: 'If you have errors at creation Bashed Patch you can use [the corrected version](https://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906).'
+        content:
+          - lang: en
+            text: 'If you have errors at creation Bashed Patch you can use [the corrected version](https://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906).'
+          - lang: ja
+            text: 'Bashed Patchの作成時にエラーが出る場合は[修正版](https://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906)を使用してください。'
         condition: 'checksum("xgfPferdeKarren-en.esp",99BFDF60)'
     dirty:
       - crc: 0x7c465726
@@ -6919,7 +7055,11 @@ plugins:
   - name: 'hothtrooper44_ArmorCompilation.esp'
     msg:
       - type: warn
-        content: 'This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches. It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.'
+        content:
+          - lang: en
+            text: 'This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches. It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.'
+          - lang: ja
+            text: 'このプラグインはhothtrooper44_ArmorCompilation.espのSkyjubs Invisible Helmetsバージョンです。他のhothtrooper氏のパッチと同時に使用しても期待される効果は発生しないでしょう。DawnguardとDragonborn以外のSkyjubs Invisible Helmets esp群とは互換性がありません。'
         condition: 'checksum("hothtrooper44_ArmorCompilation.esp",1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp",983EFB9E)'
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Immersive Armors.esp")'
@@ -7149,7 +7289,11 @@ plugins:
   - name: 'JSwordsDistributionBalancePlugin.esp'
     msg:
       - type: warn
-        content: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+        content:
+          - lang: en
+            text: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
+          - lang: ja
+            text: '[こちら](http://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
         condition: 'version("JSwordsDistributionBalancePlugin.esp","14.0",<)'
     tag:
       - Delev
@@ -7428,7 +7572,11 @@ plugins:
   - name: 'Merry Xmas 2012.esp'
     msg:
       - type: say
-        content: 'The Xmas present box of this mod conflicts with Xmas tree and the Xmas present boxes of Saturalia - Christmas In Skyrim in Dragonsreach in Whiterun. To resolve this, picking up all Saturalia''s Xmas present boxes in Dragonsreach before installing "Xmas Present MOD" or using Console Commands "tcl", "disable", etc is necessary.'
+        content:
+          - lang: en
+            text: 'The Xmas present box of this mod conflicts with Xmas tree and the Xmas present boxes of Saturalia - Christmas In Skyrim in Dragonsreach in Whiterun. To resolve this, picking up all Saturalia''s Xmas present boxes in Dragonsreach before installing "Xmas Present MOD" or using Console Commands "tcl", "disable", etc is necessary.'
+          - lang: ja
+            text: 'このModで追加されるXmasプレゼントボックスはSaturalia - Christmas In Skyrimのドラゴンリーチとホワイトランに置かれるXmasツリーおよびXmasプレゼントボックスと競合します。競合を解決するには、ドラゴンズリーチに置かれたSaturalia側のプレゼントボックスを事前に回収し尽くすか、それが無理なら「tcl」や「disable」などのコンソールコマンドを必要に応じて使用してください。'
         condition: 'active("ChristmasInSkyrim.esp")'
   - name: 'meteora''s smithing mod.esp'
     dirty:
@@ -7607,7 +7755,11 @@ plugins:
   - name: 'NA_Trueflame_Unenchanted_(Eng|Rus)\.esp'
     msg:
       - type: say
-        content: 'Incompatible with: NA_Trueflame_Eng or Rus esp'
+        content:
+          - lang: en
+            text: 'Incompatible with: NA_Trueflame_Eng or Rus esp'
+          - lang: ja
+            text: '競合: NA_Trueflame_Eng.esp (*Rus.esp)'
         condition: 'file("NA_Trueflame_(Eng|Rus)\.esp")'
       - type: warn
         content:
@@ -8303,7 +8455,11 @@ plugins:
   - name: 'TrissArmorRetextured.esp'
     msg:
       - type: say
-        content: 'As of version 3.0 Sharlikran''s Compatibility Patch is no longer needed.'
+        content:
+          - lang: en
+            text: 'As of version 3.0 Sharlikran''s Compatibility Patch is no longer needed.'
+          - lang: ja
+            text: '3.0以降ではSharlikran''s Compatibility Patchは不要です。'
         condition: 'version("TrissArmorRetextured.esp","2.1.1",>)'
       - type: warn
         condition: 'checksum("TrissArmorRetextured.esp",ED5D1DE)'
@@ -8423,7 +8579,11 @@ plugins:
       - *obsolete
       - *alreadyInSkyRe
       - type: say
-        content: 'Incompatible with: WeaponsOf3E*.esp'
+        content:
+          - lang: en
+            text: 'Incompatible with: WeaponsOf3E*.esp'
+          - lang: ja
+            text: '競合: WeaponsOf3E*.esp'
         condition: 'file("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp")'
     tag:
       - Delev
@@ -8465,7 +8625,7 @@ plugins:
           - lang: es
             text: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
           - lang: ja
-            text: 'ダウンロードページにて作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
+            text: 'ダウンロードページにて製作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
       - *obsolete
     dirty:
       - crc: 0x6f9af605
@@ -8482,7 +8642,7 @@ plugins:
           - lang: es
             text: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
           - lang: ja
-            text: 'ダウンロードページにて作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
+            text: 'ダウンロードページにて製作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
   - name: 'Witcher2-v3.0 Nilfgaard-Pale.esp'
     msg:
       - type: warn
@@ -8494,7 +8654,7 @@ plugins:
           - lang: es
             text: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
           - lang: ja
-            text: 'ダウンロードページにて作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
+            text: 'ダウンロードページにて製作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
     dirty:
       - crc: 0xb44cf9de
         <<: *dirtyPlugin
@@ -8510,7 +8670,7 @@ plugins:
           - lang: es
             text: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
           - lang: ja
-            text: 'ダウンロードページにて作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
+            text: 'ダウンロードページにて製作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
       - type: say
         content:
           - lang: en
@@ -8532,7 +8692,7 @@ plugins:
           - lang: es
             text: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
           - lang: ja
-            text: 'ダウンロードページにて作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
+            text: 'ダウンロードページにて製作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
       - type: say
         content:
           - lang: en
@@ -8554,7 +8714,7 @@ plugins:
           - lang: es
             text: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
           - lang: ja
-            text: 'ダウンロードページにて作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
+            text: 'ダウンロードページにて製作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
   - name: 'Witcher2-v3.0 Viperassassin-DB.esp'
     msg:
       - type: warn
@@ -8566,7 +8726,7 @@ plugins:
           - lang: es
             text: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
           - lang: ja
-            text: 'ダウンロードページにて作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
+            text: 'ダウンロードページにて製作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
   - name: 'WolfArmorLightSA.esp'
     dirty:
       - crc: 0x898389c8
@@ -8588,10 +8748,18 @@ plugins:
   - name: 'XAC.esp'
     msg:
       - type: say
-        content: 'This is the SkyRe compatible version.'
+        content:
+          - lang: en
+            text: 'This is the SkyRe compatible version.'
+          - lang: ja
+            text: 'SkyRe互換版です。'
         condition: 'checksum("XAC.esp",7BD34BA7)'
       - type: warn
-        content: 'Requires bsa or loose files from original version or this mod will not work.'
+        content:
+          - lang: en
+            text: 'Requires bsa or loose files from original version or this mod will not work.'
+          - lang: ja
+            text: 'オリジナル版のBsaまたはルーズファイルがなければ機能しません。'
         condition: 'checksum("XAC.esp",7BD34BA7) and not file("XAC.bsa")'
     tag:
       - name: Deactivate
@@ -8646,10 +8814,18 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
       - type: error
-        content: 'Use Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョンを使用してください。'
         condition: 'active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",112359C0) or checksum("BandolierForNPCMasterFile.esp",76E11697) or checksum("BandolierForNPCMasterFile.esp",0146A38B) )'
       - type: error
-        content: 'Use non-Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use non-Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョン以外を使用してください。'
         condition: 'not active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",882FDEA5) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) )'
   - name: 'BandolierForNPCsWinterIsComing.esp'
     msg: [ *obsolete ]
@@ -8688,7 +8864,11 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
       - type: error
-        content: 'Use non-Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use non-Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョン以外を使用してください。'
         condition: 'not active("Dawnguard.esm")'
     inc:
       - 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
@@ -8697,7 +8877,11 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
       - type: error
-        content: 'Use non-Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use non-Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョン以外を使用してください。'
         condition: 'not active("Dawnguard.esm")'
     inc:
       - 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
@@ -8764,27 +8948,47 @@ plugins:
   - name: 'Better Sorting by eclips3 - Ingredients .+\.esp'
     msg:
       - type: say
-        content: 'Use only 1 Better Sorting by eclips3 - Ingredients .esp file'
+        content:
+          - lang: en
+            text: 'Use only 1 Better Sorting by eclips3 - Ingredients .esp file'
+          - lang: ja
+            text: 'Better Sorting by eclips3 - Ingredients*.espは一つのみ使用してください。'
         condition: 'active("Better Sorting by eclips3 - Ingredients (Weightless).esp") or active("Better Sorting by eclips3 - Ingredients (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Ingredients (Light Weight).esp")'
   - name: 'Better Sorting by eclips3 - Soul Gems .+\.esp'
     msg:
       - type: say
-        content: 'Use only 1 Better Sorting by eclips3 - Soul Gem .esp file'
+        content:
+          - lang: en
+            text: 'Use only 1 Better Sorting by eclips3 - Soul Gem .esp file'
+          - lang: ja
+            text: 'Better Sorting by eclips3 - Soul Gem*.espは一つのみ使用してください。'
         condition: 'active("Better Sorting by eclips3 - Soul Gems (Named).esp") and active("Better Sorting by eclips3 - Soul Gems (Numbered).esp")'
   - name: 'Better Sorting by eclips3 - Books .+\.esp'
     msg:
       - type: say
-        content: 'Use only 1 Better Sorting by eclips3 - Books .esp file'
+        content:
+          - lang: en
+            text: 'Use only 1 Better Sorting by eclips3 - Books .esp file'
+          - lang: ja
+            text: 'Better Sorting by eclips3 - Books*.espは一つのみ使用してください。'
         condition: 'active("Better Sorting by eclips3 - Books (Before).esp") and active("Better Sorting by eclips3 - Books (After).esp")'
   - name: 'Better Sorting by eclips3 - Food .+\.esp'
     msg:
       - type: say
-        content: 'Use only 1 Better Sorting by eclips3 - Food .esp file'
+        content:
+          - lang: en
+            text: 'Use only 1 Better Sorting by eclips3 - Food .esp file'
+          - lang: ja
+            text: 'Better Sorting by eclips3*.espは一つのみ使用してください。'
         condition: 'active("Better Sorting by eclips3 - Food (Weightless).esp") or active("Better Sorting by eclips3 - Food (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Food (Light Weight).esp")'
   - name: 'Better Sorting by eclips3 - Potions .+\.esp'
     msg:
       - type: say
-        content: 'Use only 1 Better Sorting by eclips3 - Potions .esp file'
+        content:
+          - lang: en
+            text: 'Use only 1 Better Sorting by eclips3 - Potions .esp file'
+          - lang: ja
+            text: 'Better Sorting by eclips3 - Potions*.espは一つのみ使用してください。'
         condition: 'active("Better Sorting by eclips3 - Potions (Weightless).esp") or active("Better Sorting by eclips3 - Potions (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Potions (Light Weight).esp")'
   - name: 'Smithing Perks Overhaul( - Balanced)?\.esp'
     inc:
@@ -9555,7 +9759,7 @@ plugins:
           - lang: es
             text: 'ERSO 03.2 plugins are no longer recommended or supported by the mod author.'
           - lang: ja
-            text: 'ERSO 03.2のプラグインは現在は作者によってサポートされておらず、使用は推奨されません。'
+            text: 'ERSO 03.2のプラグインは現在は製作者によってサポートされておらず、使用は推奨されません。'
   - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DG\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -9783,10 +9987,18 @@ plugins:
       - 'Scoped Bows.esp'
     msg:
       - type: say
-        content: 'Incompatible with: PerkUP'
+        content:
+          - lang: en
+            text: 'Incompatible with: PerkUP'
+          - lang: ja
+            text: '競合: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
       - type: say
-        content: 'Incompatible with: Uncapped perks'
+        content:
+          - lang: en
+            text: 'Incompatible with: Uncapped perks'
+          - lang: ja
+            text: '競合: Uncapped perks'
         condition: 'file("Uncapped Perks.*\.esp")'
       - <<: *reqModX
         condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
@@ -9853,10 +10065,18 @@ plugins:
       - 'Complete Crafting Overhaul - BS version.esp'
     msg:
       - type: say
-        content: 'Incompatible with: PerkUP'
+        content:
+          - lang: en
+            text: 'Incompatible with: PerkUP'
+          - lang: ja
+            text: '競合: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
       - type: say
-        content: 'Incompatible with: Uncapped perks'
+        content:
+          - lang: en
+            text: 'Incompatible with: Uncapped perks'
+          - lang: ja
+            text: '競合: Uncapped perks'
         condition: 'file("Uncapped Perks.*\.esp")'
       - type: warn
         content:
@@ -9986,7 +10206,11 @@ plugins:
   - name: 'SkyRe_StandingStones_Fix.esp'
     msg:
       - type: say
-        content: 'This mod is meant to be used with the Races module of SkyRe. The game should generally work fine without it, but the effect from the Lady Standing Stone may not behave as expected.'
+        content:
+          - lang: en
+            text: 'This mod is meant to be used with the Races module of SkyRe. The game should generally work fine without it, but the effect from the Lady Standing Stone may not behave as expected.'
+          - lang: ja
+            text: 'このModはSkyReの種族用モジュール（Races module）との使用を想定されています。モジュール抜きでも全体的に問題なく動作しますが、淑女の石碑から得られる効果が正しく発揮されない可能性があります。'
         condition: 'not active("SkyRe_Races.esp")'
   - name: 'SkyRe_Survivalism.esp'
     dirty:
@@ -10157,7 +10381,11 @@ plugins:
   - name: 'SkyRe_Plugin_JaySuSSwords_1.3D.esp'
     msg:
       - type: error
-        content: 'The order of the master files are listed as: Skyrim.esm, JSwords.esm, Update.esm which conflicts with the order in the masterlist.  There are also 4 unresolved keywords and, Skyrim won''t properly track to them because SkyRe_Main.esp is not a master.  Correcting this in the CK is not recomended because there will be too many errors to resolve.  Delete this file it should not be used.'
+        content:
+          - lang: en
+            text: 'The order of the master files are listed as: Skyrim.esm, JSwords.esm, Update.esm which conflicts with the order in the masterlist.  There are also 4 unresolved keywords and, Skyrim won''t properly track to them because SkyRe_Main.esp is not a master.  Correcting this in the CK is not recomended because there will be too many errors to resolve.  Delete this file it should not be used.'
+          - lang: ja
+            text: 'マスターファイルがSkyrim.esm、JSwords.esm、Update.esmという順番で並んでおり、マスターリストの順番と競合しています。さらに4つの未解決のキーワードが存在しており、SkyRe_Main.espがマスターではないためSkyrim側ではこれらのキーワードを正確に追跡できません。エラーの数があまりにも多すぎるため、Creation Kitによる修正は避けるべきでしょう。このファイルは削除してください。使用するべきではありません。'
         condition: 'checksum("SkyRe_Plugin_JaySuSSwords_1.3D.esp",33879A9F)'
       - type: warn
         content:
@@ -10185,7 +10413,7 @@ plugins:
           - lang: es
             text: 'T3nd0 has informed the LOOT team that he does not remember making the file so it''s probably not his.  However, he stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.'
           - lang: ja
-            text: 'T3nd0より、このようなファイルを作った覚えは無いとの連絡がLOOTのチーム宛にあったため、おそらくこのファイルはT3nd0が作成したものではありません。また、現在は動的にパッチを適用できるSkyProc Patcherが完成しているため、T3nd0からの個別パッチ提供は停止しています。このファイルをアンインストールし、SkyProc Patcherを使用しながら遊んでください。作者からはそのように想定されています。'
+            text: 'T3nd0氏より、このようなファイルを作った覚えは無いとの連絡がLOOTのチーム宛にあったため、おそらくこのファイルはT3nd0氏が作成したものではありません。また、現在は動的にパッチを適用できるSkyProc Patcherが完成しているため、T3nd0氏からの個別パッチ提供は停止しています。このファイルをアンインストールし、製作者から想定されているようにSkyProc Patcherを使用しながら遊んでください。'
       - <<: *installOriginalResources
         type: error
         condition: 'not file("JSwords(DV)?\.esm")'
@@ -11108,7 +11336,11 @@ plugins:
       - 'FalkreathCastle.esp'
     msg:
       - type: say
-        content: 'Incompatible with: BertsBreezeRemodel'
+        content:
+          - lang: en
+            text: 'Incompatible with: BertsBreezeRemodel'
+          - lang: ja
+            text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'bettercitiesdocksolitude.esp'
     dirty:
@@ -11247,7 +11479,11 @@ plugins:
   - name: 'breezehome enhanced.esp'
     msg:
       - type: say
-        content: 'Incompatible with: BertsBreezeRemodel'
+        content:
+          - lang: en
+            text: 'Incompatible with: BertsBreezeRemodel'
+          - lang: ja
+            text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
     dirty:
       - crc: 0x1f629b97
@@ -11263,7 +11499,11 @@ plugins:
   - name: 'Breezehome_FullyUpgradable.esp'
     msg:
       - type: say
-        content: 'Incompatible with: BertsBreezeRemodel'
+        content:
+          - lang: en
+            text: 'Incompatible with: BertsBreezeRemodel'
+          - lang: ja
+            text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
     dirty:
       - crc: 0x444a410c
@@ -11274,20 +11514,32 @@ plugins:
   - name: 'Breezehome_FullyUpgradable_v.+\.esp'
     msg:
       - type: say
-        content: 'Incompatible with: BertsBreezeRemodel'
+        content:
+          - lang: en
+            text: 'Incompatible with: BertsBreezeRemodel'
+          - lang: ja
+            text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
       - *obsolete
   - name: 'Breezehome_Fully_Upgradeable.esp'
     msg:
       - type: say
-        content: 'Incompatible with: BertsBreezeRemodel'
+        content:
+          - lang: en
+            text: 'Incompatible with: BertsBreezeRemodel'
+          - lang: ja
+            text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
       - *obsolete
   - name: 'Breezehome_Fully_Upgradable.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/11158' ]
     msg:
       - type: say
-        content: 'Incompatible with: BertsBreezeRemodel'
+        content:
+          - lang: en
+            text: 'Incompatible with: BertsBreezeRemodel'
+          - lang: ja
+            text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Breezehome Mannequin.esp'
     dirty:
@@ -11308,7 +11560,11 @@ plugins:
   - name: 'Breezehome Remodeled Finely.esp'
     msg:
       - type: say
-        content: 'Incompatible with: BertsBreezeRemodel'
+        content:
+          - lang: en
+            text: 'Incompatible with: BertsBreezeRemodel'
+          - lang: ja
+            text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Breezehome Sovngarde Portal.esp'
     dirty:
@@ -11413,7 +11669,11 @@ plugins:
   - name: 'Breezehome PLUS.esp'
     msg:
       - type: say
-        content: 'Incompatible with: BertsBreezeRemodel'
+        content:
+          - lang: en
+            text: 'Incompatible with: BertsBreezeRemodel'
+          - lang: ja
+            text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Briar''sEndCourierQuest.esp'
     inc:
@@ -11933,7 +12193,11 @@ plugins:
   - name: 'DovahkiinSpeech - HigherReq.esp'
     msg:
       - type: warn
-        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+        content:
+          - lang: en
+            text: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+          - lang: ja
+            text: 'TES5Editで修正されない4つの削除されたレコード（Magic effects x2, Perk x1, Spell x1）が含まれています。'
         condition: 'checksum("DovahkiinSpeech - HigherReq.esp",E1870DC5)'
     dirty:
       - crc: 0xe1870dc5
@@ -11947,7 +12211,11 @@ plugins:
   - name: 'DovahkiinSpeech - HigherReqNerfed.esp'
     msg:
       - type: warn
-        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+        content:
+          - lang: en
+            text: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+          - lang: ja
+            text: 'TES5Editで修正されない4つの削除されたレコード（Magic effects x2, Perk x1, Spell x1）が含まれています。'
         condition: 'checksum("DovahkiinSpeech - HigherReqNerfed.esp",4B15F923)'
     dirty:
       - crc: 0x4b15f923
@@ -11956,7 +12224,11 @@ plugins:
   - name: 'DovahkiinSpeech - MidNoPerkReq.esp'
     msg:
       - type: warn
-        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+        content:
+          - lang: en
+            text: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+          - lang: ja
+            text: 'TES5Editで修正されない4つの削除されたレコード（Magic effects x2, Perk x1, Spell x1）が含まれています。'
         condition: 'checksum("DovahkiinSpeech - MidNoPerkReq.esp",6179F01D)'
     dirty:
       - crc: 0x6179f01d
@@ -11965,7 +12237,11 @@ plugins:
   - name: 'DovahkiinSpeech - MidReq.esp'
     msg:
       - type: warn
-        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+        content:
+          - lang: en
+            text: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+          - lang: ja
+            text: 'TES5Editで修正されない4つの削除されたレコード（Magic effects x2, Perk x1, Spell x1）が含まれています。'
         condition: 'checksum("DovahkiinSpeech - MidReq.esp",FFFCDA31)'
     dirty:
       - crc: 0xfffcda31
@@ -11974,7 +12250,11 @@ plugins:
   - name: 'DovahkiinSpeech.esp'
     msg:
       - type: warn
-        content: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+        content:
+          - lang: en
+            text: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+          - lang: ja
+            text: 'TES5Editで修正されない4つの削除されたレコード（Magic effects x2, Perk x1, Spell x1）が含まれています。'
         condition: 'checksum("DovahkiinSpeech.esp",27656479)'
     dirty:
       - crc: 0x27656479
@@ -12008,7 +12288,11 @@ plugins:
   - name: 'Manoir des chutes du Dragon.esp'
     msg:
       - type: error
-        content: 'French translation of Dragon Falls Manor.esp.'
+        content:
+          - lang: en
+            text: 'French translation of Dragon Falls Manor.esp.'
+          - lang: ja
+            text: 'Dragon Falls Manor.espのフランス語版です。'
         condition: 'file("Dragon Falls Manor.esp")'
     dirty:
       - crc: 0x2590076
@@ -12153,7 +12437,7 @@ plugins:
           - lang: ru
             text: 'Плагин является частично дружественным к компаньонам. Компаньоны не смогут проходить через двери.'
           - lang: ja
-            text: 'ある程度は仲間も移動できるように作られていますが、ツタの扉はnavmeshesがあるにもかかわらず通る事ができません。'
+            text: 'ある程度は仲間も移動できるように作られていますが、ツタの扉はnavmeshesがあるにもかかわらず通行できません。'
   - name: 'EBM.esp'
     msg:
       - <<: *obsolete
@@ -12225,7 +12509,11 @@ plugins:
   - name: 'ExplorerDungeonPack.esp'
     msg:
       - type: say
-        content: 'Incompatible with: ExplorerDungeonPack.esm.  Use the correct version.'
+        content:
+          - lang: en
+            text: 'Incompatible with: ExplorerDungeonPack.esm.  Use the correct version.'
+          - lang: ja
+            text: '競合: ExplorerDungeonPack.esm（正しいバージョンを使用してください）'
         condition: 'checksum("ExplorerDungeonPack.esp",4D76065C) and file("ExplorerDungeonPack.esm")'
     dirty:
       - crc: 0x3b99039
@@ -12320,7 +12608,11 @@ plugins:
   - name: 'Fleetford.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Briar''sEnd'
+        content:
+          - lang: en
+            text: 'Incompatible with: Briar''sEnd'
+          - lang: ja
+            text: '競合: Briar''sEnd'
         condition: 'file("Briar''sEnd.*\.esp")'
     dirty:
       - crc: 0x6d3a13d9
@@ -12435,7 +12727,11 @@ plugins:
   - name: 'Freedom of Speech.esp'
     msg:
       - type: error
-        content: 'Use Freedom of Speech -- Dawnguard.esp'
+        content:
+          - lang: en
+            text: 'Use Freedom of Speech -- Dawnguard.esp'
+          - lang: ja
+            text: 'Freedom of Speech -- Dawnguard.espを使用してください。'
         condition: 'active("Dawnguard.esm") and checksum("Freedom of Speech.esp",48DA06FC)'
     dirty:
       - crc: 0x251fdaed
@@ -13398,7 +13694,11 @@ plugins:
   - name: 'Millview.esp'
     msg:
       - type: warn
-        content: 'from author, ''A conflict with CLARALUX has been brought to my attention. To avoid this, you will need to disable the "CLARALUX Headquarters, Carts and Engineers" feature of CLARALUX.'''
+        content:
+          - lang: en
+            text: 'from author, ''A conflict with CLARALUX has been brought to my attention. To avoid this, you will need to disable the "CLARALUX Headquarters, Carts and Engineers" feature of CLARALUX.'''
+          - lang: ja
+            text: '以下製作者より。「CLARALUXと競合するとの報告がありました。競合を回避するには、CLARALUXのCLARALUX Headquarters、Carts and Engineers機能を無効にしてください」'
         condition: 'file("CLARALUX.esp") or file("CLARALUX-DG-Patch.esp") or file("CLARALUX-HF-Patch.esp")'
     dirty:
       - crc: 0xf27a06cb
@@ -13777,7 +14077,11 @@ plugins:
   - name: 'Ramen.esp'
     msg:
       - type: error
-        content: 'Use Ramen0dawnguard.esp instead.'
+        content:
+          - lang: en
+            text: 'Use Ramen0dawnguard.esp instead.'
+          - lang: ja
+            text: 'Ramen0dawnguard.espを使用してください。'
         condition: 'active("Dawnguard.esm")'
   - name: 'Ramen0dawnguard.esp'
     inc:
@@ -14196,7 +14500,11 @@ plugins:
   - name: 'Skyhaven_modified.esp'
     msg:
       - type: say
-        content: 'Skyhaven_modified.esp is meant to be used with the [ExtraBlades.esp module](http://www.nexusmods.com/skyrim/mods/15979). It should still work without it though, but may make cause things to look out of place.'
+        content:
+          - lang: en
+            text: 'Skyhaven_modified.esp is meant to be used with the [ExtraBlades.esp module](http://www.nexusmods.com/skyrim/mods/15979). It should still work without it though, but may make cause things to look out of place.'
+          - lang: ja
+            text: 'Skyhaven_modified.espは[ExtraBlades.esp module](http://www.nexusmods.com/skyrim/mods/15979)と使用するプラグインです。プラグインが欠けていても機能しますが、違和感が生じるかもしれません。'
         condition: 'not active("ExtraBlades.esp")'
     dirty:
       - crc: 0x85335156
@@ -14357,7 +14665,7 @@ plugins:
           - lang: ru
             text: 'Этот мод не совместим с последним квестом в основной цепочке квестов. Либо отключите .esp, прежде чем сделать это, либо дождитесь, пока вы не завершите главный квест.'
           - lang: ja
-            text: 'このModはメインクエストの最終部分とは互換性がありません。最終部分に入る前にEspを無効にするか、メインクエストを終えるまで導入しないでください。'
+            text: 'このModはメインクエストの最終パートとは互換性がありません。最終パートに入る前にEspを無効にするか、メインクエストを終えるまで導入しないでください。'
   - name: 'SovngardeNordHeroes.esp'
     msg:
       - <<: *obsolete
@@ -14779,7 +15087,11 @@ plugins:
   - name: 'towHarvest.esp'
     msg:
       - type: error
-        content: 'Dawnguard version required.'
+        content:
+          - lang: en
+            text: 'Dawnguard version required.'
+          - lang: ja
+            text: 'Dawnguardバージョンが必要です。'
         condition: 'checksum("towHarvest.esp",A3654F92) and active("Dawnguard.esm")'
   - name: 'TQContest_Agamashi.esp'
     dirty:
@@ -14935,7 +15247,7 @@ plugins:
           - lang: ru
             text: 'UDOChestless.esp не имеет Skyrim.esm в мастерфайлах.  Наиболее вероятно будут созданны дубликаты всего, что было модифицировано.'
           - lang: ja
-            text: 'UDOChestless.espはSkyrim.esmをマスターファイルとしていません。変更だけで終わるはずの箇所が複製されてしまう可能性が高いです。'
+            text: 'UDOChestless.espはSkyrim.esmをマスターファイルとしていません。変更だけで終わるはずの箇所が複製されてしまう可能性が高いでしょう。'
   - name: 'Ultimate HD Fire Spells.esp'
     dirty:
       - crc: 0xe79bb5ef
@@ -15068,7 +15380,11 @@ plugins:
   - name: 'Dawnguard - Vigilant of Stendarr Quests Patch.esp'
     msg:
       - type: warn
-        content: 'This patch is to be used only if the Hall of the Viligent has been "trashed" by the Dawnguard NPC''s.'
+        content:
+          - lang: en
+            text: 'This patch is to be used only if the Hall of the Viligent has been "trashed" by the Dawnguard NPC''s.'
+          - lang: ja
+            text: 'このパッチは番人の間がドーンガードのNPCによって「破壊」されている場合にのみ使用してください。'
         condition: 'not active("Dawnguard.esm")'
     dirty:
       - crc: 0x9f4d4339
@@ -15231,7 +15547,11 @@ plugins:
   - name: 'Whiterun Trees 1.1.esp'
     msg:
       - type: warn
-        content: 'Different mod with same name. Probably incompatible.'
+        content:
+          - lang: en
+            text: 'Different mod with same name. Probably incompatible.'
+          - lang: ja
+            text: '同名のModとは異なります。おそらく両立できません。'
         condition: 'checksum("Whiterun Trees.esp",D2995274)'
   - name: 'ICP Whiterun Exterior.esp'
     inc:
@@ -15422,10 +15742,18 @@ plugins:
   - name: 'SkyrimWeightImprovement.esp'
     msg:
       - type: say
-        content: 'Use Dawnguard version if you want Dawnguard items to be adjusted by this mod.'
+        content:
+          - lang: en
+            text: 'Use Dawnguard version if you want Dawnguard items to be adjusted by this mod.'
+          - lang: ja
+            text: 'Dawnguardのアイテムを調整したい場合はDawnguardバージョンを使用してください。'
         condition: 'active("Dawnguard.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) )'
       - type: say
-        content: 'Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.'
+        content:
+          - lang: en
+            text: 'Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.'
+          - lang: ja
+            text: 'DawnguardとHearthfiresのアイテムを調整したい場合はDawnguard and Hearthfiresバージョンを使用してください。'
         condition: 'active("Hearthfires.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
     dirty:
       - crc: 0x770f0bb8
@@ -15443,7 +15771,11 @@ plugins:
         condition: 'many("WeightedArrows(Heavy|Light|Medium)?\.esp")'
         subs: [ 'Weighted Arrows .esp file' ]
       - type: say
-        content: 'Use Dawnguard version to include weighted crossbow bolts.'
+        content:
+          - lang: en
+            text: 'Use Dawnguard version to include weighted crossbow bolts.'
+          - lang: ja
+            text: 'Dawnguardバージョンを使用すればクロスボウのボルトにも重量を追加できます。'
         condition: 'active("Dawnguard.esm")'
   - name: 'WeightedArrowsDLC1(Heavy|Light|Medium)?\.esp'
     msg:
@@ -15478,7 +15810,11 @@ plugins:
   - name: 'no_quest_items.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Dawnguard. Use Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Incompatible with: Dawnguard. Use Dawnguard version.'
+          - lang: ja
+            text: '競合: Dawnguard（Dawnguard versionを使用してください）'
         condition: 'active("Dawnguard.esm") and not checksum("no_quest_items.esp",47CDC33D)'
       - <<: *obsolete
         condition: 'checksum("no_quest_items.esp",8CAAD195) or checksum("no_quest_items.esp",639770A2)'
@@ -15774,14 +16110,22 @@ plugins:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food \(((Light|Normal|Reduced) Weight|Weightless)\)\.esp'
     msg:
@@ -15793,49 +16137,77 @@ plugins:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions \(((Light|Half|Normal) Weight|Weightless)\)\.esp'
     msg:
@@ -15847,28 +16219,44 @@ plugins:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems \((Ranked|PseudoVanilla)\)\.esp'
     msg:
@@ -15880,14 +16268,22 @@ plugins:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
       - type: say
-        content: 'Do not clean the file further with TES5Edit.'
+        content:
+          - lang: en
+            text: 'Do not clean the file further with TES5Edit.'
+          - lang: ja
+            text: 'TES5Editによる追加クリーニングは避けてください。'
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting.esp'
     msg: [ *obsolete ]
@@ -16119,12 +16515,20 @@ plugins:
   - name: 'Distant Detail.esp'
     msg:
       - type: error
-        content: 'Use Distant DetailHF.esp'
+        content:
+          - lang: en
+            text: 'Use Distant DetailHF.esp'
+          - lang: ja
+            text: 'Distant DetailHF.espを使用してください。'
         condition: 'active("Hearthfires.esm")'
   - name: 'Distant DetailHF.esp'
     msg:
       - type: say
-        content: '[Detailed guide for cleaning.](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)'
+        content:
+          - lang: en
+            text: '[Detailed guide for cleaning.](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)'
+          - lang: ja
+            text: '[クリーニングの詳しい解説](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)'
     inc:
       - 'Distant Detail.esp'
     dirty:
@@ -16408,7 +16812,11 @@ plugins:
   - name: 'HigherEnchantmentsNoChargeArtifacts.esp'
     msg:
       - type: warn
-        content: 'Use Dawnguard version HigherEnchantmentsNoChargeArtifactsDawnguard.esp'
+        content:
+          - lang: en
+            text: 'Use Dawnguard version HigherEnchantmentsNoChargeArtifactsDawnguard.esp'
+          - lang: ja
+            text: 'Dawnguardバージョン（HigherEnchantmentsNoChargeArtifactsDawnguard.esp）を使用してください。'
         condition: 'active("Dawnguard.esm")'
     dirty:
       - crc: 0x890aed0c
@@ -16516,7 +16924,11 @@ plugins:
   - name: 'increaseddifficulty.esp'
     msg:
       - type: warn
-        content: 'This mod is not properly mastered to Skyrim.esm.  It will not change or add anything in your game.'
+        content:
+          - lang: en
+            text: 'This mod is not properly mastered to Skyrim.esm.  It will not change or add anything in your game.'
+          - lang: ja
+            text: 'このModはSkyrim.esmを正しくマスターファイルとして認識していません。変更内容をそのまま複製してしまいます。'
         condition: 'checksum("increaseddifficulty.esp",DFD6D81E)'
   - name: 'Intense Difficulty 2x to player.esp'
     msg: [ *corrupt ]
@@ -16720,7 +17132,11 @@ plugins:
   - name: 'masteredmagicka.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Mighty Magic'
+        content:
+          - lang: en
+            text: 'Incompatible with: Mighty Magic'
+          - lang: ja
+            text: '競合: Mighty Magic'
         condition: 'file("Mighty Magick .+\.esp")'
     dirty:
       - crc: 0xe5918397
@@ -16731,7 +17147,11 @@ plugins:
       - 'masteredmagicka.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Mighty Magic'
+        content:
+          - lang: en
+            text: 'Incompatible with: Mighty Magic'
+          - lang: ja
+            text: '競合: Mighty Magic'
         condition: 'file("Mighty Magick .+\.esp")'
     dirty:
       - crc: 0x89ff6fe5
@@ -16740,12 +17160,20 @@ plugins:
   - name: 'masteredmagickaboundweapons.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Mighty Magic'
+        content:
+          - lang: en
+            text: 'Incompatible with: Mighty Magic'
+          - lang: ja
+            text: '競合: Mighty Magic'
         condition: 'file("Mighty Magick .+\.esp")'
   - name: 'masteredmagickaenchantmentfix.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Mighty Magic'
+        content:
+          - lang: en
+            text: 'Incompatible with: Mighty Magic'
+          - lang: ja
+            text: '競合: Mighty Magic'
         condition: 'file("Mighty Magick .+\.esp")'
     dirty:
       - crc: 0x94af712d
@@ -16780,7 +17208,11 @@ plugins:
   - name: 'MenuShoutsInDragonsLanguage.esp'
     msg:
       - type: error
-        content: 'Use Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョンを使用してください。'
         condition: 'active("Dawnguard.esm") and checksum("MenuShoutsInDragonsLanguage.esp",B36BDB9A)'
   - name: 'Merchants Reply Only With Take A Look.esp'
     dirty:
@@ -16789,7 +17221,11 @@ plugins:
         itm: 9
     msg:
       - type: say
-        content: 'Contains wild edits to some NPC_ records''s tint masks. Delete the NPC_ tree to remove the wild edits.'
+        content:
+          - lang: en
+            text: 'Contains wild edits to some NPC_ records''s tint masks. Delete the NPC_ tree to remove the wild edits.'
+          - lang: ja
+            text: '一部のNPC_レコードのtint maskに意図しない編集が施されています。NPC_ツリーを削除し、変更内容を消去してください。'
   - name: 'mjhReducedGoldRewards.esp'
     tag:
       - Delev
@@ -17097,7 +17533,11 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
     msg:
       - type: say
-        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+        content:
+          - lang: en
+            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+          - lang: ja
+            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyHelmets.esp'
     inc:
@@ -17105,7 +17545,11 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
     msg:
       - type: say
-        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+        content:
+          - lang: en
+            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+          - lang: ja
+            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_DragonboneEbonsteel.esp'
     msg:
@@ -17158,10 +17602,18 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
     msg:
       - type: say
-        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+        content:
+          - lang: en
+            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+          - lang: ja
+            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
       - type: say
-        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
+        content:
+          - lang: en
+            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
+          - lang: ja
+            text: '競合: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp'
     inc:
@@ -17171,10 +17623,18 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
     msg:
       - type: say
-        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+        content:
+          - lang: en
+            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+          - lang: ja
+            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
       - type: say
-        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
+        content:
+          - lang: en
+            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
+          - lang: ja
+            text: '競合: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dawnguard.esp'
     inc:
@@ -17364,7 +17824,11 @@ plugins:
   - name: 'Skeleton Resurrection.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Skyrim Redone'
+        content:
+          - lang: en
+            text: 'Incompatible with: Skyrim Redone'
+          - lang: ja
+            text: '競合: Skyrim Redone'
         condition: 'file("SkyRe_.+\.esp")'
       - type: warn
         content:
@@ -17491,7 +17955,11 @@ plugins:
   - name: 'valkiirs_tastier_food.esp'
     msg:
       - type: say
-        content: 'Use Hearthfires version to get changes made to Hearthfires food.'
+        content:
+          - lang: en
+            text: 'Use Hearthfires version to get changes made to Hearthfires food.'
+          - lang: ja
+            text: 'Hearthfiresの食べ物にも変更を加えるならHearthfiresバージョンを使用してください。'
         condition: 'active("Hearthfires.esm")'
   - name: 'valkiirs_tastier_food_hearthfire.esp'
     inc:
@@ -17533,7 +18001,11 @@ plugins:
   - name: 'VanillaMonsterLoot.esp'
     msg:
       - type: warn
-        content: 'Use Dawnguard version - ImprovedMonsterLoot.esp'
+        content:
+          - lang: en
+            text: 'Use Dawnguard version - ImprovedMonsterLoot.esp'
+          - lang: ja
+            text: 'DawnguardバージョンのImprovedMonsterLoot.espを使用してください。'
         condition: 'active("Dawnguard.esm")'
     tag:
       - Relev
@@ -18069,10 +18541,18 @@ plugins:
   - name: 'RiverwoodEnhancedPlugin.esp'
     msg:
       - type: say
-        content: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.'
+        content:
+          - lang: en
+            text: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.'
+          - lang: ja
+            text: 'Lanterns of SkyrimとTowns and Villages Enhanced - Riverwoodを正常に両立させるには[Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395)を代わりに使用する必要があります。'
         condition: 'file("Lanterns Of Skyrim - All In One - Main.esm")'
       - type: error
-        content: 'Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not an add-on.'
+        content:
+          - lang: en
+            text: 'Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not an add-on.'
+          - lang: ja
+            text: '削除してください。LoS and RE patch.espはRiverwoodEnhancedPlugin.espを置き換えるように作られています。アドオンではありません。'
         condition: 'file("LoS and RE patch.esp")'
     dirty:
       - crc: 0x5b3c0e5a
@@ -18136,7 +18616,11 @@ plugins:
   - name: 'tos_oakwood.esp'
     msg:
       - type: warn
-        content: 'You need to use Heartfires version of Oakwood to work as intended with Hearthfires.'
+        content:
+          - lang: en
+            text: 'You need to use Heartfires version of Oakwood to work as intended with Hearthfires.'
+          - lang: ja
+            text: 'Hearthfiresでも本来の動作をさせるにはHeartfiresバージョンのOakwoodを使用する必要があります。'
         condition: 'active("Hearthfires.esm")'
     dirty:
       - crc: 0x9ff8763e
@@ -18152,10 +18636,18 @@ plugins:
   - name: 'TownsAndCitiesEnhanced.esp'
     msg:
       - type: say
-        content: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns And Cities Enhanced.'
+        content:
+          - lang: en
+            text: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns And Cities Enhanced.'
+          - lang: ja
+            text: 'Lanterns of SkyrimとTowns And Cities Enhancedを正常に両立させるには[Lanterns of Skyrim and Towns and Villages Enhanced patch](http://www.nexusmods.com/skyrim/mods/27395)を代わりに使用する必要があります。'
         condition: 'file("Lanterns Of Skyrim - All In One - Main.esm")'
       - type: error
-        content: 'Remove. L0S and TaVE patch.esp is designed as a replacement for TownsAndCitiesEnhanced.esp, not an add-on.'
+        content:
+          - lang: en
+            text: 'Remove. L0S and TaVE patch.esp is designed as a replacement for TownsAndCitiesEnhanced.esp, not an add-on.'
+          - lang: ja
+            text: '削除してください。L0S and TaVE patch.espはTownsAndCitiesEnhanced.espを置き換えるように作られています。アドオンではありません。'
         condition: 'file("L0S and TaVE patch.esp")'
     dirty:
       - crc: 0xa37760e6
@@ -18179,7 +18671,11 @@ plugins:
     msg:
       - *obsolete
       - type: error
-        content: 'Included in UniqueTaverns.esp'
+        content:
+          - lang: en
+            text: 'Included in UniqueTaverns.esp'
+          - lang: ja
+            text: 'UniqueTaverns.espに含まれています。'
         condition: 'file("UniqueTaverns.esp")'
   - name: 'WhiterunInEnhanced.esp'
     dirty:
@@ -18264,7 +18760,11 @@ plugins:
   - name: 'LakeExpanded01.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.'
+        content:
+          - lang: en
+            text: 'Incompatible with: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.'
+          - lang: ja
+            text: '競合: Hearthfires（Hearthfiresバージョンを使用してください。）'
         condition: 'active("Hearthfires.esm") and ( checksum("LakeExpanded01.esp",43AEF0BF) or checksum("LakeExpanded01.esp",843EB3FC) )'
     dirty:
       - crc: 0x43aef0bf
@@ -18427,7 +18927,11 @@ plugins:
       - 'AOS.esp'
     msg:
       - type: say
-        content: 'Outdated. It is recommended to install the latest version of [Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773) and upgrade to the most recent patch.'
+        content:
+          - lang: en
+            text: 'Outdated. It is recommended to install the latest version of [Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773) and upgrade to the most recent patch.'
+          - lang: ja
+            text: '旧式のプラグインです。最新版の[Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773)をインストールし、最も新しいパッチに更新することをお勧めします。'
   - name: 'AOS_ICS Patch.esp'
     after:
       - 'Improved Combat Sounds v2.2.esp'
@@ -18439,7 +18943,11 @@ plugins:
       - 'AOS.esp'
     msg:
       - type: say
-        content: 'Outdated. It is recommended to install the latest version of [Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773) and upgrade to the most recent patch.'
+        content:
+          - lang: en
+            text: 'Outdated. It is recommended to install the latest version of [Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773) and upgrade to the most recent patch.'
+          - lang: ja
+            text: '旧式のプラグインです。最新版の[Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773)をインストールし、最も新しいパッチに更新することをお勧めします。'
   - name: 'AOS_DBAscendant Patch.esp'
     after:
       - 'DragonbornAscendant.esp'
@@ -18451,7 +18959,11 @@ plugins:
       - 'RealisticWaterTwo.esp'
     msg:
       - type: say
-        content: 'Outdated. It is recommended to install the latest version of [Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773) and upgrade to the most recent patch.'
+        content:
+          - lang: en
+            text: 'Outdated. It is recommended to install the latest version of [Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773) and upgrade to the most recent patch.'
+          - lang: ja
+            text: '旧式のプラグインです。最新版の[Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773)をインストールし、最も新しいパッチに更新することをお勧めします。'
   - name: 'AOS_CWO Patch.esp'
     after:
       - 'Civil War Overhaul.esp'
@@ -18472,7 +18984,11 @@ plugins:
       - 'The Horkerpocalypse.esp'
     msg:
       - type: warn
-        content: 'Stolen content. Please show respect for authors'' rights and download from a legitimate source ([here](http://www.nexusmods.com/skyrim/mods/8058)).'
+        content:
+          - lang: en
+            text: 'Stolen content. Please show respect for authors'' rights and download from a legitimate source ([here](http://www.nexusmods.com/skyrim/mods/8058)).'
+          - lang: ja
+            text: '盗用されたコンテンツです。製作者の権利に配慮するよう願います。[こちら](http://www.nexusmods.com/skyrim/mods/8058)から正規のファイルをダウンロードできます。'
         condition: 'checksum("Open Cities Skyrim.esp", 022AD2C8)'
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Open Cities.esp") and not active("Requiem-OpenCities.esp")'
@@ -18591,7 +19107,11 @@ plugins:
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
     msg:
       - type: warn
-        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+        content:
+          - lang: en
+            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+          - lang: ja
+            text: 'Sounds of Skyrim - DungeonsとRealistic Lighting Overhaul - Dungeons.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
         condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeons.esp")'
     dirty:
       - crc: 0x18ad5feb
@@ -18605,7 +19125,11 @@ plugins:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
     msg:
       - type: warn
-        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+        content:
+          - lang: en
+            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+          - lang: ja
+            text: 'Sounds of Skyrim - DungeonsとRealistic Lighting Overhaul - Dungeon Lighting.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
         condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
     dirty:
       - crc: 0xcb2aeeaf
@@ -18620,7 +19144,11 @@ plugins:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
     msg:
       - type: say
-        content: 'The order of ''Major City Interiors.esp'' and ''Dawnguard Interiors.esp'' is interchangeable. [Here is a note from RLO author, Daemonui, about the differences you will see](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
+        content:
+          - lang: en
+            text: 'The order of ''Major City Interiors.esp'' and ''Dawnguard Interiors.esp'' is interchangeable. [Here is a note from RLO author, Daemonui, about the differences you will see](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
+          - lang: ja
+            text: '''Major City Interiors.esp''と''Dawnguard Interiors.esp''のロード順は入れ替えることができます。[RLOを製作されたDaemonui氏による解説へのリンクです。相違について確認できます](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
     msg:
       - type: warn
@@ -18653,7 +19181,11 @@ plugins:
             text: 'Sounds of Skyrim - CivilizaitonとRealistic Lighting Overhaul - Major City Interiors.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
         condition: 'file("SoS - The Dungeons.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
       - type: warn
-        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+        content:
+          - lang: en
+            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+          - lang: ja
+            text: 'Sounds of Skyrim - DungeonsとRealistic Lighting Overhaul - Major City Interiors.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601から適切な互換パッチを探すことをお勧めします。'
         condition: 'file("SoS - Civilization.esp") and not file("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp")'
     dirty:
       - crc: 0x33a5fd6
@@ -18694,12 +19226,20 @@ plugins:
   - name: 'ClimatesOfTamriel-Dawnguard-Patch.esp'
     msg:
       - type: warn
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
         condition: 'checksum("ClimatesOfTamriel-Dawnguard-Patch.esp",8F78567C)'
   - name: 'ClimatesOfTamriel-Dragonborn-Patch.esp'
     msg:
       - type: warn
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
         condition: 'checksum("ClimatesOfTamriel-Dragonborn-Patch.esp",81CF7754)'
   - name: 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
     inc:
@@ -18709,10 +19249,18 @@ plugins:
       - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     msg:
       - type: warn
-        content: 'Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+        content:
+          - lang: en
+            text: 'Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+          - lang: ja
+            text: 'Sounds of Skyrim - The DungeonsとClimatesOfTamriel-Dungeons-Hardcore.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
         condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchCoTHardcore.esp")'
       - type: warn
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
         condition: 'checksum("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F)'
     dirty:
       - crc: 0x4eea922f
@@ -18729,7 +19277,11 @@ plugins:
       - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     msg:
       - type: warn
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
         condition: 'checksum("ClimatesOfTamriel-Dungeons-Hazardous.esp",CBE304CE)'
   - name: 'ClimatesOfTamriel-Interiors-Cold.esp'
     inc:
@@ -18738,7 +19290,11 @@ plugins:
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
     msg:
       - type: warn
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
         condition: 'checksum("ClimatesOfTamriel-Interiors-Cold.esp",84DB3F8)'
   - name: 'ClimatesOfTamriel-Interiors-Warm.esp'
     inc:
@@ -18747,12 +19303,20 @@ plugins:
       - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
     msg:
       - type: warn
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
         condition: 'checksum("ClimatesOfTamriel-Interiors-Warm.esp",77C47623)'
   - name: 'ClimatesOfTamriel-WinterEdition.esp'
     msg:
       - type: warn
-        content: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
         condition: 'checksum("ClimatesOfTamriel-WinterEdition.esp",74DF3C5)'
   - name: 'ELFXEnhancer.esp'
     ## loaded after COT as it is more specialized
@@ -18840,7 +19404,11 @@ plugins:
       - 'Imp''s More Complex Needs.esm'
     msg:
       - type: say
-        content: 'It is recommended that you unsubscribe from and delete this mod, then install the [SkyrimNexus version](http://www.nexusmods.com/skyrim/mods/10639) for more compatibility with other mods.'
+        content:
+          - lang: en
+            text: 'It is recommended that you unsubscribe from and delete this mod, then install the [SkyrimNexus version](http://www.nexusmods.com/skyrim/mods/10639) for more compatibility with other mods.'
+          - lang: ja
+            text: 'サブスクライブを解除してModそのものを削除し、他のModとの互換性を高めるために[SkyrimNexus版](http://www.nexusmods.com/skyrim/mods/10639)をインストールすることをお勧めします。'
         condition: 'checksum("imp''s more complex needs.esp",DAADC533) or checksum("imp''s more complex needs.esp",59466F1E)'
     dirty:
       - crc: 0xdaadc533
@@ -18870,14 +19438,22 @@ plugins:
   - name: 'Medium hit.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Realistic Ragdoll Force'
+        content:
+          - lang: en
+            text: 'Incompatible with: Realistic Ragdoll Force'
+          - lang: ja
+            text: '競合: Realistic Ragdoll Force'
         condition: 'file("dD.?- Realistic Ragdoll Force.*\.esp")'
   - name: 'Realistic hit.esp'
     inc:
       - 'Medium hit.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Realistic Ragdoll Force'
+        content:
+          - lang: en
+            text: 'Incompatible with: Realistic Ragdoll Force'
+          - lang: ja
+            text: '競合: Realistic Ragdoll Force'
         condition: 'file("dD.?- Realistic Ragdoll Force.*\.esp")'
   - name: 'RealisticCarryWeight.esp'
     dirty:
@@ -19109,13 +19685,25 @@ plugins:
       - 'Dawnguard.esm'
     msg:
       - type: say
-        content: 'Incompatible with: Belua Sanguinare'
+        content:
+          - lang: en
+            text: 'Incompatible with: Belua Sanguinare'
+          - lang: ja
+            text: '競合: Belua Sanguinare'
         condition: 'file("MM_BeluaSangunaire.*\.esp")'
       - type: say
-        content: 'Incompatible with: Better Vampires'
+        content:
+          - lang: en
+            text: 'Incompatible with: Better Vampires'
+          - lang: ja
+            text: '競合: Better Vampires'
         condition: 'file("Better Vampires( ML| DG)?( - No DawnGuard.esp)?\.esp")'
       - type: say
-        content: 'Incompatible with: Imp''s More Complex Needs'
+        content:
+          - lang: en
+            text: 'Incompatible with: Imp''s More Complex Needs'
+          - lang: ja
+            text: '競合: Imp''s More Complex Needs'
         condition: 'file("Imp''s More Complex Needs\.es[mp]")'
       - type: say
         content:
@@ -19164,7 +19752,7 @@ plugins:
           - lang: es
             text: 'You need the Dawnguard version of better vampires to work as intended with dawnguard.'
           - lang: ja
-            text: 'Dawnguard環境下で本来の動作をさせるには、Dawnguard版のBetter Vampiresを使用する必要があります。'
+            text: 'Dawnguard環境下で本来の動作をさせるには、DawnguardバージョンのBetter Vampiresを使用する必要があります。'
         condition: 'active("Dawnguard.esm")'
   - name: 'Better Vampires ML - No DawnGuard.esp'
     inc:
@@ -19182,7 +19770,7 @@ plugins:
           - lang: es
             text: 'You need the Dawnguard version of better vampires to work as intended with dawnguard.'
           - lang: ja
-            text: 'Dawnguard環境下で本来の動作をさせるには、Dawnguard版のBetter Vampiresを使用する必要があります。'
+            text: 'Dawnguard環境下で本来の動作をさせるには、DawnguardバージョンのBetter Vampiresを使用する必要があります。'
         condition: 'active("Dawnguard.esm")'
   - name: 'godly werewold.esp'
     dirty:
@@ -19245,7 +19833,11 @@ plugins:
   - name: 'ToL_Core_by_Brevi.esp'
     msg:
       - type: say
-        content: 'It has been reported that Automatic Variants does not import the spell that infects the player on being hit by a werewolf.'
+        content:
+          - lang: en
+            text: 'It has been reported that Automatic Variants does not import the spell that infects the player on being hit by a werewolf.'
+          - lang: ja
+            text: 'Automatic Variantsではウェアウルフがプレイヤーを攻撃したときに感染させる呪文がインポートされないと報告されています。'
         condition: 'active("Automatic Variants.esp")'
   - name: 'ToL_SKSE_by_Brevi.esp'
     req:
@@ -19293,10 +19885,18 @@ plugins:
   - name: 'WerewolfMastery.esp'
     msg:
       - type: error
-        content: 'Use Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョンを使用してください。'
         condition: 'active("Dawnguard.esm") and checksum("WerewolfMastery.esp",57E4BC0F)'
       - type: error
-        content: 'Use non-Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use non-Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョン以外を使用してください。'
         condition: 'not active("Dawnguard.esm") and checksum("WerewolfMastery.esp",73AC0648)'
     dirty:
       - crc: 0x73ac0648
@@ -19589,10 +20189,18 @@ plugins:
   - name: 'Evilbass Light and Dark Spells.esp'
     msg:
       - type: error
-        content: 'Use non-Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use non-Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョンを使用してください。'
         condition: 'not active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",4E1181E9)'
       - type: error
-        content: 'Use Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Use Dawnguard version.'
+          - lang: ja
+            text: 'Dawnguardバージョン以外を使用してください。'
         condition: 'active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",248F5114)'
     dirty:
       - crc: 0x248f5114
@@ -19644,7 +20252,11 @@ plugins:
   - name: 'Isharas_Glimpse_of_Elsweyr.esp'
     msg:
       - type: say
-        content: 'Note that to allow containers to have categories like the player inventory you need [SKSE](http://skse.silverlock.org/). See the "Tip" section on the mods [description page](http://www.nexusmods.com/skyrim/mods/25362).'
+        content:
+          - lang: en
+            text: 'Note that to allow containers to have categories like the player inventory you need [SKSE](http://skse.silverlock.org/). See the "Tip" section on the mods [description page](http://www.nexusmods.com/skyrim/mods/25362).'
+          - lang: ja
+            text: '注: 入れ物にプレイヤーのインベントリと同じようなカテゴリを追加するには[SKSE](http://skse.silverlock.org/)が必要です。詳しくはModの[概要ページ](http://www.nexusmods.com/skyrim/mods/25362)にある「tip」の項目を確認してください。'
         condition: 'not file("../skse_loader.exe")'
   - name: 'KodlakWhitemane.esp'
     msg:
@@ -19975,10 +20587,18 @@ plugins:
   - name: 'MorePowerfulShouts.esp'
     msg:
       - type: error
-        content: 'Remove and use the Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Remove and use the Dawnguard version.'
+          - lang: ja
+            text: '削除してDawnguardバージョンを使用してください。'
         condition: 'checksum("MorePowerfulShouts.esp",F1EDB543) and active("Dawnguard.esm")'
       - type: error
-        content: 'Remove and use the non-Dawnguard version.'
+        content:
+          - lang: en
+            text: 'Remove and use the non-Dawnguard version.'
+          - lang: ja
+            text: '削除して非Dawnguardバージョンを使用してください。'
         condition: 'checksum("MorePowerfulShouts.esp",E845AEC7) and not active("Dawnguard.esm")'
     dirty:
       - crc: 0xe845aec7
@@ -20105,7 +20725,11 @@ plugins:
   - name: 'Improved Soultrap.esp'
     msg:
       - type: error
-        content: 'Use NamedSoulGems compatibility patch instead.'
+        content:
+          - lang: en
+            text: 'Use NamedSoulGems compatibility patch instead.'
+          - lang: ja
+            text: 'NamedSoulGemsの互換パッチを代わりに使用してください。'
         condition: 'file("NamedSoulGems.esp")'
   - name: 'NamedSoulGems.esp'
     dirty:
@@ -20196,10 +20820,18 @@ plugins:
   - name: 'DynamicPotions.esp'
     msg:
       - type: say
-        content: 'To save and load custom presets while using this mod, download the [FISS plugin](http://www.nexusmods.com/skyrim/mods/48265). A "Presets" page will appear in the MCM menu once FISS is active.'
+        content:
+          - lang: en
+            text: 'To save and load custom presets while using this mod, download the [FISS plugin](http://www.nexusmods.com/skyrim/mods/48265). A "Presets" page will appear in the MCM menu once FISS is active.'
+          - lang: ja
+            text: 'カスタムプリセットの保存や読み込みを行うには[FISS plugin](http://www.nexusmods.com/skyrim/mods/48265)をインストールする必要があります。FISSをアクティブにすればMCMメニューに「プリセット」ページが表示されます。'
         condition: 'not file("FISS.esp")'
       - type: say
-        content: 'To gain access to all the features of Dynamic Potions version 3.1, you will need to upgrade to [SKSE version 1.7+](http://skse.silverlock.org)'
+        content:
+          - lang: en
+            text: 'To gain access to all the features of Dynamic Potions version 3.1, you will need to upgrade to [SKSE version 1.7+](http://skse.silverlock.org)'
+          - lang: ja
+            text: 'Dynamic Potions 3.1のすべての機能を利用するには[SKSE](http://skse.silverlock.org)を1.7以上に更新する必要があります。'
         condition: 'version("../skse_loader.exe", "0.1.7.0", <)'
   - name: 'Eld-combinePotions.esp'
     msg:
@@ -20423,7 +21055,11 @@ plugins:
       - 'Dragon Combat Overhaul.esp'
     msg:
       - type: warn
-        content: 'Dawnguard detected. Use The Dance of Death - Dawnguard Edition.esp instead.'
+        content:
+          - lang: en
+            text: 'Dawnguard detected. Use The Dance of Death - Dawnguard Edition.esp instead.'
+          - lang: ja
+            text: 'Dawnguardが見つかりました。The Dance of Death - Dawnguard Edition.espを代わりに使用してください。'
         condition: 'active("Dawnguard.esm")'
     dirty:
       - crc: 0xfb852f7a
@@ -20544,7 +21180,7 @@ plugins:
           - lang: ru
             text: 'Выберете только один из нижестледующих, если вы предпочитаете ванильные настройки или другие моды, которые регулируют эти значения.'
           - lang: ja
-            text: 'いずれか一つを選んでください。バニラの設定や他の数値変更Modを優先したい場合は任意で構いません。'
+            text: 'いずれか一つを選んでください。Vanillaの設定や他の数値変更Modを優先したい場合は任意で構いません。'
   - name: 'betterskillgains.esp'
     msg:
       - <<: *obsolete
@@ -20576,12 +21212,20 @@ plugins:
   - name: 'ACE Archery.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Crafting300.esp, to fix this get the compatibility patch found [here](http://www.nexusmods.com/skyrim/download/70990)'
+        content:
+          - lang: en
+            text: 'Incompatible with: Crafting300.esp, to fix this get the compatibility patch found [here](http://www.nexusmods.com/skyrim/download/70990)'
+          - lang: ja
+            text: '競合: Crafting300.esp（[こちら](http://www.nexusmods.com/skyrim/download/70990)にある互換パッチで修正できます）'
         condition: 'checksum("Crafting300.esp",46C639C1)'
   - name: 'ACE Archery-Weapons of the Third Era Patch.esp'
     msg:
       - type: warn
-        content: 'This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.'
+        content:
+          - lang: en
+            text: 'This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.'
+          - lang: ja
+            text: 'このファイルには未解決のエラーが存在します。削除してください。Skyrimに元からあるエントリが何らかの理由で二重に複製されてしまいます。'
         condition: 'checksum("ACE Archery-Weapons of the Third Era Patch.esp",873EAB94)'
   - name: 'LB_MuchAdoSnowElves_ACE_Patch_Long.esp'
     inc:
@@ -20735,7 +21379,11 @@ plugins:
         display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
     msg:
       - type: say
-        content: 'Incompatible with: PerkUP'
+        content:
+          - lang: en
+            text: 'Incompatible with: PerkUP'
+          - lang: ja
+            text: '競合: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
   - name: 'Uncapped Perks.esp'
     req:
@@ -20743,7 +21391,11 @@ plugins:
         display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
     msg:
       - type: say
-        content: 'Incompatible with: PerkUP'
+        content:
+          - lang: en
+            text: 'Incompatible with: PerkUP'
+          - lang: ja
+            text: '競合: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
   - name: 'Uncapped Perks - Optional Magic Add-on.esp'
     req:
@@ -20752,7 +21404,11 @@ plugins:
   - name: 'Uncapped Perks - .+\.esp'
     msg:
       - type: say
-        content: 'Incompatible with: PerkUP'
+        content:
+          - lang: en
+            text: 'Incompatible with: PerkUP'
+          - lang: ja
+            text: '競合: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
   - name: 'BlueStarPerkAdventure.esp'
     req:
@@ -21625,7 +22281,7 @@ plugins:
           - lang: es
             text: 'Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.'
           - lang: ja
-            text: 'このプラグインには削除ができず、競合を引き起こす可能性のあるフランス語のデータが含まれています。問題が生じた場合は作者に連絡を取り、Modのクリーニングを要望してください。'
+            text: 'このプラグインには削除ができず、競合を引き起こす可能性のあるフランス語のデータが含まれています。問題が生じた場合は製作者に連絡し、Modのクリーニングについて要望を出してください。'
     dirty:
       - crc: 0xf3c4e9c8
         <<: *dirtyPlugin
@@ -21718,7 +22374,11 @@ plugins:
   - name: 'KhaleesiFacePreset.esp'
     msg:
       - type: warn
-        content: 'This file is broken and will not work.'
+        content:
+          - lang: en
+            text: 'This file is broken and will not work.'
+          - lang: ja
+            text: 'このファイルは破損しています。機能しません。'
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
   - name: '3DNPC.esp'
     msg:
@@ -22062,7 +22722,7 @@ plugins:
           - lang: ru
             text: 'Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на [странице мода](http://www.nexusmods.com/skyrim/mods/14037)(Eng).'
           - lang: ja
-            text: '安全にインストールするには従者全員と別れてからセーブし、関連Modをすべて削除してからそのデータをロードし、さらにもう一度セーブしたデータを使ってください。安全にアンインストールまたは更新する場合の手順については[公開ページ](http://www.nexusmods.com/skyrim/mods/14037)にある専用手順を参照してください。'
+            text: '安全にインストールするには従者全員と別れてからセーブし、関連Modをすべて削除してからロード→セーブしたデータを使ってください。アンインストールまたは更新の方法については[公開ページ](http://www.nexusmods.com/skyrim/mods/14037)にある専用手順を参照してください。'
     dirty:
       - crc: 0x6ef3ffba
         <<: *dirtyPlugin
@@ -22086,7 +22746,11 @@ plugins:
       - 'UFO - Dragonborn AddOn.esp'
     msg:
       - type: warn
-        content: 'Outdated. Please upgrade to [new official Dragonborn AddOn](http://www.nexusmods.com/skyrim/mods/14037).'
+        content:
+          - lang: en
+            text: 'Outdated. Please upgrade to [new official Dragonborn AddOn](http://www.nexusmods.com/skyrim/mods/14037).'
+          - lang: ja
+            text: '旧式のプラグインです。[新しい公式のDragonborn AddOn](http://www.nexusmods.com/skyrim/mods/14037)に更新してください。'
         condition: 'not file("UFO - Dragonborn AddOn.esp")'
   - name: 'Endgame NPC Overhaul.esp'
     after:
@@ -22155,10 +22819,18 @@ plugins:
   - name: 'KTNUlfric.esp'
     msg:
       - type: error
-        content: 'Use UFO version of KTNUlfric.esp'
+        content:
+          - lang: en
+            text: 'Use UFO version of KTNUlfric.esp'
+          - lang: ja
+            text: 'KTNUlfric.espのUFOバージョンを使用してください。'
         condition: 'checksum("KTNUlfric.esp",8CF90F55) and file("UFO - Ultimate Follower Overhaul.esp")'
       - type: error
-        content: 'Use UFO version of KTNUlfric.esp'
+        content:
+          - lang: en
+            text: 'Use UFO version of KTNUlfric.esp'
+          - lang: ja
+            text: 'KTNUlfric.espのUFOバージョンを使用してください。'
         condition: 'checksum("KTNUlfric.esp",35CB3586) and not file("UFO - Ultimate Follower Overhaul.esp")'
     dirty:
       - crc: 0x35cb3586
@@ -22383,7 +23055,7 @@ plugins:
           - lang: es
             text: 'This mod will most likely conflict with other Companions altering mods.'
           - lang: ja
-            text: 'このModはおそらく仲間を改変するModと競合します。'
+            text: 'このModは仲間に変更を加えるModと競合するでしょう。'
     dirty:
       - crc: 0x49701951
         <<: *dirtyPlugin
@@ -22611,7 +23283,11 @@ plugins:
   - name: 'FFDogs.esp'
     msg:
       - type: warn
-        content: 'Broken as per [author''s notes](http://www.nexusmods.com/skyrim/mods/30297)'
+        content:
+          - lang: en
+            text: 'Broken as per [author''s notes](http://www.nexusmods.com/skyrim/mods/30297)'
+          - lang: ja
+            text: '[製作者のNOTE](http://www.nexusmods.com/skyrim/mods/30297)に書かれているように破損しています。'
         condition: 'checksum("FFDogs.esp",907CBDCD)'
   - name: 'FFBretonClaribelle.esp'
     dirty:
@@ -23124,7 +23800,11 @@ plugins:
   - name: 'SlavePackRiekling.esp'
     msg:
       - type: warn
-        content: 'Plugin has some corruption.'
+        content:
+          - lang: en
+            text: 'Plugin has some corruption.'
+          - lang: ja
+            text: 'プラグインの一部が破損しています。'
         condition: 'checksum("SlavePackRiekling.esp",9657019E)'
     dirty:
       - crc: 0x9657019e
@@ -23444,7 +24124,7 @@ plugins:
           - lang: ru
             text: 'Несовместим с: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.'
           - lang: ja
-            text: 'Better Followersとは互換性がありません。Better Followers側に同じ機能があるためです。moveit側のGame Settingに合わせたい場合のみ使用してください。fBumpReactionSmallWaitTimerは2（Better Followersは0.3）に、fBumpReactionSmallDelayTimeは1（バニラと同等）（Better Followersは0.3）になります。その他の設定値はBetter Followersと同じです。'
+            text: 'Better Followersとは互換性がありません。Better Followers側に同じ機能があるためです。moveit側のGame Settingに合わせたい場合のみ使用してください。fBumpReactionSmallWaitTimerは2（Better Followersは0.3）に、fBumpReactionSmallDelayTimeは1（Vanillaと同等）（Better Followersは0.3）になります。その他の設定値はBetter Followersと同じです。'
         condition: 'file("Better Follower Improvements.esp") and file("Better Followers - [SBNP].*\.esp")'
       - <<: *useOnlyOneX
         condition: 'many("move.?it(LWT)?\.esp")'
@@ -23473,7 +24153,11 @@ plugins:
   - name: 'AmazingFollowerTweaks.esp'
     msg:
       - type: say
-        content: 'German version'
+        content:
+          - lang: en
+            text: 'German version'
+          - lang: ja
+            text: 'ドイツ語版です。'
         condition: 'checksum("AmazingFollowerTweaks.esp",1482CEEC)'
     after:
       - 'Inigo.esp'
@@ -23603,7 +24287,11 @@ plugins:
   - name: 'True Giants( v\d)?\.esp'
     msg:
       - type: say
-        content: 'Incompatible with: Height Adjusted Races with True Giants'
+        content:
+          - lang: en
+            text: 'Incompatible with: Height Adjusted Races with True Giants'
+          - lang: ja
+            text: '競合: Height Adjusted Races with True Giants'
         condition: 'file("Height Adjusted Races(.+)True Giants(.+)?\.esp")'
   - name: 'AROP- Altmer Edition( - NW)?\.esp'
     msg:
@@ -23826,7 +24514,11 @@ plugins:
   - name: 'SkyRe_Races_Fix.esp'
     msg:
       - type: say
-        content: 'This mod is meant to be used with the Races module of SkyRe. The game should work fine without it, but the Khajiit "Claws" effect will have a wrong description.'
+        content:
+          - lang: en
+            text: 'This mod is meant to be used with the Races module of SkyRe. The game should work fine without it, but the Khajiit "Claws" effect will have a wrong description.'
+          - lang: ja
+            text: 'このModはSkyReの種族用モジュール（Races module）との使用を想定されています。プラグインが欠けていても機能しますが、カジートの「爪」の効果説明が本来と異なってしまいます。'
         condition: 'not active("SkyRe_Races.esp")'
   - name: 'ethereal_elven_overhaul.esp'
     inc:
@@ -23962,10 +24654,18 @@ plugins:
   - name: 'Duns_Inc_Shaders_Begone.esp'
     msg:
       - type: warn
-        content: 'Contains unexpected (or out of order) records, you should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
+        content:
+          - lang: en
+            text: 'Contains unexpected (or out of order) records, you should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
+          - lang: ja
+            text: '予期しない（または順番が狂った）レコードが含まれています。バージョン2に更新してください。[こちら](http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
         condition: 'checksum("Duns_Inc_Shaders_Begone.esp",B0D9FEDA)'
       - type: warn
-        content: 'Sharlikran''s version is now obsolete. You should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
+        content:
+          - lang: en
+            text: 'Sharlikran''s version is now obsolete. You should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
+          - lang: ja
+            text: 'Sharlikran版は現在では使われていません。バージョン2に更新してください。http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
         condition: 'checksum("Duns_Inc_Shaders_Begone.esp",2C0126D)'
     dirty:
       - crc: 0xC8FF638F
@@ -23974,10 +24674,18 @@ plugins:
   - name: 'Duns_Inc_Shaders_Begone_xWeapons.esp'
     msg:
       - type: warn
-        content: 'Contains unexpected (or out of order) records, you should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
+        content:
+          - lang: en
+            text: 'Contains unexpected (or out of order) records, you should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
+          - lang: ja
+            text: '予期しない（または順番が狂った）レコードが含まれています。バージョン2に更新してください。[こちら](http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
         condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",4928C96B)'
       - type: warn
-        content: 'Sharlikran''s version is now obsolete. You should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
+        content:
+          - lang: en
+            text: 'Sharlikran''s version is now obsolete. You should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
+          - lang: ja
+            text: 'Sharlikran版は現在では使われていません。バージョン2に更新してください。http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
         condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",493A9DEA)'
   - name: 'RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp'
     msg:
@@ -24024,7 +24732,11 @@ plugins:
             text: 'Sounds of Skyrim - The WildsとrcrnShaders.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)から適切な互換パッチを探すことをお勧めします。'
         condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
       - type: warn
-        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+        content:
+          - lang: en
+            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+          - lang: ja
+            text: 'Sounds of Skyrim - DungeonsとrcrnShaders.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
         condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
     dirty:
       - crc: 0x209fd1b5
@@ -24056,7 +24768,11 @@ plugins:
             text: 'Sounds of Skyrim - The WildsとrcrnPlus.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)から適切な互換パッチを探すことをお勧めします。'
         condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
       - type: warn
-        content: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+        content:
+          - lang: en
+            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
+          - lang: ja
+            text: 'Sounds of Skyrim - DungeonsとrcrnPlus.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
         condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
   - name: 'RCRNvolumetric.esp'
     dirty:
@@ -24582,7 +25298,11 @@ plugins:
   - name: 'waves.esp'
     msg:
       - type: warn
-        content: 'Plugin has some corruption.'
+        content:
+          - lang: en
+            text: 'Plugin has some corruption.'
+          - lang: ja
+            text: 'プラグインの一部が破損しています。'
         condition: 'checksum("Waves.esp",80C9D6A)'
     dirty:
       - crc: 0x80c9d6a
@@ -24605,7 +25325,11 @@ plugins:
   - name: 'GreenWaterFix.esp'
     msg:
       - type: say
-        content: 'Upgrade to version 1.1 (For Vanilla water ONLY)'
+        content:
+          - lang: en
+            text: 'Upgrade to version 1.1 (For Vanilla water ONLY)'
+          - lang: ja
+            text: 'バージョン1.1に更新してください（Vanilla water用のみ）。'
         condition: 'checksum("GreenWaterFix.esp",7F378D8E)'
   - name: 'GreenWaterFix_CompWithWATER1_5b.esp'
     msg:
@@ -24981,7 +25705,11 @@ plugins:
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
     msg:
       - type: say
-        content: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
+        content:
+          - lang: en
+            text: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
+          - lang: ja
+            text: 'ズームイン時に問題が発生し続ける場合、ユーザーリストを編集してなるべく下の方、動的に生成されたプラグインの後にロードさせてください。'
     dirty:
       - crc: 0xc243a5f2
         <<: *dirtyPlugin
@@ -24993,7 +25721,11 @@ plugins:
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
     msg:
       - type: say
-        content: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
+        content:
+          - lang: en
+            text: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
+          - lang: ja
+            text: 'ズームイン時に問題が発生し続ける場合、ユーザーリストを編集してなるべく下の方、動的に生成されたプラグインの後にロードさせてください。'
     dirty:
       - crc: 0xaafe91d6
         <<: *dirtyPlugin
@@ -25006,7 +25738,11 @@ plugins:
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
     msg:
       - type: say
-        content: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
+        content:
+          - lang: en
+            text: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
+          - lang: ja
+            text: 'ズームイン時に問題が発生し続ける場合、ユーザーリストを編集してなるべく下の方、動的に生成されたプラグインの後にロードさせてください。'
     dirty:
       - crc: 0xaafe91d6
         <<: *dirtyPlugin
@@ -25141,7 +25877,7 @@ plugins:
           - lang: es
             text: 'Deactivate ''SkyRe_EnemyAI.esp'' before creation of ASIS patch and activate only after creation of ASIS patch.'
           - lang: ja
-            text: 'ASISでパッチを作成する前は''SkyRe_EnemyAI.esp''を非アクティブにし、パッチ作成後にアクティブにしてください。SkyRe_EnemyAI.espをASISのblocklist.txt に追加するのもいいでしょう。([ガイド](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922))'
+            text: 'ASISでパッチを作成する場合はその前に''SkyRe_EnemyAI.esp''を非アクティブにし、パッチ作成後にアクティブにしてください。SkyRe_EnemyAI.espをASISのblocklist.txt に追加してもいいでしょう。([解説](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922))'
         condition: 'active("SkyRe_EnemyAI.esp") and (file("ASIS.esp") or file("ASIS-Dependency.esp"))'
   - name: 'DeadlyCombat_ASIS_Patch.esp'
     global_priority: 105
@@ -25169,7 +25905,11 @@ plugins:
     global_priority: 105
     msg:
       - type: say
-        content: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature.'
+        content:
+          - lang: en
+            text: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature.'
+          - lang: ja
+            text: 'SUMのmerged patch機能を使用している場合、このパッチのマスターファイルをReProccer.espからSUM.espに変更してください。'
         condition: 'file("SUM.esp")'
   - name: 'ReProccer-SkyforgeShields.esp'
     global_priority: 105
@@ -25187,7 +25927,11 @@ plugins:
     global_priority: 105
     msg:
       - type: say
-        content: 'Install the meshes from this mod last, to override other skeleton replacers and armor mesh replacers.'
+        content:
+          - lang: en
+            text: 'Install the meshes from this mod last, to override other skeleton replacers and armor mesh replacers.'
+          - lang: ja
+            text: 'このModのメッシュは最後にインストールしてください。Skeletonや防具のメッシュを置き換えるModを上書きするためです。'
   #qotsafans patches now include over 150 uniquely named esps
   - name: 'qotsafans.*\.esp'
     global_priority: 105
@@ -25198,7 +25942,11 @@ plugins:
     global_priority: 105
     msg:
       - type: say
-        content: 'Outdated. It is recommended to install the latest version of [Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773) and upgrade to the most recent patch.'
+        content:
+          - lang: en
+            text: 'Outdated. It is recommended to install the latest version of [Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773) and upgrade to the most recent patch.'
+          - lang: ja
+            text: '旧式のプラグインです。最新版の[Audio Overhaul for Skyrim](http://www.nexusmods.com/skyrim/mods/43773)をインストールし、最も新しいパッチに更新することをお勧めします。'
     ## a compat patch for qotsafans compat patches
   - name: 'AOS_CTD_Fix.esp'
     after:
@@ -25344,7 +26092,11 @@ plugins:
     msg:
       - type: warn
         condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_Undeath_compat.esp")'
-        content: 'This mod has certain conflicts with "MoonAndStar_MAS.esp". Consider using [the compatibility patch](http://www.nexusmods.com/skyrim/mods/52397/).'
+        content:
+          - lang: en
+            text: 'This mod has certain conflicts with "MoonAndStar_MAS.esp". Consider using [the compatibility patch](http://www.nexusmods.com/skyrim/mods/52397/).'
+          - lang: ja
+            text: 'このModはMoonAndStar_MAS.espと一部で競合します。[互換パッチ](http://www.nexusmods.com/skyrim/mods/52397/)を使用してみてください。'
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("NRM Undeath - Requiem Patch.esp")'
     url: [ 'http://www.nexusmods.com/skyrim/mods/40607' ]
@@ -25447,7 +26199,11 @@ plugins:
         udr: 24
     msg:
       - type: warn
-        content: 'This plugin contains 1 deleted reference that cannot be automatically undeleted.'
+        content:
+          - lang: en
+            text: 'This plugin contains 1 deleted reference that cannot be automatically undeleted.'
+          - lang: ja
+            text: 'このプラグインには削除されたリファレンスが1つ含まれています。自動的に復元することはできません。'
   - name: 'Stronger Daedric Artifacts.esp'
     dirty:
       - crc: 0xC2653B1F
@@ -25642,7 +26398,11 @@ plugins:
     msg:
       - type: warn
         condition: 'active("Guard Dialogue Overhaul.esp")'
-        content: 'Guard Dialogue Overhaul detected.  Use the Guard Dialogue Overhaul version to have both mods work as intended.'
+        content:
+          - lang: en
+            text: 'Guard Dialogue Overhaul detected.  Use the Guard Dialogue Overhaul version to have both mods work as intended.'
+          - lang: ja
+            text: 'Guard Dialogue Overhaulが見つかりました。本来の動作をさせるにはGuard Dialogue Overhaulバージョンを使用する必要があります。'
     url: [ 'http://www.nexusmods.com/skyrim/mods/52326' ]
   - name: 'Campfire.esm'
     msg:
