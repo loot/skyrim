@@ -2590,11 +2590,7 @@ plugins:
   - name: 'PNENB.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+        content: 'Use non-Dawnguard version.'
         condition: 'checksum("PNENB.esp",B8865296) and not file("Dawnguard.esm")'
   - name: 'RevampedExteriorFog.esp'
     inc:
@@ -3387,11 +3383,7 @@ plugins:
   - name: 'PrometheusBeastSkeletons.esp'
     msg:
       - type: warn
-        content:
-          - lang: en
-            text: 'Plugin has some corruption.'
-          - lang: ja
-            text: 'プラグインの一部が破損しています。'
+        content: 'Plugin has some corruption.'
         condition: 'checksum("Prometheus_BeastSkeletons.esp",42EE9442)'
   - name: 'Beauties of Skyrim.esp'
     dirty:
@@ -3524,18 +3516,10 @@ plugins:
   - name: 'Bloody Cannibalism.esp'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+        content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",75D6B87E)'
       - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+        content: 'Use Dawnguard version.'
         condition: 'active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",A220A80B)'
     dirty:
       - crc: 0xa220a80b
@@ -3847,11 +3831,7 @@ plugins:
       - 'Skyrealism - Feast and Famine.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Headbomb''s Better Sorting - Food *.esp'
-          - lang: ja
-            text: '競合: Headbomb''s Better Sorting - Food *.esp'
+        content: 'Incompatible with: Headbomb''s Better Sorting - Food *.esp'
         condition: 'file("Headbomb''s Better Sorting - Food.+\.esp")'
   - name: 'DropThatGold.esp'
     req: [ *SKSE ]
@@ -4058,18 +4038,10 @@ plugins:
   - name: 'Grind_stuff.esp'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Use Hearthfires version.'
-          - lang: ja
-            text: 'Hearthfiresバージョンを使用してください。'
+        content: 'Use Hearthfires version.'
         condition: 'active("Hearthfires.esm") and checksum("Grind_stuff.esp",31CCFA29)'
       - type: error
-        content:
-          - lang: en
-            text: 'Use non-Hearthfires version.'
-          - lang: ja
-            text: 'Hearthfiresバージョン以外を使用してください。'
+        content: 'Use non-Hearthfires version.'
         condition: 'not active("Hearthfires.esm") and checksum("Grind_stuff.esp",5E014754)'
   - name: 'Guard Build (HF) 1.esp'
     dirty:
@@ -5173,11 +5145,7 @@ plugins:
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyMoMod Lore * v10.esp''s'
-          - lang: ja
-            text: '競合: SkyMoMod Lore * v10.esp'
+        content: 'Incompatible with: SkyMoMod Lore * v10.esp''s'
         condition: 'file("SkyMoMod Lore.+\.esp")'
       - <<: *obsolete
         condition: 'not file("Deleveled Skyrim - SkyMoMod_list.esp") or not file("SkyMoMod Lore.+\.esp") or not file("skymo-dawn.esp")'
@@ -5214,11 +5182,7 @@ plugins:
             text: '旧式のプラグインです。SkyMoMod Lore-Friendly * v10.espの最新版に更新してください。'
         condition: 'file("SkyMoMod Lore-Friendly .+\.esp")'
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyMoMod Lore-Friendly * v10.esp''s'
-          - lang: ja
-            text: '競合: SkyMoMod Lore-Friendly * v10.esp'
+        content: 'Incompatible with: SkyMoMod Lore-Friendly * v10.esp''s'
         condition: 'file("SkyMoMod Lore-Friendly .+\.esp")'
     tag:
       - Delev
@@ -5328,18 +5292,10 @@ plugins:
   - name: 'Statues.esp'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Use Hearthfires version.'
-          - lang: ja
-            text: 'Hearthfiresバージョンを使用してください。'
+        content: 'Use Hearthfires version.'
         condition: 'active("Hearthfires.esm") and checksum("Statues.esp",C08BE2C5)'
       - type: error
-        content:
-          - lang: en
-            text: 'Use Vanilla version.'
-          - lang: ja
-            text: 'Vanillaバージョンを使用してください。'
+        content: 'Use Vanilla version.'
         condition: 'not active("Hearthfires.esm") and checksum("Statues.esp",5081E67A)'
   - name: 'SteamAchievementUnlocker.esp'
     dirty:
@@ -7755,11 +7711,7 @@ plugins:
   - name: 'NA_Trueflame_Unenchanted_(Eng|Rus)\.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: NA_Trueflame_Eng or Rus esp'
-          - lang: ja
-            text: '競合: NA_Trueflame_Eng.esp (*Rus.esp)'
+        content: 'Incompatible with: NA_Trueflame_Eng or Rus esp'
         condition: 'file("NA_Trueflame_(Eng|Rus)\.esp")'
       - type: warn
         content:
@@ -8579,11 +8531,7 @@ plugins:
       - *obsolete
       - *alreadyInSkyRe
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: WeaponsOf3E*.esp'
-          - lang: ja
-            text: '競合: WeaponsOf3E*.esp'
+        content: 'Incompatible with: WeaponsOf3E*.esp'
         condition: 'file("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp")'
     tag:
       - Delev
@@ -8814,18 +8762,10 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+        content: 'Use Dawnguard version.'
         condition: 'active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",112359C0) or checksum("BandolierForNPCMasterFile.esp",76E11697) or checksum("BandolierForNPCMasterFile.esp",0146A38B) )'
       - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+        content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",882FDEA5) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) )'
   - name: 'BandolierForNPCsWinterIsComing.esp'
     msg: [ *obsolete ]
@@ -8864,11 +8804,7 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+        content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm")'
     inc:
       - 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
@@ -8877,11 +8813,7 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+        content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm")'
     inc:
       - 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
@@ -9987,18 +9919,10 @@ plugins:
       - 'Scoped Bows.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
+        content: 'Incompatible with: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Uncapped perks'
-          - lang: ja
-            text: '競合: Uncapped perks'
+        content: 'Incompatible with: Uncapped perks'
         condition: 'file("Uncapped Perks.*\.esp")'
       - <<: *reqModX
         condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
@@ -10065,18 +9989,10 @@ plugins:
       - 'Complete Crafting Overhaul - BS version.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
+        content: 'Incompatible with: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Uncapped perks'
-          - lang: ja
-            text: '競合: Uncapped perks'
+        content: 'Incompatible with: Uncapped perks'
         condition: 'file("Uncapped Perks.*\.esp")'
       - type: warn
         content:
@@ -11336,11 +11252,7 @@ plugins:
       - 'FalkreathCastle.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
+        content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'bettercitiesdocksolitude.esp'
     dirty:
@@ -11479,11 +11391,7 @@ plugins:
   - name: 'breezehome enhanced.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
+        content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
     dirty:
       - crc: 0x1f629b97
@@ -11499,11 +11407,7 @@ plugins:
   - name: 'Breezehome_FullyUpgradable.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
+        content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
     dirty:
       - crc: 0x444a410c
@@ -11514,32 +11418,20 @@ plugins:
   - name: 'Breezehome_FullyUpgradable_v.+\.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
+        content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
       - *obsolete
   - name: 'Breezehome_Fully_Upgradeable.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
+        content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
       - *obsolete
   - name: 'Breezehome_Fully_Upgradable.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/11158' ]
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
+        content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Breezehome Mannequin.esp'
     dirty:
@@ -11560,11 +11452,7 @@ plugins:
   - name: 'Breezehome Remodeled Finely.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
+        content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Breezehome Sovngarde Portal.esp'
     dirty:
@@ -11669,11 +11557,7 @@ plugins:
   - name: 'Breezehome PLUS.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
+        content: 'Incompatible with: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Briar''sEndCourierQuest.esp'
     inc:
@@ -12608,11 +12492,7 @@ plugins:
   - name: 'Fleetford.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Briar''sEnd'
-          - lang: ja
-            text: '競合: Briar''sEnd'
+        content: 'Incompatible with: Briar''sEnd'
         condition: 'file("Briar''sEnd.*\.esp")'
     dirty:
       - crc: 0x6d3a13d9
@@ -15087,11 +14967,7 @@ plugins:
   - name: 'towHarvest.esp'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Dawnguard version required.'
-          - lang: ja
-            text: 'Dawnguardバージョンが必要です。'
+        content: 'Dawnguard version required.'
         condition: 'checksum("towHarvest.esp",A3654F92) and active("Dawnguard.esm")'
   - name: 'TQContest_Agamashi.esp'
     dirty:
@@ -15810,11 +15686,7 @@ plugins:
   - name: 'no_quest_items.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Dawnguard. Use Dawnguard version.'
-          - lang: ja
-            text: '競合: Dawnguard（Dawnguard versionを使用してください）'
+        content: 'Incompatible with: Dawnguard. Use Dawnguard version.'
         condition: 'active("Dawnguard.esm") and not checksum("no_quest_items.esp",47CDC33D)'
       - <<: *obsolete
         condition: 'checksum("no_quest_items.esp",8CAAD195) or checksum("no_quest_items.esp",639770A2)'
@@ -16110,22 +15982,14 @@ plugins:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food \(((Light|Normal|Reduced) Weight|Weightless)\)\.esp'
     msg:
@@ -16137,77 +16001,49 @@ plugins:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions \(((Light|Half|Normal) Weight|Weightless)\)\.esp'
     msg:
@@ -16219,44 +16055,28 @@ plugins:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems \((Ranked|PseudoVanilla)\)\.esp'
     msg:
@@ -16268,22 +16088,14 @@ plugins:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
       - <<: *patchOutSub
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
       - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+        content: 'Do not clean the file further with TES5Edit.'
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting.esp'
     msg: [ *obsolete ]
@@ -17132,11 +16944,7 @@ plugins:
   - name: 'masteredmagicka.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Mighty Magic'
-          - lang: ja
-            text: '競合: Mighty Magic'
+        content: 'Incompatible with: Mighty Magic'
         condition: 'file("Mighty Magick .+\.esp")'
     dirty:
       - crc: 0xe5918397
@@ -17147,11 +16955,7 @@ plugins:
       - 'masteredmagicka.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Mighty Magic'
-          - lang: ja
-            text: '競合: Mighty Magic'
+        content: 'Incompatible with: Mighty Magic'
         condition: 'file("Mighty Magick .+\.esp")'
     dirty:
       - crc: 0x89ff6fe5
@@ -17160,20 +16964,12 @@ plugins:
   - name: 'masteredmagickaboundweapons.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Mighty Magic'
-          - lang: ja
-            text: '競合: Mighty Magic'
+        content: 'Incompatible with: Mighty Magic'
         condition: 'file("Mighty Magick .+\.esp")'
   - name: 'masteredmagickaenchantmentfix.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Mighty Magic'
-          - lang: ja
-            text: '競合: Mighty Magic'
+        content: 'Incompatible with: Mighty Magic'
         condition: 'file("Mighty Magick .+\.esp")'
     dirty:
       - crc: 0x94af712d
@@ -17208,11 +17004,7 @@ plugins:
   - name: 'MenuShoutsInDragonsLanguage.esp'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+        content: 'Use Dawnguard version.'
         condition: 'active("Dawnguard.esm") and checksum("MenuShoutsInDragonsLanguage.esp",B36BDB9A)'
   - name: 'Merchants Reply Only With Take A Look.esp'
     dirty:
@@ -17533,11 +17325,7 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyHelmets.esp'
     inc:
@@ -17545,11 +17333,7 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_DragonboneEbonsteel.esp'
     msg:
@@ -17602,18 +17386,10 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
+        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp'
     inc:
@@ -17623,18 +17399,10 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
+        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
+        content: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
         condition: 'file("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dawnguard.esp'
     inc:
@@ -17824,11 +17592,7 @@ plugins:
   - name: 'Skeleton Resurrection.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Skyrim Redone'
-          - lang: ja
-            text: '競合: Skyrim Redone'
+        content: 'Incompatible with: Skyrim Redone'
         condition: 'file("SkyRe_.+\.esp")'
       - type: warn
         content:
@@ -18760,11 +18524,7 @@ plugins:
   - name: 'LakeExpanded01.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.'
-          - lang: ja
-            text: '競合: Hearthfires（Hearthfiresバージョンを使用してください。）'
+        content: 'Incompatible with: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.'
         condition: 'active("Hearthfires.esm") and ( checksum("LakeExpanded01.esp",43AEF0BF) or checksum("LakeExpanded01.esp",843EB3FC) )'
     dirty:
       - crc: 0x43aef0bf
@@ -19438,22 +19198,14 @@ plugins:
   - name: 'Medium hit.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Realistic Ragdoll Force'
-          - lang: ja
-            text: '競合: Realistic Ragdoll Force'
+        content: 'Incompatible with: Realistic Ragdoll Force'
         condition: 'file("dD.?- Realistic Ragdoll Force.*\.esp")'
   - name: 'Realistic hit.esp'
     inc:
       - 'Medium hit.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Realistic Ragdoll Force'
-          - lang: ja
-            text: '競合: Realistic Ragdoll Force'
+        content: 'Incompatible with: Realistic Ragdoll Force'
         condition: 'file("dD.?- Realistic Ragdoll Force.*\.esp")'
   - name: 'RealisticCarryWeight.esp'
     dirty:
@@ -19685,25 +19437,13 @@ plugins:
       - 'Dawnguard.esm'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Belua Sanguinare'
-          - lang: ja
-            text: '競合: Belua Sanguinare'
+        content: 'Incompatible with: Belua Sanguinare'
         condition: 'file("MM_BeluaSangunaire.*\.esp")'
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Better Vampires'
-          - lang: ja
-            text: '競合: Better Vampires'
+        content: 'Incompatible with: Better Vampires'
         condition: 'file("Better Vampires( ML| DG)?( - No DawnGuard.esp)?\.esp")'
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Imp''s More Complex Needs'
-          - lang: ja
-            text: '競合: Imp''s More Complex Needs'
+        content: 'Incompatible with: Imp''s More Complex Needs'
         condition: 'file("Imp''s More Complex Needs\.es[mp]")'
       - type: say
         content:
@@ -19885,18 +19625,10 @@ plugins:
   - name: 'WerewolfMastery.esp'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+        content: 'Use Dawnguard version.'
         condition: 'active("Dawnguard.esm") and checksum("WerewolfMastery.esp",57E4BC0F)'
       - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+        content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm") and checksum("WerewolfMastery.esp",73AC0648)'
     dirty:
       - crc: 0x73ac0648
@@ -20189,18 +19921,10 @@ plugins:
   - name: 'Evilbass Light and Dark Spells.esp'
     msg:
       - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+        content: 'Use non-Dawnguard version.'
         condition: 'not active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",4E1181E9)'
       - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+        content: 'Use Dawnguard version.'
         condition: 'active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",248F5114)'
     dirty:
       - crc: 0x248f5114
@@ -21379,11 +21103,7 @@ plugins:
         display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
+        content: 'Incompatible with: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
   - name: 'Uncapped Perks.esp'
     req:
@@ -21391,11 +21111,7 @@ plugins:
         display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
+        content: 'Incompatible with: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
   - name: 'Uncapped Perks - Optional Magic Add-on.esp'
     req:
@@ -21404,11 +21120,7 @@ plugins:
   - name: 'Uncapped Perks - .+\.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
+        content: 'Incompatible with: PerkUP'
         condition: 'file("PerkUP-.*\.esp")'
   - name: 'BlueStarPerkAdventure.esp'
     req:
@@ -23800,11 +23512,7 @@ plugins:
   - name: 'SlavePackRiekling.esp'
     msg:
       - type: warn
-        content:
-          - lang: en
-            text: 'Plugin has some corruption.'
-          - lang: ja
-            text: 'プラグインの一部が破損しています。'
+        content: 'Plugin has some corruption.'
         condition: 'checksum("SlavePackRiekling.esp",9657019E)'
     dirty:
       - crc: 0x9657019e
@@ -24287,11 +23995,7 @@ plugins:
   - name: 'True Giants( v\d)?\.esp'
     msg:
       - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Height Adjusted Races with True Giants'
-          - lang: ja
-            text: '競合: Height Adjusted Races with True Giants'
+        content: 'Incompatible with: Height Adjusted Races with True Giants'
         condition: 'file("Height Adjusted Races(.+)True Giants(.+)?\.esp")'
   - name: 'AROP- Altmer Edition( - NW)?\.esp'
     msg:
@@ -25298,11 +25002,7 @@ plugins:
   - name: 'waves.esp'
     msg:
       - type: warn
-        content:
-          - lang: en
-            text: 'Plugin has some corruption.'
-          - lang: ja
-            text: 'プラグインの一部が破損しています。'
+        content: 'Plugin has some corruption.'
         condition: 'checksum("Waves.esp",80C9D6A)'
     dirty:
       - crc: 0x80c9d6a
