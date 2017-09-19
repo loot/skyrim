@@ -192,6 +192,11 @@ common:
         text: '只使用一个%1%。'
       - lang: ja
         text: '%1%は一つだけ使用してください。'
+  - &alsoUseX
+    type: say
+    content:
+      - lang: en
+        text: 'It is highly recommended that you also use %1%.'
   - &installOriginalResources
     type: say
     content:
@@ -2489,10 +2494,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Chesko_Frostfall.esp'
-    req:
-      - name: 'EnchantingAwakenedFrostfallPatch.esp'
-        display: '[Enchanting Awakened Frostfall Patch](http://www.nexusmods.com/skyrim/mods/42796)'
-        condition: 'file("EnchantingAwakened.esp")'
+    msg:
+      - <<: *alsoUseX
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedFrostfallPatch.esp")'
+        subs: [ 'the [Enchanting Awakened Frostfall Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
   - name: 'FrostfallWalkingStickFix.esp'
     msg: [ *obsolete ]
   - name: 'enb_reference.esp'
@@ -19965,10 +19970,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 6
   - name: 'Apocalypse - The Spell Package.esp'
-    req:
-      - name: 'EnchantingAwakenedApocalypsePatch.esp'
-        display: '[Enchanting Awakened Apocalypse Patch](http://www.nexusmods.com/skyrim/mods/42796)'
-        condition: 'file("EnchantingAwakened.esp")'
+    msg:
+      - <<: *alsoUseX
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedApocalypsePatch.esp")'
+        subs: [ 'the [Enchanting Awakened Apocalypse Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
     dirty:
       - crc: 0x9f7f929a
         <<: *dirtyPlugin
@@ -21818,24 +21823,28 @@ plugins:
   - name: 'Stealth Skills Rebalanced_COMPLETE.esp'
     after:
       - 'EnchantingAwakened.esp'
+    msg:
+      - <<: *alsoUseX
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSSRPatch.esp")'
+        subs: [ 'the [Enchanting Awakened Stealth Skills Rebalanced Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
     tag:
       - Delev
   - name: 'Stealth Skills Rebalanced_LOCKPICKING.esp'
     inc:
       - 'Stealth Skills Rebalanced_COMPLETE.esp'
-    req:
-      - name: 'EnchantingAwakenedSSRPatch.esp'
-        display: '[Enchanting Awakened SSR Patch](http://www.nexusmods.com/skyrim/mods/42796)'
-        condition: 'file("EnchantingAwakened.esp")'
+    msg:
+      - <<: *alsoUseX
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSSRPatch.esp")'
+        subs: [ 'the [Enchanting Awakened Stealth Skills Rebalanced Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
     tag:
       - Delev
   - name: 'Stealth Skills Rebalanced_PICKPOCKET.esp'
     inc:
       - 'Stealth Skills Rebalanced_COMPLETE.esp'
-    req:
-      - name: 'EnchantingAwakenedSSRPatch.esp'
-        display: '[Enchanting Awakened SSR Patch](http://www.nexusmods.com/skyrim/mods/42796)'
-        condition: 'file("EnchantingAwakened.esp")'
+    msg:
+      - <<: *alsoUseX
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSSRPatch.esp")'
+        subs: [ 'the [Enchanting Awakened Stealth Skills Rebalanced Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
     tag:
       - Delev
   - name: 'Stealth Skills Rebalanced_SNEAK.esp'
@@ -25107,10 +25116,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 8
   - name: 'Animated Weapon Enchants.esp'
-    req:
-      - name: 'EnchantingAwakenedAWEPatch.esp'
-        display: '[Enchanting Awakened AWE Patch](http://www.nexusmods.com/skyrim/mods/42796)'
-        condition: 'file("EnchantingAwakened.esp")'
+    msg:
+      - <<: *alsoUseX
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedAWEPatch.esp")'
+        subs: [ 'the [Enchanting Awakened Animated Weapon Enchants Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
   - name: 'DTHSpellMageArmorEffectReplacer.+\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -25128,10 +25137,10 @@ plugins:
     after:
       - 'Distant DetailHF.esp'
   - name: 'SeeEnchs.esp'
-    req:
-      - name: 'EnchantingAwakenedSeeEnchPatch.esp'
-        display: '[Enchanting Awakened SeeEnch Patch](http://www.nexusmods.com/skyrim/mods/42796)'
-        condition: 'file("EnchantingAwakened.esp")'
+    msg:
+      - <<: *alsoUseX
+        condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSeeEnchPatch.esp")'
+        subs: [ 'the [Enchanting Awakened SeeEnchantments Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
   - name: 'Hot Volcanic Water.esp'
     dirty:
       - crc: 0xcb9a32b4
