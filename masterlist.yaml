@@ -17262,10 +17262,9 @@ plugins:
   - name: 'MoreSalt.esp'
     tag:
       - Relev
-    dirty:
-      - crc: 0x492e06a5
-        <<: *dirtyPlugin
-        itm: 1
+    msg:
+      - <<: *doNotClean
+        condition: 'checksum("MoreSalt.esp",492E06A5)'
   - name: 'mso- morahir''s staff overhaul.esp'
     dirty:
       - crc: 0xd31d84e2
