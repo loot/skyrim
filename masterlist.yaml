@@ -24108,15 +24108,16 @@ plugins:
       - name: 'Change Follower Outfits Redux -- USKP 1.2 Farkas Compatability.esp'
         display: '[USKP Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
         condition: 'active("Unofficial Skyrim Patch.esp")'
-      - name: 'Change Follower Outfits Redux -- Dawnguard.esp'
-        display: '[Dawnguard Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
-        condition: 'active("Dawnguard.esm")'
-      - name: 'Change Follower Outfits Redux -- Hearthfire.esp'
-        display: '[Hearthfire Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
-        condition: 'active("Hearthfires.esm")'
-      - name: 'Change Follower Outfits Redux -- Dragonborn.esp'
-        display: '[Dragonborn Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
-        condition: 'active("Dragonborn.esm")'
+    msg:
+      - <<: *reqModX
+        subs: [ '[Dawnguard Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
+        condition: 'active("Dawnguard.esm") and not active("Change Follower Outfits Redux -- Dawnguard.esp")'
+      - <<: *reqModX
+        subs: [ '[Hearthfire Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
+        condition: 'active("Hearthfires.esm") and not active("Change Follower Outfits Redux -- Hearthfire.esp")'
+      - <<: *reqModX
+        subs: [ '[Dragonborn Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
+        condition: 'active("Dragonborn.esm") and not active("Change Follower Outfits Redux -- Dragonborn.esp")'
   - name: 'Followers Stop Fighting Each Other.esp'
     msg: [ *obsolete ]
   - name: 'Seguidores DEJAR de pelear Entre Other.esp'
