@@ -26669,3 +26669,11 @@ plugins:
       - <<: *reqPatchForX
         condition: 'file("Immersive Sounds - Compendium.esp") and not active("Requiem - Immersive Jewelry ISC.esp")'
         subs: [ 'Immersive Sounds - Compendium.esp' ]
+  - name: 'Immersive Horses - Hearthfire Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Immersive Horses - Hearthfire Patch.esp") and version("Requiem - Immersive Horses.esp", "1.63", >=)'
+        subs: [ 'Requiem - Immersive Horses.esp' ]
+      - <<: *alreadyInX
+        condition: 'active("Immersive Horses - Hearthfire Patch.esp") and version("Requiem - Immersive Horses - SkyTEST.esp", "1.63", >=)'
+        subs: [ 'Requiem - Immersive Horses - SkyTEST.esp' ]
