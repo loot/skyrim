@@ -9346,7 +9346,7 @@ plugins:
       - 'Requiem - ESF Companions.esp'
     msg:
       - <<: *reqPatchForX
-        condition: 'file("ESFCompanions.esp") and not active("Requiem_Minor_Arcana - ESF Companions.esp")'
+        condition: 'version("ESFCompanions.esp", "0.3.8", >=) and not active("Requiem_Minor_Arcana - ESF Companions.esp")'
         subs: [ 'ESFCompanions.esp' ]
   # Must be loaded directly after Minor Arcana
   - name: 'Requiem - Minor Arcana - USLEEP patch.esp'
@@ -16589,7 +16589,7 @@ plugins:
       - 'BetterQuestObjectives.esp'
     msg:
       - <<: *reqRequiemPatch
-        condition: 'file("Requiem.esp") and not active("Requiem - ESF Companions.esp")'
+        condition: 'version("ESFCompanions.esp", "0.3.8", >=) and file("Requiem.esp") and not active("Requiem - ESF Companions.esp")'
     dirty:
       - crc: 0x16c76fa7
         <<: *dirtyPlugin
