@@ -4189,6 +4189,9 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
+    msg:
+      - <<: *reqRequiemPatch
+        condition: 'file("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
     dirty:
       - crc: 0x83B040DA
         <<: *dirtyPlugin
@@ -19470,7 +19473,7 @@ plugins:
       - 'TradeRoutes.esp'
     msg:
       - <<: *reqRequiemPatch
-        condition: 'file("Requiem.esp") and not active("RND_Requiem-Patch.esp") and not active("Requiem - Realistic Needs & Hypothermia.esp") and not active("RequiemSurvivalExperience.esp") and not active("Requiem Food patch.esp")'
+        condition: 'file("Requiem.esp") and not active("RND_Requiem-Patch.esp") and not active("Requiem - Realistic Needs & Hypothermia.esp") and not active("RSE-RequiemSurvivalExperience.esp") and not active("Requiem Food patch.esp")'
     tag:
       - Delev
       - Relev
@@ -26416,7 +26419,7 @@ plugins:
   - name: 'Campfire.esm'
     msg:
       - <<: *reqRequiemPatch
-        condition: 'file("Requiem.esp") and not active("Requiem - Campfire.esp")'
+        condition: 'file("Requiem.esp") and not active("Requiem - Campfire.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
     clean:
       - crc: 0xB536FDD0
         util: TES5Edit v3.1.3
@@ -26543,7 +26546,7 @@ plugins:
   - name: 'Frostfall.esp'
     msg:
       - <<: *reqRequiemPatch
-        condition: 'file("Requiem.esp") and not active("Requiem - Frostfall.esp")'
+        condition: 'file("Requiem.esp") and not active("Requiem - Frostfall.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
   - name: 'HothFollower.esp'
     msg:
       - <<: *reqRequiemPatch
@@ -26551,7 +26554,7 @@ plugins:
   - name: 'Hypothermia.esp'
     msg:
       - <<: *reqRequiemPatch
-        condition: 'file("Requiem.esp") and not active("Requiem - Realistic Needs & Hypothermia.esp")'
+        condition: 'file("Requiem.esp") and not active("Requiem - Realistic Needs & Hypothermia.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
   - name: 'Immersive Horses.esp'
     msg:
       - <<: *reqRequiemPatch
