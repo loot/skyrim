@@ -462,9 +462,60 @@ globals:
       - lang: ja
         text: '[Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811)がインストールされているようです。FNIS本体、またFNISに準拠するModをインストール/アンインストールする際は、必ずGenerateFNISforUsers.exeを実行し直すようにしてください。'
 
+groups:
+  - name: &updateEsmGroup Update.esm
+
+  - name: &unofficialPatchGroup Unofficial Patches
+    after: [ *updateEsmGroup ]
+
+  - name: &newLandsGroup New Lands & Optimisers
+    after: [ *unofficialPatchGroup ]
+
+  - name: default
+    after: [ *newLandsGroup ]
+
+  - name: &immersiveCitizensGroup Immersive Citizens
+    after: [ default ]
+
+  - name: &stepGroup Step Patches & Skyrim Child Overhaul
+    after: [ *immersiveCitizensGroup ]
+
+  - name: &morrowlootGroup Morrowloot
+    after: [ *stepGroup ]
+
+  - name: &alternateStartGroup Alternate Start & Requiem
+    after: [ *morrowlootGroup ]
+
+  - name: &lightingGroup Lighting
+    after: [ *alternateStartGroup ]
+
+  - name: &dynamicPatchGroup Dynamic Patches
+    after: [ *lightingGroup ]
+
+  - name: &mapMarkersGroup Map Markers
+    after: [ *dynamicPatchGroup ]
+
+  - name: &asisGroup ASIS
+    after: [ *mapMarkersGroup ]
+
+  - name: &latePatchGroup Late Patches
+    after: [ *asisGroup ]
+
+  - name: &sumGroup SkyProc Unified Manager
+    after: [ *latePatchGroup ]
+
+  - name: &reproccerGroup Reproccer Patches
+    after: [ *sumGroup ]
+
+  - name: &postReproccerGroup Post-Reproccer Patches
+    after: [ *reproccerGroup ]
+
+  - name: &mapGroup Maps & LOD
+    after: [ *postReproccerGroup ]
+
 plugins:
   - name: 'Update.esm'
-    global_priority: -127
+    group: *updateEsmGroup
     tag:
       - C.Encounter
       - C.Location
@@ -487,7 +538,7 @@ plugins:
         udr: 3
         itm: 92
   - name: 'Unofficial Skyrim Patch.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
     msg:
       - type: say
         condition: 'active("Dawnguard.esm") and not file("Unofficial Dawnguard Patch.esp")'
@@ -553,12 +604,12 @@ plugins:
       - Sound
       - Stats
   - name: 'SMPC.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - 'Unofficial Skyrim Patch.esp'
     msg: [ *harmful ]
   - name: 'Dawnguard.esm'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
@@ -589,7 +640,7 @@ plugins:
         crc: 0x3af859f5
         itm: 6
   - name: 'Unofficial Dawnguard Patch.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Dawnguard - Textures.esm'
@@ -610,18 +661,18 @@ plugins:
       - 'Unofficial Dawnguard Patch.esp'
     msg: [ *harmful ]
   - name: 'SCO Winter Landscape Decoloration.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
   - name: 'SCO Winter Landscape Decoloration - Solstheim.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - 'SCO Winter Landscape Decoloration.esp'
   - name: 'SCO Winter Edition.esp'
-    global_priority: 50
+    group: *stepGroup
     after:
       - 'SCO Winter Landscape Decoloration.esp'
       - 'SCO Winter Landscape Decoloration - Solstheim.esp'
   - name: 'Hearthfires.esm'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
@@ -646,19 +697,19 @@ plugins:
         udr: 11
         nav: 5
   - name: 'SCO Winter Edition - Solstheim.esp'
-    global_priority: 50
+    group: *stepGroup
     after:
       - 'SCO Winter Landscape Decoloration.esp'
       - 'SCO Winter Landscape Decoloration - Solstheim.esp'
       - 'SCO Winter Edition.esp'
   - name: 'SCO Winter Edition - Hearthfire Patch.esp'
-    global_priority: 50
+    group: *stepGroup
     after:
       - 'SCO Winter Landscape Decoloration - Solstheim.esp'
       - 'SCO Winter Edition.esp'
       - 'SCO Winter Edition - Solstheim.esp'
   - name: 'SCO Winter Edition - No Grass Patch.esp'
-    global_priority: 50
+    group: *stepGroup
     after:
       - 'SCO Winter Landscape Decoloration.esp'
       - 'SCO Winter Landscape Decoloration - Solstheim.esp'
@@ -666,7 +717,7 @@ plugins:
       - 'SCO Winter Edition - Solstheim.esp'
       - 'SCO Winter Edition - Hearthfire Patch.esp'
   - name: 'Unofficial Hearthfire Patch.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
@@ -686,7 +737,7 @@ plugins:
       - 'Unofficial Hearthfire Patch.esp'
     msg: [ *harmful ]
   - name: 'Dragonborn.esm'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
@@ -716,7 +767,7 @@ plugins:
         udr: 8
         nav: 1
   - name: 'Unofficial Dragonborn Patch.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
@@ -742,7 +793,7 @@ plugins:
       - 'Unofficial Dragonborn Patch.esp'
     msg: [ *harmful ]
   - name: 'Unofficial Skyrim Legendary Edition Patch.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - 'Dawnguard - Textures.esm'
       - 'HearthFires - Textures.esm'
@@ -774,7 +825,7 @@ plugins:
         util: TES5Edit v3.1.3
 # Falskaar is stated to be an "unofficial DLC", it should be loaded right after the Beth DLCs, logically. - William
   - name: 'Falskaar.esm'
-    global_priority: -90
+    group: *newLandsGroup
     msg:
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("NRM Falskaar - Requiem Patch.esp")'
@@ -783,7 +834,7 @@ plugins:
         util: TES5Edit v3.1.3
 # Wyrmstooth to load very early around Falskaar
   - name: 'Wyrmstooth.esp'
-    global_priority: -90
+    group: *newLandsGroup
     after:
       - 'Falskaar.esm'
     msg:
@@ -816,16 +867,16 @@ plugins:
         itm: 22
         nav: 1
   - name: 'Skyrim Project Optimization.esm'
-    global_priority: -90
+    group: *newLandsGroup
   - name: 'Skyrim Project Optimization - No Homes.esm'
-    global_priority: -90
+    group: *newLandsGroup
     inc:
       - 'Skyrim Project Optimization - No Homes - Full Version.esm'
       - 'Skyrim Project Optimization - Full Version.esm'
       - 'Skyrim Project Optimization - No Homes.esp'
       - 'Skyrim Project Optimization.esm'
   - name: 'Skyrim Project Optimization - Dawnguard.esm'
-    global_priority: -90
+    group: *newLandsGroup
     after:
       - 'Skyrim Project Optimization.esm'
       - 'Skyrim Project Optimization - No Homes.esm'
@@ -833,7 +884,7 @@ plugins:
       - 'Skyrim Project Optimization - No Homes - Full Version.esm'
       - 'Skyrim Project Optimization - Full Version.esm'
   - name: 'Skyrim Project Optimization - Dragonborn.esm'
-    global_priority: -90
+    group: *newLandsGroup
     after:
       - 'Skyrim Project Optimization.esm'
       - 'Skyrim Project Optimization - No Homes.esm'
@@ -843,7 +894,7 @@ plugins:
       - 'Skyrim Project Optimization - Full Version.esm'
 # SPO full versions need to load later since they edit all DLCs
   - name: 'Skyrim Project Optimization - Full Version.esm'
-    global_priority: -90
+    group: *newLandsGroup
     inc:
       - 'Skyrim Project Optimization - No Homes - Full Version.esm'
       - 'Skyrim Project Optimization - No Homes.esm'
@@ -852,7 +903,7 @@ plugins:
       - crc: 0xFE33A011
         util: TES5Edit v3.1.3
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esm'
-    global_priority: -90
+    group: *newLandsGroup
     inc:
       - 'Skyrim Project Optimization - No Homes.esm'
       - 'Skyrim Project Optimization - Full Version.esm'
@@ -1105,7 +1156,7 @@ plugins:
   - name: 'Extended Colors.esm'
     msg: [ *obsolete ]
   - name: 'Unofficial High Resolution Patch.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
@@ -1646,37 +1697,37 @@ plugins:
     msg: [ *obsolete ]
 # Low priority .esp's
   - name: 'HighResTexturePack01.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
   - name: 'HighResTexturePack02.esp'
     after:
       - 'HighResTexturePack01.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
   - name: 'HighResTexturePack03.esp'
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
-    global_priority: -120
+    group: *unofficialPatchGroup
   - name: 'VanillaReducedTextures.esp'
-    global_priority: -90
+    group: *newLandsGroup
     after:
       - 'Cutting Room Floor.esp'
   - name: 'VanillaReducedTexturesDG.esp'
     after:
       - 'Cutting Room Floor.esp'
       - 'VanillaReducedTextures.esp'
-    global_priority: -90
+    group: *newLandsGroup
   - name: 'VanillaReducedTexturesDB.esp'
     after:
       - 'Cutting Room Floor.esp'
       - 'VanillaReducedTextures.esp'
       - 'VanillaReducedTexturesDG.esp'
-    global_priority: -90
+    group: *newLandsGroup
   - name: 'Bethesda_Hi-Res_Optimized.esp'
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
       - 'HighResTexturePack03.esp'
-    global_priority: -90
+    group: *newLandsGroup
 # esm''s released with esp extension
   - name: 'Bandit Raid.esp'
     msg:
@@ -1696,19 +1747,19 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Skyrim Project Optimization - Full Version.esp'
-    global_priority: -90
+    group: *newLandsGroup
     inc:
       - 'Skyrim Project Optimization - No Homes - Full Version.esp'
       - 'Skyrim Project Optimization - No Homes.esp'
       - 'Skyrim Project Optimization - Full Version.esm'
   - name: 'Skyrim Project Optimization - No Homes.esp'
-    global_priority: -90
+    group: *newLandsGroup
     inc:
       - 'Skyrim Project Optimization - No Homes - Full Version.esp'
       - 'Skyrim Project Optimization - Full Version.esp'
       - 'Skyrim Project Optimization - No Homes.esm'
   - name: 'Skyrim Project Optimization - No Homes - Full Version.esp'
-    global_priority: -90
+    group: *newLandsGroup
     inc:
       - 'Skyrim Project Optimization - No Homes.esp'
       - 'Skyrim Project Optimization - Full Version.esp'
@@ -3048,9 +3099,9 @@ plugins:
     msg:
       - *ReqCBBE
   - name: 'TouringCarriages.esp'
-    global_priority: -90
+    group: *newLandsGroup
   - name: 'Cutting Room Floor.esp'
-    global_priority: -90
+    group: *newLandsGroup
     after:
       - 'TouringCarriages.esp'
       - 'WhiterunHoldForest.esp'
@@ -9214,7 +9265,7 @@ plugins:
     msg: [ *obsolete ]
 ### Rules for Requiem and its patches ###
   - name: 'Requiem.esp'
-    global_priority: 70
+    group: *alternateStartGroup
     inc:
       - 'Requiem plus PCEA 3-5.esp'
       - 'Ordinator - Perks of Skyrim.esp'
@@ -18983,7 +19034,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Open Cities Skyrim.esp'
-    global_priority: 70
+    group: *alternateStartGroup
     after:
       - 'Unique Region Names.esp'
       - 'URN+CoT Patch.esp'
@@ -19327,7 +19378,7 @@ plugins:
         condition: 'checksum("ClimatesOfTamriel-WinterEdition.esp",74DF3C5)'
   - name: 'ELFXEnhancer.esp'
     ## loaded after COT as it is more specialized
-    global_priority: 75
+    group: *lightingGroup
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
@@ -19341,11 +19392,11 @@ plugins:
         itm: 1
         udr: 0
   - name: 'ELFX - Hardcore.esp'
-    global_priority: 75
+    group: *lightingGroup
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELE_.+_Lite\.esp'
-    global_priority: 75
+    group: *lightingGroup
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'RelightingSkyrim_Legendary.esp'
@@ -24231,7 +24282,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 141
   - name: 'Alternate Start - Live Another Life.esp'
-    global_priority: 70
+    group: *alternateStartGroup
     msg:
       - type: error
         content:
@@ -25688,30 +25739,30 @@ plugins:
       - 'Skyrim Performance MOD.esp'
 ## STEP
   - name: 'STEP Core Patch.esp'
-    global_priority: 50
+    group: *stepGroup
     tag:
       - Stats
       - Names
   - name: 'STEP Extended Patch.esp'
-    global_priority: 50
+    group: *stepGroup
     tag:
       - Stats
       - Names
       - Delev
       - Relev
   - name: 'STEP Combined Plugin.esp'
-    global_priority: 50
+    group: *stepGroup
   - name: 'STEP Combined PluginHF.esp'
-    global_priority: 50
+    group: *stepGroup
   - name: 'World_Map_Height_Pitch_Tweak(_(130|170|200|250|Vanilla_pitch))?(_50|_90)?\.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
-    global_priority: 70
+    group: *alternateStartGroup
     msg:
       - <<: *useOnlyOneX
         condition: 'many("World_Map_Height_Pitch_Tweak(_(130|170|200|250|Vanilla_pitch))?(_50|_90)?\.esp")'
         subs: [ 'World_Map_Height_Pitch_Tweak .esp file' ]
   - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
-    global_priority: 70
+    group: *alternateStartGroup
     inc:
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
@@ -25727,7 +25778,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 9
   - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
-    global_priority: 70
+    group: *alternateStartGroup
     inc:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
@@ -25744,7 +25795,7 @@ plugins:
         itm: 10
         udr: 0
   - name: 'Warburg''s 3D Paper World Map - Texture 3.esp'
-    global_priority: 70
+    group: *alternateStartGroup
     inc:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
@@ -25760,11 +25811,11 @@ plugins:
         <<: *dirtyPlugin
         itm: 9
   - name: 'TES5Merged.esp'
-    global_priority: 80
+    group: *dynamicPatchGroup
     tag:
       - NoMerge
   - name: 'Smashed Patch.esp'
-    global_priority: 80
+    group: *dynamicPatchGroup
     after:
       - 'TES5Merged.esp'
     tag:
@@ -25774,7 +25825,7 @@ plugins:
         condition: 'file("Bashed Patch.*\.esp")'
         subs: [ 'Bashed Patch' ]
   - name: 'Bashed Patch.*\.esp'
-    global_priority: 80
+    group: *dynamicPatchGroup
     after:
       - 'TES5Merged.esp'
     msg:
@@ -25782,84 +25833,84 @@ plugins:
         condition: 'file("Smashed Patch.esp")'
         subs: [ 'Smashed Patch.esp' ]
   - name: 'Warburg''s 3D Paper World Map - Dawnguard.esp'
-    global_priority: 85
+    group: *mapMarkersGroup
     after:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
   - name: 'Warburg''s 3D Paper World Map - Dragonborn.esp'
-    global_priority: 85
+    group: *mapMarkersGroup
     after:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
       - 'Warburg''s 3D Paper World Map - Texture 3.esp'
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
-    global_priority: 85
+    group: *mapMarkersGroup
     req: [ *SKSE ]
     msg: [ *doNotClean ]
   - name: 'Pre Automatic Variants.*\.esp'
-    global_priority: 90
+    group: *asisGroup
   - name: 'ASIS-Dependency.esp'
-    global_priority: 90
+    group: *asisGroup
   - name: 'PreASISPatch.*\.esp'
-    global_priority: 90
+    group: *asisGroup
   - name: 'Pre ReProccer.*\.esp'
-    global_priority: 90
+    group: *asisGroup
   - name: 'Automatic Variants.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'ASIS.esp'
-    global_priority: 95
+    group: *latePatchGroup
     ##  IF VAR(EN) && IF VAR(SkyReM) WARN: Unmark Automatic Perks and Automatic Spells flags in ASIS patch options. Or you will have bugs and CTDs in game when using SkyRe and ASIS.
     ##    IF VAR(RU) && IF VAR(SkyReM) WARN: Отключите флажки Automatic Perks и Automatic Spells в опциях патча. Если этого не сделать, то будут серьезные проблемы с АИ, при использовании SkyRe и ASIS (патч наделит неписей и мобов перками и заклинаниями, приводящими к периодическому замораживанию неписей, а также вылетам на рабочий стол).
     ## Message does not appear to be relevant with newer SkyRe versions. - William
   - name: 'CR Compatibility Patch.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'Automatic Spells.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'Automatic Variations.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'Customized AI.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'DEOS - Patch.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'LLI.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'GELO_Patcher_Build.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'Dual Sheath Redux Patch.esp'
-    global_priority: 95
+    group: *latePatchGroup
     after:
       - 'GELO_Patcher_Build.esp'
       - 'LLI.esp'
       - 'PatchusMaximus.esp'
   - name: 'EveryBody''s Different.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'NPC Enchant Fix.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'NPC ReWeHeighter.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'Pauldrons_Greaves_Patch.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'PotentialFollower+PotentialMarriage.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'PatchusMaximus.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'Perk Patch.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'RBS.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'ReProccer.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'Requiem for the Indifferent.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'ScrollProccer.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'The Staff Machine.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'TravellersOfSkyrim - Custom Travellers.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'WTF.esp'
-    global_priority: 95
+    group: *latePatchGroup
     msg:
       - type: say
         content:
@@ -25872,12 +25923,12 @@ plugins:
           - lang: ja
             text: 'May need [TES5Edit]([TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)でクリーニングする必要があるかもしれません。このSkyProc Patchでテスト生成するとITMが紛れこむ場合があります。クリーニングの手順は[こちら](https://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit)です。'
   - name: 'ZF Primary Needs Patcher.esp'
-    global_priority: 95
+    group: *latePatchGroup
   - name: 'RSPatch.esp'
-    global_priority: 95
+    group: *latePatchGroup
 # Needs to load last.  If other plugins need to load this low, please adjust metadata so this always remains last.
   - name: 'SUM.esp'
-    global_priority: 100
+    group: *sumGroup
   - name: 'SkyRe_EnemyAI.esp'
     msg:
       - type: say
@@ -25892,29 +25943,29 @@ plugins:
             text: 'ASISでパッチを作成する場合はその前に''SkyRe_EnemyAI.esp''を非アクティブにし、パッチ作成後にアクティブにしてください。SkyRe_EnemyAI.espをASISのblocklist.txt に追加してもいいでしょう。([解説](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922))'
         condition: 'active("SkyRe_EnemyAI.esp") and (file("ASIS.esp") or file("ASIS-Dependency.esp"))'
   - name: 'DeadlyCombat_ASIS_Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'PostASISPatch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'Post ?Re[pP]roccer.*\.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'ANC EOS Recipe Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'BlackSacramentArmor ReProccer Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'BSA WIC LVA ReProccer Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'CBC EN LL ReProccer Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'kids_of_skyrim - skeleton AV patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'ReProccerNONPLAYERfix.esp'
-    global_priority: 105
+    group: *reproccerGroup
     msg:
       - <<: *alreadyInX
         condition: 'file("qotsafans.*\.esp")'
         subs: [ 'Qotsafan''s Reproccer patches' ]
   - name: 'ReProccerDragonborn.esp'
-    global_priority: 105
+    group: *reproccerGroup
     msg:
       - type: say
         content:
@@ -25924,19 +25975,19 @@ plugins:
             text: 'SUMのmerged patch機能を使用している場合、このパッチのマスターファイルをReProccer.espからSUM.espに変更してください。'
         condition: 'file("SUM.esp")'
   - name: 'ReProccer-SkyforgeShields.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'SkyforgedWeapons ReProccer Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'ReProccerSRP Better Vampires Compat.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'WIC ReProccer Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'Miscellaneous ReProccer Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'SkyRe Destruction Tree Tweak Patch.*\.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'Realistic Weapon Positions.esp'
-    global_priority: 105
+    group: *reproccerGroup
     msg:
       - type: say
         content:
@@ -25946,12 +25997,12 @@ plugins:
             text: 'このModのメッシュは最後にインストールしてください。Skeletonや防具のメッシュを置き換えるModを上書きするためです。'
   #qotsafans patches now include over 150 uniquely named esps
   - name: 'qotsafans.*\.esp'
-    global_priority: 105
+    group: *reproccerGroup
   #Post Reproccer Scoped Bows Patch must load after qotsafans stuff
   - name: 'Post Reproccer Scoped Bows Patch.esp'
-    global_priority: 110
+    group: *postReproccerGroup
   - name: 'AOS_SkyRe-Patch Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
     msg:
       - type: say
         content:
@@ -25963,21 +26014,21 @@ plugins:
   - name: 'AOS_CTD_Fix.esp'
     after:
       - 'AOS_SkyRe-Patch Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'AOS_Reduced_Reverb_Addon.esp'
     after:
       - 'AOS_CTD_Fix.esp'
       - 'AOS_SkyRe-Patch Patch.esp'
-    global_priority: 105
+    group: *reproccerGroup
     ## two AOS reported to load after any other AOS plugins or patches
 # DeadlyCombat_PISE_Patch.esp
 # Must load after ASIS (Unconfirmed, as comment for now)
   - name: 'EzEWorldMap.esp'
-    global_priority: 115
+    group: *mapGroup
   - name: 'EzEMapSolstheim.esp'
-    global_priority: 115
+    group: *mapGroup
   - name: 'Warburgs Paper World Map.esp'
-    global_priority: 115
+    group: *mapGroup
   - name: 'CombatDramaOverhaul.esp'
     dirty:
       - crc: 0x964e1f5c
@@ -26394,10 +26445,10 @@ plugins:
         itm: 6
         udr: 1
   - name: 'MLU.esp'
-    global_priority: 60
+    group: *morrowlootGroup
     url: [ 'http://www.nexusmods.com/skyrim/mods/66105' ]
   - name: 'DynDOLOD.esp'
-    global_priority: 115
+    group: *mapGroup
     url: [ 'http://www.nexusmods.com/skyrim/mods/59721' ]
   - name: 'Dynamic Dialogue Followers.esp'
     after:
@@ -26455,7 +26506,7 @@ plugins:
       - crc: 0x803DB5D7
         util: TES5Edit v3.1.3
   - name: 'Immersive Citizens - AI Overhaul.esp'
-    global_priority: 40
+    group: *immersiveCitizensGroup
     after:
       - 'BHTNF.esp'
       - 'BHTNF_Eli.esp'
@@ -26502,9 +26553,9 @@ plugins:
     after:
       - 'AuroraVillage.esp'
   - name: 'No Vendor or Loot Spells.esp'
-    global_priority: 105
+    group: *reproccerGroup
   - name: 'Skyrim Unlocked.esp'
-    global_priority: 70
+    group: *alternateStartGroup
     msg:
       - <<: *reqPatchForX
         condition: 'active("Open Cities Skyrim.esp") and not active("Skyrim Unlocked - Open Cities Skyrim Patch.esp")'
