@@ -471,11 +471,20 @@ groups:
   - name: &newLandsGroup New Lands & Optimisers
     after: [ *unofficialPatchGroup ]
 
+  - name: &underridesGroup Underrides
+    after: [ *newLandsGroup ]
+
   - name: default
     after: [ *newLandsGroup ]
 
-  - name: &immersiveCitizensGroup Immersive Citizens
+  - name: &ordinatorGroup Ordinator
     after: [ default ]
+
+  - name: &prePatchusMaximusGroup Pre-Patchus Maximus Patches
+    after: [ *ordinatorGroup ]
+
+  - name: &immersiveCitizensGroup Immersive Citizens
+    after: [ *prePatchusMaximusGroup ]
 
   - name: &stepGroup Step Patches & Skyrim Child Overhaul
     after: [ *immersiveCitizensGroup ]
@@ -483,8 +492,20 @@ groups:
   - name: &morrowlootGroup Morrowloot
     after: [ *stepGroup ]
 
-  - name: &alternateStartGroup Alternate Start & Requiem
+  - name: &requiemGroup Requiem
     after: [ *morrowlootGroup ]
+
+  - name: &requiemEarlyGroup Requiem - Early Patches
+    after: [ *requiemGroup ]
+
+  - name: &requiemDragonbornGroup Requiem - Dragonborn Patches
+    after: [ *requiemEarlyGroup ]
+
+  - name: &requiemPatchesGroup Requiem - Misc. Patches
+    after: [ *requiemDragonbornGroup ]
+
+  - name: &alternateStartGroup Alternate Start & Requiem
+    after: [ *requiemPatchesGroup ]
 
   - name: &lightingGroup Lighting
     after: [ *alternateStartGroup ]
@@ -4524,7 +4545,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'UnlimitedBookshelves.esp'
-    priority: -1
+    group: *underridesGroup
 ## This edits the object bounds of many items, so it should load before any other mod that also edits those items.
     dirty:
       - crc: 0x2f29b9d5
@@ -9265,7 +9286,7 @@ plugins:
     msg: [ *obsolete ]
 ### Rules for Requiem and its patches ###
   - name: 'Requiem.esp'
-    group: *alternateStartGroup
+    group: *requiemGroup
     inc:
       - 'Requiem plus PCEA 3-5.esp'
       - 'Ordinator - Perks of Skyrim.esp'
@@ -9313,10 +9334,10 @@ plugins:
         udr: 10
   # Must be loaded directly after Requiem.esp
   - name: 'Requiem - Bugsmasher Edition.esp'
-    priority: -127
+    group: *requiemEarlyGroup
   # Must be loaded directly after Requiem.esp
   - name: 'Requiem - Legendary Bugsmasher Edition.esp'
-    priority: -127
+    group: *requiemEarlyGroup
   - name: 'Requiem - Difficulty Bar Restored.esp'
     inc:
       - 'Requiem - Difficulty Bar Restored - Nightmare.esp'
@@ -9350,24 +9371,24 @@ plugins:
       - 'http://www.nexusmods.com/skyrim/mods/54562'
   # Should be loaded directly after Requiem.esp and the bugsmasher
   - name: 'Requiem - Hearthfire.esp'
-    priority: -127
+    group: *requiemEarlyGroup
     after:
       - 'Requiem - Bugsmasher Edition.esp'
       - 'Requiem - Legendary Bugsmasher Edition.esp'
   # Should lose conflicts because other patches may make important edits to Dragonborn content
   - name: 'NRM_Dragonborn_Reqtified.esp'
-    priority: -75
+    group: *requiemDragonbornGroup
     inc:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
   # Should lose conflicts because other patches may make important edits to Dragonborn content
   - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
-    priority: -75
+    group: *requiemDragonbornGroup
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
       - 'COR-CraftingOverhaulReqtified.esp'
   # Should lose conflicts because other patches may make important edits to something touched by AOS
   - name: 'Requiem - Audio Overhaul for Skyrim.esp'
-    priority: -50
+    group: *requiemPatchesGroup
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
       - 'COR-CraftingOverhaulReqtified.esp'
@@ -9404,7 +9425,7 @@ plugins:
         subs: [ 'ESFCompanions.esp' ]
   # Must be loaded directly after Minor Arcana
   - name: 'Requiem - Minor Arcana - USLEEP patch.esp'
-    priority: -127
+    group: *requiemEarlyGroup
   - name: 'Requiem - WRF_MinorArcana_MortalEnemies_TG.esp'
     after:
       - 'Requiem_Minor_Arcana.esp'
@@ -9450,7 +9471,7 @@ plugins:
         subs: [ 'ExplosiveBoltsVisualized.esp' ]
   # Should lose conflicts because other patches may make important edits to the races
   - name: 'Requiem - Height Adjusted Races with True Giants.esp'
-    priority: -50
+    group: *requiemPatchesGroup
     msg:
       - <<: *replacerPluginForX
         condition: 'file("Height Adjusted Races.esp")'
@@ -16134,7 +16155,7 @@ plugins:
             text: '旧式のファイルです。Even Better Quest Objectivesのページ内にある個別パッチをご利用ください。[Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
   # Should lose conflicts because other patches may make important edits to quests
   - name: BetterQuestObjectives-RequiemPatch.esp
-    priority: -50
+    group: *requiemPatchesGroup
     after:
       - 'ESFCompanions.esp'
     msg:
@@ -26122,7 +26143,7 @@ plugins:
         itm: 5
 
   - name: 'Pre PaMa WAFR Patch.esp'
-    priority: 89
+    group: *prePatchusMaximusGroup
     tag:
       - Names
     req:
@@ -26130,7 +26151,7 @@ plugins:
         display: '[Weapons & Armor Fixes_Remade](http://www.nexusmods.com/skyrim/mods/34093)'
 
   - name: 'Pre PaMa CCF Patch.esp'
-    priority: 89
+    group: *prePatchusMaximusGroup
     tag:
       - Names
       - Stats
@@ -26138,7 +26159,7 @@ plugins:
   - name: 'Pre PaMa CCOR Patch.esp'
     after:
       - 'PerkusMaximus_Warrior.esp'
-    priority: 89
+    group: *prePatchusMaximusGroup
     tag:
       - Names
       - Stats
@@ -26378,7 +26399,7 @@ plugins:
     url: [ 'http://www.nexusmods.com/skyrim/mods/30411' ]
 # Load Ordinator after other perk mods so it has precedence.
   - name: 'Ordinator - Perks of Skyrim.esp'
-    priority: 1
+    group: *ordinatorGroup
   - name: 'Darkend.esp'
     after:
       - 'AOS.esp'
