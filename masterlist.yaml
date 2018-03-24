@@ -9303,6 +9303,10 @@ plugins:
     after:
       - 'Requiem - Bugsmasher Edition.esp'
       - 'Requiem - Legendary Bugsmasher Edition.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Requiem - Hearthfire.esp") and version("Requiem.esp", "2.0.0", >=)'
+        subs: [ 'Requiem.esp' ]
   # Should lose conflicts because other patches may make important edits to Dragonborn content
   - name: 'NRM_Dragonborn_Reqtified.esp'
     priority: -75
@@ -9311,21 +9315,30 @@ plugins:
   # Should lose conflicts because other patches may make important edits to Dragonborn content
   - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
     priority: -75
-    after:
-      - 'KFR-Kryptopyr''sFixesReqtified.esp'
-      - 'COR-CraftingOverhaulReqtified.esp'
   # Should lose conflicts because other patches may make important edits to something touched by AOS
   - name: 'Requiem - Audio Overhaul for Skyrim.esp'
     priority: -50
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
       - 'COR-CraftingOverhaulReqtified.esp'
+      - 'Requiem - Cutting Room Floor.esp'
+      - 'Alternate Start - Live Another Life.esp'
   - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
     after:
       - 'NRM_Dragonborn_Reqtified.esp'
+      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+    msg:
+      - <<: *reqPatchForX
+        condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("KFR-FZR.esp")'
+        subs: [ 'Fozar''s Dragonborn patch' ]
   - name: 'COR-CraftingOverhaulReqtified.esp'
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
+      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+    msg:
+      - <<: *reqPatchForX
+        condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("COR-FZR.esp")'
+        subs: [ 'Fozar''s Dragonborn patch' ]
   - name: 'COR-Campfire.esp'
     req:
       - 'COR-CraftingOverhaulReqtified.esp'
