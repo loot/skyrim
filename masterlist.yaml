@@ -26633,9 +26633,21 @@ plugins:
       - <<: *reqPatchForX
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Skyrim Unlocked - Immersive College of Winterhold Patch.esp")'
         subs: [ 'Immersive College of Winterhold' ]
+      - <<: *reqPatchForX
+        condition: 'active("ESFCompanions.esp") and not active("Skyrim Unlocked - ESF Companions Patch.esp")'
+        subs: [ 'Enhanced Skyrim Factions - The Companions Guild' ]
+      - <<: *reqPatchForX
+        condition: 'active("Alternate Start - Live Another Life.esp") and not active("Skyrim Unlocked - Live Another Life Patch.esp")'
+        subs: [ 'Alternate Start - Live Another Life' ]
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Skyrim Unlocked.esp") and not active("Requiem - Skyrim Unlocked - OCS.esp")'
-  - name: 'Skyrim Unlocked - Immersive College of Winterhold Patch'
+  - name: 'Skyrim Unlocked - Immersive College of Winterhold Patch.esp'
+    req:
+      - 'Skyrim Unlocked.esp'
+  - name: 'Skyrim Unlocked - ESF Companions Patch.esp'
+    req:
+      - 'Skyrim Unlocked.esp'
+  - name: 'Skyrim Unlocked - Live Another Life Patch.esp'
     req:
       - 'Skyrim Unlocked.esp'
   - name: 'Open Cities Skyrim - Skyrim Unlocked Patch.esp'
