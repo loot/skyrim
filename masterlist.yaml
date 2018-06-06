@@ -294,6 +294,11 @@ common:
   - &dirtyPlugin
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
     info: 'A cleaning guide is available [here](http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit).'
+  - &hasWildEdits
+    type: say
+    content:
+      - lang: en
+        text: "This plug-in %1% contains wild edits. A manual [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning guide is available here: %2%"
 
 bash_tags:
   - 'Actors.ACBS'
@@ -553,15 +558,16 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x7f464083
         udr: 1
-      # Version 1.9.32.0 of Update.esm
+      ## (TES5EDIT v3.2.1) Version 1.9.32.0 of Update.esm
       - <<: *dirtyPlugin
         crc: 0xE5B67BDA
-        udr: 3
         itm: 96
+        udr: 3
+        nav: 0
     clean:
       # Version 1.9.32.0 - Auto Clean
       - crc: 0x18401373
-        util: SSEEdit v3.2.1
+        util: TES5EDIT v3.2.1
   - name: 'Unofficial Skyrim Patch.esp'
     group: *unofficialPatchGroup
     msg:
@@ -609,13 +615,13 @@ plugins:
       - Relations
       - Relev
       - Stats
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - 'Dawnguard.esm'
+          - '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)'
+        condition: 'checksum("Dawnguard.esm",94A47F31)'
     dirty:
-    # TES5Edit 3.0.30
-      - <<: *dirtyPlugin
-        crc: 0xbd72ccf3
-        itm: 619
-        udr: 82
-        nav: 57
     # TES5EDIT 3.0.31
       - <<: *dirtyPlugin
         crc: 0x31FEA081
@@ -623,6 +629,25 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x3af859f5
         itm: 6
+      ## (TES5EDIT v3.2.1)  Version 1.9.32.0 - Original
+      - <<: *dirtyPlugin
+        crc: 0xBD72CCF3
+        itm: 630
+        udr: 82
+        nav: 57
+      ## (TES5EDIT v3.2.1)  Version 1.9.32.0 - Auto Clean First pass
+      - <<: *dirtyPlugin
+        crc: 0x6391C6DC
+        itm: 6
+        udr: 0
+        nav: 57
+    clean:
+      # Version 1.9.32.0 - Auto Clean Second pass
+      - crc: 0x94A47F31
+        util: TES5EDIT v3.2.1
+      # Version 1.9.32.0 - Auto plus Manual Clean
+      - crc: 0x50FB6A39
+        util: TES5EDIT v3.2.1
   - name: 'Unofficial Dawnguard Patch.esp'
     group: *unofficialPatchGroup
     after:
@@ -679,12 +704,16 @@ plugins:
       - Invent
       - Sound
     dirty:
-    # TES5Edit 3.0.30
+      ## (TES5EDIT v3.2.1)  Version 1.9.32.0 - Original
       - <<: *dirtyPlugin
-        crc: 0xaf82ce6a
+        crc: 0xAF82CE6A
         itm: 184
         udr: 11
         nav: 5
+    clean:
+      # Version 1.9.32.0 - Auto Clean
+      - crc: 0xFBB4B8FA
+        util: TES5EDIT v3.2.1
   - name: 'SCO Winter Edition - Solstheim.esp'
     group: *stepGroup
     after:
@@ -754,12 +783,16 @@ plugins:
       - Relev
       - Stats
     dirty:
-    # TES5Edit 3.0.30
+      ## (TES5EDIT v3.2.1) Version 1.9.32.0 - Original 
       - <<: *dirtyPlugin
-        crc: 0xa9f83bff
+        crc: 0xA9F83BFF
         itm: 61
         udr: 8
         nav: 1
+    clean:
+      ## Version 1.9.32.0 - Auto Clean
+      - crc: 0xE0715431
+        util: TES5EDIT v3.2.1
   - name: 'Unofficial Dragonborn Patch.esp'
     group: *unofficialPatchGroup
     after:
