@@ -556,12 +556,13 @@ plugins:
       # Version 1.9.32.0 of Update.esm
       - <<: *dirtyPlugin
         crc: 0xE5B67BDA
-        udr: 3
         itm: 96
+        udr: 3
+        nav: 0
     clean:
       # Version 1.9.32.0 - Auto Clean
       - crc: 0x18401373
-        util: SSEEdit v3.2.1
+        util: TES5EDIT v3.2.1
   - name: 'Unofficial Skyrim Patch.esp'
     group: *unofficialPatchGroup
     msg:
@@ -610,12 +611,6 @@ plugins:
       - Relev
       - Stats
     dirty:
-    # TES5Edit 3.0.30
-      - <<: *dirtyPlugin
-        crc: 0xbd72ccf3
-        itm: 619
-        udr: 82
-        nav: 57
     # TES5EDIT 3.0.31
       - <<: *dirtyPlugin
         crc: 0x31FEA081
@@ -623,6 +618,26 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x3af859f5
         itm: 6
+    # TES5EDIT v3.2.1
+      # Version 1.9.32.0 - Original
+      - <<: *dirtyPlugin
+        crc: 0xBD72CCF3
+        itm: 630
+        udr: 82
+        nav: 57
+      # Version 1.9.32.0 - Auto Clean First pass
+      - <<: *dirtyPlugin
+        crc: 0x6391C6DC
+        itm: 6
+        udr: 0
+        nav: 57
+    clean:
+      # Version 1.9.32.0 - Auto Clean Second pass
+      - crc: 0x94A47F31
+        util: TES5EDIT v3.2.1
+      # Version 1.9.32.0 - Auto plus Manual Clean
+      - crc: 0x50FB6A39
+        util: TES5EDIT v3.2.1
   - name: 'Unofficial Dawnguard Patch.esp'
     group: *unofficialPatchGroup
     after:
