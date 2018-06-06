@@ -294,6 +294,11 @@ common:
   - &dirtyPlugin
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
     info: 'A cleaning guide is available [here](http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit).'
+ - &hasWildEdits
+    type: say
+    content:
+      - lang: en
+        text: "This plug-in %1% contains wild edits. A manual [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning guide is available here: %2%"
 
 bash_tags:
   - 'Actors.ACBS'
@@ -610,6 +615,12 @@ plugins:
       - Relations
       - Relev
       - Stats
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - 'Dawnguard.esm'
+          - '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)'
+        condition: 'checksum("Dawnguard.esm",6391C6DC)'
     dirty:
     # TES5EDIT 3.0.31
       - <<: *dirtyPlugin
