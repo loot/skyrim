@@ -19554,6 +19554,9 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'RealisticNeedsandDiseases.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/75876/'
+        name: 'Realistic Needs and Diseases All-In-One for USLEEP on Nexus Mods'
     after:
       - '3DNPC.esp'
       - 'TradeRoutes.esp'
@@ -19562,7 +19565,24 @@ plugins:
         condition: 'file("Requiem.esp") and not active("RND_Requiem-Patch.esp") and not active("Requiem - Realistic Needs & Hypothermia.esp") and not active("RSE-RequiemSurvivalExperience.esp") and not active("Requiem Food patch.esp")'
     tag:
       - Delev
+      - Graphics
+      - Invent
+      - Names
       - Relev
+      - Stats
+    dirty:
+      ## v1.0.3 RealisticNeedsandDiseasesUSLEEP - ENG
+      - <<: *dirtyPlugin
+        crc: 0x8B0C212F
+        itm: 1
+        udr: 0
+        nav: 0
+        util: '[TES5Edit  v3.2.1](http://www.nexusmods.com/skyrim/mods/25859)'
+        info: 'A cleaning guide is available [here](http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit).'
+    clean:
+      ## v1.0.3 RealisticNeedsandDiseasesUSLEEP - ENG
+      - crc: 0xCEDB343F
+        util: TES5EDIT v3.2.1
   - name: 'RND_Dawnguard-Patch.esp'
     after:
       - '3DNPC.esp'
