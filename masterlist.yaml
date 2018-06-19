@@ -509,11 +509,17 @@ groups:
   - name: &requiemPatchesGroup Requiem - Misc. Patches
     after: [ *requiemDragonbornGroup ]
 
-  - name: &alternateStartGroup Alternate Start & Requiem
+  - name: &ocsGroup Open Cities Skyrim
     after: [ *requiemPatchesGroup ]
 
-  - name: &lightingGroup Lighting
+  - name: &alternateStartGroup Alternate Start & Requiem
+    after: [ *ocsGroup ]
+
+  - name: &unlockedGroup Skyrim Unlocked
     after: [ *alternateStartGroup ]
+
+  - name: &lightingGroup Lighting
+    after: [ *unlockedGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
     after: [ *lightingGroup ]
@@ -19076,7 +19082,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Open Cities Skyrim.esp'
-    group: *alternateStartGroup
+    group: *ocsGroup
     after:
       - 'Unique Region Names.esp'
       - 'URN+CoT Patch.esp'
@@ -26761,7 +26767,7 @@ plugins:
   - name: 'No Vendor or Loot Spells.esp'
     group: *reproccerGroup
   - name: 'Skyrim Unlocked.esp'
-    group: *alternateStartGroup
+    group: *unlockedGroup
     msg:
       - <<: *reqPatchForX
         condition: 'active("Open Cities Skyrim.esp") and not active("Skyrim Unlocked - Open Cities Skyrim Patch.esp")'
@@ -26788,8 +26794,6 @@ plugins:
       - 'Skyrim Unlocked.esp'
   - name: 'Open Cities Skyrim - Skyrim Unlocked Patch.esp'
     msg: [ *obsolete ]
-  - name: 'Requiem - Skyrim Unlocked.esp'
-    group: *alternateStartGroup
   - name: 'Craftable Horse Barding.esp'
     msg:
       - <<: *reqRequiemPatch
