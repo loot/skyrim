@@ -2444,6 +2444,7 @@ plugins:
         condition: 'file("Requiem.esp") and not active("KFR-Kryptopyr''sFixesReqtified.esp") and not active("Requiem - CCF WAFR Patch.esp")'
     tag:
       - Delev
+      - Graphics
       - Relev
       - Stats
   - name: 'Clothing & Clutter Fixes.esp'
@@ -2454,6 +2455,8 @@ plugins:
         condition: 'file("Requiem.esp") and not active("KFR-Kryptopyr''sFixesReqtified.esp") and not active("Requiem - CCF WAFR Patch.esp")'
     tag:
       - Delev
+      - Graphics
+      - Sound
       - Relev
       - Stats
   - name: 'Clothing Jewelry & Clutter Fixes.esp'
@@ -2751,6 +2754,8 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
+    tag:
+      - Sound
     dirty:
       - crc: 0xd88afe72
         <<: *dirtyPlugin
@@ -4897,6 +4902,8 @@ plugins:
   - name: 'Radiant and Unique Potions and Poisons.esp'
     msg: [ *obsolete ]
   - name: 'Radiant and Unique Potions Poisons and BOOZE.esp'
+    tag:
+      - Graphics
     msg:
       - type: say
         content:
@@ -9159,6 +9166,8 @@ plugins:
       - 'Weapons & Armor Fixes_Remade.esp'
       - 'Clothing & Clutter Fixes.esp'
       - 'aMidianBorn_ContentAddon.esp'
+    tag:
+      - Graphics
     msg:
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp")'
@@ -17484,6 +17493,12 @@ plugins:
   - name: 'Paralyze-1.1b.esp'
     inc:
       - 'Paralyze.esp'
+  - name: 'Paralyze.esp'
+    url: ['https://www.nexusmods.com/skyrim/mods/34108']
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp")'
+        subs: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
   - name: 'Passive Dragons (non-aggressive to all potentially friendly factions).esp'
     inc:
       - 'Passive dragons.esp'
@@ -17976,6 +17991,8 @@ plugins:
   - name: 'TheChoiceIsYours.esp'
     after:
       - 'BetterQuestObjectives.esp'
+    tag:
+      - Names
     dirty:
       - crc: 0xdd345cc
         <<: *dirtyPlugin
@@ -19453,6 +19470,9 @@ plugins:
       - 'RelightingSkyrim_DG.esp'
       - 'RelightingSkyrim_HF.esp'
       - 'RelightingSkyrim_DB.esp'
+    tag:
+      - C.ImageSpace
+      - C.Light
   - name: 'SV - The Indoors.esp'
     dirty:
       - crc: 0x51b712e6
@@ -21944,12 +21964,14 @@ plugins:
   - name: 'Stealth Skills Rebalanced_COMPLETE.esp'
     after:
       - 'EnchantingAwakened.esp'
+      - 'NARC.esp'
     msg:
       - <<: *alsoUseX
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSSRPatch.esp")'
         subs: [ 'the [Enchanting Awakened Stealth Skills Rebalanced Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
     tag:
       - Delev
+      - Stat
   - name: 'Stealth Skills Rebalanced_LOCKPICKING.esp'
     inc:
       - 'Stealth Skills Rebalanced_COMPLETE.esp'
@@ -26246,6 +26268,8 @@ plugins:
   - name: 'Thieves Guild Requirements.esp'
     after:
       - 'BetterQuestObjectives.esp'
+    tag:
+      - Names
   - name: 'Solstheim - The Lost Levels.esp'
     dirty:
       - crc: 0x98580AA3
@@ -26469,6 +26493,7 @@ plugins:
       - 'BetterQuestObjectives.esp'
       - 'Complete Crafting Overhaul_Remade.esp'
       - 'disparity.esp'
+      - 'Radiant and Unique Potions Poisons and Booze.esp'
   - name: 'Elisdriel.esp'
     after:
       - 'WhiterunHoldForest.esp'
@@ -26518,6 +26543,16 @@ plugins:
   - name: 'DynDOLOD.esp'
     group: *mapGroup
     url: [ 'http://www.nexusmods.com/skyrim/mods/59721' ]
+  - name: 'DesyncBirdsOfPrey.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/59721' ]
+    tag:
+      - NoMerge
+  - name: 'SGR Enhanced Trees Activator.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/76086/'
+        name: 'Enhanced Vanilla Trees on Nexus Mods'
+    tag:
+      - NoMerge
   - name: 'Dynamic Dialogue Followers.esp'
     after:
       - 'EFFDialogue.esp'
@@ -26736,6 +26771,8 @@ plugins:
       - 'Routa Non-Stormcloak.esp'
       - 'nTr4nc3 - Whiterun Mansion.esp'
       - '3DNPC.esp'
+    tag:
+      - C.Owner
   - name: 'Provincial Courier Service.esp'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
@@ -26852,6 +26889,8 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Improved Closefaced Helmets.esp")'
+    tag:
+      - Graphics
   - name: 'Inconsequential NPCs.esp'
     msg:
       - <<: *reqRequiemPatch
@@ -26867,6 +26906,8 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'file("Requiem.esp") and not active("Requiem - Rustic Soulgems.esp") and not active("Requiem - Rustic Soulgems - ISC.esp")'
+    tag:
+      - Names
   - name: 'ScopedBows.esp'
     msg:
       - <<: *reqRequiemPatch
@@ -26967,3 +27008,10 @@ plugins:
   - name: 'Requiem - Realistic Darkness.esp'
     after:
       - 'Requiem.esp'
+  - name: 'IHSS.esp'
+    tag:
+      - Sound
+  - name: 'Books Covers Skyrim.esp'
+    tag:
+      - Graphics
+      - Names
