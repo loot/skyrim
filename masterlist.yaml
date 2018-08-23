@@ -9574,7 +9574,7 @@ plugins:
   - name: 'Bounty Gold.esp'
     after:
       - 'Requiem.esp'
-  - name: 'dD.?- Realistic Ragdoll Force.*\.esp'
+  - name: 'dD - Realistic Ragdoll Force - (Realistic|Reduced|Medium|High)\.esp'
     after:
       - 'Requiem.esp'
     msg:
@@ -9586,6 +9586,9 @@ plugins:
             text: 'Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712), для поддержки других версий skeleton.nif или попробуйте использовать [XP32 Maximum Skeleton Extended - XPMSE](http://www.nexusmods.com/skyrim/mods/68000).'
           - lang: ja
             text: 'skeleton.nifを変更するModとラグドールが競合します。[Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712)にて他のskeleton.nifとの互換ファイルがないか確認してください。'
+      - <<: *alreadyInX
+        condition: 'active("XPMSE.esp")'
+        subs: [ 'XPMSE.esp' ]
   - name: 'XPMSE.esp'
     after:
       - 'Requiem.esp'
