@@ -1321,6 +1321,9 @@ plugins:
             text: 'Совместимый с версией 14.0 очищенный и исправленный патч совместимости в TES5Edit может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: ja
             text: '[こちら](http://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
+      - <<: *alreadyInX
+        condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+        subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
       - <<: *patchOutSub
         condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
     clean:
@@ -6474,6 +6477,9 @@ plugins:
         udr: 1
   - name: 'Cloaks( - (No Imperial|Player Only))?\.esp'
     msg:
+      - <<: *alreadyInX
+        condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+        subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
       - <<: *useOnlyOneX
         condition: 'many("Cloaks( - (No Imperial|Player Only))?\.esp")'
         subs: [ 'Cloaks .esp file' ]
@@ -6505,6 +6511,9 @@ plugins:
         itm: 50
   - name: 'Cloaks( - (No Imperial|Player Only))? - Dawnguard\.esp'
     msg:
+      - <<: *alreadyInX
+        condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+        subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
       - <<: *useOnlyOneX
         condition: 'many("Cloaks( - (No Imperial|Player Only))? - Dawnguard\.esp")'
         subs: [ 'Cloaks Dawnguard .esp file' ]
@@ -6531,6 +6540,9 @@ plugins:
       - Relev
   - name: '1nivWICCloaks(CRAFT|NoGuards)?.esp'
     msg:
+      - <<: *alreadyInX
+        condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+        subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
       - <<: *useOnlyOneX
         condition: 'many("1nivWICCloaks(CRAFT|NoGuards)?.esp")'
         subs: [ 'WICCloaks .esp file' ]
@@ -7413,6 +7425,9 @@ plugins:
           - lang: ja
             text: '[こちら](http://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
         condition: 'version("JSwordsDistributionBalancePlugin.esp","14.0",<)'
+      - <<: *alreadyInX
+        condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+        subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
     tag:
       - Delev
       - Relev
@@ -27049,3 +27064,13 @@ plugins:
       - <<: *alreadyInX
         condition: 'active("aMidianBorn_ContentAddon.esp")'
         subs: [ 'aMidianBorn_ContentAddon.esp' ]
+  - name: 'Dr_Bandolier.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+        subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
+  - name: 'Dr_BandolierDG.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+        subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
