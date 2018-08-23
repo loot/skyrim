@@ -9550,8 +9550,10 @@ plugins:
     inc:
       - 'Requiem - Difficulty Bar Restored - Nightmare.esp'
   - name: 'Requiem - No Overencumbered Messages.esp'
-    inc:
-      - 'Requiem - No Messages.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Requiem - No Messages.esp")'
+        subs: [ 'Requiem - No Messages.esp' ]
   - name: 'Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp'
     msg:
       - <<: *useOnlyOneX
