@@ -90,6 +90,14 @@ common:
     <<: *alreadyInX
     condition: 'file("Sexier Housecarls.esp")'
     subs: [ 'Sexier Housecarls.esp' ]
+  - &alreadyInAmidianBornContentAddon
+    <<: *alreadyInX
+    condition: 'active("aMidianBorn_ContentAddon.esp")'
+    subs: [ 'aMidianBorn_ContentAddon.esp' ]
+  - &alreadyInCompleteCraftingOverhaulRemade
+    <<: *alreadyInX
+    condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+    subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
 
   - &fixedInOfficialPatchX
     type: error
@@ -1321,6 +1329,7 @@ plugins:
             text: 'Совместимый с версией 14.0 очищенный и исправленный патч совместимости в TES5Edit может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
           - lang: ja
             text: '[こちら](http://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
+      - <<: *alreadyInCompleteCraftingOverhaulRemade
       - <<: *patchOutSub
         condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
     clean:
@@ -6190,6 +6199,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'AMB Glass Variants Lore.esp'
+    msg:
+      - <<: *alreadyInAmidianBornContentAddon
     tag:
       - Delev
       - Relev
@@ -6470,6 +6481,7 @@ plugins:
         udr: 1
   - name: 'Cloaks( - (No Imperial|Player Only))?\.esp'
     msg:
+      - <<: *alreadyInCompleteCraftingOverhaulRemade
       - <<: *useOnlyOneX
         condition: 'many("Cloaks( - (No Imperial|Player Only))?\.esp")'
         subs: [ 'Cloaks .esp file' ]
@@ -6501,6 +6513,7 @@ plugins:
         itm: 50
   - name: 'Cloaks( - (No Imperial|Player Only))? - Dawnguard\.esp'
     msg:
+      - <<: *alreadyInCompleteCraftingOverhaulRemade
       - <<: *useOnlyOneX
         condition: 'many("Cloaks( - (No Imperial|Player Only))? - Dawnguard\.esp")'
         subs: [ 'Cloaks Dawnguard .esp file' ]
@@ -6527,6 +6540,7 @@ plugins:
       - Relev
   - name: '1nivWICCloaks(CRAFT|NoGuards)?.esp'
     msg:
+      - <<: *alreadyInCompleteCraftingOverhaulRemade
       - <<: *useOnlyOneX
         condition: 'many("1nivWICCloaks(CRAFT|NoGuards)?.esp")'
         subs: [ 'WICCloaks .esp file' ]
@@ -7076,6 +7090,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 7
   - name: 'Glass Variants.esp'
+    msg:
+      - <<: *alreadyInAmidianBornContentAddon
     tag:
       - Delev
       - Relev
@@ -7405,6 +7421,7 @@ plugins:
           - lang: ja
             text: '[こちら](http://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
         condition: 'version("JSwordsDistributionBalancePlugin.esp","14.0",<)'
+      - <<: *alreadyInCompleteCraftingOverhaulRemade
     tag:
       - Delev
       - Relev
@@ -9533,8 +9550,10 @@ plugins:
     inc:
       - 'Requiem - Difficulty Bar Restored - Nightmare.esp'
   - name: 'Requiem - No Overencumbered Messages.esp'
-    inc:
-      - 'Requiem - No Messages.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Requiem - No Messages.esp")'
+        subs: [ 'Requiem - No Messages.esp' ]
   - name: 'Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -9551,7 +9570,7 @@ plugins:
   - name: 'Bounty Gold.esp'
     after:
       - 'Requiem.esp'
-  - name: 'dD.?- Realistic Ragdoll Force.*\.esp'
+  - name: 'dD - Realistic Ragdoll Force - (Realistic|Reduced|Medium|High)\.esp'
     after:
       - 'Requiem.esp'
     msg:
@@ -9563,6 +9582,9 @@ plugins:
             text: 'Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу [ Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712), для поддержки других версий skeleton.nif или попробуйте использовать [XP32 Maximum Skeleton Extended - XPMSE](http://www.nexusmods.com/skyrim/mods/68000).'
           - lang: ja
             text: 'skeleton.nifを変更するModとラグドールが競合します。[Custom Skeleton Replacers](http://www.nexusmods.com/skyrim/mods/16712)にて他のskeleton.nifとの互換ファイルがないか確認してください。'
+      - <<: *alreadyInX
+        condition: 'active("XPMSE.esp")'
+        subs: [ 'XPMSE.esp' ]
   - name: 'XPMSE.esp'
     after:
       - 'Requiem.esp'
@@ -16194,7 +16216,6 @@ plugins:
             text: 'This file is obsolete. Please use the universal patch on the Even Better Quest Objectives page. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
           - lang: ja
             text: '旧式のファイルです。Even Better Quest Objectivesのページ内にある個別パッチをご利用ください。[Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
-  # Should lose conflicts because other patches may make important edits to quests
   - name: BetterQuestObjectives-RequiemPatch.esp
     after:
       - 'ESFCompanions.esp'
@@ -27030,3 +27051,15 @@ plugins:
   - name: 'IHSS.esp'
     tag:
       - Sound
+  - name: 'aMidianborn_Skyforge_Weapons.esp'
+    msg:
+      - <<: *alreadyInAmidianBornContentAddon
+  - name: 'Differently Ebony.esp'
+    msg:
+      - <<: *alreadyInAmidianBornContentAddon
+  - name: 'Dr_Bandolier.esp'
+    msg:
+      - <<: *alreadyInCompleteCraftingOverhaulRemade
+  - name: 'Dr_BandolierDG.esp'
+    msg:
+      - <<: *alreadyInCompleteCraftingOverhaulRemade
