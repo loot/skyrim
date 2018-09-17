@@ -27499,10 +27499,18 @@ plugins:
       - crc: 0x138FAF5E
         util: TES5Edit v3.2.2
   - name: 'skycity3.esp'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/2127024-sky-city-markarth-evolved/?p=63661711)'
+        condition: 'checksum("skycity3.esp", 4947FD90)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xD31A8590
         itm: 20
+    clean:
+      - crc: 0x6D912864
+        util: TES5Edit v3.2.2
   - name: 'Farm Animals_HF.esp'
     clean:
       - crc: 0x6190C05E
