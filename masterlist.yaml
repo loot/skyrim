@@ -16980,6 +16980,14 @@ plugins:
     after:
       - 'Hothtrooper44_ArmorCompilation.esp'
       - 'Hothtrooper44_Armor_Ecksstra.esp'
+    msg:
+      - <<: *hasWildEdits
+        subs:
+          - '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/771785-guard-dialogue-overhaul/?p=63659936)'
+        condition: 'checksum("Guard Dialogue Overhaul.esp", AFACD2E9)'
+    clean:
+      - crc: 0x46880DEB
+        util: TES5Edit v3.2.2
   - name: 'Guard Patrols.esp'
     dirty:
       - crc: 0x745dbcc
