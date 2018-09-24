@@ -303,10 +303,10 @@ common:
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
     info: 'A cleaning guide is available [here](http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit).'
   - &hasWildEdits
-    type: say
+    type: warn
     content:
       - lang: en
-        text: "This plug-in %1% contains wild edits. A manual [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning guide is available here: %2%"
+        text: "This plugin contains wild edits. A manual [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning guide is available here: %1%"
 
 bash_tags:
   - 'Actors.ACBS'
@@ -488,7 +488,7 @@ groups:
     after: [ *newLandsGroup ]
 
   - name: default
-    after: [ *newLandsGroup ]
+    after: [ *underridesGroup ]
 
   - name: &ordinatorGroup Ordinator
     after: [ default ]
@@ -641,7 +641,6 @@ plugins:
     msg:
       - <<: *hasWildEdits
         subs:
-          - 'Dawnguard.esm'
           - '[Manual Cleaning Guide](https://afkmods.iguanadons.net/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)'
         condition: 'checksum("Dawnguard.esm",94A47F31)'
     dirty:
@@ -2455,6 +2454,7 @@ plugins:
           - lang: ja
             text: 'このModは人間種族（インペリアル、ブレトン、ノルド、レッドガード）を改変するModとは両立できません。また、バベットのfacegenデータ(0001D4B7.NIF)を含むModとは互換性がありません。'
   - name: 'Weapons & Armor Fixes_Remade.esp'
+    group: *underridesGroup
     after:
       - 'Guard Dialogue Overhaul.esp'
     msg:
@@ -2466,6 +2466,7 @@ plugins:
       - Relev
       - Stats
   - name: 'Clothing & Clutter Fixes.esp'
+    group: *underridesGroup
     after:
       - 'Weapons & Armor Fixes_Remade.esp'
     msg:
@@ -4481,11 +4482,11 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Langsam wirkende Tränke.esp",163A3470)'
-  - name: 'Lanterns Of Skyrim - All In One - (Vivida ENB)?(The Goddess ENB|The Goddess v2dot2)?(Somber ENB)?(RLO)?(Cold Skyrim ENB)?(Climates of Tamriel - )?(1_5x Brighter|2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?(Skylight)?\.esp'
+  - name: '(LanternsOfSkyrimELFXpatch|Vivid Weathers - Lanterns of Skyrim Preset|Vividian - Lanterns of Skyrim Preset|Lanterns Of Skyrim - All In One - (Vivida ENB)?(The Goddess ENB|The Goddess v2dot2)?(Somber ENB)?(RLO)?(Cold Skyrim ENB)?(Climates of Tamriel - )?(1_5x Brighter|2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?(Skylight)?)\.esp'
     msg:
       - <<: *useOnlyOneX
-        condition: 'many("Lanterns Of Skyrim - All In One - (Vivida ENB)?(The Goddess ENB|The Goddess v2dot2)?(Somber ENB)?(RLO)?(Cold Skyrim ENB)?(Climates of Tamriel - )?(1_5x Brighter|2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?(Skylight)?\.esp")'
-        subs: [ 'Lanterns Of Skyrim - All In One .esp file' ]
+        condition: 'many("(LanternsOfSkyrimELFXpatch|Vivid Weathers - Lanterns of Skyrim Preset|Vividian - Lanterns of Skyrim Preset|Lanterns Of Skyrim - All In One - (Vivida ENB)?(The Goddess ENB|The Goddess v2dot2)?(Somber ENB)?(RLO)?(Cold Skyrim ENB)?(Climates of Tamriel - )?(1_5x Brighter|2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?(Skylight)?)\.esp")'
+        subs: [ 'Lanterns Of Skyrim Preset' ]
   - name: 'leazeropenlock.esp'
     dirty:
       - crc: 0x952ceb17
@@ -16187,6 +16188,7 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("BetterNordHeroWeapons.esp",0B39EBC1)'
   - name: 'BetterQuestObjectives.esp'
+    group: *underridesGroup
     msg:
       - type: warn
         content:
@@ -16905,6 +16907,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Guard Dialogue Overhaul.esp'
+    group: *underridesGroup
     after:
       - 'Hothtrooper44_ArmorCompilation.esp'
       - 'Hothtrooper44_Armor_Ecksstra.esp'
@@ -17889,6 +17892,11 @@ plugins:
       - crc: 0x23f00d9a
         <<: *dirtyPlugin
         itm: 17
+  - name: 'SkyTEST-RealisticAnimals&Predators\.es(p|m)'
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("SkyTEST-RealisticAnimals&Predators\.es(p|m)")'
+        subs: [ 'SkyTEST-RealisticAnimals&Predators plugin' ]
   - name: 'Convenient Horses.esp'
     msg: [ *doNotClean ]
   - name: 'Skyrim Horses Renewal.esp'
@@ -22772,7 +22780,14 @@ plugins:
         <<: *dirtyPlugin
         itm: 8
   - name: 'SeaPointSettlement.esp'
-    msg: [ *doNotClean ]
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x0CA559AA
+        util: 'TES5Edit v3.2.70 EXPERIMENTAL'
+        itm: 69
+    clean:
+      - crc: 0x33948074
+        util: TES5Edit v3.2.70 EXPERIMENTAL
   - name: 'SerenitySeapointPatch.esp'
     dirty:
       - crc: 0x74F86411
@@ -25408,6 +25423,11 @@ plugins:
       - 'SkyFalls Falskaar Small waterfalls.esp'
       - 'SkyFalls DB + FS Small Waterfalls.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'RealisticWaterTwo - (Dawnguard|Dragonborn|Waves( - Dawnguard)?)\.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("RealisticWaterTwo - Legendary.esp")'
+        subs: [ 'RealisticWaterTwo - Legendary.esp' ]
   - name: 'Better Mills Textures.esp'
     after:
       - 'SkyFalls + SkyMills.esp'
@@ -26185,6 +26205,7 @@ plugins:
         udr: 6
         nav: 1
   - name: 'Skyrim Unbound.esp'
+    group: *alternateStartGroup
     dirty:
       - crc: 0x59869ADE
         <<: *dirtyPlugin
@@ -26816,13 +26837,19 @@ plugins:
       - 'Civil War Repairs.esp'
       - 'EnhancedLightsandFX.esp'
       - 'ESFCompanions.esp'
+      - 'Hidden Hideouts of Skyrim City Edition - Merged.esp'
+      - 'Hidden Hideouts of Skyrim City Edition - Merged - No Map Markers.esp'
+      - 'Hidden Hideouts of Skyrim City Edition - Merged - Deep Immersion.esp'
+      - '3DNPC.esp'
+      - 'RayeksEnd.esp'
       - 'Requiem.esp'
-      - 'Thane''s Breezehome.esp'
-      - 'Thornrock.esp'
       - 'Routa.esp'
       - 'Routa Non-Stormcloak.esp'
+      - 'SkyfallEstateBuildable.esp'
+      - 'Thane''s Breezehome.esp'
+      - 'Thornrock.esp'
+      - 'Whiterun Complete.esp'
       - 'nTr4nc3 - Whiterun Mansion.esp'
-      - '3DNPC.esp'
     tag:
       - C.Owner
   - name: 'Provincial Courier Service.esp'
@@ -26831,6 +26858,7 @@ plugins:
   - name: 'Relationship Dialogue Overhaul.esp'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
+      - 'Inconsequential NPCs.esp'
     msg:
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("RDO - Requiem Patch.esp")'
@@ -27080,6 +27108,27 @@ plugins:
     after:
       - 'Requiem - Immersive Horses.esp'
       - 'Requiem - Immersive Horses - SkyTEST.esp'
+  - name: 'Quest Markers Restored.esp'
+    group: *underridesGroup
+    after:
+      - 'BetterQuestObjectives.esp'
+  - name: 'RDO - Immersive Horses Patch.esp'
+    after:
+      - 'RDO - Requiem Patch.esp'
+  - name: 'Serana Dialogue Edit.esp'
+    after:
+      - name: 'Relationship Dialogue Overhaul.esp'
+        condition: 'version("Serana Dialogue Edit.esp", "1.0", >=)'
+  - name: 'Arthmoor''s Skyrim Villages - All In One.esp'
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'more idle markers.esp'
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'CollegeApplication.esp'
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("CollegeApplication.esp", 314DD5F6)'
   - name: 'No Snow Under The Roof - CRF Patch.esp'
     after:
       - 'CRF - Lighting Overhaul.esp'
