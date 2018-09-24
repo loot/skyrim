@@ -488,7 +488,7 @@ groups:
     after: [ *newLandsGroup ]
 
   - name: default
-    after: [ *newLandsGroup ]
+    after: [ *underridesGroup ]
 
   - name: &ordinatorGroup Ordinator
     after: [ default ]
@@ -2455,6 +2455,7 @@ plugins:
           - lang: ja
             text: 'このModは人間種族（インペリアル、ブレトン、ノルド、レッドガード）を改変するModとは両立できません。また、バベットのfacegenデータ(0001D4B7.NIF)を含むModとは互換性がありません。'
   - name: 'Weapons & Armor Fixes_Remade.esp'
+    group: *underridesGroup
     after:
       - 'Guard Dialogue Overhaul.esp'
     msg:
@@ -2466,6 +2467,7 @@ plugins:
       - Relev
       - Stats
   - name: 'Clothing & Clutter Fixes.esp'
+    group: *underridesGroup
     after:
       - 'Weapons & Armor Fixes_Remade.esp'
     msg:
@@ -16179,6 +16181,7 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("BetterNordHeroWeapons.esp",0B39EBC1)'
   - name: 'BetterQuestObjectives.esp'
+    group: *underridesGroup
     msg:
       - type: warn
         content:
@@ -16897,6 +16900,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Guard Dialogue Overhaul.esp'
+    group: *underridesGroup
     after:
       - 'Hothtrooper44_ArmorCompilation.esp'
       - 'Hothtrooper44_Armor_Ecksstra.esp'
@@ -27081,6 +27085,10 @@ plugins:
   - name: 'Dr_BandolierDG.esp'
     msg:
       - <<: *alreadyInCompleteCraftingOverhaulRemade
+  - name: 'Quest Markers Restored.esp'
+    group: *underridesGroup
+    after:
+      - 'BetterQuestObjectives.esp'
   - name: 'RDO - Immersive Horses Patch.esp'
     after:
       - 'RDO - Requiem Patch.esp'
