@@ -17002,6 +17002,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Guard Dialogue Overhaul.esp'
+    group: *underridesGroup
     after:
       - 'Hothtrooper44_ArmorCompilation.esp'
       - 'Hothtrooper44_Armor_Ecksstra.esp'
@@ -22911,10 +22912,18 @@ plugins:
       - crc: 0x700cd98d
         <<: *dirtyPlugin
         itm: 8
-  - name: 'SeaPointSettlement.esp'
     clean:
       - crc: 0x0CA559AA
         util: TES5Edit v3.2.2
+  - name: 'SeaPointSettlement.esp'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x0CA559AA
+        util: 'TES5Edit v3.2.70 EXPERIMENTAL'
+        itm: 69
+    clean:
+      - crc: 0x33948074
+        util: TES5Edit v3.2.70 EXPERIMENTAL
   - name: 'SerenitySeapointPatch.esp'
     dirty:
       - crc: 0x74F86411
@@ -24562,6 +24571,8 @@ plugins:
           - lang: ja
             text: 'Live Another Life.espが見つかりました。新バージョンを使う前に古いバージョンをアンインストールしてください。'
         condition: 'file("Live Another Life.esp")'
+      - <<: *reqRequiemPatch
+        condition: 'active("Requiem.esp") and not active("Requiem - Live Another Life.esp")'
     tag:
       - C.Location
     clean:
@@ -27338,6 +27349,15 @@ plugins:
   - name: 'Dr_BandolierDG.esp'
     msg:
       - <<: *alreadyInCompleteCraftingOverhaulRemade
+  - name: 'RDO - Immersive Horses Patch.esp'
+    after:
+      - 'Requiem - Immersive Horses.esp'
+      - 'Requiem - Immersive Horses - SkyTEST.esp'
+      - 'RDO - Requiem Patch.esp'
+  - name: 'Quest Markers Restored.esp'
+    group: *underridesGroup
+    after:
+      - 'BetterQuestObjectives.esp'
   - name: 'Serana Dialogue Edit.esp'
     after:
       - name: 'Relationship Dialogue Overhaul.esp'
@@ -28023,3 +28043,16 @@ plugins:
     clean:
       - crc: 0x6A181424
         util: TES5Edit v3.2.2
+  - name: 'Arthmoor''s Skyrim Villages - All In One.esp'
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'more idle markers.esp'
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
+  - name: 'CollegeApplication.esp'
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("CollegeApplication.esp", 314DD5F6)'
+  - name: 'No Snow Under The Roof - CRF Patch.esp'
+    after:
+      - 'CRF - Lighting Overhaul.esp'
