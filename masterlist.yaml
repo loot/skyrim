@@ -9363,7 +9363,7 @@ plugins:
             text: 'Delete MineOreScript.pex from Requiem. [CCOR](http://www.nexusmods.com/skyrim/mods/49791)''s script must take precedence.'
           - lang: ja
             text: 'RequiemのMineOreScript.pexは削除してください。[CCOR](http://www.nexusmods.com/skyrim/mods/49791)側のスクリプトを優先させる必要があります。'
-        condition: 'active("Complete Crafting Overhaul_Remade.esp") and (checksum("Scripts/MineOreScript.pex", 82F96995) or checksum("Scripts/MineOreScript.pex", 0332450B))'
+        condition: 'active("Complete Crafting Overhaul_Remade.esp") and (checksum("Scripts/MineOreScript.pex", 82F96995) or checksum("Scripts/MineOreScript.pex", 0332450B) or checksum("Scripts/MineOreScript.pex", 8FFEAA3B))'
     tag:
       - Delev
       - Relev
@@ -9510,6 +9510,8 @@ plugins:
     after:
       - 'REQMOD.esp'
       - 'Requiem_Minor_Arcana.esp'
+      - 'Requiem - SkyTEST.esp'
+      - 'Requiem - Wild World.esp'
   - name: 'Requiem - Immersive Horses - SkyTEST.esp'
     req:
       - 'Requiem - SkyTEST.esp'
@@ -9547,6 +9549,9 @@ plugins:
       - <<: *replacerPluginForX
         condition: 'file("RUSTIC SOULGEMS - Unsorted.esp")'
         subs: [ 'RUSTIC SOULGEMS - Unsorted.esp' ]
+  - name: 'Requiem - Timing Is Everything.esp'
+    after:
+      - 'Requiem_Minor_Arcana.esp'
   - name: 'Requiem - Difficulty Bar Restored.esp'
     inc:
       - 'Requiem - Difficulty Bar Restored - Nightmare.esp'
@@ -9608,6 +9613,9 @@ plugins:
     after:
       - 'Requiem.esp'
   - name: 'Requiem - Realistic Darkness.esp'
+    after:
+      - 'Requiem.esp'
+  - name: 'Clairvoyance.esp'
     after:
       - 'Requiem.esp'
 ### End of Requiem's rules ###
@@ -26853,6 +26861,9 @@ plugins:
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Inconsequential NPCs.esp'
+    msg:
+      - <<: *reqRequiemPatch
+        condition: 'active("Requiem.esp") and not active("RDO - Requiem Patch.esp")'
   - name: 'CFTO.esp'
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
@@ -27010,6 +27021,10 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Jewelry( BTC| ISC)?\.esp")'
+  - name: 'Wild World.esp'
+    msg:
+      - <<: *reqRequiemPatch
+        condition: 'active("Requiem.esp") and not active("Requiem - Wild World.esp")'
   - name: 'ISC WAFR Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -27091,13 +27106,15 @@ plugins:
   - name: 'Dr_BandolierDG.esp'
     msg:
       - <<: *alreadyInCompleteCraftingOverhaulRemade
+  - name: 'RDO - Immersive Horses Patch.esp'
+    after:
+      - 'Requiem - Immersive Horses.esp'
+      - 'Requiem - Immersive Horses - SkyTEST.esp'
+      - 'RDO - Requiem Patch.esp'
   - name: 'Quest Markers Restored.esp'
     group: *underridesGroup
     after:
       - 'BetterQuestObjectives.esp'
-  - name: 'RDO - Immersive Horses Patch.esp'
-    after:
-      - 'RDO - Requiem Patch.esp'
   - name: 'Serana Dialogue Edit.esp'
     after:
       - name: 'Relationship Dialogue Overhaul.esp'
