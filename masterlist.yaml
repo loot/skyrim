@@ -4630,8 +4630,11 @@ plugins:
     after: [ 'Scarcity - Less Loot Mod.esp' ]
     msg:
       - <<: *useOnlyOneX
-        condition: 'many("(Scarcity - (2|4|6|8|10)x (Loot|Merchant Item) Rarity)\.esp")'
-        subs: [ 'Scarcity - Less Loot Mod' ]
+        condition: 'many("(Scarcity - (2|4|6|8|10)x Merchant Item Rarity)\.esp")'
+        subs: [ 'Scarcity - Merchant Item Rarity' ]
+      - <<: *useOnlyOneX
+        condition: 'many("(Scarcity - (2|4|6|8|10)x Loot Rarity)\.esp")'
+        subs: [ 'Scarcity - Loot Rarity' ]
   - name: 'UnlimitedBookshelves.esp'
     group: *underridesGroup
 ## This edits the object bounds of many items, so it should load before any other mod that also edits those items.
