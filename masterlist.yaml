@@ -4624,7 +4624,7 @@ plugins:
     clean:
       - crc: 0x9B2CE1BD # v1.3.0
         util: 'SSEEdit v3.2.70 EXPERIMENTAL'
-  - name: 'Scarcity - (2|4|6|8|10)x (Loot|Merchant Item) Rarity\.esp'
+  - name: 'Scarcity - (2|4|6|8|10)x Merchant Item Rarity\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/49496/' ]
     group: *dynamicPatchGroup
     after: [ 'Scarcity - Less Loot Mod.esp' ]
@@ -4632,6 +4632,11 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("(Scarcity - (2|4|6|8|10)x Merchant Item Rarity)\.esp")'
         subs: [ 'Scarcity - Merchant Item Rarity' ]
+  - name: 'Scarcity - (2|4|6|8|10)x Loot Rarity\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/49496/' ]
+    group: *dynamicPatchGroup
+    after: [ 'Scarcity - Less Loot Mod.esp' ]
+    msg:
       - <<: *useOnlyOneX
         condition: 'many("(Scarcity - (2|4|6|8|10)x Loot Rarity)\.esp")'
         subs: [ 'Scarcity - Loot Rarity' ]
