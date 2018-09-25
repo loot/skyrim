@@ -4619,10 +4619,19 @@ plugins:
       - Delev
       - Relev
   - name: 'Scarcity - Less Loot Mod.esp'
-    dirty:
-      - crc: 0xcea93ccb
-        <<: *dirtyPlugin
-        itm: 1
+    url: [ 'https://www.nexusmods.com/skyrim/mods/49496/' ]
+    group: *dynamicPatchGroup
+    clean:
+      - crc: 0x9B2CE1BD # v1.3.0
+        util: 'SSEEdit v3.2.70 EXPERIMENTAL'
+  - name: 'Scarcity - (2|4|6|8|10)x (Loot|Merchant Item) Rarity\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/49496/' ]
+    group: *dynamicPatchGroup
+    after: [ 'Scarcity - Less Loot Mod.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("(Scarcity - (2|4|6|8|10)x (Loot|Merchant Item) Rarity)\.esp")'
+        subs: [ 'Scarcity - Less Loot Mod' ]
   - name: 'UnlimitedBookshelves.esp'
     group: *underridesGroup
 ## This edits the object bounds of many items, so it should load before any other mod that also edits those items.
@@ -26151,6 +26160,7 @@ plugins:
   - name: 'Bashed Patch.*\.esp'
     group: *dynamicPatchGroup
     after:
+      - 'Scarcity - .*\.esp'
       - 'TES5Merged.esp'
     msg:
       - <<: *SmashedVsBashedPatch
