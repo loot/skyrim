@@ -18610,11 +18610,38 @@ plugins:
     msg: [ *obsolete ]
     url:
       - 'http://www.nexusmods.com/skyrim/mods/13608'
+  - name: 'ETaC - RESOURCES.esm'
+    clean:
+      - crc: 0x3A877593
+        util: 'TES5Edit v3.2.2'
   - name: 'ETaC - Complete.esp'
     after:
       - 'Tamriel Reloaded HD.esp'
       - 'WhiterunHoldForest.esp'
       - '3DNPC.esp'
+    clean:
+      - crc: 0x159185B2
+        util: 'TES5Edit v3.2.2'
+  - name: 'ETaC - Complete No Snow Patch.esp'
+    clean:
+      - crc: 0xFFDAFFFA
+        util: 'TES5Edit v3.2.2'
+  - name: 'ETaC - Complete LoS Patch.esp'
+    clean:
+      - crc: 0x85BB8058
+        util: 'TES5Edit v3.2.2'
+  - name: 'ETaC - Complete RSC Patch.esp'
+    clean:
+      - crc: 0x9ABCCFB7
+        util: 'TES5Edit v3.2.2'
+  - name: 'ETaC - Better Dynamic Snow Patch.esp'
+    clean:
+      - crc: 0xF5B641FF
+        util: 'TES5Edit v3.2.2'
+  - name: 'ETaC - Complete CFTO Patch.esp'
+    clean:
+      - crc: 0x43C66F13
+        util: 'TES5Edit v3.2.2'
   - name: 'ETaC - Darkwater.esp'
     msg:
       - type: error
@@ -26393,6 +26420,9 @@ plugins:
       - crc: 0x59869ADE
         <<: *dirtyPlugin
         itm: 5
+      - <<: *dirtyPlugin
+        crc: 0x02D18626
+        itm: 10
   - name: 'Silent khajiit night-eye.esp'
     after:
       - 'nighteyetoggle.esp'
@@ -27205,6 +27235,13 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Improved Closefaced Helmets.esp")'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x19E2D968
+        itm: 5
+    clean:
+      - crc: 0xCE4D9445
+        util: 'TES5Edit v3.2.2'
     tag:
       - Graphics
   - name: 'Inconsequential NPCs.esp'
@@ -27369,7 +27406,7 @@ plugins:
     after:
       - 'BetterQuestObjectives.esp'
     clean:
-      - crc: 0x6816E897
+      - crc: 0x192240BE
         util: TES5Edit v3.2.2
   - name: 'Serana Dialogue Edit.esp'
     after:
@@ -28057,3 +28094,48 @@ plugins:
     clean:
       - crc: 0x6A181424
         util: TES5Edit v3.2.2
+  - name: 'ForgottenCity.esp'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0x6F5FD398
+        util: 'TES5Edit v3.2.71 EXPERIMENTAL'
+        itm: 13
+    clean:
+      - crc: 0xE7C917DA
+        util: 'TES5Edit v3.2.71 EXPERIMENTAL'
+  - name: 'Whistling Mine - No Snow Under the Roof.esp'
+    clean:
+      - crc: 0x292EB6D0
+        util: 'TES5Edit v3.2.2'
+  - name: 'Helarchen Creek - No Snow Under the Roof.esp'
+    clean:
+      - crc: 0x6634ED5C
+        util: 'TES5Edit v3.2.2'
+  - name: 'Vivid Weathers.esp'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xC68AD9B0
+        itm: 5
+    clean:
+      - crc: 0x80AF5564
+        util: 'TES5Edit v3.2.2'
+  - name: 'Vivid Weathers - AOS patch.esp'
+    clean:
+      - crc: 0x9AF8A6B8
+        util: 'TES5Edit v3.2.2'
+  - name: 'Vivid Weathers - Extended Rain.esp'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xAB1CB7A0
+        itm: 10
+    clean:
+      - crc: 0x7BE42D05
+        util: 'TES5Edit v3.2.2'
+  - name: 'Vivid Weathers - Extended Snow.esp'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xB4B80067
+        itm: 5
+    clean:
+      - crc: 0x68C7F388
+        util: 'TES5Edit v3.2.2'
