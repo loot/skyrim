@@ -5233,6 +5233,11 @@ plugins:
   - name: 'SKSE_Athletics.esp'
     req: [ *SKSE ]
   - name: 'skyBirds - Airborne Perching Birds.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/23771'
+        name: 'skyBirds - Airborne Perching Birds'
+      - link: 'https://www.nexusmods.com/skyrim/mods/76065'
+        name: 'skyBirds USLEEP Performance Patches'
     after:
       - 'Birds.esp'
       - 'BirdsHF.esp'
@@ -5246,14 +5251,37 @@ plugins:
       - crc: 0x18DBC60E
         <<: *dirtyPlugin
         itm: 3
-      - crc: 0x2FC92864
-        <<: *dirtyPlugin
+      # USLEEP - No Barrels
+      - <<: *quickClean
+        crc: 0x2FC92864
+        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+      # USLEEP - No Bugs101
+      - <<: *quickClean
+        crc: 0x0C5FB5D4
+        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+      # USLEEP - No Bugs101 - No Barrels
+      - <<: *quickClean
+        crc: 0xCA8DF400
+        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
     clean:
+      # version: 0.931
+      - crc: 0xB2D5D61A
+        util: 'TES5Edit v4.0.1'
+      # USLEEP
       - crc: 0xF3206010
-        util: TES5Edit v3.2.2
-      - crc: 0x3ABCD6A5
-        util: TES5Edit v3.2.2
+        util: 'TES5Edit v4.0.1'
+      # USLEEP - No Barrels
+      - crc: 0xA3A1CA0A
+        util: 'TES5Edit v4.0.1'
+      # USLEEP - No Bugs101
+      - crc: 0x8B8241B5
+        util: 'TES5Edit v4.0.1'
+      # USLEEP - No Bugs101 - No Barrels
+      - crc: 0x3D231807
+        util: 'TES5Edit v4.0.1'
   - name: 'SkyEx.esp'
     dirty:
       - crc: 0xfc694964
