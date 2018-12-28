@@ -5812,23 +5812,9 @@ plugins:
       - 'CiviliansWillNotDie.esp'
     req: [ 'Unofficial Skyrim Patch.esp' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Outdated, upgrade to version 0.7 and above - CWND-UnofficialPatches.esp'
-          - lang: ru
-            text: 'Устарело, обновите до версии 0.7 и выше - CWND-UnofficialPatches.esp'
-          - lang: ja
-            text: '旧式のプラグインです。0.7以降のCWND-UnofficialPatches.espを使用してください。'
-      - type: say
-        content:
-          - lang: en
-            text: 'Outdated, upgrade to [version 0.6 or above](http://modgames.net/load/247-1-0-13970).'
-          - lang: ru
-            text: 'Устарело. Обновите до [CiviliansWillNotDiePatches.esp](http://modgames.net/load/247-1-0-13970) 0.6+'
-          - lang: ja
-            text: '旧式のプラグインです。[0.6以降のバージョン](http://modgames.net/load/247-1-0-13970)に更新してください。'
-        condition: 'checksum("CiviliansWillNotDiePatches.esp",C0754EA7)'
+      - <<: *obsolete
+        subs: [ '[version 0.7 or above](http://modgames.net/load/247-1-0-13970).' ]
+        condition: 'checksum("CiviliansWillNotDiePatches.esp", C0754EA7)'
   - name: 'CWND-Basic.esp'
     msg:
       - type: say
