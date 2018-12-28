@@ -34,10 +34,6 @@ common:
     <<: *alreadyInX
     condition: 'active("Unofficial High Resolution Patch.esp")'
     subs: [ 'Unofficial High Resolution Patch.esp' ]
-  - &alreadyInUDGP
-    <<: *alreadyInX
-    condition: 'active("Unofficial Dawnguard Patch.esp")'
-    subs: [ '[Unofficial Dawnguard Patch](http://www.nexusmods.com/skyrim/mods/23491)' ]
   - &alreadyInPerkUpArchery
     <<: *alreadyInX
     condition: 'file("PerkUP-Archery.esp")'
@@ -2250,7 +2246,7 @@ plugins:
   - name: 'Spell Absorb Fix.esp'
     msg:
       - *alreadyInUSLEEP
-      - *alreadyInUDGP
+      - *alreadyInUSLEEP
   - name: 'SolitudeProudspireManorFix.esp'
     msg: [ *alreadyInUSLEEP ]
   - name: 'StaggerFix.esp'
@@ -2302,7 +2298,7 @@ plugins:
   - name: 'VampiresHoodFix.esp'
     msg: [ *alreadyInUSLEEP ]
   - name: 'vampirelorddrainlifefix.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'Vampire Orcs Welcome in Strongholds.esp'
     msg: [ *alreadyInUSLEEP ]
   - name: 'VampireRaceDetection.esp'
@@ -2352,7 +2348,7 @@ plugins:
   - name: 'BoundDaggerFix.esp'
     msg: [ *alreadyInUSLEEP ]
   - name: 'BreezhomeAlchemyLabFix.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'chopping_block_wood_fires.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2361,19 +2357,19 @@ plugins:
 # ## correctdoucebriseALCH.esp
 # ## french patch to allow the purchase of alchemy lab in Breezehome under DG
   - name: 'CraftableBoneHawkRings.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'Dawnguard Breezehome Fix.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
     dirty:
       - crc: 0x330aed25
         <<: *dirtyPlugin
         itm: 2
   - name: 'Dawnguard Summons Fixed.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'DawnguardDrainVitalityFix.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'dghorsepatch.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'Dragonborn Spell Absorb Fix.esp'
     msg: [ *alreadyInUSLEEP ]
   - name: 'HDtextures01.esp'
@@ -2382,7 +2378,7 @@ plugins:
         condition: 'version("../TESV.exe", "1.8", >=)'
         subs: [ '1.8' ]
   - name: 'Headtracking Fix - Dawnguard.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'HF-MoveSpouse.esp'
     msg: [ *corrupt ]
     dirty:
@@ -2394,7 +2390,7 @@ plugins:
   - name: 'invisible_shield_fix.esp'
     msg: [ *alreadyInUSLEEP ]
   - name: 'Krill_AurielsBowFix.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'Prodspire Cooking pot hearthfire bugfix.esp'
     msg:
       - <<: *alreadyInX
@@ -2425,7 +2421,7 @@ plugins:
           - lang: ja
             text: 'このModは吸血鬼のキャラクタークラスを改変するModとは両立できません。'
   - name: 'USKP Dawnguard vampire face & eye fix.esp'
-    msg: [ *alreadyInUDGP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'EveryVampireEyesGrow.esp'
     msg:
       - type: say
