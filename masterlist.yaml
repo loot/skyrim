@@ -11451,16 +11451,8 @@ plugins:
         udr: 1
   - name: 'SummerWearSA.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [here](http://www.nexusmods.com/skyrim/mods/25237).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [здесь](http://www.nexusmods.com/skyrim/mods/25237).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/25237).'
-          - lang: ja
-            text: '旧式のプラグインです。[こちら](http://www.nexusmods.com/skyrim/mods/25237)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[here](http://www.nexusmods.com/skyrim/mods/25237).' ]
         condition: 'checksum("SummerWearSA.esp",D91C8FE5)'
     dirty:
       - crc: 0x7cb5c5ea
