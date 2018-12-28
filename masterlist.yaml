@@ -25141,40 +25141,18 @@ plugins:
 # Need to go after new items to affect them.
   - name: 'Duns_Inc_Shaders_Begone.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records, you should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
-          - lang: ja
-            text: '予期しない（または順番が狂った）レコードが含まれています。バージョン2に更新してください。[こちら](http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
-        condition: 'checksum("Duns_Inc_Shaders_Begone.esp",B0D9FEDA)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Sharlikran''s version is now obsolete. You should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
-          - lang: ja
-            text: 'Sharlikran版は現在では使われていません。バージョン2に更新してください。http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
-        condition: 'checksum("Duns_Inc_Shaders_Begone.esp",2C0126D)'
+      - <<: *obsolete
+        subs: [ 'You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).' ]
+        condition: 'checksum("Duns_Inc_Shaders_Begone.esp",B0D9FEDA) or checksum("Duns_Inc_Shaders_Begone.esp",2C0126D)'
     dirty:
       - crc: 0xC8FF638F
         <<: *dirtyPlugin
         itm: 1
   - name: 'Duns_Inc_Shaders_Begone_xWeapons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records, you should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
-          - lang: ja
-            text: '予期しない（または順番が狂った）レコードが含まれています。バージョン2に更新してください。[こちら](http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
-        condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",4928C96B)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Sharlikran''s version is now obsolete. You should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
-          - lang: ja
-            text: 'Sharlikran版は現在では使われていません。バージョン2に更新してください。http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
-        condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",493A9DEA)'
+      - <<: *obsolete
+        subs: [ 'You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).' ]
+        condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",4928C96B) or checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",493A9DEA)'
   - name: 'RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp'
     msg:
       - type: say
