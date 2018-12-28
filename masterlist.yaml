@@ -15817,16 +15817,8 @@ plugins:
             text: 'このファイルは実際にはEsmファイルではありません。ファイル名の付け間違いです。'
   - name: 'Whiterun Trees.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Whiterun Trees 1.1.esp](http://www.nexusmods.com/skyrim/mods/8240).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Whiterun Trees](http://www.nexusmods.com/skyrim/mods/8240).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Whiterun Trees 1.1.esp](http://www.nexusmods.com/skyrim/mods/8240).'
-          - lang: ja
-            text: '旧式のプラグインです。[Whiterun Trees 1.1.esp](http://www.nexusmods.com/skyrim/mods/8240)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Whiterun Trees 1.1.esp](http://www.nexusmods.com/skyrim/mods/8240).' ]
         condition: 'checksum("Whiterun Trees.esp",226D7357)'
     dirty:
       - crc: 0xd2995274
