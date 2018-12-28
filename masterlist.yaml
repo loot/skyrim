@@ -8496,16 +8496,8 @@ plugins:
         condition: 'checksum("stoutheartarmor.esp",7E65336D)'
   - name: 'Strapless Bikinis.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Included in Sharlikran''s Compatability Patch.'
-          - lang: ru
-            text: 'Устарело. Уже включено в Sharlikran''s Compatability Patch.'
-          - lang: es
-            text: 'Obsoleto. Esta incluido en Sharlikran''s Compatability Patch.'
-          - lang: ja
-            text: '旧式のプラグインです。Sharlikran''s Compatability Patchに新しいプラグインが含まれています。'
+      - <<: *obsolete
+        subs: [ 'Included in Sharlikran''s Compatability Patch.' ]
       - *ReqCBBE
       - *corrupt
   - name: 'SuccubusUNPByNausicaa.esp'
