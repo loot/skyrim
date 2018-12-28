@@ -34,10 +34,6 @@ common:
     <<: *alreadyInX
     condition: 'active("Unofficial High Resolution Patch.esp")'
     subs: [ 'Unofficial High Resolution Patch.esp' ]
-  - &alreadyInUDBP
-    <<: *alreadyInX
-    condition: 'active("Unofficial Dragonborn Patch.esp")'
-    subs: [ 'Unofficial Dragonborn Patch.esp' ]
   - &alreadyInUDGP
     <<: *alreadyInX
     condition: 'active("Unofficial Dawnguard Patch.esp")'
@@ -2242,7 +2238,7 @@ plugins:
   - name: 'sapphire_speak_fix.esp'
     msg: [ *alreadyInUSLEEP ]
   - name: 'Severin Manor Music.esp'
-    msg: [ *alreadyInUDBP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'Shrine of Azura LOD Fix.esp'
     msg: [ *alreadyInUSLEEP ]
   - name: 'Silent Moons Enchantment Fix.*\.esp'
@@ -2352,9 +2348,9 @@ plugins:
 # ## RaceComp is explicit master; USKP is implicit
 # ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
   - name: 'ancient-nordic-pickaxe-smith-fix.esp'
-    msg: [ *alreadyInUDBP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'BoundDaggerFix.esp'
-    msg: [ *alreadyInUDBP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'BreezhomeAlchemyLabFix.esp'
     msg: [ *alreadyInUDGP ]
   - name: 'chopping_block_wood_fires.esp'
@@ -2379,7 +2375,7 @@ plugins:
   - name: 'dghorsepatch.esp'
     msg: [ *alreadyInUDGP ]
   - name: 'Dragonborn Spell Absorb Fix.esp'
-    msg: [ *alreadyInUDBP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'HDtextures01.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2415,7 +2411,7 @@ plugins:
       - name: 'HighResTexturePack02.esp'
         condition: 'not file("HighResTexturePack01.esp")'
   - name: 'Stahlrim Arrow Projectile Fix.esp'
-    msg: [ *alreadyInUDBP ]
+    msg: [ *alreadyInUSLEEP ]
   - name: 'Vampire Face Fixes.esp'
     msg:
       - type: say
