@@ -23702,16 +23702,8 @@ plugins:
         display: '[Fuz Ro D''oh](http://www.nexusmods.com/skyrim/mods/14884)'
   - name: 'ExtraBlades.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to [latest version](http://www.nexusmods.com/skyrim/mods/15979).'
-          - lang: ru
-            text: 'Устарело. Обновите до [последней версии](http://www.nexusmods.com/skyrim/mods/15979).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la [última versión](http://www.nexusmods.com/skyrim/mods/15979).'
-          - lang: ja
-            text: '旧式のプラグインです。[最新版](http://www.nexusmods.com/skyrim/mods/15979)に更新してください。'
+      - <<: *obsolete
+        subs: [ '[latest version](http://www.nexusmods.com/skyrim/mods/15979).' ]
         condition: 'checksum("ExtraBlades.esp",4CA21BFE)'
     dirty:
       - crc: 0x8f9b3b9c
