@@ -5373,16 +5373,8 @@ plugins:
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
   - name: 'skymo-dawn.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, SkyMoMod Lore-Friendly * v10.esp.'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, SkyMoMod Lore-Friendly * v10.esp.'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, SkyMoMod Lore-Friendly * v10.esp.'
-          - lang: ja
-            text: '旧式のプラグインです。SkyMoMod Lore-Friendly * v10.espの最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ 'SkyMoMod Lore-Friendly * v10.esp' ]
         condition: 'file("SkyMoMod Lore-Friendly .+\.esp")'
       - type: say
         content:
