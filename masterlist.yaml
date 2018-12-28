@@ -3926,17 +3926,9 @@ plugins:
     req: [ *SKSE ]
   - name: 'Disease Descriptions.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [here](http://www.nexusmods.com/skyrim/mods/31202).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [здесь](http://www.nexusmods.com/skyrim/mods/31202).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/31202).'
-          - lang: ja
-            text: '旧式のプラグインです。[こちら](http://www.nexusmods.com/skyrim/mods/31202)の最新版に更新してください。'
-        condition: 'checksum("Disease Descriptions.esp",708C92F3)'
+      - <<: *obsolete
+        subs: [ '[Disease Descriptions for the Immersive Adventurer](http://www.nexusmods.com/skyrim/mods/31202).' ]
+        condition: 'not checksum("Disease Descriptions.esp",E199AED9)'
   - name: 'Don.?Juan.*\.esp'
     req: [ *FNIS ]
   - name: 'Dogsofskyrim.esp'
