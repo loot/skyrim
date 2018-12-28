@@ -143,20 +143,21 @@ common:
     <<: *preCKUseXInstead
     subs: [ 'http://www.nexusmods.com/skyrim/mods/26230' ]
   - &obsolete
-    type: say
+    type: warn
     content:
       - lang: en
-        text: 'Obsolete. Update to latest version.'
+        text: 'Obsolete. Update to latest version. %1%'
       - lang: ru
-        text: 'Устарело. Обновите до последней версии.'
+        text: 'Устарело. Обновите до последней версии. %1%'
       - lang: es
-        text: 'Obsoleto. Actualizar a la última versión.'
+        text: 'Obsoleto. Actualizar a la última versión. %1%'
       - lang: ko
-        text: '사용되지 않습니다. 최신 버전으로 업데이트하십시오.'
+        text: '사용되지 않습니다. 최신 버전으로 업데이트하십시오. %1%'
       - lang: zh_CN
-        text: '已过时。请升级到最新版本。'
+        text: '已过时。请升级到最新版本。 %1%'
       - lang: ja
-        text: '旧式のプラグインです。最新版に更新してください。'
+        text: '旧式のプラグインです。最新版に更新してください。 %1%'
+    subs: [ '' ]
   - &corrupt
     type: warn
     content:
@@ -1037,17 +1038,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 42
   - name: 'breezehomebasement.esm'
+    url: [ 'https://skyrim.nexusmods.com/mods/5817' ]
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Obsolete. Update to Breezehome_Basement.esp at [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            text: 'Устарело. Обновите до Breezehome_Basement.esp на [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la Breezehome_Basement.esp en [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ja
-            text: '旧式のプラグインです。[Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593)のBreezehome_Basement.espに更新してください。'
+      - <<: *obsolete
+        subs: [ '[Breezehome Basement Continued](https://www.nexusmods.com/skyrim/mods/59521).' ]
   - name: 'Castle Draco Master File Load First.esm'
     tag:
       - Delev
@@ -1234,31 +1228,15 @@ plugins:
         nav: 2
   - name: 'hideout.esm'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Obsolete. Update to Hideout_Main.esp at [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            text: 'Устарело. Обновите до Hideout_Main.esp на [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la Hideout_Main.esp en [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ja
-            text: '旧式のプラグインです。[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593)のHideout_Main.espに更新してください。'
+      - <<: *obsolete
+        subs: [ '[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).' ]
       - <<: *preCKUseXInstead
         condition: 'version("hideout.esm","10.2",<)'
         subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
   - name: 'retreat.esm'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Obsolete. Update to Dovahkiin_Retreat.esp at [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: ru
-            text: 'Устарело. Обновите до Dovahkiin_Retreat.esp на [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la Dovahkiin_Retreat.esp en [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: ja
-            text: '旧式のプラグインです。[Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522)のDovahkiin_Retreat.espに更新してください。'
+      - <<: *obsolete
+        subs: [ '[Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).' ]
       - <<: *preCKUseXInstead
         condition: 'version("retreat.esm","1.0",<)'
         subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
@@ -1422,16 +1400,8 @@ plugins:
             text: 'NPCに編集を加える他のMod用のスタンドアローン髪型Modです。こちらを使用する場合はMTOH.espを非アクティブにしてください。'
   - name: 'Murder01.esm'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, Hjakhtraevarr Tomb.'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, Hjakhtraevarr Tomb.'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, Hjakhtraevarr Tomb.'
-          - lang: ja
-            text: '旧式のプラグインです。Hjakhtraevarr Tombの最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ 'Obsolete. Update to latest version, Hjakhtraevarr Tomb.' ]
   - name: 'Natural Characters and Companions.esm'
     req:
       - 'LovelyHairstyles.esp'
@@ -3822,29 +3792,13 @@ plugins:
   - name: 'CRAFT - Salvage Material.esp'
     msg:
       - *alreadyInCraftTemperSmelt
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
-          - lang: ja
-            text: '旧式のプラグインです。[Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).' ]
   - name: 'CRAFT - Forge Equipment.esp'
     msg:
       - *alreadyInCraftTemperSmelt
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
-          - lang: ja
-            text: '旧式のプラグインです。[Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).' ]
   - name: 'Crafting300.esp'
     tag:
       - Delev
@@ -3964,17 +3918,9 @@ plugins:
     req: [ *SKSE ]
   - name: 'Disease Descriptions.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [here](http://www.nexusmods.com/skyrim/mods/31202).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [здесь](http://www.nexusmods.com/skyrim/mods/31202).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/31202).'
-          - lang: ja
-            text: '旧式のプラグインです。[こちら](http://www.nexusmods.com/skyrim/mods/31202)の最新版に更新してください。'
-        condition: 'checksum("Disease Descriptions.esp",708C92F3)'
+      - <<: *obsolete
+        subs: [ '[Disease Descriptions for the Immersive Adventurer](http://www.nexusmods.com/skyrim/mods/31202).' ]
+        condition: 'not checksum("Disease Descriptions.esp",E199AED9)'
   - name: 'Don.?Juan.*\.esp'
     req: [ *FNIS ]
   - name: 'Dogsofskyrim.esp'
@@ -4053,16 +3999,8 @@ plugins:
   - name: 'EQUIPMENT - Unarmed Spiked Gauntlets.esp'
     msg:
       - *alreadyInCraftTemperSmelt
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).'
-          - lang: ja
-            text: '旧式のプラグインです。[Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Craft, Temper, Smelt](http://www.nexusmods.com/skyrim/mods/22290).' ]
   - name: 'Eternal Bunny Pet (Dark Silent)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -5427,16 +5365,8 @@ plugins:
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
   - name: 'skymo-dawn.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, SkyMoMod Lore-Friendly * v10.esp.'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, SkyMoMod Lore-Friendly * v10.esp.'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, SkyMoMod Lore-Friendly * v10.esp.'
-          - lang: ja
-            text: '旧式のプラグインです。SkyMoMod Lore-Friendly * v10.espの最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ 'SkyMoMod Lore-Friendly * v10.esp' ]
         condition: 'file("SkyMoMod Lore-Friendly .+\.esp")'
       - type: say
         content:
@@ -8558,16 +8488,8 @@ plugins:
         condition: 'checksum("stoutheartarmor.esp",7E65336D)'
   - name: 'Strapless Bikinis.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Included in Sharlikran''s Compatability Patch.'
-          - lang: ru
-            text: 'Устарело. Уже включено в Sharlikran''s Compatability Patch.'
-          - lang: es
-            text: 'Obsoleto. Esta incluido en Sharlikran''s Compatability Patch.'
-          - lang: ja
-            text: '旧式のプラグインです。Sharlikran''s Compatability Patchに新しいプラグインが含まれています。'
+      - <<: *obsolete
+        subs: [ 'Included in Sharlikran''s Compatability Patch.' ]
       - *ReqCBBE
       - *corrupt
   - name: 'SuccubusUNPByNausicaa.esp'
@@ -8935,16 +8857,7 @@ plugins:
             text: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
           - lang: ja
             text: 'ダウンロードページにて製作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, Witcher2-v3.5 Redania-Imperial.esp.'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, Witcher2-v3.5 Redania-Imperial.esp.'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, Witcher2-v3.5 Redania-Imperial.esp.'
-          - lang: ja
-            text: '旧式のプラグインです。Witcher2-v3.5 Redania-Imperial.espの最新版に更新してください。'
+      - *obsolete
   - name: 'Witcher2-v3.0 Temeria-Eastmarsh.esp'
     msg:
       - type: warn
@@ -8957,16 +8870,7 @@ plugins:
             text: 'Author states on download page that CTDs occur when player wears an armor.  He does not say which esp causes this.'
           - lang: ja
             text: 'ダウンロードページにて製作者より、プレイヤーが防具を装備したときにCTDが発生すると言及されています。どのEspがCTDを引き起こすのかは述べられていません。'
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, Witcher2-v3.5 Temeria-Eastmarsh.esp.'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, Witcher2-v3.5 Temeria-Eastmarsh.esp.'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, Witcher2-v3.5 Temeria-Eastmarsh.esp.'
-          - lang: ja
-            text: '旧式のプラグインです。Witcher2-v3.5 Temeria-Eastmarsh.espの最新版に更新してください。'
+      - *obsolete
   - name: 'Witcher2-v3.0 Ulfric-Roche.esp'
     msg:
       - type: warn
@@ -11118,16 +11022,8 @@ plugins:
 # Mods not in alphabetical order have been hand placed to avoid conflicts (as much as possible).
   - name: '0.1.6.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Obsolete. Update to Riftrun_HF_v_2_0.esp at [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            text: 'Устарело. Обновите до Riftrun_HF_v_2_0.esp на [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la Riftrun_HF_v_2_0.esp en [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ja
-            text: '旧式のプラグインです。[Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593)のRiftrun_HF_v_2_0.espに更新してください。'
+      - <<: *obsolete
+        subs: [ '[Riftrun Continued](https://www.nexusmods.com/skyrim/mods/59531).' ]
   - name: '0fl_skynet.esp'
     dirty:
       - crc: 0x1a9030e0
@@ -11465,16 +11361,8 @@ plugins:
         udr: 1
   - name: 'SummerWearSA.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [here](http://www.nexusmods.com/skyrim/mods/25237).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [здесь](http://www.nexusmods.com/skyrim/mods/25237).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/25237).'
-          - lang: ja
-            text: '旧式のプラグインです。[こちら](http://www.nexusmods.com/skyrim/mods/25237)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[here](http://www.nexusmods.com/skyrim/mods/25237).' ]
         condition: 'checksum("SummerWearSA.esp",D91C8FE5)'
     dirty:
       - crc: 0x7cb5c5ea
@@ -11902,17 +11790,10 @@ plugins:
           - lang: ja
             text: '現在はサポートされていません。Dovahkiin Hideoutを使用してください。'
   - name: 'breezehomebasement.esp'
+    url: [ 'https://skyrim.nexusmods.com/mods/5817' ]
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Obsolete. Update to Breezehome_Basement.esp at [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            text: 'Устарело. Обновите до Breezehome_Basement.esp на [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la Breezehome_Basement.esp en [Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ja
-            text: '旧式のプラグインです。[Shawks Corner](http://www.nexusmods.com/skyrim/mods/43593)のBreezehome_Basement.espに更新してください。'
+      - <<: *obsolete
+        subs: [ '[Breezehome Basement Continued](https://www.nexusmods.com/skyrim/mods/59521).' ]
   - name: 'Breezehomedesk - no_table.esp'
     dirty:
       - crc: 0x1295e2fc
@@ -12894,16 +12775,8 @@ plugins:
         udr: 70
   - name: 'farmeve-unlimited.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [JobsofSkyrim.esp](http://www.nexusmods.com/skyrim/mods/25020).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [JobsofSkyrim.esp](http://www.nexusmods.com/skyrim/mods/25020).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [JobsofSkyrim.esp](http://www.nexusmods.com/skyrim/mods/25020).'
-          - lang: ja
-            text: '旧式のプラグインです。[JobsofSkyrim.esp](http://www.nexusmods.com/skyrim/mods/25020)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[JobsofSkyrim.esp](http://www.nexusmods.com/skyrim/mods/25020).' ]
   - name: 'fishchickenlodge.esp'
     dirty:
       - crc: 0x226a8a66
@@ -13331,43 +13204,19 @@ plugins:
         itm: 1
   - name: 'hideout.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Obsolete. Update to Hideout_Main.esp at [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            text: 'Устарело. Обновите до Hideout_Main.esp на [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la Hideout_Main.esp en [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ja
-            text: '旧式のプラグインです。[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593)のHideout_Main.espに更新してください。'
+      - <<: *obsolete
+        subs: [ '[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).' ]
       - <<: *preCKUseXInstead
         condition: 'version("hideout.esp","10.2",<)'
         subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
   - name: 'hideout - hearthfires.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Obsolete. Update to Hideout_HF_Main.esp at [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ru
-            text: 'Устарело. Обновите до Hideout_HF_Main.esp на [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la Hideout_HF_Main.esp en [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ja
-            text: '旧式のプラグインです。[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593)のHideout_HF_Main.espに更新してください。'
+      - <<: *obsolete
+        subs: ['[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).' ]
   - name: 'hideoutcompact.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Obsolete. Update to Hideout_Compact.esp at [Dovahkiin Hideout Continued - Compact Edition](http://www.nexusmods.com/skyrim/mods/59524).'
-          - lang: ru
-            text: 'Устарело. Обновите до Hideout_Compact.esp на [Dovahkiin Hideout Continued - Compact Edition](http://www.nexusmods.com/skyrim/mods/59524).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la Hideout_Compact.esp en [Dovahkiin Hideout Continued - Compact Edition](http://www.nexusmods.com/skyrim/mods/59524).'
-          - lang: ja
-            text: '旧式のプラグインです。[Dovahkiin Hideout Continued - Compact Edition](http://www.nexusmods.com/skyrim/mods/59524)のHideout_Compact.espに更新してください。'
+      - <<: *obsolete
+        subs: [ '[Dovahkiin Hideout Continued - Compact Edition](http://www.nexusmods.com/skyrim/mods/59524).' ]
     dirty:
       - crc: 0x2a2bc9b8
         <<: *dirtyPlugin
@@ -13379,19 +13228,11 @@ plugins:
         udr: 3
   - name: 'retreat.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Obsolete. Update to Dovahkiin_Retreat.esp at [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: ru
-            text: 'Устарело. Обновите до Dovahkiin_Retreat.esp на [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la Dovahkiin_Retreat.esp en [Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).'
-          - lang: ja
-            text: '旧式のプラグインです。[Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522)のDovahkiin_Retreat.espに更新してください。'
       - <<: *preCKUseXInstead
         condition: 'version("retreat.esp","1.0",<)'
         subs: [ 'http://www.nexusmods.com/skyrim/mods/59522' ]
+      - <<: *obsolete
+        subs: [ '[Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).' ]
   - name: 'HighlandFarmMilk.esp'
     dirty:
       - crc: 0x1258e09a
@@ -14195,16 +14036,8 @@ plugins:
         itm: 2
   - name: 'niflheim1.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Forfeoranna Heim](http://www.nexusmods.com/skyrim/mods/13351).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Forfeoranna Heim](http://www.nexusmods.com/skyrim/mods/13351).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Forfeoranna Heim](http://www.nexusmods.com/skyrim/mods/13351).'
-          - lang: ja
-            text: '旧式のプラグインです。[Forfeoranna Heim](http://www.nexusmods.com/skyrim/mods/13351)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Forfeoranna Heim](http://www.nexusmods.com/skyrim/mods/13351).' ]
   - name: 'Nirn Falls Manor.esp'
     dirty:
       - crc: 0xf6d72530
@@ -15870,16 +15703,8 @@ plugins:
             text: 'このファイルは実際にはEsmファイルではありません。ファイル名の付け間違いです。'
   - name: 'Whiterun Trees.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Whiterun Trees 1.1.esp](http://www.nexusmods.com/skyrim/mods/8240).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Whiterun Trees](http://www.nexusmods.com/skyrim/mods/8240).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Whiterun Trees 1.1.esp](http://www.nexusmods.com/skyrim/mods/8240).'
-          - lang: ja
-            text: '旧式のプラグインです。[Whiterun Trees 1.1.esp](http://www.nexusmods.com/skyrim/mods/8240)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Whiterun Trees 1.1.esp](http://www.nexusmods.com/skyrim/mods/8240).' ]
         condition: 'checksum("Whiterun Trees.esp",226D7357)'
     dirty:
       - crc: 0xd2995274
@@ -16413,16 +16238,8 @@ plugins:
         condition: 'not file("Better Skill and Quest Books Names.esp") or not file("Better Skill and Quest Books Names - BS.esp")'
   - name: 'BetterQuestObjectives-BSaQB-BSPatch.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'This file is obsolete. Please use the universal patch on the Even Better Quest Objectives page. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
-          - lang: ru
-            text: 'Устарело. Пожалуйста используйте универсальный патч со страницы Even Better Quest Objectives. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
-          - lang: es
-            text: 'This file is obsolete. Please use the universal patch on the Even Better Quest Objectives page. [Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
-          - lang: ja
-            text: '旧式のファイルです。Even Better Quest Objectivesのページ内にある個別パッチをご利用ください。[Nexus](http://www.nexusmods.com/skyrim/mods/32695)'
+      - <<: *obsolete
+        subs: [ '[Nexus](http://www.nexusmods.com/skyrim/mods/32695)' ]
   - name: BetterQuestObjectives-RequiemPatch.esp
     after:
       - 'ESFCompanions.esp'
@@ -17602,16 +17419,8 @@ plugins:
       - Delev
   - name: 'More Diverse Enchanting Options.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Spellblade](http://www.nexusmods.com/skyrim/mods/42500).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Spellblade](http://www.nexusmods.com/skyrim/mods/42500).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Spellblade](http://www.nexusmods.com/skyrim/mods/42500).'
-          - lang: ja
-            text: '旧式のプラグインです。[Spellblade](http://www.nexusmods.com/skyrim/mods/42500)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Spellblade](http://www.nexusmods.com/skyrim/mods/42500).' ]
   - name: 'More Dynamic Shadows.esp'
     dirty:
       - crc: 0x60e49dc8
@@ -18661,17 +18470,8 @@ plugins:
         itm: 19
   - name: 'DarkbroSanctuary1.0.0.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to the [latest version](http://www.nexusmods.com/skyrim/mods/20700).'
-          - lang: ru
-            text: 'Устарело. Обновите до [последней версии](http://www.nexusmods.com/skyrim/mods/20700).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la [última versión](http://www.nexusmods.com/skyrim/mods/20700).'
-          - lang: ja
-            text: '旧式のプラグインです。[最新版](http://www.nexusmods.com/skyrim/mods/20700)に更新してください。'
-        condition: 'checksum("DarkbroSanctuary1.0.0.esp",68385991) or checksum("DarkbroSanctuary1.0.0.esp",C8D708F4)'
+      - <<: *obsolete
+        subs: [ '[latest version](http://www.nexusmods.com/skyrim/mods/20700).' ]
     dirty:
       - crc: 0x68385991
         <<: *dirtyPlugin
@@ -18684,16 +18484,8 @@ plugins:
         udr: 648
   - name: 'Dawnstar A Real Sanctuary.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to the [latest version](http://www.nexusmods.com/skyrim/mods/20700).'
-          - lang: ru
-            text: 'Устарело. Обновите до [последней версии](http://www.nexusmods.com/skyrim/mods/20700).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la [última versión](http://www.nexusmods.com/skyrim/mods/20700).'
-          - lang: ja
-            text: '旧式のプラグインです。[最新版](http://www.nexusmods.com/skyrim/mods/20700)に更新してください。'
+      - <<: *obsolete
+        subs: [ '[latest version](http://www.nexusmods.com/skyrim/mods/20700).' ]
   - name: 'Drinking Fountains of Skyrim.esp'
     msg:
       - <<: *obsolete
@@ -21515,16 +21307,8 @@ plugins:
         itm: 7
   - name: 'DukePatricks - CombatTweaks.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Duke Patricks - Archery And Heavy Weapons Combat](http://tesalliance.org/forums/index.php?/files/file/1567-duke-patricks-archery-and-heavy-weapons-combat/).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Duke Patricks - Archery And Heavy Weapons Combat](http://tesalliance.org/forums/index.php?/files/file/1567-duke-patricks-archery-and-heavy-weapons-combat/).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Duke Patricks - Archery And Heavy Weapons Combat](http://tesalliance.org/forums/index.php?/files/file/1567-duke-patricks-archery-and-heavy-weapons-combat/).'
-          - lang: ja
-            text: '旧式のプラグインです。[Duke Patricks - Archery And Heavy Weapons Combat](http://tesalliance.org/forums/index.php?/files/file/1567-duke-patricks-archery-and-heavy-weapons-combat/)に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Duke Patricks - Archery And Heavy Weapons Combat](http://tesalliance.org/forums/index.php?/files/file/1567-duke-patricks-archery-and-heavy-weapons-combat/).' ]
   - name: 'Horsemen.esp'
     dirty:
       - crc: 0xb652c4f9
@@ -22192,16 +21976,8 @@ plugins:
       - 'SkyRe_Main_NoDawnguard.esp'
   - name: 'PPE_Perk-.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [PerkUP](http://www.nexusmods.com/skyrim/mods/9359) or [unofficial version](http://www.nexusmods.com/skyrim/mods/33829).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [PerkUP](http://www.nexusmods.com/skyrim/mods/9359) или [unofficial version](http://www.nexusmods.com/skyrim/mods/33829).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [PerkUP](http://www.nexusmods.com/skyrim/mods/9359) o [unofficial version](http://www.nexusmods.com/skyrim/mods/33829).'
-          - lang: ja
-            text: '旧式のプラグインです。最新版の[PerkUP](http://www.nexusmods.com/skyrim/mods/9359)か[unofficial version](http://www.nexusmods.com/skyrim/mods/33829)に更新してください。'
+      - <<: *obsolete
+        subs: [ '[PerkUP](http://www.nexusmods.com/skyrim/mods/9359) or [unofficial version](http://www.nexusmods.com/skyrim/mods/33829).' ]
   - name: 'rapid fire.esp'
     dirty:
       - crc: 0xb7b2ebd4
@@ -23733,16 +23509,8 @@ plugins:
     msg: [ *corrupt ]
   - name: 'Erik.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Ashara''s Follower Faces](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Ashara''s Follower Faces](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Ashara''s Follower Faces](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: ja
-            text: '旧式のプラグインです。最新版の[Ashara''s Follower Faces](http://www.nexusmods.com/skyrim/mods/20729)に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Ashara''s Follower Faces](http://www.nexusmods.com/skyrim/mods/20729).' ]
   - name: 'ExpandedDialogueFaendal.esp'
     req:
       - *SKSE
@@ -23755,16 +23523,8 @@ plugins:
         display: '[Fuz Ro D''oh](http://www.nexusmods.com/skyrim/mods/14884)'
   - name: 'ExtraBlades.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to [latest version](http://www.nexusmods.com/skyrim/mods/15979).'
-          - lang: ru
-            text: 'Устарело. Обновите до [последней версии](http://www.nexusmods.com/skyrim/mods/15979).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la [última versión](http://www.nexusmods.com/skyrim/mods/15979).'
-          - lang: ja
-            text: '旧式のプラグインです。[最新版](http://www.nexusmods.com/skyrim/mods/15979)に更新してください。'
+      - <<: *obsolete
+        subs: [ '[latest version](http://www.nexusmods.com/skyrim/mods/15979).' ]
         condition: 'checksum("ExtraBlades.esp",4CA21BFE)'
     dirty:
       - crc: 0x8f9b3b9c
@@ -24254,16 +24014,8 @@ plugins:
         itm: 3
   - name: 'Onmund.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [here](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [здесь](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: ja
-            text: '旧式のプラグインです。[こちら](http://www.nexusmods.com/skyrim/mods/20729)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[here](http://www.nexusmods.com/skyrim/mods/20729).' ]
   - name: 'Human Onmund.esp'
     msg:
       - <<: *corrupt
@@ -24451,16 +24203,8 @@ plugins:
         condition: 'checksum("pluginUthgerd von Wölfe.esp",016D9774)'
   - name: 'Vorstag.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [here](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [здесь](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: ja
-            text: '旧式のプラグインです。[こちら](http://www.nexusmods.com/skyrim/mods/20729)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[here](http://www.nexusmods.com/skyrim/mods/20729).' ]
   - name: 'WalksInShadows.esp'
     msg:
       - <<: *corrupt
@@ -24671,16 +24415,8 @@ plugins:
       - 'UFO - Ultimate Follower Overhaul.esp'
   - name: 'NonEssentialChilds.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [here](http://www.nexusmods.com/skyrim/mods/13202).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [здесь](http://www.nexusmods.com/skyrim/mods/13202).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/13202).'
-          - lang: ja
-            text: '旧式のプラグインです。[こちら](http://www.nexusmods.com/skyrim/mods/13202)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Non-Essential Children - Hearthfire](http://www.nexusmods.com/skyrim/mods/9286).' ]
   - name: 'NonEssentialChildren.esp'
     tag:
       - name: Delev
@@ -24999,16 +24735,8 @@ plugins:
         itm: 2
   - name: 'RaRe.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [SkyRe_Races.esp](http://www.nexusmods.com/skyrim/mods/9286).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [SkyRe_Races.esp](http://www.nexusmods.com/skyrim/mods/9286).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [SkyRe_Races.esp](http://www.nexusmods.com/skyrim/mods/9286).'
-          - lang: ja
-            text: '旧式のプラグインです。最新版の[SkyRe_Races.esp](http://www.nexusmods.com/skyrim/mods/9286)に更新してください。'
+      - <<: *obsolete
+        subs: [ '[T3nd0s Skyrim Redone - ](http://www.nexusmods.com/skyrim/mods/9286).' ]
   - name: 'real race heights.esp'
     dirty:
       - crc: 0x9e21d7c9
@@ -25035,16 +24763,8 @@ plugins:
         condition: 'file("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")'
   - name: 'Vampire Lord Polished.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [Vampirism.esp](http://www.nexusmods.com/skyrim/mods/23016).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [Vampirism.esp](http://www.nexusmods.com/skyrim/mods/23016).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [Vampirism.esp](http://www.nexusmods.com/skyrim/mods/23016).'
-          - lang: ja
-            text: '旧式のプラグインです。最新版の[Vampirism.esp](http://www.nexusmods.com/skyrim/mods/23016)に更新してください。'
+      - <<: *obsolete
+        subs: [ '[Vampirism Polished](http://www.nexusmods.com/skyrim/mods/23016).' ]
   - name: 'SkyRe_Races.esp'
     inc:
       - 'EnhancedCharacterEdit.esp'
@@ -25194,40 +24914,18 @@ plugins:
 # Need to go after new items to affect them.
   - name: 'Duns_Inc_Shaders_Begone.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records, you should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
-          - lang: ja
-            text: '予期しない（または順番が狂った）レコードが含まれています。バージョン2に更新してください。[こちら](http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
-        condition: 'checksum("Duns_Inc_Shaders_Begone.esp",B0D9FEDA)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Sharlikran''s version is now obsolete. You should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
-          - lang: ja
-            text: 'Sharlikran版は現在では使われていません。バージョン2に更新してください。http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
-        condition: 'checksum("Duns_Inc_Shaders_Begone.esp",2C0126D)'
+      - <<: *obsolete
+        subs: [ 'You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).' ]
+        condition: 'checksum("Duns_Inc_Shaders_Begone.esp",B0D9FEDA) or checksum("Duns_Inc_Shaders_Begone.esp",2C0126D)'
     dirty:
       - crc: 0xC8FF638F
         <<: *dirtyPlugin
         itm: 1
   - name: 'Duns_Inc_Shaders_Begone_xWeapons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains unexpected (or out of order) records, you should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
-          - lang: ja
-            text: '予期しない（または順番が狂った）レコードが含まれています。バージョン2に更新してください。[こちら](http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
-        condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",4928C96B)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Sharlikran''s version is now obsolete. You should upgrade to version 2. You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).'
-          - lang: ja
-            text: 'Sharlikran版は現在では使われていません。バージョン2に更新してください。http://www.nexusmods.com/skyrim/mods/6566)から製作者による新バージョンを入手できます。'
-        condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",493A9DEA)'
+      - <<: *obsolete
+        subs: [ 'You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).' ]
+        condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",4928C96B) or checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",493A9DEA)'
   - name: 'RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp'
     msg:
       - type: say
