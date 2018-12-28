@@ -23041,13 +23041,8 @@ plugins:
     inc:
       - 'UFO - Dragonborn AddOn.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Outdated. Please upgrade to [new official Dragonborn AddOn](http://www.nexusmods.com/skyrim/mods/14037).'
-          - lang: ja
-            text: '旧式のプラグインです。[新しい公式のDragonborn AddOn](http://www.nexusmods.com/skyrim/mods/14037)に更新してください。'
-        condition: 'not file("UFO - Dragonborn AddOn.esp")'
+      - <<: *obsolete
+        subs: [ '[UFO - Dragonborn AddOn](http://www.nexusmods.com/skyrim/mods/14037).' ]
   - name: 'Endgame NPC Overhaul.esp'
     after:
       - 'UFO - Ultimate Follower Overhaul.esp'
