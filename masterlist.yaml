@@ -24398,16 +24398,8 @@ plugins:
         condition: 'checksum("pluginUthgerd von Wölfe.esp",016D9774)'
   - name: 'Vorstag.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Obsolete. Update to latest version, [here](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: ru
-            text: 'Устарело. Обновите до последней версии, [здесь](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: es
-            text: 'Obsoleto. Actualizar a la última versión, [aquí](http://www.nexusmods.com/skyrim/mods/20729).'
-          - lang: ja
-            text: '旧式のプラグインです。[こちら](http://www.nexusmods.com/skyrim/mods/20729)の最新版に更新してください。'
+      - <<: *obsolete
+        subs: [ '[here](http://www.nexusmods.com/skyrim/mods/20729).' ]
   - name: 'WalksInShadows.esp'
     msg:
       - <<: *corrupt
