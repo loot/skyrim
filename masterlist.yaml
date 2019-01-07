@@ -27214,6 +27214,9 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Rustic Soulgems.esp") and not active("Requiem - Rustic Soulgems - ISC.esp")'
+      - <<: *deletePlugin
+        condition: 'active("RUSTIC SOULGEMS - (Uns|S)orted\.esp") and active("Requiem - Rustic Soulgems( - ISC)?.esp")'
+        subs: [ 'the Requiem patch for Rustic Soulgems' ]
     tag:
       - Names
   - name: 'ScopedBows.esp'
