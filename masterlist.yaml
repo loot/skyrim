@@ -27157,6 +27157,9 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Improved Closefaced Helmets.esp")'
+      - <<: *deletePlugin
+        condition: 'active("imp_helm_legend.esp") and version("Requiem - Improved Closefaced Helmets.esp", "2.12", >=)'
+        subs: [ 'the Requiem patch for Improved Closefaced Helmets' ]
     dirty:
       # version: 1.57
       - <<: *quickClean
