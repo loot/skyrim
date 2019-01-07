@@ -10933,11 +10933,6 @@ plugins:
   - name: 'REQ Tribunal Robes by Zairaam.esp'
     msg:
       - *installOriginalResources
-  - name: 'ExplosiveBoltsVisualized-SkyRe.esp'
-    msg:
-      - <<: *deleteOrDeactivateX
-        condition: 'active("ExplosiveBoltsVisualized.esp")'
-        subs: [ 'ExplosiveBoltsVisualized.esp' ]
 #
 # All mods that add or change quests,
 # add player houses,
@@ -27043,6 +27038,9 @@ plugins:
       - <<: *deletePlugin
         condition: 'active("ExplosiveBoltsVisualized.esp") and active("Requiem - Explosive Bolts Visualized.esp")'
         subs: [ 'the Requiem patch for Explosive Bolts Visualized' ]
+      - <<: *deletePlugin
+        condition: 'active("ExplosiveBoltsVisualized.esp") and active("ExplosiveBoltsVisualized-SkyRe.esp")'
+        subs: [ 'the SkyRe patch for Explosive Bolts Visualized' ]
   - name: 'DeadlyDragons.esp'
     msg:
       - <<: *reqRequiemPatch
