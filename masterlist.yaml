@@ -216,6 +216,11 @@ common:
         text: 'Не забудьте отключить или удалить %1%.'
       - lang: ja
         text: '%1%を削除するか非アクティブにしてください。'
+  - &deletePlugin
+    type: warn
+    content:
+      - lang: en
+        text: 'When using **%1%**, it''s recommended that you deactivate or delete this plugin, but keep the assets (e.g. meshes, textures) installed with this mod as they''re still required by **%1%**.'
   - &replacerPluginForX
     type: error
     content:
@@ -27149,6 +27154,9 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Improved Closefaced Helmets.esp")'
+      - <<: *deletePlugin
+        condition: 'active("imp_helm_legend.esp") and version("Requiem - Improved Closefaced Helmets.esp", "2.12", >=)'
+        subs: [ 'the Requiem patch for Improved Closefaced Helmets' ]
     dirty:
       # version: 1.57
       - <<: *quickClean
