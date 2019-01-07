@@ -24528,10 +24528,10 @@ plugins:
         itm: 4
   - name: 'Height Adjusted Skyrim(.+)?\.esp'
     msg: [ *obsolete ]
-  - name: 'Height Adjusted Races( .+)?\.esp'
+  - name: 'Height Adjusted Races.*\.esp'
     msg:
       - <<: *useOnlyOneX
-        condition: 'many("Height Adjusted Races( .+)?\.esp")'
+        condition: 'many("Height Adjusted Races.*\.esp")'
         subs: [ 'Height Adjusted Races .esp file' ]
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Height Adjusted Races with True Giants.esp") and not active("Requiem - True Giants and Mammoths.esp")'
