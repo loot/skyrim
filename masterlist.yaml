@@ -27105,6 +27105,9 @@ plugins:
     msg:
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Explosive Bolts Visualized.esp")'
+      - <<: *deletePlugin
+        condition: 'active("ExplosiveBoltsVisualized.esp") and active("Requiem - Explosive Bolts Visualized.esp")'
+        subs: [ 'the Requiem patch for Explosive Bolts Visualized' ]
   - name: 'DeadlyDragons.esp'
     msg:
       - <<: *reqRequiemPatch
