@@ -221,13 +221,6 @@ common:
     content:
       - lang: en
         text: 'When using **%1%**, it''s recommended that you deactivate or delete this plugin, but keep the assets (e.g. meshes, textures) installed with this mod as they''re still required by **%1%**.'
-  - &replacerPluginForX
-    type: error
-    content:
-      - lang: en
-        text: 'This replaces %1%. Delete or deactivate %1% but keep its resources.'
-      - lang: ja
-        text: '%1%を置き換えます。%1%のプラグインを削除するか非アクティブにし、他のファイルはそのままにしておいてください。'
   - &SmashedVsBashedPatch
     type: say
     content:
@@ -965,13 +958,17 @@ plugins:
       - Relev
     url:
       - 'http://www.nexusmods.com/skyrim/mods/4955'
-  - name: '(83Willows_101BUGS_V4_).+\.esp'
+  - name: '83Willows_101BUGS_V4_.+\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/4955' ]
     msg:
       - <<: *useOnlyOneX
-        condition: 'many("(83Willows_101BUGS_V4_).+.esp")'
-        subs: [ '83Willows_101BUGS_V4_ .esp file' ]
+        condition: 'many("83Willows_101BUGS_V4_.+\.esp")'
+        subs: [ '83Willows 101Bugs plugin' ]
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - 83Willows 101Bugs.esp")'
+      - <<: *deletePlugin
+        condition: 'active("83Willows_101BUGS_V4_.+\.esp") and active("Requiem - 83Willows 101Bugs.esp")'
+        subs: [ 'the Requiem patch for 83Willows 101Bugs' ]
   - name: 'actorEvents.esm'
     req:
       - *SKSE
@@ -9498,40 +9495,8 @@ plugins:
     group: *requiemEarlyGroup
   - name: 'Requiem - Height Adjusted Races with True Giants.esp'
     group: *requiemEarlyGroup
-    msg:
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races.esp")'
-        subs: [ 'Height Adjusted Races.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races - Morrowind Lore Heights.esp")'
-        subs: [ 'Height Adjusted Races - Morrowind Lore Heights.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races - Oblivion Lore Heights.esp")'
-        subs: [ 'Height Adjusted Races - Oblivion Lore Heights.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races - Player Races Only.esp")'
-        subs: [ 'Height Adjusted Races - Player Races Only.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races - Player Races Only - Oblivion Lore Heights.esp")'
-        subs: [ 'Height Adjusted Races - Player Races Only - Oblivion Lore Heights.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races - Player Races Only - Morrowind Lore Heights.esp")'
-        subs: [ 'Height Adjusted Races - Player Races Only - Morrowind Lore Heights.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races with True Giants.esp")'
-        subs: [ 'Height Adjusted Races with True Giants.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races with True Giants - Smaller Giant Edition.esp")'
-        subs: [ 'Height Adjusted Races with True Giants - Smaller Giant Edition.esp' ]
   - name: 'Requiem - True Giants and Mammoths.esp'
     group: *requiemEarlyGroup
-    msg:
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races - True Giants and Mammoths.esp")'
-        subs: [ 'Height Adjusted Races - True Giants and Mammoths.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("Height Adjusted Races - True Giants and Mammoths - Smaller Giant Edition.esp")'
-        subs: [ 'Height Adjusted Races - True Giants and Mammoths - Smaller Giant Edition.esp' ]
   - name: 'Requiem - Guard Dialogue & Open Helmets.esp'
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
@@ -9567,33 +9532,6 @@ plugins:
   - name: 'Requiem - Deadly Dragons( - AOS)?\.esp'
     after:
       - 'Requiem - Wild World.esp'
-  - name: 'Requiem - 83Willows 101Bugs.esp'
-    msg:
-      - <<: *replacerPluginForX
-        condition: 'file("83Willows_101BUGS_V4_LowRes.esp")'
-        subs: [ '83Willows_101BUGS_V4_LowRes.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("83Willows_101BUGS_V4_HighRes.esp")'
-        subs: [ '83Willows_101BUGS_V4_HighRes.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("83Willows_101BUGS_V4_LowerRes_HighSpawn.esp")'
-        subs: [ '83Willows_101BUGS_V4_LowerRes_HighSpawn.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("83Willows_101BUGS_V4_HighRes_HighSpawn.esp")'
-        subs: [ '83Willows_101BUGS_V4_HighRes_HighSpawn.esp' ]
-  - name: 'Requiem - Explosive Bolts Visualized.esp'
-    msg:
-      - <<: *replacerPluginForX
-        condition: 'file("ExplosiveBoltsVisualized.esp")'
-        subs: [ 'ExplosiveBoltsVisualized.esp' ]
-  - name: 'Requiem - Rustic Soulgems( - ISC)?\.esp'
-    msg:
-      - <<: *replacerPluginForX
-        condition: 'file("RUSTIC SOULGEMS - Sorted.esp")'
-        subs: [ 'RUSTIC SOULGEMS - Sorted.esp' ]
-      - <<: *replacerPluginForX
-        condition: 'file("RUSTIC SOULGEMS - Unsorted.esp")'
-        subs: [ 'RUSTIC SOULGEMS - Unsorted.esp' ]
   - name: 'Requiem - Timing Is Everything.esp'
     after:
       - 'Requiem_Minor_Arcana.esp'
@@ -10995,11 +10933,6 @@ plugins:
   - name: 'REQ Tribunal Robes by Zairaam.esp'
     msg:
       - *installOriginalResources
-  - name: 'ExplosiveBoltsVisualized-SkyRe.esp'
-    msg:
-      - <<: *deleteOrDeactivateX
-        condition: 'active("ExplosiveBoltsVisualized.esp")'
-        subs: [ 'ExplosiveBoltsVisualized.esp' ]
 #
 # All mods that add or change quests,
 # add player houses,
@@ -24528,13 +24461,20 @@ plugins:
         itm: 4
   - name: 'Height Adjusted Skyrim(.+)?\.esp'
     msg: [ *obsolete ]
-  - name: 'Height Adjusted Races( .+)?\.esp'
+  - name: 'Height Adjusted Races.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/7587' ]
     msg:
       - <<: *useOnlyOneX
-        condition: 'many("Height Adjusted Races( .+)?\.esp")'
+        condition: 'many("Height Adjusted Races.*\.esp")'
         subs: [ 'Height Adjusted Races .esp file' ]
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Height Adjusted Races with True Giants.esp") and not active("Requiem - True Giants and Mammoths.esp")'
+      - <<: *alreadyInX
+        condition: 'active("Height Adjusted Races.*\.esp") and active("Requiem - Height Adjusted Races with True Giants.esp")'
+        subs: [ 'Requiem - Height Adjusted Races with True Giants.esp' ]
+      - <<: *alreadyInX
+        condition: 'active("Height Adjusted Races.*\.esp") and active("Requiem - True Giants and Mammoths.esp")'
+        subs: [ 'Requiem - True Giants and Mammoths.esp' ]
   - name: 'True Giants( v\d)?\.esp'
     msg:
       - type: say
@@ -27091,9 +27031,16 @@ plugins:
       - crc: 0x6859FBEB
         util: 'TES5Edit v4.0.1'
   - name: 'ExplosiveBoltsVisualized.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21922' ]
     msg:
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Explosive Bolts Visualized.esp")'
+      - <<: *deletePlugin
+        condition: 'active("ExplosiveBoltsVisualized.esp") and active("Requiem - Explosive Bolts Visualized.esp")'
+        subs: [ 'the Requiem patch for Explosive Bolts Visualized' ]
+      - <<: *deletePlugin
+        condition: 'active("ExplosiveBoltsVisualized.esp") and active("ExplosiveBoltsVisualized-SkyRe.esp")'
+        subs: [ 'the SkyRe patch for Explosive Bolts Visualized' ]
   - name: 'DeadlyDragons.esp'
     msg:
       - <<: *reqRequiemPatch
@@ -27196,9 +27143,13 @@ plugins:
       - crc: 0xBDE8703C
         util: 'TES5Edit v4.0.1'
   - name: 'RUSTIC SOULGEMS - (Uns|S)orted\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/63766' ]
     msg:
       - <<: *reqRequiemPatch
         condition: 'active("Requiem.esp") and not active("Requiem - Rustic Soulgems.esp") and not active("Requiem - Rustic Soulgems - ISC.esp")'
+      - <<: *deletePlugin
+        condition: 'active("RUSTIC SOULGEMS - (Uns|S)orted\.esp") and active("Requiem - Rustic Soulgems( - ISC)?.esp")'
+        subs: [ 'the Requiem patch for Rustic Soulgems' ]
     tag:
       - Names
   - name: 'ScopedBows.esp'
