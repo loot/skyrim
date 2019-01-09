@@ -4333,6 +4333,7 @@ plugins:
     msg:
       - <<: *patchProvided
         condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
+        subs: [ 'Requiem' ]
       - <<: *patchRSE
         condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
     dirty:
@@ -20022,6 +20023,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         condition: 'active("Requiem.esp") and not active("Requiem - Better Vampires Patch.esp")'
+        subs: [ 'Requiem' ]
   - name: 'Better Vampires ML.esp'
     inc:
       - 'Better Vampires.esp'
@@ -20086,6 +20088,7 @@ plugins:
             text: '吸血鬼のシステムを変更するModとは競合します。'
       - <<: *patchProvided
         condition: 'active("Requiem.esp") and not active("mslVampiricThirst - Requiem.esp")'
+        subs: [ 'Requiem' ]
     dirty:
       - crc: 0xfafb18c2
         <<: *dirtyPlugin
@@ -20286,6 +20289,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         condition: 'active("Requiem.esp") and not active("EnchantingAwakenedRequiem.esp")'
+        subs: [ 'Requiem' ]
   - name: 'EnchantingAwakenedRequiem.esp'
     dirty:
       - crc: 0xe410b8ec
@@ -27008,6 +27012,7 @@ plugins:
     msg:
       - <<: *patchIncluded
         condition: 'active("Requiem.esp") and not active("RDO - Requiem Patch.esp")'
+        subs: [ 'Requiem' ]
     clean:
       # version: 2.0
       - crc: 0x6EA57C0D
