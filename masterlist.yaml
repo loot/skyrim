@@ -27114,8 +27114,11 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Immersive Sounds - Compendium.esp'
     msg:
-      - <<: *reqRequiemPatch
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp")'
+      - <<: *patchIncluded
+        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
+        subs: [ 'Requiem' ]
+      - <<: *patchRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
     clean:
       # version: 2.02
       - crc: 0x82A29913
