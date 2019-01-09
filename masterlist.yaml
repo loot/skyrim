@@ -16187,8 +16187,13 @@ plugins:
     after:
       - 'BetterQuestObjectives.esp'
     msg:
-      - <<: *reqRequiemPatch
-        condition: 'active("Requiem.esp") and not active("Requiem - Book Covers Skyrim.esp") and not active("REQ - BCS Patch.esp")'
+      - <<: *patchRPC
+        condition: 'version("Requiem.esp", "2.0.0", >=) and not active("Requiem - Book Covers Skyrim.esp")'
+      - <<: *patch3rdParty
+        condition: 'version("Requiem.esp", "2.0.0", <) and not active("REQ - BCS Patch.esp")'
+        subs:
+          - 'Requiem'
+          - '[Book Covers Skyrim - Compatibility Patch Collection](https://www.nexusmods.com/skyrim/mods/50441)'
     tag:
       - Graphics
       - Names
