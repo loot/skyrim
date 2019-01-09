@@ -9443,13 +9443,12 @@ plugins:
     msg:
       - <<: *doNotClean
         condition: 'version("Requiem.esp", "1.9.3", >=)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Your load order does not contain the extra plugin called Bugsmasher, which includes all fixes from the Unofficial Patches that require an explicit dependence on their plugins.'
-          - lang: ja
-            text: '追加プラグインのBugsmasherがロードされていません。このプラグインにはUnofficial Patchesへの依存を明確に必要とするタイプの修正内容が含まれています。'
-        condition: 'not active("Requiem - Bugsmasher Edition.esp") and not active("Requiem - Legendary Bugsmasher Edition.esp")'
+      - <<: *patchIncluded
+        condition: 'active("Unofficial Skyrim Patch.esp") and not active("Requiem - Bugsmasher Edition.esp")'
+        subs: [ 'Unofficial Skyrim Patch' ]
+      - <<: *patchIncluded
+        condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp") and not active("Requiem - Legendary Bugsmasher Edition.esp")'
+        subs: [ 'Unofficial Skyrim Legendary Edition Patch' ]
       - type: error
         content:
           - lang: en
