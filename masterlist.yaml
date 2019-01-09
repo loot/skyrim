@@ -4338,7 +4338,9 @@ plugins:
       - *SKSE
       - *SkyUI
     msg:
-      - <<: *reqRequiemPatch
+      - <<: *patchProvided
+        condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
+      - <<: *patchRSE
         condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
     dirty:
       - crc: 0x83B040DA
