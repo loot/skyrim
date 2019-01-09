@@ -6638,7 +6638,9 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("1nivWICCloaks(CRAFT|NoGuards)?.esp")'
         subs: [ 'WICCloaks .esp file' ]
-      - <<: *reqRequiemPatch
+      - <<: *patchCFR
+        condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
+      - <<: *patchCOR
         condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
     tag:
       - Relev
