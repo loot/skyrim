@@ -17844,9 +17844,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 12
   - name: 'SkyTEST-RealisticAnimals&Predators.esm'
-    msg:
-      - <<: *reqRequiemPatch
-        condition: 'active("Requiem.esp") and not active("Requiem - SkyTEST.esp")'
     dirty:
       - crc: 0x7b5f9e63
         <<: *dirtyPlugin
@@ -17862,6 +17859,8 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("SkyTEST-RealisticAnimals&Predators\.es(p|m)")'
         subs: [ 'SkyTEST-RealisticAnimals&Predators plugin' ]
+      - <<: *patchRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - SkyTEST.esp")'
   - name: 'Convenient Horses.esp'
     msg: [ *doNotClean ]
   - name: 'Skyrim Horses Renewal.esp'
