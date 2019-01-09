@@ -19192,8 +19192,11 @@ plugins:
           - lang: ja
             text: '盗用されたコンテンツです。製作者の権利に配慮するよう願います。[こちら](http://www.nexusmods.com/skyrim/mods/8058)から正規のファイルをダウンロードできます。'
         condition: 'checksum("Open Cities Skyrim.esp", 022AD2C8)'
-      - <<: *reqRequiemPatch
-        condition: 'active("Requiem.esp") and not active("Requiem - Open Cities.esp") and not active("Requiem-OpenCities.esp")'
+      - <<: *patch3rdParty
+        condition: 'version("Requiem.esp", "2.0.0", <) and not active("Requiem-OpenCities.esp")'
+        subs:
+          - 'Requiem'
+          - '[Arbitrated Patches](https://www.nexusmods.com/skyrim/mods/56736)'
     tag:
       - C.Location
 
