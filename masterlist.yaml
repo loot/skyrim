@@ -27574,6 +27574,9 @@ plugins:
       - crc: 0x46192AFE
         util: 'TES5Edit v4.0.1'
   - name: 'Book Covers Skyrim - Lost Library.esp'
+    msg:
+      - <<: *patchRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Lost Library.esp")'
     clean:
       # version: 1.7
       - crc: 0x8F56DE23
