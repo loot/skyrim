@@ -27248,8 +27248,11 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Requiem - Dawnguard Arsenal.esp")'
   - name: 'One With Nature.*\.esp'
     msg:
-      - <<: *reqRequiemPatch
+      - <<: *patch3rdParty
         condition: 'active("Requiem.esp") and not active("Requiem - One With Nature.esp")'
+        subs:
+          - 'Requiem'
+          - '[One With Nature - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83639)'
   - name: 'Immersive Jewelry.esp'
     msg:
       - <<: *reqRequiemPatch
