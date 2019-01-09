@@ -16066,8 +16066,11 @@ plugins:
     after:
       - 'BetterQuestObjectives.esp'
     msg:
-      - <<: *reqRequiemPatch
+      - <<: *patch3rdParty
         condition: 'active("Requiem.esp") and not active("CAR-ContentAddonReqtified.esp")'
+        subs:
+          - 'Requiem'
+          - '[CAR - Content Addon Reqtified](https://www.nexusmods.com/skyrim/mods/72562)'
     tag:
       - Delev
       - Relev
