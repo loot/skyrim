@@ -14064,8 +14064,11 @@ plugins:
       - 'OBIS.esp'
       - 'OBISDB.esp'
     msg:
-      - <<: *reqRequiemPatch
+      - <<: *patch3rdParty
         condition: 'active("Requiem.esp") and not active("Requiem - Civil War Overhaul Patch.esp")'
+        subs:
+          - 'Requiem'
+          - '[Requiem - Civil War Overhaul Patch](https://www.nexusmods.com/skyrim/mods/63146)'
     dirty:
       - crc: 0x49e6e0bd
         <<: *dirtyPlugin
