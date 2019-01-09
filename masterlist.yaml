@@ -6577,7 +6577,9 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Cloaks( - (No Imperial|Player Only))?\.esp")'
         subs: [ 'Cloaks .esp file' ]
-      - <<: *reqRequiemPatch
+      - <<: *patchCFR
+        condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
+      - <<: *patchCOR
         condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
   - name: 'Cloaks.esp'
     dirty:
