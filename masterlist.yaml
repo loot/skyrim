@@ -2756,7 +2756,10 @@ plugins:
       - name: 'RealisticWaterTwo.esp'
         condition: 'not file("AOS2_RealisticWaterTwo Patch.esp") and not file("WAO-.*RWT.*\.esp") and not active("Requiem.esp")'
     msg:
-      - <<: *reqRequiemPatch
+      - <<: *patchIncluded
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
+      - <<: *patchRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
     tag:
       - Sound
