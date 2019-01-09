@@ -232,6 +232,21 @@ common:
         text: 'Может быть использовано совместно с %1% но возможно потребуется дополнительная работа. Smashed Patch или Bash Patch должны быть использованы независимо друг от друга.'
       - lang: ja
         text: '%1%と同時に使用できますが、追加作業が必要となります。Smashed PatchかBash Patchはそれぞれ単独で使用してください。'
+  - &patchProvided
+    type: warn
+    content:
+      - lang: en
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
+  - &patchIncluded
+    type: warn
+    content:
+      - lang: en
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
+  - &patch3rdParty
+    type: warn
+    content:
+      - lang: en
+        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
   - &reqModX
     type: say
     content:
@@ -281,13 +296,6 @@ common:
         text: 'Incompatible with: Requiem. You must install a compatibility patch.'
       - lang: ja
         text: '競合: Requiem（互換パッチをインストールしてください）'
-  - &reqPatchForX
-    type: warn
-    content:
-      - lang: en
-        text: 'Incompatible with: %1%. You must install the compatibility patch from the mod page.'
-      - lang: ja
-        text: '競合: %1%. Modの公開ページから互換パッチをインストールしてください。'
 
 # Cleaning data
   - &dirtyPlugin
@@ -9466,19 +9474,21 @@ plugins:
     inc:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
   - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61520' ]
     group: *requiemWAFRGroup
     msg:
-      - <<: *reqPatchForX
+      - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("KFR-FZR.esp")'
-        subs: [ 'Fozar''s Dragonborn patch' ]
+        subs: [ 'Fozar''s Dragonborn Patch' ]
   - name: 'KFR-(?!Kryptopyr''sFixesReqtified).+\.esp'
     group: *requiemWAFRGroup
     req:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
   - name: 'COR-CraftingOverhaulReqtified.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61569' ]
     group: *requiemCCORGroup
     msg:
-      - <<: *reqPatchForX
+      - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("COR-FZR.esp")'
         subs: [ 'Fozar''s Dragonborn patch' ]
   - name: 'COR-(?!CraftingOverhaulReqtified).+\.esp'
@@ -9501,6 +9511,11 @@ plugins:
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
   - name: 'Requiem_Minor_Arcana.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/90983'
+        name: Requiem - Minor Arcana Reborn
+      - link: 'https://www.nexusmods.com/skyrim/mods/72865'
+        name: Requiem - Minor Arcana
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
       - 'COR-CraftingOverhaulReqtified.esp'
@@ -9509,10 +9524,6 @@ plugins:
       - 'Requiem - Immersive Spells.esp'
       - 'Requiem - Civil War Overhaul Patch.esp'
       - 'Requiem - ESF Companions.esp'
-    msg:
-      - <<: *reqPatchForX
-        condition: 'version("ESFCompanions.esp", "0.3.8", >=) and not active("Requiem_Minor_Arcana - ESF Companions.esp")'
-        subs: [ 'ESFCompanions.esp' ]
   - name: 'Requiem - WRF_MinorArcana_MortalEnemies_TG.esp'
     after:
       - 'Requiem_Minor_Arcana.esp'
@@ -26989,18 +27000,19 @@ plugins:
   - name: 'No Vendor or Loot Spells.esp'
     group: *reproccerGroup
   - name: 'Skyrim Unlocked.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/69420' ]
     group: *unlockedGroup
     msg:
-      - <<: *reqPatchForX
+      - <<: *patchIncluded
         condition: 'active("Open Cities Skyrim.esp") and not active("Skyrim Unlocked - Open Cities Skyrim Patch.esp")'
         subs: [ 'Open Cities Skyrim' ]
-      - <<: *reqPatchForX
+      - <<: *patchIncluded
         condition: 'active("CollegeOfWinterholdImmersive.esp") and not active("Skyrim Unlocked - Immersive College of Winterhold Patch.esp")'
         subs: [ 'Immersive College of Winterhold' ]
-      - <<: *reqPatchForX
+      - <<: *patchIncluded
         condition: 'active("ESFCompanions.esp") and not active("Skyrim Unlocked - ESF Companions Patch.esp")'
         subs: [ 'Enhanced Skyrim Factions - The Companions Guild' ]
-      - <<: *reqPatchForX
+      - <<: *patchIncluded
         condition: 'active("Alternate Start - Live Another Life.esp") and not active("Skyrim Unlocked - Live Another Life Patch.esp")'
         subs: [ 'Alternate Start - Live Another Life' ]
       - <<: *reqRequiemPatch
@@ -27251,13 +27263,14 @@ plugins:
         condition: 'many("Requiem - Immersive Jewelry( BTC| ISC)?\.esp")'
         subs: [ 'Requiem patch for Immersive Jewelry' ]
   - name: 'Requiem - Immersive Jewelry.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/83771' ]
     msg:
-      - <<: *reqPatchForX
+      - <<: *patchProvided
         condition: 'file("Requiem - Behind the Curtain.esp") and not active("Requiem - Immersive Jewelry BTC.esp")'
-        subs: [ 'Requiem - Behind the Curtain.esp' ]
-      - <<: *reqPatchForX
+        subs: [ 'Requiem - Behind the Curtain' ]
+      - <<: *patchProvided
         condition: 'file("Immersive Sounds - Compendium.esp") and not active("Requiem - Immersive Jewelry ISC.esp")'
-        subs: [ 'Immersive Sounds - Compendium.esp' ]
+        subs: [ 'Immersive Sounds Compendium' ]
   - name: 'Immersive Horses - Hearthfire Patch.esp'
     msg:
       - <<: *alreadyInX
