@@ -277,7 +277,7 @@ common:
     subs:
       - 'Requiem'
       - '[CFR - Cloaks For Requiem](https://www.nexusmods.com/skyrim/mods/61590)'
-  - &patchRSE
+  - &patchRequiemRSE
     <<: *patch3rdParty
     subs:
       - 'Requiem'
@@ -4334,7 +4334,7 @@ plugins:
       - <<: *patchProvided
         condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
         subs: [ 'Requiem' ]
-      - <<: *patchRSE
+      - <<: *patchRequiemRSE
         condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
     dirty:
       - crc: 0x83B040DA
@@ -19733,7 +19733,7 @@ plugins:
       - '3DNPC.esp'
       - 'TradeRoutes.esp'
     msg:
-      - <<: *patchRSE
+      - <<: *patchRequiemRSE
         condition: 'active("Requiem.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
     tag:
       - Delev
@@ -26760,7 +26760,7 @@ plugins:
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
-      - <<: *patchRSE
+      - <<: *patchRequiemRSE
         condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
     clean:
       # version: 1.11
@@ -27145,7 +27145,7 @@ plugins:
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
-      - <<: *patchRSE
+      - <<: *patchRequiemRSE
         condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
     clean:
       # version: 3.4.1
@@ -27157,7 +27157,7 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Requiem - Hoth.esp")'
   - name: 'Hypothermia.esp'
     msg:
-      - <<: *patchRSE
+      - <<: *patchRequiemRSE
         condition: 'active("Requiem.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
   - name: 'Immersive Horses.esp'
     msg:
