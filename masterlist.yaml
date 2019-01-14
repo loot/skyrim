@@ -257,7 +257,7 @@ common:
     subs:
       - 'Requiem'
       - '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)'
-  - &patchMRP
+  - &patchRequiemMRP
     <<: *patch3rdParty
     subs:
       - 'Requiem'
@@ -4383,7 +4383,7 @@ plugins:
   - name: 'ImmersiveSpells.esp'
     req: [ *SKSE ]
     msg:
-      - <<: *patchMRP
+      - <<: *patchRequiemMRP
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Spells.esp")'
   - name: 'ImmersiveSpells-NoDlcDawnDragComp.esp'
     req: [ *SKSE ]
@@ -5341,7 +5341,7 @@ plugins:
           - lang: ja
             text: 'このEspはjackstarr氏によるロアフレンドリーバージョンです。lifestorock氏によるオリジナル版のEspもしくはEsmは使用しないでください。'
         condition: 'checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
-      - <<: *patchMRP
+      - <<: *patchRequiemMRP
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Creatures.esp")'
     tag:
       - Delev
@@ -17608,7 +17608,7 @@ plugins:
   - name: 'Rebirth Monster.esp'
     msg:
       # version: 1.9.5
-      - <<: *patchMRP
+      - <<: *patchRequiemMRP
         condition: 'checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Requiem - Revenge of the Enemies.esp")'
       # version: 2.0 and later
       - <<: *patch3rdParty
@@ -24547,7 +24547,7 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Height Adjusted Races.*\.esp")'
         subs: [ 'Height Adjusted Races .esp file' ]
-      - <<: *patchMRP
+      - <<: *patchRequiemMRP
         condition: 'active("Requiem.esp") and not active("Requiem - Height Adjusted Races with True Giants.esp") and not active("Requiem - True Giants and Mammoths.esp")'
       - <<: *alreadyInX
         condition: 'active("Height Adjusted Races.*\.esp") and active("Requiem - Height Adjusted Races with True Giants.esp")'
@@ -27139,7 +27139,7 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Requiem - Faction Crossbows.esp")'
   - name: 'FireAndIceOverhaul.esp'
     msg:
-      - <<: *patchMRP
+      - <<: *patchRequiemMRP
         condition: 'active("Requiem.esp") and not active("Requiem - Fire and Ice Overhaul.esp") and not active("Requiem - Fire and Ice Overhaul - AOS.esp")'
   - name: 'Frostfall.esp'
     msg:
@@ -27271,7 +27271,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'DawnguardArsenal.esp'
     msg:
-      - <<: *patchMRP
+      - <<: *patchRequiemMRP
         condition: 'active("Requiem.esp") and not active("Requiem - Dawnguard Arsenal.esp")'
   - name: 'One With Nature.*\.esp'
     msg:
