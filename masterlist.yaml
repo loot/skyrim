@@ -247,7 +247,7 @@ common:
     content:
       - lang: en
         text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
-  - &patchRPC
+  - &patchRequiemRPC
     <<: *patch3rdParty
     subs:
       - 'Requiem'
@@ -1005,7 +1005,7 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("83Willows_101BUGS_V4_.+\.esp")'
         subs: [ '83Willows 101Bugs plugin' ]
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - 83Willows 101Bugs.esp")'
       - <<: *deletePlugin
         condition: 'active("83Willows_101BUGS_V4_.+\.esp") and active("Requiem - 83Willows 101Bugs.esp")'
@@ -2787,7 +2787,7 @@ plugins:
       - <<: *patchIncluded
         subs: [ 'Requiem' ]
         condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
     tag:
       - Sound
@@ -3200,7 +3200,7 @@ plugins:
       - 'TouringCarriages.esp'
       - 'WhiterunHoldForest.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
     tag:
       - C.Climate
@@ -3320,7 +3320,7 @@ plugins:
     after:
       - 'TradeRoutes.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Trade and Barter.esp")'
     tag:
       - Delev
@@ -6412,7 +6412,7 @@ plugins:
     msg: [ *reqNudeAndJiggly ]
   - name: 'Black Mage Armor.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Black Mage Armor.esp")'
     tag:
       - name: Deactivate
@@ -7277,7 +7277,7 @@ plugins:
           - lang: ja
             text: 'このプラグインはhothtrooper44_ArmorCompilation.espのSkyjubs Invisible Helmetsバージョンです。他のhothtrooper氏のパッチと同時に使用しても期待される効果は発生しないでしょう。DawnguardとDragonborn以外のSkyjubs Invisible Helmets esp群とは互換性がありません。'
         condition: 'checksum("hothtrooper44_ArmorCompilation.esp",1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp",983EFB9E)'
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Armors.esp")'
     tag:
       - name: Delev
@@ -7390,7 +7390,7 @@ plugins:
     after:
       - 'AmazingFollowerTweaks.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Weapons.esp")'
     tag:
       - Delev
@@ -8200,7 +8200,7 @@ plugins:
   - name: 'PrvtI_HeavyArmory.esp'
     msg:
       - <<: *alreadyInSkyRe
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp")'
     tag:
       - Relev
@@ -12123,7 +12123,7 @@ plugins:
     after:
       - 'Clothing & Clutter Fixes.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive College of Winterhold.esp")'
     dirty:
       - crc: 0xfb30c482
@@ -16028,7 +16028,7 @@ plugins:
         udr: 1
   - name: 'Animallica.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Animallica.esp")'
     dirty:
       - crc: 0x8e94479b
@@ -16227,7 +16227,7 @@ plugins:
     after:
       - 'BetterQuestObjectives.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'version("Requiem.esp", "2.0.0", >=) and not active("Requiem - Book Covers Skyrim.esp")'
       - <<: *patch3rdParty
         condition: 'version("Requiem.esp", "2.0.0", <) and not active("REQ - BCS Patch.esp")'
@@ -16729,7 +16729,7 @@ plugins:
       - 'Brevi_MoonlightTales.esp'
       - 'BetterQuestObjectives.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'version("ESFCompanions.esp", "0.3.8", >=) and active("Requiem.esp") and not active("Requiem - ESF Companions.esp")'
     dirty:
       - crc: 0x16c76fa7
@@ -17144,7 +17144,7 @@ plugins:
       - <<: *reqModX
         condition: 'active("Unofficial Skyrim Patch.esp") and not file("RSChildren_PatchUSKP.esp") and not file("RSChildren_CompleteUSKP.esp")'
         subs: [ '[RSChildren USKP Patch](http://www.nexusmods.com/skyrim/mods/55555/)' ]
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - RS Children Overhaul.esp")'
     clean:
       # version: 1.2.0
@@ -17152,7 +17152,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'RSChildren.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - RS Children Overhaul.esp")'
     clean:
       # version: 1.2.0 Update - 170623
@@ -17906,7 +17906,7 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("SkyTEST-RealisticAnimals&Predators\.es(p|m)")'
         subs: [ 'SkyTEST-RealisticAnimals&Predators plugin' ]
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - SkyTEST.esp")'
   - name: 'Convenient Horses.esp'
     msg: [ *doNotClean ]
@@ -18090,7 +18090,7 @@ plugins:
     after:
       - 'BetterQuestObjectives.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Timing Is Everything.esp")'
     dirty:
       - crc: 0x99c43ba5
@@ -22826,7 +22826,7 @@ plugins:
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'Inigo.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Inigo.esp")'
     dirty:
       - crc: 0xb9fc7507
@@ -24324,7 +24324,7 @@ plugins:
 # test placement of Brhuce as for Vilja; Trainwiz reco to place after every follower mod incl aft but I''m skeptical -LD
   - name: 'EMCompViljaSkyrim.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Vilja.esp")'
     dirty:
       - crc: 0xc45d4383
@@ -24490,7 +24490,7 @@ plugins:
           - lang: ja
             text: 'Live Another Life.espが見つかりました。新バージョンを使う前に古いバージョンをアンインストールしてください。'
         condition: 'file("Live Another Life.esp")'
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Live Another Life.esp")'
     tag:
       - C.Location
@@ -26758,7 +26758,7 @@ plugins:
     url: [ 'http://www.nexusmods.com/skyrim/mods/52326' ]
   - name: 'Campfire.esm'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
       - <<: *patchRSE
         condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
@@ -26768,7 +26768,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'CompanionArissa.esm'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Arissa.esp")'
     dirty:
       # version: 2.2.2
@@ -27087,7 +27087,7 @@ plugins:
       - <<: *patchIncluded
         condition: 'active("Alternate Start - Live Another Life.esp") and not active("Skyrim Unlocked - Live Another Life Patch.esp")'
         subs: [ 'Alternate Start - Live Another Life' ]
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Skyrim Unlocked.esp") and not active("Requiem - Skyrim Unlocked - OCS.esp")'
   - name: 'Skyrim Unlocked - Immersive College of Winterhold Patch.esp'
     req:
@@ -27108,7 +27108,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Craftable Horse Barding.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Craftable Horse Barding.esp")'
     clean:
       # version: 3.4
@@ -27117,7 +27117,7 @@ plugins:
   - name: 'ExplosiveBoltsVisualized.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21922' ]
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'version("Requiem.esp", "2.0.0", <) and not active("Requiem - Explosive Bolts Visualized.esp")'
       - <<: *deletePlugin
         condition: 'active("ExplosiveBoltsVisualized.esp") and active("Requiem - Explosive Bolts Visualized.esp")'
@@ -27127,15 +27127,15 @@ plugins:
         subs: [ 'the SkyRe patch for Explosive Bolts Visualized' ]
   - name: 'DeadlyDragons.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Deadly Dragons.esp") and not active("Requiem - Deadly Dragons - AOS.esp")'
   - name: 'Dragon Combat Overhaul.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Dragon Combat Overhaul.esp")'
   - name: 'Faction Crossbows.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Faction Crossbows.esp")'
   - name: 'FireAndIceOverhaul.esp'
     msg:
@@ -27143,7 +27143,7 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Requiem - Fire and Ice Overhaul.esp") and not active("Requiem - Fire and Ice Overhaul - AOS.esp")'
   - name: 'Frostfall.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
       - <<: *patchRSE
         condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
@@ -27153,7 +27153,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'HothFollower.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Hoth.esp")'
   - name: 'Hypothermia.esp'
     msg:
@@ -27161,7 +27161,7 @@ plugins:
         condition: 'active("Requiem.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
   - name: 'Immersive Horses.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Horses.esp") and not active("Requiem - Immersive Horses - SkyTEST.esp")'
     clean:
       # version: 2.5
@@ -27169,7 +27169,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Immersive Patrols II.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Patrols.esp") and not active("Requiem - Immersive Patrols - CWO.esp")'
     clean:
       # version: 2.2.0
@@ -27180,7 +27180,7 @@ plugins:
       - <<: *patchIncluded
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
         subs: [ 'Requiem' ]
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
     clean:
       # version: 2.02
@@ -27188,7 +27188,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'imp_helm_legend.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Improved Closefaced Helmets.esp")'
       - <<: *deletePlugin
         condition: 'active("imp_helm_legend.esp") and version("Requiem - Improved Closefaced Helmets.esp", "2.12", >=)'
@@ -27207,7 +27207,7 @@ plugins:
       - Graphics
   - name: 'Inconsequential NPCs.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Inconsequential NPCs.esp")'
     dirty:
       # version: 1.9e
@@ -27221,7 +27221,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Inconsequential NPCs - Enhancement.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Inconsequential NPCs - Enhancement.esp")'
       - <<: *alreadyInX
         condition: 'active("Requiem - Inconsequential NPCs - Enhancement.esp")'
@@ -27234,7 +27234,7 @@ plugins:
   - name: 'RUSTIC SOULGEMS - (Uns|S)orted\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/63766' ]
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Rustic Soulgems.esp") and not active("Requiem - Rustic Soulgems - ISC.esp")'
       - <<: *deletePlugin
         condition: 'active("RUSTIC SOULGEMS - (Uns|S)orted\.esp") and active("Requiem - Rustic Soulgems( - ISC)?.esp")'
@@ -27243,11 +27243,11 @@ plugins:
       - Names
   - name: 'ScopedBows.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Scoped Bows.esp")'
   - name: 'Unique Uniques.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Unique Uniques.esp") and not active("Requiem - Unique Uniques - AOS.esp")'
     clean:
       # version: 1.8
@@ -27255,7 +27255,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'VioLens.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - VioLens.esp")'
     clean:
       # version: 2.11
@@ -27263,7 +27263,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'WM Flora Fixes.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - WM Flora Fixes.esp")'
     clean:
       # version: 2.01
@@ -27289,7 +27289,7 @@ plugins:
           - '[Immersive Jewelry - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83771)'
   - name: 'Wild World.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Wild World.esp")'
     clean:
       # version: 1.42
@@ -27644,7 +27644,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Book Covers Skyrim - Lost Library.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Lost Library.esp")'
     clean:
       # version: 1.7
@@ -28468,7 +28468,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Common Clothes and Armors.esp'
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Common Clothes and Armors.esp")'
     clean:
       # version: 1.1.0
@@ -28633,5 +28633,5 @@ plugins:
   - name: 'Lucien.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/95029' ]
     msg:
-      - <<: *patchRPC
+      - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Lucien.esp")'
