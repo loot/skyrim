@@ -904,8 +904,9 @@ plugins:
   - name: 'Falskaar.esm'
     group: *newLandsGroup
     msg:
-      - <<: *patchRequiemNRM
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Falskaar - Requiem Patch.esp")'
+        subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
     clean:
       # version: 1.2.1
       - crc: 0xDDFDBEDE
@@ -916,8 +917,9 @@ plugins:
     after:
       - 'Falskaar.esm'
     msg:
-      - <<: *patchRequiemNRM
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Wyrmstooth - Requiem Patch.esp")'
+        subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
     dirty:
       - crc: 0x54f43cef
         <<: *dirtyPlugin
@@ -22672,8 +22674,9 @@ plugins:
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
   - name: '3DNPC.esp'
     msg:
-      - <<: *patchRequiemNRM
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM 3DNPC - Requiem Patch.esp")'
+        subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
     dirty:
       - crc: 0x143c788a
         <<: *dirtyPlugin
@@ -26408,8 +26411,9 @@ plugins:
             text: 'This mod has certain conflicts with "MoonAndStar_MAS.esp". Consider using [the compatibility patch](http://www.nexusmods.com/skyrim/mods/52397/).'
           - lang: ja
             text: 'このModはMoonAndStar_MAS.espと一部で競合します。[互換パッチ](http://www.nexusmods.com/skyrim/mods/52397/)を使用してみてください。'
-      - <<: *patchRequiemNRM
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Undeath - Requiem Patch.esp")'
+        subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
     url: [ 'http://www.nexusmods.com/skyrim/mods/40607' ]
   - name: 'Verdant - A Skyrim Grass Plugin.esp'
     after:
