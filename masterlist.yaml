@@ -14060,10 +14060,9 @@ plugins:
       - 'OBIS.esp'
       - 'OBISDB.esp'
     msg:
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("Requiem - Civil War Overhaul Patch.esp")'
         subs:
-          - 'Requiem'
           - '[Requiem - Civil War Overhaul Patch](https://www.nexusmods.com/skyrim/mods/63146)'
     dirty:
       - crc: 0x49e6e0bd
@@ -16062,10 +16061,9 @@ plugins:
     after:
       - 'BetterQuestObjectives.esp'
     msg:
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("CAR-ContentAddonReqtified.esp")'
         subs:
-          - 'Requiem'
           - '[CAR - Content Addon Reqtified](https://www.nexusmods.com/skyrim/mods/72562)'
     tag:
       - Delev
@@ -16201,10 +16199,9 @@ plugins:
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", >=) and not active("Requiem - Book Covers Skyrim.esp")'
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("REQ - BCS Patch.esp")'
         subs:
-          - 'Requiem'
           - '[Book Covers Skyrim - Compatibility Patch Collection](https://www.nexusmods.com/skyrim/mods/50441)'
     tag:
       - Graphics
@@ -17583,10 +17580,9 @@ plugins:
       - <<: *patchRequiemMRP
         condition: 'checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Requiem - Revenge of the Enemies.esp")'
       # version: 2.0 and later
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'not checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Rebirth Monster - Requiem Patch.esp") and not active("Rebirth Monster - Requiem Merged Patch.esp")'
         subs:
-          - 'Requiem'
           - '[Revenge of the Enemies Patches](https://www.nexusmods.com/skyrim/mods/73369)'
     tag:
       - Delev
@@ -19188,10 +19184,9 @@ plugins:
           - lang: ja
             text: '盗用されたコンテンツです。製作者の権利に配慮するよう願います。[こちら](http://www.nexusmods.com/skyrim/mods/8058)から正規のファイルをダウンロードできます。'
         condition: 'checksum("Open Cities Skyrim.esp", 022AD2C8)'
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem-OpenCities.esp")'
         subs:
-          - 'Requiem'
           - '[Arbitrated Patches](https://www.nexusmods.com/skyrim/mods/56736)'
       - <<: *semiCompatible
         condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", >=)'
@@ -27253,17 +27248,15 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Requiem - Dawnguard Arsenal.esp")'
   - name: 'One With Nature.*\.esp'
     msg:
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("Requiem - One With Nature.esp")'
         subs:
-          - 'Requiem'
           - '[One With Nature - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83639)'
   - name: 'Immersive Jewelry.esp'
     msg:
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Jewelry( BTC| ISC)?\.esp")'
         subs:
-          - 'Requiem'
           - '[Immersive Jewelry - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83771)'
   - name: 'Wild World.esp'
     msg:
