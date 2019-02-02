@@ -16200,9 +16200,9 @@ plugins:
       - 'BetterQuestObjectives.esp'
     msg:
       - <<: *patchRequiemRPC
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", >=) and not active("Requiem - Book Covers Skyrim.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", >=) and not active("Requiem - Book Covers Skyrim.esp")'
       - <<: *patch3rdParty
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("REQ - BCS Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("REQ - BCS Patch.esp")'
         subs:
           - 'Requiem'
           - '[Book Covers Skyrim - Compatibility Patch Collection](https://www.nexusmods.com/skyrim/mods/50441)'
@@ -19189,12 +19189,12 @@ plugins:
             text: '盗用されたコンテンツです。製作者の権利に配慮するよう願います。[こちら](http://www.nexusmods.com/skyrim/mods/8058)から正規のファイルをダウンロードできます。'
         condition: 'checksum("Open Cities Skyrim.esp", 022AD2C8)'
       - <<: *patch3rdParty
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem-OpenCities.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem-OpenCities.esp")'
         subs:
           - 'Requiem'
           - '[Arbitrated Patches](https://www.nexusmods.com/skyrim/mods/56736)'
       - <<: *semiCompatible
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", >=)'
         subs:
           - 'Requiem'
           - 'Requiem''s changes to locks in cities will be reverted.'
@@ -27094,7 +27094,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/21922' ]
     msg:
       - <<: *patchRequiemRPC
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem - Explosive Bolts Visualized.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem - Explosive Bolts Visualized.esp")'
       - <<: *deletePlugin
         condition: 'active("ExplosiveBoltsVisualized.esp") and active("Requiem - Explosive Bolts Visualized.esp")'
         subs: [ 'the Requiem patch for Explosive Bolts Visualized' ]
