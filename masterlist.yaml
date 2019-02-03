@@ -9417,6 +9417,7 @@ plugins:
     msg: [ *obsolete ]
 ### Rules for Requiem and its patches ###
   - name: 'Requiem.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/19281' ]
     group: *requiemGroup
     inc:
       - 'Requiem plus PCEA 3-5.esp'
@@ -9447,8 +9448,6 @@ plugins:
     tag:
       - Delev
       - Relev
-    url:
-      - 'http://www.nexusmods.com/skyrim/mods/19281'
     dirty:
       - crc: 0x3b5fc1df
         <<: *dirtyPlugin
@@ -9463,46 +9462,33 @@ plugins:
         itm: 306
         udr: 10
   - name: 'Requiem - Bugsmasher Edition.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/19281' ]
     group: *requiemBugsmasherGroup
   - name: 'Requiem - Legendary Bugsmasher Edition.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/19281' ]
     group: *requiemBugsmasherGroup
-  - name: 'Requiem - Hearthfires.esp'
-    group: *requiemDLCGroup
-    dirty:
-      - crc: 0xa3a78f22
-        <<: *dirtyPlugin
-        itm: 1
-    url:
-      - 'http://www.nexusmods.com/skyrim/mods/58121'
-  # This is the old dragonborn patch by azirok
-  - name: 'Requiem - Dragonborn.esp'
-    group: *requiemDLCGroup
-    dirty:
-      - crc: 0x740bb9f0
-        <<: *dirtyPlugin
-        itm: 3
-    url:
-      - 'http://www.nexusmods.com/skyrim/mods/54562'
   - name: 'Requiem - Hearthfire.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     group: *requiemDLCGroup
     msg:
       - <<: *alreadyInX
-        condition: 'active("Requiem - Hearthfire.esp") and version("Requiem.esp", "2.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
+        condition: 'version("Requiem.esp", "2.0.0", >=)'
+        subs: [ 'Requiem 2.0.0 and higher' ]
   - name: 'NRM_Dragonborn_Reqtified.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/60508' ]
     group: *requiemDLCGroup
     inc:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
   - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/78139' ]
     group: *requiemDLCGroup
-  - name: 'Requiem - WAF+Clothing and Clutter Fixes Patch.esp'
-    group: *requiemWAFRGroup
-    inc:
-      - 'KFR-Kryptopyr''sFixesReqtified.esp'
-  - name: 'Requiem - WAF+CCF+TrueWeapons Patch.esp'
-    group: *requiemWAFRGroup
-    inc:
-      - 'KFR-Kryptopyr''sFixesReqtified.esp'
+  - name: 'Requiem - Vanilla Dragonborn DLC.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19281' ]
+    group: *requiemDLCGroup
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp")'
+        subs: [ 'Fozar''s Requiem - Dragonborn Patch' ]
   - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61520' ]
     group: *requiemWAFRGroup
@@ -9526,18 +9512,24 @@ plugins:
     req:
       - 'COR-CraftingOverhaulReqtified.esp'
   - name: 'Requiem - Cutting Room Floor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     group: *requiemEarlyGroup
   - name: 'Requiem - Audio Overhaul for Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     group: *requiemEarlyGroup
     after:
       - 'Requiem - Cutting Room Floor.esp'
   - name: 'Requiem - Immersive Sounds Compendium.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     group: *requiemEarlyGroup
   - name: 'Requiem - Height Adjusted Races with True Giants.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/58141' ]
     group: *requiemEarlyGroup
   - name: 'Requiem - True Giants and Mammoths.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/58141' ]
     group: *requiemEarlyGroup
   - name: 'Requiem - Guard Dialogue & Open Helmets.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/52602' ]
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
   - name: 'Requiem_Minor_Arcana.esp'
@@ -9554,47 +9546,38 @@ plugins:
       - 'Requiem - Immersive Spells.esp'
       - 'Requiem - Civil War Overhaul Patch.esp'
       - 'Requiem - ESF Companions.esp'
-  - name: 'Requiem - WRF_MinorArcana_MortalEnemies_TG.esp'
-    after:
-      - 'Requiem_Minor_Arcana.esp'
   - name: 'Requiem - Immersive Horses( - SkyTEST)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
       - 'REQMOD.esp'
       - 'Requiem_Minor_Arcana.esp'
       - 'Requiem - SkyTEST.esp'
       - 'Requiem - Wild World.esp'
   - name: 'Requiem - Immersive Horses - SkyTEST.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     req:
       - 'Requiem - SkyTEST.esp'
   - name: 'Requiem - Craftable Horse Barding.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
       - 'Requiem - Immersive Horses.esp'
       - 'Requiem - Immersive Horses - SkyTEST.esp'
   - name: 'Requiem - Deadly Dragons( - AOS)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
       - 'Requiem - Wild World.esp'
   - name: 'Requiem - Timing Is Everything.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
       - 'Requiem_Minor_Arcana.esp'
-  - name: 'Requiem - Difficulty Bar Restored.esp'
-    inc:
-      - 'Requiem - Difficulty Bar Restored - Nightmare.esp'
   - name: 'Requiem - No Overencumbered Messages.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19281' ]
     msg:
       - <<: *alreadyInX
         condition: 'active("Requiem - No Messages.esp")'
         subs: [ 'Requiem - No Messages.esp' ]
-  - name: 'Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp")'
-        subs: [ 'TrainUnitsPerLevel .esp file' ]
-  - name: 'Requiem - Weapon Damage Modifier (2|3)x Vanilla.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("Requiem - TrainUnitsPerLevel(0|5|10|100)\.esp")'
-        subs: [ 'Requiem - Weapon Damage Modifier .esp file' ]
   - name: 'Open Face Guard Helmets.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/52602' ]
     after:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
   - name: 'Bounty Gold.esp'
@@ -9641,6 +9624,7 @@ plugins:
     after:
       - 'Requiem.esp'
   - name: 'Requiem - Realistic Darkness.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/63297' ]
     after:
       - 'Requiem.esp'
   - name: 'Clairvoyance.esp'
@@ -14076,10 +14060,9 @@ plugins:
       - 'OBIS.esp'
       - 'OBISDB.esp'
     msg:
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("Requiem - Civil War Overhaul Patch.esp")'
         subs:
-          - 'Requiem'
           - '[Requiem - Civil War Overhaul Patch](https://www.nexusmods.com/skyrim/mods/63146)'
     dirty:
       - crc: 0x49e6e0bd
@@ -16078,10 +16061,9 @@ plugins:
     after:
       - 'BetterQuestObjectives.esp'
     msg:
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("CAR-ContentAddonReqtified.esp")'
         subs:
-          - 'Requiem'
           - '[CAR - Content Addon Reqtified](https://www.nexusmods.com/skyrim/mods/72562)'
     tag:
       - Delev
@@ -16216,11 +16198,10 @@ plugins:
       - 'BetterQuestObjectives.esp'
     msg:
       - <<: *patchRequiemRPC
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", >=) and not active("Requiem - Book Covers Skyrim.esp")'
-      - <<: *patch3rdParty
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("REQ - BCS Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", >=) and not active("Requiem - Book Covers Skyrim.esp")'
+      - <<: *patchRequiem3rdParty
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("REQ - BCS Patch.esp")'
         subs:
-          - 'Requiem'
           - '[Book Covers Skyrim - Compatibility Patch Collection](https://www.nexusmods.com/skyrim/mods/50441)'
     tag:
       - Graphics
@@ -17599,10 +17580,9 @@ plugins:
       - <<: *patchRequiemMRP
         condition: 'checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Requiem - Revenge of the Enemies.esp")'
       # version: 2.0 and later
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'not checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Rebirth Monster - Requiem Patch.esp") and not active("Rebirth Monster - Requiem Merged Patch.esp")'
         subs:
-          - 'Requiem'
           - '[Revenge of the Enemies Patches](https://www.nexusmods.com/skyrim/mods/73369)'
     tag:
       - Delev
@@ -19204,13 +19184,12 @@ plugins:
           - lang: ja
             text: '盗用されたコンテンツです。製作者の権利に配慮するよう願います。[こちら](http://www.nexusmods.com/skyrim/mods/8058)から正規のファイルをダウンロードできます。'
         condition: 'checksum("Open Cities Skyrim.esp", 022AD2C8)'
-      - <<: *patch3rdParty
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem-OpenCities.esp")'
+      - <<: *patchRequiem3rdParty
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem-OpenCities.esp")'
         subs:
-          - 'Requiem'
           - '[Arbitrated Patches](https://www.nexusmods.com/skyrim/mods/56736)'
       - <<: *semiCompatible
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", >=)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", >=)'
         subs:
           - 'Requiem'
           - 'Requiem''s changes to locks in cities will be reverted.'
@@ -27110,7 +27089,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/21922' ]
     msg:
       - <<: *patchRequiemRPC
-        condition: 'file("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem - Explosive Bolts Visualized.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem - Explosive Bolts Visualized.esp")'
       - <<: *deletePlugin
         condition: 'active("ExplosiveBoltsVisualized.esp") and active("Requiem - Explosive Bolts Visualized.esp")'
         subs: [ 'the Requiem patch for Explosive Bolts Visualized' ]
@@ -27269,17 +27248,15 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Requiem - Dawnguard Arsenal.esp")'
   - name: 'One With Nature.*\.esp'
     msg:
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("Requiem - One With Nature.esp")'
         subs:
-          - 'Requiem'
           - '[One With Nature - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83639)'
   - name: 'Immersive Jewelry.esp'
     msg:
-      - <<: *patch3rdParty
+      - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Jewelry( BTC| ISC)?\.esp")'
         subs:
-          - 'Requiem'
           - '[Immersive Jewelry - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83771)'
   - name: 'Wild World.esp'
     msg:
