@@ -525,26 +525,8 @@ groups:
   - name: &requiemGroup Requiem
     after: [ *morrowlootGroup ]
 
-  - name: &requiemBugsmasherGroup Requiem - Bugsmasher
-    after: [ *requiemGroup ]
-
-  - name: &requiemDLCGroup Requiem - DLC Patches
-    after: [ *requiemBugsmasherGroup ]
-
-  - name: &requiemWAFRGroup Requiem - WAFR & CCR
-    after: [ *requiemDLCGroup ]
-
-  - name: &requiemCCORGroup Requiem - CCOR
-    after: [ *requiemWAFRGroup ]
-
-  - name: &requiemEarlyGroup Requiem - Early Patches
-    after: [ *requiemCCORGroup ]
-
-  - name: &requiemPatchesGroup Requiem - Misc. Patches
-    after: [ *requiemEarlyGroup ]
-
   - name: &ocsGroup Open Cities Skyrim
-    after: [ *requiemPatchesGroup ]
+    after: [ *requiemGroup ]
 
   - name: &alternateStartGroup Alternate Start & Requiem
     after: [ *ocsGroup ]
@@ -9461,73 +9443,44 @@ plugins:
         <<: *dirtyPlugin
         itm: 306
         udr: 10
-  - name: 'Requiem - Bugsmasher Edition.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/19281' ]
-    group: *requiemBugsmasherGroup
-  - name: 'Requiem - Legendary Bugsmasher Edition.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/19281' ]
-    group: *requiemBugsmasherGroup
   - name: 'Requiem - Hearthfire.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    group: *requiemDLCGroup
     msg:
       - <<: *alreadyInX
         condition: 'version("Requiem.esp", "2.0.0", >=)'
         subs: [ 'Requiem 2.0.0 and higher' ]
   - name: 'NRM_Dragonborn_Reqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/60508' ]
-    group: *requiemDLCGroup
     inc:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
-  - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/78139' ]
-    group: *requiemDLCGroup
   - name: 'Requiem - Vanilla Dragonborn DLC.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19281' ]
-    group: *requiemDLCGroup
     msg:
       - <<: *alreadyInX
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp")'
         subs: [ 'Fozar''s Requiem - Dragonborn Patch' ]
   - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61520' ]
-    group: *requiemWAFRGroup
     msg:
       - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("KFR-FZR.esp")'
         subs: [ 'Fozar''s Dragonborn Patch' ]
   - name: 'KFR-(?!Kryptopyr''sFixesReqtified).+\.esp'
-    group: *requiemWAFRGroup
     req:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
   - name: 'COR-CraftingOverhaulReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61569' ]
-    group: *requiemCCORGroup
     msg:
       - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("COR-FZR.esp")'
         subs: [ 'Fozar''s Dragonborn patch' ]
   - name: 'COR-(?!CraftingOverhaulReqtified).+\.esp'
-    group: *requiemCCORGroup
     req:
       - 'COR-CraftingOverhaulReqtified.esp'
-  - name: 'Requiem - Cutting Room Floor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    group: *requiemEarlyGroup
   - name: 'Requiem - Audio Overhaul for Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    group: *requiemEarlyGroup
     after:
       - 'Requiem - Cutting Room Floor.esp'
-  - name: 'Requiem - Immersive Sounds Compendium.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    group: *requiemEarlyGroup
-  - name: 'Requiem - Height Adjusted Races with True Giants.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/58141' ]
-    group: *requiemEarlyGroup
-  - name: 'Requiem - True Giants and Mammoths.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/58141' ]
-    group: *requiemEarlyGroup
   - name: 'Requiem - Guard Dialogue & Open Helmets.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/52602' ]
     after:
