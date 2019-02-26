@@ -605,7 +605,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("Hearthfires.esm") and file("Dragonborn.esm")'
+        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
     tag:
       - C.Acoustic
       - C.Climate
@@ -673,7 +673,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("Hearthfires.esm") and file("Dragonborn.esm")'
+        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
     tag:
       - C.Climate
       - C.Encounter
@@ -701,7 +701,7 @@ plugins:
     after:
       - 'SCO Winter Landscape Decoloration.esp'
       - 'SCO Winter Landscape Decoloration - Solstheim.esp'
-  - name: 'Hearthfires.esm'
+  - name: 'HearthFires.esm'
     group: *unofficialPatchGroup
     after:
       - name: 'Unofficial Skyrim Patch.esp'
@@ -757,7 +757,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("Hearthfires.esm") and file("Dragonborn.esm")'
+        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
     tag:
       - C.Climate
       - C.Location
@@ -768,7 +768,7 @@ plugins:
       - Sound
   - name: 'SMPC_HF.esp'
     after:
-      - 'Hearthfires.esm'
+      - 'HearthFires.esm'
       - 'Unofficial Hearthfire Patch.esp'
     msg: [ *harmful ]
   - name: 'Dragonborn.esm'
@@ -781,7 +781,7 @@ plugins:
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
       - 'SMPC_DG.esp'
-      - 'Hearthfires.esm'
+      - 'HearthFires.esm'
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
       - 'SMPC_HF.esp'
@@ -814,7 +814,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("Hearthfires.esm") and file("Dragonborn.esm")'
+        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
     tag:
       - C.Climate
       - C.Encounter
@@ -3054,7 +3054,7 @@ plugins:
             text: 'Use Remove Interior Fog V2 - Hearthfire.esp in addition to include Hearthfires locations.'
           - lang: ja
             text: 'Hearthfiresのロケーションに対応させるためにRemove Interior Fog V2 - Hearthfire.espを使用してください。'
-        condition: 'file("Hearthfires.esm")'
+        condition: 'file("HearthFires.esm")'
   - name: 'Remove Interior Fog V2 - Full Version.esp'
     msg:
       - type: error
@@ -3614,7 +3614,7 @@ plugins:
         udr: 3
   - name: 'Birds.esp'
     inc:
-      - 'Hearthfires.esm'
+      - 'HearthFires.esm'
     dirty:
       - crc: 0x200672c3
         <<: *dirtyPlugin
@@ -3622,7 +3622,7 @@ plugins:
         udr: 2
   - name: 'Birdsclean.esp'
     inc:
-      - 'Hearthfires.esm'
+      - 'HearthFires.esm'
       - 'Birds.esp'
     dirty:
       - crc: 0xdcf07465
@@ -4187,14 +4187,14 @@ plugins:
             text: 'Use Hearthfires version.'
           - lang: ja
             text: 'Hearthfiresバージョンを使用してください。'
-        condition: 'active("Hearthfires.esm") and checksum("Grind_stuff.esp",31CCFA29)'
+        condition: 'active("HearthFires.esm") and checksum("Grind_stuff.esp",31CCFA29)'
       - type: error
         content:
           - lang: en
             text: 'Use non-Hearthfires version.'
           - lang: ja
             text: 'Hearthfiresバージョン以外を使用してください。'
-        condition: 'not active("Hearthfires.esm") and checksum("Grind_stuff.esp",5E014754)'
+        condition: 'not active("HearthFires.esm") and checksum("Grind_stuff.esp",5E014754)'
   - name: 'Guard Build (HF) 1.esp'
     dirty:
       - crc: 0x374c0a09
@@ -5520,14 +5520,14 @@ plugins:
             text: 'Use Hearthfires version.'
           - lang: ja
             text: 'Hearthfiresバージョンを使用してください。'
-        condition: 'active("Hearthfires.esm") and checksum("Statues.esp",C08BE2C5)'
+        condition: 'active("HearthFires.esm") and checksum("Statues.esp",C08BE2C5)'
       - type: error
         content:
           - lang: en
             text: 'Use Vanilla version.'
           - lang: ja
             text: 'Vanillaバージョンを使用してください。'
-        condition: 'not active("Hearthfires.esm") and checksum("Statues.esp",5081E67A)'
+        condition: 'not active("HearthFires.esm") and checksum("Statues.esp",5081E67A)'
   - name: 'SteamAchievementUnlocker.esp'
     dirty:
       - crc: 0x67cb652
@@ -15867,7 +15867,7 @@ plugins:
             text: 'Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.'
           - lang: ja
             text: 'DawnguardとHearthfiresのアイテムを調整したい場合はDawnguard and Hearthfiresバージョンを使用してください。'
-        condition: 'active("Hearthfires.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
+        condition: 'active("HearthFires.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
     dirty:
       - crc: 0x770f0bb8
         <<: *dirtyPlugin
@@ -16635,7 +16635,7 @@ plugins:
             text: 'Use Distant DetailHF.esp'
           - lang: ja
             text: 'Distant DetailHF.espを使用してください。'
-        condition: 'active("Hearthfires.esm")'
+        condition: 'active("HearthFires.esm")'
   - name: 'Distant DetailHF.esp'
     msg:
       - type: say
@@ -18127,7 +18127,7 @@ plugins:
             text: 'Use Hearthfires version to get changes made to Hearthfires food.'
           - lang: ja
             text: 'Hearthfiresの食べ物にも変更を加えるならHearthfiresバージョンを使用してください。'
-        condition: 'active("Hearthfires.esm")'
+        condition: 'active("HearthFires.esm")'
   - name: 'valkiirs_tastier_food_hearthfire.esp'
     inc:
       - 'valkiirs_tastier_food.esp'
@@ -18818,7 +18818,7 @@ plugins:
             text: 'You need to use Heartfires version of Oakwood to work as intended with Hearthfires.'
           - lang: ja
             text: 'Hearthfiresでも本来の動作をさせるにはHeartfiresバージョンのOakwoodを使用する必要があります。'
-        condition: 'active("Hearthfires.esm")'
+        condition: 'active("HearthFires.esm")'
     dirty:
       - crc: 0x9ff8763e
         <<: *dirtyPlugin
@@ -18962,7 +18962,7 @@ plugins:
             text: 'Incompatible with: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.'
           - lang: ja
             text: '競合: Hearthfires（Hearthfiresバージョンを使用してください。）'
-        condition: 'active("Hearthfires.esm") and ( checksum("LakeExpanded01.esp",43AEF0BF) or checksum("LakeExpanded01.esp",843EB3FC) )'
+        condition: 'active("HearthFires.esm") and ( checksum("LakeExpanded01.esp",43AEF0BF) or checksum("LakeExpanded01.esp",843EB3FC) )'
     dirty:
       - crc: 0x43aef0bf
         <<: *dirtyPlugin
@@ -22986,7 +22986,7 @@ plugins:
       - name: 'UFO - Dawnguard AddOn.esp'
         condition: 'active("Dawnguard.esm") and checksum("UFO - Ultimate Follower Overhaul.esp",396AE69F)'
       - name: 'UFO - Heartfire AddOn.esp'
-        condition: 'active("Hearthfires.esm") and checksum("UFO - Ultimate Follower Overhaul.esp",396AE69F)'
+        condition: 'active("HearthFires.esm") and checksum("UFO - Ultimate Follower Overhaul.esp",396AE69F)'
     msg:
       - type: say
         content:
@@ -24341,7 +24341,7 @@ plugins:
         condition: 'active("Dawnguard.esm") and not active("Change Follower Outfits Redux -- Dawnguard.esp")'
       - <<: *reqModX
         subs: [ '[Hearthfire Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
-        condition: 'active("Hearthfires.esm") and not active("Change Follower Outfits Redux -- Hearthfire.esp")'
+        condition: 'active("HearthFires.esm") and not active("Change Follower Outfits Redux -- Hearthfire.esp")'
       - <<: *reqModX
         subs: [ '[Dragonborn Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
         condition: 'active("Dragonborn.esm") and not active("Change Follower Outfits Redux -- Dragonborn.esp")'
