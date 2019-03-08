@@ -27355,7 +27355,7 @@ plugins:
   - name: 'Inconsequential NPCs - Enhancement.esp'
     msg:
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Inconsequential NPCs - Enhancement.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", <) and not active("Requiem - Inconsequential NPCs - Enhancement.esp")'
       - <<: *alreadyInX
         condition: 'active("Requiem - Inconsequential NPCs - Enhancement.esp")'
         subs: [ 'Requiem - Inconsequential NPCs - Enhancement.esp' ]
