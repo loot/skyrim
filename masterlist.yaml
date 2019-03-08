@@ -9415,10 +9415,10 @@ plugins:
       - <<: *doNotClean
         condition: 'version("Requiem.esp", "1.9.3", >=)'
       - <<: *patchIncluded
-        condition: 'active("Unofficial Skyrim Patch.esp") and not active("Requiem - Bugsmasher Edition.esp")'
+        condition: 'version("Requiem.esp", "2.0.0", <) and active("Unofficial Skyrim Patch.esp") and not active("Requiem - Bugsmasher Edition.esp")'
         subs: [ 'Unofficial Skyrim Patch' ]
       - <<: *patchIncluded
-        condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp") and not active("Requiem - Legendary Bugsmasher Edition.esp")'
+        condition: 'version("Requiem.esp", "3.0.0", <) and active("Unofficial Skyrim Legendary Edition Patch.esp") and not active("Requiem - Legendary Bugsmasher Edition.esp")'
         subs: [ 'Unofficial Skyrim Legendary Edition Patch' ]
       - type: error
         content:
