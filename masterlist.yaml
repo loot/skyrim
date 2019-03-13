@@ -9415,10 +9415,10 @@ plugins:
       - <<: *doNotClean
         condition: 'version("Requiem.esp", "1.9.3", >=)'
       - <<: *patchIncluded
-        condition: 'active("Unofficial Skyrim Patch.esp") and not active("Requiem - Bugsmasher Edition.esp")'
+        condition: 'version("Requiem.esp", "2.0.0", <) and active("Unofficial Skyrim Patch.esp") and not active("Requiem - Bugsmasher Edition.esp")'
         subs: [ 'Unofficial Skyrim Patch' ]
       - <<: *patchIncluded
-        condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp") and not active("Requiem - Legendary Bugsmasher Edition.esp")'
+        condition: 'version("Requiem.esp", "3.0.0", <) and active("Unofficial Skyrim Legendary Edition Patch.esp") and not active("Requiem - Legendary Bugsmasher Edition.esp")'
         subs: [ 'Unofficial Skyrim Legendary Edition Patch' ]
       - type: error
         content:
@@ -9426,7 +9426,7 @@ plugins:
             text: 'Delete MineOreScript.pex from Requiem. [CCOR](http://www.nexusmods.com/skyrim/mods/49791)''s script must take precedence.'
           - lang: ja
             text: 'RequiemのMineOreScript.pexは削除してください。[CCOR](http://www.nexusmods.com/skyrim/mods/49791)側のスクリプトを優先させる必要があります。'
-        condition: 'active("Complete Crafting Overhaul_Remade.esp") and (checksum("Scripts/MineOreScript.pex", 82F96995) or checksum("Scripts/MineOreScript.pex", 0332450B) or checksum("Scripts/MineOreScript.pex", 8FFEAA3B))'
+        condition: 'active("Complete Crafting Overhaul_Remade.esp") and (checksum("Scripts/MineOreScript.pex", 82F96995) or checksum("Scripts/MineOreScript.pex", 0332450B) or checksum("Scripts/MineOreScript.pex", 8FFEAA3B) or checksum("Scripts/MineOreScript.pex", 73C11655))'
     tag:
       - Delev
       - Relev
@@ -27355,7 +27355,7 @@ plugins:
   - name: 'Inconsequential NPCs - Enhancement.esp'
     msg:
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Inconsequential NPCs - Enhancement.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", <) and not active("Requiem - Inconsequential NPCs - Enhancement.esp")'
       - <<: *alreadyInX
         condition: 'active("Requiem - Inconsequential NPCs - Enhancement.esp")'
         subs: [ 'Requiem - Inconsequential NPCs - Enhancement.esp' ]
