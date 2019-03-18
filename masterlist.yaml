@@ -20206,8 +20206,10 @@ plugins:
           - lang: ja
             text: '吸血鬼のシステムを変更するModとは競合します。'
       - <<: *patchProvided
-        condition: 'active("Requiem.esp") and not active("mslVampiricThirst - Requiem.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", <) and not active("mslVampiricThirst - Requiem.esp")'
         subs: [ 'Requiem' ]
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", >=) and not active("Requiem - Vampiric Thirst.esp")'
     dirty:
       - crc: 0xfafb18c2
         <<: *dirtyPlugin
