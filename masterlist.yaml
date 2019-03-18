@@ -20192,7 +20192,8 @@ plugins:
         subs: [ 'LFox Werewolf Improvements.esp' ]
   - name: 'mslVampiricThirst.esp'
     after:
-      - 'Requiem.esp'
+      - name: 'Requiem.esp'
+        condition: 'version("Requiem.esp", "3.0.0", <)'
       - 'Requiem - Bugsmasher Edition.esp'
       - 'Requiem - Legendary Bugsmasher Edition.esp'
     req: [ *SKSE ]
