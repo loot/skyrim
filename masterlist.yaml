@@ -22949,12 +22949,15 @@ plugins:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Inigo.esp")'
     dirty:
-      - crc: 0xb9fc7507
-        <<: *dirtyPlugin
-        itm: 10
-      - crc: 0x4321049d
-        <<: *dirtyPlugin
-        itm: 39
+      # version: 2.3
+      - <<: *quickClean
+        crc: 0x6371E737
+        util: '[TES5Edit v4.0.2](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 36
+    clean:
+      # version: 2.3
+      - crc: 0x34DF3757
+        util: 'TES5Edit v4.0.2'
   - name: 'tos_laintardale_hf.esp'
     dirty:
       - crc: 0xe536de07
