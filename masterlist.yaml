@@ -9533,7 +9533,7 @@ plugins:
       - 'Requiem - Civil War Overhaul Patch.esp'
       - 'Requiem - Immersive Armors.esp'
       - 'Requiem - Immersive Weapons.esp'
-  - name: 'Requiem - (83Willows 101Bugs|Animallica|Arissa|Audio Overhaul for Skyrim|Black Mage Armor|Book Covers Skyrim|Campfire|Common Clothes and Armors|Craftable Horse Barding|Cutting Room Floor|Deadly Dragons( - AOS)?|Dragon Combat Overhaul|ESF Companions|Faction Crossbows|Frostfall|Heavy Armory|Hoth|Immersive Armors|Immersive College of Winterhold|Immersive Horses( - SkyTEST)?|Immersive Patrols|Immersive Sounds Compendium|Immersive Weapons|Improved Closefaced Helmets|Inconsequential NPCs|Inigo|Live Another Life|Lost Library|Lucien|RS Children Overhaul|Rustic Soulgems( - ISC)?|Scoped Bows|Skyrim Unlocked|SkyTEST|Timing is Everything|Trade and Barter|Unique Uniques( - AOS)?|Vilja|VioLens|Wild World|WM Flora Fixes)\.esp'
+  - name: 'Requiem - (83Willows 101Bugs|Animallica|Arissa|Audio Overhaul for Skyrim|Black Mage Armor|Book Covers Skyrim|Campfire|Common Clothes and Armors|Craftable Horse Barding|Cutting Room Floor|Deadly Dragons( - AOS)?|Dragon Combat Overhaul|ESF Companions|Faction Crossbows|Frostfall|Heavy Armory|Hoth|Immersive Armors|Immersive College of Winterhold|Immersive Horses( - SkyTEST)?|Immersive Patrols|Immersive Sounds Compendium|Immersive Weapons|Improved Closefaced Helmets|Inconsequential NPCs|Inigo|Live Another Life|Lost Library|Lucien|RS Children Overhaul|Rustic Soulgems( - ISC)?|Scoped Bows|Skyrim Unlocked|SkyTEST|Timing is Everything|Trade and Barter|Unique Uniques( - AOS)?|Vampiric Thirst|Vilja|VioLens|Wild World|WM Flora Fixes)\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
       - 'Requiem - Bugsmasher Edition.esp'
@@ -20192,7 +20192,8 @@ plugins:
         subs: [ 'LFox Werewolf Improvements.esp' ]
   - name: 'mslVampiricThirst.esp'
     after:
-      - 'Requiem.esp'
+      - name: 'Requiem.esp'
+        condition: 'version("Requiem.esp", "3.0.0", <)'
       - 'Requiem - Bugsmasher Edition.esp'
       - 'Requiem - Legendary Bugsmasher Edition.esp'
     req: [ *SKSE ]
@@ -20206,8 +20207,10 @@ plugins:
           - lang: ja
             text: '吸血鬼のシステムを変更するModとは競合します。'
       - <<: *patchProvided
-        condition: 'active("Requiem.esp") and not active("mslVampiricThirst - Requiem.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", <) and not active("mslVampiricThirst - Requiem.esp")'
         subs: [ 'Requiem' ]
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", >=) and not active("Requiem - Vampiric Thirst.esp")'
     dirty:
       - crc: 0xfafb18c2
         <<: *dirtyPlugin
