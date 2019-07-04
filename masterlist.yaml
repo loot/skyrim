@@ -27258,7 +27258,9 @@ plugins:
   - name: 'Dragon Combat Overhaul.esp'
     msg:
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Dragon Combat Overhaul.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", <) and not active("Requiem - Dragon Combat Overhaul.esp")'
+      - <<: *patchRequiemMRP
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", >=) and not active("Requiem - Dragon Combat Overhaul.esp")'
   - name: 'Faction Crossbows.esp'
     msg:
       - <<: *patchRequiemRPC
