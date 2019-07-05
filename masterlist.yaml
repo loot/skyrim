@@ -968,7 +968,9 @@ plugins:
         condition: 'many("83Willows_101BUGS_V4_.+\.esp")'
         subs: [ '83Willows 101Bugs plugin' ]
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - 83Willows 101Bugs.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", <) and not active("Requiem - 83Willows 101Bugs.esp")'
+      - <<: *patchRequiemMRP
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", >=) and not active("Requiem - 83Willows 101Bugs.esp")'
       - <<: *deletePlugin
         condition: 'active("83Willows_101BUGS_V4_.+\.esp") and active("Requiem - 83Willows 101Bugs.esp")'
         subs: [ 'the Requiem patch for 83Willows 101Bugs' ]
@@ -9642,10 +9644,6 @@ plugins:
       - 'NRM_Dragonborn_Reqtified.esp'
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
       - 'COR-CraftingOverhaulReqtified.esp'
-    msg:
-      - <<: *patchProvided
-        condition: 'active("Requiem_Minor_Arcana.esp") and not active("Requiem - Food and Drug Rebalance MA patch.esp")'
-        subs: [ 'Requiem - Minor Arcana Reborn' ]
   - name: 'Requiem - Immersive Divine Blessings.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/90691' ]
     after:
@@ -27258,7 +27256,9 @@ plugins:
   - name: 'Dragon Combat Overhaul.esp'
     msg:
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Dragon Combat Overhaul.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", <) and not active("Requiem - Dragon Combat Overhaul.esp")'
+      - <<: *patchRequiemMRP
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", >=) and not active("Requiem - Dragon Combat Overhaul.esp")'
   - name: 'Faction Crossbows.esp'
     msg:
       - <<: *patchRequiemRPC
@@ -28922,3 +28922,12 @@ plugins:
       # version: 1.5
       - crc: 0xEBB7CC0A
         util: 'TES5Edit v4.0.2'
+  - name: 'Cloaks&Capes.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/86219' ]
+    clean:
+      # version: 1.4
+      - crc: 0xA6DBD663
+        util: 'TES5Edit v4.0.2'
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Cloaks and Capes.esp")'
