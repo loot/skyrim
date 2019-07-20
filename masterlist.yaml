@@ -4587,19 +4587,15 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Scarcity - (2|4|6|8|10)x Merchant Item Rarity\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/49496/' ]
-    group: *dynamicPatchGroup
-    after: [ 'Scarcity - Less Loot Mod.esp' ]
     msg:
       - <<: *useOnlyOneX
-        condition: 'many("(Scarcity - (2|4|6|8|10)x Merchant Item Rarity)\.esp")'
+        condition: 'many("Scarcity - (2|4|6|8|10)x Merchant Item Rarity\.esp")'
         subs: [ 'Scarcity - Merchant Item Rarity' ]
   - name: 'Scarcity - (2|4|6|8|10)x Loot Rarity\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/49496/' ]
-    group: *dynamicPatchGroup
-    after: [ 'Scarcity - Less Loot Mod.esp' ]
     msg:
       - <<: *useOnlyOneX
-        condition: 'many("(Scarcity - (2|4|6|8|10)x Loot Rarity)\.esp")'
+        condition: 'many("Scarcity - (2|4|6|8|10)x Loot Rarity\.esp")'
         subs: [ 'Scarcity - Loot Rarity' ]
   - name: 'UnlimitedBookshelves.esp'
     group: *underridesGroup
@@ -26181,7 +26177,7 @@ plugins:
   - name: 'Bashed Patch.*\.esp'
     group: *dynamicPatchGroup
     after:
-      - 'Scarcity - .*\.esp'
+      - 'Scarcity - Less Loot Mod.esp'
       - 'TES5Merged.esp'
     msg:
       - <<: *SmashedVsBashedPatch
