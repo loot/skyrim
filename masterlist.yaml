@@ -9516,6 +9516,11 @@ plugins:
       - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("COR-FZR.esp")'
         subs: [ 'Fozar''s Dragonborn patch' ]
+      - <<: *versionXIncY
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", >=)'
+        subs:
+          - 'Crafting Overhaul Reqtified'
+          - 'Requiem'
   - name: 'COR-(Campfire|CircletsWithHoods|Cloaks_LightGuardsOnly|FurCloaks_LightGuardsOnly|FZR|NoHeavyStormcloaks|WetAndCold|WoodenBows)\.esp'
     req:
       - 'COR-CraftingOverhaulReqtified.esp'
