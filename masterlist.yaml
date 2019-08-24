@@ -9498,6 +9498,11 @@ plugins:
       - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("KFR-FZR.esp")'
         subs: [ 'Fozar''s Dragonborn Patch' ]
+      - <<: *versionXIncY
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", >=)'
+        subs:
+          - 'Kryptopyr''s Fixes Reqtified'
+          - 'Requiem'
   - name: 'KFR-(CircletsWithHoods|FZR|NoHeavyStormcloaks)\.esp'
     req:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
