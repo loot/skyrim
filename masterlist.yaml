@@ -27316,10 +27316,12 @@ plugins:
   - name: 'Immersive Sounds - Compendium.esp'
     msg:
       - <<: *patchIncluded
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
         subs: [ 'Requiem' ]
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", >=) and not active("Requiem - Immersive Sounds Compendium.esp")'
     clean:
       # version: 2.02
       - crc: 0x82A29913
