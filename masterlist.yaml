@@ -2755,9 +2755,11 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Requiem' ]
-        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", >=) and not active("Requiem - Audio Overhaul for Skyrim.esp")'
     tag:
       - Sound
     dirty:
