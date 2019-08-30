@@ -307,6 +307,27 @@ common:
       - lang: ja
         text: 'SkyUI.espがアクティブになっていません。このModを完全に機能させるには[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)が必要です。'
     condition: 'not active("SkyUI.esp")'
+  - &versionXIncY
+    type: error
+    content:
+      - lang: en
+        text: 'Your installed version of %1% is not compatible with your version of %2%.'
+      - lang: ru
+        text: 'Установленная у вас версия %1% несовместима с версией %2%.'
+      - lang: da
+        text: 'Din installerede version af %1% er ikke kompatibel med din version af %2%.'
+      - lang: ja
+        text: 'インストールされている%1%は使用中のバージョンの%2%との互換性がありません。'
+      - lang: de
+        text: 'Ihre installierte Version von %1% ist nicht kompatibel mit Ihrer Version von %2%.'
+      - lang: ko
+        text: '현재 설치된 %1%의 버전은 %2%의 버전과 호환되지 않습니다.'
+      - lang: pt
+        text: 'A sua versão instalada de %1% não é compatível com a sua versão de %2%.'
+      - lang: pt_BR
+        text: 'A sua versão instalada de %1% não é compatível com a sua versão de %2%.'
+      - lang: pl
+        text: 'Twoja zainstalowana wersja %1% nie jest kompatybilna z twoją wersją %2%.'
 
 # Cleaning data
   - &dirtyPlugin
@@ -2755,9 +2776,11 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Requiem' ]
-        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", >=) and not active("Requiem - Audio Overhaul for Skyrim.esp")'
     tag:
       - Sound
     dirty:
@@ -2794,7 +2817,7 @@ plugins:
       - name: 'AOS2_GDO Patch.esp'
     msg:
       - <<: *alreadyInX
-        condition: 'active("Requiem - Audio Overhaul for Skyrim.esp")'
+        condition: 'active("Requiem - Audio Overhaul for Skyrim.esp") and version("Requiem - Audio Overhaul for Skyrim.esp", "3.08", <)'
         subs: [ 'Requiem - Audio Overhaul for Skyrim.esp' ]
   - name: '(AOS2_Requiem Patch|Requiem - Audio Overhaul for Skyrim)\.esp'
     msg:
@@ -9475,6 +9498,11 @@ plugins:
       - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("KFR-FZR.esp")'
         subs: [ 'Fozar''s Dragonborn Patch' ]
+      - <<: *versionXIncY
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", >=)'
+        subs:
+          - 'Kryptopyr''s Fixes Reqtified'
+          - 'Requiem'
   - name: 'KFR-(CircletsWithHoods|FZR|NoHeavyStormcloaks)\.esp'
     req:
       - 'KFR-Kryptopyr''sFixesReqtified.esp'
@@ -9488,6 +9516,11 @@ plugins:
       - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("COR-FZR.esp")'
         subs: [ 'Fozar''s Dragonborn patch' ]
+      - <<: *versionXIncY
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", >=)'
+        subs:
+          - 'Crafting Overhaul Reqtified'
+          - 'Requiem'
   - name: 'COR-(Campfire|CircletsWithHoods|Cloaks_LightGuardsOnly|FurCloaks_LightGuardsOnly|FZR|NoHeavyStormcloaks|WetAndCold|WoodenBows)\.esp'
     req:
       - 'COR-CraftingOverhaulReqtified.esp'
@@ -18456,7 +18489,7 @@ plugins:
   - name: 'WeaponsArmorFixes_ImmersiveWeapons_Patch.esp'
     msg:
       - <<: *alreadyInX
-        condition: 'active("Requiem - Immersive Weapons.esp")'
+        condition: 'active("Requiem - Immersive Weapons.esp") and version("Requiem - Immersive Weapons.esp", "3.08", <)'
         subs: [ 'Requiem - Immersive Weapons.esp' ]
   - name: 'Skyrim unleashed_items.esp'
     tag:
@@ -27314,10 +27347,12 @@ plugins:
   - name: 'Immersive Sounds - Compendium.esp'
     msg:
       - <<: *patchIncluded
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
         subs: [ 'Requiem' ]
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", >=) and not active("Requiem - Immersive Sounds Compendium.esp")'
     clean:
       # version: 2.02
       - crc: 0x82A29913
@@ -27432,17 +27467,17 @@ plugins:
   - name: 'ISC WAFR Patch.esp'
     msg:
       - <<: *alreadyInX
-        condition: 'active("Requiem - Immersive Sounds Compendium.esp")'
+        condition: 'active("Requiem - Immersive Sounds Compendium.esp") and version("Requiem - Immersive Sounds Compendium.esp", "3.08", <)'
         subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
   - name: 'ISC CCF Patch.esp'
     msg:
       - <<: *alreadyInX
-        condition: 'active("Requiem - Immersive Sounds Compendium.esp")'
+        condition: 'active("Requiem - Immersive Sounds Compendium.esp") and version("Requiem - Immersive Sounds Compendium.esp", "3.08", <)'
         subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
   - name: 'ISCompendium CCO Patch.esp'
     msg:
       - <<: *alreadyInX
-        condition: 'active("Requiem - Immersive Sounds Compendium.esp")'
+        condition: 'active("Requiem - Immersive Sounds Compendium.esp") and version("Requiem - Immersive Sounds Compendium.esp", "3.04", <)'
         subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
   - name: '(ISC Requiem Patch|Requiem - Immersive Sounds Compendium)\.esp'
     msg:
