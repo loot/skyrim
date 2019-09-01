@@ -13043,13 +13043,9 @@ plugins:
   - name: 'DovahkiinSpeech.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9548' ]
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
-          - lang: ja
-            text: 'TES5Editで修正されない4つの削除されたレコード（Magic effects x2, Perk x1, Spell x1）が含まれています。'
-        condition: 'checksum("DovahkiinSpeech.esp",27656479)'
+      - <<: *hasWildEdits
+        subs: [ 'Remove deleted records **00105F1B**, **0010FDD4*, **00105F1A* and **00105F1D* in TES5Edit. Ignoring this advice will lead to potential game breaking issues.' ]
+        condition: 'checksum("DovahkiinSpeech.esp", B23123F1)'
     dirty:
       - <<: *quickClean
         crc: 0x27656479
