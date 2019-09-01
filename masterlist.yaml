@@ -13040,6 +13040,19 @@ plugins:
         itm: 2
         udr: 19
         nav: 1
+  - name: 'DovahkiinSpeech.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
+          - lang: ja
+            text: 'TES5Editで修正されない4つの削除されたレコード（Magic effects x2, Perk x1, Spell x1）が含まれています。'
+        condition: 'checksum("DovahkiinSpeech.esp",27656479)'
+    dirty:
+      - crc: 0x27656479
+        <<: *dirtyPlugin
+        itm: 8
   - name: 'DovahkiinSpeech - HigherReq.esp'
     msg:
       - type: warn
@@ -13095,19 +13108,6 @@ plugins:
         condition: 'checksum("DovahkiinSpeech - MidReq.esp",FFFCDA31)'
     dirty:
       - crc: 0xfffcda31
-        <<: *dirtyPlugin
-        itm: 8
-  - name: 'DovahkiinSpeech.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.'
-          - lang: ja
-            text: 'TES5Editで修正されない4つの削除されたレコード（Magic effects x2, Perk x1, Spell x1）が含まれています。'
-        condition: 'checksum("DovahkiinSpeech.esp",27656479)'
-    dirty:
-      - crc: 0x27656479
         <<: *dirtyPlugin
         itm: 8
   - name: 'dragocave.esp'
