@@ -491,6 +491,52 @@ common:
       - lang: zh_CN
         text: '只使用一个%1%。'
 
+  - &useVersion
+    type: error
+    content:
+      - lang: en
+        text: 'Use %1% version.'
+      - lang: de
+        text: 'Benutzen Sie die %1% Version.'
+      - lang: ja
+        text: '%1%バージョンを使用してください。'
+      - lang: ru
+        text: 'Используйте версию для %1%'
+  - &useVersionDawnguard
+    <<: *useVersion
+    subs: [ 'Dawnguard' ]
+    condition: 'active("Dawnguard.esm")'
+  - &useVersionDragonborn
+    <<: *useVersion
+    subs: [ 'Dragonborn' ]
+    condition: 'active("Dragonborn.esm")'
+  - &useVersionHearthFires
+    <<: *useVersion
+    subs: [ 'HearthFires' ]
+    condition: 'active("HearthFires.esm")'
+
+  - &useVersionNon
+    type: error
+    content:
+      - lang: en
+        text: 'Use non-%1% version.'
+      - lang: de
+        text: 'Benutzen Sie die Nicht-%1% Version.'
+      - lang: ja
+        text: '%1%バージョン以外を使用してください。'
+  - &useVersionNonDawnguard
+    <<: *useVersionNon
+    subs: [ 'Dawnguard' ]
+    condition: 'not active("Dawnguard.esm")'
+  - &useVersionNonDragonborn
+    <<: *useVersionNon
+    subs: [ 'Dragonborn' ]
+    condition: 'not active("Dragonborn.esm")'
+  - &useVersionNonHearthFires
+    <<: *useVersionNon
+    subs: [ 'HearthFires' ]
+    condition: 'not active("HearthFires.esm")'
+
   - &versionXIncY
     type: error
     content:
@@ -3001,14 +3047,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'PNENB.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'checksum("PNENB.esp",B8865296) and not file("Dawnguard.esm")'
   - name: 'RevampedExteriorFog.esp'
     inc:
@@ -3874,14 +3913,7 @@ plugins:
       - Relev
   - name: 'PrometheusBeastSkeletons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Plugin has some corruption.'
-          - lang: de
-            text: 'Dieses Plugin ist beschädigt.'
-          - lang: ja
-            text: 'プラグインの一部が破損しています。'
+      - <<: *corrupt
         condition: 'checksum("Prometheus_BeastSkeletons.esp",42EE9442)'
   - name: 'Beauties of Skyrim.esp'
     dirty:
@@ -3905,29 +3937,11 @@ plugins:
         itm: 2
   - name: 'DV Better Sleep Dawnguard.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version, DV Better Sleep.esp'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version, DV Better Sleep.esp'
-          - lang: ja
-            text: '非Dawnguardバージョン（DV Better Sleep.esp）を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and file("DV Better Sleep Dawnguard.esp")'
   - name: 'DV Better Sleep.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version, DV Better Sleep Dawnguard.esp'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version, DV Better Sleep Dawnguard.esp'
-          - lang: es
-            text: 'Utilizar la versión para Dawnguard, DV Better Sleep Dawnguard.esp'
-          - lang: ja
-            text: 'Dawnguardバージョン（DV Better Sleep Dawnguard.esp）を使用してください。'
-          - lang: ru
-            text: 'Используйте Dawnguard-версию, DV Better Sleep Dawnguard.esp'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and file("DV Better Sleep.esp")'
   - name: 'BetterFishAdded.esp'
     tag:
@@ -4023,23 +4037,9 @@ plugins:
     req: [ *SKSE ]
   - name: 'Bloody Cannibalism.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",75D6B87E)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",A220A80B)'
     dirty:
       - crc: 0xa220a80b
@@ -4346,20 +4346,7 @@ plugins:
   - name: 'DropThatGold.esp'
     req: [ *SKSE ]
   - name: 'DSpSoB.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Make sure you use Dawnguard version.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie die Dawnguard-Version verwenden.'
-          - lang: es
-            text: 'Asegúrate de utilizar la versión para Dawnguard.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使うようにしてください。'
-          - lang: ru
-            text: 'Убедитесь, что используете Dawnguard-версию.'
-        condition: 'active("Dawnguard.esm")'
+    msg: [ *useVersionDawnguard ]
     dirty:
       - crc: 0x44d3f30c
         <<: *dirtyPlugin
@@ -4546,23 +4533,9 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Grind_stuff.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Hearthfires version.'
-          - lang: de
-            text: 'Benutzen Sie die Hearthfires Version.'
-          - lang: ja
-            text: 'Hearthfiresバージョンを使用してください。'
+      - <<: *useVersionHearthFires
         condition: 'active("HearthFires.esm") and checksum("Grind_stuff.esp",31CCFA29)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Hearthfires version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Hearthfires Version.'
-          - lang: ja
-            text: 'Hearthfiresバージョン以外を使用してください。'
+      - <<: *useVersionNonHearthFires
         condition: 'not active("HearthFires.esm") and checksum("Grind_stuff.esp",5E014754)'
   - name: 'Guard Build (HF) 1.esp'
     dirty:
@@ -5920,23 +5893,10 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Statues.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Hearthfires version.'
-          - lang: de
-            text: 'Verwenden Sie die Hearthfires Version.'
-          - lang: ja
-            text: 'Hearthfiresバージョンを使用してください。'
+      - <<: *useVersionHearthFires
         condition: 'active("HearthFires.esm") and checksum("Statues.esp",C08BE2C5)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Vanilla version.'
-          - lang: de
-            text: 'Verwenden Sie die vanilla Version.'
-          - lang: ja
-            text: 'Vanillaバージョンを使用してください。'
+      - <<: *useVersion
+        subs: [ 'Vanilla' ]
         condition: 'not active("HearthFires.esm") and checksum("Statues.esp",5081E67A)'
   - name: 'SteamAchievementUnlocker.esp'
     dirty:
@@ -9525,23 +9485,9 @@ plugins:
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",112359C0) or checksum("BandolierForNPCMasterFile.esp",76E11697) or checksum("BandolierForNPCMasterFile.esp",0146A38B) )'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",882FDEA5) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) )'
   - name: 'BandolierForNPCsWinterIsComing.esp'
     msg: [ *obsolete ]
@@ -9549,16 +9495,7 @@ plugins:
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
-          - lang: ru
-            text: 'Используйте версию для Dawnguard.'
+      - <<: *useVersionDawnguard
         condition: 'file("Dr_BandolierDG.esp")'
     inc:
       - 'BandolierForNPCsCheaperBandoliers_BalancedWeight.esp'
@@ -9566,47 +9503,20 @@ plugins:
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
-          - lang: ru
-            text: 'Используйте версию для Dawnguard.'
+      - <<: *useVersionDawnguard
         condition: 'file("Dr_BandolierDG.esp")'
     inc:
       - 'BandolierForNPCsCheaperBandoliers.esp'
   - name: 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
-        condition: 'not active("Dawnguard.esm")'
+    msg: [ *useVersionNonDawnguard ]
     inc:
       - 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
   - name: 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
-        condition: 'not active("Dawnguard.esm")'
+    msg: [ *useVersionNonDawnguard ]
     inc:
       - 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
   - name: 'BandolierForNPCsImmersiveArmorsPatch.esp'
@@ -16094,14 +16004,7 @@ plugins:
         udr: 1
   - name: 'towHarvest.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Dawnguard version required.'
-          - lang: de
-            text: 'Dawnguard Version erforderlich.'
-          - lang: ja
-            text: 'Dawnguardバージョンが必要です。'
+      - <<: *useVersionDawnguard
         condition: 'checksum("towHarvest.esp",A3654F92) and active("Dawnguard.esm")'
   - name: 'TQContest_Agamashi.esp'
     dirty:
@@ -16832,14 +16735,7 @@ plugins:
       - Relev
   - name: 'no_quest_items.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Dawnguard. Use Dawnguard version.'
-          - lang: de
-            text: 'Inkompatibel mit: Dawnguard. Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: '競合: Dawnguard（Dawnguard versionを使用してください）'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and not checksum("no_quest_items.esp",47CDC33D)'
       - <<: *obsolete
         condition: 'checksum("no_quest_items.esp",8CAAD195) or checksum("no_quest_items.esp",639770A2)'
@@ -17142,27 +17038,13 @@ plugins:
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food \(((Light|Normal|Reduced) Weight|Weightless)\)\.esp'
     msg:
@@ -17173,92 +17055,43 @@ plugins:
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions \(((Light|Half|Normal) Weight|Weightless)\)\.esp'
     msg:
@@ -17269,53 +17102,25 @@ plugins:
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems \((Ranked|PseudoVanilla)\)\.esp'
     msg:
@@ -17326,27 +17131,13 @@ plugins:
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not clean the file further with TES5Edit.'
-          - lang: de
-            text: 'Säubern Sie die Datei nicht weiter mit TES5Edit.'
-          - lang: ja
-            text: 'TES5Editによる追加クリーニングは避けてください。'
+      - <<: *doNotClean
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting.esp'
     msg: [ *obsolete ]
@@ -17898,16 +17689,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 11
   - name: 'HigherEnchantmentsNoChargeArtifacts.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use Dawnguard version HigherEnchantmentsNoChargeArtifactsDawnguard.esp'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version HigherEnchantmentsNoChargeArtifactsDawnguard.esp'
-          - lang: ja
-            text: 'Dawnguardバージョン（HigherEnchantmentsNoChargeArtifactsDawnguard.esp）を使用してください。'
-        condition: 'active("Dawnguard.esm")'
+    msg: [ *useVersionDawnguard ]
     dirty:
       - crc: 0x890aed0c
         <<: *dirtyPlugin
@@ -18246,16 +18028,8 @@ plugins:
     tag:
       - Delev
   - name: 'masteredmagicka.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Mighty Magic'
-          - lang: de
-            text: 'Inkompatibel mit: Mighty Magic'
-          - lang: ja
-            text: '競合: Mighty Magic'
-        condition: 'file("Mighty Magick .+\.esp")'
+    inc:
+      - 'Mighty Magick Skyrim - Main.esp'
     dirty:
       - crc: 0xe5918397
         <<: *dirtyPlugin
@@ -18263,42 +18037,17 @@ plugins:
   - name: 'masteredmagickaalternative.esp'
     inc:
       - 'masteredmagicka.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Mighty Magic'
-          - lang: de
-            text: 'Inkompatibel mit: Mighty Magic'
-          - lang: ja
-            text: '競合: Mighty Magic'
-        condition: 'file("Mighty Magick .+\.esp")'
+      - 'Mighty Magick Skyrim - Main.esp'
     dirty:
       - crc: 0x89ff6fe5
         <<: *dirtyPlugin
         itm: 2
   - name: 'masteredmagickaboundweapons.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Mighty Magic'
-          - lang: de
-            text: 'Inkompatibel mit: Mighty Magic'
-          - lang: ja
-            text: '競合: Mighty Magic'
-        condition: 'file("Mighty Magick .+\.esp")'
+    inc:
+      - 'Mighty Magick Skyrim - Main.esp'
   - name: 'masteredmagickaenchantmentfix.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Mighty Magic'
-          - lang: de
-            text: 'Inkompatibel mit: Mighty Magic'
-          - lang: ja
-            text: '競合: Mighty Magic'
-        condition: 'file("Mighty Magick .+\.esp")'
+    inc:
+      - 'Mighty Magick Skyrim - Main.esp'
     dirty:
       - crc: 0x94af712d
         <<: *dirtyPlugin
@@ -18331,14 +18080,7 @@ plugins:
         udr: 2
   - name: 'MenuShoutsInDragonsLanguage.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("MenuShoutsInDragonsLanguage.esp",B36BDB9A)'
   - name: 'Merchants Reply Only With Take A Look.esp'
     dirty:
@@ -20009,14 +19751,7 @@ plugins:
         subs: [ 'Immersive Grass .esp file' ]
   - name: 'LakeExpanded01.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.'
-          - lang: de
-            text: 'Inkompatibel mit: Hearthfires (Offizieller Bethesda DLC). Verwenden Sie die Hearthfires Version.'
-          - lang: ja
-            text: '競合: Hearthfires（Hearthfiresバージョンを使用してください。）'
+      - <<: *useVersionHearthFires
         condition: 'active("HearthFires.esm") and ( checksum("LakeExpanded01.esp",43AEF0BF) or checksum("LakeExpanded01.esp",843EB3FC) )'
     dirty:
       - crc: 0x43aef0bf
@@ -21283,23 +21018,9 @@ plugins:
       - 'WerewolfMastery.esp'
   - name: 'WerewolfMastery.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("WerewolfMastery.esp",57E4BC0F)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Verwenden Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and checksum("WerewolfMastery.esp",73AC0648)'
     dirty:
       - crc: 0x73ac0648
@@ -21600,23 +21321,9 @@ plugins:
     msg: [ *corrupt ]
   - name: 'Evilbass Light and Dark Spells.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Verwenden Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",4E1181E9)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",248F5114)'
     dirty:
       - crc: 0x248f5114
@@ -25295,14 +25002,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'SlavePackRiekling.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Plugin has some corruption.'
-          - lang: de
-            text: 'Das Plugin ist beschädigt.'
-          - lang: ja
-            text: 'プラグインの一部が破損しています。'
+      - <<: *corrupt
         condition: 'checksum("SlavePackRiekling.esp",9657019E)'
     dirty:
       - crc: 0x9657019e
@@ -26894,14 +26594,7 @@ plugins:
         condition: 'file("Chesko_Frostfall.esp")'
   - name: 'waves.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Plugin has some corruption.'
-          - lang: de
-            text: 'Das Plugin ist beschädigt.'
-          - lang: ja
-            text: 'プラグインの一部が破損しています。'
+      - <<: *corrupt
         condition: 'checksum("Waves.esp",80C9D6A)'
     dirty:
       - crc: 0x80c9d6a
