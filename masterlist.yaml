@@ -491,6 +491,46 @@ common:
       - lang: zh_CN
         text: '只使用一个%1%。'
 
+  - &useVersion
+    type: error
+    content:
+      - lang: en
+        text: 'Use %1% version.'
+      - lang: de
+        text: 'Benutzen Sie die %1% Version.'
+      - lang: ja
+        text: '%1%バージョンを使用してください。'
+      - lang: ru
+        text: 'Используйте версию для %1%'
+  - &useVersionDawnguard
+    <<: *useVersion
+    subs: [ 'Dawnguard' ]
+  - &useVersionDragonborn
+    <<: *useVersion
+    subs: [ 'Dragonborn' ]
+  - &useVersionHearthFires
+    <<: *useVersion
+    subs: [ 'HearthFires' ]
+
+  - &useVersionNon
+    type: error
+    content:
+      - lang: en
+        text: 'Use non-%1% version.'
+      - lang: de
+        text: 'Benutzen Sie die Nicht-%1% Version.'
+      - lang: ja
+        text: '%1%バージョン以外を使用してください。'
+  - &useVersionNonDawnguard
+    <<: *useVersionNon
+    subs: [ 'Dawnguard' ]
+  - &useVersionNonDragonborn
+    <<: *useVersionNon
+    subs: [ 'Dragonborn' ]
+  - &useVersionNonHearthFires
+    <<: *useVersionNon
+    subs: [ 'HearthFires' ]
+
   - &versionXIncY
     type: error
     content:
