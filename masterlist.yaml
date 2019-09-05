@@ -3041,14 +3041,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'PNENB.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'checksum("PNENB.esp",B8865296) and not file("Dawnguard.esm")'
   - name: 'RevampedExteriorFog.esp'
     inc:
@@ -3938,29 +3931,11 @@ plugins:
         itm: 2
   - name: 'DV Better Sleep Dawnguard.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version, DV Better Sleep.esp'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version, DV Better Sleep.esp'
-          - lang: ja
-            text: '非Dawnguardバージョン（DV Better Sleep.esp）を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and file("DV Better Sleep Dawnguard.esp")'
   - name: 'DV Better Sleep.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version, DV Better Sleep Dawnguard.esp'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version, DV Better Sleep Dawnguard.esp'
-          - lang: es
-            text: 'Utilizar la versión para Dawnguard, DV Better Sleep Dawnguard.esp'
-          - lang: ja
-            text: 'Dawnguardバージョン（DV Better Sleep Dawnguard.esp）を使用してください。'
-          - lang: ru
-            text: 'Используйте Dawnguard-версию, DV Better Sleep Dawnguard.esp'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and file("DV Better Sleep.esp")'
   - name: 'BetterFishAdded.esp'
     tag:
@@ -4056,23 +4031,9 @@ plugins:
     req: [ *SKSE ]
   - name: 'Bloody Cannibalism.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",75D6B87E)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",A220A80B)'
     dirty:
       - crc: 0xa220a80b
@@ -4380,18 +4341,7 @@ plugins:
     req: [ *SKSE ]
   - name: 'DSpSoB.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Make sure you use Dawnguard version.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie die Dawnguard-Version verwenden.'
-          - lang: es
-            text: 'Asegúrate de utilizar la versión para Dawnguard.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使うようにしてください。'
-          - lang: ru
-            text: 'Убедитесь, что используете Dawnguard-версию.'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm")'
     dirty:
       - crc: 0x44d3f30c
@@ -9558,23 +9508,9 @@ plugins:
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",112359C0) or checksum("BandolierForNPCMasterFile.esp",76E11697) or checksum("BandolierForNPCMasterFile.esp",0146A38B) )'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and ( checksum("BandolierForNPCMasterFile.esp",882FDEA5) or checksum("BandolierForNPCMasterFile.esp",18D6D7C8) or checksum("BandolierForNPCMasterFile.esp",BECFD7BA) )'
   - name: 'BandolierForNPCsWinterIsComing.esp'
     msg: [ *obsolete ]
@@ -9582,16 +9518,7 @@ plugins:
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
-          - lang: ru
-            text: 'Используйте версию для Dawnguard.'
+      - <<: *useVersionDawnguard
         condition: 'file("Dr_BandolierDG.esp")'
     inc:
       - 'BandolierForNPCsCheaperBandoliers_BalancedWeight.esp'
@@ -9599,16 +9526,7 @@ plugins:
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
-          - lang: ru
-            text: 'Используйте версию для Dawnguard.'
+      - <<: *useVersionDawnguard
         condition: 'file("Dr_BandolierDG.esp")'
     inc:
       - 'BandolierForNPCsCheaperBandoliers.esp'
@@ -9616,14 +9534,7 @@ plugins:
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm")'
     inc:
       - 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
@@ -9631,14 +9542,7 @@ plugins:
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm")'
     inc:
       - 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
@@ -16865,14 +16769,7 @@ plugins:
       - Relev
   - name: 'no_quest_items.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Dawnguard. Use Dawnguard version.'
-          - lang: de
-            text: 'Inkompatibel mit: Dawnguard. Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: '競合: Dawnguard（Dawnguard versionを使用してください）'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and not checksum("no_quest_items.esp",47CDC33D)'
       - <<: *obsolete
         condition: 'checksum("no_quest_items.esp",8CAAD195) or checksum("no_quest_items.esp",639770A2)'
@@ -17827,14 +17724,7 @@ plugins:
         itm: 11
   - name: 'HigherEnchantmentsNoChargeArtifacts.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use Dawnguard version HigherEnchantmentsNoChargeArtifactsDawnguard.esp'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version HigherEnchantmentsNoChargeArtifactsDawnguard.esp'
-          - lang: ja
-            text: 'Dawnguardバージョン（HigherEnchantmentsNoChargeArtifactsDawnguard.esp）を使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm")'
     dirty:
       - crc: 0x890aed0c
@@ -18259,14 +18149,7 @@ plugins:
         udr: 2
   - name: 'MenuShoutsInDragonsLanguage.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("MenuShoutsInDragonsLanguage.esp",B36BDB9A)'
   - name: 'Merchants Reply Only With Take A Look.esp'
     dirty:
@@ -21211,23 +21094,9 @@ plugins:
       - 'WerewolfMastery.esp'
   - name: 'WerewolfMastery.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("WerewolfMastery.esp",57E4BC0F)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Verwenden Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and checksum("WerewolfMastery.esp",73AC0648)'
     dirty:
       - crc: 0x73ac0648
@@ -21528,23 +21397,9 @@ plugins:
     msg: [ *corrupt ]
   - name: 'Evilbass Light and Dark Spells.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Dawnguard version.'
-          - lang: de
-            text: 'Verwenden Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'not active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",4E1181E9)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Dawnguard version.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version.'
-          - lang: ja
-            text: 'Dawnguardバージョン以外を使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",248F5114)'
     dirty:
       - crc: 0x248f5114
