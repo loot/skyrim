@@ -3874,14 +3874,7 @@ plugins:
       - Relev
   - name: 'PrometheusBeastSkeletons.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Plugin has some corruption.'
-          - lang: de
-            text: 'Dieses Plugin ist beschädigt.'
-          - lang: ja
-            text: 'プラグインの一部が破損しています。'
+      - <<: *corrupt
         condition: 'checksum("Prometheus_BeastSkeletons.esp",42EE9442)'
   - name: 'Beauties of Skyrim.esp'
     dirty:
@@ -25295,14 +25288,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'SlavePackRiekling.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Plugin has some corruption.'
-          - lang: de
-            text: 'Das Plugin ist beschädigt.'
-          - lang: ja
-            text: 'プラグインの一部が破損しています。'
+      - <<: *corrupt
         condition: 'checksum("SlavePackRiekling.esp",9657019E)'
     dirty:
       - crc: 0x9657019e
@@ -26894,14 +26880,7 @@ plugins:
         condition: 'file("Chesko_Frostfall.esp")'
   - name: 'waves.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Plugin has some corruption.'
-          - lang: de
-            text: 'Das Plugin ist beschädigt.'
-          - lang: ja
-            text: 'プラグインの一部が破損しています。'
+      - <<: *corrupt
         condition: 'checksum("Waves.esp",80C9D6A)'
     dirty:
       - crc: 0x80c9d6a
