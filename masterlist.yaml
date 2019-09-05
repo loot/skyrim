@@ -4346,9 +4346,7 @@ plugins:
   - name: 'DropThatGold.esp'
     req: [ *SKSE ]
   - name: 'DSpSoB.esp'
-    msg:
-      - <<: *useVersionDawnguard
-        condition: 'active("Dawnguard.esm")'
+    msg: [ *useVersionDawnguard ]
     dirty:
       - crc: 0x44d3f30c
         <<: *dirtyPlugin
@@ -9512,17 +9510,13 @@ plugins:
   - name: 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
-    msg:
-      - <<: *useVersionNonDawnguard
-        condition: 'not active("Dawnguard.esm")'
+    msg: [ *useVersionNonDawnguard ]
     inc:
       - 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
   - name: 'BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp'
     url:
       - 'http://www.nexusmods.com/skyrim/mods/17805'
-    msg:
-      - <<: *useVersionNonDawnguard
-        condition: 'not active("Dawnguard.esm")'
+    msg: [ *useVersionNonDawnguard ]
     inc:
       - 'BandolierForNPCsCheaperBandoliersDawnguard.esp'
   - name: 'BandolierForNPCsImmersiveArmorsPatch.esp'
@@ -17695,9 +17689,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 11
   - name: 'HigherEnchantmentsNoChargeArtifacts.esp'
-    msg:
-      - <<: *useVersionDawnguard
-        condition: 'active("Dawnguard.esm")'
+    msg: [ *useVersionDawnguard ]
     dirty:
       - crc: 0x890aed0c
         <<: *dirtyPlugin
