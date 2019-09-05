@@ -303,8 +303,8 @@ common:
         text: '%1% is not fully compatible with this mod. %2%'
       - lang: de
         text: '%1% ist nicht voll kompatibel mit dieser Mod. %2%'
-  - &reqModX
-    type: say
+  - &requiresX
+    type: warn
     content:
       - lang: en
         text: 'Requires: %1%'
@@ -317,26 +317,32 @@ common:
       - lang: ru
         text: 'Требуется: %1%'
   - &ReqCBBE
-    <<: *reqModX
+    <<: *requiresX
+    type: say
     subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666)' ]
   - &ReqCBBEorDemUNP
-    <<: *reqModX
+    <<: *requiresX
+    type: say
     subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
   - &ReqLBreplacer
-    <<: *reqModX
+    <<: *requiresX
     subs: [ '[Lady Body](http://modgames.net/load/256-1-0-11011)' ]
     condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - &reqDimonizedUNP
-    <<: *reqModX
+    <<: *requiresX
+    type: say
     subs: [ '[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
   - &reqNudeAndJiggly
-    <<: *reqModX
+    <<: *requiresX
+    type: say
     subs: [ '[CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)' ]
   - &reqUNPB
-    <<: *reqModX
+    <<: *requiresX
+    type: say
     subs: [ '[UNPB](http://www.nexusmods.com/skyrim/mods/37900)' ]
   - &reqBetterMales
-    <<: *reqModX
+    <<: *requiresX
+    type: say
     subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)' ]
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
   - &requiresMCM
@@ -1455,7 +1461,8 @@ plugins:
       - 'MagicDuel.esm'
   - name: 'Malise - A Companion By Joseph Anthony.esm'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Better Females](http://www.nexusmods.com/skyrim/mods/2812)' ]
   - name: 'MiniLoversSound.esm'
     req: [ *FNIS ]
@@ -1636,7 +1643,8 @@ plugins:
         nav: 1
   - name: 'Sirenia.esm'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Amazing Smooth Females Complete](http://www.nexusmods.com/skyrim/mods/140)' ]
   - name: 'Skyrim Immersive Creatures.esm'
     tag:
@@ -4185,7 +4193,8 @@ plugins:
       - *SKSE
       - *SkyUI
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ 'Java Runtime Environment 7 update 17+' ]
     clean:
       # version: 1.7.3
@@ -5599,7 +5608,8 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("SkyMoMod Lore.+\.esp")'
         subs: [ 'SkyMoMod Lore .esp file' ]
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ 'SkyMoMod 10' ]
     tag:
       - Delev
@@ -6633,7 +6643,8 @@ plugins:
         condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
   - name: 'bikiniADEC.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Acdale EyeCandy Body ADEC](http://www.nexusmods.com/skyrim/mods/5390)' ]
     dirty:
       - crc: 0xc44993c7
@@ -6790,7 +6801,8 @@ plugins:
         condition: 'file("SkyRe Chainmail Hauberks.esp")'
   - name: 'ChildrenClothesClassed.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Elaborate Textiles](http://www.nexusmods.com/skyrim/mods/19826)' ]
   - name: 'ChitinGoggles.esp'
     msg:
@@ -6943,7 +6955,8 @@ plugins:
         itm: 4
   - name: 'CraftableCrownHelmets.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Crown Helmets](http://www.nexusmods.com/skyrim/mods/5803/) meshes' ]
   - name: 'craftableskyforgeweapons.esp'
     dirty:
@@ -7906,7 +7919,8 @@ plugins:
   - name: 'LH Jewel Collection.esp'
     msg:
       - *ReqLBreplacer
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Lady Head](http://modgames.net/load/256-1-0-15866)' ]
   - name: 'Lich King''s Armor.esp'
     msg:
@@ -8499,7 +8513,8 @@ plugins:
       - Relev
   - name: 'Guard Weapons - Heavy Armory - Halberds.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Heavy Armory](http://www.nexusmods.com/skyrim/mods/21120)' ]
     dirty:
       - crc: 0xbaf5e2e4
@@ -8850,9 +8865,10 @@ plugins:
       - Relev
   - name: 'TBSC_BodySuit.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[CHSBHC - BBP female body](http://www.nexusmods.com/skyrim/mods/4888)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[SkyHeels](http://www.nexusmods.com/skyrim/mods/5589) resources' ]
         condition: 'not file("SkyHeels.esp")'
   - name: 'tbmchrysamere.esp'
@@ -8956,7 +8972,8 @@ plugins:
         itm: 9
   - name: 'TMasks-JudgmentDay.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ 'Meshes and textures from [Tribunal Maskes by Zairaam](http://www.nexusmods.com/skyrim/mods/20077), esp usage optional' ]
   - name: 'TorchArrow-Dawnguard.esp'
     inc:
@@ -9119,7 +9136,7 @@ plugins:
       - Relev
   - name: 'RecyclingModWo3E.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("Weapons of the Third Era.+\.esp")'
         subs: [ '[Weapons of the Third Era](http://www.nexusmods.com/skyrim/mods/3871)' ]
   - name: 'WereWolfRing.esp'
@@ -10508,7 +10525,7 @@ plugins:
         subs: [ 'ERSO 03 Dragonborn .esp file' ]
   - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DD\.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp")'
         subs: [ '[Deadly Dragons](http://www.nexusmods.com/skyrim/mods/3829) (6.3.5)' ]
       - <<: *useOnlyOneX
@@ -10742,7 +10759,7 @@ plugins:
           - lang: ja
             text: '競合: Uncapped perks'
         condition: 'file("Uncapped Perks.*\.esp")'
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
         subs: [ '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175) for full perk functionality' ]
       - type: say
@@ -10836,7 +10853,7 @@ plugins:
             text: 'SkyReを他のModと併用すると多数の競合が発生します。プレイする前にReadmeの内容を読んでおけば問題の多くを防げるでしょう。[こちら](http://www.nexusmods.com/skyrim/mods/9286)を参照してください。'
           - lang: ru
             text: 'SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его [здесь](http://www.nexusmods.com/skyrim/mods/9286)(Англ.).'
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
         subs: [ '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175) for full perk functionality' ]
       - type: say
@@ -16278,13 +16295,16 @@ plugins:
         condition: 'version("WARZONES - Civil Unrest.esp", "2015.2", <)'
   - name: 'Better Warzones Soldier Uniforms.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[WARZONES](http://www.nexusmods.com/skyrim/mods/9494)' ]
   - name: 'Better Warzones Soldier Uniforms With Cloaks.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[WARZONES](http://www.nexusmods.com/skyrim/mods/9494)' ]
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Cloaks of Skyrim](http://www.nexusmods.com/skyrim/mods/12092)' ]
   - name: 'waterstonemanor.esp'
     dirty:
@@ -16901,7 +16921,7 @@ plugins:
         subs: [ 'Requiem - Cutting Room Floor.esp' ]
   - name: 'BetterQuestObjectives-BSaQBPatch.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[Better Skill and Quest Books Names](http://www.nexusmods.com/skyrim/mods/10125)' ]
         condition: 'not file("Better Skill and Quest Books Names.esp") or not file("Better Skill and Quest Books Names - BS.esp")'
   - name: 'BetterQuestObjectives-BSaQB-BSPatch.esp'
@@ -17887,7 +17907,7 @@ plugins:
         itm: 6
   - name: 'RSkyrimChildren.esm'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Unofficial Skyrim Patch.esp") and not file("RSChildren_PatchUSKP.esp") and not file("RSChildren_CompleteUSKP.esp")'
         subs: [ '[RSChildren USKP Patch](http://www.nexusmods.com/skyrim/mods/55555/)' ]
       - <<: *patchRequiemRPC
@@ -18312,7 +18332,8 @@ plugins:
       - 'Passive dragons.esp'
   - name: 'PalistovSpinningArrows_CloserQuiversLongerArrows.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Closer Quivers and Longer Arrows](http://www.nexusmods.com/skyrim/mods/5711)' ]
   - name: 'PermanentWerewolfNightEye.esp'
     msg: [ *obsolete ]
@@ -18337,7 +18358,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Real Dibella priestress.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[DreamBurrows Sage Outfit Retexture Standalone](http://www.nexusmods.com/skyrim/mods/17699)' ]
   - name: 'Realistic Animal Behaviour.esp'
     msg:
@@ -18704,28 +18726,28 @@ plugins:
     after: [ 'Convenient Horses.esp' ]
   - name: 'dD - Enhanced Blood Main.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and not file("SkyMoMod.esm") and not file("dD-Dawnguard-EBT Patch.esp")'
         subs: [ '[Dawnguard Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-EBT Patch.esp")'
         subs: [ '[Dragonborn Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dragonborn.esm") and active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-Dawnguard-EBT Patch.esp")'
         subs: [ '[Dragonborn-Dawnguard_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-SkyrimMonsterMod EBT Patch.esp")'
         subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-Dawnguard-MonsterMod EBT Patch.esp")'
         subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and file("SkyMoMod.esm") and not file("dD-Dragonborn-MonsterMod EBT Patch.esp")'
         subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-DG-DB-MonsterMod EBT Patch.esp") and not file("Skyrim Immersive Creatures.esp")'
         subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and file("Skyrim Immersive Creatures.esp") and not file("dD-DG-DB-MM-SiC EBT Patch.esp")'
         subs: [ '[Monster Mod and Immersive Creatures Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
     dirty:
@@ -19625,7 +19647,7 @@ plugins:
         nav: 2
   - name: 'SolitudeBetterDocks-SDD-CompatiblePatch.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("Solitude A City Of Trade.esm") or not file("Solitude A City Of Trade.esp") or not file("Solitude A City Of Trade LITE!.esp")'
         subs: [ 'Solitude A City Of Trade' ]
   - name: 'TAVERiften.esp'
@@ -21669,7 +21691,8 @@ plugins:
     msg: [ *alreadyInLegendarySouls ]
   - name: 'Summon Behemot Dragon.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Behemoth](http://www.nexusmods.com/skyrim/mods/17473) meshes, textures' ]
   - name: 'Summon_Gargoyle.esp'
     inc:
@@ -22423,7 +22446,7 @@ plugins:
         itm: 32
   - name: 'BS-Balanced_Magic_BETA_2_0.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("(Headbomb''s )?Better Sorting.*\.esp")'
         subs: [ 'Better Sorting' ]
   - name: 'New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp'
@@ -22670,7 +22693,7 @@ plugins:
       - name: 'SPIKE.esm'
         display: 'Guard Dialogue Overhaul'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("SkyRe_Main.esp") and not file("SkyRe_Main_NoDawnguard.esp")'
         subs: [ 'Skyrim Redone' ]
   - name: 'StavesofSkyrim.esp'
@@ -22907,7 +22930,7 @@ plugins:
     req:
       - 'More Craftables.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("PerkUP-.*\.esp")'
         subs: [ '[PerkUP](http://www.nexusmods.com/skyrim/mods/9359)' ]
   - name: 'Perky.esp'
@@ -23271,7 +23294,8 @@ plugins:
       - *SKSE
       - *FNIS
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[a little sexy apparel replacer - for CBBE/UNP/ADEC](http://www.nexusmods.com/skyrim/mods/5564/)' ]
   - name: 'ApachiiHair.esp'
     msg: [ *obsolete ]
@@ -23287,12 +23311,13 @@ plugins:
     msg:
       - <<: *obsolete
         condition: 'not checksum("NoMoreVanillaHair.esp",A31830F1) and not checksum("NoMoreVanillaHair.esp",7F9635D9)'
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Crazy hairs and demoness hairs conversion by zzjay](http://www.nexusmods.com/skyrim/mods/19623)' ]
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Hair Pack](http://www.nexusmods.com/skyrim/mods/3809)' ]
-      - <<: *reqModX
-        type: warn
+      - <<: *requiresX
         subs: [ 'Hair packs of TES IV: Oblivion and Hair packs of Fallout3, which are no longer available' ]
     dirty:
       - crc: 0xa31830f1
@@ -24300,7 +24325,8 @@ plugins:
         itm: 6
   - name: 'Braithwen Fernleaf( Archer| Auburn| Auburn Auto)?\.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Human Eyes for Elves](http://www.nexusmods.com/skyrim/mods/195)' ]
       - *corrupt
   - name: 'BrandShei.esp'
@@ -24330,7 +24356,8 @@ plugins:
         itm: 3
   - name: 'Cicero.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Nude Male with Roberts New Vegas male](http://www.nexusmods.com/skyrim/mods/3421)' ]
   - name: 'CleanBalimund.esp'
     msg: [ *corrupt ]
@@ -24559,9 +24586,11 @@ plugins:
         itm: 12
   - name: 'FelixConstantine.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Smooth Faces for Ladies and Gents](http://www.nexusmods.com/skyrim/mods/1971)' ]
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Pretty Eyes](http://www.nexusmods.com/skyrim/mods/3424)' ]
   - name: 'Fezzik the Giant.esp'
     msg:
@@ -24894,7 +24923,8 @@ plugins:
         subs: [ 'UniqueLydia .esp file' ]
   - name: 'Maerwen Briaerthorne.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Human eyes for Elves](http://www.nexusmods.com/skyrim/mods/195)' ]
       - *corrupt
   - name: 'Maven.esp'
@@ -25049,7 +25079,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Serana_Revised.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ 'Meshes and Textures from [Girls of Skyrim - Michelle](http://www.nexusmods.com/skyrim/mods/21038)' ]
   - name: 'Vampire Serana.esp'
     msg: [ *obsolete ]
@@ -25241,7 +25272,7 @@ plugins:
           - lang: ru
             text: 'Удалите скрипт C01QuestScript.pex, из папки data/scripts, если он существует.'
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
         subs: [ 'Better Followers - Armor Pack I & II, download it on BF page' ]
       - <<: *useOnlyOneX
@@ -25269,12 +25300,12 @@ plugins:
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'Better NPC - Faction Pack.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
         subs: [ 'Beauty version of Better Followers, named BP or BNP or SBP or SBNP' ]
   - name: 'Better NPC - Marriage Pack.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
         subs: [ 'Beauty version of Better Followers, named BP or BNP or SBP or SBNP' ]
   - name: 'AskFollowerSkills.esp'
@@ -25397,13 +25428,13 @@ plugins:
         display: '[USKP Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
         condition: 'active("Unofficial Skyrim Patch.esp")'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[Dawnguard Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
         condition: 'active("Dawnguard.esm") and not active("Change Follower Outfits Redux -- Dawnguard.esp")'
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[Hearthfire Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
         condition: 'active("HearthFires.esm") and not active("Change Follower Outfits Redux -- Hearthfire.esp")'
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[Dragonborn Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
         condition: 'active("Dragonborn.esm") and not active("Change Follower Outfits Redux -- Dragonborn.esp")'
   - name: 'Followers Stop Fighting Each Other.esp'
@@ -26394,12 +26425,12 @@ plugins:
         condition: 'not file("rcrnPlus.esp")'
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("rcrnShaders.esp") or not file("rcrnPlus.esp")'
         subs: [ '[RCRN](http://www.nexusmods.com/skyrim/mods/1875)' ]
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN - Lanterns Of Skyrim.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("rcrnShaders.esp") or not file("rcrnPlus.esp")'
         subs: [ '[RCRN](http://www.nexusmods.com/skyrim/mods/1875)' ]
   - name: 'Volrath - Dragonreach - Brazier fix( - 1\.1)\.esp'
@@ -26727,7 +26758,8 @@ plugins:
         condition: 'checksum("GreenWaterFix.esp",7F378D8E)'
   - name: 'GreenWaterFix_CompWithWATER1_5b.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[WATER 1.5b](http://www.nexusmods.com/skyrim/mods/13268)' ]
   - name: 'Atlas Dawnguard.esp'
     dirty:
@@ -28193,7 +28225,7 @@ plugins:
       - name: 'II EaTC Patch.esp'
         condition: 'active("ETaC - RESOURCES.esm")'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Requiem.esp") and not active("II Requiem patch.esp") and not active("II Requiem C2H6O patch.esp")'
         subs: [ 'II Requiem patch.esp or II Requiem C2H6O patch.esp' ]
   - name: 'NPC_Overhaul_V_(1|2|3)_\.esp'
