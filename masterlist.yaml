@@ -288,7 +288,7 @@ common:
         text: 'Quando se usa **%1%**, é recomendado que você desative ou delete este arquivo ESP, mas que mantenha os recursos (ex. meshes, texturas) que vieram com esse mod.'
       - lang: ru
         text: 'Пока используется **%1%**, рекомендуется отключить или удалить esp этого мода, но оставить установленные ресурсы (meshes, textures). Т.к. они все еще требуются для **%1%**.'
-  - &SmashedVsBashedPatch
+  - &onlyUseSmashOrBash
     type: say
     content:
       - lang: en
@@ -27351,7 +27351,7 @@ plugins:
     tag:
       - NoMerge
     msg:
-      - <<: *SmashedVsBashedPatch
+      - <<: *onlyUseSmashOrBash
         condition: 'file("Bashed Patch.*\.esp")'
         subs: [ 'Bashed Patch' ]
   - name: 'Bashed Patch.*\.esp'
@@ -27360,7 +27360,7 @@ plugins:
       - 'Scarcity - Less Loot Mod.esp'
       - 'TES5Merged.esp'
     msg:
-      - <<: *SmashedVsBashedPatch
+      - <<: *onlyUseSmashOrBash
         condition: 'file("Smashed Patch.esp")'
         subs: [ 'Smashed Patch.esp' ]
   - name: 'Warburg''s 3D Paper World Map - Dawnguard.esp'
