@@ -1,11 +1,11 @@
 common:
 # Files
-  - &SKSE
-    name: '../skse_loader.exe'
-    display: '[SKSE](http://skse.silverlock.org)'
   - &FNIS
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811)'
+  - &SKSE
+    name: '../skse_loader.exe'
+    display: '[SKSE](http://skse.silverlock.org)'
   - &SkyUI
     name: 'SkyUI.esp'
     display: '[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)'
@@ -16,6 +16,8 @@ common:
     content:
       - lang: en
         text: 'Delete. Already included in %1%.'
+      - lang: da
+        text: 'Slet. Allerede inkluderet i %1%.'
       - lang: de
         text: 'Löschen. Bereits in %1% enthalten.'
       - lang: es
@@ -24,18 +26,48 @@ common:
         text: '削除してください。既に%1%に含まれています。'
       - lang: ko
         text: '삭제하십시오. 이미 %1%에 포함되어 있습니다.'
+      - lang: pl
+        text: 'Usuń. Już zawarte w %1%'
+      - lang: pt
+        text: 'Apagar. Já incluído em %1%.'
+      - lang: pt_BR
+        text: 'Delete. Já icluído em %1%'
       - lang: ru
         text: 'Удалите. Уже включено в %1%.'
       - lang: zh_CN
         text: '删除。已包含在%1%中。'
-  - &alreadyInUSLEEP
+  - &alreadyInAmidianBornContentAddon
     <<: *alreadyInX
-    subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214/)' ]
-    condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp")'
-  - &alreadyInUHRP
+    condition: 'active("aMidianBorn_ContentAddon.esp")'
+    subs: [ 'aMidianBorn_ContentAddon.esp' ]
+  - &alreadyInBDO
     <<: *alreadyInX
-    condition: 'active("Unofficial High Resolution Patch.esp")'
-    subs: [ 'Unofficial High Resolution Patch.esp' ]
+    condition: 'file("BDO.esp")'
+    subs: [ 'BDO.esp' ]
+  - &alreadyInCompleteCraftingOverhaul
+    <<: *alreadyInX
+    condition: 'file("Complete Crafting Overhaul( - BS version)?\.esp")'
+    subs: [ 'Complete Crafting Overhaul' ]
+  - &alreadyInCompleteCraftingOverhaulRemade
+    <<: *alreadyInX
+    condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+    subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
+  - &alreadyInCraftTemperSmelt
+    <<: *alreadyInX
+    condition: 'file("Craft, Temper, Smelt.esp")'
+    subs: [ 'Craft, Temper, Smelt.esp' ]
+  - &alreadyInFFNords
+    <<: *alreadyInX
+    condition: 'file("FFNords.esp")'
+    subs: [ 'FFNords.esp' ]
+  - &alreadyInLegendarySouls
+    <<: *alreadyInX
+    condition: 'file("LegendarySouls.esp")'
+    subs: [ 'LegendarySouls.esp' ]
+  - &alreadyInPerkUp
+    <<: *alreadyInX
+    condition: 'file("PerkUP.+\.esp")'
+    subs: [ 'PerkUP plugins' ]
   - &alreadyInPerkUpArchery
     <<: *alreadyInX
     condition: 'file("PerkUP-Archery.esp")'
@@ -44,54 +76,127 @@ common:
     <<: *alreadyInX
     condition: 'file("Pretty Followers.esm")'
     subs: [ 'Pretty Followers' ]
-  - &alreadyInSkyRe
-    <<: *alreadyInX
-    condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
-    subs: [ 'SkyRe Main' ]
-  - &alreadyInBDO
-    <<: *alreadyInX
-    condition: 'file("BDO.esp")'
-    subs: [ 'BDO.esp' ]
-  - &alreadyInLegendarySouls
-    <<: *alreadyInX
-    condition: 'file("LegendarySouls.esp")'
-    subs: [ 'LegendarySouls.esp' ]
-  - &alreadyInSkyrimImmersiveCreatures
-    <<: *alreadyInX
-    condition: active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")
-    subs: [ 'Skyrim Immersive Creatures.esp' ]
-  - &alreadyInCompleteCraftingOverhaul
-    <<: *alreadyInX
-    condition: 'file("Complete Crafting Overhaul( - BS version)?\.esp")'
-    subs: [ 'Complete Crafting Overhaul' ]
-  - &alreadyInCraftTemperSmelt
-    <<: *alreadyInX
-    condition: 'file("Craft, Temper, Smelt.esp")'
-    subs: [ 'Craft, Temper, Smelt.esp' ]
-  - &alreadyInPerkUp
-    <<: *alreadyInX
-    condition: 'file("PerkUP.+\.esp")'
-    subs: [ 'PerkUP plugins' ]
-  - &alreadyInSIDTComplete
-    <<: *alreadyInX
-    condition: 'file("SIDT - Complete.esp")'
-    subs: [ 'SIDT - Complete.esp' ]
-  - &alreadyInFFNords
-    <<: *alreadyInX
-    condition: 'file("FFNords.esp")'
-    subs: [ 'FFNords.esp' ]
   - &alreadyInSexierHousecarls
     <<: *alreadyInX
     condition: 'file("Sexier Housecarls.esp")'
     subs: [ 'Sexier Housecarls.esp' ]
-  - &alreadyInAmidianBornContentAddon
+  - &alreadyInSIDTComplete
     <<: *alreadyInX
-    condition: 'active("aMidianBorn_ContentAddon.esp")'
-    subs: [ 'aMidianBorn_ContentAddon.esp' ]
-  - &alreadyInCompleteCraftingOverhaulRemade
+    condition: 'file("SIDT - Complete.esp")'
+    subs: [ 'SIDT - Complete.esp' ]
+  - &alreadyInSkyrimImmersiveCreatures
     <<: *alreadyInX
-    condition: 'active("Complete Crafting Overhaul_Remade.esp")'
-    subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
+    condition: active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")
+    subs: [ 'Skyrim Immersive Creatures.esp' ]
+  - &alreadyInSkyRe
+    <<: *alreadyInX
+    condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
+    subs: [ 'SkyRe Main' ]
+
+  - &alreadyInOrFixedByX
+    type: error
+    content:
+    - lang: en
+      text: 'Delete. Already included or otherwise fixed in %1%.'
+    - lang: de
+      text: 'Löschen. Bereits enthalten oder anderweitig korrigiert in %1%.'
+    - lang: es
+      text: 'Borrar. Esta incluido, o de otra modo, arreglado en el %1%.'
+    - lang: ru
+      text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
+  - &alreadyInOrFixedByUSLEEP
+    <<: *alreadyInOrFixedByX
+    subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214/)' ]
+    condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp")'
+  - &alreadyInOrFixedByUHRP
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Unofficial High Resolution Patch.esp' ]
+    condition: 'active("Unofficial High Resolution Patch.esp")'
+
+  - &alsoUseX
+    type: say
+    content:
+      - lang: en
+        text: 'It is highly recommended that you also use %1%.'
+      - lang: de
+        text: 'Es wird dringend empfohlen, dass Sie auch %1% benutzen.'
+
+  - &corrupt
+    type: warn
+    content:
+      - lang: en
+        text: 'This file is corrupt and should not be used.'
+      - lang: de
+        text: 'Diese Datei ist korrupt und sollte nicht benutzt werden.'
+      - lang: es
+        text: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - lang: ja
+        text: 'このファイルは壊れています。使用しないでください。'
+      - lang: pl
+        text: 'Ten plik jest zepsuty i nie powinien być używany.'
+      - lang: pt_BR
+        text: 'Este arquivo está corrompido e não deveria ser utilizado.'
+      - lang: ru
+        text: 'Файл испорчен и не должен использоваться.'
+
+  - &deleteOrDeactivateX
+    type: error
+    content:
+      - lang: en
+        text: 'Delete or deactivate. %1%'
+      - lang: de
+        text: 'Lösche oder deaktiviere. %1%'
+      - lang: ja
+        text: '%1%を削除するか非アクティブにしてください。'
+      - lang: ru
+        text: 'Не забудьте отключить или удалить. %1%'
+    subs: [ '' ]
+
+  - &deletePlugin
+    type: warn
+    content:
+      - lang: en
+        text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
+      - lang: de
+        text: 'Beim Nutzen von **%1%** ist es empfohlen, dass Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Mittel (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden. Diese werden immer noch von **%1%** vorausgesetzt.'
+      - lang: ja
+        text: '**%1%**を使用中の場合。このespファイルは無効化あるいは削除するのはおすすめしますが、このmodによってインストールされたリソース(メッシュ、テクスチャなど)はそのままにしておいてください。これらは**%1%**によって引き続き必要とされてます。'
+      - lang: ko
+        text: '**%1%** 모드를 사용중일 떈, 이 ESP 파일을 삭제하고 함께 설치된 리소스(예: 메쉬, 텍스쳐)만 남겨두는 걸 권장합니다. 리소스는 **%1%** 모드에서 필요로 합니다.'
+      - lang: pl
+        text: 'Używając **%1%**, jest rekomendowane abyś dezaktywował lub usunął ten plik ESP, ale pozostawił zasoby (siatki, tekstury) zainstalowane z tym modem. Ponieważ są wciąż wymagane przez **%1%**.'
+      - lang: pt
+        text: 'Ao utilizar **%1%**, é recomendado que você desative ou apage este ficheiro ESP, mas mantenha os recursos (ex. meshes, texturas) instalados por este mod. Sendo que os mesmos ainda são necessitados por **%1%**. '
+      - lang: pt_BR
+        text: 'Quando se usa **%1%**, é recomendado que você desative ou delete este arquivo ESP, mas que mantenha os recursos (ex. meshes, texturas) que vieram com esse mod.'
+      - lang: ru
+        text: 'Пока используется **%1%**, рекомендуется отключить или удалить esp этого мода, но оставить установленные ресурсы (meshes, textures). Т.к. они все еще требуются для **%1%**.'
+
+  - &doNotClean
+    type: say
+    content:
+      - lang: en
+        text: 'Do not clean ITM records, they are intentional and required for the mod to function. It is safe to undelete records, but do not do anything other than that.'
+      - lang: da
+        text: 'Rengør ikke ITM-poster: de er forsætlige og krævede for at mod’en fungerer. Det er sikkert at gendanne poster, men gør ikke andet end dét.'
+      - lang: de
+        text: 'ITM-Einträge in diesem Plugin sollten nicht gesäubert werden, sie sind absichtlich enthalten und werden benötigt, damit die Mod richtig funktioniert. Gelöschte Einträge wiederherzustellen ist in Ordnung, alles andere aber nicht.'
+      - lang: es
+        text: 'No limpiar las referencias ITM (iguales al master), ya que son intencionales y necesarias para que el Mod funcione. Sí es seguro restaurar las UDR (referencias borradas), pero no haga más que eso.'
+      - lang: ja
+        text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
+      - lang: ko
+        text: 'ITM 자료를 삭제하지 마십시오. 모드가 정상 작동하기 위해 의도적으로 남겨진 자료입니다. 삭제를 취소하는 것 이외에는 안전하지 않습니다.'
+      - lang: pl
+        text: 'Nie czyść rekordów ITM, są one zamierzone i potrzebne do działania tego moda. Jest bezpieczne aby cofnąć usunięcie rekordów (UDR), ale nie rób nic innego ponad to. '
+      - lang: pt
+        text: 'Não apagar os registos ITM. São intencionais e necessárias para o funcionamento do mod. É seguro restaurar os registos, mas não faça nada mais que isso.'
+      - lang: pt_BR
+        text: 'Não apague os registros ITM. Eles são intencionais e necessários para que o mod funcione. É seguro restaurar os registros, mas nada mais além disso.'
+      - lang: ru
+        text: 'Не очищать ITM-записи. "Грязные" правки оставлены специально и требуются для функционирования мода. Восстановить удаленные записи (UDR) можно безопасно, но идентичные мастерфайлу лучше оставить.'
+      - lang: zh_CN
+        text: '不干净。"脏"数据是故意的，这是mod需要的功能。'
 
   - &fixedInOfficialPatchX
     type: error
@@ -107,23 +212,7 @@ common:
       - lang: ru
         text: 'Удалите. Исправлено в официальном патче %1%.'
 
-
-  - &doNotClean
-    type: say
-    content:
-      - lang: en
-        text: 'Do not clean ITM records, they are intentional and required for the mod to function. It is safe to undelete records, but do not do anything other than that.'
-      - lang: de
-        text: 'ITM-Einträge in diesem Plugin sollten nicht gesäubert werden, sie sind absichtlich enthalten und werden benötigt, damit die Mod richtig funktioniert. Gelöschte Einträge wiederherzustellen ist in Ordnung, alles andere aber nicht.'
-      - lang: es
-        text: 'No limpiar las referencias ITM (iguales al master), ya que son intencionales y necesarias para que el Mod funcione. Sí es seguro restaurar las UDR (referencias borradas), pero no haga más que eso.'
-      - lang: ja
-        text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
-      - lang: ru
-        text: 'Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.'
-      - lang: zh_CN
-        text: '不干净。"脏"数据是故意的，这是mod需要的功能。'
-  - &patchOutSub
+  - &fixedPluginOutSub
     type: warn
     content:
       - lang: en
@@ -136,7 +225,7 @@ common:
         text: '予期しない（あるいは順序が乱れた）レコードが含まれています。[こちら](http://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った互換パッチを入手可能です。'
       - lang: ru
         text: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](http://www.nexusmods.com/skyrim/mods/26230). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)' #added additional info about localized fixed versions because condition for this message it is show message for espm with different checksum from fixed english version and message also will be displayed for any localisation of fixed version.
-  - &preCKUseXInstead
+  - &fixedPluginPreCK
     type: warn
     content:
       - lang: en
@@ -149,9 +238,34 @@ common:
         text: '元のファイルはCreation Kitのリリース日（2012年2月7日）より前にリリースされています。[こちら](%1%)からTES5Editで修正しクリーニングを行った互換パッチを入手可能です。'
       - lang: ru
         text: 'Оригинальный файл был выпущен до выхода Creation Kit (07 фев. 2012). Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](%1%). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)' #added additional info about localized fixed versions because message also can be displayed for any localisation of fixed version.
-  - &preCKSharlikranPatch
-    <<: *preCKUseXInstead
+  - &fixedPluginPreCKSharlikran
+    <<: *fixedPluginPreCK
     subs: [ 'http://www.nexusmods.com/skyrim/mods/26230' ]
+
+  - &harmful
+    type: warn
+    content:
+      - lang: en
+        text: 'This plugin is now considered harmful and should not be used.'
+      - lang: de
+        text: 'Diese Datei wird nun als schädlich angesehen und sollte nicht benutzt werden.'
+      - lang: ja
+        text: '現在では悪影響を与えると見なされているプラグインです。使用しないでください。'
+      - lang: ru
+        text: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
+
+  - &installOriginalResources
+    type: say
+    content:
+      - lang: en
+        text: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
+      - lang: de
+        text: 'Vergessen Sie nicht, die Original Mod vor dem Aktivieren eines Patches zu installieren, oder Skyrim wird abstürzen wenn es nicht die benötigten Dateien finden kann.'
+      - lang: ja
+        text: 'パッチをアクティブにする前に必ず元のModをインストールしてください。元のModから使用されているファイルが見つからなかった場合、ゲームが強制終了したりバグが発生する恐れがあります。'
+      - lang: ru
+        text: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+
   - &obsolete
     type: warn
     content:
@@ -170,84 +284,8 @@ common:
       - lang: zh_CN
         text: '已过时。请升级到最新版本。 %1%'
     subs: [ '' ]
-  - &corrupt
-    type: warn
-    content:
-      - lang: en
-        text: 'This file is corrupt and should not be used.'
-      - lang: de
-        text: 'Diese Datei ist korrupt und sollte nicht benutzt werden.'
-      - lang: es
-        text: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
-      - lang: ja
-        text: 'このファイルは壊れています。使用しないでください。'
-      - lang: ru
-        text: 'Файл испорчен и не должен использоваться.'
-  - &harmful
-    type: warn
-    content:
-      - lang: en
-        text: 'This plugin is now considered harmful and should not be used.'
-      - lang: de
-        text: 'Diese Datei wird nun als schädlich angesehen und sollte nicht benutzt werden.'
-      - lang: ja
-        text: '現在では悪影響を与えると見なされているプラグインです。使用しないでください。'
-      - lang: ru
-        text: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
-  - &useOnlyOneX
-    type: error
-    content:
-      - lang: en
-        text: 'Use only one %1%.'
-      - lang: de
-        text: 'Nutzen Sie nur einen %1%.'
-      - lang: es
-        text: 'Utilizar solo un %1%.'
-      - lang: ja
-        text: '%1%は一つだけ使用してください。'
-      - lang: ko
-        text: '%1%을 한개만 사용하십시오.'
-      - lang: ru
-        text: 'Используйте только один %1%.'
-      - lang: zh_CN
-        text: '只使用一个%1%。'
-  - &alsoUseX
-    type: say
-    content:
-      - lang: en
-        text: 'It is highly recommended that you also use %1%.'
-      - lang: de
-        text: 'Es wird dringend empfohlen, dass Sie auch %1% benutzen.'
-  - &installOriginalResources
-    type: say
-    content:
-      - lang: en
-        text: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-      - lang: de
-        text: 'Vergessen Sie nicht, die Original Mod vor dem Aktivieren eines Patches zu installieren, oder Skyrim wird abstürzen wenn es nicht die benötigten Dateien finden kann.'
-      - lang: ja
-        text: 'パッチをアクティブにする前に必ず元のModをインストールしてください。元のModから使用されているファイルが見つからなかった場合、ゲームが強制終了したりバグが発生する恐れがあります。'
-      - lang: ru
-        text: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-  - &deleteOrDeactivateX
-    type: error
-    content:
-      - lang: en
-        text: 'Delete or deactivate %1%.'
-      - lang: de
-        text: 'Lösche oder deaktiviere %1%.'
-      - lang: ja
-        text: '%1%を削除するか非アクティブにしてください。'
-      - lang: ru
-        text: 'Не забудьте отключить или удалить %1%.'
-  - &deletePlugin
-    type: warn
-    content:
-      - lang: en
-        text: 'When using **%1%**, it''s recommended that you deactivate or delete this plugin, but keep the assets (e.g. meshes, textures) installed with this mod as they''re still required by **%1%**.'
-      - lang: de
-        text: 'Beim Nutzen von **%1%** wird empfohlen, dass Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Mittel (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden. Diese werden immer noch von **%1%** vorausgesetzt.'
-  - &SmashedVsBashedPatch
+
+  - &onlyUseSmashOrBash
     type: say
     content:
       - lang: en
@@ -260,34 +298,45 @@ common:
         text: '%1%と同時に使用できますが、追加作業が必要となります。Smashed PatchかBash Patchはそれぞれ単独で使用してください。'
       - lang: ru
         text: 'Может быть использовано совместно с %1% но возможно потребуется дополнительная работа. Smashed Patch или Bash Patch должны быть использованы независимо друг от друга.'
-  - &patchProvided
-    type: warn
-    content:
-      - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
-      - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
-  - &patchIncluded
-    type: warn
-    content:
-      - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
-      - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit dem Installer dieses Plugins.'
+
   - &patch3rdParty
-    type: warn
+    type: say
     content:
       - lang: en
-        text: 'You seem to be using %1%, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %2%'
       - lang: de
         text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: %2%'
+      - lang: ja
+        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。サードパーティのパッチはここで入手できます:%2%'
+      - lang: ko
+        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 제3자 제공 호환성 패치는 여기에서 다운로드 가능합니다: %2%'
+      - lang: pl
+        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka trzeciej strony jest dostępna tutaj: %2%'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %2%'
+      - lang: pt_BR
+        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %2%'
+      - lang: ru
+        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти здесь: %2%'
   - &patchRequiem3rdParty
-    type: warn
+    type: say
     content:
       - lang: en
         text: 'You seem to be using Requiem, but you have not enabled a compatibility patch for this mod. A third party patch is available here: %1%'
       - lang: de
         text: 'Sie scheinen Requiem zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Patch von Dritten ist hier verfügbar: %1%'
+      - lang: ja
+        text: 'Requiemを使用しているようですが、このmodの互換性パッチが有効になっていません。サードパーティのパッチはここで入手できます:%1%'
+      - lang: ko
+        text: 'Requiem 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 제3자 제공 호환성 패치는 여기에서 다운로드 가능합니다: %1%'
+      - lang: pl
+        text: 'Wygląda na to że używasz Requiem, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka trzeciej strony jest dostępna tutaj: %1%'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar Requiem, mas não ativou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %1%'
+      - lang: pt_BR
+        text: 'Você aparenta estar usando Requiem, mas não habilitou o patch de compatibilidade para este mod. Um patch feito por terceiros está disponível aqui: %1%'
+      - lang: ru
+        text: 'Похоже, что используется Requiem, но патч совместимости для него не был подключен. Патч совместимости можно найти здесь: %1%'
   - &patchRequiemRPC
     <<: *patchRequiem3rdParty
     subs:
@@ -296,15 +345,70 @@ common:
     <<: *patchRequiem3rdParty
     subs:
       - '[More Requiem Patches](https://www.nexusmods.com/skyrim/mods/58141)'
-  - &semiCompatible
+
+  - &patchIncluded
     type: say
     content:
       - lang: en
-        text: '%1% is not fully compatible with this mod. %2%'
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
       - lang: de
-        text: '%1% ist nicht voll kompatibel mit dieser Mod. %2%'
-  - &reqModX
+        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit dem Installer dieses Plugins.'
+      - lang: ja
+        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのインストーラーに含まれています。'
+      - lang: ko
+        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 인스톨러에 포함되어 있습니다.'
+      - lang: pl
+        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona wraz z instalatorem tej wtyczki.'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluído com o instalador do plugin'
+      - lang: pt_BR
+        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluso com o instalador desse plugin.'
+      - lang: ru
+        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти в установщике плагина.'
+  - &patchProvided
     type: say
+    content:
+      - lang: en
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
+      - lang: de
+        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
+      - lang: ja
+        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのmodページにあります。.'
+      - lang: ko
+        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 모드 페이지에서 제공 중입니다.'
+      - lang: pl
+        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona na stronie internetowej tej wtyczki.'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está disponível na página mod deste plugin.'
+      - lang: pt_BR
+        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade é provido na página desse plugin.'
+      - lang: ru
+        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти на странице плагина.'
+
+  # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
+  - &requiresMCM
+    type: warn
+    content:
+      - lang: en
+        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
+      - lang: de
+        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) installiert.'
+      - lang: ja
+        text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)を導入してください。'
+      - lang: ko
+        text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863)를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
+      - lang: pl
+        text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
+      - lang: pt
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
+      - lang: pt_BR
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
+      - lang: ru
+        text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
+    condition: 'not active("SkyUI.esp")'
+
+  - &requiresX
+    type: warn
     content:
       - lang: en
         text: 'Requires: %1%'
@@ -316,39 +420,77 @@ common:
         text: '要: %1%'
       - lang: ru
         text: 'Требуется: %1%'
-  - &ReqCBBE
-    <<: *reqModX
+  - &requiresBetterMales
+    <<: *requiresX
+    type: say
+    subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)' ]
+  - &requiresCBBE
+    <<: *requiresX
+    type: say
     subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666)' ]
-  - &ReqCBBEorDemUNP
-    <<: *reqModX
+  - &requiresCBBEorUNP
+    <<: *requiresX
+    type: say
     subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
-  - &ReqLBreplacer
-    <<: *reqModX
+  - &requiresCHSBHC
+    <<: *requiresX
+    type: say
+    subs: [ '[CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)' ]
+  - &requiresLadyBody
+    <<: *requiresX
     subs: [ '[Lady Body](http://modgames.net/load/256-1-0-11011)' ]
     condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
-  - &reqDimonizedUNP
-    <<: *reqModX
+  - &requiresUNP
+    <<: *requiresX
+    type: say
     subs: [ '[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
-  - &reqNudeAndJiggly
-    <<: *reqModX
-    subs: [ '[CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)' ]
-  - &reqUNPB
-    <<: *reqModX
+  - &requiresUNPB
+    <<: *requiresX
+    type: say
     subs: [ '[UNPB](http://www.nexusmods.com/skyrim/mods/37900)' ]
-  - &reqBetterMales
-    <<: *reqModX
-    subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)' ]
-  # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
-  - &reqSkyUI
-    type: warn
+
+  - &semiCompatible
+    type: say
     content:
       - lang: en
-        text: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for this mod to be fully functional.'
+        text: '%1% is not fully compatible with this mod. %2%'
       - lang: de
-        text: 'SkyUI.esp ist in Ihrer Ladereihenfolge nicht aktiv. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) wird benötigt, damit diese Mod voll und ganz funktioniert.'
+        text: '%1% ist nicht voll kompatibel mit dieser Mod. %2%'
       - lang: ja
-        text: 'SkyUI.espがアクティブになっていません。このModを完全に機能させるには[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)が必要です。'
-    condition: 'not active("SkyUI.esp")'
+        text: '%1%は%2%と完全な互換性がありません。'
+      - lang: ko
+        text: '%1% 모드는 이 모드와 완벽히 호환되지 않습니다. %2%'
+      - lang: pt
+        text: '%1% não é totalmente compatível com este mod. %2%'
+      - lang: pt_BR
+        text: '%1% não é completamente compatível com este mod. %2%'
+      - lang: ru
+        text: '%1% не полностью совместим с этим модом. %2%'
+
+  - &useOnlyOneX
+    type: error
+    content:
+      - lang: en
+        text: 'Use only one %1%.'
+      - lang: de
+        text: 'Nutzen Sie nur einen %1%.'
+      - lang: es
+        text: 'Utilizar solo un %1%.'
+      - lang: ja
+        text: '%1%は一つだけ使用してください。'
+      - lang: ko
+        text: '%1%을 한 개만 사용하십시오.'
+      - lang: pl
+        text: 'Używa tylko jednego %1%'
+      - lang: pt
+        text: 'Utilizar apenas um %1%.'
+      - lang: pt_BR
+        text: 'Utilize apenas um %1%'
+      - lang: ru
+        text: 'Используйте только один %1%.'
+      - lang: zh_CN
+        text: '只使用一个%1%。'
+
   - &versionXIncY
     type: error
     content:
@@ -371,24 +513,81 @@ common:
       - lang: ru
         text: 'Установленная у вас версия %1% несовместима с версией %2%.'
 
+  - &wildEdits
+    type: warn
+    content:
+      - lang: en
+        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods. %1%'
+      - lang: da
+        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
+      - lang: de
+        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
+      - lang: ja
+        text: 'このプラグインにはITMおよびUDRレコード以外の誤った編集(Wild Edit)が含まれており、navmeshが削除されています。他のmodと干渉しないように、追加の手動クリーニングが必要になる場合があります。%1%'
+      - lang: pl
+        text: 'Ta wtyczka zawiera dzikie edycje (Wild Edit) poza rekordami ITM i UDR oraz usunięte siatki nawigacyjne i może wymagać dodatkowego ręcznego czyszczenia aby nie kolidować z innymi modami. %1%'
+      - lang: pt
+        text: 'Este plugin contém edições selvagens (Wild Edits) para além dos registros ITM e UDR, e Navmeshes apagadas. Pode requerer limpeza manual adicional de forma a não interferir com outros mods. %1%'
+      - lang: pt_BR
+        text: 'Este plugin contém edições não-intencionais (Wild Edits) além dos registros ITM e UDR e Navmeshes deletadas e pode requerer limpeza manual adicional de forma que não interfira com outros mods. %1%'
+      - lang: ru
+        text: 'Плагин содержит дикие правки, кроме ITM, UDR записей и удаленных навмешей и может потребовать дополнительной ручной чистки, чтобы не пересекаться с другими модами. %1%'
+    subs: [ '' ]
+
 # Cleaning data
   - &dirtyPlugin
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
-    info: 'An explanation of Dirty Edits is available [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-A).'
+    info:
+      - lang: en
+        text: 'An explanation of Dirty Edits is available [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-A).'
+      - lang: de
+        text: 'Eine englische Säuberungsanleitung ist [hier](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3) verfügbar.'
+      - lang: ja
+        text: 'Dirty Editsについては[ここ](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-A)を参照してください。'
+      - lang: pl
+        text: 'Wytłumaczenie o brudnych wtyczkach (Dirty Edits) jest dostępne [tutaj](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-A).'
+      - lang: pt
+        text: 'Uma explição em inglês de Edição Suja (Dirty Edits) está disponível [aqui](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-A).'
+      - lang: pt_BR
+        text: 'Uma explicação de Edições Sujas (Dirty Edits) está disponível [aqui](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-A).'
+      - lang: ru
+        text: 'Объяснение по грязным правкам доступно [здесь](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#Apendix-A).'
   - &quickClean
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
-    info: 'Due to Improvements made to the cleaning process with the official release of xEdit 4.0.x+, any mods which were verified as clean with older versions of xEdit may now require additional cleaning. A guide for running xEdit 4.0.x+ in Quick Auto Clean mode can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-4).'
+    info:
+      - lang: en
+        text: 'Due to Improvements made to the cleaning process with the official release of xEdit 4.0.x+, any mods which were verified as clean with older versions of xEdit may now require additional cleaning. A guide for running xEdit 4.0.x+ in **Quick Auto Clean** mode can be found [here](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-4).'
+      - lang: de
+        text: 'Wegen Verbesserungen die dem Säuberungsprozess mit der offiziellen Veröffentlichung von xEdit 4.0.x+ zugute gekommen sind, müssen eventuell sämtliche Mods die mithilfe älterer Versionen von xEdit als sauber verifiziert wurden, erneut gesäubert werden. Eine englische Anleitung zum Ausführen von xEdit 4.0.x+ im **Schnell-Automatisch-Säubern** Modus kann [hier](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-4) aufgefunden werden.'
+      - lang: ja
+        text: 'xEdit 4.0.x+の公式リリースでクリーニングプロセスが改善されたため、以前のバージョンのxEditでクリーニングした場合は、追加のクリーニングが必要になることがあります。xEdit 4.0.x+を**Quick Auto Clean**モードで実行するためのガイドがあります[ここ] (https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-4)。'
+      - lang: ko
+        text: 'xEdit 4.0.x+ 공식 출시와 함께 소개된 향상된 청소 기능으로 인해, 구 버전의 xEdit로 검증되었던 모드는 추가적인 청소가 필요할 수 있습니다. xEdit 4.0.x+ **Quick Auto Clean** 모드 실행 설명서는 [여기](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-4)에서 찾을 수 있습니다. '
+      - lang: pl
+        text: 'W związku z ulepszeniami w procesie czyszczenia z oficjalnym wydaniem xEdit 4.0.x+, każdy mod zweryfikowany jako czysty w starszej wersji xEdit może wymagać dodatkowego czyszczenia. Poradnik jak używać xEdit 4.0.x+ w trybie **Szybkie Auto Czyszczenie** można znaleźć [tutaj](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-4).'
+      - lang: pt
+        text: 'Devido a melhorias feitas ao processo de limpeza com o lançamento oficial de xEdit 4.0.x+, qualquer mod que seja verificado como limpo por versões anteriores de xEdit podem agora necessitar de limpeza adicional. Um guia em inglês para utilizar xEdit 4.0.x+ no modo **Limpeza Automática Rápida** pode ser encontrado [aqui](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-4).'
+      - lang: pt_BR
+        text: 'Devido a melhorias feitas ao processo de limpeza com o lançamento oficial do xEdit 4.0.x+, quaisquer mods que foram verificados como limpos com versões antigas do xEdit podem agora necessitar de limpeza adicional. Uma guia para utilizar o xEdit 4.0.x+ no modo **Limpeza Automática Rápida** (Quick Auto Clean) pode ser encontrado [aqui](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-4).'
+      - lang: ru
+        text: 'Из-за изменений в способе очистки в версии xEdit 4.0.x+, моды, что были проверены как чистые с предыдущими версиями xEdit могут вновь потребовать очистки. Руководство по запуску xEdit 4.0.x+ в режиме **Быстрой очистки** может быть найдено [здесь](https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-4).'
   - &reqManualFix
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
-    info: 'It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. More information on **Deleted navmeshes** is provided [here](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-
-  - &hasWildEdits
-    type: say
-    content:
+    info:
       - lang: en
-        text: "This plugin contains wild edits. A manual [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning guide is available here: %1%"
+        text: 'It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually(A complex process that should be done by the mod author). More information on **Deleted navmeshes** is provided [here](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
       - lang: de
-        text: 'Dieses Plugin enthält wilde Modifikationen. Eine manuelle [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) Säuberungsanleitung ist hier verfügbar: %1%'
+        text: 'Es wird streng empfohlen, keine Mods zu verwenden die **Gelöschte Navmeshes** beinhalten, da diese dafür bekannt sind Abstürze auszulösen. **Gelöschte Navmeshes** müssen manuell korrigiert werden (ein komplexer Prozess der vom Mod-Autor erledigt werden sollte). Mehr Informationen über **Gelöschte Navmeshes** werden [hier](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial) geboten.'
+      - lang: ja
+        text: '**navmeshの削除**を含むmodは使用しないことを強く推奨します。クラッシュの原因になります。**navmeshの削除**は手動で修正する必要があります(mod作成者が行う必要がある複雑なプロセスです)。**navmeshの削除**の詳細については[ここ](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial)を参照してください。'
+      - lang: pl
+        text: 'Jest silnie zalecane aby nie używać modów zawierających **Usunięte navmeshe** jako że są znane jako powód awarii. **Usunięte navmeshe** muszą zostać poprawione ręcznie(skomplikowany proces który powinien być wykonany przez autora modu). Więcej informacji o **Usuniętych navmeshach** można znaleźć [tutaj](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+      - lang: pt
+        text: 'É fortemente recomandado não utilizar mods que contenham **Navmeshes apagados** sendo que são conhecidos por causar falhas. **Navmeshes apagados** devem ser corrigidos manualmente(Um processo complexo que deve ser feito pelo autor do mod). Mais informação sobre **Navmeshes apagados** está disponível em inglês [aqui] (https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+      - lang: pt_BR
+        text: 'É fortemente recomendade que você não utilize mods que contenham **Navmeshes deletados** pois eles são conhecidos por causar crashes. **Navmeshes deletados devem ser corrigos manualmente (Um processo complexo que deve ser feito pelo autor do mod). Mais informações em **Navmeshes deletadas** está disponível [aqui](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+      - lang: ru
+        text: 'Настоятельно не рекомендуется использовать моды с **удаленными навмешами** т.к. известно, что они вызывают вылеты. **удаленные навмеши** должны быть исправлены вручную(Комплексный процесс, который должен быть выполнен автором мода). Больше информации о **удаленных навмешах** можно найти [здесь](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
 
 bash_tags:
   - 'Actors.ACBS'
@@ -470,6 +669,8 @@ globals:
     content:
       - lang: en
         text: '[Latest LOOT thread](%1%).'
+      - lang: da
+        text: '[Seneste LOOT-tråd](%1%).'
       - lang: de
         text: '[Aktueller LOOT-Thread](%1%).'
       - lang: es
@@ -478,6 +679,10 @@ globals:
         text: '[LOOTの最新スレッドを開く](%1%)（英語）'
       - lang: ko
         text: '[최신 LOOT 스레드](%1%).'
+      - lang: pl
+        text: '[Ostatni wątek LOOT](%1%).'
+      - lang: pt
+        text: '[Postagem mais recente do LOOT](%1%).'
       - lang: ru
         text: '[Обсуждение LOOT "(Eng)"](%1%).'
       - lang: zh_CN
@@ -709,7 +914,8 @@ plugins:
       - Relev
       - Stats
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+        type: say
         subs:
           - '[Manual Cleaning Guide](https://www.afkmods.com/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)'
         condition: 'checksum("Dawnguard.esm",72F9CE01)'
@@ -1307,14 +1513,14 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).' ]
-      - <<: *preCKUseXInstead
+      - <<: *fixedPluginPreCK
         condition: 'version("hideout.esm","10.2",<)'
         subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
   - name: 'retreat.esm'
     msg:
       - <<: *obsolete
         subs: [ '[Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).' ]
-      - <<: *preCKUseXInstead
+      - <<: *fixedPluginPreCK
         condition: 'version("retreat.esm","1.0",<)'
         subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
   - name: 'Riftrun_HF_v_2_0.esp'
@@ -1363,7 +1569,7 @@ plugins:
           - lang: ru
             text: 'Совместимый с версией 14.0 очищенный и исправленный патч совместимости в TES5Edit может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
       - <<: *alreadyInCompleteCraftingOverhaulRemade
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
     clean:
       - crc: 0x142A34B6
@@ -1415,7 +1621,7 @@ plugins:
         itm: 7
   - name: 'LiFE.esm'
     msg:
-      - *ReqCBBEorDemUNP
+      - *requiresCBBEorUNP
 # ## Lighting.esm
 # ## this is a companion mod
 # ## Lightsabers.esm
@@ -1431,7 +1637,8 @@ plugins:
       - 'MagicDuel.esm'
   - name: 'Malise - A Companion By Joseph Anthony.esm'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Better Females](http://www.nexusmods.com/skyrim/mods/2812)' ]
   - name: 'MiniLoversSound.esm'
     req: [ *FNIS ]
@@ -1536,7 +1743,7 @@ plugins:
   - name: 'Perk-Reset-MCM.esm'
     req:
       - *SKSE
-    msg: [ *reqSkyUI ]
+    msg: [ *requiresMCM ]
   - name: 'pinewoodvillage.esm'
     msg: [ *obsolete ]
     dirty:
@@ -1585,7 +1792,7 @@ plugins:
       - *SKSE
       - *FNIS
     msg:
-      - *reqSkyUI
+      - *requiresMCM
       - type: error
         content:
           - lang: en
@@ -1612,7 +1819,8 @@ plugins:
         nav: 1
   - name: 'Sirenia.esm'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Amazing Smooth Females Complete](http://www.nexusmods.com/skyrim/mods/140)' ]
   - name: 'Skyrim Immersive Creatures.esm'
     tag:
@@ -1932,63 +2140,63 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'AerinRestrainingOrder.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'AmuletOfArticulationFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Amulet of Articulation Leveling Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     tag:
       - Relev
   - name: 'AmuletofJulianosFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Ancient Knowledge Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Ancient Shrouded Cowl Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Ancient Shrouded Cowl Beast Race Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Annoying Clipping Remover.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'ArdwenToGildergreen.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Argonian Disarming Bash Bug Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Ash Pile Expiration.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'AspectOfTerrorFixv1.0.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'AtronachEffectFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'AtronachForgeBootsFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'aventus aretino fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0x80e1299c
         <<: *dirtyPlugin
         itm: 6
   - name: 'Back off, Barbas!.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Bardfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'bardsfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'bard''s_college_quests_fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Belethor Vendor Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'blackreachgeodefix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BM_Bench.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'brandsheiprisonfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'brawlbug-plugin.esp'
     msg: [ *obsolete ]
   - name: 'Brawl Bugs CE.esp'
     msg: [ *alreadyInSkyRe ]
   - name: 'breezehomelightfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BreezehomeLadderFixJP.esp'
     dirty:
       - crc: 0xF2BAA689
@@ -2000,7 +2208,7 @@ plugins:
     inc:
       - 'BreezehomeLadderFix.esp'
   - name: 'BreezehomeLightingFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'breezehomeshadowfix.esp'
     dirty:
       - crc: 0xf416a7c9
@@ -2009,107 +2217,107 @@ plugins:
   - name: 'Breezehome-hf-CTD-fix.esp'
     msg: [ *obsolete ]
   - name: 'Brynjolf Dialogue Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'bug_description.blessing_of_talos.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Bugfix-NoFollowerTrespassDialog.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
 # ## DSAMG - Miraak Music Fixes.esp
 # ## author instructions to place above UDBP: should cut some DB "can''t absorb dragon souls" reports
 # ## DSAMG proper is just bunch of scripts and music files, no esp- possibly why load order troubleshooting comes up empty -LD
   - name: 'bugfixalchemynoregeneration.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'bugfixenchanmentnoregeneration.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Bugfixrobesenchantments.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Bullseye Perk Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Civil War Neutrality Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Chesko_MatchingSetPerkFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.9", >=)'
         subs: [ '1.9' ]
   - name: 'Cloak Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'CombatMusicFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Conjuration Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'CriticalChargeFix.esp'
     msg:
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
       - <<: *obsolete
         condition: 'not checksum("CriticalChargeFix.esp",A35E7560)'
       - <<: *alreadyInX
         condition: 'file("PerkUP-TwoHanded.esp")'
         subs: [ 'PerkUP-TwoHanded.esp' ]
   - name: 'CTD Fellglow Keep Dungeon Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DaedricBowBashFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DaedricShieldHiResFix.esp'
-    msg: [ *alreadyInUHRP ]
+    msg: [ *alreadyInOrFixedByUHRP ]
   - name: 'Daggers acts like blades.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DaggerBowEnchantPotionFixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Deflect Arrows Perk Fix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.5", >=)'
         subs: [ '1.5' ]
   - name: 'Derkeethus_fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DialogueWithAVampireOrWhatever.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dragon Shout - Marked for Death.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0xc9ab8c3e
         <<: *dirtyPlugin
         itm: 9
   - name: 'Dreagonsreach bottle fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'EbonyArmorMatchingSetFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'EbonyBladeFixed.*\.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Farengar.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'FalmerHelmetFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Falmer Helmet Fixed.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Farm Wheat Height Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'FemaleVampireEyeFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'fix-BelethorUnlocked.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Floating Cabbage fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'followerhuntingbowfix.esp'
     msg:
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
       - *alreadyInBDO
       - <<: *alreadyInX
         condition: 'file("Better Followers - [SBNP].*\.esp")'
         subs: [ 'Better Followers' ]
   - name: 'FollowerHuntingBow12.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'FoodRestoreHealthFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'forsworn boots fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'FrostMagicBugFixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'furrycommentfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'GhorzaGraBagolInvestmentFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'GiantPhysicsFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2118,23 +2326,23 @@ plugins:
   - name: 'GM-KhajiitDSHFix.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'gourmetFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'greatweapon_speedfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Greatsword Attack speed Fix 1.3.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'HeadsmansAxeFixed.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Headtracking Fix - Skyrim.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HelmetStackFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'hjerim chest fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0x560f7c1c
         <<: *dirtyPlugin
@@ -2142,33 +2350,33 @@ plugins:
   - name: 'Hjerimfix.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
     dirty:
       - crc: 0x9b9b0581
         <<: *dirtyPlugin
         udr: 9
   - name: 'HjerimMessFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HM DB CookQuestFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'imperialhelmetfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'ImperialHelmetHeavyFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'invinciblehawkfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Invisibility Eyes Fix.esp'
     req: [ *SKSE ]
   - name: 'KarliahFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Kataous'' Bug Fixes for Player Homes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'KeeningFix.*\.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'KeeningSmithing.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'KillThemGenerals.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'LCBM.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2211,71 +2419,71 @@ plugins:
             text: 'Использование lightingfix.esp вместе с Relighting Skyrim - Dawnguard.esp может вызвать несоответствия освещения.'
         condition: 'file("lightingfix.esp")'
   - name: 'lydia chair fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MageRobesCommentFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Magnus20.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.4", >=)'
         subs: [ '1.4' ]
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Magnus20.esp",DE1D22AC)'
   - name: 'Magnus50.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.4", >=)'
         subs: [ '1.4' ]
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Magnus50.esp",1003FA02)'
   - name: 'Magnus100.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.4", >=)'
         subs: [ '1.4' ]
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Magnus100.esp",37C6B07A)'
   - name: 'Mannequinfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'markedfordeathfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MatchingSetFixes.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.9", >=)'
         subs: [ '1.9' ]
   - name: 'Miner''s Clothes Variant Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Minor Miner Fixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MorokeiFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Muiri''s Problem.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Nightingale Blade fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'nightingalebladefix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Nightingale Bow and Nord Hero Bow silenced.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Nirnroot Placement Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'NoFortifyFortifyResto.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'NordHeroBowTemperFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.9", >=)'
         subs: [ '1.9.26' ]
   - name: 'onehandeddagger.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
 # ## Orc&ElfFix4TBBP.esp
 # ## This is a fix for TBBP meshes, I believe.
   - name: 'Potema and Mjoll Quest Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Proudspire Manor Bug Fixes.esp'
     msg:
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
       - <<: *alreadyInX
         condition: 'file("ProudspireManorImprovements.esp")'
         subs: [ 'ProudspireManorImprovements.esp' ]
@@ -2285,17 +2493,17 @@ plugins:
         condition: 'version("../TESV.exe", "1.5", >=)'
         subs: [ '1.5' ]
   - name: 'Prowler.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Quick Orc Fixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Regain Winterhold Bugfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Repairing the Phial fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'RiftenJailVisualFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'riften jail test 2.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'RiverwoodTraderInvestorFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2307,25 +2515,25 @@ plugins:
         condition: 'version("../TESV.exe", "1.5", >=)'
         subs: [ '1.5' ]
   - name: 'sapphire_speak_fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Severin Manor Music.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Shrine of Azura LOD Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Silent Moons Enchantment Fix.*\.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'SkyrimFixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Smallest Mod EVER.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Spell Absorb Fix.esp'
     msg:
-      - *alreadyInUSLEEP
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'SolitudeProudspireManorFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'StaggerFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'StaffOfMagnusFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2342,67 +2550,67 @@ plugins:
         condition: 'version("../TESV.exe", "1.9", >=)'
         subs: [ '1.9.26' ]
   - name: 'SybilleStentorFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'TalosShrineFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'TemperSkyforgeDaggers.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'terramend.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0x2aa40114
         <<: *dirtyPlugin
         itm: 8
         udr: 7
   - name: 'Thalmor Embassy Disguise Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Thief armor fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Thorald.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'towerofstrength.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Treebugfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Vampire Eyes Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'VampireInvisibleItemsFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'VampiresHoodFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'vampirelorddrainlifefix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Vampire Orcs Welcome in Strongholds.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'VampireRaceDetection.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
 # ## VampireRaceDetection.esp
 # ## As per thread on the mod''s Steam Workshop page: "http://steamcommunity.com/sharedfiles/filedetails/?id=89925318"
 # ## Vulkanglas statt Malachit.esp
   - name: 'Wandering Dupe Mannequin Fix v1.2 SPODUM Vanilla.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'whiterun bug fixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Whiterun Field Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Whiterun Lighting Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'WhitePhialFireplace.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'whitrun stair fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Winterhold Shields.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'wolfqueenfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Wuuthrad fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'YngolFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
 # ## Unofficial Patches
 # ## Unofficial Skyrim Patch that is not false flagged
 # ## maybe need better place for this file. also need to correct english message (tokcdk)
@@ -2419,11 +2627,11 @@ plugins:
 # ## RaceComp is explicit master; USKP is implicit
 # ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
   - name: 'ancient-nordic-pickaxe-smith-fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BoundDaggerFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BreezhomeAlchemyLabFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'chopping_block_wood_fires.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2432,28 +2640,28 @@ plugins:
 # ## correctdoucebriseALCH.esp
 # ## french patch to allow the purchase of alchemy lab in Breezehome under DG
   - name: 'CraftableBoneHawkRings.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dawnguard Breezehome Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0x330aed25
         <<: *dirtyPlugin
         itm: 2
   - name: 'Dawnguard Summons Fixed.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DawnguardDrainVitalityFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'dghorsepatch.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dragonborn Spell Absorb Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HDtextures01.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.8", >=)'
         subs: [ '1.8' ]
   - name: 'Headtracking Fix - Dawnguard.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HF-MoveSpouse.esp'
     msg: [ *corrupt ]
     dirty:
@@ -2461,11 +2669,11 @@ plugins:
         <<: *dirtyPlugin
         itm: 15
   - name: 'HighResTexturePackFix.esp'
-    msg: [ *alreadyInUHRP ]
+    msg: [ *alreadyInOrFixedByUHRP ]
   - name: 'invisible_shield_fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Krill_AurielsBowFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Prodspire Cooking pot hearthfire bugfix.esp'
     msg:
       - <<: *alreadyInX
@@ -2482,7 +2690,7 @@ plugins:
       - name: 'HighResTexturePack02.esp'
         condition: 'not file("HighResTexturePack01.esp")'
   - name: 'Stahlrim Arrow Projectile Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Vampire Face Fixes.esp'
     msg:
       - type: say
@@ -2498,7 +2706,7 @@ plugins:
           - lang: ru
             text: 'Этот мод может быть несовместим с любыми модами, меняющими классы персонажей вампиров.'
   - name: 'USKP Dawnguard vampire face & eye fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'EveryVampireEyesGrow.esp'
     msg:
       - type: say
@@ -3196,19 +3404,19 @@ plugins:
 # ## Bethsoft6.118,128and9.187,193
   - name: 'Warmer Magic Lights v2.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Warmer Magic Lights v2.esp",2A1E2810)'
   - name: 'Warmer Magic Lights v2 - White.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Warmer Magic Lights v2 - White.esp",B5571C09)'
   - name: 'Warmer Magic Lights v2 - White - Big.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Warmer Magic Lights v2 - White - Big.esp",ACAE3F31)'
   - name: 'Warmer Magic Lights v2 - Big.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Warmer Magic Lights v2 - Big.esp",DE4F928D)'
 # ## NoTint.esp
 # ## Moved ClimatesOfTamriel From Here
@@ -3293,13 +3501,13 @@ plugins:
 # assorted k dds below from bugzilla are likely due to steam packaging reqs -LD
   - name: 'calientevanillaarmor - banditpack curvy.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'calientesvanillaarmor - banditpack slim.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'cbbev3_vanillapack.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'TouringCarriages.esp'
     group: *newLandsGroup
   - name: 'Cutting Room Floor.esp'
@@ -3360,8 +3568,8 @@ plugins:
 # Removed REGEX because specific load order is needed
   - name: 'Weapons and Armor fixes.esp'
     msg:
-      - *alreadyInUSLEEP
-      - <<: *patchOutSub
+      - *alreadyInOrFixedByUSLEEP
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("Weapons and Armor fixes.esp",D27D2F2)'
       - type: say
         content:
@@ -3381,7 +3589,7 @@ plugins:
 # with other mods in Base group.
   - name: 'Weapons and Armor fixes - Hacks.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("Weapons and Armor fixes - Hacks.esp",119BC97C)'
   - name: 'sh_HF_goat_fix.esp'
     tag:
@@ -3593,7 +3801,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'BabettesFeastBalanced.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'version("BabettesFeastBalanced.esp","1.2",<)'
       - type: warn
         content:
@@ -3609,7 +3817,7 @@ plugins:
       - 'BabettesFeastWeakerEffects.esp'
   - name: 'BabettesFeastOverpowered.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'version("BabettesFeastOverpowered.esp","1.2",<)'
       - type: warn
         content:
@@ -3625,7 +3833,7 @@ plugins:
       - 'BabettesFeastWeakerEffects.esp'
   - name: 'BabettesFeastWeakerEffects.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'version("BabettesFeastWeakerEffects.esp","1.2",<)'
       - type: warn
         content:
@@ -3656,7 +3864,7 @@ plugins:
         subs: [ 'BagofTrash .esp file' ]
   - name: 'BanditsEyepatch.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("BanditsEyepatch.esp",43DE0DBC)'
   - name: 'Bandits Wear Helmets.esp'
     tag:
@@ -3886,15 +4094,15 @@ plugins:
         condition: 'checksum("cao_DweSchematicsSearch.esp",A655AB19)'
   - name: 'cao_goldbrand.esp'
     msg:
-      - <<: *preCKUseXInstead
+      - <<: *fixedPluginPreCK
         subs: [ 'http://www.nexusmods.com/skyrim/mods/5830' ]
   - name: 'cao_goldbrand_WT.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'version("cao_goldbrand_WT.esp", "1.0", <)'
   - name: 'cao_ToolsTrade_BuyRL.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'checksum("cao_ToolsTrade_BuyRL.esp",3979D654)'
   - name: 'CarryWeightSpells.esp'
     dirty:
@@ -3940,7 +4148,7 @@ plugins:
   - name: 'Conjuration & Summoning fixes.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
       - <<: *alreadyInX
         condition: 'file("SpellFix.esp")'
         subs: [ 'SpellFix.esp' ]
@@ -4161,7 +4369,8 @@ plugins:
       - *SKSE
       - *SkyUI
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ 'Java Runtime Environment 7 update 17+' ]
     clean:
       # version: 1.7.3
@@ -4794,7 +5003,7 @@ plugins:
         udr: 59
   - name: 'Lost Art of the Blacksmith.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Lost Art of the Blacksmith.esp",1720F631)'
   - name: 'LoversComfort.esp'
     req:
@@ -5575,7 +5784,8 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("SkyMoMod Lore.+\.esp")'
         subs: [ 'SkyMoMod Lore .esp file' ]
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ 'SkyMoMod 10' ]
     tag:
       - Delev
@@ -5879,7 +6089,7 @@ plugins:
       - Relev
   - name: 'ValsCraftingMeltdownAlpha.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     inc:
@@ -6458,7 +6668,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 15
   - name: 'Alexia CatGarter.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'AlexScorpionsShop.esp'
     dirty:
       - crc: 0xc2dbdc74
@@ -6525,7 +6735,7 @@ plugins:
   - name: 'ArmoredAlikrHoods.esp'
     msg: [ *obsolete ]
   - name: 'ArmoredNocturnal.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'armorkits.esp'
     tag:
       - Relev
@@ -6565,7 +6775,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Backpack OE.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'BadGremlinsJarHunt.esp'
     dirty:
       - crc: 0x82caa554
@@ -6581,7 +6791,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 6
   - name: 'BBP_ArmorPack2.esp'
-    msg: [ *reqNudeAndJiggly ]
+    msg: [ *requiresCHSBHC ]
   - name: 'BDYEB.esp'
     tag:
       - Relev
@@ -6604,19 +6814,20 @@ plugins:
         subs: [ 'Better Bond of Matrimony .esp file' ]
   - name: 'Bikini Clothes.esp'
     msg:
-      - *ReqCBBE
-      - <<: *patchOutSub
+      - *requiresCBBE
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
   - name: 'bikiniADEC.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Acdale EyeCandy Body ADEC](http://www.nexusmods.com/skyrim/mods/5390)' ]
     dirty:
       - crc: 0xc44993c7
         <<: *dirtyPlugin
         itm: 1
   - name: 'bikiniCHSBHC.esp'
-    msg: [ *reqNudeAndJiggly ]
+    msg: [ *requiresCHSBHC ]
   - name: 'Black Mage Armor.esp'
     msg:
       - <<: *patchRequiemRPC
@@ -6742,7 +6953,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Casual Outfit OE.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Cattelya Greatsword.esp'
     dirty:
       - crc: 0x38c1fcb3
@@ -6754,7 +6965,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'chainmail.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Chainmail Hood v2.2.esp'
     tag:
       - Relev
@@ -6766,7 +6977,8 @@ plugins:
         condition: 'file("SkyRe Chainmail Hauberks.esp")'
   - name: 'ChildrenClothesClassed.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Elaborate Textiles](http://www.nexusmods.com/skyrim/mods/19826)' ]
   - name: 'ChitinGoggles.esp'
     msg:
@@ -6897,7 +7109,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'CompanionsShields.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("CompanionsShields.esp",75F460D6)'
   - name: 'CoolItems1_2.esp'
     msg:
@@ -6919,7 +7131,8 @@ plugins:
         itm: 4
   - name: 'CraftableCrownHelmets.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Crown Helmets](http://www.nexusmods.com/skyrim/mods/5803/) meshes' ]
   - name: 'craftableskyforgeweapons.esp'
     dirty:
@@ -6955,7 +7168,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Daedric Extra Armor.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("Daedric Extra Armor.esp",8DDD039)'
   - name: 'DaedricCrossbow.esp'
     dirty:
@@ -6978,10 +7191,10 @@ plugins:
   - name: 'DarkImperial.esp'
     msg: [ *obsolete ]
   - name: 'selobl_DarkLillith.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'DarkNemesis.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("DarkNemesis.esp",CE5E555B)'
     tag:
       - name: Deactivate
@@ -7046,7 +7259,7 @@ plugins:
             text: 'Убедитесь что у вас установлена корректная версия типа тел: [DIMONIZED женское тело UNP](http://www.nexusmods.com/skyrim/mods/6709) или [женское тело CBBE](http://www.nexusmods.com/skyrim/mods/2666).'
   - name: 'DemonHunterV2armor.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'detectbeing.esp'
     dirty:
       - crc: 0x120f41f1
@@ -7065,11 +7278,11 @@ plugins:
     msg: [ *obsolete ]
   - name: 'DHuntress.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'diamondweapons1\.[02]\.esp'
     msg: [ *obsolete ]
   - name: 'DIMclothes1.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'DLE_en.esp'
     msg:
       - <<: *obsolete
@@ -7079,14 +7292,14 @@ plugins:
       - 'DME.esp'
   - name: 'Doom Heavy Set.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
   - name: 'DPArmor.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'version("DPArmor.esp","0.3",<)'
   - name: 'DragonboneCrossbow.esp'
     dirty:
@@ -7300,7 +7513,7 @@ plugins:
         itm: 11
   - name: 'EternalShineArmorAndWeapons.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("..\TESV.exe","1.8",>) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
     tag:
       - name: Deactivate
@@ -7353,21 +7566,21 @@ plugins:
         itm: 2
   - name: 'FlameAtronachArmor.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'Flare Arrow( Brighter| Explosive)?.esp'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("Flare Arrow( Brighter| Explosive)?.esp")'
         subs: [ 'Flare Arrow .esp file' ]
   - name: 'Fitness Outfit OE.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Fletching.esp'
     dirty:
       - crc: 0xb2669e47
         <<: *dirtyPlugin
         itm: 1
   - name: 'Footwear OE.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'fox(\d\d?)[^51-56] Armor\.esp' #up to fox50 for FoxMergedv2.6(checksumofesp,2E996104)
     msg:
       - <<: *alreadyInX
@@ -7375,7 +7588,7 @@ plugins:
         subs: [ 'FoxMerged.esp' ]
   - name: 'Frostmourne.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("Frostmourne.esp",428F46D4) and not checksum("Frostmourne.esp",51F43BA4) and version("..\TESV.exe","1.8",>)'
   - name: 'Frostmourne 1.0.1.esp'
     msg: [ *obsolete ]
@@ -7386,16 +7599,16 @@ plugins:
       - 'frostmourneblade.esp'
   - name: 'FullBootForKKSA.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'NordicSkaalHeavyFalmerWeightFix.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'GattiBondage0.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'GattiBondage1.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'Ghosu - Project Flintlock.esp'
     dirty:
       - crc: 0xee1910e
@@ -7434,7 +7647,7 @@ plugins:
         itm: 6
   - name: 'Hana.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Hana.esp",C86C77D9)'
   - name: 'HartherzEnglish.esp'
     dirty:
@@ -7483,7 +7696,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'HmmWhatToWear.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'HmmWhatToWearMerged.esp'
     tag:
       - Delev
@@ -7763,7 +7976,7 @@ plugins:
   - name: 'T3nd0sOverhaulJSwordsPlugin.esp'
     msg: [ *obsolete ]
   - name: 'Juquinha-armory.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'katana.esp'
     dirty:
       - crc: 0xa48ab749
@@ -7777,71 +7990,71 @@ plugins:
     msg: [ *obsolete ]
   - name: 'KURESE Gloria conversion.esp'
     msg:
-      - *reqDimonizedUNP
+      - *requiresUNP
       - <<: *alreadyInX
         condition: 'file("DIMclothes1.esp")'
         subs: [ 'DIMONIZED UNP clothing resources' ]
   - name: 'Lady of Death.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'LBArmorPack.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Blood Mage.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'Blood Mage.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Jarl Clothes.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Blood of the Divines.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Dark Lady.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Dragon Princess.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Dwemer Fury Heavy Set.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB_EnemiesEssplode!.esp'
     tag:
       - Relev
   - name: 'LB GoldLeopardRobe.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Lady Bat.esp'
     dirty:
       - crc: 0xcb996b7d
         <<: *dirtyPlugin
         udr: 1
   - name: 'LB Lady .+\.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Lustmord Vampire.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Lydia Armor.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Mandu Armor.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Medusa Armor.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB_MuchAdoSnowElves.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Necromance Robe.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Pantie & Boots.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Jewelry.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB RobeExperiencedMagician.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Santa Babe.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Underworld.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Valkyrie.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB VampLord.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LBClosetMagician.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LBGoldArmoredBikini.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LC_ArcherEliteArmor.esp'
     msg:
       - <<: *obsolete
@@ -7851,7 +8064,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 5
   - name: 'LC_AssassinOfShadownArmor.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LeatherBackpackBlack.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -7874,19 +8087,20 @@ plugins:
         subs: [ 'LeatherBackPack Original .esp file' ]
   - name: 'LeiFangAndChristieByNausicaa.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'LFArmors.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("LFArmors.esp",EF8F74B6)'
   - name: 'LH Jewel Collection.esp'
     msg:
-      - *ReqLBreplacer
-      - <<: *reqModX
+      - *requiresLadyBody
+      - <<: *requiresX
+        type: say
         subs: [ '[Lady Head](http://modgames.net/load/256-1-0-15866)' ]
   - name: 'Lich King''s Armor.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'checksum("Lich King''s Armor.esp",5C5EB4D7)'
   - name: 'light daedric armor.esp'
     dirty:
@@ -7927,7 +8141,7 @@ plugins:
         itm: 8
   - name: 'loners_sword.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("loners_sword.esp",246E1CBB)'
   - name: 'Longbows.esp'
     tag:
@@ -8040,9 +8254,9 @@ plugins:
         <<: *dirtyPlugin
         itm: 16
   - name: 'MinaArmors.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Mini Sage Outfit.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'MoarJewels.esp'
     dirty:
       - crc: 0x80b52779
@@ -8072,7 +8286,7 @@ plugins:
         condition: 'checksum("Monys Portable Crafting Equipment.esp",9B33A305)'
   - name: 'MorrowindArmor.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'checksum("MorrowindArmor.esp",7DDD7CAC)'
   - name: 'MorrowindGlass.esp'
     inc:
@@ -8109,7 +8323,7 @@ plugins:
             text: 'Убедидесь, что используете правильный esp для [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
   - name: 'Mystic.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Mystic.esp",67CBB5B2)'
     tag:
       - name: Deactivate
@@ -8316,7 +8530,7 @@ plugins:
             text: 'Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) или [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или [UNP Blessed Body (UNPB)](http://www.nexusmods.com/skyrim/mods/37900).'
   - name: 'Niagras Bleach Pack.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Niagras Bleach Pack.esp",32E5FB23)'
   - name: 'Nicoroshi Creations.esp'
     tag:
@@ -8423,9 +8637,9 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_Oriental Weapon&Armor.*\.esp")'
   - name: 'Osare KneeSocks.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Osare Maid Outfit.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Painkiller''s_Hrothmund''s_Axe.esp'
     dirty:
       - crc: 0x781b36e
@@ -8435,7 +8649,7 @@ plugins:
     req:
       - *SKSE
   - name: 'PENIS.esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'PhoenixBlade.esp'
     msg:
       - <<: *corrupt
@@ -8475,7 +8689,8 @@ plugins:
       - Relev
   - name: 'Guard Weapons - Heavy Armory - Halberds.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Heavy Armory](http://www.nexusmods.com/skyrim/mods/21120)' ]
     dirty:
       - crc: 0xbaf5e2e4
@@ -8499,7 +8714,7 @@ plugins:
         udr: 3
   - name: 'Redguard Shield.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'version("Redguard Shield.esp","1.2",<)'
   - name: 'RedguardKnight.esp'
     tag:
@@ -8554,7 +8769,7 @@ plugins:
       - Delev
   - name: 'RogueOutfit.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'romulusarmor.esp'
     dirty:
       - crc: 0x355fe880
@@ -8566,7 +8781,7 @@ plugins:
         <<: *dirtyPlugin
         udr: 2
   - name: 'Saber Lily - Caliburn Outfit.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Samurai Light Armors .esp'
     dirty:
       - crc: 0x3cf22aae
@@ -8586,17 +8801,17 @@ plugins:
         itm: 1
   - name: 'seducesets.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'SED7-CBBE3.+\.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'SED7-BettermalesFLACID_SILVEREDITION_malePiercing_PA.esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'selobl_Diano.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'SeraphimStandAlone.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("SeraphimStandAlone.esp",556E0B68)'
   - name: 'SeraphineHuntedArmor.esp'
     msg:
@@ -8671,8 +8886,8 @@ plugins:
         condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
   - name: 'Skimpy Plate Armor.esp'
     msg:
-      - *ReqCBBE
-      - <<: *patchOutSub
+      - *requiresCBBE
+      - <<: *fixedPluginOutSub
         condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
   - name: 'skinripper essentials kit.esp'
     tag:
@@ -8698,7 +8913,7 @@ plugins:
         itm: 2
   - name: 'SnowyNightingale.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("SnowyNightingale.esp",83B46ABF)'
   - name: 'Song General Armor&weapon.esp'
     tag:
@@ -8713,7 +8928,7 @@ plugins:
         itm: 1
   - name: 'Sovngarde Steel Armor and Weapons.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("Sovngarde Steel Armor and Weapons.esp",B84EB4CE)'
   - name: 'Space Wiking''s Dwemer Exoskeleton.esp'
     dirty:
@@ -8748,7 +8963,7 @@ plugins:
         itm: 3
   - name: 'Spriggan Armor 2.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
     dirty:
       - crc: 0xc5e7b65b
         <<: *dirtyPlugin
@@ -8790,10 +9005,10 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ 'Included in Sharlikran''s Compatability Patch.' ]
-      - *ReqCBBE
+      - *requiresCBBE
       - *corrupt
   - name: 'SuccubusUNPByNausicaa.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'SummoningRings1_2.esp'
     msg:
       - <<: *corrupt
@@ -8826,9 +9041,10 @@ plugins:
       - Relev
   - name: 'TBSC_BodySuit.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[CHSBHC - BBP female body](http://www.nexusmods.com/skyrim/mods/4888)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[SkyHeels](http://www.nexusmods.com/skyrim/mods/5589) resources' ]
         condition: 'not file("SkyHeels.esp")'
   - name: 'tbmchrysamere.esp'
@@ -8861,20 +9077,20 @@ plugins:
       - Relev
   - name: 'TemplarArmor.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("TemplarArmor.esp",EE0395E4)'
   - name: 'TERAArmors_CBBE.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'TeraArmors-CBBEByNausicaa.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'TERAArmors.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'TERA Armors for Skyrim - UNP.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'TERA Armors for Skyrim - UNPB-BBP.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'TERAArmors - Leveled Lists.esp'
     tag:
       - Relev
@@ -8932,7 +9148,8 @@ plugins:
         itm: 9
   - name: 'TMasks-JudgmentDay.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ 'Meshes and textures from [Tribunal Maskes by Zairaam](http://www.nexusmods.com/skyrim/mods/20077), esp usage optional' ]
   - name: 'TorchArrow-Dawnguard.esp'
     inc:
@@ -8981,25 +9198,25 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'UNP Jewelry Retextured.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'UNP Jewelry Variants.esp'
     msg: [ *obsolete ]
   - name: 'UNP Jewelry Variants V-2.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'UNP Leather Clothes.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'UNP Boots.*\.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Isharas_PetrovichClothes.esp'
     req:
       - name: 'UNP Simply Clothes.esp'
         display: '[UNP Simply Clothes](http://www.nexusmods.com/skyrim/mods/16658)'
   - name: 'UNP Undies.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'UNPB Barbarian Armor.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'UNP Petrovna.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'VagabondArmor.esp'
     tag:
       - name: Deactivate
@@ -9020,7 +9237,7 @@ plugins:
         condition: 'file("SkyRe_Plugin_VanguardArmor_3.esp") or file("SG_HothTrooper.esp")'
   - name: 'ViceroyInquisitor.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'viciousdawnbreaker.esp'
     tag:
       - name: Deactivate
@@ -9056,14 +9273,14 @@ plugins:
     inc:
       - '3rdEraWeaponsMoS.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("WeaponsOf3E.esp",67F338A1)'
       - *alreadyInSkyRe
     tag:
       - Relev
   - name: 'WeaponsOf3E - No Leveled Lists.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
   - name: '3rdEraWeaponsMoS.esp'
     msg:
@@ -9095,7 +9312,7 @@ plugins:
       - Relev
   - name: 'RecyclingModWo3E.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("Weapons of the Third Era.+\.esp")'
         subs: [ '[Weapons of the Third Era](http://www.nexusmods.com/skyrim/mods/3871)' ]
   - name: 'WereWolfRing.esp'
@@ -9258,7 +9475,7 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe XAC Stat (Original|Swap)( Classic)?\.esp")'
   - name: 'YPSArmorPack.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'zabswitchhat.esp'
     dirty:
       - crc: 0x70e18e66
@@ -9270,7 +9487,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'zzTmBallGown.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Lorecraft - Bandolier.esp'
     msg:
       - type: warn
@@ -10484,7 +10701,7 @@ plugins:
         subs: [ 'ERSO 03 Dragonborn .esp file' ]
   - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DD\.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp")'
         subs: [ '[Deadly Dragons](http://www.nexusmods.com/skyrim/mods/3829) (6.3.5)' ]
       - <<: *useOnlyOneX
@@ -10718,7 +10935,7 @@ plugins:
           - lang: ja
             text: '競合: Uncapped perks'
         condition: 'file("Uncapped Perks.*\.esp")'
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
         subs: [ '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175) for full perk functionality' ]
       - type: say
@@ -10812,7 +11029,7 @@ plugins:
             text: 'SkyReを他のModと併用すると多数の競合が発生します。プレイする前にReadmeの内容を読んでおけば問題の多くを防げるでしょう。[こちら](http://www.nexusmods.com/skyrim/mods/9286)を参照してください。'
           - lang: ru
             text: 'SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его [здесь](http://www.nexusmods.com/skyrim/mods/9286)(Англ.).'
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
         subs: [ '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175) for full perk functionality' ]
       - type: say
@@ -13043,7 +13260,7 @@ plugins:
   - name: 'DovahkiinSpeech.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9548' ]
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
         subs: [ 'Remove deleted records **00105F1B**, **0010FDD4**, **00105F1A** and **00105F1D** in TES5Edit. Ignoring this advice will lead to potential game breaking issues.' ]
         condition: 'checksum("DovahkiinSpeech.esp", B23123F1)'
     dirty:
@@ -13811,7 +14028,7 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).' ]
-      - <<: *preCKUseXInstead
+      - <<: *fixedPluginPreCK
         condition: 'version("hideout.esp","10.2",<)'
         subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
   - name: 'hideout - hearthfires.esp'
@@ -13833,7 +14050,7 @@ plugins:
         udr: 3
   - name: 'retreat.esp'
     msg:
-      - <<: *preCKUseXInstead
+      - <<: *fixedPluginPreCK
         condition: 'version("retreat.esp","1.0",<)'
         subs: [ 'http://www.nexusmods.com/skyrim/mods/59522' ]
       - <<: *obsolete
@@ -15553,7 +15770,7 @@ plugins:
         itm: 9
   - name: 'Sweet&Sexy Lingerie.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
     dirty:
       - crc: 0x7bb104b9
         <<: *dirtyPlugin
@@ -16254,13 +16471,16 @@ plugins:
         condition: 'version("WARZONES - Civil Unrest.esp", "2015.2", <)'
   - name: 'Better Warzones Soldier Uniforms.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[WARZONES](http://www.nexusmods.com/skyrim/mods/9494)' ]
   - name: 'Better Warzones Soldier Uniforms With Cloaks.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[WARZONES](http://www.nexusmods.com/skyrim/mods/9494)' ]
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Cloaks of Skyrim](http://www.nexusmods.com/skyrim/mods/12092)' ]
   - name: 'waterstonemanor.esp'
     dirty:
@@ -16877,7 +17097,7 @@ plugins:
         subs: [ 'Requiem - Cutting Room Floor.esp' ]
   - name: 'BetterQuestObjectives-BSaQBPatch.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[Better Skill and Quest Books Names](http://www.nexusmods.com/skyrim/mods/10125)' ]
         condition: 'not file("Better Skill and Quest Books Names.esp") or not file("Better Skill and Quest Books Names - BS.esp")'
   - name: 'BetterQuestObjectives-BSaQB-BSPatch.esp'
@@ -16920,7 +17140,7 @@ plugins:
         subs: [ 'Book Covers Skyrim.esp' ]
   - name: 'Headbomb''s Better Sorting - Ammo.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
       - type: say
         content:
@@ -16933,7 +17153,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
       - type: say
         content:
@@ -16951,7 +17171,7 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Food .esp file' ]
   - name: 'Headbomb''s Better Sorting - Food (Light Weight).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
       - type: say
         content:
@@ -16964,7 +17184,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
       - type: say
         content:
@@ -16977,7 +17197,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
       - type: say
         content:
@@ -16990,7 +17210,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
       - type: say
         content:
@@ -17003,7 +17223,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
       - type: say
         content:
@@ -17016,7 +17236,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
       - type: say
         content:
@@ -17029,7 +17249,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
       - type: say
         content:
@@ -17047,7 +17267,7 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Potions .esp file' ]
   - name: 'Headbomb''s Better Sorting - Potions (Light Weight).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
       - type: say
         content:
@@ -17060,7 +17280,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
       - type: say
         content:
@@ -17073,7 +17293,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
       - type: say
         content:
@@ -17086,7 +17306,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
       - type: say
         content:
@@ -17104,7 +17324,7 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Soul Gems .esp file' ]
   - name: 'Headbomb''s Better Sorting - Soul Gems (Ranked).esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
       - type: say
         content:
@@ -17117,7 +17337,7 @@ plugins:
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
       - type: say
         content:
@@ -17284,9 +17504,9 @@ plugins:
     tag:
       - Delev
   - name: 'DA_Maxwell_Outfit_Dibella_UNP.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'DA_Maxwell_Outfit_Dibella_UNP_EV.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Deadly_Slaughterfish.esp'
     msg:
       - type: say
@@ -17613,9 +17833,8 @@ plugins:
       - 'Hothtrooper44_ArmorCompilation.esp'
       - 'Hothtrooper44_Armor_Ecksstra.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/771785-guard-dialogue-overhaul/?p=63659936)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/771785-guard-dialogue-overhaul/?p=63659936)' ]
         condition: 'checksum("Guard Dialogue Overhaul.esp", AFACD2E9)'
     clean:
       # version: 1.4 Fully cleaned
@@ -17864,7 +18083,7 @@ plugins:
         itm: 6
   - name: 'RSkyrimChildren.esm'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Unofficial Skyrim Patch.esp") and not file("RSChildren_PatchUSKP.esp") and not file("RSChildren_CompleteUSKP.esp")'
         subs: [ '[RSChildren USKP Patch](http://www.nexusmods.com/skyrim/mods/55555/)' ]
       - <<: *patchRequiemRPC
@@ -17918,7 +18137,7 @@ plugins:
           - lang: ru
             text: 'Несовместим с: Другие, меняющие драконов,  моды(Deadly Dragons и т.п.)'
   - name: 'LB Yarl Clothes.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LegionArmorVariety(OPTIONA?L?\d)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -18002,7 +18221,7 @@ plugins:
         itm: 6
   - name: 'MageFriendlyDragonPriestMasks.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("MageFriendlyDragonPriestMasks.esp",D1755B5B)'
   - name: 'MageFriendlyDragonPriestMasks_hidden.esp'
     msg: [ *corrupt ]
@@ -18015,7 +18234,7 @@ plugins:
       - 'Magnify Spell Enchantments.esp'
   - name: 'Magnus100_50.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Magnus100_50.esp",6243CC49)'
   - name: 'MasculinizedLevelLists.esp'
     tag:
@@ -18218,7 +18437,7 @@ plugins:
       - 'OpenFaceGuardHelmets.esp'
   - name: 'OpenFaceHelmets.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("OpenFaceHelmets.esp",D695AB86)'
   - name: 'Organized Books v(0.1|1.0)?\.esp'
     msg: [ *obsolete ]
@@ -18289,12 +18508,13 @@ plugins:
       - 'Passive dragons.esp'
   - name: 'PalistovSpinningArrows_CloserQuiversLongerArrows.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Closer Quivers and Longer Arrows](http://www.nexusmods.com/skyrim/mods/5711)' ]
   - name: 'PermanentWerewolfNightEye.esp'
     msg: [ *obsolete ]
   - name: 'posesivecorpses.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'PowerOfBlood.esp'
     dirty:
       - crc: 0x9572b55c
@@ -18314,7 +18534,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Real Dibella priestress.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[DreamBurrows Sage Outfit Retexture Standalone](http://www.nexusmods.com/skyrim/mods/17699)' ]
   - name: 'Realistic Animal Behaviour.esp'
     msg:
@@ -18681,28 +18902,28 @@ plugins:
     after: [ 'Convenient Horses.esp' ]
   - name: 'dD - Enhanced Blood Main.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and not file("SkyMoMod.esm") and not file("dD-Dawnguard-EBT Patch.esp")'
         subs: [ '[Dawnguard Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-EBT Patch.esp")'
         subs: [ '[Dragonborn Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dragonborn.esm") and active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-Dawnguard-EBT Patch.esp")'
         subs: [ '[Dragonborn-Dawnguard_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-SkyrimMonsterMod EBT Patch.esp")'
         subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-Dawnguard-MonsterMod EBT Patch.esp")'
         subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and file("SkyMoMod.esm") and not file("dD-Dragonborn-MonsterMod EBT Patch.esp")'
         subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-DG-DB-MonsterMod EBT Patch.esp") and not file("Skyrim Immersive Creatures.esp")'
         subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and file("Skyrim Immersive Creatures.esp") and not file("dD-DG-DB-MM-SiC EBT Patch.esp")'
         subs: [ '[Monster Mod and Immersive Creatures Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
     dirty:
@@ -19602,7 +19823,7 @@ plugins:
         nav: 2
   - name: 'SolitudeBetterDocks-SDD-CompatiblePatch.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("Solitude A City Of Trade.esm") or not file("Solitude A City Of Trade.esp") or not file("Solitude A City Of Trade LITE!.esp")'
         subs: [ 'Solitude A City Of Trade' ]
   - name: 'TAVERiften.esp'
@@ -20522,7 +20743,7 @@ plugins:
         itm: 10
   - name: 'BabettesFeast - IMCN.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'version("BabettesFeast - IMCN.esp","0.31",<)'
   - name: 'kuerteeEncumberingLootArmourAndWeapons.esp'
     req:
@@ -21329,7 +21550,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'conjureatronarchfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'cremation.esp'
     dirty:
       - crc: 0x849d7480
@@ -21646,7 +21867,8 @@ plugins:
     msg: [ *alreadyInLegendarySouls ]
   - name: 'Summon Behemot Dragon.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Behemoth](http://www.nexusmods.com/skyrim/mods/17473) meshes, textures' ]
   - name: 'Summon_Gargoyle.esp'
     inc:
@@ -21963,7 +22185,7 @@ plugins:
   - name: 'MorePowerfulNecromancy.esp'
     msg: [ *obsolete ]
   - name: 'More Visible Soul Trap Effect.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Paralysis in Illusion.esp'
     dirty:
       - crc: 0x7a14834a
@@ -21981,7 +22203,7 @@ plugins:
       - 'Skyrim_Best Voise Magic.esp'
   - name: 'SkyrimBalancedMagicSystem.esp'
     msg:
-      - <<: *preCKSharlikranPatch
+      - <<: *fixedPluginPreCKSharlikran
         condition: 'checksum("SkyrimBalancedMagicSystem.esp",B3A41B23)'
   - name: 'SkyrimBalancedMagicSystem - spells.esp'
     msg: [ *obsolete ]
@@ -22111,7 +22333,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Fortify Enchanting necklace.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("Fortify Enchanting necklace.esp",E170C251)'
   - name: 'HasteEnchantment.esp'
     dirty:
@@ -22400,7 +22622,7 @@ plugins:
         itm: 32
   - name: 'BS-Balanced_Magic_BETA_2_0.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("(Headbomb''s )?Better Sorting.*\.esp")'
         subs: [ 'Better Sorting' ]
   - name: 'New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp'
@@ -22448,7 +22670,7 @@ plugins:
       - 'Dawnguard.esm'
   - name: 'cao_PerkRanks.esp'
     msg:
-      - <<: *patchOutSub
+      - <<: *fixedPluginOutSub
         condition: 'not checksum("cao_PerkRanks.esp",B2A7936F)'
   - name: 'Character_Generation.esp'
     req:
@@ -22647,7 +22869,7 @@ plugins:
       - name: 'SPIKE.esm'
         display: 'Guard Dialogue Overhaul'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("SkyRe_Main.esp") and not file("SkyRe_Main_NoDawnguard.esp")'
         subs: [ 'Skyrim Redone' ]
   - name: 'StavesofSkyrim.esp'
@@ -22884,7 +23106,7 @@ plugins:
     req:
       - 'More Craftables.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("PerkUP-.*\.esp")'
         subs: [ '[PerkUP](http://www.nexusmods.com/skyrim/mods/9359)' ]
   - name: 'Perky.esp'
@@ -23248,7 +23470,8 @@ plugins:
       - *SKSE
       - *FNIS
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[a little sexy apparel replacer - for CBBE/UNP/ADEC](http://www.nexusmods.com/skyrim/mods/5564/)' ]
   - name: 'ApachiiHair.esp'
     msg: [ *obsolete ]
@@ -23264,12 +23487,13 @@ plugins:
     msg:
       - <<: *obsolete
         condition: 'not checksum("NoMoreVanillaHair.esp",A31830F1) and not checksum("NoMoreVanillaHair.esp",7F9635D9)'
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Crazy hairs and demoness hairs conversion by zzjay](http://www.nexusmods.com/skyrim/mods/19623)' ]
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Hair Pack](http://www.nexusmods.com/skyrim/mods/3809)' ]
-      - <<: *reqModX
-        type: warn
+      - <<: *requiresX
         subs: [ 'Hair packs of TES IV: Oblivion and Hair packs of Fallout3, which are no longer available' ]
     dirty:
       - crc: 0xa31830f1
@@ -23361,11 +23585,11 @@ plugins:
         <<: *dirtyPlugin
         itm: 12
   - name: 'Dwarf Race.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Gimli.Esp'
     inc:
       - 'Dwarf Race.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Dwemer_Race.esp'
     dirty:
       - crc: 0x91cd07be
@@ -23408,18 +23632,18 @@ plugins:
   - name: 'GiantChild.esp'
     msg: [ *obsolete ]
   - name: 'Gollum.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Halfling Race.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Sam Merry and Peppin.Esp'
     inc:
       - 'Halfling Race.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Frodo Sam Merry & Peppin.Esp'
     inc:
       - 'Halfling Race.Esp'
       - 'Sam Merry and Peppin.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'HBR_Marshwalker(Argonian)_Standalone.esp'
     dirty:
       - crc: 0x8e76e40f
@@ -23530,7 +23754,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'RZW_ChubbyRaces.esp'
-    msg: [ *reqNudeAndJiggly ]
+    msg: [ *requiresCHSBHC ]
   - name: 'SC_Drow Race.esp'
     msg: [ *obsolete ]
   - name: 'SirenRace.esp'
@@ -23652,7 +23876,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Aragorn.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Azzi.esp'
     dirty:
       - crc: 0x22f94ac9
@@ -23671,7 +23895,7 @@ plugins:
         itm: 11
         udr: 1
   - name: 'Boromir.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'DFB - Companions Lost No More.esp'
     dirty:
       - crc: 0x500dd498
@@ -23751,7 +23975,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 14
   - name: 'Gandalf.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'HorseCompanions.esp'
     msg:
       - type: warn
@@ -23849,7 +24073,7 @@ plugins:
     inc:
       - 'CWBattleUlfric.esp'
   - name: 'Legolas.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Lilium_Companion.esp'
     dirty:
       - crc: 0x3c10445f
@@ -24194,9 +24418,9 @@ plugins:
     msg: [ *corrupt ]
   - name: 'Angelina Jolie.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'Angelina Jolie UNP.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Annekke.esp'
     dirty:
       - crc: 0xd2e8a173
@@ -24277,7 +24501,8 @@ plugins:
         itm: 6
   - name: 'Braithwen Fernleaf( Archer| Auburn| Auburn Auto)?\.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Human Eyes for Elves](http://www.nexusmods.com/skyrim/mods/195)' ]
       - *corrupt
   - name: 'BrandShei.esp'
@@ -24307,7 +24532,8 @@ plugins:
         itm: 3
   - name: 'Cicero.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Nude Male with Roberts New Vegas male](http://www.nexusmods.com/skyrim/mods/3421)' ]
   - name: 'CleanBalimund.esp'
     msg: [ *corrupt ]
@@ -24350,7 +24576,7 @@ plugins:
         condition: 'version("../TESV.exe","1.5.26",>)'
   - name: 'Companion_Crea.esp'
     msg:
-      - *ReqCBBEorDemUNP
+      - *requiresCBBEorUNP
       - type: say
         content:
           - lang: en
@@ -24365,7 +24591,7 @@ plugins:
             text: 'Убедитесь, что вы используете правильный esp, для соответствующего типа тела'
   - name: 'Companion_Lese.esp'
     msg:
-      - *ReqCBBEorDemUNP
+      - *requiresCBBEorUNP
       - type: say
         content:
           - lang: en
@@ -24536,9 +24762,11 @@ plugins:
         itm: 12
   - name: 'FelixConstantine.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Smooth Faces for Ladies and Gents](http://www.nexusmods.com/skyrim/mods/1971)' ]
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Pretty Eyes](http://www.nexusmods.com/skyrim/mods/3424)' ]
   - name: 'Fezzik the Giant.esp'
     msg:
@@ -24661,7 +24889,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'HousecarlWhiterun Sexy Lydia v0.5.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
       - <<: *corrupt
         condition: 'checksum("HousecarlWhiterun Sexy Lydia v0.5.esp",7C29388F)'
   - name: 'Hroki.esp'
@@ -24871,7 +25099,8 @@ plugins:
         subs: [ 'UniqueLydia .esp file' ]
   - name: 'Maerwen Briaerthorne.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[Human eyes for Elves](http://www.nexusmods.com/skyrim/mods/195)' ]
       - *corrupt
   - name: 'Maven.esp'
@@ -25026,7 +25255,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Serana_Revised.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ 'Meshes and Textures from [Girls of Skyrim - Michelle](http://www.nexusmods.com/skyrim/mods/21038)' ]
   - name: 'Vampire Serana.esp'
     msg: [ *obsolete ]
@@ -25218,7 +25448,7 @@ plugins:
           - lang: ru
             text: 'Удалите скрипт C01QuestScript.pex, из папки data/scripts, если он существует.'
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
         subs: [ 'Better Followers - Armor Pack I & II, download it on BF page' ]
       - <<: *useOnlyOneX
@@ -25246,12 +25476,12 @@ plugins:
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'Better NPC - Faction Pack.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
         subs: [ 'Beauty version of Better Followers, named BP or BNP or SBP or SBNP' ]
   - name: 'Better NPC - Marriage Pack.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
         subs: [ 'Beauty version of Better Followers, named BP or BNP or SBP or SBNP' ]
   - name: 'AskFollowerSkills.esp'
@@ -25374,13 +25604,13 @@ plugins:
         display: '[USKP Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)'
         condition: 'active("Unofficial Skyrim Patch.esp")'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[Dawnguard Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
         condition: 'active("Dawnguard.esm") and not active("Change Follower Outfits Redux -- Dawnguard.esp")'
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[Hearthfire Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
         condition: 'active("HearthFires.esm") and not active("Change Follower Outfits Redux -- Hearthfire.esp")'
-      - <<: *reqModX
+      - <<: *requiresX
         subs: [ '[Dragonborn Compatibility Patch](http://www.nexusmods.com/skyrim/mods/23798/)' ]
         condition: 'active("Dragonborn.esm") and not active("Change Follower Outfits Redux -- Dragonborn.esp")'
   - name: 'Followers Stop Fighting Each Other.esp'
@@ -25730,7 +25960,7 @@ plugins:
     inc:
       - 'LiFE.esm'
     msg:
-      - *ReqCBBEorDemUNP
+      - *requiresCBBEorUNP
   - name: 'nord_nightseye01.esp'
     dirty:
       - crc: 0xbb8b06a8
@@ -25860,7 +26090,7 @@ plugins:
         condition: 'many("WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp")'
         subs: [ 'Blood Coins .esp file' ]
   - name: 'ChickenNestFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MD - WMTBNDE .+\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -26371,12 +26601,12 @@ plugins:
         condition: 'not file("rcrnPlus.esp")'
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("rcrnShaders.esp") or not file("rcrnPlus.esp")'
         subs: [ '[RCRN](http://www.nexusmods.com/skyrim/mods/1875)' ]
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN - Lanterns Of Skyrim.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'not file("rcrnShaders.esp") or not file("rcrnPlus.esp")'
         subs: [ '[RCRN](http://www.nexusmods.com/skyrim/mods/1875)' ]
   - name: 'Volrath - Dragonreach - Brazier fix( - 1\.1)\.esp'
@@ -26704,7 +26934,8 @@ plugins:
         condition: 'checksum("GreenWaterFix.esp",7F378D8E)'
   - name: 'GreenWaterFix_CompWithWATER1_5b.esp'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
+        type: say
         subs: [ '[WATER 1.5b](http://www.nexusmods.com/skyrim/mods/13268)' ]
   - name: 'Atlas Dawnguard.esp'
     dirty:
@@ -27147,7 +27378,7 @@ plugins:
     tag:
       - NoMerge
     msg:
-      - <<: *SmashedVsBashedPatch
+      - <<: *onlyUseSmashOrBash
         condition: 'file("Bashed Patch.*\.esp")'
         subs: [ 'Bashed Patch' ]
   - name: 'Bashed Patch.*\.esp'
@@ -27156,7 +27387,7 @@ plugins:
       - 'Scarcity - Less Loot Mod.esp'
       - 'TES5Merged.esp'
     msg:
-      - <<: *SmashedVsBashedPatch
+      - <<: *onlyUseSmashOrBash
         condition: 'file("Smashed Patch.esp")'
         subs: [ 'Smashed Patch.esp' ]
   - name: 'Warburg''s 3D Paper World Map - Dawnguard.esp'
@@ -28170,7 +28401,7 @@ plugins:
       - name: 'II EaTC Patch.esp'
         condition: 'active("ETaC - RESOURCES.esm")'
     msg:
-      - <<: *reqModX
+      - <<: *requiresX
         condition: 'active("Requiem.esp") and not active("II Requiem patch.esp") and not active("II Requiem C2H6O patch.esp")'
         subs: [ 'II Requiem patch.esp or II Requiem C2H6O patch.esp' ]
   - name: 'NPC_Overhaul_V_(1|2|3)_\.esp'
@@ -28608,9 +28839,8 @@ plugins:
   - name: 'skycity3.esp'
     msg:
       # version: 3.2 after Quick Clean
-      - <<: *hasWildEdits
-        subs:
-          - '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/2127024-sky-city-markarth-evolved/?p=63661711)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/2127024-sky-city-markarth-evolved/?p=63661711)' ]
         condition: 'checksum("skycity3.esp", A9225F03)'
     dirty:
       # version: 3.2
@@ -28633,9 +28863,8 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Unique Flowers & Plants.esm'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/2101589-unique-flowers-and-plants/?p=63660816)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/2101589-unique-flowers-and-plants/?p=63660816)' ]
         condition: 'checksum("Unique Flowers & Plants.esm", 3966F8DD)'
     clean:
       - crc: 0x81DB879A
@@ -28756,9 +28985,8 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'HallgarthsforNPCs.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - '[Manual Cleaning Guide](https://www.nexusmods.com/skyrim/mods/93719)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](https://www.nexusmods.com/skyrim/mods/93719)' ]
         condition: 'checksum("HallgarthsforNPCs.esp", DBF9EA56)'
     dirty:
       # version: 1
