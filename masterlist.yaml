@@ -1,11 +1,11 @@
 common:
 # Files
-  - &SKSE
-    name: '../skse_loader.exe'
-    display: '[SKSE](http://skse.silverlock.org)'
   - &FNIS
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim](http://www.nexusmods.com/skyrim/mods/11811)'
+  - &SKSE
+    name: '../skse_loader.exe'
+    display: '[SKSE](http://skse.silverlock.org)'
   - &SkyUI
     name: 'SkyUI.esp'
     display: '[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)'
@@ -36,6 +36,38 @@ common:
         text: 'Удалите. Уже включено в %1%.'
       - lang: zh_CN
         text: '删除。已包含在%1%中。'
+  - &alreadyInAmidianBornContentAddon
+    <<: *alreadyInX
+    condition: 'active("aMidianBorn_ContentAddon.esp")'
+    subs: [ 'aMidianBorn_ContentAddon.esp' ]
+  - &alreadyInBDO
+    <<: *alreadyInX
+    condition: 'file("BDO.esp")'
+    subs: [ 'BDO.esp' ]
+  - &alreadyInCompleteCraftingOverhaul
+    <<: *alreadyInX
+    condition: 'file("Complete Crafting Overhaul( - BS version)?\.esp")'
+    subs: [ 'Complete Crafting Overhaul' ]
+  - &alreadyInCompleteCraftingOverhaulRemade
+    <<: *alreadyInX
+    condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+    subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
+  - &alreadyInCraftTemperSmelt
+    <<: *alreadyInX
+    condition: 'file("Craft, Temper, Smelt.esp")'
+    subs: [ 'Craft, Temper, Smelt.esp' ]
+  - &alreadyInFFNords
+    <<: *alreadyInX
+    condition: 'file("FFNords.esp")'
+    subs: [ 'FFNords.esp' ]
+  - &alreadyInLegendarySouls
+    <<: *alreadyInX
+    condition: 'file("LegendarySouls.esp")'
+    subs: [ 'LegendarySouls.esp' ]
+  - &alreadyInPerkUp
+    <<: *alreadyInX
+    condition: 'file("PerkUP.+\.esp")'
+    subs: [ 'PerkUP plugins' ]
   - &alreadyInPerkUpArchery
     <<: *alreadyInX
     condition: 'file("PerkUP-Archery.esp")'
@@ -44,54 +76,22 @@ common:
     <<: *alreadyInX
     condition: 'file("Pretty Followers.esm")'
     subs: [ 'Pretty Followers' ]
-  - &alreadyInSkyRe
-    <<: *alreadyInX
-    condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
-    subs: [ 'SkyRe Main' ]
-  - &alreadyInBDO
-    <<: *alreadyInX
-    condition: 'file("BDO.esp")'
-    subs: [ 'BDO.esp' ]
-  - &alreadyInLegendarySouls
-    <<: *alreadyInX
-    condition: 'file("LegendarySouls.esp")'
-    subs: [ 'LegendarySouls.esp' ]
-  - &alreadyInSkyrimImmersiveCreatures
-    <<: *alreadyInX
-    condition: active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")
-    subs: [ 'Skyrim Immersive Creatures.esp' ]
-  - &alreadyInCompleteCraftingOverhaul
-    <<: *alreadyInX
-    condition: 'file("Complete Crafting Overhaul( - BS version)?\.esp")'
-    subs: [ 'Complete Crafting Overhaul' ]
-  - &alreadyInCraftTemperSmelt
-    <<: *alreadyInX
-    condition: 'file("Craft, Temper, Smelt.esp")'
-    subs: [ 'Craft, Temper, Smelt.esp' ]
-  - &alreadyInPerkUp
-    <<: *alreadyInX
-    condition: 'file("PerkUP.+\.esp")'
-    subs: [ 'PerkUP plugins' ]
-  - &alreadyInSIDTComplete
-    <<: *alreadyInX
-    condition: 'file("SIDT - Complete.esp")'
-    subs: [ 'SIDT - Complete.esp' ]
-  - &alreadyInFFNords
-    <<: *alreadyInX
-    condition: 'file("FFNords.esp")'
-    subs: [ 'FFNords.esp' ]
   - &alreadyInSexierHousecarls
     <<: *alreadyInX
     condition: 'file("Sexier Housecarls.esp")'
     subs: [ 'Sexier Housecarls.esp' ]
-  - &alreadyInAmidianBornContentAddon
+  - &alreadyInSIDTComplete
     <<: *alreadyInX
-    condition: 'active("aMidianBorn_ContentAddon.esp")'
-    subs: [ 'aMidianBorn_ContentAddon.esp' ]
-  - &alreadyInCompleteCraftingOverhaulRemade
+    condition: 'file("SIDT - Complete.esp")'
+    subs: [ 'SIDT - Complete.esp' ]
+  - &alreadyInSkyrimImmersiveCreatures
     <<: *alreadyInX
-    condition: 'active("Complete Crafting Overhaul_Remade.esp")'
-    subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
+    condition: active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")
+    subs: [ 'Skyrim Immersive Creatures.esp' ]
+  - &alreadyInSkyRe
+    <<: *alreadyInX
+    condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
+    subs: [ 'SkyRe Main' ]
 
   - &alreadyInOrFixedByX
     type: error
@@ -113,20 +113,64 @@ common:
     subs: [ 'Unofficial High Resolution Patch.esp' ]
     condition: 'active("Unofficial High Resolution Patch.esp")'
 
-  - &fixedInOfficialPatchX
+  - &alsoUseX
+    type: say
+    content:
+      - lang: en
+        text: 'It is highly recommended that you also use %1%.'
+      - lang: de
+        text: 'Es wird dringend empfohlen, dass Sie auch %1% benutzen.'
+
+  - &corrupt
+    type: warn
+    content:
+      - lang: en
+        text: 'This file is corrupt and should not be used.'
+      - lang: de
+        text: 'Diese Datei ist korrupt und sollte nicht benutzt werden.'
+      - lang: es
+        text: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
+      - lang: ja
+        text: 'このファイルは壊れています。使用しないでください。'
+      - lang: pl
+        text: 'Ten plik jest zepsuty i nie powinien być używany.'
+      - lang: pt_BR
+        text: 'Este arquivo está corrompido e não deveria ser utilizado.'
+      - lang: ru
+        text: 'Файл испорчен и не должен использоваться.'
+
+  - &deleteOrDeactivateX
     type: error
     content:
       - lang: en
-        text: 'Delete. Fixed in Official Patch %1%.'
+        text: 'Delete or deactivate. %1%'
       - lang: de
-        text: 'Löschen. Korrigiert im offiziellen Patch %1%.'
-      - lang: es
-        text: 'Borrar. Incluido en el patch oficial %1%.'
+        text: 'Lösche oder deaktiviere. %1%'
       - lang: ja
-        text: '削除してください。公式パッチ%1%で修正されています。'
+        text: '%1%を削除するか非アクティブにしてください。'
       - lang: ru
-        text: 'Удалите. Исправлено в официальном патче %1%.'
+        text: 'Не забудьте отключить или удалить. %1%'
+    subs: [ '' ]
 
+  - &deletePlugin
+    type: warn
+    content:
+      - lang: en
+        text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
+      - lang: de
+        text: 'Beim Nutzen von **%1%** ist es empfohlen, dass Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Mittel (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden. Diese werden immer noch von **%1%** vorausgesetzt.'
+      - lang: ja
+        text: '**%1%**を使用中の場合。このespファイルは無効化あるいは削除するのはおすすめしますが、このmodによってインストールされたリソース(メッシュ、テクスチャなど)はそのままにしておいてください。これらは**%1%**によって引き続き必要とされてます。'
+      - lang: ko
+        text: '**%1%** 모드를 사용중일 떈, 이 ESP 파일을 삭제하고 함께 설치된 리소스(예: 메쉬, 텍스쳐)만 남겨두는 걸 권장합니다. 리소스는 **%1%** 모드에서 필요로 합니다.'
+      - lang: pl
+        text: 'Używając **%1%**, jest rekomendowane abyś dezaktywował lub usunął ten plik ESP, ale pozostawił zasoby (siatki, tekstury) zainstalowane z tym modem. Ponieważ są wciąż wymagane przez **%1%**.'
+      - lang: pt
+        text: 'Ao utilizar **%1%**, é recomendado que você desative ou apage este ficheiro ESP, mas mantenha os recursos (ex. meshes, texturas) instalados por este mod. Sendo que os mesmos ainda são necessitados por **%1%**. '
+      - lang: pt_BR
+        text: 'Quando se usa **%1%**, é recomendado que você desative ou delete este arquivo ESP, mas que mantenha os recursos (ex. meshes, texturas) que vieram com esse mod.'
+      - lang: ru
+        text: 'Пока используется **%1%**, рекомендуется отключить или удалить esp этого мода, но оставить установленные ресурсы (meshes, textures). Т.к. они все еще требуются для **%1%**.'
 
   - &doNotClean
     type: say
@@ -153,6 +197,21 @@ common:
         text: 'Не очищать ITM-записи. "Грязные" правки оставлены специально и требуются для функционирования мода. Восстановить удаленные записи (UDR) можно безопасно, но идентичные мастерфайлу лучше оставить.'
       - lang: zh_CN
         text: '不干净。"脏"数据是故意的，这是mod需要的功能。'
+
+  - &fixedInOfficialPatchX
+    type: error
+    content:
+      - lang: en
+        text: 'Delete. Fixed in Official Patch %1%.'
+      - lang: de
+        text: 'Löschen. Korrigiert im offiziellen Patch %1%.'
+      - lang: es
+        text: 'Borrar. Incluido en el patch oficial %1%.'
+      - lang: ja
+        text: '削除してください。公式パッチ%1%で修正されています。'
+      - lang: ru
+        text: 'Удалите. Исправлено в официальном патче %1%.'
+
   - &fixedPluginOutSub
     type: warn
     content:
@@ -182,6 +241,31 @@ common:
   - &fixedPluginPreCKSharlikran
     <<: *fixedPluginPreCK
     subs: [ 'http://www.nexusmods.com/skyrim/mods/26230' ]
+
+  - &harmful
+    type: warn
+    content:
+      - lang: en
+        text: 'This plugin is now considered harmful and should not be used.'
+      - lang: de
+        text: 'Diese Datei wird nun als schädlich angesehen und sollte nicht benutzt werden.'
+      - lang: ja
+        text: '現在では悪影響を与えると見なされているプラグインです。使用しないでください。'
+      - lang: ru
+        text: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
+
+  - &installOriginalResources
+    type: say
+    content:
+      - lang: en
+        text: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
+      - lang: de
+        text: 'Vergessen Sie nicht, die Original Mod vor dem Aktivieren eines Patches zu installieren, oder Skyrim wird abstürzen wenn es nicht die benötigten Dateien finden kann.'
+      - lang: ja
+        text: 'パッチをアクティブにする前に必ず元のModをインストールしてください。元のModから使用されているファイルが見つからなかった場合、ゲームが強制終了したりバグが発生する恐れがあります。'
+      - lang: ru
+        text: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
+
   - &obsolete
     type: warn
     content:
@@ -200,106 +284,7 @@ common:
       - lang: zh_CN
         text: '已过时。请升级到最新版本。 %1%'
     subs: [ '' ]
-  - &corrupt
-    type: warn
-    content:
-      - lang: en
-        text: 'This file is corrupt and should not be used.'
-      - lang: de
-        text: 'Diese Datei ist korrupt und sollte nicht benutzt werden.'
-      - lang: es
-        text: 'Este archivo puede corromper tu juego y no debería ser utilizado.'
-      - lang: ja
-        text: 'このファイルは壊れています。使用しないでください。'
-      - lang: pl
-        text: 'Ten plik jest zepsuty i nie powinien być używany.'
-      - lang: pt_BR
-        text: 'Este arquivo está corrompido e não deveria ser utilizado.'
-      - lang: ru
-        text: 'Файл испорчен и не должен использоваться.'
-  - &harmful
-    type: warn
-    content:
-      - lang: en
-        text: 'This plugin is now considered harmful and should not be used.'
-      - lang: de
-        text: 'Diese Datei wird nun als schädlich angesehen und sollte nicht benutzt werden.'
-      - lang: ja
-        text: '現在では悪影響を与えると見なされているプラグインです。使用しないでください。'
-      - lang: ru
-        text: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
-  - &useOnlyOneX
-    type: error
-    content:
-      - lang: en
-        text: 'Use only one %1%.'
-      - lang: de
-        text: 'Nutzen Sie nur einen %1%.'
-      - lang: es
-        text: 'Utilizar solo un %1%.'
-      - lang: ja
-        text: '%1%は一つだけ使用してください。'
-      - lang: ko
-        text: '%1%을 한 개만 사용하십시오.'
-      - lang: pl
-        text: 'Używa tylko jednego %1%'
-      - lang: pt
-        text: 'Utilizar apenas um %1%.'
-      - lang: pt_BR
-        text: 'Utilize apenas um %1%'
-      - lang: ru
-        text: 'Используйте только один %1%.'
-      - lang: zh_CN
-        text: '只使用一个%1%。'
-  - &alsoUseX
-    type: say
-    content:
-      - lang: en
-        text: 'It is highly recommended that you also use %1%.'
-      - lang: de
-        text: 'Es wird dringend empfohlen, dass Sie auch %1% benutzen.'
-  - &installOriginalResources
-    type: say
-    content:
-      - lang: en
-        text: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-      - lang: de
-        text: 'Vergessen Sie nicht, die Original Mod vor dem Aktivieren eines Patches zu installieren, oder Skyrim wird abstürzen wenn es nicht die benötigten Dateien finden kann.'
-      - lang: ja
-        text: 'パッチをアクティブにする前に必ず元のModをインストールしてください。元のModから使用されているファイルが見つからなかった場合、ゲームが強制終了したりバグが発生する恐れがあります。'
-      - lang: ru
-        text: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-  - &deleteOrDeactivateX
-    type: error
-    content:
-      - lang: en
-        text: 'Delete or deactivate. %1%'
-      - lang: de
-        text: 'Lösche oder deaktiviere. %1%'
-      - lang: ja
-        text: '%1%を削除するか非アクティブにしてください。'
-      - lang: ru
-        text: 'Не забудьте отключить или удалить. %1%'
-    subs: [ '' ]
-  - &deletePlugin
-    type: warn
-    content:
-      - lang: en
-        text: 'When using **%1%**. It''s recommended that you deactivate or delete this ESP file, but keep the resources (e.g. meshes, textures) installed with this mod. As they''re still required by **%1%**.'
-      - lang: de
-        text: 'Beim Nutzen von **%1%** ist es empfohlen, dass Sie die ESP-Datei deaktivieren oder löschen, aber die mitgelieferten Mittel (z.B Meshes, Texturen) beibehalten die mit dieser Mod mitinstalliert wurden. Diese werden immer noch von **%1%** vorausgesetzt.'
-      - lang: ja
-        text: '**%1%**を使用中の場合。このespファイルは無効化あるいは削除するのはおすすめしますが、このmodによってインストールされたリソース(メッシュ、テクスチャなど)はそのままにしておいてください。これらは**%1%**によって引き続き必要とされてます。'
-      - lang: ko
-        text: '**%1%** 모드를 사용중일 떈, 이 ESP 파일을 삭제하고 함께 설치된 리소스(예: 메쉬, 텍스쳐)만 남겨두는 걸 권장합니다. 리소스는 **%1%** 모드에서 필요로 합니다.'
-      - lang: pl
-        text: 'Używając **%1%**, jest rekomendowane abyś dezaktywował lub usunął ten plik ESP, ale pozostawił zasoby (siatki, tekstury) zainstalowane z tym modem. Ponieważ są wciąż wymagane przez **%1%**.'
-      - lang: pt
-        text: 'Ao utilizar **%1%**, é recomendado que você desative ou apage este ficheiro ESP, mas mantenha os recursos (ex. meshes, texturas) instalados por este mod. Sendo que os mesmos ainda são necessitados por **%1%**. '
-      - lang: pt_BR
-        text: 'Quando se usa **%1%**, é recomendado que você desative ou delete este arquivo ESP, mas que mantenha os recursos (ex. meshes, texturas) que vieram com esse mod.'
-      - lang: ru
-        text: 'Пока используется **%1%**, рекомендуется отключить или удалить esp этого мода, но оставить установленные ресурсы (meshes, textures). Т.к. они все еще требуются для **%1%**.'
+
   - &onlyUseSmashOrBash
     type: say
     content:
@@ -313,44 +298,7 @@ common:
         text: '%1%と同時に使用できますが、追加作業が必要となります。Smashed PatchかBash Patchはそれぞれ単独で使用してください。'
       - lang: ru
         text: 'Может быть использовано совместно с %1% но возможно потребуется дополнительная работа. Smashed Patch или Bash Patch должны быть использованы независимо друг от друга.'
-  - &patchProvided
-    type: say
-    content:
-      - lang: en
-        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
-      - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
-      - lang: ja
-        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのmodページにあります。.'
-      - lang: ko
-        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 모드 페이지에서 제공 중입니다.'
-      - lang: pl
-        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona na stronie internetowej tej wtyczki.'
-      - lang: pt
-        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está disponível na página mod deste plugin.'
-      - lang: pt_BR
-        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade é provido na página desse plugin.'
-      - lang: ru
-        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти на странице плагина.'
-  - &patchIncluded
-    type: say
-    content:
-      - lang: en
-        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
-      - lang: de
-        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit dem Installer dieses Plugins.'
-      - lang: ja
-        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのインストーラーに含まれています。'
-      - lang: ko
-        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 인스톨러에 포함되어 있습니다.'
-      - lang: pl
-        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona wraz z instalatorem tej wtyczki.'
-      - lang: pt
-        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluído com o instalador do plugin'
-      - lang: pt_BR
-        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluso com o instalador desse plugin.'
-      - lang: ru
-        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти в установщике плагина.'
+
   - &patch3rdParty
     type: say
     content:
@@ -397,64 +345,46 @@ common:
     <<: *patchRequiem3rdParty
     subs:
       - '[More Requiem Patches](https://www.nexusmods.com/skyrim/mods/58141)'
-  - &semiCompatible
+
+  - &patchIncluded
     type: say
     content:
       - lang: en
-        text: '%1% is not fully compatible with this mod. %2%'
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is included with this plugin''s installer.'
       - lang: de
-        text: '%1% ist nicht voll kompatibel mit dieser Mod. %2%'
+        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch ist enthalten mit dem Installer dieses Plugins.'
       - lang: ja
-        text: '%1%は%2%と完全な互換性がありません。'
+        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのインストーラーに含まれています。'
       - lang: ko
-        text: '%1% 모드는 이 모드와 완벽히 호환되지 않습니다. %2%'
+        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 인스톨러에 포함되어 있습니다.'
+      - lang: pl
+        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona wraz z instalatorem tej wtyczki.'
       - lang: pt
-        text: '%1% não é totalmente compatível com este mod. %2%'
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluído com o instalador do plugin'
       - lang: pt_BR
-        text: '%1% não é completamente compatível com este mod. %2%'
+        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade está incluso com o instalador desse plugin.'
       - lang: ru
-        text: '%1% не полностью совместим с этим модом. %2%'
-  - &requiresX
-    type: warn
+        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти в установщике плагина.'
+  - &patchProvided
+    type: say
     content:
       - lang: en
-        text: 'Requires: %1%'
+        text: 'You seem to be using **%1%**, but you have not enabled a compatibility patch for this mod. A compatibility patch is provided on this plugin''s mod page.'
       - lang: de
-        text: 'Benötigt: %1%'
-      - lang: es
-        text: 'Requiere: %1%'
+        text: 'Sie scheinen **%1%** zu nutzen, aber Sie haben keinen Kompatibilitätspatch für diese Mod aktiviert. Ein Kompatibilitätspatch wird auf dieser Plugins Mod-Seite zur Verfügung gestellt.'
       - lang: ja
-        text: '要: %1%'
+        text: '**%1%**を使用しているようですが、このmodの互換性パッチが有効になっていません。互換性パッチは、このプラグインのmodページにあります。.'
+      - lang: ko
+        text: '**%1%** 모드와 사용하기 위한 호환성 패치가 작동 중이지 않습니다. 호환성 패치는 이 플러그인의 모드 페이지에서 제공 중입니다.'
+      - lang: pl
+        text: 'Wygląda na to że używasz **%1%**, ale nie masz aktywnej łatki zgodności dla tego moda. Łatka zgodności jest dostarczona na stronie internetowej tej wtyczki.'
+      - lang: pt
+        text: 'Você aparenta estar a utilizar **%1%**, mas não ativou o patch de compatibilidade para este mod. Um patch de compatibilidade está disponível na página mod deste plugin.'
+      - lang: pt_BR
+        text: 'Você aparenta estar usando **%1%**, mas não habilitou o patch de compatibilidade para este mod. Um patch de compatibilidade é provido na página desse plugin.'
       - lang: ru
-        text: 'Требуется: %1%'
-  - &requiresCBBE
-    <<: *requiresX
-    type: say
-    subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666)' ]
-  - &requiresCBBEorUNP
-    <<: *requiresX
-    type: say
-    subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
-  - &requiresLadyBody
-    <<: *requiresX
-    subs: [ '[Lady Body](http://modgames.net/load/256-1-0-11011)' ]
-    condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
-  - &requiresUNP
-    <<: *requiresX
-    type: say
-    subs: [ '[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
-  - &requiresCHSBHC
-    <<: *requiresX
-    type: say
-    subs: [ '[CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)' ]
-  - &requiresUNPB
-    <<: *requiresX
-    type: say
-    subs: [ '[UNPB](http://www.nexusmods.com/skyrim/mods/37900)' ]
-  - &requiresBetterMales
-    <<: *requiresX
-    type: say
-    subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)' ]
+        text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти на странице плагина.'
+
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
   - &requiresMCM
     type: warn
@@ -476,6 +406,91 @@ common:
       - lang: ru
         text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
     condition: 'not active("SkyUI.esp")'
+
+  - &requiresX
+    type: warn
+    content:
+      - lang: en
+        text: 'Requires: %1%'
+      - lang: de
+        text: 'Benötigt: %1%'
+      - lang: es
+        text: 'Requiere: %1%'
+      - lang: ja
+        text: '要: %1%'
+      - lang: ru
+        text: 'Требуется: %1%'
+  - &requiresBetterMales
+    <<: *requiresX
+    type: say
+    subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)' ]
+  - &requiresCBBE
+    <<: *requiresX
+    type: say
+    subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666)' ]
+  - &requiresCBBEorUNP
+    <<: *requiresX
+    type: say
+    subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
+  - &requiresCHSBHC
+    <<: *requiresX
+    type: say
+    subs: [ '[CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)' ]
+  - &requiresLadyBody
+    <<: *requiresX
+    subs: [ '[Lady Body](http://modgames.net/load/256-1-0-11011)' ]
+    condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
+  - &requiresUNP
+    <<: *requiresX
+    type: say
+    subs: [ '[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
+  - &requiresUNPB
+    <<: *requiresX
+    type: say
+    subs: [ '[UNPB](http://www.nexusmods.com/skyrim/mods/37900)' ]
+
+  - &semiCompatible
+    type: say
+    content:
+      - lang: en
+        text: '%1% is not fully compatible with this mod. %2%'
+      - lang: de
+        text: '%1% ist nicht voll kompatibel mit dieser Mod. %2%'
+      - lang: ja
+        text: '%1%は%2%と完全な互換性がありません。'
+      - lang: ko
+        text: '%1% 모드는 이 모드와 완벽히 호환되지 않습니다. %2%'
+      - lang: pt
+        text: '%1% não é totalmente compatível com este mod. %2%'
+      - lang: pt_BR
+        text: '%1% não é completamente compatível com este mod. %2%'
+      - lang: ru
+        text: '%1% не полностью совместим с этим модом. %2%'
+
+  - &useOnlyOneX
+    type: error
+    content:
+      - lang: en
+        text: 'Use only one %1%.'
+      - lang: de
+        text: 'Nutzen Sie nur einen %1%.'
+      - lang: es
+        text: 'Utilizar solo un %1%.'
+      - lang: ja
+        text: '%1%は一つだけ使用してください。'
+      - lang: ko
+        text: '%1%을 한 개만 사용하십시오.'
+      - lang: pl
+        text: 'Używa tylko jednego %1%'
+      - lang: pt
+        text: 'Utilizar apenas um %1%.'
+      - lang: pt_BR
+        text: 'Utilize apenas um %1%'
+      - lang: ru
+        text: 'Используйте только один %1%.'
+      - lang: zh_CN
+        text: '只使用一个%1%。'
+
   - &versionXIncY
     type: error
     content:
