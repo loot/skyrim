@@ -36,14 +36,6 @@ common:
         text: 'Удалите. Уже включено в %1%.'
       - lang: zh_CN
         text: '删除。已包含在%1%中。'
-  - &alreadyInUSLEEP
-    <<: *alreadyInX
-    subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214/)' ]
-    condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp")'
-  - &alreadyInUHRP
-    <<: *alreadyInX
-    condition: 'active("Unofficial High Resolution Patch.esp")'
-    subs: [ 'Unofficial High Resolution Patch.esp' ]
   - &alreadyInPerkUpArchery
     <<: *alreadyInX
     condition: 'file("PerkUP-Archery.esp")'
@@ -100,6 +92,26 @@ common:
     <<: *alreadyInX
     condition: 'active("Complete Crafting Overhaul_Remade.esp")'
     subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
+
+  - &alreadyInOrFixedByX
+    type: error
+    content:
+    - lang: en
+      text: 'Delete. Already included or otherwise fixed in %1%.'
+    - lang: de
+      text: 'Löschen. Bereits enthalten oder anderweitig korrigiert in %1%.'
+    - lang: es
+      text: 'Borrar. Esta incluido, o de otra modo, arreglado en el %1%.'
+    - lang: ru
+      text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
+  - &alreadyInOrFixedByUSLEEP
+    <<: *alreadyInOrFixedByX
+    subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214/)' ]
+    condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp")'
+  - &alreadyInOrFixedByUHRP
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Unofficial High Resolution Patch.esp' ]
+    condition: 'active("Unofficial High Resolution Patch.esp")'
 
   - &fixedInOfficialPatchX
     type: error
@@ -2113,63 +2125,63 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'AerinRestrainingOrder.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'AmuletOfArticulationFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Amulet of Articulation Leveling Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     tag:
       - Relev
   - name: 'AmuletofJulianosFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Ancient Knowledge Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Ancient Shrouded Cowl Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Ancient Shrouded Cowl Beast Race Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Annoying Clipping Remover.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'ArdwenToGildergreen.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Argonian Disarming Bash Bug Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Ash Pile Expiration.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'AspectOfTerrorFixv1.0.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'AtronachEffectFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'AtronachForgeBootsFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'aventus aretino fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0x80e1299c
         <<: *dirtyPlugin
         itm: 6
   - name: 'Back off, Barbas!.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Bardfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'bardsfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'bard''s_college_quests_fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Belethor Vendor Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'blackreachgeodefix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BM_Bench.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'brandsheiprisonfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'brawlbug-plugin.esp'
     msg: [ *obsolete ]
   - name: 'Brawl Bugs CE.esp'
     msg: [ *alreadyInSkyRe ]
   - name: 'breezehomelightfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BreezehomeLadderFixJP.esp'
     dirty:
       - crc: 0xF2BAA689
@@ -2181,7 +2193,7 @@ plugins:
     inc:
       - 'BreezehomeLadderFix.esp'
   - name: 'BreezehomeLightingFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'breezehomeshadowfix.esp'
     dirty:
       - crc: 0xf416a7c9
@@ -2190,107 +2202,107 @@ plugins:
   - name: 'Breezehome-hf-CTD-fix.esp'
     msg: [ *obsolete ]
   - name: 'Brynjolf Dialogue Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'bug_description.blessing_of_talos.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Bugfix-NoFollowerTrespassDialog.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
 # ## DSAMG - Miraak Music Fixes.esp
 # ## author instructions to place above UDBP: should cut some DB "can''t absorb dragon souls" reports
 # ## DSAMG proper is just bunch of scripts and music files, no esp- possibly why load order troubleshooting comes up empty -LD
   - name: 'bugfixalchemynoregeneration.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'bugfixenchanmentnoregeneration.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Bugfixrobesenchantments.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Bullseye Perk Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Civil War Neutrality Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Chesko_MatchingSetPerkFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.9", >=)'
         subs: [ '1.9' ]
   - name: 'Cloak Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'CombatMusicFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Conjuration Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'CriticalChargeFix.esp'
     msg:
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
       - <<: *obsolete
         condition: 'not checksum("CriticalChargeFix.esp",A35E7560)'
       - <<: *alreadyInX
         condition: 'file("PerkUP-TwoHanded.esp")'
         subs: [ 'PerkUP-TwoHanded.esp' ]
   - name: 'CTD Fellglow Keep Dungeon Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DaedricBowBashFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DaedricShieldHiResFix.esp'
-    msg: [ *alreadyInUHRP ]
+    msg: [ *alreadyInOrFixedByUHRP ]
   - name: 'Daggers acts like blades.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DaggerBowEnchantPotionFixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Deflect Arrows Perk Fix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.5", >=)'
         subs: [ '1.5' ]
   - name: 'Derkeethus_fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DialogueWithAVampireOrWhatever.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dragon Shout - Marked for Death.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0xc9ab8c3e
         <<: *dirtyPlugin
         itm: 9
   - name: 'Dreagonsreach bottle fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'EbonyArmorMatchingSetFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'EbonyBladeFixed.*\.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Farengar.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'FalmerHelmetFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Falmer Helmet Fixed.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Farm Wheat Height Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'FemaleVampireEyeFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'fix-BelethorUnlocked.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Floating Cabbage fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'followerhuntingbowfix.esp'
     msg:
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
       - *alreadyInBDO
       - <<: *alreadyInX
         condition: 'file("Better Followers - [SBNP].*\.esp")'
         subs: [ 'Better Followers' ]
   - name: 'FollowerHuntingBow12.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'FoodRestoreHealthFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'forsworn boots fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'FrostMagicBugFixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'furrycommentfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'GhorzaGraBagolInvestmentFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'GiantPhysicsFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2299,23 +2311,23 @@ plugins:
   - name: 'GM-KhajiitDSHFix.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'gourmetFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'greatweapon_speedfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Greatsword Attack speed Fix 1.3.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'HeadsmansAxeFixed.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Headtracking Fix - Skyrim.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HelmetStackFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'hjerim chest fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0x560f7c1c
         <<: *dirtyPlugin
@@ -2323,33 +2335,33 @@ plugins:
   - name: 'Hjerimfix.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
     dirty:
       - crc: 0x9b9b0581
         <<: *dirtyPlugin
         udr: 9
   - name: 'HjerimMessFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HM DB CookQuestFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'imperialhelmetfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'ImperialHelmetHeavyFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'invinciblehawkfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Invisibility Eyes Fix.esp'
     req: [ *SKSE ]
   - name: 'KarliahFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Kataous'' Bug Fixes for Player Homes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'KeeningFix.*\.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'KeeningSmithing.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'KillThemGenerals.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'LCBM.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2392,9 +2404,9 @@ plugins:
             text: 'Использование lightingfix.esp вместе с Relighting Skyrim - Dawnguard.esp может вызвать несоответствия освещения.'
         condition: 'file("lightingfix.esp")'
   - name: 'lydia chair fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MageRobesCommentFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Magnus20.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2417,46 +2429,46 @@ plugins:
       - <<: *preCKSharlikranPatch
         condition: 'not checksum("Magnus100.esp",37C6B07A)'
   - name: 'Mannequinfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'markedfordeathfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MatchingSetFixes.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.9", >=)'
         subs: [ '1.9' ]
   - name: 'Miner''s Clothes Variant Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Minor Miner Fixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MorokeiFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Muiri''s Problem.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Nightingale Blade fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'nightingalebladefix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Nightingale Bow and Nord Hero Bow silenced.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Nirnroot Placement Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'NoFortifyFortifyResto.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'NordHeroBowTemperFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.9", >=)'
         subs: [ '1.9.26' ]
   - name: 'onehandeddagger.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
 # ## Orc&ElfFix4TBBP.esp
 # ## This is a fix for TBBP meshes, I believe.
   - name: 'Potema and Mjoll Quest Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Proudspire Manor Bug Fixes.esp'
     msg:
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
       - <<: *alreadyInX
         condition: 'file("ProudspireManorImprovements.esp")'
         subs: [ 'ProudspireManorImprovements.esp' ]
@@ -2466,17 +2478,17 @@ plugins:
         condition: 'version("../TESV.exe", "1.5", >=)'
         subs: [ '1.5' ]
   - name: 'Prowler.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Quick Orc Fixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Regain Winterhold Bugfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Repairing the Phial fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'RiftenJailVisualFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'riften jail test 2.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'RiverwoodTraderInvestorFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2488,25 +2500,25 @@ plugins:
         condition: 'version("../TESV.exe", "1.5", >=)'
         subs: [ '1.5' ]
   - name: 'sapphire_speak_fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Severin Manor Music.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Shrine of Azura LOD Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Silent Moons Enchantment Fix.*\.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'SkyrimFixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Smallest Mod EVER.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Spell Absorb Fix.esp'
     msg:
-      - *alreadyInUSLEEP
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'SolitudeProudspireManorFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'StaggerFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'StaffOfMagnusFix.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2523,67 +2535,67 @@ plugins:
         condition: 'version("../TESV.exe", "1.9", >=)'
         subs: [ '1.9.26' ]
   - name: 'SybilleStentorFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'TalosShrineFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'TemperSkyforgeDaggers.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'terramend.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0x2aa40114
         <<: *dirtyPlugin
         itm: 8
         udr: 7
   - name: 'Thalmor Embassy Disguise Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Thief armor fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Thorald.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'towerofstrength.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Treebugfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Vampire Eyes Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'VampireInvisibleItemsFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'VampiresHoodFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'vampirelorddrainlifefix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Vampire Orcs Welcome in Strongholds.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'VampireRaceDetection.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
 # ## VampireRaceDetection.esp
 # ## As per thread on the mod''s Steam Workshop page: "http://steamcommunity.com/sharedfiles/filedetails/?id=89925318"
 # ## Vulkanglas statt Malachit.esp
   - name: 'Wandering Dupe Mannequin Fix v1.2 SPODUM Vanilla.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'whiterun bug fixes.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Whiterun Field Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Whiterun Lighting Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'WhitePhialFireplace.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'whitrun stair fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Winterhold Shields.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
   - name: 'wolfqueenfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Wuuthrad fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'YngolFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
 # ## Unofficial Patches
 # ## Unofficial Skyrim Patch that is not false flagged
 # ## maybe need better place for this file. also need to correct english message (tokcdk)
@@ -2600,11 +2612,11 @@ plugins:
 # ## RaceComp is explicit master; USKP is implicit
 # ## IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
   - name: 'ancient-nordic-pickaxe-smith-fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BoundDaggerFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BreezhomeAlchemyLabFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'chopping_block_wood_fires.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -2613,28 +2625,28 @@ plugins:
 # ## correctdoucebriseALCH.esp
 # ## french patch to allow the purchase of alchemy lab in Breezehome under DG
   - name: 'CraftableBoneHawkRings.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dawnguard Breezehome Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
       - crc: 0x330aed25
         <<: *dirtyPlugin
         itm: 2
   - name: 'Dawnguard Summons Fixed.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DawnguardDrainVitalityFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'dghorsepatch.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dragonborn Spell Absorb Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HDtextures01.esp'
     msg:
       - <<: *fixedInOfficialPatchX
         condition: 'version("../TESV.exe", "1.8", >=)'
         subs: [ '1.8' ]
   - name: 'Headtracking Fix - Dawnguard.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HF-MoveSpouse.esp'
     msg: [ *corrupt ]
     dirty:
@@ -2642,11 +2654,11 @@ plugins:
         <<: *dirtyPlugin
         itm: 15
   - name: 'HighResTexturePackFix.esp'
-    msg: [ *alreadyInUHRP ]
+    msg: [ *alreadyInOrFixedByUHRP ]
   - name: 'invisible_shield_fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Krill_AurielsBowFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Prodspire Cooking pot hearthfire bugfix.esp'
     msg:
       - <<: *alreadyInX
@@ -2663,7 +2675,7 @@ plugins:
       - name: 'HighResTexturePack02.esp'
         condition: 'not file("HighResTexturePack01.esp")'
   - name: 'Stahlrim Arrow Projectile Fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Vampire Face Fixes.esp'
     msg:
       - type: say
@@ -2679,7 +2691,7 @@ plugins:
           - lang: ru
             text: 'Этот мод может быть несовместим с любыми модами, меняющими классы персонажей вампиров.'
   - name: 'USKP Dawnguard vampire face & eye fix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'EveryVampireEyesGrow.esp'
     msg:
       - type: say
@@ -3541,7 +3553,7 @@ plugins:
 # Removed REGEX because specific load order is needed
   - name: 'Weapons and Armor fixes.esp'
     msg:
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
       - <<: *patchOutSub
         condition: 'not checksum("Weapons and Armor fixes.esp",D27D2F2)'
       - type: say
@@ -4121,7 +4133,7 @@ plugins:
   - name: 'Conjuration & Summoning fixes.esp'
     msg:
       - *corrupt
-      - *alreadyInUSLEEP
+      - *alreadyInOrFixedByUSLEEP
       - <<: *alreadyInX
         condition: 'file("SpellFix.esp")'
         subs: [ 'SpellFix.esp' ]
@@ -18487,7 +18499,7 @@ plugins:
   - name: 'PermanentWerewolfNightEye.esp'
     msg: [ *obsolete ]
   - name: 'posesivecorpses.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'PowerOfBlood.esp'
     dirty:
       - crc: 0x9572b55c
@@ -21523,7 +21535,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'conjureatronarchfix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'cremation.esp'
     dirty:
       - crc: 0x849d7480
@@ -22158,7 +22170,7 @@ plugins:
   - name: 'MorePowerfulNecromancy.esp'
     msg: [ *obsolete ]
   - name: 'More Visible Soul Trap Effect.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Paralysis in Illusion.esp'
     dirty:
       - crc: 0x7a14834a
@@ -26063,7 +26075,7 @@ plugins:
         condition: 'many("WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp")'
         subs: [ 'Blood Coins .esp file' ]
   - name: 'ChickenNestFix.esp'
-    msg: [ *alreadyInUSLEEP ]
+    msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MD - WMTBNDE .+\.esp'
     msg:
       - <<: *useOnlyOneX
