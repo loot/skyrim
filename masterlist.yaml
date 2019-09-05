@@ -16004,14 +16004,7 @@ plugins:
         udr: 1
   - name: 'towHarvest.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Dawnguard version required.'
-          - lang: de
-            text: 'Dawnguard Version erforderlich.'
-          - lang: ja
-            text: 'Dawnguardバージョンが必要です。'
+      - <<: *useVersionDawnguard
         condition: 'checksum("towHarvest.esp",A3654F92) and active("Dawnguard.esm")'
   - name: 'TQContest_Agamashi.esp'
     dirty:
