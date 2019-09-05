@@ -339,15 +339,25 @@ common:
     <<: *reqModX
     subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)' ]
   # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
-  - &reqSkyUI
+  - &requiresMCM
     type: warn
     content:
       - lang: en
-        text: 'SkyUI.esp is not active in your load order. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) is required for this mod to be fully functional.'
+        text: 'A **Mod Configuration Menu** is required for this mod to be fully functional. An **MCM** can be added by installing [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
       - lang: de
-        text: 'SkyUI.esp ist in Ihrer Ladereihenfolge nicht aktiv. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) wird benötigt, damit diese Mod voll und ganz funktioniert.'
+        text: 'Ein **Mod-Konfigurationsmenü** ist vorausgesetzt, damit diese Mod voll funktionstüchtig ist. Ein **MCM** kann hinzugefügt werden, indem man [SkyUI](http://www.nexusmods.com/skyrim/mods/3863) installiert.'
       - lang: ja
-        text: 'SkyUI.espがアクティブになっていません。このModを完全に機能させるには[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)が必要です。'
+        text: 'このmodを完全に機能させるには、**Mod Configuration Menu**が必要です。**MCM**を追加するには[SkyUI](http://www.nexusmods.com/skyrim/mods/3863)を導入してください。'
+      - lang: ko
+        text: '모드가 정상 작동하기 위해서는 **모드 설정 메뉴**가필요합니다. [SkyUI](http://www.nexusmods.com/skyrim/mods/3863)를 설치하면 **MCM** 메뉴를 추가할 수 있습니다.'
+      - lang: pl
+        text: '**Menu Konfiguracji Modów** jest wymagane aby ten mod funkcjonował w pełni poprawnie. **MCM** może zostać dodane poprzez instalację [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
+      - lang: pt
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para este mod funcionar na totalidade. Um **MCM** pode ser adicionado ao instalar [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
+      - lang: pt_BR
+        text: 'Um **Menu de Configuração de Mod** (Mod Configuration Menu) é necessário para que este mod funcione totalmente. Um **MCM** pode ser adicionado ao instalar [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
+      - lang: ru
+        text: '**Mod Configuration Menu** требуется для полного функционирования мода. **MCM** может быть добавлен вместе с [SkyUI](http://www.nexusmods.com/skyrim/mods/3863).'
     condition: 'not active("SkyUI.esp")'
   - &versionXIncY
     type: error
@@ -1550,7 +1560,7 @@ plugins:
   - name: 'Perk-Reset-MCM.esm'
     req:
       - *SKSE
-    msg: [ *reqSkyUI ]
+    msg: [ *requiresMCM ]
   - name: 'pinewoodvillage.esm'
     msg: [ *obsolete ]
     dirty:
@@ -1599,7 +1609,7 @@ plugins:
       - *SKSE
       - *FNIS
     msg:
-      - *reqSkyUI
+      - *requiresMCM
       - type: error
         content:
           - lang: en
