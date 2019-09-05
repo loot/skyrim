@@ -4529,23 +4529,9 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Grind_stuff.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Hearthfires version.'
-          - lang: de
-            text: 'Benutzen Sie die Hearthfires Version.'
-          - lang: ja
-            text: 'Hearthfiresバージョンを使用してください。'
+      - <<: *useVersionHearthFires
         condition: 'active("HearthFires.esm") and checksum("Grind_stuff.esp",31CCFA29)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use non-Hearthfires version.'
-          - lang: de
-            text: 'Benutzen Sie die Nicht-Hearthfires Version.'
-          - lang: ja
-            text: 'Hearthfiresバージョン以外を使用してください。'
+      - <<: *useVersionNonHearthFires
         condition: 'not active("HearthFires.esm") and checksum("Grind_stuff.esp",5E014754)'
   - name: 'Guard Build (HF) 1.esp'
     dirty:
@@ -5903,23 +5889,10 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Statues.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Hearthfires version.'
-          - lang: de
-            text: 'Verwenden Sie die Hearthfires Version.'
-          - lang: ja
-            text: 'Hearthfiresバージョンを使用してください。'
+      - <<: *useVersionHearthFires
         condition: 'active("HearthFires.esm") and checksum("Statues.esp",C08BE2C5)'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Vanilla version.'
-          - lang: de
-            text: 'Verwenden Sie die vanilla Version.'
-          - lang: ja
-            text: 'Vanillaバージョンを使用してください。'
+      - <<: *useVersion
+        subs: [ 'Vanilla' ]
         condition: 'not active("HearthFires.esm") and checksum("Statues.esp",5081E67A)'
   - name: 'SteamAchievementUnlocker.esp'
     dirty:
@@ -19820,14 +19793,7 @@ plugins:
         subs: [ 'Immersive Grass .esp file' ]
   - name: 'LakeExpanded01.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.'
-          - lang: de
-            text: 'Inkompatibel mit: Hearthfires (Offizieller Bethesda DLC). Verwenden Sie die Hearthfires Version.'
-          - lang: ja
-            text: '競合: Hearthfires（Hearthfiresバージョンを使用してください。）'
+      - <<: *useVersionHearthFires
         condition: 'active("HearthFires.esm") and ( checksum("LakeExpanded01.esp",43AEF0BF) or checksum("LakeExpanded01.esp",843EB3FC) )'
     dirty:
       - crc: 0x43aef0bf
