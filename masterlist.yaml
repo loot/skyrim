@@ -505,12 +505,15 @@ common:
   - &useVersionDawnguard
     <<: *useVersion
     subs: [ 'Dawnguard' ]
+    condition: 'active("Dawnguard.esm")'
   - &useVersionDragonborn
     <<: *useVersion
     subs: [ 'Dragonborn' ]
+    condition: 'active("Dragonborn.esm")'
   - &useVersionHearthFires
     <<: *useVersion
     subs: [ 'HearthFires' ]
+    condition: 'active("HearthFires.esm")'
 
   - &useVersionNon
     type: error
@@ -524,12 +527,15 @@ common:
   - &useVersionNonDawnguard
     <<: *useVersionNon
     subs: [ 'Dawnguard' ]
+    condition: 'not active("Dawnguard.esm")'
   - &useVersionNonDragonborn
     <<: *useVersionNon
     subs: [ 'Dragonborn' ]
+    condition: 'not active("Dragonborn.esm")'
   - &useVersionNonHearthFires
     <<: *useVersionNon
     subs: [ 'HearthFires' ]
+    condition: 'not active("HearthFires.esm")'
 
   - &versionXIncY
     type: error
