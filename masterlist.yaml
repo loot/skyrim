@@ -427,31 +427,31 @@ common:
         text: '要: %1%'
       - lang: ru
         text: 'Требуется: %1%'
-  - &ReqCBBE
+  - &requiresCBBE
     <<: *requiresX
     type: say
     subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666)' ]
-  - &ReqCBBEorDemUNP
+  - &requiresCBBEorUNP
     <<: *requiresX
     type: say
     subs: [ '[CBBE](http://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
-  - &ReqLBreplacer
+  - &requiresLadyBody
     <<: *requiresX
     subs: [ '[Lady Body](http://modgames.net/load/256-1-0-11011)' ]
     condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
-  - &reqDimonizedUNP
+  - &requiresUNP
     <<: *requiresX
     type: say
     subs: [ '[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)' ]
-  - &reqNudeAndJiggly
+  - &requiresCHSBHC
     <<: *requiresX
     type: say
     subs: [ '[CHSBHC - BBP - Nude and Jiggly Mod](http://www.nexusmods.com/skyrim/mods/4888)' ]
-  - &reqUNPB
+  - &requiresUNPB
     <<: *requiresX
     type: say
     subs: [ '[UNPB](http://www.nexusmods.com/skyrim/mods/37900)' ]
-  - &reqBetterMales
+  - &requiresBetterMales
     <<: *requiresX
     type: say
     subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](http://www.nexusmods.com/skyrim/mods/2488)' ]
@@ -1606,7 +1606,7 @@ plugins:
         itm: 7
   - name: 'LiFE.esm'
     msg:
-      - *ReqCBBEorDemUNP
+      - *requiresCBBEorUNP
 # ## Lighting.esm
 # ## this is a companion mod
 # ## Lightsabers.esm
@@ -3486,13 +3486,13 @@ plugins:
 # assorted k dds below from bugzilla are likely due to steam packaging reqs -LD
   - name: 'calientevanillaarmor - banditpack curvy.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'calientesvanillaarmor - banditpack slim.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'cbbev3_vanillapack.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'TouringCarriages.esp'
     group: *newLandsGroup
   - name: 'Cutting Room Floor.esp'
@@ -6653,7 +6653,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 15
   - name: 'Alexia CatGarter.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'AlexScorpionsShop.esp'
     dirty:
       - crc: 0xc2dbdc74
@@ -6720,7 +6720,7 @@ plugins:
   - name: 'ArmoredAlikrHoods.esp'
     msg: [ *obsolete ]
   - name: 'ArmoredNocturnal.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'armorkits.esp'
     tag:
       - Relev
@@ -6760,7 +6760,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Backpack OE.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'BadGremlinsJarHunt.esp'
     dirty:
       - crc: 0x82caa554
@@ -6776,7 +6776,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 6
   - name: 'BBP_ArmorPack2.esp'
-    msg: [ *reqNudeAndJiggly ]
+    msg: [ *requiresCHSBHC ]
   - name: 'BDYEB.esp'
     tag:
       - Relev
@@ -6799,7 +6799,7 @@ plugins:
         subs: [ 'Better Bond of Matrimony .esp file' ]
   - name: 'Bikini Clothes.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
       - <<: *fixedPluginOutSub
         condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
   - name: 'bikiniADEC.esp'
@@ -6812,7 +6812,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'bikiniCHSBHC.esp'
-    msg: [ *reqNudeAndJiggly ]
+    msg: [ *requiresCHSBHC ]
   - name: 'Black Mage Armor.esp'
     msg:
       - <<: *patchRequiemRPC
@@ -6938,7 +6938,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Casual Outfit OE.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Cattelya Greatsword.esp'
     dirty:
       - crc: 0x38c1fcb3
@@ -6950,7 +6950,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'chainmail.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Chainmail Hood v2.2.esp'
     tag:
       - Relev
@@ -7176,7 +7176,7 @@ plugins:
   - name: 'DarkImperial.esp'
     msg: [ *obsolete ]
   - name: 'selobl_DarkLillith.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'DarkNemesis.esp'
     msg:
       - <<: *fixedPluginOutSub
@@ -7244,7 +7244,7 @@ plugins:
             text: 'Убедитесь что у вас установлена корректная версия типа тел: [DIMONIZED женское тело UNP](http://www.nexusmods.com/skyrim/mods/6709) или [женское тело CBBE](http://www.nexusmods.com/skyrim/mods/2666).'
   - name: 'DemonHunterV2armor.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'detectbeing.esp'
     dirty:
       - crc: 0x120f41f1
@@ -7263,11 +7263,11 @@ plugins:
     msg: [ *obsolete ]
   - name: 'DHuntress.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'diamondweapons1\.[02]\.esp'
     msg: [ *obsolete ]
   - name: 'DIMclothes1.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'DLE_en.esp'
     msg:
       - <<: *obsolete
@@ -7277,7 +7277,7 @@ plugins:
       - 'DME.esp'
   - name: 'Doom Heavy Set.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp'
     msg:
       - <<: *fixedPluginOutSub
@@ -7551,21 +7551,21 @@ plugins:
         itm: 2
   - name: 'FlameAtronachArmor.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'Flare Arrow( Brighter| Explosive)?.esp'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("Flare Arrow( Brighter| Explosive)?.esp")'
         subs: [ 'Flare Arrow .esp file' ]
   - name: 'Fitness Outfit OE.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Fletching.esp'
     dirty:
       - crc: 0xb2669e47
         <<: *dirtyPlugin
         itm: 1
   - name: 'Footwear OE.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'fox(\d\d?)[^51-56] Armor\.esp' #up to fox50 for FoxMergedv2.6(checksumofesp,2E996104)
     msg:
       - <<: *alreadyInX
@@ -7584,16 +7584,16 @@ plugins:
       - 'frostmourneblade.esp'
   - name: 'FullBootForKKSA.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'NordicSkaalHeavyFalmerWeightFix.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'GattiBondage0.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'GattiBondage1.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'Ghosu - Project Flintlock.esp'
     dirty:
       - crc: 0xee1910e
@@ -7681,7 +7681,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'HmmWhatToWear.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'HmmWhatToWearMerged.esp'
     tag:
       - Delev
@@ -7961,7 +7961,7 @@ plugins:
   - name: 'T3nd0sOverhaulJSwordsPlugin.esp'
     msg: [ *obsolete ]
   - name: 'Juquinha-armory.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'katana.esp'
     dirty:
       - crc: 0xa48ab749
@@ -7975,71 +7975,71 @@ plugins:
     msg: [ *obsolete ]
   - name: 'KURESE Gloria conversion.esp'
     msg:
-      - *reqDimonizedUNP
+      - *requiresUNP
       - <<: *alreadyInX
         condition: 'file("DIMclothes1.esp")'
         subs: [ 'DIMONIZED UNP clothing resources' ]
   - name: 'Lady of Death.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'LBArmorPack.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Blood Mage.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'Blood Mage.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Jarl Clothes.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Blood of the Divines.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Dark Lady.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Dragon Princess.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Dwemer Fury Heavy Set.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB_EnemiesEssplode!.esp'
     tag:
       - Relev
   - name: 'LB GoldLeopardRobe.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Lady Bat.esp'
     dirty:
       - crc: 0xcb996b7d
         <<: *dirtyPlugin
         udr: 1
   - name: 'LB Lady .+\.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Lustmord Vampire.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Lydia Armor.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Mandu Armor.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Medusa Armor.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB_MuchAdoSnowElves.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Necromance Robe.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Pantie & Boots.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Jewelry.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB RobeExperiencedMagician.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Santa Babe.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Underworld.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB Valkyrie.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LB VampLord.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LBClosetMagician.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LBGoldArmoredBikini.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LC_ArcherEliteArmor.esp'
     msg:
       - <<: *obsolete
@@ -8049,7 +8049,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 5
   - name: 'LC_AssassinOfShadownArmor.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LeatherBackpackBlack.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -8072,14 +8072,14 @@ plugins:
         subs: [ 'LeatherBackPack Original .esp file' ]
   - name: 'LeiFangAndChristieByNausicaa.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'LFArmors.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("LFArmors.esp",EF8F74B6)'
   - name: 'LH Jewel Collection.esp'
     msg:
-      - *ReqLBreplacer
+      - *requiresLadyBody
       - <<: *requiresX
         type: say
         subs: [ '[Lady Head](http://modgames.net/load/256-1-0-15866)' ]
@@ -8239,9 +8239,9 @@ plugins:
         <<: *dirtyPlugin
         itm: 16
   - name: 'MinaArmors.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Mini Sage Outfit.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'MoarJewels.esp'
     dirty:
       - crc: 0x80b52779
@@ -8622,9 +8622,9 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_Oriental Weapon&Armor.*\.esp")'
   - name: 'Osare KneeSocks.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Osare Maid Outfit.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Painkiller''s_Hrothmund''s_Axe.esp'
     dirty:
       - crc: 0x781b36e
@@ -8634,7 +8634,7 @@ plugins:
     req:
       - *SKSE
   - name: 'PENIS.esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'PhoenixBlade.esp'
     msg:
       - <<: *corrupt
@@ -8754,7 +8754,7 @@ plugins:
       - Delev
   - name: 'RogueOutfit.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'romulusarmor.esp'
     dirty:
       - crc: 0x355fe880
@@ -8766,7 +8766,7 @@ plugins:
         <<: *dirtyPlugin
         udr: 2
   - name: 'Saber Lily - Caliburn Outfit.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Samurai Light Armors .esp'
     dirty:
       - crc: 0x3cf22aae
@@ -8786,14 +8786,14 @@ plugins:
         itm: 1
   - name: 'seducesets.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'SED7-CBBE3.+\.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'SED7-BettermalesFLACID_SILVEREDITION_malePiercing_PA.esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'selobl_Diano.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'SeraphimStandAlone.esp'
     msg:
       - <<: *fixedPluginOutSub
@@ -8871,7 +8871,7 @@ plugins:
         condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
   - name: 'Skimpy Plate Armor.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
       - <<: *fixedPluginOutSub
         condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
   - name: 'skinripper essentials kit.esp'
@@ -8948,7 +8948,7 @@ plugins:
         itm: 3
   - name: 'Spriggan Armor 2.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
     dirty:
       - crc: 0xc5e7b65b
         <<: *dirtyPlugin
@@ -8990,10 +8990,10 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ 'Included in Sharlikran''s Compatability Patch.' ]
-      - *ReqCBBE
+      - *requiresCBBE
       - *corrupt
   - name: 'SuccubusUNPByNausicaa.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'SummoningRings1_2.esp'
     msg:
       - <<: *corrupt
@@ -9066,16 +9066,16 @@ plugins:
         condition: 'not checksum("TemplarArmor.esp",EE0395E4)'
   - name: 'TERAArmors_CBBE.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'TeraArmors-CBBEByNausicaa.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'TERAArmors.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'TERA Armors for Skyrim - UNP.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'TERA Armors for Skyrim - UNPB-BBP.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'TERAArmors - Leveled Lists.esp'
     tag:
       - Relev
@@ -9183,25 +9183,25 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'UNP Jewelry Retextured.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'UNP Jewelry Variants.esp'
     msg: [ *obsolete ]
   - name: 'UNP Jewelry Variants V-2.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'UNP Leather Clothes.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'UNP Boots.*\.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Isharas_PetrovichClothes.esp'
     req:
       - name: 'UNP Simply Clothes.esp'
         display: '[UNP Simply Clothes](http://www.nexusmods.com/skyrim/mods/16658)'
   - name: 'UNP Undies.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'UNPB Barbarian Armor.esp'
-    msg: [ *reqUNPB ]
+    msg: [ *requiresUNPB ]
   - name: 'UNP Petrovna.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'VagabondArmor.esp'
     tag:
       - name: Deactivate
@@ -9222,7 +9222,7 @@ plugins:
         condition: 'file("SkyRe_Plugin_VanguardArmor_3.esp") or file("SG_HothTrooper.esp")'
   - name: 'ViceroyInquisitor.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'viciousdawnbreaker.esp'
     tag:
       - name: Deactivate
@@ -9460,7 +9460,7 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe XAC Stat (Original|Swap)( Classic)?\.esp")'
   - name: 'YPSArmorPack.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'zabswitchhat.esp'
     dirty:
       - crc: 0x70e18e66
@@ -9472,7 +9472,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'zzTmBallGown.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Lorecraft - Bandolier.esp'
     msg:
       - type: warn
@@ -15755,7 +15755,7 @@ plugins:
         itm: 9
   - name: 'Sweet&Sexy Lingerie.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
     dirty:
       - crc: 0x7bb104b9
         <<: *dirtyPlugin
@@ -17489,9 +17489,9 @@ plugins:
     tag:
       - Delev
   - name: 'DA_Maxwell_Outfit_Dibella_UNP.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'DA_Maxwell_Outfit_Dibella_UNP_EV.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Deadly_Slaughterfish.esp'
     msg:
       - type: say
@@ -18122,7 +18122,7 @@ plugins:
           - lang: ru
             text: 'Несовместим с: Другие, меняющие драконов,  моды(Deadly Dragons и т.п.)'
   - name: 'LB Yarl Clothes.esp'
-    msg: [ *ReqLBreplacer ]
+    msg: [ *requiresLadyBody ]
   - name: 'LegionArmorVariety(OPTIONA?L?\d)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -23570,11 +23570,11 @@ plugins:
         <<: *dirtyPlugin
         itm: 12
   - name: 'Dwarf Race.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Gimli.Esp'
     inc:
       - 'Dwarf Race.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Dwemer_Race.esp'
     dirty:
       - crc: 0x91cd07be
@@ -23617,18 +23617,18 @@ plugins:
   - name: 'GiantChild.esp'
     msg: [ *obsolete ]
   - name: 'Gollum.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Halfling Race.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Sam Merry and Peppin.Esp'
     inc:
       - 'Halfling Race.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Frodo Sam Merry & Peppin.Esp'
     inc:
       - 'Halfling Race.Esp'
       - 'Sam Merry and Peppin.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'HBR_Marshwalker(Argonian)_Standalone.esp'
     dirty:
       - crc: 0x8e76e40f
@@ -23739,7 +23739,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'RZW_ChubbyRaces.esp'
-    msg: [ *reqNudeAndJiggly ]
+    msg: [ *requiresCHSBHC ]
   - name: 'SC_Drow Race.esp'
     msg: [ *obsolete ]
   - name: 'SirenRace.esp'
@@ -23861,7 +23861,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Aragorn.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Azzi.esp'
     dirty:
       - crc: 0x22f94ac9
@@ -23880,7 +23880,7 @@ plugins:
         itm: 11
         udr: 1
   - name: 'Boromir.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'DFB - Companions Lost No More.esp'
     dirty:
       - crc: 0x500dd498
@@ -23960,7 +23960,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 14
   - name: 'Gandalf.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'HorseCompanions.esp'
     msg:
       - type: warn
@@ -24058,7 +24058,7 @@ plugins:
     inc:
       - 'CWBattleUlfric.esp'
   - name: 'Legolas.Esp'
-    msg: [ *reqBetterMales ]
+    msg: [ *requiresBetterMales ]
   - name: 'Lilium_Companion.esp'
     dirty:
       - crc: 0x3c10445f
@@ -24403,9 +24403,9 @@ plugins:
     msg: [ *corrupt ]
   - name: 'Angelina Jolie.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
   - name: 'Angelina Jolie UNP.esp'
-    msg: [ *reqDimonizedUNP ]
+    msg: [ *requiresUNP ]
   - name: 'Annekke.esp'
     dirty:
       - crc: 0xd2e8a173
@@ -24561,7 +24561,7 @@ plugins:
         condition: 'version("../TESV.exe","1.5.26",>)'
   - name: 'Companion_Crea.esp'
     msg:
-      - *ReqCBBEorDemUNP
+      - *requiresCBBEorUNP
       - type: say
         content:
           - lang: en
@@ -24576,7 +24576,7 @@ plugins:
             text: 'Убедитесь, что вы используете правильный esp, для соответствующего типа тела'
   - name: 'Companion_Lese.esp'
     msg:
-      - *ReqCBBEorDemUNP
+      - *requiresCBBEorUNP
       - type: say
         content:
           - lang: en
@@ -24874,7 +24874,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'HousecarlWhiterun Sexy Lydia v0.5.esp'
     msg:
-      - *ReqCBBE
+      - *requiresCBBE
       - <<: *corrupt
         condition: 'checksum("HousecarlWhiterun Sexy Lydia v0.5.esp",7C29388F)'
   - name: 'Hroki.esp'
@@ -25945,7 +25945,7 @@ plugins:
     inc:
       - 'LiFE.esm'
     msg:
-      - *ReqCBBEorDemUNP
+      - *requiresCBBEorUNP
   - name: 'nord_nightseye01.esp'
     dirty:
       - crc: 0xbb8b06a8
