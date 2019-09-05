@@ -371,6 +371,27 @@ common:
       - lang: ru
         text: 'Установленная у вас версия %1% несовместима с версией %2%.'
 
+  - &wildEdits
+    type: warn
+    content:
+      - lang: en
+        text: 'This plugin contains wild edits beyond ITM and UDR records and deleted navmeshes and may require additional manual cleaning to not interfere with other mods. %1%'
+      - lang: da
+        text: 'Dette plugin indeholder ukontrollerede redigeringer udover ITM- og UDR-poster og slettede navmesher og kan behøve yderligere manuel oprydning for ikke at forstyrre andre mods. %1%'
+      - lang: de
+        text: 'Dieses Plugin enthält wilde Modifikationen weit über ITM-, und UDR Einträge und entfernte Navmeshes hinaus und benötigt vermutlich mehr manuelle Säuberung um andere Mods nicht zu beeinträchtigen. %1%'
+      - lang: ja
+        text: 'このプラグインにはITMおよびUDRレコード以外の誤った編集(Wild Edit)が含まれており、navmeshが削除されています。他のmodと干渉しないように、追加の手動クリーニングが必要になる場合があります。%1%'
+      - lang: pl
+        text: 'Ta wtyczka zawiera dzikie edycje (Wild Edit) poza rekordami ITM i UDR oraz usunięte siatki nawigacyjne i może wymagać dodatkowego ręcznego czyszczenia aby nie kolidować z innymi modami. %1%'
+      - lang: pt
+        text: 'Este plugin contém edições selvagens (Wild Edits) para além dos registros ITM e UDR, e Navmeshes apagadas. Pode requerer limpeza manual adicional de forma a não interferir com outros mods. %1%'
+      - lang: pt_BR
+        text: 'Este plugin contém edições não-intencionais (Wild Edits) além dos registros ITM e UDR e Navmeshes deletadas e pode requerer limpeza manual adicional de forma que não interfira com outros mods. %1%'
+      - lang: ru
+        text: 'Плагин содержит дикие правки, кроме ITM, UDR записей и удаленных навмешей и может потребовать дополнительной ручной чистки, чтобы не пересекаться с другими модами. %1%'
+    subs: [ '' ]
+
 # Cleaning data
   - &dirtyPlugin
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
@@ -381,14 +402,6 @@ common:
   - &reqManualFix
     util: '[TES5Edit](http://www.nexusmods.com/skyrim/mods/25859)'
     info: 'It is strongly recommended not to use mods that contain **Deleted navmeshes** as they''re known to cause crashes. **Deleted navmeshes** must be corrected manually. More information on **Deleted navmeshes** is provided [here](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
-
-  - &hasWildEdits
-    type: say
-    content:
-      - lang: en
-        text: "This plugin contains wild edits. A manual [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) cleaning guide is available here: %1%"
-      - lang: de
-        text: 'Dieses Plugin enthält wilde Modifikationen. Eine manuelle [TES5Edit](http://www.nexusmods.com/skyrim/mods/25859) Säuberungsanleitung ist hier verfügbar: %1%'
 
 bash_tags:
   - 'Actors.ACBS'
@@ -709,7 +722,8 @@ plugins:
       - Relev
       - Stats
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
+        type: say
         subs:
           - '[Manual Cleaning Guide](https://www.afkmods.com/index.php?/topic/4110-manual-cleaning-skyrim-and-skyrim-se-master-files/)'
         condition: 'checksum("Dawnguard.esm",72F9CE01)'
@@ -13043,7 +13057,7 @@ plugins:
   - name: 'DovahkiinSpeech.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9548' ]
     msg:
-      - <<: *hasWildEdits
+      - <<: *wildEdits
         subs: [ 'Remove deleted records **00105F1B**, **0010FDD4**, **00105F1A** and **00105F1D** in TES5Edit. Ignoring this advice will lead to potential game breaking issues.' ]
         condition: 'checksum("DovahkiinSpeech.esp", B23123F1)'
     dirty:
@@ -17613,9 +17627,8 @@ plugins:
       - 'Hothtrooper44_ArmorCompilation.esp'
       - 'Hothtrooper44_Armor_Ecksstra.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/771785-guard-dialogue-overhaul/?p=63659936)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/771785-guard-dialogue-overhaul/?p=63659936)' ]
         condition: 'checksum("Guard Dialogue Overhaul.esp", AFACD2E9)'
     clean:
       # version: 1.4 Fully cleaned
@@ -28608,9 +28621,8 @@ plugins:
   - name: 'skycity3.esp'
     msg:
       # version: 3.2 after Quick Clean
-      - <<: *hasWildEdits
-        subs:
-          - '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/2127024-sky-city-markarth-evolved/?p=63661711)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/2127024-sky-city-markarth-evolved/?p=63661711)' ]
         condition: 'checksum("skycity3.esp", A9225F03)'
     dirty:
       # version: 3.2
@@ -28633,9 +28645,8 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Unique Flowers & Plants.esm'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/2101589-unique-flowers-and-plants/?p=63660816)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](https://forums.nexusmods.com/index.php?/topic/2101589-unique-flowers-and-plants/?p=63660816)' ]
         condition: 'checksum("Unique Flowers & Plants.esm", 3966F8DD)'
     clean:
       - crc: 0x81DB879A
@@ -28756,9 +28767,8 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'HallgarthsforNPCs.esp'
     msg:
-      - <<: *hasWildEdits
-        subs:
-          - '[Manual Cleaning Guide](https://www.nexusmods.com/skyrim/mods/93719)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](https://www.nexusmods.com/skyrim/mods/93719)' ]
         condition: 'checksum("HallgarthsforNPCs.esp", DBF9EA56)'
     dirty:
       # version: 1
