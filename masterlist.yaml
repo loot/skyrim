@@ -25409,10 +25409,41 @@ plugins:
     inc:
       - 'mjhKhajiitSpeakExtra - Dagi-Raht.esp'
   - name: 'BecomeKingofSkyrim.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/41087'  # V1
+      - 'https://www.nexusmods.com/skyrim/mods/64018'  # V2
+      - 'https://www.nexusmods.com/skyrim/mods/79490'  # Immersive Edition
     dirty:
-      - crc: 0x62c0e76d
-        <<: *dirtyPlugin
-        itm: 141
+      # v5e - aysigago - 41087
+      - <<: *quickClean
+        crc: 0x7F44AB5C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 59
+      # v7 - Harkon121599 - 64018
+      - <<: *quickClean
+        crc: 0x160A0257
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
+      # v1.7 - DJAretin0 - 79490
+      - <<: *quickClean
+        crc: 0x87AFFB0D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 71
+    clean:
+      # v5e - aysigago - 41087
+      - crc: 0x90DE5BE8
+        util: 'TES5Edit v4.0.2f'
+      # v7 - Harkon121599 - 64018
+      - crc: 0x3A185CCE
+        util: 'TES5Edit v4.0.2f'
+      # v1.7 - DJAretin0 - 79490
+      - crc: 0xA1C8EB23
+        util: 'TES5Edit v4.0.2f'
+  - name: 'RemoveEssentialPatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/41087' ]
+    clean:
+      - crc: 0xC24BE01D
+        util: 'TES5Edit v4.0.2f'
   - name: 'Alternate Start - Live Another Life.esp'
     group: *alternateStartGroup
     msg:
