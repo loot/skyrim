@@ -12498,8 +12498,19 @@ plugins:
             text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
       - *obsolete
+
   - name: 'Breezehome_Fully_Upgradable.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/11158' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xC1DDA80E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x70BD80A3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
     msg:
       - type: say
         content:
@@ -12510,6 +12521,29 @@ plugins:
           - lang: ja
             text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
+  - name: 'Breezehome_Fully_Upgradable_DG.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11158' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xB2EB835B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
+        udr: 1
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xD9AD2B18
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'Breezehome_Fully_Upgradable_NoDLC.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11158' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x35506A64
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
+    clean:
+      - crc: 0x6F1AE4E6
+        util: 'TES5Edit v4.0.2f'
   - name: 'Breezehome Mannequin.esp'
     dirty:
       - crc: 0xbd71febc
