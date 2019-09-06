@@ -29948,3 +29948,42 @@ plugins:
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cloaks and Capes.esp")'
+  - name: 'Dragon Break.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50882' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xC5620B54
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 89
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x1D6272F1
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: '0db2SECOND.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50882' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x412433D7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0x53CE6F9A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
+  - name: '0db2patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50882' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF1419DC5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+    clean:
+      - crc: 0xC97AAEF8
+        util: 'TES5Edit v4.0.2f'
+  - name: 'PATCHDragon Break.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50882' ]
+    clean:
+      - crc: 0x3631D31E
+        util: 'TES5Edit v4.0.2f'
