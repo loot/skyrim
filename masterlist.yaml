@@ -4599,17 +4599,21 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'High Level Enemies.esp'
-    dirty:
-      -  crc: 0x1C8C37F3
-         <<: *dirtyPlugin
-         itm: 12
-         udr: 0
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27866' ]
     tag:
       - Relev
-  - name: 'High Level Enemies - Falskaar.esp'
-    tag:
-      - Relev
+    clean:
+      # Main
+      - crc: 0xD1C184A2
+        util: 'TES5Edit v4.0.2f'
+      # Main Scaled
+      - crc: 0x6A544F26
+        util: 'TES5Edit v4.0.2f'
+      # Main SIC
+      - crc: 0x297D77BE
+        util: 'TES5Edit v4.0.2f'
   - name: 'High Level Enemies - Dawnguard.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27866' ]
     msg:
       - type: warn
         content:
@@ -4626,7 +4630,36 @@ plugins:
         condition: 'not active("High Level Enemies.esp")'
     tag:
       - Relev
+    dirty:
+      # DG
+      - <<: *quickClean
+        crc: 0xAC94562C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # DG Scaled
+      - <<: *quickClean
+        crc: 0xD656F01A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      # DG
+      - crc: 0xF1C7394D
+        util: 'TES5Edit v4.0.2f'
+      # DG Scaled
+      - crc: 0x8367D5DD
+        util: 'TES5Edit v4.0.2f'
   - name: 'High Level Enemies - Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27866' ]
+    tag:
+      - Relev
+    clean:
+      # DB
+      - crc: 0x3170B6F4
+        util: 'TES5Edit v4.0.2f'
+      # DB Scaled
+      - crc: 0x9933D9D4
+        util: 'TES5Edit v4.0.2f'
+  - name: 'High Level Enemies - Falskaar.esp'
     tag:
       - Relev
   - name: 'HigherLevelEnemies.esp'
