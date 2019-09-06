@@ -1221,11 +1221,38 @@ plugins:
           - lang: de
             text: 'Diese esm Datei WIRD ihr Spiel beschädigen. Wir empfehlen mit Nachdruck, dass Sie den [Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214) benutzen. Modifizieren Sie nicht die Dateityp-Erweiterung.'
   - name: 'MoT_First_LoadOrder_File_After_Skyrim.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6272' ]
     dirty:
-      - crc: 0x6d3163ad
-        <<: *dirtyPlugin
-        itm: 22
+      - <<: *reqManualFix
+        crc: 0x6D3163AD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 116
         nav: 1
+      - <<: *reqManualFix
+        crc: 0xAF530814
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'MoT_Last_LoadOrder_File.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6272' ]
+    tag:
+      - Delev
+      - Relev
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xA2C3F4C9
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 253
+        udr: 56
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x81AF66AF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xF5C28F34
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'Skyrim Project Optimization.esm'
     group: *newLandsGroup
   - name: 'Skyrim Project Optimization - No Homes.esm'
@@ -3239,11 +3266,6 @@ plugins:
       - crc: 0x68eb2f
         <<: *dirtyPlugin
         itm: 43
-# ## REGEX: MoT2? - (Misc 1|Scripts 1|Sounds 1|Visual 1|Visual 2|Visual 3|Visual 4)\.esp
-# ## these are all TES4 header only
-# ## Reverb.esp
-# ## Sound.esp
-# ## paired with Reverb.esp
   - name: 'better_torches.esp'
     msg:
       - type: warn
@@ -26960,21 +26982,6 @@ plugins:
       - crc: 0x676790BF
         <<: *dirtyPlugin
         itm: 3
-  - name: 'MoT_Last_LoadOrder_File.esp'
-    tag:
-      - Delev
-      - Relev
-    dirty:
-      - crc: 0x211c2134
-        <<: *dirtyPlugin
-        itm: 180
-        udr: 51
-        nav: 2
-      - crc: 0xa2c3f4c9
-        <<: *dirtyPlugin
-        itm: 211
-        udr: 56
-        nav: 2
   - name: 'SKSE Hotkeys.esp'
     req:
       - *SKSE
