@@ -4599,17 +4599,21 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'High Level Enemies.esp'
-    dirty:
-      -  crc: 0x1C8C37F3
-         <<: *dirtyPlugin
-         itm: 12
-         udr: 0
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27866' ]
     tag:
       - Relev
-  - name: 'High Level Enemies - Falskaar.esp'
-    tag:
-      - Relev
+    clean:
+      # Main
+      - crc: 0xD1C184A2
+        util: 'TES5Edit v4.0.2f'
+      # Main Scaled
+      - crc: 0x6A544F26
+        util: 'TES5Edit v4.0.2f'
+      # Main SIC
+      - crc: 0x297D77BE
+        util: 'TES5Edit v4.0.2f'
   - name: 'High Level Enemies - Dawnguard.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27866' ]
     msg:
       - type: warn
         content:
@@ -4626,7 +4630,36 @@ plugins:
         condition: 'not active("High Level Enemies.esp")'
     tag:
       - Relev
+    dirty:
+      # DG
+      - <<: *quickClean
+        crc: 0xAC94562C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # DG Scaled
+      - <<: *quickClean
+        crc: 0xD656F01A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      # DG
+      - crc: 0xF1C7394D
+        util: 'TES5Edit v4.0.2f'
+      # DG Scaled
+      - crc: 0x8367D5DD
+        util: 'TES5Edit v4.0.2f'
   - name: 'High Level Enemies - Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27866' ]
+    tag:
+      - Relev
+    clean:
+      # DB
+      - crc: 0x3170B6F4
+        util: 'TES5Edit v4.0.2f'
+      # DB Scaled
+      - crc: 0x9933D9D4
+        util: 'TES5Edit v4.0.2f'
+  - name: 'High Level Enemies - Falskaar.esp'
     tag:
       - Relev
   - name: 'HigherLevelEnemies.esp'
@@ -11771,15 +11804,16 @@ plugins:
   - name: 'Abadonedshack_0.5b.esp'
     msg: [ *corrupt ]
   - name: 'AdalMatar.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/33108' ]
     dirty:
-      - crc: 0x5b12dd15
-        <<: *dirtyPlugin
-        itm: 183
-        udr: 1
-        nav: 5
-      - crc: 0xba0c35c4
-        <<: *dirtyPlugin
-        itm: 17
+      - <<: *reqManualFix
+        crc: 0xBA0C35C4
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 33
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0xCFBA118F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 3
   - name: 'AdragoniusTower.esp'
     dirty:
@@ -12311,16 +12345,17 @@ plugins:
         itm: 1
         udr: 1
   - name: 'BetterDarkBrotherhood.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25941' ]
     dirty:
-      - crc: 0x6e40868
-        <<: *dirtyPlugin
-        itm: 118
-        udr: 27
-        nav: 2
-      - crc: 0xe0c083ad
-        <<: *dirtyPlugin
-        itm: 149
+      - <<: *reqManualFix
+        crc: 0xC90E0DC8
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 209
         udr: 26
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x9C54C4AA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'BetterDGEntrance.esp'
     dirty:
@@ -12498,6 +12533,16 @@ plugins:
       - *obsolete
   - name: 'Breezehome_Fully_Upgradable.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/11158' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xC1DDA80E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x70BD80A3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
     msg:
       - type: say
         content:
@@ -12508,6 +12553,29 @@ plugins:
           - lang: ja
             text: '競合: BertsBreezeRemodel'
         condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
+  - name: 'Breezehome_Fully_Upgradable_DG.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11158' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xB2EB835B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
+        udr: 1
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xD9AD2B18
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'Breezehome_Fully_Upgradable_NoDLC.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11158' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x35506A64
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
+    clean:
+      - crc: 0x6F1AE4E6
+        util: 'TES5Edit v4.0.2f'
   - name: 'Breezehome Mannequin.esp'
     dirty:
       - crc: 0xbd71febc
@@ -13244,16 +13312,15 @@ plugins:
         itm: 15
         udr: 19
   - name: 'DragonmournInn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/33323' ]
     dirty:
-      - crc: 0xd167169B
-        <<: *dirtyPlugin
-        itm: 31
-        udr: 0
-      - crc: 0xcc0c0dd7
-        <<: *dirtyPlugin
-        itm: 343
-        udr: 19
-        nav: 4
+      - <<: *quickClean
+        crc: 0xD167169B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 46
+    clean:
+      - crc: 0x6A1C2B6B
+        util: 'TES5Edit v4.0.2f'
   - name: 'dragonpeaks.esp'
     dirty:
       - crc: 0xc11aeb0a
@@ -13287,10 +13354,15 @@ plugins:
         itm: 10
         udr: 4
   - name: 'DreadmystHollow.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26839' ]
     dirty:
-      - crc: 0x4dc5d6e5
-        <<: *dirtyPlugin
-        itm: 48
+      - <<: *quickClean
+        crc: 0x4DC5D6E5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 54
+    clean:
+      - crc: 0xE98F85D1
+        util: 'TES5Edit v4.0.2f'
   - name: 'dremorathrall.esp'
     dirty:
       - crc: 0x752f259a
@@ -13522,10 +13594,17 @@ plugins:
         udr: 195
         nav: 3
   - name: 'flaho_shi_eagles_nest_ENG.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/34834' ]
     dirty:
-      - crc: 0x28f58b4e
-        <<: *dirtyPlugin
+      - <<: *reqManualFix
+        crc: 0x2DCE5CC9
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 23
         udr: 2
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x9E95CDFF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'flaho_shi_wassersturz.esp'
     dirty:
@@ -13896,6 +13975,7 @@ plugins:
         itm: 43
         udr: 9
   - name: 'Hebrock_Der Schatten von Meresis.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25872' ]
     msg:
       - type: say
         content:
@@ -13908,17 +13988,25 @@ plugins:
         content: 'The English version has been renamed starting from version 1.1.2.'
         condition: 'checksum("Hebrock_Der Schatten von Meresis.esp",61DCB4E0)'
     dirty:
-      - crc: 0x49083650
-        <<: *dirtyPlugin
-        itm: 81
-      - crc: 0x61dcb4e0
-        <<: *dirtyPlugin
-        itm: 1
+      - <<: *reqManualFix
+        crc: 0x49083650
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 103
+        nav: 21
+      - <<: *reqManualFix
+        crc: 0x74C44958
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 21
   - name: 'Hebrock_Der Schatten von Meresis - EV.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/36843' ]
     dirty:
-      - crc: 0x61dcb4e0
-        <<: *dirtyPlugin
-        itm: 1
+      - <<: *quickClean
+        crc: 0x61DCB4E0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 20
+    clean:
+      - crc: 0xAC9EF379
+        util: 'TES5Edit v4.0.2f'
   - name: 'hellaylegacydungeon02.esp'
     msg:
       - <<: *obsolete
@@ -13929,12 +14017,43 @@ plugins:
         itm: 42
         udr: 8
   - name: 'Here There Be Monsters.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/32411' ]
     dirty:
-      - crc: 0x97885c9b
-        <<: *dirtyPlugin
-        itm: 95
+      - <<: *reqManualFix
+        crc: 0x66BBCD6D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 164
         udr: 3
-        nav: 11
+        nav: 12
+      - <<: *reqManualFix
+        crc: 0x99354182
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 12
+  - name: 'Here There Be Monsters - Call of Cthulhu.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/68259' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x6645FFFF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 518
+        udr: 5
+        nav: 90
+      - <<: *reqManualFix
+        crc: 0xAA6CDF0B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 90
+  - name: 'Here There Be Monsters - Curse of Cipactli.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/88643' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xDC663DED
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
+        nav: 4
+      - <<: *reqManualFix
+        crc: 0xE91800C8
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 4
   - name: 'hideoushobo.esp'
     dirty:
       - crc: 0x1d8eb77f
@@ -14144,11 +14263,29 @@ plugins:
         itm: 1
         udr: 0
   - name: 'Immersive Orc Strongholds.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     dirty:
-      - crc: 0x3c4bb3ac
-        <<: *dirtyPlugin
-        itm: 8
-        udr: 0
+      # v14.3.1
+      - <<: *quickClean
+        crc: 0xE7FEFA7F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 46
+    clean:
+      # v14.3.1
+      - crc: 0x81562542
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Immersive Whiterun.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
+    dirty:
+      # v14.3.1
+      - <<: *quickClean
+        crc: 0xF559DA17
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 15
+    clean:
+      # v14.3.1
+      - crc: 0x82D68512
+        util: 'TES5Edit v4.0.2f'
   - name: 'Immersive Shors stone.esp'
     dirty:
       - crc: 0x816648df
@@ -14156,11 +14293,17 @@ plugins:
         itm: 1
         udr: 0
   - name: 'Immersive Solstheim.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     dirty:
-      - crc: 0x983fc6e8
-        <<: *dirtyPlugin
-        itm: 5
-        udr: 0
+      # v14.3.1
+      - <<: *quickClean
+        crc: 0x40D9A5F9
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
+    clean:
+      # v14.3.1
+      - crc: 0x57ED7123
+        util: 'TES5Edit v4.0.2f'
   - name: 'Immersive Stonehills.esp'
     dirty:
       - crc: 0x59a75b27
@@ -14466,21 +14609,15 @@ plugins:
         itm: 6
         udr: 1
   - name: 'Lurking in the shadows.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25462' ]
     dirty:
-      - crc: 0xf87d7c47
-        <<: *dirtyPlugin
-        itm: 59
-        udr: 53
-        nav: 9
-      - crc: 0x6B78D95F
-        <<: *dirtyPlugin
-        nav: 9
-      - crc: 0xD8D162D1
-        <<: *dirtyPlugin
-        nav: 9
-      - crc: 0x6EA53B43
-        <<: *dirtyPlugin
-        nav: 9
+      - <<: *quickClean
+        crc: 0x57223ADC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 85
+    clean:
+      - crc: 0xCB0B8C53
+        util: 'TES5Edit v4.0.2f'
   - name: 'Lyberanthuin Restored.esp'
     dirty:
       - crc: 0x41f211fe
@@ -15043,11 +15180,15 @@ plugins:
   - name: 'Reapers.esp'
     msg: [ *obsolete ]
   - name: 'Reaper''s The Dark Tower.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17863' ]
     dirty:
-      - crc: 0x1b0ec1db
-        <<: *dirtyPlugin
-        itm: 17
-        udr: 9
+      - <<: *quickClean
+        crc: 0x2E445146
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      - crc: 0x9E26BE0D
+        util: 'TES5Edit v4.0.2f'
   - name: 'Reaper''s Landscape - The Dead Forest.esp'
     dirty:
       - crc: 0x79dbae41
@@ -15832,10 +15973,15 @@ plugins:
         udr: 20
         nav: 1
   - name: 'The Fifth Gate.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24351' ]
     dirty:
-      - crc: 0x2726c0bf
-        <<: *dirtyPlugin
-        itm: 69
+      - <<: *quickClean
+        crc: 0x2726C0BF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 76
+    clean:
+      - crc: 0xA8F3FD0B
+        util: 'TES5Edit v4.0.2f'
   - name: 'Die fünf Pforten- Deutsch.esp'
     dirty:
       - crc: 0x69e4e164
@@ -15847,19 +15993,16 @@ plugins:
         <<: *dirtyPlugin
         itm: 22
   - name: 'thefrontier.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/33164' ]
     dirty:
-      - crc: 0x7314b95
-        <<: *dirtyPlugin
-        itm: 9
+      - <<: *quickClean
+        crc: 0xBEE47B46
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 30
         udr: 1
-      - crc: 0x13762b47
-        <<: *dirtyPlugin
-        itm: 200
-        udr: 22
-      - crc: 0xbee47b46
-        <<: *dirtyPlugin
-        itm: 8
-        udr: 1
+    clean:
+      - crc: 0x7C087D3A
+        util: 'TES5Edit v4.0.2f'
   - name: 'The McMiller Chronicles.esp'
     dirty:
       - crc: 0xe2214b30
@@ -15945,6 +16088,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 5
   - name: 'Thunderchild - Epic Shout Package.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/41376' ]
     after:
       - 'SPERG.esp'
     msg: [ *doNotClean ]
@@ -18615,16 +18759,29 @@ plugins:
   - name: 'SkyTEST-RealPredators(\&Animals)?\.esp'
     msg: [ *obsolete ]
   - name: 'SkyTEST-RealisticAnimals&Predators.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10175' ]
+    inc:
+      - 'SkyTEST-RealisticAnimals&Predators.esm'
     dirty:
-      - crc: 0x2e582d9b
-        <<: *dirtyPlugin
-        itm: 12
+      - <<: *quickClean
+        crc: 0xBD40ECF4
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      - crc: 0x5D6ABC17
+        util: 'TES5Edit v4.0.2f'
   - name: 'SkyTEST-RealisticAnimals&Predators.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10175' ]
+    inc:
+      - 'SkyTEST-RealisticAnimals&Predators.esp'
     dirty:
-      - crc: 0x7b5f9e63
-        <<: *dirtyPlugin
-        itm: 12
-        udr: 0
+      - <<: *quickClean
+        crc: 0x598C3077
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      - crc: 0xD7DBBD9A
+        util: 'TES5Edit v4.0.2f'
   - name: 'SkyTEST-RealisticAnimals&Predators-Dragonborn.esp'
     dirty:
       - crc: 0x23f00d9a
@@ -19242,19 +19399,57 @@ plugins:
   - name: 'ETaC - RESOURCES.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     clean:
-      # version: 0.4.3 With MCM
+      # v14.3.1 ESM
+      - crc: 0x32DCA947
+        util: 'TES5Edit v4.0.2f'
+      # v14.3.1 ESM MCM
+      - crc: 0xD8BF00A8
+        util: 'TES5Edit v4.0.2f'
+      # v0.4.4 ESM
       - crc: 0x48B0148E
-        util: 'TES5Edit v4.0.2'
+        util: 'TES5Edit v4.0.2f'
+      # v0.4.4 ESM - No MCM
+      - crc: 0x4C8AEAA0
+        util: 'TES5Edit v4.0.2f'
   - name: 'ETaC - Complete.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     after:
       - 'Tamriel Reloaded HD.esp'
       - 'WhiterunHoldForest.esp'
       - '3DNPC.esp'
+    dirty:
+      # v14.3.1 Complete
+      - <<: *quickClean
+        crc: 0x6A4D6A20
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 220
+      # v14.3.1 Complete - No Inns
+      - <<: *quickClean
+        crc: 0x1CB40901
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 220
     clean:
-      # version: 0.4.4
+      # v14.3.1 Complete
+      - crc: 0xF4C41918
+        util: 'TES5Edit v4.0.2f'
+      # v14.3.1 Complete - No Inns
+      - crc: 0x73686028
+        util: 'TES5Edit v4.0.2f'
+      # v0.4.4 Complete
       - crc: 0xA3E49812
-        util: 'TES5Edit v4.0.2'
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ETaC - Dragon Bridge South.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
+    dirty:
+      # v14.3.1
+      - <<: *quickClean
+        crc: 0x6BFE713C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
+    clean:
+      # v14.3.1
+      - crc: 0xFC68DD41
+        util: 'TES5Edit v4.0.2f'
   - name: 'ETaC - Complete No Snow Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     clean:
@@ -19339,6 +19534,7 @@ plugins:
     after:
       - '3DNPC.esp'
   - name: 'ETaC - Riverwood.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     msg:
       - type: error
         content:
@@ -19351,13 +19547,14 @@ plugins:
           - lang: ru
             text: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
         condition: 'file("ETaC - Villages Complete.esp")'
-    dirty:
-      - crc: 0xb699fc8e
-        <<: *dirtyPlugin
-        itm: 29
+    clean:
+      # v0.4.4
+      - crc: 0x5CFDBF12
+        util: 'TES5Edit v4.0.2f'
     after:
       - '3DNPC.esp'
   - name: 'ETaC - Rorikstead.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     msg:
       - type: error
         content:
@@ -19370,12 +19567,24 @@ plugins:
           - lang: ru
             text: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
         condition: 'file("ETaC - Villages Complete.esp")'
-    dirty:
-      - crc: 0x5626a22c
-        <<: *dirtyPlugin
-        itm: 38
+    clean:
+      # v0.4.4
+      - crc: 0xE6FD3597
+        util: 'TES5Edit v4.0.2f'
     after:
       - '3DNPC.esp'
+  - name: 'ETaC - Darkwater Crossing.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
+    clean:
+      # v0.4.4
+      - crc: 0x4C6B58A6
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ETaC - Dawnstar.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
+    clean:
+      # v0.4.4
+      - crc: 0xD3B68E55
+        util: 'TES5Edit v4.0.2f'
   - name: 'ETaC - Morthal.esp'
     dirty:
       - crc: 0xa20e7abc
@@ -19865,10 +20074,15 @@ plugins:
   - name: 'Populated Cities v.+\.esp'
     msg: [ *obsolete ]
   - name: 'Populated Cities 2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9201' ]
     dirty:
-      - crc: 0x5fc72375
-        <<: *dirtyPlugin
-        itm: 59
+      - <<: *quickClean
+        crc: 0x5FC72375
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 60
+    clean:
+      - crc: 0x948B6761
+        util: 'TES5Edit v4.0.2f'
   - name: 'BFT Ships and Carriages.esp'
     dirty:
       - crc: 0x97054add
@@ -23049,14 +23263,15 @@ plugins:
   - name: 'Summoning.esp'
     msg: [ *corrupt ]
   - name: 'Vampirelordroyal.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22565' ]
     dirty:
-      - crc: 0x520f0ef2
-        <<: *dirtyPlugin
-        itm: 18
-      - crc: 0xA9A828B7
-        <<: *dirtyPlugin
-        itm: 32
-        udr: 0
+      - <<: *quickClean
+        crc: 0xC7233FED
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      - crc: 0xC9FCC766
+        util: 'TES5Edit v4.0.2f'
   - name: 'weaponperkadjustments.esp'
     dirty:
       - crc: 0xe830cbbe
@@ -23537,29 +23752,19 @@ plugins:
             text: 'このファイルは破損しています。機能しません。'
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
   - name: '3DNPC.esp'
+    url: [ 'http://3dnpc.com/' ]
     msg:
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM 3DNPC - Requiem Patch.esp")'
         subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
     dirty:
-      - crc: 0x143c788a
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0x500bab3f
-        <<: *dirtyPlugin
-        itm: 408
-      - crc: 0xa17c4314
-        <<: *dirtyPlugin
-        itm: 30
-      - crc: 0xd802277e
-        <<: *dirtyPlugin
-        itm: 31
-      - crc: 0x8e88023f
-        <<: *dirtyPlugin
-        itm: 6
+      - <<: *quickClean
+        crc: 0xE91FCA2F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 336
     clean:
-      - crc: 0x837C53D0
-        util: TES5Edit v3.1.3
+      - crc: 0xA26C90FD
+        util: 'TES5Edit v4.0.2f'
   - name: 'AlmostEveryoneIsAnAdventurer.esp'
     req: [ *SKSE ]
   - name: 'kuerteeSimpleMultipleFollowers MCM.esp'
@@ -23710,6 +23915,7 @@ plugins:
             text: 'HorseRidingFollowers уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
   - name: 'Inigo.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/40960' ]
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Inigo.esp")'
@@ -23717,12 +23923,12 @@ plugins:
       # version: 2.3
       - <<: *quickClean
         crc: 0x6371E737
-        util: '[TES5Edit v4.0.2](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 36
     clean:
       # version: 2.3
-      - crc: 0x34DF3757
-        util: 'TES5Edit v4.0.2'
+      - crc: 0xAAB7BD04
+        util: 'TES5Edit v4.0.2f'
   - name: 'tos_laintardale_hf.esp'
     dirty:
       - crc: 0xe536de07
@@ -25363,16 +25569,13 @@ plugins:
     after:
       - 'Inigo.esp'
     dirty:
-      - crc: 0x13848dc1
-        <<: *dirtyPlugin
-        itm: 6
-        udr: 9
-      - crc: 0x32f45bb8
-        <<: *dirtyPlugin
-        itm: 6
-      - crc: 0xfc40f409
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xD6C72A3C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
+    clean:
+      - crc: 0x24727083
+        util: 'TES5Edit v4.0.2f'
   - name: 'Guardian HeadQuarters.esp'
     dirty:
       - crc: 0x5ba9ace4
@@ -25421,10 +25624,41 @@ plugins:
     inc:
       - 'mjhKhajiitSpeakExtra - Dagi-Raht.esp'
   - name: 'BecomeKingofSkyrim.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/41087'  # V1
+      - 'https://www.nexusmods.com/skyrim/mods/64018'  # V2
+      - 'https://www.nexusmods.com/skyrim/mods/79490'  # Immersive Edition
     dirty:
-      - crc: 0x62c0e76d
-        <<: *dirtyPlugin
-        itm: 141
+      # v5e - aysigago - 41087
+      - <<: *quickClean
+        crc: 0x7F44AB5C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 59
+      # v7 - Harkon121599 - 64018
+      - <<: *quickClean
+        crc: 0x160A0257
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
+      # v1.7 - DJAretin0 - 79490
+      - <<: *quickClean
+        crc: 0x87AFFB0D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 71
+    clean:
+      # v5e - aysigago - 41087
+      - crc: 0x90DE5BE8
+        util: 'TES5Edit v4.0.2f'
+      # v7 - Harkon121599 - 64018
+      - crc: 0x3A185CCE
+        util: 'TES5Edit v4.0.2f'
+      # v1.7 - DJAretin0 - 79490
+      - crc: 0xA1C8EB23
+        util: 'TES5Edit v4.0.2f'
+  - name: 'RemoveEssentialPatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/41087' ]
+    clean:
+      - crc: 0xC24BE01D
+        util: 'TES5Edit v4.0.2f'
   - name: 'Alternate Start - Live Another Life.esp'
     group: *alternateStartGroup
     msg:
@@ -26630,16 +26864,77 @@ plugins:
       - <<: *requiresX
         type: say
         subs: [ '[WATER 1.5b](http://www.nexusmods.com/skyrim/mods/13268)' ]
+  - name: 'Atlas Legendary.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/14976'
+      - 'https://www.nexusmods.com/skyrim/mods/74045'
+    dirty:
+      # v1.7 - kronixx - 14976
+      - <<: *quickClean
+        crc: 0x06CB3897
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      # v1.7 - kronixx - 14976
+      - crc: 0x5F2E1E45
+        util: 'TES5Edit v4.0.2f'
+      # v2.0 - kryptopyr - 74045
+      - crc: 0xDA3B193D
+        util: 'TES5Edit v4.0.2f'
+    msg:
+      - <<: *requiresX
+        type: say
+        subs: [ '[Atlas Map Markers For Skyrim](https://www.nexusmods.com/skyrim/mods/14976)' ]
+        condition: 'checksum("Atlas Legendary.esp",06CB3897)'
   - name: 'Atlas Dawnguard.esp'
-    dirty:
-      - crc: 0xc03d5fcd
-        <<: *dirtyPlugin
-        udr: 1
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      - crc: 0x6C34D250
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Hearthfire.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      - crc: 0x3BDECE5A
+        util: 'TES5Edit v4.0.2f'
   - name: 'Atlas Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
     dirty:
-      - crc: 0x5ffce4bf
-        <<: *dirtyPlugin
-        itm: 17
+      - <<: *quickClean
+        crc: 0x9A0D454B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      - crc: 0x1F0A44F6
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Blackreach.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      - crc: 0x70F4600D
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Compass Tweaks.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      - crc: 0x85E9C958
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Legendary OCS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x23EBE51C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      - crc: 0xA63D08DF
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Map Markers.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      # 11 Atlas Map Markers
+      - crc: 0x0EA55F07
+        util: 'TES5Edit v4.0.2f'
+      # 13 Atlas Open Cities
+      - crc: 0x0DDCF02D
+        util: 'TES5Edit v4.0.2f'
   - name: 'BarenziahQuestMarkers.esp'
     msg:
       - <<: *alreadyInX
@@ -27404,6 +27699,7 @@ plugins:
     after:
       - 'Convenient Horses.esp'
   - name: 'Undeath.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/40607' ]
     after:
       - 'MoonAndStar_MAS.esp'
     msg:
@@ -27419,7 +27715,14 @@ plugins:
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Undeath - Requiem Patch.esp")'
         subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
-    url: [ 'http://www.nexusmods.com/skyrim/mods/40607' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x13173CB1
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 48
+    clean:
+      - crc: 0xE5E76148
+        util: 'TES5Edit v4.0.2f'
   - name: 'Verdant - A Skyrim Grass Plugin.esp'
     after:
       - 'Skyrim Flora Overhaul.esp'
@@ -27685,6 +27988,14 @@ plugins:
       - 'Complete Crafting Overhaul_Remade.esp'
       - 'disparity.esp'
       - 'Radiant and Unique Potions Poisons and Booze.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x185A6E55
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+    clean:
+      - crc: 0x6166F91F
+        util: 'TES5Edit v4.0.2f'
   - name: 'Elisdriel.esp'
     after:
       - 'WhiterunHoldForest.esp'
@@ -28086,8 +28397,17 @@ plugins:
     after:
       - 'Feminine Females.esp'
   - name: 'MoonAndStar_MAS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/52397' ]
     after:
       - 'AuroraVillage.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE19B3101
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 28
+    clean:
+      - crc: 0x0D6CA609
+        util: 'TES5Edit v4.0.2f'
   - name: 'No Vendor or Loot Spells.esp'
     group: *reproccerGroup
   - name: 'Skyrim Unlocked.esp'
@@ -28301,13 +28621,14 @@ plugins:
       - crc: 0xB3094DDB
         util: 'TES5Edit v4.0.1'
   - name: 'WM Flora Fixes.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/70656' ]
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - WM Flora Fixes.esp")'
     clean:
       # version: 2.01
       - crc: 0xADF81090
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2f'
   - name: 'DawnguardArsenal.esp'
     msg:
       - <<: *patchRequiemMRP
@@ -29825,3 +30146,372 @@ plugins:
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cloaks and Capes.esp")'
+  - name: 'Dragon Break.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50882' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xC5620B54
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 89
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x1D6272F1
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: '0db2SECOND.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50882' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x412433D7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0x53CE6F9A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
+  - name: '0db2patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50882' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF1419DC5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+    clean:
+      - crc: 0xC97AAEF8
+        util: 'TES5Edit v4.0.2f'
+  - name: 'PATCHDragon Break.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50882' ]
+    clean:
+      - crc: 0x3631D31E
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Abundant Enchantments.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/41375' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xA2C3A201
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      - crc: 0xA64931DC
+        util: 'TES5Edit v4.0.2f'
+  - name: 'AgentOfRighteousMight.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/33766' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x340E1F6C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
+    clean:
+      - crc: 0xBF76AFAC
+        util: 'TES5Edit v4.0.2f'
+  - name: 'AlchemyOrganization.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8431' ]
+    dirty:
+      # normal version
+      - <<: *quickClean
+        crc: 0x1FA92C7B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+        udr: 1
+      # auto close door version
+      - <<: *quickClean
+        crc: 0x8D5C8EDF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+        udr: 1
+    clean:
+      # normal version
+      - crc: 0xC1A33780
+        util: 'TES5Edit v4.0.2f'
+      # auto close door version
+      - crc: 0x3CD452D6
+        util: 'TES5Edit v4.0.2f'
+  - name: 'AmethystHollowsMaster.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18575' ]
+    clean:
+      - crc: 0x6C5E6636
+        util: 'TES5Edit v4.0.2f'
+  - name: 'AmethystHollowsUpdate.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18575' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x9A535EAB
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 33
+    clean:
+      - crc: 0x3ED2B4E6
+        util: 'TES5Edit v4.0.2f'
+  - name: 'armored-horses.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13348' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x3B1B7A1E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      - crc: 0xB12A6796
+        util: 'TES5Edit v4.0.2f'
+  - name: 'BetterArcadia.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/95022' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xD7612713
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 84
+        udr: 94
+    clean:
+      - crc: 0x9926A7BF
+        util: 'TES5Edit v4.0.2f'
+  - name: 'bhabhilon.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30279' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x37465D81
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1348
+    clean:
+      - crc: 0x9182E3B7
+        util: 'TES5Edit v4.0.2f'
+  - name: 'BSAssets.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/84946' ]
+    clean:
+      - crc: 0xB85819EB
+        util: 'TES5Edit v4.0.2f'
+  - name: 'BSHeartland - Meshes.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/84946' ]
+    clean:
+      - crc: 0x13CF0015
+        util: 'TES5Edit v4.0.2f'
+  - name: 'BSHeartland - Textures.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/84946' ]
+    clean:
+      - crc: 0x13CF0015
+        util: 'TES5Edit v4.0.2f'
+  - name: 'BSHeartland.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/84946' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x317A3AF2
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 524
+    clean:
+      - crc: 0xEB249B52
+        util: 'TES5Edit v4.0.2f'
+  - name: 'BS_DLC_patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/84946' ]
+    clean:
+      - crc: 0x6DDBA1E6
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Ciceriareplacor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/98395' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x8F771C0C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      - crc: 0x3803F08C
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Clockwork.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/77809' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x575CA2DB
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 120
+    clean:
+      - crc: 0xED94CEA7
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Conan_Hyborian_Age.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/40914' ]
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("Conan_Hyborian_Age.esp",71D6B15D)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC8A7315B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      - crc: 0x436AC928
+        util: 'TES5Edit v4.0.2f'
+  - name: 'crimsonquestmarkers.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22517' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF19E0840
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
+    clean:
+      - crc: 0x3EC51487
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Dreamborne Islands.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/79826' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x3D11B8E0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+      # LITE version
+      - <<: *quickClean
+        crc: 0xAAC5CD98
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+    clean:
+      - crc: 0x57F02A06
+        util: 'TES5Edit v4.0.2f'
+      # LITE version
+      - crc: 0xBE0E85E5
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Forgotten DungeonsAll.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/57979' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xAD4C099C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 504
+    clean:
+      - crc: 0xF06CB63F
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Grytewake.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12295' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x4DACD73F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 70
+        nav: 8
+      - <<: *reqManualFix
+        crc: 0x7E020E7F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 8
+  - name: 'Grytewake.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12295' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x16895327
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 87
+        nav: 8
+      - <<: *reqManualFix
+        crc: 0x991489FD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 8
+  - name: 'handcart-wellsantos.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/74517' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x71A003CE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      - crc: 0x9E1E7F0F
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Item Recycling.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/38901' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x88C00214
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+    clean:
+      - crc: 0x311344C4
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Lakeview_Extended.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/31380' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x3B216C47
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 39
+    clean:
+      - crc: 0x611E1301
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ApachiiHair.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10168' ]
+    clean:
+      - crc: 0x783F7167
+        util: 'TES5Edit v4.0.2f'
+  - name: 'LylvieveSisters.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15680' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xC3201C1C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      - crc: 0xA33318B5
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Masters of Death.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9752' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xD96C2FAC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      - crc: 0xAF2086F0
+        util: 'TES5Edit v4.0.2f'
+  - name: 'PiratesofthePacific.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29443' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x61AED698
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 100
+        udr: 2
+    clean:
+      - crc: 0xF578AE45
+        util: 'TES5Edit v4.0.2f'
+  - name: 'quest into the depths.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23087' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x41C7FCE6
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 66
+        udr: 26
+    clean:
+      - crc: 0x5CAE0507
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Rigmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/53068' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x98D0FC9A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 429
+    clean:
+      - crc: 0xC249C843
+        util: 'TES5Edit v4.0.2f'
+  - name: 'summersetisles.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/68406' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x065E12BA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2857
+    clean:
+      - crc: 0x415377E5
+        util: 'TES5Edit v4.0.2f'
+  - name: 'WheelsOfLull.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/58672' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x5BD0BF01
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 125
+    clean:
+      - crc: 0xA287E8AA
+        util: 'TES5Edit v4.0.2f'
+  - name: 'xamnant.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/44922' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF9D9B6B6
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2568
+    clean:
+      - crc: 0x24E6D93B
+        util: 'TES5Edit v4.0.2f'
