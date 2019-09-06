@@ -27698,6 +27698,7 @@ plugins:
     after:
       - 'Convenient Horses.esp'
   - name: 'Undeath.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/40607' ]
     after:
       - 'MoonAndStar_MAS.esp'
     msg:
@@ -27713,7 +27714,14 @@ plugins:
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Undeath - Requiem Patch.esp")'
         subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
-    url: [ 'http://www.nexusmods.com/skyrim/mods/40607' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x13173CB1
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 48
+    clean:
+      - crc: 0xE5E76148
+        util: 'TES5Edit v4.0.2f'
   - name: 'Verdant - A Skyrim Grass Plugin.esp'
     after:
       - 'Skyrim Flora Overhaul.esp'
