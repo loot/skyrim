@@ -11771,15 +11771,16 @@ plugins:
   - name: 'Abadonedshack_0.5b.esp'
     msg: [ *corrupt ]
   - name: 'AdalMatar.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/33108' ]
     dirty:
-      - crc: 0x5b12dd15
-        <<: *dirtyPlugin
-        itm: 183
-        udr: 1
-        nav: 5
-      - crc: 0xba0c35c4
-        <<: *dirtyPlugin
-        itm: 17
+      - <<: *reqManualFix
+        crc: 0xBA0C35C4
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 33
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0xCFBA118F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 3
   - name: 'AdragoniusTower.esp'
     dirty:
