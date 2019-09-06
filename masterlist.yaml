@@ -13942,6 +13942,7 @@ plugins:
         itm: 43
         udr: 9
   - name: 'Hebrock_Der Schatten von Meresis.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25872' ]
     msg:
       - type: say
         content:
@@ -13954,17 +13955,25 @@ plugins:
         content: 'The English version has been renamed starting from version 1.1.2.'
         condition: 'checksum("Hebrock_Der Schatten von Meresis.esp",61DCB4E0)'
     dirty:
-      - crc: 0x49083650
-        <<: *dirtyPlugin
-        itm: 81
-      - crc: 0x61dcb4e0
-        <<: *dirtyPlugin
-        itm: 1
+      - <<: *reqManualFix
+        crc: 0x49083650
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 103
+        nav: 21
+      - <<: *reqManualFix
+        crc: 0x74C44958
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 21
   - name: 'Hebrock_Der Schatten von Meresis - EV.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/36843' ]
     dirty:
-      - crc: 0x61dcb4e0
-        <<: *dirtyPlugin
-        itm: 1
+      - <<: *quickClean
+        crc: 0x61DCB4E0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 20
+    clean:
+      - crc: 0xAC9EF379
+        util: 'TES5Edit v4.0.2f'
   - name: 'hellaylegacydungeon02.esp'
     msg:
       - <<: *obsolete
