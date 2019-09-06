@@ -1221,11 +1221,38 @@ plugins:
           - lang: de
             text: 'Diese esm Datei WIRD ihr Spiel beschädigen. Wir empfehlen mit Nachdruck, dass Sie den [Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214) benutzen. Modifizieren Sie nicht die Dateityp-Erweiterung.'
   - name: 'MoT_First_LoadOrder_File_After_Skyrim.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6272' ]
     dirty:
-      - crc: 0x6d3163ad
-        <<: *dirtyPlugin
-        itm: 22
+      - <<: *reqManualFix
+        crc: 0x6D3163AD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 116
         nav: 1
+      - <<: *reqManualFix
+        crc: 0xAF530814
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'MoT_Last_LoadOrder_File.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6272' ]
+    tag:
+      - Delev
+      - Relev
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xA2C3F4C9
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 253
+        udr: 56
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x81AF66AF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xF5C28F34
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'Skyrim Project Optimization.esm'
     group: *newLandsGroup
   - name: 'Skyrim Project Optimization - No Homes.esm'
@@ -1668,10 +1695,6 @@ plugins:
   - name: 'LiFE.esm'
     msg:
       - *requiresCBBEorUNP
-# ## Lighting.esm
-# ## this is a companion mod
-# ## Lightsabers.esm
-# ## Lighting.esm is a companion mod for Lightsabers.esm?
   - name: 'Liliath.esm'
     msg: [ *alreadyInPrettyFollowers ]
   - name: 'lilyelf.esm'
@@ -1821,12 +1844,26 @@ plugins:
         itm: 274
         nav: 1
   - name: 'RiverHelm.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16374' ]
     dirty:
-      - crc: 0x41b8b722
-        <<: *dirtyPlugin
-        itm: 3700
-        udr: 192
-        nav: 50
+      - <<: *quickClean
+        crc: 0xE57E4EC6
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 944
+    clean:
+      - crc: 0x394BC4B8
+        util: 'TES5Edit v4.0.2f'
+  - name: 'BecomeKingOfRiverHelm.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16374' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x69AE9A14
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 1
+    clean:
+      - crc: 0x57B01C9B
+        util: 'TES5Edit v4.0.2f'
   - name: 'SC_Drow Race.esm'
     msg: [ *obsolete ]
   - name: 'SexiS.esm'
@@ -2904,7 +2941,6 @@ plugins:
             text: 'OrientalbeautyMod.espは現在使用している女性用の体型変更Modに依存します。'
           - lang: ru
             text: 'Версия OrientalbeautyMod.esp зависит от реплейсера женского тела, который вы используете, если таковой имеется.'
-# SupermodelSkyrim.esp moved back to npc faces because it''s npc faces overhaul (too many conflicts)
   - name: 'Tonilia.esp'
     msg:
       - <<: *corrupt
@@ -3036,15 +3072,15 @@ plugins:
       - crc: 0x1A5860EB
         util: 'TES5Edit v4.0.1'
   - name: 'Morning Fogs.esp'
-    ## very old versions incompatible with 'Supreme Fog.esp' but unlikely to be used anymore
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24810' ]
     dirty:
-      - crc: 0x2cc974e4
-        <<: *dirtyPlugin
-        itm: 4
+      - <<: *quickClean
+        crc: 0xB66B01E5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
     clean:
-      # version: 1.0
-      - crc: 0xFD718044
-        util: 'TES5Edit v4.0.1'
+      - crc: 0xFD17A22B
+        util: 'TES5Edit v4.0.2f'
   - name: 'PNENB.esp'
     msg:
       - <<: *useVersionNonDawnguard
@@ -3065,9 +3101,6 @@ plugins:
   - name: 'PaperMapHeight-RemoveFog.esp'
     after:
       - 'WATER.esp'
-# ## tweak_fog.esp
-# ## tweak_fog-AmbL_c.esp
-# ## japanese release- may be weather, lighting or both, unsure- LD
   - name: 'VanillaSnowWindyand150percentLessView.esp'
     msg: [ *obsolete ]
 # Expanded Snow Systems should load after Supreme Storms - William
@@ -3165,9 +3198,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("(AOS2_Requiem Patch|Requiem - Audio Overhaul for Skyrim)\.esp")'
         subs: [ 'Requiem patch for Audio Overhaul for Skyrim' ]
-# ## AOS_DG Patch.esp
-# ## AOS_DB Patch.esp
-# ## these should sort up here; regex: AOS_.+ down in compat patches section was unfortunately too broad -LD
   - name: 'Prometheus_No_snow_under_the_roof.esp'
     dirty:
       # version: 2.3 Vanilla + Dawnguard + Dragonborn
@@ -3239,11 +3269,6 @@ plugins:
       - crc: 0x68eb2f
         <<: *dirtyPlugin
         itm: 43
-# ## REGEX: MoT2? - (Misc 1|Scripts 1|Sounds 1|Visual 1|Visual 2|Visual 3|Visual 4)\.esp
-# ## these are all TES4 header only
-# ## Reverb.esp
-# ## Sound.esp
-# ## paired with Reverb.esp
   - name: 'better_torches.esp'
     msg:
       - type: warn
@@ -3439,8 +3464,6 @@ plugins:
       - crc: 0x4FD63CD3
         <<: *dirtyPlugin
         itm: 3
-# ## Natural Skyrim Rain.esp
-# ## Bethsoft6.118,128and9.187,193
   - name: 'Warmer Magic Lights v2.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
@@ -3457,7 +3480,6 @@ plugins:
     msg:
       - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Warmer Magic Lights v2 - Big.esp",DE4F928D)'
-# ## NoTint.esp
 # ## Moved ClimatesOfTamriel From Here
   - name: 'SI_DarkerNightsAddon.esp'
     req:
@@ -3519,7 +3541,6 @@ plugins:
       - crc: 0x7d9e7a5f
         <<: *dirtyPlugin
         itm: 1
-# ## Fantasy Music Overhaul Redone.esp
 # ## REGEX: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp
 # ## should load after fantasy music overhaul
   - name: 'Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp'
@@ -3669,9 +3690,7 @@ plugins:
     tag:
       - Delev
       - Relev
-# ## TradeBarter.esp
 # ## Recommended to be loaded before Economics of Skyrim
-# ## TradeBarterLite.esp
   - name: 'TradeBarter.esp'
     req:
       - *SKSE
@@ -3696,9 +3715,6 @@ plugins:
       - crc: 0xc3c5505
         <<: *dirtyPlugin
         itm: 16
-# ## Economics of Skyrim - Dawnguard.esp
-# ## Economics of Skyrim Merged.esp
-# ## Estimate for correct position. Mod file no longer on Nexus.
   - name: '_pocketempirebuilder.esp'
     msg:
       - <<: *corrupt
@@ -3765,9 +3781,6 @@ plugins:
   - name: 'ArmorRatingTweak80_1000AR.esp'
     msg: [ *obsolete ]
 # ## REGEX: ArmorRatingTweak_(\d{8}|U)?.+\.esp
-# ## following two lines found here during tidying, not sure how related to Base A, so left them -LD
-# ## ENG_All_In_One_v1.2.esp
-# ## NoRestorationExploit.esp
   - name: 'ArmorRatingTweak_(\d{8}|U)?.+\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -12087,13 +12100,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 86
         udr: 2
-  - name: 'BecomeKingOfRiverHelm.esp'
-    dirty:
-      - crc: 0x503c8747
-        <<: *dirtyPlugin
-        itm: 60
-        udr: 166
-        nav: 12
   - name: '0001BertsBreezehomeRemodel.V.2(esm).esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8922' ]
     dirty:
@@ -15251,12 +15257,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 39
         udr: 106
-  - name: 'Saviik City.esp'
-    dirty:
-      - crc: 0x2a1083e8
-        <<: *dirtyPlugin
-        udr: 576
-        nav: 32
   - name: 'Saviors Lodge - Player Home.esp'
     msg:
       - type: warn
@@ -26960,21 +26960,6 @@ plugins:
       - crc: 0x676790BF
         <<: *dirtyPlugin
         itm: 3
-  - name: 'MoT_Last_LoadOrder_File.esp'
-    tag:
-      - Delev
-      - Relev
-    dirty:
-      - crc: 0x211c2134
-        <<: *dirtyPlugin
-        itm: 180
-        udr: 51
-        nav: 2
-      - crc: 0xa2c3f4c9
-        <<: *dirtyPlugin
-        itm: 211
-        udr: 56
-        nav: 2
   - name: 'SKSE Hotkeys.esp'
     req:
       - *SKSE
