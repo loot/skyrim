@@ -26618,16 +26618,77 @@ plugins:
       - <<: *requiresX
         type: say
         subs: [ '[WATER 1.5b](http://www.nexusmods.com/skyrim/mods/13268)' ]
+  - name: 'Atlas Legendary.esp'
+    url:
+	  - 'https://www.nexusmods.com/skyrim/mods/14976'
+	  - 'https://www.nexusmods.com/skyrim/mods/74045'
+    dirty:
+	  # v1.7 - kronixx - 14976
+      - <<: *quickClean
+        crc: 0x06CB3897
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+	  # v1.7 - kronixx - 14976
+      - crc: 0x5F2E1E45
+        util: 'TES5Edit v4.0.2f'
+	  # v2.0 - kryptopyr - 74045
+      - crc: 0xDA3B193D
+        util: 'TES5Edit v4.0.2f'
+    msg:
+      - <<: *requiresX
+        type: say
+        subs: [ '[Atlas Map Markers For Skyrim](https://www.nexusmods.com/skyrim/mods/14976)' ]
+        condition: 'checksum("Atlas Legendary.esp",06CB3897)'
   - name: 'Atlas Dawnguard.esp'
-    dirty:
-      - crc: 0xc03d5fcd
-        <<: *dirtyPlugin
-        udr: 1
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      - crc: 0x6C34D250
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Hearthfire.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      - crc: 0x3BDECE5A
+        util: 'TES5Edit v4.0.2f'
   - name: 'Atlas Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
     dirty:
-      - crc: 0x5ffce4bf
-        <<: *dirtyPlugin
-        itm: 17
+      - <<: *quickClean
+        crc: 0x9A0D454B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      - crc: 0x1F0A44F6
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Blackreach.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      - crc: 0x70F4600D
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Compass Tweaks.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      - crc: 0x85E9C958
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Legendary OCS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x23EBE51C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      - crc: 0xA63D08DF
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Atlas Map Markers.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14976' ]
+    clean:
+      # 11 Atlas Map Markers
+      - crc: 0x0EA55F07
+        util: 'TES5Edit v4.0.2f'
+      # 13 Atlas Open Cities
+      - crc: 0x0DDCF02D
+        util: 'TES5Edit v4.0.2f'
   - name: 'BarenziahQuestMarkers.esp'
     msg:
       - <<: *alreadyInX
