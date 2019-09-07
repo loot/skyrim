@@ -22360,30 +22360,21 @@ plugins:
         <<: *dirtyPlugin
         itm: 14
         udr: 41
+  - name: 'ACE Archery.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10037' ]
+    inc:
+      - 'Crafting300.esp'
   - name: 'ACE Archery Dawnguard Patch.esp'
     msg: [ *obsolete ]
-  - name: 'ACE Archery.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Crafting300.esp, to fix this get the compatibility patch found [here](http://www.nexusmods.com/skyrim/download/70990)'
-          - lang: de
-            text: 'Inkompatibel mit: Crafting300.esp, um dieses Problem zu beheben, beziehen Sie den Kompatibilitätspatch [hier](http://www.nexusmods.com/skyrim/download/70990).'
-          - lang: ja
-            text: '競合: Crafting300.esp（[こちら](http://www.nexusmods.com/skyrim/download/70990)にある互換パッチで修正できます）'
-        condition: 'checksum("Crafting300.esp",46C639C1)'
   - name: 'ACE Archery-Weapons of the Third Era Patch.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.'
-          - lang: de
-            text: 'Diese Datei enthält ungelöste Fehler und sollte entfernt werden. Irgendwie ist der Skyrim-Master-Eintrag zweimal dupliziert.'
-          - lang: ja
-            text: 'このファイルには未解決のエラーが存在します。削除してください。Skyrimに元からあるエントリが何らかの理由で二重に複製されてしまいます。'
+      - <<: *corrupt
         condition: 'checksum("ACE Archery-Weapons of the Third Era Patch.esp",873EAB94)'
+  - name: 'ACE Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10037' ]
+    after:
+      - 'Stealth Skills Rebalanced_COMPLETE.esp'
+      - 'Stealth Skills Rebalanced_SNEAK.esp'
   - name: 'LB_MuchAdoSnowElves_ACE_Patch_Long.esp'
     inc:
       - 'LB_MuchAdoSnowElves_ACE_Patch_Light.esp'
@@ -23043,10 +23034,6 @@ plugins:
       - crc: 0xc013ba37
         <<: *dirtyPlugin
         itm: 1
-  - name: 'ACE Armor.esp'
-    after:
-      - 'Stealth Skills Rebalanced_COMPLETE.esp'
-      - 'Stealth Skills Rebalanced_SNEAK.esp'
   - name: 'Skype - Two-Handed.esp'
     dirty:
       - crc: 0x4820339a
