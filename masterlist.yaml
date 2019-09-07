@@ -1412,8 +1412,6 @@ plugins:
       - crc: 0x9e4d41f9
         <<: *dirtyPlugin
         itm: 2
-  - name: 'CLARALUX - More and Brighter Lights.esm'
-    msg: [ *obsolete ]
   - name: 'ClimatesOfTamriel.esm'
     after:
       - 'Skyrim Project Optimization.esm'
@@ -3023,41 +3021,25 @@ plugins:
         condition: 'many("MoreSnow(Windy)?(and(75|150)percentLessView)?\.esp")'
         subs: [ 'MoreSnow .esp file' ]
   - name: 'MoreSnowWindyand150percentLessView.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: All lighting mods.'
-          - lang: de
-            text: 'Inkompatibel mit allen Beleuchtungs Modifikationen.'
-          - lang: es
-            text: 'Incompatible con: Cualquier mod que modifique el clima.'
-          - lang: ja
-            text: '競合: 光源変更Mod'
-          - lang: ru
-            text: 'Несовместим с: Все моды, модифицирующие освещение.'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8328' ]
     dirty:
-      - crc: 0x7ed853ee
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x7ED853EE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      - crc: 0xFC07A6A7
+        util: 'TES5Edit v4.0.2f'
   - name: 'MoreSnowWindyand75percentLessView.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: All lighting mods.'
-          - lang: de
-            text: 'Inkompatibel mit allen Beleuchtungs Modifikationen.'
-          - lang: es
-            text: 'Incompatible con: Cualquier mod que modifique el clima.'
-          - lang: ja
-            text: '競合: 光源変更Mod'
-          - lang: ru
-            text: 'Несовместим с: Все моды, модифицирующие освещение.'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8328' ]
     dirty:
-      - crc: 0x4a595497
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x4A595497
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      - crc: 0x28F22A1E
+        util: 'TES5Edit v4.0.2f'
 # 'Better Dynamic Snow.esp' moved before 'EnhancedLightsandFX.esp' to
 # prevent bug with falling in textures when 'EnhancedLightsandFX.esp'
 # loaded before 'Better Dynamic Snow.esp'
@@ -3339,19 +3321,24 @@ plugins:
             text: 'ENB用のModです。必ず適切なENBをインストールしてください。'
           - lang: ru
             text: 'Это ENB-мод.  Убедитесь, что у вас установлена корректная версия ENB.'
-  - name: 'CLARALUX - More and Brighter Lights.esp'
-    msg: [ *obsolete ]
+  - name: 'CLARALUX.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17605' ]
     dirty:
-      - crc: 0xcf9e9621
-        <<: *dirtyPlugin
-        itm: 113
-        udr: 5
+      - <<: *quickClean
+        crc: 0xFFAAF7FF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      - crc: 0x01217166
+        util: 'TES5Edit v4.0.2f'
+  - name: 'CLARALUX - More and Brighter Lights.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17605' ]
+    msg: [ *obsolete ]
+  - name: 'CLARALUX - More and Brighter Lights.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17605' ]
+    msg: [ *obsolete ]
   - name: 'CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp")'
-        subs: [ 'LightAdjuster .esp file' ]
-      - *obsolete
+    msg: [ *obsolete ]
   - name: 'Darker_Caves_Dungeons_Ruins_Nights.esp'
     dirty:
       - crc: 0xe46b4df1
@@ -3359,16 +3346,8 @@ plugins:
         itm: 721
         udr: 1489
   - name: 'ImmersiveContentExteriorLighting.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Incompatible with: CLARALUX lighting mods'
-          - lang: de
-            text: 'Inkompatibel mit: CLARALUX Beleuchtungsmods'
-          - lang: ja
-            text: '競合: CLARALUX系の光源Mod'
-        condition: 'file("CLARALU.*\.esp")'
+    inc:
+      - 'CLARALUX.esp'
     dirty:
       - crc: 0xf2a7a8bd
         <<: *dirtyPlugin
@@ -3493,11 +3472,6 @@ plugins:
   - name: 'Further Dark Dungeons for ENB.esp'
     inc:
       - 'Dark Dungeons for ENB.esp'
-  - name: 'CLARALUX.esp'
-    dirty:
-      - crc: 0xfd3f3144
-        <<: *dirtyPlugin
-        itm: 87
   - name: 'AdditionalMusicBundleI.esp'
     dirty:
       - crc: 0x10e2879
@@ -4346,16 +4320,10 @@ plugins:
   - name: 'DrinkingGivesYourBottles.esp'
     inc:
       - 'Skyrealism - Feast and Famine.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Headbomb''s Better Sorting - Food *.esp'
-          - lang: de
-            text: 'Inkompatibel mit: Headbomb''s Better Sorting - Food *.esp'
-          - lang: ja
-            text: '競合: Headbomb''s Better Sorting - Food *.esp'
-        condition: 'file("Headbomb''s Better Sorting - Food.+\.esp")'
+      - 'Headbomb''s Better Sorting - Food (Light Weight).esp'
+      - 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
+      - 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
+      - 'Headbomb''s Better Sorting - Food (Weightless).esp'
   - name: 'DropThatGold.esp'
     req: [ *SKSE ]
   - name: 'DSpSoB.esp'
@@ -6100,20 +6068,6 @@ plugins:
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     inc:
       - 'Valdacil''s Item Sorting - Smithing Smelter Categories.esp'
-  - name: 'VinillaSnowWindyand.+percentLessView\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: All lighting mods.'
-          - lang: de
-            text: 'Inkompatibel mit: Alle Beleuchtungsmods.'
-          - lang: es
-            text: 'Incompatible con: Cualquier mod que modifique la iluminación.'
-          - lang: ja
-            text: '競合: 光源変更Mod'
-          - lang: ru
-            text: 'Несовместим с: Все моды, меняющие освещение.'
   - name: 'WantedPosters.esp'
     dirty:
       - crc: 0x30717872
@@ -8342,145 +8296,26 @@ plugins:
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Mystic Armor and Weapon Set.esp")'
-  - name: 'NA_BipolarBlade_(Eng|Rus|Deu)\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: de
-            text: 'Löschen. Bereits in Noble_Artifacts_For_Skyrim(Eng|Rus).esp enthalten.'
-          - lang: ja
-            text: 'Noble_Artifacts_For_Skyrim(Eng|Rus).espですでに削除されています。'
-          - lang: ru
-            text: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'file("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-  - name: 'NA_CleaverFelms_Eng.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: de
-            text: 'Löschen. Bereits in Noble_Artifacts_For_Skyrim(Eng|Rus).esp enthalten.'
-          - lang: ja
-            text: 'Noble_Artifacts_For_Skyrim(Eng|Rus).espですでに削除されています。'
-          - lang: ru
-            text: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'file("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
+  - name: 'NobleArtifacts_ENG.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/47052' ]
     dirty:
-      - crc: 0xc40354d2
-        <<: *dirtyPlugin
-        udr: 1
-  - name: 'NA_CleaverFelms_Rus.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: de
-            text: 'Löschen. Bereits in Noble_Artifacts_For_Skyrim(Eng|Rus).esp enthalten.'
-          - lang: ja
-            text: 'Noble_Artifacts_For_Skyrim(Eng|Rus).espですでに削除されています。'
-          - lang: ru
-            text: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'file("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
+      - <<: *quickClean
+        crc: 0xB37F55E7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        udr: 6
+    clean:
+      - crc: 0xCFDA2303
+        util: 'TES5Edit v4.0.2f'
+  - name: 'NobleArtifacts_RUS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/47052' ]
     dirty:
-      - crc: 0x3ef8d4b9
-        <<: *dirtyPlugin
-        udr: 1
-  - name: 'NA_Chrysamere_(Eng|Rus|Deu)\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: de
-            text: 'Löschen. Bereits in Noble_Artifacts_For_Skyrim(Eng|Rus).esp enthalten.'
-          - lang: ja
-            text: 'Noble_Artifacts_For_Skyrim(Eng|Rus).espですでに削除されています。'
-          - lang: ru
-            text: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'file("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-  - name: 'NA_Goldbrand_(Eng|Rus|Deu)\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: de
-            text: 'Löschen. Bereits in Noble_Artifacts_For_Skyrim(Eng|Rus).esp enthalten.'
-          - lang: ja
-            text: 'Noble_Artifacts_For_Skyrim(Eng|Rus).espですでに削除されています。'
-          - lang: ru
-            text: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'file("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-  - name: 'NA_IBOTM_(Eng|Rus|Deu)\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: de
-            text: 'Löschen. Bereits in Noble_Artifacts_For_Skyrim(Eng|Rus).esp enthalten.'
-          - lang: ja
-            text: 'Noble_Artifacts_For_Skyrim(Eng|Rus).espですでに削除されています。'
-          - lang: ru
-            text: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'file("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-  - name: 'NA_Scourge_(Eng|Rus|Deu)\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: de
-            text: 'Löschen. Bereits in Noble_Artifacts_For_Skyrim(Eng|Rus).esp enthalten.'
-          - lang: ja
-            text: 'Noble_Artifacts_For_Skyrim(Eng|Rus).espですでに削除されています。'
-          - lang: ru
-            text: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'file("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-  - name: 'NA_Trueflame_(Eng|Rus)\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: de
-            text: 'Löschen. Bereits in Noble_Artifacts_For_Skyrim(Eng|Rus).esp enthalten.'
-          - lang: ja
-            text: 'Noble_Artifacts_For_Skyrim(Eng|Rus).espですでに削除されています。'
-          - lang: ru
-            text: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'file("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-  - name: 'NA_Trueflame_Unenchanted_(Eng|Rus)\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: NA_Trueflame_Eng or Rus esp'
-          - lang: de
-            text: 'Inkompatibel mit: NA_Trueflame_Eng or Rus esp'
-          - lang: ja
-            text: '競合: NA_Trueflame_Eng.esp (*Rus.esp)'
-        condition: 'file("NA_Trueflame_(Eng|Rus)\.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-          - lang: de
-            text: 'Löschen. Bereits in Noble_Artifacts_For_Skyrim(Eng|Rus).esp enthalten.'
-          - lang: ja
-            text: 'Noble_Artifacts_For_Skyrim(Eng|Rus).espですでに削除されています。'
-          - lang: ru
-            text: 'Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp'
-        condition: 'file("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp")'
-  - name: 'NobleArtifactsForSkyrim.esp'
-    dirty:
-      - crc: 0x9b24bc8a
-        <<: *dirtyPlugin
-        udr: 7
+      - <<: *quickClean
+        crc: 0x038E142C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        udr: 6
+    clean:
+      - crc: 0xFA30358F
+        util: 'TES5Edit v4.0.2f'
   - name: 'NewBladesArmor.esp'
     dirty:
       - crc: 0x56666897
@@ -9279,10 +9114,22 @@ plugins:
   - name: 'Weapons of the Dohvakiin.esp'
     inc:
       - 'Dragonborn.esm'
+  - name: 'WeaponsOf3E.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/3871' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF758F3FA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      - crc: 0x8588F9FE
+        util: 'TES5Edit v4.0.2f'
+  - name: 'WeaponsOf3E - No Leveled Lists.esp'
+    msg:
+      - <<: *fixedPluginOutSub
+        condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
   - name: 'Weapons of the Third Era.+\.esp'
     msg: [ *obsolete ]
-    tag:
-      - Relev
   - name: 'WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp'
     inc:
       - '3rdEraWeaponsMoS.esp'
@@ -9292,26 +9139,8 @@ plugins:
       - *alreadyInSkyRe
     tag:
       - Relev
-  - name: 'WeaponsOf3E - No Leveled Lists.esp'
-    msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
   - name: '3rdEraWeaponsMoS.esp'
-    msg:
-      - *obsolete
-      - *alreadyInSkyRe
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: WeaponsOf3E*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: WeaponsOf3E*.esp'
-          - lang: ja
-            text: '競合: WeaponsOf3E*.esp'
-        condition: 'file("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp")'
-    tag:
-      - Delev
-      - Relev
+    msg: [ *obsolete ]
   - name: '3rdEraWeapMoS-lvlList.esp'
     msg:
       - <<: *alreadyInX
@@ -9911,29 +9740,11 @@ plugins:
           - lang: ru
             text: 'Только для не ENB пользователей.'
   - name: 'Legendary Lore - Dragons.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Deadly Dragons and other Dragon overhaul mods'
-          - lang: de
-            text: 'Inkompatibel mit: Deadly Dragons und andere Drachen Overhaul Mods.'
-          - lang: ja
-            text: '競合: Deadly Dragons等のドラゴンオーバーホール系Mod'
-          - lang: ru
-            text: 'Несовместим с: Deadly Dragons и прочие глобальные моды на драконов.'
+    inc:
+      - 'DeadlyDragons.esp'
   - name: 'Dragon Overhaul.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Deadly Dragons and other Dragon overhaul mods'
-          - lang: de
-            text: 'Inkompatibel mit: Deadly Dragons und andere Drachen Overhaul Mods.'
-          - lang: ja
-            text: '競合: Deadly Dragons等のドラゴンオーバーホール系Mod'
-          - lang: ru
-            text: 'Несовместим с: Deadly Dragons и прочие глобальные моды на драконов.'
+    inc:
+      - 'DeadlyDragons.esp'
   - name: 'EpicEndeavours.esp'
     tag:
       - Delev
@@ -18059,17 +17870,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 11
   - name: 'knc_resilient_dragons(_Vanillashout)?\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Other dragons mods(Deadly Dragons etc)'
-          - lang: de
-            text: 'Inkompatibel mit: Andere Drachen Mods (Deadly Dragons etc)'
-          - lang: ja
-            text: '競合: ドラゴンMod（Deadly Dragons等）'
-          - lang: ru
-            text: 'Несовместим с: Другие, меняющие драконов,  моды(Deadly Dragons и т.п.)'
+    inc:
+      - 'DeadlyDragons.esp'
   - name: 'LB Yarl Clothes.esp'
     msg: [ *requiresLadyBody ]
   - name: 'LegionArmorVariety(OPTIONA?L?\d)?\.esp'
@@ -18694,17 +18496,8 @@ plugins:
   - name: 'SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_(2|3)\.esp'
     msg: [ *obsolete ]
   - name: 'Skyrim_Dragon Update.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Other Dragon override mods, use only one.'
-          - lang: de
-            text: 'Inkompatibel mit: Andere Drachen Override Mods, verwenden Sie nur einen.'
-          - lang: ja
-            text: '競合: ドラゴン改変Mod（単独で使用してください）'
-          - lang: ru
-            text: 'Несовместим с: Другие, изменяющие драконов моды, используйте только один.'
+    inc:
+      - 'DeadlyDragons.esp'
     tag:
       - Delev
       - Relev
@@ -22942,84 +22735,163 @@ plugins:
     inc:
       - 'Perk_Heavy_Armor_Tree_Redone.esp'
   - name: 'PerkUP-Alchemy.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x78B29460
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-Alchemy.esp",78B29460)'
   - name: 'PerkUP-Alteration.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
     dirty:
-      - crc: 0x4ea01073
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x4EA01073
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'PerkUP-Archery.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x7DE1869B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-Archery.esp",7DE1869B)'
   - name: 'PerkUP-Block.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-Block.esp",BA505A27)'
   - name: 'PerkUP-Conjuration.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
     dirty:
-      - crc: 0x3acc9af
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x03ACC9AF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
   - name: 'PerkUP-Destruction.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
     dirty:
-      - crc: 0x607edf12
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x607EDF12
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
   - name: 'PerkUP-Enchanting.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x44A1D95B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-Enchanting.esp",44A1D95B)'
   - name: 'PerkUP-HeavyArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
     dirty:
-      - crc: 0xccfe419
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x0CCFE419
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'PerkUP-Illusion.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
     dirty:
-      - crc: 0x8405a460
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x8405A460
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
   - name: 'PerkUP-LightArmor.esp'
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-LightArmor.esp",B06368FC)'
   - name: 'PerkUP-Lockpicking.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x84E156CF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-Lockpicking.esp",84E156CF)'
   - name: 'PerkUP-OneHanded.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x537E45D7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-OneHanded.esp",537E45D7)'
   - name: 'PerkUP-Pickpocket.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xC499715D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-Pickpocket.esp",C499715D)'
   - name: 'PerkUP-Restoration.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
     dirty:
-      - crc: 0x79239fe4
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x79239FE4
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'PerkUP-Smithing.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF607DBD3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-Smithing.esp",F607DBD3)'
   - name: 'PerkUP-Sneak.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x5B3B0E3A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-Sneak.esp",5B3B0E3A)'
   - name: 'PerkUP-Speech.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x8E72AE48
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-Speech.esp",8E72AE48)'
   - name: 'PerkUP-TwoHanded.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x2EC31219
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-TwoHanded.esp",2EC31219)'
   - name: 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x32EC46AD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp",32EC46AD)'
@@ -23028,6 +22900,7 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("PerkUP-zOptional_LightArmor_NoHelmsReq.esp",C519978E)'
   - name: 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9359' ]
     msg:
       - <<: *corrupt
         condition: 'checksum("PerkUP-zOptional-Pickpocket_CarryMore100.esp",C7001A4E)'
@@ -25747,16 +25620,9 @@ plugins:
         condition: 'active("Height Adjusted Races.*\.esp") and active("Requiem - True Giants and Mammoths.esp")'
         subs: [ 'Requiem - True Giants and Mammoths.esp' ]
   - name: 'True Giants( v\d)?\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Height Adjusted Races with True Giants'
-          - lang: de
-            text: 'Inkompatibel mit: Height Adjusted Races with True Giants'
-          - lang: ja
-            text: '競合: Height Adjusted Races with True Giants'
-        condition: 'file("Height Adjusted Races(.+)True Giants(.+)?\.esp")'
+    inc:
+      - 'Height Adjusted Races with True Giants.esp'
+      - 'Height Adjusted Races with True Giants - Smaller Giant Edition.esp'
   - name: 'AROP- Altmer Edition( - NW)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -25937,23 +25803,18 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29063' ]
     msg:
       - <<: *useOnlyOneX
         condition: 'many("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")'
         subs: [ 'Serana-ish Vampires .esp file' ]
   - name: 'SVPaleVampires.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Serana-ish*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: Serana-ish*.esp'
-          - lang: ja
-            text: '競合: Serana-ish*.esp'
-          - lang: ru
-            text: 'Несовместим с: Serana-ish*.esp'
-        condition: 'file("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29063' ]
+    inc:
+      - 'Serana-ishVampires.esp'
+      - 'Serana-ishVampiresEyesOnly.esp'
+      - 'Serana-ishVampiresFaceOnly.esp'
+      - 'Serana-ishVampiresHarkonEyes.esp'
   - name: 'Vampire Lord Polished.esp'
     msg:
       - <<: *obsolete
@@ -27128,12 +26989,6 @@ plugins:
             text: 'map.swfを変更するModとは互換性がありません。'
           - lang: ru
             text: 'Несовместим с модами, которые меняют файл map.swf'
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with mods that change the map.swf'
-          - lang: ja
-            text: 'map.swfを変更するModとは互換性がありません。'
   - name: 'Warburg''s 3D Paper World Map v2.2.esp'
     msg: [ *obsolete ]
   - name: 'Warburg''s 3D Paper World Map.esp'
