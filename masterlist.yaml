@@ -3322,25 +3322,23 @@ plugins:
           - lang: ru
             text: 'Это ENB-мод.  Убедитесь, что у вас установлена корректная версия ENB.'
   - name: 'CLARALUX.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17605' ]
     dirty:
-      - crc: 0xfd3f3144
-        <<: *dirtyPlugin
-        itm: 87
+      - <<: *quickClean
+        crc: 0xFFAAF7FF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      - crc: 0x01217166
+        util: 'TES5Edit v4.0.2f'
   - name: 'CLARALUX - More and Brighter Lights.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17605' ]
     msg: [ *obsolete ]
   - name: 'CLARALUX - More and Brighter Lights.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17605' ]
     msg: [ *obsolete ]
-    dirty:
-      - crc: 0xcf9e9621
-        <<: *dirtyPlugin
-        itm: 113
-        udr: 5
   - name: 'CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp")'
-        subs: [ 'LightAdjuster .esp file' ]
-      - *obsolete
+    msg: [ *obsolete ]
   - name: 'Darker_Caves_Dungeons_Ruins_Nights.esp'
     dirty:
       - crc: 0xe46b4df1
