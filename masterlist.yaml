@@ -25809,23 +25809,18 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29063' ]
     msg:
       - <<: *useOnlyOneX
         condition: 'many("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")'
         subs: [ 'Serana-ish Vampires .esp file' ]
   - name: 'SVPaleVampires.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Serana-ish*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: Serana-ish*.esp'
-          - lang: ja
-            text: '競合: Serana-ish*.esp'
-          - lang: ru
-            text: 'Несовместим с: Serana-ish*.esp'
-        condition: 'file("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29063' ]
+    inc:
+      - 'Serana-ishVampires.esp'
+      - 'Serana-ishVampiresEyesOnly.esp'
+      - 'Serana-ishVampiresFaceOnly.esp'
+      - 'Serana-ishVampiresHarkonEyes.esp'
   - name: 'Vampire Lord Polished.esp'
     msg:
       - <<: *obsolete
