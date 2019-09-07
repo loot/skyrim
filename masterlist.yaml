@@ -25626,16 +25626,9 @@ plugins:
         condition: 'active("Height Adjusted Races.*\.esp") and active("Requiem - True Giants and Mammoths.esp")'
         subs: [ 'Requiem - True Giants and Mammoths.esp' ]
   - name: 'True Giants( v\d)?\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Height Adjusted Races with True Giants'
-          - lang: de
-            text: 'Inkompatibel mit: Height Adjusted Races with True Giants'
-          - lang: ja
-            text: '競合: Height Adjusted Races with True Giants'
-        condition: 'file("Height Adjusted Races(.+)True Giants(.+)?\.esp")'
+    inc:
+      - 'Height Adjusted Races with True Giants.esp'
+      - 'Height Adjusted Races with True Giants - Smaller Giant Edition.esp'
   - name: 'AROP- Altmer Edition( - NW)?\.esp'
     msg:
       - <<: *useOnlyOneX
