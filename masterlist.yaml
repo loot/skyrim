@@ -3346,16 +3346,8 @@ plugins:
         itm: 721
         udr: 1489
   - name: 'ImmersiveContentExteriorLighting.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Incompatible with: CLARALUX lighting mods'
-          - lang: de
-            text: 'Inkompatibel mit: CLARALUX Beleuchtungsmods'
-          - lang: ja
-            text: '競合: CLARALUX系の光源Mod'
-        condition: 'file("CLARALU.*\.esp")'
+    inc:
+      - 'CLARALUX.esp'
     dirty:
       - crc: 0xf2a7a8bd
         <<: *dirtyPlugin
