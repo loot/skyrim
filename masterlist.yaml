@@ -25447,18 +25447,8 @@ plugins:
   - name: 'Khaliza of Gilane.esp'
     msg: [ *corrupt ]
   - name: 'move.?it(LWT)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/4020' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Better Followers, BF already has the same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.'
-          - lang: de
-            text: 'Inkompatibel mit: Better Followers, BF hat bereits die gleichen Funktionen. Nur verwenden, wenn Sie Einstellungen von moveit setzen müssen - fBumpReactionSmallWaitTimer auf 2 (0.3 in BF) und fBumpReactionSmallDelayTime auf 1 (Vanilla) (0.3 in BF). Andere Einstellungen wie in BF.'
-          - lang: ja
-            text: 'Better Followersとは互換性がありません。Better Followers側に同じ機能があるためです。moveit側のGame Settingに合わせたい場合のみ使用してください。fBumpReactionSmallWaitTimerは2（Better Followersは0.3）に、fBumpReactionSmallDelayTimeは1（Vanillaと同等）（Better Followersは0.3）になります。その他の設定値はBetter Followersと同じです。'
-          - lang: ru
-            text: 'Несовместим с: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.'
-        condition: 'file("Better Follower Improvements.esp") and file("Better Followers - [SBNP].*\.esp")'
       - <<: *useOnlyOneX
         condition: 'many("move.?it(LWT)?\.esp")'
         subs: [ 'move it .esp file' ]
