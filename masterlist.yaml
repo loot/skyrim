@@ -3023,6 +3023,7 @@ plugins:
         condition: 'many("MoreSnow(Windy)?(and(75|150)percentLessView)?\.esp")'
         subs: [ 'MoreSnow .esp file' ]
   - name: 'MoreSnowWindyand150percentLessView.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8328' ]
     msg:
       - type: say
         content:
@@ -3037,10 +3038,15 @@ plugins:
           - lang: ru
             text: 'Несовместим с: Все моды, модифицирующие освещение.'
     dirty:
-      - crc: 0x7ed853ee
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x7ED853EE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      - crc: 0xFC07A6A7
+        util: 'TES5Edit v4.0.2f'
   - name: 'MoreSnowWindyand75percentLessView.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8328' ]
     msg:
       - type: say
         content:
@@ -3055,9 +3061,13 @@ plugins:
           - lang: ru
             text: 'Несовместим с: Все моды, модифицирующие освещение.'
     dirty:
-      - crc: 0x4a595497
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x4A595497
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      - crc: 0x28F22A1E
+        util: 'TES5Edit v4.0.2f'
 # 'Better Dynamic Snow.esp' moved before 'EnhancedLightsandFX.esp' to
 # prevent bug with falling in textures when 'EnhancedLightsandFX.esp'
 # loaded before 'Better Dynamic Snow.esp'
