@@ -9134,10 +9134,22 @@ plugins:
   - name: 'Weapons of the Dohvakiin.esp'
     inc:
       - 'Dragonborn.esm'
+  - name: 'WeaponsOf3E.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/3871' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xF758F3FA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      - crc: 0x8588F9FE
+        util: 'TES5Edit v4.0.2f'
+  - name: 'WeaponsOf3E - No Leveled Lists.esp'
+    msg:
+      - <<: *fixedPluginOutSub
+        condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
   - name: 'Weapons of the Third Era.+\.esp'
     msg: [ *obsolete ]
-    tag:
-      - Relev
   - name: 'WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp'
     inc:
       - '3rdEraWeaponsMoS.esp'
@@ -9147,26 +9159,8 @@ plugins:
       - *alreadyInSkyRe
     tag:
       - Relev
-  - name: 'WeaponsOf3E - No Leveled Lists.esp'
-    msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
   - name: '3rdEraWeaponsMoS.esp'
-    msg:
-      - *obsolete
-      - *alreadyInSkyRe
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: WeaponsOf3E*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: WeaponsOf3E*.esp'
-          - lang: ja
-            text: '競合: WeaponsOf3E*.esp'
-        condition: 'file("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp")'
-    tag:
-      - Delev
-      - Relev
+    msg: [ *obsolete ]
   - name: '3rdEraWeapMoS-lvlList.esp'
     msg:
       - <<: *alreadyInX
