@@ -9760,29 +9760,10 @@ plugins:
           - lang: ru
             text: 'Только для не ENB пользователей.'
   - name: 'Legendary Lore - Dragons.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Deadly Dragons and other Dragon overhaul mods'
-          - lang: de
-            text: 'Inkompatibel mit: Deadly Dragons und andere Drachen Overhaul Mods.'
-          - lang: ja
-            text: '競合: Deadly Dragons等のドラゴンオーバーホール系Mod'
-          - lang: ru
-            text: 'Несовместим с: Deadly Dragons и прочие глобальные моды на драконов.'
+    inc:
+      - 'DeadlyDragons.esp'
   - name: 'Dragon Overhaul.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Deadly Dragons and other Dragon overhaul mods'
-          - lang: de
-            text: 'Inkompatibel mit: Deadly Dragons und andere Drachen Overhaul Mods.'
-          - lang: ja
-            text: '競合: Deadly Dragons等のドラゴンオーバーホール系Mod'
-          - lang: ru
-            text: 'Несовместим с: Deadly Dragons и прочие глобальные моды на драконов.'
+      - 'DeadlyDragons.esp'
   - name: 'EpicEndeavours.esp'
     tag:
       - Delev
@@ -17908,17 +17889,8 @@ plugins:
         <<: *dirtyPlugin
         itm: 11
   - name: 'knc_resilient_dragons(_Vanillashout)?\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Other dragons mods(Deadly Dragons etc)'
-          - lang: de
-            text: 'Inkompatibel mit: Andere Drachen Mods (Deadly Dragons etc)'
-          - lang: ja
-            text: '競合: ドラゴンMod（Deadly Dragons等）'
-          - lang: ru
-            text: 'Несовместим с: Другие, меняющие драконов,  моды(Deadly Dragons и т.п.)'
+    inc:
+      - 'DeadlyDragons.esp'
   - name: 'LB Yarl Clothes.esp'
     msg: [ *requiresLadyBody ]
   - name: 'LegionArmorVariety(OPTIONA?L?\d)?\.esp'
@@ -18543,17 +18515,8 @@ plugins:
   - name: 'SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_(2|3)\.esp'
     msg: [ *obsolete ]
   - name: 'Skyrim_Dragon Update.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Other Dragon override mods, use only one.'
-          - lang: de
-            text: 'Inkompatibel mit: Andere Drachen Override Mods, verwenden Sie nur einen.'
-          - lang: ja
-            text: '競合: ドラゴン改変Mod（単独で使用してください）'
-          - lang: ru
-            text: 'Несовместим с: Другие, изменяющие драконов моды, используйте только один.'
+    inc:
+      - 'DeadlyDragons.esp'
     tag:
       - Delev
       - Relev
