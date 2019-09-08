@@ -13435,16 +13435,9 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Fleetford.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Briar''sEnd'
-          - lang: de
-            text: 'Inkompatible mit: Briar''sEnd'
-          - lang: ja
-            text: '競合: Briar''sEnd'
-        condition: 'file("Briar''sEnd.*\.esp")'
+    inc:
+      - 'Briar''sEndNoQuest.esp'
+      - 'Briar''sEndCourierQuest.esp'
     dirty:
       - crc: 0x6d3a13d9
         <<: *dirtyPlugin
