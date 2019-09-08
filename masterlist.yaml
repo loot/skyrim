@@ -18583,29 +18583,8 @@ plugins:
       - crc: 0xB7C14007
         util: 'TES5Edit v4.0.1'
   - name: 'Skeleton Resurrection.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Skyrim Redone'
-          - lang: de
-            text: 'Inkompatibel mit: Skyrim Redone'
-          - lang: ja
-            text: '競合: Skyrim Redone'
-        condition: 'file("SkyRe_.+\.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Has conflicts with Skyrim Immersive Creatures'
-          - lang: de
-            text: 'Hat Konflikte mit Skyrim Immersive Creatures'
-          - lang: es
-            text: 'Has conflicts with Skyrim Immersive Creatures'
-          - lang: ja
-            text: 'Skyrim Immersive Creaturesと競合します。'
-          - lang: ru
-            text: 'Имеет конфликты с Skyrim Immersive Creatures'
-        condition: 'file("Skyrim Immersive Creatures.esp")'
+    inc:
+      - 'SkyRe_Main.esp'
   - name: 'sneaky bow x\d\d?\.esp'
     msg: [ *alreadyInPerkUpArchery ]
   - name: 'spellbreaker_150.esp'
