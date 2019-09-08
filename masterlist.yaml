@@ -1523,12 +1523,6 @@ plugins:
         udr: 68
   - name: 'Expanded Towns.*\.esm'
     msg: [ *obsolete ]
-  - name: 'ExplorerDungeonPack.esm'
-    dirty:
-      - crc: 0xf28e0e3c
-        <<: *dirtyPlugin
-        itm: 9
-        nav: 1
   - name: 'Extended Colors.esm'
     msg: [ *obsolete ]
   - name: 'Unofficial High Resolution Patch.esp'
@@ -13315,26 +13309,48 @@ plugins:
       - crc: 0x27c7711a
         <<: *dirtyPlugin
         itm: 2
+  - name: 'ExplorerDungeonPack.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16521' ]
+    dirty:
+      # esm / esp combo
+      - <<: *reqManualFix
+        crc: 0xF28E0E3C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 98
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xF8500810
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'ExplorerDungeonPack.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16521' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: ExplorerDungeonPack.esm. Use the correct version.'
-          - lang: de
-            text: 'Inkompatibel mit: ExplorerDungeonPack.esm. Benutzen Sie die richtige Version.'
-          - lang: ja
-            text: '競合: ExplorerDungeonPack.esm（正しいバージョンを使用してください）'
+    msg:
+      - <<: *useVersion
+        subs: [ 'esm/esp' ]
         condition: 'checksum("ExplorerDungeonPack.esp",4D76065C) and file("ExplorerDungeonPack.esm")'
     dirty:
-      - crc: 0x3b99039
-        <<: *dirtyPlugin
-        itm: 8
+      # Initial Release
+      - <<: *reqManualFix
+        crc: 0x4D76065C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 99
         udr: 10
-      - crc: 0x4d76065c
-        <<: *dirtyPlugin
-        itm: 61
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xD9B7F282
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # esm / esp combo
+      - <<: *quickClean
+        crc: 0x03B99039
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 59
         udr: 10
+    clean:
+      # esm / esp combo
+      - crc: 0xD11774FF
+        util: 'TES5Edit v4.0.2f'
   - name: 'Falconroost.esp'
     inc:
       - 'WhiteFallsHouse.esp'
