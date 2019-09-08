@@ -5745,25 +5745,13 @@ plugins:
       - crc: 0x2C158B9F
         util: 'TES5Edit v4.0.2f'
   - name: 'SkyMoMod_lists.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16411' ]
     req:
       - name: 'SkyMoMod.esm'
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyMoMod Lore * v10.esp''s'
-          - lang: de
-            text: 'Inkompatibel mit: SkyMoMod Lore * v10.esp''s'
-          - lang: ja
-            text: '競合: SkyMoMod Lore * v10.esp'
-        condition: 'file("SkyMoMod Lore.+\.esp")'
-      - <<: *obsolete
-        condition: 'not file("Deleveled Skyrim - SkyMoMod_list.esp") or not file("SkyMoMod Lore.+\.esp") or not file("skymo-dawn.esp")'
-    tag:
-      - Delev
-      - Relev
+    msg: [ *obsolete ]
   - name: 'SkyMoMod Lore.+\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16411' ]
     inc:
       - 'SkyMoMod_lists.esp'
       - 'SkyMo-Dawn.esp'
