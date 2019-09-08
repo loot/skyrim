@@ -18314,77 +18314,23 @@ plugins:
   - name: 'SkyJubs_Invisible_Helmets_English_Main_1_(2|3|3v|4|4v)\.esp'
     msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp'
-    inc:
-      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
+    msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
-    inc:
-      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
+    msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyHelmets.esp'
-    inc:
-      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
-      - 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
+    msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_DragonboneEbonsteel.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: de
-            text: 'Diese Mod hat DragonBoneEbonsteel.esp nicht als Master. Es werden Duplikate erstellt, anstatt die Originale zu ändern.'
-          - lang: es
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: ja
-            text: 'このModはDragonBoneEbonsteel.espをマスターファイルとしていません。元のModの修正は適用されず、データの重複が発生するだけになるでしょう。'
-          - lang: ru
-            text: 'Этот мод не имеет в своих мастерфайлах DragonBoneEbonsteel.esp. Вместо модификации оригинала будут создаваться дубликаты.'
+      - *corrupt
+      - *obsolete
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_DragonKnightArmor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: de
-            text: 'Diese Mod hat DragonBoneEbonsteel.esp nicht als Master. Es werden Duplikate erstellt, anstatt die Originale zu ändern.'
-          - lang: es
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: ja
-            text: 'このModはDragonBoneEbonsteel.espをマスターファイルとしていません。元のModの修正は適用されず、データの重複が発生するだけになるでしょう。'
-          - lang: ru
-            text: 'Этот мод не имеет в своих мастерфайлах DragonBoneEbonsteel.esp. Вместо модификации оригинала будут создаваться дубликаты.'
+      - *corrupt
+      - *obsolete
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_InquisitionSet.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: de
-            text: 'Diese Mod hat DragonBoneEbonsteel.esp nicht als Master. Es werden Duplikate erstellt, anstatt die Originale zu ändern.'
-          - lang: es
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: ja
-            text: 'このModはDragonBoneEbonsteel.espをマスターファイルとしていません。元のModの修正は適用されず、データの重複が発生するだけになるでしょう。'
-          - lang: ru
-            text: 'Этот мод не имеет в своих мастерфайлах DragonBoneEbonsteel.esp. Вместо модификации оригинала будут создаваться дубликаты.'
+      - *corrupt
+      - *obsolete
   - name: 'SkyJubs_Invisible_Helmets_German_Main_1_2.esp'
     msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
@@ -18399,15 +18345,7 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
       - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
+      # huge number of incompatible plugins, so this msg is likely better than inc
       - type: say
         content:
           - lang: en
@@ -18424,15 +18362,7 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
       - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
+      # huge number of incompatible plugins, so this msg is likely better than inc
       - type: say
         content:
           - lang: en
