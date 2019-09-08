@@ -1523,12 +1523,6 @@ plugins:
         udr: 68
   - name: 'Expanded Towns.*\.esm'
     msg: [ *obsolete ]
-  - name: 'ExplorerDungeonPack.esm'
-    dirty:
-      - crc: 0xf28e0e3c
-        <<: *dirtyPlugin
-        itm: 9
-        nav: 1
   - name: 'Extended Colors.esm'
     msg: [ *obsolete ]
   - name: 'Unofficial High Resolution Patch.esp'
@@ -1913,20 +1907,29 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'SkyMoMod.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/35631' ]
     tag:
       - Delev
       - name: Relev
         condition: 'not checksum("SkyMoMod.esm", 6D2AD8B5) and not checksum("SkyMoMod.esm", 53F297BE)'
     dirty:
-      - crc: 0x4d3619d8
-        <<: *dirtyPlugin
-        itm: 3
-      - crc: 0x6d2ad8b5
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0xbe817a8c # This is the esm provided with Skyrim Immersive Creatures.
-        <<: *dirtyPlugin
-        itm: 2
+      # V4 Main
+      - <<: *quickClean
+        crc: 0xA9576551
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+      # V4 Main Lore
+      - <<: *quickClean
+        crc: 0x151A29D3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+    clean:
+      # V4 Main
+      - crc: 0xADC69596
+        util: 'TES5Edit v4.0.2f'
+      # V4 Main Lore
+      - crc: 0x7921FEDB
+        util: 'TES5Edit v4.0.2f'
   - name: 'SleepingTreeSanctuary_FollowerFriendly.esp'
     dirty:
       - crc: 0xaa2e6377
@@ -5692,6 +5695,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 24
   - name: 'Skyrim Immersive Creatures.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24913' ]
     after:
       - 'Sleeping Dangers - Sands of Time.esp'
       - 'SleepingDangers-SandsofTime.esp'
@@ -5713,20 +5717,11 @@ plugins:
     tag:
       - Delev
       - Relev
-    dirty:
-      - crc: 0x9f345819
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0x31F6B4FF
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0xACC6DAE2
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0xF68C9890
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      - crc: 0xBA4FDA63
+        util: 'TES5Edit v4.0.2f'
   - name: 'Skyrim Immersive Creatures - DLC2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24913' ]
     msg:
       - type: error
         content:
@@ -5740,30 +5735,17 @@ plugins:
     tag:
       - Delev
       - Relev
-    dirty:
-      - crc: 0xf5024f7d
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      - crc: 0x2C158B9F
+        util: 'TES5Edit v4.0.2f'
   - name: 'SkyMoMod_lists.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16411' ]
     req:
       - name: 'SkyMoMod.esm'
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyMoMod Lore * v10.esp''s'
-          - lang: de
-            text: 'Inkompatibel mit: SkyMoMod Lore * v10.esp''s'
-          - lang: ja
-            text: '競合: SkyMoMod Lore * v10.esp'
-        condition: 'file("SkyMoMod Lore.+\.esp")'
-      - <<: *obsolete
-        condition: 'not file("Deleveled Skyrim - SkyMoMod_list.esp") or not file("SkyMoMod Lore.+\.esp") or not file("skymo-dawn.esp")'
-    tag:
-      - Delev
-      - Relev
+    msg: [ *obsolete ]
   - name: 'SkyMoMod Lore.+\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16411' ]
     inc:
       - 'SkyMoMod_lists.esp'
       - 'SkyMo-Dawn.esp'
@@ -5781,21 +5763,7 @@ plugins:
       - name: 'SkyMoMod.esm'
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
   - name: 'skymo-dawn.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ 'SkyMoMod Lore-Friendly * v10.esp' ]
-        condition: 'file("SkyMoMod Lore-Friendly .+\.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyMoMod Lore-Friendly * v10.esp''s'
-          - lang: de
-            text: 'Inkompatibel mit: SkyMoMod Lore-Friendly * v10.esp''s'
-          - lang: ja
-            text: '競合: SkyMoMod Lore-Friendly * v10.esp'
-        condition: 'file("SkyMoMod Lore-Friendly .+\.esp")'
-    tag:
-      - Delev
+    msg: [ *obsolete ]
   - name: 'Skymomod_jackGa_Add-on.esp'
     tag:
       - Delev
@@ -6963,6 +6931,7 @@ plugins:
         condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
         subs: [ '[COR - Crafting Overhaul Reqtified](https://www.nexusmods.com/skyrim/mods/61569)' ]
   - name: 'Cloaks.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
       - crc: 0x35c871de
         <<: *dirtyPlugin
@@ -6971,6 +6940,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Cloaks - No Imperial.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
       - crc: 0x1c6298ce
         <<: *dirtyPlugin
@@ -6979,6 +6949,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 14
   - name: 'Cloaks - Player Only.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
       - crc: 0x2453c2e4
         <<: *dirtyPlugin
@@ -6987,6 +6958,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 50
   - name: 'Cloaks( - (No Imperial|Player Only))? - Dawnguard\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     msg:
       - <<: *alreadyInCompleteCraftingOverhaulRemade
       - <<: *useOnlyOneX
@@ -7030,30 +7002,14 @@ plugins:
     tag:
       - Relev
   - name: '1nivWICCloaks.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13486' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Cloaks of skyrim, get the compatibility patch in the WIC optional files.'
-          - lang: de
-            text: 'Inkompatibel mit: Cloaks of skyrim, besorgen Sie sich den Kompatibilitätspatch in den optionalen WIC-Dateien.'
-          - lang: ja
-            text: '競合: Cloaks of skyrim（Winter Is Coming - CloaksのOptional Filesより互換パッチをダウンロードしてください）'
-          - lang: ru
-            text: 'Несовместим с: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.'
-        condition: 'file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Cloaks of skyrim, get the compatibility patch in the WIC optional files.'
-          - lang: de
-            text: 'Inkompatibel mit: Cloaks of skyrim, besorgen Sie sich den Kompatibilitätspatch in den optionalen WIC-Dateien.'
-          - lang: ja
-            text: '競合: Cloaks of skyrim（Winter Is Coming - CloaksのOptional Filesより互換パッチをダウンロードしてください）'
-          - lang: ru
-            text: 'Несовместим с: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.'
-        condition: 'file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
+      - <<: *patchProvided
+        condition: 'file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp") or file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
+        subs:
+          - '[Cloaks of Skyrim](https://www.nexusmods.com/skyrim/mods/12092)'
   - name: '1nivWICSkyCloaksPatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13486' ]
     msg:
       - <<: *alreadyInX
         condition: 'active("CFR-CloaksForRequiem.esp")'
@@ -10689,27 +10645,48 @@ plugins:
       - 'Crafting300.esp'
       - 'Complete Crafting Overhaul.esp'
       - 'Complete Crafting Overhaul - BS version.esp'
+      - 'PerkUP-Alchemy.esp'
+      - 'PerkUP-Alteration.esp'
+      - 'PerkUP-Archery.esp'
+      - 'PerkUP-Block.esp'
+      - 'PerkUP-Conjuration.esp'
+      - 'PerkUP-Destruction.esp'
+      - 'PerkUP-Enchanting.esp'
+      - 'PerkUP-HeavyArmor.esp'
+      - 'PerkUP-Illusion.esp'
+      - 'PerkUP-LightArmor.esp'
+      - 'PerkUP-Lockpicking.esp'
+      - 'PerkUP-OneHanded.esp'
+      - 'PerkUP-Pickpocket.esp'
+      - 'PerkUP-Restoration.esp'
+      - 'PerkUP-Smithing.esp'
+      - 'PerkUP-Sneak.esp'
+      - 'PerkUP-Speech.esp'
+      - 'PerkUP-TwoHanded.esp'
+      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
+      - 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
+      - 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
+      - 'Uncapped Perks - Combat + Stealth.esp'
+      - 'Uncapped Perks - Magic.esp'
+      - 'Uncapped Perks - Alchemy.esp'
+      - 'Uncapped Perks - Alteration.esp'
+      - 'Uncapped Perks - Archery.esp'
+      - 'Uncapped Perks - Block.esp'
+      - 'Uncapped Perks - Conjuration.esp'
+      - 'Uncapped Perks - Destruction.esp'
+      - 'Uncapped Perks - Enchanting.esp'
+      - 'Uncapped Perks - Heavy Armor.esp'
+      - 'Uncapped Perks - Illusion.esp'
+      - 'Uncapped Perks - Light Armor.esp'
+      - 'Uncapped Perks - One Handed.esp'
+      - 'Uncapped Perks - Pickpocket.esp'
+      - 'Uncapped Perks - Restoration.esp'
+      - 'Uncapped Perks - Sneak.esp'
+      - 'Uncapped Perks - Speech.esp'
+      - 'Uncapped Perks - Two Handed.esp'
     after:
       - 'Scoped Bows.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: de
-            text: 'Inkompatibel mit: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
-        condition: 'file("PerkUP-.*\.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Uncapped perks'
-          - lang: de
-            text: 'Inkompatibel mit: Uncapped perks'
-          - lang: ja
-            text: '競合: Uncapped perks'
-        condition: 'file("Uncapped Perks.*\.esp")'
       - <<: *requiresX
         condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
         subs: [ '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175) for full perk functionality' ]
@@ -10779,21 +10756,46 @@ plugins:
       - 'Crafting300.esp'
       - 'Complete Crafting Overhaul.esp'
       - 'Complete Crafting Overhaul - BS version.esp'
+      - 'PerkUP-Alchemy.esp'
+      - 'PerkUP-Alteration.esp'
+      - 'PerkUP-Archery.esp'
+      - 'PerkUP-Block.esp'
+      - 'PerkUP-Conjuration.esp'
+      - 'PerkUP-Destruction.esp'
+      - 'PerkUP-Enchanting.esp'
+      - 'PerkUP-HeavyArmor.esp'
+      - 'PerkUP-Illusion.esp'
+      - 'PerkUP-LightArmor.esp'
+      - 'PerkUP-Lockpicking.esp'
+      - 'PerkUP-OneHanded.esp'
+      - 'PerkUP-Pickpocket.esp'
+      - 'PerkUP-Restoration.esp'
+      - 'PerkUP-Smithing.esp'
+      - 'PerkUP-Sneak.esp'
+      - 'PerkUP-Speech.esp'
+      - 'PerkUP-TwoHanded.esp'
+      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
+      - 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
+      - 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
+      - 'Uncapped Perks - Combat + Stealth.esp'
+      - 'Uncapped Perks - Magic.esp'
+      - 'Uncapped Perks - Alchemy.esp'
+      - 'Uncapped Perks - Alteration.esp'
+      - 'Uncapped Perks - Archery.esp'
+      - 'Uncapped Perks - Block.esp'
+      - 'Uncapped Perks - Conjuration.esp'
+      - 'Uncapped Perks - Destruction.esp'
+      - 'Uncapped Perks - Enchanting.esp'
+      - 'Uncapped Perks - Heavy Armor.esp'
+      - 'Uncapped Perks - Illusion.esp'
+      - 'Uncapped Perks - Light Armor.esp'
+      - 'Uncapped Perks - One Handed.esp'
+      - 'Uncapped Perks - Pickpocket.esp'
+      - 'Uncapped Perks - Restoration.esp'
+      - 'Uncapped Perks - Sneak.esp'
+      - 'Uncapped Perks - Speech.esp'
+      - 'Uncapped Perks - Two Handed.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
-        condition: 'file("PerkUP-.*\.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Uncapped perks'
-          - lang: ja
-            text: '競合: Uncapped perks'
-        condition: 'file("Uncapped Perks.*\.esp")'
       - type: warn
         content:
           - lang: en
@@ -12134,19 +12136,25 @@ plugins:
     clean:
       - crc: 0x4B378944
         util: 'TES5Edit v4.0.2f'
-  - name: 'betterbreezehome.esp'
+  - name: 'BetterBreezehome.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10811' ]
     after:
       - 'FalkreathCastle.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: de
-            text: 'Inkompatibel mit: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
-        condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
+    inc:
+      - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
+      - '0001BertsBreezehomeRemodel.V.2(esm).esm'
+      - '0001BertsBreezehomeRemodel.V.2(esp.2.0).esp'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x40AB804A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 65
+        udr: 291
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x8E86432E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'bettercitiesdocksolitude.esp'
     dirty:
       - crc: 0x953f6085
@@ -12288,16 +12296,10 @@ plugins:
   - name: 'breezehome-darkdream.esp'
     msg: [ *obsolete ]
   - name: 'breezehome enhanced.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: de
-            text: 'Inkompatibel mit: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
-        condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
+    inc:
+      - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
+      - '0001BertsBreezehomeRemodel.V.2(esm).esm'
+      - '0001BertsBreezehomeRemodel.V.2(esp.2.0).esp'
     dirty:
       - crc: 0x1f629b97
         <<: *dirtyPlugin
@@ -12310,16 +12312,10 @@ plugins:
         itm: 3
         udr: 1
   - name: 'Breezehome_FullyUpgradable.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: de
-            text: 'Inkompatibel mit: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
-        condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
+    inc:
+      - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
+      - '0001BertsBreezehomeRemodel.V.2(esm).esm'
+      - '0001BertsBreezehomeRemodel.V.2(esp.2.0).esp'
     dirty:
       - crc: 0x444a410c
         <<: *dirtyPlugin
@@ -12327,31 +12323,23 @@ plugins:
         udr: 2
         nav: 2
   - name: 'Breezehome_FullyUpgradable_v.+\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: de
-            text: 'Inkompatibel mit: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
-        condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
-      - *obsolete
+    inc:
+      - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
+      - '0001BertsBreezehomeRemodel.V.2(esm).esm'
+      - '0001BertsBreezehomeRemodel.V.2(esp.2.0).esp'
+    msg: [ *obsolete ]
   - name: 'Breezehome_Fully_Upgradeable.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: de
-            text: 'Inkompatibel mit: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
-        condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
-      - *obsolete
+    inc:
+      - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
+      - '0001BertsBreezehomeRemodel.V.2(esm).esm'
+      - '0001BertsBreezehomeRemodel.V.2(esp.2.0).esp'
+    msg: [ *obsolete ]
   - name: 'Breezehome_Fully_Upgradable.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/11158' ]
+    inc:
+      - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
+      - '0001BertsBreezehomeRemodel.V.2(esm).esm'
+      - '0001BertsBreezehomeRemodel.V.2(esp.2.0).esp'
     dirty:
       - <<: *reqManualFix
         crc: 0xC1DDA80E
@@ -12362,16 +12350,6 @@ plugins:
         crc: 0x70BD80A3
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: de
-            text: 'Inkompatibel mit: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
-        condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
   - name: 'Breezehome_Fully_Upgradable_DG.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11158' ]
     dirty:
@@ -12412,16 +12390,10 @@ plugins:
         udr: 387
         nav: 2
   - name: 'Breezehome Remodeled Finely.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: de
-            text: 'Inkompatibel mit: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
-        condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
+    inc:
+      - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
+      - '0001BertsBreezehomeRemodel.V.2(esm).esm'
+      - '0001BertsBreezehomeRemodel.V.2(esp.2.0).esp'
   - name: 'Breezehome Sovngarde Portal.esp'
     dirty:
       - crc: 0xa743ab12
@@ -12518,16 +12490,10 @@ plugins:
         itm: 2
         udr: 10
   - name: 'Breezehome PLUS.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: BertsBreezeRemodel'
-          - lang: de
-            text: 'Inkompatibel mit: BertsBreezeRemodel'
-          - lang: ja
-            text: '競合: BertsBreezeRemodel'
-        condition: 'file("(0001)?BertsBreezehome.+\.es[pm]")'
+    inc:
+      - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
+      - '0001BertsBreezehomeRemodel.V.2(esm).esm'
+      - '0001BertsBreezehomeRemodel.V.2(esp.2.0).esp'
   - name: 'Briar''sEndCourierQuest.esp'
     inc:
       - 'Fleetford.esp'
@@ -13343,26 +13309,47 @@ plugins:
       - crc: 0x27c7711a
         <<: *dirtyPlugin
         itm: 2
+  - name: 'ExplorerDungeonPack.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16521' ]
+    dirty:
+      # esm / esp combo
+      - <<: *reqManualFix
+        crc: 0xF28E0E3C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 98
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xF8500810
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'ExplorerDungeonPack.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16521' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: ExplorerDungeonPack.esm. Use the correct version.'
-          - lang: de
-            text: 'Inkompatibel mit: ExplorerDungeonPack.esm. Benutzen Sie die richtige Version.'
-          - lang: ja
-            text: '競合: ExplorerDungeonPack.esm（正しいバージョンを使用してください）'
+      - <<: *useVersion
+        subs: [ 'esm/esp' ]
         condition: 'checksum("ExplorerDungeonPack.esp",4D76065C) and file("ExplorerDungeonPack.esm")'
     dirty:
-      - crc: 0x3b99039
-        <<: *dirtyPlugin
-        itm: 8
+      # Initial Release
+      - <<: *reqManualFix
+        crc: 0x4D76065C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 99
         udr: 10
-      - crc: 0x4d76065c
-        <<: *dirtyPlugin
-        itm: 61
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xD9B7F282
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # esm / esp combo
+      - <<: *quickClean
+        crc: 0x03B99039
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 59
         udr: 10
+    clean:
+      # esm / esp combo
+      - crc: 0xD11774FF
+        util: 'TES5Edit v4.0.2f'
   - name: 'Falconroost.esp'
     inc:
       - 'WhiteFallsHouse.esp'
@@ -13448,21 +13435,18 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Fleetford.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Briar''sEnd'
-          - lang: de
-            text: 'Inkompatible mit: Briar''sEnd'
-          - lang: ja
-            text: '競合: Briar''sEnd'
-        condition: 'file("Briar''sEnd.*\.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16188' ]
+    inc:
+      - 'Briar''sEndNoQuest.esp'
+      - 'Briar''sEndCourierQuest.esp'
     dirty:
-      - crc: 0x6d3a13d9
-        <<: *dirtyPlugin
-        itm: 50
-        udr: 31
+      - <<: *quickClean
+        crc: 0x6D3A13D9
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 78
+    clean:
+      - crc: 0x0EC2EA98
+        util: 'TES5Edit v4.0.2f'
   - name: 'FM - UNP Merchants.esp'
     msg:
       - type: warn
@@ -17543,18 +17527,6 @@ plugins:
             text: 'Follower Tweaksプラグインは一度に一つのみ使用できます。'
           - lang: ru
             text: 'Используйте только один плагин Follower Tweaks'
-  - name: 'frostyfrost.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: other horse mods'
-          - lang: de
-            text: 'Inkompatibel mit: andere Pferde Mods'
-          - lang: ja
-            text: '競合: 馬系Mod'
-          - lang: ru
-            text: 'Несовместим с: Другие моды, меняющие лошадей'
   - name: 'FSS-No pause between lines.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
@@ -17606,31 +17578,14 @@ plugins:
       - name: 'Guard Dialogue Overhaul.esp'
         display: '[Guard Dialouge Overhaul](http://www.nexusmods.com/skyrim/mods/23390)'
   - name: 'Guards armor replacement.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: helmet replacer / changer mods.'
-          - lang: de
-            text: 'Inkompatibel mit: Helmersatz/-wechsler Mods.'
-          - lang: ja
-            text: '競合: 兜のリプレイス/変更Mod'
-          - lang: ru
-            text: 'Несовместим с: меняющими шлемы модами.'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25963' ]
     tag:
       - Delev
+    clean:
+      - crc: 0xE9027FEF
+        util: 'TES5Edit v4.0.2f'
   - name: 'Harder Trading - Sell Cap (4x|6x|10x)\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This mod is obviously not compatible with mods that change sell fBarterSellmax (sell cap).'
-          - lang: de
-            text: 'Diese Mod ist offensichtlich nicht kompatibel mit Mods, die sell fBarterSellmax (sell cap) ändern.'
-          - lang: ja
-            text: 'このModはfBarterSellmax（売却限度額）を変更するModとは完全に互換性がありません。'
-          - lang: ru
-            text: 'Этот мод, очевидно, не совместим с модами, меняющими значение fBarterSellmax (максимум денег у продавцов).'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24804' ]
   - name: 'Headtracking.esp'
     dirty:
       - crc: 0xde88faeb
@@ -18359,77 +18314,23 @@ plugins:
   - name: 'SkyJubs_Invisible_Helmets_English_Main_1_(2|3|3v|4|4v)\.esp'
     msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp'
-    inc:
-      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
+    msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
-    inc:
-      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
+    msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyHelmets.esp'
-    inc:
-      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
-      - 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
+    msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_DragonboneEbonsteel.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: de
-            text: 'Diese Mod hat DragonBoneEbonsteel.esp nicht als Master. Es werden Duplikate erstellt, anstatt die Originale zu ändern.'
-          - lang: es
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: ja
-            text: 'このModはDragonBoneEbonsteel.espをマスターファイルとしていません。元のModの修正は適用されず、データの重複が発生するだけになるでしょう。'
-          - lang: ru
-            text: 'Этот мод не имеет в своих мастерфайлах DragonBoneEbonsteel.esp. Вместо модификации оригинала будут создаваться дубликаты.'
+      - *corrupt
+      - *obsolete
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_DragonKnightArmor.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: de
-            text: 'Diese Mod hat DragonBoneEbonsteel.esp nicht als Master. Es werden Duplikate erstellt, anstatt die Originale zu ändern.'
-          - lang: es
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: ja
-            text: 'このModはDragonBoneEbonsteel.espをマスターファイルとしていません。元のModの修正は適用されず、データの重複が発生するだけになるでしょう。'
-          - lang: ru
-            text: 'Этот мод не имеет в своих мастерфайлах DragonBoneEbonsteel.esp. Вместо модификации оригинала будут создаваться дубликаты.'
+      - *corrupt
+      - *obsolete
   - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_InquisitionSet.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: de
-            text: 'Diese Mod hat DragonBoneEbonsteel.esp nicht als Master. Es werden Duplikate erstellt, anstatt die Originale zu ändern.'
-          - lang: es
-            text: 'This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.'
-          - lang: ja
-            text: 'このModはDragonBoneEbonsteel.espをマスターファイルとしていません。元のModの修正は適用されず、データの重複が発生するだけになるでしょう。'
-          - lang: ru
-            text: 'Этот мод не имеет в своих мастерфайлах DragonBoneEbonsteel.esp. Вместо модификации оригинала будут создаваться дубликаты.'
+      - *corrupt
+      - *obsolete
   - name: 'SkyJubs_Invisible_Helmets_German_Main_1_2.esp'
     msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
@@ -18444,15 +18345,7 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
       - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
+      # huge number of incompatible plugins, so this msg is likely better than inc
       - type: say
         content:
           - lang: en
@@ -18469,15 +18362,7 @@ plugins:
       - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
       - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp")'
+      # huge number of incompatible plugins, so this msg is likely better than inc
       - type: say
         content:
           - lang: en
@@ -18698,29 +18583,8 @@ plugins:
       - crc: 0xB7C14007
         util: 'TES5Edit v4.0.1'
   - name: 'Skeleton Resurrection.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Skyrim Redone'
-          - lang: de
-            text: 'Inkompatibel mit: Skyrim Redone'
-          - lang: ja
-            text: '競合: Skyrim Redone'
-        condition: 'file("SkyRe_.+\.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Has conflicts with Skyrim Immersive Creatures'
-          - lang: de
-            text: 'Hat Konflikte mit Skyrim Immersive Creatures'
-          - lang: es
-            text: 'Has conflicts with Skyrim Immersive Creatures'
-          - lang: ja
-            text: 'Skyrim Immersive Creaturesと競合します。'
-          - lang: ru
-            text: 'Имеет конфликты с Skyrim Immersive Creatures'
-        condition: 'file("Skyrim Immersive Creatures.esp")'
+    inc:
+      - 'SkyRe_Main.esp'
   - name: 'sneaky bow x\d\d?\.esp'
     msg: [ *alreadyInPerkUpArchery ]
   - name: 'spellbreaker_150.esp'
@@ -18797,17 +18661,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'ultimateodahviing.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: other mods that alter Odahviing.'
-          - lang: de
-            text: 'Inkompatibel mit: andere Mods, die Odahviing verändern.'
-          - lang: ja
-            text: 'オハダヴィーングを改変するModとは両立できません。'
-          - lang: ru
-            text: 'Несовместим с: С другими модами, меняющими дракона по имени Одавинг.'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21770' ]
+    clean:
+      - crc: 0xE497A0ED
+        util: 'TES5Edit v4.0.2f'
   - name: 'UluEgoEnchantments.esp'
     dirty:
       - crc: 0x584fd189
@@ -20513,29 +20370,21 @@ plugins:
     req:
       - *SKSE
   - name: 'Medium hit.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Realistic Ragdoll Force'
-          - lang: de
-            text: 'Inkompatibel mit: Realistic Ragdoll Force'
-          - lang: ja
-            text: '競合: Realistic Ragdoll Force'
-        condition: 'file("dD.?- Realistic Ragdoll Force.*\.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18867' ]
+    inc:
+      - 'Realistic hit.esp'
+      - 'dD - Realistic Ragdoll Force - High.esp'
+      - 'dD - Realistic Ragdoll Force - Medium.esp'
+      - 'dD - Realistic Ragdoll Force - Realistic.esp'
+      - 'dD - Realistic Ragdoll Force - Reduced.esp'
   - name: 'Realistic hit.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18867' ]
     inc:
       - 'Medium hit.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Realistic Ragdoll Force'
-          - lang: de
-            text: 'Inkompatibel mit: Realistic Ragdoll Force'
-          - lang: ja
-            text: '競合: Realistic Ragdoll Force'
-        condition: 'file("dD.?- Realistic Ragdoll Force.*\.esp")'
+      - 'dD - Realistic Ragdoll Force - High.esp'
+      - 'dD - Realistic Ragdoll Force - Medium.esp'
+      - 'dD - Realistic Ragdoll Force - Realistic.esp'
+      - 'dD - Realistic Ragdoll Force - Reduced.esp'
   - name: 'RealisticCarryWeight.esp'
     dirty:
       - crc: 0xda01fd93
@@ -20796,57 +20645,7 @@ plugins:
       - *SkyUI
       - *FNIS
   - name: 'SkyRe_Vampirism.esp'
-    inc:
-      - 'VampireOverhaul.esp'
-      - 'UVO - Ultimate Vampirism Overhaul.esp'
-      - 'Alternate Start - Live Another Life.esp'
-      - 'Dawnguard.esm'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Belua Sanguinare'
-          - lang: ja
-            text: '競合: Belua Sanguinare'
-        condition: 'file("MM_BeluaSangunaire.*\.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Better Vampires'
-          - lang: de
-            text: 'Inkompatibel mit: Better Vampires'
-          - lang: ja
-            text: '競合: Better Vampires'
-        condition: 'file("Better Vampires( ML| DG)?( - No DawnGuard.esp)?\.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Imp''s More Complex Needs'
-          - lang: de
-            text: 'Inkompatibel mit: Imp''s More Complex Needs'
-          - lang: ja
-            text: '競合: Imp''s More Complex Needs'
-        condition: 'file("Imp''s More Complex Needs\.es[mp]")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Removed from SkyRe 0.99.15.2'
-          - lang: de
-            text: 'Aus SkyRe 0.99.15.2 entfernt.'
-          - lang: ja
-            text: 'SkyRe 0.99.15.2から削除されています。'
-          - lang: ru
-            text: 'Было удалено из SkyRe 0.99.15.2'
-      - type: say
-        content:
-          - lang: en
-            text: 'Possible conflicts with other mods that changes vampirism system.'
-          - lang: de
-            text: 'Mögliche Konflikte mit anderen Mods, die das Vampirismus-System verändern.'
-          - lang: ja
-            text: '吸血鬼のシステムを変更するModと競合する可能性があります。'
-          - lang: ru
-            text: 'Возможны конфликты с другими модами, меняющими систему вампиризма.'
+    msg: [ *obsolete ]
   - name: 'DVA - Dynamic Vampire Appearance.esp'
     req:
       - *SKSE
@@ -22360,30 +22159,21 @@ plugins:
         <<: *dirtyPlugin
         itm: 14
         udr: 41
+  - name: 'ACE Archery.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10037' ]
+    inc:
+      - 'Crafting300.esp'
   - name: 'ACE Archery Dawnguard Patch.esp'
     msg: [ *obsolete ]
-  - name: 'ACE Archery.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Crafting300.esp, to fix this get the compatibility patch found [here](http://www.nexusmods.com/skyrim/download/70990)'
-          - lang: de
-            text: 'Inkompatibel mit: Crafting300.esp, um dieses Problem zu beheben, beziehen Sie den Kompatibilitätspatch [hier](http://www.nexusmods.com/skyrim/download/70990).'
-          - lang: ja
-            text: '競合: Crafting300.esp（[こちら](http://www.nexusmods.com/skyrim/download/70990)にある互換パッチで修正できます）'
-        condition: 'checksum("Crafting300.esp",46C639C1)'
   - name: 'ACE Archery-Weapons of the Third Era Patch.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.'
-          - lang: de
-            text: 'Diese Datei enthält ungelöste Fehler und sollte entfernt werden. Irgendwie ist der Skyrim-Master-Eintrag zweimal dupliziert.'
-          - lang: ja
-            text: 'このファイルには未解決のエラーが存在します。削除してください。Skyrimに元からあるエントリが何らかの理由で二重に複製されてしまいます。'
+      - <<: *corrupt
         condition: 'checksum("ACE Archery-Weapons of the Third Era Patch.esp",873EAB94)'
+  - name: 'ACE Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10037' ]
+    after:
+      - 'Stealth Skills Rebalanced_COMPLETE.esp'
+      - 'Stealth Skills Rebalanced_SNEAK.esp'
   - name: 'LB_MuchAdoSnowElves_ACE_Patch_Long.esp'
     inc:
       - 'LB_MuchAdoSnowElves_ACE_Patch_Light.esp'
@@ -22536,45 +22326,58 @@ plugins:
     req:
       - name: 'SKSE/Plugins/SKSE_Elys_Uncapper.dll'
         display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: de
-            text: 'Inkompatibel mit: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
-        condition: 'file("PerkUP-.*\.esp")'
+    inc:
+      - 'PerkUP-Alchemy.esp'
+      - 'PerkUP-Alteration.esp'
+      - 'PerkUP-Archery.esp'
+      - 'PerkUP-Block.esp'
+      - 'PerkUP-Conjuration.esp'
+      - 'PerkUP-Destruction.esp'
+      - 'PerkUP-Enchanting.esp'
+      - 'PerkUP-HeavyArmor.esp'
+      - 'PerkUP-Illusion.esp'
+      - 'PerkUP-LightArmor.esp'
+      - 'PerkUP-Lockpicking.esp'
+      - 'PerkUP-OneHanded.esp'
+      - 'PerkUP-Pickpocket.esp'
+      - 'PerkUP-Restoration.esp'
+      - 'PerkUP-Smithing.esp'
+      - 'PerkUP-Sneak.esp'
+      - 'PerkUP-Speech.esp'
+      - 'PerkUP-TwoHanded.esp'
+      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
+      - 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
+      - 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
   - name: 'Uncapped Perks.esp'
-    req:
-      - name: 'SKSE/Plugins/SKSE_Elys_Uncapper.dll'
-        display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: de
-            text: 'Inkompatibel mit: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
-        condition: 'file("PerkUP-.*\.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/7015' ]
+    msg: [ *obsolete ]
   - name: 'Uncapped Perks - Optional Magic Add-on.esp'
-    req:
-      - name: 'SKSE/Plugins/SKSE_Elys_Uncapper.dll'
-        display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/7015' ]
+    msg: [ *obsolete ]
   - name: 'Uncapped Perks - .+\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: PerkUP'
-          - lang: de
-            text: 'Inkompatibel mit: PerkUP'
-          - lang: ja
-            text: '競合: PerkUP'
-        condition: 'file("PerkUP-.*\.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/7015' ]
+    inc:
+      - 'PerkUP-Alchemy.esp'
+      - 'PerkUP-Alteration.esp'
+      - 'PerkUP-Archery.esp'
+      - 'PerkUP-Block.esp'
+      - 'PerkUP-Conjuration.esp'
+      - 'PerkUP-Destruction.esp'
+      - 'PerkUP-Enchanting.esp'
+      - 'PerkUP-HeavyArmor.esp'
+      - 'PerkUP-Illusion.esp'
+      - 'PerkUP-LightArmor.esp'
+      - 'PerkUP-Lockpicking.esp'
+      - 'PerkUP-OneHanded.esp'
+      - 'PerkUP-Pickpocket.esp'
+      - 'PerkUP-Restoration.esp'
+      - 'PerkUP-Smithing.esp'
+      - 'PerkUP-Sneak.esp'
+      - 'PerkUP-Speech.esp'
+      - 'PerkUP-TwoHanded.esp'
+      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
+      - 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
+      - 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
   - name: 'BlueStarPerkAdventure.esp'
     req:
       - name: 'SKSE/Plugins/SKSE_Elys_Uncapper.dll'
@@ -23043,10 +22846,6 @@ plugins:
       - crc: 0xc013ba37
         <<: *dirtyPlugin
         itm: 1
-  - name: 'ACE Armor.esp'
-    after:
-      - 'Stealth Skills Rebalanced_COMPLETE.esp'
-      - 'Stealth Skills Rebalanced_SNEAK.esp'
   - name: 'Skype - Two-Handed.esp'
     dirty:
       - crc: 0x4820339a
@@ -23345,17 +23144,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 45
   - name: 'mjhImprovedRaces.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Anything that changes the race descriptions or races.'
-          - lang: de
-            text: 'Inkompatibel mit: Alles, was die Rassen oder deren Beschreibungen verändert.'
-          - lang: ja
-            text: '種族の説明や種族そのものに変更を加えるModとは両立できません。'
-          - lang: ru
-            text: 'Несовместим с: Все моды, которые изменяют расы или их описания.'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14430' ]
+    clean:
+      - crc: 0x3BE97FFD
+        util: 'TES5Edit v4.0.2f'
   - name: 'Cimmerian.esp'
     dirty:
       - crc: 0x1dcf01ba
@@ -25408,18 +25200,8 @@ plugins:
   - name: 'Khaliza of Gilane.esp'
     msg: [ *corrupt ]
   - name: 'move.?it(LWT)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/4020' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Better Followers, BF already has the same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.'
-          - lang: de
-            text: 'Inkompatibel mit: Better Followers, BF hat bereits die gleichen Funktionen. Nur verwenden, wenn Sie Einstellungen von moveit setzen müssen - fBumpReactionSmallWaitTimer auf 2 (0.3 in BF) und fBumpReactionSmallDelayTime auf 1 (Vanilla) (0.3 in BF). Andere Einstellungen wie in BF.'
-          - lang: ja
-            text: 'Better Followersとは互換性がありません。Better Followers側に同じ機能があるためです。moveit側のGame Settingに合わせたい場合のみ使用してください。fBumpReactionSmallWaitTimerは2（Better Followersは0.3）に、fBumpReactionSmallDelayTimeは1（Vanillaと同等）（Better Followersは0.3）になります。その他の設定値はBetter Followersと同じです。'
-          - lang: ru
-            text: 'Несовместим с: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.'
-        condition: 'file("Better Follower Improvements.esp") and file("Better Followers - [SBNP].*\.esp")'
       - <<: *useOnlyOneX
         condition: 'many("move.?it(LWT)?\.esp")'
         subs: [ 'move it .esp file' ]
@@ -25838,26 +25620,23 @@ plugins:
             text: 'このModはSkyReの種族用モジュール（Races module）との使用を想定されています。プラグインが欠けていても機能しますが、カジートの「爪」の効果説明が本来と異なってしまいます。'
         condition: 'not active("SkyRe_Races.esp")'
   - name: 'ethereal_elven_overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24273' ]
     inc:
       - 'XCES.esp'
     msg:
-      - type: say
+      - <<: *patch3rdParty
         condition: 'file("SkyRe_Races.esp") and not file("PreASISPatchEEO.esp") and not file("EEO patch.esp") and not checksum("ethereal_elven_overhaul.esp",38515FFF)'
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyRe Races.  A compatibility patch is available [here](http://www.nexusmods.com/skyrim/mods/29185).'
-          - lang: de
-            text: 'Inkompatibel mit: SkyRe Races. Ein Kompatibilitätspatch ist [hier](http://www.nexusmods.com/skyrim/mods/29185) verfügbar.'
-          - lang: es
-            text: 'Incompatible con: SkyRe Races.  A compatibility patch is available [here](http://www.nexusmods.com/skyrim/mods/29185).'
-          - lang: ja
-            text: '競合: SkyRe Races（[こちら](http://www.nexusmods.com/skyrim/mods/29185)から互換パッチを入手可能です）'
-          - lang: ru
-            text: 'Несовместим с: SkyRe Races.  Патч совместимости доступен [здесь](http://www.nexusmods.com/skyrim/mods/29185).'
+        subs:
+          - '[SkyRe Races](https://www.nexusmods.com/skyrim/mods/9286)'
+          - '[EEO-SkRe Compatibility Patch](https://www.nexusmods.com/skyrim/mods/29185)'
     dirty:
-      - crc: 0x1841112c
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x1841112C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+    clean:
+      - crc: 0xE87FD1CE
+        util: 'TES5Edit v4.0.2f'
 #
 # Best loaded late to override possible message additions from other mods.
 #
@@ -26978,17 +26757,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 9
   - name: 'PaperMapHeightEnhanced.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with mods that change the map.swf'
-          - lang: de
-            text: 'Inkompatibel mit Mods, die die map.swf ändern.'
-          - lang: ja
-            text: 'map.swfを変更するModとは互換性がありません。'
-          - lang: ru
-            text: 'Несовместим с модами, которые меняют файл map.swf'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22425' ]
   - name: 'Warburg''s 3D Paper World Map v2.2.esp'
     msg: [ *obsolete ]
   - name: 'Warburg''s 3D Paper World Map.esp'
