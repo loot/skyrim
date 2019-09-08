@@ -13435,14 +13435,18 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Fleetford.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16188' ]
     inc:
       - 'Briar''sEndNoQuest.esp'
       - 'Briar''sEndCourierQuest.esp'
     dirty:
-      - crc: 0x6d3a13d9
-        <<: *dirtyPlugin
-        itm: 50
-        udr: 31
+      - <<: *quickClean
+        crc: 0x6D3A13D9
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 78
+    clean:
+      - crc: 0x0EC2EA98
+        util: 'TES5Edit v4.0.2f'
   - name: 'FM - UNP Merchants.esp'
     msg:
       - type: warn
