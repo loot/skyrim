@@ -469,6 +469,19 @@ common:
       - lang: ru
         text: '%1% не полностью совместим с этим модом. %2%'
 
+  - &useBashTweak
+    type: say
+    content:
+      - lang: en
+        text: 'Use Bashed Patch tweak instead.'
+      - lang: de
+        text: 'Verwenden Sie stattdessen den Bashed Patch Tweak.'
+      - lang: ja
+        text: 'Bashed Patchのtweak機能を代わりに使用してください。'
+      - lang: ru
+        text: 'Используйте вместо этого настройку башед патча.'
+    condition: 'file("Bashed Patch.*\.esp")'
+
   - &useOnlyOneX
     type: error
     content:
@@ -25487,18 +25500,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: '72HoursRespawn.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Bashed Patch tweak instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Bashed Patch Tweak.'
-          - lang: ja
-            text: 'Bashed Patchのtweak機能を代わりに使用してください。'
-          - lang: ru
-            text: 'Используйте вместо этого настройку башед патча.'
-        condition: 'file("Bashed Patch.*\.esp")'
+    msg: [ *useBashTweak ]
   - name: 'WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -25517,83 +25519,17 @@ plugins:
         condition: 'many("(SlowRespawn_)?No(Cleared)?CellRespawn\.esp")'
         subs: [ 'No Cell Respawn .esp file' ]
   - name: 'Respawn\w{3,5}Days{0,1}\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Bashed Patch tweak instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Bashed Patch Tweak.'
-          - lang: ja
-            text: 'Bashed Patchのtweak機能を代わりに使用してください。'
-          - lang: ru
-            text: 'Используйте вместо этого настройку башед патча.'
-        condition: 'file("Bashed Patch.*\.esp")'
+    msg: [ *useBashTweak ]
   - name: 'SkyRim \d Day Respawn\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Bashed Patch tweak instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Bashed Patch Tweak.'
-          - lang: ja
-            text: 'Bashed Patchのtweak機能を代わりに使用してください。'
-          - lang: ru
-            text: 'Используйте вместо этого настройку башед патча.'
-        condition: 'file("Bashed Patch.*\.esp")'
+    msg: [ *useBashTweak ]
   - name: 'skyrimespawn\d{0,1}\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Bashed Patch tweak instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Bashed Patch Tweak.'
-          - lang: ja
-            text: 'Bashed Patchのtweak機能を代わりに使用してください。'
-          - lang: ru
-            text: 'Используйте вместо этого настройку башед патча.'
-        condition: 'file("Bashed Patch.*\.esp")'
+    msg: [ *useBashTweak ]
   - name: 'Skyrim 120 Day Respawn.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Bashed Patch tweak instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Bashed Patch Tweak.'
-          - lang: ja
-            text: 'Bashed Patchのtweak機能を代わりに使用してください。'
-          - lang: ru
-            text: 'Используйте вместо этого настройку башед патча.'
-        condition: 'file("Bashed Patch.*\.esp")'
+    msg: [ *useBashTweak ]
   - name: 'Skyrim Timescale \d+\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Bashed Patch tweak instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Bashed Patch Tweak.'
-          - lang: ja
-            text: 'Bashed Patchのtweak機能を代わりに使用してください。'
-          - lang: ru
-            text: 'Используйте вместо этого настройку башед патча.'
-        condition: 'file("Bashed Patch.*\.esp")'
+    msg: [ *useBashTweak ]
   - name: 'Timescale\d{1,2}\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Bashed Patch tweak instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Bashed Patch Tweak.'
-          - lang: ja
-            text: 'Bashed Patchのtweak機能を代わりに使用してください。'
-          - lang: ru
-            text: 'Используйте вместо этого настройку башед патча.'
-        condition: 'file("Bashed Patch.*\.esp")'
+    msg: [ *useBashTweak ]
   - name: 'Duns_Inc_Shaders_Begone.esp'
     msg:
       - <<: *obsolete
