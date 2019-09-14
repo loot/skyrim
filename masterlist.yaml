@@ -24007,16 +24007,8 @@ plugins:
         udr: 16
   - name: 'CMCompanionLevel.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. This mod is no longer necessary, since Skyrim Patch v.1.6 has fixed the bug. Companions will now level their skills every time the Player levels up.'
-          - lang: de
-            text: 'Löschen. Diese Mod wird nicht mehr benötigt, da Skyrim Patch v.1.6 den Fehler behoben hat. Begleiter werden jetzt ihre Fähigkeiten jedes Mal verbessern, wenn der Spieler ein höheres Level erreicht.'
-          - lang: ja
-            text: '削除してください。Skyrim本体のv.1.6パッチでバグが修正されたため現在は必要ありません。仲間のスキルレベルはプレイヤーのレベルに合わせて上がるようになっています。'
-          - lang: ru
-            text: 'Удалите. Этот мод больше не важен. Поскольку патч 1.6+ исправляет баг.  Компаньоны теперь будут повышать свои навыки, каждый раз, при поднятии уровня игрока.'
+      - <<: *fixedInOfficialPatchX
+        subs: [ 'v1.6' ]
         condition: 'version("../TESV.exe","1.5.26",>)'
   - name: 'Companion_Crea.esp'
     msg:
