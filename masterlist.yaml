@@ -92,6 +92,10 @@ common:
     <<: *alreadyInX
     condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
     subs: [ 'SkyRe Main' ]
+  - &alreadyInUFO
+    <<: *alreadyInX
+    subs: [ 'Ultimate Follower Overhaul' ]
+    condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
 
   - &alreadyInOrFixedByX
     type: error
@@ -16695,18 +16699,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'BasicHorseRidingAI.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead'
-          - lang: de
-            text: 'In UFO - Ultimate Follower Overhaul.esp enthalten, löschen und verwenden Sie stattdessen UFO.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを利用してください。'
-          - lang: ru
-            text: 'Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'better artifacts.esp'
     dirty:
       - crc: 0x52bab796
@@ -17481,18 +17474,7 @@ plugins:
     inc:
       - 'Housecarls Can Wear Anything.esp'
   - name: 'Housecarls improved AI( \+ higher lvl cap)?\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Improved AI included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'Verbesserte KI in UFO - Ultimate Follower Overhaul.esp enthalten, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espには改良されたAIが含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'iMaxPlayerRunes\d+\.esp'
     msg:
       - type: say
@@ -23312,73 +23294,18 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'DFB - Disable Hidden Follower Bows & Arrows.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can remove all default followers equpment with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Sie können sämtliche Ausrüstung der Standard Begleiter mit UFO entfernen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者のデフォルト装備はUFOでも取り除くことができます。'
-          - lang: ru
-            text: 'Этот мод избыточен для ''UFO - Ultimate Follower Overhaul.esp''. Вы можете удалить весь скрытый инвентарь у компаньонов с помощью UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'EASamhairNE_1_1.esp'
     inc:
       - 'EASamhairE_1_1.esp'
   - name: 'Essential followers - all followers.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Mit UFO können Sie Ihre Begleiter zu wichtigen (unsterblichen) Begleitern machen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者の不死化はUFOでも可能です。'
-          - lang: ru
-            text: 'Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'essential followers.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Mit UFO können Sie Ihre Begleiter zu wichtigen (unsterblichen) Begleitern machen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者の不死化はUFOでも可能です。'
-          - lang: ru
-            text: 'Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'essentialfollowers.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Mit UFO können Sie Ihre Begleiter zu wichtigen (unsterblichen) Begleitern machen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者の不死化はUFOでも可能です。'
-          - lang: ru
-            text: 'Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'Essential Vigilance.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Mit UFO können Sie Ihre Begleiter zu wichtigen (unsterblichen) Begleitern machen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者の不死化はUFOでも可能です。'
-          - lang: ru
-            text: 'Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'follower pack orcs.esp'
     dirty:
       - crc: 0xf226ddfb
@@ -23387,31 +23314,9 @@ plugins:
   - name: 'Gandalf.Esp'
     msg: [ *requiresBetterMales ]
   - name: 'HorseCompanions.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'HorseCompanions.esp is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'HorseCompanions.esp ist in UFO - Ultimate Follower Overhaul.esp enthalten, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'HorseCompanions.espはUFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'HorseCompanions.esp уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: '.*HorseRidingFollowers\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'HorseRidingFollowers ist in UFO - Ultimate Follower Overhaul.esp enthalten, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'HorseRidingFollowersはUFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'HorseRidingFollowers уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'Inigo.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/40960' ]
     msg:
@@ -23527,18 +23432,7 @@ plugins:
       - <<: *obsolete
         condition: 'checksum("PetBearOslo.esp",7614B5F9) or checksum("PetBearOslo.esp",EA58D0C9)'
   - name: 'TCG.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'Enthalten in UFO - Ultimate Follower Overhaul.esp, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'VendorSaleDelay-Gone.esp'
     dirty:
       - crc: 0x6c8ab86b
@@ -23552,17 +23446,7 @@ plugins:
         udr: 3
   - name: 'voidMountedFollowers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO.'
-          - lang: de
-            text: 'Enthalten in UFO - Ultimate Follower Overhaul.esp, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+      - *alreadyInUFO
       - *alreadyInBDO
   - name: 'FCKaraThePathfinder.esp'
     dirty:
@@ -24846,17 +24730,7 @@ plugins:
     msg:
       - *obsolete
       - *alreadyInBDO
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete. Use UFO - Ultimate Follower Overhaul.esp instead'
-          - lang: de
-            text: 'Löschen. Verwenden Sie stattdessen UFO - Ultimate Follower Overhaul.esp.'
-          - lang: ja
-            text: '削除してUFO - Ultimate Follower Overhaul.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте вместо этого UFO - Ultimate Follower Overhaul.esp'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+      - *alreadyInUFO
   - name: 'Better NPC - Faction Pack.esp'
     msg:
       - <<: *requiresX
@@ -24882,36 +24756,13 @@ plugins:
           - lang: ru
             text: 'XFLMain.esm имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.'
         condition: 'file("XFLMain.esm")'
-      - type: say
-        content:
-          - lang: en
-            text: 'UFO - Ultimate Follower Overhaul.esp has the same functional, but you can use FollowerWander2.esp on your choice.'
-          - lang: de
-            text: 'UFO - Ultimate Follower Overhaul.esp hat die gleiche Funktionalität, aber Sie können FollowerWander2.esp nach Ihrer Wahl verwenden.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espに同じ機能が存在しますが、任意でFollowerWander2.espを使用することもできます。'
-          - lang: ru
-            text: 'UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
       - *alreadyInBDO
+      - *alreadyInUFO
   - name: 'Followers Unlimited 11.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
-        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
+    msg: [ *alreadyInUFO ]
   - name: 'MultipleFollowers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'Die Multi-Follower-Funktionalität ist in UFO - Ultimate Follower Overhaul.esp enthalten. Löschen und Verwenden Sie UFO.'
-          - lang: ja
-            text: '従者を複数同行させる機能はUFO - Ultimate Follower Overhaul.espにも存在します。このプラグインを削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+      - *alreadyInUFO
       - type: say
         content:
           - lang: en
@@ -24923,18 +24774,7 @@ plugins:
   - name: 'Follower Limit Increased.esp'
     inc:
       - 'Better Follower Improvements.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'Die Multi-Follower-Funktionalität ist in UFO - Ultimate Follower Overhaul.esp enthalten. Löschen und Verwenden Sie UFO.'
-          - lang: ja
-            text: '従者を複数同行させる機能はUFO - Ultimate Follower Overhaul.espにも存在します。このプラグインを削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'EMCompViljaSkyrim.esp'
     msg:
       - <<: *patchRequiemRPC
