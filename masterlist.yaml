@@ -13323,14 +13323,7 @@ plugins:
         udr: 2
   - name: 'Freedom of Speech.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Freedom of Speech -- Dawnguard.esp'
-          - lang: de
-            text: 'Benutzen Sie Freedom of Speech -- Dawnguard.esp'
-          - lang: ja
-            text: 'Freedom of Speech -- Dawnguard.espを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("Freedom of Speech.esp",48DA06FC)'
     dirty:
       - crc: 0x251fdaed
@@ -14698,16 +14691,7 @@ plugins:
         itm: 6
         udr: 3
   - name: 'Ramen.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Ramen0dawnguard.esp instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen Ramen0dawnguard.esp.'
-          - lang: ja
-            text: 'Ramen0dawnguard.espを使用してください。'
-        condition: 'active("Dawnguard.esm")'
+    msg: [ *useVersionDawnguard ]
   - name: 'Ramen0dawnguard.esp'
     inc:
       - 'Ramen.esp'
@@ -16366,23 +16350,10 @@ plugins:
       - Delev
   - name: 'SkyrimWeightImprovement.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Dawnguard version if you want Dawnguard items to be adjusted by this mod.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version, wenn Sie möchten, dass Dawnguard Gegenstände von dieser Mod angepasst werden.'
-          - lang: ja
-            text: 'Dawnguardのアイテムを調整したい場合はDawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) )'
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard und Hearthfires Version, wenn Sie möchten, dass Dawnguard und Hearthfires Gegenstände von dieser Mod angepasst werden.'
-          - lang: ja
-            text: 'DawnguardとHearthfiresのアイテムを調整したい場合はDawnguard and Hearthfiresバージョンを使用してください。'
+      - <<: *useVersion
+        subs: [ 'Dawnguard & HearthFires' ]
         condition: 'active("HearthFires.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
     dirty:
       - crc: 0x770f0bb8
@@ -16399,14 +16370,7 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("WeightedArrows(Heavy|Light|Medium)?\.esp")'
         subs: [ 'Weighted Arrows .esp file' ]
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Dawnguard version to include weighted crossbow bolts.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version, um gewichtete Armbrustschrauben einzuschließen.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用すればクロスボウのボルトにも重量を追加できます。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm")'
   - name: 'WeightedArrowsDLC1(Heavy|Light|Medium)?\.esp'
     msg:
@@ -17051,16 +17015,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'Distant Detail.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Distant DetailHF.esp'
-          - lang: de
-            text: 'Verwenden Sie Distant DetailHF.esp'
-          - lang: ja
-            text: 'Distant DetailHF.espを使用してください。'
-        condition: 'active("HearthFires.esm")'
+    msg: [ *useVersionHearthFires ]
   - name: 'Distant DetailHF.esp'
     msg:
       - <<: *wildEdits
@@ -21179,23 +21134,9 @@ plugins:
             text: 'Смотрите инструкции по удалению на [странице мода](http://www.nexusmods.com/skyrim/mods/8343).'
   - name: 'MorePowerfulShouts.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove and use the Dawnguard version.'
-          - lang: de
-            text: 'Löschen und verwenden Sie die Dawnguard Version.'
-          - lang: ja
-            text: '削除してDawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'checksum("MorePowerfulShouts.esp",F1EDB543) and active("Dawnguard.esm")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove and use the non-Dawnguard version.'
-          - lang: de
-            text: 'Löschen und verwenden Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: '削除して非Dawnguardバージョンを使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'checksum("MorePowerfulShouts.esp",E845AEC7) and not active("Dawnguard.esm")'
     dirty:
       - crc: 0xe845aec7
