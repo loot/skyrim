@@ -25166,17 +25166,6 @@ plugins:
   - name: 'Alternate Start - Live Another Life.esp'
     group: *alternateStartGroup
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Live Another Life.esp was detected. You must uninstall the old version of the mod before using the new one.'
-          - lang: de
-            text: 'Live Another Life.esp wurde erkannt. Sie müssen die alte Version des Mods deinstallieren, bevor Sie die neue verwenden können.'
-          - lang: ja
-            text: 'Live Another Life.espが見つかりました。新バージョンを使う前に古いバージョンをアンインストールしてください。'
-          - lang: ru
-            text: 'Обнаружена старая версия ''Live Another Life.esp''. Вы должны удалить старую версию, перед использованием этой новой.'
-        condition: 'file("Live Another Life.esp")'
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Live Another Life.esp")'
     tag:
@@ -25191,7 +25180,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 9
   - name: 'Live Another Life.esp'
-    msg: [ *corrupt ]
+    msg:
+      - *corrupt
+      - <<: *obsolete
+        subs: [ '[Alternate Start - Live Another Life](https://www.nexusmods.com/skyrim/mods/9557/)' ]
   - name: 'Necromancer Start.esp'
     dirty:
       - crc: 0xdb6b67c7
