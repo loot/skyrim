@@ -473,6 +473,26 @@ common:
       - lang: ru
         text: '%1% не полностью совместим с этим модом. %2%'
 
+  - &sortMasters
+    type: say
+    content:
+      - lang: en
+        text: 'Plugin''s Masters require sorting.'
+      - lang: de
+        text: 'Die Plugin Master müssen sortiert werden.'
+      - lang: ja
+        text: 'このプラグインのマスターはソートが必要です。'
+      - lang: ko
+        text: '플러그인 마스터의 정렬이 필요합니다.'
+      - lang: pl
+        text: 'Wtyczki Główne tej wtyczki wymagają sortowania.'
+      - lang: pt
+        text: 'A Master deste Plugin necessita ordenação.'
+      - lang: pt_BR
+        text: 'Os Masters desse plugin necessitam de ordenação.'
+      - lang: ru
+        text: 'Мастерфайлы плагина требуют сортировки.'
+
   - &useBashTweak
     type: say
     content:
@@ -17094,17 +17114,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Dawnguard - Att.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This esp has master file ArmmedttTeeth.esm placed before Dawnguard.esm (opposite LOOT).'
-          - lang: de
-            text: 'Diese esp hat die Master-Datei ArmmedttTeeth.esm vor Dawnguard.esm (gegenüber LOOT) platziert.'
-          - lang: ja
-            text: 'このEspにはDawnguard.esmの前（LOOTの位置では逆側）に置かれたArmmedttTeeth.esmというマスターファイルがあります。'
-          - lang: ru
-            text: 'Вопреки порядку загрузки LOOT, мастерфайл этого мода находится перед Dawnguard.esm'
+    msg: [ *sortMasters ]
   - name: 'DawnguardArmorLaup26.esp'
     after:
       - 'LorebalanceArtifacts.esp'
