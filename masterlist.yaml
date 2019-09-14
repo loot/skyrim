@@ -5827,20 +5827,7 @@ plugins:
       - *SKSE
     inc:
       - 'Chesko_SwiftPotion.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: es
-            text: 'SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'Syynx Stubborn Skeletons.esp'
     dirty:
       - crc: 0xd1641b6b
@@ -10338,18 +10325,7 @@ plugins:
   - name: 'DeadlyMonsters.esp'
     req:
       - *SKSE
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'ERSO 03.5 - New Dragon( Super)? Loots\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17658,31 +17634,9 @@ plugins:
         condition: 'many("LegionArmorVariety(OPTIONA?L?\d)?\.esp")'
         subs: [ 'LegionArmorVariety .esp file' ]
   - name: 'kuerteeGoldAjustment MCM.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'kuerteeTekuromotosLessPredictableRespawn MCM.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'Less Talkative NPCs Release.+\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -19570,18 +19524,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 66
   - name: 'BFT Ships and Carriages - HF.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
     dirty:
       - crc: 0xf030d4b
         <<: *dirtyPlugin
@@ -25068,20 +25011,7 @@ plugins:
     req:
       - *SKSE
   - name: 'DeadlyMutilation.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: es
-            text: 'SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'driveableboat.esp'
     dirty:
       - crc: 0x920c6e44
