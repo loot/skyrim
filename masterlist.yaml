@@ -4951,17 +4951,7 @@ plugins:
   - name: 'LPSleep.esp'
     req: [ *SKSE ]
   - name: 'lt_better_horses.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Do not use. Mod is abandoned and known to cause permanent save corruption.'
-          - lang: de
-            text: 'Verwende Sie nicht dieses Plugin. Die Mod wurde aufgegeben und verursacht bekanntermaßen dauerhafte Speicherbeschädigungen.'
-          - lang: es
-            text: 'No utilizar. Este mod ha sido abandonado y puede dañar tu juego.'
-          - lang: ja
-            text: '使用しないでください。このModは開発が停止しており、セーブデータを永久的に破損させるModとされています。'
+    msg: [ *corrupt ]
   - name: 'ltbl.esp'
     dirty:
       - crc: 0x3ac741ca
@@ -12460,19 +12450,7 @@ plugins:
         udr: 9
         nav: 10
   - name: 'CastlevaniaDemo.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Various Papyrus Scripting Errors. Contact author for update or consider removing from load order.'
-          - lang: de
-            text: 'Verschiedene Papyrus Skriptfehler. Wenden Sie sich für Aktualisierungen an den Autor, oder ziehen Sie in Betracht, dieses Plugin aus der Ladereihenfolge zu entfernen.'
-          - lang: es
-            text: 'Various Papyrus Scripting Errors. Contact author for update or consider removing from load order.'
-          - lang: ja
-            text: '複数のPapyrusスクリプトエラーが発生します。作者に連絡を取るか、プラグインをリストから削除してください。'
-          - lang: ru
-            text: 'Различные ошибки в скриптах. Свяжитесь с автором для обновления или рекомендуется  удалить плагин из вашего списка плагинов.'
+    msg: [ *corrupt ]
     dirty:
       - crc: 0xffeaee3d
         <<: *dirtyPlugin
@@ -23065,14 +23043,7 @@ plugins:
         display: '[Enhanced Character Edit](http://www.nexusmods.com/skyrim/mods/12951)'
   - name: 'KhaleesiFacePreset.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This file is broken and will not work.'
-          - lang: de
-            text: 'Diese Datei ist beschädigt und funktioniert nicht.'
-          - lang: ja
-            text: 'このファイルは破損しています。機能しません。'
+      - <<: *corrupt
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
   - name: '3DNPC.esp'
     url: [ 'http://3dnpc.com/' ]
@@ -23891,14 +23862,7 @@ plugins:
         condition: 'checksum("Fezzik the Giant.esp",3D97A0E0) or checksum("Fezzik the Giant.esp",9ED962E7)'
   - name: 'FFDogs.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Broken as per [author''s notes](http://www.nexusmods.com/skyrim/mods/30297)'
-          - lang: de
-            text: 'Beschädigt gemäß [Anmerkungen des Autors](http://www.nexusmods.com/skyrim/mods/30297).'
-          - lang: ja
-            text: '[製作者のNOTE](http://www.nexusmods.com/skyrim/mods/30297)に書かれているように破損しています。'
+      - <<: *corrupt
         condition: 'checksum("FFDogs.esp",907CBDCD)'
   - name: 'FFBretonClaribelle.esp'
     dirty:
