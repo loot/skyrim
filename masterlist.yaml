@@ -1465,28 +1465,6 @@ plugins:
             text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 or 4.3.x) von TESVSnip erstellt wurde. Bitte benutzten Sie das [aktualisierte Plugin](http://www.nexusmods.com/skyrim/mods/17802).'
           - lang: ja
             text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。[最新版のプラグイン](http://www.nexusmods.com/skyrim/mods/17802)を使用してください。'
-      - type: warn
-        condition: 'file("SoS - Civilization.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp") and not file("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Auf Grund von Konflikten zwischen Sounds of Skyrim - Civilization und ClimatesOfTamriel.esm wird es empfohlen, den Kompatibilitätspatch von [hier](http://www.nexusmods.com/skyrim/mods/20193) zu benutzen.'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizationはClimatesOfTamriel.esmと競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-      - type: warn
-        condition: 'file("SoS - The Wilds.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp") and not file("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: de
-            text: 'Auf Grund von Konflikten zwischen Sounds of Skyrim - The Wilds und ClimatesOfTamriel.esm wird es empfohlen, den Kompatibilitätspatch von [hier](http://www.nexusmods.com/skyrim/mods/10886) zu benutzen.'
-          - lang: ja
-            text: 'Sounds of Skyrim - The WildsはClimatesOfTamriel.esmと競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/10886)'
   - name: 'CoT-WeatherPatch.esp'
     dirty:
       - crc: 0x2fea325d
@@ -19479,6 +19457,21 @@ plugins:
       - C.Location
   - name: 'SoS - The Dungeons.esp'
     msg:
+      - <<: *patchProvided
+        subs: [ 'Climates Of Tamriel Dungeons Hardcore' ]
+        condition: 'file("ClimatesOfTamriel-Dungeons-Hardcore.esp") and not file("SoS - The Dungeons-PatchCoTHardcore.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Dungeons' ]
+        condition: 'file("Realistic Lighting Overhaul - Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeons.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Dungeon Lighting' ]
+        condition: 'file("Realistic Lighting Overhaul - Dungeon Lighting.esp") and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
+        condition: 'file("rcrnShaders.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
+        condition: 'active("rcrnPlus.esp") and not active("SoS - The Dungeons-PatchRCRN.esp")'
       - type: say
         content:
           - lang: en
@@ -19493,6 +19486,15 @@ plugins:
             text: 'Не используйте Crash Fix ESP для этого мода. Он помечен как мастерфайл и предназначен только как последнее средство для исправления вылетов.'
   - name: 'SoS - The Wilds.esp'
     msg:
+      - <<: *patchProvided
+        subs: [ 'Climates Of Tamriel' ]
+        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - The Wilds-PatchCoT.*\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
+        condition: 'file("rcrnShaders.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
+        condition: 'active("rcrnPlus.esp") and not active("SoS - The Wilds-PatchRCRN.esp")'
       - type: say
         content:
           - lang: en
@@ -19511,6 +19513,21 @@ plugins:
         itm: 8
   - name: 'SoS - Civilization.esp'
     msg:
+      - <<: *patchProvided
+        subs: [ 'Climates Of Tamriel' ]
+        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - Civilization(-PatchCoT| -PatchCoTSounds.esp|-PatchCoTWinterEdition| -PatchCoTSoundsWinterEdition)\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Major City Interiors' ]
+        condition: 'file("Realistic Lighting Overhaul - Major City Interiors.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Minor Cities and Town Interiors.esp' ]
+        condition: 'file("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
+        condition: 'file("rcrnShaders.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
+        condition: 'active("rcrnPlus.esp") and not active("SoS - Civilization-PatchRCRN.esp")'
       - type: say
         content:
           - lang: en
@@ -19597,16 +19614,6 @@ plugins:
       - name: 'Realistic Lighting.esp'
         display: 'Realistic Lighting with Customization'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und Realistic Lighting Overhaul - Dungeons.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとRealistic Lighting Overhaul - Dungeons.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeons.esp")'
     dirty:
       - crc: 0x18ad5feb
         <<: *dirtyPlugin
@@ -19617,16 +19624,6 @@ plugins:
   - name: 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     after:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und Realistic Lighting Overhaul - Dungeons Lighting.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとRealistic Lighting Overhaul - Dungeon Lighting.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
     dirty:
       - crc: 0xcb2aeeaf
         <<: *dirtyPlugin
@@ -19648,18 +19645,6 @@ plugins:
           - lang: ja
             text: '''Major City Interiors.esp''と''Dawnguard Interiors.esp''のロード順は入れ替えることができます。[RLOを製作されたDaemonui氏による解説へのリンクです。相違について確認できます](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Civilizaiton und Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/20193) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizaitonとRealistic Lighting Overhaul - Minor Cities and Town Interiors.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
     dirty:
       - crc: 0x53706bfb
         <<: *dirtyPlugin
@@ -19670,27 +19655,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Realistic Lighting Overhaul - Major City Interiors.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Civilizaiton und Realistic Lighting Overhaul - Major City Interiors.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/20193) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizaitonとRealistic Lighting Overhaul - Major City Interiors.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und Realistic Lighting Overhaul - Major City Interiors.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとRealistic Lighting Overhaul - Major City Interiors.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - Civilization.esp") and not file("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp")'
     dirty:
       - crc: 0x33a5fd6
         <<: *dirtyPlugin
@@ -19756,15 +19720,6 @@ plugins:
       - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
       - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - The Dungeons und ClimatesOfTamriel-Dungeons-Hardcore.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - The DungeonsとClimatesOfTamriel-Dungeons-Hardcore.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchCoTHardcore.esp")'
       - type: warn
         content:
           - lang: en
@@ -25083,83 +25038,12 @@ plugins:
             text: 'ランチャーから必ずSkyrimPrefs.iniのbEnableFileSelectionを=1にセットしてください。'
           - lang: ru
             text: 'Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Civilization und rcrnShaders.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/20193) finden.'
-          - lang: es
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizaitonとrcrnShaders.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and rcrnShaders.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - The Wilds und rcrnShaders.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/10886) finden.'
-          - lang: es
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: ja
-            text: 'Sounds of Skyrim - The WildsとrcrnShaders.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and rcrnShaders.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/10886)'
-        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und rcrnShaders.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとrcrnShaders.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
     dirty:
       - crc: 0x209fd1b5
         <<: *dirtyPlugin
         itm: 16
         udr: 3
   - name: 'rcrnPlus.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Civilization und rcrnPlus.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/20193) finden.'
-          - lang: es
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizaitonとrcrnPlus.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and rcrnPlus.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - The Wilds und rcrnPlus.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/10886) finden.'
-          - lang: es
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: ja
-            text: 'Sounds of Skyrim - The WildsとrcrnPlus.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and rcrnPlus.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/10886)'
-        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und rcrnPlus.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとrcrnPlus.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
   - name: 'RCRNvolumetric.esp'
     dirty:
       - crc: 0x54176f89
@@ -26604,15 +26488,6 @@ plugins:
     after:
       - 'MoonAndStar_MAS.esp'
     msg:
-      - type: warn
-        condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_Undeath_compat.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "MoonAndStar_MAS.esp". Consider using [the compatibility patch](http://www.nexusmods.com/skyrim/mods/52397/).'
-          - lang: de
-            text: 'Diese Mod hat bestimmte Konflikte mit "MoonAndStar_MAS.esp". Erwägen Sie die Verwendung von [dem Kompatibilitätspatch](http://www.nexusmods.com/skyrim/mods/52397/).'
-          - lang: ja
-            text: 'このModはMoonAndStar_MAS.espと一部で競合します。[互換パッチ](http://www.nexusmods.com/skyrim/mods/52397/)を使用してみてください。'
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Undeath - Requiem Patch.esp")'
         subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
@@ -27294,6 +27169,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/52397' ]
     after:
       - 'AuroraVillage.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Undeath' ]
+        condition: 'active("Undeath.esp") and not active("MoonAndStar_Undeath_compat.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xE19B3101
