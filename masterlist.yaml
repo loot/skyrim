@@ -92,6 +92,10 @@ common:
     <<: *alreadyInX
     condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
     subs: [ 'SkyRe Main' ]
+  - &alreadyInUFO
+    <<: *alreadyInX
+    subs: [ 'Ultimate Follower Overhaul' ]
+    condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
 
   - &alreadyInOrFixedByX
     type: error
@@ -468,6 +472,26 @@ common:
         text: '%1% não é completamente compatível com este mod. %2%'
       - lang: ru
         text: '%1% не полностью совместим с этим модом. %2%'
+
+  - &sortMasters
+    type: say
+    content:
+      - lang: en
+        text: 'Plugin''s Masters require sorting.'
+      - lang: de
+        text: 'Die Plugin Master müssen sortiert werden.'
+      - lang: ja
+        text: 'このプラグインのマスターはソートが必要です。'
+      - lang: ko
+        text: '플러그인 마스터의 정렬이 필요합니다.'
+      - lang: pl
+        text: 'Wtyczki Główne tej wtyczki wymagają sortowania.'
+      - lang: pt
+        text: 'A Master deste Plugin necessita ordenação.'
+      - lang: pt_BR
+        text: 'Os Masters desse plugin necessitam de ordenação.'
+      - lang: ru
+        text: 'Мастерфайлы плагина требуют сортировки.'
 
   - &useBashTweak
     type: say
@@ -1441,28 +1465,6 @@ plugins:
             text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 or 4.3.x) von TESVSnip erstellt wurde. Bitte benutzten Sie das [aktualisierte Plugin](http://www.nexusmods.com/skyrim/mods/17802).'
           - lang: ja
             text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。[最新版のプラグイン](http://www.nexusmods.com/skyrim/mods/17802)を使用してください。'
-      - type: warn
-        condition: 'file("SoS - Civilization.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp") and not file("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Auf Grund von Konflikten zwischen Sounds of Skyrim - Civilization und ClimatesOfTamriel.esm wird es empfohlen, den Kompatibilitätspatch von [hier](http://www.nexusmods.com/skyrim/mods/20193) zu benutzen.'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizationはClimatesOfTamriel.esmと競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-      - type: warn
-        condition: 'file("SoS - The Wilds.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp") and not file("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: de
-            text: 'Auf Grund von Konflikten zwischen Sounds of Skyrim - The Wilds und ClimatesOfTamriel.esm wird es empfohlen, den Kompatibilitätspatch von [hier](http://www.nexusmods.com/skyrim/mods/10886) zu benutzen.'
-          - lang: ja
-            text: 'Sounds of Skyrim - The WildsはClimatesOfTamriel.esmと競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/10886)'
   - name: 'CoT-WeatherPatch.esp'
     dirty:
       - crc: 0x2fea325d
@@ -1778,19 +1780,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 26
   - name: 'Overlord Tower.esm'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use either good or evil version.'
-          - lang: de
-            text: 'Benutzen Sie entweder die gute oder böse Version.'
-          - lang: es
-            text: 'Utilizar la versión buena o la versión malvada.'
-          - lang: ja
-            text: 'goodかevilバージョンのどちらかを使用してください。'
-          - lang: ru
-            text: 'Используйте либо good либо evil версию.'
     dirty:
       - crc: 0x67a4293
         <<: *dirtyPlugin
@@ -4940,17 +4929,7 @@ plugins:
   - name: 'LPSleep.esp'
     req: [ *SKSE ]
   - name: 'lt_better_horses.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Do not use. Mod is abandoned and known to cause permanent save corruption.'
-          - lang: de
-            text: 'Verwende Sie nicht dieses Plugin. Die Mod wurde aufgegeben und verursacht bekanntermaßen dauerhafte Speicherbeschädigungen.'
-          - lang: es
-            text: 'No utilizar. Este mod ha sido abandonado y puede dañar tu juego.'
-          - lang: ja
-            text: '使用しないでください。このModは開発が停止しており、セーブデータを永久的に破損させるModとされています。'
+    msg: [ *corrupt ]
   - name: 'ltbl.esp'
     dirty:
       - crc: 0x3ac741ca
@@ -5823,20 +5802,7 @@ plugins:
       - *SKSE
     inc:
       - 'Chesko_SwiftPotion.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: es
-            text: 'SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'Syynx Stubborn Skeletons.esp'
     dirty:
       - crc: 0xd1641b6b
@@ -6884,19 +6850,7 @@ plugins:
     tag:
       - Relev
   - name: 'Lorecraft - Cloaks( No Imperial| Player Only)?\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Update to new version for Cloaks 09.'
-          - lang: de
-            text: 'Aktualisieren Sie auf die neue Version für Cloaks 09.'
-          - lang: es
-            text: 'Actualizar a Cloaks 09.'
-          - lang: ja
-            text: 'Cloaks 09の新バージョンに更新してください。'
-          - lang: ru
-            text: 'Обновите до новой версии Cloaks 09.'
+    msg: [ *obsolete ]
     tag:
       - Relev
   - name: '1nivWICCloaks(CRAFT|NoGuards)?.esp'
@@ -8585,18 +8539,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'SkaalHeavyArmor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Contains wild edit. Remove DLC2SkaalAmulet from the ESP using TES5Edit.'
-          - lang: de
-            text: 'Enthält wilde Bearbeitung. Entfernen Sie DLC2SkaalAmulet mit TES5Edit aus der ESP.'
-          - lang: es
-            text: 'Contains wild edit. Remove DLC2SkaalAmulet from the ESP using TES5Edit.'
-          - lang: ja
-            text: '意図しない編集が含まれています。TES5EditでEspを開き、DLC2SkaalAmuletを削除してください。'
-          - lang: ru
-            text: 'Содержит случайную правку. Удалите DLC2SkaalAmulet из ESP, используя TES5Edit.'
+      - <<: *wildEdits
+        subs: [ 'Remove DLC2SkaalAmulet from the ESP using TES5Edit.' ]
   - name: 'Skeleton Key Recipe.esp'
     msg:
       - <<: *corrupt
@@ -9331,59 +9275,29 @@ plugins:
         udr: 2
   - name: 'Better Sorting by eclips3 - Ingredients .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Ingredients .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Ingredients .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3 - Ingredients*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Ingredients (Weightless).esp") or active("Better Sorting by eclips3 - Ingredients (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Ingredients (Light Weight).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Ingredients' ]
+        condition: 'many("Better Sorting by eclips3 - Ingredients .+\.esp")'
   - name: 'Better Sorting by eclips3 - Soul Gems .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Soul Gem .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Soul Gem .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3 - Soul Gem*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Soul Gems (Named).esp") and active("Better Sorting by eclips3 - Soul Gems (Numbered).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Soul Gems' ]
+        condition: 'many("Better Sorting by eclips3 - Soul Gems .+\.esp")'
   - name: 'Better Sorting by eclips3 - Books .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Books .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Books .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3 - Books*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Books (Before).esp") and active("Better Sorting by eclips3 - Books (After).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Books' ]
+        condition: 'many("Better Sorting by eclips3 - Books .+\.esp")'
   - name: 'Better Sorting by eclips3 - Food .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Food .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Food .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Food (Weightless).esp") or active("Better Sorting by eclips3 - Food (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Food (Light Weight).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Food' ]
+        condition: 'many("Better Sorting by eclips3 - Food .+\.esp")'
   - name: 'Better Sorting by eclips3 - Potions .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Potions .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Potions .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3 - Potions*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Potions (Weightless).esp") or active("Better Sorting by eclips3 - Potions (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Potions (Light Weight).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Potions' ]
+        condition: 'many("Better Sorting by eclips3 - Potions .+\.esp")'
   - name: 'Smithing Perks Overhaul( - Balanced)?\.esp'
     inc:
       - 'PerkUP-Smithing.esp'
@@ -10105,57 +10019,25 @@ plugins:
     inc:
       - 'DS-MoreAgressionForRemover.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Not Needed Already in v3.1'
-          - lang: de
-            text: 'Nicht benötigt, bereits in v3.1.'
-          - lang: ja
-            text: 'v3.1では不要です。'
-          - lang: ru
-            text: 'Не нужно, уже включено в версию v3.1+'
+      - <<: *alreadyInX
+        subs: [ 'DragonSwarms v3.1+' ]
         condition: 'file("DragonSwarms.*\.esp")'
   - name: 'DS-FlybyOpt.esp'
     inc:
       - 'DS-MoreAgressionForRemover.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Not Needed Already in v3.1'
-          - lang: de
-            text: 'Nicht benötigt, bereits in v3.1.'
-          - lang: ja
-            text: 'v3.1では不要です。'
-          - lang: ru
-            text: 'Не нужно, уже включено в версию v3.1+'
+      - <<: *alreadyInX
+        subs: [ 'DragonSwarms v3.1+' ]
         condition: 'file("DragonSwarms.*\.esp")'
   - name: 'DS-MoreAgressionForRemover.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Not Needed Already in v3.1'
-          - lang: de
-            text: 'Nicht benötigt, bereits in v3.1.'
-          - lang: ja
-            text: 'v3.1では不要です。'
-          - lang: ru
-            text: 'Не нужно, уже включено в версию v3.1+'
+      - <<: *alreadyInX
+        subs: [ 'DragonSwarms v3.1+' ]
         condition: 'file("DragonSwarms.*\.esp")'
   - name: 'DragonSwarmsOptRemoveTimerStable.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Not Needed Already in v3.1'
-          - lang: de
-            text: 'Nicht benötigt, bereits in v3.1.'
-          - lang: ja
-            text: 'v3.1では不要です。'
-          - lang: ru
-            text: 'Не нужно, уже включено в версию v3.1+'
+      - <<: *alreadyInX
+        subs: [ 'DragonSwarms v3.1+' ]
         condition: 'file("DragonSwarms.*\.esp")'
   - name: 'DS-VanillaTimer+MultipleEvents.esp'
     inc:
@@ -10366,18 +10248,7 @@ plugins:
   - name: 'DeadlyMonsters.esp'
     req:
       - *SKSE
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'ERSO 03.5 - New Dragon( Super)? Loots\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -12296,16 +12167,8 @@ plugins:
         udr: 3
   - name: 'Breezehome1stwing.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'No longer support, use Dovahkiin Hideout instead'
-          - lang: de
-            text: 'Wird nicht mehr unterstützt, verwenden Sie stattdessen Dovahkiin Hideout.'
-          - lang: ja
-            text: '現在はサポートされていません。Dovahkiin Hideoutを使用してください。'
-          - lang: ru
-            text: 'Больше не поддерживается, используйте вместо этого Dovahkiin Hideout.'
+      - <<: *obsolete
+        subs: [ '[Dovahkiin Hideout](https://www.nexusmods.com/skyrim/mods/12553/)' ]
   - name: 'breezehomebasement.esp'
     url: []
     msg:
@@ -12565,19 +12428,7 @@ plugins:
         udr: 9
         nav: 10
   - name: 'CastlevaniaDemo.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Various Papyrus Scripting Errors. Contact author for update or consider removing from load order.'
-          - lang: de
-            text: 'Verschiedene Papyrus Skriptfehler. Wenden Sie sich für Aktualisierungen an den Autor, oder ziehen Sie in Betracht, dieses Plugin aus der Ladereihenfolge zu entfernen.'
-          - lang: es
-            text: 'Various Papyrus Scripting Errors. Contact author for update or consider removing from load order.'
-          - lang: ja
-            text: '複数のPapyrusスクリプトエラーが発生します。作者に連絡を取るか、プラグインをリストから削除してください。'
-          - lang: ru
-            text: 'Различные ошибки в скриптах. Свяжитесь с автором для обновления или рекомендуется  удалить плагин из вашего списка плагинов.'
+    msg: [ *corrupt ]
     dirty:
       - crc: 0xffeaee3d
         <<: *dirtyPlugin
@@ -13450,14 +13301,7 @@ plugins:
         udr: 2
   - name: 'Freedom of Speech.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Freedom of Speech -- Dawnguard.esp'
-          - lang: de
-            text: 'Benutzen Sie Freedom of Speech -- Dawnguard.esp'
-          - lang: ja
-            text: 'Freedom of Speech -- Dawnguard.espを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("Freedom of Speech.esp",48DA06FC)'
     dirty:
       - crc: 0x251fdaed
@@ -14825,16 +14669,7 @@ plugins:
         itm: 6
         udr: 3
   - name: 'Ramen.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Ramen0dawnguard.esp instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen Ramen0dawnguard.esp.'
-          - lang: ja
-            text: 'Ramen0dawnguard.espを使用してください。'
-        condition: 'active("Dawnguard.esm")'
+    msg: [ *useVersionDawnguard ]
   - name: 'Ramen0dawnguard.esp'
     inc:
       - 'Ramen.esp'
@@ -16493,23 +16328,10 @@ plugins:
       - Delev
   - name: 'SkyrimWeightImprovement.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Dawnguard version if you want Dawnguard items to be adjusted by this mod.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version, wenn Sie möchten, dass Dawnguard Gegenstände von dieser Mod angepasst werden.'
-          - lang: ja
-            text: 'Dawnguardのアイテムを調整したい場合はDawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) )'
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard und Hearthfires Version, wenn Sie möchten, dass Dawnguard und Hearthfires Gegenstände von dieser Mod angepasst werden.'
-          - lang: ja
-            text: 'DawnguardとHearthfiresのアイテムを調整したい場合はDawnguard and Hearthfiresバージョンを使用してください。'
+      - <<: *useVersion
+        subs: [ 'Dawnguard & HearthFires' ]
         condition: 'active("HearthFires.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
     dirty:
       - crc: 0x770f0bb8
@@ -16526,14 +16348,7 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("WeightedArrows(Heavy|Light|Medium)?\.esp")'
         subs: [ 'Weighted Arrows .esp file' ]
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Dawnguard version to include weighted crossbow bolts.'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version, um gewichtete Armbrustschrauben einzuschließen.'
-          - lang: ja
-            text: 'Dawnguardバージョンを使用すればクロスボウのボルトにも重量を追加できます。'
+      - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm")'
   - name: 'WeightedArrowsDLC1(Heavy|Light|Medium)?\.esp'
     msg:
@@ -16735,18 +16550,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'BasicHorseRidingAI.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead'
-          - lang: de
-            text: 'In UFO - Ultimate Follower Overhaul.esp enthalten, löschen und verwenden Sie stattdessen UFO.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを利用してください。'
-          - lang: ru
-            text: 'Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'better artifacts.esp'
     dirty:
       - crc: 0x52bab796
@@ -16800,14 +16604,8 @@ plugins:
   - name: 'BetterQuestObjectives.esp'
     group: *underridesGroup
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This file is out of date. Please obtain the new version [here](http://www.nexusmods.com/skyrim/mods/32695).'
-          - lang: de
-            text: 'Diese Datei ist veraltet. Bitte besorgen Sie sich die neue Version [hier](http://www.nexusmods.com/skyrim/mods/32695).'
-          - lang: ja
-            text: '古いファイルです。[こちら](http://www.nexusmods.com/skyrim/mods/32695)から新バージョンを入手してください。'
+      - <<: *obsolete
+        subs: [ '[Even Better Quest Objectives](http://www.nexusmods.com/skyrim/mods/32695/)' ]
         condition: 'checksum("BetterQuestObjectives.esp",BCD35920)'
     tag:
       - NoMerge
@@ -17171,17 +16969,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Dawnguard - Att.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This esp has master file ArmmedttTeeth.esm placed before Dawnguard.esm (opposite LOOT).'
-          - lang: de
-            text: 'Diese esp hat die Master-Datei ArmmedttTeeth.esm vor Dawnguard.esm (gegenüber LOOT) platziert.'
-          - lang: ja
-            text: 'このEspにはDawnguard.esmの前（LOOTの位置では逆側）に置かれたArmmedttTeeth.esmというマスターファイルがあります。'
-          - lang: ru
-            text: 'Вопреки порядку загрузки LOOT, мастерфайл этого мода находится перед Dawnguard.esm'
+    msg: [ *sortMasters ]
   - name: 'DawnguardArmorLaup26.esp'
     after:
       - 'LorebalanceArtifacts.esp'
@@ -17205,26 +16993,11 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'Distant Detail.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use Distant DetailHF.esp'
-          - lang: de
-            text: 'Verwenden Sie Distant DetailHF.esp'
-          - lang: ja
-            text: 'Distant DetailHF.espを使用してください。'
-        condition: 'active("HearthFires.esm")'
+    msg: [ *useVersionHearthFires ]
   - name: 'Distant DetailHF.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: '[Detailed guide for cleaning.](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)'
-          - lang: de
-            text: '[Ausführliche Anleitung zum Säubern.](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)'
-          - lang: ja
-            text: '[クリーニングの詳しい解説](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)' ]
     inc:
       - 'Distant Detail.esp'
     dirty:
@@ -17404,16 +17177,9 @@ plugins:
         itm: 1
   - name: 'Follower Tweaks.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Only use one Follower Tweaks - plugin at once'
-          - lang: de
-            text: 'Verwenden Sie immer nur ein Follower Tweaks - Plugin.'
-          - lang: ja
-            text: 'Follower Tweaksプラグインは一度に一つのみ使用できます。'
-          - lang: ru
-            text: 'Используйте только один плагин Follower Tweaks'
+      - <<: *useOnlyOneX
+        subs: [ 'Follower Tweaks' ]
+        condition: 'many("Follower Tweaks.*\.esp")'
   - name: 'FSS-No pause between lines.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
@@ -17527,18 +17293,7 @@ plugins:
     inc:
       - 'Housecarls Can Wear Anything.esp'
   - name: 'Housecarls improved AI( \+ higher lvl cap)?\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Improved AI included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'Verbesserte KI in UFO - Ultimate Follower Overhaul.esp enthalten, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espには改良されたAIが含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'iMaxPlayerRunes\d+\.esp'
     msg:
       - type: say
@@ -17722,31 +17477,9 @@ plugins:
         condition: 'many("LegionArmorVariety(OPTIONA?L?\d)?\.esp")'
         subs: [ 'LegionArmorVariety .esp file' ]
   - name: 'kuerteeGoldAjustment MCM.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'kuerteeTekuromotosLessPredictableRespawn MCM.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'Less Talkative NPCs Release.+\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17879,19 +17612,13 @@ plugins:
       - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("MenuShoutsInDragonsLanguage.esp",B36BDB9A)'
   - name: 'Merchants Reply Only With Take A Look.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Mod contains wild edits to some NPC_ records''s tint masks. Delete the NPC_ tree to remove the wild edits.' ]
     dirty:
       - crc: 0x82f59d12
         <<: *dirtyPlugin
         itm: 9
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Contains wild edits to some NPC_ records''s tint masks. Delete the NPC_ tree to remove the wild edits.'
-          - lang: de
-            text: 'Enthält wilde Änderungen an den Tönungsmasken einiger NPC_ Datensätze. Löschen Sie den NPC_ Baum, um die wilden Änderungen zu entfernen.'
-          - lang: ja
-            text: '一部のNPC_レコードのtint maskに意図しない編集が施されています。NPC_ツリーを削除し、変更内容を消去してください。'
   - name: 'mjhReducedGoldRewards.esp'
     tag:
       - Delev
@@ -18727,18 +18454,9 @@ plugins:
       - Relev
   - name: 'Zbuffed Candlelight Spell R.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Only use one Zbuffed Candlelight Spell R*.esp'
-          - lang: de
-            text: 'Verwenden Sie nur eine Zbuffed Candlelight Spell R * .esp'
-          - lang: es
-            text: 'Utilizar solo un Zbuffed Candlelight Spell R*.esp'
-          - lang: ja
-            text: 'Zbuffed Candlelight Spell R*.espは単体でのみ使用できます。'
-          - lang: ru
-            text: 'Используйте только один Zbuffed Candlelight Spell R*.esp'
+      - <<: *useOnlyOneX
+        subs: [ 'Zbuffed Candlelight Spell R*.esp' ]
+        condition: 'many("Zbuffed Candlelight Spell R.+\.esp")'
   - name: 'WeaponsArmorFixes_ambSkyforge_Patch.esp'
     req:
       - name: 'Weapons & Armor Fixes_Remade.esp'
@@ -19634,18 +19352,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 66
   - name: 'BFT Ships and Carriages - HF.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
     dirty:
       - crc: 0xf030d4b
         <<: *dirtyPlugin
@@ -19750,6 +19457,21 @@ plugins:
       - C.Location
   - name: 'SoS - The Dungeons.esp'
     msg:
+      - <<: *patchProvided
+        subs: [ 'Climates Of Tamriel Dungeons Hardcore' ]
+        condition: 'file("ClimatesOfTamriel-Dungeons-Hardcore.esp") and not file("SoS - The Dungeons-PatchCoTHardcore.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Dungeons' ]
+        condition: 'file("Realistic Lighting Overhaul - Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeons.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Dungeon Lighting' ]
+        condition: 'file("Realistic Lighting Overhaul - Dungeon Lighting.esp") and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
+        condition: 'file("rcrnShaders.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
+        condition: 'active("rcrnPlus.esp") and not active("SoS - The Dungeons-PatchRCRN.esp")'
       - type: say
         content:
           - lang: en
@@ -19764,6 +19486,15 @@ plugins:
             text: 'Не используйте Crash Fix ESP для этого мода. Он помечен как мастерфайл и предназначен только как последнее средство для исправления вылетов.'
   - name: 'SoS - The Wilds.esp'
     msg:
+      - <<: *patchProvided
+        subs: [ 'Climates Of Tamriel' ]
+        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - The Wilds-PatchCoT.*\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
+        condition: 'file("rcrnShaders.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
+        condition: 'active("rcrnPlus.esp") and not active("SoS - The Wilds-PatchRCRN.esp")'
       - type: say
         content:
           - lang: en
@@ -19782,6 +19513,21 @@ plugins:
         itm: 8
   - name: 'SoS - Civilization.esp'
     msg:
+      - <<: *patchProvided
+        subs: [ 'Climates Of Tamriel' ]
+        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - Civilization(-PatchCoT| -PatchCoTSounds.esp|-PatchCoTWinterEdition| -PatchCoTSoundsWinterEdition)\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Major City Interiors' ]
+        condition: 'file("Realistic Lighting Overhaul - Major City Interiors.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Minor Cities and Town Interiors.esp' ]
+        condition: 'file("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
+        condition: 'file("rcrnShaders.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
+        condition: 'active("rcrnPlus.esp") and not active("SoS - Civilization-PatchRCRN.esp")'
       - type: say
         content:
           - lang: en
@@ -19868,16 +19614,6 @@ plugins:
       - name: 'Realistic Lighting.esp'
         display: 'Realistic Lighting with Customization'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und Realistic Lighting Overhaul - Dungeons.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとRealistic Lighting Overhaul - Dungeons.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeons.esp")'
     dirty:
       - crc: 0x18ad5feb
         <<: *dirtyPlugin
@@ -19888,16 +19624,6 @@ plugins:
   - name: 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     after:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und Realistic Lighting Overhaul - Dungeons Lighting.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとRealistic Lighting Overhaul - Dungeon Lighting.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeonLighting.esp")'
     dirty:
       - crc: 0xcb2aeeaf
         <<: *dirtyPlugin
@@ -19919,18 +19645,6 @@ plugins:
           - lang: ja
             text: '''Major City Interiors.esp''と''Dawnguard Interiors.esp''のロード順は入れ替えることができます。[RLOを製作されたDaemonui氏による解説へのリンクです。相違について確認できます](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Civilizaiton und Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/20193) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizaitonとRealistic Lighting Overhaul - Minor Cities and Town Interiors.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
     dirty:
       - crc: 0x53706bfb
         <<: *dirtyPlugin
@@ -19941,27 +19655,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'Realistic Lighting Overhaul - Major City Interiors.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Civilizaiton und Realistic Lighting Overhaul - Major City Interiors.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/20193) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizaitonとRealistic Lighting Overhaul - Major City Interiors.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und Realistic Lighting Overhaul - Major City Interiors.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとRealistic Lighting Overhaul - Major City Interiors.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - Civilization.esp") and not file("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp")'
     dirty:
       - crc: 0x33a5fd6
         <<: *dirtyPlugin
@@ -20027,15 +19720,6 @@ plugins:
       - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
       - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - The Dungeons und ClimatesOfTamriel-Dungeons-Hardcore.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - The DungeonsとClimatesOfTamriel-Dungeons-Hardcore.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchCoTHardcore.esp")'
       - type: warn
         content:
           - lang: en
@@ -21405,23 +21089,9 @@ plugins:
             text: 'Смотрите инструкции по удалению на [странице мода](http://www.nexusmods.com/skyrim/mods/8343).'
   - name: 'MorePowerfulShouts.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove and use the Dawnguard version.'
-          - lang: de
-            text: 'Löschen und verwenden Sie die Dawnguard Version.'
-          - lang: ja
-            text: '削除してDawnguardバージョンを使用してください。'
+      - <<: *useVersionDawnguard
         condition: 'checksum("MorePowerfulShouts.esp",F1EDB543) and active("Dawnguard.esm")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove and use the non-Dawnguard version.'
-          - lang: de
-            text: 'Löschen und verwenden Sie die Nicht-Dawnguard Version.'
-          - lang: ja
-            text: '削除して非Dawnguardバージョンを使用してください。'
+      - <<: *useVersionNonDawnguard
         condition: 'checksum("MorePowerfulShouts.esp",E845AEC7) and not active("Dawnguard.esm")'
     dirty:
       - crc: 0xe845aec7
@@ -21998,16 +21668,9 @@ plugins:
         itm: 3
   - name: 'Balanced_Magic_(Adept|Novice|Master)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Choose only one of the below - optional if you prefer vanilla settings or other mods which adjust these values.'
-          - lang: de
-            text: 'Wählen Sie nur eine der folgenden Optionen - optional, wenn Sie Vanille-Einstellungen bevorzugen, oder andere Mods, welche diese Werte anpassen.'
-          - lang: ja
-            text: 'いずれか一つを選んでください。Vanillaの設定や他の数値変更Modを優先したい場合は任意で構いません。'
-          - lang: ru
-            text: 'Выберете только один из нижестледующих, если вы предпочитаете ванильные настройки или другие моды, которые регулируют эти значения.'
+      - <<: *useOnlyOneX
+        subs: [ 'Balanced Magic' ]
+        condition: 'many("Balanced_Magic_(Adept|Novice|Master)\.esp")'
   - name: 'betterskillgains.esp'
     msg:
       - <<: *obsolete
@@ -23183,18 +22846,8 @@ plugins:
         itm: 80
   - name: 'NewSuccubusRace.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.'
-          - lang: de
-            text: 'Mod enthält nicht gelöschte französische Daten, die Konflikte verursachen können. Wenn dies zu einem Problem wird, kontaktieren Sie bitte den Autor und fordern Sie ihn auf, den Mod zu säubern.'
-          - lang: es
-            text: 'Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.'
-          - lang: ja
-            text: 'このプラグインには削除ができず、競合を引き起こす可能性のあるフランス語のデータが含まれています。問題が生じた場合は製作者に連絡し、Modのクリーニングについて要望を出してください。'
-          - lang: ru
-            text: 'Мод содержит восстановленные данные на французском, что может вызывать конфликты. Если это становится проблемой, свяжитесь с автором модаи убедите его почистить его мод.'
+      - <<: *wildEdits
+        subs: [ 'Mod contains undeleted French data.' ]
     dirty:
       - crc: 0xf3c4e9c8
         <<: *dirtyPlugin
@@ -23286,14 +22939,7 @@ plugins:
         display: '[Enhanced Character Edit](http://www.nexusmods.com/skyrim/mods/12951)'
   - name: 'KhaleesiFacePreset.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This file is broken and will not work.'
-          - lang: de
-            text: 'Diese Datei ist beschädigt und funktioniert nicht.'
-          - lang: ja
-            text: 'このファイルは破損しています。機能しません。'
+      - <<: *corrupt
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
   - name: '3DNPC.esp'
     url: [ 'http://3dnpc.com/' ]
@@ -23358,73 +23004,18 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'DFB - Disable Hidden Follower Bows & Arrows.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can remove all default followers equpment with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Sie können sämtliche Ausrüstung der Standard Begleiter mit UFO entfernen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者のデフォルト装備はUFOでも取り除くことができます。'
-          - lang: ru
-            text: 'Этот мод избыточен для ''UFO - Ultimate Follower Overhaul.esp''. Вы можете удалить весь скрытый инвентарь у компаньонов с помощью UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'EASamhairNE_1_1.esp'
     inc:
       - 'EASamhairE_1_1.esp'
   - name: 'Essential followers - all followers.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Mit UFO können Sie Ihre Begleiter zu wichtigen (unsterblichen) Begleitern machen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者の不死化はUFOでも可能です。'
-          - lang: ru
-            text: 'Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'essential followers.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Mit UFO können Sie Ihre Begleiter zu wichtigen (unsterblichen) Begleitern machen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者の不死化はUFOでも可能です。'
-          - lang: ru
-            text: 'Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'essentialfollowers.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Mit UFO können Sie Ihre Begleiter zu wichtigen (unsterblichen) Begleitern machen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者の不死化はUFOでも可能です。'
-          - lang: ru
-            text: 'Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'Essential Vigilance.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Is redundant for ''UFO - Ultimate Follower Overhaul.esp''. You can make essential any your followers with UFO.'
-          - lang: de
-            text: 'Ist für ''UFO - Ultimate Follower Overhaul.esp'' redundant. Mit UFO können Sie Ihre Begleiter zu wichtigen (unsterblichen) Begleitern machen.'
-          - lang: ja
-            text: '''UFO - Ultimate Follower Overhaul.esp''と機能が重複します。従者の不死化はUFOでも可能です。'
-          - lang: ru
-            text: 'Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'follower pack orcs.esp'
     dirty:
       - crc: 0xf226ddfb
@@ -23433,31 +23024,9 @@ plugins:
   - name: 'Gandalf.Esp'
     msg: [ *requiresBetterMales ]
   - name: 'HorseCompanions.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'HorseCompanions.esp is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'HorseCompanions.esp ist in UFO - Ultimate Follower Overhaul.esp enthalten, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'HorseCompanions.espはUFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'HorseCompanions.esp уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: '.*HorseRidingFollowers\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'HorseRidingFollowers ist in UFO - Ultimate Follower Overhaul.esp enthalten, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'HorseRidingFollowersはUFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'HorseRidingFollowers уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'Inigo.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/40960' ]
     msg:
@@ -23573,18 +23142,7 @@ plugins:
       - <<: *obsolete
         condition: 'checksum("PetBearOslo.esp",7614B5F9) or checksum("PetBearOslo.esp",EA58D0C9)'
   - name: 'TCG.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'Enthalten in UFO - Ultimate Follower Overhaul.esp, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'VendorSaleDelay-Gone.esp'
     dirty:
       - crc: 0x6c8ab86b
@@ -23598,17 +23156,7 @@ plugins:
         udr: 3
   - name: 'voidMountedFollowers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO.'
-          - lang: de
-            text: 'Enthalten in UFO - Ultimate Follower Overhaul.esp, löschen und verwenden Sie UFO.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espに含まれています。削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+      - *alreadyInUFO
       - *alreadyInBDO
   - name: 'FCKaraThePathfinder.esp'
     dirty:
@@ -24007,16 +23555,8 @@ plugins:
         udr: 16
   - name: 'CMCompanionLevel.esp'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete. This mod is no longer necessary, since Skyrim Patch v.1.6 has fixed the bug. Companions will now level their skills every time the Player levels up.'
-          - lang: de
-            text: 'Löschen. Diese Mod wird nicht mehr benötigt, da Skyrim Patch v.1.6 den Fehler behoben hat. Begleiter werden jetzt ihre Fähigkeiten jedes Mal verbessern, wenn der Spieler ein höheres Level erreicht.'
-          - lang: ja
-            text: '削除してください。Skyrim本体のv.1.6パッチでバグが修正されたため現在は必要ありません。仲間のスキルレベルはプレイヤーのレベルに合わせて上がるようになっています。'
-          - lang: ru
-            text: 'Удалите. Этот мод больше не важен. Поскольку патч 1.6+ исправляет баг.  Компаньоны теперь будут повышать свои навыки, каждый раз, при поднятии уровня игрока.'
+      - <<: *fixedInOfficialPatchX
+        subs: [ 'v1.6' ]
         condition: 'version("../TESV.exe","1.5.26",>)'
   - name: 'Companion_Crea.esp'
     msg:
@@ -24218,14 +23758,7 @@ plugins:
         condition: 'checksum("Fezzik the Giant.esp",3D97A0E0) or checksum("Fezzik the Giant.esp",9ED962E7)'
   - name: 'FFDogs.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Broken as per [author''s notes](http://www.nexusmods.com/skyrim/mods/30297)'
-          - lang: de
-            text: 'Beschädigt gemäß [Anmerkungen des Autors](http://www.nexusmods.com/skyrim/mods/30297).'
-          - lang: ja
-            text: '[製作者のNOTE](http://www.nexusmods.com/skyrim/mods/30297)に書かれているように破損しています。'
+      - <<: *corrupt
         condition: 'checksum("FFDogs.esp",907CBDCD)'
   - name: 'FFBretonClaribelle.esp'
     dirty:
@@ -24900,17 +24433,7 @@ plugins:
     msg:
       - *obsolete
       - *alreadyInBDO
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete. Use UFO - Ultimate Follower Overhaul.esp instead'
-          - lang: de
-            text: 'Löschen. Verwenden Sie stattdessen UFO - Ultimate Follower Overhaul.esp.'
-          - lang: ja
-            text: '削除してUFO - Ultimate Follower Overhaul.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте вместо этого UFO - Ultimate Follower Overhaul.esp'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+      - *alreadyInUFO
   - name: 'Better NPC - Faction Pack.esp'
     msg:
       - <<: *requiresX
@@ -24936,36 +24459,13 @@ plugins:
           - lang: ru
             text: 'XFLMain.esm имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.'
         condition: 'file("XFLMain.esm")'
-      - type: say
-        content:
-          - lang: en
-            text: 'UFO - Ultimate Follower Overhaul.esp has the same functional, but you can use FollowerWander2.esp on your choice.'
-          - lang: de
-            text: 'UFO - Ultimate Follower Overhaul.esp hat die gleiche Funktionalität, aber Sie können FollowerWander2.esp nach Ihrer Wahl verwenden.'
-          - lang: ja
-            text: 'UFO - Ultimate Follower Overhaul.espに同じ機能が存在しますが、任意でFollowerWander2.espを使用することもできます。'
-          - lang: ru
-            text: 'UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
       - *alreadyInBDO
+      - *alreadyInUFO
   - name: 'Followers Unlimited 11.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
-        subs: [ 'UFO - Ultimate Follower Overhaul.esp' ]
+    msg: [ *alreadyInUFO ]
   - name: 'MultipleFollowers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'Die Multi-Follower-Funktionalität ist in UFO - Ultimate Follower Overhaul.esp enthalten. Löschen und Verwenden Sie UFO.'
-          - lang: ja
-            text: '従者を複数同行させる機能はUFO - Ultimate Follower Overhaul.espにも存在します。このプラグインを削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+      - *alreadyInUFO
       - type: say
         content:
           - lang: en
@@ -24977,18 +24477,7 @@ plugins:
   - name: 'Follower Limit Increased.esp'
     inc:
       - 'Better Follower Improvements.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Multi followers functionality is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO'
-          - lang: de
-            text: 'Die Multi-Follower-Funktionalität ist in UFO - Ultimate Follower Overhaul.esp enthalten. Löschen und Verwenden Sie UFO.'
-          - lang: ja
-            text: '従者を複数同行させる機能はUFO - Ultimate Follower Overhaul.espにも存在します。このプラグインを削除してUFOを使用してください。'
-          - lang: ru
-            text: 'Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+    msg: [ *alreadyInUFO ]
   - name: 'EMCompViljaSkyrim.esp'
     msg:
       - <<: *patchRequiemRPC
@@ -25174,17 +24663,6 @@ plugins:
   - name: 'Alternate Start - Live Another Life.esp'
     group: *alternateStartGroup
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Live Another Life.esp was detected. You must uninstall the old version of the mod before using the new one.'
-          - lang: de
-            text: 'Live Another Life.esp wurde erkannt. Sie müssen die alte Version des Mods deinstallieren, bevor Sie die neue verwenden können.'
-          - lang: ja
-            text: 'Live Another Life.espが見つかりました。新バージョンを使う前に古いバージョンをアンインストールしてください。'
-          - lang: ru
-            text: 'Обнаружена старая версия ''Live Another Life.esp''. Вы должны удалить старую версию, перед использованием этой новой.'
-        condition: 'file("Live Another Life.esp")'
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Live Another Life.esp")'
     tag:
@@ -25199,7 +24677,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 9
   - name: 'Live Another Life.esp'
-    msg: [ *corrupt ]
+    msg:
+      - *corrupt
+      - <<: *obsolete
+        subs: [ '[Alternate Start - Live Another Life](https://www.nexusmods.com/skyrim/mods/9557/)' ]
   - name: 'Necromancer Start.esp'
     dirty:
       - crc: 0xdb6b67c7
@@ -25290,20 +24771,7 @@ plugins:
     req:
       - *SKSE
   - name: 'DeadlyMutilation.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.'
-          - lang: de
-            text: 'SkyUI.esp ist nicht vorhanden oder nicht aktiv. Sie werden nicht in der Lage sein, das SkyUI MCM zu verwenden.'
-          - lang: es
-            text: 'SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.'
-          - lang: ja
-            text: 'SkyUI.espが存在しないか非アクティブです。SkyUIのMCMを利用することはできません。'
-          - lang: ru
-            text: 'SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.'
-        condition: 'not active("SkyUI.esp")'
+    msg: [ *requiresMCM ]
   - name: 'driveableboat.esp'
     dirty:
       - crc: 0x920c6e44
@@ -25570,83 +25038,12 @@ plugins:
             text: 'ランチャーから必ずSkyrimPrefs.iniのbEnableFileSelectionを=1にセットしてください。'
           - lang: ru
             text: 'Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Civilization und rcrnShaders.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/20193) finden.'
-          - lang: es
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizaitonとrcrnShaders.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and rcrnShaders.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - The Wilds und rcrnShaders.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/10886) finden.'
-          - lang: es
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: ja
-            text: 'Sounds of Skyrim - The WildsとrcrnShaders.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and rcrnShaders.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/10886)'
-        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und rcrnShaders.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとrcrnShaders.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
     dirty:
       - crc: 0x209fd1b5
         <<: *dirtyPlugin
         itm: 16
         udr: 3
   - name: 'rcrnPlus.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Civilization und rcrnPlus.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/20193) finden.'
-          - lang: es
-            text: 'Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/20193).'
-          - lang: ja
-            text: 'Sounds of Skyrim - CivilizaitonとrcrnPlus.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/20193)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - Civilization and rcrnPlus.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/20193)'
-        condition: 'file("SoS - Civilization.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - The Wilds und rcrnPlus.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/10886) finden.'
-          - lang: es
-            text: 'Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/10886).'
-          - lang: ja
-            text: 'Sounds of Skyrim - The WildsとrcrnPlus.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/10886)から適切な互換パッチを探すことをお勧めします。'
-          - lang: ru
-            text: 'В соответствии с конфликтами между Sounds of Skyrim - The Wilds and rcrnPlus.esp рекомендуется использовать соответствующий патч совместимости, расположенный [здесь.](http://www.nexusmods.com/skyrim/mods/10886)'
-        condition: 'file("SoS - The Wilds.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found [here](http://www.nexusmods.com/skyrim/mods/8601).'
-          - lang: de
-            text: 'Aufgrund von Konflikten zwischen Sounds of Skyrim - Dungeons und rcrnPlus.esp wird empfohlen, den entsprechenden Kompatibilitätspatch zu verwenden, den Sie [hier](http://www.nexusmods.com/skyrim/mods/8601) finden.'
-          - lang: ja
-            text: 'Sounds of Skyrim - DungeonsとrcrnPlus.espは競合するため、[こちら](http://www.nexusmods.com/skyrim/mods/8601)から適切な互換パッチを探すことをお勧めします。'
-        condition: 'file("SoS - The Dungeons.esp") and not file("SoS - The Dungeons-PatchRCRN.esp")'
   - name: 'RCRNvolumetric.esp'
     dirty:
       - crc: 0x54176f89
@@ -27091,15 +26488,6 @@ plugins:
     after:
       - 'MoonAndStar_MAS.esp'
     msg:
-      - type: warn
-        condition: 'active("MoonAndStar_MAS.esp") and not active("MoonAndStar_Undeath_compat.esp")'
-        content:
-          - lang: en
-            text: 'This mod has certain conflicts with "MoonAndStar_MAS.esp". Consider using [the compatibility patch](http://www.nexusmods.com/skyrim/mods/52397/).'
-          - lang: de
-            text: 'Diese Mod hat bestimmte Konflikte mit "MoonAndStar_MAS.esp". Erwägen Sie die Verwendung von [dem Kompatibilitätspatch](http://www.nexusmods.com/skyrim/mods/52397/).'
-          - lang: ja
-            text: 'このModはMoonAndStar_MAS.espと一部で競合します。[互換パッチ](http://www.nexusmods.com/skyrim/mods/52397/)を使用してみてください。'
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Undeath - Requiem Patch.esp")'
         subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
@@ -27219,19 +26607,13 @@ plugins:
         <<: *dirtyPlugin
         nav: 2
   - name: 'PMR - ELFX Compatibility Patch.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Mod contains one deleted reference.' ]
     dirty:
       - crc: 0x456046F7
         <<: *dirtyPlugin
         udr: 24
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin contains 1 deleted reference that cannot be automatically undeleted.'
-          - lang: de
-            text: 'Dieses Plugin enthält 1 gelöschte Referenz, die nicht automatisch wiederhergestellt werden kann.'
-          - lang: ja
-            text: 'このプラグインには削除されたリファレンスが1つ含まれています。自動的に復元することはできません。'
   - name: 'Stronger Daedric Artifacts.esp'
     dirty:
       - crc: 0xC2653B1F
@@ -27787,6 +27169,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/52397' ]
     after:
       - 'AuroraVillage.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Undeath' ]
+        condition: 'active("Undeath.esp") and not active("MoonAndStar_Undeath_compat.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xE19B3101
