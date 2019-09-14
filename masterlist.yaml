@@ -8583,18 +8583,8 @@ plugins:
     msg: [ *obsolete ]
   - name: 'SkaalHeavyArmor.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Contains wild edit. Remove DLC2SkaalAmulet from the ESP using TES5Edit.'
-          - lang: de
-            text: 'Enthält wilde Bearbeitung. Entfernen Sie DLC2SkaalAmulet mit TES5Edit aus der ESP.'
-          - lang: es
-            text: 'Contains wild edit. Remove DLC2SkaalAmulet from the ESP using TES5Edit.'
-          - lang: ja
-            text: '意図しない編集が含まれています。TES5EditでEspを開き、DLC2SkaalAmuletを削除してください。'
-          - lang: ru
-            text: 'Содержит случайную правку. Удалите DLC2SkaalAmulet из ESP, используя TES5Edit.'
+      - <<: *wildEdits
+        subs: [ 'Remove DLC2SkaalAmulet from the ESP using TES5Edit.' ]
   - name: 'Skeleton Key Recipe.esp'
     msg:
       - <<: *corrupt
@@ -17107,14 +17097,8 @@ plugins:
         condition: 'active("HearthFires.esm")'
   - name: 'Distant DetailHF.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: '[Detailed guide for cleaning.](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)'
-          - lang: de
-            text: '[Ausführliche Anleitung zum Säubern.](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)'
-          - lang: ja
-            text: '[クリーニングの詳しい解説](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)'
+      - <<: *wildEdits
+        subs: [ '[Manual Cleaning Guide](http://wiki.step-project.com/User:Neovalen/Skyrim_Revisited#Distant_Detail_Hearthfire_Edition)' ]
     inc:
       - 'Distant Detail.esp'
     dirty:
@@ -17729,19 +17713,13 @@ plugins:
       - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("MenuShoutsInDragonsLanguage.esp",B36BDB9A)'
   - name: 'Merchants Reply Only With Take A Look.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Mod contains wild edits to some NPC_ records''s tint masks. Delete the NPC_ tree to remove the wild edits.' ]
     dirty:
       - crc: 0x82f59d12
         <<: *dirtyPlugin
         itm: 9
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Contains wild edits to some NPC_ records''s tint masks. Delete the NPC_ tree to remove the wild edits.'
-          - lang: de
-            text: 'Enthält wilde Änderungen an den Tönungsmasken einiger NPC_ Datensätze. Löschen Sie den NPC_ Baum, um die wilden Änderungen zu entfernen.'
-          - lang: ja
-            text: '一部のNPC_レコードのtint maskに意図しない編集が施されています。NPC_ツリーを削除し、変更内容を消去してください。'
   - name: 'mjhReducedGoldRewards.esp'
     tag:
       - Delev
@@ -23006,18 +22984,8 @@ plugins:
         itm: 80
   - name: 'NewSuccubusRace.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.'
-          - lang: de
-            text: 'Mod enthält nicht gelöschte französische Daten, die Konflikte verursachen können. Wenn dies zu einem Problem wird, kontaktieren Sie bitte den Autor und fordern Sie ihn auf, den Mod zu säubern.'
-          - lang: es
-            text: 'Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.'
-          - lang: ja
-            text: 'このプラグインには削除ができず、競合を引き起こす可能性のあるフランス語のデータが含まれています。問題が生じた場合は製作者に連絡し、Modのクリーニングについて要望を出してください。'
-          - lang: ru
-            text: 'Мод содержит восстановленные данные на французском, что может вызывать конфликты. Если это становится проблемой, свяжитесь с автором модаи убедите его почистить его мод.'
+      - <<: *wildEdits
+        subs: [ 'Mod contains undeleted French data.' ]
     dirty:
       - crc: 0xf3c4e9c8
         <<: *dirtyPlugin
@@ -26871,19 +26839,13 @@ plugins:
         <<: *dirtyPlugin
         nav: 2
   - name: 'PMR - ELFX Compatibility Patch.esp'
+    msg:
+      - <<: *wildEdits
+        subs: [ 'Mod contains one deleted reference.' ]
     dirty:
       - crc: 0x456046F7
         <<: *dirtyPlugin
         udr: 24
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin contains 1 deleted reference that cannot be automatically undeleted.'
-          - lang: de
-            text: 'Dieses Plugin enthält 1 gelöschte Referenz, die nicht automatisch wiederhergestellt werden kann.'
-          - lang: ja
-            text: 'このプラグインには削除されたリファレンスが1つ含まれています。自動的に復元することはできません。'
   - name: 'Stronger Daedric Artifacts.esp'
     dirty:
       - crc: 0xC2653B1F
