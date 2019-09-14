@@ -9342,59 +9342,29 @@ plugins:
         udr: 2
   - name: 'Better Sorting by eclips3 - Ingredients .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Ingredients .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Ingredients .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3 - Ingredients*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Ingredients (Weightless).esp") or active("Better Sorting by eclips3 - Ingredients (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Ingredients (Light Weight).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Ingredients' ]
+        condition: 'many("Better Sorting by eclips3 - Ingredients .+\.esp")'
   - name: 'Better Sorting by eclips3 - Soul Gems .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Soul Gem .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Soul Gem .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3 - Soul Gem*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Soul Gems (Named).esp") and active("Better Sorting by eclips3 - Soul Gems (Numbered).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Soul Gems' ]
+        condition: 'many("Better Sorting by eclips3 - Soul Gems .+\.esp")'
   - name: 'Better Sorting by eclips3 - Books .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Books .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Books .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3 - Books*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Books (Before).esp") and active("Better Sorting by eclips3 - Books (After).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Books' ]
+        condition: 'many("Better Sorting by eclips3 - Books .+\.esp")'
   - name: 'Better Sorting by eclips3 - Food .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Food .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Food .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Food (Weightless).esp") or active("Better Sorting by eclips3 - Food (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Food (Light Weight).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Food' ]
+        condition: 'many("Better Sorting by eclips3 - Food .+\.esp")'
   - name: 'Better Sorting by eclips3 - Potions .+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use only 1 Better Sorting by eclips3 - Potions .esp file'
-          - lang: de
-            text: 'Benutzen Sie nur eine Better Sorting by eclips3 - Potions .esp Datei.'
-          - lang: ja
-            text: 'Better Sorting by eclips3 - Potions*.espは一つのみ使用してください。'
-        condition: 'active("Better Sorting by eclips3 - Potions (Weightless).esp") or active("Better Sorting by eclips3 - Potions (Vanilla Weight).esp") or active("Better Sorting by eclips3 - Potions (Light Weight).esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Sorting by eclips3 - Potions' ]
+        condition: 'many("Better Sorting by eclips3 - Potions .+\.esp")'
   - name: 'Smithing Perks Overhaul( - Balanced)?\.esp'
     inc:
       - 'PerkUP-Smithing.esp'
@@ -17337,16 +17307,9 @@ plugins:
         itm: 1
   - name: 'Follower Tweaks.*\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Only use one Follower Tweaks - plugin at once'
-          - lang: de
-            text: 'Verwenden Sie immer nur ein Follower Tweaks - Plugin.'
-          - lang: ja
-            text: 'Follower Tweaksプラグインは一度に一つのみ使用できます。'
-          - lang: ru
-            text: 'Используйте только один плагин Follower Tweaks'
+      - <<: *useOnlyOneX
+        subs: [ 'Follower Tweaks' ]
+        condition: 'many("Follower Tweaks.*\.esp")'
   - name: 'FSS-No pause between lines.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
@@ -18627,18 +18590,9 @@ plugins:
       - Relev
   - name: 'Zbuffed Candlelight Spell R.+\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Only use one Zbuffed Candlelight Spell R*.esp'
-          - lang: de
-            text: 'Verwenden Sie nur eine Zbuffed Candlelight Spell R * .esp'
-          - lang: es
-            text: 'Utilizar solo un Zbuffed Candlelight Spell R*.esp'
-          - lang: ja
-            text: 'Zbuffed Candlelight Spell R*.espは単体でのみ使用できます。'
-          - lang: ru
-            text: 'Используйте только один Zbuffed Candlelight Spell R*.esp'
+      - <<: *useOnlyOneX
+        subs: [ 'Zbuffed Candlelight Spell R*.esp' ]
+        condition: 'many("Zbuffed Candlelight Spell R.+\.esp")'
   - name: 'WeaponsArmorFixes_ambSkyforge_Patch.esp'
     req:
       - name: 'Weapons & Armor Fixes_Remade.esp'
@@ -21887,16 +21841,9 @@ plugins:
         itm: 3
   - name: 'Balanced_Magic_(Adept|Novice|Master)\.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Choose only one of the below - optional if you prefer vanilla settings or other mods which adjust these values.'
-          - lang: de
-            text: 'Wählen Sie nur eine der folgenden Optionen - optional, wenn Sie Vanille-Einstellungen bevorzugen, oder andere Mods, welche diese Werte anpassen.'
-          - lang: ja
-            text: 'いずれか一つを選んでください。Vanillaの設定や他の数値変更Modを優先したい場合は任意で構いません。'
-          - lang: ru
-            text: 'Выберете только один из нижестледующих, если вы предпочитаете ванильные настройки или другие моды, которые регулируют эти значения.'
+      - <<: *useOnlyOneX
+        subs: [ 'Balanced Magic' ]
+        condition: 'many("Balanced_Magic_(Adept|Novice|Master)\.esp")'
   - name: 'betterskillgains.esp'
     msg:
       - <<: *obsolete
