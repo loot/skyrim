@@ -16800,14 +16800,8 @@ plugins:
   - name: 'BetterQuestObjectives.esp'
     group: *underridesGroup
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This file is out of date. Please obtain the new version [here](http://www.nexusmods.com/skyrim/mods/32695).'
-          - lang: de
-            text: 'Diese Datei ist veraltet. Bitte besorgen Sie sich die neue Version [hier](http://www.nexusmods.com/skyrim/mods/32695).'
-          - lang: ja
-            text: '古いファイルです。[こちら](http://www.nexusmods.com/skyrim/mods/32695)から新バージョンを入手してください。'
+      - <<: *obsolete
+        subs: [ '[Even Better Quest Objectives](http://www.nexusmods.com/skyrim/mods/32695/)' ]
         condition: 'checksum("BetterQuestObjectives.esp",BCD35920)'
     tag:
       - NoMerge
