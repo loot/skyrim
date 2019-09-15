@@ -1457,10 +1457,38 @@ plugins:
         condition: 'many("Blood \(\w+\)\.ESM")'
         subs: [ 'Blood .esm file' ]
   - name: 'BoogyManLair.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12375' ]
     dirty:
-      - crc: 0xa1d94bda
-        <<: *dirtyPlugin
-        itm: 42
+      # v1.0 / v1.2
+      - <<: *quickClean
+        crc: 0xA1D94BDA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 109
+    clean:
+      # v1.0 / v1.2 - after QAC
+      - crc: 0x47D8108A
+        util: 'TES5Edit v4.0.2f'
+  - name: 'VFU_Home.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12375' ]
+    dirty:
+      # v1.0
+      - <<: *quickClean
+        crc: 0xEF28A85A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 116
+      # v1.2
+      - <<: *quickClean
+        crc: 0x9887F7C7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 118
+        udr: 28
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x98166FA7
+        util: 'TES5Edit v4.0.2f'
+      # v1.2 - after QAC
+      - crc: 0x22EACC45
+        util: 'TES5Edit v4.0.2f'
   - name: 'breezehomebasement.esm'
     url: []
     msg:
@@ -15979,12 +16007,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 8
         udr: 55
-  - name: 'VFU_Home.esp'
-    dirty:
-      - crc: 0x9887f7c7
-        <<: *dirtyPlugin
-        itm: 48
-        udr: 28
   - name: 'Vigilant of Stendarr Quests.esp'
     dirty:
       - crc: 0xa0318472
