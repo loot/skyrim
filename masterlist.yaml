@@ -1228,6 +1228,7 @@ plugins:
       - crc: 0xDDFDBEDE
         util: 'TES5Edit v4.0.1'
   - name: 'Wyrmstooth.esp'
+    url: [ 'https://archive.org/details/wyrmstooth1.18' ]
     group: *newLandsGroup
     after:
       - 'Falskaar.esm'
@@ -1235,10 +1236,10 @@ plugins:
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Wyrmstooth - Requiem Patch.esp")'
         subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
-    dirty:
-      - crc: 0x54f43cef
-        <<: *dirtyPlugin
-        itm: 6259
+    clean:
+      # v1.18
+      - crc: 0xDD27EAC5
+        util: 'TES5Edit v4.0.2f'
   - name: 'Unofficial Skyrim Patch.esm'
     msg:
       - type: error
@@ -1323,15 +1324,34 @@ plugins:
       - 'Skyrim Project Optimization - Full Version.esm'
       - 'Skyrim Project Optimization - No Homes - Full Version.esp'
   - name: '1NordDungeonAlt.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10029' ]
     dirty:
-      - crc: 0x68ad6d32
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0x68AD6D32
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      - crc: 0xDF7362E3
+        util: 'TES5Edit v4.0.2f'
   - name: '28 Days and a Bit 5.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5604' ]
+    msg: [ *obsolete ]
+  - name: '28 Days and a Bit 5.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5604' ]
+    inc:
+      - '28 Days and a Bit 5.esm'
     dirty:
-      - crc: 0xaf6984af
-        <<: *dirtyPlugin
-        itm: 28
+      # v0.8.6
+      - <<: *quickClean
+        crc: 0xB3720688
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 73
+        udr: 49
+    clean:
+      # v0.8.6 - after QAC
+      - crc: 0xAE091C12
+        util: 'TES5Edit v4.0.2f'
   - name: '3DNPC.esm'
     msg: [ *obsolete ]
   - name: '(83Willows_)?101BUGs.+\.esm'
@@ -1376,25 +1396,57 @@ plugins:
   - name: 'ANK_Castle_Main.esm'
     msg: [ *obsolete ]
   - name: 'Anora follower.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17080' ]
     dirty:
-      - crc: 0x319033ce
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x319033CE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      - crc: 0x075CE435
+        util: 'TES5Edit v4.0.2f'
   - name: 'AOM.esm'
-    dirty:
-      - crc: 0xe032fa90
-        <<: *dirtyPlugin
-        itm: 8
-        udr: 11
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1040' ]
+    clean:
+      # v8.0d
+      - crc: 0x3FD15314
+        util: 'TES5Edit v4.0.2f'
+  - name: 'AOM.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1040' ]
+    clean:
+      # v8.1
+      - crc: 0x5F90EC7C
+        util: 'TES5Edit v4.0.2f'
   - name: 'AP Skyrim.esm'
     msg:
       - <<: *obsolete
         condition: 'checksum("AP Skyrim.esm",857D5AAC) or checksum("AP Skyrim.esm",CBE8B5C2)'
   - name: 'archmageTrophyhall.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11123' ]
     dirty:
-      - crc: 0xf788fdf0
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0xF788FDF0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 45
         udr: 20
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x4CC58E5F
+        util: 'TES5Edit v4.0.2f'
+  - name: 'archmageTrophyhall.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11123' ]
+    dirty:
+      # v1.3
+      - <<: *quickClean
+        crc: 0x278DA913
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+        udr: 564
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x8A7BDBF3
+        util: 'TES5Edit v4.0.2f'
   - name: 'BBLuxurySuite.esm'
     msg: [ *doNotClean ]
   - name: 'BecomeKingOfRiverHelm.esm'
@@ -1405,23 +1457,83 @@ plugins:
         condition: 'many("Blood \(\w+\)\.ESM")'
         subs: [ 'Blood .esm file' ]
   - name: 'BoogyManLair.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12375' ]
     dirty:
-      - crc: 0xa1d94bda
-        <<: *dirtyPlugin
-        itm: 42
+      # v1.0 / v1.2
+      - <<: *quickClean
+        crc: 0xA1D94BDA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 109
+    clean:
+      # v1.0 / v1.2 - after QAC
+      - crc: 0x47D8108A
+        util: 'TES5Edit v4.0.2f'
+  - name: 'VFU_Home.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12375' ]
+    dirty:
+      # v1.0
+      - <<: *quickClean
+        crc: 0xEF28A85A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 116
+      # v1.2
+      - <<: *quickClean
+        crc: 0x9887F7C7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 118
+        udr: 28
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x98166FA7
+        util: 'TES5Edit v4.0.2f'
+      # v1.2 - after QAC
+      - crc: 0x22EACC45
+        util: 'TES5Edit v4.0.2f'
   - name: 'breezehomebasement.esm'
     url: []
     msg:
       - <<: *obsolete
         subs: [ '[Breezehome Basement Continued](https://www.nexusmods.com/skyrim/mods/59521).' ]
   - name: 'Castle Draco Master File Load First.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
     tag:
       - Delev
     dirty:
-      - crc: 0x39bc4317
-        <<: *dirtyPlugin
-        itm: 1451
+      # v0.512
+      - <<: *reqManualFix
+        crc: 0x39BC4317
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1489
         nav: 28
+      # v0.512 - after QAC
+      - <<: *reqManualFix
+        crc: 0x53031FBF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 28
+  - name: 'Castle Draco Support ESP Load Last.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
+    dirty:
+      # v0.512
+      - <<: *quickClean
+        crc: 0x7BF398F5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v0.512 - after QAC
+      - crc: 0xCD3C6E62
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Castle Draco Riverwood Edition.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30469' ]
+    dirty:
+      # v5.5
+      - <<: *quickClean
+        crc: 0xC79A139B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
+    clean:
+      # v5.5 - after QAC
+      - crc: 0x5EED3A77
+        util: 'TES5Edit v4.0.2f'
   - name: 'CastleDrakhur_masterfle.esm'
     dirty:
       - crc: 0x7bc1ae65
@@ -3624,12 +3736,6 @@ plugins:
       - crc: 0xd513587f
         <<: *dirtyPlugin
         itm: 3
-  - name: 'AOM.esp'
-    dirty:
-      - crc: 0xc7fec3a9
-        <<: *dirtyPlugin
-        itm: 8
-        udr: 11
   - name: 'ArgonianfemGuild.esp'
     dirty:
       - crc: 0x7a44f764
@@ -11335,11 +11441,6 @@ plugins:
         itm: 334
         udr: 434
         nav: 7
-  - name: '28 Days and a Bit 5.esp'
-    inc:
-      - '28 Days and a Bit 5.esm'
-    msg:
-      - *obsolete
   - name: '7th heaven home.esp'
     dirty:
       - crc: 0x6055640f
@@ -11512,12 +11613,6 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Another Breezehome Basement.esp'
     msg: [ *obsolete ]
-  - name: 'archmageTrophyhall.esp'
-    dirty:
-      - crc: 0x278da913
-        <<: *dirtyPlugin
-        itm: 9
-        udr: 564
   - name: 'Arheim.esp'
     dirty:
       - crc: 0xea6ce99a
@@ -12371,11 +12466,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
         nav: 14
-  - name: 'Castle Draco Support ESP Load Last.esp'
-    dirty:
-      - crc: 0x7bf398f5
-        <<: *dirtyPlugin
-        itm: 1
   - name: 'Castle Dracula.esp'
     dirty:
       - crc: 0x3bee9879
@@ -15944,12 +16034,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 8
         udr: 55
-  - name: 'VFU_Home.esp'
-    dirty:
-      - crc: 0x9887f7c7
-        <<: *dirtyPlugin
-        itm: 48
-        udr: 28
   - name: 'Vigilant of Stendarr Quests.esp'
     dirty:
       - crc: 0xa0318472
