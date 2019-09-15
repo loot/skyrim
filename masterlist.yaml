@@ -1335,10 +1335,23 @@ plugins:
       - crc: 0xDF7362E3
         util: 'TES5Edit v4.0.2f'
   - name: '28 Days and a Bit 5.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5604' ]
+    msg: [ *obsolete ]
+  - name: '28 Days and a Bit 5.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5604' ]
+    inc:
+      - '28 Days and a Bit 5.esm'
     dirty:
-      - crc: 0xaf6984af
-        <<: *dirtyPlugin
-        itm: 28
+      # v0.8.6
+      - <<: *quickClean
+        crc: 0xB3720688
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 73
+        udr: 49
+    clean:
+      # v0.8.6 - after QAC
+      - crc: 0xAE091C12
+        util: 'TES5Edit v4.0.2f'
   - name: '3DNPC.esm'
     msg: [ *obsolete ]
   - name: '(83Willows_)?101BUGs.+\.esm'
@@ -11342,11 +11355,6 @@ plugins:
         itm: 334
         udr: 434
         nav: 7
-  - name: '28 Days and a Bit 5.esp'
-    inc:
-      - '28 Days and a Bit 5.esm'
-    msg:
-      - *obsolete
   - name: '7th heaven home.esp'
     dirty:
       - crc: 0x6055640f
