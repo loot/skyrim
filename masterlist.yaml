@@ -1495,13 +1495,33 @@ plugins:
       - <<: *obsolete
         subs: [ '[Breezehome Basement Continued](https://www.nexusmods.com/skyrim/mods/59521).' ]
   - name: 'Castle Draco Master File Load First.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
     tag:
       - Delev
     dirty:
-      - crc: 0x39bc4317
-        <<: *dirtyPlugin
-        itm: 1451
+      # v0.512
+      - <<: *reqManualFix
+        crc: 0x39BC4317
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1489
         nav: 28
+      # v0.512 - after QAC
+      - <<: *reqManualFix
+        crc: 0x53031FBF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 28
+  - name: 'Castle Draco Support ESP Load Last.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
+    dirty:
+      # v0.512
+      - <<: *quickClean
+        crc: 0x7BF398F5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v0.512 - after QAC
+      - crc: 0xCD3C6E62
+        util: 'TES5Edit v4.0.2f'
   - name: 'Castle Draco Riverwood Edition.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30469' ]
     dirty:
@@ -12446,11 +12466,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
         nav: 14
-  - name: 'Castle Draco Support ESP Load Last.esp'
-    dirty:
-      - crc: 0x7bf398f5
-        <<: *dirtyPlugin
-        itm: 1
   - name: 'Castle Dracula.esp'
     dirty:
       - crc: 0x3bee9879
