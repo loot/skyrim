@@ -242,18 +242,6 @@ common:
     <<: *fixedPluginPreCK
     subs: [ 'http://www.nexusmods.com/skyrim/mods/26230' ]
 
-  - &harmful
-    type: warn
-    content:
-      - lang: en
-        text: 'This plugin is now considered harmful and should not be used.'
-      - lang: de
-        text: 'Diese Datei wird nun als schädlich angesehen und sollte nicht benutzt werden.'
-      - lang: ja
-        text: '現在では悪影響を与えると見なされているプラグインです。使用しないでください。'
-      - lang: ru
-        text: 'Этот плагин теперь считается небезопасным и не должен использоваться.'
-
   - &installOriginalResources
     type: say
     content:
@@ -945,7 +933,7 @@ plugins:
     group: *unofficialPatchGroup
     after:
       - 'Unofficial Skyrim Patch.esp'
-    msg: [ *harmful ]
+    msg: [ *corrupt ]
   - name: 'Dawnguard.esm'
     group: *unofficialPatchGroup
     after:
@@ -1007,7 +995,7 @@ plugins:
     after:
       - 'Dawnguard.esm'
       - 'Unofficial Dawnguard Patch.esp'
-    msg: [ *harmful ]
+    msg: [ *corrupt ]
   - name: 'SCO Winter Landscape Decoloration.esp'
     group: *unofficialPatchGroup
   - name: 'SCO Winter Landscape Decoloration - Solstheim.esp'
@@ -1088,7 +1076,7 @@ plugins:
     after:
       - 'HearthFires.esm'
       - 'Unofficial Hearthfire Patch.esp'
-    msg: [ *harmful ]
+    msg: [ *corrupt ]
   - name: 'Dragonborn.esm'
     group: *unofficialPatchGroup
     after:
@@ -1149,7 +1137,7 @@ plugins:
     after:
       - 'Dragonborn.esm'
       - 'Unofficial Dragonborn Patch.esp'
-    msg: [ *harmful ]
+    msg: [ *corrupt ]
   - name: 'Unofficial Skyrim Legendary Edition Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/71214/'
@@ -2661,9 +2649,9 @@ plugins:
   - name: 'YngolFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'USKP_addon.esp'
-    msg: [ *harmful ]
+    msg: [ *corrupt ]
   - name: 'USKP_addon ENG.esp'
-    msg: [ *harmful ]
+    msg: [ *corrupt ]
   - name: 'ancient-nordic-pickaxe-smith-fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BoundDaggerFix.esp'
