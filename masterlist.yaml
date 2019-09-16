@@ -11614,12 +11614,32 @@ plugins:
         itm: 2
         udr: 15
   - name: 'Amberhalls Heartwood Village.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22618' ]
     dirty:
-      - crc: 0x119ac39e
-        <<: *dirtyPlugin
-        itm: 11
+      # .9
+      - <<: *reqManualFix
+        crc: 0x119AC39E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
         udr: 113
         nav: 988
+      # .9 - after QAC
+      - <<: *reqManualFix
+        crc: 0x60B57E55
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 988
+      # .9Beta
+      - <<: *reqManualFix
+        crc: 0xF48AC735
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+        udr: 113
+        nav: 990
+      # .9Beta - after QAC
+      - <<: *reqManualFix
+        crc: 0xB9305797
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 990
   - name: 'AMRetreat.esp'
     dirty:
       - crc: 0x35b13c96
