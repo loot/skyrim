@@ -1630,11 +1630,35 @@ plugins:
     inc:
       - 'EASamhairE_1_1.esm'
   - name: 'Enchanting Scrolls.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26780' ]
     dirty:
-      - crc: 0x8c4258bc
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x8C4258BC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-        udr: 0
+  - name: 'Enchanting Scrolls.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26780' ]
+    inc:
+      - 'Enchanting Scrolls.esm'
+    dirty:
+      - <<: *quickClean
+        crc: 0x95EDA249
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+  - name: 'Enchanting Scrolls - Empty Soul Gems.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26780' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xFC56D52D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+  - name: 'Enchanting Scrolls - More Scrolls.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26780' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xAE0295B4
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'Evil Lair of Hydra.esm'
     dirty:
       - crc: 0x723b9bc
@@ -7368,23 +7392,6 @@ plugins:
       - crc: 0xae40b146
         <<: *dirtyPlugin
         udr: 1
-  - name: 'Enchanting Scrolls.esp'
-    inc:
-      - 'Enchanting Scrolls.esm'
-    dirty:
-      - crc: 0x95eda249
-        <<: *dirtyPlugin
-        itm: 2
-  - name: 'Enchanting Scrolls - Empty Soul Gems.esp'
-    dirty:
-      - crc: 0xfc56d52d
-        <<: *dirtyPlugin
-        itm: 2
-  - name: 'Enchanting Scrolls - More Scrolls.esp'
-    dirty:
-      - crc: 0xae0295b4
-        <<: *dirtyPlugin
-        itm: 2
   - name: 'EngineerOutfit.esp'
     msg:
       - <<: *alreadyInX
