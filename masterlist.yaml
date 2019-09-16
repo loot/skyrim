@@ -11455,10 +11455,17 @@ plugins:
   - name: 'A new look at Skyrim v1\.[1-6]\.esp'
     msg: [ *obsolete ]
   - name: 'a shack by the springs.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=7380' ]
     dirty:
-      - crc: 0xdc28e089
-        <<: *dirtyPlugin
+      - <<: *reqManualFix
+        crc: 0xDC28E089
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 53
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x813ED9D4
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'a_dragons_respect.esp'
     dirty:
       - crc: 0xf39a808
