@@ -11447,13 +11447,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 10
         udr: 16
-  - name: '2013HalloweenOverhaulMod.esp'
-    dirty:
-      - crc: 0xf2b291d4
-        <<: *dirtyPlugin
-        itm: 334
-        udr: 434
-        nav: 7
   - name: '7th heaven home.esp'
     dirty:
       - crc: 0x6055640f
@@ -11462,10 +11455,17 @@ plugins:
   - name: 'A new look at Skyrim v1\.[1-6]\.esp'
     msg: [ *obsolete ]
   - name: 'a shack by the springs.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=7380' ]
     dirty:
-      - crc: 0xdc28e089
-        <<: *dirtyPlugin
+      - <<: *reqManualFix
+        crc: 0xDC28E089
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 53
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x813ED9D4
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'a_dragons_respect.esp'
     dirty:
       - crc: 0xf39a808
@@ -11503,19 +11503,23 @@ plugins:
         crc: 0xCFBA118F
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 3
-  - name: 'AdragoniusTower.esp'
+  - name: 'adragoniustower.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17256' ]
     dirty:
-      - crc: 0xee105604
-        <<: *dirtyPlugin
-        itm: 10
-  - name: 'adventcalendar.esp'
+      - <<: *quickClean
+        crc: 0x4A8E173E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+    clean:
+      - crc: 0x6043E1D0
+        util: 'TES5Edit v4.0.2f'
+  - name: 'AdventCalendar.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27638' ]
     dirty:
-      - crc: 0x3a7d34af
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0x871d9583
-        <<: *dirtyPlugin
-        itm: 1
+      - <<: *quickClean
+        crc: 0x3A7D34AF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
   - name: 'Aella.esp'
     msg:
       - <<: *obsolete
@@ -11526,15 +11530,25 @@ plugins:
         itm: 16
         udr: 4
   - name: 'AesirArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/35094' ]
     dirty:
-      - crc: 0xcaa6b7f3
-        <<: *dirtyPlugin
-        itm: 2
+      - <<: *quickClean
+        crc: 0x8DF1944C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+    clean:
+      - crc: 0xC9B86DB0
+        util: 'TES5Edit v4.0.2f'
   - name: 'afewrandomnpcs.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21031' ]
     dirty:
-      - crc: 0xaef1c6e3
-        <<: *dirtyPlugin
-        itm: 4
+      - <<: *quickClean
+        crc: 0xAEF1C6E3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      - crc: 0x9C30DB3C
+        util: 'TES5Edit v4.0.2f'
   - name: 'AGameOfThrones.esp'
     dirty:
       - crc: 0xda07a741
@@ -11582,10 +11596,12 @@ plugins:
         itm: 28
         nav: 1
   - name: 'alb084ImmersiveFollowers.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25899' ]
     dirty:
-      - crc: 0x5be44f8c
-        <<: *dirtyPlugin
-        itm: 130
+      - <<: *quickClean
+        crc: 0x2C2165AB
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        udr: 130
   - name: 'AlchemistsHiddenValley.esp'
     dirty:
       - crc: 0x3eebe030
@@ -11598,12 +11614,32 @@ plugins:
         itm: 2
         udr: 15
   - name: 'Amberhalls Heartwood Village.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22618' ]
     dirty:
-      - crc: 0x119ac39e
-        <<: *dirtyPlugin
-        itm: 11
+      # .9
+      - <<: *reqManualFix
+        crc: 0x119AC39E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
         udr: 113
         nav: 988
+      # .9 - after QAC
+      - <<: *reqManualFix
+        crc: 0x60B57E55
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 988
+      # .9Beta
+      - <<: *reqManualFix
+        crc: 0xF48AC735
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+        udr: 113
+        nav: 990
+      # .9Beta - after QAC
+      - <<: *reqManualFix
+        crc: 0xB9305797
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 990
   - name: 'AMRetreat.esp'
     dirty:
       - crc: 0x35b13c96
@@ -11687,12 +11723,14 @@ plugins:
         <<: *dirtyPlugin
         itm: 27
         udr: 3
-  - name: 'aezeal''s castle.esp'
+  - name: 'Aezeal''s Castle.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23407' ]
     dirty:
-      - crc: 0x3a79485d
-        <<: *dirtyPlugin
-        itm: 116
-        udr: 286
+      - <<: *quickClean
+        crc: 0x6AF44415
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 743
+        udr: 280
   - name: 'B3.esp'
     dirty:
       - crc: 0x58681624
@@ -11805,9 +11843,11 @@ plugins:
         udr: 3
         nav: 2
   - name: 'Beautiful Riften.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15786' ]
     dirty:
-      - crc: 0xe56e690b
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xE56E690B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 13
         udr: 102
   - name: 'Beautiful Whiterun.esp'
