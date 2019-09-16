@@ -1535,12 +1535,35 @@ plugins:
       - crc: 0x5EED3A77
         util: 'TES5Edit v4.0.2f'
   - name: 'CastleDrakhur_masterfle.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20735' ]
     dirty:
-      - crc: 0x7bc1ae65
-        <<: *dirtyPlugin
-        itm: 23
+      # v2.01
+      - <<: *reqManualFix
+        crc: 0x7BC1AE65
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 37
         udr: 7
         nav: 6
+      # v2.01 - after QAC
+      - <<: *reqManualFix
+        crc: 0xB806D58C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 6
+  - name: 'CastleDrakhur_updatefile.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20735' ]
+    dirty:
+      # v2.01
+      - <<: *reqManualFix
+        crc: 0xD6ED863C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 31
+        udr: 102
+        nav: 7
+      # v2.01 - after QAC
+      - <<: *reqManualFix
+        crc: 0x43C568DE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 7
   - name: 'Celestial-Hairstyles.esm'
     dirty:
       - crc: 0x9e4d41f9
@@ -12472,13 +12495,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 25
         udr: 9
-  - name: 'CastleDrakhur_updatefile.esp'
-    dirty:
-      - crc: 0xd6ed863c
-        <<: *dirtyPlugin
-        itm: 20
-        udr: 102
-        nav: 7
   - name: 'CastleGrey.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
