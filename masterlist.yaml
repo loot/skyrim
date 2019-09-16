@@ -1535,17 +1535,35 @@ plugins:
       - crc: 0x5EED3A77
         util: 'TES5Edit v4.0.2f'
   - name: 'CastleDrakhur_masterfle.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20735' ]
     dirty:
-      - crc: 0x7bc1ae65
-        <<: *dirtyPlugin
-        itm: 23
+      # v2.01
+      - <<: *reqManualFix
+        crc: 0x7BC1AE65
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 37
         udr: 7
         nav: 6
-  - name: 'Celestial-Hairstyles.esm'
+      # v2.01 - after QAC
+      - <<: *reqManualFix
+        crc: 0xB806D58C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 6
+  - name: 'CastleDrakhur_updatefile.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20735' ]
     dirty:
-      - crc: 0x9e4d41f9
-        <<: *dirtyPlugin
-        itm: 2
+      # v2.01
+      - <<: *reqManualFix
+        crc: 0xD6ED863C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 31
+        udr: 102
+        nav: 7
+      # v2.01 - after QAC
+      - <<: *reqManualFix
+        crc: 0x43C568DE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 7
   - name: 'ClimatesOfTamriel.esm'
     after:
       - 'Skyrim Project Optimization.esm'
@@ -1593,11 +1611,6 @@ plugins:
     msg: [ *obsolete ]
   - name: 'DeadlyDragons.esm'
     msg: [ *obsolete ]
-  - name: 'DFB - XP Mod Redone.esm'
-    dirty:
-      - crc: 0x2d137293
-        <<: *dirtyPlugin
-        itm: 3
   - name: 'DSpSoB.esm'
     msg: [ *obsolete ]
   - name: 'EACalypso.esm'
@@ -1617,16 +1630,42 @@ plugins:
     inc:
       - 'EASamhairE_1_1.esm'
   - name: 'Enchanting Scrolls.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26780' ]
     dirty:
-      - crc: 0x8c4258bc
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x8C4258BC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-        udr: 0
-  - name: 'Evil Lair of Hydra.esm'
+  - name: 'Enchanting Scrolls.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26780' ]
+    inc:
+      - 'Enchanting Scrolls.esm'
     dirty:
-      - crc: 0x723b9bc
-        <<: *dirtyPlugin
-        itm: 314
+      - <<: *quickClean
+        crc: 0x95EDA249
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+  - name: 'Enchanting Scrolls - Empty Soul Gems.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26780' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xFC56D52D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+  - name: 'Enchanting Scrolls - More Scrolls.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26780' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xAE0295B4
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+  - name: 'Evil Lair of Hydra.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12556' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x0723B9BC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 361
         udr: 68
   - name: 'Expanded Towns.*\.esm'
     msg: [ *obsolete ]
@@ -1747,29 +1786,20 @@ plugins:
   - name: 'kuerteeInventoryAndWeight.esm'
     msg: [ *obsolete ]
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18916' ]
     msg:
-      - type: say
-        condition: 'active("Dawnguard.esm") and checksum("Lanterns Of Skyrim - All In One - Main.esm",042A3DE0)'
-        content:
-          - lang: en
-            text: 'Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.'
-          - lang: de
-            text: 'Benutzen Sie die Dawnguard Version von Lanterns Of Skyrim - All In One - Main.esm, damit sich die Änderungen auf Dawnguard auswirken.'
-          - lang: ja
-            text: 'Dawnguardへの変更を加えるにはDawnguardバージョンのLanterns Of Skyrim - All In One - Main.esmを使用してください。'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xDA6791AC
-        itm: 24
-        udr: 0
-      - <<: *dirtyPlugin
-        crc: 0x1E83E045
-        itm: 24
-        udr: 0
+      - <<: *patch3rdParty
+        condition: 'active("Dawnguard.esm") and checksum("Lanterns Of Skyrim - All In One - Main.esm",AC4A653A)'
+        subs:
+          - 'Dawnguard'
+          - '[Lanterns of Skyrim - All in One - Dawnguard Patch](https://www.nexusmods.com/skyrim/mods/26662)'
     clean:
-      # version: 2.5
+      # v2.5
       - crc: 0xAC4A653A
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2f'
+      # v1.31 - Non MCM
+      - crc: 0x06E762D5
+        util: 'TES5Edit v4.0.2f'
   - name: 'LB_MuchAdoSnowElves.esm'
     msg:
       - type: warn
@@ -7355,23 +7385,6 @@ plugins:
       - crc: 0xae40b146
         <<: *dirtyPlugin
         udr: 1
-  - name: 'Enchanting Scrolls.esp'
-    inc:
-      - 'Enchanting Scrolls.esm'
-    dirty:
-      - crc: 0x95eda249
-        <<: *dirtyPlugin
-        itm: 2
-  - name: 'Enchanting Scrolls - Empty Soul Gems.esp'
-    dirty:
-      - crc: 0xfc56d52d
-        <<: *dirtyPlugin
-        itm: 2
-  - name: 'Enchanting Scrolls - More Scrolls.esp'
-    dirty:
-      - crc: 0xae0295b4
-        <<: *dirtyPlugin
-        itm: 2
   - name: 'EngineerOutfit.esp'
     msg:
       - <<: *alreadyInX
@@ -12472,13 +12485,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 25
         udr: 9
-  - name: 'CastleDrakhur_updatefile.esp'
-    dirty:
-      - crc: 0xd6ed863c
-        <<: *dirtyPlugin
-        itm: 20
-        udr: 102
-        nav: 7
   - name: 'CastleGrey.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
