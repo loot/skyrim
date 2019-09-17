@@ -19241,11 +19241,17 @@ plugins:
   - name: 'ultime skyrim - riverwood.esp'
     msg: [ *obsolete ]
   - name: 'ultimate skyrim - riverwood.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22453' ]
     dirty:
-      - crc: 0x604d605a
-        <<: *dirtyPlugin
-        itm: 81
+      - <<: *reqManualFix
+        crc: 0x604D605A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 172
         udr: 235
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x70B9D79C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'UniqueTavernsFalkwreath.esp'
     msg:
@@ -19313,11 +19319,13 @@ plugins:
         itm: 16
         udr: 2
   - name: 'GloriousEnviroments.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27770' ]
     dirty:
-      - crc: 0x7845b850
-        <<: *dirtyPlugin
-        itm: 37
-        udr: 222
+      - <<: *quickClean
+        crc: 0x63F7456B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 99
+        udr: 262
   - name: 'grass & ground fixes.esp'
     dirty:
       - crc: 0xce13ba2a
@@ -19403,9 +19411,12 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'ThicketAndShrubRemover.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22692' ]
+    msg: [ *corrupt ]
     dirty:
-      - crc: 0xa27fa332
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xA27FA332
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 26231
   - name: 'trueskyrimLOD.esp'
     msg: [ *obsolete ]
@@ -19465,16 +19476,18 @@ plugins:
       - crc: 0x948B6761
         util: 'TES5Edit v4.0.2f'
   - name: 'BFT Ships and Carriages.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15508' ]
     dirty:
-      - crc: 0x97054add
-        <<: *dirtyPlugin
-        itm: 66
-  - name: 'BFT Ships and Carriages - HF.esp'
-    msg: [ *requiresMCM ]
-    dirty:
-      - crc: 0xf030d4b
-        <<: *dirtyPlugin
-        itm: 64
+      # Vanilla
+      - <<: *quickClean
+        crc: 0x226944E0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 47
+      # HF
+      - <<: *quickClean
+        crc: 0x079EA7D8
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 47
   - name: 'RealisticRoomRental.esp'
     dirty:
       - crc: 0x484ef81f
@@ -19533,9 +19546,6 @@ plugins:
     req: [ *SKSE ]
   - name: 'SkyrimSewers.esp'
     dirty:
-      - crc: 0x6c30e0ba
-        <<: *dirtyPlugin
-        itm: 4
       # version: 4.12
       - <<: *quickClean
         crc: 0x255F7577
@@ -19944,6 +19954,7 @@ plugins:
       - C.ImageSpace
       - C.Light
   - name: 'ELE_Legendary_Lite.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/59733' ]
     group: *lightingGroup
     after:
       - 'Alternate Start - Live Another Life.esp'
@@ -19953,16 +19964,10 @@ plugins:
     tag:
       - C.ImageSpace
       - C.Light
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5176EB29
-        itm: 197
-        udr: 0
-        nav: 0
     clean:
-      # version: 0.9.5f
+      # v0.9.5f
       - crc: 0x6E3D2DFA
-        util: 'TES5Edit v4.0.2'
+        util: 'TES5Edit v4.0.2f'
   - name: 'SV - The Indoors.esp'
     dirty:
       - crc: 0x51b712e6
@@ -20025,10 +20030,9 @@ plugins:
           - lang: ja
             text: 'サブスクライブを解除してModそのものを削除し、他のModとの互換性を高めるために[SkyrimNexus版](http://www.nexusmods.com/skyrim/mods/10639)をインストールすることをお勧めします。'
         condition: 'checksum("imp''s more complex needs.esp",DAADC533) or checksum("imp''s more complex needs.esp",59466F1E)'
-    dirty:
-      - crc: 0xdaadc533
-        <<: *dirtyPlugin
-        itm: 10
+    clean:
+      - crc: 0x79B1B51C
+        util: 'TES5Edit v4.0.2f'
   - name: 'BabettesFeast - IMCN.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
@@ -20091,17 +20095,14 @@ plugins:
       - Stats
     dirty:
       ## v1.0.3 RealisticNeedsandDiseasesUSLEEP - ENG
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x8B0C212F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-        udr: 0
-        nav: 0
-        util: '[TES5Edit  v3.2.1](http://www.nexusmods.com/skyrim/mods/25859)'
-        info: 'A cleaning guide is available [here](http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit).'
     clean:
       ## v1.0.3 RealisticNeedsandDiseasesUSLEEP - ENG
       - crc: 0xCEDB343F
-        util: TES5EDIT v3.2.1
+        util: 'TES5Edit v4.0.2f'
   - name: 'RND_Dawnguard-Patch.esp'
     after:
       - '3DNPC.esp'
@@ -20308,14 +20309,18 @@ plugins:
   - name: 'Sprint\d\.esp'
     msg: [ *corrupt ]
   - name: 'Transportato - Ships.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/41279' ]
     dirty:
-      - crc: 0x998cf48f
-        <<: *dirtyPlugin
-        itm: 137
+      - <<: *quickClean
+        crc: 0x2A055A2E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 147
   - name: 'Transportato - Trains.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/41279' ]
     dirty:
-      - crc: 0x16c54fe7
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xBDF47612
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 17
   - name: 'NerniesCityandVillage_TRO_BasicNeeds_Patch.esp'
     after:
