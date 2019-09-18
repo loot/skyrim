@@ -1281,6 +1281,24 @@ plugins:
         crc: 0xF5C28F34
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
+  - name: 'motTome2.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6272' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x5A0212CE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 264
+        udr: 31
+        nav: 16
+      - <<: *reqManualFix
+        crc: 0x83A7D377
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        nav: 16
+      - <<: *reqManualFix
+        crc: 0x005BF44A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 16
   - name: 'Skyrim Project Optimization.esm'
     group: *newLandsGroup
   - name: 'Skyrim Project Optimization - No Homes.esm'
@@ -1678,15 +1696,17 @@ plugins:
       - 'HighResTexturePack02.esp'
       - 'HighResTexturePack03.esp'
   - name: 'GeneralStores.esm'
-    dirty:
-      - crc: 0x4b8b6da
-        <<: *dirtyPlugin
-        itm: 1
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18340' ]
+    clean:
+      # v2.3
+      - crc: 0x9A198059
+        util: 'TES5Edit v4.0.2f'
   - name: 'GiantChild.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17733' ]
     dirty:
-      - crc: 0x479c279c
-        <<: *dirtyPlugin
-        itm: 0
+      - <<: *quickClean
+        crc: 0x479C279C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 8
   - name: 'GuardedHouse(Imperial|Stormcloak)?\.esm'
     msg:
@@ -1694,31 +1714,37 @@ plugins:
         condition: 'many("GuardedHouse(Imperial|Stormcloak)?\.esm")'
         subs: [ 'GuardedHouse .esm file' ]
   - name: 'GuardedHouse.esm'
-    tag:
-      - Relev
-    dirty:
-      - crc: 0x35fa0d1a
-        <<: *dirtyPlugin
-        itm: 475
-        udr: 50
-        nav: 2
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15837' ]
+    msg: [ *obsolete ]
   - name: 'GuardedHouseImperial.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15837' ]
     tag:
       - Relev
     dirty:
-      - crc: 0x9c84ff3b
-        <<: *dirtyPlugin
-        itm: 469
+      - <<: *reqManualFix
+        crc: 0x9C84FF3B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 496
         udr: 60
         nav: 2
+      - <<: *reqManualFix
+        crc: 0xDAE2E91B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'GuardedHouseStormcloak.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15837' ]
     tag:
       - Relev
     dirty:
-      - crc: 0xb25108f0
-        <<: *dirtyPlugin
-        itm: 469
+      - <<: *reqManualFix
+        crc: 0xB25108F0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 494
         udr: 58
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xEB1CB13F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'hideout.esm'
     msg:
@@ -1752,10 +1778,6 @@ plugins:
         itm: 12
   - name: 'Imp''s More Complex Needs.esm'
     msg: [ *obsolete ]
-    dirty:
-      - crc: 0xeb90af33
-        <<: *dirtyPlugin
-        itm: 1
   - name: 'IsharasUniqueRaces.esm'
     inc:
       - 'ethereal_elven_overhaul.esp'
@@ -1849,24 +1871,11 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
         udr: 0
-  - name: 'Monster Hunter.esm'
-    dirty:
-      - crc: 0x51fb2723
-        <<: *dirtyPlugin
-        itm: 28
-        udr: 19
   - name: 'moonpath.esm'
     dirty:
       - crc: 0x50a19275
         <<: *dirtyPlugin
         itm: 1
-  - name: 'motTome2.esm'
-    dirty:
-      - crc: 0x5a0212ce
-        <<: *dirtyPlugin
-        itm: 104
-        udr: 31
-        nav: 16
   - name: 'MTAutoStorage.esm'
     dirty:
       - crc: 0x7c0f98ca
@@ -12859,10 +12868,34 @@ plugins:
         <<: *dirtyPlugin
         itm: 5
   - name: 'DomaineAlucard.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/20528'
+      - 'https://www.nexusmods.com/skyrim/mods/22363'
     dirty:
-      - crc: 0x40271cea
-        <<: *dirtyPlugin
-        udr: 14
+      # v0.5.5 (FR)
+      - <<: *reqManualFix
+        crc: 0x757B9911
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 32
+        udr: 8
+        nav: 1
+      # v0.5.5 (FR) - after QAC
+      - <<: *reqManualFix
+        crc: 0x8E0A3224
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # v1.0 (EN)
+      - <<: *reqManualFix
+        crc: 0x61D81296
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 32
+        udr: 8
+        nav: 1
+      # v1.0 (EN) - after QAC
+      - <<: *reqManualFix
+        crc: 0x47C385DA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'Domino_MudcrabMerchant.esp'
     msg:
       - <<: *obsolete
@@ -12872,10 +12905,15 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Dorn Heven.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/35899' ]
     dirty:
-      - crc: 0xb97f7366
-        <<: *dirtyPlugin
-        itm: 219
+      - <<: *quickClean
+        crc: 0x2CFC0E15
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 241
+    clean:
+      - crc: 0x796E85F0
+        util: 'TES5Edit v4.0.2f'
   - name: 'Dovaheim4.0.esp'
     dirty:
       - crc: 0x4c8ae31d
@@ -16180,21 +16218,31 @@ plugins:
         type: say
         subs: [ '[Cloaks of Skyrim](http://www.nexusmods.com/skyrim/mods/12092)' ]
   - name: 'waterstonemanor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/37631' ]
     dirty:
-      - crc: 0xc8562277
-        <<: *dirtyPlugin
-        itm: 2
-        nav: 5
+      # v1.13BETA
+      - <<: *reqManualFix
+        crc: 0x89AA5E12
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+        nav: 1
+      # v1.13BETA - after QAC
+      - <<: *reqManualFix
+        crc: 0x6A1DB9A6
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'WayofDragonborn.esp'
     req: [ *SKSE ]
   - name: 'WayofDragonbornCreativePerks.esp'
     req: [ *SKSE ]
   - name: 'WeatherTop.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23200' ]
     dirty:
-      - crc: 0x57764a83
-        <<: *dirtyPlugin
-        itm: 1
-        udr: 8
+      - <<: *quickClean
+        crc: 0xC047D8D7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
+        udr: 99
   - name: 'wellcave.esp'
     msg: [ *obsolete ]
   - name: 'WellCaveCustom.esp'
