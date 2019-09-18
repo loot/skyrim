@@ -16180,11 +16180,19 @@ plugins:
         type: say
         subs: [ '[Cloaks of Skyrim](http://www.nexusmods.com/skyrim/mods/12092)' ]
   - name: 'waterstonemanor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/37631' ]
     dirty:
-      - crc: 0xc8562277
-        <<: *dirtyPlugin
-        itm: 2
-        nav: 5
+      # v1.13BETA
+      - <<: *reqManualFix
+        crc: 0x89AA5E12
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+        nav: 1
+      # v1.13BETA - after QAC
+      - <<: *reqManualFix
+        crc: 0x6A1DB9A6
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'WayofDragonborn.esp'
     req: [ *SKSE ]
   - name: 'WayofDragonbornCreativePerks.esp'
