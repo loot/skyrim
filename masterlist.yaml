@@ -1696,31 +1696,37 @@ plugins:
         condition: 'many("GuardedHouse(Imperial|Stormcloak)?\.esm")'
         subs: [ 'GuardedHouse .esm file' ]
   - name: 'GuardedHouse.esm'
-    tag:
-      - Relev
-    dirty:
-      - crc: 0x35fa0d1a
-        <<: *dirtyPlugin
-        itm: 475
-        udr: 50
-        nav: 2
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15837' ]
+    msg: [ *obsolete ]
   - name: 'GuardedHouseImperial.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15837' ]
     tag:
       - Relev
     dirty:
-      - crc: 0x9c84ff3b
-        <<: *dirtyPlugin
-        itm: 469
+      - <<: *reqManualFix
+        crc: 0x9C84FF3B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 496
         udr: 60
         nav: 2
+      - <<: *reqManualFix
+        crc: 0xDAE2E91B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'GuardedHouseStormcloak.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15837' ]
     tag:
       - Relev
     dirty:
-      - crc: 0xb25108f0
-        <<: *dirtyPlugin
-        itm: 469
+      - <<: *reqManualFix
+        crc: 0xB25108F0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 494
         udr: 58
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xEB1CB13F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'hideout.esm'
     msg:
