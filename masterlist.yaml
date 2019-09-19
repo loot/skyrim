@@ -6124,63 +6124,73 @@ plugins:
             text: 'Используйте Wolfs_*_Recipes esps или WolfsRecettes* esps, не не вместе.'
         condition: 'file("Wolfs_.+_Recipes\.esp") and file("WolfsRecettes.+\.esp")'
   - name: 'Woodcutter''s Wife.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12740' ]
     dirty:
-      - crc: 0xc6e9683
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x0C6E9683
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 15
   - name: 'xFenWSOWAF.esp'
     tag:
       - Delev
       - Relev
   - name: 'xgfPferdeKarren-en.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25493' ]
     inc:
       - 'xgfpferdekarren.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'If you have errors at creation Bashed Patch you can use [the corrected version](https://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906).'
-          - lang: de
-            text: 'Wenn Sie Fehler beim Erstellen vom Bashed Patch haben, können Sie [die korrigierte Version](https://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906) verwenden.'
-          - lang: ja
-            text: 'Bashed Patchの作成時にエラーが出る場合は[修正版](https://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906)を使用してください。'
-        condition: 'checksum("xgfPferdeKarren-en.esp",99BFDF60)'
+    clean:
+      # v2.5
+      - crc: 0x24896765
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Zira''s Skyrim Horse Base.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19710' ]
     dirty:
-      - crc: 0x7c465726
-        <<: *dirtyPlugin
-        itm: 4
-      - crc: 0xb56a25c1
-        <<: *dirtyPlugin
-        itm: 4
+      - <<: *quickClean
+        crc: 0x86D08FB5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 64
+        udr: 47
+    clean:
+      - crc: 0xA648C624
+        util: 'TES5Edit v4.0.2f'
   - name: 'Zira''s Skyrim Horse Base( - (Armored|Bareback Riding|No Tack))?\.esp'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("Zira''s Skyrim Horse Base - (Armored|Bareback Riding|No Tack)\.esp")'
         subs: [ 'Zira''s Skyrim Horse Base .esp file' ]
   - name: 'Zira''s Skyrim Horse Base - Armored.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19710' ]
     dirty:
-      - crc: 0x421df75a
-        <<: *dirtyPlugin
-        itm: 3
+      - <<: *quickClean
+        crc: 0x421DF75A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 64
         udr: 47
+    clean:
+      - crc: 0x6058CC23
+        util: 'TES5Edit v4.0.2f'
   - name: 'Zira''s Skyrim Horse Base - Bareback Riding.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19710' ]
     dirty:
-      - crc: 0xa2dd658d
-        <<: *dirtyPlugin
-        itm: 3
+      - <<: *quickClean
+        crc: 0xA2DD658D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 64
         udr: 47
+    clean:
+      - crc: 0x2DC2E37C
+        util: 'TES5Edit v4.0.2f'
   - name: 'Zira''s Skyrim Horse Base - No Tack.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19710' ]
     dirty:
-      - crc: 0xf93cd5d0
-        <<: *dirtyPlugin
-        itm: 3
+      - <<: *quickClean
+        crc: 0xF93CD5D0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 64
         udr: 47
-  - name: 'Zira''s Skyrim Horse Base.esp'
-    dirty:
-      - crc: 0x86d08fb5
-        <<: *dirtyPlugin
-        itm: 3
-        udr: 47
+    clean:
+      - crc: 0x769F83D2
+        util: 'TES5Edit v4.0.2f'
   - name: 'KoS_Outcast(_Lite)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -6245,33 +6255,64 @@ plugins:
       - <<: *obsolete
         condition: 'checksum("Destructible_bottles.esp",BF5ED5A9) or checksum("Destructible_bottles.esp",0900B364) or checksum("Destructible_bottles.esp",48639563) or checksum("Destructible_bottles.esp",078C74DD) or checksum("Destructible_bottles.esp",5BE52467) or checksum("Destructible_bottles.esp",D59FAF05) or checksum("Destructible_bottles.esp",D80876E8)'
   - name: 'Item Sorting by Saige.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/87514' ]
     dirty:
-      - crc: 0x658a6a4e
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x658A6A4E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
-  - name: 'item sorting dg by saige.esp'
+    clean:
+      - crc: 0xA4DEC088
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Item Sorting DG by Saige.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/87514' ]
     dirty:
-      - crc: 0x3e12ee2
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x03E12EE2
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - crc: 0x637d24f6
-        <<: *dirtyPlugin
-        itm: 3
+    clean:
+      - crc: 0x86811CFD
+        util: 'TES5Edit v4.0.2f'
+  - name: 'more_Travelers.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9759' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x7E530819
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 87
+    clean:
+      - crc: 0xC5EEBF2D
+        util: 'TES5Edit v4.0.2f'
   - name: 'more_Travelers(_light)?\.esp'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("more_Travelers(_light)?\.esp")'
         subs: [ 'more_Travelers .esp file' ]
+  - name: 'more_Travelers.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9759' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x5CAE63DD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
   - name: 'more_Travelers-light.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9759' ]
     dirty:
-      - crc: 0xfb560796
-        <<: *dirtyPlugin
-        itm: 13
+      - <<: *quickClean
+        crc: 0xFB560796
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
   - name: 'SIM - NPCAdditionsWEREWOLVES.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8228' ]
     dirty:
-      - crc: 0x28cca4f1
-        <<: *dirtyPlugin
-        itm: 48
+      - <<: *quickClean
+        crc: 0x28CCA4F1
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 51
+    clean:
+      - crc: 0xFB58D762
+        util: 'TES5Edit v4.0.2f'
   - name: 'CAS.esp'
     msg:
       - type: warn
@@ -6288,11 +6329,16 @@ plugins:
             text: 'Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee''s auto-save and time".'
         condition: 'file("kuerteeAutoSaveAndTime.esp")'
   - name: 'ContainerMagic.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23001' ]
     req: [ *SKSE ]
     dirty:
-      - crc: 0xcbf09128
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xCBF09128
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      - crc: 0x86C86AB2
+        util: 'TES5Edit v4.0.2f'
   - name: 'DEAsprint&jump.esp'
     req:
       - *SKSE
@@ -6310,16 +6356,23 @@ plugins:
           - lang: ru
             text: 'Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.'
   - name: 'Dragon Soul Relinquishment.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27531' ]
     dirty:
-      - crc: 0xe270ad1e
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xE270AD1E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'Duke Patricks - Savvy Save.esp'
+    clean:
+      - crc: 0x0861BEA2
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Duke Patricks - Savvy Save .esp'
+    # the empty space before the .esp is intended
+    url: [ 'https://www.nexusmods.com/skyrim/mods/35429' ]
     req: [ *SKSE ]
-    dirty:
-      - crc: 0x4dc4ef35
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      # v3.0
+      - crc: 0x3CFF9323
+        util: 'TES5Edit v4.0.2f'
   - name: 'DynamicNaming.esp'
     req: [ *SKSE ]
   - name: 'Dynavision.esp'
