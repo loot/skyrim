@@ -6135,25 +6135,13 @@ plugins:
       - Delev
       - Relev
   - name: 'xgfPferdeKarren-en.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25493' ]
     inc:
       - 'xgfpferdekarren.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'If you have errors at creation Bashed Patch you can use [the corrected version](https://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906).'
-          - lang: de
-            text: 'Wenn Sie Fehler beim Erstellen vom Bashed Patch haben, können Sie [die korrigierte Version](https://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906) verwenden.'
-          - lang: ja
-            text: 'Bashed Patchの作成時にエラーが出る場合は[修正版](https://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906)を使用してください。'
-        condition: 'checksum("xgfPferdeKarren-en.esp",99BFDF60)'
-    dirty:
-      - crc: 0x7c465726
-        <<: *dirtyPlugin
-        itm: 4
-      - crc: 0xb56a25c1
-        <<: *dirtyPlugin
-        itm: 4
+    clean:
+      # v2.5
+      - crc: 0x24896765
+        util: 'TES5Edit v4.0.2f'
   - name: 'Zira''s Skyrim Horse Base.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19710' ]
     dirty:
