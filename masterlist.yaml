@@ -6255,18 +6255,25 @@ plugins:
       - <<: *obsolete
         condition: 'checksum("Destructible_bottles.esp",BF5ED5A9) or checksum("Destructible_bottles.esp",0900B364) or checksum("Destructible_bottles.esp",48639563) or checksum("Destructible_bottles.esp",078C74DD) or checksum("Destructible_bottles.esp",5BE52467) or checksum("Destructible_bottles.esp",D59FAF05) or checksum("Destructible_bottles.esp",D80876E8)'
   - name: 'Item Sorting by Saige.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/87514' ]
     dirty:
-      - crc: 0x658a6a4e
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x658A6A4E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
-  - name: 'item sorting dg by saige.esp'
+    clean:
+      - crc: 0xA4DEC088
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Item Sorting DG by Saige.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/87514' ]
     dirty:
-      - crc: 0x3e12ee2
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x03E12EE2
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - crc: 0x637d24f6
-        <<: *dirtyPlugin
-        itm: 3
+    clean:
+      - crc: 0x86811CFD
+        util: 'TES5Edit v4.0.2f'
   - name: 'more_Travelers(_light)?\.esp'
     msg:
       - <<: *useOnlyOneX
