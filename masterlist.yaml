@@ -6329,11 +6329,16 @@ plugins:
             text: 'Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee''s auto-save and time".'
         condition: 'file("kuerteeAutoSaveAndTime.esp")'
   - name: 'ContainerMagic.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23001' ]
     req: [ *SKSE ]
     dirty:
-      - crc: 0xcbf09128
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xCBF09128
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      - crc: 0x86C86AB2
+        util: 'TES5Edit v4.0.2f'
   - name: 'DEAsprint&jump.esp'
     req:
       - *SKSE
