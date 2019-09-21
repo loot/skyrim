@@ -17527,10 +17527,15 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("Improved blessing.esp",BF08EFFE)'
   - name: 'improved final battle.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=14839' ]
     dirty:
-      - crc: 0x41a04451
-        <<: *dirtyPlugin
-        itm: 10
+      - <<: *quickClean
+        crc: 0x41A04451
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 37
+    clean:
+      - crc: 0x01D063C6
+        util: 'TES5Edit v4.0.2f'
   - name: 'ImprovedMonsterLoot.esp'
     tag:
       - Relev
