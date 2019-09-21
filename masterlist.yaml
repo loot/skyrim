@@ -10885,10 +10885,12 @@ plugins:
             text: 'このModはSkyReの種族用モジュール（Races module）との使用を想定されています。モジュール抜きでも全体的に問題なく動作しますが、淑女の石碑から得られる効果が正しく発揮されない可能性があります。'
         condition: 'not active("SkyRe_Races.esp")'
   - name: 'SkyRe_Survivalism.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9286' ]
     dirty:
-      - crc: 0xaa2d4fd7
-        <<: *dirtyPlugin
-        itm: 3
+      - <<: *quickClean
+        crc: 0x92CF529F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'Morrowloot.esp'
     msg:
       - type: say
