@@ -10557,12 +10557,18 @@ plugins:
     tag:
       - Relev
   - name: 'Monster Wars.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18997' ]
     dirty:
-      - crc: 0xba316da7
-        <<: *dirtyPlugin
-        itm: 302
+      - <<: *reqManualFix
+        crc: 0x34540BE2
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 442
         udr: 16
-        nav: 9
+        nav: 4
+      - <<: *reqManualFix
+        crc: 0x4F354881
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 4
   - name: 'SkyRe_Main.esp'
     req:
       - *SKSE
