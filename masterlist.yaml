@@ -1834,13 +1834,19 @@ plugins:
             text: 'LB_MuchAdoSnowElves_WeaponsOnly.esp用のEsmとは異なります。'
         condition: 'file("LB_MuchAdoSnowElves_WeaponsOnly.esp") and checksum("LB_MuchAdoSnowElves.esm",9E22BEF7)'
   - name: 'LevelersTower.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14152' ]
     dirty:
-      - crc: 0xf22b5be
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x0F22B5BE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-      - crc: 0x7af4d53a
-        <<: *dirtyPlugin
-        itm: 7
+  - name: 'LevelersTower.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14152' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xCB15135B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'LiFE.esm'
     msg:
       - *requiresCBBEorUNP
@@ -14284,14 +14290,6 @@ plugins:
         itm: 37
         udr: 27
         nav: 7
-  - name: 'LevelersTower.esp'
-    dirty:
-      - crc: 0x7af4d53a
-        <<: *dirtyPlugin
-        itm: 7
-      - crc: 0xcb15135b
-        <<: *dirtyPlugin
-        itm: 1
   - name: 'LevelersTowerRemod.esp'
     inc:
       - 'LevelersTower.esp'
