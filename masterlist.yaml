@@ -1811,7 +1811,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/18916' ]
     msg:
       - <<: *patch3rdParty
-        condition: 'active("Dawnguard.esm") and checksum("Lanterns Of Skyrim - All In One - Main.esm",AC4A653A)'
+        condition: 'checksum("Lanterns Of Skyrim - All In One - Main.esm",AC4A653A) and active("Dawnguard.esm") and not active("Lanterns Of Skyrim - AIO - Dawnguard.esp")'
         subs:
           - 'Dawnguard'
           - '[Lanterns of Skyrim - All in One - Dawnguard Patch](https://www.nexusmods.com/skyrim/mods/26662)'
