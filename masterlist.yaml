@@ -1811,7 +1811,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/18916' ]
     msg:
       - <<: *patch3rdParty
-        condition: 'active("Dawnguard.esm") and checksum("Lanterns Of Skyrim - All In One - Main.esm",AC4A653A)'
+        condition: 'checksum("Lanterns Of Skyrim - All In One - Main.esm",AC4A653A) and active("Dawnguard.esm") and not active("Lanterns Of Skyrim - AIO - Dawnguard.esp")'
         subs:
           - 'Dawnguard'
           - '[Lanterns of Skyrim - All in One - Dawnguard Patch](https://www.nexusmods.com/skyrim/mods/26662)'
@@ -1834,13 +1834,19 @@ plugins:
             text: 'LB_MuchAdoSnowElves_WeaponsOnly.esp用のEsmとは異なります。'
         condition: 'file("LB_MuchAdoSnowElves_WeaponsOnly.esp") and checksum("LB_MuchAdoSnowElves.esm",9E22BEF7)'
   - name: 'LevelersTower.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14152' ]
     dirty:
-      - crc: 0xf22b5be
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x0F22B5BE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-      - crc: 0x7af4d53a
-        <<: *dirtyPlugin
-        itm: 7
+  - name: 'LevelersTower.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14152' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xCB15135B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'LiFE.esm'
     msg:
       - *requiresCBBEorUNP
@@ -5979,10 +5985,25 @@ plugins:
         <<: *dirtyPlugin
         itm: 5
   - name: 'Training Dummies XP.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26491' ]
     dirty:
-      - crc: 0x8bca1fac
-        <<: *dirtyPlugin
-        itm: 47
+      - <<: *quickClean
+        crc: 0x03DA8870
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+    clean:
+      - crc: 0xE737AD8F
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Training Dummies XP Dawnguard.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26491' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xE82810D0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      - crc: 0xB57DC136
+        util: 'TES5Edit v4.0.2f'
   - name: 'TravellersOfSkyrim.esp'
     msg: [ *obsolete ]
   - name: 'TravellersOfSkyrim - Light.esp'
@@ -14269,14 +14290,6 @@ plugins:
         itm: 37
         udr: 27
         nav: 7
-  - name: 'LevelersTower.esp'
-    dirty:
-      - crc: 0x7af4d53a
-        <<: *dirtyPlugin
-        itm: 7
-      - crc: 0xcb15135b
-        <<: *dirtyPlugin
-        itm: 1
   - name: 'LevelersTowerRemod.esp'
     inc:
       - 'LevelersTower.esp'
@@ -21772,26 +21785,22 @@ plugins:
       - 'Dragon Combat Overhaul.esp'
     msg: [ *obsolete ]
   - name: 'The Dance of Death.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10906' ]
     after:
       - 'DragonCombatOverhaul.esp'
       - 'DragonCombatOverhaulDragonborn.esp'
       - 'DragonCombatOverhaulDragonborn - Requiem Patch.esp'
       - 'Dragon Combat Overhaul.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Dawnguard detected. Use The Dance of Death - Dawnguard Edition.esp instead.'
-          - lang: de
-            text: 'Dawnguard entdeckt. Verwenden Sie stattdessen The Dance of Death - Dawnguard Edition.esp.'
-          - lang: ja
-            text: 'Dawnguardが見つかりました。The Dance of Death - Dawnguard Edition.espを代わりに使用してください。'
-        condition: 'active("Dawnguard.esm")'
+      - <<: *useVersionDawnguard
+        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm")'
     dirty:
-      - crc: 0xfb852f7a
-        <<: *dirtyPlugin
-        itm: 7
+      - <<: *quickClean
+        crc: 0x50DA6D88
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'The Dance of Death - Dawnguard Edition.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10906' ]
     after:
       - 'DragonCombatOverhaul.esp'
       - 'DragonCombatOverhaulDragonborn.esp'
@@ -21800,18 +21809,21 @@ plugins:
     inc:
       - 'The Dance of Death.esp'
     dirty:
-      - crc: 0x564a52ef
-        <<: *dirtyPlugin
-        itm: 7
+      - <<: *quickClean
+        crc: 0x42E4A03E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'The Dance of Death - Ultimate Edition.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10906' ]
     after:
       - 'DragonCombatOverhaul.esp'
       - 'DragonCombatOverhaulDragonborn.esp'
       - 'DragonCombatOverhaulDragonborn - Requiem Patch.esp'
       - 'Dragon Combat Overhaul.esp'
     dirty:
-      - crc: 0x21a635c6
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x21A635C6
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'VioLens( - Requiem Patch)?\.esp'
     after:
@@ -21824,15 +21836,15 @@ plugins:
   - name: 'Troy1010_ImprovedArmorFormula_Difficulty.+\.esp'
     msg: [ *obsolete ]
   - name: 'Troy1010_ImprovedArmorFormula 4.0.0.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15860' ]
     dirty:
-      - crc: 0xbec1b7d3
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x6F07D98B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'Wilderness War Parties.esp'
-    dirty:
-      - crc: 0x2b8ad3d0
-        <<: *dirtyPlugin
-        itm: 21
+    clean:
+      - crc: 0xDEA447A3
+        util: 'TES5Edit v4.0.2f'
   - name: 'ACE BYOG Carry Weight ([Dd]+\d{1,3})\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -21893,23 +21905,22 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("TwoHandedExtended200.esp",D196971F)'
   - name: 'ArcheryDummyXP.esp'
-    dirty:
-      - crc: 0x9c044962
-        <<: *dirtyPlugin
-        itm: 3
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23698' ]
+    clean:
+      - crc: 0xD903EA41
+        util: 'TES5Edit v4.0.2f'
   - name: 'Balanced_Magic_(Adept|Novice|Master)\.esp'
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Balanced Magic' ]
         condition: 'many("Balanced_Magic_(Adept|Novice|Master)\.esp")'
   - name: 'betterskillgains.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("betterskillgains.esp",D1DF377A) or checksum("betterskillgains.esp",2A4DE483) or checksum("betterskillgains.esp",7D6A1243)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20490' ]
     dirty:
-      - crc: 0x750982fc
-        <<: *dirtyPlugin
-        itm: 32
+      - <<: *quickClean
+        crc: 0x34BB7DFC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
   - name: 'BS-Balanced_Magic_BETA_2_0.esp'
     msg:
       - <<: *requiresX
