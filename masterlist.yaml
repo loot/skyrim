@@ -21917,13 +21917,12 @@ plugins:
         subs: [ 'Balanced Magic' ]
         condition: 'many("Balanced_Magic_(Adept|Novice|Master)\.esp")'
   - name: 'betterskillgains.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("betterskillgains.esp",D1DF377A) or checksum("betterskillgains.esp",2A4DE483) or checksum("betterskillgains.esp",7D6A1243)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20490' ]
     dirty:
-      - crc: 0x750982fc
-        <<: *dirtyPlugin
-        itm: 32
+      - <<: *quickClean
+        crc: 0x34BB7DFC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
   - name: 'BS-Balanced_Magic_BETA_2_0.esp'
     msg:
       - <<: *requiresX
