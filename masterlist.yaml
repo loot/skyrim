@@ -7889,10 +7889,16 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") or file("SkyRe_Plugin_InsanitysDragonKatana.esp")'
   - name: 'Insanity''s Sorrow.esp'
-    dirty:
-      - crc: 0x872acbc
-        <<: *dirtyPlugin
-        itm: 2
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/15389'  # v1.2
+      - 'https://www.nexusmods.com/skyrim/mods/89782'  # v2.0
+    clean:
+      # 15389 - v1.2
+      - crc: 0x0872ACBC
+        util: 'TES5Edit v4.0.2f'
+      # 89782 - v2.0
+      - crc: 0xBEDC2266
+        util: 'TES5Edit v4.0.2f'
   - name: 'Insanity''s Umbra Sword.esp'
     dirty:
       - crc: 0xd8894064
