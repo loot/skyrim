@@ -17293,13 +17293,14 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 359
   - name: 'Dragon Souls To Attributes.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23898' ]
     msg:
       - <<: *obsolete
         condition: 'checksum("Dragon Souls To Attributes.esp",4A52794E) or checksum("Dragon Souls To Attributes.esp",646A5BB8)'
-    dirty:
-      - crc: 0xec31c990
-        <<: *dirtyPlugin
-        itm: 3
+    clean:
+      # v1.06a
+      - crc: 0x48E76744
+        util: 'TES5Edit v4.0.2f'
   - name: 'Dragonbane Enchantment.esp'
     msg: [ *corrupt ]
   - name: 'droppablebarenziah.esp'
