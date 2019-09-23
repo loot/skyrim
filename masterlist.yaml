@@ -7830,10 +7830,28 @@ plugins:
       - crc: 0x0E41D31D
         util: 'TES5Edit v4.0.2f'
   - name: 'imp_helm.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15927' ]
+    msg: [ *obsolete ]
+  - name: 'imp_helm_legend.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15927' ]
+    tag:
+      - Graphics
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Improved Closefaced Helmets.esp")'
+      - <<: *deletePlugin
+        condition: 'active("imp_helm_legend.esp") and version("Requiem - Improved Closefaced Helmets.esp", "2.12", >=)'
+        subs: [ 'the Requiem patch for Improved Closefaced Helmets' ]
     dirty:
-      - crc: 0xb5cc3f9d
-        <<: *dirtyPlugin
-        itm: 3
+      # v1.5
+      - <<: *quickClean
+        crc: 0x19E2D968
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v1.5 - after QAC
+      - crc: 0xCE4D9445
+        util: 'TES5Edit v4.0.2f'
   - name: 'WeaponsArmorFixes_ClosefacedHelmets_Patch.esp'
     req:
       - name: 'Weapons & Armor Fixes_Remade.esp'
@@ -27568,25 +27586,6 @@ plugins:
       # version: 2.02
       - crc: 0x82A29913
         util: 'TES5Edit v4.0.1'
-  - name: 'imp_helm_legend.esp'
-    msg:
-      - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Improved Closefaced Helmets.esp")'
-      - <<: *deletePlugin
-        condition: 'active("imp_helm_legend.esp") and version("Requiem - Improved Closefaced Helmets.esp", "2.12", >=)'
-        subs: [ 'the Requiem patch for Improved Closefaced Helmets' ]
-    dirty:
-      # version: 1.57
-      - <<: *quickClean
-        crc: 0x19E2D968
-        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 5
-    clean:
-      # version: 1.57
-      - crc: 0x6976684F
-        util: 'TES5Edit v4.0.1'
-    tag:
-      - Graphics
   - name: 'Inconsequential NPCs.esp'
     msg:
       - <<: *patchRequiemRPC
