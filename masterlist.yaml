@@ -7772,29 +7772,46 @@ plugins:
     tag:
       - Relev
   - name: 'ImmersiveLoot.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24399' ]
     tag:
       - Delev
       - Relev
-    dirty:
-      - crc: 0xf2377244
-        <<: *dirtyPlugin
-        itm: 73
+    clean:
+      # v5.0a
+      - crc: 0xFE158ECE
+        util: 'TES5Edit v4.0.2f'
+      # v5.0b
+      - crc: 0x46BA4C7D
+        util: 'TES5Edit v4.0.2f'
   - name: 'ImmersiveLoot - Dawnguard.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24399' ]
     tag:
       - Delev
       - Relev
+    clean:
+      - crc: 0xC4E7A8F1
+        util: 'TES5Edit v4.0.2f'
   - name: 'ImmersiveLoot - Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24399' ]
     tag:
       - Delev
       - Relev
+    clean:
+      - crc: 0x8086D653
+        util: 'TES5Edit v4.0.2f'
   - name: 'ImmersiveCells.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24399' ]
     tag:
       - Relev
     dirty:
-      - crc: 0x332080b8
-        <<: *dirtyPlugin
-        itm: 2
-        udr: 10
+      - <<: *quickClean
+        crc: 0xB7F02ECD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
+        udr: 14
+    clean:
+      - crc: 0xCCC93DD2
+        util: 'TES5Edit v4.0.2f'
   - name: 'WarmongerArmory_DLC.esp'
     after:
       - 'WarmongerArmory_Vanilla.esp'
