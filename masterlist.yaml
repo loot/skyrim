@@ -3197,6 +3197,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1460
   - name: 'AOS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/43773' ]
     after:
       - 'WetandCold.esp'
       # RWT must be loaded after Requiem but AOS shouldn't so this rule is disabled when Requiem is installed
@@ -3212,15 +3213,10 @@ plugins:
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", >=) and not active("Requiem - Audio Overhaul for Skyrim.esp")'
     tag:
       - Sound
-    dirty:
-      - crc: 0xd88afe72
-        <<: *dirtyPlugin
-        itm: 7
-        udr: 0
     clean:
-      # version: 2.5.1
+      # v2.5.1
       - crc: 0x5B5430F7
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2f'
   - name: 'AOS2_DD Patch.esp'
     msg:
       - <<: *alreadyInX
