@@ -7003,10 +7003,26 @@ plugins:
         condition: 'file("WetandCold - Ashes.esp")'
         subs: [ 'WetandCold - Ashes.esp' ]
   - name: 'Chrysamere.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/22329'
+      - 'https://www.nexusmods.com/skyrim/mods/63223'
+      - 'https://www.nexusmods.com/skyrim/mods/97088'
     dirty:
-      - crc: 0x741c7c7c
-        <<: *dirtyPlugin
+      # 22329
+      - <<: *quickClean
+        crc: 0x741C7C7C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
+      # 97088
+      - <<: *quickClean
+        crc: 0x3DA74FEE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        udr: 1
+    clean:
+      # 63223
+      - crc: 0xB14EF7D4
+        util: 'TES5Edit v4.0.2f'
   - name: 'Cloaks( - (No Imperial|Player Only))?\.esp'
     msg:
       - <<: *alreadyInCompleteCraftingOverhaulRemade
