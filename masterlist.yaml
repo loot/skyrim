@@ -6929,11 +6929,19 @@ plugins:
           - lang: ru
             text: 'Требуется: UNP или UNPB. Должно работать со всеми версиями.'
   - name: 'BoundArmors.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30462' ]
     dirty:
-      - crc: 0xa90b69f3
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xA27AF145
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-        udr: 5
+        udr: 4
+    clean:
+      - crc: 0x2B4AE61A
+        util: 'TES5Edit v4.0.2f'
+  - name: 'True Bound Armors.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30462' ]
+    msg: [ *obsolete ]
   - name: 'BoundGear.esp'
     dirty:
       - crc: 0x67848836
@@ -9063,12 +9071,6 @@ plugins:
             text: 'バージョン2.1.1はCreation Kitのリリース日（2012年2月7日）より前にリリースされています。[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593)からTES5Editで修正しクリーニングを行った互換パッチを入手可能です。'
           - lang: ru
             text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-  - name: 'True Bound Armors.esp'
-    dirty:
-      - crc: 0x1f431905
-        <<: *dirtyPlugin
-        itm: 8
-        udr: 6
   - name: 'UnenchantedNightingaleArmour.esp'
     msg: [ *obsolete ]
   - name: 'UniqueLeveledItemsUpgrade(1dot)?\d?\.esp'
