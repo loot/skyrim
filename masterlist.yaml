@@ -6929,17 +6929,22 @@ plugins:
           - lang: ru
             text: 'Требуется: UNP или UNPB. Должно работать со всеми версиями.'
   - name: 'BoundArmors.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30462' ]
     dirty:
-      - crc: 0xa90b69f3
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xA27AF145
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-        udr: 5
+        udr: 4
+    clean:
+      - crc: 0x2B4AE61A
+        util: 'TES5Edit v4.0.2f'
+  - name: 'True Bound Armors.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30462' ]
+    msg: [ *obsolete ]
   - name: 'BoundGear.esp'
-    dirty:
-      - crc: 0x67848836
-        <<: *dirtyPlugin
-        itm: 9
-        udr: 41
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30462' ]
+    msg: [ *obsolete ]
   - name: 'BowofIorveth.esp'
     tag:
       - name: Deactivate
@@ -6956,22 +6961,26 @@ plugins:
     tag:
       - Relev
   - name: 'Carbon Fiber Bow.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/59674' ]
     dirty:
-      - crc: 0xc62c2cff
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x4BDBCD24
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Casual Outfit OE.esp'
     msg: [ *requiresUNP ]
   - name: 'Cattelya Greatsword.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11886' ]
     dirty:
-      - crc: 0x38c1fcb3
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x38C1FCB3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'Cerberus.esp'
-    dirty:
-      - crc: 0xbd2cf9a5
-        <<: *dirtyPlugin
-        itm: 2
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30880' ]
+    clean:
+      - crc: 0x405B1DC0
+        util: 'TES5Edit v4.0.2f'
   - name: 'chainmail.esp'
     msg: [ *requiresUNP ]
   - name: 'Chainmail Hood v2.2.esp'
@@ -6994,10 +7003,26 @@ plugins:
         condition: 'file("WetandCold - Ashes.esp")'
         subs: [ 'WetandCold - Ashes.esp' ]
   - name: 'Chrysamere.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/22329'
+      - 'https://www.nexusmods.com/skyrim/mods/63223'
+      - 'https://www.nexusmods.com/skyrim/mods/97088'
     dirty:
-      - crc: 0x741c7c7c
-        <<: *dirtyPlugin
+      # 22329
+      - <<: *quickClean
+        crc: 0x741C7C7C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
+      # 97088
+      - <<: *quickClean
+        crc: 0x3DA74FEE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        udr: 1
+    clean:
+      # 63223
+      - crc: 0xB14EF7D4
+        util: 'TES5Edit v4.0.2f'
   - name: 'Cloaks( - (No Imperial|Player Only))?\.esp'
     msg:
       - <<: *alreadyInCompleteCraftingOverhaulRemade
@@ -9063,12 +9088,6 @@ plugins:
             text: 'バージョン2.1.1はCreation Kitのリリース日（2012年2月7日）より前にリリースされています。[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593)からTES5Editで修正しクリーニングを行った互換パッチを入手可能です。'
           - lang: ru
             text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
-  - name: 'True Bound Armors.esp'
-    dirty:
-      - crc: 0x1f431905
-        <<: *dirtyPlugin
-        itm: 8
-        udr: 6
   - name: 'UnenchantedNightingaleArmour.esp'
     msg: [ *obsolete ]
   - name: 'UniqueLeveledItemsUpgrade(1dot)?\d?\.esp'
@@ -11766,10 +11785,12 @@ plugins:
         <<: *dirtyPlugin
         itm: 16
   - name: 'ancient tower.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11711' ]
     dirty:
-      - crc: 0x1d3be8db
-        <<: *dirtyPlugin
-        itm: 26
+      - <<: *quickClean
+        crc: 0x1D3BE8DB
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
   - name: 'Ank_Castle_Addon.esp'
     msg: [ *obsolete ]
   - name: 'Another Breezehome Basement.esp'
@@ -11786,11 +11807,17 @@ plugins:
         <<: *dirtyPlugin
         itm: 63
   - name: 'armybasement.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12485' ]
     dirty:
-      - crc: 0x2eadf762
-        <<: *dirtyPlugin
-        itm: 13
+      - <<: *reqManualFix
+        crc: 0x2EADF762
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 221
         udr: 1
+        nav: 35
+      - <<: *reqManualFix
+        crc: 0x6DC60E7F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 35
   - name: 'arthyngrad sanctum.esp'
     dirty:
