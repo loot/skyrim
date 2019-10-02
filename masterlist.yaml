@@ -21310,11 +21310,6 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Star Wars Force Abilities.esp",FD5D302E)'
-  - name: 'Starbomb.esp'
-    dirty:
-      - crc: 0x215e5b64
-        <<: *dirtyPlugin
-        itm: 26
   - name: 'Succubus.esp'
     msg: [ *obsolete ]
   - name: 'SummersetLinweSummon.esp'
@@ -21342,37 +21337,67 @@ plugins:
     tag:
       - Relev
   - name: 'SwordDance.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13142' ]
     dirty:
-      - crc: 0xf73f4730
-        <<: *dirtyPlugin
-        itm: 4
+      - <<: *quickClean
+        crc: 0x36DF6D30
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'SynodSeptimusSummon.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20994' ]
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - crc: 0x259814e3
-        <<: *dirtyPlugin
+      # v1a
+      - <<: *quickClean
+        crc: 0x259814E3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+      # v2b
+      - <<: *quickClean
+        crc: 0xE20D6B62
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'TeleportSpellMod.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11549' ]
     dirty:
-      - crc: 0x9a6fd915
-        <<: *dirtyPlugin
-        itm: 11
+      - <<: *quickClean
+        crc: 0x9A6FD915
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 39
   - name: 'ThalmorAncanoSummon.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18094' ]
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - crc: 0xc8407cda
-        <<: *dirtyPlugin
-        itm: 6
+      # v1b
+      - <<: *quickClean
+        crc: 0xC8407CDA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+      # v2b
+      - <<: *quickClean
+        crc: 0x1CFD8301
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
   - name: 'The Nights Embrace.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21886' ]
     dirty:
-      - crc: 0xdc859fd2
-        <<: *dirtyPlugin
-        itm: 3
+      - <<: *quickClean
+        crc: 0xDC859FD2
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
   - name: 'ThievesGreyFoxSummon.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21210' ]
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - crc: 0x1595af04
-        <<: *dirtyPlugin
+      # v1a
+      - <<: *quickClean
+        crc: 0x1595AF04
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+      # v2a
+      - <<: *quickClean
+        crc: 0xCA47F847
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'TotalConjuration.esp'
     tag:
@@ -21589,8 +21614,12 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'ForgottenMagic_Redone.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/35339' ]
     inc:
       - 'ForgottenMagic.esp'
+    clean:
+      - crc: 0x9578E0FF
+        util: 'TES5Edit v4.0.2f'
   - name: 'Improved Soultrap.esp'
     msg:
       - type: error
@@ -21797,20 +21826,10 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Duel - Combat Realism.esp'
-    dirty:
-      - crc: 0x936E329B
-        <<: *dirtyPlugin
-        itm: 7
-        udr: 0
-      - crc: 0x948c8561
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0xB2CA229B
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0xd0edcdfa
-        <<: *dirtyPlugin
-        itm: 5
+    url: [ 'https://www.nexusmods.com/skyrim/mods/2700' ]
+    clean:
+      - crc: 0xB15437DF
+        util: 'TES5Edit v4.0.2f'
   - name: 'BalancedCombat.esp'
     dirty:
       - crc: 0x8952cb95
@@ -22062,11 +22081,13 @@ plugins:
         condition: 'many("New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp")'
         subs: [ 'New Leveled Encounter Levels .esp file' ]
   - name: 'Crimson Tide - Blood.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12798' ]
     inc:
       - 'dD - Enhanced Blood Main.esp'
     dirty:
-      - crc: 0xdb6c1082
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xDB6C1082
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 14
         udr: 41
   - name: 'ACE Archery.esp'
