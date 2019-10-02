@@ -22081,11 +22081,13 @@ plugins:
         condition: 'many("New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp")'
         subs: [ 'New Leveled Encounter Levels .esp file' ]
   - name: 'Crimson Tide - Blood.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12798' ]
     inc:
       - 'dD - Enhanced Blood Main.esp'
     dirty:
-      - crc: 0xdb6c1082
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xDB6C1082
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 14
         udr: 41
   - name: 'ACE Archery.esp'
