@@ -18670,18 +18670,27 @@ plugins:
     inc:
       - 'valkiirs_tastier_food.esp'
   - name: 'valuablecoins.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("valuablecoins.esp",80A41AE4)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11701' ]
     dirty:
-      - crc: 0x325f41cc
-        <<: *dirtyPlugin
+      # Valuable Coins -Copper Silver Gold Platinum-
+      - <<: *quickClean
+        crc: 0xD125B45C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - crc: 0xB7D1F4BA
-        <<: *dirtyPlugin
+      # MORE Valuable Coins -Weightless
+      - <<: *quickClean
+        crc: 0xB7D1F4BA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - crc: 0xD125B45C
-        <<: *dirtyPlugin
+      # Valuable Coins -Copper Silver Gold Platinum- All weightless
+      - <<: *quickClean
+        crc: 0x325F41CC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+      # Valuable Coins -Copper Silver Gold Platinum- Weightless copper
+      - <<: *quickClean
+        crc: 0xFE29441F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'vanillaarcheryimproved.esp'
     msg:
