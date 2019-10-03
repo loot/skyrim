@@ -2039,11 +2039,19 @@ plugins:
         subs: [ '[Better Females](http://www.nexusmods.com/skyrim/mods/2812)' ]
   - name: 'MiniLoversSound.esm'
     req: [ *FNIS ]
-  - name: 'MjanasLabyrinth.esm'
+  - name: 'Mjanas_Labyrinth.esp'
+    url: [ 'http://modsreloaded.com/mjanas-labyrinth' ]
     dirty:
-      - crc: 0xc475bc22
-        <<: *dirtyPlugin
-        itm: 32
+      - <<: *reqManualFix
+        crc: 0xB6D1404D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 47
+        udr: 56
+        nav: 6
+      - <<: *reqManualFix
+        crc: 0x43F69F14
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 6
   - name: 'Monli.esm'
     dirty:
       - crc: 0x94b31a2c
