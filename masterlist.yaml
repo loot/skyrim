@@ -1775,17 +1775,19 @@ plugins:
       - crc: 0x38FA6335
         util: 'TES5Edit v4.0.2f'
   - name: 'DA_Skyship.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24234' ]
+    msg: [ *obsolete ]
+  - name: 'DA_Skyship.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24234' ]
     req: [ *SKSE ]
     dirty:
-      - crc: 0x51f4b5ce
-        <<: *dirtyPlugin
-        itm: 119
-      - crc: 0x63cdb5f1
-        <<: *dirtyPlugin
-        itm: 119
-      - crc: 0xfd184636
-        <<: *dirtyPlugin
-        itm: 119
+      - <<: *quickClean
+        crc: 0x16E3C26D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
+    clean:
+      - crc: 0xCC7A1963
+        util: 'TES5Edit v4.0.2f'
   - name: 'DBShreddedTriss.esm'
     msg: [ *obsolete ]
   - name: 'DeadlyDragons.esm'
@@ -13067,20 +13069,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
         udr: 51
-  - name: 'DA_Skyship.esp'
-    req: [ *SKSE ]
-    dirty:
-      - crc: 0x5b03bf9a
-        <<: *dirtyPlugin
-        itm: 30
-        udr: 1
-      - crc: 0xfe8d1c12
-        <<: *dirtyPlugin
-        itm: 30
-        udr: 1
-      - crc: 0x9430cbf7
-        <<: *dirtyPlugin
-        itm: 12
   - name: 'DA_Skyship_Dragonborn.esp'
     msg: [ *obsolete ]
   - name: 'Daedra in Conjurer Dungeons.esp'
