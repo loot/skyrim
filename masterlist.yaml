@@ -1583,14 +1583,11 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 7
   - name: 'ClimatesOfTamriel.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
     after:
       - 'Skyrim Project Optimization.esm'
       - 'Skyrim Project Optimization - Dawnguard.esm'
       - 'Skyrim Project Optimization - Dragonborn.esm'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc110b173
-        itm: 4
     msg:
       - type: warn
         condition: 'checksum("ClimatesOfTamriel.esm",C30AB34E)'
@@ -1601,6 +1598,157 @@ plugins:
             text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 or 4.3.x) von TESVSnip erstellt wurde. Bitte benutzten Sie das [aktualisierte Plugin](http://www.nexusmods.com/skyrim/mods/17802).'
           - lang: ja
             text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。[最新版のプラグイン](http://www.nexusmods.com/skyrim/mods/17802)を使用してください。'
+    dirty:
+      - <<: *quickClean
+        crc: 0xDF772E21
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      - crc: 0xE8DC9BD9
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-Dawnguard-Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: de
+            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
+        condition: 'checksum("ClimatesOfTamriel-Dawnguard-Patch.esp",8F78567C)'
+    clean:
+      - crc: 0x9D7312A5
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-Dragonborn-Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: de
+            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
+        condition: 'checksum("ClimatesOfTamriel-Dragonborn-Patch.esp",81CF7754)'
+    clean:
+      - crc: 0x9FFF2A85
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    inc:
+      - 'ClimatesOfTamriel-Dungeons-Hazardous.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: de
+            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
+        condition: 'checksum("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F)'
+    dirty:
+      - <<: *quickClean
+        crc: 0x67CA961C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      - crc: 0xAE6881C4
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-Dungeons-Hazardous.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    inc:
+      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
+      - 'Realistic Lighting Overhaul - Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
+      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: de
+            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
+        condition: 'checksum("ClimatesOfTamriel-Dungeons-Hazardous.esp",CBE304CE)'
+    clean:
+      - crc: 0xBDC66F4C
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-Interiors-Cold.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    inc:
+      - 'ClimatesOfTamriel-Interiors-Warm.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: de
+            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
+        condition: 'checksum("ClimatesOfTamriel-Interiors-Cold.esp",84DB3F8)'
+    clean:
+      - crc: 0x80B61351
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-Interiors-Warm.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    inc:
+      - 'ClimatesOfTamriel-Interiors-Cold.esp'
+      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
+      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: de
+            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
+        condition: 'checksum("ClimatesOfTamriel-Interiors-Warm.esp",77C47623)'
+    clean:
+      - crc: 0xB61E85AE
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-Nights-Level-1.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    clean:
+      - crc: 0x558CFBB3
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-Nights-Level-2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    clean:
+      - crc: 0xF2AEB31E
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-Nights-Level-3.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    clean:
+      - crc: 0x3EB8D079
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ClimatesOfTamriel-WinterEdition.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17802' ]
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
+          - lang: de
+            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
+          - lang: ja
+            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
+        condition: 'checksum("ClimatesOfTamriel-WinterEdition.esp",74DF3C5)'
+    clean:
+      - crc: 0x1675469B
+        util: 'TES5Edit v4.0.2f'
   - name: 'CoT-WeatherPatch.esp'
     dirty:
       - crc: 0x2fea325d
@@ -20091,108 +20239,6 @@ plugins:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
       - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
       - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-  - name: 'ClimatesOfTamriel-Dawnguard-Patch.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
-          - lang: de
-            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
-          - lang: ja
-            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
-        condition: 'checksum("ClimatesOfTamriel-Dawnguard-Patch.esp",8F78567C)'
-  - name: 'ClimatesOfTamriel-Dragonborn-Patch.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
-          - lang: de
-            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
-          - lang: ja
-            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
-        condition: 'checksum("ClimatesOfTamriel-Dragonborn-Patch.esp",81CF7754)'
-  - name: 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
-    inc:
-      - 'ClimatesOfTamriel-Dungeons-Hazardous.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
-          - lang: de
-            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
-          - lang: ja
-            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
-        condition: 'checksum("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F)'
-    dirty:
-      - crc: 0x4eea922f
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0x67CA961C
-        <<: *dirtyPlugin
-        itm: 2
-  - name: 'ClimatesOfTamriel-Dungeons-Hazardous.esp'
-    inc:
-      - 'ClimatesOfTamriel-Dungeons-Hardcore.esp'
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-      - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
-          - lang: de
-            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
-          - lang: ja
-            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
-        condition: 'checksum("ClimatesOfTamriel-Dungeons-Hazardous.esp",CBE304CE)'
-  - name: 'ClimatesOfTamriel-Interiors-Cold.esp'
-    inc:
-      - 'ClimatesOfTamriel-Interiors-Warm.esp'
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
-          - lang: de
-            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
-          - lang: ja
-            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
-        condition: 'checksum("ClimatesOfTamriel-Interiors-Cold.esp",84DB3F8)'
-  - name: 'ClimatesOfTamriel-Interiors-Warm.esp'
-    inc:
-      - 'ClimatesOfTamriel-Interiors-Cold.esp'
-      - 'Realistic Lighting Overhaul - Major City Interiors.esp'
-      - 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
-          - lang: de
-            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
-          - lang: ja
-            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
-        condition: 'checksum("ClimatesOfTamriel-Interiors-Warm.esp",77C47623)'
-  - name: 'ClimatesOfTamriel-WinterEdition.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.'
-          - lang: de
-            text: 'Dieses Plugin hat falsch nummerierte FormIDs und ist möglicherweise beschädigt, da es mit einer älteren Version (4.2 oder 4.3.x) von TESVSnip erstellt wurde. Eine reparierte Version wurde an den Autor gesendet. Bitte suchen Sie nach einem Update.'
-          - lang: ja
-            text: 'このプラグインには不正な番号のFormIDが存在します。破損しているデータもあるかもしれません。これは古いバージョン(4.2 か 4.3.x)のTESVSnipで作られているためです。製作者まで修正版が送られていますので、今後の更新をお待ちください。'
-        condition: 'checksum("ClimatesOfTamriel-WinterEdition.esp",74DF3C5)'
   - name: 'ELFXEnhancer.esp'
     ## loaded after COT as it is more specialized
     group: *lightingGroup
