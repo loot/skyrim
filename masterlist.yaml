@@ -12327,11 +12327,30 @@ plugins:
         udr: 81
         nav: 18
   - name: 'Borderlands.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25618' ]
     dirty:
-      - crc: 0x44062b91
-        <<: *dirtyPlugin
-        itm: 16
-        udr: 80
+      # v10
+      - <<: *reqManualFix
+        crc: 0x75E0E275
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 152
+        nav: 34
+      # v10 - after QAC
+      - <<: *reqManualFix
+        crc: 0x38E5A2FF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 34
+      # v11
+      - <<: *reqManualFix
+        crc: 0xE0DD7BA5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 152
+        udr: 2
+        nav: 34
+      # v11 - after QAC
+      - <<: *reqManualFix
+        crc: 0xAFC713A9
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 34
   - name: 'breezehome-darkdream.esp'
     msg: [ *obsolete ]
