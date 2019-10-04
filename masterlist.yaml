@@ -2199,10 +2199,16 @@ plugins:
         <<: *dirtyPlugin
         udr: 1
   - name: 'SG_BlacksmithsCavern.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17524' ]
     dirty:
-      - crc: 0x564d3a3b
-        <<: *dirtyPlugin
-        itm: 20
+      - <<: *reqManualFix
+        crc: 0x564D3A3B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 61
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xE5028944
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Sirenia.esm'
     msg:
