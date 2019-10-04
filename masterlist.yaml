@@ -2199,10 +2199,16 @@ plugins:
         <<: *dirtyPlugin
         udr: 1
   - name: 'SG_BlacksmithsCavern.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17524' ]
     dirty:
-      - crc: 0x564d3a3b
-        <<: *dirtyPlugin
-        itm: 20
+      - <<: *reqManualFix
+        crc: 0x564D3A3B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 61
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xE5028944
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Sirenia.esm'
     msg:
@@ -2242,27 +2248,30 @@ plugins:
       # V4 Main Lore
       - crc: 0x7921FEDB
         util: 'TES5Edit v4.0.2f'
-  - name: 'SleepingTreeSanctuary_FollowerFriendly.esp'
+  - name: 'SleepingTreeSanctuary.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17289' ]
     dirty:
-      - crc: 0xaa2e6377
-        <<: *dirtyPlugin
-        itm: 5
+      # Quest version
+      - <<: *quickClean
+        crc: 0xD9F90E25
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+      # Non-Quest version
+      - <<: *quickClean
+        crc: 0x4F06FA81
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+  - name: 'SleepingTreeSanctuary_FollowerFriendly.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27754' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xAA2E6377
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 21
         udr: 2
   - name: 'SmithBornMaterials.esm'
     after:
       - 'SmithBornPerks.esm'
-  - name: 'Solitude A City Of Trade.esm'
-    dirty:
-      - crc: 0x89696ea3
-        <<: *dirtyPlugin
-        itm: 10
-        udr: 0
-        nav: 2
-      - crc: 0xfb48bbe3
-        <<: *dirtyPlugin
-        itm: 9
-        udr: 4
-        nav: 2
   - name: 'SpecializedFollowers.esm'
     msg: [ *obsolete ]
   - name: 'SPTDiverseGuardsSkyrimResources.esm'
@@ -8420,6 +8429,7 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_Malo_Waffen.esp") or file("SG_Malo_Waffen.esp")'
   - name: 'SG_Malo_Waffen.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17527' ]
     inc:
       - 'SkyRe_Plugin_Malo_Waffen.esp'
     msg:
@@ -8428,8 +8438,9 @@ plugins:
         subs: [ 'Malo_Waffen.esp' ]
       - *installOriginalResources
     dirty:
-      - crc: 0x3790213b
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x3790213B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
         udr: 2
   - name: 'mancika_templarset.esp'
@@ -19567,25 +19578,64 @@ plugins:
         itm: 4
         udr: 5
   - name: 'seadragonoasis.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=16767' ]
     dirty:
-      - crc: 0xb28eec06
-        <<: *dirtyPlugin
-        itm: 296
+      - <<: *quickClean
+        crc: 0xB28EEC06
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 302
         udr: 3
+  - name: 'Solitude A City Of Trade.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22821' ]
+    msg: [ *obsolete ]
   - name: 'Solitude A City Of Trade.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22821' ]
     inc:
       - 'Solitude A City Of Trade.esm'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x89696EA3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x7F745508
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'Solitude A City Of Trade LITE!.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22821' ]
     inc:
       - 'Solitude A City Of Trade.esp'
       - 'Solitude A City Of Trade.esm'
-  - name: 'solitude enhanced.esp'
     dirty:
-      - crc: 0x1475c13b
-        <<: *dirtyPlugin
-        itm: 123
-        udr: 53
-        nav: 2
+      - <<: *reqManualFix
+        crc: 0x4E0AC62B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 45
+        udr: 10
+        nav: 11
+      - <<: *reqManualFix
+        crc: 0x120B36BC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+        nav: 11
+      - <<: *reqManualFix
+        crc: 0x35B7D356
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 11
+  - name: 'solitude enhanced.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/33591' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x40F10AEC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 205
+        udr: 154
+        nav: 4
+      - <<: *reqManualFix
+        crc: 0x88B37C0F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 4
   - name: 'SolitudeBetterDocks-SDD-CompatiblePatch.esp'
     msg:
       - <<: *requiresX
