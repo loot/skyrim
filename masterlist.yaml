@@ -8420,6 +8420,7 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_Malo_Waffen.esp") or file("SG_Malo_Waffen.esp")'
   - name: 'SG_Malo_Waffen.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17527' ]
     inc:
       - 'SkyRe_Plugin_Malo_Waffen.esp'
     msg:
@@ -8428,8 +8429,9 @@ plugins:
         subs: [ 'Malo_Waffen.esp' ]
       - *installOriginalResources
     dirty:
-      - crc: 0x3790213b
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x3790213B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
         udr: 2
   - name: 'mancika_templarset.esp'
