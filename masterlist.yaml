@@ -11758,17 +11758,18 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Riftrun Continued](https://www.nexusmods.com/skyrim/mods/59531).' ]
-  - name: '0fl_skynet.esp'
-    dirty:
-      - crc: 0x1a9030e0
-        <<: *dirtyPlugin
-        itm: 10
-        udr: 16
   - name: '7th heaven home.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22508' ]
     dirty:
-      - crc: 0x6055640f
-        <<: *dirtyPlugin
-        itm: 23
+      - <<: *reqManualFix
+        crc: 0x9368D747
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 145
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x16A50E3A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'A new look at Skyrim v1\.[1-6]\.esp'
     msg: [ *obsolete ]
   - name: 'a shack by the springs.esp'
@@ -11784,11 +11785,16 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'a_dragons_respect.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=13510' ]
     dirty:
-      - crc: 0xf39a808
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x0F39A808
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 16
         udr: 4
+    clean:
+      - crc: 0x4210E3F2
+        util: 'TES5Edit v4.0.2f'
   - name: 'AAIRiverwood.esp'
     dirty:
       - crc: 0x4eab6a6f
@@ -14767,11 +14773,17 @@ plugins:
         itm: 15
         udr: 1
   - name: 'massive2.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=15544' ]
     dirty:
-      - crc: 0x1fe17273
-        <<: *dirtyPlugin
+      - <<: *reqManualFix
+        crc: 0x1FE17273
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 13
         udr: 2
+        nav: 22
+      - <<: *reqManualFix
+        crc: 0x93781630
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 22
   - name: 'MavensLetter.esp'
     dirty:
