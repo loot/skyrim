@@ -13045,11 +13045,16 @@ plugins:
       - <<: *obsolete
         condition: 'checksum("Candle Pond Ranch.esp",8B643328)'
   - name: 'Castle Brennenburgh.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13965' ]
     dirty:
-      - crc: 0xa1786e09
-        <<: *dirtyPlugin
-        itm: 25
-        udr: 9
+      - <<: *reqManualFix
+        crc: 0xF8E70B5F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x1B0E30BA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'CastleDKmaster.esp'
     req:
