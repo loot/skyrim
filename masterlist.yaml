@@ -2290,10 +2290,47 @@ plugins:
   - name: 'Populated Cities NPCListMaster.esm'
     msg: [ *obsolete ]
   - name: 'Ranger Ridge.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9904' ]
     dirty:
-      - crc: 0x98145fb5
-        <<: *dirtyPlugin
-        itm: 274
+      # v1.33
+      - <<: *reqManualFix
+        crc: 0x98145FB5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 282
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x20E04153
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'Ranger Ridge.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9904' ]
+    dirty:
+      # Full ESP
+      - <<: *reqManualFix
+        crc: 0xCBB7B1F7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 251
+        udr: 25
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xA6DCFC78
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xA07256EF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # Bugfix ESP
+      - <<: *reqManualFix
+        crc: 0x0576CECD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 312
+        udr: 24
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x8423B729
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'RiverHelm.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/16374' ]
@@ -15309,13 +15346,6 @@ plugins:
   - name: 'Ramen0dawnguard.esp'
     inc:
       - 'Ramen.esp'
-  - name: 'Ranger Ridge.esp'
-    dirty:
-      - crc: 0xcbb7b1f7
-        <<: *dirtyPlugin
-        itm: 120
-        udr: 25
-        nav: 1
   - name: 'Ranger''s Valley Lodge.esp'
     dirty:
       - crc: 0xd9adfdf2
