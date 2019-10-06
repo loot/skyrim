@@ -2143,10 +2143,21 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 29
   - name: 'ORS_SolitudeGate.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21256' ]
     dirty:
-      - crc: 0x31bacfae
-        <<: *dirtyPlugin
-        itm: 26
+      # v1.7
+      - <<: *quickClean
+        crc: 0x8EC27DFD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
+  - name: 'ORS_SolitudeGate.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21256' ]
+    dirty:
+      # v1.8
+      - <<: *quickClean
+        crc: 0x874164A1
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
   - name: 'Overlord Tower.esm'
     dirty:
       - crc: 0x67a4293
@@ -19571,8 +19582,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 17
         udr: 4
-  - name: 'ORS_SolitudeGate.esp'
-    msg: [ *obsolete ]
   - name: 'Pinewood Village.esp'
     inc:
       - 'pinewoodvillage.esm'
