@@ -2203,17 +2203,37 @@ plugins:
     msg:
       - *alreadyInPrettyFollowers
   - name: 'Prison.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23548' ]
     dirty:
-      - crc: 0xfb7c55c8
-        <<: *dirtyPlugin
-        itm: 17
+      # v2.3
+      - <<: *quickClean
+        crc: 0xFB7C55C8
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 37
+    msg:
+      - <<: *obsolete
+        subs: [ '[Dread Prison](https://www.nexusmods.com/skyrim/mods/54535)' ]
   - name: 'PrisonUpdate.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23548' ]
+    msg: [ *obsolete ]
+  - name: 'PrisonUpdate.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23548' ]
     dirty:
-      - crc: 0x41a40641
-        <<: *dirtyPlugin
-        itm: 167
+      # v2.3
+      - <<: *reqManualFix
+        crc: 0x494EB5AF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
         udr: 77
         nav: 3
+      # v2.3 - after QAC
+      - <<: *reqManualFix
+        crc: 0x46B0B62A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
+    msg:
+      - <<: *obsolete
+        subs: [ '[Dread Prison](https://www.nexusmods.com/skyrim/mods/54535)' ]
   - name: 'Populated Cities NPCListMaster.esm'
     msg: [ *obsolete ]
   - name: 'Ranger Ridge.esm'
@@ -15169,12 +15189,6 @@ plugins:
         itm: 23
         udr: 10
         nav: 6
-  - name: 'PrisonUpdate.esp'
-    dirty:
-      - crc: 0x5251d917
-        <<: *dirtyPlugin
-        itm: 14
-        udr: 11
   - name: 'PrisonAddon1.esp'
     dirty:
       - crc: 0xda1195e7
