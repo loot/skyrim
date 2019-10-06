@@ -2159,13 +2159,18 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 35
   - name: 'Overlord Tower.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18421' ]
     dirty:
-      - crc: 0x67a4293
-        <<: *dirtyPlugin
-        itm: 29
-      - crc: 0x25e0e990
-        <<: *dirtyPlugin
-        itm: 47
+      # Evil version
+      - <<: *quickClean
+        crc: 0x067A4293
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 377
+      # Good version
+      - <<: *quickClean
+        crc: 0x25E0E990
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 395
   - name: 'paradise_halls_base.esm'
     req:
       - *SKSE
