@@ -2053,10 +2053,25 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 6
   - name: 'moonpath.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9782' ]
     dirty:
-      - crc: 0x50a19275
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x50A19275
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      - crc: 0x4C1B76C0
+        util: 'TES5Edit v4.0.2f'
+  - name: 'moonpath_questdata.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9782' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x78CAE957
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      - crc: 0x40B15C70
+        util: 'TES5Edit v4.0.2f'
   - name: 'MTAutoStorage.esm'
     dirty:
       - crc: 0x7c0f98ca
@@ -14893,11 +14908,6 @@ plugins:
         nav: 1
   - name: 'monestery.esp'
     msg: [ *obsolete ]
-  - name: 'moonpath_questdata.esp'
-    dirty:
-      - crc: 0x78cae957
-        <<: *dirtyPlugin
-        itm: 1
   - name: 'MoreBanditCamps.esp'
     dirty:
       - crc: 0x83c325b1
