@@ -2073,10 +2073,41 @@ plugins:
       - crc: 0x40B15C70
         util: 'TES5Edit v4.0.2f'
   - name: 'MTAutoStorage.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/34241' ]
     dirty:
-      - crc: 0x7c0f98ca
-        <<: *dirtyPlugin
-        itm: 2
+      - <<: *quickClean
+        crc: 0xEDA019E7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
+    clean:
+      - crc: 0x400AEEFB
+        util: 'TES5Edit v4.0.2f'
+  - name: 'wingspread.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/34241' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xF6311FC3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+        udr: 5
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xAD6ACC7F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
+  - name: 'wingspread_no_auto.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/34241' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xAEE6CD22
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+        udr: 4
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xAF403F3E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'MTOH.esm'
     msg:
       - type: say
