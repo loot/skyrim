@@ -2053,15 +2053,61 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 6
   - name: 'moonpath.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9782' ]
     dirty:
-      - crc: 0x50a19275
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x50A19275
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'MTAutoStorage.esm'
+    clean:
+      - crc: 0x4C1B76C0
+        util: 'TES5Edit v4.0.2f'
+  - name: 'moonpath_questdata.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9782' ]
     dirty:
-      - crc: 0x7c0f98ca
-        <<: *dirtyPlugin
-        itm: 2
+      - <<: *quickClean
+        crc: 0x78CAE957
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      - crc: 0x40B15C70
+        util: 'TES5Edit v4.0.2f'
+  - name: 'MTAutoStorage.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/34241' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xEDA019E7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
+    clean:
+      - crc: 0x400AEEFB
+        util: 'TES5Edit v4.0.2f'
+  - name: 'wingspread.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/34241' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xF6311FC3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+        udr: 5
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xAD6ACC7F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
+  - name: 'wingspread_no_auto.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/34241' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xAEE6CD22
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+        udr: 4
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xAF403F3E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'MTOH.esm'
     msg:
       - type: say
@@ -2090,23 +2136,41 @@ plugins:
   - name: 'OrientalRace.esm'
     msg: [ *obsolete ]
   - name: 'ORS_MorthalPain.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25676' ]
     dirty:
-      - crc: 0x8ac2860f
-        <<: *dirtyPlugin
-        itm: 23
-  - name: 'ORS_SolitudeGate.esm'
-    dirty:
-      - crc: 0x31bacfae
-        <<: *dirtyPlugin
-        itm: 26
-  - name: 'Overlord Tower.esm'
-    dirty:
-      - crc: 0x67a4293
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x39736C76
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 29
-      - crc: 0x25e0e990
-        <<: *dirtyPlugin
-        itm: 47
+  - name: 'ORS_SolitudeGate.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21256' ]
+    dirty:
+      # v1.7
+      - <<: *quickClean
+        crc: 0x8EC27DFD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
+  - name: 'ORS_SolitudeGate.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21256' ]
+    dirty:
+      # v1.8
+      - <<: *quickClean
+        crc: 0x874164A1
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
+  - name: 'Overlord Tower.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18421' ]
+    dirty:
+      # Evil version
+      - <<: *quickClean
+        crc: 0x067A4293
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 377
+      # Good version
+      - <<: *quickClean
+        crc: 0x25E0E990
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 395
   - name: 'paradise_halls_base.esm'
     req:
       - *SKSE
@@ -2118,34 +2182,155 @@ plugins:
       - *SKSE
     msg: [ *requiresMCM ]
   - name: 'pinewoodvillage.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12851' ]
     msg: [ *obsolete ]
+  - name: 'Pinewood Village.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12851' ]
+    inc:
+      - 'pinewoodvillage.esm'
     dirty:
-      - crc: 0xdda83b3f
-        <<: *dirtyPlugin
-        itm: 33
+      - <<: *reqManualFix
+        crc: 0x4A26EA6A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 59
         udr: 25
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xFA075BAB
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'Pretty Brelyna.esm'
     msg:
       - *alreadyInPrettyFollowers
   - name: 'Prison.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23548' ]
     dirty:
-      - crc: 0xfb7c55c8
-        <<: *dirtyPlugin
-        itm: 17
+      # v2.3
+      - <<: *quickClean
+        crc: 0xFB7C55C8
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 37
+    msg:
+      - <<: *obsolete
+        subs: [ '[Dread Prison](https://www.nexusmods.com/skyrim/mods/54535)' ]
   - name: 'PrisonUpdate.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23548' ]
+    msg: [ *obsolete ]
+  - name: 'PrisonUpdate.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23548' ]
     dirty:
-      - crc: 0x41a40641
-        <<: *dirtyPlugin
-        itm: 167
+      # v2.3
+      - <<: *reqManualFix
+        crc: 0x494EB5AF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
         udr: 77
         nav: 3
+      # v2.3 - after QAC
+      - <<: *reqManualFix
+        crc: 0x46B0B62A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
+    msg:
+      - <<: *obsolete
+        subs: [ '[Dread Prison](https://www.nexusmods.com/skyrim/mods/54535)' ]
+  - name: 'PrisonAddon1.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23548' ]
+    dirty:
+      # v1.0
+      - <<: *quickClean
+        crc: 0xDA1195E7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 630
+        udr: 1
+    msg:
+      - <<: *obsolete
+        subs: [ '[Dread Prison](https://www.nexusmods.com/skyrim/mods/54535)' ]
+  - name: 'PrisonAddon3.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23548' ]
+    dirty:
+      # v1.0
+      - <<: *quickClean
+        crc: 0xA393C5EF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+        udr: 1
+    msg:
+      - <<: *obsolete
+        subs: [ '[Dread Prison](https://www.nexusmods.com/skyrim/mods/54535)' ]
+  - name: 'DreadPrison.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/54535' ]
+    dirty:
+      # v4.2.1
+      - <<: *reqManualFix
+        crc: 0x0A84DE6A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 136
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x9D204DD2
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'DreadPrisonAddon01.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/54535' ]
+    dirty:
+      # v1_1.3
+      - <<: *quickClean
+        crc: 0xF19E0D42
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
+  - name: 'DreadPrisonAddon03.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/54535' ]
+    dirty:
+      # v3_1.3
+      - <<: *quickClean
+        crc: 0x20F50998
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 46
   - name: 'Populated Cities NPCListMaster.esm'
     msg: [ *obsolete ]
   - name: 'Ranger Ridge.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9904' ]
     dirty:
-      - crc: 0x98145fb5
-        <<: *dirtyPlugin
-        itm: 274
+      # v1.33
+      - <<: *reqManualFix
+        crc: 0x98145FB5
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 282
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x20E04153
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'Ranger Ridge.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9904' ]
+    dirty:
+      # Full ESP
+      - <<: *reqManualFix
+        crc: 0xCBB7B1F7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 251
+        udr: 25
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xA6DCFC78
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xA07256EF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # Bugfix ESP
+      - <<: *reqManualFix
+        crc: 0x0576CECD
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 312
+        udr: 24
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x8423B729
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'RiverHelm.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/16374' ]
@@ -14893,11 +15078,6 @@ plugins:
         nav: 1
   - name: 'monestery.esp'
     msg: [ *obsolete ]
-  - name: 'moonpath_questdata.esp'
-    dirty:
-      - crc: 0x78cae957
-        <<: *dirtyPlugin
-        itm: 1
   - name: 'MoreBanditCamps.esp'
     dirty:
       - crc: 0x83c325b1
@@ -15099,34 +15279,6 @@ plugins:
         itm: 23
         udr: 10
         nav: 6
-  - name: 'PrisonUpdate.esp'
-    dirty:
-      - crc: 0x5251d917
-        <<: *dirtyPlugin
-        itm: 14
-        udr: 11
-  - name: 'PrisonAddon1.esp'
-    dirty:
-      - crc: 0xda1195e7
-        <<: *dirtyPlugin
-        itm: 624
-        udr: 1
-  - name: 'PrisonAddon2.esp'
-    dirty:
-      - crc: 0x6d8b17b3
-        <<: *dirtyPlugin
-        itm: 15
-        nav: 1
-  - name: 'PrisonAddon3.esp'
-    dirty:
-      - crc: 0xa393c5ef
-        <<: *dirtyPlugin
-        udr: 1
-  - name: 'PrisonAddon4.esp'
-    dirty:
-      - crc: 0x79767606
-        <<: *dirtyPlugin
-        itm: 3
   - name: 'Proudspire Manor Refurbished.esp'
     dirty:
       - crc: 0x54bdfaee
@@ -15194,13 +15346,6 @@ plugins:
   - name: 'Ramen0dawnguard.esp'
     inc:
       - 'Ramen.esp'
-  - name: 'Ranger Ridge.esp'
-    dirty:
-      - crc: 0xcbb7b1f7
-        <<: *dirtyPlugin
-        itm: 120
-        udr: 25
-        nav: 1
   - name: 'Ranger''s Valley Lodge.esp'
     dirty:
       - crc: 0xd9adfdf2
@@ -19528,16 +19673,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 17
         udr: 4
-  - name: 'ORS_SolitudeGate.esp'
-    msg: [ *obsolete ]
-  - name: 'Pinewood Village.esp'
-    inc:
-      - 'pinewoodvillage.esm'
-    dirty:
-      - crc: 0x4a26ea6a
-        <<: *dirtyPlugin
-        itm: 33
-        udr: 25
   - name: 'Riverwood Enhanced.esp'
     dirty:
       - crc: 0x63725578
