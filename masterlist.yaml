@@ -1512,6 +1512,60 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Breezehome Basement Continued](https://www.nexusmods.com/skyrim/mods/59521).' ]
+  - name: 'Castle Draco.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
+    tag:
+      - Delev
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x603A5C67
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1503
+        nav: 28
+      - <<: *reqManualFix
+        crc: 0xBEF90C7D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 28
+  - name: 'Castle Draco Lost Paladin Edition.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
+    tag:
+      - Delev
+    dirty:
+      # v0.68
+      - <<: *reqManualFix
+        crc: 0xEB865D44
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 104
+        nav: 28
+      # v0.68 - after QAC
+      - <<: *reqManualFix
+        crc: 0xC2D50B39
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 28
+      # v0.69
+      - <<: *reqManualFix
+        crc: 0xF434B424
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
+        udr: 7
+        nav: 28
+      # v0.69 - after QAC
+      - <<: *reqManualFix
+        crc: 0xB41FDC8B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 28
+  - name: 'Castle Draco - Auto Sorting Room Addon Load After Main Plugin.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xB676A59E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        nav: 14
+      - <<: *reqManualFix
+        crc: 0xE8DFB90B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 14
   - name: 'Castle Draco Master File Load First.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
     tag:
@@ -6281,10 +6335,15 @@ plugins:
         subs: [ 'Vanilla' ]
         condition: 'not active("HearthFires.esm") and checksum("Statues.esp",5081E67A)'
   - name: 'SteamAchievementUnlocker.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20851' ]
     dirty:
-      - crc: 0x67cb652
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x067CB652
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      - crc: 0xCA006C17
+        util: 'TES5Edit v4.0.2f'
   - name: 'StormcloakArmorVariety(OPTION\d)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -13006,27 +13065,32 @@ plugins:
   - name: 'CaethspellCavernsPlayerHome.esp'
     msg: [ *obsolete ]
   - name: 'Calavalcave.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12628' ]
     dirty:
-      - crc: 0x720fa4ce
-        <<: *dirtyPlugin
-        itm: 1596
+      - <<: *reqManualFix
+        crc: 0x9B65D3F8
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4309
         udr: 1
         nav: 36
-      - crc: 0x9b65d3f8
-        <<: *dirtyPlugin
-        itm: 1605
-        udr: 1
+      - <<: *reqManualFix
+        crc: 0x8CC7BAA2
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 36
   - name: 'Camps.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22572' ]
     dirty:
-      - crc: 0x6f42e236
-        <<: *dirtyPlugin
-        itm: 2
+      - <<: *quickClean
+        crc: 0x6F42E236
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
         udr: 19
   - name: 'CAMPS2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22572' ]
     dirty:
-      - crc: 0x322f9e1c
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x322F9E1C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
         udr: 2
   - name: 'Candle Pond Ranch Default Mannequin.esp'
@@ -13040,11 +13104,16 @@ plugins:
       - <<: *obsolete
         condition: 'checksum("Candle Pond Ranch.esp",8B643328)'
   - name: 'Castle Brennenburgh.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13965' ]
     dirty:
-      - crc: 0xa1786e09
-        <<: *dirtyPlugin
-        itm: 25
-        udr: 9
+      - <<: *reqManualFix
+        crc: 0xF8E70B5F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x1B0E30BA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'CastleDKmaster.esp'
     req:
@@ -13054,28 +13123,6 @@ plugins:
     req:
       - name: 'SkyMoMod.esm'
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
-  - name: 'Castle Draco.esp'
-    tag:
-      - Delev
-    dirty:
-      - crc: 0x603a5c67
-        <<: *dirtyPlugin
-        itm: 1456
-        nav: 28
-  - name: 'Castle Draco Lost Paladin Edition.esp'
-    tag:
-      - Delev
-    dirty:
-      - crc: 0xeb865d44
-        <<: *dirtyPlugin
-        itm: 99
-        nav: 28
-  - name: 'Castle Draco - Auto Sorting Room Addon Load After Main Plugin.esp'
-    dirty:
-      - crc: 0xb676a59e
-        <<: *dirtyPlugin
-        itm: 4
-        nav: 14
   - name: 'Castle Dracula.esp'
     dirty:
       - crc: 0x3bee9879
@@ -13241,14 +13288,18 @@ plugins:
   - name: 'Corpse_Preparation.esp'
     req: [ *SKSE ]
   - name: 'Creeks.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Creeks.esp",CEA19788) or checksum("Creeks.esp",B0022758) or checksum("Creeks.esp",152E225F) or checksum("Creeks.esp",27D75BC4) or checksum("Creeks.esp",FBB0A123)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18978' ]
     dirty:
-      - crc: 0x4b535d88
-        <<: *dirtyPlugin
-        itm: 36
+      - <<: *reqManualFix
+        crc: 0x4B535D88
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 94
         udr: 29
+        nav: 4
+      - <<: *reqManualFix
+        crc: 0x9A416B84
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 4
   - name: 'CrimsonQuest2.esp'
     dirty:
       - crc: 0xb8c5038e
