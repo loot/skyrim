@@ -13288,14 +13288,18 @@ plugins:
   - name: 'Corpse_Preparation.esp'
     req: [ *SKSE ]
   - name: 'Creeks.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Creeks.esp",CEA19788) or checksum("Creeks.esp",B0022758) or checksum("Creeks.esp",152E225F) or checksum("Creeks.esp",27D75BC4) or checksum("Creeks.esp",FBB0A123)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18978' ]
     dirty:
-      - crc: 0x4b535d88
-        <<: *dirtyPlugin
-        itm: 36
+      - <<: *reqManualFix
+        crc: 0x4B535D88
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 94
         udr: 29
+        nav: 4
+      - <<: *reqManualFix
+        crc: 0x9A416B84
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 4
   - name: 'CrimsonQuest2.esp'
     dirty:
       - crc: 0xb8c5038e
