@@ -13065,26 +13065,58 @@ plugins:
       - name: 'SkyMoMod.esm'
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
   - name: 'Castle Draco.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
     tag:
       - Delev
     dirty:
-      - crc: 0x603a5c67
-        <<: *dirtyPlugin
-        itm: 1456
+      - <<: *reqManualFix
+        crc: 0x603A5C67
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1503
+        nav: 28
+      - <<: *reqManualFix
+        crc: 0xBEF90C7D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 28
   - name: 'Castle Draco Lost Paladin Edition.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
     tag:
       - Delev
     dirty:
-      - crc: 0xeb865d44
-        <<: *dirtyPlugin
-        itm: 99
+      # v0.68
+      - <<: *reqManualFix
+        crc: 0xEB865D44
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 104
+        nav: 28
+      # v0.68 - after QAC
+      - <<: *reqManualFix
+        crc: 0xC2D50B39
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 28
+      # v0.69
+      - <<: *reqManualFix
+        crc: 0xF434B424
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
+        udr: 7
+        nav: 28
+      # v0.69 - after QAC
+      - <<: *reqManualFix
+        crc: 0xB41FDC8B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 28
   - name: 'Castle Draco - Auto Sorting Room Addon Load After Main Plugin.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12792' ]
     dirty:
-      - crc: 0xb676a59e
-        <<: *dirtyPlugin
+      - <<: *reqManualFix
+        crc: 0xB676A59E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+        nav: 14
+      - <<: *reqManualFix
+        crc: 0xE8DFB90B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 14
   - name: 'Castle Dracula.esp'
     dirty:
