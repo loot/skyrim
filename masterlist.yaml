@@ -13684,10 +13684,17 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Dungeons Vault of Elements.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20560' ]
     dirty:
-      - crc: 0xa30fcaee
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xA30FCAEE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
         udr: 4
+    clean:
+      - crc: 0x10F99865
+        util: 'TES5Edit v4.0.2f'
   - name: 'DusksCabin.esp'
     dirty:
       - crc: 0xd8766585
