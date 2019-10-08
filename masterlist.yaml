@@ -12379,27 +12379,50 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
         udr: 1
-  - name: 'SummerWearSA.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[here](http://www.nexusmods.com/skyrim/mods/25237).' ]
-        condition: 'checksum("SummerWearSA.esp",D91C8FE5)'
-    dirty:
-      - crc: 0x7cb5c5ea
-        <<: *dirtyPlugin
-        itm: 24
-  - name: 'SummerWearBBLS.esp'
-    dirty:
-      - crc: 0xe9ca2ddc
-        <<: *dirtyPlugin
-        itm: 6
   - name: 'BBLSSummerWear.esp'
     msg: [ *obsolete ]
-  - name: 'SummerWearUBH.esp'
+  - name: 'SummerWear.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
+    clean:
+      # v2.0
+      - crc: 0x4ABC3A12
+        util: 'TES5Edit v4.0.2f'
+  - name: 'SummerWearSA.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
     dirty:
-      - crc: 0x22d2ac81
-        <<: *dirtyPlugin
-        itm: 6
+      # v2.0
+      - <<: *quickClean
+        crc: 0x7CB5C5EA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+    clean:
+      # v2.0 - after QAC
+      - crc: 0xAA686CBE
+        util: 'TES5Edit v4.0.2f'
+  - name: 'SummerWearBBLS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
+    dirty:
+      # v2.0
+      - <<: *quickClean
+        crc: 0xE9CA2DDC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v2.0 - after QAC
+      - crc: 0xE7354444
+        util: 'TES5Edit v4.0.2f'
+  - name: 'SummerWearUBH.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
+    dirty:
+      # v2.1
+      - <<: *quickClean
+        crc: 0x759E6860
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v2.1 - after QAC
+      - crc: 0x4B6EE849
+        util: 'TES5Edit v4.0.2f'
   - name: 'BBLS_PatioFurniture.esp'
     dirty:
       - crc: 0x90c691
