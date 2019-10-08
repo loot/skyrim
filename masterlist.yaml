@@ -2663,10 +2663,60 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 819
   - name: 'WinterholdDestruction.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30554' ]
     dirty:
-      - crc: 0x52c2acf1
-        <<: *dirtyPlugin
+      # v2.25 - Normal
+      - <<: *quickClean
+        crc: 0x6F0640AF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+      # v2.25 - Compatibility
+      - <<: *reqManualFix
+        crc: 0x8ED61409
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 28
+        nav: 1
+      # v2.25 - Compatibility - After QAC
+      - <<: *reqManualFix
+        crc: 0x85A67A5A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+    clean:
+      # v2.25 - Normal - After QAC
+      - crc: 0xB662C637
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ExpandedWinterholdRuins.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30554' ]
+    dirty:
+      # v2.25 - Normal
+      - <<: *quickClean
+        crc: 0xF462EFAE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v2.25 - Normal - After QAC
+      - crc: 0xC9110449
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ExpandedWinterholdRuinsExterior.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30554' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xE76DACEB
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      - crc: 0xFE8D1903
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ExpandedWinterholdRuinsExterior - NoHouse.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30554' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x939075D0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      - crc: 0x31898CAF
+        util: 'TES5Edit v4.0.2f'
   - name: 'XFLMain.esm'
     inc:
       - 'BDO.esp'
@@ -19708,15 +19758,6 @@ plugins:
         itm: 5
         udr: 242
         nav: 3
-  - name: 'ExpandedWinterholdRuins.esp'
-    dirty:
-      - crc: 0xdb0a9cb5
-        <<: *dirtyPlugin
-        itm: 188
-      - crc: 0xa7d9fa59
-        <<: *dirtyPlugin
-        itm: 6
-        udr: 12
   - name: 'FarvynsDivineOctavo.esp'
     inc:
       - 'Open Cities Skyrim.esp'
