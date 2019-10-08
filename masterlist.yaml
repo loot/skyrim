@@ -13684,42 +13684,42 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'Dungeons Vault of Elements.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20560' ]
     dirty:
-      - crc: 0xa30fcaee
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xA30FCAEE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
         udr: 4
-  - name: 'DusksCabin.esp'
-    dirty:
-      - crc: 0xd8766585
-        <<: *dirtyPlugin
-        udr: 1
-  - name: 'DVC.esp'
-    dirty:
-      - crc: 0x16317a66
-        <<: *dirtyPlugin
-        itm: 2
-  - name: 'DVCLight.esp'
-    inc:
-      - 'DVC.esp'
-    dirty:
-      - crc: 0xb81a8cb5
-        <<: *dirtyPlugin
-        itm: 44
+    clean:
+      - crc: 0x10F99865
+        util: 'TES5Edit v4.0.2f'
   - name: 'DwarvenFalls.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21115' ]
     dirty:
-      - crc: 0x30ff942d
-        <<: *dirtyPlugin
-        itm: 8
+      - <<: *quickClean
+        crc: 0xC4155F0F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
         udr: 26
+    clean:
+      - crc: 0xB975B64E
+        util: 'TES5Edit v4.0.2f'
   - name: 'DwemerAquarium.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14122' ]
     dirty:
-      - crc: 0x53d1ab91
-        <<: *dirtyPlugin
-        itm: 83
+      # v1.0
+      - <<: *quickClean
+        crc: 0x472FE7FE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 90
         udr: 4
-      - crc: 0x472FE7FE
-        <<: *dirtyPlugin
-        itm: 83
+      # v1.0f
+      - <<: *quickClean
+        crc: 0x53D1AB91
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 90
         udr: 4
   - name: 'Earthmist hollow.esp'
     msg:
@@ -13734,65 +13734,90 @@ plugins:
           - lang: ru
             text: 'Плагин является частично дружественным к компаньонам. Компаньоны не смогут проходить через двери.'
   - name: 'EBM.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14938' ]
     msg:
       - <<: *obsolete
         condition: 'not checksum("EBM.esp",2CBBAEC7) and not checksum("EBM.esp",ADA00DD0)'
     dirty:
-      - crc: 0x2cbbaec7
-        <<: *dirtyPlugin
-        itm: 24
+      - <<: *reqManualFix
+        crc: 0x2CBBAEC7
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 47
         udr: 3
         nav: 3
+      - <<: *reqManualFix
+        crc: 0xBB7AD472
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'Ebon Mine.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15915' ]
     dirty:
-      - crc: 0x72885a80
-        <<: *dirtyPlugin
-        itm: 2
+      - <<: *quickClean
+        crc: 0x8CFA5A84
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
+    clean:
+      - crc: 0xD5D85B60
+        util: 'TES5Edit v4.0.2f'
   - name: 'Ebonvale.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/41391' ]
     dirty:
-      - crc: 0x1476f297
-        <<: *dirtyPlugin
-        itm: 130
-        udr: 181
+      # 2.9a
+      - <<: *quickClean
+        crc: 0xFCFFC24D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 31
+        udr: 8
   - name: 'ElysiumEstate.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/33939' ]
     after:
       - 'WhiterunHoldForest.esp'
     dirty:
-      - crc: 0xf0182534
-        <<: *dirtyPlugin
-        itm: 3
-        udr: 2
-        nav: 1
-  - name: 'enchantersbreezehome.esp'
-    dirty:
-      - crc: 0x64e5e85
-        <<: *dirtyPlugin
-        udr: 2
-  - name: 'enhancedhighhrothgarbymat.esp'
-    dirty:
-      - crc: 0x63b82993
-        <<: *dirtyPlugin
+      # v5.0.3
+      - <<: *quickClean
+        crc: 0x981B275F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-  - name: 'EnlargedDwemerStoreRoom.esp'
+    clean:
+      # v5.0.3 - after QAC
+      - crc: 0x8FDEBE9E
+        util: 'TES5Edit v4.0.2f'
+  - name: 'enhancedhighhrothgarbymat.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=131196527' ]
     dirty:
-      - crc: 0xd00304
-        <<: *dirtyPlugin
-        itm: 5
+      - <<: *quickClean
+        crc: 0x63B82993
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      - crc: 0x662B1648
+        util: 'TES5Edit v4.0.2f'
+  - name: 'EnlargedDwemerStoreRoom.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9664' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x00D00304
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 136
         udr: 1
         nav: 1
+      - <<: *reqManualFix
+        crc: 0x7E75181C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'EpicBossFight.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13491' ]
     dirty:
-      - crc: 0xab83511d
-        <<: *dirtyPlugin
-        itm: 56
+      - <<: *reqManualFix
+        crc: 0xAB83511D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 70
         udr: 76
         nav: 8
-  - name: 'epiccreaturesskyrim.esp'
-    dirty:
-      - crc: 0x4dd72040
-        <<: *dirtyPlugin
-        itm: 25
-        udr: 2
+      - <<: *reqManualFix
+        crc: 0x4E3488E8
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 8
   - name: 'expanded basement.esp'
     msg:
       - <<: *obsolete
