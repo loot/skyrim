@@ -1466,7 +1466,13 @@ plugins:
       - crc: 0x8A7BDBF3
         util: 'TES5Edit v4.0.2f'
   - name: 'BBLuxurySuite.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11427' ]
     msg: [ *doNotClean ]
+  - name: 'BBLuxurySuiteENM.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11427' ]
+    clean:
+      - crc: 0x5D42E0D5
+        util: 'TES5Edit v4.0.2f'
   - name: 'BecomeKingOfRiverHelm.esm'
     msg: [ *obsolete ]
   - name: 'Blood \(\w+\)\.ESM'
@@ -2566,50 +2572,151 @@ plugins:
   - name: 'Ultimate Witcher MOD.esm'
     msg: [ *obsolete ]
   - name: 'UndergroundBathhouse.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27361' ]
     dirty:
-      - crc: 0xfd0cf70
-        <<: *dirtyPlugin
-        itm: 1
-        udr: 4
-      - crc: 0xc07c8282
-        <<: *dirtyPlugin
-        itm: 2
+      - <<: *quickClean
+        crc: 0x8AE89603
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 79
   - name: 'UndergroundBathhouse_light.esm'
     inc:
       - 'UndergroundBathhouse.esm'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf4137ac5
-        itm: 1
-        udr: 4
+    msg: [ *obsolete ]
   - name: 'UnicornCave.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17246' ]
+    msg: [ *obsolete ]
+  - name: 'unicorncave.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17246' ]
+    inc:
+      - 'UnicornCave.esm'
     dirty:
-      - crc: 0xc5d100f6
-        <<: *dirtyPlugin
-        itm: 41
-        udr: 0
+      # v1.3
+      - <<: *quickClean
+        crc: 0x40169648
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 88
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x4D2DCC06
+        util: 'TES5Edit v4.0.2f'
   - name: 'Vigilant of Stendarr Quests Master.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13725' ]
     dirty:
-      - crc: 0xb0207cf
-        <<: *dirtyPlugin
+      # v1.5
+      - <<: *quickClean
+        crc: 0x0B0207CF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.5 - after QAC
+      - crc: 0x4654C82C
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Dawnguard - Vigilant of Stendarr Quests Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13725' ]
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This patch is to be used only if the Hall of the Viligent has been "trashed" by the Dawnguard NPC''s.'
+          - lang: de
+            text: 'Dieser Patch darf nur verwendet werden, wenn die Halle der Viligent von den Dawnguard NPCs "zerstört" wurde.'
+          - lang: ja
+            text: 'このパッチは番人の間がドーンガードのNPCによって「破壊」されている場合にのみ使用してください。'
+        condition: 'not active("Dawnguard.esm")'
+    dirty:
+      # v1.0
+      - <<: *quickClean
+        crc: 0x9F4D4339
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x7F0A7601
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Vigilant of Stendarr Quests.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13725' ]
+    dirty:
+      # v1.5B
+      - <<: *quickClean
+        crc: 0xA0318472
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
+      # v1.5C
+      - <<: *quickClean
+        crc: 0x63846C4B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
+  - name: 'Vigilant of Stendarr Quests No Joining Requirements Patch.esp'
+    msg: [ *obsolete ]
   - name: 'WARZONES - Civil Unrest.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9494' ]
     dirty:
-      - crc: 0x5641193a
-        <<: *dirtyPlugin
-        itm: 66
-        udr: 1
-  - name: 'Warzones French.esm'
+      - <<: *quickClean
+        crc: 0x7798B901
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
+  - name: 'WARZONES - DLC - Assault Attack.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/71011' ]
     dirty:
-      - crc: 0x628534cb
-        <<: *dirtyPlugin
-        itm: 65
-        udr: 1
+      - <<: *quickClean
+        crc: 0xD2A39A1D
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 819
   - name: 'WinterholdDestruction.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30554' ]
     dirty:
-      - crc: 0x52c2acf1
-        <<: *dirtyPlugin
+      # v2.25 - Normal
+      - <<: *quickClean
+        crc: 0x6F0640AF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+      # v2.25 - Compatibility
+      - <<: *reqManualFix
+        crc: 0x8ED61409
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 28
+        nav: 1
+      # v2.25 - Compatibility - After QAC
+      - <<: *reqManualFix
+        crc: 0x85A67A5A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+    clean:
+      # v2.25 - Normal - After QAC
+      - crc: 0xB662C637
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ExpandedWinterholdRuins.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30554' ]
+    dirty:
+      # v2.25 - Normal
+      - <<: *quickClean
+        crc: 0xF462EFAE
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v2.25 - Normal - After QAC
+      - crc: 0xC9110449
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ExpandedWinterholdRuinsExterior.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30554' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xE76DACEB
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      - crc: 0xFE8D1903
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ExpandedWinterholdRuinsExterior - NoHouse.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30554' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x939075D0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      - crc: 0x31898CAF
+        util: 'TES5Edit v4.0.2f'
   - name: 'XFLMain.esm'
     inc:
       - 'BDO.esp'
@@ -12379,27 +12486,50 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
         udr: 1
-  - name: 'SummerWearSA.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[here](http://www.nexusmods.com/skyrim/mods/25237).' ]
-        condition: 'checksum("SummerWearSA.esp",D91C8FE5)'
-    dirty:
-      - crc: 0x7cb5c5ea
-        <<: *dirtyPlugin
-        itm: 24
-  - name: 'SummerWearBBLS.esp'
-    dirty:
-      - crc: 0xe9ca2ddc
-        <<: *dirtyPlugin
-        itm: 6
   - name: 'BBLSSummerWear.esp'
     msg: [ *obsolete ]
-  - name: 'SummerWearUBH.esp'
+  - name: 'SummerWear.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
+    clean:
+      # v2.0
+      - crc: 0x4ABC3A12
+        util: 'TES5Edit v4.0.2f'
+  - name: 'SummerWearSA.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
     dirty:
-      - crc: 0x22d2ac81
-        <<: *dirtyPlugin
-        itm: 6
+      # v2.0
+      - <<: *quickClean
+        crc: 0x7CB5C5EA
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+    clean:
+      # v2.0 - after QAC
+      - crc: 0xAA686CBE
+        util: 'TES5Edit v4.0.2f'
+  - name: 'SummerWearBBLS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
+    dirty:
+      # v2.0
+      - <<: *quickClean
+        crc: 0xE9CA2DDC
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v2.0 - after QAC
+      - crc: 0xE7354444
+        util: 'TES5Edit v4.0.2f'
+  - name: 'SummerWearUBH.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
+    dirty:
+      # v2.1
+      - <<: *quickClean
+        crc: 0x759E6860
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v2.1 - after QAC
+      - crc: 0x4B6EE849
+        util: 'TES5Edit v4.0.2f'
   - name: 'BBLS_PatioFurniture.esp'
     dirty:
       - crc: 0x90c691
@@ -13051,11 +13181,13 @@ plugins:
       - crc: 0xf598b916
         <<: *dirtyPlugin
         itm: 131
-  - name: 'buy_whiterun2.esp'
+  - name: 'Buy_Whiterun2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21193' ]
     dirty:
-      - crc: 0xf734ca91
-        <<: *dirtyPlugin
-        itm: 167
+      - <<: *quickClean
+        crc: 0xF734CA91
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 247
         udr: 221
   - name: 'CaethspellCavernPlayerHome.esp'
     dirty:
@@ -16618,13 +16750,6 @@ plugins:
         itm: 2
         udr: 1
         nav: 2
-  - name: 'unicorncave.esp'
-    inc:
-      - 'UnicornCave.esm'
-    dirty:
-      - crc: 0x40169648
-        <<: *dirtyPlugin
-        itm: 37
   - name: 'Unique Places.esp'
     dirty:
       - crc: 0x43524f9f
@@ -16713,31 +16838,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 8
         udr: 55
-  - name: 'Vigilant of Stendarr Quests.esp'
-    dirty:
-      - crc: 0xa0318472
-        <<: *dirtyPlugin
-        itm: 17
-      - crc: 0x63846C4B
-        <<: *dirtyPlugin
-        itm: 17
-  - name: 'Dawnguard - Vigilant of Stendarr Quests Patch.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This patch is to be used only if the Hall of the Viligent has been "trashed" by the Dawnguard NPC''s.'
-          - lang: de
-            text: 'Dieser Patch darf nur verwendet werden, wenn die Halle der Viligent von den Dawnguard NPCs "zerstört" wurde.'
-          - lang: ja
-            text: 'このパッチは番人の間がドーンガードのNPCによって「破壊」されている場合にのみ使用してください。'
-        condition: 'not active("Dawnguard.esm")'
-    dirty:
-      - crc: 0x9f4d4339
-        <<: *dirtyPlugin
-        itm: 2
-  - name: 'Vigilant of Stendarr Quests No Joining Requirements Patch.esp'
-    msg: [ *obsolete ]
   - name: 'Vjarkell Castle.esp'
     dirty:
       - crc: 0x53186f15
@@ -19660,15 +19760,6 @@ plugins:
         itm: 5
         udr: 242
         nav: 3
-  - name: 'ExpandedWinterholdRuins.esp'
-    dirty:
-      - crc: 0xdb0a9cb5
-        <<: *dirtyPlugin
-        itm: 188
-      - crc: 0xa7d9fa59
-        <<: *dirtyPlugin
-        itm: 6
-        udr: 12
   - name: 'FarvynsDivineOctavo.esp'
     inc:
       - 'Open Cities Skyrim.esp'
