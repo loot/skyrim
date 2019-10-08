@@ -2583,11 +2583,22 @@ plugins:
       - 'UndergroundBathhouse.esm'
     msg: [ *obsolete ]
   - name: 'UnicornCave.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17246' ]
+    msg: [ *obsolete ]
+  - name: 'unicorncave.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17246' ]
+    inc:
+      - 'UnicornCave.esm'
     dirty:
-      - crc: 0xc5d100f6
-        <<: *dirtyPlugin
-        itm: 41
-        udr: 0
+      # v1.3
+      - <<: *quickClean
+        crc: 0x40169648
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 88
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x4D2DCC06
+        util: 'TES5Edit v4.0.2f'
   - name: 'Vigilant of Stendarr Quests Master.esm'
     dirty:
       - crc: 0xb0207cf
@@ -16641,13 +16652,6 @@ plugins:
         itm: 2
         udr: 1
         nav: 2
-  - name: 'unicorncave.esp'
-    inc:
-      - 'UnicornCave.esm'
-    dirty:
-      - crc: 0x40169648
-        <<: *dirtyPlugin
-        itm: 37
   - name: 'Unique Places.esp'
     dirty:
       - crc: 0x43524f9f
