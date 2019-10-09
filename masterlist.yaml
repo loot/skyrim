@@ -2533,13 +2533,34 @@ plugins:
         udr: 35
   - name: 'Succubus.esm'
     msg: [ *obsolete ]
-  - name: 'Terramis_DungeonMaster.esm'
-    msg: [ *obsolete ]
   - name: 'Terramis_Dungeon_01.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12935' ]
     dirty:
-      - crc: 0x9b9c494
-        <<: *dirtyPlugin
-        itm: 2
+      - <<: *quickClean
+        crc: 0x09B9C494
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      - crc: 0x4B63E6E6
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Terramis_Dungeon_01.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12935' ]
+    inc:
+      - 'Terramis_Dungeon_01.esm'
+    dirty:
+      - <<: *quickClean
+        crc: 0x0300A1D3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      - crc: 0xAD2ED52A
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Terramis_DungeonChild.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12935' ]
+    msg: [ *obsolete ]
+  - name: 'Terramis_DungeonMaster.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12935' ]
+    msg: [ *obsolete ]
   - name: 'The Spice of Life.esm'
     msg:
       - type: warn
@@ -16269,18 +16290,6 @@ plugins:
       - crc: 0x802bcc84
         <<: *dirtyPlugin
         itm: 71
-  - name: 'Terramis_DungeonChild.esp'
-    msg: [ *obsolete ]
-  - name: 'Terramis_Dungeon_01.esp'
-    inc:
-      - 'Terramis_Dungeon_01.esm'
-    dirty:
-      - crc: 0x300a1d3
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0xE718C834
-        <<: *dirtyPlugin
-        itm: 2
   - name: 'TG Headquarters Overhaul v.1.5.esp'
     dirty:
       - crc: 0xdab11b5f
