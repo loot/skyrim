@@ -2858,10 +2858,16 @@ plugins:
           - lang: ru
             text: 'На самом деле это esm-файл, выпущенный как esp.'
   - name: 'portal2mod.esp'
+    # Official Valve mod - Fall of the Space Core, Vol. 1
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=7375' ]
     dirty:
-      - crc: 0xf0c49703
-        <<: *dirtyPlugin
-        itm: 5
+      - <<: *quickClean
+        crc: 0xF0C49703
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      - crc: 0x6FE81988
+        util: 'TES5Edit v4.0.2f'
   - name: 'NPCEssential - .+\.esp'
     msg:
       - type: say
