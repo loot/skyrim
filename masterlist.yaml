@@ -2524,36 +2524,43 @@ plugins:
   - name: 'SPTMuscularFemaleRaces.esm'
     msg: [ *obsolete ]
   - name: 'Stargate.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23471' ]
     dirty:
-      - crc: 0x8439b207
-        <<: *dirtyPlugin
-        itm: 31
-        udr: 5
+      - <<: *quickClean
+        crc: 0x9096F39C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 57
+        udr: 35
   - name: 'Succubus.esm'
     msg: [ *obsolete ]
-  - name: 'Tamrielic Lore.esm'
-    dirty:
-      - crc: 0x1ec8407a
-        <<: *dirtyPlugin
-        itm: 5
-  - name: 'Tang mo follower.esm'
-    dirty:
-      - crc: 0x363af98
-        <<: *dirtyPlugin
-        itm: 1
-  - name: 'Terramis_DungeonMaster.esm'
-    msg: [ *obsolete ]
   - name: 'Terramis_Dungeon_01.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12935' ]
     dirty:
-      - crc: 0x9b9c494
-        <<: *dirtyPlugin
-        itm: 2
-  - name: 'The Dragon King.esm'
+      - <<: *quickClean
+        crc: 0x09B9C494
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      - crc: 0x4B63E6E6
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Terramis_Dungeon_01.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12935' ]
+    inc:
+      - 'Terramis_Dungeon_01.esm'
     dirty:
-      - crc: 0x283dbd41
-        <<: *dirtyPlugin
-        itm: 408
-        udr: 0
+      - <<: *quickClean
+        crc: 0x0300A1D3
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      - crc: 0xAD2ED52A
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Terramis_DungeonChild.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12935' ]
+    msg: [ *obsolete ]
+  - name: 'Terramis_DungeonMaster.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12935' ]
+    msg: [ *obsolete ]
   - name: 'The Spice of Life.esm'
     msg:
       - type: warn
@@ -2800,11 +2807,6 @@ plugins:
             text: 'このEspファイルは実際にはEsmファイルとして公開されています。'
           - lang: ru
             text: 'На самом деле это esm-файл, выпущенный как esp.'
-  - name: 'Celestial-Hairstyles.esp'
-    dirty:
-      - crc: 0x53c845c8
-        <<: *dirtyPlugin
-        itm: 2
   - name: 'Skyrim Project Optimization - Full Version.esp'
     group: *newLandsGroup
     inc:
@@ -2856,10 +2858,16 @@ plugins:
           - lang: ru
             text: 'На самом деле это esm-файл, выпущенный как esp.'
   - name: 'portal2mod.esp'
+    # Official Valve mod - Fall of the Space Core, Vol. 1
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=7375' ]
     dirty:
-      - crc: 0xf0c49703
-        <<: *dirtyPlugin
-        itm: 5
+      - <<: *quickClean
+        crc: 0xF0C49703
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      - crc: 0x6FE81988
+        util: 'TES5Edit v4.0.2f'
   - name: 'NPCEssential - .+\.esp'
     msg:
       - type: say
@@ -2875,10 +2883,12 @@ plugins:
           - lang: ru
             text: 'Нужно загружать перед любыми модами, меняющими npc. Этот мод устанавливает флаг бессмертия для NPC, но оставляет другие характеристики, как в чистом Скайрим.'
   - name: 'AbsentAuCombat_Fix_FR.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14306' ]
     dirty:
-      - crc: 0x3f909f6e
-        <<: *dirtyPlugin
-        itm: 1
+      - <<: *quickClean
+        crc: 0x3F909F6E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
   - name: 'AerinRestrainingOrder.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'AmuletOfArticulationFix.esp'
@@ -2911,10 +2921,6 @@ plugins:
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'aventus aretino fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
-    dirty:
-      - crc: 0x80e1299c
-        <<: *dirtyPlugin
-        itm: 6
   - name: 'Back off, Barbas!.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Bardfix.esp'
@@ -2938,22 +2944,23 @@ plugins:
   - name: 'breezehomelightfix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BreezehomeLadderFixJP.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9659' ]
     dirty:
-      - crc: 0xF2BAA689
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *reqManualFix
+        crc: 0xF2BAA689
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
         nav: 2
-      - crc: 0x94D3C2C0
-        <<: *dirtyPlugin
-        nav: 32
+      # v1.2 - after QAC
+      - <<: *reqManualFix
+        crc: 0x99AD685C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
     inc:
       - 'BreezehomeLadderFix.esp'
   - name: 'BreezehomeLightingFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
-  - name: 'breezehomeshadowfix.esp'
-    dirty:
-      - crc: 0xf416a7c9
-        <<: *dirtyPlugin
-        udr: 3
   - name: 'Breezehome-hf-CTD-fix.esp'
     msg: [ *obsolete ]
   - name: 'Brynjolf Dialogue Fix.esp'
@@ -3011,10 +3018,12 @@ plugins:
   - name: 'DialogueWithAVampireOrWhatever.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dragon Shout - Marked for Death.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17459' ]
     msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
-      - crc: 0xc9ab8c3e
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0xC9AB8C3E
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
   - name: 'Dreagonsreach bottle fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
@@ -3080,18 +3089,10 @@ plugins:
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'hjerim chest fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
-    dirty:
-      - crc: 0x560f7c1c
-        <<: *dirtyPlugin
-        udr: 4
   - name: 'Hjerimfix.esp'
     msg:
       - *corrupt
       - *alreadyInOrFixedByUSLEEP
-    dirty:
-      - crc: 0x9b9b0581
-        <<: *dirtyPlugin
-        udr: 9
   - name: 'HjerimMessFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HM DB CookQuestFix.esp'
@@ -3127,11 +3128,6 @@ plugins:
         subs: [ '1.8' ]
   - name: 'lightplacement.esp'
     msg: [ *obsolete ]
-  - name: 'lightingfix.esp'
-    dirty:
-      - crc: 0xb22ed6c8
-        <<: *dirtyPlugin
-        itm: 9
   - name: 'OLSE for Dawnguard.esp'
     dirty:
       - crc: 0x931f68bd
@@ -16283,18 +16279,6 @@ plugins:
       - crc: 0x802bcc84
         <<: *dirtyPlugin
         itm: 71
-  - name: 'Terramis_DungeonChild.esp'
-    msg: [ *obsolete ]
-  - name: 'Terramis_Dungeon_01.esp'
-    inc:
-      - 'Terramis_Dungeon_01.esm'
-    dirty:
-      - crc: 0x300a1d3
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0xE718C834
-        <<: *dirtyPlugin
-        itm: 2
   - name: 'TG Headquarters Overhaul v.1.5.esp'
     dirty:
       - crc: 0xdab11b5f
