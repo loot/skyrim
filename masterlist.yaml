@@ -2944,13 +2944,19 @@ plugins:
   - name: 'breezehomelightfix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BreezehomeLadderFixJP.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9659' ]
     dirty:
-      - crc: 0xF2BAA689
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *reqManualFix
+        crc: 0xF2BAA689
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
         nav: 2
-      - crc: 0x94D3C2C0
-        <<: *dirtyPlugin
-        nav: 32
+      # v1.2 - after QAC
+      - <<: *reqManualFix
+        crc: 0x99AD685C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
     inc:
       - 'BreezehomeLadderFix.esp'
   - name: 'BreezehomeLightingFix.esp'
