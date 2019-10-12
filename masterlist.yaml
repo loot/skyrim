@@ -14906,13 +14906,20 @@ plugins:
     clean:
       - crc: 0x339A4BC3
         util: 'TES5Edit v4.0.2f'
-  - name: 'improvedskyforge.esp'
+  - name: 'ImprovedSkyforge.esp'
     dirty:
-      - crc: 0xfdb929ce
-        <<: *dirtyPlugin
-        itm: 7
+      # v1.2
+      - <<: *reqManualFix
+        crc: 0xBA2E16C0
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
         udr: 31
-        nav: 1
+        nav: 6
+      # v1.2 - after QAC
+      - <<: *reqManualFix
+        crc: 0x7E02B877
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 6
   - name: 'InfinityHall.esp'
     dirty:
       - crc: 0x1a10446b
