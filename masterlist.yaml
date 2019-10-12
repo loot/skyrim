@@ -14922,11 +14922,27 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 6
   - name: 'InfinityHall.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22938' ]
     dirty:
-      - crc: 0x1a10446b
-        <<: *dirtyPlugin
-        itm: 22
+      # Normal
+      - <<: *quickClean
+        crc: 0x1A10446B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 30
         udr: 6
+      # No Mannequins
+      - <<: *quickClean
+        crc: 0xDE413168
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 30
+        udr: 6
+    clean:
+      # Normal - after QAC
+      - crc: 0x25F1372A
+        util: 'TES5Edit v4.0.2f'
+      # No Mannequins - after QAC
+      - crc: 0xFE287D69
+        util: 'TES5Edit v4.0.2f'
   - name: 'Inns and Taverns.esp'
     dirty:
       - crc: 0xaf369c26
