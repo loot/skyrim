@@ -15932,10 +15932,17 @@ plugins:
   - name: 'riverwood house.esp'
     msg: [ *obsolete ]
   - name: 'Riverwood House Of Tree.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9751' ]
     dirty:
-      - crc: 0xa35adc2
-        <<: *dirtyPlugin
-        itm: 7
+      # v2.1
+      - <<: *quickClean
+        crc: 0x0A35ADC2
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+    clean:
+      # v2.1 - after QAC
+      - crc: 0xDAE78C8F
+        util: 'TES5Edit v4.0.2f'
   - name: 'riverwoodhuntingcabin.esp'
     dirty:
       - crc: 0x369c1e79
