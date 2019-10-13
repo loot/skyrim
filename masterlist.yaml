@@ -15932,84 +15932,148 @@ plugins:
   - name: 'riverwood house.esp'
     msg: [ *obsolete ]
   - name: 'Riverwood House Of Tree.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9751' ]
     dirty:
-      - crc: 0xa35adc2
-        <<: *dirtyPlugin
-        itm: 7
-  - name: 'riverwoodhuntingcabin.esp'
+      # v2.1
+      - <<: *quickClean
+        crc: 0x0A35ADC2
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+    clean:
+      # v2.1 - after QAC
+      - crc: 0xDAE78C8F
+        util: 'TES5Edit v4.0.2f'
+  - name: 'RiverwoodHuntingCabin.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15878' ]
+    msg: [ *obsolete ]
+  - name: 'RiverwoodHuntingCabinSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15878' ]
     dirty:
-      - crc: 0x369c1e79
-        <<: *dirtyPlugin
-        itm: 17
-      - crc: 0xa9cdb9b1
-        <<: *dirtyPlugin
-        itm: 21
+      # v1.8
+      - <<: *quickClean
+        crc: 0xDE7F9603
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v1.8 - after QAC
+      - crc: 0x3783C8CA
+        util: 'TES5Edit v4.0.2h'
   - name: 'RiverwoodRepose.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11944' ]
     dirty:
-      - crc: 0x304711bc
-        <<: *dirtyPlugin
-        itm: 29
+      # v3.6
+      - <<: *reqManualFix
+        crc: 0x304711BC
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 48
         udr: 4
-  - name: 'ROEBETA.esp'
-    req: [ *SKSE ]
-    dirty:
-      - crc: 0x8880d3d2
-        <<: *dirtyPlugin
-        itm: 62
-        udr: 10
-        nav: 1
-  - name: 'rooq_bathing_twocell.esp'
-    dirty:
-      - crc: 0x8937ed86
-        <<: *dirtyPlugin
-        itm: 8
-        udr: 17
+        nav: 2
+      # v3.6 - after QAC
+      - <<: *reqManualFix
+        crc: 0x12156A3A
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'rooq_bathing_onecell.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9227' ]
     dirty:
-      - crc: 0xc4f7edf0
-        <<: *dirtyPlugin
+      # v0.3
+      - <<: *quickClean
+        crc: 0xC4F7EDF0
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+        udr: 17
+    clean:
+      # v0.3 - after QAC
+      - crc: 0x48CA1DF7
+        util: 'TES5Edit v4.0.2h'
+  - name: 'rooq_bathing_twocell.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9227' ]
+    msg:
+      - <<: *useVersionHearthFires
+        condition: 'active("HearthFires.esm")'
+    dirty:
+      # v0.3
+      - <<: *quickClean
+        crc: 0x8937ED86
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
         udr: 17
+    clean:
+      # v0.3 - after QAC
+      - crc: 0xB6690AAB
+        util: 'TES5Edit v4.0.2h'
+  - name: 'Rooq_Bathing_TwoCell_HearthFires.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9227' ]
+    clean:
+      # v0.4
+      - crc: 0x92008946
+        util: 'TES5Edit v4.0.2h'
   - name: 'Rorik''s Keep.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22133' ]
     dirty:
-      - crc: 0x79fdfc96
-        <<: *dirtyPlugin
-        itm: 3
+      # v3.0
+      - <<: *quickClean
+        crc: 0x79FDFC96
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
         udr: 1
-      - crc: 0x9757CD5B
-        <<: *dirtyPlugin
-        itm: 3
-        udr: 1
+    clean:
+      # v3.0 - after QAC
+      - crc: 0xFDCB0990
+        util: 'TES5Edit v4.0.2h'
   - name: 'RPQuestAssist_2dot0.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/35785' ]
     dirty:
-      - crc: 0x2c5365b5
-        <<: *dirtyPlugin
-        itm: 16
-        udr: 19
+      # v2.34
+      - <<: *quickClean
+        crc: 0xB6F792D2
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
   - name: 'rrcamp.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10016' ]
     dirty:
-      - crc: 0x4f728bc6
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x4F728BC6
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
         udr: 40
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x9186EE50
+        util: 'TES5Edit v4.0.2h'
   - name: 'RTSforSkyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12683' ]
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("RTSforSkyrim.esp",6FDC7CAD) or checksum("RTSforSkyrim.esp",FF4ADC92)'
     dirty:
-      - crc: 0x291400f7
-        <<: *dirtyPlugin
-        itm: 26
-  - name: 'RTSCraterZone.esp'
-    dirty:
-      - crc: 0x4237a0ea
-        <<: *dirtyPlugin
-        itm: 3
+      # v0.28
+      - <<: *quickClean
+        crc: 0x6FDC7CAD
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 271
+      # v0.282
+      - <<: *quickClean
+        crc: 0x2880EB78
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 274
   - name: 'Rudale.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20352' ]
     msg:
       - <<: *obsolete
         condition: 'checksum("Rudale.esp",69ECFBC4)'
     dirty:
-      - crc: 0x5a0a771
-        <<: *dirtyPlugin
-        itm: 13
+      # v1.2
+      - <<: *quickClean
+        crc: 0x05A0A771
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 147
         udr: 59
+    clean:
+      # v1.2 - after QAC
+      - crc: 0xF65AEFCB
+        util: 'TES5Edit v4.0.2h'
   - name: 'Run For Your Lives.esp'
     inc:
       - 'EveryoneGetInside.esp'
