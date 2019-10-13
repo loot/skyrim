@@ -16818,14 +16818,22 @@ plugins:
       - 'SPERG.esp'
     msg: [ *doNotClean ]
   - name: 'tinyalchemisthut.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25712' ]
     msg:
       - <<: *obsolete
         condition: 'checksum("tinyalchemisthut.esp",4D9F38F8) or checksum("tinyalchemisthut.esp",A0FAF929)'
     dirty:
-      - crc: 0xc7bb600c
-        <<: *dirtyPlugin
-        itm: 16
+      # v1.2
+      - <<: *reqManualFix
+        crc: 0xC7BB600C
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 30
         udr: 15
+        nav: 3
+      # v1.2 - after QAC
+      - <<: *reqManualFix
+        crc: 0xAEBAF54D
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 3
   - name: 'tinyassassinhideout.esp'
     dirty:
