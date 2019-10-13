@@ -15943,14 +15943,21 @@ plugins:
       # v2.1 - after QAC
       - crc: 0xDAE78C8F
         util: 'TES5Edit v4.0.2f'
-  - name: 'riverwoodhuntingcabin.esp'
+  - name: 'RiverwoodHuntingCabin.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15878' ]
+    msg: [ *obsolete ]
+  - name: 'RiverwoodHuntingCabinSE.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15878' ]
     dirty:
-      - crc: 0x369c1e79
-        <<: *dirtyPlugin
-        itm: 17
-      - crc: 0xa9cdb9b1
-        <<: *dirtyPlugin
-        itm: 21
+      # v1.8
+      - <<: *quickClean
+        crc: 0xDE7F9603
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v1.8 - after QAC
+      - crc: 0x3783C8CA
+        util: 'TES5Edit v4.0.2h'
   - name: 'RiverwoodRepose.esp'
     dirty:
       - crc: 0x304711bc
