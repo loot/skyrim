@@ -16735,11 +16735,18 @@ plugins:
         itm: 5
         udr: 3
   - name: 'The Scribes Lectern.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16816' ]
     dirty:
-      - crc: 0xeb185b71
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xEB185B71
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
         udr: 1
+    clean:
+      # v1.2 - after QAC
+      - crc: 0xF4533AAD
+        util: 'TES5Edit v4.0.2h'
   - name: 'The Secret Room of Breezehome.esp'
     inc:
       - 'secretroom-bh-en.esp'
