@@ -16754,13 +16754,20 @@ plugins:
     inc:
       - 'When Vampires Attack.esp'
   - name: 'the tree of vjaas.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17425' ]
     tag:
       - Relev
     dirty:
-      - crc: 0xdf49540d
-        <<: *dirtyPlugin
-        itm: 76
+      # v10072012
+      - <<: *quickClean
+        crc: 0xDF49540D
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 73
         udr: 4
+    clean:
+      # v10072012 - after QAC
+      - crc: 0x7F6D8FE3
+        util: 'TES5Edit v4.0.2h'
   - name: 'The Warden Stone.esp'
     dirty:
       - crc: 0xdee8cbe9
