@@ -15973,18 +15973,41 @@ plugins:
         crc: 0x12156A3A
         util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
-  - name: 'rooq_bathing_twocell.esp'
-    dirty:
-      - crc: 0x8937ed86
-        <<: *dirtyPlugin
-        itm: 8
-        udr: 17
   - name: 'rooq_bathing_onecell.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9227' ]
     dirty:
-      - crc: 0xc4f7edf0
-        <<: *dirtyPlugin
+      # v0.3
+      - <<: *quickClean
+        crc: 0xC4F7EDF0
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+        udr: 17
+    clean:
+      # v0.3 - after QAC
+      - crc: 0x48CA1DF7
+        util: 'TES5Edit v4.0.2h'
+  - name: 'rooq_bathing_twocell.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9227' ]
+    msg:
+      - <<: *useVersionHearthFires
+        condition: 'active("HearthFires.esm")'
+    dirty:
+      # v0.3
+      - <<: *quickClean
+        crc: 0x8937ED86
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
         udr: 17
+    clean:
+      # v0.3 - after QAC
+      - crc: 0xB6690AAB
+        util: 'TES5Edit v4.0.2h'
+  - name: 'Rooq_Bathing_TwoCell_HearthFires.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9227' ]
+    clean:
+      # v0.4
+      - crc: 0x92008946
+        util: 'TES5Edit v4.0.2h'
   - name: 'Rorik''s Keep.esp'
     dirty:
       - crc: 0x79fdfc96
