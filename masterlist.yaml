@@ -16043,10 +16043,21 @@ plugins:
       - crc: 0x9186EE50
         util: 'TES5Edit v4.0.2h'
   - name: 'RTSforSkyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12683' ]
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("RTSforSkyrim.esp",6FDC7CAD) or checksum("RTSforSkyrim.esp",FF4ADC92)'
     dirty:
-      - crc: 0x291400f7
-        <<: *dirtyPlugin
-        itm: 26
+      # v0.28
+      - <<: *quickClean
+        crc: 0x6FDC7CAD
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 271
+      # v0.282
+      - <<: *quickClean
+        crc: 0x2880EB78
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 274
   - name: 'RTSCraterZone.esp'
     dirty:
       - crc: 0x4237a0ea
