@@ -16734,23 +16734,19 @@ plugins:
         <<: *dirtyPlugin
         itm: 5
         udr: 3
-  - name: 'The Red Paw.esp'
-    dirty:
-      - crc: 0x68f59d29
-        <<: *dirtyPlugin
-        itm: 10
-        udr: 764
-  - name: 'Thermopylae.esp'
-    dirty:
-      - crc: 0x70e4b395
-        <<: *dirtyPlugin
-        itm: 31
   - name: 'The Scribes Lectern.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16816' ]
     dirty:
-      - crc: 0xeb185b71
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xEB185B71
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
         udr: 1
+    clean:
+      # v1.2 - after QAC
+      - crc: 0xF4533AAD
+        util: 'TES5Edit v4.0.2h'
   - name: 'The Secret Room of Breezehome.esp'
     inc:
       - 'secretroom-bh-en.esp'
@@ -16758,62 +16754,86 @@ plugins:
     inc:
       - 'When Vampires Attack.esp'
   - name: 'the tree of vjaas.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17425' ]
     tag:
       - Relev
     dirty:
-      - crc: 0xdf49540d
-        <<: *dirtyPlugin
-        itm: 76
+      # v10072012
+      - <<: *quickClean
+        crc: 0xDF49540D
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 73
         udr: 4
+    clean:
+      # v10072012 - after QAC
+      - crc: 0x7F6D8FE3
+        util: 'TES5Edit v4.0.2h'
   - name: 'The Warden Stone.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22412' ]
     dirty:
-      - crc: 0xdee8cbe9
-        <<: *dirtyPlugin
-        itm: 9
+      # v1.0
+      - <<: *quickClean
+        crc: 0xDEE8CBE9
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
         udr: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x2ECA571E
+        util: 'TES5Edit v4.0.2h'
   - name: 'thievesguildexit.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16638' ]
     dirty:
-      - crc: 0x6183ea77
-        <<: *dirtyPlugin
-        itm: 3
+      # v3.0
+      - <<: *quickClean
+        crc: 0x4F253B98
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 18
+    clean:
+      # v3.0 - after QAC
+      - crc: 0x927955B9
+        util: 'TES5Edit v4.0.2h'
   - name: 'ThiefSecretEntrances.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17604' ]
     dirty:
-      - crc: 0xf2ccb43f
-        <<: *dirtyPlugin
-        itm: 18
+      # v1.0
+      - <<: *quickClean
+        crc: 0xF2CCB43F
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
         udr: 2
-  - name: 'ThievesGuildTrapdoor.esp'
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x07AB8F6C
+        util: 'TES5Edit v4.0.2h'
+  - name: 'ThievesGuildTrapDoor.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/8513' ]
-    dirty:
-      - crc: 0x8e258333
-        <<: *dirtyPlugin
-        itm: 8
-        nav: 2
-  - name: 'throneroom.esp'
-    dirty:
-      - crc: 0x2f04b129
-        <<: *dirtyPlugin
-        udr: 32
-  - name: 'Thunderbolt - The Shout Package.esp'
-    dirty:
-      - crc: 0xc1886dbd
-        <<: *dirtyPlugin
-        itm: 5
+    clean:
+      # v1.3
+      - crc: 0x8A4DF3DD
+        util: 'TES5Edit v4.0.2h'
   - name: 'Thunderchild - Epic Shout Package.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/41376' ]
     after:
       - 'SPERG.esp'
     msg: [ *doNotClean ]
   - name: 'tinyalchemisthut.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25712' ]
     msg:
       - <<: *obsolete
         condition: 'checksum("tinyalchemisthut.esp",4D9F38F8) or checksum("tinyalchemisthut.esp",A0FAF929)'
     dirty:
-      - crc: 0xc7bb600c
-        <<: *dirtyPlugin
-        itm: 16
+      # v1.2
+      - <<: *reqManualFix
+        crc: 0xC7BB600C
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 30
         udr: 15
+        nav: 3
+      # v1.2 - after QAC
+      - <<: *reqManualFix
+        crc: 0xAEBAF54D
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 3
   - name: 'tinyassassinhideout.esp'
     dirty:
