@@ -15959,11 +15959,20 @@ plugins:
       - crc: 0x3783C8CA
         util: 'TES5Edit v4.0.2h'
   - name: 'RiverwoodRepose.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11944' ]
     dirty:
-      - crc: 0x304711bc
-        <<: *dirtyPlugin
-        itm: 29
+      # v3.6
+      - <<: *reqManualFix
+        crc: 0x304711BC
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 48
         udr: 4
+        nav: 2
+      # v3.6 - after QAC
+      - <<: *reqManualFix
+        crc: 0x12156A3A
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'ROEBETA.esp'
     req: [ *SKSE ]
     dirty:
