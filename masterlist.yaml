@@ -2383,6 +2383,7 @@ plugins:
       - *SKSE
       - *FNIS
   - name: 'SexLab.esm'
+    url: [ 'https://www.loverslab.com/files/file/150-skyrim-sexlab-sex-animation-framework-v162-updated-jun-3rd-2016/' ]
     req:
       - *SKSE
       - *FNIS
@@ -2401,10 +2402,45 @@ plugins:
           - lang: ru
             text: 'FNIS_SexLab_List.txt не установлен. Анимации мода не будут добавлены в список FNIS и не будут работать в игре. Перед установкой через Wrye Bash Bain вам необходимо выбрать опцию "Не пропускать ничего" для архива этого мода на вкладке ''Установщики''.'
         condition: 'not file("meshes/actors/character/animations/SexLab/FNIS_SexLab_List.txt")'
+    clean:
+      # v1.62
+      - crc: 0xBC339CA4
+        util: 'TES5Edit v4.0.2h'
+  - name: 'SexLabAroused.esm'
+    url: [ 'https://www.loverslab.com/files/file/1421-sexlab-aroused-redux-december-05-2016/' ]
+    clean:
+      # v28b
+      - crc: 0xE458426B
+        util: 'TES5Edit v4.0.2h'
+  - name: 'ZaZAnimationPack.esm'
+    url: [ 'https://www.loverslab.com/files/file/156-zaz-animation-pack-v70-2017-05-16/' ]
+    req: [ *FNIS ]
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'FNIS_ZaZAnimationPack_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise ''Override Skips'' option for archive of this mod in the ''Installers'' tab.'
+          - lang: de
+            text: 'FNIS_ZaZAnimationPack_List.txt ist nicht installiert. Animationen der Mod werden nicht zur FNIS Liste hinzugefügt und werden nicht im Spiel funktionieren. Vor der Installation durch Wrye Bash Bain sollten Sie die ''Override Skips'' Option für das Archiv der Mod im ''Installers'' Tab auswählen.'
+          - lang: es
+            text: 'FNIS_ZaZAnimationPack_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise ''Override Skips'' option for archive of this mod in the ''Installers'' tab.'
+          - lang: ja
+            text: 'FNIS_SexLab_List.txtがインストールされていません。このファイルがなければModの追加アニメーションがFNISのリストに登録されず、再生もできません。Wrye Bashでインストールする場合は、まず最初に「Installers」タブを開いてModのアーカイブを選択し、右クリックメニューから「Override Skips」オプションを有効にする必要があります。'
+          - lang: ru
+            text: 'FNIS_ZaZAnimationPack_List.txt не установлен. Анимации мода не будут добавлены в список FNIS и не будут работать в игре. Перед установкой через Wrye Bash Bain вам необходимо выбрать опцию "Не пропускать ничего" для архива этого мода на вкладке ''Установщики''.'
+        condition: 'not file("meshes/actors/character/animations/ZaZAnimationPack/FNIS_ZaZAnimationPack_List.txt")'
+    clean:
+      # v7.0
+      - crc: 0x8C11D683
+        util: 'TES5Edit v4.0.2h'
   - name: 'SexLab_Dialogues.esp'
+    url: [ 'https://www.loverslab.com/files/file/1540-sexlab-dialogues-sept-2019' ]
     dirty:
-      - crc: 0xe348b6d6
-        <<: *dirtyPlugin
+      # 20190922
+      - <<: *quickClean
+        crc: 0xC54674F1
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
         udr: 1
   - name: 'SG_BlacksmithsCavern.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17524' ]
@@ -2427,11 +2463,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'Skyrim_Realism.esm'
-    dirty:
-      - crc: 0xbc06197f
-        <<: *dirtyPlugin
-        itm: 2
   - name: 'SkyMoMod.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35631' ]
     tag:
@@ -2704,22 +2735,6 @@ plugins:
             text: '安全にアンインストールするには[Modのページ](http://www.nexusmods.com/skyrim/mods/12933)に記載されている専用のアンインストール手順を確認してください。'
           - lang: ru
             text: 'Для безопасного удаления мода смотрите инструкции по удалению на [странице мода](http://www.nexusmods.com/skyrim/mods/12933) или на [странице локализации](http://modgames.net/load/247-1-0-10650).'
-  - name: 'ZaZAnimationPack.esm'
-    req: [ *FNIS ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'FNIS_ZaZAnimationPack_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise ''Override Skips'' option for archive of this mod in the ''Installers'' tab.'
-          - lang: de
-            text: 'FNIS_ZaZAnimationPack_List.txt ist nicht installiert. Animationen der Mod werden nicht zur FNIS Liste hinzugefügt und werden nicht im Spiel funktionieren. Vor der Installation durch Wrye Bash Bain sollten Sie die ''Override Skips'' Option für das Archiv der Mod im ''Installers'' Tab auswählen.'
-          - lang: es
-            text: 'FNIS_ZaZAnimationPack_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise ''Override Skips'' option for archive of this mod in the ''Installers'' tab.'
-          - lang: ja
-            text: 'FNIS_SexLab_List.txtがインストールされていません。このファイルがなければModの追加アニメーションがFNISのリストに登録されず、再生もできません。Wrye Bashでインストールする場合は、まず最初に「Installers」タブを開いてModのアーカイブを選択し、右クリックメニューから「Override Skips」オプションを有効にする必要があります。'
-          - lang: ru
-            text: 'FNIS_ZaZAnimationPack_List.txt не установлен. Анимации мода не будут добавлены в список FNIS и не будут работать в игре. Перед установкой через Wrye Bash Bain вам необходимо выбрать опцию "Не пропускать ничего" для архива этого мода на вкладке ''Установщики''.'
-        condition: 'not file("meshes/actors/character/animations/ZaZAnimationPack/FNIS_ZaZAnimationPack_List.txt")'
   - name: 'ZZZ_Stenvar_Replacer_THAIDEN.esm'
     msg: [ *obsolete ]
 # Low priority .esp's
@@ -3090,11 +3105,6 @@ plugins:
         subs: [ '1.8' ]
   - name: 'lightplacement.esp'
     msg: [ *obsolete ]
-  - name: 'OLSE for Dawnguard.esp'
-    dirty:
-      - crc: 0x931f68bd
-        <<: *dirtyPlugin
-        udr: 1
   - name: 'Relighting Skyrim - Dawnguard.esp'
     msg:
       - type: warn
@@ -3246,12 +3256,17 @@ plugins:
       - *corrupt
       - *alreadyInOrFixedByUSLEEP
   - name: 'terramend.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=8339' ]
     msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
-      - crc: 0x2aa40114
-        <<: *dirtyPlugin
-        itm: 8
+      - <<: *quickClean
+        crc: 0x2AA40114
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 28
         udr: 7
+    clean:
+      - crc: 0xC07C3C88
+        util: 'TES5Edit v4.0.2h'
   - name: 'Thalmor Embassy Disguise Fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Thief armor fix.esp'
@@ -3314,11 +3329,16 @@ plugins:
   - name: 'CraftableBoneHawkRings.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dawnguard Breezehome Fix.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21894' ]
     msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
-      - crc: 0x330aed25
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x330AED25
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      - crc: 0xA5683397
+        util: 'TES5Edit v4.0.2h'
   - name: 'Dawnguard Summons Fixed.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DawnguardDrainVitalityFix.esp'
@@ -3335,11 +3355,16 @@ plugins:
   - name: 'Headtracking Fix - Dawnguard.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HF-MoveSpouse.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25795' ]
     msg: [ *corrupt ]
     dirty:
-      - crc: 0x7d544dfe
-        <<: *dirtyPlugin
-        itm: 15
+      - <<: *quickClean
+        crc: 0x7D544DFE
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 48
+    clean:
+      - crc: 0xFA150E7D
+        util: 'TES5Edit v4.0.2h'
   - name: 'HighResTexturePackFix.esp'
     msg: [ *alreadyInOrFixedByUHRP ]
   - name: 'invisible_shield_fix.esp'
@@ -5504,20 +5529,6 @@ plugins:
       - *SKSE
       - *SkyUI
       - *FNIS
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: '[SexLabAroused](http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/) is new dependency for the latest version of mod, install and enable it, otherwise you will get CTD.'
-          - lang: de
-            text: '[SexLabAroused](http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/) ist eine neue Abhängigkeit für die neueste Version dieser Mod, installieren und aktivieren Sie sie, sonst bekommen Sie einen CTD.'
-          - lang: es
-            text: '[SexLabAroused](http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/) is new dependency for the latest version of mod, install and enable it, otherwise you will get CTD.'
-          - lang: ja
-            text: '最新版は[SexLabAroused](http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/)に依存しています。インストールして有効にしなければCTDが発生するでしょう。'
-          - lang: ru
-            text: '[SexLabAroused](http://www.loverslab.com/topic/20193-wip-sexlab-aroused-v20130824/) - новое требование для последней версии мода, установите и подключите его, для избежания вылетов с последними версиями.'
-        condition: 'not file("SexLabAroused.esm")'
   - name: 'LoversHook.esp'
     req:
       - *SKSE
@@ -24328,11 +24339,6 @@ plugins:
           - lang: ru
             text: 'Oбновите до последней версии.'
         condition: 'version("SPTConsistentOlderPeople.esp", "1.3", <)'
-  - name: 'Tauriel The Hobbit.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3e16af9d
-        itm: 1
   - name: 'Better Followers.esp'
     msg: [ *obsolete ]
   - name: 'SpecializedFollowers.esp'
@@ -27571,14 +27577,6 @@ plugins:
       - crc: 0x9C6761F3
         <<: *dirtyPlugin
         nav: 2
-  - name: 'PMR - ELFX Compatibility Patch.esp'
-    msg:
-      - <<: *wildEdits
-        subs: [ 'Mod contains one deleted reference.' ]
-    dirty:
-      - crc: 0x456046F7
-        <<: *dirtyPlugin
-        udr: 24
   - name: 'Stronger Daedric Artifacts.esp'
     dirty:
       - crc: 0xC2653B1F
@@ -27751,13 +27749,6 @@ plugins:
   - name: 'nTr4nc3 - Whiterun Mansion.esp'
     after:
       - 'WhiterunHoldForest.esp'
-  - name: 'Jaggarsfeld Extended.esp'
-    url: []
-    dirty:
-      - crc: 0x239a664f
-        <<: *dirtyPlugin
-        itm: 1
-        udr: 178
   - name: 'Man Those Borders!.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/74304' ]
     dirty:
