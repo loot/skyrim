@@ -27761,9 +27761,15 @@ plugins:
   - name: 'marriagemod - alpha v3.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/50121' ]
     dirty:
-      - crc: 0x06253825
-        <<: *dirtyPlugin
+      # 1.9.32.0.8
+      - <<: *quickClean
+        crc: 0x06253825
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 47
+    clean:
+      # 1.9.32.0.8 - after QAC
+      - crc: 0xF8FDA4E8
+        util: 'TES5Edit v4.0.2h'
   - name: 'Complete Alchemy & Cooking Overhaul.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/69306' ]
     after:
