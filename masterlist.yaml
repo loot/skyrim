@@ -12702,15 +12702,15 @@ plugins:
   - name: 'BetterDGEntrance.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30086' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2eb928ab
-        itm: 14
-        udr: 14
-      # version: 1.0
+      # v1.0
       - <<: *quickClean
         crc: 0x53EC5DE6
-        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 28
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x3BCF9616
+        util: 'TES5Edit v4.0.2h'
   - name: 'BetterDwemerExteriors.esp'
     dirty:
       - crc: 0xc96424e
@@ -13280,6 +13280,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 14
   - name: 'CollegeOfWinterholdImmersive.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/36849' ]
     inc:
       - 'College of Winterhold Reborn.esp'
       - 'College Of Winterhold Overhaul Release - V1.02.esp'
@@ -13288,16 +13289,10 @@ plugins:
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive College of Winterhold.esp")'
-    dirty:
-      # version: 5.3
-      - <<: *quickClean
-        crc: 0x4C958994
-        util: '[TES5Edit v4.0.2](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 4
     clean:
-      # version: 5.3
-      - crc: 0xD0AA3B24
-        util: 'TES5Edit v4.0.2'
+      # v6.1
+      - crc: 0xE2194448
+        util: 'TES5Edit v4.0.2h'
   - name: 'CWIELnFXPatch.esp'
     dirty:
       - crc: 0x350cacf3
@@ -19199,14 +19194,10 @@ plugins:
       - <<: *requiresX
         condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and file("Skyrim Immersive Creatures.esp") and not file("dD-DG-DB-MM-SiC EBT Patch.esp")'
         subs: [ '[Monster Mod and Immersive Creatures Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xFD8ABF04
-        itm: 1
     clean:
-      # version: 3.8
+      # v3.8
       - crc: 0x40AEB034
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2h'
   - name: 'dd - enhanced blood main dg.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/60' ]
     msg: [ *obsolete ]
@@ -19214,14 +19205,10 @@ plugins:
     inc:
       - 'dD-Dawnguard-EBT Patch.esp'
       - 'dD-Dragonborn-EBT Patch.esp'
-    dirty:
-      - crc: 0x4730f8bd
-        <<: *dirtyPlugin
-        itm: 1
     clean:
-      # version: 3.8
+      # v3.8
       - crc: 0xFB317E84
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2h'
   - name: 'dD-SkyrimMonsterMod EBT Patch.esp'
     inc:
       - 'dD-Dawnguard-EBT Patch.esp'
@@ -19825,58 +19812,17 @@ plugins:
         util: 'TES5Edit v4.0.2'
   - name: 'ETaC - Darkwater.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove.  ETaC - Villages Complete contains these changes.'
-          - lang: de
-            text: 'Löschen. ETaC - Villages Complete beinhaltet diese Veränderungen.'
-          - lang: ja
-            text: '削除してください。ETaC - Villages Complete.espに同じ変更内容が含まれています。'
-          - lang: ru
-            text: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
-        condition: 'file("ETaC - Villages Complete.esp")'
-    dirty:
-      - crc: 0x41f31139
-        <<: *dirtyPlugin
-        itm: 31
+    msg: [ *obsolete ]
     after:
       - '3DNPC.esp'
   - name: 'ETaC - Dragon Bridge.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove.  ETaC - Villages Complete.esp contains these changes.'
-          - lang: de
-            text: 'Löschen. ETaC - Villages Complete.esp beinhaltet diese Veränderungen.'
-          - lang: ja
-            text: '削除してください。ETaC - Villages Complete.espに同じ変更内容が含まれています。'
-          - lang: ru
-            text: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
-        condition: 'file("ETaC - Villages Complete.esp")'
-    dirty:
-      - crc: 0x5145a4b
-        <<: *dirtyPlugin
-        itm: 196
+    msg: [ *obsolete ]
     after:
       - '3DNPC.esp'
   - name: 'ETaC - Ivarstead.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove.  ETaC - Villages Complete.esp contains these changes.'
-          - lang: de
-            text: 'Löschen. ETaC - Villages Complete.esp beinhaltet diese Veränderungen.'
-          - lang: ja
-            text: '削除してください。ETaC - Villages Complete.espに同じ変更内容が含まれています。'
-          - lang: ru
-            text: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
-        condition: 'file("ETaC - Villages Complete.esp")'
+    msg: [ *obsolete ]
     after:
       - '3DNPC.esp'
   - name: 'ETaC - Riverwood.esp'
@@ -19933,10 +19879,7 @@ plugins:
         util: 'TES5Edit v4.0.2f'
   - name: 'ETaC - Morthal.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    dirty:
-      - crc: 0xa20e7abc
-        <<: *dirtyPlugin
-        itm: 31
+    msg: [ *obsolete ]
     after:
       - '3DNPC.esp'
   - name: 'ETaC SkyRealFF Patch - Dawnguard.esp'
@@ -20666,36 +20609,51 @@ plugins:
   - name: 'RL - .*\.esp'
     msg: [ *obsolete ]
   - name: 'EnhancedLightsandFX.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
       - 'Better Mills Textures.esp'
-    dirty:
-      - crc: 0x2f172642 # Version 2.0
-        <<: *dirtyPlugin
-        itm: 12
-        udr: 0
     clean:
-      # version: 3.04
+      # v3.04
       - crc: 0x2C685F45
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2h'
   - name: 'EnhancedLightsandFX_CN.esp'
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
   - name: 'ELFX - Exteriors.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
-    dirty:
-      - crc: 0xc4817e64
-        <<: *dirtyPlugin
-        itm: 6
-        udr: 0
     clean:
-      # version: 3.04
+      # v3.04
       - crc: 0xB7EB16BF
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2h'
+  - name: 'ELFX - Weathers.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
+    clean:
+      # v3.04
+      - crc: 0x2459E062
+        util: 'TES5Edit v4.0.2h'
+  - name: 'ELFXEnhancer.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
+    ## loaded after COT as it is more specialized
+    group: *lightingGroup
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+    clean:
+      # v3.04
+      - crc: 0xA386091E
+        util: 'TES5Edit v4.0.2h'
+  - name: 'ELFX - Hardcore.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
+    group: *lightingGroup
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELFX - Moonpath.esp'
     after:
       - 'rcrnShaders.esp'
@@ -20809,25 +20767,6 @@ plugins:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
       - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
       - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-  - name: 'ELFXEnhancer.esp'
-    ## loaded after COT as it is more specialized
-    group: *lightingGroup
-    after:
-      - 'rcrnShaders.esp'
-      - 'rcrnPlus.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-    dirty:
-      - crc: 0xeb9b8ecd
-        <<: *dirtyPlugin
-        itm: 1
-      - crc: 0x31d9d865
-        <<: *dirtyPlugin
-        itm: 1
-        udr: 0
-  - name: 'ELFX - Hardcore.esp'
-    group: *lightingGroup
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELE_.+_Lite\.esp'
     group: *lightingGroup
     after:
@@ -27592,10 +27531,10 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'ETaC - Complete ELFX Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    dirty:
-      - crc: 0x352FE2A2
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v0.4.4
+      - crc: 0x30735125
+        util: 'TES5Edit v4.0.2h'
   - name: 'SoSFC-LF.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/63834' ]
     dirty:
@@ -27605,41 +27544,70 @@ plugins:
   - name: 'OCS - ICOW Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/59937' ]
     dirty:
-      - crc: 0xDAAF398F
-        <<: *dirtyPlugin
-        itm: 19
+      # v1.0
+      - <<: *quickClean
+        crc: 0xDAAF398F
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xED45A970
+        util: 'TES5Edit v4.0.2h'
   - name: 'OCS - SkyTEST Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/59937' ]
     dirty:
-      - crc: 0x8ADC324E
-        <<: *dirtyPlugin
-        itm: 17
+      # v1.0
+      - <<: *quickClean
+        crc: 0x4DF5E59B
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
   - name: 'mcCampingLite.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11526' ]
     dirty:
-      - crc: 0x624C4C75
-        <<: *dirtyPlugin
+      # v1.9.5
+      - <<: *quickClean
+        crc: 0x7FB536C4
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v1.9.5 - after QAC
+      - crc: 0x2FE3F9E9
+        util: 'TES5Edit v4.0.2h'
   - name: 'CornerofTheSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29824' ]
     dirty:
-      - crc: 0x901A6636
-        <<: *dirtyPlugin
-        itm: 87
+      # v1.2
+      - <<: *reqManualFix
+        crc: 0x901A6636
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 140
         udr: 18
+        nav: 5
+      # v1.2 - after QAC
+      - <<: *reqManualFix
+        crc: 0xE6D27622
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 5
   - name: 'Windhelm Lighthouse.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35693' ]
     dirty:
-      - crc: 0x9C6761F3
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *reqManualFix
+        crc: 0x9C6761F3
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'Stronger Daedric Artifacts.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8825' ]
     dirty:
-      - crc: 0xC2653B1F
-        <<: *dirtyPlugin
+      # v2.1
+      - <<: *quickClean
+        crc: 0xC2653B1F
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v2.1 - after QAC
+      - crc: 0x1F7AF473
+        util: 'TES5Edit v4.0.2h'
   - name: 'hearthfireextended.esp'
     dirty:
       # version: 1.0.3
@@ -27769,9 +27737,15 @@ plugins:
   - name: 'marriagemod - alpha v3.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/50121' ]
     dirty:
-      - crc: 0x06253825
-        <<: *dirtyPlugin
+      # 1.9.32.0.8
+      - <<: *quickClean
+        crc: 0x06253825
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 47
+    clean:
+      # 1.9.32.0.8 - after QAC
+      - crc: 0xF8FDA4E8
+        util: 'TES5Edit v4.0.2h'
   - name: 'Complete Alchemy & Cooking Overhaul.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/69306' ]
     after:
@@ -28539,10 +28513,18 @@ plugins:
   - name: 'Helsmyrr.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/64442' ]
     dirty:
-      - <<: *dirtyPlugin
+      # v1.10
+      - <<: *reqManualFix
         crc: 0xB9BF0C74
-        itm: 157
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 191
         udr: 58
+        nav: 1
+      # v1.10 - after QAC
+      - <<: *reqManualFix
+        crc: 0x4FC7A4E2
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'Sea of Spirits.esp'
     dirty:
       # version: 1.1
@@ -28586,16 +28568,42 @@ plugins:
   - name: 'SkyrimUnhinged.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/93144' ]
     dirty:
-      - <<: *dirtyPlugin
+      # v4.0 - Female
+      - <<: *quickClean
         crc: 0x2181ED1C
-        itm: 15
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+      # v4.0 - Male
+      - <<: *quickClean
+        crc: 0x11616639
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
   - name: 'Vaults of Skyrim Palaces Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/84599' ]
     dirty:
-      - <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
         crc: 0x7CAE947E
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 26
         udr: 17
+    clean:
+      # v1.1 - after QAC
+      - crc: 0xE318D109
+        util: 'TES5Edit v4.0.2h'
+  - name: 'Vaults of Skyrim 1.0 NEXUS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/84599' ]
+    dirty:
+      # v1.1
+      - <<: *quickClean
+        crc: 0x750B5B0B
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 20
+        udr: 24
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x9C413DD0
+        util: 'TES5Edit v4.0.2h'
   - name: 'Ducks and Swans.esp'
     dirty:
       # version: 1.1
@@ -28642,15 +28650,10 @@ plugins:
         util: TES5Edit v3.2.2
   - name: 'Ashes.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/92743' ]
-    dirty:
-        # version: 0.01
-      - <<: *dirtyPlugin
-        crc: 0x75D8B080
-        itm: 2
     clean:
-        # version: 0.02
+      # v0.02
       - crc: 0x6E8395A7
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2h'
   - name: 'AshesOfTheRedMountain.esp'
     dirty:
       # Main file
