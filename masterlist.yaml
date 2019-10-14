@@ -3329,11 +3329,16 @@ plugins:
   - name: 'CraftableBoneHawkRings.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dawnguard Breezehome Fix.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21894' ]
     msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
-      - crc: 0x330aed25
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x330AED25
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      - crc: 0xA5683397
+        util: 'TES5Edit v4.0.2h'
   - name: 'Dawnguard Summons Fixed.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DawnguardDrainVitalityFix.esp'
@@ -3350,11 +3355,16 @@ plugins:
   - name: 'Headtracking Fix - Dawnguard.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HF-MoveSpouse.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25795' ]
     msg: [ *corrupt ]
     dirty:
-      - crc: 0x7d544dfe
-        <<: *dirtyPlugin
-        itm: 15
+      - <<: *quickClean
+        crc: 0x7D544DFE
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 48
+    clean:
+      - crc: 0xFA150E7D
+        util: 'TES5Edit v4.0.2h'
   - name: 'HighResTexturePackFix.esp'
     msg: [ *alreadyInOrFixedByUHRP ]
   - name: 'invisible_shield_fix.esp'
