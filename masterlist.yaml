@@ -27609,9 +27609,15 @@ plugins:
   - name: 'mcCampingLite.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11526' ]
     dirty:
-      - crc: 0x624C4C75
-        <<: *dirtyPlugin
+      # v1.9.5
+      - <<: *quickClean
+        crc: 0x7FB536C4
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v1.9.5 - after QAC
+      - crc: 0x2FE3F9E9
+        util: 'TES5Edit v4.0.2h'
   - name: 'CornerofTheSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29824' ]
     dirty:
