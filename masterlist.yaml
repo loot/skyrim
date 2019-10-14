@@ -3256,12 +3256,17 @@ plugins:
       - *corrupt
       - *alreadyInOrFixedByUSLEEP
   - name: 'terramend.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=8339' ]
     msg: [ *alreadyInOrFixedByUSLEEP ]
     dirty:
-      - crc: 0x2aa40114
-        <<: *dirtyPlugin
-        itm: 8
+      - <<: *quickClean
+        crc: 0x2AA40114
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 28
         udr: 7
+    clean:
+      - crc: 0xC07C3C88
+        util: 'TES5Edit v4.0.2h'
   - name: 'Thalmor Embassy Disguise Fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Thief armor fix.esp'
