@@ -28539,10 +28539,18 @@ plugins:
   - name: 'Helsmyrr.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/64442' ]
     dirty:
-      - <<: *dirtyPlugin
+      # v1.10
+      - <<: *reqManualFix
         crc: 0xB9BF0C74
-        itm: 157
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 191
         udr: 58
+        nav: 1
+      # v1.10 - after QAC
+      - <<: *reqManualFix
+        crc: 0x4FC7A4E2
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'Sea of Spirits.esp'
     dirty:
       # version: 1.1
@@ -28586,9 +28594,16 @@ plugins:
   - name: 'SkyrimUnhinged.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/93144' ]
     dirty:
-      - <<: *dirtyPlugin
+      # v4.0 - Female
+      - <<: *quickClean
         crc: 0x2181ED1C
-        itm: 15
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+      # v4.0 - Male
+      - <<: *quickClean
+        crc: 0x11616639
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
   - name: 'Vaults of Skyrim Palaces Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/84599' ]
     dirty:
