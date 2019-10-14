@@ -20653,36 +20653,51 @@ plugins:
   - name: 'RL - .*\.esp'
     msg: [ *obsolete ]
   - name: 'EnhancedLightsandFX.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
       - 'Better Mills Textures.esp'
-    dirty:
-      - crc: 0x2f172642 # Version 2.0
-        <<: *dirtyPlugin
-        itm: 12
-        udr: 0
     clean:
-      # version: 3.04
+      # v3.04
       - crc: 0x2C685F45
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2h'
   - name: 'EnhancedLightsandFX_CN.esp'
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
   - name: 'ELFX - Exteriors.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
-    dirty:
-      - crc: 0xc4817e64
-        <<: *dirtyPlugin
-        itm: 6
-        udr: 0
     clean:
-      # version: 3.04
+      # v3.04
       - crc: 0xB7EB16BF
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2h'
+  - name: 'ELFX - Weathers.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
+    clean:
+      # v3.04
+      - crc: 0x2459E062
+        util: 'TES5Edit v4.0.2h'
+  - name: 'ELFXEnhancer.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
+    ## loaded after COT as it is more specialized
+    group: *lightingGroup
+    after:
+      - 'rcrnShaders.esp'
+      - 'rcrnPlus.esp'
+      - 'Immersive Citizens - AI Overhaul.esp'
+    clean:
+      # v3.04
+      - crc: 0xA386091E
+        util: 'TES5Edit v4.0.2h'
+  - name: 'ELFX - Hardcore.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
+    group: *lightingGroup
+    after:
+      - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELFX - Moonpath.esp'
     after:
       - 'rcrnShaders.esp'
@@ -20796,25 +20811,6 @@ plugins:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
       - 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
       - 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-  - name: 'ELFXEnhancer.esp'
-    ## loaded after COT as it is more specialized
-    group: *lightingGroup
-    after:
-      - 'rcrnShaders.esp'
-      - 'rcrnPlus.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-    dirty:
-      - crc: 0xeb9b8ecd
-        <<: *dirtyPlugin
-        itm: 1
-      - crc: 0x31d9d865
-        <<: *dirtyPlugin
-        itm: 1
-        udr: 0
-  - name: 'ELFX - Hardcore.esp'
-    group: *lightingGroup
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
   - name: 'ELE_.+_Lite\.esp'
     group: *lightingGroup
     after:
