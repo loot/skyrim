@@ -27615,10 +27615,17 @@ plugins:
   - name: 'CornerofTheSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29824' ]
     dirty:
-      - crc: 0x901A6636
-        <<: *dirtyPlugin
-        itm: 87
+      # v1.2
+      - <<: *reqManualFix
+        crc: 0x901A6636
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 140
         udr: 18
+        nav: 5
+      # v1.2 - after QAC
+      - <<: *reqManualFix
+        crc: 0xE6D27622
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 5
   - name: 'Windhelm Lighthouse.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35693' ]
