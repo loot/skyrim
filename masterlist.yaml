@@ -28592,10 +28592,29 @@ plugins:
   - name: 'Vaults of Skyrim Palaces Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/84599' ]
     dirty:
-      - <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
         crc: 0x7CAE947E
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 26
         udr: 17
+    clean:
+      # v1.1 - after QAC
+      - crc: 0xE318D109
+        util: 'TES5Edit v4.0.2h'
+  - name: 'Vaults of Skyrim 1.0 NEXUS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/84599' ]
+    dirty:
+      # v1.1
+      - <<: *quickClean
+        crc: 0x750B5B0B
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 20
+        udr: 24
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x9C413DD0
+        util: 'TES5Edit v4.0.2h'
   - name: 'Ducks and Swans.esp'
     dirty:
       # version: 1.1
