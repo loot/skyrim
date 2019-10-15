@@ -4056,10 +4056,38 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("KatuLights.*\.esp")'
         subs: [ 'KatuLights .esp file' ]
+  - name: 'Dark Dungeons for Skyrim-Dawnguard-Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
+    clean:
+      # v1.01
+      - crc: 0x7823B785
+        util: 'TES5Edit v4.0.2h'
+  - name: 'Dark Dungeons for Dawnguard.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
+    clean:
+      # v1.0
+      - crc: 0xFA04E662
+        util: 'TES5Edit v4.0.2h'
+  - name: 'Dark Dungeons for Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
+    clean:
+      # v1.0
+      - crc: 0x337FE6BB
+        util: 'TES5Edit v4.0.2h'
   - name: 'Further Dark Dungeons for ENB.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
     inc:
       - 'Dark Dungeons for ENB.esp'
+    dirty:
+      # v1.08
+      - <<: *quickClean
+        crc: 0xA64545AF
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v1.08 - after QAC
+      - crc: 0x0C8D5264
+        util: 'TES5Edit v4.0.2h'
   - name: 'AdditionalMusicBundleI.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25625' ]
     dirty:
@@ -27142,12 +27170,6 @@ plugins:
   - name: 'Unique Grasses.esp'
     dirty:
       - crc: 0x094C536C
-        <<: *dirtyPlugin
-        itm: 5
-  - name: 'Dark Dungeons for Skyrim-Dawnguard-Dragonborn.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
-    dirty:
-      - crc: 0x00D8ACA2
         <<: *dirtyPlugin
         itm: 5
   - name: 'JaxonzEnhGrab.esp'
