@@ -26947,26 +26947,12 @@ plugins:
     inc:
       - 'AP Skyrim.esp'
     req: [ *FNIS ]
-  - name: 'BalancedModeCore.esp'
-    inc:
-      - 'BalancedModeCoreDG.esp'
-      - 'BalancedModeNoResp.esp'
-      - 'BalancedModeNoRespClear.esp'
-  - name: 'BalancedModeCoreDG.esp'
-    inc:
-      - 'BalancedModeCore.esp'
-      - 'BalancedModeNoResp.esp'
-      - 'BalancedModeNoRespClear.esp'
-  - name: 'BalancedModeNoResp.esp'
-    inc:
-      - 'BalancedModeCore.esp'
-      - 'BalancedModeCoreDG.esp'
-      - 'BalancedModeNoRespClear.esp'
+  - name: 'BalancedMode(Core|CoreDG|NoResp|NoRespClear)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Balanced Mode' ]
+        condition: 'many("BalancedMode(Core|CoreDG|NoResp|NoRespClear)\.esp")'
   - name: 'BalancedModeNoRespClear.esp'
-    inc:
-      - 'BalancedModeCore.esp'
-      - 'BalancedModeCoreDG.esp'
-      - 'BalancedModeNoResp.esp'
     dirty:
       - crc: 0x1a4d3a64
         <<: *dirtyPlugin
