@@ -27176,9 +27176,26 @@ plugins:
   - name: 'SoSFC-LF.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/63834' ]
     dirty:
-      - crc: 0xD86DBF15
-        <<: *dirtyPlugin
+      # v1.0 - No Guards
+      - <<: *quickClean
+        crc: 0xD86DBF15
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 24
+      # v0.5 - Craftable only
+      - <<: *quickClean
+        crc: 0x29E19E12
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 54
+    clean:
+      # v1.0 - Main
+      - crc: 0x8BC46C80
+        util: 'TES5Edit v4.0.2h'
+      # v1.0 - No Guards - after QAC
+      - crc: 0x7126413C
+        util: 'TES5Edit v4.0.2h'
+      # v0.5 - Craftable only - after QAC
+      - crc: 0xFE044E64
+        util: 'TES5Edit v4.0.2h'
   - name: 'OCS - ICOW Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/59937' ]
     dirty:
