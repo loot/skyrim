@@ -27066,10 +27066,9 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("World_Map_Height_Pitch_Tweak(_(130|170|200|250|Vanilla_pitch))?(_50|_90)?\.esp")'
         subs: [ 'World_Map_Height_Pitch_Tweak .esp file' ]
-  - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
+  - name: 'Warburg''s 3D Paper World Map - Texture [12]\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
     group: *alternateStartGroup
-    inc: [ 'Warburg''s 3D Paper World Map - Texture 2.esp' ]
     msg:
       - type: say
         content:
@@ -27079,28 +27078,25 @@ plugins:
             text: 'Bei anhaltenden Problemen mit dem Zoomen sollten Sie eine Benutzerliste erstellen und verwenden, um die Karte unter allen dynamischen Plug-ins zu laden.'
           - lang: ja
             text: 'ズームイン時に問題が発生し続ける場合、ユーザーリストを編集してなるべく下の方、動的に生成されたプラグインの後にロードさせてください。'
+  - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
+    inc: [ 'Warburg''s 3D Paper World Map - Texture 2.esp' ]
     dirty:
       - crc: 0xc243a5f2
         <<: *dirtyPlugin
         itm: 9
   - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
-    group: *alternateStartGroup
     inc: [ 'Warburg''s 3D Paper World Map - Texture 1.esp' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
-          - lang: de
-            text: 'Bei anhaltenden Problemen mit dem Zoomen sollten Sie eine Benutzerliste erstellen und verwenden, um die Karte unter allen dynamischen Plug-ins zu laden.'
-          - lang: ja
-            text: 'ズームイン時に問題が発生し続ける場合、ユーザーリストを編集してなるべく下の方、動的に生成されたプラグインの後にロードさせてください。'
     dirty:
       - crc: 0xaafe91d6
         <<: *dirtyPlugin
         itm: 10
-        udr: 0
+  - name: 'Warburg''s 3D Paper World Map - (Dawnguard|Dragonborn)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
+    group: *mapMarkersGroup
+    after:
+      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
+      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
+
   - name: 'TES5Merged.esp'
     group: *dynamicPatchGroup
     tag: [ NoMerge ]
@@ -27122,18 +27118,7 @@ plugins:
       - <<: *onlyUseSmashOrBash
         condition: 'file("Smashed Patch.esp")'
         subs: [ 'Smashed Patch.esp' ]
-  - name: 'Warburg''s 3D Paper World Map - Dawnguard.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
-    group: *mapMarkersGroup
-    after:
-      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
-  - name: 'Warburg''s 3D Paper World Map - Dragonborn.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
-    group: *mapMarkersGroup
-    after:
-      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
+
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
     group: *mapMarkersGroup
     req: [ *SKSE ]
