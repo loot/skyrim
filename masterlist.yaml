@@ -3734,17 +3734,8 @@ plugins:
   - name: 'ExpandedSnowSystems.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/28016' ]
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Dawnguard.esm found. Use the Dawnguard version of ExpandedSnowSystems.esp instead to have mod work as intended.'
-          - lang: de
-            text: 'Dawnguard.esm gefunden. Verwenden Sie stattdessen die Dawnguard-Version von ExpandedSnowSystems.esp, damit die Mod wie vorgesehen funktionieren.'
-          - lang: es
-            text: 'Dawnguard.esm esta siencdo utilizado. Usa la versión de ExpandedSnowSystems.esp para Dawnguard.'
-          - lang: ja
-            text: 'Dawnguard.esmが見つかりました。本来の動作をさせるにはDawnguardバージョンのExpandedSnowSystems.espを使用する必要があります。'
-        condition: 'active("Dawnguard.esm") and ( checksum("ExpandedSnowSystems.esp",03A9B612) or checksum("ExpandedSnowSystems.esp",72CC3B0C) )'
+      - <<: *useVersionDawnguard
+        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and ( checksum("ExpandedSnowSystems.esp",DB538BE0) or checksum("ExpandedSnowSystems.esp",74DF9966) )'
       - type: warn
         content:
           - lang: en
@@ -3754,13 +3745,16 @@ plugins:
           - lang: ja
             text: 'ClimatesOfTamriel.esmが存在するかアクティブになっています。代わりにExpandedSnowSystems-CoT.espを使用しなければ正しく動作しません。'
         condition: 'active("ClimatesOfTamriel.esm")'
-    dirty:
-      - crc: 0x3a9b612
-        <<: *dirtyPlugin
-        itm: 1301
-      - crc: 0xb5eb3179
-        <<: *dirtyPlugin
-        itm: 1460
+    clean:
+      # v1.4 - DG and DB
+      - crc: 0x74DF9966
+        util: 'TES5Edit v4.0.2i'
+      # v1.3 - No DG
+      - crc: 0xDB538BE0
+        util: 'TES5Edit v4.0.2i'
+      # v1.3 - DG
+      - crc: 0xB7A24777
+        util: 'TES5Edit v4.0.2i'
   - name: 'AOS.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/43773' ]
     after:
