@@ -3583,9 +3583,15 @@ plugins:
   - name: '1 Day Moon Phases.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/5801' ]
     dirty:
-      - crc: 0xfe2f1935
-        <<: *dirtyPlugin
+      # Final
+      - <<: *quickClean
+        crc: 0xFE2F1935
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # Final - after QAC
+      - crc: 0xB4CED9D1
+        util: 'TES5Edit v4.0.2h'
   - name: 'Chesko_Frostfall.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11163' ]
     msg:
