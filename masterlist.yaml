@@ -26997,10 +26997,6 @@ plugins:
         itm: 9
   - name: 'PaperMapHeightEnhanced.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22425' ]
-  - name: 'Warburg''s 3D Paper World Map v2.2.esp'
-    msg: [ *obsolete ]
-  - name: 'Warburg''s 3D Paper World Map.esp'
-    msg: [ *obsolete ]
   - name: 'WorldMapInFull3D.esp'
     msg:
       - type: say
@@ -27155,9 +27151,7 @@ plugins:
   - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
     group: *alternateStartGroup
-    inc:
-      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
+    inc: [ 'Warburg''s 3D Paper World Map - Texture 2.esp' ]
     msg:
       - type: say
         content:
@@ -27174,9 +27168,7 @@ plugins:
   - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
     group: *alternateStartGroup
-    inc:
-      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
+    inc: [ 'Warburg''s 3D Paper World Map - Texture 1.esp' ]
     msg:
       - type: say
         content:
@@ -27191,24 +27183,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 10
         udr: 0
-  - name: 'Warburg''s 3D Paper World Map - Texture 3.esp'
-    group: *alternateStartGroup
-    inc:
-      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
-          - lang: de
-            text: 'Bei anhaltenden Problemen mit dem Zoomen sollten Sie eine Benutzerliste erstellen und verwenden, um die Karte unter allen dynamischen Plug-ins zu laden.'
-          - lang: ja
-            text: 'ズームイン時に問題が発生し続ける場合、ユーザーリストを編集してなるべく下の方、動的に生成されたプラグインの後にロードさせてください。'
-    dirty:
-      - crc: 0xaafe91d6
-        <<: *dirtyPlugin
-        itm: 9
   - name: 'TES5Merged.esp'
     group: *dynamicPatchGroup
     tag: [ NoMerge ]
@@ -27236,14 +27210,12 @@ plugins:
     after:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
   - name: 'Warburg''s 3D Paper World Map - Dragonborn.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
     group: *mapMarkersGroup
     after:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
     group: *mapMarkersGroup
     req: [ *SKSE ]
@@ -27427,8 +27399,6 @@ plugins:
   - name: 'EzEWorldMap.esp'
     group: *mapGroup
   - name: 'EzEMapSolstheim.esp'
-    group: *mapGroup
-  - name: 'Warburgs Paper World Map.esp'
     group: *mapGroup
   - name: 'CombatDramaOverhaul.esp'
     dirty:
