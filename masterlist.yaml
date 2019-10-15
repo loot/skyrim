@@ -3483,11 +3483,6 @@ plugins:
       - crc: 0xaac416c0
         <<: *dirtyPlugin
         itm: 2
-  - name: 'Eyes of Sheogorath.esp'
-    dirty:
-      - crc: 0xee0634b4
-        <<: *dirtyPlugin
-        itm: 4
   - name: 'Faendal.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12909' ]
     msg:
@@ -3500,16 +3495,6 @@ plugins:
       - crc: 0x60930ce6
         <<: *dirtyPlugin
         itm: 4
-  - name: 'FaceliftOther.esp'
-    dirty:
-      - crc: 0x79a336f4
-        <<: *dirtyPlugin
-        itm: 3
-  - name: 'FaceliftMarriageFollowers.esp'
-    dirty:
-      - crc: 0x60223e44
-        <<: *dirtyPlugin
-        itm: 2
   - name: 'Hirelingrevamp.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22616' ]
     dirty:
@@ -3957,16 +3942,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 721
         udr: 1489
-  - name: 'ImmersiveContentExteriorLighting.esp'
-    inc:
-      - 'CLARALUX.esp'
-    dirty:
-      - crc: 0xf2a7a8bd
-        <<: *dirtyPlugin
-        itm: 17
-  - name: 'ImmersiveContentVeryLateLightPatch.esp'
-    inc:
-      - 'ImmersiveContentLateLightPatch.esp'
   - name: 'kuerteeDisableLightsFarFromActors.esp'
     req:
       - *SKSE
@@ -4117,13 +4092,6 @@ plugins:
             text: 'ミュージックファイルだけでなくテクスチャやメッシュも追加されます。ルーズファイルのままだと上書きされるかもしれません。'
           - lang: ru
             text: 'Добавляет музыку, но также включает тесктуры с моделями. Отдельные файлы перезапишут их.'
-  - name: 'FMO - (Non-Replacer Version|Replacer Version)?\.esp'
-    msg: [ *obsolete ]
-  - name: 'Fantasy Music Overhaul.esp'
-    dirty:
-      - crc: 0xfa0711c6
-        <<: *dirtyPlugin
-        itm: 3
   - name: 'Symphonies Of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/34234' ]
     dirty:
@@ -4282,14 +4250,6 @@ plugins:
       # version: 1.2 Hearthfire
       - crc: 0xAC24F58B
         util: 'TES5Edit v4.0.1'
-  - name: 'Economics of Skyrim.esp'
-    tag:
-      - Delev
-      - Relev
-    dirty:
-      - crc: 0xc3c5505
-        <<: *dirtyPlugin
-        itm: 16
   - name: '_pocketempirebuilder.esp'
     msg:
       - <<: *corrupt
@@ -4888,12 +4848,6 @@ plugins:
       - Relev
   - name: 'DetailedPotionNamesAuto.esp'
     req: [ *SKSE ]
-  - name: 'DF127EnchantedArrows2.0.esp'
-    tag: [ Relev ]
-    dirty:
-      - crc: 0x6504a925
-        <<: *dirtyPlugin
-        itm: 32
   - name: 'DF127EnchantedArrowsandBolts.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/52837' ]
     tag: [ Relev ]
@@ -5338,14 +5292,6 @@ plugins:
       - crc: 0xec66178e
         <<: *dirtyPlugin
         itm: 4
-  - name: 'Immersive Patrols.esp'
-    dirty:
-      - crc: 0x54bcda38
-        <<: *dirtyPlugin
-        itm: 31
-        udr: 8
-  - name: 'Immersive Patrols Merged.esp'
-    msg: [ *obsolete ]
   - name: 'Immersive Werewolves.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/50389' ]
     dirty:
@@ -20791,18 +20737,6 @@ plugins:
       - crc: 0x18ad5feb
         <<: *dirtyPlugin
         itm: 18
-  - name: 'Realistic Lighting Overhaul - Brighter Dungeons.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-  - name: 'Realistic Lighting Overhaul - Dungeon Lighting.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
-    dirty:
-      - crc: 0xcb2aeeaf
-        <<: *dirtyPlugin
-        itm: 5
-  - name: 'Realistic Lighting Overhaul - Dawnguard.esp'
-    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
     after:
@@ -20840,9 +20774,6 @@ plugins:
       - crc: 0x89ee7304
         <<: *dirtyPlugin
         itm: 4
-  - name: 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Weathers.esp'
   - name: 'RLO - Adaptive Interiors Vanilla Weathers Patch.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
     inc:
@@ -26997,10 +26928,6 @@ plugins:
         itm: 9
   - name: 'PaperMapHeightEnhanced.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22425' ]
-  - name: 'Warburg''s 3D Paper World Map v2.2.esp'
-    msg: [ *obsolete ]
-  - name: 'Warburg''s 3D Paper World Map.esp'
-    msg: [ *obsolete ]
   - name: 'WorldMapInFull3D.esp'
     msg:
       - type: say
@@ -27155,9 +27082,7 @@ plugins:
   - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
     group: *alternateStartGroup
-    inc:
-      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
+    inc: [ 'Warburg''s 3D Paper World Map - Texture 2.esp' ]
     msg:
       - type: say
         content:
@@ -27174,9 +27099,7 @@ plugins:
   - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
     group: *alternateStartGroup
-    inc:
-      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
+    inc: [ 'Warburg''s 3D Paper World Map - Texture 1.esp' ]
     msg:
       - type: say
         content:
@@ -27191,24 +27114,6 @@ plugins:
         <<: *dirtyPlugin
         itm: 10
         udr: 0
-  - name: 'Warburg''s 3D Paper World Map - Texture 3.esp'
-    group: *alternateStartGroup
-    inc:
-      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
-          - lang: de
-            text: 'Bei anhaltenden Problemen mit dem Zoomen sollten Sie eine Benutzerliste erstellen und verwenden, um die Karte unter allen dynamischen Plug-ins zu laden.'
-          - lang: ja
-            text: 'ズームイン時に問題が発生し続ける場合、ユーザーリストを編集してなるべく下の方、動的に生成されたプラグインの後にロードさせてください。'
-    dirty:
-      - crc: 0xaafe91d6
-        <<: *dirtyPlugin
-        itm: 9
   - name: 'TES5Merged.esp'
     group: *dynamicPatchGroup
     tag: [ NoMerge ]
@@ -27236,14 +27141,12 @@ plugins:
     after:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
   - name: 'Warburg''s 3D Paper World Map - Dragonborn.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25501' ]
     group: *mapMarkersGroup
     after:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
       - 'Warburg''s 3D Paper World Map - Texture 2.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 3.esp'
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
     group: *mapMarkersGroup
     req: [ *SKSE ]
@@ -27427,8 +27330,6 @@ plugins:
   - name: 'EzEWorldMap.esp'
     group: *mapGroup
   - name: 'EzEMapSolstheim.esp'
-    group: *mapGroup
-  - name: 'Warburgs Paper World Map.esp'
     group: *mapGroup
   - name: 'CombatDramaOverhaul.esp'
     dirty:
