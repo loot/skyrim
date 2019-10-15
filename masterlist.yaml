@@ -3513,9 +3513,15 @@ plugins:
   - name: 'Hirelingrevamp.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22616' ]
     dirty:
-      - crc: 0xb2c27e1b
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x6F80462B
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x9920D75D
+        util: 'TES5Edit v4.0.2h'
   - name: 'Layla.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24698' ]
     msg: [ *corrupt ]
