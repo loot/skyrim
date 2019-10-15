@@ -3499,14 +3499,17 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/12909' ]
     msg:
       - <<: *corrupt
-        condition: 'checksum("Faendal.esp",60930CE6)'
+        condition: 'checksum("Faendal.esp",60930CE6) or checksum("Faendal.esp",C4A869DC)'
     dirty:
-      - crc: 0x5d38c4e9
-        <<: *dirtyPlugin
+      # 12909 - v1.2
+      - <<: *quickClean
+        crc: 0x60930CE6
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
-      - crc: 0x60930ce6
-        <<: *dirtyPlugin
-        itm: 4
+    clean:
+      # 12909 - v1.2 - after QAC
+      - crc: 0xC4A869DC
+        util: 'TES5Edit v4.0.2h'
   - name: 'Hirelingrevamp.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22616' ]
     dirty:
