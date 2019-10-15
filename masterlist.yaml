@@ -3379,9 +3379,15 @@ plugins:
         condition: 'active("Unofficial Hearthfire Patch.esp")'
         subs: [ 'Unofficial Hearthfire Patch.esp' ]
     dirty:
-      - crc: 0x91aa4e51
-        <<: *dirtyPlugin
-        itm: 2
+      # v1
+      - <<: *quickClean
+        crc: 0x91AA4E51
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v1 - after QAC
+      - crc: 0x397E80A8
+        util: 'TES5Edit v4.0.2h'
   - name: 'Skyrim - Director''s Cut - HD Pack Fix.esp'
     req:
       - name: 'HighResTexturePack01.esp'
@@ -3480,27 +3486,42 @@ plugins:
   - name: 'Dalls_Skyrim_Faces_NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18760' ]
     dirty:
-      - crc: 0xaac416c0
-        <<: *dirtyPlugin
-        itm: 2
+      # Main
+      - <<: *quickClean
+        crc: 0xAAC416C0
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # Main - after QAC
+      - crc: 0xE0EBF452
+        util: 'TES5Edit v4.0.2h'
   - name: 'Faendal.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12909' ]
     msg:
       - <<: *corrupt
-        condition: 'checksum("Faendal.esp",60930CE6)'
+        condition: 'checksum("Faendal.esp",60930CE6) or checksum("Faendal.esp",C4A869DC)'
     dirty:
-      - crc: 0x5d38c4e9
-        <<: *dirtyPlugin
+      # 12909 - v1.2
+      - <<: *quickClean
+        crc: 0x60930CE6
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
-      - crc: 0x60930ce6
-        <<: *dirtyPlugin
-        itm: 4
+    clean:
+      # 12909 - v1.2 - after QAC
+      - crc: 0xC4A869DC
+        util: 'TES5Edit v4.0.2h'
   - name: 'Hirelingrevamp.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22616' ]
     dirty:
-      - crc: 0xb2c27e1b
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x6F80462B
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x9920D75D
+        util: 'TES5Edit v4.0.2h'
   - name: 'Layla.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24698' ]
     msg: [ *corrupt ]
@@ -3535,14 +3556,17 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/14040' ]
     msg:
       - <<: *corrupt
-        condition: 'checksum("Tonilia.esp",1AEB51FC)'
+        condition: 'checksum("Tonilia.esp",1AEB51FC) or checksum("Tonilia.esp",914D89EB)'
     dirty:
-      - crc: 0x926deea0
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x1AEB51FC
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - crc: 0x1AEB51FC
-        <<: *dirtyPlugin
-        itm: 3
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x914D89EB
+        util: 'TES5Edit v4.0.2h'
   - name: 'Vex.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/14040' ]
     msg:
@@ -3559,9 +3583,15 @@ plugins:
   - name: '1 Day Moon Phases.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/5801' ]
     dirty:
-      - crc: 0xfe2f1935
-        <<: *dirtyPlugin
+      # Final
+      - <<: *quickClean
+        crc: 0xFE2F1935
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # Final - after QAC
+      - crc: 0xB4CED9D1
+        util: 'TES5Edit v4.0.2h'
   - name: 'Chesko_Frostfall.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11163' ]
     msg:
@@ -3592,9 +3622,15 @@ plugins:
   - name: 'Fewer Snowstorms.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8492' ]
     dirty:
-      - crc: 0x88cb9260
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x88CB9260
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x14164D28
+        util: 'TES5Edit v4.0.2h'
   - name: 'getSnowyV.+\.esp'
     inc:
       - 'Chesko_Frostfall.esp'
@@ -3603,17 +3639,29 @@ plugins:
     inc:
       - 'MoreSnowWindy.esp'
     dirty:
-      - crc: 0xf26a6037
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xF26A6037
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x4F81151F
+        util: 'TES5Edit v4.0.2h'
   - name: 'MoreSnowWindy.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8328' ]
     inc:
       - 'MoreSnow.esp'
     dirty:
-      - crc: 0xb1cc90a4
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xB1CC90A4
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x6BDD6671
+        util: 'TES5Edit v4.0.2h'
   - name: 'MoreSnow(Windy)?(and(75|150)percentLessView)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -3668,16 +3716,16 @@ plugins:
       - 'Realistic Lighting.esp'
   - name: 'Supreme Fog.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24460' ]
-    dirty:
-      - crc: 0x4b1eb3a6
-        <<: *dirtyPlugin
-        itm: 4
+    clean:
+      # v2.0
+      - crc: 0x58B9CAD1
+        util: 'TES5Edit v4.0.2h'
   - name: 'Supreme Storms.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27022' ]
-    dirty:
-      - crc: 0x6b5d41bd
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      # v1.2
+      - crc: 0x5EDCD0EC
+        util: 'TES5Edit v4.0.2h'
   - name: 'PaperMapHeight-RemoveFog.esp'
     after:
       - 'WATER.esp'
@@ -4056,10 +4104,38 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("KatuLights.*\.esp")'
         subs: [ 'KatuLights .esp file' ]
+  - name: 'Dark Dungeons for Skyrim-Dawnguard-Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
+    clean:
+      # v1.01
+      - crc: 0x7823B785
+        util: 'TES5Edit v4.0.2h'
+  - name: 'Dark Dungeons for Dawnguard.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
+    clean:
+      # v1.0
+      - crc: 0xFA04E662
+        util: 'TES5Edit v4.0.2h'
+  - name: 'Dark Dungeons for Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
+    clean:
+      # v1.0
+      - crc: 0x337FE6BB
+        util: 'TES5Edit v4.0.2h'
   - name: 'Further Dark Dungeons for ENB.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
     inc:
       - 'Dark Dungeons for ENB.esp'
+    dirty:
+      # v1.08
+      - <<: *quickClean
+        crc: 0xA64545AF
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v1.08 - after QAC
+      - crc: 0x0C8D5264
+        util: 'TES5Edit v4.0.2h'
   - name: 'AdditionalMusicBundleI.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25625' ]
     dirty:
@@ -27144,18 +27220,18 @@ plugins:
       - crc: 0x094C536C
         <<: *dirtyPlugin
         itm: 5
-  - name: 'Dark Dungeons for Skyrim-Dawnguard-Dragonborn.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/12454' ]
-    dirty:
-      - crc: 0x00D8ACA2
-        <<: *dirtyPlugin
-        itm: 5
   - name: 'JaxonzEnhGrab.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/52583' ]
     dirty:
-      - crc: 0x756D2124
-        <<: *dirtyPlugin
+      # v2.92
+      - <<: *quickClean
+        crc: 0x756D2124
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v2.92 - after QAC
+      - crc: 0x2FF1388B
+        util: 'TES5Edit v4.0.2h'
   - name: 'TrueStorms.esp'
     dirty:
       # version: 1.5 Vanilla
@@ -27176,9 +27252,26 @@ plugins:
   - name: 'SoSFC-LF.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/63834' ]
     dirty:
-      - crc: 0xD86DBF15
-        <<: *dirtyPlugin
+      # v1.0 - No Guards
+      - <<: *quickClean
+        crc: 0xD86DBF15
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 24
+      # v0.5 - Craftable only
+      - <<: *quickClean
+        crc: 0x29E19E12
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 54
+    clean:
+      # v1.0 - Main
+      - crc: 0x8BC46C80
+        util: 'TES5Edit v4.0.2h'
+      # v1.0 - No Guards - after QAC
+      - crc: 0x7126413C
+        util: 'TES5Edit v4.0.2h'
+      # v0.5 - Craftable only - after QAC
+      - crc: 0xFE044E64
+        util: 'TES5Edit v4.0.2h'
   - name: 'OCS - ICOW Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/59937' ]
     dirty:
