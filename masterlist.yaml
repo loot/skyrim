@@ -27153,9 +27153,15 @@ plugins:
   - name: 'JaxonzEnhGrab.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/52583' ]
     dirty:
-      - crc: 0x756D2124
-        <<: *dirtyPlugin
+      # v2.92
+      - <<: *quickClean
+        crc: 0x756D2124
+        util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v2.92 - after QAC
+      - crc: 0x2FF1388B
+        util: 'TES5Edit v4.0.2h'
   - name: 'TrueStorms.esp'
     dirty:
       # version: 1.5 Vanilla
