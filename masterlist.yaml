@@ -24332,19 +24332,9 @@ plugins:
         <<: *dirtyPlugin
         itm: 18
   - name: 'SPTConsistentOlderPeople.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19730' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Update to the latest version.'
-          - lang: de
-            text: 'Aktualisieren Sie auf die neueste Version.'
-          - lang: es
-            text: 'Update to the latest version.'
-          - lang: ja
-            text: '最新版に更新してください。'
-          - lang: ru
-            text: 'Oбновите до последней версии.'
+      - <<: *obsolete
         condition: 'version("SPTConsistentOlderPeople.esp", "1.3", <)'
   - name: 'Better Followers.esp'
     msg: [ *obsolete ]
