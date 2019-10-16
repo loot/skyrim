@@ -3905,15 +3905,33 @@ plugins:
       # v2.0 - after QAC
       - crc: 0x12188E5B
         util: 'TES5Edit v4.0.2i'
+  - name: 'LIAT - NPCs.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
+    dirty:
+      # v1.31
+      - <<: *quickClean
+        crc: 0x8EFD5F95
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+    clean:
+      # v1.31 - after QAC
+      - crc: 0xB0C82860
+        util: 'TES5Edit v4.0.2i'
   - name: 'LIAT - Sounds.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("LIAT - Sounds.esp",A03F61CD)'
     dirty:
-      - crc: 0x68eb2f
-        <<: *dirtyPlugin
-        itm: 43
+      # v1.31
+      - <<: *quickClean
+        crc: 0x0068EB2F
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 47
+    clean:
+      # v1.31 - after QAC
+      - crc: 0x726826BE
+        util: 'TES5Edit v4.0.2i'
+  - name: 'LIAT - (AI Packages|Crowded|Less Visitors|Lively Inns and Taverns|More Visitors)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
+    msg: [ *obsolete ]
   - name: 'better_torches.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27443' ]
     msg:
@@ -5625,18 +5643,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'LIAT - (AI Packages|Crowded|Less Visitors|Lively Inns and Taverns|More Visitors)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
-    msg: [ *obsolete ]
-  - name: 'LIAT - NPCs.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("LIAT - NPCs.esp",5887EDBA)'
-    dirty:
-      - crc: 0x8efd5f95
-        <<: *dirtyPlugin
-        itm: 3
   - name: 'Long lost smelters by Hyralux.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8298' ]
     dirty:
