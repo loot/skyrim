@@ -3861,9 +3861,15 @@ plugins:
   - name: 'Clanking Armor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24352' ]
     dirty:
-      - crc: 0x7055b881
-        <<: *dirtyPlugin
-        itm: 5
+      # v1.2
+      - <<: *quickClean
+        crc: 0xDD039D67
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x1E4AB12E
+        util: 'TES5Edit v4.0.2i'
   - name: 'ClimatesOfTamriel-Sound.esp'
     msg:
       - type: warn
@@ -3879,10 +3885,10 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Immersive Sounds - Aural Assortment.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/49084' ]
-    dirty:
-      - crc: 0xf3d99077
-        <<: *dirtyPlugin
-        itm: 4
+    clean:
+      # v2.0
+      - crc: 0xD336EEDF
+        util: 'TES5Edit v4.0.2i'
   - name: 'Improved Combat Sounds v2.0.esp'
     msg: [ *obsolete ]
   - name: 'ICS Possible Fix \d\.esp'
@@ -3890,18 +3896,42 @@ plugins:
   - name: 'KCEUnarmedBladeSound.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/28022' ]
     dirty:
-      - crc: 0x7252cc51
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0x7252CC51
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x12188E5B
+        util: 'TES5Edit v4.0.2i'
+  - name: 'LIAT - NPCs.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
+    dirty:
+      # v1.31
+      - <<: *quickClean
+        crc: 0x8EFD5F95
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+    clean:
+      # v1.31 - after QAC
+      - crc: 0xB0C82860
+        util: 'TES5Edit v4.0.2i'
   - name: 'LIAT - Sounds.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("LIAT - Sounds.esp",A03F61CD)'
     dirty:
-      - crc: 0x68eb2f
-        <<: *dirtyPlugin
-        itm: 43
+      # v1.31
+      - <<: *quickClean
+        crc: 0x0068EB2F
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 47
+    clean:
+      # v1.31 - after QAC
+      - crc: 0x726826BE
+        util: 'TES5Edit v4.0.2i'
+  - name: 'LIAT - (AI Packages|Crowded|Less Visitors|Lively Inns and Taverns|More Visitors)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
+    msg: [ *obsolete ]
   - name: 'better_torches.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27443' ]
     msg:
@@ -3914,10 +3944,10 @@ plugins:
           - lang: ja
             text: 'このModには重複したセルが存在するようです。リフテンのラットウェイがおかしなことになっているかもしれません。'
         condition: 'checksum("better_torches.esp",9F5EA6E6) or checksum("better_torches.esp",96F75656)'
-    dirty:
-      - crc: 0x9f5ea6e6
-        <<: *dirtyPlugin
-        itm: 3
+    clean:
+      # v1.1
+      - crc: 0xB7F684D4
+        util: 'TES5Edit v4.0.2i'
   - name: 'better_torches_brighter_torchlight.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27443' ]
     inc:
@@ -3932,17 +3962,23 @@ plugins:
           - lang: ja
             text: 'このModには重複したセルが存在するようです。リフテンのラットウェイがおかしなことになっているかもしれません。'
         condition: 'checksum("better_torches_brighter_torchlight.esp",9BEBAD4D) or checksum("better_torches_brighter_torchlight.esp",CB5777CE)'
-    dirty:
-      - crc: 0x9bebad4d
-        <<: *dirtyPlugin
-        itm: 3
+    clean:
+      # v1.1
+      - crc: 0x29540D4F
+        util: 'TES5Edit v4.0.2i'
   - name: 'DynamicTorches.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8070' ]
     dirty:
-      - crc: 0xa30aa667
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0xA30AA667
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
         udr: 106
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x52C1F8CD
+        util: 'TES5Edit v4.0.2i'
   - name: 'Blackout_Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27960' ]
     msg:
@@ -3959,9 +3995,15 @@ plugins:
           - lang: ru
             text: 'Это ENB-мод.  Убедитесь, что у вас установлена корректная версия ENB.'
     dirty:
-      - crc: 0x3a1da448
-        <<: *dirtyPlugin
-        itm: 3
+      # v2.0
+      - <<: *quickClean
+        crc: 0x3A1DA448
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x58BF8CE5
+        util: 'TES5Edit v4.0.2i'
   - name: 'Blackout_Dawnguard.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27960' ]
     msg:
@@ -3977,6 +4019,10 @@ plugins:
             text: 'ENB用のModです。必ず適切なENBをインストールしてください。'
           - lang: ru
             text: 'Это ENB-мод.  Убедитесь, что у вас установлена корректная версия ENB.'
+    clean:
+      # v2.0
+      - crc: 0x7B30F518
+        util: 'TES5Edit v4.0.2i'
   - name: 'CLARALUX.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17605' ]
     dirty:
@@ -3998,19 +4044,28 @@ plugins:
   - name: 'Darker_Caves_Dungeons_Ruins_Nights.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21062' ]
     dirty:
-      - crc: 0xe46b4df1
-        <<: *dirtyPlugin
-        itm: 721
-        udr: 1489
+      # v2.1
+      - <<: *quickClean
+        crc: 0x19C83EFA
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 754
+        udr: 1490
   - name: 'kuerteeDisableLightsFarFromActors.esp'
     req:
       - *SKSE
   - name: 'MikeFoxs_CorrectLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12762' ]
     dirty:
-      - crc: 0xd2b44ebe
-        <<: *dirtyPlugin
+      # v0.a.3
+      - <<: *quickClean
+        crc: 0xD2B44EBE
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
         udr: 302
+    clean:
+      # v0.a.3 - after QAC
+      - crc: 0x0E8FABEF
+        util: 'TES5Edit v4.0.2i'
   - name: 'realrain.esp'
     inc:
       - 'realrainextended.esp'
@@ -5613,18 +5668,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'LIAT - (AI Packages|Crowded|Less Visitors|Lively Inns and Taverns|More Visitors)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
-    msg: [ *obsolete ]
-  - name: 'LIAT - NPCs.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19841' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("LIAT - NPCs.esp",5887EDBA)'
-    dirty:
-      - crc: 0x8efd5f95
-        <<: *dirtyPlugin
-        itm: 3
   - name: 'Long lost smelters by Hyralux.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8298' ]
     dirty:
@@ -20807,50 +20850,27 @@ plugins:
       - name: 'Realistic Lighting.esp'
         display: 'Realistic Lighting with Customization'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x18ad5feb
-        <<: *dirtyPlugin
-        itm: 18
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
     after:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'The order of ''Major City Interiors.esp'' and ''Dawnguard Interiors.esp'' is interchangeable. [Here is a note from RLO author, Daemonui, about the differences you will see](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
-          - lang: de
-            text: 'Die Reihenfolge von ''Major City Interiors.esp'' und ''Dawnguard Interiors.esp'' ist austauschbar. [Hier ist ein Hinweis des RLO-Autors, Daemonui, zu den Unterschieden, die Sie sehen werden](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
-          - lang: ja
-            text: '''Major City Interiors.esp''と''Dawnguard Interiors.esp''のロード順は入れ替えることができます。[RLOを製作されたDaemonui氏による解説へのリンクです。相違について確認できます](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x53706bfb
-        <<: *dirtyPlugin
-        itm: 2
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x89ceaa91
-        <<: *dirtyPlugin
-        itm: 2
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Major City Interiors.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x33a5fd6
-        <<: *dirtyPlugin
-        itm: 9
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Weathers.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x89ee7304
-        <<: *dirtyPlugin
-        itm: 4
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'RLO - Adaptive Interiors Vanilla Weathers Patch.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
     inc:
       - 'ClimatesOfTamriel.esm'
     after:
@@ -20860,10 +20880,42 @@ plugins:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
+    msg: [ *obsolete ]
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
     after:
       - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+    msg: [ *obsolete ]
+  - name: 'RLO - Exteriors.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    dirty:
+      # v5.0.3
+      - <<: *quickClean
+        crc: 0x99AAB3DC
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      # v5.0.3 - after QAC
+      - crc: 0xB214FC3F
+        util: 'TES5Edit v4.0.2i'
+  - name: 'RLO - Interiors.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    clean:
+      # v5.0.3
+      - crc: 0x57BA2B05
+        util: 'TES5Edit v4.0.2i'
+  - name: 'RLO - Effects.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    clean:
+      # v5.0.3
+      - crc: 0x6D391637
+        util: 'TES5Edit v4.0.2i'
+  - name: 'RLO - Illuminated Spells.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    clean:
+      # v5.0.3
+      - crc: 0xA862C4E9
+        util: 'TES5Edit v4.0.2i'
   - name: 'ClimatesOfTamriel - VannillaNights.esp'
     inc:
       - 'Realistic Lighting Overhaul - Weathers.esp'
