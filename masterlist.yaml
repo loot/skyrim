@@ -4056,9 +4056,16 @@ plugins:
   - name: 'MikeFoxs_CorrectLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12762' ]
     dirty:
-      - crc: 0xd2b44ebe
-        <<: *dirtyPlugin
+      # v0.a.3
+      - <<: *quickClean
+        crc: 0xD2B44EBE
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
         udr: 302
+    clean:
+      # v0.a.3 - after QAC
+      - crc: 0x0E8FABEF
+        util: 'TES5Edit v4.0.2i'
   - name: 'realrain.esp'
     inc:
       - 'realrainextended.esp'
