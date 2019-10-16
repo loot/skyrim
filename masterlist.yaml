@@ -3995,9 +3995,15 @@ plugins:
           - lang: ru
             text: 'Это ENB-мод.  Убедитесь, что у вас установлена корректная версия ENB.'
     dirty:
-      - crc: 0x3a1da448
-        <<: *dirtyPlugin
-        itm: 3
+      # v2.0
+      - <<: *quickClean
+        crc: 0x3A1DA448
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x58BF8CE5
+        util: 'TES5Edit v4.0.2i'
   - name: 'Blackout_Dawnguard.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27960' ]
     msg:
@@ -4013,6 +4019,10 @@ plugins:
             text: 'ENB用のModです。必ず適切なENBをインストールしてください。'
           - lang: ru
             text: 'Это ENB-мод.  Убедитесь, что у вас установлена корректная версия ENB.'
+    clean:
+      # v2.0
+      - crc: 0x7B30F518
+        util: 'TES5Edit v4.0.2i'
   - name: 'CLARALUX.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17605' ]
     dirty:
