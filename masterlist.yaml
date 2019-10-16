@@ -3969,10 +3969,16 @@ plugins:
   - name: 'DynamicTorches.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8070' ]
     dirty:
-      - crc: 0xa30aa667
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0xA30AA667
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
         udr: 106
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x52C1F8CD
+        util: 'TES5Edit v4.0.2i'
   - name: 'Blackout_Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27960' ]
     msg:
