@@ -20807,50 +20807,27 @@ plugins:
       - name: 'Realistic Lighting.esp'
         display: 'Realistic Lighting with Customization'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x18ad5feb
-        <<: *dirtyPlugin
-        itm: 18
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
     after:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'The order of ''Major City Interiors.esp'' and ''Dawnguard Interiors.esp'' is interchangeable. [Here is a note from RLO author, Daemonui, about the differences you will see](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
-          - lang: de
-            text: 'Die Reihenfolge von ''Major City Interiors.esp'' und ''Dawnguard Interiors.esp'' ist austauschbar. [Hier ist ein Hinweis des RLO-Autors, Daemonui, zu den Unterschieden, die Sie sehen werden](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
-          - lang: ja
-            text: '''Major City Interiors.esp''と''Dawnguard Interiors.esp''のロード順は入れ替えることができます。[RLOを製作されたDaemonui氏による解説へのリンクです。相違について確認できます](https://forums.nexusmods.com/index.php?/topic/895903-realistic-lighting-overhaul/page-481#entry7841467).'
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x53706bfb
-        <<: *dirtyPlugin
-        itm: 2
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Major City Exteriors.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x89ceaa91
-        <<: *dirtyPlugin
-        itm: 2
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Major City Interiors.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x33a5fd6
-        <<: *dirtyPlugin
-        itm: 9
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Weathers.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
-    dirty:
-      - crc: 0x89ee7304
-        <<: *dirtyPlugin
-        itm: 4
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    msg: [ *obsolete ]
   - name: 'RLO - Adaptive Interiors Vanilla Weathers Patch.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
     inc:
       - 'ClimatesOfTamriel.esm'
     after:
@@ -20860,10 +20837,42 @@ plugins:
       - 'Realistic Lighting Overhaul - Major City Interiors.esp'
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
+    msg: [ *obsolete ]
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/30450/' ]
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
     after:
       - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+    msg: [ *obsolete ]
+  - name: 'RLO - Exteriors.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    dirty:
+      # v5.0.3
+      - <<: *quickClean
+        crc: 0x99AAB3DC
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      # v5.0.3 - after QAC
+      - crc: 0xB214FC3F
+        util: 'TES5Edit v4.0.2i'
+  - name: 'RLO - Interiors.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    clean:
+      # v5.0.3
+      - crc: 0x57BA2B05
+        util: 'TES5Edit v4.0.2i'
+  - name: 'RLO - Effects.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    clean:
+      # v5.0.3
+      - crc: 0x6D391637
+        util: 'TES5Edit v4.0.2i'
+  - name: 'RLO - Illuminated Spells.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
+    clean:
+      # v5.0.3
+      - crc: 0xA862C4E9
+        util: 'TES5Edit v4.0.2i'
   - name: 'ClimatesOfTamriel - VannillaNights.esp'
     inc:
       - 'Realistic Lighting Overhaul - Weathers.esp'
