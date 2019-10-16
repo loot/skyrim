@@ -3861,9 +3861,15 @@ plugins:
   - name: 'Clanking Armor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24352' ]
     dirty:
-      - crc: 0x7055b881
-        <<: *dirtyPlugin
-        itm: 5
+      # v1.2
+      - <<: *quickClean
+        crc: 0xDD039D67
+        util: '[TES5Edit v4.0.2i](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x1E4AB12E
+        util: 'TES5Edit v4.0.2i'
   - name: 'ClimatesOfTamriel-Sound.esp'
     msg:
       - type: warn
