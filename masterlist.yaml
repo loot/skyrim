@@ -4873,37 +4873,59 @@ plugins:
     inc:
       - 'HearthFires.esm'
     dirty:
-      - crc: 0x200672c3
-        <<: *dirtyPlugin
-        itm: 376
+      # v2.4
+      - <<: *quickClean
+        crc: 0x200672C3
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 423
         udr: 2
+    clean:
+      # v2.4 - after QAC
+      - crc: 0x2667DB4C
+        util: 'TES5Edit v4.0.2j'
   - name: 'Birdsclean.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11555' ]
     inc:
       - 'HearthFires.esm'
       - 'Birds.esp'
     dirty:
-      - crc: 0xdcf07465
-        <<: *dirtyPlugin
-        itm: 45
+      - <<: *quickClean
+        crc: 0xDCF07465
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 47
+    clean:
+      # after QAC
+      - crc: 0x4DFD4015
+        util: 'TES5Edit v4.0.2j'
   - name: 'BirdsHF.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11555' ]
     inc:
       - 'Birds.esp'
     msg: [ *obsolete ]
     dirty:
-      - crc: 0x9f07f0a4
-        <<: *dirtyPlugin
-        itm: 368
+      # v1.0
+      - <<: *quickClean
+        crc: 0x9F07F0A4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 417
         udr: 2
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x96D1D815
+        util: 'TES5Edit v4.0.2j'
   - name: 'BirdsHFclean.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11555' ]
     inc:
       - 'Birds.esp'
     dirty:
-      - crc: 0xb5314156
-        <<: *dirtyPlugin
-        itm: 48
+      - <<: *quickClean
+        crc: 0xB5314156
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 50
+    clean:
+      # after QAC
+      - crc: 0xBD947B8D
+        util: 'TES5Edit v4.0.2j'
   - name: 'Birdsofskyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17723' ]
     dirty:
