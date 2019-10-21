@@ -4753,9 +4753,15 @@ plugins:
   - name: 'Beauties of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24296' ]
     dirty:
-      - crc: 0x38f04200
-        <<: *dirtyPlugin
+      # 2Point0h
+      - <<: *quickClean
+        crc: 0x38F04200
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+    clean:
+      # 2Point0h - after QAC
+      - crc: 0x86511E90
+        util: 'TES5Edit v4.0.2j'
   - name: 'BecomeAVampire.esp'
     req:
       - *SKSE
