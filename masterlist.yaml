@@ -5062,12 +5062,36 @@ plugins:
         itm: 43
   - name: 'Catsofskyrim.esp'
     url:
+      # catsofskyrim.esp
       - 'https://www.nexusmods.com/skyrim/mods/14379'
+      # Catsofskyrim.esp
       - 'https://www.nexusmods.com/skyrim/mods/17424'
     dirty:
-      - crc: 0x3de83b91
-        <<: *dirtyPlugin
-        itm: 9
+      # 14379 - v1.31
+      - <<: *quickClean
+        crc: 0xA1817D7F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # 17424 - v0.3.1 - Main
+      - <<: *quickClean
+        crc: 0xEE148352
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+      # 17424 - v0.3.1 - Essential animals
+      - <<: *quickClean
+        crc: 0x3DE83B91
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      # 14379 - v1.31 - after QAC
+      - crc: 0x48EE7E23
+        util: 'TES5Edit v4.0.2j'
+      # 17424 - v0.3.1 - Main - after QAC
+      - crc: 0x8C0D1AE2
+        util: 'TES5Edit v4.0.2j'
+      # 17424 - v0.3.1 - Essential animals - after QAC
+      - crc: 0xBF38444F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Char Your Own Skeevers.esp'
     req: [ *SKSE ]
   - name: 'Chesko_WearableLantern.esp'
