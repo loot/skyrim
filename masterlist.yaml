@@ -5157,14 +5157,16 @@ plugins:
   - name: 'CP Apple Trees.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25793' ]
     dirty:
-      - crc: 0xc4e6faf8
-        <<: *dirtyPlugin
+      # v1.3a
+      - <<: *quickClean
+        crc: 0xC4E6FAF8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 1
-      - crc: 0xeab431ed
-        <<: *dirtyPlugin
-        itm: 1
-        udr: 1
+    clean:
+      # v1.3a - after QAC
+      - crc: 0xD8E11D05
+        util: 'TES5Edit v4.0.2j'
   - name: 'CRAFT - Salvage Material.esp'
     msg:
       - *alreadyInCraftTemperSmelt
