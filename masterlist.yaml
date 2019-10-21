@@ -4566,9 +4566,15 @@ plugins:
   - name: 'Armor and Clothing Diversity.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21605' ]
     dirty:
-      - crc: 0x8550b53d
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0x8550B53D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x937B8A9A
+        util: 'TES5Edit v4.0.2j'
   - name: 'Armored Skeleton.esp'
     msg: [ *alreadyInSkyrimImmersiveCreatures ]
     tag: [ Relev ]
