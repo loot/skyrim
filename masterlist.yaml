@@ -5040,9 +5040,15 @@ plugins:
   - name: 'CarryWeightSpells.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/4710' ]
     dirty:
-      - crc: 0x8a3c392a
-        <<: *dirtyPlugin
+      # v1.7
+      - <<: *quickClean
+        crc: 0x8A3C392A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.7 - after QAC
+      - crc: 0xCBC4C456
+        util: 'TES5Edit v4.0.2j'
   - name: 'Carriage1.esp'
     dirty:
       - crc: 0xdd48cc7
