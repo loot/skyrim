@@ -4721,11 +4721,15 @@ plugins:
   - name: 'Baby Dragons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19206' ]
     dirty:
-      - crc: 0xf1f78cb8
-        <<: *dirtyPlugin
-        itm: 104
-        udr: 51
-        nav: 13
+      # v1.41
+      - <<: *quickClean
+        crc: 0x93F7FE15
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 75
+    clean:
+      # v1.41 - after QAC
+      - crc: 0x3D85BFF0
+        util: 'TES5Edit v4.0.2j'
   - name: 'Back off, [Subject Name Here]!.esp'
     inc:
       - 'Back off, Barbas!.esp'
