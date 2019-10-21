@@ -4222,9 +4222,15 @@ plugins:
             text: 'Full版のRemove Interior Fog V2を使用する場合は個別インストール版を使用しないでください。'
         condition: 'file("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp")'
     dirty:
-      - crc: 0x4FD63CD3
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0x4FD63CD3
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x0DAEEE55
+        util: 'TES5Edit v4.0.2j'
   - name: 'Warmer Magic Lights v2.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
