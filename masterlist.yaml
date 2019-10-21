@@ -4177,9 +4177,15 @@ plugins:
             text: 'Удаление тумана внутри помещений повлияет на Realistic Lighting. Загружайте перед RL если вы замечаете баги.'
         condition: 'file("Realistic Lighting.esp")'
     dirty:
-      - crc: 0x2014aa8e
-        <<: *dirtyPlugin
-        itm: 4
+      # v1.3
+      - <<: *quickClean
+        crc: 0x2014AA8E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x78E23FB2
+        util: 'TES5Edit v4.0.2j'
   - name: 'Remove Interior Fog V2 - Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29253' ]
     inc:
