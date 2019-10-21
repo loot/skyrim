@@ -4814,86 +4814,130 @@ plugins:
       - crc: 0x2D0D04B6
         util: 'TES5Edit v4.0.2j'
   - name: 'bbLager.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11329?' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11329' ]
     tag:
       - Delev
       - Relev
     dirty:
-      - crc: 0x68c5a371
-        <<: *dirtyPlugin
-        itm: 30
+      # v5.5
+      - <<: *reqManualFix
+        crc: 0x68C5A371
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 42
+        nav: 3
+      # v5.5 - after QAC
+      - <<: *reqManualFix
+        crc: 0x9F52B8E9
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 3
   - name: 'bbLagerLight.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22744' ]
     dirty:
-      - crc: 0x7aea5a0a
-        <<: *dirtyPlugin
+      # v1.1.1
+      - <<: *quickClean
+        crc: 0x7AEA5A0A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.1.1 - after QAC
+      - crc: 0xEAB8FD16
+        util: 'TES5Edit v4.0.2j'
   - name: 'BellyachesNewDragonSpecies_FactionlessDragons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20889' ]
     dirty:
-      - crc: 0xaa96f38f
-        <<: *dirtyPlugin
-        itm: 118
+      # v1.5
+      - <<: *quickClean
+        crc: 0xAA96F38F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 120
         udr: 3
+    clean:
+      # v1.5 - after QAC
+      - crc: 0xF7F080E8
+        util: 'TES5Edit v4.0.2j'
   - name: 'BellyachesNewDragonSpecies.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20889' ]
     dirty:
-      - crc: 0x685e2580
-        <<: *dirtyPlugin
-        itm: 117
+      # v1.5
+      - <<: *quickClean
+        crc: 0x61BCAC04
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 120
         udr: 3
+    clean:
+      # v1.5 - after QAC
+      - crc: 0x17A028B7
+        util: 'TES5Edit v4.0.2j'
   - name: 'Birds.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11555' ]
     inc:
       - 'HearthFires.esm'
     dirty:
-      - crc: 0x200672c3
-        <<: *dirtyPlugin
-        itm: 376
+      # v2.4
+      - <<: *quickClean
+        crc: 0x200672C3
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 423
         udr: 2
+    clean:
+      # v2.4 - after QAC
+      - crc: 0x2667DB4C
+        util: 'TES5Edit v4.0.2j'
   - name: 'Birdsclean.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11555' ]
     inc:
       - 'HearthFires.esm'
       - 'Birds.esp'
     dirty:
-      - crc: 0xdcf07465
-        <<: *dirtyPlugin
-        itm: 45
+      - <<: *quickClean
+        crc: 0xDCF07465
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 47
+    clean:
+      # after QAC
+      - crc: 0x4DFD4015
+        util: 'TES5Edit v4.0.2j'
   - name: 'BirdsHF.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11555' ]
     inc:
       - 'Birds.esp'
     msg: [ *obsolete ]
     dirty:
-      - crc: 0x9f07f0a4
-        <<: *dirtyPlugin
-        itm: 368
+      # v1.0
+      - <<: *quickClean
+        crc: 0x9F07F0A4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 417
         udr: 2
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x96D1D815
+        util: 'TES5Edit v4.0.2j'
   - name: 'BirdsHFclean.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11555' ]
     inc:
       - 'Birds.esp'
     dirty:
-      - crc: 0xb5314156
-        <<: *dirtyPlugin
-        itm: 48
+      - <<: *quickClean
+        crc: 0xB5314156
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 50
+    clean:
+      # after QAC
+      - crc: 0xBD947B8D
+        util: 'TES5Edit v4.0.2j'
   - name: 'Birdsofskyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17723' ]
     dirty:
-      - crc: 0x86981213
-        <<: *dirtyPlugin
-        itm: 32
-      # version: 0.6.5
+      # v0.6.5
       - <<: *quickClean
         crc: 0xCF25ED24
-        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 32
     clean:
-      # version: 0.6.5
-      - crc: 0xC4DF22A1
-        util: 'TES5Edit v4.0.1'
+      # v0.6.5 - after QAC
+      - crc: 0xA5A9D2CE
+        util: 'TES5Edit v4.0.2j'
   - name: 'bladesfactionfix.esp'
     dirty:
       - crc: 0xb487451d
@@ -4913,10 +4957,28 @@ plugins:
       - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",A220A80B)'
     dirty:
-      - crc: 0xa220a80b
-        <<: *dirtyPlugin
+      # v0.11BETA
+      - <<: *quickClean
+        crc: 0xAD42346F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
         udr: 20
+      # v0.11BETA - No Dawnguard
+      - <<: *quickClean
+        crc: 0xA220A80B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+        udr: 20
+    clean:
+      # v0.10b
+      - crc: 0x75D6B87E
+        util: 'TES5Edit v4.0.2j'
+      # v0.11BETA - after QAC
+      - crc: 0xCE29177A
+        util: 'TES5Edit v4.0.2j'
+      # v0.11BETA - No Dawnguard - after QAC
+      - crc: 0x4FB6BB16
+        util: 'TES5Edit v4.0.2j'
   - name: 'Bob The Merchant.esp'
     dirty:
       - crc: 0x5f9d7c3
@@ -4978,9 +5040,15 @@ plugins:
   - name: 'CarryWeightSpells.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/4710' ]
     dirty:
-      - crc: 0x8a3c392a
-        <<: *dirtyPlugin
+      # v1.7
+      - <<: *quickClean
+        crc: 0x8A3C392A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.7 - after QAC
+      - crc: 0xCBC4C456
+        util: 'TES5Edit v4.0.2j'
   - name: 'Carriage1.esp'
     dirty:
       - crc: 0xdd48cc7
@@ -4994,24 +5062,66 @@ plugins:
         itm: 43
   - name: 'Catsofskyrim.esp'
     url:
+      # catsofskyrim.esp
       - 'https://www.nexusmods.com/skyrim/mods/14379'
+      # Catsofskyrim.esp
       - 'https://www.nexusmods.com/skyrim/mods/17424'
     dirty:
-      - crc: 0x3de83b91
-        <<: *dirtyPlugin
-        itm: 9
+      # 14379 - v1.31
+      - <<: *quickClean
+        crc: 0xA1817D7F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # 17424 - v0.3.1 - Main
+      - <<: *quickClean
+        crc: 0xEE148352
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+      # 17424 - v0.3.1 - Essential animals
+      - <<: *quickClean
+        crc: 0x3DE83B91
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      # 14379 - v1.31 - after QAC
+      - crc: 0x48EE7E23
+        util: 'TES5Edit v4.0.2j'
+      # 17424 - v0.3.1 - Main - after QAC
+      - crc: 0x8C0D1AE2
+        util: 'TES5Edit v4.0.2j'
+      # 17424 - v0.3.1 - Essential animals - after QAC
+      - crc: 0xBF38444F
+        util: 'TES5Edit v4.0.2j'
+  - name: 'Dogsofskyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17424' ]
+    dirty:
+      # v0.3.1 - Main
+      - <<: *quickClean
+        crc: 0xDE3A16B3
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 2
+      # v0.3.1 - Essential animals
+      - <<: *quickClean
+        crc: 0x94E5B3C5
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 2
+    clean:
+      # v0.3.1 - Main - after QAC
+      - crc: 0x438CDA45
+        util: 'TES5Edit v4.0.2j'
+      # v0.3.1 - Essential animals - after QAC
+      - crc: 0x4973E083
+        util: 'TES5Edit v4.0.2j'
   - name: 'Char Your Own Skeevers.esp'
     req: [ *SKSE ]
   - name: 'Chesko_WearableLantern.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17416' ]
-    dirty:
-      - crc: 0xa451e273
-        <<: *dirtyPlugin
-        itm: 1
     clean:
-      # version: 4.0.2
+      # v4.0.2
       - crc: 0x74CFC818
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2j'
   - name: 'Chesko_WearableLantern_Candle_DG.esp'
     inc:
       - 'Chesko_WearableLantern_Candle.esp'
@@ -5031,9 +5141,15 @@ plugins:
   - name: 'Console Books.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10627' ]
     dirty:
-      - crc: 0x6ae62ca9
-        <<: *dirtyPlugin
-        itm: 1
+      # v2.5
+      - <<: *quickClean
+        crc: 0xDF949B70
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v2.5 - after QAC
+      - crc: 0x4EC2BC6F
+        util: 'TES5Edit v4.0.2j'
   - name: 'CopyArmor.esp'
     req:
       - *SKSE
@@ -5041,14 +5157,16 @@ plugins:
   - name: 'CP Apple Trees.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25793' ]
     dirty:
-      - crc: 0xc4e6faf8
-        <<: *dirtyPlugin
+      # v1.3a
+      - <<: *quickClean
+        crc: 0xC4E6FAF8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 1
-      - crc: 0xeab431ed
-        <<: *dirtyPlugin
-        itm: 1
-        udr: 1
+    clean:
+      # v1.3a - after QAC
+      - crc: 0xD8E11D05
+        util: 'TES5Edit v4.0.2j'
   - name: 'CRAFT - Salvage Material.esp'
     msg:
       - *alreadyInCraftTemperSmelt
@@ -5082,21 +5200,31 @@ plugins:
           - lang: ru
             text: 'В большинстве случаев будет конфликтовать со всеми модами, меняющими подземелья.'
     dirty:
-      - crc: 0x4b3f9bd5
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x4B3F9BD5
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 95
         udr: 2479
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xC8277359
+        util: 'TES5Edit v4.0.2j'
   - name: 'CrossbowsRevamped.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21666' ]
     tag:
       - Delev
       - Relev
     dirty:
-      - crc: 0x52f5f6d1
-        <<: *dirtyPlugin
-        itm: 10
-      - crc: 0xfb9bc01a
-        <<: *dirtyPlugin
+      # v2.1
+      - <<: *quickClean
+        crc: 0xFB9BC01A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v2.1 - after QAC
+      - crc: 0x1594C16D
+        util: 'TES5Edit v4.0.2j'
   - name: 'CrossbowsRevamped70pctnospawn.esp'
     tag:
       - Delev
@@ -5181,12 +5309,6 @@ plugins:
         condition: 'not checksum("Disease Descriptions.esp",E199AED9)'
   - name: 'Don.?Juan.*\.esp'
     req: [ *FNIS ]
-  - name: 'Dogsofskyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17424' ]
-    dirty:
-      - crc: 0x3de83b91
-        <<: *dirtyPlugin
-        itm: 9
   - name: 'Dovahtracker.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35465' ]
     dirty:
