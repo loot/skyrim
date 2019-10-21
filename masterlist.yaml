@@ -5092,6 +5092,28 @@ plugins:
       # 17424 - v0.3.1 - Essential animals - after QAC
       - crc: 0xBF38444F
         util: 'TES5Edit v4.0.2j'
+  - name: 'Dogsofskyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17424' ]
+    dirty:
+      # v0.3.1 - Main
+      - <<: *quickClean
+        crc: 0xDE3A16B3
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 2
+      # v0.3.1 - Essential animals
+      - <<: *quickClean
+        crc: 0x94E5B3C5
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 2
+    clean:
+      # v0.3.1 - Main - after QAC
+      - crc: 0x438CDA45
+        util: 'TES5Edit v4.0.2j'
+      # v0.3.1 - Essential animals - after QAC
+      - crc: 0x4973E083
+        util: 'TES5Edit v4.0.2j'
   - name: 'Char Your Own Skeevers.esp'
     req: [ *SKSE ]
   - name: 'Chesko_WearableLantern.esp'
@@ -5273,12 +5295,6 @@ plugins:
         condition: 'not checksum("Disease Descriptions.esp",E199AED9)'
   - name: 'Don.?Juan.*\.esp'
     req: [ *FNIS ]
-  - name: 'Dogsofskyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17424' ]
-    dirty:
-      - crc: 0x3de83b91
-        <<: *dirtyPlugin
-        itm: 9
   - name: 'Dovahtracker.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35465' ]
     dirty:
