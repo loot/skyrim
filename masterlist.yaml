@@ -4814,14 +4814,21 @@ plugins:
       - crc: 0x2D0D04B6
         util: 'TES5Edit v4.0.2j'
   - name: 'bbLager.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11329?' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11329' ]
     tag:
       - Delev
       - Relev
     dirty:
-      - crc: 0x68c5a371
-        <<: *dirtyPlugin
-        itm: 30
+      # v5.5
+      - <<: *reqManualFix
+        crc: 0x68C5A371
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 42
+        nav: 3
+      # v5.5 - after QAC
+      - <<: *reqManualFix
+        crc: 0x9F52B8E9
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 3
   - name: 'bbLagerLight.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22744' ]
