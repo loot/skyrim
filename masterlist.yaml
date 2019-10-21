@@ -4957,10 +4957,28 @@ plugins:
       - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("Bloody Cannibalism.esp",A220A80B)'
     dirty:
-      - crc: 0xa220a80b
-        <<: *dirtyPlugin
+      # v0.11BETA
+      - <<: *quickClean
+        crc: 0xAD42346F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
         udr: 20
+      # v0.11BETA - No Dawnguard
+      - <<: *quickClean
+        crc: 0xA220A80B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+        udr: 20
+    clean:
+      # v0.10b
+      - crc: 0x75D6B87E
+        util: 'TES5Edit v4.0.2j'
+      # v0.11BETA - after QAC
+      - crc: 0xCE29177A
+        util: 'TES5Edit v4.0.2j'
+      # v0.11BETA - No Dawnguard - after QAC
+      - crc: 0x4FB6BB16
+        util: 'TES5Edit v4.0.2j'
   - name: 'Bob The Merchant.esp'
     dirty:
       - crc: 0x5f9d7c3
