@@ -3771,14 +3771,10 @@ plugins:
         util: 'TES5Edit v4.0.2f'
   - name: 'Better Dynamic Snow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11' ]
-    dirty:
-      - crc: 0x541965a9
-        <<: *dirtyPlugin
-        itm: 6
     clean:
-      # version: 4.4
+      # v4.4
       - crc: 0x1A5860EB
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2j'
   - name: 'Morning Fogs.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24810' ]
     dirty:
@@ -4181,9 +4177,15 @@ plugins:
             text: 'Удаление тумана внутри помещений повлияет на Realistic Lighting. Загружайте перед RL если вы замечаете баги.'
         condition: 'file("Realistic Lighting.esp")'
     dirty:
-      - crc: 0x2014aa8e
-        <<: *dirtyPlugin
-        itm: 4
+      # v1.3
+      - <<: *quickClean
+        crc: 0x2014AA8E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x78E23FB2
+        util: 'TES5Edit v4.0.2j'
   - name: 'Remove Interior Fog V2 - Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29253' ]
     inc:
@@ -4220,9 +4222,15 @@ plugins:
             text: 'Full版のRemove Interior Fog V2を使用する場合は個別インストール版を使用しないでください。'
         condition: 'file("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp")'
     dirty:
-      - crc: 0x4FD63CD3
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0x4FD63CD3
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x0DAEEE55
+        util: 'TES5Edit v4.0.2j'
   - name: 'Warmer Magic Lights v2.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
@@ -4282,9 +4290,15 @@ plugins:
   - name: 'AdditionalMusicBundleI.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25625' ]
     dirty:
-      - crc: 0x10e2879
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0x010E2879
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.1 - after QAC
+      - crc: 0xA1664BDA
+        util: 'TES5Edit v4.0.2j'
   - name: 'Ambience Music Overhaul - Addon.esp'
     msg: [ *obsolete ]
   - name: 'Ambience Music Overhaul - Addon - with vanilla music -.esp'
@@ -4313,10 +4327,10 @@ plugins:
             text: 'Добавляет музыку, но также включает тесктуры с моделями. Отдельные файлы перезапишут их.'
   - name: 'Symphonies Of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/34234' ]
-    dirty:
-      - crc: 0x7d9e7a5f
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      # v2.0
+      - crc: 0xDFCC581D
+        util: 'TES5Edit v4.0.2j'
   - name: 'Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -4325,9 +4339,15 @@ plugins:
   - name: 'skyrimsoundtrackexpansion.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25163' ]
     dirty:
-      - crc: 0x6fa5890
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x06FA5890
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xE3297A17
+        util: 'TES5Edit v4.0.2j'
   - name: 'calientevanillaarmor - banditpack curvy.esp'
     msg:
       - *requiresCBBE
@@ -4430,13 +4450,18 @@ plugins:
           - lang: ru
             text: 'Вы можете использовать данный esp для версии 1.20-1.26 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.'
         condition: 'checksum("StaticMeshImprovementMod.esp",8806A693)'
+  - name: 'SMIM-ShackRoofFixes.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8655' ]
+    clean:
+      # v2.08
+      - crc: 0x7938E7F0
+        util: 'TES5Edit v4.0.2j'
   - name: 'SMIM-ShackRoofFixesDragonborn.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8655' ]
-    dirty:
-      - crc: 0x36966a9c
-        <<: *dirtyPlugin
-        itm: 3
-        udr: 0
+    clean:
+      # v2.08
+      - crc: 0xFC4F77F9
+        util: 'TES5Edit v4.0.2j'
   - name: 'SurvivalistIngenuity.esp'
     tag:
       - Delev
@@ -4498,9 +4523,15 @@ plugins:
   - name: 'AllFemaleGuards.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/14039' ]
     dirty:
-      - crc: 0x63fa5a9f
-        <<: *dirtyPlugin
+      # v5.0
+      - <<: *quickClean
+        crc: 0x63FA5A9F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 11
+    clean:
+      # v5.0 - after QAC
+      - crc: 0x4CC395ED
+        util: 'TES5Edit v4.0.2j'
   - name: 'anon_soullevelsrevealed.esp'
     dirty:
       - crc: 0xd513587f
@@ -4509,16 +4540,41 @@ plugins:
   - name: 'ArgonianfemGuild.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22198' ]
     dirty:
-      - crc: 0x7a44f764
-        <<: *dirtyPlugin
+      # v1
+      - <<: *quickClean
+        crc: 0x7A44F764
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
+        udr: 1
+    clean:
+      # v1 - after QAC
+      - crc: 0x4069547B
+        util: 'TES5Edit v4.0.2j'
+  - name: 'KhajiitfemGuild.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22198' ]
+    dirty:
+      # v1
+      - <<: *quickClean
+        crc: 0x47CEB0C1
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 11
         udr: 1
+    clean:
+      # v1 - after QAC
+      - crc: 0xCFAB88C6
+        util: 'TES5Edit v4.0.2j'
   - name: 'Armor and Clothing Diversity.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21605' ]
     dirty:
-      - crc: 0x8550b53d
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0x8550B53D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x937B8A9A
+        util: 'TES5Edit v4.0.2j'
   - name: 'Armored Skeleton.esp'
     msg: [ *alreadyInSkyrimImmersiveCreatures ]
     tag: [ Relev ]
@@ -4558,9 +4614,15 @@ plugins:
   - name: 'Arrows of Magicka.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9799' ]
     dirty:
-      - crc: 0x449c7bdc
-        <<: *dirtyPlugin
+      # v1.6
+      - <<: *quickClean
+        crc: 0x449C7BDC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
+    clean:
+      # v1.6 - after QAC
+      - crc: 0x1AEA3B69
+        util: 'TES5Edit v4.0.2j'
   - name: 'Arrows of Magicka.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9799' ]
     msg:
@@ -4593,9 +4655,15 @@ plugins:
   - name: 'AV1Jills.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20473' ]
     dirty:
-      - crc: 0x803fa31
-        <<: *dirtyPlugin
+      # v1.0b
+      - <<: *quickClean
+        crc: 0x0803FA31
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.0b - after QAC
+      - crc: 0x02ADEEB2
+        util: 'TES5Edit v4.0.2j'
   - name: 'AvengersBosses.esp'
     msg:
       - <<: *corrupt
@@ -4653,11 +4721,15 @@ plugins:
   - name: 'Baby Dragons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19206' ]
     dirty:
-      - crc: 0xf1f78cb8
-        <<: *dirtyPlugin
-        itm: 104
-        udr: 51
-        nav: 13
+      # v1.41
+      - <<: *quickClean
+        crc: 0x93F7FE15
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 75
+    clean:
+      # v1.41 - after QAC
+      - crc: 0x3D85BFF0
+        util: 'TES5Edit v4.0.2j'
   - name: 'Back off, [Subject Name Here]!.esp'
     inc:
       - 'Back off, Barbas!.esp'
@@ -4681,9 +4753,15 @@ plugins:
   - name: 'Beauties of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24296' ]
     dirty:
-      - crc: 0x38f04200
-        <<: *dirtyPlugin
+      # 2Point0h
+      - <<: *quickClean
+        crc: 0x38F04200
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+    clean:
+      # 2Point0h - after QAC
+      - crc: 0x86511E90
+        util: 'TES5Edit v4.0.2j'
   - name: 'BecomeAVampire.esp'
     req:
       - *SKSE
@@ -4697,8 +4775,9 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/4558' ]
     msg: [ *corrupt ]
     dirty:
-      - crc: 0x6b9403cc
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x6B9403CC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'DV Better Sleep Dawnguard.esp'
     msg:
@@ -4710,13 +4789,30 @@ plugins:
         condition: 'active("Dawnguard.esm") and file("DV Better Sleep.esp")'
   - name: 'BetterFishAdded.esp'
     tag: [ Relev ]
+  - name: 'BetterFurnitureClutter.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19545' ]
+    dirty:
+      # v1.8
+      - <<: *quickClean
+        crc: 0x3E08AD8B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+    clean:
+      # v1.8 - after QAC
+      - crc: 0x87C34448
+        util: 'TES5Edit v4.0.2j'
   - name: 'BetterFurnitureClutter_CratesVanillaLoot.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19545' ]
     dirty:
-      - crc: 0x099c1a15
-        <<: *dirtyPlugin
+      # v1.8
+      - <<: *quickClean
+        crc: 0x099C1A15
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-        udr: 0
+    clean:
+      # v1.8 - after QAC
+      - crc: 0x2D0D04B6
+        util: 'TES5Edit v4.0.2j'
   - name: 'bbLager.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11329?' ]
     tag:
@@ -5635,13 +5731,6 @@ plugins:
     inc:
       - 'JBS_overhaul.esp'
       - 'JBS_overhaul_thalmor.esp'
-  - name: 'KhajiitfemGuild.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22198' ]
-    dirty:
-      - crc: 0x47ceb0c1
-        <<: *dirtyPlugin
-        itm: 10
-        udr: 1
   - name: 'kuerteeHorseCommands.esp'
     msg: [ *obsolete ]
   - name: 'kuerteeHorseCommandsVerB.esp'
