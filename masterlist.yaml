@@ -4614,9 +4614,15 @@ plugins:
   - name: 'Arrows of Magicka.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9799' ]
     dirty:
-      - crc: 0x449c7bdc
-        <<: *dirtyPlugin
+      # v1.6
+      - <<: *quickClean
+        crc: 0x449C7BDC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
+    clean:
+      # v1.6 - after QAC
+      - crc: 0x1AEA3B69
+        util: 'TES5Edit v4.0.2j'
   - name: 'Arrows of Magicka.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9799' ]
     msg:
