@@ -5369,10 +5369,13 @@ plugins:
   - name: 'DSpSoB.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17746' ]
     msg: [ *useVersionDawnguard ]
-    dirty:
-      - crc: 0x44d3f30c
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v1.0
+      - crc: 0x8FAD1B41
+        util: 'TES5Edit v4.0.2j'
+      # v0.7
+      - crc: 0x44D3F30C
+        util: 'TES5Edit v4.0.2j'
   - name: 'Dual Sheath Redux.esp'
     req:
       - *SKSE
