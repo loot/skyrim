@@ -5765,12 +5765,21 @@ plugins:
   - name: 'HM Marry All.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8779' ]
     dirty:
-      - crc: 0xdb88b8be
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xDB88B8BE
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
-      - crc: 0x139C1E4C
-        <<: *dirtyPlugin
-        itm: 5
+      # v1.3
+      - <<: *quickClean
+        crc: 0x139C1E4C
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+      # v1.4
+      - <<: *quickClean
+        crc: 0x1CAD8C8F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
   - name: 'HM Nirnroot Regrows.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21212' ]
     dirty:
