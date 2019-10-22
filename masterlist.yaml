@@ -5417,10 +5417,16 @@ plugins:
   - name: 'ExpandedJailCells.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18545' ]
     dirty:
-      - crc: 0xba5a6f28
-        <<: *dirtyPlugin
-        itm: 1
+      # v0.5
+      - <<: *quickClean
+        crc: 0xBA5A6F28
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 21
         udr: 1
+    clean:
+      # 0.5 - after QAC
+      - crc: 0xD5151454
+        util: 'TES5Edit v4.0.2j'
   - name: 'Expensive Transports 5x.esp'
     inc:
       - 'Expensive Transports 10x.esp'
