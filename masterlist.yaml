@@ -6124,9 +6124,15 @@ plugins:
   - name: 'Long lost smelters by Hyralux.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8298' ]
     dirty:
-      - crc: 0xf94a11aa
-        <<: *dirtyPlugin
+      # v1.9
+      - <<: *quickClean
+        crc: 0xA5296315
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 12
+    clean:
+      # v1.9 - after QAC
+      - crc: 0xC6D76F4A
+        util: 'TES5Edit v4.0.2j'
   - name: 'Loot_Overhaul_Rebalanced_v.04.esp'
     tag:
       - Delev
