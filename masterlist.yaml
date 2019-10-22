@@ -5573,12 +5573,15 @@ plugins:
   - name: 'GeneralStoresVlindrelHall.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25316' ]
     dirty:
-      - crc: 0x3aa2c5e6
-        <<: *dirtyPlugin
-        udr: 8
-      - crc: 0xc3c58f71
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xC3C58F71
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x25139EDF
+        util: 'TES5Edit v4.0.2j'
   - name: 'Get More Ingots 3 ingots.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/4578' ]
     dirty:
