@@ -5883,12 +5883,33 @@ plugins:
       # v1.7.7.1
       - crc: 0xC3E13EF7
         util: 'TES5Edit v4.0.2j'
+  - name: 'ImmersiveBountyHunting_Bandits.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29448' ]
+    dirty:
+      # v1.6Beta
+      - <<: *quickClean
+        crc: 0x7D20B023
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
+        udr: 1
+    clean:
+      # v1.6Beta - after QAC
+      - crc: 0xFF32F68F
+        util: 'TES5Edit v4.0.2j'
   - name: 'ImmersiveBountyHunting.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29448' ]
     dirty:
-      - crc: 0xd89bc15f
-        <<: *dirtyPlugin
-        itm: 17
+      # v1.6Beta
+      - <<: *quickClean
+        crc: 0xB3ACFE14
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 101
+        udr: 3
+      # v1.5Beta
+      - <<: *quickClean
+        crc: 0xD89BC15F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
         udr: 2
   - name: 'ImmersiveSpells.esp'
     req: [ *SKSE ]
