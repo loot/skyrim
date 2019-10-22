@@ -5585,9 +5585,15 @@ plugins:
   - name: 'Get More Ingots 3 ingots.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/4578' ]
     dirty:
-      - crc: 0xcb4c5908
-        <<: *dirtyPlugin
+      # v1.00
+      - <<: *quickClean
+        crc: 0xCB4C5908
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v1.00 - after QAC
+      - crc: 0xBCF6A9DA
+        util: 'TES5Edit v4.0.2j'
   - name: 'GlaiceLootMod.esp'
     tag:
       - Delev
