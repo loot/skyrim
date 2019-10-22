@@ -5311,9 +5311,16 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/52837' ]
     tag: [ Relev ]
     dirty:
-      - crc: 0xa859bc56
-        <<: *dirtyPlugin
-        itm: 37
+      # Final
+      - <<: *quickClean
+        crc: 0xEBEF8DE0
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 38
+        udr: 92
+    clean:
+      # Final - after QAC
+      - crc: 0xA03527F0
+        util: 'TES5Edit v4.0.2j'
   - name: 'DIM-playeridlingmod.esp'
     req: [ *SKSE ]
   - name: 'DineWithFollowers.esp'
