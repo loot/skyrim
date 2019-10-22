@@ -6364,12 +6364,24 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("No Warning - (Default|Double) Attack Radius\.esp")'
         subs: [ 'No Warning Attack Radius .esp file' ]
+  - name: 'No Warning - Default Attack Radius.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18280' ]
+    clean:
+      # v2.0
+      - crc: 0x8977504A
+        util: 'TES5Edit v4.0.2j'
   - name: 'No Warning - Double Attack Radius.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18280' ]
     dirty:
-      - crc: 0xb79d2ccd
-        <<: *dirtyPlugin
-        itm: 2
+      # v2.0
+      - <<: *quickClean
+        crc: 0xB79D2CCD
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x6226093F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Nocturnal Craftable Armors.esp'
     inc:
       - 'Vampirelordroyal.esp'
