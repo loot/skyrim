@@ -6192,14 +6192,20 @@ plugins:
       - 'Ars Metallica.esp'
       - 'MAD Ingots & Leather Ars Metallica Compatible.esp'
   - name: 'Magecraft.esp'
-    url: [ 'https://www.neusmods.com/skyrim/mods/25884' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25884' ]
     dirty:
-      - crc: 0x8cd7efba
-        <<: *dirtyPlugin
-        udr: 39
-      - crc: 0xb9ebdc52
-        <<: *dirtyPlugin
-        udr: 39
+      # v1.6
+      - <<: *quickClean
+        crc: 0x4DF64723
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v1.6 - after QAC
+      - crc: 0x7E92D357
+        util: 'TES5Edit v4.0.2j'
+      # v1.7
+      - crc: 0x46396C20
+        util: 'TES5Edit v4.0.2j'
   - name: 'MaladiesDeBordeciel.esp'
     url: [ 'https://confrerie-des-traducteurs.fr/skyrim/mods/jouabilite/maladies_de_bordeciel' ]
     dirty:
