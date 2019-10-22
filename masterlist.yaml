@@ -6160,14 +6160,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/10891' ]
     group: *underridesGroup
     ## This edits the object bounds of many items, so it should load before any other mod that also edits those items.
-    dirty:
-      - crc: 0x2f29b9d5
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0x99d0445e
-        <<: *dirtyPlugin
-        itm: 36
-        udr: 59
+    clean:
+      # v2.2
+      - crc: 0x8E9290D1
+        util: 'TES5Edit v4.0.2j'
   - name: 'Lost Art of the Blacksmith.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
