@@ -5624,13 +5624,15 @@ plugins:
   - name: 'Guard Build (HF) 1.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25140' ]
     dirty:
-      - crc: 0x374c0a09
-        <<: *dirtyPlugin
+      # v1.5
+      - <<: *quickClean
+        crc: 0x374C0A09
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 13
-      - crc: 0x3819fb2e
-        <<: *dirtyPlugin
-        itm: 26
-        udr: 2
+    clean:
+      # v1.5 - after QAC
+      - crc: 0x47820E24
+        util: 'TES5Edit v4.0.2j'
   - name: 'guardedborders.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18106' ]
     dirty:
