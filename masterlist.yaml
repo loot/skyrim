@@ -6256,10 +6256,25 @@ plugins:
     inc:
       - 'Montures Monstres.esp'
     dirty:
-      - crc: 0x261535fb
-        <<: *dirtyPlugin
+      # v1.4.1
+      - <<: *quickClean
+        crc: 0xE4EEB80E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 1
+      # v1.5.1
+      - <<: *quickClean
+        crc: 0xB08D723E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        udr: 1
+    clean:
+      # v1.4.1 - after QAC
+      - crc: 0xA2A1BA52
+        util: 'TES5Edit v4.0.2j'
+      # v1.5.1 - after QAC
+      - crc: 0xAB602ECE
+        util: 'TES5Edit v4.0.2j'
   - name: 'More Craftables.esp'
     tag: [ Relev ]
   - name: 'More Craftables - Crafting 300 compatibility.esp'
