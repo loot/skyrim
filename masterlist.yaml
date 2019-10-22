@@ -6093,9 +6093,10 @@ plugins:
   - name: 'LegendarySouls.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23387' ]
     dirty:
-      - crc: 0x9ddf1f5f
-        <<: *dirtyPlugin
-        itm: 270
+      - <<: *quickClean
+        crc: 0x4659C058
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 335
   - name: 'LFox Alchemists Have Poisons.esp'
     msg:
       - <<: *alreadyInX
@@ -6123,9 +6124,15 @@ plugins:
   - name: 'Long lost smelters by Hyralux.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8298' ]
     dirty:
-      - crc: 0xf94a11aa
-        <<: *dirtyPlugin
+      # v1.9
+      - <<: *quickClean
+        crc: 0xA5296315
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 12
+    clean:
+      # v1.9 - after QAC
+      - crc: 0xC6D76F4A
+        util: 'TES5Edit v4.0.2j'
   - name: 'Loot_Overhaul_Rebalanced_v.04.esp'
     tag:
       - Delev
@@ -6153,14 +6160,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/10891' ]
     group: *underridesGroup
     ## This edits the object bounds of many items, so it should load before any other mod that also edits those items.
-    dirty:
-      - crc: 0x2f29b9d5
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0x99d0445e
-        <<: *dirtyPlugin
-        itm: 36
-        udr: 59
+    clean:
+      # v2.2
+      - crc: 0x8E9290D1
+        util: 'TES5Edit v4.0.2j'
   - name: 'Lost Art of the Blacksmith.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
@@ -6189,20 +6192,25 @@ plugins:
       - 'Ars Metallica.esp'
       - 'MAD Ingots & Leather Ars Metallica Compatible.esp'
   - name: 'Magecraft.esp'
-    url: [ 'https://www.neusmods.com/skyrim/mods/25884' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25884' ]
     dirty:
-      - crc: 0x8cd7efba
-        <<: *dirtyPlugin
-        udr: 39
-      - crc: 0xb9ebdc52
-        <<: *dirtyPlugin
-        udr: 39
+      # v1.6
+      - <<: *quickClean
+        crc: 0x4DF64723
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v1.6 - after QAC
+      - crc: 0x7E92D357
+        util: 'TES5Edit v4.0.2j'
+      # v1.7
+      - crc: 0x46396C20
+        util: 'TES5Edit v4.0.2j'
   - name: 'MaladiesDeBordeciel.esp'
     url: [ 'https://confrerie-des-traducteurs.fr/skyrim/mods/jouabilite/maladies_de_bordeciel' ]
-    dirty:
-      - crc: 0xe54712f2
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      - crc: 0x8A62E0C6
+        util: 'TES5Edit v4.0.2j'
   - name: 'MicroBikin.+\.esp'
     msg: [ *corrupt ]
   - name: 'marader.esp'
@@ -6214,36 +6222,59 @@ plugins:
     tag:
       - Delev
       - Relev
-    dirty:
-      - crc: 0xa0e26ce4
-        <<: *dirtyPlugin
-        itm: 2
-  - name: 'marijuana.esp'
+    clean:
+      # v1.3
+      - crc: 0x05097CA5
+        util: 'TES5Edit v4.0.2j'
+  - name: 'Marijuana.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9505' ]
     dirty:
-      - crc: 0x41a328f2
-        <<: *dirtyPlugin
-        itm: 2
+      # v1.04
+      - <<: *quickClean
+        crc: 0x8A2881F2
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v1.04 - after QAC
+      - crc: 0x1EA4711F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Modern Day Calendar Names_Learn Names.esp'
     inc:
       - 'ModernDayCalendarNames.esp'
       - 'ModernDayCalenderNames DV.esp'
   - name: 'Montures Monstres.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20351' ]
-    dirty:
-      - crc: 0xadbf7d3b
-        <<: *dirtyPlugin
-        itm: 5
-        udr: 2
+    clean:
+      # v2.6.6
+      - crc: 0xBE5E099D
+        util: 'TES5Edit v4.0.2j'
+      # v2.7.1
+      - crc: 0x189C3011
+        util: 'TES5Edit v4.0.2j'
   - name: 'Monster Mounts Dawnguard.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25511' ]
     inc:
       - 'Montures Monstres.esp'
     dirty:
-      - crc: 0x261535fb
-        <<: *dirtyPlugin
+      # v1.4.1
+      - <<: *quickClean
+        crc: 0xE4EEB80E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 1
+      # v1.5.1
+      - <<: *quickClean
+        crc: 0xB08D723E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        udr: 1
+    clean:
+      # v1.4.1 - after QAC
+      - crc: 0xA2A1BA52
+        util: 'TES5Edit v4.0.2j'
+      # v1.5.1 - after QAC
+      - crc: 0xAB602ECE
+        util: 'TES5Edit v4.0.2j'
   - name: 'More Craftables.esp'
     tag: [ Relev ]
   - name: 'More Craftables - Crafting 300 compatibility.esp'
@@ -6267,9 +6298,15 @@ plugins:
   - name: 'More_Hides.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13867' ]
     dirty:
-      - crc: 0xc1457e3c
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xD0B6794D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x06140626
+        util: 'TES5Edit v4.0.2j'
   - name: 'MoreVillageAnimals.esp'
     msg: [ *obsolete ]
   - name: 'Moss Rocks_DB.esp'
@@ -6291,40 +6328,60 @@ plugins:
   - name: 'NEW dRAGONS3.0.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12492' ]
     dirty:
-      - crc: 0x83ebdc5c
-        <<: *dirtyPlugin
-        itm: 60
+      # v3.0
+      - <<: *quickClean
+        crc: 0x83EBDC5C
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 70
         udr: 1
-  - name: 'New_Beverages_and_Misc_Items.esp'
+    clean:
+      # v3.0 - after QAC
+      - crc: 0xEFC24D9D
+        util: 'TES5Edit v4.0.2j'
+  - name: 'NewBeveragesAndMiscItems.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10826' ]
     dirty:
-      - crc: 0xd77b6928
-        <<: *dirtyPlugin
-        itm: 25
+      # v7
+      - <<: *quickClean
+        crc: 0xD77B6928
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 46
         udr: 76
   - name: 'No Permanent Essentials Redux.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25137' ]
-    dirty:
-      - crc: 0xd68322c4
-        <<: *dirtyPlugin
-        itm: 2
+    msg: [ *obsolete ]
   - name: 'No Permanent Essentials Redux -- Dawnguard.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25137' ]
-    dirty:
-      - crc: 0x11202a14
-        <<: *dirtyPlugin
-        itm: 2
+    msg: [ *obsolete ]
+  - name: 'No Permanent Essentials Redux -- Legendary Edition.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25137' ]
+    clean:
+      # v2.0.3
+      - crc: 0x95B1080A
+        util: 'TES5Edit v4.0.2j'
   - name: 'No Warning - (Default|Double) Attack Radius\.esp'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("No Warning - (Default|Double) Attack Radius\.esp")'
         subs: [ 'No Warning Attack Radius .esp file' ]
+  - name: 'No Warning - Default Attack Radius.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18280' ]
+    clean:
+      # v2.0
+      - crc: 0x8977504A
+        util: 'TES5Edit v4.0.2j'
   - name: 'No Warning - Double Attack Radius.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18280' ]
     dirty:
-      - crc: 0xb79d2ccd
-        <<: *dirtyPlugin
-        itm: 2
+      # v2.0
+      - <<: *quickClean
+        crc: 0xB79D2CCD
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x6226093F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Nocturnal Craftable Armors.esp'
     inc:
       - 'Vampirelordroyal.esp'
@@ -6357,10 +6414,10 @@ plugins:
         itm: 5
   - name: 'Oblivion Black Soul Gem Creation.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/48529' ]
-    dirty:
-      - crc: 0x91e35983
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      # v1.0
+      - crc: 0xF4630AE3
+        util: 'TES5Edit v4.0.2j'
   - name: 'Oblivious Horses.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -6368,10 +6425,15 @@ plugins:
         subs: [ 'Oblivious Horses .esp file' ]
   - name: 'Omega Death.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30082' ]
+    msg: [ *obsolete ]
+  - name: 'TheFirstDragonSlayerUltimateDeathEdition.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30082' ]
     dirty:
-      - crc: 0xaf7b99c2
-        <<: *dirtyPlugin
-        itm: 2
+      # Morph
+      - <<: *quickClean
+        crc: 0x33F8DB35
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
   - name: 'Open Empty Containers.esp'
     req: [ *SKSE ]
   - name: 'PassiveWeaponEnchantmentRecharging.esp'
@@ -6441,10 +6503,16 @@ plugins:
   - name: 'Populated Prisons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/33141' ]
     dirty:
-      - crc: 0x6bd131f0
-        <<: *dirtyPlugin
-        itm: 7
+      # v1.0
+      - <<: *quickClean
+        crc: 0x6BD131F0
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
         udr: 14
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xF4EDC1A9
+        util: 'TES5Edit v4.0.2j'
   - name: 'Portable Campsite.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9935' ]
     dirty:
