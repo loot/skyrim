@@ -5505,10 +5505,16 @@ plugins:
   - name: 'Forge In Every House.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21614' ]
     dirty:
-      - crc: 0x986a1c0c
-        <<: *dirtyPlugin
-        itm: 4
+      # v1.0
+      - <<: *quickClean
+        crc: 0x986A1C0C
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
         udr: 70
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x510DDB28
+        util: 'TES5Edit v4.0.2j'
   - name: 'Four New Dragons.esp'
     dirty:
       - crc: 0x7673f01d
