@@ -5235,11 +5235,15 @@ plugins:
       - name: 'Dawnguard.esm'
         condition: 'checksum("Cumulable Blessings.esp",DA1971DC)'
     dirty:
-      - crc: 0xbcc10635
-        <<: *dirtyPlugin
+      # v1.3.1 - English - Dawnguard required
+      - <<: *quickClean
+        crc: 0xBCC10635
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - crc: 0xDA1971DC
-        <<: *dirtyPlugin
+      # v1.2.1 - English - Dawnguard not required
+      - <<: *quickClean
+        crc: 0xDA1971DC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'CUYC_CleanUpYourCorpses.esp'
     req:
@@ -5252,10 +5256,22 @@ plugins:
   - name: 'DawnsPoshPonies.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18211' ]
     dirty:
-      - crc: 0x33539c8d
-        <<: *dirtyPlugin
-        itm: 5
+      # v1.0
+      - <<: *quickClean
+        crc: 0x227831D6
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
         udr: 3
+      # v1.1
+      - <<: *quickClean
+        crc: 0x33539C8D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+        udr: 3
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x6B0402E4
+        util: 'TES5Edit v4.0.2j'
   - name: 'DeadThrall.esp'
     msg: [ *obsolete ]
   - name: 'Decorator Assistant.+\.esp'
@@ -5295,9 +5311,16 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/52837' ]
     tag: [ Relev ]
     dirty:
-      - crc: 0xa859bc56
-        <<: *dirtyPlugin
-        itm: 37
+      # Final
+      - <<: *quickClean
+        crc: 0xEBEF8DE0
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 38
+        udr: 92
+    clean:
+      # Final - after QAC
+      - crc: 0xA03527F0
+        util: 'TES5Edit v4.0.2j'
   - name: 'DIM-playeridlingmod.esp'
     req: [ *SKSE ]
   - name: 'DineWithFollowers.esp'
@@ -5312,17 +5335,24 @@ plugins:
   - name: 'Dovahtracker.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35465' ]
     dirty:
-      - crc: 0x6db847e0
-        <<: *dirtyPlugin
-        itm: 1
+      # v1.1.5
+      - <<: *quickClean
+        crc: 0x6DB847E0
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v1.1.5 - after QAC
+      - crc: 0xF646494B
+        util: 'TES5Edit v4.0.2j'
   - name: 'Dragonlings 1.0 - A dragon sub-species.esp'
     tag: [ Delev ]
   - name: 'dragonmanstandalone.esp'
     url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=27569495' ]
     dirty:
-      - crc: 0xaac0c4a6
-        <<: *dirtyPlugin
-        itm: 2
+      - <<: *quickClean
+        crc: 0x189B1014
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'Dragons in the Wild.esp'
     tag: [ Delev ]
   - name: 'DragonsCanAbsorbYourSoul.esp'
@@ -5339,10 +5369,13 @@ plugins:
   - name: 'DSpSoB.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17746' ]
     msg: [ *useVersionDawnguard ]
-    dirty:
-      - crc: 0x44d3f30c
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v1.0
+      - crc: 0x8FAD1B41
+        util: 'TES5Edit v4.0.2j'
+      # v0.7
+      - crc: 0x44D3F30C
+        util: 'TES5Edit v4.0.2j'
   - name: 'Dual Sheath Redux.esp'
     req:
       - *SKSE
@@ -5360,9 +5393,15 @@ plugins:
   - name: 'E0PortableBedroll.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9889' ]
     dirty:
-      - crc: 0xc4a5be33
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xC4A5BE33
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
+    clean:
+      # v1.2 - after QAC
+      - crc: 0xCCB92B34
+        util: 'TES5Edit v4.0.2j'
   - name: 'Enchanters Merchant.esp'
     msg: [ *obsolete ]
   - name: 'EQUIPMENT - Unarmed Spiked Gauntlets.esp'
@@ -5378,10 +5417,16 @@ plugins:
   - name: 'ExpandedJailCells.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18545' ]
     dirty:
-      - crc: 0xba5a6f28
-        <<: *dirtyPlugin
-        itm: 1
+      # v0.5
+      - <<: *quickClean
+        crc: 0xBA5A6F28
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 21
         udr: 1
+    clean:
+      # 0.5 - after QAC
+      - crc: 0xD5151454
+        util: 'TES5Edit v4.0.2j'
   - name: 'Expensive Transports 5x.esp'
     inc:
       - 'Expensive Transports 10x.esp'
@@ -5405,28 +5450,24 @@ plugins:
   - name: 'Extra Encounters V1.0.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29688' ]
     msg: [ *obsolete ]
-    dirty:
-      - crc: 0xf44a605
-        <<: *dirtyPlugin
-        itm: 41
   - name: 'Extra Encounters.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29688' ]
-    dirty:
-      - crc: 0x849b85c8
-        <<: *dirtyPlugin
-        itm: 46
-  - name: 'Extra Encounters - Higher Spawn Rate.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29688' ]
-    dirty:
-      - crc: 0xd9e80a14
-        <<: *dirtyPlugin
-        itm: 46
+    clean:
+      # v1.5 - Basic
+      - crc: 0x10D3860A
+        util: 'TES5Edit v4.0.2j'
   - name: 'Extra Encounters - Dawnguard.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29688' ]
-    dirty:
-      - crc: 0x2a2be0f4
-        <<: *dirtyPlugin
-        itm: 6
+    clean:
+      # v1.5
+      - crc: 0x57558464
+        util: 'TES5Edit v4.0.2j'
+  - name: 'Extra Encounters - HSR.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29688' ]
+    clean:
+      # v1.5
+      - crc: 0x5BC0253A
+        util: 'TES5Edit v4.0.2j'
   - name: 'Faster Bolts (100|25|50|75).*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -5435,10 +5476,10 @@ plugins:
   - name: 'FCC- Main.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23690' ]
     req: [ *SKSE ]
-    dirty:
-      - crc: 0xd286578
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v2.2
+      - crc: 0xFC5E756B
+        util: 'TES5Edit v4.0.2j'
   - name: 'fgc.esp'
     dirty:
       - crc: 0x6c5f435
