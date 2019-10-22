@@ -6226,12 +6226,18 @@ plugins:
       # v1.3
       - crc: 0x05097CA5
         util: 'TES5Edit v4.0.2j'
-  - name: 'marijuana.esp'
+  - name: 'Marijuana.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9505' ]
     dirty:
-      - crc: 0x41a328f2
-        <<: *dirtyPlugin
-        itm: 2
+      # v1.04
+      - <<: *quickClean
+        crc: 0x8A2881F2
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v1.04 - after QAC
+      - crc: 0x1EA4711F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Modern Day Calendar Names_Learn Names.esp'
     inc:
       - 'ModernDayCalendarNames.esp'
