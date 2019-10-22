@@ -5256,10 +5256,22 @@ plugins:
   - name: 'DawnsPoshPonies.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18211' ]
     dirty:
-      - crc: 0x33539c8d
-        <<: *dirtyPlugin
-        itm: 5
+      # v1.0
+      - <<: *quickClean
+        crc: 0x227831D6
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
         udr: 3
+      # v1.1
+      - <<: *quickClean
+        crc: 0x33539C8D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+        udr: 3
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x6B0402E4
+        util: 'TES5Edit v4.0.2j'
   - name: 'DeadThrall.esp'
     msg: [ *obsolete ]
   - name: 'Decorator Assistant.+\.esp'
