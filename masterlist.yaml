@@ -5235,11 +5235,15 @@ plugins:
       - name: 'Dawnguard.esm'
         condition: 'checksum("Cumulable Blessings.esp",DA1971DC)'
     dirty:
-      - crc: 0xbcc10635
-        <<: *dirtyPlugin
+      # v1.3.1 - English - Dawnguard required
+      - <<: *quickClean
+        crc: 0xBCC10635
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - crc: 0xDA1971DC
-        <<: *dirtyPlugin
+      # v1.2.1 - English - Dawnguard not required
+      - <<: *quickClean
+        crc: 0xDA1971DC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'CUYC_CleanUpYourCorpses.esp'
     req:
