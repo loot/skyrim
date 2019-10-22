@@ -5783,9 +5783,24 @@ plugins:
   - name: 'HM Nirnroot Regrows.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21212' ]
     dirty:
-      - crc: 0xd484cd35
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xD484CD35
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 205
+      # v1.1
+      - <<: *quickClean
+        crc: 0x222BB703
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+        udr: 243
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x20DF2008
+        util: 'TES5Edit v4.0.2j'
+      # v1.1 - after QAC
+      - crc: 0xE50A86A2
+        util: 'TES5Edit v4.0.2j'
   - name: 'HoodlessArchmageWithFixedStats.esp'
     msg:
       - <<: *corrupt
