@@ -5529,15 +5529,23 @@ plugins:
   - name: 'fx_eye_candy_rings.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11134' ]
     dirty:
-      - crc: 0x94dc5e7b
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0xa7494b03
-        <<: *dirtyPlugin
-        itm: 3
-      - crc: 0xe02cc68b
-        <<: *dirtyPlugin
-        itm: 6
+      # v2.1
+      - <<: *quickClean
+        crc: 0x94DC5E7B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 25
+      # v2.1a
+      - <<: *quickClean
+        crc: 0xE02CC68B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 25
+    clean:
+      # v2.1 - after QAC
+      - crc: 0x4D1B5AFD
+        util: 'TES5Edit v4.0.2j'
+      # v2.1a - after QAC
+      - crc: 0xC6C04DDB
+        util: 'TES5Edit v4.0.2j'
   - name: 'GenebrisTreasureChests.esp'
     tag:
       - Delev
