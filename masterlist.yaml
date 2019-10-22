@@ -5679,9 +5679,15 @@ plugins:
   - name: 'hearthfire_buyingots.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25424' ]
     dirty:
-      - crc: 0xbc1e72ef
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xBC1E72EF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xCBE518A1
+        util: 'TES5Edit v4.0.2j'
   - name: 'High Level Enemies.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27866' ]
     tag: [ Relev ]
