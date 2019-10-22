@@ -6298,9 +6298,15 @@ plugins:
   - name: 'More_Hides.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13867' ]
     dirty:
-      - crc: 0xc1457e3c
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xD0B6794D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x06140626
+        util: 'TES5Edit v4.0.2j'
   - name: 'MoreVillageAnimals.esp'
     msg: [ *obsolete ]
   - name: 'Moss Rocks_DB.esp'
