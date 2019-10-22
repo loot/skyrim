@@ -5561,9 +5561,15 @@ plugins:
   - name: 'GeneralStoresProudspire.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25236' ]
     dirty:
-      - crc: 0x7dfcb25d
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x7DFCB25D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x3AA6A412
+        util: 'TES5Edit v4.0.2j'
   - name: 'GeneralStoresVlindrelHall.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25316' ]
     dirty:
