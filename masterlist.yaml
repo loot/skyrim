@@ -6328,10 +6328,16 @@ plugins:
   - name: 'NEW dRAGONS3.0.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12492' ]
     dirty:
-      - crc: 0x83ebdc5c
-        <<: *dirtyPlugin
-        itm: 60
+      # v3.0
+      - <<: *quickClean
+        crc: 0x83EBDC5C
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 70
         udr: 1
+    clean:
+      # v3.0 - after QAC
+      - crc: 0xEFC24D9D
+        util: 'TES5Edit v4.0.2j'
   - name: 'New_Beverages_and_Misc_Items.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10826' ]
     dirty:
