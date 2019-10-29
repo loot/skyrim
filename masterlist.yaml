@@ -7406,9 +7406,15 @@ plugins:
   - name: 'Unicorn.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13606' ]
     dirty:
-      - crc: 0x69a349b1
-        <<: *dirtyPlugin
+      # v2.2
+      - <<: *quickClean
+        crc: 0x69A349B1
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+    clean:
+      # v2.2 - after QAC
+      - crc: 0x2804BA2F
+        util: 'TES5Edit v4.0.2j'
   - name: 'UniqueGear.esp'
     dirty:
       - crc: 0xf1dac5d6
