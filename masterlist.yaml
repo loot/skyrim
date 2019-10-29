@@ -8345,9 +8345,15 @@ plugins:
   - name: 'black_hand_robe.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15546' ]
     dirty:
-      - crc: 0xbff2e35c
-        <<: *dirtyPlugin
+      # v2.3
+      - <<: *quickClean
+        crc: 0xBFF2E35C
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 15
+    clean:
+      # v2.3 - after QAC
+      - crc: 0xA8CA2716
+        util: 'TES5Edit v4.0.2j'
   - name: 'Black Scaled Armor MOD.esp'
     msg:
       - <<: *obsolete
