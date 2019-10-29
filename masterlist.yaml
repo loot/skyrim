@@ -7377,9 +7377,15 @@ plugins:
   - name: 'two_handed_rebalance.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11159' ]
     dirty:
-      - crc: 0x5871d2fc
-        <<: *dirtyPlugin
+      # Main
+      - <<: *quickClean
+        crc: 0x5871D2FC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
+    clean:
+      # Main - after QAC
+      - crc: 0x7CD582E4
+        util: 'TES5Edit v4.0.2j'
   - name: 'Tytanis_v052_SPANISH.esp'
     msg: [ *obsolete ]
   - name: 'Tytanis\w{0,2}(GER)?\.esp'
@@ -7388,19 +7394,27 @@ plugins:
       - Relev
   - name: 'Underwater_Treasure.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/33994' ]
-    dirty:
-      - crc: 0x2676b18f
-        <<: *dirtyPlugin
-        itm: 18
-        udr: 3
+    clean:
+      # v4 - Only Sea of Ghosts
+      - crc: 0x4F750703
+        util: 'TES5Edit v4.0.2j'
+      # v4 - Sea, Rivers and Lakes
+      - crc: 0x9E6A323B
+        util: 'TES5Edit v4.0.2j'
   - name: 'Undies Underneath.esp'
     req: [ *SKSE ]
   - name: 'Unicorn.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13606' ]
     dirty:
-      - crc: 0x69a349b1
-        <<: *dirtyPlugin
+      # v2.2
+      - <<: *quickClean
+        crc: 0x69A349B1
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+    clean:
+      # v2.2 - after QAC
+      - crc: 0x2804BA2F
+        util: 'TES5Edit v4.0.2j'
   - name: 'UniqueGear.esp'
     dirty:
       - crc: 0xf1dac5d6
@@ -7409,9 +7423,15 @@ plugins:
   - name: 'UniqueEverything.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/16964' ]
     dirty:
-      - crc: 0x9ab1accf
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0x9AB1ACCF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x1DA3FD5F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Unleveled_Skyrim_Items.esp'
     tag:
       - Delev
@@ -7465,10 +7485,15 @@ plugins:
   - name: 'Wild Horses of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35321' ]
     dirty:
-      - crc: 0x81afca9f
-        <<: *dirtyPlugin
-        itm: 2
-        udr: 6
+      # v1.3
+      - <<: *quickClean
+        crc: 0xD23B4D2A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v1.3 - after QAC
+      - crc: 0xEB980F36
+        util: 'TES5Edit v4.0.2j'
   - name: 'WiS IV - Heroes & Villains( insane| Easy| Hard)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -7780,28 +7805,39 @@ plugins:
             text: 'Убедитесь, что вы не выключили DoF в вашем ini-файле. Если вы не видите эффекта, откройте ваш Skyrimprefs.ini и найдите строку ''bDoDepthOfField''. Убедитесь, что она имеет значение 1.'
   - name: 'IMAGINATOR - Visual Control for Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13049' ]
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("IMAGINATOR - Visual Control for Skyrim.esp",7DFC69E3)'
+  - name: 'Imaginator BETA.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13049' ]
     dirty:
-      - crc: 0x7dfc69e3
-        <<: *dirtyPlugin
-        itm: 26
+      # v2
+      - <<: *quickClean
+        crc: 0xFB3A2B27
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v2 - after QAC
+      - crc: 0xABE7186E
+        util: 'TES5Edit v4.0.2j'
   - name: 'kuerteeActorDetails.esp'
     req: [ *SKSE ]
   - name: 'kuerteeAutoFirstThirdPersonView.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27452' ]
     req:
       - *SKSE
-    dirty:
-      - crc: 0x44b0d8bf
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v0.704
+      - crc: 0x3585D750
+        util: 'TES5Edit v4.0.2j'
   - name: 'kuerteeAutoSaveAndTime.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13239' ]
     req:
       - *SKSE
-    dirty:
-      - crc: 0x1b5b09f7
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v0.8
+      - crc: 0x953E221B
+        util: 'TES5Edit v4.0.2j'
   - name: 'NoxUEc.esp'
     req: [ *SKSE ]
   - name: 'NoxUE2.00.esp'
@@ -7989,12 +8025,18 @@ plugins:
     msg: [ *corrupt ]
   - name: '18 Black® Katanas HD ML.esp'
     msg: [ *obsolete ]
-  - name: 'abimod.esp'
+  - name: 'abiMod.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22108' ]
     dirty:
-      - crc: 0x86bec75a
-        <<: *dirtyPlugin
-        itm: 1
+      # v1.01
+      - <<: *quickClean
+        crc: 0x86BEC75A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v1.01 - after QAC
+      - crc: 0x08703862
+        util: 'TES5Edit v4.0.2j'
   - name: 'ACB Harley.esp'
     dirty:
       - crc: 0x1fd524b8
@@ -8019,9 +8061,23 @@ plugins:
   - name: 'AetheriumSwordsnArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23530' ]
     dirty:
-      - crc: 0x9bcbbaf0
-        <<: *dirtyPlugin
-        itm: 4
+      # v2.40 - Main
+      - <<: *quickClean
+        crc: 0x9BCBBAF0
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+      # v2.40 - Tone Down
+      - <<: *quickClean
+        crc: 0x35A0984B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+    clean:
+      # v2.40 - Main - after QAC
+      - crc: 0xA2DC5E2D
+        util: 'TES5Edit v4.0.2j'
+      # v2.40 - Tonw Down - after QAC
+      - crc: 0x935E25F4
+        util: 'TES5Edit v4.0.2j'
   - name: 'AgedRoundShield.esp'
     tag: [ Relev ]
   - name: 'akavirisharpkatana.esp'
@@ -8033,20 +8089,38 @@ plugins:
   - name: 'AlchemistSatchel.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27142' ]
     dirty:
-      - crc: 0xcae60b0
-        <<: *dirtyPlugin
+      # v1.2b - Vanilla
+      - <<: *quickClean
+        crc: 0xCAE60B01
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 18
-      - crc: 0x2412654c
-        <<: *dirtyPlugin
+      # v1.2b - Dawnguard
+      - <<: *quickClean
+        crc: 0x2412654C
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 15
   - name: 'Alexia CatGarter.esp'
     msg: [ *requiresUNP ]
   - name: 'AlexScorpionsShop.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30131' ]
     dirty:
-      - crc: 0xc2dbdc74
-        <<: *dirtyPlugin
-        itm: 3
+      # v1.1
+      - <<: *quickClean
+        crc: 0xBFDCE05B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+      # v1.1a
+      - <<: *quickClean
+        crc: 0x1A0A3341
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x00829DD8
+        util: 'TES5Edit v4.0.2j'
+      # v1.1a - after QAC
+      - crc: 0x241D6705
+        util: 'TES5Edit v4.0.2j'
   - name: 'Alchemic Tomes.esp'
     dirty:
       - crc: 0xeda60d92
@@ -8061,17 +8135,29 @@ plugins:
   - name: 'Althirs Camping Tools English.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10824' ]
     dirty:
-      - crc: 0xc5346be3
-        <<: *dirtyPlugin
+      # v1.7
+      - <<: *quickClean
+        crc: 0xDEC01F16
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.7 - after QAC
+      - crc: 0x10EB7A0F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Althirs Camping Tools German.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10824' ]
     inc:
       - 'Althirs Camping Tools English.esp'
     dirty:
-      - crc: 0xd1b56978
-        <<: *dirtyPlugin
+      # v1.7
+      - <<: *quickClean
+        crc: 0x87EEDB7A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.7 - after QAC
+      - crc: 0xCABC5DE1
+        util: 'TES5Edit v4.0.2j'
   - name: 'AMB Glass Variants Lore.esp'
     msg:
       - <<: *alreadyInAmidianBornContentAddon
@@ -8080,10 +8166,10 @@ plugins:
       - Relev
   - name: 'AmbrosiaFashions.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20924' ]
-    dirty:
-      - crc: 0x5625fc4f
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      # v1.2
+      - crc: 0x1B6B42B9
+        util: 'TES5Edit v4.0.2j'
   - name: 'Angis(Even)?(Better){1,2}Bow\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -8098,9 +8184,15 @@ plugins:
   - name: 'ArcaneArchery.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12955' ]
     dirty:
-      - crc: 0x3bb808e1
-        <<: *dirtyPlugin
+      # v0.05a
+      - <<: *quickClean
+        crc: 0x3BB808E1
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v0.05a - after QAC
+      - crc: 0x466DEFDB
+        util: 'TES5Edit v4.0.2j'
   - name: 'archdemonplushighdragon.esp'
     dirty:
       - crc: 0x84f7cb68
@@ -8122,17 +8214,28 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/23911' ]
     msg: [ *alreadyInSkyrimImmersiveCreatures ]
     dirty:
-      - crc: 0x267783d2
-        <<: *dirtyPlugin
+      # v1
+      - <<: *quickClean
+        crc: 0x267783D2
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 14
-        udr: 1
+    clean:
+      # v1 - after QAC
+      - crc: 0xB5E73B1E
+        util: 'TES5Edit v4.0.2j'
   - name: 'AronsMechaDragons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24587' ]
     msg: [ *alreadyInSkyrimImmersiveCreatures ]
     dirty:
-      - crc: 0x77a605c4
-        <<: *dirtyPlugin
-        itm: 10
+      # v1
+      - <<: *quickClean
+        crc: 0x77A605C4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 15
+    clean:
+      # v1 - after QAC
+      - crc: 0xC31DD6D6
+        util: 'TES5Edit v4.0.2j'
   - name: 'ArrowsOfMight1.1.esp'
     msg: [ *obsolete ]
   - name: 'Avatar of Baltazar.esp'
@@ -8141,9 +8244,15 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe Avatar of Baltazar.esp")'
     dirty:
-      - crc: 0x1233bbaf
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0x1233BBAF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+    clean:
+      # v1.1 - after QAC
+      - crc: 0xC50F293F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Avatar Of Grenth.esp'
     tag:
       - name: Deactivate
@@ -8157,9 +8266,25 @@ plugins:
   - name: 'BadGremlinsJarHunt.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25956' ]
     dirty:
-      - crc: 0x82caa554
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x82CAA554
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+      # v3.1
+      - <<: *quickClean
+        crc: 0xB2D4ADE0
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+      # v4.0
+      - <<: *quickClean
+        crc: 0x0012EDE5
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      # v4.0 - after QAC
+      - crc: 0x805120C1
+        util: 'TES5Edit v4.0.2j'
   - name: 'BaratheonArmor.esp'
     tag:
       - name: Deactivate
@@ -8213,10 +8338,6 @@ plugins:
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Black Mage Armor.esp")'
-    dirty:
-      - crc: 0x1963e64e
-        <<: *dirtyPlugin
-        udr: 2
     clean:
       # version: 3.2
       - crc: 0xCB8F3ACD
@@ -8224,9 +8345,15 @@ plugins:
   - name: 'black_hand_robe.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15546' ]
     dirty:
-      - crc: 0xbff2e35c
-        <<: *dirtyPlugin
+      # v2.3
+      - <<: *quickClean
+        crc: 0xBFF2E35C
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 15
+    clean:
+      # v2.3 - after QAC
+      - crc: 0xA8CA2716
+        util: 'TES5Edit v4.0.2j'
   - name: 'Black Scaled Armor MOD.esp'
     msg:
       - <<: *obsolete
@@ -8251,15 +8378,15 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/37289' ]
     tag: [ Relev ]
     dirty:
-      - crc: 0x3e021f5d
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0x3E021F5D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
-      - crc: 0x4cbfd47c
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0x746240b2
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x5DA0B0E4
+        util: 'TES5Edit v4.0.2j'
   - name: 'bouncy_bodices.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -8406,30 +8533,39 @@ plugins:
   - name: 'Cloaks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
-      - crc: 0x35c871de
-        <<: *dirtyPlugin
-        itm: 4
-      - crc: 0xd8f94c02
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xD8F94C02
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x2D16EDED
+        util: 'TES5Edit v4.0.2j'
   - name: 'Cloaks - No Imperial.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
-      - crc: 0x1c6298ce
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x1C6298CE
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-      - crc: 0xd5733582
-        <<: *dirtyPlugin
-        itm: 14
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x646C341F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Cloaks - Player Only.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
-      - crc: 0x2453c2e4
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x2453C2E4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-      - crc: 0x317b2066
-        <<: *dirtyPlugin
-        itm: 50
+    clean:
+      # v1.2 - after QAC
+      - crc: 0xA691B584
+        util: 'TES5Edit v4.0.2j'
   - name: 'Cloaks( - (No Imperial|Player Only))? - Dawnguard\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     msg:
