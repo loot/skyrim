@@ -6781,10 +6781,16 @@ plugins:
   - name: 'AmazingRiverwoodRetex.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18268' ]
     dirty:
-      - crc: 0x2c9fd152
-        <<: *dirtyPlugin
-        itm: 16
+      # Final
+      - <<: *quickClean
+        crc: 0x2C9FD152
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 242
         udr: 34
+    clean:
+      # Final - after QAC
+      - crc: 0xA1D31C1A
+        util: 'TES5Edit v4.0.2j'
   - name: 'Roasted Meat - RWL + RND.esp'
     msg:
       - type: say
