@@ -8184,9 +8184,15 @@ plugins:
   - name: 'ArcaneArchery.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12955' ]
     dirty:
-      - crc: 0x3bb808e1
-        <<: *dirtyPlugin
+      # v0.05a
+      - <<: *quickClean
+        crc: 0x3BB808E1
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v0.05a - after QAC
+      - crc: 0x466DEFDB
+        util: 'TES5Edit v4.0.2j'
   - name: 'archdemonplushighdragon.esp'
     dirty:
       - crc: 0x84f7cb68
