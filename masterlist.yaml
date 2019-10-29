@@ -7485,10 +7485,15 @@ plugins:
   - name: 'Wild Horses of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35321' ]
     dirty:
-      - crc: 0x81afca9f
-        <<: *dirtyPlugin
-        itm: 2
-        udr: 6
+      # v1.3
+      - <<: *quickClean
+        crc: 0xD23B4D2A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v1.3 - after QAC
+      - crc: 0xEB980F36
+        util: 'TES5Edit v4.0.2j'
   - name: 'WiS IV - Heroes & Villains( insane| Easy| Hard)?\.esp'
     msg:
       - <<: *useOnlyOneX
