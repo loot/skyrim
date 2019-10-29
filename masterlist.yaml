@@ -6552,10 +6552,17 @@ plugins:
   - name: 'Project-Legacy.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12968' ]
     dirty:
-      - crc: 0x29a43728
-        <<: *dirtyPlugin
-        itm: 21
+      # v0.2.5a
+      - <<: *reqManualFix
+        crc: 0x29A43728
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 76
         udr: 263
+        nav: 1
+      # v0.2.5a - after QAC
+      - <<: *reqManualFix
+        crc: 0xE8957067
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Prides of Skyrim( weak)?\.esp'
     tag: [ Relev ]
