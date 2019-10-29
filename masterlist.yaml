@@ -8104,9 +8104,23 @@ plugins:
   - name: 'AlexScorpionsShop.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30131' ]
     dirty:
-      - crc: 0xc2dbdc74
-        <<: *dirtyPlugin
-        itm: 3
+      # v1.1
+      - <<: *quickClean
+        crc: 0xBFDCE05B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+      # v1.1a
+      - <<: *quickClean
+        crc: 0x1A0A3341
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x00829DD8
+        util: 'TES5Edit v4.0.2j'
+      # v1.1a - after QAC
+      - crc: 0x241D6705
+        util: 'TES5Edit v4.0.2j'
   - name: 'Alchemic Tomes.esp'
     dirty:
       - crc: 0xeda60d92
