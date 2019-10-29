@@ -8061,9 +8061,23 @@ plugins:
   - name: 'AetheriumSwordsnArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23530' ]
     dirty:
-      - crc: 0x9bcbbaf0
-        <<: *dirtyPlugin
-        itm: 4
+      # v2.40 - Main
+      - <<: *quickClean
+        crc: 0x9BCBBAF0
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+      # v2.40 - Tone Down
+      - <<: *quickClean
+        crc: 0x35A0984B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+    clean:
+      # v2.40 - Main - after QAC
+      - crc: 0xA2DC5E2D
+        util: 'TES5Edit v4.0.2j'
+      # v2.40 - Tonw Down - after QAC
+      - crc: 0x935E25F4
+        util: 'TES5Edit v4.0.2j'
   - name: 'AgedRoundShield.esp'
     tag: [ Relev ]
   - name: 'akavirisharpkatana.esp'
