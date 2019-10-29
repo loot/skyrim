@@ -6809,9 +6809,15 @@ plugins:
   - name: 'RPChoppingAndMining.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18336' ]
     dirty:
-      - crc: 0xfd51136d
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xFD51136D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x6CD18D5B
+        util: 'TES5Edit v4.0.2j'
   - name: 'rt_Animal - Processing.esp'
     inc:
       - 'rt_AutoHarvest.esp'
