@@ -7394,11 +7394,13 @@ plugins:
       - Relev
   - name: 'Underwater_Treasure.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/33994' ]
-    dirty:
-      - crc: 0x2676b18f
-        <<: *dirtyPlugin
-        itm: 18
-        udr: 3
+    clean:
+      # v4 - Only Sea of Ghosts
+      - crc: 0x4F750703
+        util: 'TES5Edit v4.0.2j'
+      # v4 - Sea, Rivers and Lakes
+      - crc: 0x9E6A323B
+        util: 'TES5Edit v4.0.2j'
   - name: 'Undies Underneath.esp'
     req: [ *SKSE ]
   - name: 'Unicorn.esp'
