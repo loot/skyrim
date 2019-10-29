@@ -6522,9 +6522,15 @@ plugins:
   - name: 'Portable Campsite.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9935' ]
     dirty:
-      - crc: 0xc70be4c6
-        <<: *dirtyPlugin
-        itm: 9
+      # v3.0
+      - <<: *quickClean
+        crc: 0xC70BE4C6
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+    clean:
+      # v3.0 - after QAC
+      - crc: 0x63D180F9
+        util: 'TES5Edit v4.0.2j'
   - name: 'poshmudcrabs.esp'
     dirty:
       - crc: 0x7b384084
