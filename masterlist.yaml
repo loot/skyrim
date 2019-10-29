@@ -7805,10 +7805,21 @@ plugins:
             text: 'Убедитесь, что вы не выключили DoF в вашем ini-файле. Если вы не видите эффекта, откройте ваш Skyrimprefs.ini и найдите строку ''bDoDepthOfField''. Убедитесь, что она имеет значение 1.'
   - name: 'IMAGINATOR - Visual Control for Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13049' ]
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("IMAGINATOR - Visual Control for Skyrim.esp",7DFC69E3)'
+  - name: 'Imaginator BETA.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13049' ]
     dirty:
-      - crc: 0x7dfc69e3
-        <<: *dirtyPlugin
-        itm: 26
+      # v2
+      - <<: *quickClean
+        crc: 0xFB3A2B27
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v2 - after QAC
+      - crc: 0xABE7186E
+        util: 'TES5Edit v4.0.2j'
   - name: 'kuerteeActorDetails.esp'
     req: [ *SKSE ]
   - name: 'kuerteeAutoFirstThirdPersonView.esp'
