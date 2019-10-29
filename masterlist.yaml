@@ -5814,6 +5814,7 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("Necessary Markers_german.esp",58DB7A80)'
   - name: 'Hunterborn.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/33201' ]
     req:
       - *SKSE
       - *SkyUI
@@ -5825,10 +5826,15 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
         subs: [ '[RSE - Requiem Survival Experience](https://www.nexusmods.com/skyrim/mods/56275)' ]
     dirty:
-      - crc: 0x83B040DA
-        <<: *dirtyPlugin
-        itm: 9
-    url: [ 'http://www.nexusmods.com/skyrim/mods/33201' ]
+      # v1.6
+      - <<: *quickClean
+        crc: 0x8BC60484
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v1.6 - after QAC
+      - crc: 0x1409598E
+        util: 'TES5Edit v4.0.2j'
   - name: 'Immersive Battles.esp'
     dirty:
       - crc: 0x6cecb1b1
@@ -6516,9 +6522,15 @@ plugins:
   - name: 'Portable Campsite.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9935' ]
     dirty:
-      - crc: 0xc70be4c6
-        <<: *dirtyPlugin
-        itm: 9
+      # v3.0
+      - <<: *quickClean
+        crc: 0xC70BE4C6
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+    clean:
+      # v3.0 - after QAC
+      - crc: 0x63D180F9
+        util: 'TES5Edit v4.0.2j'
   - name: 'poshmudcrabs.esp'
     dirty:
       - crc: 0x7b384084
@@ -6528,38 +6540,67 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/15190' ]
     tag: [ Relev ]
     dirty:
-      - crc: 0x7f5ea37e
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x7F5EA37E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 26
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x5A591FD6
+        util: 'TES5Edit v4.0.2j'
   - name: 'Project-Legacy.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12968' ]
     dirty:
-      - crc: 0x29a43728
-        <<: *dirtyPlugin
-        itm: 21
+      # v0.2.5a
+      - <<: *reqManualFix
+        crc: 0x29A43728
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 76
         udr: 263
+        nav: 1
+      # v0.2.5a - after QAC
+      - <<: *reqManualFix
+        crc: 0xE8957067
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Prides of Skyrim( weak)?\.esp'
     tag: [ Relev ]
   - name: 'Prides of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12647' ]
     dirty:
-      - crc: 0x914a3a73
-        <<: *dirtyPlugin
-        itm: 94
+      # v1.3 - Main
+      - <<: *reqManualFix
+        crc: 0x914A3A73
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 108
         udr: 40
         nav: 1
-      - crc: 0xD748752A
-        <<: *dirtyPlugin
-        itm: 94
+      # v1.3 - Main - after QAC
+      - <<: *reqManualFix
+        crc: 0xABA68576
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # v1.3 - HARDCORE
+      - <<: *reqManualFix
+        crc: 0xD748752A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 107
         udr: 40
+        nav: 1
+      # v1.3 - HARDCORE - after QAC
+      - <<: *reqManualFix
+        crc: 0xDAF32670
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Rageofthespirits.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20485' ]
     dirty:
-      - crc: 0xbc4ba4f4
-        <<: *dirtyPlugin
-        itm: 3
+      # v3.0alpha
+      - <<: *quickClean
+        crc: 0xBC4BA4F4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
         udr: 71
   - name: 'Radiant and Unique Potions and Poisons.esp'
     msg: [ *obsolete ]
@@ -6582,10 +6623,15 @@ plugins:
   - name: 'Real Clouds.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/39450' ]
     dirty:
-      - crc: 0xe3a80548
-        <<: *dirtyPlugin
-        itm: 42
-        udr: 1
+      # v2.0
+      - <<: *quickClean
+        crc: 0x8E25C2AD
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v2.0 - after QAC
+      - crc: 0xFB123018
+        util: 'TES5Edit v4.0.2j'
   - name: 'real glaciers.esp'
     msg: [ *obsolete ]
   - name: 'realistic dragons.esp'
@@ -6615,49 +6661,59 @@ plugins:
       - Relev
   - name: 'Realistic Wildlife Loot - Reduced.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8075' ]
-    dirty:
-      - crc: 0xde8bf53d
-        <<: *dirtyPlugin
-        itm: 3
+    clean:
+      # v2.0.3
+      - crc: 0x297092B7
+        util: 'TES5Edit v4.0.2j'
   - name: 'Realistic Wildlife Loot - Realistic.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8075' ]
-    dirty:
-      - crc: 0x16AFA5F7
-        <<: *dirtyPlugin
-        itm: 3
+    clean:
+      # v2.0.3
+      - crc: 0x76380192
+        util: 'TES5Edit v4.0.2j'
   - name: 'Real Wildlife Skyrim 0.1.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9778' ]
     tag: [ Delev ]
     dirty:
-      - crc: 0xed42b25
-        <<: *dirtyPlugin
-        itm: 346
-      - crc: 0xe5382bf1
-        <<: *dirtyPlugin
-        itm: 328
-        udr: 1
-      - crc: 0xe58d4fca
-        <<: *dirtyPlugin
-        itm: 340
-        udr: 1
+      # v1.343
+      - <<: *quickClean
+        crc: 0xBFFF72CE
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v1.343 - after QAC
+      - crc: 0x26001CC2
+        util: 'TES5Edit v4.0.2j'
   - name: 'Real Wildlife Skyrim 0.1 No Food.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9778' ]
     inc:
       - 'Real Wildlife Skyrim 0.1.esp'
     tag: [ Delev ]
     dirty:
-      - crc: 0x52dd73e8
-        <<: *dirtyPlugin
-        itm: 360
+      # v1.341
+      - <<: *quickClean
+        crc: 0x52DD73E8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 383
+    clean:
+      # v1.341 - after QAC
+      - crc: 0x89C88E08
+        util: 'TES5Edit v4.0.2j'
   - name: 'Real Wildlife.esp'
     tag: [ Relev ]
   - name: 'wildlife_overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/37999' ]
     dirty:
-      - crc: 0x89b169d7
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0x4C4EE368
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 19
         udr: 16
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x6971B05A
+        util: 'TES5Edit v4.0.2j'
   - name: 'SIRWPat?ch\.esp'
     tag:
       - Delev
@@ -6668,15 +6724,15 @@ plugins:
       - Delev
       - Relev
     dirty:
-      - crc: 0x5d7c8ca2
-        <<: *dirtyPlugin
-        itm: 13
-      - crc: 0x6375823b
-        <<: *dirtyPlugin
-        itm: 14
-      - crc: 0xf0fd39eb
-        <<: *dirtyPlugin
-        itm: 20
+      # v7
+      - <<: *quickClean
+        crc: 0x629B83B6
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+    clean:
+      # v7 - after QAC
+      - crc: 0x2EB4DE21
+        util: 'TES5Edit v4.0.2j'
   - name: 'RecyclingMod.esp'
     msg:
       - type: say
@@ -6725,10 +6781,16 @@ plugins:
   - name: 'AmazingRiverwoodRetex.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18268' ]
     dirty:
-      - crc: 0x2c9fd152
-        <<: *dirtyPlugin
-        itm: 16
+      # Final
+      - <<: *quickClean
+        crc: 0x2C9FD152
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 242
         udr: 34
+    clean:
+      # Final - after QAC
+      - crc: 0xA1D31C1A
+        util: 'TES5Edit v4.0.2j'
   - name: 'Roasted Meat - RWL + RND.esp'
     msg:
       - type: say
@@ -6747,9 +6809,15 @@ plugins:
   - name: 'RPChoppingAndMining.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18336' ]
     dirty:
-      - crc: 0xfd51136d
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xFD51136D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x6CD18D5B
+        util: 'TES5Edit v4.0.2j'
   - name: 'rt_Animal - Processing.esp'
     inc:
       - 'rt_AutoHarvest.esp'
@@ -6761,15 +6829,21 @@ plugins:
   - name: 'RWB - Realistic Wolf Behavior.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23785' ]
     dirty:
-      - crc: 0x652fd3f8
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0x652FD3F8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+    clean:
+      # v1.1 - after QAC
+      - crc: 0xDAF5D363
+        util: 'TES5Edit v4.0.2j'
   - name: 'SaltSacks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23948' ]
-    dirty:
-      - crc: 0x1d44162d
-        <<: *dirtyPlugin
-        itm: 4
+    clean:
+      # v1.0.1
+      - crc: 0xDA63DEA2
+        util: 'TES5Edit v4.0.2j'
   - name: 'SaveHotKey.esp'
     msg: [ *obsolete ]
   - name: 'SB - Loot Mod.esp'
@@ -6779,40 +6853,76 @@ plugins:
   - name: 'SDO Full-LOD - Giant Campfires.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19446' ]
     dirty:
-      - crc: 0x4cb0a7cc
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x4CB0A7CC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 12
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xB1BD0CA6
+        util: 'TES5Edit v4.0.2j'
   - name: 'SDO Full-LOD - The Morthal Swamp Complete.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19446' ]
     dirty:
-      - crc: 0x43a4fd69
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x43A4FD69
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 129
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x54600053
+        util: 'TES5Edit v4.0.2j'
   - name: 'SDO Full-LOD - The Morthal Swamp Light.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19446' ]
     dirty:
-      - crc: 0xf7f16c14
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xF7F16C14
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 117
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x30DD813A
+        util: 'TES5Edit v4.0.2j'
   - name: 'SDO Full-LOD - Waterfall Effects.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19446' ]
     dirty:
-      - crc: 0x3de3f58
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x03DE3F58
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 36
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xB1293726
+        util: 'TES5Edit v4.0.2j'
   - name: 'SDO Full-LOD - Whiterun Trundra Creeks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19446' ]
     dirty:
-      - crc: 0xbf8f3890
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xBF8F3890
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 39
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xAACFD505
+        util: 'TES5Edit v4.0.2j'
   - name: 'See Your Neighbor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24513' ]
     dirty:
-      - crc: 0xed9d480b
-        <<: *dirtyPlugin
-        itm: 3
+      # v4.0
+      - <<: *quickClean
+        crc: 0xED9D480B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
         udr: 5
+    clean:
+      # v4.0 - after QAC
+      - crc: 0x4DF9126C
+        util: 'TES5Edit v4.0.2j'
   - name: 'SexiSWorkingGirl.esp'
     req:
       - *SKSE
@@ -6866,12 +6976,6 @@ plugins:
       - 'BirdsHFclean.esp'
       - 'Birdsofskyrim.esp'
     dirty:
-      - crc: 0x131bb61c
-        <<: *dirtyPlugin
-        itm: 3
-      - crc: 0x18DBC60E
-        <<: *dirtyPlugin
-        itm: 3
       # USLEEP - No Barrels
       - <<: *quickClean
         crc: 0x2FC92864
@@ -6906,10 +7010,25 @@ plugins:
   - name: 'SkyEx.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/37554' ]
     dirty:
-      - crc: 0xfc694964
-        <<: *dirtyPlugin
+      # v1.0Hearth
+      - <<: *quickClean
+        crc: 0xEF5D5160
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 33
+        udr: 31
+      # v1.0
+      - <<: *quickClean
+        crc: 0xA43B6580
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 31
         udr: 31
+    clean:
+      # v1.0Hearth - after QAC
+      - crc: 0x9AAECEC3
+        util: 'TES5Edit v4.0.2j'
+      # v1.0 - after QAC
+      - crc: 0x4ED251FF
+        util: 'TES5Edit v4.0.2j'
   - name: 'Skyforge Smelter.esp'
     dirty:
       - crc: 0x86b4d1d2
@@ -6923,9 +7042,15 @@ plugins:
   - name: 'Skyhighrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22287' ]
     dirty:
-      - crc: 0xad626bd2
-        <<: *dirtyPlugin
-        itm: 13
+      # v2.5
+      - <<: *quickClean
+        crc: 0x96CC9821
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
+    clean:
+      # v2.5 - after QAC
+      - crc: 0x0391624C
+        util: 'TES5Edit v4.0.2j'
   - name: 'SkyMoMod.esp'
     msg: [ *obsolete ]
     tag:
@@ -7029,20 +7154,13 @@ plugins:
       - 'Skyrim Expanded Loot Tables.esp'
   - name: 'Skyrim Flora Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/141' ]
-    dirty:
-      - crc: 0xdd0bf6d4
-        <<: *dirtyPlugin
-        itm: 1
-      - crc: 0xE4DF9806
-        <<: *dirtyPlugin
-        itm: 1
-      - crc: 0xfab40701
-        <<: *dirtyPlugin
-        itm: 8
     clean:
-      # version: 2.6
+      # v2.6
       - crc: 0x5C2E5564
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2j'
+      # v2.81
+      - crc: 0x7BF50CFC
+        util: 'TES5Edit v4.0.2j'
   - name: 'Skyrim Scaling Stopper - Misc Edits.esp'
     msg:
       - type: warn
@@ -7082,10 +7200,10 @@ plugins:
         itm: 2
   - name: 'Smelter_Riften & Solitude.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18024' ]
-    dirty:
-      - crc: 0xbc2a12bd
-        <<: *dirtyPlugin
-        itm: 17
+    clean:
+      # v2.0
+      - crc: 0x18AB7589
+        util: 'TES5Edit v4.0.2j'
   - name: 'smeltorswheretheyshouldbe.esp'
     dirty:
       - crc: 0x883d4a75
@@ -7101,12 +7219,18 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'smithingsupplies.esp'
+  - name: 'CraftingSupplies_AIO_ALL.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/37696' ]
-    dirty:
-      - crc: 0xa093937
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v2.0
+      - crc: 0xFAFE7513
+        util: 'TES5Edit v4.0.2j'
+  - name: 'SmithingSupplies.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/37696' ]
+    clean:
+      # v3.1
+      - crc: 0xFE485CB8
+        util: 'TES5Edit v4.0.2j'
   - name: 'Sorcerer Renamer.esp'
     req:
       - *SKSE
@@ -7159,9 +7283,15 @@ plugins:
   - name: 'Syynx Stubborn Skeletons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15768' ]
     dirty:
-      - crc: 0xd1641b6b
-        <<: *dirtyPlugin
+      # v1 - Main
+      - <<: *quickClean
+        crc: 0x58433592
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1 - Main - after QAC
+      - crc: 0x3C7C8C39
+        util: 'TES5Edit v4.0.2j'
   - name: 'Tailoring.esp'
     dirty:
       - crc: 0x9fabd6ad
@@ -7194,9 +7324,15 @@ plugins:
   - name: 'TorchesForSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15648' ]
     dirty:
-      - crc: 0x2ded0382
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x2DED0382
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x457015C5
+        util: 'TES5Edit v4.0.2j'
   - name: 'Training Dummies XP.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/26491' ]
     dirty:
