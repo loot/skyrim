@@ -6913,10 +6913,16 @@ plugins:
   - name: 'See Your Neighbor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24513' ]
     dirty:
-      - crc: 0xed9d480b
-        <<: *dirtyPlugin
-        itm: 3
+      # v4.0
+      - <<: *quickClean
+        crc: 0xED9D480B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
         udr: 5
+    clean:
+      # v4.0 - after QAC
+      - crc: 0x4DF9126C
+        util: 'TES5Edit v4.0.2j'
   - name: 'SexiSWorkingGirl.esp'
     req:
       - *SKSE
