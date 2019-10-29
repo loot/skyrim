@@ -8533,30 +8533,39 @@ plugins:
   - name: 'Cloaks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
-      - crc: 0x35c871de
-        <<: *dirtyPlugin
-        itm: 4
-      - crc: 0xd8f94c02
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xD8F94C02
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x2D16EDED
+        util: 'TES5Edit v4.0.2j'
   - name: 'Cloaks - No Imperial.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
-      - crc: 0x1c6298ce
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x1C6298CE
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-      - crc: 0xd5733582
-        <<: *dirtyPlugin
-        itm: 14
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x646C341F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Cloaks - Player Only.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
-      - crc: 0x2453c2e4
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x2453C2E4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-      - crc: 0x317b2066
-        <<: *dirtyPlugin
-        itm: 50
+    clean:
+      # v1.2 - after QAC
+      - crc: 0xA691B584
+        util: 'TES5Edit v4.0.2j'
   - name: 'Cloaks( - (No Imperial|Player Only))? - Dawnguard\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     msg:
