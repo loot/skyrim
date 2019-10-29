@@ -6569,15 +6569,29 @@ plugins:
   - name: 'Prides of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12647' ]
     dirty:
-      - crc: 0x914a3a73
-        <<: *dirtyPlugin
-        itm: 94
+      # v1.3 - Main
+      - <<: *reqManualFix
+        crc: 0x914A3A73
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 108
         udr: 40
         nav: 1
-      - crc: 0xD748752A
-        <<: *dirtyPlugin
-        itm: 94
+      # v1.3 - Main - after QAC
+      - <<: *reqManualFix
+        crc: 0xABA68576
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # v1.3 - HARDCORE
+      - <<: *reqManualFix
+        crc: 0xD748752A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 107
         udr: 40
+        nav: 1
+      # v1.3 - HARDCORE - after QAC
+      - <<: *reqManualFix
+        crc: 0xDAF32670
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Rageofthespirits.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20485' ]
