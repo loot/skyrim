@@ -8089,11 +8089,15 @@ plugins:
   - name: 'AlchemistSatchel.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27142' ]
     dirty:
-      - crc: 0xcae60b0
-        <<: *dirtyPlugin
+      # v1.2b - Vanilla
+      - <<: *quickClean
+        crc: 0xCAE60B01
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 18
-      - crc: 0x2412654c
-        <<: *dirtyPlugin
+      # v1.2b - Dawnguard
+      - <<: *quickClean
+        crc: 0x2412654C
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 15
   - name: 'Alexia CatGarter.esp'
     msg: [ *requiresUNP ]
