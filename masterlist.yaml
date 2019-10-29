@@ -6623,10 +6623,15 @@ plugins:
   - name: 'Real Clouds.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/39450' ]
     dirty:
-      - crc: 0xe3a80548
-        <<: *dirtyPlugin
-        itm: 42
-        udr: 1
+      # v2.0
+      - <<: *quickClean
+        crc: 0x8E25C2AD
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v2.0 - after QAC
+      - crc: 0xFB123018
+        util: 'TES5Edit v4.0.2j'
   - name: 'real glaciers.esp'
     msg: [ *obsolete ]
   - name: 'realistic dragons.esp'
