@@ -5814,6 +5814,7 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("Necessary Markers_german.esp",58DB7A80)'
   - name: 'Hunterborn.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/33201' ]
     req:
       - *SKSE
       - *SkyUI
@@ -5825,10 +5826,15 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
         subs: [ '[RSE - Requiem Survival Experience](https://www.nexusmods.com/skyrim/mods/56275)' ]
     dirty:
-      - crc: 0x83B040DA
-        <<: *dirtyPlugin
-        itm: 9
-    url: [ 'http://www.nexusmods.com/skyrim/mods/33201' ]
+      # v1.6
+      - <<: *quickClean
+        crc: 0x8BC60484
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v1.6 - after QAC
+      - crc: 0x1409598E
+        util: 'TES5Edit v4.0.2j'
   - name: 'Immersive Battles.esp'
     dirty:
       - crc: 0x6cecb1b1
