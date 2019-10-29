@@ -7010,10 +7010,25 @@ plugins:
   - name: 'SkyEx.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/37554' ]
     dirty:
-      - crc: 0xfc694964
-        <<: *dirtyPlugin
+      # v1.0Hearth
+      - <<: *quickClean
+        crc: 0xEF5D5160
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 33
+        udr: 31
+      # v1.0
+      - <<: *quickClean
+        crc: 0xA43B6580
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 31
         udr: 31
+    clean:
+      # v1.0Hearth - after QAC
+      - crc: 0x9AAECEC3
+        util: 'TES5Edit v4.0.2j'
+      # v1.0 - after QAC
+      - crc: 0x4ED251FF
+        util: 'TES5Edit v4.0.2j'
   - name: 'Skyforge Smelter.esp'
     dirty:
       - crc: 0x86b4d1d2
