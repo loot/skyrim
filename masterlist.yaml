@@ -7042,9 +7042,15 @@ plugins:
   - name: 'Skyhighrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22287' ]
     dirty:
-      - crc: 0xad626bd2
-        <<: *dirtyPlugin
-        itm: 13
+      # v2.5
+      - <<: *quickClean
+        crc: 0x96CC9821
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
+    clean:
+      # v2.5 - after QAC
+      - crc: 0x0391624C
+        util: 'TES5Edit v4.0.2j'
   - name: 'SkyMoMod.esp'
     msg: [ *obsolete ]
     tag:
