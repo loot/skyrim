@@ -6829,9 +6829,15 @@ plugins:
   - name: 'RWB - Realistic Wolf Behavior.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23785' ]
     dirty:
-      - crc: 0x652fd3f8
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0x652FD3F8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+    clean:
+      # v1.1 - after QAC
+      - crc: 0xDAF5D363
+        util: 'TES5Edit v4.0.2j'
   - name: 'SaltSacks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23948' ]
     dirty:
