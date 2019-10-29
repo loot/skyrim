@@ -7423,9 +7423,15 @@ plugins:
   - name: 'UniqueEverything.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/16964' ]
     dirty:
-      - crc: 0x9ab1accf
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0x9AB1ACCF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x1DA3FD5F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Unleveled_Skyrim_Items.esp'
     tag:
       - Delev
