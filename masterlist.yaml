@@ -8378,15 +8378,15 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/37289' ]
     tag: [ Relev ]
     dirty:
-      - crc: 0x3e021f5d
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0x3E021F5D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
-      - crc: 0x4cbfd47c
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0x746240b2
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x5DA0B0E4
+        util: 'TES5Edit v4.0.2j'
   - name: 'bouncy_bodices.*\.esp'
     msg:
       - <<: *useOnlyOneX
