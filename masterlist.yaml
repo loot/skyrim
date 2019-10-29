@@ -8025,12 +8025,18 @@ plugins:
     msg: [ *corrupt ]
   - name: '18 Black® Katanas HD ML.esp'
     msg: [ *obsolete ]
-  - name: 'abimod.esp'
+  - name: 'abiMod.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22108' ]
     dirty:
-      - crc: 0x86bec75a
-        <<: *dirtyPlugin
-        itm: 1
+      # v1.01
+      - <<: *quickClean
+        crc: 0x86BEC75A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v1.01 - after QAC
+      - crc: 0x08703862
+        util: 'TES5Edit v4.0.2j'
   - name: 'ACB Harley.esp'
     dirty:
       - crc: 0x1fd524b8
