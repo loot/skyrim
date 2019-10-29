@@ -8135,17 +8135,29 @@ plugins:
   - name: 'Althirs Camping Tools English.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10824' ]
     dirty:
-      - crc: 0xc5346be3
-        <<: *dirtyPlugin
+      # v1.7
+      - <<: *quickClean
+        crc: 0xDEC01F16
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.7 - after QAC
+      - crc: 0x10EB7A0F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Althirs Camping Tools German.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10824' ]
     inc:
       - 'Althirs Camping Tools English.esp'
     dirty:
-      - crc: 0xd1b56978
-        <<: *dirtyPlugin
+      # v1.7
+      - <<: *quickClean
+        crc: 0x87EEDB7A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.7 - after QAC
+      - crc: 0xCABC5DE1
+        util: 'TES5Edit v4.0.2j'
   - name: 'AMB Glass Variants Lore.esp'
     msg:
       - <<: *alreadyInAmidianBornContentAddon
