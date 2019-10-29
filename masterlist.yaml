@@ -6675,26 +6675,30 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/9778' ]
     tag: [ Delev ]
     dirty:
-      - crc: 0xed42b25
-        <<: *dirtyPlugin
-        itm: 346
-      - crc: 0xe5382bf1
-        <<: *dirtyPlugin
-        itm: 328
-        udr: 1
-      - crc: 0xe58d4fca
-        <<: *dirtyPlugin
-        itm: 340
-        udr: 1
+      # v1.343
+      - <<: *quickClean
+        crc: 0xBFFF72CE
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+    clean:
+      # v1.343 - after QAC
+      - crc: 0x26001CC2
+        util: 'TES5Edit v4.0.2j'
   - name: 'Real Wildlife Skyrim 0.1 No Food.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9778' ]
     inc:
       - 'Real Wildlife Skyrim 0.1.esp'
     tag: [ Delev ]
     dirty:
-      - crc: 0x52dd73e8
-        <<: *dirtyPlugin
-        itm: 360
+      # v1.341
+      - <<: *quickClean
+        crc: 0x52DD73E8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 383
+    clean:
+      # v1.341 - after QAC
+      - crc: 0x89C88E08
+        util: 'TES5Edit v4.0.2j'
   - name: 'Real Wildlife.esp'
     tag: [ Relev ]
   - name: 'wildlife_overhaul.esp'
