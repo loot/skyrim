@@ -9080,14 +9080,30 @@ plugins:
     tag:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_DwemerAutoBlade.esp")'
+  - name: 'DwemerBombs.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12754' ]
+    inc:
+      - 'DwemerBombsNoPerkTree.esp'
+    dirty:
+      # Main
+      - <<: *quickClean
+        crc: 0xD7BB72C4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      # Main - after QAC
+      - crc: 0xACAEA2EA
+        util: 'TES5Edit v4.0.2j'
   - name: 'DwemerBombsNoPerkTree.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12754' ]
     inc:
       - 'DwemerBombs.esp'
     dirty:
-      - crc: 0x8d5e43b0
-        <<: *dirtyPlugin
-        itm: 11
+      # v1
+      - <<: *quickClean
+        crc: 0x8D5E43B0
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'Earrings Set1.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11130' ]
     dirty:
@@ -24214,13 +24230,6 @@ plugins:
   - name: 'df127expertsmithing.esp'
     dirty:
       - crc: 0xb7d4ac8e
-        <<: *dirtyPlugin
-        itm: 9
-  - name: 'DwemerBombs.esp'
-    inc:
-      - 'DwemerBombsNoPerkTree.esp'
-    dirty:
-      - crc: 0xd7bb72c4
         <<: *dirtyPlugin
         itm: 9
   - name: 'Improved Lower Level Smithing.esp'
