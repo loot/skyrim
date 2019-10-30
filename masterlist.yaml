@@ -8824,16 +8824,28 @@ plugins:
   - name: 'DEATH-DEALER.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18077' ]
     dirty:
-      - crc: 0xc4ea57d6
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0xC4EA57D6
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
         udr: 5
+    clean:
+      # v2.0 - after QAC
+      - crc: 0xC9B423BC
+        util: 'TES5Edit v4.0.2j'
   - name: 'DEATH-DEALER-PKR.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18077' ]
     dirty:
-      - crc: 0x88046b62
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x13C7E048
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v1.2 - after QAC
+      - crc: 0xF5D6FF60
+        util: 'TES5Edit v4.0.2j'
   - name: 'DemonHunterArmor.esp'
     msg:
       - type: say
