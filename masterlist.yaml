@@ -9158,9 +9158,15 @@ plugins:
   - name: 'Elgars Silver Emporium -Weapon Set-.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/28961' ]
     dirty:
-      - crc: 0xd060543f
-        <<: *dirtyPlugin
-        udr: 1
+      # v0.8
+      - <<: *quickClean
+        crc: 0xD060543F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v0.8 - after QAC
+      - crc: 0xEF528F89
+        util: 'TES5Edit v4.0.2j'
   - name: 'EliteRogueArmour.esp'
     url:
       - 'https://www.nexusmods.com/skyrim/mods/30189'
