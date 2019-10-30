@@ -9145,10 +9145,16 @@ plugins:
   - name: 'elementalshield.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/41297' ]
     dirty:
-      - crc: 0xa6122f10
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xD21D4925
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 1
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x3D090243
+        util: 'TES5Edit v4.0.2j'
   - name: 'Elgars Silver Emporium -Weapon Set-.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/28961' ]
     dirty:
