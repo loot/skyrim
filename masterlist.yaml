@@ -9316,9 +9316,15 @@ plugins:
   - name: 'Fletching.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9761' ]
     dirty:
-      - crc: 0xb2669e47
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xB2669E47
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x04F499E2
+        util: 'TES5Edit v4.0.2j'
   - name: 'Footwear OE.esp'
     msg: [ *requiresUNP ]
   - name: 'fox(\d\d?)[^51-56] Armor\.esp' #up to fox50 for FoxMergedv2.6(checksumofesp,2E996104)
