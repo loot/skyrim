@@ -8940,15 +8940,27 @@ plugins:
   - name: 'DragonfireCrossbow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22233' ]
     dirty:
-      - crc: 0x5596eef2
-        <<: *dirtyPlugin
-        itm: 8
+      # v1
+      - <<: *quickClean
+        crc: 0x5596EEF2
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+    clean:
+      # v1 - after QAC
+      - crc: 0x9B178DD2
+        util: 'TES5Edit v4.0.2j'
   - name: 'DragonfireCrossbow02.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22233' ]
     dirty:
-      - crc: 0xa8edde9d
-        <<: *dirtyPlugin
+      # v2
+      - <<: *quickClean
+        crc: 0xA8EDDE9D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v2 - after QAC
+      - crc: 0x4F55623E
+        util: 'TES5Edit v4.0.2j'
   - name: 'DragonIron.esp'
     msg:
       - <<: *corrupt
