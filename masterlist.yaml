@@ -9358,12 +9358,18 @@ plugins:
   - name: 'Ghosu - Project Flintlock.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/26653' ]
     dirty:
-      - crc: 0xee1910e
-        <<: *dirtyPlugin
-        itm: 4
-      - crc: 0x3d18c33f
-        <<: *dirtyPlugin
-        itm: 7
+      # v1.3 - Main
+      - <<: *quickClean
+        crc: 0x3D18C33F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+    clean:
+      # v1.3 - Main - after QAC
+      - crc: 0x1435A0C0
+        util: 'TES5Edit v4.0.2j'
+      # v1.3 Cleaned
+      - crc: 0x2A1483ED
+        util: 'TES5Edit v4.0.2j'
   - name: 'Glass Variants.esp'
     msg:
       - <<: *alreadyInAmidianBornContentAddon
