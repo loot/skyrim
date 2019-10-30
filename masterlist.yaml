@@ -8602,16 +8602,20 @@ plugins:
         condition: 'file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp") or file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
         subs:
           - '[Cloaks of Skyrim](https://www.nexusmods.com/skyrim/mods/12092)'
+    clean:
+      # v2.4
+      - crc: 0xAE563374
+        util: 'TES5Edit v4.0.2j'
   - name: '1nivWICSkyCloaksPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13486' ]
     msg:
       - <<: *alreadyInX
         condition: 'active("CFR-CloaksForRequiem.esp")'
         subs: [ 'CFR-CloaksForRequiem.esp' ]
-    dirty:
-      - crc: 0x2a8cad17
-        <<: *dirtyPlugin
-        itm: 4
+    clean:
+      # v2.4
+      - crc: 0x8D9E2F98
+        util: 'TES5Edit v4.0.2j'
   - name: '1nivWICSkyCloaksPatch-No Imp.esp'
     inc:
       - '1nivWICSkyCloaksPatch.esp'
@@ -8652,32 +8656,67 @@ plugins:
   - name: 'Crossbows_Basic_Collection_DE.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23876' ]
     dirty:
-      - crc: 0xc15adbb3
-        <<: *dirtyPlugin
+      # v1.1.2
+      - <<: *quickClean
+        crc: 0x187F75AB
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v1.1.2 - after QAC
+      - crc: 0x3C8AB5DB
+        util: 'TES5Edit v4.0.2j'
+  - name: 'Crossbows_Basic_Collection_DE_LL.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23876' ]
+    dirty:
+      # v1.1.2
+      - <<: *quickClean
+        crc: 0x3B154386
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        udr: 2
+    clean:
+      # v1.1.2 - after QAC
+      - crc: 0xAF3328CC
+        util: 'TES5Edit v4.0.2j'
   - name: 'Crossbows_Basic_Collection_EN.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23876' ]
     inc:
       - 'Crossbows_Basic_Collection_DE.esp'
     dirty:
-      - crc: 0xe4a653b4
-        <<: *dirtyPlugin
+      # v1.1.2
+      - <<: *quickClean
+        crc: 0x01148789
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v1.1.2 - after QAC
+      - crc: 0x8DD86F96
+        util: 'TES5Edit v4.0.2j'
   - name: 'Crossbows_Basic_Collection_EN_LL.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23876' ]
     dirty:
-      - crc: 0x44ed3622
-        <<: *dirtyPlugin
-        itm: 1
+      # v1.1.2
+      - <<: *quickClean
+        crc: 0x44ED3622
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v1.1.2 - after QAC
+      - crc: 0x60B863F2
+        util: 'TES5Edit v4.0.2j'
   - name: 'Crossbows by Scot.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22207' ]
     dirty:
-      - crc: 0x56839516
-        <<: *dirtyPlugin
-        itm: 1
-      - crc: 0x9c9266a8
-        <<: *dirtyPlugin
+      # V1 - Normal
+      - <<: *quickClean
+        crc: 0x9C9266A8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
+      # V1 - Faster
+      - <<: *quickClean
+        crc: 0x56839516
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'customnightingale.esp'
     msg: [ *obsolete ]
   - name: 'Daedric Extra Armor.esp'
@@ -8687,10 +8726,16 @@ plugins:
   - name: 'DaedricCrossbow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22113' ]
     dirty:
-      - crc: 0x7a4af5a4
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0x7A4AF5A4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 2
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x837A5184
+        util: 'TES5Edit v4.0.2j'
   - name: 'DaggerCraft.esp'
     tag:
       - name: Deactivate
@@ -8720,10 +8765,16 @@ plugins:
   - name: 'Dark Souls Rings.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23841' ]
     dirty:
-      - crc: 0x4dfa74c8
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x4DFA74C8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
         udr: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x5539763B
+        util: 'TES5Edit v4.0.2j'
   - name: 'Dawnguard Fraktionen Extended.esp'
     dirty:
       - crc: 0x9c5504fc
@@ -8737,34 +8788,64 @@ plugins:
   - name: 'DawnguardPaladinArmorCP.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35227' ]
     dirty:
-      - crc: 0xb139b288
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xE367811F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xB38EBD6B
+        util: 'TES5Edit v4.0.2j'
   - name: 'DDD-BardsLute.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23216' ]
     dirty:
-      - crc: 0x583fc67e
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x583FC67E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x80579990
+        util: 'TES5Edit v4.0.2j'
   - name: 'deadly bow spell.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25848' ]
     dirty:
-      - crc: 0xb162020e
-        <<: *dirtyPlugin
-        itm: 6
+      # v2.0
+      - <<: *quickClean
+        crc: 0xB162020E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x3F489D37
+        util: 'TES5Edit v4.0.2j'
   - name: 'DEATH-DEALER.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18077' ]
     dirty:
-      - crc: 0xc4ea57d6
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0xC4EA57D6
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
         udr: 5
+    clean:
+      # v2.0 - after QAC
+      - crc: 0xC9B423BC
+        util: 'TES5Edit v4.0.2j'
   - name: 'DEATH-DEALER-PKR.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18077' ]
     dirty:
-      - crc: 0x88046b62
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x13C7E048
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v1.2 - after QAC
+      - crc: 0xF5D6FF60
+        util: 'TES5Edit v4.0.2j'
   - name: 'DemonHunterArmor.esp'
     msg:
       - type: say
@@ -8824,9 +8905,15 @@ plugins:
   - name: 'DragonboneCrossbow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22303' ]
     dirty:
-      - crc: 0x294218c5
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0x294218C5
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x9235783A
+        util: 'TES5Edit v4.0.2j'
   - name: 'dragonblood mod.esp'
     dirty:
       - crc: 0x83115133
@@ -8853,15 +8940,27 @@ plugins:
   - name: 'DragonfireCrossbow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22233' ]
     dirty:
-      - crc: 0x5596eef2
-        <<: *dirtyPlugin
-        itm: 8
+      # v1
+      - <<: *quickClean
+        crc: 0x5596EEF2
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+    clean:
+      # v1 - after QAC
+      - crc: 0x9B178DD2
+        util: 'TES5Edit v4.0.2j'
   - name: 'DragonfireCrossbow02.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22233' ]
     dirty:
-      - crc: 0xa8edde9d
-        <<: *dirtyPlugin
+      # v2
+      - <<: *quickClean
+        crc: 0xA8EDDE9D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v2 - after QAC
+      - crc: 0x4F55623E
+        util: 'TES5Edit v4.0.2j'
   - name: 'DragonIron.esp'
     msg:
       - <<: *corrupt
@@ -8880,15 +8979,21 @@ plugins:
   - name: 'DragonsoulArmour.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13866' ]
     dirty:
-      - crc: 0xe0c93ba1
-        <<: *dirtyPlugin
-        itm: 9
+      # v1.1
+      - <<: *quickClean
+        crc: 0xE0C93BA1
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+    clean:
+      # v1.1 - after QAC
+      - crc: 0xCFAB8B0B
+        util: 'TES5Edit v4.0.2j'
   - name: 'DragonsoulWeapons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13866' ]
-    dirty:
-      - crc: 0xcca2f9b7
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v1.1
+      - crc: 0xCCA2F9B7
+        util: 'TES5Edit v4.0.2j'
   - name: 'dragonweapons.esp'
     msg:
       - <<: *corrupt
@@ -8902,9 +9007,15 @@ plugins:
   - name: 'Drow Armor Set.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27054' ]
     dirty:
-      - crc: 0x83bd886a
-        <<: *dirtyPlugin
-        itm: 5
+      # v1.1
+      - <<: *quickClean
+        crc: 0xD792FFF8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x09D31F06
+        util: 'TES5Edit v4.0.2j'
   - name: 'Divine Aegis.esp'
     tag:
       - name: Deactivate
