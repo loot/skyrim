@@ -8602,16 +8602,20 @@ plugins:
         condition: 'file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp") or file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
         subs:
           - '[Cloaks of Skyrim](https://www.nexusmods.com/skyrim/mods/12092)'
+    clean:
+      # v2.4
+      - crc: 0xAE563374
+        util: 'TES5Edit v4.0.2j'
   - name: '1nivWICSkyCloaksPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13486' ]
     msg:
       - <<: *alreadyInX
         condition: 'active("CFR-CloaksForRequiem.esp")'
         subs: [ 'CFR-CloaksForRequiem.esp' ]
-    dirty:
-      - crc: 0x2a8cad17
-        <<: *dirtyPlugin
-        itm: 4
+    clean:
+      # v2.4
+      - crc: 0x8D9E2F98
+        util: 'TES5Edit v4.0.2j'
   - name: '1nivWICSkyCloaksPatch-No Imp.esp'
     inc:
       - '1nivWICSkyCloaksPatch.esp'
