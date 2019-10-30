@@ -8707,12 +8707,16 @@ plugins:
   - name: 'Crossbows by Scot.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22207' ]
     dirty:
-      - crc: 0x56839516
-        <<: *dirtyPlugin
-        itm: 1
-      - crc: 0x9c9266a8
-        <<: *dirtyPlugin
+      # V1 - Normal
+      - <<: *quickClean
+        crc: 0x9C9266A8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
+      # V1 - Faster
+      - <<: *quickClean
+        crc: 0x56839516
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'customnightingale.esp'
     msg: [ *obsolete ]
   - name: 'Daedric Extra Armor.esp'
