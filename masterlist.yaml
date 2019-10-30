@@ -8979,15 +8979,21 @@ plugins:
   - name: 'DragonsoulArmour.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13866' ]
     dirty:
-      - crc: 0xe0c93ba1
-        <<: *dirtyPlugin
-        itm: 9
+      # v1.1
+      - <<: *quickClean
+        crc: 0xE0C93BA1
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+    clean:
+      # v1.1 - after QAC
+      - crc: 0xCFAB8B0B
+        util: 'TES5Edit v4.0.2j'
   - name: 'DragonsoulWeapons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13866' ]
-    dirty:
-      - crc: 0xcca2f9b7
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v1.1
+      - crc: 0xCCA2F9B7
+        util: 'TES5Edit v4.0.2j'
   - name: 'dragonweapons.esp'
     msg:
       - <<: *corrupt
