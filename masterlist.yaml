@@ -8765,10 +8765,16 @@ plugins:
   - name: 'Dark Souls Rings.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23841' ]
     dirty:
-      - crc: 0x4dfa74c8
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x4DFA74C8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
         udr: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x5539763B
+        util: 'TES5Edit v4.0.2j'
   - name: 'Dawnguard Fraktionen Extended.esp'
     dirty:
       - crc: 0x9c5504fc
