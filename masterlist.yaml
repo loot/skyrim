@@ -9276,9 +9276,15 @@ plugins:
   - name: 'FalchionSword.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19110' ]
     dirty:
-      - crc: 0xcf7ad7c4
-        <<: *dirtyPlugin
-        itm: 6
+      # v1.01
+      - <<: *quickClean
+        crc: 0xCF7AD7C4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
+    clean:
+      # v1.01 - after QAC
+      - crc: 0x35124F02
+        util: 'TES5Edit v4.0.2j'
   - name: 'Faleria.esp'
     dirty:
       - crc: 0xd624babc
