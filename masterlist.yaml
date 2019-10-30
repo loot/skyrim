@@ -8812,9 +8812,15 @@ plugins:
   - name: 'deadly bow spell.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25848' ]
     dirty:
-      - crc: 0xb162020e
-        <<: *dirtyPlugin
-        itm: 6
+      # v2.0
+      - <<: *quickClean
+        crc: 0xB162020E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x3F489D37
+        util: 'TES5Edit v4.0.2j'
   - name: 'DEATH-DEALER.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18077' ]
     dirty:
