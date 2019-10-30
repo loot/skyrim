@@ -9221,9 +9221,23 @@ plugins:
   - name: 'Equipping Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/49784' ]
     dirty:
-      - crc: 0x42e067f8
-        <<: *dirtyPlugin
-        itm: 11
+      # v3.13
+      - <<: *quickClean
+        crc: 0xA2313F69
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+      # v4.25
+      - <<: *quickClean
+        crc: 0x42E067F8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v3.13 - after QAC
+      - crc: 0x052D4BE2
+        util: 'TES5Edit v4.0.2j'
+      # 4.25 - after QAC
+      - crc: 0xDF5214F4
+        util: 'TES5Edit v4.0.2j'
   - name: 'EternalShineArmorAndWeapons.esp'
     msg:
       - <<: *fixedPluginOutSub
