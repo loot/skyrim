@@ -9173,9 +9173,31 @@ plugins:
       - 'https://www.nexusmods.com/skyrim/mods/35682'
       - 'https://www.nexusmods.com/skyrim/mods/37111'
     dirty:
-      - crc: 0xecc16558
-        <<: *dirtyPlugin
+      # 30189 - v1.11 && 37111 - v1.0 & v1.1
+      - <<: *quickClean
+        crc: 0x0B645CDF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+      # 35682 - v1.2
+      - <<: *quickClean
+        crc: 0xA7D9D9D4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # 35682 - v1.1
+      - <<: *quickClean
+        crc: 0x4358CFD8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      # 30189 - v1.11 && 37111 - v1.0 & v1.1 - after QAC
+      - crc: 0xAD12AA47
+        util: 'TES5Edit v4.0.2j'
+      # 35682 - v1.2 - after QAC
+      - crc: 0xE5C27125
+        util: 'TES5Edit v4.0.2j'
+      # 35682 - v1.1 - after QAC
+      - crc: 0xF957F939
+        util: 'TES5Edit v4.0.2j'
   - name: 'Empowered Archmage Robes.esp'
     tag: [ Relev ]
   - name: 'EnchantableDPMask.esp'
