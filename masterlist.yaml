@@ -9396,9 +9396,15 @@ plugins:
   - name: 'Guardianoftime.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22008' ]
     dirty:
-      - crc: 0xe05797b
-        <<: *dirtyPlugin
-        itm: 6
+      # v1
+      - <<: *quickClean
+        crc: 0x0E05797B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v1 - after QAC
+      - crc: 0xE2FA24ED
+        util: 'TES5Edit v4.0.2j'
   - name: 'Hana.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
