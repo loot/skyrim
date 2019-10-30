@@ -9023,9 +9023,15 @@ plugins:
   - name: 'Duskfang and Dawnfang.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25225' ]
     dirty:
-      - crc: 0x9a06cd5
-        <<: *dirtyPlugin
-        itm: 5
+      # v3.31
+      - <<: *quickClean
+        crc: 0x5F8B8BBC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+    clean:
+      # v3.31 - after QAC
+      - crc: 0x1119C940
+        util: 'TES5Edit v4.0.2j'
   - name: 'DwarvenArmorUpgrade.esp'
     tag: [ Relev ]
   - name: 'Dwarven War Cross Bow.esp'
@@ -9045,15 +9051,23 @@ plugins:
       - 'dwarvenrifle.esp'
       - 'dwarvenrifle_CN.esp'
     dirty:
-      - crc: 0x350c9568
-        <<: *dirtyPlugin
+      # v0.2.1
+      - <<: *quickClean
+        crc: 0x350C9568
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+    clean:
+      # v0.2.1 - after QAC
+      - crc: 0xFB5FBA24
+        util: 'TES5Edit v4.0.2j'
   - name: 'Dwemer Artificer.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8389' ]
     dirty:
-      - crc: 0x939498b8
-        <<: *dirtyPlugin
-        itm: 6
+      # v0.60
+      - <<: *quickClean
+        crc: 0x6AB3A374
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
   - name: 'Dwemer Artificer v0.1.esp'
     msg: [ *obsolete ]
   - name: 'Dwemer Artificer v0.2.esp'
@@ -9066,67 +9080,133 @@ plugins:
     tag:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_DwemerAutoBlade.esp")'
+  - name: 'DwemerBombs.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12754' ]
+    inc:
+      - 'DwemerBombsNoPerkTree.esp'
+    dirty:
+      # Main
+      - <<: *quickClean
+        crc: 0xD7BB72C4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      # Main - after QAC
+      - crc: 0xACAEA2EA
+        util: 'TES5Edit v4.0.2j'
   - name: 'DwemerBombsNoPerkTree.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12754' ]
     inc:
       - 'DwemerBombs.esp'
     dirty:
-      - crc: 0x8d5e43b0
-        <<: *dirtyPlugin
-        itm: 11
+      # v1
+      - <<: *quickClean
+        crc: 0x8D5E43B0
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'Earrings Set1.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11130' ]
     dirty:
-      - crc: 0x5d8a9fdb
-        <<: *dirtyPlugin
+      # v1.5
+      - <<: *quickClean
+        crc: 0x5D8A9FDB
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.5 - after QAC
+      - crc: 0x60C1135E
+        util: 'TES5Edit v4.0.2j'
   - name: 'HN66s_Earrings_1.5_DV.esp'
     req:
       - 'Earrings Set1.esp'
   - name: 'Ebonita.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8056' ]
     dirty:
-      - crc: 0xcd413a55
-        <<: *dirtyPlugin
-        udr: 28
+      # v1.0
+      - <<: *quickClean
+        crc: 0xCD413A55
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        udr: 9
   - name: 'Ebony Bow & Blade.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27433' ]
     dirty:
-      - crc: 0x653d7cb4
-        <<: *dirtyPlugin
+      # v2
+      - <<: *quickClean
+        crc: 0x653D7CB4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
+    clean:
+      # v2 - after QAC
+      - crc: 0x4AE01987
+        util: 'TES5Edit v4.0.2j'
   - name: 'EK_RingLimiter.esp'
     req:
       - *SKSE
   - name: 'elementalshield.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/41297' ]
     dirty:
-      - crc: 0xa6122f10
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xD21D4925
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 1
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x3D090243
+        util: 'TES5Edit v4.0.2j'
   - name: 'Elgars Silver Emporium -Weapon Set-.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/28961' ]
     dirty:
-      - crc: 0xd060543f
-        <<: *dirtyPlugin
-        udr: 1
+      # v0.8
+      - <<: *quickClean
+        crc: 0xD060543F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v0.8 - after QAC
+      - crc: 0xEF528F89
+        util: 'TES5Edit v4.0.2j'
   - name: 'EliteRogueArmour.esp'
     url:
       - 'https://www.nexusmods.com/skyrim/mods/30189'
       - 'https://www.nexusmods.com/skyrim/mods/35682'
       - 'https://www.nexusmods.com/skyrim/mods/37111'
     dirty:
-      - crc: 0xecc16558
-        <<: *dirtyPlugin
+      # 30189 - v1.11 && 37111 - v1.0 & v1.1
+      - <<: *quickClean
+        crc: 0x0B645CDF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+      # 35682 - v1.2
+      - <<: *quickClean
+        crc: 0xA7D9D9D4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # 35682 - v1.1
+      - <<: *quickClean
+        crc: 0x4358CFD8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      # 30189 - v1.11 && 37111 - v1.0 & v1.1 - after QAC
+      - crc: 0xAD12AA47
+        util: 'TES5Edit v4.0.2j'
+      # 35682 - v1.2 - after QAC
+      - crc: 0xE5C27125
+        util: 'TES5Edit v4.0.2j'
+      # 35682 - v1.1 - after QAC
+      - crc: 0xF957F939
+        util: 'TES5Edit v4.0.2j'
   - name: 'Empowered Archmage Robes.esp'
     tag: [ Relev ]
   - name: 'EnchantableDPMask.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11611' ]
     dirty:
-      - crc: 0xae40b146
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0xAE40B146
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
   - name: 'EngineerOutfit.esp'
     msg:
@@ -9141,9 +9221,23 @@ plugins:
   - name: 'Equipping Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/49784' ]
     dirty:
-      - crc: 0x42e067f8
-        <<: *dirtyPlugin
-        itm: 11
+      # v3.13
+      - <<: *quickClean
+        crc: 0xA2313F69
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+      # v4.25
+      - <<: *quickClean
+        crc: 0x42E067F8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v3.13 - after QAC
+      - crc: 0x052D4BE2
+        util: 'TES5Edit v4.0.2j'
+      # 4.25 - after QAC
+      - crc: 0xDF5214F4
+        util: 'TES5Edit v4.0.2j'
   - name: 'EternalShineArmorAndWeapons.esp'
     msg:
       - <<: *fixedPluginOutSub
@@ -9182,9 +9276,15 @@ plugins:
   - name: 'FalchionSword.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19110' ]
     dirty:
-      - crc: 0xcf7ad7c4
-        <<: *dirtyPlugin
-        itm: 6
+      # v1.01
+      - <<: *quickClean
+        crc: 0xCF7AD7C4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
+    clean:
+      # v1.01 - after QAC
+      - crc: 0x35124F02
+        util: 'TES5Edit v4.0.2j'
   - name: 'Faleria.esp'
     dirty:
       - crc: 0xd624babc
@@ -9194,9 +9294,15 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/16050' ]
     tag: [ Relev ]
     dirty:
-      - crc: 0x109f7c23
-        <<: *dirtyPlugin
+      # v2.3
+      - <<: *quickClean
+        crc: 0x109F7C23
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v2.3 - after QAC
+      - crc: 0x836BC1D8
+        util: 'TES5Edit v4.0.2j'
   - name: 'FlameAtronachArmor.esp'
     msg:
       - *requiresCBBE
@@ -9210,9 +9316,15 @@ plugins:
   - name: 'Fletching.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9761' ]
     dirty:
-      - crc: 0xb2669e47
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xB2669E47
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x04F499E2
+        util: 'TES5Edit v4.0.2j'
   - name: 'Footwear OE.esp'
     msg: [ *requiresUNP ]
   - name: 'fox(\d\d?)[^51-56] Armor\.esp' #up to fox50 for FoxMergedv2.6(checksumofesp,2E996104)
@@ -9246,12 +9358,18 @@ plugins:
   - name: 'Ghosu - Project Flintlock.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/26653' ]
     dirty:
-      - crc: 0xee1910e
-        <<: *dirtyPlugin
-        itm: 4
-      - crc: 0x3d18c33f
-        <<: *dirtyPlugin
-        itm: 7
+      # v1.3 - Main
+      - <<: *quickClean
+        crc: 0x3D18C33F
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+    clean:
+      # v1.3 - Main - after QAC
+      - crc: 0x1435A0C0
+        util: 'TES5Edit v4.0.2j'
+      # v1.3 Cleaned
+      - crc: 0x2A1483ED
+        util: 'TES5Edit v4.0.2j'
   - name: 'Glass Variants.esp'
     msg:
       - <<: *alreadyInAmidianBornContentAddon
@@ -9278,9 +9396,15 @@ plugins:
   - name: 'Guardianoftime.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22008' ]
     dirty:
-      - crc: 0xe05797b
-        <<: *dirtyPlugin
-        itm: 6
+      # v1
+      - <<: *quickClean
+        crc: 0x0E05797B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v1 - after QAC
+      - crc: 0xE2FA24ED
+        util: 'TES5Edit v4.0.2j'
   - name: 'Hana.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
@@ -24200,13 +24324,6 @@ plugins:
   - name: 'df127expertsmithing.esp'
     dirty:
       - crc: 0xb7d4ac8e
-        <<: *dirtyPlugin
-        itm: 9
-  - name: 'DwemerBombs.esp'
-    inc:
-      - 'DwemerBombsNoPerkTree.esp'
-    dirty:
-      - crc: 0xd7bb72c4
         <<: *dirtyPlugin
         itm: 9
   - name: 'Improved Lower Level Smithing.esp'
