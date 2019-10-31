@@ -9445,9 +9445,15 @@ plugins:
   - name: 'HeavyBows.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19396' ]
     dirty:
-      - crc: 0x3d45749
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0x03D45749
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x1403C50E
+        util: 'TES5Edit v4.0.2j'
   - name: 'HedgeKnight.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13961' ]
     tag:
