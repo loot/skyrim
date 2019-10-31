@@ -9516,9 +9516,15 @@ plugins:
   - name: 'Holynegociator.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17905' ]
     dirty:
-      - crc: 0xd5e4880b
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0xD5E4880B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x4C069A1E
+        util: 'TES5Edit v4.0.2j'
   - name: 'hothtrooper44_ArmorCompilation.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19733' ]
     msg:
