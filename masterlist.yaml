@@ -9811,9 +9811,23 @@ plugins:
   - name: 'JoOsSkyrimKnightlyArmory.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20618' ]
     dirty:
-      - crc: 0xb77d7435
-        <<: *dirtyPlugin
-        itm: 10
+      # v1.1
+      - <<: *quickClean
+        crc: 0xB77D7435
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+      # v1.1a
+      - <<: *quickClean
+        crc: 0x4CE34157
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x63E96310
+        util: 'TES5Edit v4.0.2j'
+      # v1.1a - after QAC
+      - crc: 0x5EE36115
+        util: 'TES5Edit v4.0.2j'
   - name: 'JSwords.esp'
     msg: [ *obsolete ]
   - name: 'JSwordsDistributionBalancePlugin.esp'
