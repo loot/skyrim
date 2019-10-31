@@ -10033,17 +10033,25 @@ plugins:
   - name: 'lilithssickle_2_0.esp'
     msg: [ *obsolete ]
   - name: 'lilithssickle_2_1.esp'
+    msg: [ *obsolete ]
+  - name: 'lilithssickle.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22368' ]
     dirty:
-      - crc: 0x78270f6e
-        <<: *dirtyPlugin
+      # v3.0
+      - <<: *quickClean
+        crc: 0xFF8890BC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v3.0 - after QAC
+      - crc: 0xF0A557CD
+        util: 'TES5Edit v4.0.2j'
   - name: 'lilithsslayer.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24079' ]
-    dirty:
-      - crc: 0xfc6760f5
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v3.0
+      - crc: 0xFC6760F5
+        util: 'TES5Edit v4.0.2j'
   - name: 'loners_sword.esp'
     msg:
       - <<: *fixedPluginOutSub
@@ -10054,52 +10062,123 @@ plugins:
       - Delev
       - Relev
     dirty:
-      - crc: 0xda349a69
-        <<: *dirtyPlugin
-        itm: 7
-        udr: 16
+      # v5.2
+      - <<: *quickClean
+        crc: 0x056DB392
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 25
+        udr: 22
+    clean:
+      # v5.2 - after QAC
+      - crc: 0x5A5B15C0
+        util: 'TES5Edit v4.0.2j'
   - name: 'LongbowsDG.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29950' ]
     dirty:
-      - crc: 0xbdb66ab4
-        <<: *dirtyPlugin
-        itm: 5
+      # v5.2
+      - <<: *quickClean
+        crc: 0xA0164A16
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+        udr: 11
+    clean:
+      # v5.2 - after QAC
+      - crc: 0x4649CA88
+        util: 'TES5Edit v4.0.2j'
+  - name: 'LongbowsDB.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29950' ]
+    dirty:
+      # v5.2
+      - <<: *quickClean
+        crc: 0xE7C37B02
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+    clean:
+      # v5.2 - after QAC
+      - crc: 0x84580FCC
+        util: 'TES5Edit v4.0.2j'
+  - name: 'LongbowsPerks.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29950' ]
+    dirty:
+      # v5.2
+      - <<: *quickClean
+        crc: 0xE9F64015
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      # v5.2 - after QAC
+      - crc: 0x9F72C8EF
+        util: 'TES5Edit v4.0.2j'
+  - name: 'Longbows&Crossbows.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29950' ]
+    clean:
+      # v5.2
+      - crc: 0x62DC4432
+        util: 'TES5Edit v4.0.2j'
   - name: 'Lore Weapon Expansion.esp'
     tag:
       - Delev
       - Relev
   - name: 'LostLongSwords.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/26261' ]
-    dirty:
-      - crc: 0x8da6aee2
-        <<: *dirtyPlugin
-        itm: 9
+    clean:
+      # v1.1 - 1-HANDED
+      - crc: 0x49694961
+        util: 'TES5Edit v4.0.2j'
+      # v1.1 - 2-HANDED
+      - crc: 0x36D883F2
+        util: 'TES5Edit v4.0.2j'
   - name: 'LPotD Armor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24253' ]
-    dirty:
-      - crc: 0x550f86d
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      # v2.3a
+      - crc: 0x0550F86D
+        util: 'TES5Edit v4.0.2j'
   - name: 'LpotDHorse.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24253' ]
     dirty:
-      - crc: 0xf8e960cf
-        <<: *dirtyPlugin
+      # v2.3a
+      - <<: *quickClean
+        crc: 0xF8E960CF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v2.3a - after QAC
+      - crc: 0x31BBA90F
+        util: 'TES5Edit v4.0.2j'
   - name: 'LSB_BattleHammersV6.esp'
     tag: [ Delev ]
   - name: 'Magicka Sabers.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/3174' ]
     dirty:
-      - crc: 0x118a2015
-        <<: *dirtyPlugin
+      # v0.3
+      - <<: *quickClean
+        crc: 0x118A2015
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Magicka Sabers expanded.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10517' ]
+    msg: [ *obsolete ]
+  - name: 'Magicka Sabers Crystal.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10517' ]
     dirty:
-      - crc: 0xf9d0688
-        <<: *dirtyPlugin
+      # v3.0
+      - <<: *quickClean
+        crc: 0x270E9F68
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+      # v5.5
+      - <<: *quickClean
+        crc: 0x7E9E0DAF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v3.0 - after QAC
+      - crc: 0xE11B9012
+        util: 'TES5Edit v4.0.2j'
+      # v5.5 - after QAC
+      - crc: 0x076C6DAF
+        util: 'TES5Edit v4.0.2j'
   - name: 'magna carta armor.esp'
     dirty:
       - crc: 0x7c8f5058
@@ -10133,10 +10212,10 @@ plugins:
         udr: 2
   - name: 'mancika_templarset.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25642' ]
-    dirty:
-      - crc: 0xcbad4542
-        <<: *dirtyPlugin
-        itm: 1
+    clean:
+      # v1.7
+      - crc: 0x337CDA4E
+        util: 'TES5Edit v4.0.2j'
   - name: 'MapTomes.esp'
     msg:
       - <<: *obsolete
@@ -10191,9 +10270,15 @@ plugins:
   - name: 'monster_hunter.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/6429' ]
     dirty:
-      - crc: 0xa8a0c107
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xA8A0C107
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x25ECD084
+        util: 'TES5Edit v4.0.2j'
   - name: 'Monys Portable Crafting Equipment.esp'
     msg:
       - <<: *corrupt
@@ -10265,13 +10350,24 @@ plugins:
   - name: 'NewBladesArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15735' ]
     dirty:
-      - crc: 0x56666897
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0x6ee961f2
-        <<: *dirtyPlugin
+      # v1.2 - Sky Haven Temple
+      - <<: *quickClean
+        crc: 0x6EE961F2
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
         udr: 20
+      # v1.2 - Skyforge
+      - <<: *quickClean
+        crc: 0x56666897
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v1.2 - Sky Haven Temple - after QAC
+      - crc: 0x32431842
+        util: 'TES5Edit v4.0.2j'
+      # v1.2 - Skyforge - after QAC
+      - crc: 0xC0B6FAB1
+        util: 'TES5Edit v4.0.2j'
   - name: 'NewmillerCasualBikiniUNP2.esp'
     msg:
       - type: say
@@ -10340,9 +10436,15 @@ plugins:
   - name: 'NightingaleHeavyHelmet.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8570' ]
     dirty:
-      - crc: 0x62b77116
-        <<: *dirtyPlugin
-        udr: 5
+      # Final
+      - <<: *quickClean
+        crc: 0x62B77116
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      # Final - after QAC
+      - crc: 0x3283DCB9
+        util: 'TES5Edit v4.0.2j'
   - name: 'nightingalevoidarmor.esp'
     dirty:
       - crc: 0x143a972
@@ -10366,9 +10468,12 @@ plugins:
         condition: 'checksum("NiuNiu.esp",8E62670B)'
   - name: 'NobleFemaleClothes.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/6544' ]
+    msg: [ *corrupt ]
     dirty:
-      - crc: 0xb65d45bc
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xB65D45BC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'SC_NobleDresses.esp'
     req:
@@ -10382,9 +10487,15 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe Nordic Conqueror Armor.esp") or file("SkyRe Nordic Conqueror Armor - Realistic.esp")'
     dirty:
-      - crc: 0x2dfebd42
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x2DFEBD42
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x9B1F6BE8
+        util: 'TES5Edit v4.0.2j'
   - name: 'NordLederruestung.esp'
     inc:
       - 'NordLeatherArmor.esp'
@@ -10397,9 +10508,15 @@ plugins:
   - name: 'OdemsSakabato.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22073' ]
     dirty:
-      - crc: 0x2a48fcf
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0x02A48FCF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x1284E460
+        util: 'TES5Edit v4.0.2j'
   - name: 'OldKnightShield.esp'
     tag: [ Relev ]
   - name: 'Omegared99-Compilation.esp'
