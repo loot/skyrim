@@ -9860,9 +9860,15 @@ plugins:
   - name: 'katana.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27205' ]
     dirty:
-      - crc: 0xa48ab749
-        <<: *dirtyPlugin
-        itm: 2
+      # Main
+      - <<: *quickClean
+        crc: 0xA48AB749
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # Main - after QAC
+      - crc: 0xD3164A71
+        util: 'TES5Edit v4.0.2j'
   - name: 'Ket_WEAPONIZER.esp'
     tag:
       - Delev
