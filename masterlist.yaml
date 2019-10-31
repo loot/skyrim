@@ -9490,12 +9490,23 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe Heroic Dwarven Armor and Weapon Set.esp")'
     dirty:
-      - crc: 0x301de0e
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x0301DE0E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-      - crc: 0xbcc4742a
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xBCC4742A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x034B8534
+        util: 'TES5Edit v4.0.2j'
+      # v1.1 - after QAC
+      - crc: 0xBBED6E01
+        util: 'TES5Edit v4.0.2j'
   - name: 'HmmWhatToWear.esp'
     msg: [ *requiresUNP ]
   - name: 'HmmWhatToWearMerged.esp'
