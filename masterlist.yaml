@@ -9433,9 +9433,15 @@ plugins:
   - name: 'headtaker.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29360' ]
     dirty:
-      - crc: 0xd43e7148
-        <<: *dirtyPlugin
+      # v12
+      - <<: *quickClean
+        crc: 0x31A503EB
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
+    clean:
+      # v12 - after QAC
+      - crc: 0xDD222A32
+        util: 'TES5Edit v4.0.2j'
   - name: 'HeavyBows.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19396' ]
     dirty:
