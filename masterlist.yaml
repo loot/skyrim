@@ -10436,9 +10436,15 @@ plugins:
   - name: 'NightingaleHeavyHelmet.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8570' ]
     dirty:
-      - crc: 0x62b77116
-        <<: *dirtyPlugin
-        udr: 5
+      # Final
+      - <<: *quickClean
+        crc: 0x62B77116
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+    clean:
+      # Final - after QAC
+      - crc: 0x3283DCB9
+        util: 'TES5Edit v4.0.2j'
   - name: 'nightingalevoidarmor.esp'
     dirty:
       - crc: 0x143a972
