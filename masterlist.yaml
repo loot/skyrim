@@ -9409,12 +9409,23 @@ plugins:
     msg:
       - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Hana.esp",C86C77D9)'
+  - name: 'Hartherz1.2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/7558' ]
+    msg:
+      - <<: *corrupt
+        condition: 'checksum("Hartherz1.2.esp",13F0CA6A)'
   - name: 'HartherzEnglish.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/7558' ]
     dirty:
-      - crc: 0xd1207154
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0xD1207154
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.3 - after QAC
+      - crc: 0xB654AF0E
+        util: 'TES5Edit v4.0.2j'
   - name: 'HBetterBows.esp'
     tag:
       - name: Deactivate
@@ -9422,31 +9433,55 @@ plugins:
   - name: 'headtaker.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29360' ]
     dirty:
-      - crc: 0xd43e7148
-        <<: *dirtyPlugin
+      # v12
+      - <<: *quickClean
+        crc: 0x31A503EB
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
+    clean:
+      # v12 - after QAC
+      - crc: 0xDD222A32
+        util: 'TES5Edit v4.0.2j'
   - name: 'HeavyBows.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19396' ]
     dirty:
-      - crc: 0x3d45749
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0x03D45749
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x1403C50E
+        util: 'TES5Edit v4.0.2j'
   - name: 'HedgeKnight.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13961' ]
     tag:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_HedgeKnightArmor_1.esp") or file("SG_HothTrooper.esp")'
     dirty:
-      - crc: 0xa7a55ab3
-        <<: *dirtyPlugin
+      # v4
+      - <<: *quickClean
+        crc: 0xA7A55AB3
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v4 - after QAC
+      - crc: 0x7603E511
+        util: 'TES5Edit v4.0.2j'
   - name: 'HellionArrows_v1.2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12293' ]
     dirty:
-      - crc: 0xb83db305
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xB83DB305
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
         udr: 7
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x2C3E218F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Henrys Ring of Light v1-0.esp'
     msg: [ *obsolete ]
   - name: 'HeroicDwarven.esp'
@@ -9455,12 +9490,23 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe Heroic Dwarven Armor and Weapon Set.esp")'
     dirty:
-      - crc: 0x301de0e
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x0301DE0E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-      - crc: 0xbcc4742a
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xBCC4742A
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x034B8534
+        util: 'TES5Edit v4.0.2j'
+      # v1.1 - after QAC
+      - crc: 0xBBED6E01
+        util: 'TES5Edit v4.0.2j'
   - name: 'HmmWhatToWear.esp'
     msg: [ *requiresUNP ]
   - name: 'HmmWhatToWearMerged.esp'
@@ -9470,10 +9516,22 @@ plugins:
   - name: 'Holynegociator.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17905' ]
     dirty:
-      - crc: 0xd5e4880b
-        <<: *dirtyPlugin
+      # v2.0
+      - <<: *quickClean
+        crc: 0xD5E4880B
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
-  - name: 'hothtrooper44_ArmorCompilation.esp'
+    clean:
+      # v2.0 - after QAC
+      - crc: 0x4C069A1E
+        util: 'TES5Edit v4.0.2j'
+  - name: 'Hothtrooper44_Armor_Ecksstra.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19733' ]
+    clean:
+      # v8
+      - crc: 0x344E6933
+        util: 'TES5Edit v4.0.2j'
+  - name: 'Hothtrooper44_ArmorCompilation.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19733' ]
     msg:
       - type: warn
@@ -9494,29 +9552,10 @@ plugins:
         condition: 'file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
       - name: Relev
         condition: 'not file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
-    dirty:
-      - crc: 0x1b01c914
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0x983EFB9E
-        <<: *dirtyPlugin
-        itm: 2
-      - crc: 0x306605a4
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0x53E0D03D
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0x96B29C9D
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0xf95218fd
-        <<: *dirtyPlugin
-        itm: 7
     clean:
-      # version: 8.0
+      # v8
       - crc: 0x0F782AFB
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.2j'
   - name: 'SkyRe_Plugin_ImmersiveArmor_2.esp'
     msg: [ *installOriginalResources ]
   - name: 'Level List - Immersive Armor.esp'
@@ -9530,25 +9569,38 @@ plugins:
   - name: 'HotProperty.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22812' ]
     dirty:
-      - crc: 0x4d56694
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0xcf3d3cf6
-        <<: *dirtyPlugin
-        itm: 4
-      - crc: 0xe6eab3a8
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xE6EAB3A8
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x863459C4
+        util: 'TES5Edit v4.0.2j'
+      # v1.6
+      - crc: 0xEB5A871E
+        util: 'TES5Edit v4.0.2j'
   - name: 'HunEbonyArmorStandalone.esp'
     msg:
       - <<: *corrupt
         condition: 'checksum("HunEbonyArmorStandalone.esp",F7132DAC)'
   - name: 'HunEbonyWeaponsStandalone.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18196' ]
+    msg:
+      # v1.58
+      - <<: *corrupt
+        condition: 'checksum("HunEbonyWeaponsStandalone.esp",F7132DAC)'
     dirty:
-      - crc: 0x49fa902d
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0x49FA902D
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 11
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x0972EEC6
+        util: 'TES5Edit v4.0.2j'
   - name: 'hunnicarmors.esp'
     msg:
       - <<: *corrupt
@@ -9740,9 +9792,15 @@ plugins:
   - name: 'Jack of Blades'' Armour.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13752' ]
     dirty:
-      - crc: 0x8dd4b708
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0x8DD4B708
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x8592F8FA
+        util: 'TES5Edit v4.0.2j'
   - name: 'Jacksh.+\.esp'
     msg:
       - <<: *alreadyInX
@@ -9753,9 +9811,23 @@ plugins:
   - name: 'JoOsSkyrimKnightlyArmory.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20618' ]
     dirty:
-      - crc: 0xb77d7435
-        <<: *dirtyPlugin
-        itm: 10
+      # v1.1
+      - <<: *quickClean
+        crc: 0xB77D7435
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+      # v1.1a
+      - <<: *quickClean
+        crc: 0x4CE34157
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x63E96310
+        util: 'TES5Edit v4.0.2j'
+      # v1.1a - after QAC
+      - crc: 0x5EE36115
+        util: 'TES5Edit v4.0.2j'
   - name: 'JSwords.esp'
     msg: [ *obsolete ]
   - name: 'JSwordsDistributionBalancePlugin.esp'
@@ -9788,9 +9860,15 @@ plugins:
   - name: 'katana.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27205' ]
     dirty:
-      - crc: 0xa48ab749
-        <<: *dirtyPlugin
-        itm: 2
+      # Main
+      - <<: *quickClean
+        crc: 0xA48AB749
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # Main - after QAC
+      - crc: 0xD3164A71
+        util: 'TES5Edit v4.0.2j'
   - name: 'Ket_WEAPONIZER.esp'
     tag:
       - Delev
@@ -9877,9 +9955,15 @@ plugins:
       - <<: *obsolete
         condition: 'checksum("LC_ArcherEliteArmor.esp",1651D217)'
     dirty:
-      - crc: 0x9a81fb2e
-        <<: *dirtyPlugin
-        itm: 5
+      # v1.1
+      - <<: *quickClean
+        crc: 0x9A81FB2E
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
+    clean:
+      # v1.1 - after QAC
+      - crc: 0x8084FB46
+        util: 'TES5Edit v4.0.2j'
   - name: 'LC_AssassinOfShadownArmor.esp'
     msg: [ *requiresLadyBody ]
   - name: 'LeatherBackpackBlack.*\.esp'
@@ -9935,9 +10019,15 @@ plugins:
   - name: 'lilithsobliterator3_0.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23733' ]
     dirty:
-      - crc: 0x747ed3f4
-        <<: *dirtyPlugin
+      # v3.0
+      - <<: *quickClean
+        crc: 0x747ED3F4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v3.0 - after QAC
+      - crc: 0xA0565DAC
+        util: 'TES5Edit v4.0.2j'
   - name: 'lilithssickle_axe_1.esp'
     msg: [ *obsolete ]
   - name: 'lilithssickle_2_0.esp'
@@ -9954,11 +10044,6 @@ plugins:
       - crc: 0xfc6760f5
         <<: *dirtyPlugin
         itm: 2
-  - name: 'lolilabs.esp'
-    dirty:
-      - crc: 0xe65e3bc1
-        <<: *dirtyPlugin
-        itm: 8
   - name: 'loners_sword.esp'
     msg:
       - <<: *fixedPluginOutSub
