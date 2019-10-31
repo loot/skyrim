@@ -10270,9 +10270,15 @@ plugins:
   - name: 'monster_hunter.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/6429' ]
     dirty:
-      - crc: 0xa8a0c107
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xA8A0C107
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x25ECD084
+        util: 'TES5Edit v4.0.2j'
   - name: 'Monys Portable Crafting Equipment.esp'
     msg:
       - <<: *corrupt
