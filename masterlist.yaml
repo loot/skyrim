@@ -10350,13 +10350,24 @@ plugins:
   - name: 'NewBladesArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15735' ]
     dirty:
-      - crc: 0x56666897
-        <<: *dirtyPlugin
-        itm: 5
-      - crc: 0x6ee961f2
-        <<: *dirtyPlugin
+      # v1.2 - Sky Haven Temple
+      - <<: *quickClean
+        crc: 0x6EE961F2
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
         udr: 20
+      # v1.2 - Skyforge
+      - <<: *quickClean
+        crc: 0x56666897
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      # v1.2 - Sky Haven Temple - after QAC
+      - crc: 0x32431842
+        util: 'TES5Edit v4.0.2j'
+      # v1.2 - Skyforge - after QAC
+      - crc: 0xC0B6FAB1
+        util: 'TES5Edit v4.0.2j'
   - name: 'NewmillerCasualBikiniUNP2.esp'
     msg:
       - type: say
