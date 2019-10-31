@@ -10019,9 +10019,15 @@ plugins:
   - name: 'lilithsobliterator3_0.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23733' ]
     dirty:
-      - crc: 0x747ed3f4
-        <<: *dirtyPlugin
+      # v3.0
+      - <<: *quickClean
+        crc: 0x747ED3F4
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v3.0 - after QAC
+      - crc: 0xA0565DAC
+        util: 'TES5Edit v4.0.2j'
   - name: 'lilithssickle_axe_1.esp'
     msg: [ *obsolete ]
   - name: 'lilithssickle_2_0.esp'
