@@ -10033,11 +10033,19 @@ plugins:
   - name: 'lilithssickle_2_0.esp'
     msg: [ *obsolete ]
   - name: 'lilithssickle_2_1.esp'
+    msg: [ *obsolete ]
+  - name: 'lilithssickle.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22368' ]
     dirty:
-      - crc: 0x78270f6e
-        <<: *dirtyPlugin
+      # v3.0
+      - <<: *quickClean
+        crc: 0xFF8890BC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v3.0 - after QAC
+      - crc: 0xF0A557CD
+        util: 'TES5Edit v4.0.2j'
   - name: 'lilithsslayer.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24079' ]
     dirty:
