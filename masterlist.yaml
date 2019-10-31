@@ -10158,10 +10158,27 @@ plugins:
         itm: 1
   - name: 'Magicka Sabers expanded.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10517' ]
+    msg: [ *obsolete ]
+  - name: 'Magicka Sabers Crystal.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/10517' ]
     dirty:
-      - crc: 0xf9d0688
-        <<: *dirtyPlugin
+      # v3.0
+      - <<: *quickClean
+        crc: 0x270E9F68
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+      # v5.5
+      - <<: *quickClean
+        crc: 0x7E9E0DAF
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v3.0 - after QAC
+      - crc: 0xE11B9012
+        util: 'TES5Edit v4.0.2j'
+      # v5.5 - after QAC
+      - crc: 0x076C6DAF
+        util: 'TES5Edit v4.0.2j'
   - name: 'magna carta armor.esp'
     dirty:
       - crc: 0x7c8f5058
