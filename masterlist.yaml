@@ -10468,9 +10468,12 @@ plugins:
         condition: 'checksum("NiuNiu.esp",8E62670B)'
   - name: 'NobleFemaleClothes.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/6544' ]
+    msg: [ *corrupt ]
     dirty:
-      - crc: 0xb65d45bc
-        <<: *dirtyPlugin
+      # v1.1
+      - <<: *quickClean
+        crc: 0xB65D45BC
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'SC_NobleDresses.esp'
     req:
