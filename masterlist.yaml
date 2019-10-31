@@ -9460,9 +9460,15 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_HedgeKnightArmor_1.esp") or file("SG_HothTrooper.esp")'
     dirty:
-      - crc: 0xa7a55ab3
-        <<: *dirtyPlugin
+      # v4
+      - <<: *quickClean
+        crc: 0xA7A55AB3
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      # v4 - after QAC
+      - crc: 0x7603E511
+        util: 'TES5Edit v4.0.2j'
   - name: 'HellionArrows_v1.2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12293' ]
     dirty:
