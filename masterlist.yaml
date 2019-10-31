@@ -9472,10 +9472,16 @@ plugins:
   - name: 'HellionArrows_v1.2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12293' ]
     dirty:
-      - crc: 0xb83db305
-        <<: *dirtyPlugin
+      # v1.2
+      - <<: *quickClean
+        crc: 0xB83DB305
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
         udr: 7
+    clean:
+      # v1.2 - after QAC
+      - crc: 0x2C3E218F
+        util: 'TES5Edit v4.0.2j'
   - name: 'Henrys Ring of Light v1-0.esp'
     msg: [ *obsolete ]
   - name: 'HeroicDwarven.esp'
