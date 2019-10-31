@@ -10487,9 +10487,15 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe Nordic Conqueror Armor.esp") or file("SkyRe Nordic Conqueror Armor - Realistic.esp")'
     dirty:
-      - crc: 0x2dfebd42
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0x2DFEBD42
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x9B1F6BE8
+        util: 'TES5Edit v4.0.2j'
   - name: 'NordLederruestung.esp'
     inc:
       - 'NordLeatherArmor.esp'
