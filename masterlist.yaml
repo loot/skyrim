@@ -10589,9 +10589,15 @@ plugins:
   - name: 'PotemasWolfblade.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/26332' ]
     dirty:
-      - crc: 0x2559f5c8
-        <<: *dirtyPlugin
+      # v1.02
+      - <<: *quickClean
+        crc: 0x2559F5C8
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.02 - after QAC
+      - crc: 0x7A7F6BD8
+        util: 'TES5Edit v4.0.2k'
   - name: 'PrvtI_HeavyArmory.esp'
     msg:
       - <<: *alreadyInSkyRe
