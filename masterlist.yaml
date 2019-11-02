@@ -10540,10 +10540,10 @@ plugins:
     tag: [ Relev ]
   - name: 'Orcish Sabre.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25361' ]
-    dirty:
-      - crc: 0x1af00464
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v1.1
+      - crc: 0xA7A9B02E
+        util: 'TES5Edit v4.0.2k'
   - name: 'Oriental Weapon&Armor.esp'
     tag:
       - name: Deactivate
@@ -10555,9 +10555,15 @@ plugins:
   - name: 'Painkiller''s_Hrothmund''s_Axe.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/31116' ]
     dirty:
-      - crc: 0x781b36e
-        <<: *dirtyPlugin
+      # v1.3
+      - <<: *quickClean
+        crc: 0x0781B36E
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 2
+    clean:
+      # v1.3 - after QAC
+      - crc: 0x9A6BC47A
+        util: 'TES5Edit v4.0.2k'
   - name: 'PBGearRings.esp'
     req:
       - *SKSE
@@ -10583,9 +10589,15 @@ plugins:
   - name: 'PotemasWolfblade.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/26332' ]
     dirty:
-      - crc: 0x2559f5c8
-        <<: *dirtyPlugin
+      # v1.02
+      - <<: *quickClean
+        crc: 0x2559F5C8
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v1.02 - after QAC
+      - crc: 0x7A7F6BD8
+        util: 'TES5Edit v4.0.2k'
   - name: 'PrvtI_HeavyArmory.esp'
     msg:
       - <<: *alreadyInSkyRe
@@ -10607,9 +10619,15 @@ plugins:
         type: say
         subs: [ '[Heavy Armory](http://www.nexusmods.com/skyrim/mods/21120)' ]
     dirty:
-      - crc: 0xbaf5e2e4
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xBAF5E2E4
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x07A3E01F
+        util: 'TES5Edit v4.0.2k'
   - name: 'RagnvaldBookFarengar+Ragnvald.esp'
     inc:
       - 'RagnvaldBook.esp'
@@ -10623,10 +10641,16 @@ plugins:
   - name: 'Reaper''s Necroxym Greatsword.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22421' ]
     dirty:
-      - crc: 0xa5a15349
-        <<: *dirtyPlugin
-        itm: 1
+      # v1
+      - <<: *quickClean
+        crc: 0xA5A15349
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
         udr: 3
+    clean:
+      # v1 - after QAC
+      - crc: 0xBCF3C4BF
+        util: 'TES5Edit v4.0.2k'
   - name: 'Redguard Shield.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
@@ -10637,9 +10661,15 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_RedguardKnightArmor_3.esp") or file("SG_HothTrooper.esp")'
     dirty:
-      - crc: 0x8d48f1c3
-        <<: *dirtyPlugin
+      # v6
+      - <<: *quickClean
+        crc: 0x8D48F1C3
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v6 - after QAC
+      - crc: 0x15C7EDBA
+        util: 'TES5Edit v4.0.2k'
   - name: 'RegentSword.esp'
     tag:
       - name: Deactivate
@@ -10664,9 +10694,15 @@ plugins:
   - name: 'RingOFNighteye.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11021' ]
     dirty:
-      - crc: 0xb28a5287
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xB28A5287
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x02FF3946
+        util: 'TES5Edit v4.0.2k'
   - name: 'RingOfTalos.esp'
     msg: [ *corrupt ]
   - name: 'RIP88_Pool_Furniture_Sample.esp'
@@ -10677,9 +10713,15 @@ plugins:
   - name: 'Ritual Armor of Boethiah.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24814' ]
     dirty:
-      - crc: 0xc6bca82f
-        <<: *dirtyPlugin
+      # v4.24
+      - <<: *quickClean
+        crc: 0xC6BCA82F
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v4.24 - after QAC
+      - crc: 0x2653E9ED
+        util: 'TES5Edit v4.0.2k'
   - name: 'RobedSteelPlateArmor.esp'
     inc:
       - 'RobedEbonyArmor.esp'
@@ -10692,20 +10734,37 @@ plugins:
       - crc: 0x355fe880
         <<: *dirtyPlugin
         itm: 2
+  - name: 'Royal Daywalker Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21845' ]
+    clean:
+      # v1
+      - crc: 0xB3EDC5C1
+        util: 'TES5Edit v4.0.2k'
+      # v2
+      - crc: 0x7F8D0D70
+        util: 'TES5Edit v4.0.2k'
   - name: 'Royal Daywalker Armor Hoods.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21845' ]
     dirty:
-      - crc: 0xbe7e3fdd
-        <<: *dirtyPlugin
+      # v1 and v2
+      - <<: *quickClean
+        crc: 0xBE7E3FDD
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 2
   - name: 'Saber Lily - Caliburn Outfit.esp'
     msg: [ *requiresUNP ]
   - name: 'Samurai Light Armors .esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18219' ]
     dirty:
-      - crc: 0x3cf22aae
-        <<: *dirtyPlugin
-        itm: 3
+      # v1.9
+      - <<: *quickClean
+        crc: 0x3CF22AAE
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v1.9 - after QAC
+      - crc: 0x25309237
+        util: 'TES5Edit v4.0.2k'
   - name: 'Sauron Armor.esp'
     msg: [ *corrupt ]
   - name: 'ScarabSilentArchery.esp'
@@ -10716,9 +10775,15 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_Scoiatael Weapons.esp")'
     dirty:
-      - crc: 0x7aa5e3bb
-        <<: *dirtyPlugin
+      # v2.2
+      - <<: *quickClean
+        crc: 0x7AA5E3BB
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v2.2 - after QAC
+      - crc: 0xCF62E72E
+        util: 'TES5Edit v4.0.2k'
   - name: 'seducesets.esp'
     msg:
       - *requiresCBBE
@@ -10767,9 +10832,31 @@ plugins:
       - 'https://www.nexusmods.com/skyrim/mods/18231'
       - 'https://www.nexusmods.com/skyrim/mods/35188'
     dirty:
-      - crc: 0xfd396451
-        <<: *dirtyPlugin
+      # 18231 - Main
+      - <<: *quickClean
+        crc: 0xFD396451
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
+      # 35188 - v1.10 - Main
+      - <<: *quickClean
+        crc: 0x5C5DCCC4
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+      # 35188 - v1.10 - Optional
+      - <<: *quickClean
+        crc: 0xE83A3490
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      # 18231 - Main - after QAC
+      - crc: 0x6AAFE5F0
+        util: 'TES5Edit v4.0.2k'
+      # 35188 - v1.10 - Main - after QAC
+      - crc: 0x29666388
+        util: 'TES5Edit v4.0.2k'
+      # 35188 - v1.10 - Optional - after QAC
+      - crc: 0x24A4B7CC
+        util: 'TES5Edit v4.0.2k'
   - name: 'ShieldsofSkyrimLists.esp'
     inc:
       - 'ShieldsofSkyrim.esp'
@@ -10816,15 +10903,22 @@ plugins:
   - name: 'Skyrim Knights.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/91359' ]
     dirty:
-      - crc: 0x95f4356e
-        <<: *dirtyPlugin
+      - <<: *quickClean
+        crc: 0x9BDCB3DD
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'SlvrbuuMod Dawnguard.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21923' ]
     dirty:
-      - crc: 0xbed6e7d8
-        <<: *dirtyPlugin
-        itm: 2
+      # v2.0.3
+      - <<: *quickClean
+        crc: 0xBED6E7D8
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v2.0.3 - after QAC
+      - crc: 0x372FBEDD
+        util: 'TES5Edit v4.0.2k'
   - name: 'SnowyNightingale.esp'
     msg:
       - <<: *fixedPluginOutSub
@@ -10847,15 +10941,29 @@ plugins:
   - name: 'Space Wiking''s Dwemer Exoskeleton.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19212' ]
     dirty:
-      - crc: 0x4d1f46fa
-        <<: *dirtyPlugin
+      # v5.0 - Skyrim
+      - <<: *quickClean
+        crc: 0x91F7E1D9
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+      # v5.0 - Dawnguard
+      - <<: *quickClean
+        crc: 0x4D1F46FA
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      # v5.0 - Skyrim - after QAC
+      - crc: 0x26A57A6F
+        util: 'TES5Edit v4.0.2k'
+      # v5.0 - Dawnguard - after QAC
+      - crc: 0x2570AD1E
+        util: 'TES5Edit v4.0.2k'
   - name: 'Space Wiking''s The Elementals.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18072' ]
-    dirty:
-      - crc: 0x707fdf2e
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v1.0
+      - crc: 0x707FDF2E
+        util: 'TES5Edit v4.0.2k'
   - name: 'Spear.esp'
     dirty:
       - crc: 0xb5e0566d
@@ -10864,29 +10972,39 @@ plugins:
   - name: 'Spellbreakers.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22090' ]
     dirty:
-      - crc: 0x847D0495
-        <<: *dirtyPlugin
+      # v0.9.2
+      - <<: *quickClean
+        crc: 0x847D0495
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-        udr: 0
-      - crc: 0xb5e0566d
-        <<: *dirtyPlugin
-        itm: 2
+    clean:
+      # v0.9.2 - after QAC
+      - crc: 0x7383C905
+        util: 'TES5Edit v4.0.2k'
   - name: 'SpellbreakersLOREFRIENDLY.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22090' ]
     inc:
       - 'Spellbreakers.esp'
     dirty:
-      - crc: 0xd355a267
-        <<: *dirtyPlugin
+      # v0.9.2
+      - <<: *quickClean
+        crc: 0xD355A267
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Spriggan Armor 2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12101' ]
     msg:
       - *requiresCBBE
     dirty:
-      - crc: 0xc5e7b65b
-        <<: *dirtyPlugin
-        itm: 1
+      # v1.42
+      - <<: *quickClean
+        crc: 0xC5E7B65B
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v1.42 - after QAC
+      - crc: 0x17F43297
+        util: 'TES5Edit v4.0.2k'
   - name: 'spyduckWands.esp'
     req:
       - *SKSE
