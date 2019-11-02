@@ -10694,9 +10694,15 @@ plugins:
   - name: 'RingOFNighteye.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11021' ]
     dirty:
-      - crc: 0xb28a5287
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xB28A5287
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x02FF3946
+        util: 'TES5Edit v4.0.2k'
   - name: 'RingOfTalos.esp'
     msg: [ *corrupt ]
   - name: 'RIP88_Pool_Furniture_Sample.esp'
