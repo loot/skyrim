@@ -10941,9 +10941,23 @@ plugins:
   - name: 'Space Wiking''s Dwemer Exoskeleton.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19212' ]
     dirty:
-      - crc: 0x4d1f46fa
-        <<: *dirtyPlugin
+      # v5.0 - Skyrim
+      - <<: *quickClean
+        crc: 0x91F7E1D9
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+      # v5.0 - Dawnguard
+      - <<: *quickClean
+        crc: 0x4D1F46FA
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      # v5.0 - Skyrim - after QAC
+      - crc: 0x26A57A6F
+        util: 'TES5Edit v4.0.2k'
+      # v5.0 - Dawnguard - after QAC
+      - crc: 0x2570AD1E
+        util: 'TES5Edit v4.0.2k'
   - name: 'Space Wiking''s The Elementals.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18072' ]
     dirty:
