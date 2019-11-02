@@ -10713,9 +10713,15 @@ plugins:
   - name: 'Ritual Armor of Boethiah.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24814' ]
     dirty:
-      - crc: 0xc6bca82f
-        <<: *dirtyPlugin
+      # v4.24
+      - <<: *quickClean
+        crc: 0xC6BCA82F
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+    clean:
+      # v4.24 - after QAC
+      - crc: 0x2653E9ED
+        util: 'TES5Edit v4.0.2k'
   - name: 'RobedSteelPlateArmor.esp'
     inc:
       - 'RobedEbonyArmor.esp'
