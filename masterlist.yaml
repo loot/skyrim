@@ -10775,9 +10775,15 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_Scoiatael Weapons.esp")'
     dirty:
-      - crc: 0x7aa5e3bb
-        <<: *dirtyPlugin
+      # v2.2
+      - <<: *quickClean
+        crc: 0x7AA5E3BB
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v2.2 - after QAC
+      - crc: 0xCF62E72E
+        util: 'TES5Edit v4.0.2k'
   - name: 'seducesets.esp'
     msg:
       - *requiresCBBE
