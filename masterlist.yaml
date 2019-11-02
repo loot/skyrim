@@ -10734,11 +10734,22 @@ plugins:
       - crc: 0x355fe880
         <<: *dirtyPlugin
         itm: 2
+  - name: 'Royal Daywalker Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21845' ]
+    clean:
+      # v1
+      - crc: 0xB3EDC5C1
+        util: 'TES5Edit v4.0.2k'
+      # v2
+      - crc: 0x7F8D0D70
+        util: 'TES5Edit v4.0.2k'
   - name: 'Royal Daywalker Armor Hoods.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21845' ]
     dirty:
-      - crc: 0xbe7e3fdd
-        <<: *dirtyPlugin
+      # v1 and v2
+      - <<: *quickClean
+        crc: 0xBE7E3FDD
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 2
   - name: 'Saber Lily - Caliburn Outfit.esp'
     msg: [ *requiresUNP ]
