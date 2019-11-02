@@ -10756,9 +10756,15 @@ plugins:
   - name: 'Samurai Light Armors .esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18219' ]
     dirty:
-      - crc: 0x3cf22aae
-        <<: *dirtyPlugin
-        itm: 3
+      # v1.9
+      - <<: *quickClean
+        crc: 0x3CF22AAE
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+    clean:
+      # v1.9 - after QAC
+      - crc: 0x25309237
+        util: 'TES5Edit v4.0.2k'
   - name: 'Sauron Armor.esp'
     msg: [ *corrupt ]
   - name: 'ScarabSilentArchery.esp'
