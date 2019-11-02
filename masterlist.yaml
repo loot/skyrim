@@ -10641,10 +10641,16 @@ plugins:
   - name: 'Reaper''s Necroxym Greatsword.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22421' ]
     dirty:
-      - crc: 0xa5a15349
-        <<: *dirtyPlugin
-        itm: 1
+      # v1
+      - <<: *quickClean
+        crc: 0xA5A15349
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
         udr: 3
+    clean:
+      # v1 - after QAC
+      - crc: 0xBCF3C4BF
+        util: 'TES5Edit v4.0.2k'
   - name: 'Redguard Shield.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
