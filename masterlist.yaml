@@ -10996,9 +10996,15 @@ plugins:
     msg:
       - *requiresCBBE
     dirty:
-      - crc: 0xc5e7b65b
-        <<: *dirtyPlugin
-        itm: 1
+      # v1.42
+      - <<: *quickClean
+        crc: 0xC5E7B65B
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+    clean:
+      # v1.42 - after QAC
+      - crc: 0x17F43297
+        util: 'TES5Edit v4.0.2k'
   - name: 'spyduckWands.esp'
     req:
       - *SKSE
