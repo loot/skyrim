@@ -10661,9 +10661,15 @@ plugins:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_RedguardKnightArmor_3.esp") or file("SG_HothTrooper.esp")'
     dirty:
-      - crc: 0x8d48f1c3
-        <<: *dirtyPlugin
+      # v6
+      - <<: *quickClean
+        crc: 0x8D48F1C3
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+    clean:
+      # v6 - after QAC
+      - crc: 0x15C7EDBA
+        util: 'TES5Edit v4.0.2k'
   - name: 'RegentSword.esp'
     tag:
       - name: Deactivate
