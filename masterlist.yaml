@@ -10832,9 +10832,31 @@ plugins:
       - 'https://www.nexusmods.com/skyrim/mods/18231'
       - 'https://www.nexusmods.com/skyrim/mods/35188'
     dirty:
-      - crc: 0xfd396451
-        <<: *dirtyPlugin
+      # 18231 - Main
+      - <<: *quickClean
+        crc: 0xFD396451
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
+      # 35188 - v1.10 - Main
+      - <<: *quickClean
+        crc: 0x5C5DCCC4
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+      # 35188 - v1.10 - Optional
+      - <<: *quickClean
+        crc: 0xE83A3490
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      # 18231 - Main - after QAC
+      - crc: 0x6AAFE5F0
+        util: 'TES5Edit v4.0.2k'
+      # 35188 - v1.10 - Main - after QAC
+      - crc: 0x29666388
+        util: 'TES5Edit v4.0.2k'
+      # 35188 - v1.10 - Optional - after QAC
+      - crc: 0x24A4B7CC
+        util: 'TES5Edit v4.0.2k'
   - name: 'ShieldsofSkyrimLists.esp'
     inc:
       - 'ShieldsofSkyrim.esp'
