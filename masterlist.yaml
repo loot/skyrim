@@ -10619,9 +10619,15 @@ plugins:
         type: say
         subs: [ '[Heavy Armory](http://www.nexusmods.com/skyrim/mods/21120)' ]
     dirty:
-      - crc: 0xbaf5e2e4
-        <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
+        crc: 0xBAF5E2E4
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v1.0 - after QAC
+      - crc: 0x07A3E01F
+        util: 'TES5Edit v4.0.2k'
   - name: 'RagnvaldBookFarengar+Ragnvald.esp'
     inc:
       - 'RagnvaldBook.esp'
