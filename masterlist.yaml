@@ -10910,9 +10910,15 @@ plugins:
   - name: 'SlvrbuuMod Dawnguard.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21923' ]
     dirty:
-      - crc: 0xbed6e7d8
-        <<: *dirtyPlugin
-        itm: 2
+      # v2.0.3
+      - <<: *quickClean
+        crc: 0xBED6E7D8
+        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+    clean:
+      # v2.0.3 - after QAC
+      - crc: 0x372FBEDD
+        util: 'TES5Edit v4.0.2k'
   - name: 'SnowyNightingale.esp'
     msg:
       - <<: *fixedPluginOutSub
