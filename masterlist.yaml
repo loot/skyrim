@@ -6775,6 +6775,8 @@ plugins:
   - name: 'riverwood addons.esp'
     msg: [ *obsolete ]
   - name: 'riverwood flora.esp'
+    # Riverwood Enhanced R6
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8193' ]
     dirty:
       - crc: 0x63725578
         <<: *dirtyPlugin
@@ -8438,11 +8440,6 @@ plugins:
     tag:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_BowofIorveth_1.2.esp")'
-  - name: 'bow of shadows.esp'
-    dirty:
-      - crc: 0x24d10a92
-        <<: *dirtyPlugin
-        itm: 4
   - name: 'Bronze Arrows -Standalone-.esp'
     tag: [ Delev ]
   - name: 'Bulwark of Azzinoth.esp'
@@ -8733,11 +8730,6 @@ plugins:
         condition: 'file("SkyRe_Plugin_DaggerCraft_1.3.esp") or file("SkyRe_Plugin_DaggerCraft.esp")'
   - name: 'Dalls_Skelos_Weapons.esp'
     tag: [ Relev ]
-  - name: 'Dark Knight.esp'
-    dirty:
-      - crc: 0x4c5e02fc
-        <<: *dirtyPlugin
-        itm: 5
   - name: 'DarkImperial.esp'
     msg: [ *obsolete ]
   - name: 'selobl_DarkLillith.esp'
@@ -10879,14 +10871,6 @@ plugins:
       - *requiresCBBE
       - <<: *fixedPluginOutSub
         condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
-  - name: 'skinripper essentials kit.esp'
-    tag:
-      - Delev
-      - Relev
-    dirty:
-      - crc: 0xe29a7006
-        <<: *dirtyPlugin
-        itm: 11
   - name: 'SkyHeels.esp'
     msg:
       - <<: *corrupt
@@ -18851,6 +18835,7 @@ plugins:
         itm: 12
         udr: 6
   - name: 'Windmill_Shelter.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17742' ]
     dirty:
       - crc: 0xf1d65bd
         <<: *dirtyPlugin
@@ -21523,6 +21508,7 @@ plugins:
         itm: 17
         udr: 4
   - name: 'Riverwood Enhanced.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8193' ]
     dirty:
       - crc: 0x63725578
         <<: *dirtyPlugin
@@ -21535,6 +21521,7 @@ plugins:
         condition: 'many("Riverwood Enhanced( - (Detailed Cities|NO NPC))?\.esp")'
         subs: [ 'Riverwood Enhanced .esp file' ]
   - name: 'Riverwood Enhanced - Detailed Cities.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8193' ]
     dirty:
       - crc: 0x46637208
         <<: *dirtyPlugin
@@ -21542,6 +21529,7 @@ plugins:
         udr: 32
         nav: 1
   - name: 'Riverwood Enhanced - NO NPC.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8193' ]
     dirty:
       - crc: 0x73840440
         <<: *dirtyPlugin
@@ -21549,6 +21537,7 @@ plugins:
         udr: 31
         nav: 1
   - name: 'RiverwoodEnhancedPlugin.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18952' ]
     msg:
       - type: say
         content:
@@ -21638,24 +21627,28 @@ plugins:
         condition: 'not file("Solitude A City Of Trade.esm") or not file("Solitude A City Of Trade.esp") or not file("Solitude A City Of Trade LITE!.esp")'
         subs: [ 'Solitude A City Of Trade' ]
   - name: 'TAVERiften.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20185' ]
     dirty:
       - crc: 0x1057d425
         <<: *dirtyPlugin
         itm: 13
         udr: 2
   - name: 'TAVESolitude.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21148' ]
     dirty:
       - crc: 0x5856d538
         <<: *dirtyPlugin
         itm: 14
         udr: 1
   - name: 'TAVEWindhelm.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22608' ]
     dirty:
       - crc: 0x476326a8
         <<: *dirtyPlugin
         itm: 12
         udr: 2
   - name: 'tavevillages.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=68336872' ]
     dirty:
       - crc: 0x73b52f67
         <<: *dirtyPlugin
@@ -21689,6 +21682,7 @@ plugins:
         itm: 14
         udr: 3
   - name: 'TownsAndCitiesEnhanced.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17406' ]
     msg:
       - type: say
         content:
@@ -21713,6 +21707,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 18
   - name: 'L0S and TaVE patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27395' ]
     dirty:
       - crc: 0x76cf8279
         <<: *dirtyPlugin
@@ -21885,6 +21880,7 @@ plugins:
         <<: *dirtyPlugin
         udr: 1
   - name: 'tavefalkreath.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=92628430' ]
     dirty:
       - crc: 0xa570b56f
         <<: *dirtyPlugin
@@ -23020,26 +23016,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("ArcaneFist - (Expert to Master|Nerf Version)( NS)?\.esp")'
         subs: [ 'ArcaneFist .esp file' ]
-  - name: 'ArcaneFist - Expert to Master NS.esp'
-    dirty:
-      - crc: 0xffe7979b
-        <<: *dirtyPlugin
-        itm: 12
-  - name: 'ArcaneFist - Expert to Master.esp'
-    dirty:
-      - crc: 0xe4723f8
-        <<: *dirtyPlugin
-        itm: 17
-  - name: 'ArcaneFist - Nerf Version NS.esp'
-    dirty:
-      - crc: 0xffc9195d
-        <<: *dirtyPlugin
-        itm: 11
-  - name: 'ArcaneFist - Nerf Version.esp'
-    dirty:
-      - crc: 0x7b8ef9c
-        <<: *dirtyPlugin
-        itm: 15
   - name: 'ASX( - |_)Spells\.esp'
     req: [ *FNIS ]
   - name: 'BanishLight.esp'
@@ -27596,6 +27572,7 @@ plugins:
         condition: 'many("DTHSpellMageArmorEffectReplacer.+\.esp")'
         subs: [ 'DTHSpellMageArmorEffectReplacer .esp file' ]
   - name: 'RealShelter.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/52612' ]
     dirty:
       - crc: 0x47b98821
         <<: *dirtyPlugin
@@ -27612,11 +27589,13 @@ plugins:
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSeeEnchPatch.esp")'
         subs: [ 'the [Enchanting Awakened SeeEnchantments Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
   - name: 'Hot Volcanic Water.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21889' ]
     dirty:
       - crc: 0xcb9a32b4
         <<: *dirtyPlugin
         itm: 6
   - name: 'Purewaters.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1111' ]
     dirty:
       - crc: 0xb395566b
         <<: *dirtyPlugin
@@ -27832,11 +27811,6 @@ plugins:
             text: '本来はRealistic Water Textures and Terrain用のEspです。旧式のファイルかもしれません。'
           - lang: ru
             text: 'В основном реалистичные текстуры воды и земли, вероятно устарело.'
-  - name: 'WATER Plants.esp'
-    dirty:
-      - crc: 0x8b011980
-        <<: *dirtyPlugin
-        itm: 1
   - name: 'WATER DB Waves.esp'
     inc:
       - 'WATER DB.esp'
@@ -27847,6 +27821,7 @@ plugins:
       - name: NoMerge
         condition: 'file("Chesko_Frostfall.esp")'
   - name: 'waves.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/31686' ]
     msg:
       - <<: *corrupt
         condition: 'checksum("Waves.esp",80C9D6A)'
