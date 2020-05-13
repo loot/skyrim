@@ -10097,12 +10097,19 @@ plugins:
         util: 'TES5Edit v4.0.2j'
   - name: 'LPotD Armor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24253' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Divine Wrath Armor.esp")'
     clean:
       # v2.3a
       - crc: 0x0550F86D
         util: 'TES5Edit v4.0.2j'
   - name: 'LpotDHorse.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24253' ]
+    msg:
+      - <<: *deletePlugin
+        condition: 'active("LpotDHorse.esp") and active("Requiem - Divine Wrath Armor.esp")'
+        subs: [ 'the Requiem patch for Divine Wrath Armor' ]
     dirty:
       # v2.3a
       - <<: *quickClean
