@@ -31433,3 +31433,8 @@ plugins:
     msg: 
       - <<: *corrupt
         condition: 'checksum("witchplate.esp", 675A0C62)'
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Runic Armor.esp")'
+      - <<: *deletePlugin
+        condition: 'active("witchplate.esp") and active("Requiem - Runic Armor.esp")'
+        subs: [ 'Requiem - Runic Armor.esp' ]
