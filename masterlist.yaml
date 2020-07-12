@@ -31380,6 +31380,9 @@ plugins:
         util: 'TES5Edit v4.0.3'
   - name: 'KatanaCrafting.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8489' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp")'
     clean:
       # version: 2.21b
       - crc: 0x72F85BDF
