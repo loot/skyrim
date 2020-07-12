@@ -31389,6 +31389,9 @@ plugins:
         util: 'TES5Edit v4.0.3'
   - name: 'PrvtIRoyalArmory.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/81118' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Royal Armory.esp")'
     clean:
       # version: 2.2
       - crc: 0x5E045C23
