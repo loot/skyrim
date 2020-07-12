@@ -30907,6 +30907,9 @@ plugins:
         util: 'TES5Edit v4.0.2'
   - name: 'Ulags Legacy.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/94177' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Ulag''s Legacy.esp")'
     clean:
       # version: 1.1.3 - No Immersive Armors
       - crc: 0xA2C198FD
