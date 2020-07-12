@@ -9498,7 +9498,7 @@ plugins:
             text: 'このプラグインはhothtrooper44_ArmorCompilation.espのSkyjubs Invisible Helmetsバージョンです。他のhothtrooper氏のパッチと同時に使用しても期待される効果は発生しないでしょう。DawnguardとDragonborn以外のSkyjubs Invisible Helmets esp群とは互換性がありません。'
         condition: 'checksum("hothtrooper44_ArmorCompilation.esp",1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp",983EFB9E)'
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Armors.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Armors.esp")'
     tag:
       - name: Delev
         condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=) or file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
@@ -9623,7 +9623,7 @@ plugins:
       - 'AmazingFollowerTweaks.esp'
     msg:
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Weapons.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Weapons.esp")'
     tag:
       - Delev
       - Relev
@@ -27027,7 +27027,7 @@ plugins:
     group: *alternateStartGroup
     msg:
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Live Another Life.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Live Another Life.esp")'
     tag: [ C.Location ]
     clean:
       # version: 3.1.7
