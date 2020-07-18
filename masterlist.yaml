@@ -9498,7 +9498,7 @@ plugins:
             text: 'このプラグインはhothtrooper44_ArmorCompilation.espのSkyjubs Invisible Helmetsバージョンです。他のhothtrooper氏のパッチと同時に使用しても期待される効果は発生しないでしょう。DawnguardとDragonborn以外のSkyjubs Invisible Helmets esp群とは互換性がありません。'
         condition: 'checksum("hothtrooper44_ArmorCompilation.esp",1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp",983EFB9E)'
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Armors.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Armors.esp")'
     tag:
       - name: Delev
         condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=) or file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
@@ -9614,16 +9614,13 @@ plugins:
     clean:
       - crc: 0xCCC93DD2
         util: 'TES5Edit v4.0.2f'
-  - name: 'WarmongerArmory_DLC.esp'
-    after:
-      - 'WarmongerArmory_Vanilla.esp'
   - name: 'Immersive Weapons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27644' ]
     after:
       - 'AmazingFollowerTweaks.esp'
     msg:
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Weapons.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Weapons.esp")'
     tag:
       - Delev
       - Relev
@@ -11944,7 +11941,7 @@ plugins:
       - 'Requiem - Civil War Overhaul Patch.esp'
       - 'Requiem - Immersive Armors.esp'
       - 'Requiem - Immersive Weapons.esp'
-  - name: 'Requiem - (83Willows 101Bugs|Animallica|Arissa|Audio Overhaul for Skyrim|Black Mage Armor|Book Covers Skyrim|Campfire|Common Clothes and Armors|Craftable Horse Barding|Cutting Room Floor|Deadly Dragons( - AOS)?|Dragon Combat Overhaul|ESF Companions|Faction Crossbows|Frostfall|Heavy Armory|Hoth|Immersive Armors|Immersive College of Winterhold|Immersive Horses( - SkyTEST)?|Immersive Patrols|Immersive Sounds Compendium|Immersive Weapons|Improved Closefaced Helmets|Inconsequential NPCs|Inigo|Live Another Life|Lost Library|Lucien|RS Children Overhaul|Rustic Soulgems( - ISC)?|Scoped Bows|Skyrim Unlocked|SkyTEST|Timing is Everything|Trade and Barter|Unique Uniques( - AOS)?|Vampiric Thirst|Vilja|VioLens|Wild World|WM Flora Fixes)\.esp'
+  - name: 'Requiem - (83Willows 101Bugs|Animallica|Arissa|Audio Overhaul for Skyrim|Black Mage Armor|Book Covers Skyrim|Campfire|Common Clothes and Armors|Craftable Horse Barding|Cutting Room Floor|Deadly Dragons( - AOS)?|Divine Wrath Armor|Dragon Combat Overhaul|ESF Companions|Faction Crossbows|Frostfall|Heavy Armory|Hoth|Immersive Armors|Immersive College of Winterhold|Immersive Horses( - SkyTEST)?|Immersive Patrols|Immersive Sounds Compendium|Immersive Weapons|Improved Closefaced Helmets|Inconsequential NPCs|Inigo|Katana Crafting|Live Another Life|Lost Library|Lucien|Royal Armory|RS Children Overhaul|Runic Armor|Rustic Soulgems( - ISC)?|Scoped Bows|Skyrim Unlocked|SkyTEST|Timing is Everything|Trade and Barter|Ulag''s Legacy|Unique Uniques( - AOS)?|Vampiric Thirst|Vilja|VioLens|Warmonger Armory|Wild World|WM Flora Fixes)\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
       - 'Requiem - Bugsmasher Edition.esp'
@@ -12012,6 +12009,9 @@ plugins:
     after:
       - 'Requiem - Immersive Sounds Compendium.esp'
       - 'ISC Requiem Patch.esp'
+  - name: 'Requiem - Royal Armory.esp'
+    after:
+      - 'Requiem - Warmonger Armory.esp'
   - name: 'Requiem - No Overencumbered Messages.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19281' ]
     msg:
@@ -27027,7 +27027,7 @@ plugins:
     group: *alternateStartGroup
     msg:
       - <<: *patchRequiemRPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Live Another Life.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Live Another Life.esp")'
     tag: [ C.Location ]
     clean:
       # version: 3.1.7
@@ -30910,6 +30910,9 @@ plugins:
         util: 'TES5Edit v4.0.2'
   - name: 'Ulags Legacy.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/94177' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Ulag''s Legacy.esp")'
     clean:
       # version: 1.1.3 - No Immersive Armors
       - crc: 0xA2C198FD
@@ -31360,3 +31363,39 @@ plugins:
       - <<: *deletePlugin
         condition: 'active("witchplate.esp") and active("Requiem - Runic Armor.esp")'
         subs: [ 'Requiem - Runic Armor.esp' ]
+  - name: 'WarmongerArmory_Vanilla.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50459' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Warmonger Armory.esp")'
+    clean:
+      # version: 1.3
+      - crc: 0x19D9506A
+        util: 'TES5Edit v4.0.3'
+  - name: 'WarmongerArmory_DLC.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/50459' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Warmonger Armory.esp")'
+    clean:
+      # version: 1.3
+      - crc: 0xF733D519
+        util: 'TES5Edit v4.0.3'
+  - name: 'KatanaCrafting.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8489' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp")'
+    clean:
+      # version: 2.21b
+      - crc: 0x72F85BDF
+        util: 'TES5Edit v4.0.3'
+  - name: 'PrvtIRoyalArmory.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/81118' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Royal Armory.esp")'
+    clean:
+      # version: 2.2
+      - crc: 0x5E045C23
+        util: 'TES5Edit v4.0.3'
