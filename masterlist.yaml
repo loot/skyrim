@@ -20673,30 +20673,18 @@ plugins:
   - name: 'dD - Enhanced Blood Main.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/60' ]
     msg:
-      - <<: *requiresX
-        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and not file("SkyMoMod.esm") and not file("dD-Dawnguard-EBT Patch.esp")'
-        subs: [ '[Dawnguard Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *requiresX
-        condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-EBT Patch.esp")'
-        subs: [ '[Dragonborn Compatibility_Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *requiresX
-        condition: 'active("Dragonborn.esm") and active("Dawnguard.esm") and not file("SkyMoMod.esm") and not file("dD-Dragonborn-Dawnguard-EBT Patch.esp")'
-        subs: [ '[Dragonborn-Dawnguard_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *requiresX
-        condition: 'not active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-SkyrimMonsterMod EBT Patch.esp")'
-        subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *requiresX
-        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-Dawnguard-MonsterMod EBT Patch.esp")'
-        subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *requiresX
-        condition: 'active("Dragonborn.esm") and not active("Dawnguard.esm") and file("SkyMoMod.esm") and not file("dD-Dragonborn-MonsterMod EBT Patch.esp")'
-        subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *requiresX
-        condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and not file("dD-DG-DB-MonsterMod EBT Patch.esp") and not file("Skyrim Immersive Creatures.esp")'
-        subs: [ '[Skyrim Monster Mod_Compatibility Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
-      - <<: *requiresX
-        condition: 'active("Dawnguard.esm") and active("Dragonborn.esm") and file("SkyMoMod.esm") and file("Skyrim Immersive Creatures.esp") and not file("dD-DG-DB-MM-SiC EBT Patch.esp")'
-        subs: [ '[Monster Mod and Immersive Creatures Patch](http://www.nexusmods.com/skyrim/mods/60)' ]
+      - <<: *patchIncluded
+        subs: [ 'Dawnguard.esm' ]
+        condition: 'active("Dawnguard.esm") and not file("dD-.*(DG|Dawnguard).*(EBT Patch).*\.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Dragonborn.esm' ]
+        condition: 'active("Dragonborn.esm") and not file("dD-.*(DB|Dragonborn).*(EBT Patch).*\.esp")'
+      - <<: *patchIncluded
+        subs: [ 'SkyMoMod.esm' ]
+        condition: 'active("SkyMoMod.esm") and not file("dD-.*(MM|MonsterMod).*(EBT Patch).*\.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Skyrim Immersive Creatures.esp' ]
+        condition: 'active("Skyrim Immersive Creatures.esp") and not file("dD-.*(SiC|Immersive Creatures).*(EBT Patch).*\.esp")'
     clean:
       # v3.8
       - crc: 0x40AEB034
