@@ -20673,6 +20673,18 @@ plugins:
   - name: 'dD - Enhanced Blood Main.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/60' ]
     msg:
+      - <<: *patchIncluded
+        subs: [ 'Dawnguard.esm' ]
+        condition: 'active("Dawnguard.esm") and not file("dD-.*(DG|Dawnguard).*(EBT Patch).*\.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Dragonborn.esm' ]
+        condition: 'active("Dragonborn.esm") and not file("dD-.*(DB|Dragonborn).*(EBT Patch).*\.esp")'
+      - <<: *patchIncluded
+        subs: [ 'SkyMoMod.esm' ]
+        condition: 'active("SkyMoMod.esm") and not file("dD-.*(MM|MonsterMod).*(EBT Patch).*\.esp")'
+      - <<: *patchIncluded
+        subs: [ 'Skyrim Immersive Creatures.esp' ]
+        condition: 'active("Skyrim Immersive Creatures.esp") and not file("dD-.*(SiC|Immersive Creatures).*(EBT Patch).*\.esp")'
     clean:
       # v3.8
       - crc: 0x40AEB034
