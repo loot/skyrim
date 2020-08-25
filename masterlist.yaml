@@ -984,6 +984,7 @@ groups:
     after: [ *postReproccerGroup ]
 
 plugins:
+###### Official Game Files ######
   - name: 'Update.esm'
     group: *updateEsmGroup
     tag:
@@ -1090,6 +1091,17 @@ plugins:
         itm: 84
         udr: 8
         nav: 1
+  - name: 'HighResTexturePack01.esp'
+    group: *unofficialPatchGroup
+  - name: 'HighResTexturePack02.esp'
+    after:
+      - 'HighResTexturePack01.esp'
+    group: *unofficialPatchGroup
+  - name: 'HighResTexturePack03.esp'
+    after:
+      - 'HighResTexturePack01.esp'
+      - 'HighResTexturePack02.esp'
+    group: *unofficialPatchGroup
 
 ###### Unofficial Patches ######
   - name: 'Unofficial Dawnguard Patch.esp'
@@ -2686,17 +2698,6 @@ plugins:
   - name: 'ZZZ_Stenvar_Replacer_THAIDEN.esm'
     msg: [ *obsolete ]
 # Low priority .esp's
-  - name: 'HighResTexturePack01.esp'
-    group: *unofficialPatchGroup
-  - name: 'HighResTexturePack02.esp'
-    after:
-      - 'HighResTexturePack01.esp'
-    group: *unofficialPatchGroup
-  - name: 'HighResTexturePack03.esp'
-    after:
-      - 'HighResTexturePack01.esp'
-      - 'HighResTexturePack02.esp'
-    group: *unofficialPatchGroup
   - name: 'VanillaReducedTextures.esp'
     group: *newLandsGroup
     after:
