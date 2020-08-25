@@ -1018,9 +1018,8 @@ plugins:
     msg:
       - <<: *wildEdits
         type: say
-        subs:
-          - '[Dawnguard.esm Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)'
-        condition: 'checksum("Dawnguard.esm",72F9CE01)'
+        subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)' ]
+        condition: 'checksum("Dawnguard.esm", 72F9CE01) or checksum("Dawnguard.esm", 4230F385)'
     dirty:
       - <<: *quickClean
         crc: 0xBD72CCF3
