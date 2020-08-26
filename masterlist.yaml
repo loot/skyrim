@@ -1004,30 +1004,6 @@ plugins:
       # version: 1.9.32.0
       - crc: 0x1C74E15D
         util: 'TES5Edit v4.0.0'
-  - name: 'Unofficial Skyrim Patch.esp'
-    group: *unofficialPatchGroup
-    msg:
-      - <<: *obsolete
-        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
-    tag:
-      - C.Acoustic
-      - C.Climate
-      - C.Encounter
-      - C.ImageSpace
-      - C.Light
-      - C.Location
-      - C.Music
-      - C.Name
-      - C.Owner
-      - C.Water
-      - Delev
-      - Graphics
-      - Invent
-      - Names
-      - Relev
-      - Sound
-      - Stats
   - name: 'Dawnguard.esm'
     group: *unofficialPatchGroup
     after:
@@ -1063,25 +1039,6 @@ plugins:
         util: '[TES5Edit v4.0.0](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
         nav: 57
-  - name: 'Unofficial Dawnguard Patch.esp'
-    group: *unofficialPatchGroup
-    after:
-      - 'Unofficial Skyrim Patch.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
-    tag:
-      - C.Climate
-      - C.Encounter
-      - C.Location
-      - C.Name
-      - Delev
-      - Graphics
-      - Invent
-      - Names
-      - Sound
-      - Stats
   - name: 'HearthFires.esm'
     group: *unofficialPatchGroup
     after:
@@ -1105,23 +1062,6 @@ plugins:
         itm: 231
         udr: 11
         nav: 5
-  - name: 'Unofficial Hearthfire Patch.esp'
-    group: *unofficialPatchGroup
-    after:
-      - 'Unofficial Skyrim Patch.esp'
-      - 'Unofficial Dawnguard Patch.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
-    tag:
-      - C.Climate
-      - C.Location
-      - C.Owner
-      - Graphics
-      - Invent
-      - Names
-      - Sound
   - name: 'Dragonborn.esm'
     group: *unofficialPatchGroup
     after:
@@ -1150,6 +1090,68 @@ plugins:
         itm: 84
         udr: 8
         nav: 1
+
+###### Unofficial Patches ######
+  - name: 'Unofficial Skyrim Patch.esp'
+    group: *unofficialPatchGroup
+    msg:
+      - <<: *obsolete
+        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
+        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
+    tag:
+      - C.Acoustic
+      - C.Climate
+      - C.Encounter
+      - C.ImageSpace
+      - C.Light
+      - C.Location
+      - C.Music
+      - C.Name
+      - C.Owner
+      - C.Water
+      - Delev
+      - Graphics
+      - Invent
+      - Names
+      - Relev
+      - Sound
+      - Stats
+  - name: 'Unofficial Dawnguard Patch.esp'
+    group: *unofficialPatchGroup
+    after:
+      - 'Unofficial Skyrim Patch.esp'
+    msg:
+      - <<: *obsolete
+        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
+        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
+    tag:
+      - C.Climate
+      - C.Encounter
+      - C.Location
+      - C.Name
+      - Delev
+      - Graphics
+      - Invent
+      - Names
+      - Sound
+      - Stats
+  - name: 'Unofficial Hearthfire Patch.esp'
+    group: *unofficialPatchGroup
+    after:
+      - 'Unofficial Skyrim Patch.esp'
+      - 'Unofficial Dawnguard Patch.esp'
+    msg:
+      - <<: *obsolete
+        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
+        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
+    tag:
+      - C.Climate
+      - C.Location
+      - C.Owner
+      - Graphics
+      - Invent
+      - Names
+      - Sound
   - name: 'Unofficial Dragonborn Patch.esp'
     group: *unofficialPatchGroup
     after:
@@ -1211,6 +1213,14 @@ plugins:
         # version: 3.0.13a
       - crc: 0x921443A0
         util: 'TES5Edit v4.0.1'
+  - name: 'Unofficial High Resolution Patch.esp'
+    group: *unofficialPatchGroup
+    after:
+      - 'HighResTexturePack01.esp'
+      - 'HighResTexturePack02.esp'
+      - 'HighResTexturePack03.esp'
+
+
   - name: 'Falskaar.esm'
     group: *newLandsGroup
     msg:
@@ -1912,12 +1922,6 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Extended Colors.esm'
     msg: [ *obsolete ]
-  - name: 'Unofficial High Resolution Patch.esp'
-    group: *unofficialPatchGroup
-    after:
-      - 'HighResTexturePack01.esp'
-      - 'HighResTexturePack02.esp'
-      - 'HighResTexturePack03.esp'
   - name: 'GeneralStores.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18340' ]
     clean:
