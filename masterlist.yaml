@@ -1028,17 +1028,11 @@ plugins:
       - Relev
       - Sound
       - Stats
-  - name: 'SMPC.esp'
-    group: *unofficialPatchGroup
-    after:
-      - 'Unofficial Skyrim Patch.esp'
-    msg: [ *corrupt ]
   - name: 'Dawnguard.esm'
     group: *unofficialPatchGroup
     after:
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
-      - 'SMPC.esp'
     tag:
       - C.Location
       - C.RecordFlags
@@ -1088,11 +1082,6 @@ plugins:
       - Names
       - Sound
       - Stats
-  - name: 'SMPC_DG.esp'
-    after:
-      - 'Dawnguard.esm'
-      - 'Unofficial Dawnguard Patch.esp'
-    msg: [ *corrupt ]
   - name: 'SCO Winter Landscape Decoloration.esp'
     group: *unofficialPatchGroup
   - name: 'SCO Winter Landscape Decoloration - Solstheim.esp'
@@ -1109,11 +1098,9 @@ plugins:
     after:
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
-      - 'SMPC.esp'
       - 'Dawnguard.esm'
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
-      - 'SMPC_DG.esp'
       - 'SCO Winter Landscape Decoloration.esp'
       - '[JmV]LTTF.esm'
     tag:
@@ -1167,25 +1154,17 @@ plugins:
       - Invent
       - Names
       - Sound
-  - name: 'SMPC_HF.esp'
-    after:
-      - 'HearthFires.esm'
-      - 'Unofficial Hearthfire Patch.esp'
-    msg: [ *corrupt ]
   - name: 'Dragonborn.esm'
     group: *unofficialPatchGroup
     after:
       - name: 'Unofficial Skyrim Patch.esp'
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
-      - 'SMPC.esp'
       - 'Dawnguard.esm'
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
-      - 'SMPC_DG.esp'
       - 'HearthFires.esm'
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
-      - 'SMPC_HF.esp'
     tag:
       - C.Light
       - C.Location
@@ -1225,11 +1204,6 @@ plugins:
       - Names
       - Sound
       - Stats
-  - name: 'SMPC_DB.esp'
-    after:
-      - 'Dragonborn.esm'
-      - 'Unofficial Dragonborn Patch.esp'
-    msg: [ *corrupt ]
   - name: 'Unofficial Skyrim Legendary Edition Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/71214/'
@@ -3407,10 +3381,6 @@ plugins:
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'YngolFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
-  - name: 'USKP_addon.esp'
-    msg: [ *corrupt ]
-  - name: 'USKP_addon ENG.esp'
-    msg: [ *corrupt ]
   - name: 'ancient-nordic-pickaxe-smith-fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'BoundDaggerFix.esp'
