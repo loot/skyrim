@@ -1093,11 +1093,6 @@ plugins:
 
 ###### Unofficial Patches ######
   - name: 'Unofficial Skyrim Patch.esp'
-    group: *unofficialPatchGroup
-    msg:
-      - <<: *obsolete
-        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
     tag:
       - C.Acoustic
       - C.Climate
@@ -1117,12 +1112,7 @@ plugins:
       - Sound
       - Stats
   - name: 'Unofficial Dawnguard Patch.esp'
-    group: *unofficialPatchGroup
     after: [ 'Unofficial Skyrim Patch.esp' ]
-    msg:
-      - <<: *obsolete
-        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
     tag:
       - C.Climate
       - C.Encounter
@@ -1135,14 +1125,9 @@ plugins:
       - Sound
       - Stats
   - name: 'Unofficial Hearthfire Patch.esp'
-    group: *unofficialPatchGroup
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
     tag:
       - C.Climate
       - C.Location
@@ -1152,15 +1137,10 @@ plugins:
       - Names
       - Sound
   - name: 'Unofficial Dragonborn Patch.esp'
-    group: *unofficialPatchGroup
     after:
       - 'Unofficial Skyrim Patch.esp'
       - 'Unofficial Dawnguard Patch.esp'
       - 'Unofficial Hearthfire Patch.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
-        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
     tag:
       - C.Climate
       - C.Encounter
@@ -1173,6 +1153,12 @@ plugins:
       - Names
       - Sound
       - Stats
+  - name: 'Unofficial (Skyrim|Dawnguard|Hearthfire|Dragonborn) Patch.esp'
+    group: *unofficialPatchGroup
+    msg:
+      - <<: *obsolete
+        subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214)' ]
+        condition: 'file("Dawnguard.esm") and file("HearthFires.esm") and file("Dragonborn.esm")'
   - name: 'Unofficial Skyrim Legendary Edition Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/71214/'
