@@ -920,8 +920,11 @@ groups:
   - name: &unofficialPatchGroup Unofficial Patches
     after: [ *updateEsmGroup ]
 
-  - name: &newLandsGroup New Lands & Optimisers
+  - name: &dlcGroup DLC
     after: [ *unofficialPatchGroup ]
+
+  - name: &newLandsGroup New Lands & Optimisers
+    after: [ *dlcGroup ]
 
   - name: &underridesGroup Underrides
     after: [ *newLandsGroup ]
@@ -999,10 +1002,7 @@ plugins:
         itm: 96
         udr: 3
   - name: 'Dawnguard.esm'
-    group: *unofficialPatchGroup
-    after:
-      - name: 'Unofficial Skyrim Patch.esp'
-        condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
+    group: *dlcGroup
     tag:
       - C.Location
       - C.Regions
@@ -1024,13 +1024,8 @@ plugins:
         udr: 82
         nav: 57
   - name: 'HearthFires.esm'
-    group: *unofficialPatchGroup
-    after:
-      - name: 'Unofficial Skyrim Patch.esp'
-        condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
-      - 'Dawnguard.esm'
-      - name: 'Unofficial Dawnguard Patch.esp'
-        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
+    group: *dlcGroup
+    after: [ 'Dawnguard.esm' ]
     tag:
       - C.Location
       - Graphics
@@ -1044,16 +1039,10 @@ plugins:
         udr: 11
         nav: 5
   - name: 'Dragonborn.esm'
-    group: *unofficialPatchGroup
+    group: *dlcGroup
     after:
-      - name: 'Unofficial Skyrim Patch.esp'
-        condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
       - 'Dawnguard.esm'
-      - name: 'Unofficial Dawnguard Patch.esp'
-        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
       - 'HearthFires.esm'
-      - name: 'Unofficial Hearthfire Patch.esp'
-        condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
     tag:
       - C.Location
       - Invent
@@ -1066,28 +1055,17 @@ plugins:
         udr: 8
         nav: 1
   - name: 'HighResTexturePack01.esp'
-    group: *unofficialPatchGroup
+    group: *dlcGroup
   - name: 'HighResTexturePack02.esp'
-    group: *unofficialPatchGroup
+    group: *dlcGroup
     after: [ 'HighResTexturePack01.esp' ]
   - name: 'HighResTexturePack03.esp'
-    group: *unofficialPatchGroup
+    group: *dlcGroup
     after:
       - 'HighResTexturePack01.esp'
       - 'HighResTexturePack02.esp'
 
 ###### Unofficial Patches ######
-  - name: 'Unofficial Dawnguard Patch.esp'
-    after: [ 'Unofficial Skyrim Patch.esp' ]
-  - name: 'Unofficial Hearthfire Patch.esp'
-    after:
-      - 'Unofficial Skyrim Patch.esp'
-      - 'Unofficial Dawnguard Patch.esp'
-  - name: 'Unofficial Dragonborn Patch.esp'
-    after:
-      - 'Unofficial Skyrim Patch.esp'
-      - 'Unofficial Dawnguard Patch.esp'
-      - 'Unofficial Hearthfire Patch.esp'
   - name: 'Unofficial (Skyrim|Dawnguard|Hearthfire|Dragonborn) Patch.esp'
     group: *unofficialPatchGroup
     msg:
@@ -1113,10 +1091,6 @@ plugins:
   - name: 'Unofficial High Resolution Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/31255/' ]
     group: *unofficialPatchGroup
-    after:
-      - 'HighResTexturePack01.esp'
-      - 'HighResTexturePack02.esp'
-      - 'HighResTexturePack03.esp'
 
 
   - name: 'Falskaar.esm'
