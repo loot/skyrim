@@ -988,12 +988,10 @@ plugins:
   - name: 'Update.esm'
     group: *updateEsmGroup
     tag:
-      - C.Encounter
       - C.Location
-      - C.RecordFlags
       - Delev
-      - Names
-      - Stats
+      - Invent.Change
+      - Keywords
     dirty:
       - <<: *quickClean
         crc: 0xE5B67BDA
@@ -1007,14 +1005,12 @@ plugins:
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
     tag:
       - C.Location
-      - C.RecordFlags
       - C.Regions
       - Delev
-      - Graphics
       - Invent
-      - Names
+      - Keywords
       - Relev
-      - Stats
+      - Text
     msg:
       - <<: *wildEdits
         type: say
@@ -1038,10 +1034,9 @@ plugins:
       - '[JmV]LTTF.esm'
     tag:
       - C.Location
-      - C.RecordFlags
       - Graphics
-      - Invent
-      - Sound
+      - Invent.Add
+      - Text
     dirty:
       - <<: *quickClean
         crc: 0xAF82CE6A
@@ -1061,14 +1056,9 @@ plugins:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
     tag:
-      - C.Light
       - C.Location
-      - C.RecordFlags
-      - Graphics
       - Invent
-      - Names
       - Relev
-      - Stats
     dirty:
       - <<: *quickClean
         crc: 0xA9F83BFF
