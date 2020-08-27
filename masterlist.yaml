@@ -1003,9 +1003,6 @@ plugins:
         udr: 3
   - name: 'Dawnguard.esm'
     group: *dlcGroup
-    after:
-      - name: 'Unofficial Skyrim Patch.esp'
-        condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
     tag:
       - C.Location
       - C.Regions
@@ -1028,12 +1025,7 @@ plugins:
         nav: 57
   - name: 'HearthFires.esm'
     group: *dlcGroup
-    after:
-      - name: 'Unofficial Skyrim Patch.esp'
-        condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
-      - 'Dawnguard.esm'
-      - name: 'Unofficial Dawnguard Patch.esp'
-        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
+    after: [ 'Dawnguard.esm' ]
     tag:
       - C.Location
       - Graphics
@@ -1049,14 +1041,8 @@ plugins:
   - name: 'Dragonborn.esm'
     group: *dlcGroup
     after:
-      - name: 'Unofficial Skyrim Patch.esp'
-        condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
       - 'Dawnguard.esm'
-      - name: 'Unofficial Dawnguard Patch.esp'
-        condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
       - 'HearthFires.esm'
-      - name: 'Unofficial Hearthfire Patch.esp'
-        condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
     tag:
       - C.Location
       - Invent
@@ -1080,17 +1066,6 @@ plugins:
       - 'HighResTexturePack02.esp'
 
 ###### Unofficial Patches ######
-  - name: 'Unofficial Dawnguard Patch.esp'
-    after: [ 'Unofficial Skyrim Patch.esp' ]
-  - name: 'Unofficial Hearthfire Patch.esp'
-    after:
-      - 'Unofficial Skyrim Patch.esp'
-      - 'Unofficial Dawnguard Patch.esp'
-  - name: 'Unofficial Dragonborn Patch.esp'
-    after:
-      - 'Unofficial Skyrim Patch.esp'
-      - 'Unofficial Dawnguard Patch.esp'
-      - 'Unofficial Hearthfire Patch.esp'
   - name: 'Unofficial (Skyrim|Dawnguard|Hearthfire|Dragonborn) Patch.esp'
     group: *unofficialPatchGroup
     msg:
@@ -1116,10 +1091,6 @@ plugins:
   - name: 'Unofficial High Resolution Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/31255/' ]
     group: *unofficialPatchGroup
-    after:
-      - 'HighResTexturePack01.esp'
-      - 'HighResTexturePack02.esp'
-      - 'HighResTexturePack03.esp'
 
 
   - name: 'Falskaar.esm'
