@@ -984,26 +984,20 @@ groups:
     after: [ *postReproccerGroup ]
 
 plugins:
+###### Official Game Files ######
   - name: 'Update.esm'
     group: *updateEsmGroup
     tag:
-      - C.Encounter
       - C.Location
-      - C.RecordFlags
       - Delev
-      - Names
-      - Stats
+      - Invent.Change
+      - Keywords
     dirty:
-      # version: 1.9.32.0
       - <<: *quickClean
         crc: 0xE5B67BDA
-        util: '[TES5Edit v4.0.0](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 96
         udr: 3
-    clean:
-      # version: 1.9.32.0
-      - crc: 0x1C74E15D
-        util: 'TES5Edit v4.0.0'
   - name: 'Dawnguard.esm'
     group: *unofficialPatchGroup
     after:
@@ -1011,33 +1005,23 @@ plugins:
         condition: 'version("Unofficial Skyrim Patch.esp", "2.0", >=)'
     tag:
       - C.Location
-      - C.RecordFlags
       - C.Regions
       - Delev
-      - Graphics
       - Invent
-      - Names
+      - Keywords
       - Relev
-      - Stats
+      - Text
     msg:
       - <<: *wildEdits
         type: say
-        subs:
-          - '[Dawnguard.esm Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)'
-        condition: 'checksum("Dawnguard.esm",72F9CE01)'
+        subs: [ '[Dawnguard.esm Wild Edits Cleaning Guide](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixBManuallyCleaningDawnguard)' ]
+        condition: 'checksum("Dawnguard.esm", 72F9CE01) or checksum("Dawnguard.esm", 4230F385)'
     dirty:
-      # version: 1.9.32.0
       - <<: *quickClean
         crc: 0xBD72CCF3
-        util: '[TES5Edit v4.0.0](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 775
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 782
         udr: 82
-        nav: 57
-      # version: 1.9.32.0, before second pass of cleaning.
-      - <<: *quickClean
-        crc: 0x135F73D0
-        util: '[TES5Edit v4.0.0](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 7
         nav: 57
   - name: 'HearthFires.esm'
     group: *unofficialPatchGroup
@@ -1047,18 +1031,15 @@ plugins:
       - 'Dawnguard.esm'
       - name: 'Unofficial Dawnguard Patch.esp'
         condition: 'version("Unofficial Dawnguard Patch.esp", "2.0", >=)'
-      - '[JmV]LTTF.esm'
     tag:
       - C.Location
-      - C.RecordFlags
       - Graphics
-      - Invent
-      - Sound
+      - Invent.Add
+      - Text
     dirty:
-      # version: 1.9.32.0
       - <<: *quickClean
         crc: 0xAF82CE6A
-        util: '[TES5Edit v4.0.0](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 231
         udr: 11
         nav: 5
@@ -1074,22 +1055,26 @@ plugins:
       - name: 'Unofficial Hearthfire Patch.esp'
         condition: 'version("Unofficial Hearthfire Patch.esp", "2.0", >=)'
     tag:
-      - C.Light
       - C.Location
-      - C.RecordFlags
-      - Graphics
       - Invent
-      - Names
       - Relev
-      - Stats
     dirty:
-      # version: 1.9.32.0
       - <<: *quickClean
         crc: 0xA9F83BFF
-        util: '[TES5Edit v4.0.0](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 84
         udr: 8
         nav: 1
+  - name: 'HighResTexturePack01.esp'
+    group: *unofficialPatchGroup
+  - name: 'HighResTexturePack02.esp'
+    group: *unofficialPatchGroup
+    after: [ 'HighResTexturePack01.esp' ]
+  - name: 'HighResTexturePack03.esp'
+    group: *unofficialPatchGroup
+    after:
+      - 'HighResTexturePack01.esp'
+      - 'HighResTexturePack02.esp'
 
 ###### Unofficial Patches ######
   - name: 'Unofficial Dawnguard Patch.esp'
@@ -2686,17 +2671,6 @@ plugins:
   - name: 'ZZZ_Stenvar_Replacer_THAIDEN.esm'
     msg: [ *obsolete ]
 # Low priority .esp's
-  - name: 'HighResTexturePack01.esp'
-    group: *unofficialPatchGroup
-  - name: 'HighResTexturePack02.esp'
-    after:
-      - 'HighResTexturePack01.esp'
-    group: *unofficialPatchGroup
-  - name: 'HighResTexturePack03.esp'
-    after:
-      - 'HighResTexturePack01.esp'
-      - 'HighResTexturePack02.esp'
-    group: *unofficialPatchGroup
   - name: 'VanillaReducedTextures.esp'
     group: *newLandsGroup
     after:
