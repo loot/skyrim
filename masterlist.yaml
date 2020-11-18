@@ -1263,8 +1263,7 @@ plugins:
         condition: 'active("83Willows_101BUGS_V4_.+\.esp") and active("Requiem - 83Willows 101Bugs.esp")'
         subs: [ 'the Requiem patch for 83Willows 101Bugs' ]
   - name: 'actorEvents.esm'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'alchstone(1pt5x|2x|3x|x3|4x|x4x2|5x)\.esm'
     msg:
       - <<: *useOnlyOneX
@@ -1982,8 +1981,7 @@ plugins:
       - <<: *obsolete
         subs: [ 'Obsolete. Update to latest version, Hjakhtraevarr Tomb.' ]
   - name: 'Natural Characters and Companions.esm'
-    req:
-      - 'LovelyHairstyles.esp'
+    req: [ 'LovelyHairstyles.esp' ]
   - name: 'NeV-P_ExtremeMaterials.esm'
     tag:
       - Delev
@@ -2027,14 +2025,11 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 395
   - name: 'paradise_halls_base.esm'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'paradise_halls_core.esm'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'Perk-Reset-MCM.esm'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     msg: [ *requiresMCM ]
   - name: 'pinewoodvillage.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12851' ]
@@ -3686,8 +3681,7 @@ plugins:
         itm: 754
         udr: 1490
   - name: 'kuerteeDisableLightsFarFromActors.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'MikeFoxs_CorrectLighting.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12762' ]
     dirty:
@@ -3797,8 +3791,7 @@ plugins:
       - <<: *fixedPluginPreCKSharlikran
         condition: 'not checksum("Warmer Magic Lights v2 - Big.esp",DE4F928D)'
   - name: 'SI_DarkerNightsAddon.esp'
-    req:
-      - 'ClimatesOfTamriel.esm'
+    req: [ 'ClimatesOfTamriel.esm' ]
   - name: 'KatuLights.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -4105,8 +4098,7 @@ plugins:
         condition: 'many("ArmorRatingTweak_(\d{8}|U)?.+\.esp")'
         subs: [ 'ArmorRatingTweak .esp file' ]
   - name: 'ArmorSets.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'arrowcrafting.esp'
     msg:
       - <<: *obsolete
@@ -4651,8 +4643,7 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'CUYC_CleanUpYourCorpses.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'DBCallingCard.+\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -5254,8 +5245,7 @@ plugins:
     after: [ 'Perky.esp' ]
     tag: [ Relev ]
   - name: 'Ish''s Souls to Perks.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'IsharasAutoStorageForVidanisBoH.esp'
     inc: [ 'Isharas_BoH_StorageAndRetrieval.esp' ]
   - name: 'JAWS.esp'
@@ -6408,8 +6398,7 @@ plugins:
       - *SKSE
       - *SkyUI
   - name: 'Soul Eater The Enchantment Removing Chest.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'SPTFemaleGuards(InPlace)?\.esp'
     msg: [ *obsolete ]
   - name: 'StaRe.esp'
@@ -6444,8 +6433,7 @@ plugins:
       - Delev
       - Relev
   - name: 'SwiftPotion.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     inc: [ 'Chesko_SwiftPotion.esp' ]
     msg: [ *requiresMCM ]
   - name: 'Syynx Stubborn Skeletons.esp'
@@ -6760,8 +6748,7 @@ plugins:
       - 'Unofficial Skyrim Patch.esp'
       - 'Lady Body.esm'
   - name: 'CWND-Dragonborn.esp'
-    req:
-      - 'Dragonborn.esm'
+    req: [ 'Dragonborn.esm' ]
   - name: 'Destructible_bottles.esp'
     msg:
       - <<: *corrupt
@@ -6839,8 +6826,7 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'DEAsprint&jump.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     msg:
       - type: say
         content:
@@ -6916,16 +6902,14 @@ plugins:
     req: [ *SKSE ]
   - name: 'kuerteeAutoFirstThirdPersonView.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27452' ]
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     clean:
       # v0.704
       - crc: 0x3585D750
         util: 'TES5Edit v4.0.2j'
   - name: 'kuerteeAutoSaveAndTime.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13239' ]
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     clean:
       # v0.8
       - crc: 0x953E221B
@@ -6935,8 +6919,7 @@ plugins:
   - name: 'NoxUE2.00.esp'
     req: [ *SKSE ]
   - name: 'RaceMenu.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     clean:
       # version: 3.4.5
       - crc: 0x2765B7D0
@@ -6972,20 +6955,17 @@ plugins:
           - lang: ru
             text: 'Используйте только один SkyRealism - Simple Save System*.esp.'
   - name: 'Player Size Adjuster.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'SkyTweak.esp'
     req:
       - *SKSE
       - *SkyUI
   - name: 'towConversation.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'VanillaUsesCustom.esp'
     msg: [ *obsolete ]
   - name: 'SkyUI.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     after:
       - name: 'Fhaarkas Font Mod - SkyUI.esp'
         condition: 'version("SkyUI.esp", "4", >=) and version("Fhaarkas Font Mod - SkyUI.esp", "4.0", ==)'
@@ -8022,8 +8002,7 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'HN66s_Earrings_1.5_DV.esp'
-    req:
-      - 'Earrings Set1.esp'
+    req: [ 'Earrings Set1.esp' ]
   - name: 'Ebonita.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8056' ]
     dirty:
@@ -8041,8 +8020,7 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
   - name: 'EK_RingLimiter.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'elementalshield.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/41297' ]
     dirty:
@@ -8955,8 +8933,7 @@ plugins:
   - name: 'Medium Buckler.esp'
     tag: [ Relev ]
   - name: 'Melt_Down_Everything.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'Merry Xmas 2012.esp'
     msg:
       - type: say
@@ -9251,8 +9228,7 @@ plugins:
         util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 2
   - name: 'PBGearRings.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'PENIS.esp'
     msg: [ *requiresBetterMales ]
   - name: 'PhoenixBlade.esp'
@@ -9606,8 +9582,7 @@ plugins:
         util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'spyduckWands.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'stalhrimstandalone2.esp'
     tag: [ Relev ]
   - name: 'Stark Clean.esp'
@@ -10507,8 +10482,7 @@ plugins:
           - 'Kryptopyr''s Fixes Reqtified'
           - 'Requiem'
   - name: 'KFR-(CircletsWithHoods|FZR|NoHeavyStormcloaks)\.esp'
-    req:
-      - 'KFR-Kryptopyr''sFixesReqtified.esp'
+    req: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
   - name: 'COR-CraftingOverhaulReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61569' ]
     after:
@@ -10525,8 +10499,7 @@ plugins:
           - 'Crafting Overhaul Reqtified'
           - 'Requiem'
   - name: 'COR-(Campfire|CircletsWithHoods|Cloaks_LightGuardsOnly|FurCloaks_LightGuardsOnly|FZR|NoHeavyStormcloaks|WetAndCold|WoodenBows)\.esp'
-    req:
-      - 'COR-CraftingOverhaulReqtified.esp'
+    req: [ 'COR-CraftingOverhaulReqtified.esp' ]
   - name: 'CAR-ContentAddonReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/72562' ]
     after:
@@ -10717,8 +10690,7 @@ plugins:
       - 'Requiem - Legendary Bugsmasher Edition.esp'
       - 'Requiem_Minor_Arcana.esp'
       - 'Requiem - Behind the Curtain.esp'
-    req:
-      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+    req: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
   - name: 'Open Face Guard Helmets.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/52602' ]
     after:
@@ -10785,8 +10757,7 @@ plugins:
       - 'Requiem - Bugsmasher Edition.esp'
       - 'Requiem - Legendary Bugsmasher Edition.esp'
   - name: 'No Vendor or Loot Spells - Riverwood Trader Requiem.esp'
-    req:
-      - 'Requiem.esp'
+    req: [ 'Requiem.esp' ]
     after:
       - 'Requiem - Bugsmasher Edition.esp'
       - 'Requiem - Legendary Bugsmasher Edition.esp'
@@ -11098,8 +11069,7 @@ plugins:
         condition: 'many("ERSO 03.4 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dragonborn Dragons\.esp")'
         subs: [ 'ERSO 03.4 .esp file' ]
   - name: 'DeadlyMonsters.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     msg: [ *requiresMCM ]
   - name: 'ERSO 03.5 - New Dragon( Super)? Loots\.esp'
     msg:
@@ -11263,8 +11233,7 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 4
   - name: 'SkyRe_Main.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     inc:
       - 'ACE Crafting.esp'
       - 'ACE Speech.esp'
@@ -11371,8 +11340,7 @@ plugins:
       - Delev
       - Relev
   - name: 'SkyRe_Main_NoDawnguard.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     inc:
       - 'SkyRe_Main.esp'
       - 'Dawnguard.esm'
@@ -11829,18 +11797,15 @@ plugins:
         condition: 'active("Omegared99-WeaponSets.esp")'
         subs: [ 'Omegared99-WeaponSets.esp' ]
   - name: 'SkyRe_Plugin_Omegared99sACv3_6.esp'
-    req:
-      - 'Omegared99-Compilation.esm'
+    req: [ 'Omegared99-Compilation.esm' ]
     msg: [ *installOriginalResources ]
   - name: 'SkyRe_Plugin_Omegared99sArmorCompilation.esp'
-    req:
-      - 'Omegared99-Compilation.esm'
+    req: [ 'Omegared99-Compilation.esm' ]
     msg:
       - *obsolete
       - *installOriginalResources
   - name: 'SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp'
-    req:
-      - 'Omegared99-Compilation.esm'
+    req: [ 'Omegared99-Compilation.esm' ]
     msg:
       - *obsolete
       - *installOriginalResources
@@ -13416,8 +13381,7 @@ plugins:
         itm: 30
         udr: 8
   - name: 'Convenient Horse Herding.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'Corpse_Preparation.esp'
     req: [ *SKSE ]
   - name: 'Creeks.esp'
@@ -13735,8 +13699,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 7
   - name: 'DragonsReach_Hideout_Assassin_Redesign3_0.esp'
-    req:
-      - 'DragonsReach_Hideout.esm'
+    req: [ 'DragonsReach_Hideout.esm' ]
     dirty:
       - crc: 0xf5b9f021
         <<: *dirtyPlugin
@@ -15581,8 +15544,7 @@ plugins:
         udr: 41
         nav: 7
   - name: 'PumpingIron.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     dirty:
       - crc: 0x2805293d
         <<: *dirtyPlugin
@@ -18600,8 +18562,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Realistic_DamageV2.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     dirty:
       - crc: 0x907a7547
         <<: *dirtyPlugin
@@ -20431,11 +20392,9 @@ plugins:
       - Names
       - Stats
   - name: 'kuerteeBattleFatigueAndInjuries.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'kuerteeBattleFatigueAndInjuries MCM.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'Fatigue_Effects.esp'
     msg:
       - <<: *corrupt
@@ -20460,22 +20419,19 @@ plugins:
       - <<: *fixedPluginPreCKSharlikran
         condition: 'version("BabettesFeast - IMCN.esp","0.31",<)'
   - name: 'kuerteeEncumberingLootArmourAndWeapons.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'kuerteeEncumberingLootArmourAndWeapons MCM.esp'
     req:
       - *SKSE
       - *SkyUI
   - name: 'kuerteeEatAndSleep.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     dirty:
       - crc: 0xce3a5e41
         <<: *dirtyPlugin
         itm: 2
   - name: 'kuerteeEatAndSleep MCM.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'Medium hit.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18867' ]
     inc:
@@ -20657,8 +20613,7 @@ plugins:
         itm: 322
         udr: 9
   - name: 'SkyRealism - Capacity and Carry Weight.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     msg:
       - type: warn
         content:
@@ -20855,8 +20810,7 @@ plugins:
             text: 'Automatic Variantsではウェアウルフがプレイヤーを攻撃したときに感染させる呪文がインポートされないと報告されています。'
         condition: 'active("Automatic Variants.esp")'
   - name: 'ToL_SKSE_by_Brevi.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'TS_BloodOmNomNom.esp'
     dirty:
       - crc: 0x817ad7a9
@@ -21244,8 +21198,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'lootninja.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'LucienLaChanceSummon.esp'
     msg: [ *alreadyInLegendarySouls ]
   - name: 'MagesArnielSummon.esp'
@@ -22025,8 +21978,7 @@ plugins:
       - 'DragonCombatOverhaulDragonborn.esp'
       - 'DragonCombatOverhaulDragonborn - Requiem Patch.esp'
   - name: 'TKcombat.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'Troy1010_ImprovedArmorFormula_Difficulty.+\.esp'
     msg: [ *obsolete ]
   - name: 'Troy1010_ImprovedArmorFormula 4.0.0.esp'
@@ -22148,15 +22100,13 @@ plugins:
   - name: 'LB_MuchAdoSnowElves_ACE_Patch_Long.esp'
     inc: [ 'LB_MuchAdoSnowElves_ACE_Patch_Light.esp' ]
   - name: 'ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp'
-    req:
-      - 'Dawnguard.esm'
+    req: [ 'Dawnguard.esm' ]
   - name: 'cao_PerkRanks.esp'
     msg:
       - <<: *fixedPluginOutSub
         condition: 'not checksum("cao_PerkRanks.esp",B2A7936F)'
   - name: 'Character_Generation.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -22194,8 +22144,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 4
   - name: 'kuerteeSkillBasedDamageMultipliers.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'Enchanting and Alchemy.esp'
     dirty:
       - crc: 0x1774bfd2
@@ -22611,8 +22560,7 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("PerkUP-zOptional-Pickpocket_CarryMore100.esp",C7001A4E)'
   - name: 'MXMaxAllSkills.esp'
-    req:
-      - 'More Craftables.esp'
+    req: [ 'More Craftables.esp' ]
     msg:
       - <<: *requiresX
         condition: 'not file("PerkUP-.*\.esp")'
@@ -22894,8 +22842,7 @@ plugins:
   - name: 'FAMP2.esp'
     req: [ *FNIS ]
   - name: 'Interactive Skyrim.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'jutsu.esp'
     dirty:
       - crc: 0xaed46b46
@@ -25001,8 +24948,7 @@ plugins:
   - name: 'Vampire Lord - Transformation Overhaul Female.esp'
     msg: [ *corrupt ]
   - name: 'CharacterMakingExtender.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'DeadlyMutilation.esp'
     msg: [ *requiresMCM ]
   - name: 'driveableboat.esp'
@@ -25011,8 +24957,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 8
   - name: 'EnhancedCharacterEdit.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'CharGen Morphs.esp'
     req:
       - name: 'SKSE/Plugins/chargen.dll'
@@ -25184,8 +25129,7 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'Chesko_LevelUp.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'NymSkyrimGrammarHammer.esp'
     dirty:
       - crc: 0x90a68aa7
@@ -25945,8 +25889,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'SKSE Hotkeys.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
   - name: 'Skyrim Performance MOD 5min.esp'
     inc: [ 'Skyrim Performance MOD.esp' ]
   - name: 'STEP Core Patch.esp'
@@ -26237,16 +26180,14 @@ plugins:
     tag: [ Relev ]
 
   - name: 'PerkusMaximus_Master.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     tag: [ Names ]
 
   - name: 'PerMa Expansion 1 - Wintermyst.esp'
     after: [ 'PerkusMaximus_Master.esp' ]
 
   - name: 'PerkusMaximus_Mage.esp'
-    req:
-      - *SKSE
+    req: [ *SKSE ]
     after: [ 'PerMa Expansion 1 - Wintermyst.esp' ]
     tag: [ Names ]
 
