@@ -1104,8 +1104,7 @@ plugins:
   - name: 'Wyrmstooth.esp'
     url: [ 'https://archive.org/details/wyrmstooth1.18' ]
     group: *newLandsGroup
-    after:
-      - 'Falskaar.esm'
+    after: [ 'Falskaar.esm' ]
     msg:
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Wyrmstooth - Requiem Patch.esp")'
@@ -2331,8 +2330,7 @@ plugins:
         itm: 21
         udr: 2
   - name: 'SmithBornMaterials.esm'
-    after:
-      - 'SmithBornPerks.esm'
+    after: [ 'SmithBornPerks.esm' ]
   - name: 'SpecializedFollowers.esm'
     msg: [ *obsolete ]
   - name: 'SPTDiverseGuardsSkyrimResources.esm'
@@ -2530,8 +2528,7 @@ plugins:
 # Low priority .esp's
   - name: 'VanillaReducedTextures.esp'
     group: *newLandsGroup
-    after:
-      - 'Cutting Room Floor.esp'
+    after: [ 'Cutting Room Floor.esp' ]
   - name: 'VanillaReducedTexturesDG.esp'
     after:
       - 'Cutting Room Floor.esp'
@@ -3191,8 +3188,7 @@ plugins:
             text: 'Этот мод может быть не совместим с любыми модами меняющих рассы гуманоидов(имперец, бретонец, норд, редгард). Также не совместим с модами, меняющими внешние данные Бабетты(Babette''s facegendata(0001D4B7.NIF)).'
   - name: 'Weapons & Armor Fixes_Remade.esp'
     group: *underridesGroup
-    after:
-      - 'Guard Dialogue Overhaul.esp'
+    after: [ 'Guard Dialogue Overhaul.esp' ]
     msg:
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("KFR-Kryptopyr''sFixesReqtified.esp")'
@@ -3208,8 +3204,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Clothing & Clutter Fixes.esp'
     group: *underridesGroup
-    after:
-      - 'Weapons & Armor Fixes_Remade.esp'
+    after: [ 'Weapons & Armor Fixes_Remade.esp' ]
     msg:
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("KFR-Kryptopyr''sFixesReqtified.esp")'
@@ -3433,8 +3428,7 @@ plugins:
       - crc: 0x5EDCD0EC
         util: 'TES5Edit v4.0.2h'
   - name: 'PaperMapHeight-RemoveFog.esp'
-    after:
-      - 'WATER.esp'
+    after: [ 'WATER.esp' ]
   - name: 'VanillaSnowWindyand150percentLessView.esp'
     msg: [ *obsolete ]
   - name: 'ExpandedSnowSystems.esp'
@@ -3502,8 +3496,7 @@ plugins:
         condition: 'active("Requiem - Unique Uniques - AOS.esp")'
         subs: [ 'Requiem - Unique Uniques - AOS.esp' ]
   - name: 'AOS2_WAF Patch.esp'
-    after:
-      - name: 'AOS2_GDO Patch.esp'
+    after: [ 'AOS2_GDO Patch.esp' ]
     msg:
       - <<: *alreadyInX
         condition: 'active("Requiem - Audio Overhaul for Skyrim.esp") and version("Requiem - Audio Overhaul for Skyrim.esp", "3.08", <)'
@@ -3739,8 +3732,7 @@ plugins:
       - 'realrainBWRLWC.esp'
       - 'realrain.esp'
   - name: 'realrainextended.esp'
-    after:
-      - 'Purewaters.esp'
+    after: [ 'Purewaters.esp' ]
     inc:
       - 'realrainCoT.esp'
       - 'realrainBWRLWC.esp'
@@ -4043,8 +4035,7 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
-    after:
-      - 'TradeRoutes.esp'
+    after: [ 'TradeRoutes.esp' ]
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Trade and Barter.esp")'
@@ -5291,8 +5282,7 @@ plugins:
         condition: 'many("Invulnerable Horses( - Brave)?\.esp")'
         subs: [ 'Invulnerable Horses .esp file' ]
   - name: 'Ish''s Respec Mod.esp'
-    after:
-      - 'Perky.esp'
+    after: [ 'Perky.esp' ]
     tag: [ Relev ]
   - name: 'Ish''s Souls to Perks.esp'
     req:
@@ -6437,8 +6427,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 12
   - name: 'Smithing Coinage.esp'
-    after:
-      - 'Invent.esp'
+    after: [ 'Invent.esp' ]
   - name: 'Smithing [D|G]rainMill\.esp'
     inc:
       - 'SkyrimGranary.esp'
@@ -6664,15 +6653,13 @@ plugins:
   - name: 'WerewolfAftermathEquipper.esp'
     req: [ *SKSE ]
   - name: 'WetandCold.esp'
-    after:
-      - 'SKSE Hotkeys.esp'
+    after: [ 'SKSE Hotkeys.esp' ]
     clean:
       # version: 2.02
       - crc: 0x762DC693
         util: 'TES5Edit v4.0.1'
   - name: 'WetandCold - Ashes.esp'
-    after:
-      - 'SKSE Hotkeys.esp'
+    after: [ 'SKSE Hotkeys.esp' ]
     clean:
       # version: 2.02
       - crc: 0x3D7CC687
@@ -8535,8 +8522,7 @@ plugins:
         udr: 14
   - name: 'Immersive Weapons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27644' ]
-    after:
-      - 'AmazingFollowerTweaks.esp'
+    after: [ 'AmazingFollowerTweaks.esp' ]
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Weapons.esp")'
@@ -9740,8 +9726,7 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("SUNMagicArmor.esp",EAB06AA4)'
   - name: 'sunnydawnbreaker.esp'
-    after:
-      - 'improvedrealistic.esp'
+    after: [ 'improvedrealistic.esp' ]
   - name: 'Sword Master Armor.esp'
     dirty:
       - crc: 0x7d6fd4ae
@@ -10588,16 +10573,14 @@ plugins:
       - Relev
   - name: 'Requiem - Hearthfire.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    after:
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
+    after: [ 'Requiem - Legendary Bugsmasher Edition.esp' ]
     msg:
       - <<: *alreadyInX
         condition: 'version("Requiem.esp", "2.0.0", >=)'
         subs: [ 'Requiem 2.0.0 and higher' ]
   - name: 'NRM_Dragonborn_Reqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/60508' ]
-    after:
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
+    after: [ 'Requiem - Legendary Bugsmasher Edition.esp' ]
     inc:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
   - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
@@ -10612,8 +10595,7 @@ plugins:
         subs: [ 'Fozar''s Requiem - Dragonborn Patch' ]
   - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61520' ]
-    after:
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
+    after: [ 'Requiem - Legendary Bugsmasher Edition.esp' ]
     msg:
       - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("KFR-FZR.esp")'
@@ -10652,8 +10634,7 @@ plugins:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
   - name: 'CFR-CloaksForRequiem.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61590' ]
-    after:
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
+    after: [ 'Requiem - Legendary Bugsmasher Edition.esp' ]
     msg:
       - <<: *alreadyInX
         condition: 'active("COR-CraftingOverhaulReqtified.esp")'
@@ -10703,12 +10684,10 @@ plugins:
       - 'COR-NoHeavyStormcloaks.esp'
   - name: 'Requiem - Audio Overhaul for Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    after:
-      - 'Requiem - Cutting Room Floor.esp'
+    after: [ 'Requiem - Cutting Room Floor.esp' ]
   - name: 'Requiem - Immersive Sounds Compendium.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    after:
-      - 'Requiem - Cutting Room Floor.esp'
+    after: [ 'Requiem - Cutting Room Floor.esp' ]
   - name: 'Requiem - Immersive Horses( - SkyTEST)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
@@ -10720,8 +10699,7 @@ plugins:
       - 'Requiem - Breaking Bad.esp'
   - name: 'Requiem - Immersive Horses - SkyTEST.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    req:
-      - 'Requiem - SkyTEST.esp'
+    req: [ 'Requiem - SkyTEST.esp' ]
   - name: 'Requiem - Craftable Horse Barding.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
@@ -10729,12 +10707,10 @@ plugins:
       - 'Requiem - Immersive Horses - SkyTEST.esp'
   - name: 'Requiem - Deadly Dragons( - AOS)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    after:
-      - 'Requiem - Wild World.esp'
+    after: [ 'Requiem - Wild World.esp' ]
   - name: 'Requiem - Timing Is Everything.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    after:
-      - 'Requiem_Minor_Arcana.esp'
+    after: [ 'Requiem_Minor_Arcana.esp' ]
   - name: 'Requiem - Improved Closefaced Helmets.esp'
     after:
       - 'Requiem_Minor_Arcana.esp'
@@ -10755,8 +10731,7 @@ plugins:
       - 'Requiem - Immersive Sounds Compendium.esp'
       - 'ISC Requiem Patch.esp'
   - name: 'Requiem - Royal Armory.esp'
-    after:
-      - 'Requiem - Warmonger Armory.esp'
+    after: [ 'Requiem - Warmonger Armory.esp' ]
   - name: 'Requiem - No Overencumbered Messages.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19281' ]
     msg:
@@ -10780,8 +10755,7 @@ plugins:
       - 'AOS2_Requiem Patch.esp'
   - name: 'Requiem - BDT Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/95859' ]
-    after:
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
+    after: [ 'Requiem - Legendary Bugsmasher Edition.esp' ]
   - name: 'Requiem - Alchemy Rebalance.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/86504' ]
     after:
@@ -10814,8 +10788,7 @@ plugins:
         subs: [ 'Kryptopyr''s Fixes Reqtified' ]
   - name: 'Requiem - Werewolf and Vampire Rebalance.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/87420' ]
-    after:
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
+    after: [ 'Requiem - Legendary Bugsmasher Edition.esp' ]
     msg:
       - <<: *alreadyInX
         condition: 'active("Requiem - Immersive Divine Blessings.esp")'
@@ -10958,8 +10931,7 @@ plugins:
         itm: 3
   - name: 'Tropical Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/33017' ]
-    after:
-      - 'Better Mills Textures.esp'
+    after: [ 'Better Mills Textures.esp' ]
     dirty:
       - <<: *quickClean
         crc: 0xEE3DA029
@@ -11445,8 +11417,7 @@ plugins:
       - 'Uncapped Perks - Sneak.esp'
       - 'Uncapped Perks - Speech.esp'
       - 'Uncapped Perks - Two Handed.esp'
-    after:
-      - 'Scoped Bows.esp'
+    after: [ 'Scoped Bows.esp' ]
     msg:
       - <<: *requiresX
         condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
@@ -11673,8 +11644,7 @@ plugins:
       - *SkyUI
   - name: 'SkyRe_EnemyScaling.esp'
     tag: [ Relev ]
-    after:
-      - 'Immersive Weapons.esp'
+    after: [ 'Immersive Weapons.esp' ]
   - name: 'SkyRe_Enemies.esp'
     msg: [ *obsolete ]
     tag: [ Relev ]
@@ -12907,8 +12877,7 @@ plugins:
         udr: 2
   - name: 'BetterBreezehome.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10811' ]
-    after:
-      - 'FalkreathCastle.esp'
+    after: [ 'FalkreathCastle.esp' ]
     inc:
       - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
       - '0001BertsBreezehomeRemodel.V.2(esm).esm'
@@ -13534,8 +13503,7 @@ plugins:
     inc:
       - 'College of Winterhold Reborn.esp'
       - 'College Of Winterhold Overhaul Release - V1.02.esp'
-    after:
-      - 'Clothing & Clutter Fixes.esp'
+    after: [ 'Clothing & Clutter Fixes.esp' ]
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive College of Winterhold.esp")'
@@ -13549,11 +13517,9 @@ plugins:
       - crc: 0xCE70123B
         util: 'TES5Edit v4.0.1'
   - name: 'CWIDragonbornPatch.esp'
-    after:
-      - 'CollegeOfWinterholdImmersive.esp'
+    after: [ 'CollegeOfWinterholdImmersive.esp' ]
   - name: 'CWIDawnguardPatch.esp'
-    after:
-      - 'CollegeOfWinterholdImmersive.esp'
+    after: [ 'CollegeOfWinterholdImmersive.esp' ]
   - name: 'CWIRLSPatchLegendary.esp'
     clean:
       # version: 5.2
@@ -14032,8 +13998,7 @@ plugins:
         udr: 8
   - name: 'ElysiumEstate.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/33939' ]
-    after:
-      - 'WhiterunHoldForest.esp'
+    after: [ 'WhiterunHoldForest.esp' ]
     dirty:
       # v5.0.3
       - <<: *quickClean
@@ -16029,8 +15994,7 @@ plugins:
     inc:
       - 'EveryoneGetInside.esp'
   - name: 'When Vampires Attack.esp'
-    after:
-      - 'Vampirelordroyal.esp'
+    after: [ 'Vampirelordroyal.esp' ]
     inc:
       - 'TheTownIsSafe.esp'
   - name: 'SaltMines.esp'
@@ -16710,8 +16674,7 @@ plugins:
         util: 'TES5Edit v4.0.2h'
   - name: 'Thunderchild - Epic Shout Package.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/41376' ]
-    after:
-      - 'SPERG.esp'
+    after: [ 'SPERG.esp' ]
     msg: [ *doNotClean ]
   - name: 'tinyalchemisthut.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25712' ]
@@ -17124,8 +17087,7 @@ plugins:
         itm: 3
         udr: 1
   - name: 'AtrociousRiftenTextureFix.esp'
-    after:
-      - 'Unique Grasses_clippingfixer.esp'
+    after: [ 'Unique Grasses_clippingfixer.esp' ]
   - name: 'Western Watchtower Rebuilt.esp'
     msg:
       - <<: *obsolete
@@ -17202,8 +17164,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 1
   - name: 'whiterunMarket.esp'
-    after:
-      - 'forested_skyrim.esp'
+    after: [ 'forested_skyrim.esp' ]
   - name: 'WhiterunFortified.esp'
     dirty:
       - crc: 0x35897eae
@@ -17549,8 +17510,7 @@ plugins:
         itm: 5
   - name: 'aMidianBorn_ContentAddon.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24909' ]
-    after:
-      - 'BetterQuestObjectives.esp'
+    after: [ 'BetterQuestObjectives.esp' ]
     msg:
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("CAR-ContentAddonReqtified.esp")'
@@ -17662,15 +17622,13 @@ plugins:
       - <<: *obsolete
         subs: [ '[Nexus](http://www.nexusmods.com/skyrim/mods/32695)' ]
   - name: BetterQuestObjectives-RequiemPatch.esp
-    after:
-      - 'ESFCompanions.esp'
+    after: [ 'ESFCompanions.esp' ]
     msg:
       - <<: *alreadyInX
         condition: 'version("Requiem.esp", "2.0.0", >=)'
         subs: [ 'Requiem.esp' ]
   - name: 'Book Covers Skyrim.esp'
-    after:
-      - 'BetterQuestObjectives.esp'
+    after: [ 'BetterQuestObjectives.esp' ]
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", >=) and not active("Requiem - Book Covers Skyrim.esp")'
@@ -18001,8 +17959,7 @@ plugins:
   - name: 'Dawnguard - Att.esp'
     msg: [ *sortMasters ]
   - name: 'DawnguardArmorLaup26.esp'
-    after:
-      - 'LorebalanceArtifacts.esp'
+    after: [ 'LorebalanceArtifacts.esp' ]
   - name: 'DawnguardDawnbreaker_((Sun|Holy)?(Fire)?Ed(_ST)?)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -18092,11 +18049,9 @@ plugins:
       - crc: 0xB9E80CB2
         util: 'TES5Edit v4.0.2'
   - name: 'ESFCompanions - VilkasProvingHonorNoShowFix.esp'
-    after:
-      - 'Brevi_MoonlightTales.esp'
+    after: [ 'Brevi_MoonlightTales.esp' ]
   - name: 'BetterQuestObjectives-ESFCompanionsPatch.esp'
-    after:
-      - 'Brevi_MoonlightTales.esp'
+    after: [ 'Brevi_MoonlightTales.esp' ]
   - name: 'Essential Frost.esp'
     msg:
       - <<: *corrupt
@@ -18359,8 +18314,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 2
   - name: 'improvedrealistic.esp'
-    after:
-      - 'LMBalancingDawnguardDV.esp'
+    after: [ 'LMBalancingDawnguardDV.esp' ]
     inc:
       - 'improvedoverpowered.esp'
   - name: 'ImprovedScImpUniforms - Armor Base.esp'
@@ -19215,8 +19169,7 @@ plugins:
         condition: 'many("The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp")'
         subs: [ 'The Skyrim conflict .esp file' ]
   - name: 'TheChoiceIsYours.esp'
-    after:
-      - 'BetterQuestObjectives.esp'
+    after: [ 'BetterQuestObjectives.esp' ]
     tag: [ Names ]
     clean:
       # version: 2.0
@@ -19235,8 +19188,7 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
-    after:
-      - 'BetterQuestObjectives.esp'
+    after: [ 'BetterQuestObjectives.esp' ]
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - Timing Is Everything.esp")'
@@ -19446,8 +19398,7 @@ plugins:
       - name: 'Weapons & Armor Fixes_Remade.esp'
         display: '[Weapon and Armor Fixes Remade](http://www.nexusmods.com/skyrim/mods/34093/?)'
   - name: 'BetterQuestObjectives-AMBSkyforgePatch.esp'
-    after:
-      - 'ESFCompanions.esp'
+    after: [ 'ESFCompanions.esp' ]
   - name: 'WeaponsArmorFixes_MultiMod_(DLC)?(Vanilla)?Patch\.esp'
     req:
       - name: 'Weapons & Armor Fixes_Remade.esp'
@@ -19470,8 +19421,7 @@ plugins:
       - Relev
       - Stats
   - name: 'Weapons & Armor_TrueOrcish&DaedricWeapons.esp'
-    after:
-      - 'Weapons & Armor Fixes_Remade.esp'
+    after: [ 'Weapons & Armor Fixes_Remade.esp' ]
     msg:
       - <<: *alreadyInX
         condition: 'active("KFR-Kryptopyr''sFixesReqtified.esp")'
@@ -19699,18 +19649,15 @@ plugins:
   - name: 'ETaC - Darkwater.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     msg: [ *obsolete ]
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'ETaC - Dragon Bridge.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     msg: [ *obsolete ]
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'ETaC - Ivarstead.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     msg: [ *obsolete ]
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'ETaC - Riverwood.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     msg:
@@ -19729,8 +19676,7 @@ plugins:
       # v0.4.4
       - crc: 0x5CFDBF12
         util: 'TES5Edit v4.0.2f'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'ETaC - Rorikstead.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     msg:
@@ -19749,8 +19695,7 @@ plugins:
       # v0.4.4
       - crc: 0xE6FD3597
         util: 'TES5Edit v4.0.2f'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'ETaC - Darkwater Crossing.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     clean:
@@ -19766,8 +19711,7 @@ plugins:
   - name: 'ETaC - Morthal.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
     msg: [ *obsolete ]
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'ETaC SkyRealFF Patch - Dawnguard.esp'
     inc:
       - 'ETaC SkyRealFF Patch - Standard.esp'
@@ -19821,8 +19765,7 @@ plugins:
         itm: 11
         udr: 2
   - name: 'NerniesSolitudeExpansion.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     dirty:
       - crc: 0x304709ff
         <<: *dirtyPlugin
@@ -19836,8 +19779,7 @@ plugins:
         itm: 82
         udr: 24
   - name: 'NerniesCityandVillageExpansion.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     inc:
       - 'NerniesSolitudeExpansion.esp'
     dirty:
@@ -20337,14 +20279,11 @@ plugins:
       - <<: *obsolete
         subs: [ '[Audio Overhaul for Skyrim 2](http://www.nexusmods.com/skyrim/mods/43773).' ]
   - name: 'AOS_ICS Patch.esp'
-    after:
-      - 'Improved Combat Sounds v2.2.esp'
+    after: [ 'Improved Combat Sounds v2.2.esp' ]
   - name: 'AOS_BlockSparkles Patch.esp'
-    after:
-      - 'BlockSparkles.esp'
+    after: [ 'BlockSparkles.esp' ]
   - name: 'AOS_EBT Patch.esp'
-    after:
-      - 'AOS.esp'
+    after: [ 'AOS.esp' ]
     msg:
       - <<: *obsolete
         subs: [ '[Audio Overhaul for Skyrim 2](http://www.nexusmods.com/skyrim/mods/43773).' ]
@@ -20536,8 +20475,7 @@ plugins:
   - name: 'ELFX - Hardcore.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27043' ]
     group: *lightingGroup
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
+    after: [ 'Immersive Citizens - AI Overhaul.esp' ]
   - name: 'ELFX - Moonpath.esp'
     after:
       - 'rcrnShaders.esp'
@@ -20572,8 +20510,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Dawnguard Interiors.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
-    after:
-      - 'Realistic Lighting Overhaul - Dungeons.esp'
+    after: [ 'Realistic Lighting Overhaul - Dungeons.esp' ]
     msg: [ *obsolete ]
   - name: 'Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
@@ -20601,8 +20538,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'RLO - Major City Exteriors - No Guard Torches.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
-    after:
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+    after: [ 'Realistic Lighting Overhaul - Major City Exteriors.esp' ]
     msg: [ *obsolete ]
   - name: 'RLO - Exteriors.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
@@ -20634,8 +20570,7 @@ plugins:
     inc:
       - 'Realistic Lighting Overhaul - Weathers.esp'
       - 'Realistic Lighting Overhaul - Weathers - Brighter Nights.esp'
-    after:
-      - 'Realistic Lighting Overhaul - Major City Exteriors.esp'
+    after: [ 'Realistic Lighting Overhaul - Major City Exteriors.esp' ]
   - name: 'ClimatesOfTamriel-Dungeons&Interiors.esp'
     inc:
       - 'Realistic Lighting Overhaul - Dungeons.esp'
@@ -20801,26 +20736,19 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'RND_Dawnguard-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_HearthFires-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_Dragonborn-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_Overhaul.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_CheckNeedsTranslation.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_BabettesFeasts.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_BabettesFeast-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     msg:
       - type: error
         content:
@@ -20834,11 +20762,9 @@ plugins:
             text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_Cliffracers-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_DestructibleBottles-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     msg:
       - type: error
         content:
@@ -20852,20 +20778,15 @@ plugins:
             text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_DrinkingFountains-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_ETaC-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_HighlandMilkFarm-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'Hunterborn_RND-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_NCVE-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     msg:
       - type: error
         content:
@@ -20879,17 +20800,13 @@ plugins:
             text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_NerniesRangerPack-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'PrivateNeeds-RND.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_Requiem-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_RWL-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     msg:
       - type: error
         content:
@@ -20903,8 +20820,7 @@ plugins:
             text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_RWS-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     msg:
       - type: error
         content:
@@ -20918,21 +20834,16 @@ plugins:
             text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_SkyMoMod-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_USKP-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     tag: [ Relev ]
   - name: 'SI_RNADPatch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'Disease Descriptions_RND Compatibile.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_UniqueBoozeBottles-Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     msg:
       - type: say
         content:
@@ -20946,11 +20857,9 @@ plugins:
             text: 'Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.'
         condition: 'file("Unique BOOZE Bottles.*\.esp")'
   - name: 'KnapsackEnhanced.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'FalskaarRNDHotfix.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'Real Wildlife Skyrim 0.1 IMCN.esp'
     inc:
       - 'Real Wildlife Skyrim 0.1.esp'
@@ -21016,8 +20925,7 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 17
   - name: 'NerniesCityandVillage_TRO_BasicNeeds_Patch.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'ZF Primary Needs.esp'
     req:
       - *SKSE
@@ -21317,8 +21225,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 3
   - name: 'Aurora - The Doomstone Package.esp'
-    after:
-      - 'EnchantingAwakened.esp'
+    after: [ 'EnchantingAwakened.esp' ]
   - name: 'Ancient Spells.esp'
     tag: [ Relev ]
     dirty:
@@ -21967,15 +21874,13 @@ plugins:
     inc:
       - 'Clear Skies Fix.esp'
   - name: 'DeadlySpellImpacts.esp'
-    after:
-      - 'balanceddestructionv4.esp'
+    after: [ 'balanceddestructionv4.esp' ]
     clean:
       # version: 1.6.1
       - crc: 0x455C0C6A
         util: 'TES5Edit v4.0.1'
   - name: 'DeadlySpellImpacts - Two Fire.esp'
-    after:
-      - 'DeadlySpellImpacts.esp'
+    after: [ 'DeadlySpellImpacts.esp' ]
   - name: 'Lost Magic.esp'
     tag:
       - Delev
@@ -23160,8 +23065,7 @@ plugins:
         subs: [ 'the [Enchanting Awakened Stealth Skills Rebalanced Patch](http://www.nexusmods.com/skyrim/mods/42796)' ]
     tag: [ Delev ]
   - name: 'Stealth Skills Rebalanced_SNEAK.esp'
-    after:
-      - 'EnchantingAwakened.esp'
+    after: [ 'EnchantingAwakened.esp' ]
     inc:
       - 'Stealth Skills Rebalanced_COMPLETE.esp'
   - name: 'Skyrim Perk Enhancements.esp'
@@ -23209,8 +23113,7 @@ plugins:
   - name: 'Override TwoHanded.esp'
     msg: [ *doNotClean ]
   - name: 'SPERG.esp'
-    after:
-      - 'EnchantingAwakened.esp'
+    after: [ 'EnchantingAwakened.esp' ]
   - name: 'SmithingTree.esp'
     tag: [ Delev ]
   - name: 'SmithingTreeDG.esp'
@@ -23277,48 +23180,35 @@ plugins:
   - name: 'PinupsMen.esp'
     req: [ *FNIS ]
   - name: 'PotionsBETA.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
     dirty:
       - crc: 0xb541da
         <<: *dirtyPlugin
         itm: 2
   - name: 'RND_FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'IMCN_FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'IMCN_CookingExpanded-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_RWL-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'IMCN_RWL_Reduced-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'IMCN_RWL_Realistic-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_RWS-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'IMCN_RWS-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_BabettesFeast-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'IMCN_BabettesFeast-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_NCVE-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'RND_DestructibleBottles-FAMP.esp'
-    after:
-      - '3DNPC.esp'
+    after: [ '3DNPC.esp' ]
   - name: 'psikoticsnecromancy.esp'
     req:
       - name: 'SkyMoMod.esm'
@@ -23972,14 +23862,11 @@ plugins:
       - 'UFO - Dawnguard AddOn.esp'
       - 'UFO - Heartfire AddOn.esp'
   - name: 'ENPCO Dawnguard.esp'
-    after:
-      - 'Endgame NPC Overhaul.esp'
+    after: [ 'Endgame NPC Overhaul.esp' ]
   - name: 'ENPCO Hearthfire.esp'
-    after:
-      - 'Endgame NPC Overhaul.esp'
+    after: [ 'Endgame NPC Overhaul.esp' ]
   - name: 'ENPCO Dragonborn.esp'
-    after:
-      - 'Endgame NPC Overhaul.esp'
+    after: [ 'Endgame NPC Overhaul.esp' ]
   - name: 'SBF [A-Z][^l].*\.esp'
     ## individual follower overrides
     after:
@@ -25274,8 +25161,7 @@ plugins:
           - lang: ja
             text: 'ドイツ語版です。'
         condition: 'checksum("AmazingFollowerTweaks.esp",1482CEEC)'
-    after:
-      - 'Inigo.esp'
+    after: [ 'Inigo.esp' ]
     dirty:
       - <<: *quickClean
         crc: 0xD6C72A3C
@@ -25797,8 +25683,7 @@ plugins:
         <<: *dirtyPlugin
         itm: 220
   - name: 'SkyFalls + SkyMills + DG + DB.esp'
-    after:
-      - 'Distant DetailHF.esp'
+    after: [ 'Distant DetailHF.esp' ]
   - name: 'SeeEnchs.esp'
     msg:
       - <<: *alsoUseX
@@ -25959,14 +25844,11 @@ plugins:
       - 'ELFX - Dawnguard.esp'
       - 'ELFX - Dragonborn.esp'
   - name: 'Tamriel Reloaded.esp'
-    after:
-      - 'Better Mills Textures.esp'
+    after: [ 'Better Mills Textures.esp' ]
   - name: 'Better Mills Textures - Tamriel Reloaded.esp'
-    after:
-      - 'Tamriel Reloaded.esp'
+    after: [ 'Tamriel Reloaded.esp' ]
   - name: 'Better Mills Textures - Tropical Skyrim.esp'
-    after:
-      - 'Tropical Skyrim.esp'
+    after: [ 'Tropical Skyrim.esp' ]
   - name: 'RealisticWaterTextures.esp'
     msg:
       - type: warn
@@ -26462,8 +26344,7 @@ plugins:
     tag: [ NoMerge ]
   - name: 'Smashed Patch.esp'
     group: *dynamicPatchGroup
-    after:
-      - 'TES5Merged.esp'
+    after: [ 'TES5Merged.esp' ]
     tag: [ NoMerge ]
     msg:
       - <<: *onlyUseSmashOrBash
@@ -26649,8 +26530,7 @@ plugins:
         subs: [ '[Audio Overhaul for Skyrim 2](http://www.nexusmods.com/skyrim/mods/43773).' ]
     ## a compat patch for qotsafans compat patches
   - name: 'AOS_CTD_Fix.esp'
-    after:
-      - 'AOS_SkyRe-Patch Patch.esp'
+    after: [ 'AOS_SkyRe-Patch Patch.esp' ]
     group: *reproccerGroup
   - name: 'AOS_Reduced_Reverb_Addon.esp'
     after:
@@ -26683,8 +26563,7 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
   - name: 'Silent khajiit night-eye.esp'
-    after:
-      - 'nighteyetoggle.esp'
+    after: [ 'nighteyetoggle.esp' ]
   - name: 'Acquisitive Soul Gems.esp'
     after:
       - 'SkyRe_Main.esp'
@@ -26700,14 +26579,12 @@ plugins:
     tag: [ Names ]
 
   - name: 'PerMa Expansion 1 - Wintermyst.esp'
-    after:
-      - 'PerkusMaximus_Master.esp'
+    after: [ 'PerkusMaximus_Master.esp' ]
 
   - name: 'PerkusMaximus_Mage.esp'
     req:
       - *SKSE
-    after:
-      - 'PerMa Expansion 1 - Wintermyst.esp'
+    after: [ 'PerMa Expansion 1 - Wintermyst.esp' ]
     tag: [ Names ]
 
   - name: 'PerkusMaximus_Thief.esp'
@@ -26743,23 +26620,19 @@ plugins:
       - Stats
 
   - name: 'Pre PaMa CCOR Patch.esp'
-    after:
-      - 'PerkusMaximus_Warrior.esp'
+    after: [ 'PerkusMaximus_Warrior.esp' ]
     group: *prePatchusMaximusGroup
     tag:
       - Names
       - Stats
     msg: [ *doNotClean ]
   - name: 'NPO Module - Crossbows.esp'
-    after:
-      - 'PerkusMaximus_Warrior.esp'
+    after: [ 'PerkusMaximus_Warrior.esp' ]
   - name: 'Default Teammate Weapon Draw Distance.esp'
-    after:
-      - 'Convenient Horses.esp'
+    after: [ 'Convenient Horses.esp' ]
   - name: 'Undeath.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/40607' ]
-    after:
-      - 'MoonAndStar_MAS.esp'
+    after: [ 'MoonAndStar_MAS.esp' ]
     msg:
       - <<: *patchRequiem3rdParty
         condition: 'active("Requiem.esp") and not active("NRM Undeath - Requiem Patch.esp")'
@@ -26770,8 +26643,7 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 48
   - name: 'Verdant - A Skyrim Grass Plugin.esp'
-    after:
-      - 'Skyrim Flora Overhaul.esp'
+    after: [ 'Skyrim Flora Overhaul.esp' ]
     dirty:
       # version: 2.2
       - <<: *quickClean
@@ -26779,17 +26651,13 @@ plugins:
         util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 594
   - name: 'Immersive detection of NPC.esp'
-    after:
-      - 'Combat Evolved.esp'
+    after: [ 'Combat Evolved.esp' ]
   - name: 'Better Stealth AI for Followers.esp'
-    after:
-      - 'BetterQuestObjectives.esp'
+    after: [ 'BetterQuestObjectives.esp' ]
   - name: 'EBS -.*\.esp' # Enhanced Better Sorting uses a ton of plugins
-    after:
-      - 'BetterQuestObjectives.esp'
+    after: [ 'BetterQuestObjectives.esp' ]
   - name: 'Thieves Guild Requirements.esp'
-    after:
-      - 'BetterQuestObjectives.esp'
+    after: [ 'BetterQuestObjectives.esp' ]
     tag: [ Names ]
   - name: 'Solstheim - The Lost Levels.esp'
     dirty:
@@ -26920,8 +26788,7 @@ plugins:
         util: TES5Edit v3.1.3
     url: [ 'http://www.nexusmods.com/skyrim/mods/65242' ]
   - name: 'More Draconic Dragon Aspect - (Wings|Tail|Wings and Tail)\.esp'
-    after:
-      - 'More Draconic Dragon Aspect - Powered Edition.esp'
+    after: [ 'More Draconic Dragon Aspect - Powered Edition.esp' ]
     url: [ 'http://www.nexusmods.com/skyrim/mods/54306' ]
   - name: 'More Draconic Dragon Aspect - Flying Mod Addon.esp'
     after:
@@ -27011,8 +26878,7 @@ plugins:
   - name: 'Ordinator - Perks of Skyrim.esp'
     group: *ordinatorGroup
   - name: 'Darkend.esp'
-    after:
-      - 'AOS.esp'
+    after: [ 'AOS.esp' ]
     url: [ 'http://www.nexusmods.com/skyrim/mods/67559' ]
   - name: 'WAO-WeatherAndAmbienceOverhaul.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/55705' ]
@@ -27042,26 +26908,19 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
   - name: 'Elisdriel.esp'
-    after:
-      - 'WhiterunHoldForest.esp'
+    after: [ 'WhiterunHoldForest.esp' ]
   - name: 'JK''s Rorikstead.esp'
-    after:
-      - 'WhiterunHoldForest.esp'
+    after: [ 'WhiterunHoldForest.esp' ]
   - name: 'JK''s Skyrim.esp'
-    after:
-      - 'WhiterunHoldForest.esp'
+    after: [ 'WhiterunHoldForest.esp' ]
   - name: 'Lokir''s House.esp'
-    after:
-      - 'WhiterunHoldForest.esp'
+    after: [ 'WhiterunHoldForest.esp' ]
   - name: 'Nakahara.esp'
-    after:
-      - 'WhiterunHoldForest.esp'
+    after: [ 'WhiterunHoldForest.esp' ]
   - name: 'Superior Rorikstead.esp'
-    after:
-      - 'WhiterunHoldForest.esp'
+    after: [ 'WhiterunHoldForest.esp' ]
   - name: 'nTr4nc3 - Whiterun Mansion.esp'
-    after:
-      - 'WhiterunHoldForest.esp'
+    after: [ 'WhiterunHoldForest.esp' ]
   - name: 'Man Those Borders!.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/74304' ]
     dirty:
@@ -27095,12 +26954,10 @@ plugins:
         name: 'Enhanced Vanilla Trees on Nexus Mods'
     tag: [ NoMerge ]
   - name: 'Dynamic Dialogue Followers.esp'
-    after:
-      - 'EFFDialogue.esp'
+    after: [ 'EFFDialogue.esp' ]
     url: []
   - name: 'GuardAnimationsGDO.esp'
-    after:
-      - 'Guard Dialogue Overhaul.esp'
+    after: [ 'Guard Dialogue Overhaul.esp' ]
     clean:
       # version: 1.5
       - crc: 0x6DBF6EA1
@@ -27348,8 +27205,7 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
   - name: 'Provincial Courier Service.esp'
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
+    after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     clean:
       # version: 2.0
       - crc: 0xD6D01965
@@ -27367,8 +27223,7 @@ plugins:
       - crc: 0x6EA57C0D
         util: 'TES5Edit v4.0.1'
   - name: 'CFTO.esp'
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
+    after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     clean:
       # version: 2.0
       - crc: 0x2C01D8A0
@@ -27414,12 +27269,10 @@ plugins:
         condition: 'active("Requiem.esp") and not active("II Requiem patch.esp") and not active("II Requiem C2H6O patch.esp")'
         subs: [ 'II Requiem patch.esp or II Requiem C2H6O patch.esp' ]
   - name: 'NPC_Overhaul_V_(1|2|3)_\.esp'
-    after:
-      - 'Feminine Females.esp'
+    after: [ 'Feminine Females.esp' ]
   - name: 'MoonAndStar_MAS.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/52397' ]
-    after:
-      - 'AuroraVillage.esp'
+    after: [ 'AuroraVillage.esp' ]
     msg:
       - <<: *patchProvided
         subs: [ 'Undeath' ]
@@ -27730,8 +27583,7 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Quest Markers Restored.esp'
     group: *underridesGroup
-    after:
-      - 'BetterQuestObjectives.esp'
+    after: [ 'BetterQuestObjectives.esp' ]
     clean:
       # version: 1.1.0
       - crc: 0x192240BE
@@ -27745,8 +27597,7 @@ plugins:
       - crc: 0x19E50E3F
         util: 'TES5Edit v4.0.1'
   - name: 'No Snow Under The Roof - CRF Patch.esp'
-    after:
-      - 'CRF - Lighting Overhaul.esp'
+    after: [ 'CRF - Lighting Overhaul.esp' ]
     clean:
       # version: 1.5
       - crc: 0xF05588E3
@@ -27774,8 +27625,7 @@ plugins:
         util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 123
   - name: 'Arthmoor''s Skyrim Villages - All In One.esp'
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
+    after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     dirty:
       # version: 1.0.1
       - <<: *quickClean
@@ -27926,8 +27776,7 @@ plugins:
         util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'more idle markers.esp'
-    after:
-      - 'Immersive Citizens - AI Overhaul.esp'
+    after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     clean:
       # version: 0.5
       - crc: 0xC5DC3E93
