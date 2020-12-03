@@ -566,19 +566,14 @@ common:
       - lang: sv
         text: 'Denna plugins master behöver sorteras'
 
-  - &useBashTweak
+  - &useBashTweakInstead
     type: say
     content:
       - lang: en
-        text: 'Use Bashed Patch tweak instead.'
+        text: 'A Bashed Patch tweak can be used instead of this plugin. %1%'
       - lang: de
-        text: 'Verwenden Sie stattdessen den Bashed Patch Tweak.'
-      - lang: ja
-        text: 'Bashed Patchのtweak機能を代わりに使用してください。'
-      - lang: pl
-        text: 'Użyj poprawki Bashed Patch zamiast tego.'
-      - lang: ru
-        text: 'Используйте вместо этого настройку башед патча.'
+        text: 'Ein Bashed Patch Tweak kann anstelle dieses Plugins verwendet werden. %1%'
+    subs: [ '' ]
     condition: 'file("Bashed Patch.*\.esp")'
 
   - &useOnlyOneX
@@ -25147,7 +25142,7 @@ plugins:
         crc: 0x9a11b0c4
         itm: 3
   - name: '72HoursRespawn.esp'
-    msg: [ *useBashTweak ]
+    msg: [ *useBashTweakInstead ]
   - name: 'WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -25166,17 +25161,17 @@ plugins:
         condition: 'many("(SlowRespawn_)?No(Cleared)?CellRespawn\.esp")'
         subs: [ 'No Cell Respawn .esp file' ]
   - name: 'Respawn\w{3,5}Days{0,1}\.esp'
-    msg: [ *useBashTweak ]
+    msg: [ *useBashTweakInstead ]
   - name: 'SkyRim \d Day Respawn\.esp'
-    msg: [ *useBashTweak ]
+    msg: [ *useBashTweakInstead ]
   - name: 'skyrimespawn\d{0,1}\.esp'
-    msg: [ *useBashTweak ]
+    msg: [ *useBashTweakInstead ]
   - name: 'Skyrim 120 Day Respawn.esp'
-    msg: [ *useBashTweak ]
+    msg: [ *useBashTweakInstead ]
   - name: 'Skyrim Timescale \d+\.esp'
-    msg: [ *useBashTweak ]
+    msg: [ *useBashTweakInstead ]
   - name: 'Timescale\d{1,2}\.esp'
-    msg: [ *useBashTweak ]
+    msg: [ *useBashTweakInstead ]
   - name: 'Duns_Inc_Shaders_Begone.esp'
     msg:
       - <<: *obsolete
