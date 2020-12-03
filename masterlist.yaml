@@ -895,25 +895,6 @@ globals:
     subs: [ 'https://loot.github.io/latest-thread/' ]
 # SKSE Latest
   - type: say
-    condition: 'file("../skse_loader.exe") and version("../skse_loader.exe", "0.1.7.3", <)'
-    content:
-      - lang: en
-        text: 'It appears you do not have the [latest version of SKSE](http://skse.silverlock.org). Some mods may require functionality added in the latest version of SKSE to work.'
-      - lang: de
-        text: 'Sie haben anscheinend nicht die [aktuellste Version von SKSE](http://skse.silverlock.org). Einige Mods könnten einige Funktionen benötigen, welche in der aktuellsten Version von SKSE implementiert wurden.'
-      - lang: es
-        text: 'Parece que no tienes la última versión de SKSE. la nueva versión se puede encontrar [aquí](http://skse.silverlock.org/).'
-      - lang: ja
-        text: '[SKSE](http://skse.silverlock.org)が最新版ではないようです。一部のModを動作させるには最新版のSKSEで追加された機能が必要となる場合があります。'
-      - lang: ko
-        text: '[SKSE의 최신 버전](http://skse.silverlock.org)이 설치 되지 않은 것같습니다. 일부 모드가 동작하려면 SKSE의 최신 버전에서 추가된 기능을 필요로 할 수도 있습니다.'
-      - lang: pl
-        text: 'Wygląda na to że nie masz [najnowszej wersji SKSE](http://skse.silverlock.org). Część modów może wymagać funkcjonalności dodanej w najnowszej wersji SKSE aby działać poprawnie.'
-      - lang: ru
-        text: 'Возможно у вас не установлена [новейшая версия SKSE](http://skse.silverlock.org). Для работы некоторых модов может требоваться функционал, добавленный в последней версии SKSE'
-      - lang: zh_CN
-        text: '你的[SKSE](http://skse.silverlock.org)似乎不是最新的。有些插件可能需要最新的SKSE才能工作。'
-  - type: say
     condition: 'not version("../skse_loader.exe", "0.1.7.3", <)'
     content:
       - lang: en
