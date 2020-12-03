@@ -945,10 +945,10 @@ globals:
   # SKSE
   - <<: *versionOldX
     subs: [ '**Script Extender ([SKSE](http://skse.silverlock.org))**' ]
-    condition: 'version("../skse_loader.exe", "0.1.7.3", <) and file("../skse_loader.exe")'
+    condition: 'version("../skse_loader.exe", "0.1.7.3", <) and file("../skse_loader.exe") and not file("Enderal - Forgotten Stories.esm")'
   - <<: *versionUpToDateX
     subs: [ '**Script Extender ([SKSE](http://skse.silverlock.org))**' ]
-    condition: 'version("../skse_loader.exe", "0.1.7.3", >=) and file("../skse_loader.exe")'
+    condition: 'version("../skse_loader.exe", "0.1.7.3", >=) and file("../skse_loader.exe") and not file("Enderal - Forgotten Stories.esm")'
 
 # Plugin Requirements
   # SKSE
