@@ -920,6 +920,12 @@ globals:
       - lang: zh_CN
         text: '你安装了[FNIS](http://www.nexusmods.com/skyrim/mods/11811)。每次安装或卸载基于FNIS的mod时记得运行GenerateFNISforUsers.exe。'
 
+# Plugin Requirements
+  # SKSE
+  - <<: *requiresSKSE
+    subs: [ 'an SKSE Plugin' ]
+    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse_loader.exe")'
+
 groups:
   - name: &updateEsmGroup Update.esm
 
