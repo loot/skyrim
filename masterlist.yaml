@@ -1033,10 +1033,14 @@ plugins:
   - name: 'Update.esm'
     group: *updateEsmGroup
     tag:
-      - C.Location
-      - Delev
-      - Invent.Change
-      - Keywords
+      - name: 'C.Location'
+        condition: 'not file("Enderal - Forgotten Stories.esm")'
+      - name: 'Delev'
+        condition: 'not file("Enderal - Forgotten Stories.esm")'
+      - name: 'Invent.Change'
+        condition: 'not file("Enderal - Forgotten Stories.esm")'
+      - name: 'Keywords'
+        condition: 'not file("Enderal - Forgotten Stories.esm")'
     dirty:
       - <<: *quickClean
         crc: 0xE5B67BDA
