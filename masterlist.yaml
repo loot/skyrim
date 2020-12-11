@@ -28778,6 +28778,9 @@ plugins:
       - 'ZKN.esp'
   - name: 'ArteFake.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/105029' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - ArteFakes.esp")'
     clean:
       # v1.2a
       - crc: 0xC2259EB8
