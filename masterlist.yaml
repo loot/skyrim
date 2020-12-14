@@ -10556,7 +10556,7 @@ plugins:
       - 'Requiem - Civil War Overhaul Patch.esp'
       - 'Requiem - Immersive Armors.esp'
       - 'Requiem - Immersive Weapons.esp'
-  - name: 'Requiem - (83Willows 101Bugs|Animallica|Arissa|Audio Overhaul for Skyrim|Black Mage Armor|Book Covers Skyrim|Campfire|Common Clothes and Armors|Craftable Horse Barding|Cutting Room Floor|Deadly Dragons( - AOS)?|Divine Wrath Armor|Dragon Combat Overhaul|ESF Companions|Faction Crossbows|Frostfall|Heavy Armory|Hoth|Immersive Armors|Immersive College of Winterhold|Immersive Horses( - SkyTEST)?|Immersive Patrols|Immersive Sounds Compendium|Immersive Weapons|Improved Closefaced Helmets|Inconsequential NPCs|Inigo|Katana Crafting|Live Another Life|Lost Library|Lucien|Royal Armory|RS Children Overhaul|Runic Armor|Rustic Soulgems( - ISC)?|Scoped Bows|Skyrim Unlocked|SkyTEST|Timing is Everything|Trade and Barter|Ulag''s Legacy|Unique Uniques( - AOS)?|Vampiric Thirst|Vilja|VioLens|Warmonger Armory|Wild World|WM Flora Fixes)\.esp'
+  - name: 'Requiem - (83Willows 101Bugs|Animallica|Arissa|ArteFakes|Audio Overhaul for Skyrim|Black Mage Armor|Book Covers Skyrim|Campfire|Common Clothes and Armors|Craftable Horse Barding|Cutting Room Floor|Deadly Dragons( - AOS)?|Divine Wrath Armor|Dragon Combat Overhaul|ESF Companions|Faction Crossbows|Frostfall|Heavy Armory|Hoth|Immersive Armors|Immersive College of Winterhold|Immersive Horses( - SkyTEST)?|Immersive Patrols|Immersive Sounds Compendium|Immersive Weapons|Improved Closefaced Helmets|Inconsequential NPCs|Inigo|Katana Crafting|Live Another Life|Lost Library|Lucien|Royal Armory|RS Children Overhaul|Runic Armor|Rustic Soulgems( - ISC)?|Scoped Bows|Skyrim Unlocked|SkyTEST|Timing is Everything|Trade and Barter|Ulag''s Legacy|Unique Uniques( - AOS)?|Vampiric Thirst|Vilja|VioLens|Warmonger Armory|Wild World|WM Flora Fixes)\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
       - 'Requiem - Bugsmasher Edition.esp'
@@ -10582,6 +10582,7 @@ plugins:
     after:
       - 'REQMOD.esp'
       - 'Requiem_Minor_Arcana.esp'
+      - 'Requiem - Minor Arcana - Roleplaying.esp'
       - 'Requiem - SkyTEST.esp'
       - 'Requiem - Wild World.esp'
       - 'Requiem - Mortal Enemies.esp'
@@ -10594,6 +10595,8 @@ plugins:
     after:
       - 'Requiem - Immersive Horses.esp'
       - 'Requiem - Immersive Horses - SkyTEST.esp'
+      - 'Requiem - Minor Arcana - Roleplaying.esp'
+      - 'Requiem - Wild World.esp'
   - name: 'Requiem - Deadly Dragons( - AOS)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after: [ 'Requiem - Wild World.esp' ]
@@ -10611,6 +10614,7 @@ plugins:
     after:
       - 'Requiem_Minor_Arcana.esp'
       - 'Requiem - Immersive Weapons.esp'
+      - 'Requiem - Minor Arcana - Roleplaying.esp'
   - name: 'Requiem - Unique Uniques - AOS.esp'
     after:
       - 'Requiem - Audio Overhaul for Skyrim.esp'
@@ -10620,7 +10624,25 @@ plugins:
       - 'Requiem - Immersive Sounds Compendium.esp'
       - 'ISC Requiem Patch.esp'
   - name: 'Requiem - Royal Armory.esp'
-    after: [ 'Requiem - Warmonger Armory.esp' ]
+    after:
+      - 'Requiem - Minor Arcana - Civil War.esp'
+      - 'Requiem - Minor Arcana - Vigilants of Stendarr.esp'
+      - 'Requiem - Warmonger Armory.esp'
+  - name: 'Requiem - Scoped Bows.esp'
+    after:
+      - 'Requiem - Minor Arcana - Civil War.esp'
+      - 'Requiem - Minor Arcana - Roleplaying.esp'
+  - name: 'Requiem - ArteFakes.esp'
+    after:
+      - 'Requiem - Audio Overhaul for Skyrim.esp'
+      - 'Requiem - Minor Arcana - Roleplaying.esp'
+      - 'Requiem - ESF Companions.esp'
+  - name: 'Requiem - Book Covers Skyrim.esp'
+    after:
+      - 'Requiem - Minor Arcana - Roleplaying.esp'
+  - name: 'Requiem - Warmonger Armory.esp'
+    after:
+      - 'Requiem - Minor Arcana - Vigilants of Stendarr.esp'
   - name: 'Requiem - No Overencumbered Messages.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19281' ]
     msg:
@@ -28776,3 +28798,12 @@ plugins:
       - 'ZIA_Ancient Pack.esp'
       - 'ZIA_Complete Pack.esp'
       - 'ZKN.esp'
+  - name: 'ArteFake.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/105029' ]
+    msg:
+      - <<: *patchRequiemRPC
+        condition: 'active("Requiem.esp") and not active("Requiem - ArteFakes.esp")'
+    clean:
+      # v1.2a
+      - crc: 0xC2259EB8
+        util: 'TES5Edit v4.0.3'
