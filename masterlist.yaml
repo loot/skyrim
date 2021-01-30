@@ -23659,9 +23659,11 @@ plugins:
   - name: 'AdaliaFollower.esp'
     inc: [ 'R1Cots-Refait.esp' ]
   - name: 'AdrianneAvenicci.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/100055' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3f15fd93
+      - <<: *quickClean
+        crc: 0xC86DA05D
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'AelaTheHuntress.esp'
     msg:
@@ -23671,20 +23673,10 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("JNPC_AelaTheHuntress.esp",70FF9A16)'
-  - name: 'Ahlam.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9c67be65
-        itm: 3
   - name: 'AkaviriRebornbeta1.esp'
     msg:
       - <<: *obsolete
         condition: 'checksum("AkaviriRebornbeta1.esp",92CB7FEA)'
-  - name: 'Alexina.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5d08bb22
-        itm: 2
   - name: 'AlvhildeLycan.esp'
     req:
       - name: 'TheEyesOfBeauty.esp'
@@ -23727,11 +23719,6 @@ plugins:
         itm: 1
   - name: 'Balimund.esp'
     msg: [ *corrupt ]
-  - name: 'Barsukov.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf191d03b
-        itm: 3
   - name: 'Compilationv1-clean.esp'
     inc: [ 'CompilationV1.esp' ]
   - name: 'pack\d\.esp'
@@ -23813,6 +23800,7 @@ plugins:
         crc: 0x24989bbb
         itm: 1
   - name: 'CompanionsAriseFinal.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23129' ]
     msg:
       - type: say
         content:
@@ -23825,10 +23813,14 @@ plugins:
           - lang: ru
             text: 'Этот мод скорее всего конфликтует с другими модами на изменение компаньонов'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x49701951
-        itm: 17
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 123
         udr: 16
+    clean:
+      - crc: 0x15D9448A
+        util: 'TES5Edit v4.0.3'
   - name: 'CMCompanionLevel.esp'
     msg:
       - <<: *fixedInOfficialPatchX
@@ -23868,11 +23860,6 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Damsella.esp",D21DE993)'
-  - name: 'DanicaPureSpring.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7714719a
-        itm: 5
   - name: 'Delphine.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -24011,10 +23998,15 @@ plugins:
         crc: 0xf3d542db
         itm: 3
   - name: 'Feline Friendship.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11312' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x470ee7a6
-        itm: 12
+      - <<: *quickClean
+        crc: 0x470EE7A6
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 15
+    clean:
+      - crc: 0x5520EAA8
+        util: 'TES5Edit v4.0.3'
   - name: 'FelixConstantine.esp'
     msg:
       - <<: *requiresX
@@ -24116,11 +24108,6 @@ plugins:
         itm: 6
   - name: 'herman.esp'
     inc: [ 'UFO - Ultimate Follower Overhaul.esp' ]
-  - name: 'HirelingErikTheSlayer.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x58542992
-        itm: 2
   - name: 'HousecarlMarkath.esp'
     msg: [ *alreadyInSexierHousecarls ]
   - name: 'HousecarlRiften.esp'
@@ -24174,10 +24161,10 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("ImaniSuda.esp",4813304B)'
   - name: 'improved followers.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x24722b6c
-        itm: 49
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=18648' ]
+    clean:
+      - crc: 0xF6A18886
+        util: 'TES5Edit v4.0.3'
   - name: 'inathesorceress.esp'
     msg: [ *corrupt ]
   - name: 'Iona_CombatRanger.esp'
@@ -24243,21 +24230,27 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("Khagra - Ghorbash Replacer.esp",A3528322)'
   - name: 'KhajiitChildren.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25654' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xac8adfbd
+      - <<: *quickClean
+        crc: 0xFA886808
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-        udr: 1
-      - <<: *dirtyPlugin
-        crc: 0xc56c2cf4
-        udr: 1
+    clean:
+      - crc: 0x800C8AB5
+        util: 'TES5Edit v4.0.3'
   - name: 'khajiitmarriage.esp'
     msg: [ *obsolete ]
-  - name: 'Khajiit Marriage And Follower Mod 2-2.esp'
+  - name: 'KMM3.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16097' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa00d7ad4
-        itm: 7
+      - <<: *quickClean
+        crc: 0x3DC7C4B4
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      - crc: 0xACAF780D
+        util: 'TES5Edit v4.0.3'
   - name: 'KhaleesiStandalone.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -24267,8 +24260,6 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Kitana.esp",BCF5969B) or checksum("Kitana.esp",2077B972)'
-  - name: 'KMM_2a.esp'
-    msg: [ *obsolete ]
   - name: 'Lia.esp'
     msg:
       - type: say
@@ -24759,10 +24750,10 @@ plugins:
       - name: 'TheEyesOfBeauty.esp'
         display: '[The Eyes of Beauty](http://www.nexusmods.com/skyrim/mods/13722).'
   - name: 'Childclothes_For_AdultBased_Children.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa3708fa4
-        itm: 15
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26952' ]
+    clean:
+      - crc: 0xA3708FA4
+        util: 'TES5Edit v4.0.3'
   - name: 'Change Follower Outfits Redux.esp'
     after:
       - 'Lively Followers.esp'
@@ -24826,10 +24817,25 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
   - name: 'Guardian HeadQuarters.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19563' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5ba9ace4
-        itm: 36
+      # v3.1
+      - <<: *quickClean
+        crc: 0x4900D6AD
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 73
+      # v3.2
+      - <<: *quickClean
+        crc: 0x5BA9ACE4
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 73
+    clean:
+      # v3.1 - clean
+      - crc: 0xDABCC5A9
+        util: 'TES5Edit v4.0.3'
+      # v3.2 - clean
+      - crc: 0xB7CFBB8D
+        util: 'TES5Edit v4.0.3'
   - name: 'mjhKhajiitSpeak(DLC - Dawnguard|DLC - Hearthfire|DLC - Dragonborn)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/14513' ]
     msg:
@@ -24893,14 +24899,6 @@ plugins:
       - *corrupt
       - <<: *obsolete
         subs: [ '[Alternate Start - Live Another Life](https://www.nexusmods.com/skyrim/mods/9557/)' ]
-  - name: 'Necromancer Start.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdb6b67c7
-        itm: 3
-      - <<: *dirtyPlugin
-        crc: 0xAB37346B
-        itm: 3
   - name: 'QuickStart3_.+\.esp'
     msg:
       - <<: *useOnlyOneX
