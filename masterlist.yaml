@@ -23800,6 +23800,7 @@ plugins:
         crc: 0x24989bbb
         itm: 1
   - name: 'CompanionsAriseFinal.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23129' ]
     msg:
       - type: say
         content:
@@ -23812,10 +23813,14 @@ plugins:
           - lang: ru
             text: 'Этот мод скорее всего конфликтует с другими модами на изменение компаньонов'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x49701951
-        itm: 17
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 123
         udr: 16
+    clean:
+      - crc: 0x15D9448A
+        util: 'TES5Edit v4.0.3'
   - name: 'CMCompanionLevel.esp'
     msg:
       - <<: *fixedInOfficialPatchX
