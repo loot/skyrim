@@ -24230,14 +24230,15 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("Khagra - Ghorbash Replacer.esp",A3528322)'
   - name: 'KhajiitChildren.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25654' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xac8adfbd
+      - <<: *quickClean
+        crc: 0xFA886808
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-        udr: 1
-      - <<: *dirtyPlugin
-        crc: 0xc56c2cf4
-        udr: 1
+    clean:
+      - crc: 0x800C8AB5
+        util: 'TES5Edit v4.0.3'
   - name: 'khajiitmarriage.esp'
     msg: [ *obsolete ]
   - name: 'Khajiit Marriage And Follower Mod 2-2.esp'
