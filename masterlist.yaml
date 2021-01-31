@@ -8913,18 +8913,8 @@ plugins:
         crc: 0x7E9E0DAF
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-  - name: 'magna carta armor.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7c8f5058
-        itm: 3
   - name: 'Maid Armor.esp'
     msg: [ *corrupt ]
-  - name: 'Maliki.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xea4cc153
-        itm: 2
   - name: 'Malo_Waffen.esp'
     tag:
       - name: Deactivate
@@ -8981,17 +8971,16 @@ plugins:
     msg: [ *requiresUNP ]
   - name: 'Mini Sage Outfit.esp'
     msg: [ *requiresUNP ]
-  - name: 'MoarJewels.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x80b52779
-        itm: 2
   - name: 'Modern Weapons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13090' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf76e0343
+      - <<: *quickClean
+        crc: 0xF76E0343
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+    clean:
+      - crc: 0x7EBA157B
+        util: 'TES5Edit v4.0.3'
   - name: 'Mods247Helf16.esp'
     msg:
       - <<: *corrupt
@@ -9136,11 +9125,6 @@ plugins:
     tag:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_NicoroshiCreations.*\.esp")'
-  - name: '(TWE) Nilfgaardian Sorcerer Pack.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6610cc7
-        itm: 3
   - name: 'NightingaleHeavyHelmet.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8570' ]
     dirty:
@@ -9149,22 +9133,12 @@ plugins:
         crc: 0x62B77116
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'nightingalevoidarmor.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x143a972
-        itm: 4
   - name: 'Nine_Divines_Amulet.esp'
     msg: [ *obsolete ]
   - name: 'Nine_Divines_Amulet_nonOP.esp'
     msg: [ *obsolete ]
   - name: 'Nine_Divines_Amulet_nonOP_1.1.esp'
     inc: [ 'Nine_Divines_Amulet_1.1.esp' ]
-  - name: 'ninjaarmor.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6a5c0876
-        itm: 3
   - name: 'NiuNiu.esp'
     msg:
       - <<: *corrupt
@@ -9365,11 +9339,26 @@ plugins:
         itm: 7
   - name: 'RingOfTalos.esp'
     msg: [ *corrupt ]
-  - name: 'RIP88_Pool_Furniture_Sample.esp'
+  - name: 'RIP88_Pool_Furniture.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18630' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x70ee4672
+      - <<: *quickClean
+        crc: 0x58BC5F21
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      - crc: 0x61512EAE
+        util: 'TES5Edit v4.0.3'
+  - name: 'RIP88_Pool_Furniture_Sample.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18630' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x70EE4672
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      - crc: 0xC3136D0E
+        util: 'TES5Edit v4.0.3'
   - name: 'Ritual Armor of Boethiah.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24814' ]
     dirty:
@@ -9383,11 +9372,6 @@ plugins:
     tag: [ Delev ]
   - name: 'RogueOutfit.esp'
     msg: [ *requiresCBBE ]
-  - name: 'romulusarmor.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x355fe880
-        itm: 2
   - name: 'Royal Daywalker Armor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21845' ]
     clean:
@@ -9618,11 +9602,6 @@ plugins:
         crc: 0x71c90d5e
         itm: 4
         udr: 1
-  - name: 'steampunksheild.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xffdbfee2
-        itm: 1
   - name: 'StormcloakCuirassEnhanced.esp'
     tag: [ Delev ]
   - name: 'StormcloakArmorVariety.esp'
@@ -9683,18 +9662,16 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'The_IVth_Legion.esp'
+  - name: 'IV_Legion.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/30141' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3008aaa
-        itm: 9
-        udr: 41
-        nav: 1
-  - name: 'tea junkie bow.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5ee180c6
-        itm: 1
+      - <<: *quickClean
+        crc: 0x786ED300
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      - crc: 0xBE85B98B
+        util: 'TES5Edit v4.0.3'
   - name: 'Templar Clean.esp'
     tag: [ Relev ]
   - name: 'Templar Rusted.esp'
@@ -9713,12 +9690,6 @@ plugins:
     msg: [ *requiresUNP ]
   - name: 'TERA Armors for Skyrim - UNPB-BBP.esp'
     msg: [ *requiresUNPB ]
-  - name: 'TERAArmors - Leveled Lists.esp'
-    tag: [ Relev ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x91a368b1
-        itm: 17
   - name: 'Thalmor Armour Set.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -9738,16 +9709,13 @@ plugins:
     msg: [ *obsolete ]
     url: [ 'https://www.nexusmods.com/skyrim/mods/29670' ]
   - name: 'TheCallOfTheNorth.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18731' ]
     tag:
       - Delev
       - Relev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x52d08b6
-        itm: 5
-      - <<: *dirtyPlugin
-        crc: 0xA505B835
-        itm: 5
+    clean:
+      - crc: 0x72F97EFC
+        util: 'TES5Edit v4.0.3'
   - name: 'theRoadstrokersRogueSorceress.esp'
     tag:
       - name: Deactivate
@@ -10020,11 +9988,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x898389c8
         itm: 21
-  - name: 'Wulfharth''s Dragonbone Katana and Tanto.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x30d34a9f
-        itm: 7
   - name: 'WVExpansion.esp'
     tag:
       - Delev
@@ -10339,21 +10302,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x761777ff
         udr: 1
-  - name: 'Grimy_Enchantment.esp'
-    tag: [ Relev ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7a9291e3
-        itm: 47
-      - <<: *dirtyPlugin
-        crc: 0x4C1F39C0
-        itm: 47
-      - <<: *dirtyPlugin
-        crc: 0xe8494aae
-        itm: 32
-      - <<: *dirtyPlugin
-        crc: 0xDFEB1716
-        itm: 32
   - name: 'HarvestOverhaulCreaturesDawnguard.esp'
     inc: [ 'HarvestOverhaulCreatures.esp' ]
   - name: 'HarvestOverhaulCreaturesDawnguardDragonborn.esp'
@@ -16944,24 +16892,30 @@ plugins:
   - name: 'AtrociousRiftenTextureFix.esp'
     after: [ 'Unique Grasses_clippingfixer.esp' ]
   - name: 'Western Watchtower Rebuilt.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9555' ]
     msg:
       - <<: *obsolete
         condition: 'checksum("Western Watchtower Rebuilt.esp",49E528EE)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x27b7618e
-        itm: 12
+      - <<: *quickClean
+        crc: 0x27B7618E
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
         udr: 83
-  - name: 'Whispering Waters Barrow.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd3eb5880
-        itm: 46
+    clean:
+      - crc: 0x4DECBA5B
+        util: 'TES5Edit v4.0.3'
   - name: 'whiteruncatacombshotel.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/18944' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc8026f24
+      - <<: *quickClean
+        crc: 0xC8026F24
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 30
         udr: 60
+    clean:
+      - crc: 0x59B83321
+        util: 'TES5Edit v4.0.3'
   - name: 'whiterunppl1.esp'
     msg: [ *obsolete ]
   - name: 'whiterunppl1.esm'
@@ -28809,3 +28763,27 @@ plugins:
       # v1.2a
       - crc: 0xC2259EB8
         util: 'TES5Edit v4.0.3'
+
+  - name: 'SancreTor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/38955' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x6BECC749
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4568
+        udr: 54
+    clean:
+      - crc: 0xDE981139
+        util: 'TES5Edit v4.0.3'
+
+  - name: 'SolemnKeep.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/83291' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x3C44B4B0
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 31
+    clean:
+      - crc: 0x15F3DD37
+        util: 'TES5Edit v4.0.3'
+
