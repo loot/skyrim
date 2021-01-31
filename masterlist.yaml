@@ -16892,14 +16892,19 @@ plugins:
   - name: 'AtrociousRiftenTextureFix.esp'
     after: [ 'Unique Grasses_clippingfixer.esp' ]
   - name: 'Western Watchtower Rebuilt.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9555' ]
     msg:
       - <<: *obsolete
         condition: 'checksum("Western Watchtower Rebuilt.esp",49E528EE)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x27b7618e
-        itm: 12
+      - <<: *quickClean
+        crc: 0x27B7618E
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
         udr: 83
+    clean:
+      - crc: 0x4DECBA5B
+        util: 'TES5Edit v4.0.3'
   - name: 'Whispering Waters Barrow.esp'
     dirty:
       - <<: *dirtyPlugin
