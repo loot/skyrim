@@ -13106,13 +13106,16 @@ plugins:
       - '0001BertsBreezehomeRemodel.V.2(esm).esm'
       - '0001BertsBreezehomeRemodel.V.2(esp.2.0).esp'
   - name: 'Briar''sEndCourierQuest.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27578' ]
     inc: [ 'Fleetford.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x30cd77f3
-        itm: 48
-        udr: 10
-        nav: 3
+      - <<: *quickClean
+        crc: 0x5B6FF09E
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 67
+    clean:
+      - crc: 0x99F012E4
+        util: 'TES5Edit v4.0.3'
   - name: 'Briar''sEnd(Instant|Courier|No)Quest\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -13120,35 +13123,29 @@ plugins:
         subs: [ 'Briar''s End .esp file' ]
   - name: 'Briar''sEndInstantQuest.esp'
     inc: [ 'Fleetford.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3beedc33
-        itm: 48
-        udr: 10
-        nav: 3
   - name: 'Briar''sEndNoQuest.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27578' ]
     inc: [ 'Fleetford.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdc577da1
-        itm: 50
-        udr: 10
-        nav: 3
+      - <<: *quickClean
+        crc: 0x96081600
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 70
+    clean:
+      - crc: 0xBBC8DEE9
+        util: 'TES5Edit v4.0.3'
   - name: 'Bridge Farm Hearthfire version.esp'
     inc: [ 'Bridge Farm.esp' ]
-  - name: 'Brothel.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Brothel.esp",029D1CAC) or checksum("Brothel.esp",5AFFF047) or checksum("Brothel.esp",9C382042)'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb5592f06
-        itm: 29
   - name: 'BSC_thetesseract.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24967' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf598b916
-        itm: 131
+      - <<: *quickClean
+        crc: 0xF598B916
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 138
+    clean:
+      - crc: 0x5C81655A
+        util: 'TES5Edit v4.0.3'
   - name: 'Buy_Whiterun2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21193' ]
     dirty:
@@ -13158,10 +13155,15 @@ plugins:
         itm: 247
         udr: 221
   - name: 'CaethspellCavernPlayerHome.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/31794' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4620ecc
-        itm: 16
+      - <<: *quickClean
+        crc: 0x228FC239
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
+    clean:
+      - crc: 0xF429A5EA
+        util: 'TES5Edit v4.0.3'
   - name: 'CaethspellCavernsPlayerHome.esp'
     msg: [ *obsolete ]
   - name: 'Calavalcave.esp'
@@ -13222,48 +13224,83 @@ plugins:
     req:
       - name: 'SkyMoMod.esm'
         display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
-  - name: 'Castle Dracula.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3bee9879
-        itm: 25
-        udr: 9
   - name: 'CastleGrey.esp'
     inc: [ 'UFO - Ultimate Follower Overhaul.esp' ]
   - name: 'Castle Riverwood.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26835' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa186c265
-        itm: 7
+      - <<: *reqManualFix
+        crc: 0xA186C265
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
         udr: 16
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x4B40AB16
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'Burg Flusswald.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26835' ]
     inc: [ 'Castle Riverwood.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5a7d4171
-        itm: 7
+      - <<: *reqManualFix
+        crc: 0x5A7D4171
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
         udr: 16
         nav: 2
+      - <<: *reqManualFix
+        crc: 0xC2485B2E
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'Castle Stonespire.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27125' ]
+    msg: [ *obsolete ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd070a4d3
-        itm: 37
-        udr: 9
-        nav: 10
+      # v1.4.9
+      - <<: *reqManualFix
+        crc: 0xE1F22CB8
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
+        nav: 2
+      # v1.4.9 - after Cleaning
+      - <<: *reqManualFix
+        crc: 0x62856B6B
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
+  - name: 'Castle Stonespire1_5.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27125' ]
+    dirty:
+      # v1.5
+      - <<: *reqManualFix
+        crc: 0x56EA67AE
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+        nav: 1
+      # v1.5 - after Cleaning
+      - <<: *reqManualFix
+        crc: 0x0B0E0704
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'CastlevaniaDemo.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19869' ]
     msg: [ *corrupt ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xffeaee3d
+      - <<: *quickClean
+        crc: 0xFFEAEE3D
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 16
   - name: 'Cathedral.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21157' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xabadb42f
-        itm: 66
+      - <<: *quickClean
+        crc: 0xABADB42F
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1919
         udr: 71
+    clean:
+      - crc: 0x301ABFB9
+        util: 'TES5Edit v4.0.3'
   - name: 'Chapels Of Skyrim.esp'
     dirty:
       - <<: *dirtyPlugin
