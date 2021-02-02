@@ -14397,14 +14397,16 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 20
   - name: 'hellaylegacydungeon02.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("hellaylegacydungeon02.esp",CAB6DC90) or checksum("hellaylegacydungeon02.esp",30690487)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15259' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2b3e69e2
-        itm: 42
+      - <<: *quickClean
+        crc: 0x45DD0689
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 107
         udr: 8
+    clean:
+      - crc: 0xB4C8730E
+        util: 'TES5Edit v4.0.3'
   - name: 'Here There Be Monsters.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/32411' ]
     dirty:
@@ -14443,11 +14445,6 @@ plugins:
         crc: 0xE91800C8
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 4
-  - name: 'hideoushobo.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1d8eb77f
-        itm: 1
   - name: 'hideout.esp'
     msg:
       - <<: *obsolete
@@ -14460,18 +14457,19 @@ plugins:
       - <<: *obsolete
         subs: ['[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).' ]
   - name: 'hideoutcompact.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12697' ]
     msg:
       - <<: *obsolete
         subs: [ '[Dovahkiin Hideout Continued - Compact Edition](http://www.nexusmods.com/skyrim/mods/59524).' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2a2bc9b8
+      - <<: *quickClean
+        crc: 0x2A2BC9B8
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 47
         udr: 3
-      - <<: *dirtyPlugin
-        crc: 0x2a2bc9c8
-        itm: 7
-        udr: 3
+    clean:
+      - crc: 0xE7C82347
+        util: 'TES5Edit v4.0.3'
   - name: 'retreat.esp'
     msg:
       - <<: *fixedPluginPreCK
@@ -14480,55 +14478,66 @@ plugins:
       - <<: *obsolete
         subs: [ '[Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).' ]
   - name: 'HighlandFarmMilk.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17865' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1258e09a
-        itm: 8
-        nav: 1
-      - <<: *dirtyPlugin
-        crc: 0xC569164F
-        itm: 8
-        nav: 1
-      - <<: *dirtyPlugin
+      # v1.6
+      - <<: *reqManualFix
         crc: 0x80057D4B
-        itm: 8
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+        nav: 1
+      # v1.6 - after QAC
+      - <<: *reqManualFix
+        crc: 0x939E02FA
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # v1.7
+      - <<: *reqManualFix
+        crc: 0xC569164F
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+        nav: 1
+      # v1.7 - after QAC
+      - <<: *reqManualFix
+        crc: 0x55BDBDD3
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Courtyard Hjerim.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24857' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x89a0eb78
-        itm: 2
+      # v1.2
+      - <<: *reqManualFix
+        crc: 0x89A0EB78
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
         nav: 2
-  - name: 'customhjerim.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xacdbbfd5
-        itm: 4
-        udr: 140
+      # v1.2 - after QAC
+      - <<: *reqManualFix
+        crc: 0x925195CE
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'hjerim_home.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17816' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9936ebc
-        itm: 4
+      - <<: *quickClean
+        crc: 0x09936EBC
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 73
         udr: 212
+    clean:
+      - crc: 0x4D78458E
+        util: 'TES5Edit v4.0.3'
   - name: 'Hjerim Upgrades.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27120' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8e245183
-        itm: 4
+      - <<: *quickClean
+        crc: 0x8E245183
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
         udr: 8
-  - name: 'HN66 SLEEK Outfits.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe978f0d
-        itm: 58
-        udr: 1
-  - name: 'theHoardersHome.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x34949429
-        itm: 15
-        nav: 5
+    clean:
+      - crc: 0x9DF2F620
+        util: 'TES5Edit v4.0.3'
   - name: 'HomeSweetStronghold v1.0.0.esp'
     dirty:
       - <<: *dirtyPlugin
