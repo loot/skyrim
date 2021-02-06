@@ -197,34 +197,6 @@ common:
       - lang: sv
         text: 'När du använder **%1%** är det rekommenderat att du avaktiverar eller tar bort denna ESP-fil, men behåll resurserna (meshar och texturer) installerade med denna mod.'
 
-  - &doNotClean
-    type: say
-    content:
-      - lang: en
-        text: 'Do not clean ITM records, they are intentional and required for the mod to function. It is safe to undelete records, but do not do anything other than that.'
-      - lang: da
-        text: 'Rengør ikke ITM-poster: de er forsætlige og krævede for at mod’en fungerer. Det er sikkert at gendanne poster, men gør ikke andet end dét.'
-      - lang: de
-        text: 'ITM-Einträge in diesem Plugin sollten nicht gesäubert werden, sie sind absichtlich enthalten und werden benötigt, damit die Mod richtig funktioniert. Gelöschte Einträge wiederherzustellen ist in Ordnung, aber tun Sie nichts darüber hinaus.'
-      - lang: es
-        text: 'No limpiar las referencias ITM (iguales al master), ya que son intencionales y necesarias para que el Mod funcione. Sí es seguro restaurar las UDR (referencias borradas), pero no haga más que eso.'
-      - lang: ja
-        text: 'IMTレコードはクリーンしないでください。これらは意図的に残されたデータであり、Modを機能させるために必要です。削除の取り消しは安全に行えますが、それ以外のことは行わないでください。'
-      - lang: ko
-        text: 'ITM 자료를 삭제하지 마십시오. 모드가 정상 작동하기 위해 의도적으로 남겨진 자료입니다. 삭제를 취소하는 것 이외에는 안전하지 않습니다.'
-      - lang: pl
-        text: 'Nie czyść rekordów ITM, są one zamierzone i potrzebne do działania tego moda. Jest bezpieczne aby cofnąć usunięcie rekordów (UDR), ale nie rób nic innego ponad to. '
-      - lang: pt
-        text: 'Não apagar os registos ITM. São intencionais e necessárias para o funcionamento do mod. É seguro restaurar os registos, mas não faça nada mais que isso.'
-      - lang: pt_BR
-        text: 'Não apague os registros ITM. Eles são intencionais e necessários para que o mod funcione. É seguro restaurar os registros, mas nada mais além disso.'
-      - lang: ru
-        text: 'Не очищать ITM-записи. "Грязные" правки оставлены специально и требуются для функционирования мода. Восстановить удаленные записи (UDR) можно безопасно, но идентичные мастерфайлу лучше оставить.'
-      - lang: sv
-        text: 'Städa inte bort ITM records, de är avsiktliga och krävs för att modden ska fungera. Det är säkert att återställa records, men gör ingenting förutom det.'
-      - lang: zh_CN
-        text: '不干净。"脏"数据是故意的，这是mod需要的功能。'
-
   - &fixedInOfficialPatchX
     type: error
     content:
@@ -1369,7 +1341,7 @@ plugins:
         udr: 564
   - name: 'BBLuxurySuite.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11427' ]
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'BBLuxurySuiteENM.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11427' ]
     clean:
@@ -10400,8 +10372,7 @@ plugins:
       - name: 'Requiem - Hard Times.esp'
         condition: 'version("Requiem.esp", "1.8.0", >=) and checksum("Requiem - Hard Times.esp", A393D1E3)'
     msg:
-      - <<: *doNotClean
-        condition: 'version("Requiem.esp", "1.9.3", >=)'
+      # doNotClean
       - <<: *patchIncluded
         condition: 'version("Requiem.esp", "2.0.0", <) and active("Unofficial Skyrim Patch.esp") and not active("Requiem - Bugsmasher Edition.esp")'
         subs: [ 'Unofficial Skyrim Patch' ]
@@ -12479,13 +12450,13 @@ plugins:
         crc: 0xc428f6b7
         itm: 2
   - name: 'BBLuxurySuiteExt.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'BBLSHousecarlsmovein.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'BBLSspouse.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'BBLSVisitors.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'BBLuxurySuiteClassierDisplayRoom.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -16535,7 +16506,7 @@ plugins:
   - name: 'Thunderchild - Epic Shout Package.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/41376' ]
     after: [ 'SPERG.esp' ]
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'tinyalchemisthut.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25712' ]
     msg:
@@ -17528,16 +17499,14 @@ plugins:
         subs: [ 'Book Covers Skyrim.esp' ]
   - name: 'Headbomb''s Better Sorting - Ammo.esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food \(((Light|Normal|Reduced) Weight|Weightless)\)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17545,46 +17514,39 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Food .esp file' ]
   - name: 'Headbomb''s Better Sorting - Food (Light Weight).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions \(((Light|Half|Normal) Weight|Weightless)\)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17592,28 +17554,24 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Potions .esp file' ]
   - name: 'Headbomb''s Better Sorting - Potions (Light Weight).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Soul Gems \((Ranked|PseudoVanilla)\)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17621,16 +17579,14 @@ plugins:
         subs: [ 'Headbomb''s Better Sorting - Soul Gems .esp file' ]
   - name: 'Headbomb''s Better Sorting - Soul Gems (Ranked).esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
+      # doNotClean
       - <<: *fixedPluginOutSub
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
-      - <<: *doNotClean
-        condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", >=)'
   - name: 'Headbomb''s Better Sorting.esp'
     msg: [ *obsolete ]
   - name: 'Better Sorting 1.12 Sboub édition.esp'
@@ -18473,9 +18429,7 @@ plugins:
         condition: 'checksum("More Powerful Dragons Leveled Dragons.esp",CEF8347C)'
   - name: 'MoreSalt.esp'
     tag: [ Relev ]
-    msg:
-      - <<: *doNotClean
-        condition: 'checksum("MoreSalt.esp",492E06A5)'
+    # doNotClean
   - name: 'mso- morahir''s staff overhaul.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -18892,7 +18846,7 @@ plugins:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and not active("Requiem - SkyTEST.esp")'
   - name: 'Convenient Horses.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Skyrim Horses Renewal.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/54908' ]
     after: [ 'Convenient Horses.esp' ]
@@ -20702,7 +20656,7 @@ plugins:
         itm: 2
   - name: 'SkyrimHeartRate.esp'
     msg:
-      - *doNotClean
+      # doNotClean
       - type: say
         content:
           - lang: en
@@ -20890,7 +20844,7 @@ plugins:
         crc: 0x53c63925
         itm: 14
   - name: 'vampfix.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'VampireInveterDG.esp'
     msg: [ *obsolete ]
   - name: 'VampireKinship.esp'
@@ -21855,7 +21809,7 @@ plugins:
     url: [ 'http://www.nexusmods.com/skyrim/mods/42796' ]
     msg: [ *obsolete ]
   - name: 'EA Skyre No DLC Patch.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'EnchantingAwakenedBaneOfSoulsFix.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/42796' ]
     msg: [ *obsolete ]
@@ -22820,41 +22774,41 @@ plugins:
         crc: 0x3a3fdf2c
         itm: 1
   - name: 'Override Alchemy.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Alteration.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Archery.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Block.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Conjuration.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Destruction.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Enchanting.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override HeavyArmor.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Illusion.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override LightArmor.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Lockpicking.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override OneHanded.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Pickpocket.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Restoration.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Smithing.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Sneak.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override Speech.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Override TwoHanded.esp'
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'SPERG.esp'
     after: [ 'EnchantingAwakened.esp' ]
   - name: 'SmithingTree.esp'
@@ -26026,7 +25980,7 @@ plugins:
   - name: 'Duke Patricks - Heavy Weapons Combat.esp'
     group: *mapMarkersGroup
     req: [ *SKSE ]
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'Pre Automatic Variants.*\.esp'
     group: *asisGroup
   - name: 'ASIS-Dependency.esp'
@@ -26282,10 +26236,10 @@ plugins:
   - name: 'Pre PaMa CCOR Patch.esp'
     after: [ 'PerkusMaximus_Warrior.esp' ]
     group: *prePatchusMaximusGroup
+    # doNotClean
     tag:
       - Names
       - Stats
-    msg: [ *doNotClean ]
   - name: 'NPO Module - Crossbows.esp'
     after: [ 'PerkusMaximus_Warrior.esp' ]
   - name: 'Default Teammate Weapon Draw Distance.esp'
@@ -26484,7 +26438,7 @@ plugins:
         itm: 2
   - name: 'HearthfireMultiKid.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/29249' ]
-    msg: [ *doNotClean ]
+    # doNotClean
   - name: 'QaxeWinterholdRebuild.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/50491' ]
     dirty:
