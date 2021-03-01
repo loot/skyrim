@@ -2107,8 +2107,7 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Pretty Brelyna.esm'
-    msg:
-      - *alreadyInPrettyFollowers
+    msg: [ *alreadyInPrettyFollowers ]
   - name: 'Prison.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23548' ]
     dirty:
@@ -7256,8 +7255,7 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'AMB Glass Variants Lore.esp'
-    msg:
-      - <<: *alreadyInAmidianBornContentAddon
+    msg: [ *alreadyInAmidianBornContentAddon ]
     tag:
       - Delev
       - Relev
@@ -7640,9 +7638,8 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/13486' ]
     msg:
       - <<: *patchProvided
+        subs: [ '[Cloaks of Skyrim](https://www.nexusmods.com/skyrim/mods/12092/)' ]
         condition: 'file("Cloaks.esp") and not file("1nivWICSkyCloaksPatch.esp") or file("Cloaks - No Imperial.esp") and not file("1nivWICSkyCloaksPatch-No Imp.esp")'
-        subs:
-          - '[Cloaks of Skyrim](https://www.nexusmods.com/skyrim/mods/12092)'
     clean:
       # v2.4
       - crc: 0xAE563374
@@ -8244,8 +8241,7 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 16
   - name: 'Glass Variants.esp'
-    msg:
-      - <<: *alreadyInAmidianBornContentAddon
+    msg: [ *alreadyInAmidianBornContentAddon ]
     tag:
       - Delev
       - Relev
@@ -10442,8 +10438,7 @@ plugins:
     inc: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
   - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/78139' ]
-    after:
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
+    after: [ 'Requiem - Legendary Bugsmasher Edition.esp' ]
   - name: 'Requiem - Vanilla Dragonborn DLC.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19281' ]
     msg:
@@ -10604,11 +10599,9 @@ plugins:
       - 'Requiem - Minor Arcana - Roleplaying.esp'
       - 'Requiem - ESF Companions.esp'
   - name: 'Requiem - Book Covers Skyrim.esp'
-    after:
-      - 'Requiem - Minor Arcana - Roleplaying.esp'
+    after: [ 'Requiem - Minor Arcana - Roleplaying.esp' ]
   - name: 'Requiem - Warmonger Armory.esp'
-    after:
-      - 'Requiem - Minor Arcana - Vigilants of Stendarr.esp'
+    after: [ 'Requiem - Minor Arcana - Vigilants of Stendarr.esp' ]
   - name: 'Requiem - No Overencumbered Messages.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19281' ]
     msg:
@@ -15520,9 +15513,8 @@ plugins:
       - 'OBISDB.esp'
     msg:
       - <<: *patchRequiem3rdParty
+        subs: [ '[Requiem - Civil War Overhaul Patch](https://www.nexusmods.com/skyrim/mods/63146/)' ]
         condition: 'active("Requiem.esp") and not active("Requiem - Civil War Overhaul Patch.esp")'
-        subs:
-          - '[Requiem - Civil War Overhaul Patch](https://www.nexusmods.com/skyrim/mods/63146)'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x49e6e0bd
@@ -17398,9 +17390,8 @@ plugins:
     after: [ 'BetterQuestObjectives.esp' ]
     msg:
       - <<: *patchRequiem3rdParty
+        subs: [ '[CAR - Content Addon Reqtified](https://www.nexusmods.com/skyrim/mods/72562/)' ]
         condition: 'active("Requiem.esp") and not active("CAR-ContentAddonReqtified.esp")'
-        subs:
-          - '[CAR - Content Addon Reqtified](https://www.nexusmods.com/skyrim/mods/72562)'
     tag:
       - Delev
       - Relev
@@ -17515,9 +17506,8 @@ plugins:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", >=) and not active("Requiem - Book Covers Skyrim.esp")'
       - <<: *patchRequiem3rdParty
+        subs: [ '[Book Covers Skyrim - Compatibility Patch Collection](https://www.nexusmods.com/skyrim/mods/50441/)' ]
         condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("REQ - BCS Patch.esp")'
-        subs:
-          - '[Book Covers Skyrim - Compatibility Patch Collection](https://www.nexusmods.com/skyrim/mods/50441)'
     tag:
       - Graphics
       - Names
@@ -18649,9 +18639,8 @@ plugins:
         condition: 'checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Requiem - Revenge of the Enemies.esp")'
       # version: 2.0 and later
       - <<: *patchRequiem3rdParty
+        subs: [ '[Revenge of the Enemies Patches](https://www.nexusmods.com/skyrim/mods/73369/)' ]
         condition: 'not checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Rebirth Monster - Requiem Patch.esp") and not active("Rebirth Monster - Requiem Merged Patch.esp")'
-        subs:
-          - '[Revenge of the Enemies Patches](https://www.nexusmods.com/skyrim/mods/73369)'
     tag:
       - Delev
       - Relev
@@ -26248,8 +26237,7 @@ plugins:
     tag: [ Names ]
 
   - name: 'Wind Destruction.esp'
-    after:
-      - 'PerkusMaximus_Mage.esp'
+    after: [ 'PerkusMaximus_Mage.esp' ]
     tag:
       - name: -Relev
         condition: 'file("PerkusMaximus_Master.esp")'
@@ -27126,15 +27114,13 @@ plugins:
   - name: 'One With Nature.*\.esp'
     msg:
       - <<: *patchRequiem3rdParty
+        subs: [ '[One With Nature - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83639/)' ]
         condition: 'active("Requiem.esp") and not active("Requiem - One With Nature.esp")'
-        subs:
-          - '[One With Nature - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83639)'
   - name: 'Immersive Jewelry.esp'
     msg:
       - <<: *patchRequiem3rdParty
+        subs: [ '[Immersive Jewelry - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83771/)' ]
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Jewelry( BTC| ISC)?\.esp")'
-        subs:
-          - '[Immersive Jewelry - Requiem Patch](https://www.nexusmods.com/skyrim/mods/83771)'
   - name: 'Wild World.esp'
     msg:
       - <<: *patchRequiemRPC
@@ -27213,17 +27199,13 @@ plugins:
   - name: 'IHSS.esp'
     tag: [ Sound ]
   - name: 'aMidianborn_Skyforge_Weapons.esp'
-    msg:
-      - <<: *alreadyInAmidianBornContentAddon
+    msg: [ *alreadyInAmidianBornContentAddon ]
   - name: 'Differently Ebony.esp'
-    msg:
-      - <<: *alreadyInAmidianBornContentAddon
+    msg: [ *alreadyInAmidianBornContentAddon ]
   - name: 'Dr_Bandolier.esp'
-    msg:
-      - <<: *alreadyInCompleteCraftingOverhaulRemade
+    msg: [ *alreadyInCompleteCraftingOverhaulRemade ]
   - name: 'Dr_BandolierDG.esp'
-    msg:
-      - <<: *alreadyInCompleteCraftingOverhaulRemade
+    msg: [ *alreadyInCompleteCraftingOverhaulRemade ]
   - name: 'RDO - Immersive Horses Patch.esp'
     after:
       - 'Requiem - Immersive Horses.esp'
