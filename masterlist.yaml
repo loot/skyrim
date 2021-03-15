@@ -119,6 +119,34 @@ common:
         text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
       - lang: sv
         text: 'Ta bort. Redan inkluderat eller fixat i %1%.'
+  - &alreadyInOrFixedByPatch1.4
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.4' ]
+    condition: 'version("../TESV.exe", "1.4", >=)'
+  - &alreadyInOrFixedByPatch1.4.26
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.4.26' ]
+    condition: 'version("../TESV.exe", "1.4", >=)'
+  - &alreadyInOrFixedByPatch1.5
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.5' ]
+    condition: 'version("../TESV.exe", "1.5", >=)'
+  - &alreadyInOrFixedByPatch1.6
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.6' ]
+    condition: 'version("../TESV.exe", "1.6", >=)'
+  - &alreadyInOrFixedByPatch1.8
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.8' ]
+    condition: 'version("../TESV.exe", "1.8", >=)'
+  - &alreadyInOrFixedByPatch1.9
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.9' ]
+    condition: 'version("../TESV.exe", "1.9", >=)'
+  - &alreadyInOrFixedByPatch1.9.26
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.9.26' ]
+    condition: 'version("../TESV.exe", "1.9", >=)'
   - &alreadyInOrFixedByUSLEEP
     <<: *alreadyInOrFixedByX
     subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214/)' ]
