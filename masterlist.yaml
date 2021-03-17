@@ -7976,10 +7976,18 @@ plugins:
     inc: [ 'DME.esp' ]
   - name: 'Doom Heavy Set.esp'
     msg: [ *requiresCBBE ]
+
   - name: 'Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15804/' ]
+  - name: 'Dovahkiin Mercenary Armor and Weapons CBBE.esp'
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp", BC430819)'
+  - name: 'Dovahkiin Mercenary Armor and Weapons UNP.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp", BC430819)'
+
   - name: 'DPArmor.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
