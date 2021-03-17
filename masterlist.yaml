@@ -7858,13 +7858,16 @@ plugins:
     msg: [ *obsolete ]
   - name: 'selobl_DarkLillith.esp'
     msg: [ *requiresUNPB ]
+
   - name: 'DarkNemesis.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21705/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("DarkNemesis.esp",CE5E555B)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("DarkNemesis.esp", 56F07A36)'
     tag:
       - name: Deactivate
-        condition: 'file("SkyRe Dark Nemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
+        condition: 'file("SkyRe Dark Nemesis.esp") and not checksum("DarkNemesis.esp", CE5E555B)'
+
   - name: 'DarkPaladinArmor.esp'
     msg: [ *obsolete ]
   - name: 'DarkPaladinArmorV2.esp'
