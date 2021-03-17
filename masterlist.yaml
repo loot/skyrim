@@ -9135,10 +9135,13 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Monys Portable Crafting Equipment.esp",9B33A305)'
+
   - name: 'MorrowindArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22793/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'checksum("MorrowindArmor.esp",7DDD7CAC)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("MorrowindArmor.esp", 7DDD7CAC) or checksum("MorrowindArmor.esp", ACCF09C7)'
+
   - name: 'MorrowindGlass.esp'
     inc: [ 'MorrowindArmor.esp' ]
     msg:
