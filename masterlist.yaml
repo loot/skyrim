@@ -4085,28 +4085,19 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("(lower)?jumpHeight(Third|only)?\.esp")'
         subs: [ 'jumpheight .esp file' ]
+
+  - name: 'Weapons and Armor fixes( - Hacks)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/4719/' ]
   - name: 'Weapons and Armor fixes.esp'
     msg:
       - *alreadyInOrFixedByUSLEEP
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Weapons and Armor fixes.esp",D27D2F2)'
-      - type: say
-        content:
-          - lang: en
-            text: 'For ''WAF+SPO+CCO'' users. No conflicts with ''Smithing Perks Overhaul'' and ''Complete Crafting Overhaul''.'
-          - lang: de
-            text: 'Für Benutzer von ''WAF+SPO+CCO''. Keine Konflikte mit ''Smithing Perks Overhaul'' und ''Complete Crafting Overhaul''.'
-          - lang: es
-            text: 'Para los que utilizen ''WAF+SPO+CCO''. No tiene conflictos con ''Smithing Perks Overhaul'' o ''Complete Crafting Overhaul''.'
-          - lang: ja
-            text: '''WAF+SPO+CCO''環境向けのプラグインです。''Smithing Perks Overhaul''と''Complete Crafting Overhaul''とは競合しません。'
-          - lang: ru
-            text: 'Для использующих ''WAF+SPO+CCO''. Конфликтов с ''Smithing Perks Overhaul'' и ''Complete Crafting Overhaul'' не обнаружено.'
-        condition: 'file("Smithing Perks Overhaul( - Balanced)?\.esp") and file("Complete Crafting Overhaul( - BS version)?\.esp")'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Weapons and Armor fixes.esp", DB723BD2)'
   - name: 'Weapons and Armor fixes - Hacks.esp'
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Weapons and Armor fixes - Hacks.esp",119BC97C)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Weapons and Armor fixes - Hacks.esp", 4DDA13C3)'
+
   - name: 'sh_HF_goat_fix.esp'
     tag: [ Relev ]
   - name: 'Skyrim Shadow Striping Fix.esp'
