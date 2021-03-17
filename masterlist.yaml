@@ -26902,6 +26902,11 @@ plugins:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Inconsequential NPCs.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Infinite Gold For Merchants'
+          - '[RDO - Infinite Gold for Merchants patch](https://www.nexusmods.com/skyrim/mods/95515/)'
+        condition: 'active("Infinite Gold For Merchants.esp") and not active("RDO- Infinite Gold for Merchants patch.esp")'
       - <<: *patchIncluded
         condition: 'active("Requiem.esp") and not active("RDO - Requiem Patch.esp")'
         subs: [ 'Requiem' ]
