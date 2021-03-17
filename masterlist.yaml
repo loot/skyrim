@@ -7748,10 +7748,13 @@ plugins:
     inc: [ '1nivWICSkyCloaksPatch.esp' ]
   - name: 'CMHood (Ashlander).esp'
     msg: [ *obsolete ]
+
   - name: 'CompanionsShields.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14827/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("CompanionsShields.esp",75F460D6)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("CompanionsShields.esp", 6B140B61)'
+
   - name: 'CoolItems1_2.esp'
     msg:
       - <<: *corrupt
