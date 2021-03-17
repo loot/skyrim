@@ -7468,11 +7468,14 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Better Bond of Matrimony .+\.esp")'
         subs: [ 'Better Bond of Matrimony .esp file' ]
+
   - name: 'Bikini Clothes.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6236/' ]
     msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Bikini Clothes.esp", 79FCD814) or checksum("Bikini Clothes.esp", CDACB450)'
       - *requiresCBBE
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
+
   - name: 'bikiniADEC.esp'
     msg:
       - <<: *requiresX
