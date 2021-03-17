@@ -8324,10 +8324,13 @@ plugins:
       - <<: *alreadyInX
         condition: 'file("FoxMerged.esp")'
         subs: [ 'FoxMerged.esp' ]
+
   - name: 'Frostmourne.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6348/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Frostmourne.esp",428F46D4) and not checksum("Frostmourne.esp",51F43BA4) and version("..\TESV.exe","1.8",>)'
+      - <<: *obsoleteSharlikran
+        condition: 'version("..\TESV.exe", "1.8", >) and checksum("Frostmourne.esp", 5599D528)'
+
   - name: 'Frostmourne 1.0.1.esp'
     msg: [ *obsolete ]
   - name: 'Frostmourne 1.2.esp'
@@ -8886,10 +8889,13 @@ plugins:
       - <<: *requiresX
         type: say
         subs: [ '[Lady Head](http://modgames.net/load/256-1-0-15866)' ]
+
   - name: 'Lich King''s Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6348/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'checksum("Lich King''s Armor.esp",5C5EB4D7)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Lich King''s Armor.esp", 5C5EB4D7) or checksum("Lich King''s Armor.esp", 82B1A4FD)'
+
   - name: 'light daedric armor.esp'
     dirty:
       - <<: *dirtyPlugin
