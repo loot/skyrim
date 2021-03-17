@@ -26897,18 +26897,25 @@ plugins:
       # version: 2.0
       - crc: 0xD6D01965
         util: 'TES5Edit v4.0.1'
+
   - name: 'Relationship Dialogue Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/74568/' ]
     after:
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Inconsequential NPCs.esp'
     msg:
+      - <<: *patch3rdParty
+        subs:
+          - 'Infinite Gold For Merchants'
+          - '[RDO - Infinite Gold for Merchants patch](https://www.nexusmods.com/skyrim/mods/95515/)'
+        condition: 'active("Infinite Gold For Merchants.esp") and not active("RDO- Infinite Gold for Merchants patch.esp")'
       - <<: *patchIncluded
-        condition: 'active("Requiem.esp") and not active("RDO - Requiem Patch.esp")'
         subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp") and not active("RDO - Requiem Patch.esp")'
     clean:
-      # version: 2.0
       - crc: 0x6EA57C0D
-        util: 'TES5Edit v4.0.1'
+        util: 'TES5Edit v4.0.3f'
+
   - name: 'CFTO.esp'
     after: [ 'Immersive Citizens - AI Overhaul.esp' ]
     clean:
