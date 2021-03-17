@@ -4366,10 +4366,13 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("BagofTrash\w*\.esp")'
         subs: [ 'BagofTrash .esp file' ]
+
   - name: 'BanditsEyepatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1874/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("BanditsEyepatch.esp",43DE0DBC)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("BanditsEyepatch.esp", F7B08799)'
+
   - name: 'Bandits Wear Helmets.esp'
     tag: [ Relev ]
   - name: 'Barrels and Crates.esp'
