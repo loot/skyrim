@@ -2034,25 +2034,17 @@ plugins:
     msg: [ *obsolete ]
   - name: 'IsharasUniqueRaces.esm'
     inc: [ 'ethereal_elven_overhaul.esp' ]
+
   - name: 'JSwords.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1002/' ]
     msg:
-      - type: warn
-        condition: 'version("JSwords.esm","14.0",<)'
-        content:
-          - lang: en
-            text: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: de
-            text: 'Der Kompatibilitätspatch Version 14.0, ausgebessert und gesäubert mit TES5Edit, kann [hier](http://www.nexusmods.com/skyrim/mods/26230) heruntergeladen werden.'
-          - lang: ja
-            text: '[こちら](http://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
-          - lang: ru
-            text: 'Совместимый с версией 14.0 очищенный и исправленный патч совместимости в TES5Edit может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
-      - <<: *alreadyInCompleteCraftingOverhaulRemade
-      - <<: *fixedPluginOutSub
-        condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
+      - *alreadyInCompleteCraftingOverhaulRemade
+      - <<: *obsoleteSharlikran
+        condition: 'version("JSwords.esm", "14.0", <)'
     clean:
       - crc: 0x142A34B6
-        util: TES5Edit v3.1.3
+        util: 'TES5Edit v4.0.3f'
+
   - name: 'kuerteeInventoryAndWeight.esm'
     msg: [ *obsolete ]
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
