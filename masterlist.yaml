@@ -8244,13 +8244,16 @@ plugins:
         crc: 0x42E067F8
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
+
   - name: 'EternalShineArmorAndWeapons.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17582/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'version("..\TESV.exe","1.8",>) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
+      - <<: *obsoleteSharlikran
+        condition: 'version("..\TESV.exe", "1.8", >) and (checksum("EternalShineArmorAndWeapons.esp", D092DCAF) or checksum("EternalShineArmorAndWeapons.esp", 549A2BEB))'
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Equipment of Eternal Shine.esp")'
+
   - name: 'EvolvingBoundWeapons.esp'
     dirty:
       - <<: *dirtyPlugin
