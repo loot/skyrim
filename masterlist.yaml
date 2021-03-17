@@ -7832,10 +7832,13 @@ plugins:
         itm: 1
   - name: 'customnightingale.esp'
     msg: [ *obsolete ]
+
   - name: 'Daedric Extra Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17026/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Daedric Extra Armor.esp",8DDD039)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Daedric Extra Armor.esp", 7AB19402) or checksum("Daedric Extra Armor.esp", 43F11981)'
+
   - name: 'DaedricCrossbow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22113' ]
     dirty:
