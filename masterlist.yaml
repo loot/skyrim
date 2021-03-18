@@ -9634,11 +9634,14 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
+
   - name: 'Skimpy Plate Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23034/' ]
     msg:
-      - *requiresCBBE
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
+      - *requiresCBBE
+
   - name: 'SkyHeels.esp'
     msg:
       - <<: *corrupt
