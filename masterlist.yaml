@@ -9986,26 +9986,20 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Weapons of the Dohvakiin.esp'
     inc: [ 'Dragonborn.esm' ]
+
   - name: 'WeaponsOf3E.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/3871' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xF758F3FA
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 2
-  - name: 'WeaponsOf3E - No Leveled Lists.esp'
-    msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
-  - name: 'Weapons of the Third Era.+\.esp'
-    msg: [ *obsolete ]
-  - name: 'WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/3871/' ]
     inc: [ '3rdEraWeaponsMoS.esp' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("WeaponsOf3E.esp",67F338A1)'
       - *alreadyInSkyRe
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("WeaponsOf3E.esp", F758F3FA)'
     tag: [ Relev ]
+  - name: 'WeaponsOf3E - No Leveled Lists.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("WeaponsOf3E - No Leveled Lists.esp", 1CA83D71)'
+
   - name: '3rdEraWeaponsMoS.esp'
     msg: [ *obsolete ]
   - name: '3rdEraWeapMoS-lvlList.esp'
