@@ -21980,10 +21980,13 @@ plugins:
         itm: 2
   - name: 'enchantmentrebalanced.esp'
     msg: [ *obsolete ]
+
   - name: 'Fortify Enchanting necklace.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5540/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Fortify Enchanting necklace.esp",E170C251)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Fortify Enchanting necklace.esp", 43185CE3)'
+
   - name: 'HasteEnchantment.esp'
     dirty:
       - <<: *dirtyPlugin
