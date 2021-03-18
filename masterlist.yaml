@@ -9819,10 +9819,13 @@ plugins:
     tag: [ Relev ]
   - name: 'Templar Rusted.esp'
     tag: [ Relev ]
+
   - name: 'TemplarArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5397/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("TemplarArmor.esp",EE0395E4)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("TemplarArmor.esp", 65B2740C)'
+
   - name: 'TERAArmors_CBBE.esp'
     msg: [ *requiresCBBE ]
   - name: 'TeraArmors-CBBEByNausicaa.esp'
