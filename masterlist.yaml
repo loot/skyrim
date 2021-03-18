@@ -9674,10 +9674,13 @@ plugins:
         condition: 'file("SkyRe Chinese General Set.esp")'
   - name: 'SophitiaByNausicaa.esp'
     msg: [ *corrupt ]
+
   - name: 'Sovngarde Steel Armor and Weapons.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16096/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Sovngarde Steel Armor and Weapons.esp",B84EB4CE)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Sovngarde Steel Armor and Weapons.esp", E2F0DB16) or checksum("Sovngarde Steel Armor and Weapons.esp", 7BEE51A3)'
+
   - name: 'Space Wiking''s Dwemer Exoskeleton.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19212' ]
     dirty:
