@@ -22272,10 +22272,15 @@ plugins:
     inc: [ 'LB_MuchAdoSnowElves_ACE_Patch_Light.esp' ]
   - name: 'ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp'
     req: [ 'Dawnguard.esm' ]
+
   - name: 'cao_PerkRanks.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/3717/'
+      - 'https://www.curseforge.com/skyrim/mods/caos-perk-ranks-overhaul/'
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("cao_PerkRanks.esp",B2A7936F)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("cao_PerkRanks.esp", 40AAA2AD)'
+
   - name: 'Character_Generation.esp'
     req: [ *SKSE ]
   - name: 'Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp'
