@@ -249,49 +249,6 @@ common:
       - lang: sv
         text: 'När du använder **%1%** är det rekommenderat att du avaktiverar eller tar bort denna ESP-fil, men behåll resurserna (meshar och texturer) installerade med denna mod.'
 
-  - &fixedPluginOutSub
-    type: warn
-    content:
-      - lang: en
-        text: 'Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](https://www.nexusmods.com/skyrim/mods/26230).'
-      - lang: de
-        text: 'Enthält unerwartete (oder unsortierte) Einträge. Ein Kompatibilitätspatch, ausgebessert und gesäubert mit TES5Edit, kann [hier](https://www.nexusmods.com/skyrim/mods/26230) gefunden werden.'
-      - lang: es
-        text: 'Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado [aquí](https://www.nexusmods.com/skyrim/mods/26230).'
-      - lang: ja
-        text: '予期しない（あるいは順序が乱れた）レコードが含まれています。[こちら](https://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った互換パッチを入手可能です。'
-      - lang: pl
-        text: 'Zawiera niespodziewane wpisy (lub poza kolejnością). Łatka kompatybilności wyczyszczona i naprawiona przez TES5Edit może być pobrana [tutaj](https://www.nexusmods.com/skyrim/mods/26230).'
-      - lang: pt_BR
-        text: 'Contém records inesperados (ou fora de ordem). Um patch de compatibilidade consertado e limpo com o TES5Edit por ser encontrado [aqui](https://www.nexusmods.com/skyrim/mods/26230).'
-      - lang: ru
-        text: 'Содержит неожиданные (или неисправные) записи. Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](https://www.nexusmods.com/skyrim/mods/26230). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)'
-      - lang: sv
-        text: 'Innehåller oväntande (eller osorterade) uppgifter. En kompatibilitetspatch fixad och rensad med TES5Edit kan laddas ner [här](https://www.nexusmods.com/skyrim/mods/26230).'
-
-  - &fixedPluginPreCK
-    type: warn
-    content:
-      - lang: en
-        text: 'Original file was released before the Creation Kit (07 Feb. 2012). A compatibility patch fixed and cleaned with TES5Edit can be obtained [here](%1%).'
-      - lang: de
-        text: 'Die Original Datei wurde vor dem Creation Kit (07 Feb. 2012) veröffentlicht. Ein Kompatibilitätspatch, ausgebessert und gesäubert mit TES5Edit, kann [hier](%1%) heruntergeladen werden.'
-      - lang: es
-        text: 'El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012). Puedes encontrar un patch de compatibilidad [aquí](%1%).'
-      - lang: ja
-        text: '元のファイルはCreation Kitのリリース日（2012年2月7日）より前にリリースされています。[こちら](%1%)からTES5Editで修正しクリーニングを行った互換パッチを入手可能です。'
-      - lang: pl
-        text: 'Oryginalny plik został stworzony przed wydaniem Creation Kit (07 Luty 2012). Łatka kompatybilności wyczyszczona i naprawiona przez TES5Edit może być pobrana [tutaj](%1%).'
-      - lang: pt_BR
-        text: 'O arquivo original foi lançado antes do Creation Kit (07 de fev. de 2012). Um patch de compatibilidade limpo e consertado com o TES5Edit pode ser encontrado [aqui](%1%).'
-      - lang: ru
-        text: 'Оригинальный файл был выпущен до выхода Creation Kit (07 фев. 2012). Исправленный и очищенный с помощью Tes5Edit патч можно попробовать найти [здесь](%1%). (Замечание для любых локализаций исправленных файлов: Если вы уверены, что используете переведенную на русский язык исправленную версию, с указанной по ссылке страницы на Нексусе, то данное сообщение отобразится ошибочно и может быть проигнорировано.)'
-      - lang: sv
-        text: 'Originalfilen var släppt före Creation Kit (07 Feb. 2012). En kompatibilitetspatch fixad och rensad med TES5Edit kan laddas ner [här](%1%).'
-  - &fixedPluginPreCKSharlikran
-    <<: *fixedPluginPreCK
-    subs: [ 'https://www.nexusmods.com/skyrim/mods/26230' ]
-
   - &installOriginalResources
     type: say
     content:
@@ -338,6 +295,9 @@ common:
       - lang: zh_CN
         text: '已过时。请升级到最新版本。 %1%'
     subs: [ '' ]
+  - &obsoleteSharlikran
+    <<: *obsolete
+    subs: [ '[Sharlikran''s Compatibility Patches](https://www.nexusmods.com/skyrim/mods/26230/)' ]
 
   - &onlyUseSmashOrBash
     type: say
@@ -1988,20 +1948,13 @@ plugins:
         crc: 0xEB1CB13F
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
-  - name: 'hideout.esm'
+
+  - name: 'retreat\.es(p|m)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/7748/' ]
     msg:
       - <<: *obsolete
-        subs: [ '[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).' ]
-      - <<: *fixedPluginPreCK
-        condition: 'version("hideout.esm","10.2",<)'
-        subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
-  - name: 'retreat.esm'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).' ]
-      - <<: *fixedPluginPreCK
-        condition: 'version("retreat.esm","1.0",<)'
-        subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
+        subs: [ '[Dovahkiin Retreat Continued](https://www.nexusmods.com/skyrim/mods/59522/)' ]
+
   - name: 'Riftrun_HF_v_2_0.esp'
     after:
       - 'Hideout_Main.esp'
@@ -2031,25 +1984,17 @@ plugins:
     msg: [ *obsolete ]
   - name: 'IsharasUniqueRaces.esm'
     inc: [ 'ethereal_elven_overhaul.esp' ]
+
   - name: 'JSwords.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1002/' ]
     msg:
-      - type: warn
-        condition: 'version("JSwords.esm","14.0",<)'
-        content:
-          - lang: en
-            text: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](http://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: de
-            text: 'Der Kompatibilitätspatch Version 14.0, ausgebessert und gesäubert mit TES5Edit, kann [hier](http://www.nexusmods.com/skyrim/mods/26230) heruntergeladen werden.'
-          - lang: ja
-            text: '[こちら](http://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
-          - lang: ru
-            text: 'Совместимый с версией 14.0 очищенный и исправленный патч совместимости в TES5Edit может быть найден [здесь](http://www.nexusmods.com/skyrim/mods/26230).'
-      - <<: *alreadyInCompleteCraftingOverhaulRemade
-      - <<: *fixedPluginOutSub
-        condition: 'checksum("JSwords.esm",5C5F1687) or checksum("JSwords.esm",58016F83)'
+      - *alreadyInCompleteCraftingOverhaulRemade
+      - <<: *obsoleteSharlikran
+        condition: 'version("JSwords.esm", "14.0", <)'
     clean:
       - crc: 0x142A34B6
-        util: TES5Edit v3.1.3
+        util: 'TES5Edit v4.0.3f'
+
   - name: 'kuerteeInventoryAndWeight.esm'
     msg: [ *obsolete ]
   - name: 'Lanterns Of Skyrim - All In One - Main.esm'
@@ -3078,21 +3023,27 @@ plugins:
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MageRobesCommentFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
+
+  ### Staff of Magnus Absorb ###
   - name: 'Magnus20.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5705/' ]
     msg:
       - *alreadyInOrFixedByPatch1.4
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Magnus20.esp",DE1D22AC)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Magnus20.esp", E474964B)'
   - name: 'Magnus50.esp'
     msg:
-      - *alreadyInOrFixedByPatch1.4
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Magnus50.esp",1003FA02)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Magnus50.esp", B1C2AAC2)'
   - name: 'Magnus100.esp'
     msg:
-      - *alreadyInOrFixedByPatch1.4
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Magnus100.esp",37C6B07A)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Magnus100.esp", 99E5293E)'
+  - name: 'Magnus100_50.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Magnus100_50.esp", FB578221)'
+
   - name: 'Mannequinfix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'markedfordeathfix.esp'
@@ -3930,22 +3881,28 @@ plugins:
         crc: 0x4FD63CD3
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+
+  ### Warmer Magic Lights ###
   - name: 'Warmer Magic Lights v2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/4419/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Warmer Magic Lights v2.esp",2A1E2810)'
-  - name: 'Warmer Magic Lights v2 - White.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Warmer Magic Lights v2 - White.esp",B5571C09)'
-  - name: 'Warmer Magic Lights v2 - White - Big.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Warmer Magic Lights v2 - White - Big.esp",ACAE3F31)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Warmer Magic Lights v2.esp", 82423A81)'
   - name: 'Warmer Magic Lights v2 - Big.esp'
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Warmer Magic Lights v2 - Big.esp",DE4F928D)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Warmer Magic Lights v2 - Big.esp", 4FABAAE6)'
+  - name: 'Warmer Magic Lights v2 - White.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Warmer Magic Lights v2 - White.esp", E6D83005)'
+  - name: 'Warmer Magic Lights v2 - White - Big.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Warmer Magic Lights v2 - White - Big.esp", 01EC455A)'
+  - name: 'Warmer Magic Lights v1.esp'
+    msg: [ *obsolete ]
+
   - name: 'SI_DarkerNightsAddon.esp'
     req: [ 'ClimatesOfTamriel.esm' ]
   - name: 'KatuLights.*\.esp'
@@ -4090,28 +4047,19 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("(lower)?jumpHeight(Third|only)?\.esp")'
         subs: [ 'jumpheight .esp file' ]
+
+  - name: 'Weapons and Armor fixes( - Hacks)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/4719/' ]
   - name: 'Weapons and Armor fixes.esp'
     msg:
       - *alreadyInOrFixedByUSLEEP
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Weapons and Armor fixes.esp",D27D2F2)'
-      - type: say
-        content:
-          - lang: en
-            text: 'For ''WAF+SPO+CCO'' users. No conflicts with ''Smithing Perks Overhaul'' and ''Complete Crafting Overhaul''.'
-          - lang: de
-            text: 'Für Benutzer von ''WAF+SPO+CCO''. Keine Konflikte mit ''Smithing Perks Overhaul'' und ''Complete Crafting Overhaul''.'
-          - lang: es
-            text: 'Para los que utilizen ''WAF+SPO+CCO''. No tiene conflictos con ''Smithing Perks Overhaul'' o ''Complete Crafting Overhaul''.'
-          - lang: ja
-            text: '''WAF+SPO+CCO''環境向けのプラグインです。''Smithing Perks Overhaul''と''Complete Crafting Overhaul''とは競合しません。'
-          - lang: ru
-            text: 'Для использующих ''WAF+SPO+CCO''. Конфликтов с ''Smithing Perks Overhaul'' и ''Complete Crafting Overhaul'' не обнаружено.'
-        condition: 'file("Smithing Perks Overhaul( - Balanced)?\.esp") and file("Complete Crafting Overhaul( - BS version)?\.esp")'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Weapons and Armor fixes.esp", DB723BD2)'
   - name: 'Weapons and Armor fixes - Hacks.esp'
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Weapons and Armor fixes - Hacks.esp",119BC97C)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Weapons and Armor fixes - Hacks.esp", 4DDA13C3)'
+
   - name: 'sh_HF_goat_fix.esp'
     tag: [ Relev ]
   - name: 'Skyrim Shadow Striping Fix.esp'
@@ -4315,56 +4263,31 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("AvengersBosses.esp",806151D5)'
-  - name: 'Babettes Feast v1_2.esp'
-    msg: [ *obsolete ]
+
+  ### Babettes Feast - Improved Cooking ###
+  - name: 'BabettesFeast(Balanced|Overpowered|WeakerEffects)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5816/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Babettes Feast ESP' ]
+        condition: 'many("BabettesFeast(Balanced|Overpowered|WeakerEffects)\.esp")'
   - name: 'BabettesFeastBalanced.esp'
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("BabettesFeastBalanced.esp","1.2",<)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
-          - lang: de
-            text: 'Falls vorhanden, löschen Sie Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (diejenigen mit einem Leerzeichen), da sie nicht mehr verwendet werden.'
-          - lang: ja
-            text: 'スペース付きのEsp（Babettes Feast Balanced.esp、Babettes Feast Overpowered.esp、Babettes Feast Weaker Effects.esp）が存在する場合、現在は使用されていませんので削除してください。'
-        condition: 'file("Babettes Feast Balanced.esp") or file("Babettes Feast Overpowered.esp") or file("Babettes Feast Weaker Effects.esp")'
-    inc:
-      - 'BabettesFeastOverpowered.esp'
-      - 'BabettesFeastWeakerEffects.esp'
+      - <<: *obsoleteSharlikran
+        condition: 'version("BabettesFeastBalanced.esp", "1.2", <)'
   - name: 'BabettesFeastOverpowered.esp'
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("BabettesFeastOverpowered.esp","1.2",<)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
-          - lang: de
-            text: 'Falls vorhanden, löschen Sie Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (diejenigen mit einem Leerzeichen), da sie nicht mehr verwendet werden.'
-          - lang: ja
-            text: 'スペース付きのEsp（Babettes Feast Balanced.esp、Babettes Feast Overpowered.esp、Babettes Feast Weaker Effects.esp）が存在する場合、現在は使用されていませんので削除してください。'
-        condition: 'file("Babettes Feast Balanced.esp") or file("Babettes Feast Overpowered.esp") or file("Babettes Feast Weaker Effects.esp")'
-    inc:
-      - 'BabettesFeastBalanced.esp'
-      - 'BabettesFeastWeakerEffects.esp'
+      - <<: *obsoleteSharlikran
+        condition: 'version("BabettesFeastOverpowered.esp", "1.2", <)'
   - name: 'BabettesFeastWeakerEffects.esp'
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("BabettesFeastWeakerEffects.esp","1.2",<)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
-          - lang: de
-            text: 'Falls vorhanden, löschen Sie Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (diejenigen mit einem Leerzeichen), da sie nicht mehr verwendet werden.'
-          - lang: ja
-            text: 'スペース付きのEsp（Babettes Feast Balanced.esp、Babettes Feast Overpowered.esp、Babettes Feast Weaker Effects.esp）が存在する場合、現在は使用されていませんので削除してください。'
-        condition: 'file("Babettes Feast Balanced.esp") or file("Babettes Feast Overpowered.esp") or file("Babettes Feast Weaker Effects.esp")'
-    inc:
-      - 'BabettesFeastBalanced.esp'
-      - 'BabettesFeastOverpowered.esp'
+      - <<: *obsoleteSharlikran
+        condition: 'version("BabettesFeastWeakerEffects.esp", "1.2", <)'
+  - name: 'BabettesFeast - IMCN.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'version("BabettesFeast - IMCN.esp", "0.31", <)'
+
   - name: 'Baby Dragons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19206' ]
     dirty:
@@ -4380,10 +4303,13 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("BagofTrash\w*\.esp")'
         subs: [ 'BagofTrash .esp file' ]
+
   - name: 'BanditsEyepatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1874/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("BanditsEyepatch.esp",43DE0DBC)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("BanditsEyepatch.esp", F7B08799)'
+
   - name: 'Bandits Wear Helmets.esp'
     tag: [ Relev ]
   - name: 'Barrels and Crates.esp'
@@ -4614,18 +4540,21 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("cao_DweSchematicsSearch.esp",A655AB19)'
-  - name: 'cao_goldbrand.esp'
-    msg:
-      - <<: *fixedPluginPreCK
-        subs: [ 'http://www.nexusmods.com/skyrim/mods/5830' ]
+
   - name: 'cao_goldbrand_WT.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5830/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
+      - <<: *obsoleteSharlikran
         condition: 'version("cao_goldbrand_WT.esp", "1.0", <)'
+
   - name: 'cao_ToolsTrade_BuyRL.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/8527/'
+      - 'https://www.curseforge.com/skyrim/mods/caos-tools-trade-new-spells/'
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'checksum("cao_ToolsTrade_BuyRL.esp",3979D654)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("cao_ToolsTrade_BuyRL.esp", 3979D654)'
+
   - name: 'CarryWeightSpells.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/4710' ]
     dirty:
@@ -5613,10 +5542,13 @@ plugins:
       # v2.2
       - crc: 0x8E9290D1
         util: 'TES5Edit v4.0.2j'
+
   - name: 'Lost Art of the Blacksmith.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1020/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Lost Art of the Blacksmith.esp",1720F631)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Lost Art of the Blacksmith.esp", 8E4BA610)'
+
   - name: 'LoversComfort.esp'
     req:
       - *SKSE
@@ -6721,10 +6653,13 @@ plugins:
     tag:
       - Delev
       - Relev
+
   - name: 'ValsCraftingMeltdownAlpha.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/874/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("ValsCraftingMeltdownAlpha.esp", 9F5FD0C9) and checksum("ValsCraftingMeltdownAlpha.esp", 710A79E6)'
+
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     inc: [ 'Valdacil''s Item Sorting - Smithing Smelter Categories.esp' ]
   - name: 'WantedPosters.esp'
@@ -7479,11 +7414,14 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Better Bond of Matrimony .+\.esp")'
         subs: [ 'Better Bond of Matrimony .esp file' ]
+
   - name: 'Bikini Clothes.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6236/' ]
     msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Bikini Clothes.esp", 79FCD814) or checksum("Bikini Clothes.esp", CDACB450)'
       - *requiresCBBE
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Bikini Clothes.esp",16DC7E96)'
+
   - name: 'bikiniADEC.esp'
     msg:
       - <<: *requiresX
@@ -7756,10 +7694,13 @@ plugins:
     inc: [ '1nivWICSkyCloaksPatch.esp' ]
   - name: 'CMHood (Ashlander).esp'
     msg: [ *obsolete ]
+
   - name: 'CompanionsShields.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14827/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("CompanionsShields.esp",75F460D6)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("CompanionsShields.esp", 6B140B61)'
+
   - name: 'CoolItems1_2.esp'
     msg:
       - <<: *corrupt
@@ -7837,10 +7778,13 @@ plugins:
         itm: 1
   - name: 'customnightingale.esp'
     msg: [ *obsolete ]
+
   - name: 'Daedric Extra Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17026/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Daedric Extra Armor.esp",8DDD039)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Daedric Extra Armor.esp", 7AB19402) or checksum("Daedric Extra Armor.esp", 43F11981)'
+
   - name: 'DaedricCrossbow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22113' ]
     dirty:
@@ -7860,13 +7804,16 @@ plugins:
     msg: [ *obsolete ]
   - name: 'selobl_DarkLillith.esp'
     msg: [ *requiresUNPB ]
+
   - name: 'DarkNemesis.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21705/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("DarkNemesis.esp",CE5E555B)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("DarkNemesis.esp", 56F07A36)'
     tag:
       - name: Deactivate
-        condition: 'file("SkyRe Dark Nemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
+        condition: 'file("SkyRe Dark Nemesis.esp") and not checksum("DarkNemesis.esp", CE5E555B)'
+
   - name: 'DarkPaladinArmor.esp'
     msg: [ *obsolete ]
   - name: 'DarkPaladinArmorV2.esp'
@@ -7975,14 +7922,24 @@ plugins:
     inc: [ 'DME.esp' ]
   - name: 'Doom Heavy Set.esp'
     msg: [ *requiresCBBE ]
+
   - name: 'Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/15804/' ]
+  - name: 'Dovahkiin Mercenary Armor and Weapons CBBE.esp'
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp",C376FC4) and not checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp",C376FC4)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Dovahkiin Mercenary Armor and Weapons CBBE.esp", BC430819)'
+  - name: 'Dovahkiin Mercenary Armor and Weapons UNP.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Dovahkiin Mercenary Armor and Weapons UNP.esp", BC430819)'
+
   - name: 'DPArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6537/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("DPArmor.esp","0.3",<)'
+      - <<: *obsoleteSharlikran
+        condition: 'version("DPArmor.esp", "0.3", <)'
+
   - name: 'DragonboneCrossbow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22303' ]
     dirty:
@@ -8235,13 +8192,16 @@ plugins:
         crc: 0x42E067F8
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
+
   - name: 'EternalShineArmorAndWeapons.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17582/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'version("..\TESV.exe","1.8",>) and not checksum("EternalShineArmorAndWeapons.esp",3E85A943)'
+      - <<: *obsoleteSharlikran
+        condition: 'version("..\TESV.exe", "1.8", >) and (checksum("EternalShineArmorAndWeapons.esp", D092DCAF) or checksum("EternalShineArmorAndWeapons.esp", 549A2BEB))'
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Equipment of Eternal Shine.esp")'
+
   - name: 'EvolvingBoundWeapons.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -8312,10 +8272,13 @@ plugins:
       - <<: *alreadyInX
         condition: 'file("FoxMerged.esp")'
         subs: [ 'FoxMerged.esp' ]
+
   - name: 'Frostmourne.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6348/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Frostmourne.esp",428F46D4) and not checksum("Frostmourne.esp",51F43BA4) and version("..\TESV.exe","1.8",>)'
+      - <<: *obsoleteSharlikran
+        condition: 'version("..\TESV.exe", "1.8", >) and checksum("Frostmourne.esp", 5599D528)'
+
   - name: 'Frostmourne 1.0.1.esp'
     msg: [ *obsolete ]
   - name: 'Frostmourne 1.2.esp'
@@ -8368,10 +8331,13 @@ plugins:
         crc: 0x0E05797B
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
+
   - name: 'Hana.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/7664/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Hana.esp",C86C77D9)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Hana.esp", 37FF31C4)'
+
   - name: 'Hartherz1.2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/7558' ]
     msg:
@@ -8864,20 +8830,26 @@ plugins:
         subs: [ 'LeatherBackPack Original .esp file' ]
   - name: 'LeiFangAndChristieByNausicaa.esp'
     msg: [ *requiresCBBE ]
+
   - name: 'LFArmors.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6684/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("LFArmors.esp",EF8F74B6)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("LFArmors.esp", 737EA798) or checksum("LFArmors.esp", 97E4297F)'
+
   - name: 'LH Jewel Collection.esp'
     msg:
       - *requiresLadyBody
       - <<: *requiresX
         type: say
         subs: [ '[Lady Head](http://modgames.net/load/256-1-0-15866)' ]
+
   - name: 'Lich King''s Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6348/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'checksum("Lich King''s Armor.esp",5C5EB4D7)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Lich King''s Armor.esp", 5C5EB4D7) or checksum("Lich King''s Armor.esp", 82B1A4FD)'
+
   - name: 'light daedric armor.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -8919,10 +8891,13 @@ plugins:
       # v3.0
       - crc: 0xFC6760F5
         util: 'TES5Edit v4.0.2j'
+
   - name: 'loners_sword.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16751/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("loners_sword.esp",246E1CBB)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("loners_sword.esp", 78AB2F74)'
+
   - name: 'Longbows.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29950' ]
     tag:
@@ -9114,10 +9089,13 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Monys Portable Crafting Equipment.esp",9B33A305)'
+
   - name: 'MorrowindArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22793/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'checksum("MorrowindArmor.esp",7DDD7CAC)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("MorrowindArmor.esp", 7DDD7CAC) or checksum("MorrowindArmor.esp", ACCF09C7)'
+
   - name: 'MorrowindGlass.esp'
     inc: [ 'MorrowindArmor.esp' ]
     msg:
@@ -9147,13 +9125,18 @@ plugins:
             text: '必ず[CBBE](http://www.nexusmods.com/skyrim/mods/2666)か[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)用のうちの適切なEspを使用するようにしてください。'
           - lang: ru
             text: 'Убедидесь, что используете правильный esp для [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+
+  ### Mystic Elven Armor ###
   - name: 'Mystic.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Mystic.esp",67CBB5B2)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5600/' ]
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Mystic Armor and Weapon Set.esp")'
+  - name: 'SaderHorses.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("SaderHorses.esp", 46CF110A)'
+
   - name: 'NobleArtifacts_ENG.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/47052' ]
     dirty:
@@ -9230,10 +9213,13 @@ plugins:
             text: '要: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) か [CBBE](http://www.nexusmods.com/skyrim/mods/2666) か [UNP Blessed Body (UNPB)](http://www.nexusmods.com/skyrim/mods/37900)'
           - lang: ru
             text: 'Требуется: [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) или [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или [UNP Blessed Body (UNPB)](http://www.nexusmods.com/skyrim/mods/37900).'
+
   - name: 'Niagras Bleach Pack.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6583/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Niagras Bleach Pack.esp",32E5FB23)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Niagras Bleach Pack.esp", D3D9A7BF)'
+
   - name: 'Nicoroshi Creations.esp'
     tag:
       - name: Deactivate
@@ -9407,10 +9393,13 @@ plugins:
         util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
         udr: 3
+
   - name: 'Redguard Shield.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/7692/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("Redguard Shield.esp","1.2",<)'
+      - <<: *obsoleteSharlikran
+        condition: 'version("Redguard Shield.esp", "1.2", <)'
+
   - name: 'RedguardKnight.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13500' ]
     tag:
@@ -9535,10 +9524,7 @@ plugins:
     msg: [ *requiresBetterMales ]
   - name: 'selobl_Diano.esp'
     msg: [ *requiresUNPB ]
-  - name: 'SeraphimStandAlone.esp'
-    msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("SeraphimStandAlone.esp",556E0B68)'
+
   - name: 'SeraphineHuntedArmor.esp'
     msg:
       - type: say
@@ -9613,11 +9599,14 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Skeleton Key Recipe.esp",9FB9A9AC)'
+
   - name: 'Skimpy Plate Armor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23034/' ]
     msg:
-      - *requiresCBBE
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
+      - *requiresCBBE
+
   - name: 'SkyHeels.esp'
     msg:
       - <<: *corrupt
@@ -9637,20 +9626,26 @@ plugins:
         crc: 0xBED6E7D8
         util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
+
   - name: 'SnowyNightingale.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/7155/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("SnowyNightingale.esp",83B46ABF)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("SnowyNightingale.esp", 19EA0D12)'
+
   - name: 'Song General Armor&weapon.esp'
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Chinese General Set.esp")'
   - name: 'SophitiaByNausicaa.esp'
     msg: [ *corrupt ]
+
   - name: 'Sovngarde Steel Armor and Weapons.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16096/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Sovngarde Steel Armor and Weapons.esp",B84EB4CE)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Sovngarde Steel Armor and Weapons.esp", E2F0DB16) or checksum("Sovngarde Steel Armor and Weapons.esp", 7BEE51A3)'
+
   - name: 'Space Wiking''s Dwemer Exoskeleton.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19212' ]
     dirty:
@@ -9789,10 +9784,13 @@ plugins:
     tag: [ Relev ]
   - name: 'Templar Rusted.esp'
     tag: [ Relev ]
+
   - name: 'TemplarArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5397/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("TemplarArmor.esp",EE0395E4)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("TemplarArmor.esp", 65B2740C)'
+
   - name: 'TERAArmors_CBBE.esp'
     msg: [ *requiresCBBE ]
   - name: 'TeraArmors-CBBEByNausicaa.esp'
@@ -9953,26 +9951,20 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Weapons of the Dohvakiin.esp'
     inc: [ 'Dragonborn.esm' ]
+
   - name: 'WeaponsOf3E.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/3871' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xF758F3FA
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 2
-  - name: 'WeaponsOf3E - No Leveled Lists.esp'
-    msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("WeaponsOf3E - No Leveled Lists.esp",633752F5)'
-  - name: 'Weapons of the Third Era.+\.esp'
-    msg: [ *obsolete ]
-  - name: 'WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/3871/' ]
     inc: [ '3rdEraWeaponsMoS.esp' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("WeaponsOf3E.esp",67F338A1)'
       - *alreadyInSkyRe
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("WeaponsOf3E.esp", F758F3FA)'
     tag: [ Relev ]
+  - name: 'WeaponsOf3E - No Leveled Lists.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("WeaponsOf3E - No Leveled Lists.esp", 1CA83D71)'
+
   - name: '3rdEraWeaponsMoS.esp'
     msg: [ *obsolete ]
   - name: '3rdEraWeapMoS-lvlList.esp'
@@ -14551,17 +14543,11 @@ plugins:
         crc: 0xE91800C8
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 4
+
   - name: 'hideout.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).' ]
-      - <<: *fixedPluginPreCK
-        condition: 'version("hideout.esp","10.2",<)'
-        subs: [ 'http://www.nexusmods.com/skyrim/mods/43593' ]
-  - name: 'hideout - hearthfires.esp'
-    msg:
-      - <<: *obsolete
-        subs: ['[Dovahkiin Hideout Continued](http://www.nexusmods.com/skyrim/mods/43593).' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/12553/' ]
+    msg: [ *obsolete ]
+
   - name: 'hideoutcompact.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12697' ]
     msg:
@@ -14576,13 +14562,7 @@ plugins:
     clean:
       - crc: 0xE7C82347
         util: 'TES5Edit v4.0.3'
-  - name: 'retreat.esp'
-    msg:
-      - <<: *fixedPluginPreCK
-        condition: 'version("retreat.esp","1.0",<)'
-        subs: [ 'http://www.nexusmods.com/skyrim/mods/59522' ]
-      - <<: *obsolete
-        subs: [ '[Dovahkiin Retreat Continued](http://www.nexusmods.com/skyrim/mods/59522).' ]
+
   - name: 'HighlandFarmMilk.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17865' ]
     dirty:
@@ -17623,15 +17603,19 @@ plugins:
       - <<: *alreadyInX
         condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
         subs: [ 'Book Covers Skyrim.esp' ]
+
+  ### Headbomb's Better Sorting ###
+  - name: 'Headbomb''s Better Sorting.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/2730/' ]
   - name: 'Headbomb''s Better Sorting - Ammo.esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Food \(((Light|Normal|Reduced) Weight|Weightless)\)\.esp'
     msg:
@@ -17641,37 +17625,37 @@ plugins:
   - name: 'Headbomb''s Better Sorting - Food (Light Weight).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Potions \(((Light|Half|Normal) Weight|Weightless)\)\.esp'
     msg:
@@ -17681,22 +17665,22 @@ plugins:
   - name: 'Headbomb''s Better Sorting - Potions (Light Weight).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Soul Gems \((Ranked|PseudoVanilla)\)\.esp'
     msg:
@@ -17706,15 +17690,16 @@ plugins:
   - name: 'Headbomb''s Better Sorting - Soul Gems (Ranked).esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
       # doNotClean
-      - <<: *fixedPluginOutSub
+      - <<: *obsoleteSharlikran
         condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
   - name: 'Headbomb''s Better Sorting.esp'
     msg: [ *obsolete ]
+
   - name: 'Better Sorting 1.12 Sboub édition.esp'
     msg:
       - <<: *corrupt
@@ -18446,29 +18431,23 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("LZA Incremental Difficulty_.*\.esp")'
         subs: [ 'LZA Incremental Difficulty .esp file' ]
-  - name: 'MageFriendlyDiademOfTheSavant.esp'
-    msg: [ *corrupt ]
   - name: 'DragonPriestMaskQuestMarkers.esp'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xb9218834
         itm: 6
-  - name: 'MageFriendlyDragonPriestMasks.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("MageFriendlyDragonPriestMasks.esp",D1755B5B)'
-  - name: 'MageFriendlyDragonPriestMasks_hidden.esp'
-    msg: [ *corrupt ]
+
+  - name: 'MageFriendly(DragonPriestMasks(_hidden)?|DiademOfTheSavant)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/4670/' ]
+    msg: [ *obsolete ]
+
   - name: 'Magnify Spell Enchantments.esp'
     msg:
       - <<: *obsolete
         condition: 'checksum("Magnify Spell Enchantments.esp",74C76DD8)'
   - name: 'Magnify Spell Enchantments - Disenchant.esp'
     inc: [ 'Magnify Spell Enchantments.esp' ]
-  - name: 'Magnus100_50.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Magnus100_50.esp",6243CC49)'
+
   - name: 'MasculinizedLevelLists.esp'
     tag: [ Delev ]
   - name: 'MasculinizedLevelListsDG.esp'
@@ -18605,10 +18584,7 @@ plugins:
         udr: 2
   - name: 'OpenFaceGuardHelmetsFR.esp'
     inc: [ 'OpenFaceGuardHelmets.esp' ]
-  - name: 'OpenFaceHelmets.esp'
-    msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("OpenFaceHelmets.esp",D695AB86)'
+
   - name: 'Organized Books v(0.1|1.0)?\.esp'
     msg: [ *obsolete ]
   - name: 'Organized Books v1.1 - DLC Compatibility.esp'
@@ -20560,10 +20536,7 @@ plugins:
     clean:
       - crc: 0x79B1B51C
         util: 'TES5Edit v4.0.2f'
-  - name: 'BabettesFeast - IMCN.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("BabettesFeast - IMCN.esp","0.31",<)'
+
   - name: 'kuerteeEncumberingLootArmourAndWeapons.esp'
     req: [ *SKSE ]
   - name: 'kuerteeEncumberingLootArmourAndWeapons MCM.esp'
@@ -21826,12 +21799,15 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Skyrim_Best Voise Magic Damage.esp'
     inc: [ 'Skyrim_Best Voise Magic.esp' ]
+
   - name: 'SkyrimBalancedMagicSystem.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5586/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'checksum("SkyrimBalancedMagicSystem.esp",B3A41B23)'
-  - name: 'SkyrimBalancedMagicSystem - spells.esp'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("SkyrimBalancedMagicSystem.esp", B3A41B23)'
+  - name: 'SkyrimBalancedMagicSystem(-Light| - spells)\.esp'
     msg: [ *obsolete ]
+
   - name: 'Skyrim Improved Magic System( - No Race Spell Removal)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -21951,10 +21927,13 @@ plugins:
         itm: 2
   - name: 'enchantmentrebalanced.esp'
     msg: [ *obsolete ]
+
   - name: 'Fortify Enchanting necklace.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5540/' ]
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("Fortify Enchanting necklace.esp",E170C251)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Fortify Enchanting necklace.esp", 43185CE3)'
+
   - name: 'HasteEnchantment.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -22240,10 +22219,15 @@ plugins:
     inc: [ 'LB_MuchAdoSnowElves_ACE_Patch_Light.esp' ]
   - name: 'ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp'
     req: [ 'Dawnguard.esm' ]
+
   - name: 'cao_PerkRanks.esp'
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/3717/'
+      - 'https://www.curseforge.com/skyrim/mods/caos-perk-ranks-overhaul/'
     msg:
-      - <<: *fixedPluginOutSub
-        condition: 'not checksum("cao_PerkRanks.esp",B2A7936F)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("cao_PerkRanks.esp", 40AAA2AD)'
+
   - name: 'Character_Generation.esp'
     req: [ *SKSE ]
   - name: 'Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp'
