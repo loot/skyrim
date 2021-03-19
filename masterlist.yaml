@@ -9155,13 +9155,18 @@ plugins:
             text: '必ず[CBBE](http://www.nexusmods.com/skyrim/mods/2666)か[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)用のうちの適切なEspを使用するようにしてください。'
           - lang: ru
             text: 'Убедидесь, что используете правильный esp для [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
+
+  ### Mystic Elven Armor ###
   - name: 'Mystic.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Mystic.esp",67CBB5B2)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5600/' ]
     tag:
       - name: Deactivate
         condition: 'file("SkyRe Mystic Armor and Weapon Set.esp")'
+  - name: 'SaderHorses.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("SaderHorses.esp", 46CF110A)'
+
   - name: 'NobleArtifacts_ENG.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/47052' ]
     dirty:
