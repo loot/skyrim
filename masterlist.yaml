@@ -5572,10 +5572,13 @@ plugins:
       # v2.2
       - crc: 0x8E9290D1
         util: 'TES5Edit v4.0.2j'
+
   - name: 'Lost Art of the Blacksmith.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1020/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Lost Art of the Blacksmith.esp",1720F631)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Lost Art of the Blacksmith.esp", 8E4BA610)'
+
   - name: 'LoversComfort.esp'
     req:
       - *SKSE
