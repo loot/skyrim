@@ -18473,19 +18473,16 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("LZA Incremental Difficulty_.*\.esp")'
         subs: [ 'LZA Incremental Difficulty .esp file' ]
-  - name: 'MageFriendlyDiademOfTheSavant.esp'
-    msg: [ *corrupt ]
   - name: 'DragonPriestMaskQuestMarkers.esp'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xb9218834
         itm: 6
-  - name: 'MageFriendlyDragonPriestMasks.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("MageFriendlyDragonPriestMasks.esp",D1755B5B)'
-  - name: 'MageFriendlyDragonPriestMasks_hidden.esp'
-    msg: [ *corrupt ]
+
+  - name: 'MageFriendly(DragonPriestMasks(_hidden)?|DiademOfTheSavant)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/4670/' ]
+    msg: [ *obsolete ]
+
   - name: 'Magnify Spell Enchantments.esp'
     msg:
       - <<: *obsolete
