@@ -4293,56 +4293,31 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("AvengersBosses.esp",806151D5)'
-  - name: 'Babettes Feast v1_2.esp'
-    msg: [ *obsolete ]
+
+  ### Babettes Feast - Improved Cooking ###
+  - name: 'BabettesFeast(Balanced|Overpowered|WeakerEffects)\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5816/' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Babettes Feast ESP' ]
+        condition: 'many("BabettesFeast(Balanced|Overpowered|WeakerEffects)\.esp")'
   - name: 'BabettesFeastBalanced.esp'
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("BabettesFeastBalanced.esp","1.2",<)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
-          - lang: de
-            text: 'Falls vorhanden, löschen Sie Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (diejenigen mit einem Leerzeichen), da sie nicht mehr verwendet werden.'
-          - lang: ja
-            text: 'スペース付きのEsp（Babettes Feast Balanced.esp、Babettes Feast Overpowered.esp、Babettes Feast Weaker Effects.esp）が存在する場合、現在は使用されていませんので削除してください。'
-        condition: 'file("Babettes Feast Balanced.esp") or file("Babettes Feast Overpowered.esp") or file("Babettes Feast Weaker Effects.esp")'
-    inc:
-      - 'BabettesFeastOverpowered.esp'
-      - 'BabettesFeastWeakerEffects.esp'
+      - <<: *obsoleteSharlikran
+        condition: 'version("BabettesFeastBalanced.esp", "1.2", <)'
   - name: 'BabettesFeastOverpowered.esp'
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("BabettesFeastOverpowered.esp","1.2",<)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
-          - lang: de
-            text: 'Falls vorhanden, löschen Sie Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (diejenigen mit einem Leerzeichen), da sie nicht mehr verwendet werden.'
-          - lang: ja
-            text: 'スペース付きのEsp（Babettes Feast Balanced.esp、Babettes Feast Overpowered.esp、Babettes Feast Weaker Effects.esp）が存在する場合、現在は使用されていませんので削除してください。'
-        condition: 'file("Babettes Feast Balanced.esp") or file("Babettes Feast Overpowered.esp") or file("Babettes Feast Weaker Effects.esp")'
-    inc:
-      - 'BabettesFeastBalanced.esp'
-      - 'BabettesFeastWeakerEffects.esp'
+      - <<: *obsoleteSharlikran
+        condition: 'version("BabettesFeastOverpowered.esp", "1.2", <)'
   - name: 'BabettesFeastWeakerEffects.esp'
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("BabettesFeastWeakerEffects.esp","1.2",<)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'If present, delete Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (the ones with a space) because they are no longer used.'
-          - lang: de
-            text: 'Falls vorhanden, löschen Sie Babettes Feast Balanced.esp, Babettes Feast Overpowered.esp, Babettes Feast Weaker Effects.esp (diejenigen mit einem Leerzeichen), da sie nicht mehr verwendet werden.'
-          - lang: ja
-            text: 'スペース付きのEsp（Babettes Feast Balanced.esp、Babettes Feast Overpowered.esp、Babettes Feast Weaker Effects.esp）が存在する場合、現在は使用されていませんので削除してください。'
-        condition: 'file("Babettes Feast Balanced.esp") or file("Babettes Feast Overpowered.esp") or file("Babettes Feast Weaker Effects.esp")'
-    inc:
-      - 'BabettesFeastBalanced.esp'
-      - 'BabettesFeastOverpowered.esp'
+      - <<: *obsoleteSharlikran
+        condition: 'version("BabettesFeastWeakerEffects.esp", "1.2", <)'
+  - name: 'BabettesFeast - IMCN.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'version("BabettesFeast - IMCN.esp", "0.31", <)'
+
   - name: 'Baby Dragons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19206' ]
     dirty:
@@ -20578,10 +20553,7 @@ plugins:
     clean:
       - crc: 0x79B1B51C
         util: 'TES5Edit v4.0.2f'
-  - name: 'BabettesFeast - IMCN.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'version("BabettesFeast - IMCN.esp","0.31",<)'
+
   - name: 'kuerteeEncumberingLootArmourAndWeapons.esp'
     req: [ *SKSE ]
   - name: 'kuerteeEncumberingLootArmourAndWeapons MCM.esp'
