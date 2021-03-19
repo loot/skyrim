@@ -4570,14 +4570,13 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("cao_DweSchematicsSearch.esp",A655AB19)'
-  - name: 'cao_goldbrand.esp'
-    msg:
-      - <<: *fixedPluginPreCK
-        subs: [ 'http://www.nexusmods.com/skyrim/mods/5830' ]
+
   - name: 'cao_goldbrand_WT.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5830/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
+      - <<: *obsoleteSharlikran
         condition: 'version("cao_goldbrand_WT.esp", "1.0", <)'
+
   - name: 'cao_ToolsTrade_BuyRL.esp'
     msg:
       - <<: *fixedPluginPreCKSharlikran
