@@ -3911,22 +3911,28 @@ plugins:
         crc: 0x4FD63CD3
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+
+  ### Warmer Magic Lights ###
   - name: 'Warmer Magic Lights v2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/4419/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Warmer Magic Lights v2.esp",2A1E2810)'
-  - name: 'Warmer Magic Lights v2 - White.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Warmer Magic Lights v2 - White.esp",B5571C09)'
-  - name: 'Warmer Magic Lights v2 - White - Big.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Warmer Magic Lights v2 - White - Big.esp",ACAE3F31)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Warmer Magic Lights v2.esp", 82423A81)'
   - name: 'Warmer Magic Lights v2 - Big.esp'
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Warmer Magic Lights v2 - Big.esp",DE4F928D)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Warmer Magic Lights v2 - Big.esp", 4FABAAE6)'
+  - name: 'Warmer Magic Lights v2 - White.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Warmer Magic Lights v2 - White.esp", E6D83005)'
+  - name: 'Warmer Magic Lights v2 - White - Big.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Warmer Magic Lights v2 - White - Big.esp", 01EC455A)'
+  - name: 'Warmer Magic Lights v1.esp'
+    msg: [ *obsolete ]
+
   - name: 'SI_DarkerNightsAddon.esp'
     req: [ 'ClimatesOfTamriel.esm' ]
   - name: 'KatuLights.*\.esp'
