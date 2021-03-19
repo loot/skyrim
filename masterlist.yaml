@@ -3053,21 +3053,27 @@ plugins:
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MageRobesCommentFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
+
+  ### Staff of Magnus Absorb ###
   - name: 'Magnus20.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5705/' ]
     msg:
       - *alreadyInOrFixedByPatch1.4
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Magnus20.esp",DE1D22AC)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Magnus20.esp", E474964B)'
   - name: 'Magnus50.esp'
     msg:
-      - *alreadyInOrFixedByPatch1.4
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Magnus50.esp",1003FA02)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Magnus50.esp", B1C2AAC2)'
   - name: 'Magnus100.esp'
     msg:
-      - *alreadyInOrFixedByPatch1.4
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Magnus100.esp",37C6B07A)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Magnus100.esp", 99E5293E)'
+  - name: 'Magnus100_50.esp'
+    msg:
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("Magnus100_50.esp", FB578221)'
+
   - name: 'Mannequinfix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'markedfordeathfix.esp'
@@ -18477,10 +18483,7 @@ plugins:
         condition: 'checksum("Magnify Spell Enchantments.esp",74C76DD8)'
   - name: 'Magnify Spell Enchantments - Disenchant.esp'
     inc: [ 'Magnify Spell Enchantments.esp' ]
-  - name: 'Magnus100_50.esp'
-    msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("Magnus100_50.esp",6243CC49)'
+
   - name: 'MasculinizedLevelLists.esp'
     tag: [ Delev ]
   - name: 'MasculinizedLevelListsDG.esp'
