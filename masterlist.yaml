@@ -1297,9 +1297,8 @@ plugins:
   - name: 'Falskaar.esm'
     group: *newLandsGroup
     msg:
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_NRM
         condition: 'active("Requiem.esp") and not active("NRM Falskaar - Requiem Patch.esp")'
-        subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
     clean:
       # version: 1.2.1
       - crc: 0xDDFDBEDE
@@ -1309,9 +1308,8 @@ plugins:
     group: *newLandsGroup
     after: [ 'Falskaar.esm' ]
     msg:
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_NRM
         condition: 'active("Requiem.esp") and not active("NRM Wyrmstooth - Requiem Patch.esp")'
-        subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
     clean:
       # v1.18
       - crc: 0xDD27EAC5
@@ -3313,9 +3311,8 @@ plugins:
     group: *underridesGroup
     after: [ 'Guard Dialogue Overhaul.esp' ]
     msg:
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_KFR
         condition: 'active("Requiem.esp") and not active("KFR-Kryptopyr''sFixesReqtified.esp")'
-        subs: [ '[KFR - Kryptopyr''s Fixes Reqtified](https://www.nexusmods.com/skyrim/mods/61520)' ]
     tag:
       - Delev
       - Graphics
@@ -3329,9 +3326,8 @@ plugins:
     group: *underridesGroup
     after: [ 'Weapons & Armor Fixes_Remade.esp' ]
     msg:
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_KFR
         condition: 'active("Requiem.esp") and not active("KFR-Kryptopyr''sFixesReqtified.esp")'
-        subs: [ '[KFR - Kryptopyr''s Fixes Reqtified](https://www.nexusmods.com/skyrim/mods/61520)' ]
     tag:
       - Delev
       - Graphics
@@ -5258,9 +5254,8 @@ plugins:
       - <<: *patchProvided
         condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
         subs: [ 'Requiem' ]
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_RSE
         condition: 'active("Requiem.esp") and not active("Hunterborn_Requiem-Patch.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
-        subs: [ '[RSE - Requiem Survival Experience](https://www.nexusmods.com/skyrim/mods/56275)' ]
     dirty:
       # v1.6
       - <<: *quickClean
@@ -7645,12 +7640,10 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Cloaks( - (No Imperial|Player Only))?\.esp")'
         subs: [ 'Cloaks .esp file' ]
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_CFR
         condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
-        subs: [ '[CFR - Cloaks For Requiem](https://www.nexusmods.com/skyrim/mods/61590)' ]
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_COR
         condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
-        subs: [ '[COR - Crafting Overhaul Reqtified](https://www.nexusmods.com/skyrim/mods/61569)' ]
   - name: 'Cloaks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
@@ -7697,12 +7690,10 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("1nivWICCloaks(CRAFT|NoGuards)?.esp")'
         subs: [ 'WICCloaks .esp file' ]
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_CFR
         condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
-        subs: [ '[CFR - Cloaks For Requiem](https://www.nexusmods.com/skyrim/mods/61590)' ]
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_COR
         condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
-        subs: [ '[COR - Crafting Overhaul Reqtified](https://www.nexusmods.com/skyrim/mods/61569)' ]
     tag: [ Relev ]
   - name: '1nivWICCloaks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13486' ]
@@ -10401,9 +10392,8 @@ plugins:
       - 'aMidianBorn_ContentAddon.esp'
     tag: [ Graphics ]
     msg:
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_COR
         condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp")'
-        subs: [ '[COR - Crafting Overhaul Reqtified](https://www.nexusmods.com/skyrim/mods/61569)' ]
     dirty:
       # version: 1.7
       - <<: *quickClean
@@ -20614,9 +20604,8 @@ plugins:
       - '3DNPC.esp'
       - 'TradeRoutes.esp'
     msg:
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_RSE
         condition: 'active("Requiem.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
-        subs: [ '[RSE - Requiem Survival Experience](https://www.nexusmods.com/skyrim/mods/56275)' ]
     tag:
       - Delev
       - Graphics
@@ -23398,9 +23387,8 @@ plugins:
   - name: '3DNPC.esp'
     url: [ 'http://3dnpc.com/' ]
     msg:
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_NRM
         condition: 'active("Requiem.esp") and not active("NRM 3DNPC - Requiem Patch.esp")'
-        subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
     dirty:
       - <<: *quickClean
         crc: 0xE91FCA2F
@@ -26391,9 +26379,8 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/40607' ]
     after: [ 'MoonAndStar_MAS.esp' ]
     msg:
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_NRM
         condition: 'active("Requiem.esp") and not active("NRM Undeath - Requiem Patch.esp")'
-        subs: [ '[NRM Requiem Patches](https://www.nexusmods.com/skyrim/mods/60508)' ]
     dirty:
       - <<: *quickClean
         crc: 0x13173CB1
@@ -26735,9 +26722,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_RSE
         condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
-        subs: [ '[RSE - Requiem Survival Experience](https://www.nexusmods.com/skyrim/mods/56275)' ]
     clean:
       # version: 1.11
       - crc: 0x321C14B7
@@ -27119,9 +27105,8 @@ plugins:
     msg:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_RSE
         condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
-        subs: [ '[RSE - Requiem Survival Experience](https://www.nexusmods.com/skyrim/mods/56275)' ]
     clean:
       # version: 3.4.1
       - crc: 0x21E97089
@@ -27138,9 +27123,8 @@ plugins:
         itm: 7
   - name: 'Hypothermia.esp'
     msg:
-      - <<: *patchRequiem3rdParty
+      - <<: *patch3rdParty_Requiem_RSE
         condition: 'active("Requiem.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
-        subs: [ '[RSE - Requiem Survival Experience](https://www.nexusmods.com/skyrim/mods/56275)' ]
   - name: 'Immersive Horses.esp'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
@@ -28466,14 +28450,12 @@ plugins:
   - name: 'Wintersun - Faiths of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/95545' ]
     msg:
-      - <<: *patchRequiem3rdParty
-        subs: [ '[Seg''s Requiem Patches](https://www.nexusmods.com/skyrim/mods/95859)' ]
+      - <<: *patch3rdParty_Requiem_SRP
         condition: 'active("Requiem.esp") and not active("Requiem - Wintersun Patch.esp")'
   - name: 'Sacrosanct - Vampires of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/80159' ]
     msg:
-      - <<: *patchRequiem3rdParty
-        subs: [ '[Seg''s Requiem Patches](https://www.nexusmods.com/skyrim/mods/95859)' ]
+      - <<: *patch3rdParty_Requiem_SRP
         condition: 'active("Requiem.esp") and not active("(Sacrosanct Requiem Patch and Rebalance|Requiem - Sacrosanct Patch).esp")'
     after:
       - 'Requiem.esp'
@@ -28482,8 +28464,7 @@ plugins:
   - name: 'BetterDeadThralls.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/58069' ]
     msg:
-      - <<: *patchRequiem3rdParty
-        subs: [ '[Seg''s Requiem Patches](https://www.nexusmods.com/skyrim/mods/95859)' ]
+      - <<: *patch3rdParty_Requiem_SRP
         condition: 'active("Requiem.esp") and not active("Requiem - BDT Patch.esp")'
   - name: 'Book of UUNP Iron And Steel.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/75861' ]
