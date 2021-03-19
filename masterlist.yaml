@@ -344,6 +344,16 @@ common:
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти здесь: %2%'
       - lang: sv
         text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%.'
+  - &patchRequiemMRP
+    <<: *patch3rdParty
+    subs:
+      - 'Requiem'
+      - '[More Requiem Patches](https://www.nexusmods.com/skyrim/mods/58141/)'
+  - &patchRequiemRPC
+    <<: *patch3rdParty
+    subs:
+      - 'Requiem'
+      - '[Requiem Patch Central](https://www.nexusmods.com/skyrim/mods/61621/)'
 
   - &patchRequiem3rdParty
     type: say
@@ -366,12 +376,6 @@ common:
         text: 'Похоже, что используется Requiem, но патч совместимости для него не был подключен. Патч совместимости можно найти здесь: %1%'
       - lang: sv
         text: 'Du verkar använda Requiem, men har inte aktiverat en kompatibilitetspatch för det här moddet. En patch från en tredje part finns här: %1%'
-  - &patchRequiemRPC
-    <<: *patchRequiem3rdParty
-    subs: [ '[Requiem Patch Central](https://www.nexusmods.com/skyrim/mods/61621/)' ]
-  - &patchRequiemMRP
-    <<: *patchRequiem3rdParty
-    subs: [ '[More Requiem Patches](https://www.nexusmods.com/skyrim/mods/58141/)' ]
 
   - &patchIncluded
     type: say
