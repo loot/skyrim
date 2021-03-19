@@ -344,7 +344,7 @@ common:
         text: 'Похоже, что используется **%1%**, но патч совместимости для него не был подключен. Патч совместимости можно найти здесь: %2%'
       - lang: sv
         text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%.'
-  - &patchRequiemMRP
+  - &patch3rdParty_Requiem_MRP
     <<: *patch3rdParty
     subs:
       - 'Requiem'
@@ -1429,7 +1429,7 @@ plugins:
         subs: [ '83Willows 101Bugs plugin' ]
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", <) and not active("Requiem - 83Willows 101Bugs.esp")'
-      - <<: *patchRequiemMRP
+      - <<: *patch3rdParty_Requiem_MRP
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", >=) and not active("Requiem - 83Willows 101Bugs.esp")'
       - <<: *deletePlugin
         condition: 'active("83Willows_101BUGS_V4_.+\.esp") and active("Requiem - 83Willows 101Bugs.esp")'
@@ -5310,7 +5310,7 @@ plugins:
   - name: 'ImmersiveSpells.esp'
     req: [ *SKSE ]
     msg:
-      - <<: *patchRequiemMRP
+      - <<: *patch3rdParty_Requiem_MRP
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Spells.esp")'
   - name: 'ImmersiveSpells-NoDlcDawnDragComp.esp'
     req: [ *SKSE ]
@@ -6336,7 +6336,7 @@ plugins:
           - lang: ja
             text: 'このEspはjackstarr氏によるロアフレンドリーバージョンです。lifestorock氏によるオリジナル版のEspもしくはEsmは使用しないでください。'
         condition: 'checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
-      - <<: *patchRequiemMRP
+      - <<: *patch3rdParty_Requiem_MRP
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Creatures.esp")'
     tag:
       - Delev
@@ -18713,7 +18713,7 @@ plugins:
   - name: 'Rebirth Monster.esp'
     msg:
       # version: 1.9.5
-      - <<: *patchRequiemMRP
+      - <<: *patch3rdParty_Requiem_MRP
         condition: 'checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Requiem - Revenge of the Enemies.esp")'
       # version: 2.0 and later
       - <<: *patchRequiem3rdParty
@@ -25025,7 +25025,7 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Height Adjusted Races.*\.esp")'
         subs: [ 'Height Adjusted Races .esp file' ]
-      - <<: *patchRequiemMRP
+      - <<: *patch3rdParty_Requiem_MRP
         condition: 'active("Requiem.esp") and not active("Requiem - Height Adjusted Races with True Giants.esp") and not active("Requiem - True Giants and Mammoths.esp")'
       - <<: *alreadyInX
         condition: 'active("Height Adjusted Races.*\.esp") and active("Requiem - Height Adjusted Races with True Giants.esp")'
@@ -27070,7 +27070,7 @@ plugins:
     msg:
       - <<: *patchRequiemRPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", <) and not active("Requiem - Dragon Combat Overhaul.esp")'
-      - <<: *patchRequiemMRP
+      - <<: *patch3rdParty_Requiem_MRP
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", >=) and not active("Requiem - Dragon Combat Overhaul.esp")'
   - name: 'Faction Crossbows.esp'
     msg:
@@ -27082,7 +27082,7 @@ plugins:
         util: 'TES5Edit v4.0.2'
   - name: 'FireAndIceOverhaul.esp'
     msg:
-      - <<: *patchRequiemMRP
+      - <<: *patch3rdParty_Requiem_MRP
         condition: 'active("Requiem.esp") and not active("Requiem - Fire and Ice Overhaul.esp") and not active("Requiem - Fire and Ice Overhaul - AOS.esp")'
   - name: 'Frostfall.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11163' ]
@@ -27203,7 +27203,7 @@ plugins:
         util: 'TES5Edit v4.0.2f'
   - name: 'DawnguardArsenal.esp'
     msg:
-      - <<: *patchRequiemMRP
+      - <<: *patch3rdParty_Requiem_MRP
         condition: 'active("Requiem.esp") and not active("Requiem - Dawnguard Arsenal.esp")'
   - name: 'One With Nature.*\.esp'
     msg:
