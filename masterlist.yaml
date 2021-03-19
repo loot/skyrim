@@ -8860,10 +8860,13 @@ plugins:
         subs: [ 'LeatherBackPack Original .esp file' ]
   - name: 'LeiFangAndChristieByNausicaa.esp'
     msg: [ *requiresCBBE ]
+
   - name: 'LFArmors.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/6684/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("LFArmors.esp",EF8F74B6)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("LFArmors.esp", 737EA798) or checksum("LFArmors.esp", 97E4297F)'
+
   - name: 'LH Jewel Collection.esp'
     msg:
       - *requiresLadyBody
