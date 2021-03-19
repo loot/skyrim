@@ -6683,10 +6683,13 @@ plugins:
     tag:
       - Delev
       - Relev
+
   - name: 'ValsCraftingMeltdownAlpha.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/874/' ]
     msg:
-      - <<: *fixedPluginPreCKSharlikran
-        condition: 'not checksum("ValsCraftingMeltdownAlpha.esp",F655D4D3) and not checksum("ValsCraftingMeltdownAlpha.esp",6B6074FD)'
+      - <<: *obsoleteSharlikran
+        condition: 'checksum("ValsCraftingMeltdownAlpha.esp", 9F5FD0C9) and checksum("ValsCraftingMeltdownAlpha.esp", 710A79E6)'
+
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     inc: [ 'Valdacil''s Item Sorting - Smithing Smelter Categories.esp' ]
   - name: 'WantedPosters.esp'
