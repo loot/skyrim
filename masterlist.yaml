@@ -10073,6 +10073,7 @@ plugins:
     tag:
       - Delev
       - Relev
+
   - name: 'XAC.esp'
     msg:
       - type: say
@@ -10093,9 +10094,7 @@ plugins:
           - lang: ja
             text: 'オリジナル版のBsaまたはルーズファイルがなければ機能しません。'
         condition: 'checksum("XAC.esp",7BD34BA7) and not file("XAC.bsa")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe XAC Stat (Original|Swap)( Classic)?\.esp")'
+
   - name: 'YPSArmorPack.esp'
     msg: [ *requiresUNP ]
   - name: 'zabswitchhat.esp'
@@ -11676,82 +11675,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe XAC Original Classic.esp'
-    msg:
-      - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            text: 'If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original Classic.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Wenn Sie die bsa Version von XAC heruntergeladen haben, müssen Sie "XAC.bsa" in "SkyRe XAC Original Classic.bsa" umbenennen, sonst funktioniert diese Mod nicht.'
-          - lang: ja
-            text: 'bsa版のXACをダウンロードしている場合、"XAC.bsa"を"SkyRe XAC Original Classic.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Original Classic.bsa" или этот мод работать не будет.'
-        condition: 'not file("SkyRe XAC Original Classic.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("XAC.esp")'
-        subs: [ 'XAC.esp' ]
-    url: []
-  - name: 'SkyRe XAC Original.esp'
-    msg:
-      - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            text: 'If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Wenn Sie die bsa Version von XAC heruntergeladen haben, müssen Sie "XAC.bsa" in "SkyRe XAC Original.bsa" umbenennen, sonst funktioniert diese Mod nicht.'
-          - lang: ja
-            text: 'bsa版のXACをダウンロードしている場合、"XAC.bsa"を"SkyRe XAC Original.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Original.bsa" или этот мод работать не будет.'
-        condition: 'not file("SkyRe XAC Original.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("XAC.esp")'
-        subs: [ 'XAC.esp' ]
-    url: []
-  - name: 'SkyRe XAC Stat Swap Classic.esp'
-    msg:
-      - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            text: 'If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap Classic.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Wenn Sie die bsa Version von XAC heruntergeladen haben, müssen Sie "XAC.bsa" in "SkyRe XAC Stat Swap Classic.bsa" umbenennen, sonst funktioniert diese Mod nicht.'
-          - lang: ja
-            text: 'bsa版のXACをダウンロードしている場合、"XAC.bsa"を"SkyRe XAC Stat Swap Classic.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Stat Swap Classic.bsa" или этот мод работать не будет.'
-        condition: 'not file("SkyRe XAC Stat Swap Classic.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("XAC.esp")'
-        subs: [ 'XAC.esp' ]
-    url: []
-  - name: 'SkyRe XAC Stat Swap.esp'
-    msg:
-      - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            text: 'If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Wenn Sie die bsa Version von XAC heruntergeladen haben, müssen Sie "XAC.bsa" in "SkyRe XAC Stat Swap.bsa" umbenennen, sonst funktioniert diese Mod nicht.'
-          - lang: ja
-            text: 'bsa版のXACをダウンロードしている場合、"XAC.bsa"を"SkyRe XAC Stat Swap.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Stat Swap.bsa" или этот мод работать не будет.'
-        condition: 'not file("SkyRe XAC Stat Swap.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("XAC.esp")'
-        subs: [ 'XAC.esp' ]
-    url: []
   - name: 'REQ Tribunal Robes by Zairaam.esp'
     msg: [ *installOriginalResources ]
   - name: '0.1.6.esp'
