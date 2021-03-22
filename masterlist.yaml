@@ -9948,9 +9948,6 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
         condition: 'file("SG_HothTrooper.esp")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_VanguardArmor_3.esp")'
 
   - name: 'ViceroyInquisitor.esp'
     msg: [ *requiresCBBE ]
@@ -10255,9 +10252,7 @@ plugins:
 
   - name: 'SG_HothTrooper.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17532/' ]
-    inc:
-      - 'SkyRe_Plugin_VanguardArmor_3.esp'
-      - 'SkyRe_Plugin_WarchiefArmor_4.esp'
+    inc: [ 'SkyRe_Plugin_WarchiefArmor_4.esp' ]
     msg:
       - <<: *requiresResources
         subs: [ '[Baratheon Armor](https://www.nexusmods.com/skyrim/mods/14715/)' ]
@@ -11731,12 +11726,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/21764/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe_Plugin_VanguardArmor_3.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("VanguardArmor.esp")'
-        subs: [ 'VanguardArmor.esp' ]
   - name: 'SkyRe_Plugin_WarchiefArmor_4.esp'
     msg:
       - *installOriginalResources
