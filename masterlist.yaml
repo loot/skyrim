@@ -7466,9 +7466,6 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
         condition: 'file("SG_HothTrooper.esp")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_BaratheonArmor_1.esp")'
 
   - name: 'Battledress Armor.esp'
     dirty:
@@ -10274,7 +10271,6 @@ plugins:
   - name: 'SG_HothTrooper.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17532/' ]
     inc:
-      - 'SkyRe_Plugin_BaratheonArmor_1.esp'
       - 'SkyRe_Plugin_HedgeKnightArmor_1.esp'
       - 'SkyRe_Plugin_RedguardKnightArmor_3.esp'
       - 'SkyRe_Plugin_VagabondArmor_5.esp'
@@ -11712,12 +11708,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x7c6ea81c
         itm: 7
-  - name: 'SkyRe_Plugin_BaratheonArmor_1.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("BaratheonArmor.esp")'
-        subs: [ 'BaratheonArmor.esp' ]
 
   ### SkyRe - Compatibility Plugins for Weapons and Armor ###
   - name: 'SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp'
