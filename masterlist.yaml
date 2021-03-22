@@ -8243,9 +8243,6 @@ plugins:
     msg:
       - <<: *obsoleteSharlikran
         condition: 'version("..\TESV.exe", "1.8", >) and (checksum("EternalShineArmorAndWeapons.esp", D092DCAF) or checksum("EternalShineArmorAndWeapons.esp", 549A2BEB))'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Equipment of Eternal Shine.esp")'
 
   - name: 'EvolvingBoundWeapons.esp'
     dirty:
@@ -11706,14 +11703,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Equipment of Eternal Shine.esp'
-    msg:
-      - <<: *corrupt
-        condition: 'checksum("SkyRe Equipment of Eternal Shine.esp",C47F2C45)'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("EternalShineArmorAndWeapons.esp")'
-        subs: [ 'EternalShineArmorAndWeapons.esp' ]
   - name: 'Skyre Guardian Plate Armor.esp'
     msg:
       - *installOriginalResources
