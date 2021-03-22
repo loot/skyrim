@@ -7510,18 +7510,17 @@ plugins:
         itm: 1
   - name: 'bikiniCHSBHC.esp'
     msg: [ *requiresCHSBHC ]
+
   - name: 'Black Mage Armor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9645' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9645/' ]
     msg:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Black Mage Armor.esp")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Black Mage Armor.esp")'
     clean:
       # version: 3.2
       - crc: 0xCB8F3ACD
         util: 'TES5Edit v4.0.1'
+
   - name: 'black_hand_robe.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15546' ]
     dirty:
@@ -11720,12 +11719,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Black Mage Armor.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Black Mage Armor.esp")'
-        subs: [ 'Black Mage Armor.esp' ]
   - name: 'SkyRe Chainmail Hauberks.esp'
     msg:
       - *installOriginalResources
