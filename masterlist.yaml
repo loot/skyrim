@@ -7870,9 +7870,6 @@ plugins:
     msg:
       - <<: *obsoleteSharlikran
         condition: 'checksum("DarkNemesis.esp", 56F07A36)'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Dark Nemesis.esp") and not checksum("DarkNemesis.esp", CE5E555B)'
 
   - name: 'DarkPaladinArmor.esp'
     msg: [ *obsolete ]
@@ -11712,14 +11709,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Dark Nemesis.esp'
-    msg:
-      - <<: *corrupt
-        condition: 'checksum("SkyRe Dark Nemesis.esp",FBBC3828)'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("DarkNemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
-        subs: [ 'DarkNemesis.esp' ]
   - name: 'SkyRe Divine Aegis.esp'
     msg:
       - *installOriginalResources
