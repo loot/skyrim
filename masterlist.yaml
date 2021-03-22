@@ -9958,9 +9958,6 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
         condition: 'file("SG_HothTrooper.esp")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_WarchiefArmor_4.esp")'
 
   - name: 'Lorecraft - hothtrooper44 armors.esp'
     msg:
@@ -10252,7 +10249,6 @@ plugins:
 
   - name: 'SG_HothTrooper.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17532/' ]
-    inc: [ 'SkyRe_Plugin_WarchiefArmor_4.esp' ]
     msg:
       - <<: *requiresResources
         subs: [ '[Baratheon Armor](https://www.nexusmods.com/skyrim/mods/14715/)' ]
@@ -11726,12 +11722,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/21764/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe_Plugin_WarchiefArmor_4.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("warchiefarmor.esp")'
-        subs: [ 'warchiefarmor.esp' ]
   - name: 'SkyRe  - Jojjo''s Dreadknight Patch.esp'
     msg:
       - *installOriginalResources
