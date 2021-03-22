@@ -7428,17 +7428,16 @@ plugins:
         itm: 15
   - name: 'ArrowsOfMight1.1.esp'
     msg: [ *obsolete ]
+
   - name: 'Avatar of Baltazar.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22407' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Avatar of Baltazar.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22407/' ]
     dirty:
       # v1.1
       - <<: *quickClean
         crc: 0x1233BBAF
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+
   - name: 'Backpack OE.esp'
     msg: [ *requiresUNP ]
   - name: 'BadGremlinsJarHunt.esp'
@@ -11721,12 +11720,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Avatar of Baltazar.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Avatar of Baltazar.esp")'
-        subs: [ 'Avatar of Baltazar.esp' ]
   - name: 'SkyRe Avatar of Grenth.esp'
     msg:
       - *installOriginalResources
