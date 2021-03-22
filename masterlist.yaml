@@ -8434,11 +8434,9 @@ plugins:
         udr: 7
   - name: 'Henrys Ring of Light v1-0.esp'
     msg: [ *obsolete ]
+
   - name: 'HeroicDwarven.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11517' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Heroic Dwarven Armor and Weapon Set.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11517/' ]
     dirty:
       # v1.0
       - <<: *quickClean
@@ -8450,6 +8448,7 @@ plugins:
         crc: 0xBCC4742A
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+
   - name: 'HmmWhatToWear.esp'
     msg: [ *requiresUNP ]
   - name: 'HmmWhatToWearMerged.esp'
@@ -11703,12 +11702,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Heroic Dwarven Armor and Weapon Set.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("HeroicDwarven.esp")'
-        subs: [ 'HeroicDwarven.esp' ]
   - name: 'SkyRe Iron Armor Chainmail.esp'
     msg:
       - *installOriginalResources
