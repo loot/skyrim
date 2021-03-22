@@ -2484,18 +2484,20 @@ plugins:
         util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
         udr: 1
+
   - name: 'SG_BlacksmithsCavern.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17524' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17524/' ]
     dirty:
       - <<: *reqManualFix
         crc: 0x564D3A3B
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 61
         nav: 1
       - <<: *reqManualFix
         crc: 0xE5028944
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
+
   - name: 'Sirenia.esm'
     msg:
       - <<: *requiresX
@@ -7457,10 +7459,17 @@ plugins:
         crc: 0x0012EDE5
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+
   - name: 'BaratheonArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14715/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
     tag:
       - name: Deactivate
-        condition: 'file("SkyRe_Plugin_BaratheonArmor_1.esp") or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_BaratheonArmor_1.esp")'
+
   - name: 'Battledress Armor.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -8439,17 +8448,22 @@ plugins:
         crc: 0x03D45749
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+
   - name: 'HedgeKnight.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13961' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13961/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
     tag:
       - name: Deactivate
-        condition: 'file("SkyRe_Plugin_HedgeKnightArmor_1.esp") or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_HedgeKnightArmor_1.esp")'
     dirty:
-      # v4
       - <<: *quickClean
         crc: 0xA7A55AB3
-        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+
   - name: 'HellionArrows_v1.2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12293' ]
     dirty:
@@ -9448,16 +9462,20 @@ plugins:
         condition: 'version("Redguard Shield.esp", "1.2", <)'
 
   - name: 'RedguardKnight.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13500' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13500/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
     tag:
       - name: Deactivate
-        condition: 'file("SkyRe_Plugin_RedguardKnightArmor_3.esp") or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_RedguardKnightArmor_3.esp")'
     dirty:
-      # v6
       - <<: *quickClean
         crc: 0x8D48F1C3
-        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+
   - name: 'RegentSword.esp'
     tag:
       - name: Deactivate
@@ -9953,10 +9971,17 @@ plugins:
     msg: [ *requiresUNPB ]
   - name: 'UNP Petrovna.esp'
     msg: [ *requiresUNP ]
+
   - name: 'VagabondArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13230/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
     tag:
       - name: Deactivate
-        condition: 'file("SkyRe_Plugin_VagabondArmor_5.esp") or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_VagabondArmor_5.esp")'
+
   - name: 'Vampguard.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -9966,24 +9991,34 @@ plugins:
     msg: [ *obsolete ]
   - name: 'VampireMasterSet.esp'
     inc: [ 'VampireMasterHood.esp' ]
+
   - name: 'VanguardArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16238/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
     tag:
       - name: Deactivate
-        condition: 'file("SkyRe_Plugin_VanguardArmor_3.esp") or file("SG_HothTrooper.esp")'
+        condition: 'file("SkyRe_Plugin_VanguardArmor_3.esp")'
+
   - name: 'ViceroyInquisitor.esp'
     msg: [ *requiresCBBE ]
   - name: 'viciousdawnbreaker.esp'
     tag:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_viciousdawnbreaker.esp")'
-  - name: 'warchief armor.esp'
+
+  - name: 'warchiefarmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13366/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
     tag:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_WarchiefArmor_4.esp")'
-  - name: 'WarchiefArmor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_WarchiefArmor_4.esp") or file("SG_HothTrooper.esp")'
+
   - name: 'Lorecraft - hothtrooper44 armors.esp'
     msg:
       - type: say
@@ -10271,7 +10306,9 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xb79edd7f
         itm: 1
+
   - name: 'SG_HothTrooper.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17532/' ]
     inc:
       - 'SkyRe_Plugin_BaratheonArmor_1.esp'
       - 'SkyRe_Plugin_HedgeKnightArmor_1.esp'
@@ -10280,30 +10317,31 @@ plugins:
       - 'SkyRe_Plugin_VanguardArmor_3.esp'
       - 'SkyRe_Plugin_WarchiefArmor_4.esp'
     msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("BaratheonArmor.esp")'
-        subs: [ 'BaratheonArmor.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("HedgeKnight.esp")'
-        subs: [ 'HedgeKnight.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("RedguardKnight.esp")'
-        subs: [ 'RedguardKnight.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("VagabondArmor.esp")'
-        subs: [ 'VagabondArmor.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("VanguardArmor.esp")'
-        subs: [ 'VanguardArmor.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("warchiefarmor.esp")'
-        subs: [ 'warchiefarmor.esp' ]
+      - <<: *requiresResources
+        subs: [ '[Baratheon Armor](https://www.nexusmods.com/skyrim/mods/14715/)' ]
+        condition: 'not file("meshes/armor/baratheon/1stpersonbaratheoncuirassm_1.nif")'
+      - <<: *requiresResources
+        subs: [ '[Hedge Knight Armor](https://www.nexusmods.com/skyrim/mods/13961/)' ]
+        condition: 'not file("meshes/armor/HedgeKnight/1stpersonm_1.nif")'
+      - <<: *requiresResources
+        subs: [ '[Redguard Knight Armor](https://www.nexusmods.com/skyrim/mods/13500/)' ]
+        condition: 'not file("meshes/armor/redguardknight/boots_1.nif")'
+      - <<: *requiresResources
+        subs: [ '[Vagabond Armor](https://www.nexusmods.com/skyrim/mods/13230/)' ]
+        condition: 'not file("meshes/armor/vagabond/glovesGrey_go.nif")'
+      - <<: *requiresResources
+        subs: [ '[Vanguard Armor](https://www.nexusmods.com/skyrim/mods/16238/)' ]
+        condition: 'not file("meshes/armor/Vanguard/1stpersondbglovesarg_1.nif")'
+      - <<: *requiresResources
+        subs: [ '[Warchief Armor](https://www.nexusmods.com/skyrim/mods/13366/)' ]
+        condition: 'not file("meshes/armor/warcheif/bighelm_go.nif")'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc7b7e357
+      - <<: *quickClean
+        crc: 0xC7B7E357
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
         udr: 2
+
   - name: 'Better Sorting by eclips3 - Ingredients .+\.esp'
     msg:
       - <<: *useOnlyOneX
