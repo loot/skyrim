@@ -7959,10 +7959,7 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x9801e2c9
         itm: 3
-  - name: 'dfnkt-IronArmorSleeves-Craftable.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Iron Armor Chainmail.esp")'
+
   - name: 'DG Jewelry\d?\.esp'
     msg: [ *obsolete ]
   - name: 'DHuntress.esp'
@@ -11702,12 +11699,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Iron Armor Chainmail.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("dfnkt-IronArmorSleeves-Craftable.esp")'
-        subs: [ 'dfnkt-IronArmorSleeves-Craftable.esp' ]
   - name: 'SkyRe Masters of Death Sicarius Armor.esp'
     msg:
       - *installOriginalResources
