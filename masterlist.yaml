@@ -9931,9 +9931,6 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
         condition: 'file("SG_HothTrooper.esp")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_VagabondArmor_5.esp")'
 
   - name: 'Vampguard.esp'
     dirty:
@@ -10259,7 +10256,6 @@ plugins:
   - name: 'SG_HothTrooper.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17532/' ]
     inc:
-      - 'SkyRe_Plugin_VagabondArmor_5.esp'
       - 'SkyRe_Plugin_VanguardArmor_3.esp'
       - 'SkyRe_Plugin_WarchiefArmor_4.esp'
     msg:
@@ -11735,12 +11731,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/21764/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe_Plugin_VagabondArmor_5.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("VagabondArmor.esp")'
-        subs: [ 'VagabondArmor.esp' ]
   - name: 'SkyRe_Plugin_VanguardArmor_3.esp'
     msg:
       - *installOriginalResources
