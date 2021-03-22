@@ -9249,9 +9249,6 @@ plugins:
     tag: [ Delev ]
   - name: 'Nordic Conqueror Armor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20780' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Nordic Conqueror Armor.esp") or file("SkyRe Nordic Conqueror Armor - Realistic.esp")'
     dirty:
       # v1.0
       - <<: *quickClean
@@ -11691,19 +11688,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Nordic Conqueror Armor.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Nordic Conqueror Armor.esp")'
-        subs: [ 'Nordic Conqueror Armor.esp' ]
-  - name: 'SkyRe Nordic Conqueror Armor - Realistic.esp'
-    inc: [ 'SkyRe Nordic Conqueror Armor.esp' ]
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Nordic Conqueror Armor.esp")'
-        subs: [ 'Nordic Conqueror Armor.esp' ]
   - name: 'SkyRe Rogue Sorceress.esp'
     msg:
       - *installOriginalResources
