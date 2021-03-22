@@ -9105,13 +9105,12 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("MorrowindSmithingVanilla.esp",62CFEEB0)'
+
   - name: 'matys mithril armor enhanced.esp'
     msg:
       - <<: *corrupt
         condition: 'checksum("matys mithril armor enhanced.esp",A71FA4F0)'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Mithril Armor.esp")'
+
   - name: 'MorSit.esp'
     msg:
       - type: say
@@ -11696,23 +11695,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Mithril Armor.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "Matys Mithril armor Enhanced.bsa" to "SkyRe Mithril Armor.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "Matys Mithril armor Enhanced.bsa" in "SkyRe Mithril Armor.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"Matys Mithril armor Enhanced.bsa"を"SkyRe Mithril Armor.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "Matys Mithril armor Enhanced.bsa" в "SkyRe Mithril Armor.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe Mithril Armor.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Matys Mithril armor Enhanced.esp")'
-        subs: [ 'Matys Mithril armor Enhanced.esp' ]
   - name: 'SkyRe Mystic Armor and Weapon Set.esp'
     msg:
       - *installOriginalResources
