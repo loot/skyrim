@@ -7610,10 +7610,7 @@ plugins:
   - name: 'BoundGear.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30462' ]
     msg: [ *obsolete ]
-  - name: 'BowofIorveth.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_BowofIorveth_1.2.esp")'
+
   - name: 'Bronze Arrows -Standalone-.esp'
     tag: [ Delev ]
   - name: 'Bulwark of Azzinoth.esp'
@@ -11747,12 +11744,6 @@ plugins:
       - 'SkyRe_Main.esp'
       - 'SkyRe_Main_NoDawnguard.esp'
       - 'SkyRe_Combat.esp'
-  - name: 'SkyRe_Plugin_BowofIorveth_1.2.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("BowofIorveth.esp")'
-        subs: [ 'BowofIorveth.esp' ]
   - name: 'SkyRe_Plugin_HedgeKnightArmor_1.esp'
     msg:
       - *installOriginalResources
