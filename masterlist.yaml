@@ -9125,12 +9125,8 @@ plugins:
             text: 'Убедидесь, что используете правильный esp для [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
 
   ### Mystic Elven Armor ###
-  - name: 'Mystic.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/5600/' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Mystic Armor and Weapon Set.esp")'
   - name: 'SaderHorses.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5600/' ]
     msg:
       - <<: *obsoleteSharlikran
         condition: 'checksum("SaderHorses.esp", 46CF110A)'
@@ -11695,12 +11691,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Mystic Armor and Weapon Set.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Mystic.esp")'
-        subs: [ 'Mystic.esp' ]
   - name: 'SkyRe Nordic Conqueror Armor.esp'
     msg:
       - *installOriginalResources
