@@ -8548,10 +8548,7 @@ plugins:
         condition: 'checksum("hunnicarmors.esp",D968FD8E)'
   - name: 'hunterarmor.esp'
     msg: [ *obsolete ]
-  - name: 'hunterarmorv1.2.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_NordicHunterLightArmor_1.2.esp")'
+
   - name: 'hunterarmornofur.esp'
     inc: [ 'hunterarmorv1.2.esp' ]
   - name: 'I5KWeaponOH.esp'
@@ -11738,20 +11735,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/23312/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe_Plugin_NordicHunterLightArmor_1.2.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Possible already includes the hunterarmorv1.2.esp'
-          - lang: de
-            text: 'Enthält möglicherweise schon hunterarmorv1.2.esp'
-          - lang: ja
-            text: 'すでにhunterarmorv1.2.espに含まれている可能性があります。'
-          - lang: ru
-            text: 'Возможно уже включено в hunterarmorv1.2.esp'
-        condition: 'file("hunterarmorv1.2.esp")'
-      - *installOriginalResources
   - name: 'SkyRe_Plugin_RedguardKnightArmor_3.esp'
     msg:
       - *installOriginalResources
