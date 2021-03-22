@@ -9067,24 +9067,7 @@ plugins:
         itm: 3
   - name: 'Maid Armor.esp'
     msg: [ *corrupt ]
-  - name: 'Malo_Waffen.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_Malo_Waffen.esp") or file("SG_Malo_Waffen.esp")'
-  - name: 'SG_Malo_Waffen.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17527' ]
-    inc: [ 'SkyRe_Plugin_Malo_Waffen.esp' ]
-    msg:
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Malo_Waffen.esp")'
-        subs: [ 'Malo_Waffen.esp' ]
-      - *installOriginalResources
-    dirty:
-      - <<: *quickClean
-        crc: 0x3790213B
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 3
-        udr: 2
+
   - name: 'mancika_templarset.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25642' ]
     clean:
@@ -11910,12 +11893,7 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x33879a9f
         itm: 4
-  - name: 'SkyRe_Plugin_Malo_Waffen_V3Bugfix.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Malo_Waffen.esp")'
-        subs: [ 'Malo_Waffen.esp' ]
+
   - name: 'SkyRe_Plugin_Morrowloot.esp'
     msg: [ *installOriginalResources ]
   - name: 'SkyRe_Plugin_NicoroshiCreations.*\.esp'
