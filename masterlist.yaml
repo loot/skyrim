@@ -10042,27 +10042,6 @@ plugins:
       - Delev
       - Relev
 
-  - name: 'XAC.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This is the SkyRe compatible version.'
-          - lang: de
-            text: 'Dies ist die SkyRe kompatible Version.'
-          - lang: ja
-            text: 'SkyRe互換版です。'
-        condition: 'checksum("XAC.esp",7BD34BA7)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Requires bsa or loose files from original version or this mod will not work.'
-          - lang: de
-            text: 'Benötigt bsa oder lose Dateien von der Originalversion oder diese Mod wird nicht funktionieren.'
-          - lang: ja
-            text: 'オリジナル版のBsaまたはルーズファイルがなければ機能しません。'
-        condition: 'checksum("XAC.esp",7BD34BA7) and not file("XAC.bsa")'
-
   - name: 'YPSArmorPack.esp'
     msg: [ *requiresUNP ]
   - name: 'zabswitchhat.esp'
