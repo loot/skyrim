@@ -11683,17 +11683,6 @@ plugins:
             text: 'morrowlootと同じレベルドリストを変更するRelevタグ付きのプラグインがあった場合は、それよりも後にロードすることをお勧めします。morrowlootによって削除されたVanillaのレコードが再度追加されてしまうためです。'
           - lang: ru
             text: 'Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.'
-      - type: say
-        content:
-          - lang: en
-            text: 'You need the SkyRe compatibility patch for this to work as intended with SkyRe.'
-          - lang: de
-            text: 'Sie benötigen den SkyRe Kompatibilitätspatch, damit dies mit SkyRe wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'SkyReと併用した上で本来の動作をさせるには、SkyRe向けの互換パッチを利用する必要があります。'
-          - lang: ru
-            text: 'Вам нужно установить патч совместимости для правильной работы мода с SkyRe.'
-        condition: 'file("SkyRe_.+\.esp") and not file("SkyRe_Plugin_Morrowloot.esp")'
     tag:
       - Delev
       - Relev
@@ -11749,8 +11738,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/23312/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe_Plugin_Morrowloot.esp'
-    msg: [ *installOriginalResources ]
   - name: 'SkyRe_Plugin_NordicHunterLightArmor_1.2.esp'
     msg:
       - type: say
