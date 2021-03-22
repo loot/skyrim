@@ -8513,17 +8513,13 @@ plugins:
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Armors.esp")'
     tag:
       - name: Delev
-        condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=) or file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
-      - name: Relev
-        condition: 'not file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
+        condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=)'
+      - Relev
     clean:
       # v8
       - crc: 0x0F782AFB
         util: 'TES5Edit v4.0.2j'
-  - name: 'SkyRe_Plugin_ImmersiveArmor_2.esp'
-    msg: [ *installOriginalResources ]
+
   - name: 'Level List - Immersive Armor.esp'
     tag:
       - Delev
@@ -11828,12 +11824,11 @@ plugins:
       - <<: *deleteOrDeactivateX
         condition: 'active("HedgeKnight.esp")'
         subs: [ 'HedgeKnight.esp' ]
+
   - name: 'SkyRe_Plugin_ImmersiveArmor_.+\.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("hothtrooper44_ArmorCompilation.esp")'
-        subs: [ 'hothtrooper44_ArmorCompilation.esp' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21269/' ]
+    msg: [ *useInsteadReProccer ]
+
   - name: 'SkyRe_Plugin_InsanitysCelticKatana_1.2.esp'
     msg:
       - *installOriginalResources
