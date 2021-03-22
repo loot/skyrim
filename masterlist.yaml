@@ -8075,10 +8075,7 @@ plugins:
         crc: 0xD792FFF8
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
-  - name: 'Divine Aegis.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Divine Aegis.esp")'
+
   - name: 'Duskfang and Dawnfang.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25225' ]
     dirty:
@@ -11709,12 +11706,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Divine Aegis.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("DarkNemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
-        subs: [ 'DarkNemesis.esp' ]
   - name: 'SkyRe Equipment of Eternal Shine.esp'
     msg:
       - <<: *corrupt
