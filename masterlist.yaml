@@ -9641,10 +9641,6 @@ plugins:
       - <<: *obsoleteSharlikran
         condition: 'checksum("SnowyNightingale.esp", 19EA0D12)'
 
-  - name: 'Song General Armor&weapon.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Chinese General Set.esp")'
   - name: 'SophitiaByNausicaa.esp'
     msg: [ *corrupt ]
 
@@ -11716,20 +11712,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Chinese General Armor and Weapon.esp'
-    msg: [ *obsolete ]
-  - name: 'SkyRe Chinese General Set.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Song General Armor&weapon.esp")'
-        subs: [ 'Song General Armor&weapon.esp' ]
-  - name: 'SkyRe Chinese General Set - Realistic.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Song General Armor&weapon.esp")'
-        subs: [ 'Song General Armor&weapon.esp' ]
   - name: 'SkyRe Dark Nemesis.esp'
     msg:
       - <<: *corrupt
