@@ -7640,10 +7640,7 @@ plugins:
     tag: [ Relev ]
   - name: 'Chainmailhauberks 1.0.esp'
     msg: [ *obsolete ]
-  - name: 'Chainmailhauberks 1.1.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Chainmail Hauberks.esp")'
+
   - name: 'ChildrenClothesClassed.esp'
     msg:
       - <<: *requiresX
@@ -11719,12 +11716,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Chainmail Hauberks.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Chainmailhauberks 1.1.esp")'
-        subs: [ 'Chainmailhauberks 1.1.esp' ]
   - name: 'SkyRe Chinese General Armor and Weapon.esp'
     msg: [ *obsolete ]
   - name: 'SkyRe Chinese General Set.esp'
