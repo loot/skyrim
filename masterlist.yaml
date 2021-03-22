@@ -9424,9 +9424,6 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
         condition: 'file("SG_HothTrooper.esp")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_RedguardKnightArmor_3.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x8D48F1C3
@@ -10262,7 +10259,6 @@ plugins:
   - name: 'SG_HothTrooper.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17532/' ]
     inc:
-      - 'SkyRe_Plugin_RedguardKnightArmor_3.esp'
       - 'SkyRe_Plugin_VagabondArmor_5.esp'
       - 'SkyRe_Plugin_VanguardArmor_3.esp'
       - 'SkyRe_Plugin_WarchiefArmor_4.esp'
@@ -11735,12 +11731,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/23312/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe_Plugin_RedguardKnightArmor_3.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("RedguardKnight.esp")'
-        subs: [ 'RedguardKnight.esp' ]
   - name: 'SkyRe_Plugin_RegentSwords.esp'
     msg:
       - *installOriginalResources
