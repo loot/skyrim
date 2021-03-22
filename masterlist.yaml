@@ -8436,9 +8436,6 @@ plugins:
       - <<: *deletePlugin
         subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
         condition: 'file("SG_HothTrooper.esp")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_HedgeKnightArmor_1.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xA7A55AB3
@@ -10268,7 +10265,6 @@ plugins:
   - name: 'SG_HothTrooper.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17532/' ]
     inc:
-      - 'SkyRe_Plugin_HedgeKnightArmor_1.esp'
       - 'SkyRe_Plugin_RedguardKnightArmor_3.esp'
       - 'SkyRe_Plugin_VagabondArmor_5.esp'
       - 'SkyRe_Plugin_VanguardArmor_3.esp'
@@ -11744,12 +11740,6 @@ plugins:
       - 'SkyRe_Main.esp'
       - 'SkyRe_Main_NoDawnguard.esp'
       - 'SkyRe_Combat.esp'
-  - name: 'SkyRe_Plugin_HedgeKnightArmor_1.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("HedgeKnight.esp")'
-        subs: [ 'HedgeKnight.esp' ]
 
   - name: 'SkyRe_Plugin_ImmersiveArmor_.+\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21269/' ]
