@@ -8073,11 +8073,6 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("dragonweapons.esp",7516E4CE)'
 
-  - name: 'Dread Knight Weapon Set.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe  - Jojjo''s Dreadknight Patch.esp")'
-
   - name: 'DreamBurrowSageRetexture.esp'
     msg: [ *obsolete ]
   - name: 'Drow Armor Set.esp'
@@ -11722,12 +11717,10 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/21764/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe  - Jojjo''s Dreadknight Patch.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Dread Knight Weapon Set.esp")'
-        subs: [ 'Dread Knight Weapon Set.esp' ]
+  - name: 'SkyRe - Jojjo''s Dreadknight Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
+    msg: [ *useInsteadReProccer ]
+
   - name: 'SkyRe Avatar of Baltazar.esp'
     msg:
       - *installOriginalResources
