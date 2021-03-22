@@ -9033,10 +9033,7 @@ plugins:
     msg:
       - <<: *obsolete
         condition: 'checksum("MapTomes.esp",13ACEB01)'
-  - name: 'Masters of Death - Sicarius Armor (Standalone).esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Masters of Death - Sicarius Armor (Standalone)")'
+
   - name: 'Medium Buckler.esp'
     tag: [ Relev ]
   - name: 'Melt_Down_Everything.esp'
@@ -11699,18 +11696,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe Masters of Death Sicarius Armor.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
-        subs: [ 'Masters of Death - Sicarius Armor (Standalone).esp' ]
-  - name: 'SkyRe Masters of Death - Sicarius Armor (Standalone).esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
-        subs: [ 'Masters of Death - Sicarius Armor (Standalone).esp' ]
   - name: 'SkyRe Mithril Armor.esp'
     msg:
       - type: warn
