@@ -9521,18 +9521,7 @@ plugins:
             text: '必ず[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)か[CBBE](http://www.nexusmods.com/skyrim/mods/2666)のうち、インストールされている体型Modと同じバージョンのEspを使用してください。.'
           - lang: ru
             text: 'Убедитесь, что используете корректный реплейсер тел для этого esp. [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) или [CBBE](http://www.nexusmods.com/skyrim/mods/2666).'
-  - name: 'SeraticArmor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe SeraticLight.esp")'
-  - name: 'SeraticHeavyArmorDark.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe SeraticDark.esp")'
-  - name: 'SeraticHeavyArmorGray.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe SeraticGray.esp")'
+
   - name: 'sevensts.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -11687,57 +11676,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
     msg: [ *useInsteadReProccer ]
 
-  - name: 'SkyRe SeraticDark.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "SeraticHeavyArmorDark.bsa" to "SkyRe SeraticDark.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "SeraticHeavyArmorDark.bsa" in "SkyRe SeraticDark.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"SeraticHeavyArmorDark.bsa"を"SkyRe SeraticDark.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "SeraticHeavyArmorDark.bsa" в "SkyRe SeraticDark.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe SeraticDark.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("SeraticHeavyArmorDark.esp")'
-        subs: [ 'SeraticHeavyArmorDark.esp' ]
-  - name: 'SkyRe SeraticGray.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "SeraticHeavyArmorGray.bsa" to "SkyRe SeraticGray.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "SeraticHeavyArmorGray.bsa" in "SkyRe SeraticGray.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"SeraticHeavyArmorGray.bsa"を"SkyRe SeraticGray.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "SeraticHeavyArmorGray.bsa" в "SkyRe SeraticGray.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe SeraticGray.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("SeraticHeavyArmorGray.esp")'
-        subs: [ 'SeraticHeavyArmorGray.esp' ]
-  - name: 'SkyRe SeraticLight.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "SeraticArmor.bsa" to "SkyRe SeraticLight.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "SeraticArmor.bsa" in "SkyRe SeraticLight.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"SeraticArmor.bsa"を"SkyRe SeraticLight.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "SeraticArmor.bsa" в "SkyRe SeraticLight.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe SeraticLight.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("SeraticArmor.esp")'
-        subs: [ 'SeraticArmor.esp' ]
   - name: 'SkyRe XAC Original Classic.esp'
     msg:
       - *obsolete
