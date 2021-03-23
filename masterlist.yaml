@@ -257,28 +257,6 @@ common:
       - lang: sv
         text: 'När du använder **%1%** är det rekommenderat att du avaktiverar eller tar bort denna ESP-fil, men behåll resurserna (meshar och texturer) installerade med denna mod.'
 
-  - &installOriginalResources
-    type: say
-    content:
-      - lang: en
-        text: 'Remember to install the original mod before activating a patch or skyrim will crash when it can''t find the supporting files.'
-      - lang: bg
-        text: 'Не изполвайте кръпки за модове, които не сте инсталирали, в противен случай Skyrim няма да зареди.'
-      - lang: de
-        text: 'Vergessen Sie nicht, die Original Mod vor dem Aktivieren eines Patches zu installieren, oder Skyrim wird abstürzen wenn es nicht die benötigten Dateien finden kann.'
-      - lang: ja
-        text: 'パッチをアクティブにする前に必ず元のModをインストールしてください。元のModから使用されているファイルが見つからなかった場合、ゲームが強制終了したりバグが発生する恐れがあります。'
-      - lang: ko
-        text: '패치를 활성화하기 전에 원본 모드를 설치해야합니다. 그렇지 않으면 지원 파일을 찾을 수 없을 때 Skyrim이 충돌합니다.'
-      - lang: pl
-        text: 'Pamiętaj o instalacji oryginalnego moda przed aktywacją łątki lub nastąpi awaria skyrim kiedy nie znajdzie on wspieranych plików.'
-      - lang: pt_BR
-        text: 'Lembre-se de instalar o mod original antes de ativar um patch, caso contrário o Skyrim irá crashar quando ele não encontrar os arquivos necessários.'
-      - lang: ru
-        text: 'Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.'
-      - lang: sv
-        text: 'Kom ihåg att installera originalmoddet innan du aktiverar en patch annars kommer skyrim krascha när det inte hittar det stödjande filerna.'
-
   - &obsolete
     type: warn
     content:
@@ -657,6 +635,9 @@ common:
         text: 'Use %1% ao invés disso.'
       - lang: sv
         text: 'Använd %1% istället.'
+  - &useInsteadReProccer
+    <<: *useInstead
+    subs: [ '[ReProccer - Automated SkyRe Patch Generator](https://www.nexusmods.com/skyrim/mods/28467/)' ]
 
   - &useOnlyOneX
     type: error
@@ -2481,18 +2462,20 @@ plugins:
         util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
         udr: 1
+
   - name: 'SG_BlacksmithsCavern.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17524' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17524/' ]
     dirty:
       - <<: *reqManualFix
         crc: 0x564D3A3B
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 61
         nav: 1
       - <<: *reqManualFix
         crc: 0xE5028944
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
+
   - name: 'Sirenia.esm'
     msg:
       - <<: *requiresX
@@ -7423,17 +7406,16 @@ plugins:
         itm: 15
   - name: 'ArrowsOfMight1.1.esp'
     msg: [ *obsolete ]
+
   - name: 'Avatar of Baltazar.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22407' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Avatar of Baltazar.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22407/' ]
     dirty:
       # v1.1
       - <<: *quickClean
         crc: 0x1233BBAF
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+
   - name: 'Backpack OE.esp'
     msg: [ *requiresUNP ]
   - name: 'BadGremlinsJarHunt.esp'
@@ -7454,10 +7436,14 @@ plugins:
         crc: 0x0012EDE5
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
+
   - name: 'BaratheonArmor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_BaratheonArmor_1.esp") or file("SG_HothTrooper.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14715/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
+
   - name: 'Battledress Armor.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -7502,18 +7488,17 @@ plugins:
         itm: 1
   - name: 'bikiniCHSBHC.esp'
     msg: [ *requiresCHSBHC ]
+
   - name: 'Black Mage Armor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9645' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9645/' ]
     msg:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Black Mage Armor.esp")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Black Mage Armor.esp")'
     clean:
       # version: 3.2
       - crc: 0xCB8F3ACD
         util: 'TES5Edit v4.0.1'
+
   - name: 'black_hand_robe.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15546' ]
     dirty:
@@ -7526,10 +7511,7 @@ plugins:
     msg:
       - <<: *obsolete
         condition: 'checksum("Black Scaled Armor MOD.esp",852855A6)'
-  - name: 'blackswordsman.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp")'
+
   - name: 'Blessing of God.esp'
     msg: [ *obsolete ]
   - name: 'BlutKult_Dwarven_Axes.esp'
@@ -7604,10 +7586,7 @@ plugins:
   - name: 'BoundGear.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30462' ]
     msg: [ *obsolete ]
-  - name: 'BowofIorveth.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_BowofIorveth_1.2.esp")'
+
   - name: 'Bronze Arrows -Standalone-.esp'
     tag: [ Delev ]
   - name: 'Bulwark of Azzinoth.esp'
@@ -7639,10 +7618,7 @@ plugins:
     tag: [ Relev ]
   - name: 'Chainmailhauberks 1.0.esp'
     msg: [ *obsolete ]
-  - name: 'Chainmailhauberks 1.1.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Chainmail Hauberks.esp")'
+
   - name: 'ChildrenClothesClassed.esp'
     msg:
       - <<: *requiresX
@@ -7859,10 +7835,7 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 2
-  - name: 'DaggerCraft.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_DaggerCraft_1.3.esp") or file("SkyRe_Plugin_DaggerCraft.esp")'
+
   - name: 'Dalls_Skelos_Weapons.esp'
     tag: [ Relev ]
   - name: 'DarkImperial.esp'
@@ -7875,9 +7848,6 @@ plugins:
     msg:
       - <<: *obsoleteSharlikran
         condition: 'checksum("DarkNemesis.esp", 56F07A36)'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Dark Nemesis.esp") and not checksum("DarkNemesis.esp", CE5E555B)'
 
   - name: 'DarkPaladinArmor.esp'
     msg: [ *obsolete ]
@@ -7967,10 +7937,7 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x9801e2c9
         itm: 3
-  - name: 'dfnkt-IronArmorSleeves-Craftable.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Iron Armor Chainmail.esp")'
+
   - name: 'DG Jewelry\d?\.esp'
     msg: [ *obsolete ]
   - name: 'DHuntress.esp'
@@ -8018,10 +7985,7 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x83115133
         itm: 6
-  - name: 'DragonBoneWeapons.+\.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_DragonBoneWeaponsComplete.+\.esp")'
+
   - name: 'Lorecraft - Dragon Bone Weapons.esp'
     req:
       - name: 'LorecraftESM.esm'
@@ -8075,10 +8039,7 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("dragonweapons.esp",7516E4CE)'
-  - name: 'Dread Knight Weapon Set.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe  - Jojjo''s Dreadknight Patch.esp") or file("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
+
   - name: 'DreamBurrowSageRetexture.esp'
     msg: [ *obsolete ]
   - name: 'Drow Armor Set.esp'
@@ -8089,10 +8050,7 @@ plugins:
         crc: 0xD792FFF8
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
-  - name: 'Divine Aegis.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Divine Aegis.esp")'
+
   - name: 'Duskfang and Dawnfang.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25225' ]
     dirty:
@@ -8141,10 +8099,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Dwemer Scouter.esp'
     msg: [ *obsolete ]
-  - name: 'DwemerAutoBlade.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_DwemerAutoBlade.esp")'
+
   - name: 'DwemerBombs.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12754' ]
     inc: [ 'DwemerBombsNoPerkTree.esp' ]
@@ -8263,9 +8218,6 @@ plugins:
     msg:
       - <<: *obsoleteSharlikran
         condition: 'version("..\TESV.exe", "1.8", >) and (checksum("EternalShineArmorAndWeapons.esp", D092DCAF) or checksum("EternalShineArmorAndWeapons.esp", 549A2BEB))'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Equipment of Eternal Shine.esp")'
 
   - name: 'EvolvingBoundWeapons.esp'
     dirty:
@@ -8416,10 +8368,7 @@ plugins:
         crc: 0xD1207154
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'HBetterBows.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_BetterBows_1.4.1.esp") or file("SkyRe_Plugin_BetterBows.esp")'
+
   - name: 'headtaker.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29360' ]
     dirty:
@@ -8436,17 +8385,19 @@ plugins:
         crc: 0x03D45749
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+
   - name: 'HedgeKnight.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13961' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_HedgeKnightArmor_1.esp") or file("SG_HothTrooper.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13961/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
     dirty:
-      # v4
       - <<: *quickClean
         crc: 0xA7A55AB3
-        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
+
   - name: 'HellionArrows_v1.2.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12293' ]
     dirty:
@@ -8458,11 +8409,9 @@ plugins:
         udr: 7
   - name: 'Henrys Ring of Light v1-0.esp'
     msg: [ *obsolete ]
+
   - name: 'HeroicDwarven.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11517' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Heroic Dwarven Armor and Weapon Set.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11517/' ]
     dirty:
       # v1.0
       - <<: *quickClean
@@ -8474,6 +8423,7 @@ plugins:
         crc: 0xBCC4742A
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+
   - name: 'HmmWhatToWear.esp'
     msg: [ *requiresUNP ]
   - name: 'HmmWhatToWearMerged.esp'
@@ -8510,17 +8460,13 @@ plugins:
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Armors.esp")'
     tag:
       - name: Delev
-        condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=) or file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
-      - name: Relev
-        condition: 'not file("SkyRe_Plugin_ImmersiveArmor.+\.esp")'
+        condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=)'
+      - Relev
     clean:
       # v8
       - crc: 0x0F782AFB
         util: 'TES5Edit v4.0.2j'
-  - name: 'SkyRe_Plugin_ImmersiveArmor_2.esp'
-    msg: [ *installOriginalResources ]
+
   - name: 'Level List - Immersive Armor.esp'
     tag:
       - Delev
@@ -8557,10 +8503,7 @@ plugins:
         condition: 'checksum("hunnicarmors.esp",D968FD8E)'
   - name: 'hunterarmor.esp'
     msg: [ *obsolete ]
-  - name: 'hunterarmorv1.2.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_NordicHunterLightArmor_1.2.esp")'
+
   - name: 'hunterarmornofur.esp'
     inc: [ 'hunterarmorv1.2.esp' ]
   - name: 'I5KWeaponOH.esp'
@@ -8654,22 +8597,12 @@ plugins:
         itm: 2
   - name: 'InigoPerkPointGiver.esp'
     req: [ *SKSE ]
-  - name: 'InsanitysCelticKatana.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_InsanitysCelticKatana_1.2.esp") or file("SkyRe_Plugin_InsanitysCelticKatana.esp")'
+
   - name: 'Insanity''s Craftable Dragonbane.esp'
     tag:
       - name: Deactivate
         condition: 'file("Insanity''s Craftable Dragonbane.esp")'
-  - name: 'Insanity''s Dragon Katana.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") or file("SkyRe_Plugin_InsanitysDragonKatana.esp")'
-  - name: 'InsanitysDragonKatana.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") or file("SkyRe_Plugin_InsanitysDragonKatana.esp")'
+
   - name: 'Insanity''s Sorrow.esp'
     url:
       - 'https://www.nexusmods.com/skyrim/mods/15389'  # v1.2
@@ -8699,16 +8632,15 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x6b68f706
         itm: 8
+
   - name: 'isilNarsil.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/5727' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_isilNarsil.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5727/' ]
     dirty:
       - <<: *quickClean
         crc: 0xA43571C0
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 17
+
   - name: 'Ivory Armor.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -9068,24 +9000,7 @@ plugins:
         itm: 3
   - name: 'Maid Armor.esp'
     msg: [ *corrupt ]
-  - name: 'Malo_Waffen.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_Malo_Waffen.esp") or file("SG_Malo_Waffen.esp")'
-  - name: 'SG_Malo_Waffen.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17527' ]
-    inc: [ 'SkyRe_Plugin_Malo_Waffen.esp' ]
-    msg:
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Malo_Waffen.esp")'
-        subs: [ 'Malo_Waffen.esp' ]
-      - *installOriginalResources
-    dirty:
-      - <<: *quickClean
-        crc: 0x3790213B
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 3
-        udr: 2
+
   - name: 'mancika_templarset.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25642' ]
     clean:
@@ -9096,10 +9011,7 @@ plugins:
     msg:
       - <<: *obsolete
         condition: 'checksum("MapTomes.esp",13ACEB01)'
-  - name: 'Masters of Death - Sicarius Armor (Standalone).esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Masters of Death - Sicarius Armor (Standalone)")'
+
   - name: 'Medium Buckler.esp'
     tag: [ Relev ]
   - name: 'Melt_Down_Everything.esp'
@@ -9171,13 +9083,12 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("MorrowindSmithingVanilla.esp",62CFEEB0)'
+
   - name: 'matys mithril armor enhanced.esp'
     msg:
       - <<: *corrupt
         condition: 'checksum("matys mithril armor enhanced.esp",A71FA4F0)'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Mithril Armor.esp")'
+
   - name: 'MorSit.esp'
     msg:
       - type: say
@@ -9192,12 +9103,8 @@ plugins:
             text: 'Убедидесь, что используете правильный esp для [CBBE](http://www.nexusmods.com/skyrim/mods/2666) или [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)'
 
   ### Mystic Elven Armor ###
-  - name: 'Mystic.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/5600/' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Mystic Armor and Weapon Set.esp")'
   - name: 'SaderHorses.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/5600/' ]
     msg:
       - <<: *obsoleteSharlikran
         condition: 'checksum("SaderHorses.esp", 46CF110A)'
@@ -9285,10 +9192,6 @@ plugins:
       - <<: *obsoleteSharlikran
         condition: 'checksum("Niagras Bleach Pack.esp", D3D9A7BF)'
 
-  - name: 'Nicoroshi Creations.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_NicoroshiCreations.*\.esp")'
   - name: 'NightingaleHeavyHelmet.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8570' ]
     dirty:
@@ -9324,9 +9227,6 @@ plugins:
     tag: [ Delev ]
   - name: 'Nordic Conqueror Armor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20780' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Nordic Conqueror Armor.esp") or file("SkyRe Nordic Conqueror Armor - Realistic.esp")'
     dirty:
       # v1.0
       - <<: *quickClean
@@ -9376,10 +9276,7 @@ plugins:
       # v1.1
       - crc: 0xA7A9B02E
         util: 'TES5Edit v4.0.2k'
-  - name: 'Oriental Weapon&Armor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_Oriental Weapon&Armor.*\.esp")'
+
   - name: 'Osare KneeSocks.esp'
     msg: [ *requiresUNP ]
   - name: 'Osare Maid Outfit.esp'
@@ -9466,16 +9363,17 @@ plugins:
         condition: 'version("Redguard Shield.esp", "1.2", <)'
 
   - name: 'RedguardKnight.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13500' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_RedguardKnightArmor_3.esp") or file("SG_HothTrooper.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13500/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
     dirty:
-      # v6
       - <<: *quickClean
         crc: 0x8D48F1C3
-        util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+
   - name: 'RegentSword.esp'
     tag:
       - name: Deactivate
@@ -9570,17 +9468,16 @@ plugins:
     msg: [ *corrupt ]
   - name: 'ScarabSilentArchery.esp'
     msg: [ *obsolete ]
+
   - name: 'Scoiatael Weapons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18439' ]
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_Scoiatael Weapons.esp")'
     dirty:
       # v2.2
       - <<: *quickClean
         crc: 0x7AA5E3BB
         util: '[TES5Edit v4.0.2k](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+
   - name: 'seducesets.esp'
     msg: [ *requiresCBBE ]
   - name: 'SED7-CBBE3.+\.esp'
@@ -9602,18 +9499,7 @@ plugins:
             text: '必ず[DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709)か[CBBE](http://www.nexusmods.com/skyrim/mods/2666)のうち、インストールされている体型Modと同じバージョンのEspを使用してください。.'
           - lang: ru
             text: 'Убедитесь, что используете корректный реплейсер тел для этого esp. [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) или [CBBE](http://www.nexusmods.com/skyrim/mods/2666).'
-  - name: 'SeraticArmor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe SeraticLight.esp")'
-  - name: 'SeraticHeavyArmorDark.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe SeraticDark.esp")'
-  - name: 'SeraticHeavyArmorGray.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe SeraticGray.esp")'
+
   - name: 'sevensts.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -9698,10 +9584,6 @@ plugins:
       - <<: *obsoleteSharlikran
         condition: 'checksum("SnowyNightingale.esp", 19EA0D12)'
 
-  - name: 'Song General Armor&weapon.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Chinese General Set.esp")'
   - name: 'SophitiaByNausicaa.esp'
     msg: [ *corrupt ]
 
@@ -9892,14 +9774,13 @@ plugins:
     clean:
       - crc: 0x72F97EFC
         util: 'TES5Edit v4.0.3'
+
   - name: 'theRoadstrokersRogueSorceress.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe Rogue Sorceress.esp")'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x5b9c3c9f
         itm: 3
+
   - name: 'THVampireRoyalArmorUnenchanted_BoneHawkRingCraftable.esp'
     inc: [ 'THBoneHawkRingCraftable.esp' ]
   - name: 'tinyangrytrolls.esp'
@@ -9971,10 +9852,14 @@ plugins:
     msg: [ *requiresUNPB ]
   - name: 'UNP Petrovna.esp'
     msg: [ *requiresUNP ]
+
   - name: 'VagabondArmor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_VagabondArmor_5.esp") or file("SG_HothTrooper.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13230/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
+
   - name: 'Vampguard.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -9984,34 +9869,24 @@ plugins:
     msg: [ *obsolete ]
   - name: 'VampireMasterSet.esp'
     inc: [ 'VampireMasterHood.esp' ]
+
   - name: 'VanguardArmor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_VanguardArmor_3.esp") or file("SG_HothTrooper.esp")'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16238/' ]
+    msg:
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
+
   - name: 'ViceroyInquisitor.esp'
     msg: [ *requiresCBBE ]
-  - name: 'viciousdawnbreaker.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_viciousdawnbreaker.esp")'
-  - name: 'warchief armor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_WarchiefArmor_4.esp")'
-  - name: 'WarchiefArmor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe_Plugin_WarchiefArmor_4.esp") or file("SG_HothTrooper.esp")'
-  - name: 'Lorecraft - hothtrooper44 armors.esp'
+
+  - name: 'warchiefarmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13366/' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not load any of the original .ESP files that come with hothtrooper44''s original mods.'
-          - lang: de
-            text: 'Laden Sie keine der original .ESP Dateien, die mit hothtrooper44 Original-Mods mitgeliefert wurden.'
-          - lang: ja
-            text: 'hothtrooper44の元Modに付属しているオリジナルのEspはどれもロードしないでください。'
+      - <<: *deletePlugin
+        subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
+        condition: 'file("SG_HothTrooper.esp")'
+
   - name: 'Warrior Cleric Julianos - Credo.esp'
     msg: [ *obsolete ]
   - name: 'Weapons of the Dohvakiin.esp'
@@ -10166,29 +10041,7 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'XAC.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This is the SkyRe compatible version.'
-          - lang: de
-            text: 'Dies ist die SkyRe kompatible Version.'
-          - lang: ja
-            text: 'SkyRe互換版です。'
-        condition: 'checksum("XAC.esp",7BD34BA7)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Requires bsa or loose files from original version or this mod will not work.'
-          - lang: de
-            text: 'Benötigt bsa oder lose Dateien von der Originalversion oder diese Mod wird nicht funktionieren.'
-          - lang: ja
-            text: 'オリジナル版のBsaまたはルーズファイルがなければ機能しません。'
-        condition: 'checksum("XAC.esp",7BD34BA7) and not file("XAC.bsa")'
-    tag:
-      - name: Deactivate
-        condition: 'file("SkyRe XAC Stat (Original|Swap)( Classic)?\.esp")'
+
   - name: 'YPSArmorPack.esp'
     msg: [ *requiresUNP ]
   - name: 'zabswitchhat.esp'
@@ -10289,39 +10142,35 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xb79edd7f
         itm: 1
+
   - name: 'SG_HothTrooper.esp'
-    inc:
-      - 'SkyRe_Plugin_BaratheonArmor_1.esp'
-      - 'SkyRe_Plugin_HedgeKnightArmor_1.esp'
-      - 'SkyRe_Plugin_RedguardKnightArmor_3.esp'
-      - 'SkyRe_Plugin_VagabondArmor_5.esp'
-      - 'SkyRe_Plugin_VanguardArmor_3.esp'
-      - 'SkyRe_Plugin_WarchiefArmor_4.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/17532/' ]
     msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("BaratheonArmor.esp")'
-        subs: [ 'BaratheonArmor.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("HedgeKnight.esp")'
-        subs: [ 'HedgeKnight.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("RedguardKnight.esp")'
-        subs: [ 'RedguardKnight.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("VagabondArmor.esp")'
-        subs: [ 'VagabondArmor.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("VanguardArmor.esp")'
-        subs: [ 'VanguardArmor.esp' ]
-      - <<: *deleteOrDeactivateX
-        condition: 'active("warchiefarmor.esp")'
-        subs: [ 'warchiefarmor.esp' ]
+      - <<: *requiresResources
+        subs: [ '[Baratheon Armor](https://www.nexusmods.com/skyrim/mods/14715/)' ]
+        condition: 'not file("meshes/armor/baratheon/1stpersonbaratheoncuirassm_1.nif")'
+      - <<: *requiresResources
+        subs: [ '[Hedge Knight Armor](https://www.nexusmods.com/skyrim/mods/13961/)' ]
+        condition: 'not file("meshes/armor/HedgeKnight/1stpersonm_1.nif")'
+      - <<: *requiresResources
+        subs: [ '[Redguard Knight Armor](https://www.nexusmods.com/skyrim/mods/13500/)' ]
+        condition: 'not file("meshes/armor/redguardknight/boots_1.nif")'
+      - <<: *requiresResources
+        subs: [ '[Vagabond Armor](https://www.nexusmods.com/skyrim/mods/13230/)' ]
+        condition: 'not file("meshes/armor/vagabond/glovesGrey_go.nif")'
+      - <<: *requiresResources
+        subs: [ '[Vanguard Armor](https://www.nexusmods.com/skyrim/mods/16238/)' ]
+        condition: 'not file("meshes/armor/Vanguard/1stpersondbglovesarg_1.nif")'
+      - <<: *requiresResources
+        subs: [ '[Warchief Armor](https://www.nexusmods.com/skyrim/mods/13366/)' ]
+        condition: 'not file("meshes/armor/warcheif/bighelm_go.nif")'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc7b7e357
+      - <<: *quickClean
+        crc: 0xC7B7E357
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
         udr: 2
+
   - name: 'Better Sorting by eclips3 - Ingredients .+\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -11710,17 +11559,6 @@ plugins:
             text: 'morrowlootと同じレベルドリストを変更するRelevタグ付きのプラグインがあった場合は、それよりも後にロードすることをお勧めします。morrowlootによって削除されたVanillaのレコードが再度追加されてしまうためです。'
           - lang: ru
             text: 'Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.'
-      - type: say
-        content:
-          - lang: en
-            text: 'You need the SkyRe compatibility patch for this to work as intended with SkyRe.'
-          - lang: de
-            text: 'Sie benötigen den SkyRe Kompatibilitätspatch, damit dies mit SkyRe wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'SkyReと併用した上で本来の動作をさせるには、SkyRe向けの互換パッチを利用する必要があります。'
-          - lang: ru
-            text: 'Вам нужно установить патч совместимости для правильной работы мода с SkyRe.'
-        condition: 'file("SkyRe_.+\.esp") and not file("SkyRe_Plugin_Morrowloot.esp")'
     tag:
       - Delev
       - Relev
@@ -11728,568 +11566,62 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x7c6ea81c
         itm: 7
-  - name: 'SkyRe_Plugin_BaratheonArmor_1.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("BaratheonArmor.esp")'
-        subs: [ 'BaratheonArmor.esp' ]
+
+  ### SkyRe - Compatibility Plugins for Weapons and Armor ###
   - name: 'SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("blackswordsman.esp")'
-        subs: [ 'blackswordsman.esp' ]
-  - name: 'SkyRe_Plugin_BetterBows_1.4.1.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("HBetterBows.esp")'
-        subs: [ 'HBetterBows.esp' ]
-  - name: 'SkyRe_Plugin_BetterBows.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("HBetterBows.esp")'
-        subs: [ 'HBetterBows.esp' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21092/' ]
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_BetterBows(_1.4.1)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_DaggerCraft(_1.3)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_DragonBoneWeaponsComplete(_1.03)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_InsanitysCelticKatana(_1.2)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_InsanitysDragonKatana(_1.2)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_isilNarsil.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_NicoroshiCreations.*\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_JaySuS(Swords|words)(_1.3D)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_Scoiatael Weapons.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_DwemerAutoBlade.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_viciousdawnbreaker.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_Omegared99(-WeaponSets|sACv3_6|sArmorCompilation)(_3.5a)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_Oriental Weapon&Armor.*\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp'
+    msg: [ *useInsteadReProccer ]
+
   - name: 'Scoped Bows - SkyRe Patch.esp'
     after:
       - 'SkyRe_Main.esp'
       - 'SkyRe_Main_NoDawnguard.esp'
       - 'SkyRe_Combat.esp'
-      - 'SkyRe_Plugin_BetterBows.esp'
-      - 'SkyRe_Plugin_BetterBows_1.4.1.esp'
-  - name: 'SkyRe_Plugin_BowofIorveth_1.2.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("BowofIorveth.esp")'
-        subs: [ 'BowofIorveth.esp' ]
-  - name: 'SkyRe_Plugin_DaggerCraft_1.3.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("DaggerCraft.esp")'
-        subs: [ 'DaggerCraft.esp' ]
-  - name: 'SkyRe_Plugin_DaggerCraft.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("DaggerCraft.esp")'
-        subs: [ 'DaggerCraft.esp' ]
-  - name: 'SkyRe_Plugin_DragonBoneWeaponsComplete_1.03.esp'
-    msg: [ *installOriginalResources ]
-  - name: 'SkyRe_Plugin_DragonBoneWeaponsComplete.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "DragonBoneWeaponsComplete.bsa" to "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "DragonBoneWeaponsComplete.bsa" in "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"DragonBoneWeaponsComplete.bsa"を"SkyRe_Plugin_DragonBoneWeaponsComplete.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "DragonBoneWeaponsComplete.bsa" в "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" для подключения ресурсов мода..'
-        condition: 'not file("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa")'
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Dragonbone Weapons Complete.esp")'
-        subs: [ 'Dragonbone Weapons Complete.esp' ]
-      - *installOriginalResources
-  - name: 'SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("DreadKnightWeaponSet.esp") or active("Dread Knight Weapon Set.esp")'
-        subs: [ 'the Dread Knight Weapon Set plugin' ]
-  - name: 'SkyRe_Plugin_DwemerAutoBlade.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "DwemerAutoBlade.bsa" to "SkyRe_Plugin_DwemerAutoBlade.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "DwemerAutoBlade.bsa" in "SkyRe_Plugin_DwemerAutoBlade.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"DwemerAutoBlade.bsa"を"SkyRe_Plugin_DwemerAutoBlade.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "DwemerAutoBlade.bsa" в "SkyRe_Plugin_DwemerAutoBlade.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe_Plugin_DwemerAutoBlade.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("DwemerAutoBlade.esp")'
-        subs: [ 'DwemerAutoBlade.esp' ]
-  - name: 'SkyRe_Plugin_HedgeKnightArmor_1.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("HedgeKnight.esp")'
-        subs: [ 'HedgeKnight.esp' ]
+
   - name: 'SkyRe_Plugin_ImmersiveArmor_.+\.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("hothtrooper44_ArmorCompilation.esp")'
-        subs: [ 'hothtrooper44_ArmorCompilation.esp' ]
-  - name: 'SkyRe_Plugin_InsanitysCelticKatana_1.2.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("InsanitysCelticKatana.esp")'
-        subs: [ 'InsanitysCelticKatana.esp' ]
-  - name: 'SkyRe_Plugin_InsanitysCelticKatana.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("nsanitysCelticKatana.esp")'
-        subs: [ 'nsanitysCelticKatana.esp' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21269/' ]
+    msg: [ *useInsteadReProccer ]
+
   - name: 'SkyRe_Plugin_InsanitysCraftableDragonbane.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Insanity''s Craftable Dragonbane.esp")'
-        subs: [ 'Insanity''s Craftable Dragonbane.esp' ]
-  - name: 'SkyRe_Plugin_InsanitysDragonKatana_1.2.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'file("InsanitysDragonKatana.esp") or file("Insanity''s Dragon Katana.esp")'
-        subs: [ 'the Insanity''s Dragon Katana plugin' ]
-  - name: 'SkyRe_Plugin_InsanitysDragonKatana.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'file("InsanitysDragonKatana.esp") or file("Insanity''s Dragon Katana.esp")'
-        subs: [ 'the Insanity''s Dragon Katana plugin' ]
-  - name: 'SkyRe_Plugin_isilNarsil.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("isilNarsil.esp")'
-        subs: [ 'isilNarsil.esp' ]
-  - name: 'SkyRe_Plugin_JaySuSSwords_1.3D.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'The order of the master files are listed as: Skyrim.esm, JSwords.esm, Update.esm which conflicts with the order in the masterlist. There are also 4 unresolved keywords and, Skyrim won''t properly track to them because SkyRe_Main.esp is not a master. Correcting this in the CK is not recomended because there will be too many errors to resolve. Delete this file it should not be used.'
-          - lang: de
-            text: 'Die Reihenfolge der Masterdateien ist wie folgt: Skyrim.esm, JSwords.esm, Update.esm, was mit der Reihenfolge in der Masterliste in Konflikt steht. Es gibt auch 4 ungelöste Schlüsselwörter und Skyrim wird sie nicht richtig erfassen, da SkyRe_Main.esp kein Meister ist. Es wird nicht empfohlen, dies im CK zu korrigieren, da es zu viele Fehler gibt, die behoben werden müssen. Löschen Sie diese Datei, sie sollte nicht verwendet werden.'
-          - lang: ja
-            text: 'マスターファイルがSkyrim.esm、JSwords.esm、Update.esmという順番で並んでおり、マスターリストの順番と競合しています。さらに4つの未解決のキーワードが存在しており、SkyRe_Main.espがマスターではないためSkyrim側ではこれらのキーワードを正確に追跡できません。エラーの数があまりにも多すぎるため、Creation Kitによる修正は避けるべきでしょう。このファイルは削除してください。使用するべきではありません。'
-        condition: 'checksum("SkyRe_Plugin_JaySuSSwords_1.3D.esp",33879A9F)'
-      - type: warn
-        content:
-          - lang: en
-            text: 'T3nd0 stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching. Uninstall this file and use the mod itself with the patcher as the author intended to begin with.'
-          - lang: de
-            text: 'T3nd0 hat die Bereitstellung einzelner Patches eingestellt, da er einen SkyProc-Patcher erstellt hat, um das Patching dynamisch durchzuführen. Deinstallieren Sie diese Datei und benutzen die Mod selbst mit dem Patcher, wie es der Autor beabsichtigt hat.'
-          - lang: ja
-            text: '動的にパッチを適用できるSkyProc Patcherが完成したため、T3nd0からの個別パッチ提供は停止しています。このファイルをアンインストールし、SkyProc Patcherを使用しながら遊んでください。作者からはそのように想定されています。'
-          - lang: ru
-            text: 'T3nd0 прекратил предоставлять отдельные патчи, с тех пор, как он создал SkyProc патчер, для динамического создания патчей. Удалите этот файл и используйте его патчер, как и задумывал патчер. Патчер некорректно работает с русскими модами.'
-      - <<: *installOriginalResources
-        type: error
-        condition: 'not file("JSwords(DV)?\.esm")'
-    tag: [ Delev ]
-  - name: 'SkyRe_Plugin_JaySuSSwords.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'T3nd0 has informed the LOOT team that he does not remember making the file so it''s probably not his.  However, he stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.'
-          - lang: de
-            text: 'T3nd0 hat das LOOT Team darüber informiert, dass er sich nicht daran erinnert, die Datei erstellt zu haben. In jedem Fall hat er aufgehört, einzelne Patches bereitzustellen, da er einen SkyProc-Patcher erstellt hat, um das Patching dynamisch durchzuführen. Deinstallieren Sie diese Datei und benutzen Sie die Mod selbst mit dem Patcher, wie es der Autor beabsichtigt hat.'
-          - lang: ja
-            text: 'T3nd0氏より、このようなファイルを作った覚えは無いとの連絡がLOOTのチーム宛にあったため、おそらくこのファイルはT3nd0氏が作成したものではありません。また、現在は動的にパッチを適用できるSkyProc Patcherが完成しているため、T3nd0氏からの個別パッチ提供は停止しています。このファイルをアンインストールし、製作者から想定されているようにSkyProc Patcherを使用しながら遊んでください。'
-          - lang: ru
-            text: 'T3nd0 сообщил команде LOOT, что он не помнит, что создавал этот патч, так что это вероятно не его.  Однако, T3nd0 прекратил предоставлять отдельные патчи, с тех пор, как он создал SkyProc патчер, для динамического создания патчей. Удалите этот файл и используйте его патчер, как и задумывал патчер. Патчер некорректно работает с русскими модами.'
-      - <<: *installOriginalResources
-        type: error
-        condition: 'not file("JSwords(DV)?\.esm")'
-    tag: [ Delev ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x33879a9f
-        itm: 4
-  - name: 'SkyRe_Plugin_Malo_Waffen_V3Bugfix.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Malo_Waffen.esp")'
-        subs: [ 'Malo_Waffen.esp' ]
-  - name: 'SkyRe_Plugin_Morrowloot.esp'
-    msg: [ *installOriginalResources ]
-  - name: 'SkyRe_Plugin_NicoroshiCreations.*\.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Nicoroshi Creations.esp")'
-        subs: [ 'Nicoroshi Creations.esp' ]
-  - name: 'SkyRe_Plugin_NordicHunterLightArmor_1.2.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Possible already includes the hunterarmorv1.2.esp'
-          - lang: de
-            text: 'Enthält möglicherweise schon hunterarmorv1.2.esp'
-          - lang: ja
-            text: 'すでにhunterarmorv1.2.espに含まれている可能性があります。'
-          - lang: ru
-            text: 'Возможно уже включено в hunterarmorv1.2.esp'
-        condition: 'file("hunterarmorv1.2.esp")'
-      - *installOriginalResources
-  - name: 'SkyRe_Plugin_Omegared99-WeaponSets.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Omegared99-WeaponSets.esp")'
-        subs: [ 'Omegared99-WeaponSets.esp' ]
-  - name: 'SkyRe_Plugin_Omegared99sACv3_6.esp'
-    req: [ 'Omegared99-Compilation.esm' ]
-    msg: [ *installOriginalResources ]
-  - name: 'SkyRe_Plugin_Omegared99sArmorCompilation.esp'
-    req: [ 'Omegared99-Compilation.esm' ]
-    msg:
-      - *obsolete
-      - *installOriginalResources
-  - name: 'SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp'
-    req: [ 'Omegared99-Compilation.esm' ]
-    msg:
-      - *obsolete
-      - *installOriginalResources
-  - name: 'SkyRe_Plugin_Oriental Weapon&Armor.*\.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Oriental Weapon&Armor.esp")'
-        subs: [ 'Oriental Weapon&Armor.esp' ]
-  - name: 'SkyRe_Plugin_RedguardKnightArmor_3.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("RedguardKnight.esp")'
-        subs: [ 'RedguardKnight.esp' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23312/' ]
+    msg: [ *useInsteadReProccer ]
+
   - name: 'SkyRe_Plugin_RegentSwords.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("RegentSword.esp")'
-        subs: [ 'RegentSword.esp' ]
-  - name: 'SkyRe_Plugin_Scoiatael Weapons.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Scoiatael Weapons.esp")'
-        subs: [ 'Scoiatael Weapons.esp' ]
-  - name: 'SkyRe_Plugin_VagabondArmor_5.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("VagabondArmor.esp")'
-        subs: [ 'VagabondArmor.esp' ]
-  - name: 'SkyRe_Plugin_VanguardArmor_3.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("VanguardArmor.esp")'
-        subs: [ 'VanguardArmor.esp' ]
-  - name: 'SkyRe_Plugin_viciousdawnbreaker.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "viciousdawnbreaker.bsa" to "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "viciousdawnbreaker.bsa" in "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"viciousdawnbreaker.bsa"を"SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "viciousdawnbreaker.bsa" в "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("viciousdawnbreaker.esp")'
-        subs: [ 'viciousdawnbreaker.esp' ]
-  - name: 'SkyRe_Plugin_WarchiefArmor_4.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("warchiefarmor.esp")'
-        subs: [ 'warchiefarmor.esp' ]
-  - name: 'SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp")'
-        subs: [ 'SkyRe Dreadknight .esp file' ]
-  - name: 'SkyRe  - Jojjo''s Dreadknight Patch.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Dread Knight Weapon Set.esp")'
-        subs: [ 'Dread Knight Weapon Set.esp' ]
-  - name: 'SkyRe Avatar of Baltazar.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Avatar of Baltazar.esp")'
-        subs: [ 'Avatar of Baltazar.esp' ]
-  - name: 'SkyRe Avatar of Grenth.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Avatar of Grenth.esp")'
-        subs: [ 'Avatar of Grenth.esp' ]
-  - name: 'SkyRe Black Mage Armor.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Black Mage Armor.esp")'
-        subs: [ 'Black Mage Armor.esp' ]
-  - name: 'SkyRe Chainmail Hauberks.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Chainmailhauberks 1.1.esp")'
-        subs: [ 'Chainmailhauberks 1.1.esp' ]
-  - name: 'SkyRe Chinese General Armor and Weapon.esp'
-    msg: [ *obsolete ]
-  - name: 'SkyRe Chinese General Set.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Song General Armor&weapon.esp")'
-        subs: [ 'Song General Armor&weapon.esp' ]
-  - name: 'SkyRe Chinese General Set - Realistic.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Song General Armor&weapon.esp")'
-        subs: [ 'Song General Armor&weapon.esp' ]
-  - name: 'SkyRe Dark Nemesis.esp'
-    msg:
-      - <<: *corrupt
-        condition: 'checksum("SkyRe Dark Nemesis.esp",FBBC3828)'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("DarkNemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
-        subs: [ 'DarkNemesis.esp' ]
-  - name: 'SkyRe Divine Aegis.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("DarkNemesis.esp") and not checksum("DarkNemesis.esp",CE5E555B)'
-        subs: [ 'DarkNemesis.esp' ]
-  - name: 'SkyRe Equipment of Eternal Shine.esp'
-    msg:
-      - <<: *corrupt
-        condition: 'checksum("SkyRe Equipment of Eternal Shine.esp",C47F2C45)'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("EternalShineArmorAndWeapons.esp")'
-        subs: [ 'EternalShineArmorAndWeapons.esp' ]
-  - name: 'Skyre Guardian Plate Armor.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Guardian Plate Armor.esp")'
-        subs: [ 'Guardian Plate Armor.esp' ]
-  - name: 'SkyRe Heroic Dwarven Armor and Weapon Set.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("HeroicDwarven.esp")'
-        subs: [ 'HeroicDwarven.esp' ]
-  - name: 'SkyRe Iron Armor Chainmail.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("dfnkt-IronArmorSleeves-Craftable.esp")'
-        subs: [ 'dfnkt-IronArmorSleeves-Craftable.esp' ]
-  - name: 'SkyRe Masters of Death Sicarius Armor.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
-        subs: [ 'Masters of Death - Sicarius Armor (Standalone).esp' ]
-  - name: 'SkyRe Masters of Death - Sicarius Armor (Standalone).esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Masters of Death - Sicarius Armor (Standalone).esp")'
-        subs: [ 'Masters of Death - Sicarius Armor (Standalone).esp' ]
-  - name: 'SkyRe Mithril Armor.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "Matys Mithril armor Enhanced.bsa" to "SkyRe Mithril Armor.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "Matys Mithril armor Enhanced.bsa" in "SkyRe Mithril Armor.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"Matys Mithril armor Enhanced.bsa"を"SkyRe Mithril Armor.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "Matys Mithril armor Enhanced.bsa" в "SkyRe Mithril Armor.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe Mithril Armor.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Matys Mithril armor Enhanced.esp")'
-        subs: [ 'Matys Mithril armor Enhanced.esp' ]
-  - name: 'SkyRe Mystic Armor and Weapon Set.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Mystic.esp")'
-        subs: [ 'Mystic.esp' ]
-  - name: 'SkyRe Nordic Conqueror Armor.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Nordic Conqueror Armor.esp")'
-        subs: [ 'Nordic Conqueror Armor.esp' ]
-  - name: 'SkyRe Nordic Conqueror Armor - Realistic.esp'
-    inc: [ 'SkyRe Nordic Conqueror Armor.esp' ]
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("Nordic Conqueror Armor.esp")'
-        subs: [ 'Nordic Conqueror Armor.esp' ]
-  - name: 'SkyRe Rogue Sorceress.esp'
-    msg:
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("theRoadstrokersRogueSorceress.esp")'
-        subs: [ 'theRoadstrokersRogueSorceress.esp' ]
-  - name: 'SkyRe SeraticDark.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "SeraticHeavyArmorDark.bsa" to "SkyRe SeraticDark.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "SeraticHeavyArmorDark.bsa" in "SkyRe SeraticDark.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"SeraticHeavyArmorDark.bsa"を"SkyRe SeraticDark.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "SeraticHeavyArmorDark.bsa" в "SkyRe SeraticDark.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe SeraticDark.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("SeraticHeavyArmorDark.esp")'
-        subs: [ 'SeraticHeavyArmorDark.esp' ]
-  - name: 'SkyRe SeraticGray.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "SeraticHeavyArmorGray.bsa" to "SkyRe SeraticGray.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "SeraticHeavyArmorGray.bsa" in "SkyRe SeraticGray.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"SeraticHeavyArmorGray.bsa"を"SkyRe SeraticGray.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "SeraticHeavyArmorGray.bsa" в "SkyRe SeraticGray.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe SeraticGray.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("SeraticHeavyArmorGray.esp")'
-        subs: [ 'SeraticHeavyArmorGray.esp' ]
-  - name: 'SkyRe SeraticLight.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to rename "SeraticArmor.bsa" to "SkyRe SeraticLight.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Sie müssen "SeraticArmor.bsa" in "SkyRe SeraticLight.bsa" umbenennen, ansonsten funktioniert diese Mod nicht.'
-          - lang: ja
-            text: '"SeraticArmor.bsa"を"SkyRe SeraticLight.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Вам нужно переименовать "SeraticArmor.bsa" в "SkyRe SeraticLight.bsa" или этот мод не будет работать.'
-        condition: 'not file("SkyRe SeraticLight.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("SeraticArmor.esp")'
-        subs: [ 'SeraticArmor.esp' ]
-  - name: 'SkyRe XAC Original Classic.esp'
-    msg:
-      - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            text: 'If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original Classic.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Wenn Sie die bsa Version von XAC heruntergeladen haben, müssen Sie "XAC.bsa" in "SkyRe XAC Original Classic.bsa" umbenennen, sonst funktioniert diese Mod nicht.'
-          - lang: ja
-            text: 'bsa版のXACをダウンロードしている場合、"XAC.bsa"を"SkyRe XAC Original Classic.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Original Classic.bsa" или этот мод работать не будет.'
-        condition: 'not file("SkyRe XAC Original Classic.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("XAC.esp")'
-        subs: [ 'XAC.esp' ]
-    url: []
-  - name: 'SkyRe XAC Original.esp'
-    msg:
-      - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            text: 'If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Wenn Sie die bsa Version von XAC heruntergeladen haben, müssen Sie "XAC.bsa" in "SkyRe XAC Original.bsa" umbenennen, sonst funktioniert diese Mod nicht.'
-          - lang: ja
-            text: 'bsa版のXACをダウンロードしている場合、"XAC.bsa"を"SkyRe XAC Original.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Original.bsa" или этот мод работать не будет.'
-        condition: 'not file("SkyRe XAC Original.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("XAC.esp")'
-        subs: [ 'XAC.esp' ]
-    url: []
-  - name: 'SkyRe XAC Stat Swap Classic.esp'
-    msg:
-      - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            text: 'If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap Classic.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Wenn Sie die bsa Version von XAC heruntergeladen haben, müssen Sie "XAC.bsa" in "SkyRe XAC Stat Swap Classic.bsa" umbenennen, sonst funktioniert diese Mod nicht.'
-          - lang: ja
-            text: 'bsa版のXACをダウンロードしている場合、"XAC.bsa"を"SkyRe XAC Stat Swap Classic.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Stat Swap Classic.bsa" или этот мод работать не будет.'
-        condition: 'not file("SkyRe XAC Stat Swap Classic.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("XAC.esp")'
-        subs: [ 'XAC.esp' ]
-    url: []
-  - name: 'SkyRe XAC Stat Swap.esp'
-    msg:
-      - *obsolete
-      - type: warn
-        content:
-          - lang: en
-            text: 'If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap.bsa" or this mod won''t work.'
-          - lang: de
-            text: 'Wenn Sie die bsa Version von XAC heruntergeladen haben, müssen Sie "XAC.bsa" in "SkyRe XAC Stat Swap.bsa" umbenennen, sonst funktioniert diese Mod nicht.'
-          - lang: ja
-            text: 'bsa版のXACをダウンロードしている場合、"XAC.bsa"を"SkyRe XAC Stat Swap.bsa"にリネームしないと機能しません。'
-          - lang: ru
-            text: 'Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Stat Swap.bsa" или этот мод работать не будет.'
-        condition: 'not file("SkyRe XAC Stat Swap.bsa")'
-      - *installOriginalResources
-      - <<: *deleteOrDeactivateX
-        condition: 'active("XAC.esp")'
-        subs: [ 'XAC.esp' ]
-    url: []
-  - name: 'REQ Tribunal Robes by Zairaam.esp'
-    msg: [ *installOriginalResources ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21764/' ]
+    msg: [ *useInsteadReProccer ]
+
+  - name: 'SkyRe - Jojjo''s Dreadknight Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26657/' ]
+    msg: [ *useInsteadReProccer ]
+
   - name: '0.1.6.esp'
     msg:
       - <<: *obsolete
@@ -14421,10 +13753,8 @@ plugins:
         crc: 0x10e82562
         itm: 27
         udr: 136
+
   - name: 'Guardian Plate Armor.esp'
-    tag:
-      - name: Deactivate
-        condition: 'file("Skyre Guardian Plate Armor.esp")'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x15972bcb
@@ -14434,6 +13764,7 @@ plugins:
         crc: 0x5ED4F98F
         itm: 4
         udr: 1
+
   - name: 'GuildmastersQuarters.esp'
     msg:
       - <<: *obsolete
@@ -18953,8 +18284,6 @@ plugins:
   - name: 'SkyReHedgeKnightArmorPlugin.esp'
     msg: [ *obsolete ]
   - name: 'SkyReJaySuSwordsPlugin.esp'
-    msg: [ *obsolete ]
-  - name: 'SkyRe_Plugin_JaySuSwords_1.3D.esp'
     msg: [ *obsolete ]
   - name: 'SkyReNicoroshiCreationsPlugin.esp'
     msg: [ *obsolete ]
