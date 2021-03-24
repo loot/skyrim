@@ -127,31 +127,31 @@ common:
         text: 'Удалите. Уже включено в %1% или исправлено иным образом.'
       - lang: sv
         text: 'Ta bort. Redan inkluderat eller fixat i %1%.'
-  - &alreadyInOrFixedByPatch1.4
+  - &alreadyInOrFixedByPatchv1_4
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.4' ]
     condition: 'version("../TESV.exe", "1.4", >=)'
-  - &alreadyInOrFixedByPatch1.4.26
+  - &alreadyInOrFixedByPatchv1_4_26
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.4.26' ]
     condition: 'version("../TESV.exe", "1.4", >=)'
-  - &alreadyInOrFixedByPatch1.5
+  - &alreadyInOrFixedByPatchv1_5
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.5' ]
     condition: 'version("../TESV.exe", "1.5", >=)'
-  - &alreadyInOrFixedByPatch1.6
+  - &alreadyInOrFixedByPatchv1_6
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.6' ]
     condition: 'version("../TESV.exe", "1.6", >=)'
-  - &alreadyInOrFixedByPatch1.8
+  - &alreadyInOrFixedByPatchv1_8
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.8' ]
     condition: 'version("../TESV.exe", "1.8", >=)'
-  - &alreadyInOrFixedByPatch1.9
+  - &alreadyInOrFixedByPatchv1_9
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.9' ]
     condition: 'version("../TESV.exe", "1.9", >=)'
-  - &alreadyInOrFixedByPatch1.9.26
+  - &alreadyInOrFixedByPatchv1_9_26
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.9.26' ]
     condition: 'version("../TESV.exe", "1.9", >=)'
@@ -2923,7 +2923,7 @@ plugins:
   - name: 'Civil War Neutrality Fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Chesko_MatchingSetPerkFix.esp'
-    msg: [ *alreadyInOrFixedByPatch1.9 ]
+    msg: [ *alreadyInOrFixedByPatchv1_9 ]
   - name: 'Cloak Fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'CombatMusicFix.esp'
@@ -2949,7 +2949,7 @@ plugins:
   - name: 'DaggerBowEnchantPotionFixes.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Deflect Arrows Perk Fix.esp'
-    msg: [ *alreadyInOrFixedByPatch1.5 ]
+    msg: [ *alreadyInOrFixedByPatchv1_5 ]
   - name: 'Derkeethus_fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'DialogueWithAVampireOrWhatever.esp'
@@ -3002,7 +3002,7 @@ plugins:
   - name: 'GhorzaGraBagolInvestmentFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'GiantPhysicsFix.esp'
-    msg: [ *alreadyInOrFixedByPatch1.4 ]
+    msg: [ *alreadyInOrFixedByPatchv1_4 ]
   - name: 'GM-KhajiitDSHFix.esp'
     msg:
       - *corrupt
@@ -3051,9 +3051,9 @@ plugins:
   - name: 'KillThemGenerals.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'LCBM.esp'
-    msg: [ *alreadyInOrFixedByPatch1.5 ]
+    msg: [ *alreadyInOrFixedByPatchv1_5 ]
   - name: 'Letrush Fix.esp'
-    msg: [ *alreadyInOrFixedByPatch1.8 ]
+    msg: [ *alreadyInOrFixedByPatchv1_8 ]
   - name: 'lightplacement.esp'
     msg: [ *obsolete ]
   - name: 'RelightingSkyrim_Legendary.esp'
@@ -3085,7 +3085,7 @@ plugins:
   - name: 'Magnus20.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/5705/' ]
     msg:
-      - *alreadyInOrFixedByPatch1.4
+      - *alreadyInOrFixedByPatchv1_4
       - <<: *obsoleteSharlikran
         condition: 'checksum("Magnus20.esp", E474964B)'
   - name: 'Magnus50.esp'
@@ -3106,7 +3106,7 @@ plugins:
   - name: 'markedfordeathfix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'MatchingSetFixes.esp'
-    msg: [ *alreadyInOrFixedByPatch1.9 ]
+    msg: [ *alreadyInOrFixedByPatchv1_9 ]
   - name: 'Miner''s Clothes Variant Fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Minor Miner Fixes.esp'
@@ -3126,7 +3126,7 @@ plugins:
   - name: 'NoFortifyFortifyResto.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'NordHeroBowTemperFix.esp'
-    msg: [ *alreadyInOrFixedByPatch1.9.26 ]
+    msg: [ *alreadyInOrFixedByPatchv1_9_26 ]
   - name: 'onehandeddagger.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Potema and Mjoll Quest Fix.esp'
@@ -3138,7 +3138,7 @@ plugins:
         condition: 'file("ProudspireManorImprovements.esp")'
         subs: [ 'ProudspireManorImprovements.esp' ]
   - name: 'Proudspire Manor Weapon Rack Fixes.esp'
-    msg: [ *alreadyInOrFixedByPatch1.5 ]
+    msg: [ *alreadyInOrFixedByPatchv1_5 ]
   - name: 'Prowler.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Quick Orc Fixes.esp'
@@ -3152,9 +3152,9 @@ plugins:
   - name: 'riften jail test 2.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'RiverwoodTraderInvestorFix.esp'
-    msg: [ *alreadyInOrFixedByPatch1.9.26 ]
+    msg: [ *alreadyInOrFixedByPatchv1_9_26 ]
   - name: 'SanguineRoseFix.esp'
-    msg: [ *alreadyInOrFixedByPatch1.5 ]
+    msg: [ *alreadyInOrFixedByPatchv1_5 ]
   - name: 'sapphire_speak_fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Severin Manor Music.esp'
@@ -3174,11 +3174,11 @@ plugins:
   - name: 'StaggerFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'StaffOfMagnusFix.esp'
-    msg: [ *alreadyInOrFixedByPatch1.4.26 ]
+    msg: [ *alreadyInOrFixedByPatchv1_4_26 ]
   - name: 'stormcloak boot fix.esp'
-    msg: [ *alreadyInOrFixedByPatch1.9.26 ]
+    msg: [ *alreadyInOrFixedByPatchv1_9_26 ]
   - name: 'StuddedArmorFixes.esp'
-    msg: [ *alreadyInOrFixedByPatch1.9.26 ]
+    msg: [ *alreadyInOrFixedByPatchv1_9_26 ]
   - name: 'SybilleStentorFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'TalosShrineFix.esp'
@@ -3247,7 +3247,7 @@ plugins:
   - name: 'BreezhomeAlchemyLabFix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'chopping_block_wood_fires.esp'
-    msg: [ *alreadyInOrFixedByPatch1.8 ]
+    msg: [ *alreadyInOrFixedByPatchv1_8 ]
   - name: 'CraftableBoneHawkRings.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'Dawnguard Breezehome Fix.esp'
@@ -3267,7 +3267,7 @@ plugins:
   - name: 'Dragonborn Spell Absorb Fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HDtextures01.esp'
-    msg: [ *alreadyInOrFixedByPatch1.8 ]
+    msg: [ *alreadyInOrFixedByPatchv1_8 ]
   - name: 'Headtracking Fix - Dawnguard.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'HF-MoveSpouse.esp'
@@ -23317,7 +23317,7 @@ plugins:
       - crc: 0x15D9448A
         util: 'TES5Edit v4.0.3'
   - name: 'CMCompanionLevel.esp'
-    msg: [ *alreadyInOrFixedByPatch1.6 ]
+    msg: [ *alreadyInOrFixedByPatchv1_6 ]
   - name: 'Companion_Crea.esp'
     msg:
       - *requiresCBBEorUNP
