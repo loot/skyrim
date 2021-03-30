@@ -1,17 +1,22 @@
+# LOOT ignores anything that doesn't come under 'bash_tags', 'globals',
+# 'groups', or 'plugins', so a section like 'common' is useful for storing
+# data that gets re-used.
 common:
-# Files
+# File Anchors
   - &FNIS
     name: 'tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe'
     display: '[Fores New Idles in Skyrim](https://www.nexusmods.com/skyrim/mods/11811)'
     condition: 'not file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
+
   - &SKSE
     name: '../skse_loader.exe'
     display: '[SKSE](https://skse.silverlock.org)'
+
   - &SkyUI
     name: 'SkyUI.esp'
     display: '[SkyUI](https://www.nexusmods.com/skyrim/mods/3863)'
 
-# Messages
+# Message Anchors
   - &alreadyInX
     type: error
     content:
@@ -906,24 +911,7 @@ common:
         text: 'Denna plugin innehåller vilda föränringar utanför ITM och UDR-records samt borttagna navmeshes och kan kräva ytterligare manuell rensning för att inte störa andra moddar. %1%'
     subs: [ '' ]
 
-# Dirty Aliases
-  - &dirtyPlugin
-    util: '[TES5Edit](https://www.nexusmods.com/skyrim/mods/25859)'
-    info:
-      - lang: en
-        text: 'An explanation of Dirty Edits is available [here](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
-      - lang: de
-        text: 'Eine englische Säuberungsanleitung ist [hier](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA) verfügbar.'
-      - lang: ja
-        text: 'Dirty Editsについては[ここ](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA)を参照してください。'
-      - lang: pl
-        text: 'Wytłumaczenie o brudnych wtyczkach (Dirty Edits) jest dostępne [tutaj](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
-      - lang: pt
-        text: 'Uma explição em inglês de Edição Suja (Dirty Edits) está disponível [aqui](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
-      - lang: pt_BR
-        text: 'Uma explicação de Edições Sujas (Dirty Edits) está disponível [aqui](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
-      - lang: ru
-        text: 'Объяснение по грязным правкам доступно [здесь](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
+# Cleaning Data Anchors
   - &quickClean
     util: '[TES5Edit](https://www.nexusmods.com/skyrim/mods/25859)'
     info:
@@ -951,6 +939,7 @@ common:
         text: 'En guide till att rensa plugins med xEdit finns [här](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods).'
       - lang: zh_CN
         text: 'xEdit的清洁插件指南可以在[这里](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#ThreeEasyStepstocleanMods)找到。'
+
   - &reqManualFix
     util: '[TES5Edit](https://www.nexusmods.com/skyrim/mods/25859)'
     info:
@@ -976,6 +965,25 @@ common:
         text: 'Настоятельно не рекомендуется использовать моды с **удаленными навмешами** т.к. известно, что они вызывают вылеты. **удаленные навмеши** должны быть исправлены вручную(Комплексный процесс, который должен быть выполнен автором мода). Больше информации о **удаленных навмешах** можно найти [здесь](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
       - lang: sv
         text: 'Det är starkt rekommenderat att inte använda mods som innehåller **Borttagna navmeshes** eftersom de kan orsaka krascher. **Borttagna navmeshes** måste korrigeras manuellt (en komplex process som borde göras av modskaparen). Mer information om **Borttagna navmeshes** hittar du [här](https://www.creationkit.com/index.php?title=Fixing_Navmesh_Deletion_Tutorial).'
+
+# Deprecated Anchors #
+  - &dirtyPlugin
+    util: '[TES5Edit](https://www.nexusmods.com/skyrim/mods/25859)'
+    info:
+      - lang: en
+        text: 'An explanation of Dirty Edits is available [here](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
+      - lang: de
+        text: 'Eine englische Säuberungsanleitung ist [hier](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA) verfügbar.'
+      - lang: ja
+        text: 'Dirty Editsについては[ここ](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA)を参照してください。'
+      - lang: pl
+        text: 'Wytłumaczenie o brudnych wtyczkach (Dirty Edits) jest dostępne [tutaj](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
+      - lang: pt
+        text: 'Uma explição em inglês de Edição Suja (Dirty Edits) está disponível [aqui](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
+      - lang: pt_BR
+        text: 'Uma explicação de Edições Sujas (Dirty Edits) está disponível [aqui](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
+      - lang: ru
+        text: 'Объяснение по грязным правкам доступно [здесь](https://tes5edit.github.io/docs/6-mod-cleaning-and-error-checking.html#AppendixA).'
 
 bash_tags:
   - 'Actors.ACBS'
@@ -1115,7 +1123,6 @@ globals:
       - 'GenerateFNISforUsers.exe'
       - 'FNIS'
     condition: 'file("tools/GenerateFNIS_for_Users/GenerateFNISforUsers.exe")'
-
   # Nemesis Unlimited Behavior Engine
   - <<: *runAnimFramework
     subs:
@@ -1123,7 +1130,6 @@ globals:
       - 'Nemesis Unlimited Behavior Engine.exe'
       - 'Nemesis'
     condition: 'file("Nemesis_Engine/Nemesis Unlimited Behavior Engine.exe")'
-    
   # Nemesis and FNIS compatibility
   - <<: *useOnlyOneX
     subs: [ '**Fores New Idles in Skyrim** or **Nemesis Unlimited Behavior Engine**' ]
