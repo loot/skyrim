@@ -24298,14 +24298,17 @@ plugins:
       - type: warn
         content:
           - lang: en
-            text: 'Delete C01QuestScript.pex from data/scripts folder, if it exists.'
+            text: 'Delete %1% from %2%.'
           - lang: de
-            text: 'Löschen Sie die Datei C01QuestScript.pex aus dem Ordner data/scripts, falls vorhanden.'
+            text: 'Löschen Sie die Datei %1% aus dem Ordner %2%, falls vorhanden.'
           - lang: ja
-            text: 'data/scriptsフォルダにC01QuestScript.pexが入っていた場合はそのまま削除してください。'
+            text: '%2%フォルダに%1%が入っていた場合はそのまま削除してください。'
           - lang: ru
-            text: 'Удалите скрипт C01QuestScript.pex, из папки data/scripts, если он существует.'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+            text: 'Удалите скрипт %1%, из папки %2%, если он существует.'
+        subs:
+          - 'Scripts/C01QuestScript.pex'
+          - 'Better Followers'
+        condition: 'file("UFO - Ultimate Follower Overhaul.esp") and checksum("Scripts/C01QuestScript.pex", CADBE633)'
   - name: 'Better Followers - SB(N)?P\.esp'
     msg:
       - <<: *requiresX
