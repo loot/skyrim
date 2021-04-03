@@ -24292,6 +24292,12 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/7554/' ]
     inc: [ 'TCG.esp' ]
     msg:
+      - <<: *requiresX
+        subs: [ 'Better Followers - Armor Pack I & II, download it on BF page' ]
+        condition: 'file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Better Followers .esp file' ]
+        condition: 'many("Better Followers - [SBNP].*\.esp")'
       - type: warn
         content:
           - lang: en
@@ -24303,12 +24309,6 @@ plugins:
           - lang: ru
             text: 'Удалите скрипт C01QuestScript.pex, из папки data/scripts, если он существует.'
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
-      - <<: *requiresX
-        condition: 'file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
-        subs: [ 'Better Followers - Armor Pack I & II, download it on BF page' ]
-      - <<: *useOnlyOneX
-        condition: 'many("Better Followers - [SBNP].*\.esp")'
-        subs: [ 'Better Followers .esp file' ]
   - name: 'Better Followers - P.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -24317,8 +24317,8 @@ plugins:
   - name: 'Better NPC - Faction Pack.esp'
     msg:
       - <<: *requiresX
-        condition: 'not file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
         subs: [ 'Beauty version of Better Followers, named BP or BNP or SBP or SBNP' ]
+        condition: 'not file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
 
   - name: 'AskFollowerSkills.esp'
     msg: [ *alreadyInBDO ]
