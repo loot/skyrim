@@ -24292,9 +24292,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/7554/' ]
     inc: [ 'TCG.esp' ]
     msg:
-      - <<: *requiresX
-        subs: [ 'Better Followers - Armor Pack I & II, download it on BF page' ]
-        condition: 'file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
       - <<: *useOnlyOneX
         subs: [ 'Better Followers .esp file' ]
         condition: 'many("Better Followers - (S)?(B)?(N)?P\.esp")'
@@ -24309,6 +24306,11 @@ plugins:
           - lang: ru
             text: 'Удалите скрипт C01QuestScript.pex, из папки data/scripts, если он существует.'
         condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+  - name: 'Better Followers - SB(N)?P\.esp'
+    msg:
+      - <<: *requiresX
+        subs: [ 'Better Followers - Armor Pack I' ]
+        condition: 'not file("meshes/armor/better followers")'
   - name: 'Better Followers - P.esp'
     dirty:
       - <<: *dirtyPlugin
