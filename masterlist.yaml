@@ -24288,7 +24288,7 @@ plugins:
         condition: 'checksum("Zeeri.esp",DDD4D989)'
 
   ### Better Followers ###
-  - name: 'Better Followers - [SBNP].*\.esp'
+  - name: 'Better Followers - (S)?(B)?(N)?P\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/7554/' ]
     inc: [ 'TCG.esp' ]
     msg:
@@ -24297,7 +24297,7 @@ plugins:
         condition: 'file("Better Followers - (BP|BNP|SBP|SBNP)\.esp")'
       - <<: *useOnlyOneX
         subs: [ 'Better Followers .esp file' ]
-        condition: 'many("Better Followers - [SBNP].*\.esp")'
+        condition: 'many("Better Followers - (S)?(B)?(N)?P\.esp")'
       - type: warn
         content:
           - lang: en
