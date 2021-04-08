@@ -633,6 +633,14 @@ common:
       - lang: sv
         text: 'Denna plugins master behöver sorteras'
 
+  - &updateOcclusion
+    type: say
+    content:
+      - lang: en
+        text: 'If you add, remove or update plugins that alter WRLD/CELL records, remember to update this module with **xLODGen.exe**.'
+      - lang: de
+        text: 'Wenn Sie Plugins hinzufügen, entfernen oder aktualisieren die WRLD/CELL Einträge verändern, denken Sie daran dieses Modul mit **xLODGen.exe** zu aktualisieren.'
+
   - &useBashTweakInstead
     type: say
     content:
@@ -1381,6 +1389,16 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/31255/' ]
     group: *unofficialPatchGroup
 
+###### Modding Tools - Generated Files ######
+  - name: 'Occlusion.esp'
+    url:
+      - link: 'https://stepmodifications.org/forum/topic/13451-xlodgen-terrain-lod-beta-76-for-fnv-fo3-fo4-fo4vr-tes5-sse-tes5vr-enderal-enderalse/'
+        name: 'xLODGen Occlusion'
+    group: *mapGroup
+    after: [ 'DynDOLOD.esp' ]
+    msg: [ *updateOcclusion ]
+
+###### Anything new can go after this (If you're not sure where to put it) ######
   - name: 'Falskaar.esm'
     group: *newLandsGroup
     msg:
