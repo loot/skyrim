@@ -1072,10 +1072,14 @@ bash_tags:
   - 'Actors.AIPackagesForceAdd'
   - 'Actors.CombatStyle'
   - 'Actors.DeathItem'
+  - 'Actors.Perks.Add'
+  - 'Actors.Perks.Change'
+  - 'Actors.Perks.Remove'
   - 'Actors.RecordFlags'
   - 'Actors.Spells'
   - 'Actors.SpellsForceAdd'
   - 'Actors.Stats'
+  - 'Actors.Voice'
   - 'C.Acoustic'
   - 'C.Climate'
   - 'C.Encounter'
@@ -1108,7 +1112,10 @@ bash_tags:
   - 'Names'
   - 'NoMerge'
   - 'NPC.AIPackageOverrides'
+  - 'NPC.AttackRace'
   - 'NPC.Class'
+  - 'NPC.CrimeFaction'
+  - 'NPC.DefaultOutfit'
   - 'NPC.Race'
   - 'ObjectBounds'
   - 'Outfits.Add'
@@ -1130,11 +1137,6 @@ bash_tags:
   - 'SpellStats'
   - 'Stats'
   - 'Text'
-  ## Removed & Deprecated Bash Tags ##
-  - 'C.GridFlags'
-  - 'Derel'
-  - 'Invent'
-  - 'Relations'
 
 globals:
   - type: say
@@ -1388,7 +1390,8 @@ plugins:
       - C.Location
       - C.Regions
       - Delev
-      - Invent
+      - Invent.Add
+      - Invent.Remove
       - Keywords
       - Relev
       - Text
@@ -1426,7 +1429,8 @@ plugins:
       - 'HearthFires.esm'
     tag:
       - C.Location
-      - Invent
+      - Invent.Add
+      - Invent.Remove
       - Relev
     dirty:
       - <<: *quickClean
@@ -4232,7 +4236,8 @@ plugins:
       - C.Location
       - C.Owner
       - Delev
-      - Invent
+      - Invent.Add
+      - Invent.Remove
       - Names
       - Stats
     dirty:
@@ -20233,7 +20238,9 @@ plugins:
     tag:
       - Delev
       - Graphics
-      - Invent
+      - Invent.Add
+      - Invent.Change
+      - Invent.Remove
       - Names
       - Relev
       - Stats
