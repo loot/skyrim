@@ -19907,8 +19907,9 @@ plugins:
       - '3DNPC.esp'
       - 'TradeRoutes.esp'
     msg:
-      - <<: *patch3rdParty_Requiem_RSE
-        condition: 'active("Requiem.esp") and not active("RSE-RequiemSurvivalExperience.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp")'
     tag:
       - Delev
       - Graphics
@@ -19994,6 +19995,10 @@ plugins:
     after: [ '3DNPC.esp' ]
   - name: 'RND_Requiem-Patch.esp'
     after: [ '3DNPC.esp' ]
+    msg:
+      - <<: *incVersionX
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        subs: [ 'Requiem.esp' ]
   - name: 'RND_RWL-Patch.esp'
     after: [ '3DNPC.esp' ]
     msg:
