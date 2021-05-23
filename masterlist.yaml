@@ -24406,14 +24406,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Height Adjusted Races.*\.esp")'
         subs: [ 'Height Adjusted Races .esp file' ]
-      - <<: *patch3rdParty_Requiem_MRP
-        condition: 'active("Requiem.esp") and not active("Requiem - Height Adjusted Races with True Giants.esp") and not active("Requiem - True Giants and Mammoths.esp")'
-      - <<: *alreadyInX
-        condition: 'active("Height Adjusted Races.*\.esp") and active("Requiem - Height Adjusted Races with True Giants.esp")'
-        subs: [ 'Requiem - Height Adjusted Races with True Giants.esp' ]
-      - <<: *alreadyInX
-        condition: 'active("Height Adjusted Races.*\.esp") and active("Requiem - True Giants and Mammoths.esp")'
-        subs: [ 'Requiem - True Giants and Mammoths.esp' ]
   - name: 'True Giants( v\d)?\.esp'
     inc:
       - 'Height Adjusted Races with True Giants.esp'
