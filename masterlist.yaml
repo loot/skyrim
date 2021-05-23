@@ -8648,6 +8648,9 @@ plugins:
     msg:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Weapons.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", >)'
     tag:
       - Delev
       - Relev
