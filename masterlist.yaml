@@ -6500,8 +6500,9 @@ plugins:
           - lang: ja
             text: 'このEspはjackstarr氏によるロアフレンドリーバージョンです。lifestorock氏によるオリジナル版のEspもしくはEsmは使用しないでください。'
         condition: 'checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
-      - <<: *patch3rdParty_Requiem_MRP
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Creatures.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp")'
     tag:
       - Delev
       - Relev
