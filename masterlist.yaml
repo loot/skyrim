@@ -26335,17 +26335,14 @@ plugins:
     after:
       - 'ETaC - RESOURCES.esm'
       - 'Hunterborn.esp'
-      - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
-      - 'NRM_Dragonborn_Reqtified.esp'
     req:
       - name: 'II EaTC Patch.esp'
         condition: 'active("ETaC - RESOURCES.esm")'
+  - name: 'II Requiem patch.esp'
     msg:
-      - <<: *requiresX
-        condition: 'active("Requiem.esp") and not active("II Requiem patch.esp") and not active("II Requiem C2H6O patch.esp")'
-        subs: [ 'II Requiem patch.esp or II Requiem C2H6O patch.esp' ]
+      - <<: *incVersionX
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        subs: [ 'Requiem.esp' ]
   - name: 'NPC_Overhaul_V_(1|2|3)_\.esp'
     after: [ 'Feminine Females.esp' ]
   - name: 'MoonAndStar_MAS.esp'
