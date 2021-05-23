@@ -18085,15 +18085,9 @@ plugins:
         itm: 2
   - name: 'Rebirth Monster.esp'
     msg:
-      # version: 1.9.5
-      - <<: *patch3rdParty_Requiem_MRP
-        condition: 'checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Requiem - Revenge of the Enemies.esp")'
-      # version: 2.0 and later
-      - <<: *patch3rdParty
-        subs:
-          - 'Requiem'
-          - '[Revenge of the Enemies Patches](https://www.nexusmods.com/skyrim/mods/73369/)'
-        condition: 'not checksum("Rebirth Monster.esp", 3F7371A1) and active("Requiem.esp") and not active("Rebirth Monster - Requiem Patch.esp") and not active("Rebirth Monster - Requiem Merged Patch.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp")'
     tag:
       - Delev
       - Relev
