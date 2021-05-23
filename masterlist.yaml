@@ -17013,7 +17013,11 @@ plugins:
       - <<: *alreadyInX
         condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
         subs: [ 'Book Covers Skyrim.esp' ]
-
+  - name: 'REQ - BCS Patch.esp'
+    msg:
+      - <<: *incVersionX
+        condition: 'version("Requiem.esp", "2.0.0", >=)'
+        subs: [ 'Requiem.esp' ]
   ### Headbomb's Better Sorting ###
   - name: 'Headbomb''s Better Sorting.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/2730/' ]
