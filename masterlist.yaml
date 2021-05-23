@@ -1446,8 +1446,9 @@ plugins:
   - name: 'Falskaar.esm'
     group: *newLandsGroup
     msg:
-      - <<: *patch3rdParty_Requiem_NRM
-        condition: 'active("Requiem.esp") and not active("NRM Falskaar - Requiem Patch.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp")'
     clean:
       # version: 1.2.1
       - crc: 0xDDFDBEDE
