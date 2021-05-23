@@ -20318,11 +20318,6 @@ plugins:
         condition: 'file("LFox Werewolf Improvements.esp")'
         subs: [ 'LFox Werewolf Improvements.esp' ]
   - name: 'mslVampiricThirst.esp'
-    after:
-      - name: 'Requiem.esp'
-        condition: 'version("Requiem.esp", "3.0.0", <)'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
     req: [ *SKSE ]
     msg:
       - type: say
@@ -20335,15 +20330,19 @@ plugins:
             text: '吸血鬼のシステムを変更するModとは競合します。'
           - lang: ru
             text: 'конфликты с другими модами, меняющими систему вампиризма.'
-      - <<: *patchProvided
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", <) and not active("mslVampiricThirst - Requiem.esp")'
-        subs: [ 'Requiem' ]
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", >=) and not active("Requiem - Vampiric Thirst.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - Vampiric Thirst.esp")'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xfafb18c2
         itm: 3
+  - name: 'mslVampiricThirst - Requiem.esp'
+    msg:
+      - <<: *versionXIncY
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        subs:
+          - 'Requiem - Vampiric Thirst'
+          - 'Requiem'
   - name: 'NoWerewolfFormCooldown.esp'
     msg:
       - type: say
