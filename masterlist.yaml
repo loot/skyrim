@@ -22696,8 +22696,9 @@ plugins:
   - name: '3DNPC.esp'
     url: [ 'http://3dnpc.com/' ]
     msg:
-      - <<: *patch3rdParty_Requiem_NRM
-        condition: 'active("Requiem.esp") and not active("NRM 3DNPC - Requiem Patch.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xE91FCA2F
