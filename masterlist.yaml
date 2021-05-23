@@ -10574,13 +10574,6 @@ plugins:
       - name: 'Requiem - Hard Times.esp'
         condition: 'version("Requiem.esp", "1.8.0", >=) and checksum("Requiem - Hard Times.esp", A393D1E3)'
     msg:
-      # doNotClean
-      - <<: *patchIncluded
-        condition: 'version("Requiem.esp", "2.0.0", <) and active("Unofficial Skyrim Patch.esp") and not active("Requiem - Bugsmasher Edition.esp")'
-        subs: [ 'Unofficial Skyrim Patch' ]
-      - <<: *patchIncluded
-        condition: 'version("Requiem.esp", "3.0.0", <) and active("Unofficial Skyrim Legendary Edition Patch.esp") and not active("Requiem - Legendary Bugsmasher Edition.esp")'
-        subs: [ 'Unofficial Skyrim Legendary Edition Patch' ]
       - type: error
         content:
           - lang: en
@@ -10808,8 +10801,6 @@ plugins:
   - name: 'dD - Realistic Ragdoll Force - (Realistic|Reduced|Medium|High)\.esp'
     after:
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
     msg:
       - type: say
         content:
@@ -10827,8 +10818,6 @@ plugins:
   - name: 'XPMSE.esp'
     after:
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
     clean:
       # version: 4.51
       - crc: 0x68388671
@@ -10836,44 +10825,27 @@ plugins:
   - name: 'RealisticRoomRental(-Basic)?.esp'
     after:
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
   - name: 'Unlimited Training.esp'
     after:
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
   - name: 'WerewolfPerksExpanded.esp'
     after:
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
   - name: 'Religion.esp'
     after:
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
   - name: 'No Vendor or Loot Spells - Riverwood Trader Requiem.esp'
     req: [ 'Requiem.esp' ]
-    after:
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
   - name: 'Realistic AI Detection 2.*\.esp'
     after:
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
   - name: 'Requiem - Realistic Darkness.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/63297' ]
     after:
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
   - name: 'Clairvoyance.esp'
     after:
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
     clean:
       # version: 1.0.1
       - crc: 0x8755BBC1
@@ -25003,8 +24975,6 @@ plugins:
       - 'Helgen Reborn.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
     dirty:
       # version: 1.11
       - <<: *quickClean
@@ -26443,8 +26413,6 @@ plugins:
       - '3DNPC.esp'
       - 'RayeksEnd.esp'
       - 'Requiem.esp'
-      - 'Requiem - Bugsmasher Edition.esp'
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
       - 'Routa.esp'
       - 'Routa Non-Stormcloak.esp'
       - 'SkyfallEstateBuildable.esp'
