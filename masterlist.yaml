@@ -10546,15 +10546,10 @@ plugins:
         subs: [ 'Requiem.esp' ]
   - name: 'RSE-RequiemSurvivalExperience.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/56275' ]
-    after:
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
-      - 'Requiem - Hearthfire.esp'
-      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
-      - 'NRM_Dragonborn_Reqtified.esp'
-      - 'KFR-Kryptopyr''sFixesReqtified.esp'
-      - 'KFR-FZR.esp'
-      - 'COR-CraftingOverhaulReqtified.esp'
-      - 'COR-FZR.esp'
+    msg:
+      - <<: *incVersionX
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        subs: [ 'Requiem.esp' ]
   - name: 'Requiem - Minor Arcana - Civil War.esp'
     tag:
       - Actors.ACBS
