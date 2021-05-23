@@ -25730,8 +25730,9 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/40607' ]
     after: [ 'MoonAndStar_MAS.esp' ]
     msg:
-      - <<: *patch3rdParty_Requiem_NRM
-        condition: 'active("Requiem.esp") and not active("NRM Undeath - Requiem Patch.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x13173CB1
