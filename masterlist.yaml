@@ -1609,13 +1609,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("83Willows_101BUGS_V4_.+\.esp")'
         subs: [ '83Willows 101Bugs plugin' ]
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", <) and not active("Requiem - 83Willows 101Bugs.esp")'
-      - <<: *patch3rdParty_Requiem_MRP
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.1.0", >=) and not active("Requiem - 83Willows 101Bugs.esp")'
-      - <<: *deletePlugin
-        condition: 'active("83Willows_101BUGS_V4_.+\.esp") and active("Requiem - 83Willows 101Bugs.esp")'
-        subs: [ 'the Requiem patch for 83Willows 101Bugs' ]
   - name: 'actorEvents.esm'
     req: [ *SKSE ]
   - name: 'alchstone(1pt5x|2x|3x|x3|4x|x4x2|5x)\.esm'
