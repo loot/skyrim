@@ -387,11 +387,6 @@ common:
         text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%.'
       - lang: zh_CN
         text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。第三方补丁可以在这里找到:%2%'
-  - &patch3rdParty_Requiem_COR
-    <<: *patch3rdParty
-    subs:
-      - 'Requiem'
-      - '[COR - Crafting Overhaul Reqtified](https://www.nexusmods.com/skyrim/mods/61569/)'
   - &patch3rdParty_Requiem_KFR
     <<: *patch3rdParty
     subs:
@@ -10403,8 +10398,9 @@ plugins:
       - 'aMidianBorn_ContentAddon.esp'
     tag: [ Graphics ]
     msg:
-      - <<: *patch3rdParty_Requiem_COR
-        condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp")'
     dirty:
       # version: 1.7
       - <<: *quickClean
@@ -10530,16 +10526,6 @@ plugins:
       - 'SkyRe_Main.esp'
       - name: 'Requiem - Hard Times.esp'
         condition: 'version("Requiem.esp", "1.8.0", >=) and checksum("Requiem - Hard Times.esp", A393D1E3)'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Delete MineOreScript.pex from Requiem. [CCOR](http://www.nexusmods.com/skyrim/mods/49791)''s script must take precedence.'
-          - lang: de
-            text: 'Löschen Sie MineOreScript.pex von Requiem. [CCOR](http://www.nexusmods.com/skyrim/mods/49791)''s Skript muss Vorrang haben.'
-          - lang: ja
-            text: 'RequiemのMineOreScript.pexは削除してください。[CCOR](http://www.nexusmods.com/skyrim/mods/49791)側のスクリプトを優先させる必要があります。'
-        condition: 'active("Complete Crafting Overhaul_Remade.esp") and (checksum("Scripts/MineOreScript.pex", 82F96995) or checksum("Scripts/MineOreScript.pex", 0332450B) or checksum("Scripts/MineOreScript.pex", 8FFEAA3B) or checksum("Scripts/MineOreScript.pex", 73C11655))'
     tag:
       - Actors.ACBS
       - Actors.AIData
@@ -10587,19 +10573,10 @@ plugins:
     req: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
   - name: 'COR-CraftingOverhaulReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61569' ]
-    after:
-      - 'Requiem - Legendary Bugsmasher Edition.esp'
-      - 'NRM_Dragonborn_Reqtified.esp'
-      - 'KFR-Kryptopyr''sFixesReqtified.esp'
     msg:
-      - <<: *patchIncluded
-        condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("COR-FZR.esp")'
-        subs: [ 'Fozar''s Dragonborn patch' ]
       - <<: *incVersionX
         condition: 'version("Requiem.esp", "3.0.0", >=)'
         subs: [ 'Requiem.esp' ]
-  - name: 'COR-(Campfire|CircletsWithHoods|Cloaks_LightGuardsOnly|FurCloaks_LightGuardsOnly|FZR|NoHeavyStormcloaks|WetAndCold|WoodenBows)\.esp'
-    req: [ 'COR-CraftingOverhaulReqtified.esp' ]
   - name: 'RSE-RequiemSurvivalExperience.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/56275' ]
     after:
@@ -26671,16 +26648,6 @@ plugins:
       - <<: *incVersionX
         condition: 'version("Requiem.esp", "3.0.0", >=)'
         subs: [ 'Requiem.esp' ]
-  - name: 'Requiem - Dragonborn - CCOR Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("COR-CraftingOverhaulReqtified.esp")'
-        subs: [ 'COR-CraftingOverhaulReqtified.esp' ]
-  - name: 'CCO_WAFTrueWeapons_Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("COR-CraftingOverhaulReqtified.esp")'
-        subs: [ 'COR-CraftingOverhaulReqtified.esp' ]
   - name: 'Requiem - Immersive Jewelry( BTC| ISC)?\.esp'
     msg:
       - <<: *useOnlyOneX
