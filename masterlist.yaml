@@ -921,35 +921,11 @@ common:
       - lang: zh_CN
         text: '您的%1%是最新的。'
 
-  - &versionXIncY
+  - &incVersionX
     type: error
     content:
       - lang: en
-        text: 'Your installed version of %1% is not compatible with your version of %2%.'
-      - lang: bg
-        text: 'Инсталираната версия на %1% не е съвместима с версията на %2%.'
-      - lang: da
-        text: 'Din installerede version af %1% er ikke kompatibel med din version af %2%.'
-      - lang: de
-        text: 'Ihre installierte Version von %1% ist nicht kompatibel mit Ihrer Version von %2%.'
-      - lang: it
-        text: 'La tua versione installata di %1% non è compatibile con la tua versione di %2%.'
-      - lang: ja
-        text: 'インストールされている%1%は使用中のバージョンの%2%との互換性がありません。'
-      - lang: ko
-        text: '현재 설치된 %1%의 버전은 %2%의 버전과 호환되지 않습니다.'
-      - lang: pl
-        text: 'Twoja zainstalowana wersja %1% nie jest kompatybilna z twoją wersją %2%.'
-      - lang: pt_BR
-        text: 'A sua versão instalada de %1% não é compatível com a sua versão de %2%.'
-      - lang: pt_PT
-        text: 'A sua versão instalada de %1% não é compatível com a sua versão de %2%.'
-      - lang: ru
-        text: 'Установленная у вас версия %1% несовместима с версией %2%.'
-      - lang: sv
-        text: 'Din installerade version av %1% är inte kombatibel med din version av %2%.'
-      - lang: zh_CN
-        text: '您安装的%1%版本与%2%版本不兼容。'
+        text: 'This plugin is incompatible with your version of %1%.'
 
   - &wildEdits
     type: warn
@@ -10623,11 +10599,9 @@ plugins:
       - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("KFR-FZR.esp")'
         subs: [ 'Fozar''s Dragonborn Patch' ]
-      - <<: *versionXIncY
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", >=)'
-        subs:
-          - 'Kryptopyr''s Fixes Reqtified'
-          - 'Requiem'
+      - <<: *incVersionX
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        subs: [ 'Requiem.esp' ]
   - name: 'KFR-(CircletsWithHoods|FZR|NoHeavyStormcloaks)\.esp'
     req: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
   - name: 'COR-CraftingOverhaulReqtified.esp'
@@ -10640,11 +10614,9 @@ plugins:
       - <<: *patchIncluded
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("COR-FZR.esp")'
         subs: [ 'Fozar''s Dragonborn patch' ]
-      - <<: *versionXIncY
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.0.0", >=)'
-        subs:
-          - 'Crafting Overhaul Reqtified'
-          - 'Requiem'
+      - <<: *incVersionX
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        subs: [ 'Requiem.esp' ]
   - name: 'COR-(Campfire|CircletsWithHoods|Cloaks_LightGuardsOnly|FurCloaks_LightGuardsOnly|FZR|NoHeavyStormcloaks|WetAndCold|WoodenBows)\.esp'
     req: [ 'COR-CraftingOverhaulReqtified.esp' ]
   - name: 'RSE-RequiemSurvivalExperience.esp'
@@ -20338,11 +20310,9 @@ plugins:
         itm: 3
   - name: 'mslVampiricThirst - Requiem.esp'
     msg:
-      - <<: *versionXIncY
+      - <<: *incVersionX
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-        subs:
-          - 'Requiem - Vampiric Thirst'
-          - 'Requiem'
+        subs: [ 'Requiem.esp' ]
   - name: 'NoWerewolfFormCooldown.esp'
     msg:
       - type: say
