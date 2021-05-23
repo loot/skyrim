@@ -3742,13 +3742,8 @@ plugins:
       - name: 'RealisticWaterTwo.esp'
         condition: 'not file("AOS2_RealisticWaterTwo Patch.esp") and not file("WAO-.*RWT.*\.esp") and not active("Requiem.esp")'
     msg:
-      - <<: *patchIncluded
-        subs: [ 'Requiem' ]
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Audio Overhaul for Skyrim.esp") and not active("AOS2_Requiem Patch.esp")'
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", >=) and not active("Requiem - Audio Overhaul for Skyrim.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp")'
     tag: [ Sound ]
     clean:
       # v2.5.1
@@ -3759,16 +3754,6 @@ plugins:
       - <<: *alreadyInX
         condition: 'active("Requiem - Deadly Dragons - AOS.esp")'
         subs: [ 'Requiem - Deadly Dragons - AOS.esp' ]
-  - name: 'AOS2_FIO Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Fire and Ice Overhaul - AOS.esp")'
-        subs: [ 'Requiem - Fire and Ice Overhaul - AOS.esp' ]
-  - name: 'AOS2_GDO Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Audio Overhaul for Skyrim.esp")'
-        subs: [ 'Requiem - Audio Overhaul for Skyrim.esp' ]
   - name: 'AOS2_Unique Uniques Patch.esp'
     msg:
       - <<: *alreadyInX
@@ -3776,15 +3761,11 @@ plugins:
         subs: [ 'Requiem - Unique Uniques - AOS.esp' ]
   - name: 'AOS2_WAF Patch.esp'
     after: [ 'AOS2_GDO Patch.esp' ]
+  - name: 'AOS2_Requiem Patch.esp'
     msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Audio Overhaul for Skyrim.esp") and version("Requiem - Audio Overhaul for Skyrim.esp", "3.08", <)'
-        subs: [ 'Requiem - Audio Overhaul for Skyrim.esp' ]
-  - name: '(AOS2_Requiem Patch|Requiem - Audio Overhaul for Skyrim)\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("(AOS2_Requiem Patch|Requiem - Audio Overhaul for Skyrim)\.esp")'
-        subs: [ 'Requiem patch for Audio Overhaul for Skyrim' ]
+      - <<: *incVersionX
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        subs: [ 'Requiem.esp' ]
   - name: 'Prometheus_No_snow_under_the_roof.esp'
     dirty:
       # version: 2.3 Vanilla + Dawnguard + Dragonborn
