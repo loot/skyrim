@@ -387,11 +387,6 @@ common:
         text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%.'
       - lang: zh_CN
         text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。第三方补丁可以在这里找到:%2%'
-  - &patch3rdParty_Requiem_CFR
-    <<: *patch3rdParty
-    subs:
-      - 'Requiem'
-      - '[CFR - Cloaks For Requiem](https://www.nexusmods.com/skyrim/mods/61590/)'
   - &patch3rdParty_Requiem_COR
     <<: *patch3rdParty
     subs:
@@ -7838,10 +7833,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Cloaks( - (No Imperial|Player Only))?\.esp")'
         subs: [ 'Cloaks .esp file' ]
-      - <<: *patch3rdParty_Requiem_CFR
-        condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
-      - <<: *patch3rdParty_Requiem_COR
-        condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
   - name: 'Cloaks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12092' ]
     dirty:
@@ -7888,10 +7879,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("1nivWICCloaks(CRAFT|NoGuards)?.esp")'
         subs: [ 'WICCloaks .esp file' ]
-      - <<: *patch3rdParty_Requiem_CFR
-        condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
-      - <<: *patch3rdParty_Requiem_COR
-        condition: 'active("Requiem.esp") and not active("COR-CraftingOverhaulReqtified.esp") and not active("CFR-CloaksForRequiem.esp")'
     tag: [ Relev ]
   - name: '1nivWICCloaks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13486' ]
@@ -7905,10 +7892,6 @@ plugins:
         util: 'TES5Edit v4.0.2j'
   - name: '1nivWICSkyCloaksPatch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13486' ]
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("CFR-CloaksForRequiem.esp")'
-        subs: [ 'CFR-CloaksForRequiem.esp' ]
     clean:
       # v2.4
       - crc: 0x8D9E2F98
@@ -10691,13 +10674,6 @@ plugins:
       - 'Requiem - Legendary Bugsmasher Edition.esp'
       - 'NRM_Dragonborn_Reqtified.esp'
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
-  - name: 'CFR-CloaksForRequiem.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/61590' ]
-    after: [ 'Requiem - Legendary Bugsmasher Edition.esp' ]
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("COR-CraftingOverhaulReqtified.esp")'
-        subs: [ 'Crafting Overhaul Reqtified' ]
   - name: 'RSE-RequiemSurvivalExperience.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/56275' ]
     after:
@@ -26961,21 +26937,6 @@ plugins:
       - <<: *alreadyInX
         condition: 'active("COR-CraftingOverhaulReqtified.esp")'
         subs: [ 'COR-CraftingOverhaulReqtified.esp' ]
-  - name: 'Cloaks - Dawnguard.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("CFR-CloaksForRequiem.esp")'
-        subs: [ 'CFR-CloaksForRequiem.esp' ]
-  - name: 'COS_WIC_CCO_patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("CFR-CloaksForRequiem.esp")'
-        subs: [ 'CFR-CloaksForRequiem.esp' ]
-  - name: '(CFR-CloaksForRequiem|Requiem - Cloaks( of Skyrim| of Skyrim Hard - Times| of Skyrim Patch| WICCloaks CCFR USKP)?)\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("(CFR-CloaksForRequiem|Requiem - Cloaks( of Skyrim| of Skyrim Hard - Times| of Skyrim Patch| WICCloaks CCFR USKP)?)\.esp")'
-        subs: [ 'Requiem patch for Cloaks of Skyrim' ]
   - name: 'Requiem - Immersive Jewelry( BTC| ISC)?\.esp'
     msg:
       - <<: *useOnlyOneX
