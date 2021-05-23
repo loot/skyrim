@@ -10742,24 +10742,16 @@ plugins:
   - name: 'Requiem - Immersive Sounds Compendium.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after: [ 'Requiem - Cutting Room Floor.esp' ]
-  - name: 'Requiem - Immersive Horses( - SkyTEST)?\.esp'
+  - name: 'Requiem - Immersive Horses.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
-      - 'REQMOD.esp'
-      - 'Requiem_Minor_Arcana.esp'
       - 'Requiem - Minor Arcana - Roleplaying.esp'
       - 'Requiem - SkyTEST.esp'
       - 'Requiem - Wild World.esp'
-      - 'Requiem - Mortal Enemies.esp'
-      - 'Requiem - Breaking Bad.esp'
-  - name: 'Requiem - Immersive Horses - SkyTEST.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
-    req: [ 'Requiem - SkyTEST.esp' ]
   - name: 'Requiem - Craftable Horse Barding.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after:
       - 'Requiem - Immersive Horses.esp'
-      - 'Requiem - Immersive Horses - SkyTEST.esp'
       - 'Requiem - Minor Arcana - Roleplaying.esp'
       - 'Requiem - Wild World.esp'
   - name: 'Requiem - Deadly Dragons( - AOS)?\.esp'
@@ -26751,7 +26743,7 @@ plugins:
   - name: 'Immersive Horses.esp'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Horses.esp") and not active("Requiem - Immersive Horses - SkyTEST.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Horses.esp")'
     clean:
       # version: 2.5
       - crc: 0x04F12565
@@ -26911,11 +26903,8 @@ plugins:
   - name: 'Immersive Horses - Hearthfire Patch.esp'
     msg:
       - <<: *alreadyInX
-        condition: 'active("Immersive Horses - Hearthfire Patch.esp") and version("Requiem - Immersive Horses.esp", "1.63", >=)'
+        condition: 'active("Immersive Horses - Hearthfire Patch.esp") and active("Requiem - Immersive Horses.esp")'
         subs: [ 'Requiem - Immersive Horses.esp' ]
-      - <<: *alreadyInX
-        condition: 'active("Immersive Horses - Hearthfire Patch.esp") and version("Requiem - Immersive Horses - SkyTEST.esp", "1.63", >=)'
-        subs: [ 'Requiem - Immersive Horses - SkyTEST.esp' ]
   - name: 'IHSS.esp'
     tag: [ Sound ]
   - name: 'aMidianborn_Skyforge_Weapons.esp'
@@ -26929,7 +26918,6 @@ plugins:
   - name: 'RDO - Immersive Horses Patch.esp'
     after:
       - 'Requiem - Immersive Horses.esp'
-      - 'Requiem - Immersive Horses - SkyTEST.esp'
       - 'RDO - Requiem Patch.esp'
     clean:
       # version: 2.0
