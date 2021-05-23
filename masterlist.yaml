@@ -26574,13 +26574,8 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Immersive Sounds - Compendium.esp'
     msg:
-      - <<: *patchIncluded
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
-        subs: [ 'Requiem' ]
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", <) and not active("Requiem - Immersive Sounds Compendium.esp") and not active("ISC Requiem Patch.esp")'
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.2.0", >=) and not active("Requiem - Immersive Sounds Compendium.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - Immersive Sounds Compendium.esp")'
     clean:
       # version: 2.02
       - crc: 0x82A29913
@@ -26671,26 +26666,11 @@ plugins:
       # version: 1.43
       - crc: 0xEF615D86
         util: 'TES5Edit v4.0.2'
-  - name: 'ISC WAFR Patch.esp'
+  - name: 'ISC Requiem Patch.esp'
     msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Immersive Sounds Compendium.esp") and version("Requiem - Immersive Sounds Compendium.esp", "3.08", <)'
-        subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
-  - name: 'ISC CCF Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Immersive Sounds Compendium.esp") and version("Requiem - Immersive Sounds Compendium.esp", "3.08", <)'
-        subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
-  - name: 'ISCompendium CCO Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Immersive Sounds Compendium.esp") and version("Requiem - Immersive Sounds Compendium.esp", "3.04", <)'
-        subs: [ 'Requiem - Immersive Sounds Compendium.esp' ]
-  - name: '(ISC Requiem Patch|Requiem - Immersive Sounds Compendium)\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("(ISC Requiem Patch|Requiem - Immersive Sounds Compendium)\.esp")'
-        subs: [ 'Requiem patch for Immersive Sounds Compendium' ]
+      - <<: *incVersionX
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        subs: [ 'Requiem.esp' ]
   - name: 'Requiem - Dragonborn - CCOR Patch.esp'
     msg:
       - <<: *alreadyInX
