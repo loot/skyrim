@@ -387,11 +387,6 @@ common:
         text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%.'
       - lang: zh_CN
         text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。第三方补丁可以在这里找到:%2%'
-  - &patch3rdParty_Requiem_KFR
-    <<: *patch3rdParty
-    subs:
-      - 'Requiem'
-      - '[KFR - Kryptopyr''s Fixes Reqtified](https://www.nexusmods.com/skyrim/mods/61520/)'
   - &patch3rdParty_Requiem_MRP
     <<: *patch3rdParty
     subs:
@@ -3471,8 +3466,9 @@ plugins:
     group: *underridesGroup
     after: [ 'Guard Dialogue Overhaul.esp' ]
     msg:
-      - <<: *patch3rdParty_Requiem_KFR
-        condition: 'active("Requiem.esp") and not active("KFR-Kryptopyr''sFixesReqtified.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp")'
     tag:
       - Delev
       - Graphics
@@ -3486,8 +3482,9 @@ plugins:
     group: *underridesGroup
     after: [ 'Weapons & Armor Fixes_Remade.esp' ]
     msg:
-      - <<: *patch3rdParty_Requiem_KFR
-        condition: 'active("Requiem.esp") and not active("KFR-Kryptopyr''sFixesReqtified.esp")'
+      - <<: *patchUnavailable
+        subs: [ 'Requiem' ]
+        condition: 'active("Requiem.esp")'
     tag:
       - Delev
       - Graphics
@@ -10561,16 +10558,10 @@ plugins:
         subs: [ 'Fozar''s Requiem - Dragonborn Patch' ]
   - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61520' ]
-    after: [ 'Requiem - Legendary Bugsmasher Edition.esp' ]
     msg:
-      - <<: *patchIncluded
-        condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp") and not active("KFR-FZR.esp")'
-        subs: [ 'Fozar''s Dragonborn Patch' ]
       - <<: *incVersionX
         condition: 'version("Requiem.esp", "3.0.0", >=)'
         subs: [ 'Requiem.esp' ]
-  - name: 'KFR-(CircletsWithHoods|FZR|NoHeavyStormcloaks)\.esp'
-    req: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
   - name: 'COR-CraftingOverhaulReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61569' ]
     msg:
@@ -18682,45 +18673,21 @@ plugins:
       - name: 'Guard Dialogue Overhaul.esp'
         display: '[Guard Dialouge Overhaul](http://www.nexusmods.com/skyrim/mods/23390)'
   - name: 'Weapons & Armor_TrueDaedricWeapons.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("KFR-Kryptopyr''sFixesReqtified.esp")'
-        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
     tag: [ Stats ]
   - name: 'Weapons & Armor_TrueOrcishWeapons.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("KFR-Kryptopyr''sFixesReqtified.esp")'
-        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
     tag:
       - Delev
       - Relev
       - Stats
   - name: 'Weapons & Armor_TrueOrcish&DaedricWeapons.esp'
     after: [ 'Weapons & Armor Fixes_Remade.esp' ]
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("KFR-Kryptopyr''sFixesReqtified.esp")'
-        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
     tag:
       - Delev
       - Relev
       - Stats
   - name: 'Weapons & Armor_TrueWeaponsLvlLists.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("KFR-Kryptopyr''sFixesReqtified.esp")'
-        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
   - name: 'Weapons & Armor_DragonPriestMasks.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("KFR-Kryptopyr''sFixesReqtified.esp")'
-        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
   - name: 'Weapons & Armor_FasterArrows.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("KFR-Kryptopyr''sFixesReqtified.esp")'
-        subs: [ 'KFR-Kryptopyr''sFixesReqtified.esp' ]
   - name: 'WeaponsArmorFixes_ImmersiveWeapons_Patch.esp'
     msg:
       - <<: *alreadyInX
