@@ -19513,14 +19513,9 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/8058/' ]
     group: *ocsGroup
     msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Requiem'
-          - '[Arbitrated Patches](https://www.nexusmods.com/skyrim/mods/56736/)'
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", <) and not active("Requiem-OpenCities.esp")'
       - <<: *patchUnavailable
         subs: [ 'Requiem' ]
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "2.0.0", >=)'
+        condition: 'active("Requiem.esp")'
     clean:
       - crc: 0x4162917F
         util: 'TES5Edit v4.0.3f'
