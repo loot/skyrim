@@ -387,11 +387,6 @@ common:
         text: 'Det verkar som att du använder **%1%**, men du har inte aktiverat en kompabilitetspatch för denna mod. En patch från en tredje part finns här: %2%.'
       - lang: zh_CN
         text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。第三方补丁可以在这里找到:%2%'
-  - &patch3rdParty_Requiem_MRP
-    <<: *patch3rdParty
-    subs:
-      - 'Requiem'
-      - '[More Requiem Patches](https://www.nexusmods.com/skyrim/mods/58141/)'
   - &patch3rdParty_Requiem_NRM
     <<: *patch3rdParty
     subs:
@@ -26435,7 +26430,10 @@ plugins:
         condition: 'active("Requiem.esp") and not active("Requiem - Deadly Dragons.esp") and not active("Requiem - Deadly Dragons - AOS.esp")'
   - name: 'Dragon Combat Overhaul.esp'
     msg:
-      - <<: *patch3rdParty_Requiem_MRP
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem'
+          - '[More Requiem Patches](https://www.nexusmods.com/skyrim/mods/58141)'
         condition: 'active("Requiem.esp") and not active("Requiem - Dragon Combat Overhaul.esp")'
   - name: 'Faction Crossbows.esp'
     msg:
@@ -26447,7 +26445,10 @@ plugins:
         util: 'TES5Edit v4.0.2'
   - name: 'FireAndIceOverhaul.esp'
     msg:
-      - <<: *patch3rdParty_Requiem_MRP
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem'
+          - '[More Requiem Patches](https://www.nexusmods.com/skyrim/mods/58141)'
         condition: 'active("Requiem.esp") and not active("Requiem - Fire and Ice Overhaul.esp") and not active("Requiem - Fire and Ice Overhaul - AOS.esp")'
   - name: 'Frostfall.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11163' ]
