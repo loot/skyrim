@@ -1440,8 +1440,7 @@ plugins:
 ###### Anything new can go after this (If you're not sure where to put it) ######
   - name: 'Falskaar.esm'
     group: *newLandsGroup
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     clean:
       # version: 1.2.1
       - crc: 0xDDFDBEDE
@@ -1450,8 +1449,7 @@ plugins:
     url: [ 'https://archive.org/details/wyrmstooth1.18' ]
     group: *newLandsGroup
     after: [ 'Falskaar.esm' ]
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     clean:
       # v1.18
       - crc: 0xDD27EAC5
@@ -3446,8 +3444,7 @@ plugins:
   - name: 'Weapons & Armor Fixes_Remade.esp'
     group: *underridesGroup
     after: [ 'Guard Dialogue Overhaul.esp' ]
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     tag:
       - Delev
       - Graphics
@@ -3460,8 +3457,7 @@ plugins:
   - name: 'Clothing & Clutter Fixes.esp'
     group: *underridesGroup
     after: [ 'Weapons & Armor Fixes_Remade.esp' ]
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     tag:
       - Delev
       - Graphics
@@ -6482,7 +6478,7 @@ plugins:
           - lang: ja
             text: 'このEspはjackstarr氏によるロアフレンドリーバージョンです。lifestorock氏によるオリジナル版のEspもしくはEsmは使用しないでください。'
         condition: 'checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
-      - <<: *patchUnavailableRequiem
+      - *patchUnavailableRequiem
     tag:
       - Delev
       - Relev
@@ -10371,8 +10367,7 @@ plugins:
       - 'Clothing & Clutter Fixes.esp'
       - 'aMidianBorn_ContentAddon.esp'
     tag: [ Graphics ]
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     dirty:
       # version: 1.7
       - <<: *quickClean
@@ -15008,8 +15003,7 @@ plugins:
     after:
       - 'OBIS.esp'
       - 'OBISDB.esp'
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     dirty:
       - <<: *dirtyPlugin
         crc: 0x49e6e0bd
@@ -16883,8 +16877,7 @@ plugins:
   - name: 'aMidianBorn_ContentAddon.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24909' ]
     after: [ 'BetterQuestObjectives.esp' ]
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     tag:
       - Delev
       - Relev
@@ -18123,8 +18116,7 @@ plugins:
         crc: 0x941ffb02
         itm: 2
   - name: 'Rebirth Monster.esp'
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     tag:
       - Delev
       - Relev
@@ -19936,8 +19928,7 @@ plugins:
     after:
       - '3DNPC.esp'
       - 'TradeRoutes.esp'
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     tag:
       - Delev
       - Graphics
@@ -20419,8 +20410,7 @@ plugins:
         condition: 'file("EnchantingAwakenedAWEPatch.esp")'
       - name: 'SeeEnchs.esp'
         condition: 'file("EnchantingAwakenedSeeEnchPatch.esp")'
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
   - name: 'EnchantingAwakenedRequiem.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -22719,8 +22709,7 @@ plugins:
         condition: 'checksum("KhaleesiFacePreset.esp",42C16D17)'
   - name: '3DNPC.esp'
     url: [ 'http://3dnpc.com/' ]
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     dirty:
       - <<: *quickClean
         crc: 0xE91FCA2F
@@ -25751,8 +25740,7 @@ plugins:
   - name: 'Undeath.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/40607' ]
     after: [ 'MoonAndStar_MAS.esp' ]
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
     dirty:
       - <<: *quickClean
         crc: 0x13173CB1
@@ -26484,8 +26472,7 @@ plugins:
         util: '[TES5Edit v4.0.2](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
   - name: 'Hypothermia.esp'
-    msg:
-      - <<: *patchUnavailableRequiem
+    msg: [ *patchUnavailableRequiem ]
   - name: 'Immersive Horses.esp'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
