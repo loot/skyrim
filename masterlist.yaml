@@ -478,7 +478,7 @@ common:
       - lang: zh_CN
         text: '需要一个补丁来使这个mod与%1%完全兼容。目前没有可供下载的。'
 
-  - &patchUnavailable_Requiem
+  - &patchUnavailableRequiem
     <<: *patchUnavailable
     subs: [ 'Requiem' ]
     condition: 'active("Requiem.esp")'
@@ -1441,7 +1441,7 @@ plugins:
   - name: 'Falskaar.esm'
     group: *newLandsGroup
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     clean:
       # version: 1.2.1
       - crc: 0xDDFDBEDE
@@ -1451,7 +1451,7 @@ plugins:
     group: *newLandsGroup
     after: [ 'Falskaar.esm' ]
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     clean:
       # v1.18
       - crc: 0xDD27EAC5
@@ -3447,7 +3447,7 @@ plugins:
     group: *underridesGroup
     after: [ 'Guard Dialogue Overhaul.esp' ]
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     tag:
       - Delev
       - Graphics
@@ -3461,7 +3461,7 @@ plugins:
     group: *underridesGroup
     after: [ 'Weapons & Armor Fixes_Remade.esp' ]
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     tag:
       - Delev
       - Graphics
@@ -6482,7 +6482,7 @@ plugins:
           - lang: ja
             text: 'このEspはjackstarr氏によるロアフレンドリーバージョンです。lifestorock氏によるオリジナル版のEspもしくはEsmは使用しないでください。'
         condition: 'checksum("Skyrim Immersive Creatures.esp",2EEAD88A)'
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     tag:
       - Delev
       - Relev
@@ -10372,7 +10372,7 @@ plugins:
       - 'aMidianBorn_ContentAddon.esp'
     tag: [ Graphics ]
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     dirty:
       # version: 1.7
       - <<: *quickClean
@@ -15009,7 +15009,7 @@ plugins:
       - 'OBIS.esp'
       - 'OBISDB.esp'
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     dirty:
       - <<: *dirtyPlugin
         crc: 0x49e6e0bd
@@ -16884,7 +16884,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/24909' ]
     after: [ 'BetterQuestObjectives.esp' ]
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     tag:
       - Delev
       - Relev
@@ -18124,7 +18124,7 @@ plugins:
         itm: 2
   - name: 'Rebirth Monster.esp'
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     tag:
       - Delev
       - Relev
@@ -19937,7 +19937,7 @@ plugins:
       - '3DNPC.esp'
       - 'TradeRoutes.esp'
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     tag:
       - Delev
       - Graphics
@@ -20420,7 +20420,7 @@ plugins:
       - name: 'SeeEnchs.esp'
         condition: 'file("EnchantingAwakenedSeeEnchPatch.esp")'
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
   - name: 'EnchantingAwakenedRequiem.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -22720,7 +22720,7 @@ plugins:
   - name: '3DNPC.esp'
     url: [ 'http://3dnpc.com/' ]
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     dirty:
       - <<: *quickClean
         crc: 0xE91FCA2F
@@ -25752,7 +25752,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/40607' ]
     after: [ 'MoonAndStar_MAS.esp' ]
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
     dirty:
       - <<: *quickClean
         crc: 0x13173CB1
@@ -26485,7 +26485,7 @@ plugins:
         itm: 7
   - name: 'Hypothermia.esp'
     msg:
-      - <<: *patchUnavailable_Requiem
+      - <<: *patchUnavailableRequiem
   - name: 'Immersive Horses.esp'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
