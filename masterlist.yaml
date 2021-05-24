@@ -8533,8 +8533,7 @@ plugins:
         condition: 'checksum("hothtrooper44_ArmorCompilation.esp",1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp",983EFB9E)'
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Armors.esp")'
-      - <<: *patchUnavailable
-        subs: [ 'Requiem' ]
+      - <<: *patchUnavailableRequiem
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", >)'
     tag:
       - name: Delev
@@ -8633,8 +8632,7 @@ plugins:
     msg:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Weapons.esp")'
-      - <<: *patchUnavailable
-        subs: [ 'Requiem' ]
+      - <<: *patchUnavailableRequiem
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", >)'
     tag:
       - Delev
