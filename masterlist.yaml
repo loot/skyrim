@@ -901,12 +901,6 @@ common:
       - lang: zh_CN
         text: '您的%1%是最新的。'
 
-  - &incVersionX
-    type: error
-    content:
-      - lang: en
-        text: 'This plugin is incompatible with your version of %1%.'
-
   - &wildEdits
     type: warn
     content:
@@ -3727,10 +3721,10 @@ plugins:
   - name: 'AOS2_WAF Patch.esp'
     after: [ 'AOS2_GDO Patch.esp' ]
   - name: 'AOS2_Requiem Patch.esp'
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'Prometheus_No_snow_under_the_roof.esp'
     dirty:
       # version: 2.3 Vanilla + Dawnguard + Dragonborn
@@ -10526,38 +10520,38 @@ plugins:
         subs: [ 'Fozar''s Requiem - Dragonborn Patch' ]
   - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/78139' ]
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v4.0.0+'
         condition: 'checksum("Fozars_Dragonborn_-_Requiem_Patch.esp", 0AE44632) and version("Requiem.esp", "4.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61520' ]
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'COR-CraftingOverhaulReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61569' ]
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'RSE-RequiemSurvivalExperience.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/56275' ]
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'Requiem_Minor_Arcana.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/90983'
         name: Requiem - Minor Arcana Reborn
       - link: 'https://www.nexusmods.com/skyrim/mods/72865'
         name: Requiem - Minor Arcana
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v4.0.0+'
         condition: 'version("Requiem.esp", "4.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'Requiem - Minor Arcana - Civil War.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/105528' ]
     tag:
@@ -10711,16 +10705,16 @@ plugins:
         subs: [ 'Requiem - No Messages.esp' ]
   - name: 'Requiem - Immersive Abilities.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/96880' ]
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v4.0.0+'
         condition: 'version("Requiem.esp", "4.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'Requiem - Immersive Divine Blessings.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/90691' ]
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v4.0.0+'
         condition: 'version("Requiem.esp", "4.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'AZ Tweaks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/81785' ]
     after: [ 'Requiem_Minor_Arcana.esp' ]
@@ -16985,10 +16979,10 @@ plugins:
         condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp",B8DA5EF5)'
         subs: [ 'Book Covers Skyrim.esp' ]
   - name: 'REQ - BCS Patch.esp'
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v2.0.0+'
         condition: 'version("Requiem.esp", "2.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   ### Headbomb's Better Sorting ###
   - name: 'Headbomb''s Better Sorting.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/2730/' ]
@@ -19990,10 +19984,10 @@ plugins:
     after: [ '3DNPC.esp' ]
   - name: 'RND_Requiem-Patch.esp'
     after: [ '3DNPC.esp' ]
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'RND_RWL-Patch.esp'
     after: [ '3DNPC.esp' ]
     msg:
@@ -20206,10 +20200,10 @@ plugins:
         crc: 0xfafb18c2
         itm: 3
   - name: 'mslVampiricThirst - Requiem.esp'
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'NoWerewolfFormCooldown.esp'
     msg:
       - type: say
@@ -20391,10 +20385,10 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xe410b8ec
         itm: 3
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v2.0.0+'
         condition: 'version("Requiem.esp", "2.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'Aurora - The Doomstone Package.esp'
     after: [ 'EnchantingAwakened.esp' ]
   - name: 'Ancient Spells.esp'
@@ -26342,10 +26336,10 @@ plugins:
       - name: 'II EaTC Patch.esp'
         condition: 'active("ETaC - RESOURCES.esm")'
   - name: 'II Requiem patch.esp'
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'NPC_Overhaul_V_(1|2|3)_\.esp'
     after: [ 'Feminine Females.esp' ]
   - name: 'MoonAndStar_MAS.esp'
@@ -26518,10 +26512,10 @@ plugins:
       - crc: 0xB3094DDB
         util: 'TES5Edit v4.0.1'
   - name: 'VioLens - Requiem Patch.esp'
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v2.0.0+'
         condition: 'version("Requiem.esp", "2.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'WM Flora Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/70656' ]
     msg:
@@ -26547,10 +26541,10 @@ plugins:
       - crc: 0xEF615D86
         util: 'TES5Edit v4.0.2'
   - name: 'ISC Requiem Patch.esp'
-    msg:
-      - <<: *incVersionX
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-        subs: [ 'Requiem.esp' ]
   - name: 'Requiem - Immersive Jewelry( BTC| ISC)?\.esp'
     msg:
       - <<: *useOnlyOneX
