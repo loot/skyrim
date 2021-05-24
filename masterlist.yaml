@@ -20381,14 +20381,14 @@ plugins:
         condition: 'file("EnchantingAwakenedSeeEnchPatch.esp")'
     msg: [ *patchUnavailableRequiem ]
   - name: 'EnchantingAwakenedRequiem.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe410b8ec
-        itm: 3
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v2.0.0+'
         condition: 'version("Requiem.esp", "2.0.0", >=)'
+    dirty:
+      - <<: *dirtyPlugin
+        crc: 0xe410b8ec
+        itm: 3
   - name: 'Aurora - The Doomstone Package.esp'
     after: [ 'EnchantingAwakened.esp' ]
   - name: 'Ancient Spells.esp'
