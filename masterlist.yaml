@@ -1430,6 +1430,22 @@ plugins:
     after: [ 'DynDOLOD.esp' ]
     msg: [ *runxLODGen ]
 
+###### Gameplay - Crafting & Harvesting ######
+  - name: 'Immersive Ingestibles.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/71708/' ]
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Expanded Towns and Cities' ]
+        condition: 'active("ETaC - RESOURCES.esm") and not active("II EaTC Patch.esp")'
+    clean:
+      - crc: 0x5A61D94C
+        util: 'TES5Edit v4.0.3'
+  - name: 'II Requiem patch.esp'
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+
 ###### Anything new can go after this (If you're not sure where to put it) ######
   - name: 'Falskaar.esm'
     group: *newLandsGroup
@@ -26325,20 +26341,7 @@ plugins:
       # version: 1.0
       - crc: 0xADE4F4F0
         util: 'TES5Edit v4.0.1'
-  - name: 'Immersive Ingestibles.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/71708/' ]
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Expanded Towns and Cities' ]
-        condition: 'active("ETaC - RESOURCES.esm") and not active("II EaTC Patch.esp")'
-    clean:
-      - crc: 0x5A61D94C
-        util: 'TES5Edit v4.0.3'
-  - name: 'II Requiem patch.esp'
-    inc:
-      - name: 'Requiem.esp'
-        display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+
   - name: 'NPC_Overhaul_V_(1|2|3)_\.esp'
     after: [ 'Feminine Females.esp' ]
   - name: 'MoonAndStar_MAS.esp'
