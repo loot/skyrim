@@ -18479,25 +18479,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("vanillaarcheryimproved(dawnguard)?\.esp")'
         subs: [ 'vanillaarcheryimproved .esp file' ]
-  - name: 'VanillaMonsterLootV1_5.esp'
-    msg: [ *obsolete ]
-    tag: [ Relev ]
-  - name: 'VanillaMonsterLoot.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use Dawnguard version - ImprovedMonsterLoot.esp'
-          - lang: de
-            text: 'Verwenden Sie die Dawnguard Version - ImprovedMonsterLoot.esp'
-          - lang: ja
-            text: 'DawnguardバージョンのImprovedMonsterLoot.espを使用してください。'
-        condition: 'active("Dawnguard.esm")'
-    tag: [ Relev ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdcee3e1e
-        itm: 2
   - name: 'VariousGuardReplacer.esp'
     dirty:
       - <<: *dirtyPlugin
