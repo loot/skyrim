@@ -4158,14 +4158,29 @@ plugins:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
     tag:
-      - C.Climate
-      - C.Location
-      - C.Owner
-      - Delev
+      - -C.RecordFlags
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Spells
+      - Actors.Stats
+      - Actors.Voice
+      - EffectStats
+      - EnchantmentStats
+      - Factions
       - Invent.Add
       - Invent.Remove
-      - Names
-      - Stats
+      - Keywords
+      - NPC.Class
+      - NPC.CrimeFaction
+      - NPC.DefaultOutfit
+      - ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
+      - R.AddSpells
+      - SpellStats
+      - Text
     dirty:
       # v2.0.8
       - <<: *quickClean
