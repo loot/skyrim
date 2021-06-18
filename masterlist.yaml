@@ -5747,11 +5747,6 @@ plugins:
     req: [ *SKSE ]
   - name: 'lt_better_horses.esp'
     msg: [ *corrupt ]
-  - name: 'ltbl.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3ac741ca
-        itm: 31
   - name: 'MAD Ingots & Leather.esp'
     inc:
       - 'Ars Metallica.esp'
@@ -5839,12 +5834,6 @@ plugins:
         display: '[Dwemer Certified](http://www.nexusmods.com/skyrim/mods/10442)'
       - name: 'More Craftables.esp'
         display: '[More Craftables](http://www.nexusmods.com/skyrim/mods/799)'
-  - name: 'More Escape Passages.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5e1c828f
-        itm: 3
-        nav: 1
   - name: 'More_Hides.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13867' ]
     dirty:
@@ -5859,11 +5848,6 @@ plugins:
     req:
       - name: 'Moss Rocks.esp'
         display: '[Moss Rocks](http://www.nexusmods.com/skyrim/mods/31856)'
-  - name: 'mxdemonicarmoredhorse.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdbe462c2
-        itm: 1
   - name: 'Names - NPCs.esp'
     msg: [ *obsolete ]
   - name: 'Names - enemies - impersonal  completely.esp'
@@ -5931,24 +5915,6 @@ plugins:
         display: '[NordNeeds](http://www.nexusmods.com/skyrim/mods/21384)'
   - name: 'RecettesSansSel.esp'
     inc: [ 'NoSaltRecipes.esp' ]
-  - name: 'NPCPerked.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Run LOOT before generating the Perked Patch.esp. Otherwise, the patch created will have it''s masters out of order.'
-          - lang: de
-            text: 'Führen Sie LOOT aus, bevor Sie Perked Patch.esp generieren. Andernfalls sind die Master des erstellten Patches in einer falschen Reihenfolge.'
-          - lang: es
-            text: 'Corre LOOT antes de generar Perked Patch.esp.'
-          - lang: ja
-            text: 'Perked Patch.espを生成する前にLOOTを実行してください。そうしないとマスターファイルの順番が乱れたパッチが作られてしまいます。'
-          - lang: ru
-            text: 'Запускайте LOOT перед генерацией Perked Patch.esp. Иначе созданный патч будет иметь отличающийся порядок мастерфайлов.'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcf92e3ac
-        itm: 5
   - name: 'Oblivion Black Soul Gem Creation.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/48529' ]
     clean:
@@ -6052,11 +6018,6 @@ plugins:
         crc: 0xC70BE4C6
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 26
-  - name: 'poshmudcrabs.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7b384084
-        itm: 1
   - name: 'Power Potions.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15190' ]
     tag: [ Relev ]
@@ -6147,11 +6108,6 @@ plugins:
         itm: 2
   - name: 'real glaciers.esp'
     msg: [ *obsolete ]
-  - name: 'realistic dragons.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd5a10e4
-        itm: 13
   - name: 'Realistic Wildlife Loot V.+\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -6261,11 +6217,6 @@ plugins:
     req:
       - name: 'Crafting300.esp'
         display: '[Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)'
-  - name: 'riftenratwaypassage.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x67da9e2e
-        udr: 5
   - name: 'riverwood addons.esp'
     msg: [ *obsolete ]
   - name: 'riverwood flora.esp'
@@ -6606,22 +6557,12 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("SkyrimImprovedPuddles(.+)?\.esp")'
         subs: [ 'SkyrimImprovedPuddles .esp file' ]
-  - name: 'SlotMachine.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc651adb4
-        itm: 2
   - name: 'Smelter_Riften & Solitude.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18024' ]
     clean:
       # v2.0
       - crc: 0x18AB7589
         util: 'TES5Edit v4.0.2j'
-  - name: 'smeltorswheretheyshouldbe.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x883d4a75
-        itm: 12
   - name: 'Smithing Coinage.esp'
     after: [ 'Invent.esp' ]
   - name: 'Smithing [D|G]rainMill\.esp'
@@ -6671,12 +6612,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("StormcloakArmorVariety(OPTION\d)?\.esp")'
         subs: [ 'StormcloakArmorVariety .esp file' ]
-  - name: 'susi!!.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x61d8423
-        itm: 2
-        udr: 7
   - name: 'Sweetroll Randomization Act.esp'
     tag:
       - Delev
@@ -6693,17 +6628,13 @@ plugins:
         crc: 0x58433592
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'Tailoring.esp'
+  - name: 'tailoring.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=108569807' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9fabd6ad
-        itm: 15
-        udr: 32
-  - name: 'Tailoring No Perks.esp'
-    inc: [ 'Tailoring.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x49889e2d
+      - <<: *quickClean
+        crc: 0xF32E4319
+        util: '[TES5Edit v4.0.3g](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
         udr: 32
   - name: 'Tamriel Compendium - Skill Books.esp'
     tag: [ Relev ]
@@ -6712,6 +6643,7 @@ plugins:
   - name: 'TheBigBookofAlchemy.esp'
     tag: [ Relev ]
   - name: 'TBBOAv2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29840' ]
     dirty:
       - <<: *dirtyPlugin
         crc: 0x8a7728ac
@@ -6797,6 +6729,7 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'UniqueGear.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/16964' ]
     dirty:
       - <<: *dirtyPlugin
         crc: 0xf1dac5d6
@@ -6827,6 +6760,7 @@ plugins:
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     inc: [ 'Valdacil''s Item Sorting - Smithing Smelter Categories.esp' ]
   - name: 'WantedPosters.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29448' ]
     dirty:
       - <<: *dirtyPlugin
         crc: 0x30717872
@@ -6837,11 +6771,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xF5123590
         udr: 1
-  - name: 'weighted gold.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd25f206d
-        udr: 2
   - name: 'WerewolfAftermathEquipper.esp'
     req: [ *SKSE ]
   - name: 'WetandCold.esp'
@@ -10013,15 +9942,12 @@ plugins:
   - name: 'YPSArmorPack.esp'
     msg: [ *requiresUNP ]
   - name: 'zabswitchhat.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=11301' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x70e18e66
+      - <<: *quickClean
+        crc: 0x70E18E66
+        util: '[TES5Edit v4.0.3g](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-  - name: 'zabuku.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdaddf4b2
-        itm: 1
   - name: 'zzTmBallGown.esp'
     msg: [ *requiresUNP ]
   - name: 'Lorecraft - Bandolier.esp'
@@ -10086,30 +10012,6 @@ plugins:
     inc: [ 'BandolierForNPCsCheaperBandoliersDawnguard.esp' ]
   - name: 'BandolierForNPCsImmersiveArmorsPatch.esp'
     msg: [ *obsolete ]
-  - name: 'CraftableODPM.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("CraftableODPM.esp",4804B647)'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb19b9231
-        itm: 2
-  - name: 'ImmersiveLoot - ImmersiveArmors.esp'
-    tag:
-      - Delev
-      - Relev
-  - name: 'ImmersiveLoot - MorrowindArmor.esp'
-    tag:
-      - Delev
-      - Relev
-  - name: 'ImmersiveLoot - RegentArmoury.esp'
-    tag:
-      - Delev
-      - Relev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb79edd7f
-        itm: 1
 
   - name: 'SG_HothTrooper.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17532/' ]
@@ -10260,12 +10162,8 @@ plugins:
         crc: 0x2A697C7B
         util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'CCO_Frostfall_Patch.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7b3ce75d
-        itm: 4
   - name: 'CCO_SIC_Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/49791' ]
     after:
       - 'Skyrim Immersive Creatures.esp'
       - 'Skyrim Immersive Creatures - DLC2.esp'
@@ -10281,11 +10179,6 @@ plugins:
     tag: [ Relev ]
   - name: 'egp2.esp'
     req: [ *SKSE ]
-  - name: 'Expanded Apothecary Inventory.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x761777ff
-        udr: 1
   - name: 'HarvestOverhaulCreaturesDawnguard.esp'
     inc: [ 'HarvestOverhaulCreatures.esp' ]
   - name: 'HarvestOverhaulCreaturesDawnguardDragonborn.esp'
