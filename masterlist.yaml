@@ -7355,16 +7355,6 @@ plugins:
         crc: 0x86BEC75A
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
-  - name: 'ACB Harley.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1fd524b8
-        itm: 2
-  - name: 'ACB Hellequin.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe22810fe
-        itm: 2
   - name: 'AdvancedGlassArmorPlus.esp'
     inc: [ 'AdvancedGlassArmor.esp' ]
   - name: 'AdvancedGlassWeaponsPlus.esp'
@@ -7389,12 +7379,6 @@ plugins:
         itm: 7
   - name: 'AgedRoundShield.esp'
     tag: [ Relev ]
-  - name: 'akavirisharpkatana.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb74e58f0
-        itm: 10
-        udr: 2
   - name: 'AlchemistSatchel.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27142' ]
     dirty:
@@ -7423,12 +7407,6 @@ plugins:
         crc: 0x1A0A3341
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
-  - name: 'Alchemic Tomes.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xeda60d92
-        itm: 10
-        udr: 8
   - name: '(alldlcshared|sharedplayer)chest\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -7481,11 +7459,6 @@ plugins:
         crc: 0x3BB808E1
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-  - name: 'archdemonplushighdragon.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x84f7cb68
-        itm: 3
   - name: 'ArmaeLegionis.esp'
     msg: [ *obsolete ]
   - name: 'ArmoredAlikrHoods.esp'
@@ -7556,11 +7529,6 @@ plugins:
         subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
         condition: 'file("SG_HothTrooper.esp")'
 
-  - name: 'Battledress Armor.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x68ce399f
-        itm: 6
   - name: 'BBP_ArmorPack2.esp'
     msg: [ *requiresCHSBHC ]
   - name: 'BDYEB.esp'
@@ -7589,15 +7557,6 @@ plugins:
         condition: 'checksum("Bikini Clothes.esp", 79FCD814) or checksum("Bikini Clothes.esp", CDACB450)'
       - *requiresCBBE
 
-  - name: 'bikiniADEC.esp'
-    msg:
-      - <<: *requiresX
-        type: say
-        subs: [ '[Acdale EyeCandy Body ADEC](http://www.nexusmods.com/skyrim/mods/5390)' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc44993c7
-        itm: 1
   - name: 'bikiniCHSBHC.esp'
     msg: [ *requiresCHSBHC ]
 
@@ -7631,6 +7590,7 @@ plugins:
   - name: 'BlutKult_Zwergenaexte.esp'
     msg: [ *corrupt ]
   - name: 'Books+.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22642' ]
     dirty:
       - <<: *dirtyPlugin
         crc: 0x8095bb6
@@ -7855,21 +7815,11 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("craftable gold coins \d?.+\.esp")'
         subs: [ 'craftable gold coins .esp file' ]
-  - name: 'craftableboundweapons.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1c2fae4
-        itm: 4
   - name: 'CraftableCrownHelmets.esp'
     msg:
       - <<: *requiresX
         type: say
         subs: [ '[Crown Helmets](http://www.nexusmods.com/skyrim/mods/5803/) meshes' ]
-  - name: 'craftableskyforgeweapons.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x28232885
-        itm: 1
   - name: 'Crossbows_Basic_Collection_DE.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23876' ]
     dirty:
@@ -7963,10 +7913,12 @@ plugins:
         itm: 3
         udr: 1
   - name: 'Dawnguard Fraktionen Extended.esp'
+    url: [ 'https://www.elderscrollsportal.de/ressourcen/dawnguard-fraktionen-extended.2609/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9c5504fc
-        itm: 12
+      - <<: *quickClean
+        crc: 0x9C5504FC
+        util: '[TES5Edit v4.0.3g](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 43
         udr: 5
   - name: 'DawnguardHelmetReplacer.esp'
     msg: [ *obsolete ]
@@ -8070,11 +8022,6 @@ plugins:
         crc: 0x294218C5
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'dragonblood mod.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x83115133
-        itm: 6
 
   - name: 'Lorecraft - Dragon Bone Weapons.esp'
     req:
@@ -8106,11 +8053,6 @@ plugins:
         condition: 'checksum("DragonIron.esp",0C4425D4)'
   - name: 'DragonplateHelmFix.esp'
     msg: [ *corrupt ]
-  - name: 'DragonsBanev1.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8c997bc8
-        itm: 1
   - name: 'DragonsoulArmour.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13866' ]
     dirty:
@@ -8310,11 +8252,6 @@ plugins:
       - <<: *obsoleteSharlikran
         condition: 'version("..\TESV.exe", "1.8", >) and (checksum("EternalShineArmorAndWeapons.esp", D092DCAF) or checksum("EternalShineArmorAndWeapons.esp", 549A2BEB))'
 
-  - name: 'exparrow.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xde5fa17b
-        itm: 1
   - name: 'Explosive Arrows.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9349' ]
     dirty:
@@ -8332,11 +8269,6 @@ plugins:
         crc: 0xCF7AD7C4
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 14
-  - name: 'Faleria.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd624babc
-        itm: 2
   - name: 'Fgems Skimpy Armor Set.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/16050' ]
     tag: [ Relev ]
@@ -8727,11 +8659,6 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 17
 
-  - name: 'Ivory Armor.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe7cea340
-        itm: 1
   - name: 'Jack of All Trades.esp'
     msg:
       - <<: *corrupt
@@ -8933,11 +8860,6 @@ plugins:
       - <<: *obsoleteSharlikran
         condition: 'checksum("Lich King''s Armor.esp", 5C5EB4D7) or checksum("Lich King''s Armor.esp", 82B1A4FD)'
 
-  - name: 'light daedric armor.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x53ae8253
-        itm: 5
   - name: 'Lightning Blaze Edge.esp'
     msg:
       - <<: *corrupt
@@ -9113,11 +9035,6 @@ plugins:
           - lang: ja
             text: 'このModで追加されるXmasプレゼントボックスはSaturalia - Christmas In Skyrimのドラゴンリーチとホワイトランに置かれるXmasツリーおよびXmasプレゼントボックスと競合します。競合を解決するには、ドラゴンズリーチに置かれたSaturalia側のプレゼントボックスを事前に回収し尽くすか、それが無理なら「tcl」や「disable」などのコンソールコマンドを必要に応じて使用してください。'
         condition: 'active("ChristmasInSkyrim.esp")'
-  - name: 'meteora''s smithing mod.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xae594483
-        itm: 16
   - name: 'MinaArmors.esp'
     msg: [ *requiresUNP ]
   - name: 'Mini Sage Outfit.esp'
@@ -9464,11 +9381,6 @@ plugins:
     tag:
       - name: Deactivate
         condition: 'file("SkyRe_Plugin_RegentSword.esp")'
-  - name: 'resurrectionstonelight.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x52b68e8c
-        itm: 7
   - name: 'ringofhircine.esp'
     msg:
       - <<: *corrupt
@@ -9586,11 +9498,6 @@ plugins:
           - lang: ru
             text: 'Убедитесь, что используете корректный реплейсер тел для этого esp. [DIMONIZED UNP](http://www.nexusmods.com/skyrim/mods/6709) или [CBBE](http://www.nexusmods.com/skyrim/mods/2666).'
 
-  - name: 'sevensts.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x114a07bc
-        udr: 3
   - name: 'Shadowrend.esp'
     url:
       - 'https://www.nexusmods.com/skyrim/mods/18231'
@@ -9699,10 +9606,12 @@ plugins:
       - crc: 0x707FDF2E
         util: 'TES5Edit v4.0.2k'
   - name: 'Spear.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/22927' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb5e0566d
-        itm: 3
+      - <<: *quickClean
+        crc: 0xB5E0566D
+        util: '[TES5Edit v4.0.3g](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'Spellbreakers.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22090' ]
     dirty:
@@ -9737,12 +9646,6 @@ plugins:
     tag: [ Relev ]
   - name: 'Stark Rusted.esp'
     tag: [ Relev ]
-  - name: 'stbucorvomask.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x71c90d5e
-        itm: 4
-        udr: 1
   - name: 'StormcloakCuirassEnhanced.esp'
     tag: [ Delev ]
   - name: 'StormcloakArmorVariety.esp'
@@ -9769,18 +9672,8 @@ plugins:
         condition: 'checksum("SUNMagicArmor.esp",EAB06AA4)'
   - name: 'sunnydawnbreaker.esp'
     after: [ 'improvedrealistic.esp' ]
-  - name: 'Sword Master Armor.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7d6fd4ae
-        itm: 8
   - name: 'Tales of Tamriel - Merchants.esp'
     inc: [ 'Tales of Tamriel - Console Needed.esp' ]
-  - name: 'Tamrielic Artifacts - Goldbrand - Eltonbrand.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x496766f9
-        udr: 1
   - name: 'Targaryen Clean.esp'
     tag: [ Relev ]
   - name: 'Targaryen Rusted.esp'
@@ -9794,6 +9687,7 @@ plugins:
         subs: [ '[SkyHeels](http://www.nexusmods.com/skyrim/mods/5589) resources' ]
         condition: 'not file("SkyHeels.esp")'
   - name: 'tbmchrysamere.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20496' ]
     dirty:
       - <<: *dirtyPlugin
         crc: 0x53e9237a
@@ -9835,6 +9729,7 @@ plugins:
   - name: 'TERA Armors for Skyrim - UNPB-BBP.esp'
     msg: [ *requiresUNPB ]
   - name: 'Thalmor Armour Set.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13853' ]
     dirty:
       - <<: *dirtyPlugin
         crc: 0x7ac3742b
@@ -9861,15 +9756,10 @@ plugins:
       - crc: 0x72F97EFC
         util: 'TES5Edit v4.0.3'
 
-  - name: 'theRoadstrokersRogueSorceress.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5b9c3c9f
-        itm: 3
-
   - name: 'THVampireRoyalArmorUnenchanted_BoneHawkRingCraftable.esp'
     inc: [ 'THBoneHawkRingCraftable.esp' ]
   - name: 'tinyangrytrolls.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9004' ]
     dirty:
       - <<: *dirtyPlugin
         crc: 0x5393f1e8
@@ -9914,6 +9804,7 @@ plugins:
       - 'http://steamcommunity.com/sharedfiles/filedetails/?id=136471864'
     msg: [ *obsolete ]
   - name: 'UniqueBows.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/32405' ]
     dirty:
       - <<: *dirtyPlugin
         crc: 0xbe7ee561
@@ -9946,11 +9837,6 @@ plugins:
         subs: [ 'Blacksmiths Guild - HothTroopers Custom Armour Sets' ]
         condition: 'file("SG_HothTrooper.esp")'
 
-  - name: 'Vampguard.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfdb0b379
-        itm: 1
   - name: 'VampireHuntersCoat.esp'
     msg: [ *obsolete ]
   - name: 'VampireMasterSet.esp'
@@ -10014,11 +9900,6 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("WereWolfRing.esp",730A89B3)'
-  - name: 'winterhold_robes.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3a0e23b5
-        itm: 7
   - name: 'Witcher2-v3.0 Aedirn-Whiterun.esp'
     msg:
       - type: warn
