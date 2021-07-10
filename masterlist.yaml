@@ -3544,20 +3544,6 @@ plugins:
             text: 'Этот мод может быть несовместим с любыми модами, меняющими классы персонажей вампиров.'
   - name: 'USKP Dawnguard vampire face & eye fix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
-  - name: 'EveryVampireEyesGrow.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This mod will not be compatible with any mods that alter humanoid(imperial, breton, nord, redguard) race. Also, not compatible with mods that have Babette''s facegendata(0001D4B7.NIF).'
-          - lang: de
-            text: 'Diese Mod ist nicht mit Mods kompatibel, die die Rassen der Humanoiden (Imperial, Breton, Nord, Redguard) verändern. Auch nicht kompatibel mit Mods, die Babettes Facegendata (0001D4B7.NIF) haben.'
-          - lang: es
-            text: 'Este mod no es compatible con mods que alteren razas humanoides (imperial, breton, nord, redguard). Tampoco es compatible con mods que alteren el facegendata Babette''s (0001D4B7.NIF).'
-          - lang: ja
-            text: 'このModは人間種族（インペリアル、ブレトン、ノルド、レッドガード）を改変するModとは両立できません。また、バベットのfacegenデータ(0001D4B7.NIF)を含むModとは互換性がありません。'
-          - lang: ru
-            text: 'Этот мод может быть не совместим с любыми модами меняющих рассы гуманоидов(имперец, бретонец, норд, редгард). Также не совместим с модами, меняющими внешние данные Бабетты(Babette''s facegendata(0001D4B7.NIF)).'
   - name: 'Weapons & Armor Fixes_Remade.esp'
     group: *underridesGroup
     after: [ 'Guard Dialogue Overhaul.esp' ]
@@ -3638,20 +3624,6 @@ plugins:
     msg: [ *obsolete ]
   - name: '(N|ThievesguildN)PCOverha.+byHaroda.+\.esp'
     msg: [ *corrupt ]
-  - name: 'OrientalbeautyMod.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'The OrientalbeautyMod.esp you use depends on which female body replacer (if any) you use.'
-          - lang: de
-            text: 'Die OrientalbeautyMod.esp welche Sie verwenden, hängt davon ab, welchen weiblichen Körper Ersetzer (falls vorhanden) Sie verwenden.'
-          - lang: es
-            text: 'El OrientalbeautyMod.esp que uses depende de cual sustituto del cuerpo femenino (En su caso) uses.'
-          - lang: ja
-            text: 'OrientalbeautyMod.espは現在使用している女性用の体型変更Modに依存します。'
-          - lang: ru
-            text: 'Версия OrientalbeautyMod.esp зависит от реплейсера женского тела, который вы используете, если таковой имеется.'
   - name: 'Tonilia.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/14040' ]
     msg:
@@ -5958,20 +5930,6 @@ plugins:
           - lang: ja
             text: 'バージョンが1.2.2未満の場合は最新版に更新してください。'
         condition: 'not checksum("People Have Torches.esp",7E5D2415)'
-  - name: 'PerkReset.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Rename this file to PerkReset.esm.'
-          - lang: de
-            text: 'Benennen Sie diese Datei in PerkReset.esm um.'
-          - lang: es
-            text: 'Renombra este archivo a PerkReset.esm.'
-          - lang: ja
-            text: 'ファイル名をPerkReset.esmに変更してください。'
-          - lang: ru
-            text: 'Переименуйте этот файл в PerkReset.esm.'
   - name: 'Perks Unbound.esp'
     msg:
       - type: say
@@ -6177,38 +6135,6 @@ plugins:
         crc: 0x629B83B6
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
-  - name: 'RecyclingMod.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Recommeded RecyclingModCrafting300.esp for Crafting300 mod. See RecyclingMod download page.'
-          - lang: de
-            text: 'RecyclingModCrafting300.esp ist für die Crafting300 Mod empfohlen. Siehe RecyclingMod-Downloadseite.'
-          - lang: es
-            text: 'Se recomienda utilizar RecyclingModCrafting300.esp para Crafting300. Ver la página de RecyclingMod.'
-          - lang: ja
-            text: 'Crafting300にはRecommeded RecyclingModCrafting300.espを推奨します。RecyclingModのダウンロードページを参照してください。'
-          - lang: ru
-            text: 'Рекомендуется патч RecyclingModCrafting300.esp для мода Crafting300. Ищите его на странице загрузки RecyclingMod.'
-        condition: 'file("Crafting300.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Recommed RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.'
-          - lang: de
-            text: 'RecyclingModWo3E.esp ist für die Weapons of the Third Era Mod empfohlen. Siehe RecyclingMod-Downloadseite.'
-          - lang: es
-            text: 'Se recomienda utilizar RecyclingModWo3E.esp para Weapons of the Third Era. Ver la página de RecyclingMod.'
-          - lang: ja
-            text: 'Weapons of the Third EraにはRecommed RecyclingModWo3E.espを推奨します。RecyclingModのダウンロードページを参照してください。'
-          - lang: ru
-            text: 'Рекомендуется патч RecyclingModWo3E.esp для мода Weapons of the Third Era. Ищите его на странице загрузки RecyclingMod.'
-        condition: 'file("Weapons of the Third Era.+\.esp")'
-  - name: 'RecyclingModCrafting300.esp'
-    req:
-      - name: 'Crafting300.esp'
-        display: '[Crafting 300 - Armoury of Tamriel](http://www.nexusmods.com/skyrim/mods/2933)'
   - name: 'riverwood addons.esp'
     msg: [ *obsolete ]
   - name: 'riverwood flora.esp'
@@ -6228,19 +6154,6 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 242
         udr: 34
-  - name: 'Roasted Meat - RWL + RND.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Requires: Realistic Wildlife Loot, Realistic needs and diseases & the compatability patch to run them together'
-          - lang: de
-            text: 'Benötigt: Realistic Wildlife Loot, Realistic needs and diseases & den Kompatibilitätspatch, um sie zusammen auszuführen.'
-          - lang: ja
-            text: '要: Realistic Wildlife Loot, Realistic needs and diseases, 二つのModを同時に動作させる互換パッチ'
-          - lang: ru
-            text: 'Требуется: Realistic Wildlife Loot, Realistic needs and diseases & патч совместимости для совместного запуска'
-        condition: 'not active("Realistic Wildlife Loot - Realistic.esp") or not active("Realistic Wildlife Loot - Reduced.esp")'
   - name: 'RPChoppingAndMining.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18336' ]
     dirty:
@@ -6873,55 +6786,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("KoS_Outcast(_Lite)?\.esp")'
         subs: [ 'KoS_Outcast .esp file' ]
-  - name: 'CiviliansWillNotDie.esp'
-    msg: [ *obsolete ]
-  - name: 'CiviliansWillNotDieChild.esp'
-    inc: [ 'CiviliansWillNotDie.esp' ]
-    msg:
-      - *obsolete
-      - type: say
-        content:
-          - lang: en
-            text: 'This version leaves children immune to violent NPC attacks, but the player will be able to kill them.'
-          - lang: de
-            text: 'Diese Version macht Kinder immun gegen gewalttätige NPC-Angriffe, aber der Spieler kann sie töten.'
-          - lang: ja
-            text: 'このバージョンでは子供が敵対NPCの攻撃に対して無敵になりますが、プレイヤーに攻撃された場合は死亡します。'
-          - lang: ru
-            text: 'Данная версия мода убирает в детских расах пометку "Child".'
-  - name: 'CiviliansWillNotDiePatches.esp - CWND-UnofficialPatches.esp'
-    inc:
-      - 'CiviliansWillNotDieChild.esp'
-      - 'CiviliansWillNotDie.esp'
-    req: [ 'Unofficial Skyrim Patch.esp' ]
-    msg:
-      - <<: *obsolete
-        subs: [ '[version 0.7 or above](http://modgames.net/load/247-1-0-13970).' ]
-        condition: 'checksum("CiviliansWillNotDiePatches.esp", C0754EA7)'
-  - name: 'CWND-Basic.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Does not work with Skyrim version 1.8.151.0.7 and beyond. Use the [Unofficial patches](http://modgames.net/load/247-1-0-13970) to fix.'
-          - lang: de
-            text: 'Funktioniert nicht mit Skyrim Version 1.8.151.0.7 und höher. Verwenden Sie die [Inoffiziellen Patches](http://modgames.net/load/247-1-0-13970).'
-          - lang: ja
-            text: 'バージョン1.8.151.0.7以降のSkyrimでは動作しません。[Unofficial patches](http://modgames.net/load/247-1-0-13970)で修正できます。'
-          - lang: ru
-            text: 'Не работает с версиями Скайрим 1.8.151.0.7 и выше. Используйте вместо этого альтернативную версию - CWND-UnofficialPatches.esp'
-        condition: 'not file("CWND-UnofficialPatches.esp") and version("../TESV.exe","1.8.151.0.7",==)'
-  - name: 'CWND-UnofficialPatches.esp'
-    inc: [ 'CWND-Basic.esp' ]
-  - name: 'CWND-UnofficialPatches_LB.esp'
-    inc:
-      - 'CWND-Basic.esp'
-      - 'CWND-UnofficialPatches.esp'
-    req:
-      - 'Unofficial Skyrim Patch.esp'
-      - 'Lady Body.esm'
-  - name: 'CWND-Dragonborn.esp'
-    req: [ 'Dragonborn.esm' ]
   - name: 'Destructible_bottles.esp'
     msg:
       - <<: *corrupt
@@ -7030,20 +6894,6 @@ plugins:
         util: 'TES5Edit v4.0.2f'
   - name: 'DynamicNaming.esp'
     req: [ *SKSE ]
-  - name: 'Dynavision.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'DYNAVISION will work with most ENB configuations, however if you are using ENB, remember to turn OFF the ENB DOF feature in your graphics options.'
-          - lang: de
-            text: 'DYNAVISION funktioniert mit den meisten ENB-Konfigurationen. Wenn Sie jedoch eine ENB verwenden, müssen Sie die ENB DoF-Funktion in Ihren Grafikoptionen deaktivieren.'
-          - lang: es
-            text: 'DYNAVISION funcionara con la mayoría de los ENBs er, si estas utilizando un ENB, recuerda apagar el DOF de tu ENB.'
-          - lang: ja
-            text: 'DYNAVISIONはほとんどのENB環境下で使用できますが、ENBを導入している場合はグラフィック設定からENB側のDOF機能をオフにすることを忘れないでください。'
-          - lang: ru
-            text: 'DYNAVISION будет работать с большинством ENB конфигураций, однако, если вы используете  ENB, не забудьте выключить опцию ENB DOF , в настройках графики.'
   - name: 'DYNAVISION Dynamic Depth of Field.esp'
     msg:
       - type: say
@@ -8945,17 +8795,6 @@ plugins:
     tag: [ Relev ]
   - name: 'Melt_Down_Everything.esp'
     req: [ *SKSE ]
-  - name: 'Merry Xmas 2012.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'The Xmas present box of this mod conflicts with Xmas tree and the Xmas present boxes of Saturalia - Christmas In Skyrim in Dragonsreach in Whiterun. To resolve this, picking up all Saturalia''s Xmas present boxes in Dragonsreach before installing "Xmas Present MOD" or using Console Commands "tcl", "disable", etc is necessary.'
-          - lang: de
-            text: 'Die Xmas present box dieser Mod hat Konflikte mit dem Xmas tree und die Xmas present boxes von Saturalia - Christmas In Skyrim in Dragonsreach in Whiterun. Um dieses Problem zu beheben, müssen Sie alle Saturalia-Xmas-Present-Boxen in Dragonsreach abrufen, bevor Sie "Xmas Present MOD" installieren oder die Konsolenbefehle "tcl", "disable" usw. verwenden.'
-          - lang: ja
-            text: 'このModで追加されるXmasプレゼントボックスはSaturalia - Christmas In Skyrimのドラゴンリーチとホワイトランに置かれるXmasツリーおよびXmasプレゼントボックスと競合します。競合を解決するには、ドラゴンズリーチに置かれたSaturalia側のプレゼントボックスを事前に回収し尽くすか、それが無理なら「tcl」や「disable」などのコンソールコマンドを必要に応じて使用してください。'
-        condition: 'active("ChristmasInSkyrim.esp")'
   - name: 'MinaArmors.esp'
     msg: [ *requiresUNP ]
   - name: 'Mini Sage Outfit.esp'
@@ -16302,19 +16141,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp")'
         subs: [ 'Imperial Soldiers .esp file' ]
-  - name: 'dlc_armor_crafting.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Recommend to install Complete Crafting Overhaul plugin, because this plugin developed in addition for CCO.'
-          - lang: de
-            text: 'Es wird empfohlen das Complete Crafting Overhaul Plugin zu installieren, da dieses Plugin zusätzlich für CCO entwickelt wurde.'
-          - lang: ja
-            text: 'Complete Crafting Overhaulをインストールすることをお勧めします。このプラグインはCCO用のアドオンとして作られたものです。'
-          - lang: ru
-            text: 'Рекомендуется установить плагин Complete Crafting Overhaul, потому что этот плагин был разработан как дополнение к CCO.'
-        condition: 'not file("Complete Crafting Overhaul( - BS version)?\.esp")'
   - name: 'Morrowloot_nwah.esp'
     inc:
       - 'Morrowloot.esp'
@@ -16373,18 +16199,6 @@ plugins:
     inc: [ 'AethEbonyCircletReplacer.esp' ]
   - name: 'AlchemyPlus.esp'
     tag: [ Relev ]
-  - name: 'all roads.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'This plugin was uploaded to Steam Workshop as Realistic Map + Roads! and banned. When comparing the contents of the BSA file, the files were binary equals to A Quality World Map - With Roads. It''s reported that the plugin (ESP file) and the BSA file are binary equals. This mod should be uninstalled. You can download the original mod [Here](http://www.nexusmods.com/skyrim/mods/4929).'
-          - lang: de
-            text: 'Dieses Plugin wurde als Realistic Map + Roads! in Steam Workshop hochgeladen und verboten. Beim Vergleich des Inhalts der BSA Datei waren die Dateien binär gleich zu A Quality World Map - With Roads. Es wird berichtet, dass das Plugin (ESP Datei) und die BSA Datei binär gleich sind. Diese Mod sollte deinstalliert werden. Sie können die Original Mod [hier](http://www.nexusmods.com/skyrim/mods/4929) herunterladen.'
-          - lang: ja
-            text: 'このプラグインはSteam WorkshopにRealistic Map + Roads!としてアップロードされBANされたものです。BSAファイルの中身を比較したところ、各ファイルのバイナリはA Quality World Map - With Roadsのものと全く同じでした。プラグイン（Esmファイル）とBSAファイルも同一のバイナリだと報告されています。このModはアンインストールしておくべきです。[こちら](http://www.nexusmods.com/skyrim/mods/4929)からオリジナルのModをダウンロードしましょう。'
-          - lang: ru
-            text: 'Этот плагин был загружен на Steam Workshop как Realistic Map + Roads! и после забанен. При сравнении содержимого BSA файла, его содержимое было эквивалентно моду A Quality World Map - With Roads. Это то говорит о том, что плагин (ESP файл) и BSA файл полностью одинаковые. Рекомендуется удалить этот мод. Вы можете загрузить оригинальный мод [здесь](http://www.nexusmods.com/skyrim/mods/4929).'
   - name: 'amulrinbuff.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -16835,18 +16649,6 @@ plugins:
     msg: [ *requiresUNP ]
   - name: 'DA_Maxwell_Outfit_Dibella_UNP_EV.esp'
     msg: [ *requiresUNP ]
-  - name: 'Deadly_Slaughterfish.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'A required file, VampireHuntersCoat.esp, has been updated and renamed to InquisitorGear.esp. Updating may break this mod.'
-          - lang: de
-            text: 'Eine erforderliche Datei, VampireHuntersCoat.esp, wurde aktualisiert und in InquisitorGear.esp umbenannt. Das Aktualisieren kann diese Mod beschädigen.'
-          - lang: ja
-            text: '必要ファイルのVampireHuntersCoat.espは更新によってInquisitorGear.espという名前に変わっています。更新するとこちらのModが破損するかもしれません。'
-          - lang: ru
-            text: 'Требуемый файл - VampireHuntersCoat.esp, был обновлен и переименован в InquisitorGear.esp. Обновление может испортить этот мод.'
   - name: 'Daedric Light Armor - Rebalanced.esp'
     msg:
       - <<: *corrupt
@@ -17741,24 +17543,6 @@ plugins:
         crc: 0xa36a4e87
         itm: 32
         udr: 18
-  - name: 'SFO - Expanded Diversity.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Uninstall the old version of Skyrim Flora Overhaul if you are using SFO - Expanded Diversity.esp'
-          - lang: de
-            text: 'Deinstallieren Sie die alte Version von Skyrim Flora Overhaul, wenn Sie SFO - Expanded Diversity.esp verwenden.'
-          - lang: ja
-            text: 'SFO - Expanded Diversity.espを使用する場合は古いバージョンのSkyrim Flora Overhaulをアンインストールしてください。'
-          - lang: ru
-            text: 'Удалите старую версию Skyrim Flora Overhaul, если используется SFO - Expanded Diversity.esp.'
-        condition: 'active("SFO - Expanded Diversity.esp") and active("Skyrim Flora Overhaul.esp")'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2a0f1313
-        itm: 39
-        udr: 54
   - name: 'Skyrim Survival Suite - Nourriture.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -18819,18 +18603,6 @@ plugins:
         crc: 0x70B9D79C
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
-  - name: 'UniqueTavernsFalkwreath.esp'
-    msg:
-      - *obsolete
-      - type: error
-        content:
-          - lang: en
-            text: 'Included in UniqueTaverns.esp'
-          - lang: de
-            text: 'Enthalten in UniqueTaverns.esp.'
-          - lang: ja
-            text: 'UniqueTaverns.espに含まれています。'
-        condition: 'file("UniqueTaverns.esp")'
   - name: 'WhiterunInEnhanced.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -19781,18 +19553,6 @@ plugins:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-  - name: 'NoWerewolfFormCooldown.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Possible conflicts with other Werewolf-mods'
-          - lang: de
-            text: 'Mögliche Konflikte mit anderen Werwolf-Mods'
-          - lang: ja
-            text: '他のウェアウルフ系Modと競合する可能性があります。'
-          - lang: ru
-            text: 'Возможны конфликты с другими модами, меняющими оборотней.'
   - name: 'playerwerewolfgrowth.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -22453,23 +22213,6 @@ plugins:
         crc: 0x69a4fb16
         itm: 7
         udr: 10
-  - name: 'GoTSkyrimConversion.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This is a Conversion.  Most other mods will be incompatible.'
-          - lang: de
-            text: 'Dies ist eine Konvertierung. Die meisten anderen Mods werden nicht kompatibel sein.'
-          - lang: ja
-            text: 'このModはゲームそのものを別の内容に変えるModであり、大部分のModと競合します。'
-          - lang: ru
-            text: 'Это конверсия.  Большинство других модов могут быть несовместимы.'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x22c9e07
-        itm: 97
-        udr: 32
   - name: 'XFLDialogue.esp'
     inc:
       - 'UFO - Ultimate Follower Overhaul.esp'
@@ -23349,17 +23092,6 @@ plugins:
     inc:
       - 'My_Little_kitty.esp'
       - 'My_Little_kitty_k.esp'
-  - name: 'MyStenvar.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You are using the Chinese version of this plugin. May cause graphical glitches when his name is displayed on screen.'
-          - lang: de
-            text: 'Sie verwenden die chinesische Version dieses Plugins. Kann zu Grafikfehlern führen, wenn sein Name auf dem Bildschirm angezeigt wird.'
-          - lang: ja
-            text: '中国語版のプラグインを使用しています。名前が表示されたときに描画上の問題が起きる可能性があります。'
-        condition: 'checksum("MyStenvar.esp",A9A71270)'
   - name: 'NjadaStonearm.esp'
     msg:
       - <<: *corrupt
@@ -23691,17 +23423,6 @@ plugins:
       - *alreadyInUFO
   - name: 'Followers Unlimited 11.esp'
     msg: [ *alreadyInUFO ]
-  - name: 'MultipleFollowers.esp'
-    msg:
-      - *alreadyInUFO
-      - type: say
-        content:
-          - lang: en
-            text: 'Make sure you dismiss any followers (except dogs) before installation.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie alle Begleiter (außer Hunde) vor der Installation entlassen.'
-          - lang: ja
-            text: 'インストールする前に必ず従者（犬は除く）と別れておいてください。'
   - name: 'Follower Limit Increased.esp'
     inc: [ 'Better Follower Improvements.esp' ]
     msg: [ *alreadyInUFO ]
@@ -24000,18 +23721,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xa7ce6ec
         itm: 1
-  - name: 'MD - BMIVR( with vanilla heights)?\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Only works fully with new game.'
-          - lang: de
-            text: 'Funktioniert nur mit einem gänzlich neuem Spielstand.'
-          - lang: ja
-            text: 'ニューゲームで始めなければ完全に動作しません。'
-          - lang: ru
-            text: 'Работает полностью только при начале новой игры.'
   - name: 'Henrys All Animals BeFriend.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9224' ]
     dirty:
@@ -24853,38 +24562,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xe33f0d1f
         itm: 54
-  - name: 'HM_HotkeyMod.esp'
-    req: [ *SKSE ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'UFO detected. Use the UFO version to have the mod work as intended.'
-          - lang: de
-            text: 'UFO wurde erkannt. Verwenden Sie die UFO Version, damit die Mod wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'UFOが見つかりました。本来の動作をさせるにはUFOバージョンを使用する必要があります。'
-          - lang: ru
-            text: 'При наличии UFO используйте UFO-версию этого мода.'
-        condition: '( checksum("HM_HotkeyMod.esp",374C564C) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and file("UFO - Ultimate Follower Overhaul.esp")'
-      - type: error
-        content:
-          - lang: en
-            text: 'UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.'
-          - lang: de
-            text: 'UFO wurde nicht erkannt. Verwenden Sie die Nicht-UFO Version, damit die Mod wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'UFOが見つかりません。UFOバージョン以外を使用してください。このままではロード中にCTDが発生します。'
-          - lang: ru
-            text: 'При отсутствии UFO используйте обычную НЕ UFO-версию этого мода.'
-        condition: '( checksum("HM_HotkeyMod.esp",676790BF) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x374c564c
-        itm: 3
-      - <<: *dirtyPlugin
-        crc: 0x676790BF
-        itm: 3
   - name: 'SKSE Hotkeys.esp'
     req: [ *SKSE ]
   - name: 'Skyrim Performance MOD 5min.esp'
