@@ -24562,38 +24562,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xe33f0d1f
         itm: 54
-  - name: 'HM_HotkeyMod.esp'
-    req: [ *SKSE ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'UFO detected. Use the UFO version to have the mod work as intended.'
-          - lang: de
-            text: 'UFO wurde erkannt. Verwenden Sie die UFO Version, damit die Mod wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'UFOが見つかりました。本来の動作をさせるにはUFOバージョンを使用する必要があります。'
-          - lang: ru
-            text: 'При наличии UFO используйте UFO-версию этого мода.'
-        condition: '( checksum("HM_HotkeyMod.esp",374C564C) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and file("UFO - Ultimate Follower Overhaul.esp")'
-      - type: error
-        content:
-          - lang: en
-            text: 'UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.'
-          - lang: de
-            text: 'UFO wurde nicht erkannt. Verwenden Sie die Nicht-UFO Version, damit die Mod wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'UFOが見つかりません。UFOバージョン以外を使用してください。このままではロード中にCTDが発生します。'
-          - lang: ru
-            text: 'При отсутствии UFO используйте обычную НЕ UFO-версию этого мода.'
-        condition: '( checksum("HM_HotkeyMod.esp",676790BF) or checksum("HM_HotkeyMod.esp",CF00AFFD) ) and not file("UFO - Ultimate Follower Overhaul.esp")'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x374c564c
-        itm: 3
-      - <<: *dirtyPlugin
-        crc: 0x676790BF
-        itm: 3
   - name: 'SKSE Hotkeys.esp'
     req: [ *SKSE ]
   - name: 'Skyrim Performance MOD 5min.esp'
