@@ -638,10 +638,6 @@ common:
     <<: *requiresX
     type: say
     subs: [ '[CHSBHC - BBP - Nude and Jiggly Mod](https://www.nexusmods.com/skyrim/mods/4888)' ]
-  - &requiresLadyBody
-    <<: *requiresX
-    subs: [ '[Lady Body](https://modgames.net/load/256-1-0-11011)' ]
-    condition: 'not file("Lady Body.esp") and not file("Lady Body.esm")'
   - &requiresUNP
     <<: *requiresX
     type: say
@@ -5582,46 +5578,6 @@ plugins:
         crc: 0xB48249E6
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
-  - name: 'Lady Body.esp'
-    msg:
-      - type: warn
-        condition: 'version("../TESV.exe","1.7.7",<) and not active("Dawnguard.esm")'
-        content:
-          - lang: en
-            text: 'For Lady Body 1.5 and higher Skyrim 1.7.7 and DLC Dawnguard are required.'
-          - lang: de
-            text: 'Für Lady Body 1.5 und neuer werden Skyrim 1.7.7 und DLC Dawnguard benötigt.'
-          - lang: es
-            text: 'Si utilizas Lady Body 1.7 o posterior Skyrim 1.7.7 y Dawnguard DLC son requeridos.'
-          - lang: ja
-            text: 'Lady Body 1.5、1.7.7以降のSkyrim、Dawnguard DLCが必要です。'
-          - lang: ru
-            text: 'Для Lady Body 1.5 и выше требуются Skyrim 1.7.7 и DLC Dawnguard.'
-      - type: warn
-        condition: 'version("../TESV.exe","1.8.151.0.7",<) and not active("Dawnguard.esm") and not active("Dragonborn.esm")'
-        content:
-          - lang: en
-            text: 'For version Lady Body 2.1 and higher Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn are required.'
-          - lang: de
-            text: 'Für Lady Body 2.1 und neuer werden Skyrim 1.8.151.0.7, DLC Dawnguard und DLC Dragonborn benötigt.'
-          - lang: es
-            text: 'Si utilizas Lady Body 2.1 o posterior Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn son requeridos.'
-          - lang: ja
-            text: 'Lady Body 2.1、1.8.151.0.7以降のSkyrim、Dawnguard DLCおよびDragonborn DLCが必要です。'
-          - lang: ru
-            text: 'Для версии 2.1 и выше требуется Skyrim 1.8.151.0.7, DLC Dawnguard и DLC Dragonborn.'
-      - type: say
-        content:
-          - lang: en
-            text: 'This mod makes Khajiit and Argonian races unplayable. Don''t install this mod if you want to play for Argonian or Khajiit.'
-          - lang: de
-            text: 'Diese Mod macht Khajiit und Argonier-Rassen unspielbar. Installieren Sie diese Mod nicht, wenn Sie als Argonier oder Khajiit spielen möchten.'
-          - lang: es
-            text: 'Este mod hace que las razas Khajiit and Argonian races no sean accesibles al jugador. No lo utilizaes si planeas ser un Argonian o Khajit.'
-          - lang: ja
-            text: 'このModはカジートとアルゴニアン種族をプレイ不能にします。アルゴニアンかカジートで遊ぼうとしている場合はインストールしないでください。'
-          - lang: ru
-            text: 'С данным модом женский вариант аргониан и хаджитов становятся недоступны игрокам в виде игровых рас! Не ставьте этот мод, если играете/хотите играть зверорасами.'
   - name: 'Legionettes.esp'
     tag: [ Relev ]
   - name: 'LegendarySouls.esp'
@@ -7238,8 +7194,6 @@ plugins:
     msg: [ *obsolete ]
   - name: 'ArmoredAlikrHoods.esp'
     msg: [ *obsolete ]
-  - name: 'ArmoredNocturnal.esp'
-    msg: [ *requiresLadyBody ]
   - name: 'armorkits.esp'
     tag: [ Relev ]
   - name: 'Armures traditionnelles de Bordeciel I.esp'
@@ -8517,69 +8471,6 @@ plugins:
         subs: [ 'DIMONIZED UNP clothing resources' ]
   - name: 'Lady of Death.esp'
     msg: [ *requiresCBBE ]
-  - name: 'LBArmorPack.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Blood Mage.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'Blood Mage.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Jarl Clothes.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Blood of the Divines.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Dark Lady.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Dragon Princess.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Dwemer Fury Heavy Set.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB_EnemiesEssplode!.esp'
-    tag: [ Relev ]
-  - name: 'LB GoldLeopardRobe.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Lady Bat.esp'
-    url: [ 'https://www.pagan-tes-mods.com/portal/index.php/skyrim/waffen-und-ruestungen/540-lb-lady-bat' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcb996b7d
-        udr: 1
-  - name: 'LB Lady .+\.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Lustmord Vampire.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Lydia Armor.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Mandu Armor.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Medusa Armor.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB_MuchAdoSnowElves.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/16455' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x530E2E4A
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 1
-  - name: 'LB Necromance Robe.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Pantie & Boots.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Jewelry.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB RobeExperiencedMagician.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Santa Babe.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Underworld.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB Valkyrie.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LB VampLord.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LBClosetMagician.esp'
-    msg: [ *requiresLadyBody ]
-  - name: 'LBGoldArmoredBikini.esp'
-    msg: [ *requiresLadyBody ]
   - name: 'LC_ArcherEliteArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22870' ]
     msg:
@@ -8591,8 +8482,6 @@ plugins:
         crc: 0x9A81FB2E
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 12
-  - name: 'LC_AssassinOfShadownArmor.esp'
-    msg: [ *requiresLadyBody ]
   - name: 'LeatherBackpackBlack.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -8621,13 +8510,6 @@ plugins:
     msg:
       - <<: *obsoleteSharlikran
         condition: 'checksum("LFArmors.esp", 737EA798) or checksum("LFArmors.esp", 97E4297F)'
-
-  - name: 'LH Jewel Collection.esp'
-    msg:
-      - *requiresLadyBody
-      - <<: *requiresX
-        type: say
-        subs: [ '[Lady Head](http://modgames.net/load/256-1-0-15866)' ]
 
   - name: 'Lich King''s Armor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/6348/' ]
@@ -17170,8 +17052,6 @@ plugins:
         itm: 11
   - name: 'knc_resilient_dragons(_Vanillashout)?\.esp'
     inc: [ 'DeadlyDragons.esp' ]
-  - name: 'LB Yarl Clothes.esp'
-    msg: [ *requiresLadyBody ]
   - name: 'LegionArmorVariety(OPTIONA?L?\d)?\.esp'
     msg:
       - <<: *useOnlyOneX
