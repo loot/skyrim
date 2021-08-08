@@ -1526,9 +1526,43 @@ plugins:
     group: *unofficialPatchGroup
     after: [ 'Lanterns Of Skyrim - All In One - Main.esm' ]
     tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.DeathItem
+      - Actors.Perks.Add
+      - Actors.Perks.Remove
+      - Actors.RecordFlags
+      - Actors.Spells
+      - Actors.Stats
+      - Actors.Voice
       - C.Acoustic
       - C.LockList
+      - C.RecordFlags
+      - C.Regions
+      - EffectStats
+      - EnchantmentStats
+      - Factions
+      - Invent.Add
+      - Invent.Change
+      - Invent.Remove
       - Keywords
+      - NPC.AttackRace
+      - NPC.Class
+      - NPC.CrimeFaction
+      - NPC.DefaultOutfit
+      - NPC.Race
+      - ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
+      - R.ChangeSpells
+      - R.Body-Size-F
+      - R.Body-Size-M
+      - R.Description
+      - Relations.Add
+      - Relations.Change
+      - SpellStats
       - Text
     clean:
       - crc: 0xC4AB8984
@@ -3798,7 +3832,9 @@ plugins:
     msg:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp")'
-    tag: [ Sound ]
+    tag:
+      - Graphics
+      - Sound
     clean:
       # v2.5.1
       - crc: 0x5B5430F7
@@ -4241,14 +4277,29 @@ plugins:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Cutting Room Floor.esp")'
     tag:
-      - C.Climate
-      - C.Location
-      - C.Owner
-      - Delev
+      - -C.RecordFlags
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Spells
+      - Actors.Stats
+      - Actors.Voice
+      - EffectStats
+      - EnchantmentStats
+      - Factions
       - Invent.Add
       - Invent.Remove
-      - Names
-      - Stats
+      - Keywords
+      - NPC.Class
+      - NPC.CrimeFaction
+      - NPC.DefaultOutfit
+      - ObjectBounds
+      - Outfits.Add
+      - Outfits.Remove
+      - R.ChangeSpells
+      - SpellStats
+      - Text
     dirty:
       # v2.0.8
       - <<: *quickClean
@@ -4331,6 +4382,9 @@ plugins:
   - name: 'SIRW.esp'
     tag:
       - Delev
+      - Invent.Add
+      - Invent.Remove
+      - Text
       - Relev
   - name: 'TradeBarter.esp'
     req:
@@ -9975,6 +10029,10 @@ plugins:
       - NPC.Race
       - Outfits.Add
       - Outfits.Remove
+      - R.ChangeSpells
+      - R.Description
+      - R.Skills
+      - R.Stats
       - Relations.Add
       - Relations.Change
       - Relations.Remove
@@ -10021,66 +10079,6 @@ plugins:
       - name: 'Requiem.esp'
         display: 'Requiem v4.0.0+'
         condition: 'version("Requiem.esp", "4.0.0", >=)'
-  - name: 'Requiem - Minor Arcana - Civil War.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/105528' ]
-    tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.CombatStyle
-      - Actors.Spells
-      - Actors.Stats
-      - Invent.Add
-      - Invent.Remove
-      - Names
-      - NPC.Class
-      - Outfits.Add
-      - Outfits.Remove
-  - name: 'Requiem - Minor Arcana - Forsworn.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/105528' ]
-    tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.CombatStyle
-      - Actors.Spells
-      - Actors.Stats
-      - Factions
-      - Invent.Add
-      - Invent.Remove
-      - NPC.Class
-      - Outfits.Add
-      - Outfits.Remove
-      - Stats
-  - name: 'Requiem - Minor Arcana - Roleplaying.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/105528' ]
-    tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.CombatStyle
-      - Actors.Spells
-      - Actors.Stats
-      - EffectStats
-      - Factions
-      - Invent.Add
-      - Invent.Remove
-      - Keywords
-      - NPC.Class
-      - Outfits.Add
-      - Outfits.Remove
-      - Stats
-      - Text
-  - name: 'Requiem - Minor Arcana - Vigilants of Stendarr.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/105528' ]
-    tag:
-      - Actors.ACBS
-      - Actors.AIData
-      - Actors.CombatStyle
-      - Actors.Spells
-      - Actors.Stats
-      - Invent.Add
-      - Invent.Remove
-      - NPC.Class
-      - Outfits.Add
-      - Outfits.Remove
   - name: 'Requiem - Cutting Room Floor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621' ]
     after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
@@ -12226,6 +12224,29 @@ plugins:
       # v6.1
       - crc: 0xE2194448
         util: 'TES5Edit v4.0.2h'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Perks.Add
+      - Actors.Perks.Remove
+      - Actors.Spells
+      - Actors.Stats
+      - C.Climate
+      - C.Encounter
+      - C.Light
+      - C.Music
+      - C.Owner
+      - C.Water
+      - EnchantmentStats
+      - Factions
+      - Invent.Add
+      - Invent.Remove
+      - Keywords
+      - NPC.AttackRace
+      - NPC.Class
+      - NPC.DefaultOutfit
   - name: 'CWIELnFXPatch.esp'
     clean:
       # version: 5.2
@@ -16275,6 +16296,7 @@ plugins:
     tag:
       - Graphics
       - Names
+      - ObjectBounds
     clean:
       # version: 3.6
       - crc: 0x8AFD20DB
@@ -17595,6 +17617,27 @@ plugins:
         subs: [ 'SkyTEST-RealisticAnimals&Predators plugin' ]
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - SkyTEST.esp")'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.CombatStyle
+      - Actors.Spells
+      - Actors.Stats
+      - Delev
+      - Factions
+      - Keywords
+      - Names
+      - NPC.Class
+      - NPC.Race
+      - R.ChangeSpells
+      - R.Body-Size-F
+      - R.Body-Size-M
+      - R.Stats
+      - Relations.Add
+      - Relations.Change
+      - Relations.Remove
+      - Relev
   - name: 'Convenient Horses.esp'
     # doNotClean
   - name: 'Skyrim Horses Renewal.esp'
@@ -25474,6 +25517,14 @@ plugins:
       # version: 3.4
       - crc: 0x6859FBEB
         util: 'TES5Edit v4.0.1'
+    tag:
+      - Factions
+      - Graphics
+      - Invent.Add
+      - Invent.Change
+      - Keywords
+      - Names
+      - Stats
   - name: 'ExplosiveBoltsVisualized.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21922' ]
     msg:
@@ -25538,6 +25589,22 @@ plugins:
       # version: 2.5
       - crc: 0x04F12565
         util: 'TES5Edit v4.0.1'
+    tag:
+      - Actors.ACBS
+      - Actors.AIData
+      - Actors.AIPackages
+      - Actors.RecordFlags
+      - Actors.Spells
+      - Actors.Stats
+      - Factions
+      - Graphics
+      - Invent.Add
+      - Keywords
+      - Names
+      - NPC.DefaultOutfit
+      - R.Stats
+      - Stats
+      - Text
   - name: 'Immersive Patrols II.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12977' ]
     msg:
@@ -25555,6 +25622,7 @@ plugins:
       # version: 2.02
       - crc: 0x82A29913
         util: 'TES5Edit v4.0.1'
+    tag: [ Sound ]
   - name: 'Inconsequential NPCs.esp'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
@@ -25630,6 +25698,12 @@ plugins:
       # version: 1.43
       - crc: 0xEF615D86
         util: 'TES5Edit v4.0.2'
+    tag:
+      - Actors.AIData
+      - Actors.AIPackages
+      - Factions
+      - Relations.Add
+      - Relations.Change
   - name: 'ISC Requiem Patch.esp'
     inc:
       - name: 'Requiem.esp'
@@ -27327,3 +27401,9 @@ plugins:
   - name: 'StrosMKaiRum.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/106267' ]
     tag: [ Graphics ]
+
+  - name: 'AI Overhaul.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/108004' ]
+    tag:
+      - Actors.AIData
+      - Actors.AIPackages
