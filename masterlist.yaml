@@ -25630,7 +25630,7 @@ plugins:
   - name: 'Unique Uniques.esp'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Unique Uniques.esp") and not active("Requiem - Unique Uniques - AOS.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "4.0.2", <) and not active("Requiem - Unique Uniques.esp") and not active("Requiem - Unique Uniques - AOS.esp")'
     clean:
       # version: 1.8
       - crc: 0x51024687
