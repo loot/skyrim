@@ -23833,21 +23833,8 @@ plugins:
       - <<: *obsolete
         subs: [ 'You can obtain the authors new version [here](http://www.nexusmods.com/skyrim/mods/6566).' ]
         condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",4928C96B) or checksum("Duns_Inc_Shaders_Begone_xWeapons.esp",493A9DEA)'
-  - name: 'RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: Original FXAA Post Process Injector and Realistic Lighting Without Post-Processing'
-          - lang: de
-            text: 'Inkompatibel mit: Original FXAA Post Process Injector und Realistic Lighting Without Post-Processing'
-          - lang: es
-            text: 'Incompatible con: FXAA Post Process Injector original y Realistic Lighting Without Post-Processing'
-          - lang: ja
-            text: '競合: Original FXAA Post Process InjectorおよびRealistic Lighting Without Post-Processing'
-          - lang: ru
-            text: 'Несовместим с: Оригинальный FXAA Post Process Injector и Realistic Lighting Without Post-Processing'
   - name: 'rcrnShaders.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1875' ]
     msg:
       - type: say
         content:
@@ -23860,15 +23847,66 @@ plugins:
           - lang: ru
             text: 'Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x209fd1b5
-        itm: 16
+      # Skyrim\RCRN\Optionals\fpresets\classic
+      - <<: *quickClean
+        crc: 0x06679BAF
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+        udr: 3
+      # Skyrim\RCRN\Optionals\fpresets\classic\fast
+      - <<: *quickClean
+        crc: 0x35E6ED89
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+        udr: 3
+      # Skyrim\RCRN\Optionals\fpresets\classic\slow
+      - <<: *quickClean
+        crc: 0x60E3B96F
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+        udr: 3
+      # Skyrim\RCRN\Optionals\fpresets\legacy
+      - <<: *quickClean
+        crc: 0xB012D842
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
+        udr: 3
+      # Skyrim\RCRN\Optionals\fpresets\legacy\fast
+      - <<: *quickClean
+        crc: 0xD6A9DCF7
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
+        udr: 3
+      # Skyrim\RCRN\Optionals\fpresets\legacy\slow
+      - <<: *quickClean
+        crc: 0xDA725D74
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
+        udr: 3
+      # Skyrim\RCRN\Optionals\fpresets\pure
+      - <<: *quickClean
+        crc: 0xC1737A79
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+        udr: 3
+      # Skyrim\RCRN\Optionals\fpresets\pure\fast
+      - <<: *quickClean
+        crc: 0x3D16E922
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+        udr: 3
+      # Skyrim\RCRN\Optionals\fpresets\pure\slow
+      - <<: *quickClean
+        crc: 0xF3813F94
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
         udr: 3
   - name: 'rcrnPlus.esp'
-  - name: 'RCRNvolumetric.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/180' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x54176f89
+      - <<: *quickClean
+        crc: 0x19390471
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   ## load all Spectacular Night Eye (SNE) plugins after rcrn
   - name: 'SNE2014(Bliss|Energy|Garland|Precipice|Psycho|SideLine|Temeraire)(NEO|PredatorN|PredatorT|VampThirst|Vanilla)\.esp'
