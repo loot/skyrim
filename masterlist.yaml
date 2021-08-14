@@ -556,7 +556,7 @@ common:
         text: '**Mod Configuration Menu** (Меню Налаштування Модів) потрібне для повного функціонування мода. **MCM** може бути додано разом з %1%.'
       - lang: zh_CN
         text: '这个Mod需要一个**Mod配置菜单**来实现完整功能。**MCM**可以通过安装%1%来添加。'
-  - &requiresMCM
+  - &requiresMCM_SkyUI
     <<: *requiresMCM_X
     subs: [ '[SkyUI](https://www.nexusmods.com/skyrim/mods/3863/)' ]
     condition: 'not active("SkyUI.esp")'
@@ -2493,7 +2493,7 @@ plugins:
     req: [ *SKSE ]
   - name: 'Perk-Reset-MCM.esm'
     req: [ *SKSE ]
-    msg: [ *requiresMCM ]
+    msg: [ *requiresMCM_SkyUI ]
   - name: 'pinewoodvillage.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12851' ]
     msg: [ *obsolete ]
@@ -2670,7 +2670,7 @@ plugins:
       - *SKSE
       - *FNIS
     msg:
-      - *requiresMCM
+      - *requiresMCM_SkyUI
       - type: error
         content:
           - lang: en
@@ -6537,7 +6537,7 @@ plugins:
   - name: 'SwiftPotion.esp'
     req: [ *SKSE ]
     inc: [ 'Chesko_SwiftPotion.esp' ]
-    msg: [ *requiresMCM ]
+    msg: [ *requiresMCM_SkyUI ]
   - name: 'Syynx Stubborn Skeletons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15768' ]
     dirty:
@@ -10518,7 +10518,7 @@ plugins:
         subs: [ 'ERSO 03.4 .esp file' ]
   - name: 'DeadlyMonsters.esp'
     req: [ *SKSE ]
-    msg: [ *requiresMCM ]
+    msg: [ *requiresMCM_SkyUI ]
   - name: 'ERSO 03.5 - New Dragon( Super)? Loots\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17079,9 +17079,9 @@ plugins:
         condition: 'many("LegionArmorVariety(OPTIONA?L?\d)?\.esp")'
         subs: [ 'LegionArmorVariety .esp file' ]
   - name: 'kuerteeGoldAjustment MCM.esp'
-    msg: [ *requiresMCM ]
+    msg: [ *requiresMCM_SkyUI ]
   - name: 'kuerteeTekuromotosLessPredictableRespawn MCM.esp'
-    msg: [ *requiresMCM ]
+    msg: [ *requiresMCM_SkyUI ]
   - name: 'Less Talkative NPCs Release.+\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -23611,7 +23611,7 @@ plugins:
   - name: 'CharacterMakingExtender.esp'
     req: [ *SKSE ]
   - name: 'DeadlyMutilation.esp'
-    msg: [ *requiresMCM ]
+    msg: [ *requiresMCM_SkyUI ]
   - name: 'driveableboat.esp'
     dirty:
       - <<: *dirtyPlugin
