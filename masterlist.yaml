@@ -17752,12 +17752,17 @@ plugins:
         condition: 'many("The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp")'
         subs: [ 'The Skyrim conflict .esp file' ]
   - name: 'TheChoiceIsYours.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26359' ]
     after: [ 'BetterQuestObjectives.esp' ]
     tag: [ Names ]
     clean:
       # version: 2.0
       - crc: 0x3A570202
         util: 'TES5Edit v4.0.1'
+    tag:
+      - Actors.AIPackages
+      - Names
+      - Text
   - name: 'the_god_auriel.esp'
     dirty:
       - <<: *dirtyPlugin
