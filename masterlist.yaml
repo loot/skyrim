@@ -9669,7 +9669,13 @@ plugins:
         util: '[TES5Edit v4.0.3g](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'zzTmBallGown.esp'
-    msg: [ *requiresUNP ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25873' ]
+    msg:
+      - <<: *requiresUNP
+        condition: 'checksum("zzTmBallGown.esp", 0x35B75C66)'
+    clean:
+      - crc: 0x35B75C66
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'Lorecraft - Bandolier.esp'
     msg:
       - type: warn
