@@ -6971,19 +6971,11 @@ plugins:
       - crc: 0x8A8A009F
         util: 'TES5Edit v4.0.1'
   - name: 'SkyRealism - Simple Save System.+\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21695' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Only use one SkyRealism - Simple Save System*.esp.'
-          - lang: de
-            text: 'Verwenden Sie nur eine SkyRealism - Simple Save System*.esp.'
-          - lang: es
-            text: 'Utilizar solo un SkyRealism - Simple Save System*.esp.'
-          - lang: ja
-            text: 'SkyRealism - Simple Save System*.espは単体でのみ使用できます。'
-          - lang: ru
-            text: 'Используйте только один SkyRealism - Simple Save System*.esp.'
+      - <<: *useOnlyOneX
+        condition: 'many("SkyRealism - Simple Save System - (OOC - )?(1|2|5|10) min.esp")'
+        subs: [ 'SkyRealism - Simple Save System .esp file' ]
   - name: 'Player Size Adjuster.esp'
     req: [ *SKSE ]
   - name: 'SkyTweak.esp'
