@@ -2388,8 +2388,16 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'MTAutoStorage.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/34241' ]
+    url:
+      - 'https://www.nexusmods.com/skyrim/mods/20561'
+      - 'https://www.nexusmods.com/skyrim/mods/34241'
     dirty:
+      # 20561
+      - <<: *quickClean
+        crc: 0x7C0F98CA
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+      # 34241
       - <<: *quickClean
         crc: 0xEDA019E7
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
@@ -13215,18 +13223,32 @@ plugins:
   - name: 'heartwoodcottageNM1_v1.esp'
     msg: [ *obsolete ]
   - name: 'heartwoodcottage1_v2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20561' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb5808d60
-        itm: 20
+      - <<: *reqManualFix
+        crc: 0xB5808D60
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 61
         udr: 9
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0xFC164775
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'heartwoodcottageNM1_v2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20561' ]
     inc: [ 'heartwoodcottage1_v2.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4bfde1c5
-        itm: 43
+      - <<: *reqManualFix
+        crc: 0x4BFDE1C5
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 92
         udr: 9
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0x52187D65
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'Hebrock_Der Schatten von Meresis.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25872' ]
     msg:
