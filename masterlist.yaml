@@ -23409,13 +23409,20 @@ plugins:
     inc: [ 'Better Follower Improvements.esp' ]
     msg: [ *alreadyInUFO ]
   - name: 'EMCompViljaSkyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26393' ]
     msg:
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Vilja.esp")'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc45d4383
-        itm: 2
+    clean:
+      # v4.2
+      - crc: 0xC4AC06C1
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+  - name: 'EMViljaInSolstheimAddOn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/26393' ]
+    clean:
+      # v2
+      - crc: 0xFA24307A
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'Selene.esp'
     msg: [ *corrupt ]
   - name: 'Tauriel original de Standalone_v1_0.esp'
