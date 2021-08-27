@@ -1670,6 +1670,14 @@ plugins:
       - Names
       - Relev
       - Stats
+  - name: 'Realistic Wildlife Loot - Realistic.esp'
+    clean:
+      - crc: 0x76380192
+        util: 'TES5Edit v4.0.3'
+  - name: 'Realistic Wildlife Loot - Reduced.esp'
+    clean:
+      - crc: 0x297092B7
+        util: 'TES5Edit v4.0.3'
   - name: 'Realistic Wildlife Loot - (Realistic|Reduced) - Dawnguard patch\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -1689,6 +1697,12 @@ plugins:
     tag: [ Delev ]
   - name: 'Realistic Wildlife Loot - Realistic - (Hearthfires|Dragonborn) patch\.esp'
     after: [ 'Realistic Wildlife Loot - Realistic - Dawnguard patch.esp' ]
+  - name: 'Realistic Wildlife Loot - Realistic - Dawnguard patch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x8DBA0590
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'Realistic Wildlife Loot - Realistic - Hearthfires patch.esp'
     tag: [ Relev ]
   - name: 'Realistic Wildlife Loot - Realistic - Dragonborn patch.esp'
@@ -1701,6 +1715,12 @@ plugins:
     after: [ 'Realistic Wildlife Loot - Reduced - Hearthfires patch.esp' ]
   - name: 'RWL Option - 3x Giant toes.esp'
     tag: [ Relev ]
+  - name: 'RWL_Bleedout_Perks.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x3D560322
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'RWL_Megaloceros_(LVL|REPLACER)\.esp'
     msg:
       - <<: *useOnlyOneX
