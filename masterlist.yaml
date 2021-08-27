@@ -1665,11 +1665,17 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Realistic Wildlife Loot ESP' ]
         condition: 'many("Realistic Wildlife Loot - (Realistic|Reduced)\.esp")'
+    tag:
+      - Delev
+      - Names
+      - Relev
+      - Stats
   - name: 'Realistic Wildlife Loot - (Realistic|Reduced) - Dawnguard patch\.esp'
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Realistic Wildlife Loot Dawnguard patch' ]
         condition: 'many("Realistic Wildlife Loot - (Realistic|Reduced) - Dawnguard patch\.esp")'
+    tag: [ Delev ]
   - name: 'Realistic Wildlife Loot - (Realistic|Reduced) - Hearthfires patch\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -1680,19 +1686,30 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Realistic Wildlife Loot Dragonborn patch' ]
         condition: 'many("Realistic Wildlife Loot - (Realistic|Reduced) - Dragonborn patch\.esp")'
+    tag: [ Delev ]
   - name: 'Realistic Wildlife Loot - Realistic - (Hearthfires|Dragonborn) patch\.esp'
     after: [ 'Realistic Wildlife Loot - Realistic - Dawnguard patch.esp' ]
+  - name: 'Realistic Wildlife Loot - Realistic - Hearthfires patch.esp'
+    tag: [ Relev ]
   - name: 'Realistic Wildlife Loot - Realistic - Dragonborn patch.esp'
     after: [ 'Realistic Wildlife Loot - Realistic - Hearthfires patch.esp' ]
   - name: 'Realistic Wildlife Loot - Reduced - (Hearthfires|Dragonborn) patch\.esp'
     after: [ 'Realistic Wildlife Loot - Reduced - Dawnguard patch.esp' ]
+  - name: 'Realistic Wildlife Loot - Reduced - Hearthfires patch.esp'
+    tag: [ Delev ]
   - name: 'Realistic Wildlife Loot - Reduced - Dragonborn patch.esp'
     after: [ 'Realistic Wildlife Loot - Reduced - Hearthfires patch.esp' ]
+  - name: 'RWL Option - 3x Giant toes.esp'
+    tag: [ Relev ]
   - name: 'RWL_Megaloceros_(LVL|REPLACER)\.esp'
     msg:
       - <<: *useOnlyOneX
         subs: [ 'Realistic Wildlife Loot Megaloceros add-on' ]
         condition: 'many("RWL_Megaloceros_(LVL|REPLACER)\.esp")'
+  - name: 'RWL_Megaloceros_REPLACER.esp'
+    tag:
+      - Actors.ACBS
+      - Names
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
   - name: 'Falskaar.esm'
