@@ -26411,6 +26411,10 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'SmartTraining.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/70970' ]
+    msg:
+      - type: error
+        content: 'The Requiem Patch provided on this plugin''s mod page is incompatible with Requiem v2.0.0+.'
+        condition: 'version("Requiem.esp", "2.0.0", >=) and checksum("Scripts/REQ_MCM_DataStorage.pex", 6862E3DC)'
     clean:
       - crc: 0x2270F07E
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
