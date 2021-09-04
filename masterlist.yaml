@@ -24831,14 +24831,16 @@ plugins:
         udr: 6
         nav: 1
   - name: 'Skyrim Unbound.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/71465' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/71465'
+        name: 'Skyrim Unbound'
+      - link: 'https://www.nexusmods.com/skyrim/mods/98850'
+        name: 'Skyrim Unbound Reborn'
     group: *alternateStartGroup
-    dirty:
-      # v5.19
-      - <<: *quickClean
-        crc: 0x02D18626
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 10
+    clean:
+      # Skyrim Unbound Reborn
+      - crc: 0x46F9E2D7
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'Silent khajiit night-eye.esp'
     after: [ 'nighteyetoggle.esp' ]
   - name: 'Acquisitive Soul Gems.esp'
@@ -27763,11 +27765,11 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/98103' ]
     dirty:
       - <<: *quickClean
-        crc: 0xEF505E06
+        crc: 0x4953F3B1
         util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 19
     clean:
-      - crc: 0xA3B3CD2E
+      - crc: 0x41EA18BD
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'Skyrim Exterior Fixes - Light Sources.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/98103' ]
@@ -27813,7 +27815,22 @@ plugins:
   - name: 'SeranaDialogAddon.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/104587' ]
     clean:
-      - crc: 0x0A25C6C8
+      - crc: 0x775CF1C0
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+  - name: 'SDA RDO Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/104587' ]
+    clean:
+      - crc: 0xFFA4B3C0
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+  - name: 'SDA SDE Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/104587' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x4FE3537F
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+    clean:
+      - crc: 0x2D1BDECF
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
 
   - name: 'iomaungandr rising.esp'
@@ -28128,6 +28145,21 @@ plugins:
       - crc: 0x0E336406
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
     tag: [ C.Location ]
+  - name: 'BofOldPNPatcth.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/69317' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xC7AD7084
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+    clean:
+      - crc: 0xC8278C3F
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+  - name: 'GCofSPNPatch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/69317' ]
+    clean:
+      - crc: 0x87A10C16
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
 
   - name: 'Interesting Roads.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/105625' ]
@@ -28167,6 +28199,55 @@ plugins:
       # USLEEP
       - crc: 0x60866B1C
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
+
   - name: 'Natural Lighting Vivid Atmospherics.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/75346' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/75346'
+        name: 'Natural Lighting Vivid Atmospherics'
+      - link: 'https://www.nexusmods.com/skyrim/mods/98610'
+        name: 'Patrician ENB'
     tag: [ Sound ]
+    clean:
+      # Patrician ENB
+      - crc: 0x2906E1D7
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+
+  - name: 'All Geared Up Derivative.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/99250' ]
+    clean:
+      - crc: 0xBB3F2C10
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+
+  - name: 'Nilheim_MiscQuestExpansion.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/108584' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xD99A4B9F
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+    clean:
+      - crc: 0x8A33DA85
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+
+  - name: 'AdditionalMusicProject.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/28951' ]
+    clean:
+      - crc: 0x4E0F1E67
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+  - name: 'AdditionalMusicProjectReplacer.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/28951' ]
+    clean:
+      - crc: 0x028F4FC6
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+
+  - name: 'DSer360MovementBehavior.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/101507' ]
+    clean:
+      - crc: 0xCD59DEB9
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+
+  - name: 'Nemesis PCEA.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/100942' ]
+    clean:
+      - crc: 0xB9041403
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
