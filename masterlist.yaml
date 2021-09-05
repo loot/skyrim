@@ -13030,13 +13030,32 @@ plugins:
         itm: 27
         udr: 102
         nav: 9
-  - name: 'fortheljarchen.esp'
+  - name: 'FortHeljarchen.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30488' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x66467091
-        itm: 193
+      # v1
+      - <<: *reqManualFix
+        crc: 0x298BE9AE
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 162
+        udr: 414
+        nav: 1506
+      # v1 - after QAC
+      - <<: *reqManualFix
+        crc: 0x67076DE0
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1506
+      # v1.1
+      - <<: *reqManualFix
+        crc: 0xA8428125
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 216
         udr: 419
+        nav: 1506
+      # v1.1 - after QAC
+      - <<: *reqManualFix
+        crc: 0x937D6382
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1506
   - name: 'fortwinstad.esp'
     dirty:
