@@ -13082,11 +13082,19 @@ plugins:
         itm: 9
         udr: 2
   - name: 'garrettsretreat_v02a.esp'
+    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=78211614' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9fb00c2c
-        itm: 80
+      # v2a
+      - <<: *reqManualFix
+        crc: 0x9FB00C2C
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 489
         udr: 134
+        nav: 1
+      # v2a - after QAC
+      - <<: *reqManualFix
+        crc: 0xF00B74B2
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Geir Manor.esp'
     dirty:
