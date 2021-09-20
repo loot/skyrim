@@ -19466,19 +19466,6 @@ plugins:
         itm: 4
   - name: 'Epic Potent Flame Thrall.esp'
     msg: [ *corrupt ]
-  - name: 'Evilbass Light and Dark Spells.esp'
-    msg:
-      - <<: *useVersionNonDawnguard
-        condition: 'not active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",4E1181E9)'
-      - <<: *useVersionDawnguard
-        condition: 'active("Dawnguard.esm") and checksum("Evilbass Light and Dark Spells.esp",248F5114)'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x248f5114
-        itm: 2
-      - <<: *dirtyPlugin
-        crc: 0x4e1181e9
-        itm: 20
   - name: 'FalmerSnowElf.esp'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
