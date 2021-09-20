@@ -19728,23 +19728,6 @@ plugins:
             text: '[公開ページ](http://www.nexusmods.com/skyrim/mods/8343)のアンインストール手順に目を通しておいてください。'
           - lang: ru
             text: 'Смотрите инструкции по удалению на [странице мода](http://www.nexusmods.com/skyrim/mods/8343).'
-  - name: 'MorePowerfulShouts.esp'
-    msg:
-      - <<: *useVersionDawnguard
-        condition: 'checksum("MorePowerfulShouts.esp",F1EDB543) and active("Dawnguard.esm")'
-      - <<: *useVersionNonDawnguard
-        condition: 'checksum("MorePowerfulShouts.esp",E845AEC7) and not active("Dawnguard.esm")'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe845aec7
-        itm: 4
-      - <<: *dirtyPlugin
-        crc: 0xf1edb543
-        itm: 3
-  - name: 'More Powerful Shouts (Traducción español).esp'
-    inc: [ 'MorePowerfulShouts.esp' ]
-  - name: 'MorePowerfulShoutsVanillaCooldown.esp'
-    inc: [ 'MorePowerfulShouts_DragonTimes.esp' ]
   - name: 'reducedshouttimes.esp'
     dirty:
       - <<: *dirtyPlugin
