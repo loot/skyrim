@@ -3808,19 +3808,12 @@ plugins:
   - name: 'FrostfallWalkingStickFix.esp'
     msg: [ *obsolete ]
   - name: 'enb_reference.esp'
-    inc:
-      - 'ClimatesOfTamriel.esm'
-      - 'Realistic Lighting.esp'
+    inc: [ 'ClimatesOfTamriel.esm' ]
   - name: 'enbweather.esp'
-    inc:
-      - 'ClimatesOfTamriel.esm'
-      - 'Realistic Lighting.esp'
+    inc: [ 'ClimatesOfTamriel.esm' ]
   - name: 'ENB Weather - Exterior Fog Plugin.esp'
-    inc:
-      - 'ClimatesOfTamriel.esm'
-      - 'Realistic Lighting.esp'
+    inc: [ 'ClimatesOfTamriel.esm' ]
   - name: 'enhanceddynamicweathersystem(normal|snowy|rainy|sunny)?\.esp'
-    inc: [ 'Realistic Lighting.esp' ]
     msg:
       - <<: *useOnlyOneX
         condition: 'many("enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp")'
@@ -3898,8 +3891,6 @@ plugins:
     msg:
       - <<: *useVersionNonDawnguard
         condition: 'checksum("PNENB.esp",B8865296) and not file("Dawnguard.esm")'
-  - name: 'RevampedExteriorFog.esp'
-    inc: [ 'Realistic Lighting.esp' ]
   - name: 'Supreme Fog.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24460' ]
     clean:
@@ -4209,20 +4200,6 @@ plugins:
       - 'realrain.esp'
   - name: 'RemoveAmbientInteriorFog.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9571' ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.'
-          - lang: de
-            text: 'Das Entfernen des Innenraum-Nebels wirkt sich auf die realistische Beleuchtung aus. Laden Sie dieses Plugin vor RL, wenn Fehler auftreten.'
-          - lang: es
-            text: 'Remover la niebla de interiores puede afectar Realistic Lighting. Cargar antes de RL si tienes problemas.'
-          - lang: ja
-            text: '屋内のフォグを削除するとRealistic Lightingに影響します。 エラーが発生する場合はRealistic Lightingより前にロードしてください。'
-          - lang: ru
-            text: 'Удаление тумана внутри помещений повлияет на Realistic Lighting. Загружайте перед RL если вы замечаете баги.'
-        condition: 'file("Realistic Lighting.esp")'
     dirty:
       # v1.3
       - <<: *quickClean
@@ -18520,15 +18497,6 @@ plugins:
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
-  - name: 'Realistic Lighting.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5f40f0f8
-        itm: 247
-  - name: '[Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp'
-    req:
-      - name: 'Realistic Lighting.esp'
-        display: 'Realistic Lighting with Customization'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
     msg: [ *obsolete ]
