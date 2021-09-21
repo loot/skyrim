@@ -1413,11 +1413,8 @@ groups:
   - name: &immersiveCitizensGroup Immersive Citizens
     after: [ *prePatchusMaximusGroup ]
 
-  - name: &stepGroup Step Patches & Skyrim Child Overhaul
-    after: [ *immersiveCitizensGroup ]
-
   - name: &morrowlootGroup Morrowloot
-    after: [ *stepGroup ]
+    after: [ *immersiveCitizensGroup ]
 
   - name: &requiemGroup Requiem
     after: [ *morrowlootGroup ]
@@ -23210,22 +23207,6 @@ plugins:
     req: [ *SKSE ]
   - name: 'Skyrim Performance MOD 5min.esp'
     inc: [ 'Skyrim Performance MOD.esp' ]
-  - name: 'STEP Core Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11' ]
-    tag:
-      - Stats
-      - Names
-  - name: 'STEP Extended Patch.esp'
-    group: *stepGroup
-    tag:
-      - Stats
-      - Names
-      - Delev
-      - Relev
-  - name: 'STEP Combined Plugin.esp'
-    group: *stepGroup
-  - name: 'STEP Combined PluginHF.esp'
-    group: *stepGroup
   - name: 'World_Map_Height_Pitch_Tweak(_(130|170|200|250|Vanilla_pitch))?(_50|_90)?\.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/26998' ]
     group: *alternateStartGroup
