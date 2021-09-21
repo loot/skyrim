@@ -3808,19 +3808,12 @@ plugins:
   - name: 'FrostfallWalkingStickFix.esp'
     msg: [ *obsolete ]
   - name: 'enb_reference.esp'
-    inc:
-      - 'ClimatesOfTamriel.esm'
-      - 'Realistic Lighting.esp'
+    inc: [ 'ClimatesOfTamriel.esm' ]
   - name: 'enbweather.esp'
-    inc:
-      - 'ClimatesOfTamriel.esm'
-      - 'Realistic Lighting.esp'
+    inc: [ 'ClimatesOfTamriel.esm' ]
   - name: 'ENB Weather - Exterior Fog Plugin.esp'
-    inc:
-      - 'ClimatesOfTamriel.esm'
-      - 'Realistic Lighting.esp'
+    inc: [ 'ClimatesOfTamriel.esm' ]
   - name: 'enhanceddynamicweathersystem(normal|snowy|rainy|sunny)?\.esp'
-    inc: [ 'Realistic Lighting.esp' ]
     msg:
       - <<: *useOnlyOneX
         condition: 'many("enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp")'
@@ -3898,8 +3891,6 @@ plugins:
     msg:
       - <<: *useVersionNonDawnguard
         condition: 'checksum("PNENB.esp",B8865296) and not file("Dawnguard.esm")'
-  - name: 'RevampedExteriorFog.esp'
-    inc: [ 'Realistic Lighting.esp' ]
   - name: 'Supreme Fog.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24460' ]
     clean:
@@ -4209,20 +4200,6 @@ plugins:
       - 'realrain.esp'
   - name: 'RemoveAmbientInteriorFog.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9571' ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.'
-          - lang: de
-            text: 'Das Entfernen des Innenraum-Nebels wirkt sich auf die realistische Beleuchtung aus. Laden Sie dieses Plugin vor RL, wenn Fehler auftreten.'
-          - lang: es
-            text: 'Remover la niebla de interiores puede afectar Realistic Lighting. Cargar antes de RL si tienes problemas.'
-          - lang: ja
-            text: '屋内のフォグを削除するとRealistic Lightingに影響します。 エラーが発生する場合はRealistic Lightingより前にロードしてください。'
-          - lang: ru
-            text: 'Удаление тумана внутри помещений повлияет на Realistic Lighting. Загружайте перед RL если вы замечаете баги.'
-        condition: 'file("Realistic Lighting.esp")'
     dirty:
       # v1.3
       - <<: *quickClean
@@ -15004,12 +14981,6 @@ plugins:
         crc: 0x674a01b0
         itm: 24
         udr: 18
-  - name: 'TalosCamp.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x48d354d4
-        itm: 10
-        udr: 97
   - name: 'Tame Beast.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -15023,11 +14994,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xdd944705
         itm: 22
-  - name: 'TEG_TelvanniHall.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x802bcc84
-        itm: 71
   - name: 'TG Headquarters Overhaul v.1.5.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -15040,16 +15006,6 @@ plugins:
         itm: 6
         udr: 224
         nav: 1
-  - name: 'Thanes Basement.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7c9a098b
-        itm: 4
-  - name: 'Thanes Basement DoorMoved.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x70bb45f1
-        itm: 4
   - name: 'A Thane-Worthy Breezehome.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -15097,25 +15053,11 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xbf7d1324
         udr: 75
-  - name: 'TheClone Honeyside û Housecarl B gone.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7086a8f6
-        itm: 2
-        udr: 75
   - name: 'The Descent.esp'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xe30989af
         itm: 90
-        udr: 24
-        nav: 5
-  - name: 'The Descent_rus.esp'
-    inc: [ 'The Descent.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6a9d98b6
-        itm: 57
         udr: 24
         nav: 5
   - name: 'thedomain.esp'
@@ -15151,12 +15093,6 @@ plugins:
         crc: 0xe2214b30
         itm: 32
         udr: 13
-  - name: 'TheOldGuard.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbc385137
-        itm: 13
-        udr: 14
   - name: 'The Pit.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -15290,12 +15226,6 @@ plugins:
     msg:
       - <<: *useVersionDawnguard
         condition: 'checksum("towHarvest.esp",A3654F92) and active("Dawnguard.esm")'
-  - name: 'TQContest_Agamashi.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe053a0c5
-        itm: 8
-        udr: 4
   - name: 'TruePeopleOfSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15019' ]
     dirty:
@@ -15538,16 +15468,6 @@ plugins:
     clean:
       - crc: 0xEA2B8542
         util: 'TES5Edit v4.0.3'
-  - name: 'VodahminMahhe.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x167a4215
-        itm: 9
-  - name: 'voidcraft_breezehome.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf8ec984c
-        udr: 190
   - name: 'walkingstickquest.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -15596,13 +15516,6 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 14
         udr: 99
-  - name: 'wellcave.esp'
-    msg: [ *obsolete ]
-  - name: 'WellCaveCustom.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd3eb5880
-        itm: 5
   - name: 'AtrociousRiftenTextureFix.esp'
     after: [ 'Unique Grasses_clippingfixer.esp' ]
   - name: 'Western Watchtower Rebuilt.esp'
@@ -15666,12 +15579,6 @@ plugins:
         condition: 'checksum("Whiterun Trees.esp",D2995274)'
   - name: '(BETA) Immersive Cities - Whiterun.esp'
     msg: [ *obsolete ]
-  - name: 'whiterunexenhanced.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7d840cac
-        itm: 9
-        udr: 6
   - name: 'Whiterun Ferns.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -15679,24 +15586,6 @@ plugins:
         itm: 1
   - name: 'whiterunMarket.esp'
     after: [ 'forested_skyrim.esp' ]
-  - name: 'WhiterunFortified.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x35897eae
-        itm: 16
-  - name: 'WhiterunREVISION.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x20f258de
-        itm: 123
-        udr: 12
-  - name: 'RRBetterWhiterunInt.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x50931c9b
-        itm: 35
-        udr: 1
-        nav: 1
   - name: 'Whitewatch Tower.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -15722,26 +15611,12 @@ plugins:
         crc: 0xf1d65bd
         itm: 32
         udr: 1
-  - name: 'Winterhold_Improvements.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1c127ee5
-        itm: 17
-      - <<: *dirtyPlugin
-        crc: 0x4cb27b45
-        itm: 18
   - name: 'Winterhold Fully Restored.esp'
     dirty:
       - <<: *dirtyPlugin
         crc: 0x5725e884
         itm: 17
         udr: 356
-  - name: 'winterhold house.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa23a7ff4
-        itm: 36
-        udr: 9
   - name: 'Winterhold repair.esp'
     msg: [ *obsolete ]
   - name: 'Winterhold repairV4.esp'
@@ -15751,12 +15626,6 @@ plugins:
         itm: 171
         udr: 26
         nav: 1
-  - name: 'wip.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6865ccef
-        itm: 8
-        udr: 4
   - name: 'Woodland sanctuary.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -15769,24 +15638,12 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x9ec79790
         itm: 13
-  - name: 'WoTS - Non-Overhaul Version.esp'
-    inc: [ 'WoTS - Overhaul Version.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdf5c6bef
-        itm: 8
   - name: 'WyvernCliff.esp'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xe7d2ec3e
         itm: 32
         udr: 3
-  - name: 'Zelda Whiterun.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7a4c187e
-        itm: 7
-        udr: 1
   - name: 'zzzbasement.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20023' ]
     dirty:
@@ -15828,23 +15685,6 @@ plugins:
     req: [ *SKSE ]
   - name: 'SkyrimCoinReplacer.*\.esp'
     tag: [ Delev ]
-  - name: 'SkyrimWeightImprovement.esp'
-    msg:
-      - <<: *useVersionDawnguard
-        condition: 'active("Dawnguard.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) )'
-      - <<: *useVersion
-        subs: [ 'Dawnguard & HearthFires' ]
-        condition: 'active("HearthFires.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x770f0bb8
-        itm: 5
-      - <<: *dirtyPlugin
-        crc: 0x84521d2d
-        itm: 3
-      - <<: *dirtyPlugin
-        crc: 0xb12ca7e5
-        itm: 5
   - name: 'WeightedArrows(Heavy|Light|Medium)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -16976,19 +16816,6 @@ plugins:
       - Delev
       - NoMerge
       - Relev
-  - name: 'NoSpiders - BearSpiders.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x75d16717
-        udr: 2
-  - name: 'NoSpiders - SkyMoMod.esp'
-    req:
-      - name: 'SkyMoMod.esm'
-        display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1baeed6c
-        udr: 2
 
   - name: 'Organized Books v(0.1|1.0)?\.esp'
     msg: [ *obsolete ]
@@ -17102,21 +16929,11 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("RealNightEye(Red|Green|Colorless|Blue|Yellow)?\.esp")'
         subs: [ 'RealNightEye .esp file' ]
-  - name: 'RebalancedWeapons.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x941ffb02
-        itm: 2
   - name: 'Rebirth Monster.esp'
     msg: [ *patchUnavailableRequiem ]
     tag:
       - Delev
       - Relev
-  - name: 'RestoSpells.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x15b11d47
-        itm: 11
   - name: 'RichMerchants\w*\.esp'
     msg:
       - type: warn
@@ -17429,16 +17246,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("-?Stickier_Arrows-? (V2|Fix)\.esp")'
         subs: [ 'Stickier Arrows .esp file' ]
-  - name: 'StrongerArrows&BoltsDAWNGUARD.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2fffbe67
-        itm: 3
-  - name: 'thalmor_disguise.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2c877368
-        itm: 2
   - name: 'The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17455,11 +17262,6 @@ plugins:
       # version: 2.0
       - crc: 0x3A570202
         util: 'TES5Edit v4.0.1'
-  - name: 'the_god_auriel.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x44c9d999
-        itm: 4
   - name: 'The Secret of Steel - Dragonborn.esp'
     tag: [ Relev ]
   - name: 'The Secret of Steel - Tweaks.esp'
@@ -18150,12 +17952,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x17c2c0de
         udr: 15
-  - name: 'WinterholdRuinsAddon_V1.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1af5e998
-        itm: 41
-        nav: 4
   - name: 'Better Forests and Environments.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -18237,16 +18033,6 @@ plugins:
         itm: 314
         udr: 150
         nav: 8
-  - name: 'Oblivion Gates.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xeebbff41
-        itm: 82
-        udr: 1
-      - <<: *dirtyPlugin
-        crc: 0xED42650C
-        itm: 82
-        udr: 1
   - name: 'SummerSkyrim.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -18325,14 +18111,6 @@ plugins:
         itm: 44
   - name: 'RealisticRoomRental-Basic.esp'
     inc: [ 'RealisticRoomRental.esp' ]
-  - name: 'RRRE-Lite.esp'
-    inc:
-      - 'RealisticRoomRental.esp'
-      - 'RealisticRoomRental-Basic.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x653acd5d
-        itm: 2
   - name: 'AOS_WetandCold Patch.esp'
     after:
       - 'WetandCold.esp'
@@ -18465,11 +18243,6 @@ plugins:
             text: 'このMod用のCrash Fix ESPは使用しないでください。マスターファイルとしてのフラグが立ちます。クラッシュを修正するための最後の手段としてください。'
           - lang: ru
             text: 'Не используйте Crash Fix ESP для этого мода. Он помечен как мастерфайл и предназначен только как последнее средство для исправления вылетов.'
-  - name: 'SoundPropagationOverhaul.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3363ba8f
-        itm: 1
   - name: 'Realistic Lighting( - Full| - Addon)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -18543,15 +18316,6 @@ plugins:
     after:
       - 'rcrnShaders.esp'
       - 'rcrnPlus.esp'
-  - name: 'Realistic Lighting.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5f40f0f8
-        itm: 247
-  - name: '[Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp'
-    req:
-      - name: 'Realistic Lighting.esp'
-        display: 'Realistic Lighting with Customization'
   - name: 'Realistic Lighting Overhaul - Dungeons.esp'
     url: [ 'http://www.nexusmods.com/skyrim/mods/30450' ]
     msg: [ *obsolete ]
@@ -18650,16 +18414,6 @@ plugins:
       # v0.9.5f
       - crc: 0x6E3D2DFA
         util: 'TES5Edit v4.0.2f'
-  - name: 'SV - The Indoors.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x51b712e6
-        itm: 1
-  - name: 'SV - The Outdoors.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8a040f19
-        itm: 7
   - name: 'SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp'
     inc: [ 'WAO-WeatherAndAmbienceOverhaul.esp' ]
     msg:
@@ -18913,11 +18667,6 @@ plugins:
         condition: 'active("Dawnguard.esm") and not checksum("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) and not checksum("SkyRealism - Capacity and Carry Weight.esp", 31764A66)'
   - name: 'SkyRealism - Portable Crafting Kits.esp'
     req: [ *SKSE ]
-  - name: 'TTYM - Frostfall Module.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7f71ead5
-        itm: 2
   - name: 'SkyrimHeartRate.esp'
     msg:
       # doNotClean
@@ -19076,11 +18825,6 @@ plugins:
         condition: 'active("Automatic Variants.esp")'
   - name: 'ToL_SKSE_by_Brevi.esp'
     req: [ *SKSE ]
-  - name: 'TS_BloodOmNomNom.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x817ad7a9
-        udr: 12
   - name: 'BloodmoonRising.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -19471,11 +19215,6 @@ plugins:
         udr: 1
   - name: 'MYSpellHard.esp'
     inc: [ 'MYSpell.esp' ]
-  - name: 'MystraTransmuteOreNoCooldown.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xea66f549
-        itm: 2
   - name: 'Nature of the beast.esp'
     msg:
       - <<: *obsolete
@@ -19506,11 +19245,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Phenderix''s Magic Evolved -( Cleaned)?( - No Perks)?\.esp")'
         subs: [ 'Phenderix''s Magic Evolved .esp file' ]
-  - name: 'Phenderix''s Ultimate Magic System.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x87aca9ae
-        itm: 5
   - name: 'Pilfer.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18623' ]
     dirty:
@@ -19526,12 +19260,6 @@ plugins:
         itm: 2
   - name: 'PowerMasterTheTimeAndSpace.esp'
     msg: [ *obsolete ]
-  - name: 'PrimalSpells.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x683fd4e5
-        itm: 1
-        udr: 1
   - name: 'PsijicIachesisSummon.esp'
     msg: [ *alreadyInLegendarySouls ]
   - name: 'QueenPotemaSummon.esp'
@@ -19582,14 +19310,6 @@ plugins:
   - name: 'Summon_Gargoyle.esp'
     inc: [ 'Conjure_Gargoyle.esp' ]
     msg: [ *obsolete ]
-  - name: 'SummonableCreatures.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("SummonableCreatures.esp",442DF73F) or checksum("SummonableCreatures.esp",86FBDC8B)'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5e074043
-        itm: 5
   - name: 'SummonFollowers.esp'
     req: [ *SKSE ]
   - name: 'Support Magic.esp'
@@ -19657,12 +19377,6 @@ plugins:
         crc: 0xCA47F847
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
-  - name: 'TotalConjuration.esp'
-    tag: [ Relev ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfb678137
-        itm: 35
   - name: 'transmute_gem_spell.esp'
     dirty:
       - <<: *dirtyPlugin
@@ -19686,14 +19400,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xcd6e13f0
         itm: 6
-  - name: 'wkyddUnlockingSpell.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("wkyddUnlockingSpell.esp",AAA13CE3) or checksum("wkyddUnlockingSpell.esp",73D0DE92)'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf4d4c951
-        itm: 3
   - name: 'shouts_for_thuu''mic_2.esp'
     msg: [ *obsolete ]
   - name: 'chfshPlayerVoicesets.esp'
@@ -19721,11 +19427,6 @@ plugins:
             text: '[公開ページ](http://www.nexusmods.com/skyrim/mods/8343)のアンインストール手順に目を通しておいてください。'
           - lang: ru
             text: 'Смотрите инструкции по удалению на [странице мода](http://www.nexusmods.com/skyrim/mods/8343).'
-  - name: 'reducedshouttimes.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x486a4036
-        itm: 5
   - name: 'Shout-tastic.esp'
     msg:
       - <<: *obsolete
@@ -19902,11 +19603,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'poison diseaseSpells.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7e5c597d
-        itm: 14
   - name: 'PT(Alchemy)?(Food)?Overhaul(_ONLY)?(_BetterSorting)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -19956,11 +19652,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Realistic crime report radius( zero)?\.esp")'
         subs: [ 'Realistic crime report radius .esp file' ]
-  - name: 'Stealth AI for Followers_Standard.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9b5a3dee
-        itm: 3
   - name: 'Duel - Combat Realism.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/2700' ]
     clean:
@@ -20350,11 +20041,6 @@ plugins:
         display: '[Skyrim -Community- Uncapper](http://www.nexusmods.com/skyrim/mods/1175)'
   - name: 'SmithingMasteryPerks.esp'
     inc: [ 'PerkUP-Smithing.esp' ]
-  - name: 'Target Training System - TTS.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x59f6e5c8
-        itm: 10
   - name: 'Throwing Knives Skill.esp'
     req:
       - name: 'MergedThieverySkill.esp'
@@ -20673,11 +20359,6 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[PerkUP](http://www.nexusmods.com/skyrim/mods/9359) or [unofficial version](http://www.nexusmods.com/skyrim/mods/33829).' ]
-  - name: 'rapid fire.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb7b2ebd4
-        itm: 8
   - name: 'Shars Signs - The Lover (5%|10%|30%|50%)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -21027,12 +20708,6 @@ plugins:
         itm: 5
   - name: 'KidsColouredEyesNoHF.esp'
     inc: [ 'KidsColouredEyesV2.esp' ]
-  - name: 'Naruto - Overhaul.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x614c4fda
-        itm: 8
-        udr: 1108
   - name: 'serana1normaleyes.esp'
     inc: [ 'serana1.esp' ]
   - name: 'serana1demoneyes.esp'
@@ -21136,11 +20811,6 @@ plugins:
     inc: [ 'MilkyGirlMage.esp' ]
   - name: 'MilkyGirlRaceWarriorExtendedcolors.esp'
     inc: [ 'MilkyGirlRaceWarrior.esp' ]
-  - name: 'Nazgultest.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfebdfeed
-        itm: 26
   - name: 'Neovalen Race Compatibility.esp'
     req:
       - name: 'DSpSoB.esp'
@@ -21171,14 +20841,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xcb3e2362
         itm: 2
-  - name: 'OrientalRace.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf8db1304
-        itm: 2
-      - <<: *dirtyPlugin
-        crc: 0xD9E80FF5
-        itm: 2
   - name: 'RZW_ChubbyRaces.esp'
     msg: [ *requiresCHSBHC ]
   - name: 'SC_Drow Race.esp'
@@ -21193,46 +20855,11 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x98d9ed8b
         itm: 20
-  - name: 'StarWarsRaces.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x83d67dcd
-        itm: 12
-        udr: 21
-  - name: 'TheDemoness.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb2c8bfc7
-        itm: 30
-  - name: 'TheGuardians.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9493376c
-        itm: 20
-  - name: 'TheStygian.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd57ba9ad
-        itm: 21
-      - <<: *dirtyPlugin
-        crc: 0xD503BE40
-        itm: 21
-  - name: 'VampireRace.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9a3dceb3
-        itm: 2
   - name: 'WUS - Witcher Race.esp'
     dirty:
       - <<: *dirtyPlugin
         crc: 0xfe98631
         itm: 12
-  - name: 'Yamato Transform and Summon.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd7668232
-        itm: 12
-        udr: 2
   - name: 'Children of Skyrim - NORD PRESETS.esp'
     msg: [ *obsolete ]
   - name: 'Kawaii Face Presets.esp'
@@ -21367,32 +20994,8 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x3c10445f
         itm: 2
-  - name: 'Only Kharjo.esp'
-    inc:
-      - 'Better Kharjo.esp'
-      - 'Ja´dirr + Kharjo Makeover.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb0cdab38
-        itm: 9
-  - name: 'PAHAPDialoguePatcher.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8fc75a5b
-        itm: 2
   - name: 'paradise_halls.esp'
     msg: [ *obsolete ]
-  - name: 'paradise_halls_fellglow_slave_camp.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa2742491
-        itm: 6
-        udr: 2
-  - name: 'PAHExtender.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x71628fb6
-        itm: 4
   - name: 'PetBearOslo.esp'
     msg:
       - <<: *obsolete
@@ -22143,11 +21746,6 @@ plugins:
     inc:
       - 'MeekoHuskyEssential.esp'
       - 'MeekoHuskyArmored.esp'
-  - name: 'TheMeekoMod.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xba87765e
-        itm: 2
   - name: 'Meesei.esp'
     msg:
       - <<: *corrupt
@@ -22197,11 +21795,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xfd8a3158
         itm: 1
-  - name: 'SFR_Onmund.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf8df7340
-        itm: 3
   - name: 'Onmund.esp'
     msg:
       - <<: *obsolete
@@ -22226,11 +21819,6 @@ plugins:
         condition: 'checksum("Ral-Kur1.1.1.esp",3EB078AF)'
   - name: 'Rowena Frostmoor.esp'
     msg: [ *corrupt ]
-  - name: 'SaraliFollower.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa280fcc8
-        itm: 6
   - name: 'JNPC_SeranaB.esp'
     inc: [ 'JNPC_Serana.esp' ]
   - name: 'JNPC_Serana_alt.esp'
@@ -22259,11 +21847,6 @@ plugins:
     msg: [ *obsolete ]
   - name: 'A Sexy Lydia Replacer CBBE B_02.esp'
     msg: [ *corrupt ]
-  - name: 'Sigrid.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x72f4f16e
-        itm: 4
   - name: 'Skjor.esp'
     msg:
       - <<: *corrupt
@@ -22316,18 +21899,8 @@ plugins:
         crc: 0x3e675448
         itm: 2
         udr: 2
-  - name: 'SRIsaka.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7c53e81f
-        itm: 1
   - name: 'Stenvar.esp'
     msg: [ *obsolete ]
-  - name: 'Suky_Companion.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x756d53b2
-        itm: 1
   - name: 'Sura the Lioness of Persia.esp'
     msg: [ *corrupt ]
   - name: 'Sven.esp'
@@ -22709,21 +22282,6 @@ plugins:
     inc: [ 'Alternate Start - Live Another Life.esp' ]
   - name: 'RAS - Riverwood CharGen.esp'
     inc: [ 'Alternate Start - Live Another Life.esp' ]
-  - name: 'Silver Hand Start.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x33a16d73
-        itm: 6
-  - name: 'Thalmor Start.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9b29f1c6
-        itm: 4
-  - name: 'Witch Start.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x77f5d848
-        itm: 4
   - name: 'Height Adjusted Skyrim(.+)?\.esp'
     msg: [ *obsolete ]
   - name: 'Height Adjusted Races.*\.esp'
@@ -22863,12 +22421,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xe4a1c5f7
         itm: 7
-  - name: 'Racial Perks Instead of Skills.esp'
-    inc: [ 'Race Abilities and Skills Redone.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf8a60dd
-        itm: 2
   - name: 'RaRe.esp'
     msg:
       - <<: *obsolete
@@ -23614,11 +23166,6 @@ plugins:
             text: 'Quality World Map with roadsのような他のマップModを使用している場合は、マップを表示（屋内のみ）するためにuLockedTerrainLODを32に変更してください。'
           - lang: ru
             text: 'Если вы используете другие моды. изменяющие карты, такие как Quality World Map with roads, измените параметр uLockedTerrainLOD на 32 для их отображения (только внутри помещений)'
-  - name: 'SoundPropagationOverhaul DSAMG Patch.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x32da1d52
-        itm: 1
   - name: 'SSS Deadly Dragons Patch (A|B|C)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -24050,12 +23597,6 @@ plugins:
         crc: 0x43EBAE28
         itm: 3
         udr: 20
-  - name: 'Skyrim_Ice_Shader_Fix.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xE44C9B0C
-        itm: 1
-        udr: 1
   - name: 'Unique Grasses.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/42370' ]
     dirty:
