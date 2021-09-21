@@ -15798,23 +15798,6 @@ plugins:
     req: [ *SKSE ]
   - name: 'SkyrimCoinReplacer.*\.esp'
     tag: [ Delev ]
-  - name: 'SkyrimWeightImprovement.esp'
-    msg:
-      - <<: *useVersionDawnguard
-        condition: 'active("Dawnguard.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) )'
-      - <<: *useVersion
-        subs: [ 'Dawnguard & HearthFires' ]
-        condition: 'active("HearthFires.esm") and ( checksum("SkyrimWeightImprovement.esp",B12CA7E5) or checksum("SkyrimWeightImprovement.esp",6166E301) ) and active("Dawnguard.esm")'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x770f0bb8
-        itm: 5
-      - <<: *dirtyPlugin
-        crc: 0x84521d2d
-        itm: 3
-      - <<: *dirtyPlugin
-        crc: 0xb12ca7e5
-        itm: 5
   - name: 'WeightedArrows(Heavy|Light|Medium)?\.esp'
     msg:
       - <<: *useOnlyOneX
