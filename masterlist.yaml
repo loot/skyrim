@@ -1360,6 +1360,28 @@ bash_tags:
   - 'Text'
 
 globals:
+# Latest LOOT Thread
+  - &lootThread
+    <<: *latestLOOTThread
+    subs: [ 'https://loot.github.io/latest-thread/' ]
+
+# SKSE
+  # Missing
+  - &skseMissing
+    <<: *scriptExtenderMissing
+    subs:
+      - 'SKSE'
+      - '[SKSE](https://skse.silverlock.org)'
+    condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse_loader.exe")'
+
+  # Required Scripts
+  - &skseRequiredScripts
+    <<: *scriptExtenderRequiredScripts
+    subs:
+      - 'Skyrim Script Extender'
+      - '[SKSE](https://skse.silverlock.org)'
+    condition: 'not file("scripts/skse.pex") and file("../skse_loader.exe")'
+
 # Animation Frameworks
   # Fores New Idles
   - <<: *runAnimFramework
