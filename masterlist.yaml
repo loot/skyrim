@@ -41,62 +41,6 @@ prelude:
           text: 'Видаліть. Уже додано у %1%.'
         - lang: zh_CN
           text: '删除。已包含在%1%中。'
-    - &alreadyInAmidianBornContentAddon
-      <<: *alreadyInX
-      condition: 'active("aMidianBorn_ContentAddon.esp")'
-      subs: [ 'aMidianBorn_ContentAddon.esp' ]
-    - &alreadyInBDO
-      <<: *alreadyInX
-      condition: 'file("BDO.esp")'
-      subs: [ 'BDO.esp' ]
-    - &alreadyInCompleteCraftingOverhaul
-      <<: *alreadyInX
-      condition: 'file("Complete Crafting Overhaul( - BS version)?\.esp")'
-      subs: [ 'Complete Crafting Overhaul' ]
-    - &alreadyInCompleteCraftingOverhaulRemade
-      <<: *alreadyInX
-      condition: 'active("Complete Crafting Overhaul_Remade.esp")'
-      subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
-    - &alreadyInCraftTemperSmelt
-      <<: *alreadyInX
-      condition: 'file("Craft, Temper, Smelt.esp")'
-      subs: [ 'Craft, Temper, Smelt.esp' ]
-    - &alreadyInFFNords
-      <<: *alreadyInX
-      condition: 'file("FFNords.esp")'
-      subs: [ 'FFNords.esp' ]
-    - &alreadyInLegendarySouls
-      <<: *alreadyInX
-      condition: 'file("LegendarySouls.esp")'
-      subs: [ 'LegendarySouls.esp' ]
-    - &alreadyInPerkUp
-      <<: *alreadyInX
-      condition: 'file("PerkUP.+\.esp")'
-      subs: [ 'PerkUP plugins' ]
-    - &alreadyInPerkUpArchery
-      <<: *alreadyInX
-      condition: 'file("PerkUP-Archery.esp")'
-      subs: [ 'PerkUP-Archery.esp' ]
-    - &alreadyInPrettyFollowers
-      <<: *alreadyInX
-      condition: 'file("Pretty Followers.esm")'
-      subs: [ 'Pretty Followers' ]
-    - &alreadyInSIDTComplete
-      <<: *alreadyInX
-      condition: 'file("SIDT - Complete.esp")'
-      subs: [ 'SIDT - Complete.esp' ]
-    - &alreadyInSkyrimImmersiveCreatures
-      <<: *alreadyInX
-      condition: active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")
-      subs: [ 'Skyrim Immersive Creatures.esp' ]
-    - &alreadyInSkyRe
-      <<: *alreadyInX
-      condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
-      subs: [ 'SkyRe Main' ]
-    - &alreadyInUFO
-      <<: *alreadyInX
-      subs: [ 'Ultimate Follower Overhaul' ]
-      condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
 
     - &alreadyInOrFixedByX
       type: error
@@ -131,42 +75,6 @@ prelude:
           text: 'Видаліть. Уже включено або іншим чином виправлено у %1%.'
         - lang: zh_CN
           text: '删除。在%1%中已包含或修复。'
-    - &alreadyInOrFixedByPatchv1_4
-      <<: *alreadyInOrFixedByX
-      subs: [ 'Skyrim Patch 1.4' ]
-      condition: 'version("../TESV.exe", "1.4", >=)'
-    - &alreadyInOrFixedByPatchv1_4_26
-      <<: *alreadyInOrFixedByX
-      subs: [ 'Skyrim Patch 1.4.26' ]
-      condition: 'version("../TESV.exe", "1.4", >=)'
-    - &alreadyInOrFixedByPatchv1_5
-      <<: *alreadyInOrFixedByX
-      subs: [ 'Skyrim Patch 1.5' ]
-      condition: 'version("../TESV.exe", "1.5", >=)'
-    - &alreadyInOrFixedByPatchv1_6
-      <<: *alreadyInOrFixedByX
-      subs: [ 'Skyrim Patch 1.6' ]
-      condition: 'version("../TESV.exe", "1.6", >=)'
-    - &alreadyInOrFixedByPatchv1_8
-      <<: *alreadyInOrFixedByX
-      subs: [ 'Skyrim Patch 1.8' ]
-      condition: 'version("../TESV.exe", "1.8", >=)'
-    - &alreadyInOrFixedByPatchv1_9
-      <<: *alreadyInOrFixedByX
-      subs: [ 'Skyrim Patch 1.9' ]
-      condition: 'version("../TESV.exe", "1.9", >=)'
-    - &alreadyInOrFixedByPatchv1_9_26
-      <<: *alreadyInOrFixedByX
-      subs: [ 'Skyrim Patch 1.9.26' ]
-      condition: 'version("../TESV.exe", "1.9", >=)'
-    - &alreadyInOrFixedByUSLEEP
-      <<: *alreadyInOrFixedByX
-      subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214/)' ]
-      condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp")'
-    - &alreadyInOrFixedByUHRP
-      <<: *alreadyInOrFixedByX
-      subs: [ 'Unofficial High Resolution Patch.esp' ]
-      condition: 'active("Unofficial High Resolution Patch.esp")'
 
     - &alsoUseX
       type: say
@@ -343,9 +251,6 @@ prelude:
         - lang: zh_CN
           text: '已过时。请升级到最新版本。 %1%'
       subs: [ '' ]
-    - &obsoleteSharlikran
-      <<: *obsolete
-      subs: [ '[Sharlikran''s Compatibility Patches](https://www.nexusmods.com/skyrim/mods/26230/)' ]
 
     - &onlyUseSmashOrBash
       type: say
@@ -416,16 +321,6 @@ prelude:
           text: 'Схоже, що ви використовуєте **%1%**, але його патч сумісності не було ввімкнено. Сторонній патч можна знайти тут: %2%'
         - lang: zh_CN
           text: '您似乎使用了**%1%**，但没有启用这个mod的兼容性补丁。第三方补丁可以在这里找到:%2%'
-    - &patch3rdParty_Requiem_RPC
-      <<: *patch3rdParty
-      subs:
-        - 'Requiem'
-        - '[Requiem Patch Central](https://www.nexusmods.com/skyrim/mods/61621/)'
-    - &patch3rdParty_Requiem_SRP
-      <<: *patch3rdParty
-      subs:
-        - 'Requiem'
-        - '[Seg''s Requiem Patches](https://www.nexusmods.com/skyrim/mods/95859/)'
 
     - &patchIncluded
       type: say
@@ -526,10 +421,6 @@ prelude:
           text: 'Потрібний патч для повної сумісності з %1%. На даний момент жодного не доступно для завантаження.'
         - lang: zh_CN
           text: '需要一个补丁来使这个mod与%1%完全兼容。目前没有可供下载的。'
-    - &patchUnavailableRequiem
-      <<: *patchUnavailable
-      subs: [ 'Requiem' ]
-      condition: 'active("Requiem.esp")'
 
     # Useful for when a plugin needs SkyUI, but shouldn't load after it (eg. when it's a master plugin).
     - &requiresMCM_X
@@ -565,10 +456,6 @@ prelude:
           text: '**Mod Configuration Menu** (Меню Налаштування Модів) потрібне для повного функціонування мода. **MCM** може бути додано разом з %1%.'
         - lang: zh_CN
           text: '这个Mod需要一个**Mod配置菜单**来实现完整功能。**MCM**可以通过安装%1%来添加。'
-    - &requiresMCM_SkyUI
-      <<: *requiresMCM_X
-      subs: [ '[SkyUI](https://www.nexusmods.com/skyrim/mods/3863/)' ]
-      condition: 'not active("SkyUI.esp")'
 
     - &requiresResources
       type: warn
@@ -635,30 +522,6 @@ prelude:
           text: 'Потрібно: %1%'
         - lang: zh_CN
           text: '需要:%1%'
-    - &requiresBetterMales
-      <<: *requiresX
-      type: say
-      subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](https://www.nexusmods.com/skyrim/mods/2488)' ]
-    - &requiresCBBE
-      <<: *requiresX
-      type: say
-      subs: [ '[CBBE](https://www.nexusmods.com/skyrim/mods/2666)' ]
-    - &requiresCBBEorUNP
-      <<: *requiresX
-      type: say
-      subs: [ '[CBBE](https://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)' ]
-    - &requiresCHSBHC
-      <<: *requiresX
-      type: say
-      subs: [ '[CHSBHC - BBP - Nude and Jiggly Mod](https://www.nexusmods.com/skyrim/mods/4888)' ]
-    - &requiresUNP
-      <<: *requiresX
-      type: say
-      subs: [ '[DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)' ]
-    - &requiresUNPB
-      <<: *requiresX
-      type: say
-      subs: [ '[UNPB](https://www.nexusmods.com/skyrim/mods/37900)' ]
 
     - &runAnimFramework
       type: say
@@ -824,9 +687,6 @@ prelude:
           text: 'Замість цього використовуйте: %1%.'
         - lang: zh_CN
           text: '使用%1%代替。'
-    - &useInsteadReProccer
-      <<: *useInstead
-      subs: [ '[ReProccer - Automated SkyRe Patch Generator](https://www.nexusmods.com/skyrim/mods/28467/)' ]
 
     - &useOnlyOneX
       type: error
@@ -899,18 +759,6 @@ prelude:
           text: 'Використовуйте версію %1%.'
         - lang: zh_CN
           text: '使用%1%版本。'
-    - &useVersionDawnguard
-      <<: *useVersion
-      subs: [ 'Dawnguard' ]
-      condition: 'active("Dawnguard.esm")'
-    - &useVersionDragonborn
-      <<: *useVersion
-      subs: [ 'Dragonborn' ]
-      condition: 'active("Dragonborn.esm")'
-    - &useVersionHearthFires
-      <<: *useVersion
-      subs: [ 'HearthFires' ]
-      condition: 'active("HearthFires.esm")'
 
     - &useVersionNon
       type: error
@@ -945,18 +793,6 @@ prelude:
           text: 'Використовуйте не-%1% версію.'
         - lang: zh_CN
           text: '使用%1%以外的版本。'
-    - &useVersionNonDawnguard
-      <<: *useVersionNon
-      subs: [ 'Dawnguard' ]
-      condition: 'not active("Dawnguard.esm")'
-    - &useVersionNonDragonborn
-      <<: *useVersionNon
-      subs: [ 'Dragonborn' ]
-      condition: 'not active("Dragonborn.esm")'
-    - &useVersionNonHearthFires
-      <<: *useVersionNon
-      subs: [ 'HearthFires' ]
-      condition: 'not active("HearthFires.esm")'
 
     - &versionOldX
       type: say
@@ -1285,6 +1121,191 @@ common:
   - &SkyUI
     name: 'SkyUI.esp'
     display: '[SkyUI](https://www.nexusmods.com/skyrim/mods/3863)'
+
+# Sub-Anchors
+  # &alreadyInX
+  - &alreadyInAmidianBornContentAddon
+    <<: *alreadyInX
+    condition: 'active("aMidianBorn_ContentAddon.esp")'
+    subs: [ 'aMidianBorn_ContentAddon.esp' ]
+  - &alreadyInBDO
+    <<: *alreadyInX
+    condition: 'file("BDO.esp")'
+    subs: [ 'BDO.esp' ]
+  - &alreadyInCompleteCraftingOverhaul
+    <<: *alreadyInX
+    condition: 'file("Complete Crafting Overhaul( - BS version)?\.esp")'
+    subs: [ 'Complete Crafting Overhaul' ]
+  - &alreadyInCompleteCraftingOverhaulRemade
+    <<: *alreadyInX
+    condition: 'active("Complete Crafting Overhaul_Remade.esp")'
+    subs: [ 'Complete Crafting Overhaul_Remade.esp' ]
+  - &alreadyInCraftTemperSmelt
+    <<: *alreadyInX
+    condition: 'file("Craft, Temper, Smelt.esp")'
+    subs: [ 'Craft, Temper, Smelt.esp' ]
+  - &alreadyInFFNords
+    <<: *alreadyInX
+    condition: 'file("FFNords.esp")'
+    subs: [ 'FFNords.esp' ]
+  - &alreadyInLegendarySouls
+    <<: *alreadyInX
+    condition: 'file("LegendarySouls.esp")'
+    subs: [ 'LegendarySouls.esp' ]
+  - &alreadyInPerkUp
+    <<: *alreadyInX
+    condition: 'file("PerkUP.+\.esp")'
+    subs: [ 'PerkUP plugins' ]
+  - &alreadyInPerkUpArchery
+    <<: *alreadyInX
+    condition: 'file("PerkUP-Archery.esp")'
+    subs: [ 'PerkUP-Archery.esp' ]
+  - &alreadyInPrettyFollowers
+    <<: *alreadyInX
+    condition: 'file("Pretty Followers.esm")'
+    subs: [ 'Pretty Followers' ]
+  - &alreadyInSIDTComplete
+    <<: *alreadyInX
+    condition: 'file("SIDT - Complete.esp")'
+    subs: [ 'SIDT - Complete.esp' ]
+  - &alreadyInSkyrimImmersiveCreatures
+    <<: *alreadyInX
+    condition: active("Skyrim Immersive Creatures.esp") or active("Skyrim Immersive Creatures.esm")
+    subs: [ 'Skyrim Immersive Creatures.esp' ]
+  - &alreadyInSkyRe
+    <<: *alreadyInX
+    condition: 'file("SkyRe_Main.esp") or file("SkyRe_Main_NoDawnguard.esp")'
+    subs: [ 'SkyRe Main' ]
+  - &alreadyInUFO
+    <<: *alreadyInX
+    subs: [ 'Ultimate Follower Overhaul' ]
+    condition: 'file("UFO - Ultimate Follower Overhaul.esp")'
+
+  # &alreadyInOrFixedByX
+  - &alreadyInOrFixedByPatchv1_4
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.4' ]
+    condition: 'version("../TESV.exe", "1.4", >=)'
+  - &alreadyInOrFixedByPatchv1_4_26
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.4.26' ]
+    condition: 'version("../TESV.exe", "1.4", >=)'
+  - &alreadyInOrFixedByPatchv1_5
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.5' ]
+    condition: 'version("../TESV.exe", "1.5", >=)'
+  - &alreadyInOrFixedByPatchv1_6
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.6' ]
+    condition: 'version("../TESV.exe", "1.6", >=)'
+  - &alreadyInOrFixedByPatchv1_8
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.8' ]
+    condition: 'version("../TESV.exe", "1.8", >=)'
+  - &alreadyInOrFixedByPatchv1_9
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.9' ]
+    condition: 'version("../TESV.exe", "1.9", >=)'
+  - &alreadyInOrFixedByPatchv1_9_26
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Skyrim Patch 1.9.26' ]
+    condition: 'version("../TESV.exe", "1.9", >=)'
+  - &alreadyInOrFixedByUSLEEP
+    <<: *alreadyInOrFixedByX
+    subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214/)' ]
+    condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp")'
+  - &alreadyInOrFixedByUHRP
+    <<: *alreadyInOrFixedByX
+    subs: [ 'Unofficial High Resolution Patch.esp' ]
+    condition: 'active("Unofficial High Resolution Patch.esp")'
+
+  # &obsolete
+  - &obsoleteSharlikran
+    <<: *obsolete
+    subs: [ '[Sharlikran''s Compatibility Patches](https://www.nexusmods.com/skyrim/mods/26230/)' ]
+
+  # &patch3rdParty
+  - &patch3rdParty_Requiem_RPC
+    <<: *patch3rdParty
+    subs:
+      - 'Requiem'
+      - '[Requiem Patch Central](https://www.nexusmods.com/skyrim/mods/61621/)'
+  - &patch3rdParty_Requiem_SRP
+    <<: *patch3rdParty
+    subs:
+      - 'Requiem'
+      - '[Seg''s Requiem Patches](https://www.nexusmods.com/skyrim/mods/95859/)'
+
+  # &patchUnavailable
+  - &patchUnavailableRequiem
+    <<: *patchUnavailable
+    subs: [ 'Requiem' ]
+    condition: 'active("Requiem.esp")'
+
+  # &requiresMCM_X
+  - &requiresMCM_SkyUI
+    <<: *requiresMCM_X
+    subs: [ '[SkyUI](https://www.nexusmods.com/skyrim/mods/3863/)' ]
+    condition: 'not active("SkyUI.esp")'
+
+  # &requiresX
+  - &requiresBetterMales
+    <<: *requiresX
+    type: say
+    subs: [ '[Better males - Beautiful nudes and faces - New hairstyles](https://www.nexusmods.com/skyrim/mods/2488)' ]
+  - &requiresCBBE
+    <<: *requiresX
+    type: say
+    subs: [ '[CBBE](https://www.nexusmods.com/skyrim/mods/2666)' ]
+  - &requiresCBBEorUNP
+    <<: *requiresX
+    type: say
+    subs: [ '[CBBE](https://www.nexusmods.com/skyrim/mods/2666) or [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)' ]
+  - &requiresCHSBHC
+    <<: *requiresX
+    type: say
+    subs: [ '[CHSBHC - BBP - Nude and Jiggly Mod](https://www.nexusmods.com/skyrim/mods/4888)' ]
+  - &requiresUNP
+    <<: *requiresX
+    type: say
+    subs: [ '[DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)' ]
+  - &requiresUNPB
+    <<: *requiresX
+    type: say
+    subs: [ '[UNPB](https://www.nexusmods.com/skyrim/mods/37900)' ]
+
+  # &useInstead
+  - &useInsteadReProccer
+    <<: *useInstead
+    subs: [ '[ReProccer - Automated SkyRe Patch Generator](https://www.nexusmods.com/skyrim/mods/28467/)' ]
+
+  # &useVersion
+  - &useVersionDawnguard
+    <<: *useVersion
+    subs: [ 'Dawnguard' ]
+    condition: 'active("Dawnguard.esm")'
+  - &useVersionDragonborn
+    <<: *useVersion
+    subs: [ 'Dragonborn' ]
+    condition: 'active("Dragonborn.esm")'
+  - &useVersionHearthFires
+    <<: *useVersion
+    subs: [ 'HearthFires' ]
+    condition: 'active("HearthFires.esm")'
+
+  # &useVersionNon
+  - &useVersionNonDawnguard
+    <<: *useVersionNon
+    subs: [ 'Dawnguard' ]
+    condition: 'not active("Dawnguard.esm")'
+  - &useVersionNonDragonborn
+    <<: *useVersionNon
+    subs: [ 'Dragonborn' ]
+    condition: 'not active("Dragonborn.esm")'
+  - &useVersionNonHearthFires
+    <<: *useVersionNon
+    subs: [ 'HearthFires' ]
+    condition: 'not active("HearthFires.esm")'
 
 bash_tags:
   - 'Actors.ACBS'
