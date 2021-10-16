@@ -1747,6 +1747,153 @@ plugins:
     msg: [ *obsolete ]
 
 ###### Location - Overhauls ######
+  - name: 'ETaC - RESOURCES.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    clean:
+      # v14.3.1 ESM
+      - crc: 0x32DCA947
+        util: 'TES5Edit v4.0.2f'
+      # v14.3.1 ESM MCM
+      - crc: 0xD8BF00A8
+        util: 'TES5Edit v4.0.2f'
+      # v0.4.4 ESM
+      - crc: 0x48B0148E
+        util: 'TES5Edit v4.0.2f'
+      # v0.4.4 ESM - No MCM
+      - crc: 0x4C8AEAA0
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ETaC - Complete.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    after:
+      - 'Tamriel Reloaded HD.esp'
+      - 'WhiterunHoldForest.esp'
+      - '3DNPC.esp'
+    dirty:
+      # v14.3.1 Complete
+      - <<: *quickClean
+        crc: 0x6A4D6A20
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 220
+      # v14.3.1 Complete - No Inns
+      - <<: *quickClean
+        crc: 0x1CB40901
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 220
+  - name: 'ETaC - Darkwater Crossing.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    clean:
+      # v0.4.4
+      - crc: 0x4C6B58A6
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ETaC - Dawnstar.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    clean:
+      # v0.4.4
+      - crc: 0xD3B68E55
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ETaC - Riverwood.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    after: [ '3DNPC.esp' ]
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Remove.  ETaC - Villages Complete.esp contains these changes.'
+          - lang: de
+            text: 'Zu löschen. ETaC - Villages Complete.esp beinhaltet diese Veränderungen.'
+          - lang: ja
+            text: '削除してください。ETaC - Villages Complete.espに同じ変更内容が含まれています。'
+          - lang: ru
+            text: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
+        condition: 'file("ETaC - Villages Complete.esp")'
+    clean:
+      # v0.4.4
+      - crc: 0x5CFDBF12
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ETaC - Rorikstead.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    after: [ '3DNPC.esp' ]
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Remove.  ETaC - Villages Complete.esp contains these changes.'
+          - lang: de
+            text: 'Zu löschen. ETaC - Villages Complete.esp beinhaltet diese Veränderungen.'
+          - lang: ja
+            text: '削除してください。ETaC - Villages Complete.espに同じ変更内容が含まれています。'
+          - lang: ru
+            text: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
+        condition: 'file("ETaC - Villages Complete.esp")'
+    clean:
+      # v0.4.4
+      - crc: 0xE6FD3597
+        util: 'TES5Edit v4.0.2f'
+  - name: 'ETaC - Better Dynamic Snow Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    clean:
+      # version: 0.4.4
+      - crc: 0x7F818E6E
+        util: 'TES5Edit v4.0.2'
+  - name: 'ETaC - Complete CFTO Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    clean:
+      # version: 0.4.4
+      - crc: 0x43C66F13
+        util: 'TES5Edit v4.0.2'
+  - name: 'ETaC - Complete ELFX Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    clean:
+      # v0.4.4
+      - crc: 0x30735125
+        util: 'TES5Edit v4.0.2h'
+  - name: 'ETaC - Complete LoS Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    clean:
+      # version: 0.4.4
+      - crc: 0x762EE425
+        util: 'TES5Edit v4.0.2'
+  - name: 'ETaC - Complete No Snow Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    clean:
+      # version: 0.4.4
+      - crc: 0x5D16AD6B
+        util: 'TES5Edit v4.0.2'
+  - name: 'ETaC - Complete RSC Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    clean:
+      # version: 0.4.4
+      - crc: 0x1553858E
+        util: 'TES5Edit v4.0.2'
+  - name: 'Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dragon Bridge?|and Settlements?|and Villages?)\.esp'
+    url: [ 'http://www.nexusmods.com/skyrim/mods/13608/' ]
+    msg: [ *obsolete ]
+  - name: 'ETaC - Darkwater.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    after: [ '3DNPC.esp' ]
+    msg: [ *obsolete ]
+  - name: 'ETaC - Dragon Bridge.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    after: [ '3DNPC.esp' ]
+    msg: [ *obsolete ]
+  - name: 'ETaC - Dragon Bridge South.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    dirty:
+      # v14.3.1
+      - <<: *quickClean
+        crc: 0x6BFE713C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
+  - name: 'ETaC - Ivarstead.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    after: [ '3DNPC.esp' ]
+    msg: [ *obsolete ]
+  - name: 'ETaC - Morthal.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13608/' ]
+    after: [ '3DNPC.esp' ]
+    msg: [ *obsolete ]
+  - name: 'ETaC SkyRealFF Patch - Dawnguard.esp'
+    inc: [ 'ETaC SkyRealFF Patch - Standard.esp' ]
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
   - name: 'Falskaar.esm'
@@ -17549,147 +17696,6 @@ plugins:
     msg: [ *obsolete ]
   - name: 'Drinking Fountains of Skyrim Sound DE DB.esp'
     msg: [ *obsolete ]
-  - name: 'Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dragon Bridge?|and Settlements?|and Villages?)\.esp'
-    url: [ 'http://www.nexusmods.com/skyrim/mods/13608' ]
-    msg: [ *obsolete ]
-  - name: 'ETaC - RESOURCES.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    clean:
-      # v14.3.1 ESM
-      - crc: 0x32DCA947
-        util: 'TES5Edit v4.0.2f'
-      # v14.3.1 ESM MCM
-      - crc: 0xD8BF00A8
-        util: 'TES5Edit v4.0.2f'
-      # v0.4.4 ESM
-      - crc: 0x48B0148E
-        util: 'TES5Edit v4.0.2f'
-      # v0.4.4 ESM - No MCM
-      - crc: 0x4C8AEAA0
-        util: 'TES5Edit v4.0.2f'
-  - name: 'ETaC - Complete.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    after:
-      - 'Tamriel Reloaded HD.esp'
-      - 'WhiterunHoldForest.esp'
-      - '3DNPC.esp'
-    dirty:
-      # v14.3.1 Complete
-      - <<: *quickClean
-        crc: 0x6A4D6A20
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 220
-      # v14.3.1 Complete - No Inns
-      - <<: *quickClean
-        crc: 0x1CB40901
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 220
-  - name: 'ETaC - Dragon Bridge South.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    dirty:
-      # v14.3.1
-      - <<: *quickClean
-        crc: 0x6BFE713C
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 12
-  - name: 'ETaC - Complete No Snow Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    clean:
-      # version: 0.4.4
-      - crc: 0x5D16AD6B
-        util: 'TES5Edit v4.0.2'
-  - name: 'ETaC - Complete LoS Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    clean:
-      # version: 0.4.4
-      - crc: 0x762EE425
-        util: 'TES5Edit v4.0.2'
-  - name: 'ETaC - Complete RSC Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    clean:
-      # version: 0.4.4
-      - crc: 0x1553858E
-        util: 'TES5Edit v4.0.2'
-  - name: 'ETaC - Better Dynamic Snow Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    clean:
-      # version: 0.4.4
-      - crc: 0x7F818E6E
-        util: 'TES5Edit v4.0.2'
-  - name: 'ETaC - Complete CFTO Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    clean:
-      # version: 0.4.4
-      - crc: 0x43C66F13
-        util: 'TES5Edit v4.0.2'
-  - name: 'ETaC - Darkwater.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    msg: [ *obsolete ]
-    after: [ '3DNPC.esp' ]
-  - name: 'ETaC - Dragon Bridge.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    msg: [ *obsolete ]
-    after: [ '3DNPC.esp' ]
-  - name: 'ETaC - Ivarstead.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    msg: [ *obsolete ]
-    after: [ '3DNPC.esp' ]
-  - name: 'ETaC - Riverwood.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove.  ETaC - Villages Complete.esp contains these changes.'
-          - lang: de
-            text: 'Zu löschen. ETaC - Villages Complete.esp beinhaltet diese Veränderungen.'
-          - lang: ja
-            text: '削除してください。ETaC - Villages Complete.espに同じ変更内容が含まれています。'
-          - lang: ru
-            text: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
-        condition: 'file("ETaC - Villages Complete.esp")'
-    clean:
-      # v0.4.4
-      - crc: 0x5CFDBF12
-        util: 'TES5Edit v4.0.2f'
-    after: [ '3DNPC.esp' ]
-  - name: 'ETaC - Rorikstead.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove.  ETaC - Villages Complete.esp contains these changes.'
-          - lang: de
-            text: 'Zu löschen. ETaC - Villages Complete.esp beinhaltet diese Veränderungen.'
-          - lang: ja
-            text: '削除してください。ETaC - Villages Complete.espに同じ変更内容が含まれています。'
-          - lang: ru
-            text: 'Удалите. Уже включено в ETaC - Villages Complete.esp'
-        condition: 'file("ETaC - Villages Complete.esp")'
-    clean:
-      # v0.4.4
-      - crc: 0xE6FD3597
-        util: 'TES5Edit v4.0.2f'
-    after: [ '3DNPC.esp' ]
-  - name: 'ETaC - Darkwater Crossing.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    clean:
-      # v0.4.4
-      - crc: 0x4C6B58A6
-        util: 'TES5Edit v4.0.2f'
-  - name: 'ETaC - Dawnstar.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    clean:
-      # v0.4.4
-      - crc: 0xD3B68E55
-        util: 'TES5Edit v4.0.2f'
-  - name: 'ETaC - Morthal.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    msg: [ *obsolete ]
-    after: [ '3DNPC.esp' ]
-  - name: 'ETaC SkyRealFF Patch - Dawnguard.esp'
-    inc: [ 'ETaC SkyRealFF Patch - Standard.esp' ]
   - name: 'Expanded Villages2.0.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8867' ]
     dirty:
@@ -23647,12 +23653,6 @@ plugins:
         crc: 0xA04BFEF0
         util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'ETaC - Complete ELFX Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13608' ]
-    clean:
-      # v0.4.4
-      - crc: 0x30735125
-        util: 'TES5Edit v4.0.2h'
   - name: 'SoSFC-LF.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/63834' ]
     dirty:
