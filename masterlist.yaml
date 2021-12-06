@@ -31,6 +31,7 @@ prelude:
     - &deleteOrDeactivateX
       type: error
       content: 'Delete or deactivate. %1%'
+      subs: [ '' ]
 
     - &deletePlugin
       type: warn
@@ -71,6 +72,7 @@ prelude:
     - &obsolete
       type: warn
       content: 'Obsolete. Update to the latest version. %1%'
+      subs: [ '' ]
 
     - &onlyUseSmashOrBash
       type: say
@@ -140,14 +142,18 @@ prelude:
     - &sortMasters
       type: say
       content: 'Plugin''s Masters require sorting. %1%'
+      subs: [ '[xEdit - Sort Masters](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#SortingMasterFileLoadOrders)' ]
 
     - &useBashTweakInstead
       type: say
       content: 'A Bashed Patch tweak can be used instead of this plugin. %1%'
+      subs: [ '' ]
+      condition: 'file("Bashed Patch.*\.esp")'
 
     - &useINITweakInstead
       type: say
       content: 'An INI tweak can be used instead of this plugin. %1%'
+      subs: [ '' ]
 
     - &useInstead
       type: warn
@@ -184,6 +190,7 @@ prelude:
     - &wildEdits
       type: warn
       content: 'This plugin contains [wild edits](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#WildEdits) and may require additional manual cleaning to not interfere with other mods. %1%'
+      subs: [ '' ]
 
   # Cleaning Data Anchors
     - &quickClean
@@ -198,14 +205,23 @@ prelude:
     - &latestLOOTThread
       type: say
       content: '[Latest LOOT thread](%1%).'
+      subs: [ 'https://loot.github.io/latest-thread/' ]
 
     - &scriptExtenderMissing
       type: error
       content: 'You have installed an %1% plugin but %1% was not found! See %1% download page: %2%.'
+      subs:
+        - 'SKSE'
+        - '[SKSE](https://skse.silverlock.org)'
+      condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse_loader.exe")'
 
     - &scriptExtenderRequiredScripts
       type: warn
       content: 'It appears you have installed **%1%**, but its required scripts seem to be missing. Please ensure you have correctly installed the scripts bundled with the **%2%** installation archive.'
+      subs:
+        - 'Skyrim Script Extender'
+        - '[SKSE](https://skse.silverlock.org)'
+      condition: 'not file("scripts/skse.pex") and file("../skse_loader.exe")'
 
   # Deprecated Anchors
     - &dirtyPlugin
