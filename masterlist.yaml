@@ -893,6 +893,13 @@ plugins:
     after:
       - 'Clockwork.esp'
       - 'Immersive Citizens - AI Overhaul.esp'
+    msg:
+      - <<: *patch3rdParty
+        type: warn
+        subs:
+          - 'Clockwork (Clockwork Castle)'
+          - '[Arthmoor''s Skyrim Villages-Clockwork Entrance Patch](https://www.nexusmods.com/skyrim/mods/110574/)'
+        condition: 'active("Clockwork.esp") and not active("ArthClockPatch.esp")'
     dirty:
       # version: 1.0.1
       - <<: *quickClean
