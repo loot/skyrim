@@ -1648,11 +1648,13 @@ plugins:
   - name: 'Extended Colors.esm'
     msg: [ *obsolete ]
   - name: 'GeneralStores.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18340' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18340/'
+        name: 'General Stores - storage resource for packrats'
     clean:
       # v2.3
       - crc: 0x9A198059
-        util: 'TES5Edit v4.0.2f'
+        util: 'TES5Edit v4.0.4b'
   - name: 'GiantChild.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17733' ]
     dirty:
@@ -3053,12 +3055,18 @@ plugins:
     clean:
       - crc: 0xF84DC756
         util: 'TES5Edit v4.0.3'
-  - name: 'ColourEyesNoDGHF.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/30347' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3b2f32fc
-        itm: 1
+  - name: 'ChildrenOSEyes(No)?HFV3(A|B)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/30347/'
+        name: 'Children of Skyrim Eye Colours'
+  - name: 'ChildrenOSEyesHFV3A.esp'
+    clean:
+      - crc: 0xC08D1951
+        util: 'TES5Edit v4.0.4b'
+  - name: 'ChildrenOSEyesNoHFV3B.esp'
+    clean:
+      - crc: 0xCB4260EC
+        util: 'TES5Edit v4.0.4b'
   - name: 'Dalls_Skyrim_Faces_NPCs.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18760' ]
     dirty:
@@ -3779,15 +3787,15 @@ plugins:
       - crc: 0xFC4F77F9
         util: 'TES5Edit v4.0.2j'
   - name: 'SurvivalistIngenuity.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/83096' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/83096/'
+        name: 'Skyrim Improved'
     tag:
       - Delev
       - Relev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x58f2b4dc
-        itm: 62
-        udr: 60
+    clean:
+      - crc: 0x2E576835
+        util: 'TES5Edit v4.0.4b'
   - name: 'SI_VanillaPrizes.esp'
     inc: [ 'SI_PrizesDoubled.esp' ]
   - name: 'SIRW.esp'
@@ -3816,31 +3824,53 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("_pocketempirebuilder.esp",CCC24004)'
+  - name: 'Skyrim Adventurer''s Tent.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15272/'
+        name: 'Skyrim Adventurers Tent'
+    clean:
+      - crc: 0x9025D89C
+        util: 'TES5Edit v4.0.4b'
+  - name: 'ADV (HB-Style|GenStoresPlugin)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15272/'
+        name: 'Skyrim Adventurers Tent'
   - name: 'ADV HB-Style.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/15272' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4ae9efe5
-        udr: 1
+    clean:
+      - crc: 0x69DF62E0
+        util: 'TES5Edit v4.0.4b'
   - name: 'ADV GenStoresPlugin.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/15272' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7e5c17a4
-        itm: 1
+      - <<: *quickClean
+        crc: 0x7E5C17A4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+    clean:
+      - crc: 0x7DEA981D
+        util: 'TES5Edit v4.0.4b'
   - name: 'Advanced Spell Toggle.esp'
     req: [ *SKSE ]
   - name: 'AK- Clothe Dead NPCs.esp'
     req: [ *SKSE ]
+  - name: 'AK- Placeable Statics( - Hearthfire)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25068/'
+        name: 'Placeable Statics - Move Anything'
   - name: 'AK- Placeable Statics.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25068' ]
     req: [ *SKSE ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf20cbafa
+      - <<: *quickClean
+        crc: 0xF20CBAFA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
+    clean:
+      - crc: 0x15EF16CA
+        util: 'TES5Edit v4.0.4b'
   - name: 'AK- Placeable Statics - Hearthfire.esp'
     req: [ *SKSE ]
+    clean:
+      - crc: 0x6EC9FF1E
+        util: 'TES5Edit v4.0.4b'
   - name: 'AK- A Friend of Time.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18386' ]
     dirty:
