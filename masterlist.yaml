@@ -4217,11 +4217,24 @@ plugins:
       - crc: 0x75D6B87E
         util: 'TES5Edit v4.0.2j'
   - name: 'Bob The Merchant.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22304' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22304/'
+        name: 'The Bob Trading Company'
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("Bob The Merchant.esp", 05F9D7C3)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5f9d7c3
-        itm: 1
+      # v1.1
+      - <<: *quickClean
+        crc: 0x05F9D7C3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+      # v2.0
+      - <<: *quickClean
+        crc: 0x540C5D3D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 83
+        udr: 436
   - name: 'BreezeDog.esp'
     msg:
       - type: say
@@ -4282,24 +4295,30 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Carriage1.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18162' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18162/'
+        name: 'Carriages and Ships - Translation Brazilian Portuguese'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdd48cc7
-        itm: 20
+      - <<: *quickClean
+        crc: 0x41716BAB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 87
         udr: 4
   - name: 'Cart in Each Big Town.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8434' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8434/'
+        name: 'Cart in Each Big Town'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x74dd90b9
-        itm: 43
+      - <<: *quickClean
+        crc: 0x74DD90B9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 95
   - name: 'Catsofskyrim.esp'
     url:
       # catsofskyrim.esp
-      - 'https://www.nexusmods.com/skyrim/mods/14379'
+      - 'https://www.nexusmods.com/skyrim/mods/14379/'
       # Catsofskyrim.esp
-      - 'https://www.nexusmods.com/skyrim/mods/17424'
+      - 'https://www.nexusmods.com/skyrim/mods/17424/'
     dirty:
       # 14379 - v1.31
       - <<: *quickClean
@@ -4775,17 +4794,23 @@ plugins:
         itm: 8
         udr: 4
   - name: 'GuardianStonesExpanded.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17976' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/17976/'
+        name: 'Guardian Stones Expanded'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbdbf79e7
-        itm: 2
+      - <<: *quickClean
+        crc: 0xBDBF79E7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
   - name: 'Guard''s don''t change outfits.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/23309' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/23309/'
+        name: 'Guards Dont Change Outfits'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x62b9ed5b
-        itm: 39
+      - <<: *quickClean
+        crc: 0x62B9ED5B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 42
   - name: 'GuessDistance.esp'
     req: [ *SKSE ]
   - name: 'GunjarNoFool.esp'
@@ -5048,14 +5073,16 @@ plugins:
   - name: 'kuerteeHorseCommandsVerB.esp'
     msg: [ *obsolete ]
   - name: 'kuerteeProfessions.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18258' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5f580bb5
-        itm: 2
-      - <<: *dirtyPlugin
-        crc: 0xA0DA9A22
-        itm: 2
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18258/'
+        name: 'Professions'
+    clean:
+      # Main File
+      - crc: 0x37AB736F
+        util: 'TES5Edit v4.0.4b'
+      # Optional File
+      - crc: 0x06F9585A
+        util: 'TES5Edit v4.0.4b'
   - name: 'Kuun''s angels drop worn armor.esp'
     inc: [ 'Kuun''s angels drop armor.esp' ]
   - name: 'Langsam wirkende Tränke.esp'
@@ -5665,10 +5692,13 @@ plugins:
         itm: 18
         udr: 5
   - name: 'SignTown_by_YURIL_1o5.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/50419' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/50419/'
+        name: 'Illustrated town panels ENG'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8de338eb
+      - <<: *quickClean
+        crc: 0xE7A95E38
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 11
   - name: 'SimpleBleeding.esp'
     msg:
@@ -5753,14 +5783,14 @@ plugins:
       - Delev
       - Relev
   - name: 'SleepingDangers-SandsofTime.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/12452' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/12452/'
+        name: 'Ultimate Deadly Encounters'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x16c5fedd
+      - <<: *quickClean
+        crc: 0xB3FA0216
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
-      - <<: *dirtyPlugin
-        crc: 0x6e945f25
-        itm: 24
   - name: 'Skyrim Immersive Creatures.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24913' ]
     after:
@@ -6053,19 +6083,21 @@ plugins:
         crc: 0x69A349B1
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
+  - name: 'Unique(Gear|Everything)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/16964/'
+        name: 'Unique Everything - meshes textures skeletons per Race'
   - name: 'UniqueGear.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/16964' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf1dac5d6
+      - <<: *quickClean
+        crc: 0xF1DAC5D6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'UniqueEverything.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/16964' ]
     dirty:
-      # v2.0
       - <<: *quickClean
         crc: 0x9AB1ACCF
-        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
   - name: 'Unleveled_Skyrim_Items.esp'
     tag:
