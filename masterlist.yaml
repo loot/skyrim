@@ -6116,18 +6116,6 @@ plugins:
 
   - name: 'Valdacil''s Item Sorting - Smithing No Smelter Categories.esp'
     inc: [ 'Valdacil''s Item Sorting - Smithing Smelter Categories.esp' ]
-  - name: 'WantedPosters.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29448' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x30717872
-        itm: 7
-      - <<: *dirtyPlugin
-        crc: 0x436ebc46
-        udr: 1
-      - <<: *dirtyPlugin
-        crc: 0xF5123590
-        udr: 1
   - name: 'WerewolfAftermathEquipper.esp'
     req: [ *SKSE ]
   - name: 'WetandCold.esp'
@@ -6800,11 +6788,14 @@ plugins:
   - name: 'BlutKult_Zwergenaexte.esp'
     msg: [ *corrupt ]
   - name: 'Books+.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22642' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22642/'
+        name: 'Books PLUS'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8095bb6
-        itm: 4
+      - <<: *quickClean
+        crc: 0x08095BB6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
         udr: 18
   - name: 'BosmerArmorMATY743.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/37289' ]
@@ -7308,11 +7299,14 @@ plugins:
   - name: 'DwarvenArmorUpgrade.esp'
     tag: [ Relev ]
   - name: 'Dwarven War Cross Bow.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22706' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22706/'
+        name: 'Siege CrossBow Collection'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8d6dd2fb
-        itm: 6
+      - <<: *quickClean
+        crc: 0x8D6DD2FB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
         udr: 3
   - name: 'DwarvenPowerArmor.esp'
     msg:
@@ -7467,11 +7461,14 @@ plugins:
         condition: 'version("..\TESV.exe", "1.8", >) and (checksum("EternalShineArmorAndWeapons.esp", D092DCAF) or checksum("EternalShineArmorAndWeapons.esp", 549A2BEB))'
 
   - name: 'Explosive Arrows.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9349' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9349/'
+        name: 'Explosive Arrows'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x23656143
-        itm: 24
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 31
         udr: 11
   - name: 'FaceMasksforNPC.esp'
     tag: [ Relev ]
@@ -7856,11 +7853,14 @@ plugins:
   - name: 'Ironman5000 Weapon Overhaul.esp'
     msg: [ *obsolete ]
   - name: 'ironman.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/16860' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/16860/'
+        name: 'Vibranium Helmet'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6b68f706
-        itm: 8
+      - <<: *quickClean
+        crc: 0x7EE6EE54
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
 
   - name: 'isilNarsil.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/5727/' ]
@@ -8819,11 +8819,14 @@ plugins:
       - <<: *requiresX
         subs: [ '[SkyHeels](http://www.nexusmods.com/skyrim/mods/5589) resources' ]
         condition: 'not file("SkyHeels.esp")'
-  - name: 'tbmchrysamere.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20496' ]
+  - name: 'tbmChrysamere.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20496/'
+        name: 'Tamrielic Lore - Chrysamere'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x53e9237a
+      - <<: *quickClean
+        crc: 0x53E9237A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
         udr: 3
   - name: 'TCOSS.esp'
@@ -9090,11 +9093,12 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/22054' ]
     msg: [ *corrupt ]
   - name: 'WolfArmorLightSA.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20226' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x898389c8
-        itm: 21
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20226/'
+        name: 'Light Wolf Armor Standalone'
+    clean:
+      - crc: 0x898389C8
+        util: 'TES5Edit v4.0.4b'
   - name: 'WVExpansion.esp'
     tag:
       - Delev
@@ -10606,11 +10610,14 @@ plugins:
         itm: 33
         udr: 10
   - name: 'Als Treasure Vault.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9994' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9994/'
+        name: 'Als Treasure Vault'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x10f4a82b
-        itm: 2
+      - <<: *quickClean
+        crc: 0x10F4A82B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
         udr: 15
   - name: 'Amberhalls Heartwood Village.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22618' ]
@@ -10640,11 +10647,14 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 990
   - name: 'AMRetreat.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17234' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/17234/'
+        name: 'Arch-Mage Retreat'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x35b13c96
-        itm: 5
+      - <<: *quickClean
+        crc: 0x35B13C96
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
   - name: 'ancient tower.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11711' ]
     dirty:
@@ -10657,18 +10667,24 @@ plugins:
   - name: 'Another Breezehome Basement.esp'
     msg: [ *obsolete ]
   - name: 'Arheim.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22758' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22758/'
+        name: 'Arheim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xea6ce99a
-        itm: 10
+      - <<: *quickClean
+        crc: 0xEA6CE99A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2475
         udr: 2
   - name: 'ArmorDisguises.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20903' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20903/'
+        name: 'Armor Disguises'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x61de8dd5
-        itm: 63
+      - <<: *quickClean
+        crc: 0x68DBC251
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
   - name: 'armybasement.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12485' ]
     dirty:
@@ -10683,42 +10699,61 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 35
   - name: 'Asgrim''s Hold.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21784' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21784/'
+        name: 'Asgrims Hold and DrHkls Forgotten Realms Weaponry'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa22b2395
-        itm: 2
+      # v1.0
+      - <<: *quickClean
+        crc: 0x873D66A4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 36
+      # v1.2
+      - <<: *quickClean
+        crc: 0xA22B2395
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 43
   - name: 'AssassinsSquads.esp'
-    url: [ https://www.nexusmods.com/skyrim/mods/8309 ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8309/'
+        name: 'Assassin Squads'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9d13b98
+      - <<: *quickClean
+        crc: 0x09D13B98
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'Atmospheric Whiterun.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/34481' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/34481/'
+        name: 'Atmospheric Whiterun'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x531dc18d
-        itm: 25
+      - <<: *quickClean
+        crc: 0xA829A9F6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+  - name: 'attic(hjaarmarch|lakeview|pale)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/32557/'
+        name: 'Hearthfire Attics'
   - name: 'attichjaarmarch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/32557' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8d6c4dc0
+      - <<: *quickClean
+        crc: 0x8D6C4DC0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 27
         udr: 3
   - name: 'atticlakeview.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/32557' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x149f3451
+      - <<: *quickClean
+        crc: 0x149F3451
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 27
         udr: 3
   - name: 'atticpale.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/32557' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe603dc8f
+      - <<: *quickClean
+        crc: 0xE603DC8F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 27
         udr: 3
   - name: 'Aezeal''s Castle.esp'
@@ -10738,11 +10773,14 @@ plugins:
         util: '[TES5Edit v4.0.3g](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2680
   - name: 'BankofMarkarth.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/15275' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15275/'
+        name: 'Bank of Markarth'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc79214d7
-        itm: 5
+      - <<: *quickClean
+        crc: 0xC79214D7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 20
         udr: 1
   - name: 'BBLuxurySuiteExt.esp'
     # doNotClean
