@@ -1234,14 +1234,6 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 24
         udr: 564
-  - name: 'BBLuxurySuite.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11427' ]
-    # doNotClean
-  - name: 'BBLuxurySuiteENM.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11427' ]
-    clean:
-      - crc: 0x5D42E0D5
-        util: 'TES5Edit v4.0.2f'
   - name: 'BecomeKingOfRiverHelm.esm'
     msg: [ *obsolete ]
   - name: 'Blood \(\w+\)\.ESM'
@@ -2279,15 +2271,20 @@ plugins:
   - name: 'Ultimate Witcher MOD.esm'
     msg: [ *obsolete ]
   - name: 'UndergroundBathhouse.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/27361' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/27361/'
+        name: 'Underground Bathhouse and Paradise Valley'
     dirty:
+      # v6.0
+      - <<: *quickClean
+        crc: 0x81B5CC12
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 79
+      # v6.02
       - <<: *quickClean
         crc: 0x8AE89603
-        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 79
-    clean:
-      - crc: 0x12D8AE23
-        util: 'TES5Edit v4.0.3'
   - name: 'UndergroundBathhouse_light.esm'
     inc: [ 'UndergroundBathhouse.esm' ]
     msg: [ *obsolete ]
@@ -10782,71 +10779,116 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 20
         udr: 1
-  - name: 'BBLuxurySuiteExt.esp'
-    # doNotClean
-  - name: 'BBLSHousecarlsmovein.esp'
-    # doNotClean
-  - name: 'BBLSspouse.esp'
-    # doNotClean
-  - name: 'BBLSVisitors.esp'
-    # doNotClean
-  - name: 'BBLuxurySuiteClassierDisplayRoom.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24340' ]
+  - name: 'BBLuxurySuite(ENM)?\.es(m|p)'
+    url:
+      - link: 'https://migal3d.com/bbls/'
+        name: 'Bathing Beauties or Beefcake Luxury Suite'
+  - name: 'BBLuxurySuite.esm'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x91e5fc6a
-        udr: 6
-  - name: 'BBLuxurySuiteDisplayRoom.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24340' ]
+      # v6.1
+      - <<: *quickClean
+        crc: 0x5C6AAACB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
+      # v6.21
+      - <<: *quickClean
+        crc: 0xC5467868
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
+  - name: 'BBLuxurySuiteENM.esp'
+    clean:
+      - crc: 0x5D42E0D5
+        util: 'TES5Edit v4.0.4b'
+  - name: 'BBLuxurySuiteClassier.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19866/'
+        name: 'A Classier BB Luxury Suite'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2d4a79cb
-        udr: 6
+      # Main file - v5.2
+      - <<: *quickClean
+        crc: 0x86E3512C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 29
+      # Optional File - v5.0
+      - <<: *quickClean
+        crc: 0x8A13462A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+        udr: 30
+  - name: 'ClassierTempleofMara.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19866/'
+        name: 'A Classier BB Luxury Suite'
+    dirty:
+      - <<: *quickClean
+        crc: 0x22B65274
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
+        udr: 2
+  - name: 'BBLS_PatioFurniture.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19866/'
+        name: 'A Classier BB Luxury Suite'
+    dirty:
+      - <<: *quickClean
+        crc: 0x0090C691
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'BBLSsecretArmourRoom.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20983' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20983/'
+        name: 'Bathing Beauties Luxury Suite Secret Armor Room'
+    clean:
+      # v1.3
+      - crc: 0x86BAAB56
+        util: 'TES5Edit v4.0.4b'
+  - name: 'BBLuxurySuite(Classier)?DisplayRoom\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24340/'
+        name: 'Bathing Beauties Luxury Suite - Display Room'
+  - name: 'BBLuxurySuiteClassierDisplayRoom.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbbf453f1
-        itm: 2
-        udr: 1
-  - name: 'BBLSSummerWear.esp'
-    msg: [ *obsolete ]
+      - <<: *quickClean
+        crc: 0x91E5FC6A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        udr: 5
+  - name: 'BBLuxurySuiteDisplayRoom.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x2D4A79CB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        udr: 5
+  - name: 'SummerWear(SA|BBLS|UBH)?\.es(m|p)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25237/'
+        name: 'Summer Wear V2 nsfw'
   - name: 'SummerWear.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
     clean:
       # v2.0
       - crc: 0x4ABC3A12
-        util: 'TES5Edit v4.0.2f'
+        util: 'TES5Edit v4.0.4b'
   - name: 'SummerWearSA.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
     dirty:
       # v2.0
       - <<: *quickClean
         crc: 0x7CB5C5EA
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 26
   - name: 'SummerWearBBLS.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
     dirty:
       # v2.0
       - <<: *quickClean
         crc: 0xE9CA2DDC
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'SummerWearUBH.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25237' ]
     dirty:
       # v2.1
       - <<: *quickClean
         crc: 0x759E6860
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
-  - name: 'BBLS_PatioFurniture.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19866' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x90c691
-        itm: 1
   - name: 'BeardedClam.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11782' ]
     dirty:
@@ -11625,13 +11667,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xe4e3473
         itm: 4
-  - name: 'ClassierTempleofMara.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19866' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x22b65274
-        itm: 12
-        udr: 2
   - name: 'Club Obos.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10778' ]
     dirty:
@@ -26056,10 +26091,12 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 39
   - name: 'ApachiiHair.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10168' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10168/'
+        name: 'ApachiiSkyHair'
     clean:
       - crc: 0x783F7167
-        util: 'TES5Edit v4.0.2f'
+        util: 'TES5Edit v4.0.4b'
   - name: 'LylvieveSisters.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15680' ]
     dirty:
