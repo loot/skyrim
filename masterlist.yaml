@@ -13808,102 +13808,103 @@ plugins:
         crc: 0x51a8111e
         itm: 6
         nav: 2
+  - name: 'OBIS(DB)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/31264/'
+        name: 'OBIS - Organized Bandits In Skyrim'
   - name: 'OBIS.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/31264' ]
     tag:
       - Delev
       - Relev
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8bfe9620
-        itm: 3
-      - <<: *dirtyPlugin
-        crc: 0xacc9e849
-        itm: 41
-      - <<: *dirtyPlugin
-        crc: 0xb366bf1b
-        itm: 39
-      - <<: *dirtyPlugin
-        crc: 0xc2c693e1
-        itm: 37
-      - <<: *dirtyPlugin
-        crc: 0xedd0fbe8
-        itm: 44
+    clean:
+      - crc: 0x0D03C149
+        util: 'TES5Edit v4.0.4b'
   - name: 'OBISDB.esp'
     tag:
       - Delev
       - Relev
+    clean:
+      - crc: 0x417BDC00
+        util: 'TES5Edit v4.0.4b'
   - name: 'OBIS Bandit Patrols.esp'
     tag: [ Relev ]
   - name: 'Civil War Overhaul.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/103098' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/103098/'
+        name: 'Civil War Overhaul'
     after:
       - 'OBIS.esp'
       - 'OBISDB.esp'
     msg: [ *patchUnavailableRequiem ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x49e6e0bd
-        itm: 1
+    clean:
+      # v4.03
+      - crc: 0xDF877E09
+        util: 'TES5Edit v4.0.4b'
   - name: 'Overhauled Throne Rooms.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10648' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10648/'
+        name: 'Overhauled Throne Rooms'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc1f35560
-        itm: 9
-        udr: 166
-  - name: 'Overhauled Throne RoomsNoFastTravel.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10648' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9b5301d1
-        itm: 9
-        udr: 166
+      - <<: *quickClean
+        crc: 0x64AA8CF2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 90
+        udr: 193
   - name: 'Overlook Tower - MAINv1.9b.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/4514' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/4514/'
+        name: 'Overlook Tower Player Home'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xed33f2b1
-        itm: 159
+      - <<: *reqManualFix
+        crc: 0xED33F2B1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 321
         udr: 3
         nav: 3
+      - <<: *reqManualFix
+        crc: 0x13CAE5B3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'Proudspire Manor Refurbished.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/51829' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/51829/'
+        name: 'Proudspire Manor Refurbished - ESP'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x54bdfaee
-        itm: 3
-        udr: 51
-      - <<: *dirtyPlugin
-        crc: 0x9be95fe3
-        itm: 3
-        udr: 51
-      - <<: *dirtyPlugin
-        crc: 0xcde3ca7c
-        itm: 3
-        udr: 49
+      # v1.8.3
+      - <<: *quickClean
+        crc: 0x8439B076
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 15
+        udr: 1
   - name: 'PumpingIron.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29476' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/29476/'
+        name: 'Pumping Iron - Dynamic Muscle Growth'
     req: [ *SKSE ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2805293d
-        itm: 3
+    clean:
+      - crc: 0x3B6D5DAD
+        util: 'TES5Edit v4.0.4b'
   - name: 'PuppetMaster2.1.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10419' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10419/'
+        name: 'The Puppet Master Complete'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb09450a0
+      - <<: *quickClean
+        crc: 0xB09450A0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
         udr: 9
   - name: 'PuppetMasterBoss.esp'
     msg: [ *obsolete ]
   - name: 'Queen of the damned-Akasha Dress.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/28736' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/28736/'
+        name: 'Queen of the damned-Akasha Dress'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd0ea5488
-        itm: 3
+      - <<: *quickClean
+        crc: 0xD0EA5488
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
   - name: 'questrewardleveler.esp'
     url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=1050838' ]
     dirty:
@@ -13917,21 +13918,30 @@ plugins:
   - name: 'Ramen0dawnguard.esp'
     inc: [ 'Ramen.esp' ]
   - name: 'Ranger''s Valley Lodge.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/15096' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15096/'
+        name: 'Rangers Valley Lodge -NO LOAD SCREENS-'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd9adfdf2
-        itm: 41
-        udr: 33
+      - <<: *reqManualFix
+        crc: 0xD9ADFDF2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 45
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x2F34634D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Rashiik.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11389' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/11389/'
+        name: 'Rashiiks Talon'
     msg:
       - <<: *obsolete
         condition: 'checksum("Rashiik.esp", E5ED0B07)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7948d345
+      - <<: *quickClean
+        crc: 0x7948D345
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
   - name: 'ReachHome.esp'
     msg: [ *obsolete ]
@@ -13998,19 +14008,30 @@ plugins:
   - name: 'riversidelodgesws.esp'
     msg: [ *obsolete ]
   - name: 'RiverwoodExpEnv01.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20281' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20281/'
+        name: 'RiverwoodExpandedV12'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa785be6b
-        itm: 26
+      - <<: *quickClean
+        crc: 0xA785BE6B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 78
         udr: 13
   - name: 'RiverwoodHotSprings.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/23089' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/23089/'
+        name: 'Hot Springs Home - Riverwood'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf545e78a
-        itm: 25
+      - <<: *reqManualFix
+        crc: 0xF545E78A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 47
         udr: 3
+        nav: 5
+      - <<: *reqManualFix
+        crc: 0xA05E8244
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 5
   - name: 'riverwood house.esp'
     msg: [ *obsolete ]
   - name: 'Riverwood House Of Tree.esp'
@@ -14137,12 +14158,19 @@ plugins:
     after: [ 'Vampirelordroyal.esp' ]
     inc: [ 'TheTownIsSafe.esp' ]
   - name: 'Sam''s Travelling Caravan.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/26207' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/26207/'
+        name: 'samv96UKs Travelling Caravan Home abode'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa73b0ad8
-        itm: 178
+      - <<: *reqManualFix
+        crc: 0xA73B0AD8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 426
         udr: 1
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xE6C6B058
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Sanc Castle.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8506' ]
