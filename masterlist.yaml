@@ -2177,7 +2177,9 @@ plugins:
       - Delev
       - Relev
   - name: 'SkyMoMod.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/35631' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/35631/'
+        name: 'Monster Mod'
     tag:
       - Delev
       - name: Relev
@@ -2186,12 +2188,12 @@ plugins:
       # V4 Main
       - <<: *quickClean
         crc: 0xA9576551
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
       # V4 Main Lore
       - <<: *quickClean
-        crc: 0x151A29D3
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        crc: 0xC735BF5E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'SleepingTreeSanctuary.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/17289' ]
@@ -11645,40 +11647,70 @@ plugins:
         util: 'TES5Edit v4.0.3'
   - name: 'Chapels Of Skyrim.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/30010'
+      - link: 'https://www.nexusmods.com/skyrim/mods/30010/'
         name: 'Chapels Of Skyrim'
-      - link: 'https://www.nexusmods.com/skyrim/mods/89523'
+      - link: 'https://www.nexusmods.com/skyrim/mods/89523/'
         name: 'Chapels Of Skyrim - Finished Edition'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe37562fb
-        itm: 376
+      # 30010
+      - <<: *reqManualFix
+        crc: 0xE37562FB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 401
         udr: 53
         nav: 3
+      # 30010 - after QAC
+      - <<: *reqManualFix
+        crc: 0x99326A5D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
+      # 89523
+      - <<: *reqManualFix
+        crc: 0xBCADAFDE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 407
+        nav: 3
+      # 89523 - after QAC
+      - <<: *reqManualFix
+        crc: 0x1A966F2D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'Cheat Shack (All Items!).esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9344' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9344/'
+        name: 'The Cheat Shack'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcbd2da2a
-        itm: 15
+      - <<: *quickClean
+        crc: 0xCBD2DA2A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 36
   - name: 'CityShrines.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19518' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19518/'
+        name: 'City Shrines'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe4e3473
+      - <<: *quickClean
+        crc: 0x0E4E3473
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'Club Obos.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10778' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10778/'
+        name: 'Club Obos'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x558cb89b
-        itm: 47
-  - name: 'cMKPowerBooks.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/14158' ]
+      - <<: *quickClean
+        crc: 0x558CB89B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 77
+  - name: 'cMKPowerBooks.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/14158/'
+        name: 'cMK - Power Books'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc9035ecb
-        itm: 14
+      - <<: *quickClean
+        crc: 0x63643E87
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
   - name: 'CollegeOfWinterholdImmersive.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/36849' ]
     inc:
@@ -11749,74 +11781,148 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 4
   - name: 'CrimsonQuest2.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21274' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21274/'
+        name: 'The False One Rises'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb8c5038e
+      - <<: *quickClean
+        crc: 0xB8C5038E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'CrimsonQuest3.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/26402' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/26402/'
+        name: 'Rescue Bronwen'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9267f2db
-        itm: 35
+      - <<: *quickClean
+        crc: 0x9EC2648B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 42
   - name: 'CuilalielHaven.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/16604' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/16604/'
+        name: 'Cuilalie Haven - Elven Home'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc21288ed
-        itm: 34
+      - <<: *reqManualFix
+        crc: 0xC21288ED
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 40
         udr: 15
-        nav: 2
+        nav: 4
+      - <<: *reqManualFix
+        crc: 0x452C9EB1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 4
+  - name: '(arthyngrad sanctum|cryptOfSkaldivar|Lavanka|SteezMyster''s Dungeon|TQContest_Agamashi|Vault of kingorc)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20921/'
+        name: 'Wheezes Community Dungeon Pack'
+  - name: 'arthyngrad sanctum.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE6EFD739
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 46
   - name: 'cryptOfSkaldivar.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20921' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa9346f91
-        itm: 31
+      - <<: *quickClean
+        crc: 0xA9346F91
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 54
+  - name: 'Lavanka.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE3225935
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
+  - name: 'SteezMyster''s Dungeon.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xFDD3C5FD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 30
+  - name: 'TQContest_Agamashi.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE053A0C5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 25
+        udr: 4
+  - name: 'Vault of kingorc.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xD553054A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 40
+        udr: 73
   - name: 'ctfdFollower.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10610' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10610/'
+        name: 'Cinder The Flame Dancer CHAPTER ONE'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4ff72199
-        itm: 49
+      - <<: *reqManualFix
+        crc: 0x4FF72199
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 56
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x78D908E7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'CZHCAD.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22791' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22791/'
+        name: 'Home Construction and Decoration'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb3418c2a
+      - <<: *quickClean
+        crc: 0x7BA0E6BF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
-        udr: 51
   - name: 'DA_Skyship_Dragonborn.esp'
     msg: [ *obsolete ]
   - name: 'Daedra in Conjurer Dungeons.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21231' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21231/'
+        name: 'Daedra in Conjurer Dungeons'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xee210836
+      - <<: *quickClean
+        crc: 0xEE210836
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'DaphnesWell.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20451' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20451/'
+        name: 'Daphnes Well'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcea0f9e2
-        itm: 1
+      - <<: *quickClean
+        crc: 0xCEA0F9E2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
         udr: 79
   - name: 'DarkBrotherhoodPlayerRoom.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/14624' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/14624/'
+        name: 'Improved Dark Brotherhood Dawnstar Sanctuary Player Room'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa0f95d24
+      - <<: *quickClean
+        crc: 0xA0F95D24
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 93
         udr: 67
   - name: 'DawnstarMarket.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18890' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18890/'
+        name: 'Dawnstar Indoor Market'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x13265d73
-        itm: 52
+      - <<: *reqManualFix
+        crc: 0x752B6974
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 75
         udr: 6
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x5B4DAFF4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'dawnstarsanctuaryrespawns.esp'
     url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=7698' ]
@@ -11826,19 +11932,19 @@ plugins:
         util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'RIC_Dawnstar.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22644' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22644/'
+        name: 'Dawnstar Expanded'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x83d60e6f
-        itm: 27
-      - <<: *dirtyPlugin
-        crc: 0x998e6fa5
-        itm: 6
+      - <<: *quickClean
+        crc: 0x998E6FA5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 30
   - name: 'deadmanor.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/11981'
+      - link: 'https://www.nexusmods.com/skyrim/mods/11981/'
         name: 'Dead Manor'
-      - link: 'https://www.nexusmods.com/skyrim/mods/20127'
+      - link: 'https://www.nexusmods.com/skyrim/mods/20127/'
         name: 'Dead Manor - German'
     dirty:
       # Original
@@ -11854,23 +11960,47 @@ plugins:
         itm: 14
         udr: 4
   - name: 'DeadManor 1.1.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20127' ]
+    url: [ 'https://www.nexusmods.com/skyrim/mods/20127/' ]
     msg: [ *obsolete ]
+  - name: '(Death Green|Smaller Trees) Markarth\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/11558/'
+        name: 'Death Green Markarth'
   - name: 'Death Green Markarth.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11558' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x390ada9e
+      - <<: *quickClean
+        crc: 0x390ADA9E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
         udr: 11
+  - name: 'Smaller Trees Markarth.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x3DF856F3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        udr: 14
   - name: 'Destroy the Thieves Guild.esp'
     url:
-      - 'https://www.nexusmods.com/skyrim/mods/28880'
-      - 'https://www.nexusmods.com/skyrim/mods/73972'
+      - link: 'https://www.nexusmods.com/skyrim/mods/28880/'
+        name: 'Destroy the Thieves Guild - bruce142'
+      - link: 'https://www.nexusmods.com/skyrim/mods/73972/'
+        name: 'Destroy the Thieves Guild - Spark01'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2f071cab
-        itm: 24
+      # 28880 - Main file
+      - <<: *quickClean
+        crc: 0xBADA7EE1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 61
+      # 28880 - Update file
+      - <<: *quickClean
+        crc: 0x8A75C0CA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 61
+      # 73972
+      - <<: *quickClean
+        crc: 0xDC2DA868
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
   - name: 'WIP-Destroy the Thieves Guild.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25443' ]
     dirty:
@@ -12971,7 +13101,7 @@ plugins:
   - name: 'Hunter.esp'
     req:
       - name: 'SkyMoMod.esm'
-        display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
+        display: '[Skyrim Monster Mod](https://www.nexusmods.com/skyrim/mods/35631/)'
   - name: 'HuntersLakeHouse1-5.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22314' ]
     dirty:
@@ -13380,12 +13510,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0x4259f0f3
         udr: 107
-  - name: 'Lavanka.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/44526' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe3225935
-        itm: 14
   - name: 'LawnDaveTheDragon.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8808' ]
     msg:
@@ -14328,12 +14452,6 @@ plugins:
       - <<: *dirtyPlugin
         crc: 0xfa9e4ca
         udr: 61
-  - name: 'Smaller Trees Markarth.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11558' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3df856f3
-        udr: 14
   - name: 'SnowberryCottage.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/16366' ]
     dirty:
@@ -14427,12 +14545,6 @@ plugins:
         itm: 141
   - name: 'Stag''sRest.esp'
     inc: [ 'Cabin in the woods.esp' ]
-  - name: 'SteezMyster''s Dungeon.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20921' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfdd3c5fd
-        itm: 13
   - name: 'Stegdon''s Book Collection.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12237' ]
     msg:
@@ -15026,13 +15138,6 @@ plugins:
         itm: 62
         udr: 4
         nav: 3
-  - name: 'Vault of kingorc.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20921' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd553054a
-        itm: 31
-        udr: 73
   - name: 'VeiledKeep.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24752' ]
     dirty:
@@ -16972,18 +17077,18 @@ plugins:
     inc: [ 'dD-Dawnguard-EBT Patch.esp' ]
     req:
       - name: 'SkyMoMod.esm'
-        display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
+        display: '[Skyrim Monster Mod](https://www.nexusmods.com/skyrim/mods/35631/)'
   - name: 'dD-Dawnguard-MonsterMod EBT Patch.esp'
     inc:
       - 'dD-Dawnguard-EBT Patch.esp'
       - 'dD-SkyrimMonsterMod EBT Patch.esp'
     req:
       - name: 'SkyMoMod.esm'
-        display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
+        display: '[Skyrim Monster Mod](https://www.nexusmods.com/skyrim/mods/35631/)'
   - name: 'dD-Dragonborn-MonsterMod EBT Patch.esp'
     req:
       - name: 'SkyMoMod.esm'
-        display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
+        display: '[Skyrim Monster Mod](https://www.nexusmods.com/skyrim/mods/35631/)'
   - name: 'dD-DG-DB-MonsterMod EBT Patch.esp'
     inc:
       - 'dD-Dawnguard-EBT Patch.esp'
@@ -16994,7 +17099,7 @@ plugins:
       - 'dD-Dragonborn-MonsterMod EBT Patch.esp'
     req:
       - name: 'SkyMoMod.esm'
-        display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
+        display: '[Skyrim Monster Mod](https://www.nexusmods.com/skyrim/mods/35631/)'
   - name: 'dD-DG-DB-MM-SiC EBT Patch.esp'
     inc:
       - 'dD-Dawnguard-EBT Patch.esp'
@@ -17006,7 +17111,7 @@ plugins:
       - 'dD-DG-DB-MonsterMod EBT Patch.esp'
     req:
       - name: 'SkyMoMod.esm'
-        display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
+        display: '[Skyrim Monster Mod](https://www.nexusmods.com/skyrim/mods/35631/)'
       - name: 'Skyrim Immersive Creatures.esp'
         display: '[Skyrim Immersive Creatures](http://www.nexusmods.com/skyrim/mods/24913)'
   - name: 'dD-Skybirds Patch.esp'
@@ -20598,7 +20703,7 @@ plugins:
   - name: 'psikoticsnecromancy.esp'
     req:
       - name: 'SkyMoMod.esm'
-        display: '[Skyrim Monster Mod](http://www.nexusmods.com/skyrim/mods/35631)'
+        display: '[Skyrim Monster Mod](https://www.nexusmods.com/skyrim/mods/35631/)'
   - name: 'SexiSArrokAnimations.esp'
     req: [ *FNIS ]
   - name: 'SexiSCupid.esp'
