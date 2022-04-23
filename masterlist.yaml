@@ -11989,63 +11989,115 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'WIP-Destroy the Thieves Guild.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25443/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25443/'
+        name: 'WIP - Destroy the Thieves Guild'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x43fb188c
-        itm: 3
-      - <<: *dirtyPlugin
+      # Main file
+      - <<: *quickClean
         crc: 0xE5C3CF54
-        itm: 3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+      # Optional - No Apachii requirement
+      - <<: *quickClean
+        crc: 0x8F8C4530
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+      # Optional - Exclude Etienne Rarnis
+      - <<: *quickClean
+        crc: 0x43FB188C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+      # Optional - No Apachii requirement & Exclude Etienne Rarnis
+      - <<: *quickClean
+        crc: 0xCD20D7C5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
   - name: 'LocalizedGuildJobs.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/14509/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/14509/'
+        name: 'Localized Thieves Guild Jobs'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x71fe325d
-        itm: 15
-  - name: 'df127merchantspack01.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/52837/' ]
+      # Main file
+      - <<: *quickClean
+        crc: 0x71FE325D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+      # Update file
+      - <<: *quickClean
+        crc: 0x722C0598
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+  - name: 'DF127MerchantsPack01.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/52837/'
+        name: 'Dark''s Old Projects'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5d83ebdb
-        itm: 186
+      - <<: *reqManualFix
+        crc: 0x5D83EBDB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 937
         udr: 81
         nav: 6
+      - <<: *reqManualFix
+        crc: 0xD393D356
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 6
   - name: 'DJZ Cooking Pots.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/36803/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/36803/'
+        name: 'More Cooking Pots'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x5321939E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
         udr: 4
   - name: 'DFB - Dimensional Rift Home.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9580/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9580/'
+        name: 'DFB - Dimensional Rift Home'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc035fbe0
+      - <<: *quickClean
+        crc: 0xC035FBE0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'DisintegratingAxe.esp'
     msg:
       - <<: *obsolete
         condition: 'checksum("DisintegratingAxe.esp", 70970745)'
   - name: 'DoggyDoors.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19821/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19821/'
+        name: 'Doggy Doors - Thieves Guild Fix for Heimskr and Severio homes'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6868b566
-        itm: 1
+      - <<: *quickClean
+        crc: 0x6868B566
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'Dolphyn_Estate.esp'
     url:
-      - 'https://www.nexusmods.com/skyrim/mods/22475/'
-      - 'https://www.nexusmods.com/skyrim/mods/51996/'
+      - link: 'https://www.nexusmods.com/skyrim/mods/22475/'
+        name: 'Dolphyn Estate v1'
+      - link: 'https://www.nexusmods.com/skyrim/mods/51996/'
+        name: 'Dolphyn Estate V2'
     dirty:
-      - <<: *dirtyPlugin
+      # v1
+      - <<: *quickClean
         crc: 0x38547885
-        itm: 5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 20
+      # v2
+      - <<: *quickClean
+        crc: 0xB2B7688F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 25
   - name: 'DomaineAlucard.esp'
     url:
-      - 'https://www.nexusmods.com/skyrim/mods/20528/'
-      - 'https://www.nexusmods.com/skyrim/mods/22363/'
+      - link: 'https://www.nexusmods.com/skyrim/mods/20528/'
+        name: 'FR - Domaine Alucard'
+      - link: 'https://www.nexusmods.com/skyrim/mods/22363/'
+        name: 'Domaine Alucard - English'
     dirty:
       # v0.5.5 (FR)
       - <<: *reqManualFix
@@ -12072,14 +12124,20 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Domino_MudcrabMerchant.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/12630/' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Domino_MudcrabMerchant.esp", 2F466C70)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/12630/'
+        name: 'Dominos Mudcrab Merchant'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x57bda449
-        itm: 4
+      # v1.1.2
+      - <<: *quickClean
+        crc: 0x41133E23
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+      # v1.1 - Standalone
+      - <<: *quickClean
+        crc: 0x57BDA449
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
   - name: 'Dorn Heven.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/35899/' ]
     dirty:
@@ -12088,11 +12146,14 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 241
   - name: 'DovahkriidGrenzganger.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21654/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21654/'
+        name: 'Dovahkriid Grenzganger - Quest and Companions'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3c53a050
-        itm: 25
+      - <<: *quickClean
+        crc: 0x3C53A050
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 37
         udr: 21
   - name: 'dovahkiin_mountain_retreat.esp'
     url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=92030123' ]
@@ -12134,22 +12195,24 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/9548/' ]
     msg: [ *obsolete ]
   - name: 'Dragon Falls Manor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10901/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10901/'
+        name: 'Dragon Falls Manor'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7ea3a5
-        itm: 52
+      - <<: *reqManualFix
+        crc: 0x197A15AB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 804
         udr: 19
-      - <<: *dirtyPlugin
-        crc: 0x197a15ab
-        itm: 63
-        udr: 19
-      - <<: *dirtyPlugin
-        crc: 0x775367f7
-        itm: 15
-        udr: 19
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0x12A624F8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'Manoir des chutes du Dragon.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11644/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/11644/'
+        name: 'Le Manoir des Chutes du Dragon - Dragon Falls Manor'
     msg:
       - type: error
         content:
@@ -12161,10 +12224,16 @@ plugins:
             text: 'Dragon Falls Manor.espのフランス語版です。'
         condition: 'file("Dragon Falls Manor.esp")'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2590076
-        itm: 15
+      - <<: *reqManualFix
+        crc: 0x02590076
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 804
         udr: 19
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0xBF6ABBCC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'DragonmournInn.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/33323/' ]
     dirty:
@@ -12187,11 +12256,14 @@ plugins:
         condition: 'many("DragonsReach_Hideout_(Plus|Assassin|Nightingale)\.esp")'
         subs: [ 'Dragons Reach Hideout  .esp file' ]
   - name: 'dragonstaffofdomination001.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13073/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/13073/'
+        name: 'Dragon Staves of Domination'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfd198303
-        itm: 10
+      - <<: *quickClean
+        crc: 0xFD198303
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 15
         udr: 4
   - name: 'DreadmystHollow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/26839/' ]
@@ -12226,50 +12298,62 @@ plugins:
         util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Druidessentials.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/37665/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/37665/'
+        name: 'Druid Essentials'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7c29eac5
-        itm: 17
+      - <<: *quickClean
+        crc: 0x48D2C15D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 73
         udr: 36
-      - <<: *dirtyPlugin
-        crc: 0x7e71d818
-        itm: 17
-        udr: 35
+  - name: 'Dungeons (4|Chapter (1|2|3 Crystal Forest)|Realm of Darkness|Swamp of the Dead|Vault of Elements)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/36555/'
+        name: 'Lord Dagoberts Dungeons'
   - name: 'Dungeons 4.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/36555/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x44d055e4
+      - <<: *quickClean
+        crc: 0x44D055E4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 3
   - name: 'Dungeons Chapter 1.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/36555/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x36cc67ac
-        itm: 5
+      - <<: *quickClean
+        crc: 0x36CC67AC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
   - name: 'Dungeons Chapter 2.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/36555/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbd2d1a36
+      - <<: *quickClean
+        crc: 0xBD2D1A36
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'Dungeons Chapter 3 Crystal Forest.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/36555/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xff958cdf
+      - <<: *quickClean
+        crc: 0xD5232FD5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
-  - name: 'Dungeons Vault of Elements.esp'
-    url:
-      - 'https://www.nexusmods.com/skyrim/mods/20560/'
-      - 'https://www.nexusmods.com/skyrim/mods/36555/'
+  - name: 'Dungeons Realm of Darkness.esp'
     dirty:
-      # v1.0
+      - <<: *quickClean
+        crc: 0x24D71E4F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+  - name: 'Dungeons Swamp of the Dead.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC13D1209
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+        udr: 2
+  - name: 'Dungeons Vault of Elements.esp'
+    dirty:
       - <<: *quickClean
         crc: 0xA30FCAEE
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
         udr: 4
   - name: 'DwarvenFalls.esp'
