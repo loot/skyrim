@@ -20221,46 +20221,40 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/22691/'
         name: 'Staves of Skyrim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5924d476
+      # Main file
+      - <<: *quickClean
+        crc: 0xD9061037
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 5
+      # No Perks
+      - <<: *quickClean
+        crc: 0xC3BCCFC6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 5
+      # SkyRe
+      - <<: *quickClean
+        crc: 0x5924D476
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
         udr: 5
-      - <<: *dirtyPlugin
-        crc: 0xa456b6cd
-        itm: 4
-        udr: 5
-      - <<: *dirtyPlugin
-        crc: 0x938B07D0
-        itm: 4
-        udr: 5
-      - <<: *dirtyPlugin
-        crc: 0x265E9C99
-        itm: 4
-        udr: 5
-      - <<: *dirtyPlugin
-        crc: 0x43E13A2E
-        itm: 4
-        udr: 5
-      - <<: *dirtyPlugin
-        crc: 0x6A04E2AA
-        itm: 4
-        udr: 5
+  - name: '2HandSpeed(30|40)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8101/'
+        name: 'Two Handed Speed'
   - name: '2HandSpeed30.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/8101/'
-        name: 'Two Handed Speed'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x57db9855
-        itm: 11
+      - <<: *quickClean
+        crc: 0x57DB9855
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: '2HandSpeed40.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/8101/'
-        name: 'Two Handed Speed'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x32fddde
-        itm: 11
+      - <<: *quickClean
+        crc: 0x032FDDDE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: '10 extra effect.esp'
     msg:
       - <<: *alreadyInX
@@ -20277,9 +20271,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/14013/'
         name: 'Alteration and Restoration Redux'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x49730f28
-        itm: 18
+      - <<: *quickClean
+        crc: 0x49730F28
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
   - name: 'balanceddestruction.esp'
     msg: [ *obsolete ]
   - name: 'balanceddestructionv2.esp'
@@ -20288,10 +20283,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22165/'
         name: 'The Beast Within - Passive Werewolf Perks'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd7a74d2e
-        itm: 1
+    clean:
+      - crc: 0xDBBBBF9F
+        util: 'TES5Edit v4.0.4b'
   - name: 'cao_extrapockets_D.+\.esp'
     msg:
       - <<: *alreadyInX
@@ -20305,8 +20299,9 @@ plugins:
         name: 'Deadarmours Weapon Perk Overhaul'
     inc: [ 'Duel - Combat Realism.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2711a049
+      - <<: *quickClean
+        crc: 0x2711A049
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'More Useful(l)? Soul Siphon(10|25|50|75|100)\.esp'
     msg:
@@ -20326,8 +20321,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/11422/'
         name: 'Overpower - Two Handed and Dual Wield Shield Disarm'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa16b0637
+      - <<: *quickClean
+        crc: 0xA16B0637
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Perk_Deft_Movement_All_(100|25|50)?\.esp'
     msg: [ *corrupt ]
@@ -20463,13 +20459,11 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/36542/'
         name: 'Syynxs Perky Reborn - Major Perk Overhaul'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Perky.esp", EE1F755B) or checksum("Perky.esp", 469D04CE)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdfa3acce
-        itm: 35
+      - <<: *quickClean
+        crc: 0xB41CA0C7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 97
   - name: 'perk tweak.esp'
     inc:
       - 'SkyRe_Main.esp'
@@ -20483,137 +20477,60 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("Shars Signs - The Lover (5%|10%|30%|50%)?\.esp")'
         subs: [ 'Shars Signs - The Lover .esp file' ]
+  - name: 'Skype( - (1H|2H|Alchemy|Archery|Destruction|Speech))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21512/'
+        name: 'SKYrim Perk Extravaganza -- SkyPE'
   - name: 'Skype.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc09abba9
+      # Main file - v1.70
+      - <<: *quickClean
+        crc: 0x2C0C4025
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+      # Main file - v2.16
+      - <<: *quickClean
+        crc: 0xE8288EB1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
+      # Main file - v2.5
+      - <<: *quickClean
+        crc: 0xF893BC43
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 25
+      # Update file - v2.0 Beta
+      - <<: *quickClean
+        crc: 0xD86E77BA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+      # Update file - v2.1
+      - <<: *quickClean
+        crc: 0xC39F377E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'Skype - 1H.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf20e942
+      - <<: *quickClean
+        crc: 0x0F20E942
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Skype - 2H.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6dfcec03
+      - <<: *quickClean
+        crc: 0x6DFCEC03
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Skype - Alchemy.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7879a2e7
-        itm: 1
-      - <<: *dirtyPlugin
-        crc: 0x6B0045BE
+      - <<: *quickClean
+        crc: 0x7879A2E7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Skype - Archery.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf2b0b35a
-        itm: 1
-      - <<: *dirtyPlugin
-        crc: 0xF1A87C0A
-        itm: 1
-  - name: 'Skype - Destruction.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x101493a
-        itm: 1
-  - name: 'Skype - Speech.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8fedf155
-        itm: 1
-  - name: 'Skype - Alteration.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9436159b
-        itm: 1
-  - name: 'Skype - Block (Classes).esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xebb34ff6
-        itm: 1
-  - name: 'Skype - Conjuration.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb99b291e
-        itm: 1
-  - name: 'Skype - Enchanting (Enchanting).esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe64a0fb0
-        itm: 1
-  - name: 'Skype - Heavy Armor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe7252a22
-        itm: 1
-  - name: 'Skype - Illusion.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x36177b67
-        itm: 1
-  - name: 'Skype - Light Armor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x42370787
-        itm: 1
-  - name: 'Skype - Lockpicking.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x93e08872
-        itm: 1
-  - name: 'Skype - One-Handed.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6663454a
-        itm: 1
-  - name: 'Skype - Pickpocket (Races).esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6eb9778d
-        itm: 1
-  - name: 'Skype - Restoration.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2b332cc8
-        itm: 1
-  - name: 'Skype - Smithing (Athletics).esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5ba11aca
-        itm: 1
-  - name: 'Skype - Sneak.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc013ba37
-        itm: 1
-  - name: 'Skype - Two-Handed.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21512/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4820339a
+      - <<: *quickClean
+        crc: 0xF2B0B35A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Stealth Skills Rebalanced_COMPLETE.esp'
     after:
@@ -20700,8 +20617,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/18783/'
         name: 'Weapon Perk Adjustments'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe830cbbe
+      - <<: *quickClean
+        crc: 0xE830CBBE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'ActionPoser.esp'
     req: [ *FNIS ]
@@ -20723,6 +20641,9 @@ plugins:
   - name: 'ElinRaceIdle.esp'
     req: [ *FNIS ]
   - name: 'FAMP2.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/26271/'
+        name: 'Fully Animated Meals Potions - See yourself Eat and Drink'
     req: [ *FNIS ]
   - name: 'Interactive Skyrim.esp'
     req: [ *SKSE ]
@@ -20733,20 +20654,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/29742/'
         name: 'Out of my Way - Anti NPC Push mod'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x39d7fa2e
+      - <<: *quickClean
+        crc: 0x39D7FA2E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 35
   - name: 'PinupsMen.esp'
     req: [ *FNIS ]
-  - name: 'PotionsBETA.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/26271/'
-        name: 'Fully Animated Meals Potions - See yourself Eat and Drink'
-    after: [ '3DNPC.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb541da
-        itm: 2
   - name: 'RND_FAMP.esp'
     after: [ '3DNPC.esp' ]
   - name: 'IMCN_FAMP.esp'
@@ -20785,15 +20698,16 @@ plugins:
     req:
       - *SKSE
       - *FNIS
-  - name: 'ShakeIt.esp'
+  - name: 'ShakeIt!.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/14521/'
         name: 'Shake It - Dance Animations'
     req: [ *FNIS ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7e047c66
-        itm: 1
+      - <<: *quickClean
+        crc: 0xC7431FB8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'zzLSARAddon.esp'
     req:
       - *SKSE
