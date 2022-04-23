@@ -14956,32 +14956,36 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/26748/'
         name: 'Tiny Assassin Hideout'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4a59033
-        itm: 2
-  - name: 'tinymagetower(nopainnogain)?\.esp'
+      - <<: *quickClean
+        crc: 0x04A59033
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
+  - name: 'tinymagetower(npainnogain)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/25886/'
         name: 'Tiny Mage Tower'
   - name: 'tinymagetower.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("tinymagetower.esp", 33ADB458) or checksum("tinymagetower.esp", 4536712D)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x52753b88
+      - <<: *reqManualFix
+        crc: 0x52753B88
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
         nav: 1
-  - name: 'tinymagetowernopainnogain.esp'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("tinymagetowernopainnogain.esp", 04DD015D)'
+      - <<: *reqManualFix
+        crc: 0xD98C6237
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'tinymagetowernpainnogain.esp'
     inc: [ 'tinymagetower.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x33fe7dae
+      - <<: *reqManualFix
+        crc: 0x33FE7DAE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x7911C0AB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'tinytreehome.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25631/' ]
@@ -15003,9 +15007,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/14681/'
         name: 'Tomb of the Volkihar'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbda182ac
-        itm: 15
+      - <<: *quickClean
+        crc: 0xBDA182AC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
         udr: 1
   - name: 'towHarvest.esp'
     msg:
@@ -15157,64 +15162,133 @@ plugins:
     clean:
       - crc: 0xD3187B55
         util: 'TES5Edit v4.0.3'
+  - name: 'UDO(chestless)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19752/'
+        name: 'Skyrim UDO - Ultimate Dungeon Overhaul and more'
   - name: 'UDO.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19752/' ]
+    msg: [ *corrupt ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd7d3445d
-        itm: 15
-        udr: 4448
+      # v2.9
+      - <<: *reqManualFix
+        crc: 0x66E522E3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 309
+        udr: 4531
+        nav: 1
+      # v3.1 - Dawnguard
+      - <<: *reqManualFix
+        crc: 0x1BCF6C3C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 342
+        udr: 4693
+        nav: 1
+      # v3.1 - Dawnguard cleaned
+      - <<: *reqManualFix
+        crc: 0x7A10170D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 260
+        nav: 1
+  - name: 'UDOchestless.esp'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0xFBCE9818
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 260
+        udr: 4441
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x499A6935
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Ultimate training ground.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10667/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10667/'
+        name: 'Ultimate training ground'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2de178ef
-        itm: 12
+      - <<: *quickClean
+        crc: 0x2DE178EF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 23
   - name: 'Ultimate Witcher MOD.esp'
     tag: [ Relev ]
   - name: 'underbreeze.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13476/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/13476/'
+        name: 'Underbreeze Workshop'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x749fbdac
-        itm: 2
+      - <<: *reqManualFix
+        crc: 0x749FBDAC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
         udr: 1
         nav: 2
+      - <<: *reqManualFix
+        crc: 0x03888556
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
+  - name: 'Unique Places( with visible markers)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15310/'
+        name: 'Unique Places'
   - name: 'Unique Places.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/15310/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x43524f9f
-        itm: 47
-        udr: 48
+      - <<: *quickClean
+        crc: 0xCBDDC84E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 185
+        udr: 50
+  - name: 'Unique Places with visible markers.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xECF0F00F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 185
+        udr: 50
   - name: 'Unmarked Places - Dragon Mounds.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8521/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8521/'
+        name: 'Unmarked Places - Dragon Mounds'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe80f1ad2
+      - <<: *quickClean
+        crc: 0xE80F1AD2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 52
         udr: 4
   - name: 'UpkeptUnderkeep.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11083/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/11083/'
+        name: 'Upkept Underkeep'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf6e10e47
-        udr: 120
+      - <<: *quickClean
+        crc: 0xF6E10E47
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+        udr: 122
   - name: 'Unstable tower eng.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/14903/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/14903/'
+        name: 'Unstable tower'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4bb6b136
-        itm: 62
+      - <<: *reqManualFix
+        crc: 0x4BB6B136
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 177
         udr: 4
         nav: 3
+      - <<: *reqManualFix
+        crc: 0x6F3EBF6A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'VeiledKeep.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24752/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24752/'
+        name: 'Veiled Keep'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4d96fdc8
-        itm: 8
+      - <<: *quickClean
+        crc: 0x4D96FDC8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
         udr: 55
   - name: 'Vjarkell Castle.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21918/' ]
