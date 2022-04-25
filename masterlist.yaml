@@ -15325,24 +15325,53 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/10134/'
         name: 'Walking Stick Quest'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x273d57b2
-        itm: 10
+      - <<: *quickClean
+        crc: 0x273D57B2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 46
         udr: 1
   - name: 'WANDERINGNAZGUL.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18338/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18338/'
+        name: 'Lotr Wandering Nazgul Stay off the Roads'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8a52aec8
-        itm: 102
+      - <<: *quickClean
+        crc: 0x504BA357
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 110
+      # Update
+      - <<: *quickClean
+        crc: 0x8A52AEC8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 114
   - name: 'WardrobeRoom.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/11444/'
         name: 'Dovahkiin - Wardrobe Room - a lot Mannequins'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf34648c1
-        itm: 5
+      # v2.36
+      - <<: *quickClean
+        crc: 0x9F50C517
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 3
+      # v2.5
+      - <<: *quickClean
+        crc: 0xF34648C1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+        udr: 3
+      # v2.42 - Optional file
+      - <<: *quickClean
+        crc: 0xF6739AAA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+        udr: 3
+      # v2.52 - Optional file
+      - <<: *quickClean
+        crc: 0x1E9AEE07
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
         udr: 3
   - name: 'WARZONES - Civil Unrest.esp'
     msg:
@@ -15426,9 +15455,21 @@ plugins:
         subs: [ '[Whiterun Trees 1.1.esp](https://www.nexusmods.com/skyrim/mods/8240/).' ]
         condition: 'checksum("Whiterun Trees.esp", 226D7357)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd2995274
-        itm: 1
+      # Trees for Whiterun - v1.0
+      - <<: *quickClean
+        crc: 0x2EA9488D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+      # Trees for Whiterun - v1.1
+      - <<: *quickClean
+        crc: 0xD2995274
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+      # Whiterun Trees - v1.0 - Old file
+      - <<: *quickClean
+        crc: 0x226D7357
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
   - name: 'Whiterun Trees 1.1.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/8240/'
@@ -15443,6 +15484,12 @@ plugins:
           - lang: ja
             text: '同名のModとは異なります。おそらく両立できません。'
         condition: 'checksum("Whiterun Trees.esp", D2995274)'
+    dirty:
+      # Whiterun Trees - v1.1
+      - <<: *quickClean
+        crc: 0x88C69EB7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
   - name: '(BETA) Immersive Cities - Whiterun.esp'
     msg: [ *obsolete ]
   - name: 'Whiterun Ferns.esp'
@@ -15450,8 +15497,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/8182/'
         name: 'The Pines of Whiterun'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1c31e69b
+      - <<: *quickClean
+        crc: 0x1C31E69B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'whiterunMarket.esp'
     after: [ 'forested_skyrim.esp' ]
@@ -15460,44 +15508,67 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/9277/'
         name: 'Whitewatch Tower Camp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe1254593
-        itm: 24
+      - <<: *reqManualFix
+        crc: 0xE1254593
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 41
         udr: 19
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xD1827FF6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'Wild Goose Chase Quest.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/17143/'
         name: 'Wild Goose Chase Quest'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9fa6917
+      - <<: *quickClean
+        crc: 0x09FA6917
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'WindhelmFletcher.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/15802/'
         name: 'Windhelm Merchant - Rita the Fletcher'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1db7b3d6
-        itm: 12
+      # v1.01
+      - <<: *quickClean
+        crc: 0x1DB7B3D6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+        udr: 6
+      # v1.01DG
+      - <<: *quickClean
+        crc: 0xF3B332A7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
         udr: 6
   - name: 'Windmill_Shelter.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17742/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/17742/'
+        name: 'Windmill Shelter'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf1d65bd
-        itm: 32
+      - <<: *quickClean
+        crc: 0x0F1D65BD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 36
         udr: 1
   - name: 'Winterhold Fully Restored.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/21138/'
         name: 'Winterhold Fully Restored'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5725e884
-        itm: 17
-        udr: 356
+      - <<: *reqManualFix
+        crc: 0x15642BAF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 81
+        udr: 358
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0x7194420C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'Winterhold repair.esp'
     msg: [ *obsolete ]
   - name: 'Winterhold repairV4.esp'
@@ -15505,37 +15576,63 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/11616/'
         name: 'Winterhold Restoration'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1cb2273b
-        itm: 171
+      # v4
+      - <<: *reqManualFix
+        crc: 0x1CB2273B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 181
         udr: 26
         nav: 1
+      # v4 - after QAC
+      - <<: *reqManualFix
+        crc: 0xC59D73EA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # v5
+      - <<: *reqManualFix
+        crc: 0x7D6D3AE9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 190
+        udr: 247
+        nav: 7
+      # v5 - after QAC
+      - <<: *reqManualFix
+        crc: 0x04211084
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 7
   - name: 'Woodland sanctuary.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/20120/'
         name: 'Woodland Sanctuary'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd0deb50d
-        itm: 3
+      - <<: *reqManualFix
+        crc: 0xD0DEB50D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
         udr: 12
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x75976FFF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Work a Steady Job as a Blacksmith.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/16782/'
         name: 'Work a Steady Job as a Blacksmith'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9ec79790
-        itm: 13
+      - <<: *quickClean
+        crc: 0x9EC79790
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
   - name: 'WyvernCliff.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/12299/'
         name: 'Wyvern Sanctuary'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe7d2ec3e
-        itm: 32
+      - <<: *quickClean
+        crc: 0xE7D2EC3E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 53
         udr: 3
   - name: 'zzzbasement.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/20023/' ]
@@ -15574,8 +15671,15 @@ plugins:
         name: 'Pork Up - Dynamic Weight Gain'
     req: [ *SKSE ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x62b426c3
+      # v1.1
+      - <<: *quickClean
+        crc: 0x62B426C3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # v1.0
+      - <<: *quickClean
+        crc: 0xCD778687
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'DynamicWeight.esp'
     req: [ *SKSE ]
@@ -15643,10 +15747,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/19989/'
         name: 'Accessible Merchant Storage'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf3a600aa
-        itm: 4
+    clean:
+      - crc: 0xF2530EDF
+        util: 'TES5Edit v4.0.4b'
   - name: 'AchieveThat.esp'
     req:
       - *SKSE
@@ -15760,8 +15863,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/26828/'
         name: 'Bards attend Classes'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7fa6195d
+      - <<: *quickClean
+        crc: 0x7FA6195D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'BasicHorseRidingAI.esp'
     msg: [ *alreadyInUFO ]
@@ -15770,9 +15874,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/20357/'
         name: 'Improved Blacksmithing'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3c4e4135
-        itm: 29
+      - <<: *quickClean
+        crc: 0x3C4E4135
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
   - name: 'mod1.esp'
     inc: [ 'Better Bone Armor.esp' ]
   - name: 'Better Deadly Bandits.esp'
