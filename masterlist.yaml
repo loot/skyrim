@@ -18885,10 +18885,9 @@ plugins:
             text: 'конфликты с другими модами, меняющими систему вампиризма.'
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Vampiric Thirst.esp")'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfafb18c2
-        itm: 3
+    clean:
+      - crc: 0x87674AA1
+        util: 'TES5Edit v4.0.4b'
   - name: 'mslVampiricThirst - Requiem.esp'
     inc:
       - name: 'Requiem.esp'
@@ -18899,8 +18898,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/12185/'
         name: 'Werewolf Growth on Feed'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe971f189
+      - <<: *quickClean
+        crc: 0xE971F189
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'Revamped Vampire Lord HC Ver.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21660/' ]
@@ -18930,12 +18930,15 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/22611/'
         name: 'Bloodmoon Rising - Moonlight Tales Werewolf and Werebear Expansion Pack'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x53b3ce8c
-        itm: 9
-      - <<: *dirtyPlugin
-        crc: 0x53c63925
-        itm: 14
+      - <<: *quickClean
+        crc: 0xB3F3CCFD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+      # No Automatic Skin System
+      - <<: *quickClean
+        crc: 0x27E534FC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'vampfix.esp'
     # doNotClean
   - name: 'VampireInveterDG.esp'
@@ -18945,17 +18948,22 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/22016/'
         name: 'Vampire Kinship'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc1417f3b
+      - <<: *quickClean
+        crc: 0xC1417F3B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
-  - name: 'Vampire''s Underwater suffocation FIX 1.1.esp'
+  - name: 'Vampire''s Underwater suffocation FIX 1.2( NoDawnguard)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/24506/'
         name: 'Vampire Underwater Suffocation FIX'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x72df351f
-        itm: 1
+  - name: 'Vampire''s Underwater suffocation FIX 1.2.esp'
+    clean:
+      - crc: 0xFD365D49
+        util: 'TES5Edit v4.0.4b'
+  - name: 'Vampire''s Underwater suffocation FIX 1.2 NoDawnguard.esp'
+    clean:
+      - crc: 0x3F06A641
+        util: 'TES5Edit v4.0.4b'
   - name: 'Vampires hate the sun.esp'
     msg:
       - <<: *corrupt
@@ -18977,14 +18985,17 @@ plugins:
       - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and checksum("WerewolfMastery.esp", 57E4BC0F)'
       - <<: *useVersionNonDawnguard
-        condition: 'not active("Dawnguard.esm") and checksum("WerewolfMastery.esp", 73AC0648)'
+        condition: 'not active("Dawnguard.esm") and checksum("WerewolfMastery.esp", A4647A07)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x73ac0648
-        itm: 1
-      - <<: *dirtyPlugin
+      # v2.0 - Non-Dawnguard
+      - <<: *quickClean
         crc: 0x57E4BC0F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+    clean:
+      # v3.0 - Dawnguard
+      - crc: 0xA4647A07
+        util: 'TES5Edit v4.0.4b'
   - name: 'BetterQuestObjectives-MoonlightPatch.esp'
     inc: [ 'BetterQuestObjectives-MoonlightMasteryPatch.esp' ]
   - name: 'BetterQuestObjectives-MoonlightMasteryPatch.esp'
@@ -19015,8 +19026,15 @@ plugins:
         name: 'Summon Adoring Fan'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x583bb026
+      # v1
+      - <<: *quickClean
+        crc: 0x583BB026
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+      # v2
+      - <<: *quickClean
+        crc: 0x001DEFEA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 13
   - name: 'AlikrKematuSummon.esp'
     url:
@@ -19024,8 +19042,15 @@ plugins:
         name: 'Summon Alikr Warrior - Kematu'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6d6b36b6
+      # v1a
+      - <<: *quickClean
+        crc: 0x6D6B36B6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+      # v2a
+      - <<: *quickClean
+        crc: 0x6FF69DC9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'Apocalypse - The Spell Package.esp'
     url:
@@ -19036,17 +19061,15 @@ plugins:
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedApocalypsePatch.esp")'
         subs: [ 'the [Enchanting Awakened Apocalypse Patch](https://www.nexusmods.com/skyrim/mods/42796/)' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9f7f929a
-        itm: 11
-      - <<: *dirtyPlugin
-        crc: 0x40A6226B
-        itm: 11
-      - <<: *dirtyPlugin
-        crc: 0xc8244604
-        itm: 5
-      - <<: *dirtyPlugin
-        crc: 0x8f0d3bcc
+      # v9.45.0 - DLC
+      - <<: *quickClean
+        crc: 0x4B62684D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+      # v9.45.0 - No DLC
+      - <<: *quickClean
+        crc: 0x03C4F87A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'EnchantingAwakened.esp'
     after:
@@ -19075,23 +19098,15 @@ plugins:
         itm: 3
   - name: 'Aurora - The Doomstone Package.esp'
     after: [ 'EnchantingAwakened.esp' ]
-  - name: 'Ancient Spells.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/9153/'
-        name: 'Ancient Spells - Morrowind and Oblivion Spells'
-    tag: [ Relev ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x652b3e53
-        itm: 9
   - name: 'Ancient Spells 2.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/36954/'
         name: 'Ancient Spells 2 - Morrowind and Oblivion Spells'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x875be291
-        itm: 9
+      - <<: *quickClean
+        crc: 0x875BE291
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'ArcaneFist.esp'
     msg: [ *obsolete ]
   - name: 'ArcaneFist - (Expert to Master|Nerf Version)( NS)?\.esp'
@@ -22302,8 +22317,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/29047/'
         name: 'Thorin Oakenshield Companion and Armor'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3d8583f0
+      - <<: *quickClean
+        crc: 0x3D8583F0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'timek_Yumi.esp'
     msg:
@@ -22314,24 +22330,27 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/4580/'
         name: 'Tougher guards'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x48ab780f
+      - <<: *quickClean
+        crc: 0x48AB780F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'TTS - Camilla Valerius.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/17133/'
         name: 'TTS - Camilla Valerius'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd2160a9a
+      - <<: *quickClean
+        crc: 0xD2160A9A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'TulliusHogan.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/9314/'
         name: 'Michael Hogan as General Tullius'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x64e37ccb
+      - <<: *quickClean
+        crc: 0x64E37CCB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Uthgerd Kriegswolfe.esp'
     msg:
@@ -22354,17 +22373,17 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/9948/'
         name: 'Wolf Companion'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb92373c
+      - <<: *quickClean
+        crc: 0x0B92373C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'Ysolda.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/11413/'
         name: 'WKC - Ysolda'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x814a898c
-        itm: 3
+    msg:
+      - <<: *corrupt
+        condition: 'checksum("Ysolda.esp", 83BE6821) or checksum("Ysolda.esp", 50E71559) or checksum("Ysolda.esp", 5EEAA8B9)'
   - name: 'Zeeri.esp'
     msg:
       - <<: *corrupt
@@ -22703,16 +22722,18 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/12575/'
         name: 'Auto-cast Racial Powers Plugin'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xea872e4c
+      - <<: *quickClean
+        crc: 0xEA872E4C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Bandit Children.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/26501/'
         name: 'Bandit Children'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd301ae7b
+      - <<: *quickClean
+        crc: 0x42FDA6BF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'Better Racials- Altmer Edition.esp'
     inc: [ 'Better Racials- Altmer Edition - NW.esp' ]
@@ -22753,8 +22774,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/26502/'
         name: 'Forsworn Children'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x722a5413
+      - <<: *quickClean
+        crc: 0x32B41C6C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'HBR_(Argonian|Khajiit|Marshwalker\(Argonian\)|OhmesRaht\(Khajiit\))_(Replacer|Standalone)\.esp'
     url:
@@ -22762,31 +22784,36 @@ plugins:
         name: 'Human Beast Races - Revamped'
   - name: 'HBR_Argonian_Replacer.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6503322f
-        itm: 12
+      - <<: *quickClean
+        crc: 0x6503322F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 21
   - name: 'HBR_Khajiit_Replacer.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xce1e8bd7
+      - <<: *quickClean
+        crc: 0xCE1E8BD7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 21
   - name: 'HBR_Marshwalker(Argonian)_Standalone.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8e76e40f
+      - <<: *quickClean
+        crc: 0x8E76E40F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 21
   - name: 'HBR_OhmesRaht(Khajiit)_Standalone.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6bc5c8fe
+      - <<: *quickClean
+        crc: 0x6BC5C8FE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 42
   - name: 'HealthRegeneratingOff.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22877/'
         name: 'Health Regenerating Off'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa7ce6ec
+      - <<: *quickClean
+        crc: 0x0A7CE6EC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Henrys All Animals BeFriend.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9224/' ]
