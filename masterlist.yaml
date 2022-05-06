@@ -13709,128 +13709,232 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'LightsWinstadManor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25387/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25387/'
+        name: 'Windstad Manor Lights'
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("LightsWinstadManor.esp", 702CECDB)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6669f54d
+      # v1.0
+      - <<: *quickClean
+        crc: 0x702CECDB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # v1.2
+      - <<: *quickClean
+        crc: 0x6669F54D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'Little Cottage on a Hill.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22773/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22773/'
+        name: 'Little Cottage on a Hill'
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("Little Cottage on a Hill.esp", AB8573E8) or checksum("Little Cottage on a Hill.esp", 08670DD0)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4c2646cf
-        itm: 20
+      # v1.0
+      - <<: *reqManualFix
+        crc: 0xAB8573E8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2733
         udr: 44
         nav: 1
-      - <<: *dirtyPlugin
-        crc: 0xab8573e8
-        itm: 19
-        udr: 44
+      # v1.0 - after QAC
+      - <<: *reqManualFix
+        crc: 0x08670DD0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # v2.0
+      - <<: *reqManualFix
+        crc: 0x954D6036
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2847
+        udr: 183
+        nav: 1
+      # v2.0 - after QAC
+      - <<: *reqManualFix
+        crc: 0x668C29D3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'LittleShrines.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21450/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21450/'
+        name: 'A Conspiracy of Faith- Little Shrines to Talos'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x16957c35
+      - <<: *quickClean
+        crc: 0x16957C35
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
         udr: 8
   - name: 'Loreius.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18691/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18691/'
+        name: 'Loreius Farm Expansion Mod'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5e55aa50
-        itm: 11
+      - <<: *quickClean
+        crc: 0x5E55AA50
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
         udr: 5
   - name: 'Lost Dwemer Forge.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9958/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9958/'
+        name: 'Lost Dwemer Forge - Obsidian Armor and Weapons'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcd0e4cc5
-        itm: 37
+      - <<: *quickClean
+        crc: 0xCD0E4CC5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 43
         udr: 3
   - name: 'lunar_cuirass.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/27827/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/27827/'
+        name: 'Lunar Armor - Quest and Armor Set'
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("lunar_cuirass.esp", 93DE6714)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x663fcc7c
+      # v1.00
+      - <<: *quickClean
+        crc: 0x93DE6714
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
+        udr: 2
+      # v1.01
+      - <<: *quickClean
+        crc: 0x663FCC7C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
         udr: 1
   - name: 'Lurking in the shadows.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25462/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25462/'
+        name: 'Lurking In The Shadows - A Castle Quest Mod'
     dirty:
+      # Mortal version
       - <<: *quickClean
         crc: 0x57223ADC
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 85
+      # Vampire version
+      - <<: *quickClean
+        crc: 0x835F9BE1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
+      # Werewolf version
+      - <<: *quickClean
+        crc: 0x1DBBC8FC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 25
   - name: 'Lyberanthuin Restored.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/28215/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/28215/'
+        name: 'Labyrinthian Restored'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x41f211fe
-        itm: 5
+      - <<: *quickClean
+        crc: 0x41F211FE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
         udr: 11
+  - name: 'Mage Tower( Battle Mage Edition)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8960/'
+        name: 'The Mage Tower 2v'
   - name: 'Mage Tower.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8960/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xaef400a
-        itm: 22
+      - <<: *quickClean
+        crc: 0x0AEF400A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 476
         udr: 1
   - name: 'Mage Tower Battle Mage Edition.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8960/' ]
     inc: [ 'Mage Tower.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6e2cca18
-        itm: 26
+      - <<: *quickClean
+        crc: 0x6E2CCA18
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 581
         udr: 6
   - name: 'MammothHome.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/16801/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/16801/'
+        name: 'Mammoth Home - LFPHS'
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("MammothHome.esp", 9DA17071)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x343779f6
-        itm: 10
+      # v1.0
+      - <<: *quickClean
+        crc: 0x9DA17071
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
+        udr: 3
+      # v1.2
+      - <<: *quickClean
+        crc: 0x343779F6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
         udr: 3
   - name: 'mannyBlackRock.esp'
     inc: [ 'mannyBlackRock.esm' ]
   - name: 'mannyDragonhead.esp'
     inc: [ 'mannyDragonhead.esm' ]
+  - name: 'Mapseller( (Dawnguard|Dragonborn))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25158/'
+        name: 'Mapseller'
   - name: 'Mapseller.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25158/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xed585b65
-        itm: 4
-  - name: 'MapsellerDawnguard.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25158/' ]
     inc:
-      - 'MapsellerDV.esp'
-      - 'Mapseller.esp'
+      - 'Mapseller Dawnguard.esp'
+      - 'Mapseller Dragonborn.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4e319705
-        itm: 4
+      - <<: *quickClean
+        crc: 0x17EA833C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+        udr: 2
+  - name: 'Mapseller Dragonborn.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xDDFA7586
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'Markarth_plus.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17817/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/17817/'
+        name: 'Cities and Towns Enhanced - Markarth Plus'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe488b882
-        itm: 37
+      - <<: *quickClean
+        crc: 0xE488B882
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 40
         udr: 28
   - name: 'MarkarthAbandonedHouseClean.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13847/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/13847/'
+        name: 'Markarth Abandoned House Cleaned'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xddc40d4e
-        itm: 145
+      # v3.0
+      - <<: *quickClean
+        crc: 0xB7CFB2B2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 172
+      # v2.5
+      - <<: *quickClean
+        crc: 0xDDC40D4E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 172
   - name: 'markarthbookstore.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/26997/' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("markarthbookstore.esp", 9857C0D6) or checksum("markarthbookstore.esp", 2939E245) or checksum("markarthbookstore.esp", 08797C3E)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/26997/'
+        name: 'Balthazars Books - a Markarth bookstore'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbc184e23
-        itm: 1
+      - <<: *quickClean
+        crc: 0xBC184E23
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'Marky123''s forest and underground house.esp'
     msg: [ *obsolete ]
   - name: 'Marky123''s forest and house.esp'
@@ -19004,7 +19108,7 @@ plugins:
         crc: 0xC1417F3B
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
-  - name: 'Vampire''s Underwater suffocation FIX 1.2( NoDawnguard)?\.esp'
+  - name: 'Vampire''s Underwater suffocation FIX 1\.2( NoDawnguard)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/24506/'
         name: 'Vampire Underwater Suffocation FIX'
