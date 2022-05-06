@@ -14523,64 +14523,68 @@ plugins:
         crc: 0xE6C6B058
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
+  - name: 'Sanc Castle(NoLock)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8506/'
+        name: ''
   - name: 'Sanc Castle.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8506/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7c8fb970
-        itm: 13
+      - <<: *reqManualFix
+        crc: 0x7C8FB970
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 151
         udr: 73
+        nav: 7
+      - <<: *reqManualFix
+        crc: 0x6EE64979
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 7
   - name: 'Sanc CastleNoLock.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8506/' ]
     inc: [ 'Sanc Castle.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2d6eebf5
-        itm: 13
+      - <<: *reqManualFix
+        crc: 0x2D6EEBF5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 151
         udr: 73
         nav: 7
+      - <<: *reqManualFix
+        crc: 0xEDACE2AE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 7
   - name: 'Saviors Lodge - Player Home.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20641/' ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You still need to install the scripts for this mod. See download page.'
-          - lang: de
-            text: 'Sie müssen noch die Skripte für diese Mod installieren. Siehe Downloadseite.'
-          - lang: ja
-            text: 'スクリプトファイルを追加インストールする必要があります。ダウンロード元のページを確認してください。'
-          - lang: ru
-            text: 'Вам всё еще нужно установить скрипты для этого мода. Ищите их на странице загрузки мода..'
-        condition: 'not file("Scripts/IHWelcomeScript.pex")'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20641/'
+        name: 'Saviors Lodge - Player Home'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x615cf04f
-        itm: 39
+      - <<: *reqManualFix
+        crc: 0x615CF04F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 190
         udr: 64
-  - name: 'Saviors Lodge V1.0.esp'
-    msg: [ *obsolete ]
-  - name: 'Saviors Lodge V2.0.esp'
-    msg: [ *obsolete ]
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x036EC7AC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'Secretentrances.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8318/' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Secretentrances.esp", BBA06CBF)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8318/'
+        name: 'Secret entrances'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xadda81b2
-        itm: 16
+      - <<: *quickClean
+        crc: 0xADDA81B2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
   - name: 'SecretOfTheDwemer.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/5048/' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("SecretOfTheDwemer.esp", E6E3A0BB) or checksum("SecretOfTheDwemer.esp", C02B0A73)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/5048/'
+        name: 'Secret Of The Dwemer'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x751a6b97
-        itm: 6
+      - <<: *quickClean
+        crc: 0x751A6B97
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
   - name: 'secretroom-bh-en.esp'
     inc: [ 'The Secret Room of Breezehome.esp' ]
   - name: 'Shadowmarks for Player Homes.esp'
@@ -14590,74 +14594,91 @@ plugins:
       - crc: 0xD5612945
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'shadowscales 0.1.0.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9073/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9073/'
+        name: 'Shadowscales -CMR-'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbf1bbe88
-        itm: 119
+      - <<: *quickClean
+        crc: 0xBF1BBE88
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 179
         udr: 54
   - name: 'ShadowSkullTower.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19410/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19410/'
+        name: 'ShadowSkull Tower - A Player Home'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x973c7cf3
-        itm: 5
+      - <<: *quickClean
+        crc: 0x973C7CF3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 61
         udr: 103
   - name: 'Sharphook.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13056/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/13056/'
+        name: 'The Lost Legend of Captain Sharphook'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6ddb0e58
-        itm: 81
+      - <<: *quickClean
+        crc: 0x6DDB0E58
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 101
   - name: 'Shrine Of Kharjo.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/16159/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/16159/'
+        name: 'The Shrine Of Kharjo'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1f0d9e37
+      - <<: *quickClean
+        crc: 0x1F0D9E37
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
         udr: 3
   - name: 'Shrouded Lair.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19037/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19037/'
+        name: 'The Shrouded Lair - A Vampire Home'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa3a1ce81
-        itm: 1248
-        udr: 1
-      - <<: *dirtyPlugin
-        crc: 0xfd7452da
-        itm: 43
-        udr: 1
+      - <<: *quickClean
+        crc: 0x54C05E28
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
   - name: 'silverfish.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/35966/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/35966/'
+        name: 'Silverfish Grotto'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1c574bbf
-        itm: 103
-      - <<: *dirtyPlugin
-        crc: 0x9e33b059
+      - <<: *quickClean
+        crc: 0x1C574BBF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 103
   - name: 'Skyhaven_modified.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/15979/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15979/'
+        name: 'Extra Blades - fixed'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Skyhaven_modified.esp is meant to be used with the [ExtraBlades.esp module](https://www.nexusmods.com/skyrim/mods/15979). It should still work without it though, but may make cause things to look out of place.'
-          - lang: de
-            text: 'Skyhaven_modified.esp ist für die Verwendung mit dem Plugin [ExtraBlades.esp](https://www.nexusmods.com/skyrim/mods/15979) vorgesehen. Es sollte zwar immer noch ohne funktionieren, kann aber dazu führen, dass Dinge fehl am Platz erscheinen.'
-          - lang: ja
-            text: 'Skyhaven_modified.espは[ExtraBlades.esp module](https://www.nexusmods.com/skyrim/mods/15979)と使用するプラグインです。プラグインが欠けていても機能しますが、違和感が生じるかもしれません。'
-        condition: 'not active("ExtraBlades.esp")'
+      - <<: *alsoUseX
+        condition: 'not active("ExtraBlades.esp") and not active("ExtraBlades-EFF.esp")'
+        subs: [ 'the [ExtraBlades module](https://www.nexusmods.com/skyrim/mods/15979/)' ]
+      - <<: *obsolete
+        condition: 'checksum("Skyhaven_modified.esp", 85335156)'
     dirty:
-      - <<: *dirtyPlugin
+      # v1.0
+      - <<: *quickClean
         crc: 0x85335156
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 38
         udr: 3
+    clean:
+      # v2.0
+      - crc: 0x2A70067A
+        util: 'TES5Edit v4.0.4b'
   - name: 'Sky Haven Teleporter 1.2.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20840/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20840/'
+        name: 'Sky Haven Teleporter'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x75806a60
+      - <<: *quickClean
+        crc: 0x75806A60
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 27
   - name: 'Skyhold Lodge.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12714/' ]
