@@ -3858,11 +3858,37 @@ plugins:
       - crc: 0x6EC9FF1E
         util: 'TES5Edit v4.0.4b'
   - name: 'AK- A Friend of Time.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18386/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18386/'
+        name: 'A Friend of Time'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x12cd5f6e
-        itm: 5
+      # v1.0
+      - <<: *quickClean
+        crc: 0x672A98AC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 96
+        udr: 1
+      # v1.1
+      - <<: *quickClean
+        crc: 0x6420B8C4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 96
+        udr: 1
+      # v1.2
+      - <<: *quickClean
+        crc: 0x12CD5F6E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 37
+    clean:
+      # v1.0 - after QAC
+      - crc: 0xD5B60ACC
+        util: 'TES5Edit v4.0.4b'
+      # v1.1 - after QAC
+      - crc: 0x213AD5B2
+        util: 'TES5Edit v4.0.4b'
+      # v1.2 - after QAC
+      - crc: 0xEFE95DE0
+        util: 'TES5Edit v4.0.4b'
   - name: 'AllFemaleGuards.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/14039/' ]
     dirty:
@@ -5284,11 +5310,21 @@ plugins:
         display: '[Moss Rocks](https://www.nexusmods.com/skyrim/mods/31856)'
   - name: 'Names - NPCs.esp'
     msg: [ *obsolete ]
-  - name: 'Names - enemies - impersonal  completely.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22194/' ]
+  - name: 'Names - (NPCs - 1_1|enemies - impersonal  completely)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22194/'
+        name: 'Concealed Enemy Names'
+  - name: 'Names - NPCs - 1_1.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x13f3d6da
+      - <<: *quickClean
+        crc: 0xB15D6209
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+  - name: 'Names - enemies - impersonal  completely.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x13F3D6DA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 57
   - name: 'NEW dRAGONS3.0.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/12492/' ]
@@ -24710,149 +24746,158 @@ plugins:
     clean:
       - crc: 0x803DB5D7
         util: TES5Edit v3.1.3
+  - name: 'Skyrim Radioactive - (Solitude|Windhelm) Docks\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/59871/'
+        name: 'Skyrim Radioactive'
   - name: 'Skyrim Radioactive - Solitude Docks.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0x56f9e63f
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0x56F9E63F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 15
+        nav: 23
+      # v1.4 - after QAC
+      - <<: *reqManualFix
+        crc: 0xBD773ABD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 23
   - name: 'Skyrim Radioactive - Windhelm Docks.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.41
-        crc: 0x8ef087e5
-        util: 'TES5Edit v3.2.2'
+      # v1.41
+      - <<: *reqManualFix
+        crc: 0x8EF087E5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 21
+        nav: 14
+      # v1.41 - after QAC
+      - <<: *reqManualFix
+        crc: 0xBD96C5FA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 14
   - name: 'SKYR Interiors - Riften.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/59871/'
+        name: 'Skyrim Radioactive'
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.1
-        crc: 0xbd2cc10d
-        util: 'TES5Edit v3.2.2'
+      # v1.1
+      - <<: *reqManualFix
+        crc: 0xBD2CC10D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
+  - name: 'SkyR - (Riverwood|Solitude|Windhelm) Interiors\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/59871/'
+        name: 'Skyrim Radioactive'
   - name: 'SkyR - Riverwood Interiors.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0xf4a6bf2c
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0xF4A6BF2C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
+  - name: 'SkyR - Solitude Interiors.esp'
+    dirty:
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0xE8683895
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 4
   - name: 'SkyR - Windhelm Interiors.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0xbcdf56be
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0xBCDF56BE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
+  - name: 'TES5R -( )?(Amrenshouse|AngelinesAromatics|Arcadia''s Cauldron|BelethorsGeneralGoods|BitsandPieces|Carlottashouse|Dragonsreach|Erikur''s house|EvetteSansHouse|Fletcher|HalloftheDead|Heimskrshouse|Helgen Keep|HouseClanBattleBorn|HouseGrayMane|Katlasfarm|Olavashouse|Severioshouse|SolitudeStables|TempleofKynareth|The Bannered Mare|The Warmaidens|The Winking Skeever|Uthgerdshouse|Ysoldashouse)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/59871/'
+        name: 'Skyrim Radioactive'
   - name: 'TES5R - Arcadia''s Cauldron.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.1
-        crc: 0x278f2b12
-        util: 'TES5Edit v3.2.2'
+      # v1.1
+      - <<: *quickClean
+        crc: 0x278F2B12
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'TES5R - HouseGrayMane.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.1
-        crc: 0xcf8031ea
-        util: 'TES5Edit v3.2.2'
+      # v1.1
+      - <<: *quickClean
+        crc: 0xCF8031EA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'TES5R - Olavashouse.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.1
-        crc: 0x2f271721
-        util: 'TES5Edit v3.2.2'
+      # v1.1
+      - <<: *reqManualFix
+        crc: 0x2F271721
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'TES5R -The Warmaidens.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.1
-        crc: 0x5b3b77e0
-        util: 'TES5Edit v3.2.2'
+      # v1.1
+      - <<: *reqManualFix
+        crc: 0x5B3B77E0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 3
-  - name: 'SkyR - Solitude Interiors.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0xe8683895
-        util: 'TES5Edit v3.2.2'
-        nav: 4
   - name: 'TES5R - AngelinesAromatics.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0xf40ca459
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0xF40CA459
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'TES5R - Erikur''s house.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0xa27bf085
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0xA27BF085
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'TES5R - EvetteSansHouse.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0x4565e70b
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0x4565E70B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'TES5R - Fletcher.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0x1198c1ae
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0x1198C1AE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'TES5R - HalloftheDead.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0x21fca3fd
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0x21FCA3FD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'TES5R - Katlasfarm.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0xe88d7d4e
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0xE88D7D4E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'TES5R - SolitudeStables.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0x49725f58
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0x49725F58
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'TES5R - The Winking Skeever.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/59871/' ]
     dirty:
-      - <<: *dirtyPlugin
-        # Version 1.4
-        crc: 0x08d8f222
-        util: 'TES5Edit v3.2.2'
+      # v1.4
+      - <<: *reqManualFix
+        crc: 0x08D8F222
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Immersive Citizens - AI Overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/65013/' ]
