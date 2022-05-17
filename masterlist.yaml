@@ -5610,16 +5610,6 @@ plugins:
         crc: 0x629B83B6
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
-  - name: 'riverwood addons.esp'
-    msg: [ *obsolete ]
-  - name: 'riverwood flora.esp'
-    # Riverwood Enhanced R6
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8193/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x63725578
-        itm: 28
-        udr: 31
   - name: 'AmazingRiverwoodRetex.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18268/' ]
     dirty:
@@ -5728,10 +5718,13 @@ plugins:
         condition: 'active("dD - Enhanced Blood Main.esp")'
         subs: [ 'dD - Enhanced Blood Main.esp' ]
   - name: 'simple_crafter_breakdown.esp'
-    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=206570755' ]
+    url:
+      - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=206570755'
+        name: 'Simple Crafter Breakdown V2 (SCB)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa1425391
+      - <<: *quickClean
+        crc: 0x68737464
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'TF_SimpleSilver+SovngardeReplacement.esp'
     inc: [ 'TF_SimpleSilverReplacement.esp' ]
@@ -6019,12 +6012,20 @@ plugins:
     tag: [ Relev ]
   - name: 'TheBigBookofAlchemy.esp'
     tag: [ Relev ]
+  - name: 'TBBOAv2(-1)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/29840/'
+        name: 'The Big Book of Alchemy v2'
   - name: 'TBBOAv2.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29840/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8a7728ac
-        itm: 13
+      - <<: *quickClean
+        crc: 0x8A7728AC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
+  - name: 'TBBOAv2-1.esp'
+    clean:
+      - crc: 0x26C1F03B
+        util: 'TES5Edit v4.0.4b'
   - name: 'TorchesForSkyrim(_x1.5|_x2|_x2.5|_x3)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -10409,9 +10410,9 @@ plugins:
         itm: 1
   - name: 'Morrowloot.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/44212'
+      - link: 'https://www.nexusmods.com/skyrim/mods/44212/'
         name: 'Morrowloot'
-      - link: 'https://www.nexusmods.com/skyrim/mods/50740'
+      - link: 'https://www.nexusmods.com/skyrim/mods/50740/'
         name: 'Morrowloot 4E Edition'
     msg:
       - type: say
@@ -10428,9 +10429,17 @@ plugins:
       - Delev
       - Relev
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7c6ea81c
-        itm: 7
+      # Morrowloot - v4.0 and v4.0.1
+      - <<: *quickClean
+        crc: 0x7522A792
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 15
+      # Morrowloot 4E Edition - v4.3
+      - <<: *quickClean
+        crc: 0x06851CEB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 26
+        udr: 1
 
   ### SkyRe - Compatibility Plugins for Weapons and Armor ###
   - name: 'SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp'
@@ -10915,12 +10924,19 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'BeardedClam.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11782/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/11782/'
+        name: 'The Bearded Clam'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa8d641d3
-        itm: 144
+      - <<: *reqManualFix
+        crc: 0xA8D641D3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 149
         udr: 3
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xA6F6C03B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'Beautiful Riften.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/15786/' ]
@@ -10930,13 +10946,24 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 13
         udr: 102
+  - name: '(Beautiful|Realistic)( )?Whiterun\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/12110/'
+        name: 'Beautiful Whiterun'
   - name: 'Beautiful Whiterun.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/12110/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x17257c94
-        itm: 86
+      - <<: *quickClean
+        crc: 0x17257C94
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 144
         udr: 2
+  - name: 'RealisticWhiterun.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x4A8E445B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        udr: 32
   - name: '0001BertsBreezehomeRemodel.V.2(esm).esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8922/' ]
     dirty:
@@ -11159,54 +11186,83 @@ plugins:
         util: '[TES5Edit v4.0.2h](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 28
   - name: 'BetterDwemerExteriors.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/30587/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/30587/'
+        name: 'Better Dwemer Exteriors'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc96424e
-        itm: 58
+      - <<: *quickClean
+        crc: 0x0C96424E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 65
         udr: 5
   - name: '01_BetterNordicRuins.esp'
     msg: [ *obsolete ]
   - name: 'BetterNordicRuins.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20942/' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("BetterNordicRuins.esp", 22F42319)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20942/'
+        name: 'Better Nordic Ruins'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6c176f16
-        itm: 47
-  - name: 'BetterProudspireManor - ASH.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22560/' ]
+      - <<: *reqManualFix
+        crc: 0x6C176F16
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 103
+        nav: 11
+      - <<: *reqManualFix
+        crc: 0xA3C20004
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 11
+  - name: 'BetterProudspireManor - ASH-Alt.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22560/'
+        name: 'Better Proudspire Manor-ASH'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x403c225
-        udr: 58
+      - <<: *reqManualFix
+        crc: 0x3ABE82DC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 129
+        udr: 61
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xB5666E40
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'BetterRiften.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9577/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9577/'
+        name: 'Better Riften'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2fccbdac
-        itm: 22
+      - <<: *quickClean
+        crc: 0x2FCCBDAC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 37
         udr: 7
   - name: 'BetterWinterhold.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21160/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21160/'
+        name: 'Better Winterhold'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x757bd177
-        itm: 2
+      - <<: *quickClean
+        crc: 0x1E6296EE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+        udr: 4
   - name: 'Bigger Cities and Villages0.1.1.esp'
     msg: [ *obsolete ]
   - name: 'BlackMoor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11588/' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("BlackMoor.esp", 997436A7) or checksum("BlackMoor.esp", 6CF48D16)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/11588/'
+        name: 'Black Moor'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8a8b45df
-        itm: 14
+      - <<: *reqManualFix
+        crc: 0x8A8B45DF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
         udr: 8
+        nav: 4
+      - <<: *reqManualFix
+        crc: 0x70C156F4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 4
   - name: 'Blacksmith Chests.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18021/' ]
     dirty:
@@ -18057,34 +18113,49 @@ plugins:
         crc: 0xe2322238
         itm: 17
         udr: 4
-  - name: 'Riverwood Enhanced.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8193/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x63725578
-        itm: 28
-        udr: 31
-        nav: 1
   - name: 'Riverwood Enhanced( - (Detailed Cities|NO NPC))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8193/'
+        name: 'Riverwood Enhanced'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("Riverwood Enhanced( - (Detailed Cities|NO NPC))?\.esp")'
         subs: [ 'Riverwood Enhanced .esp file' ]
-  - name: 'Riverwood Enhanced - Detailed Cities.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8193/' ]
+  - name: 'Riverwood Enhanced.esp'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *reqManualFix
+        crc: 0x63725578
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 75
+        udr: 31
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x09EED5E2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'Riverwood Enhanced - Detailed Cities.esp'
+    dirty:
+      - <<: *reqManualFix
         crc: 0x46637208
-        itm: 29
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 76
         udr: 32
         nav: 1
+      - <<: *reqManualFix
+        crc: 0x9CA02644
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'Riverwood Enhanced - NO NPC.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8193/' ]
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *reqManualFix
         crc: 0x73840440
-        itm: 28
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 75
         udr: 31
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x93C50630
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'RiverwoodEnhancedPlugin.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/18952/' ]
