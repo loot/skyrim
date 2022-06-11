@@ -11264,34 +11264,90 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 4
   - name: 'Blacksmith Chests.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18021/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18021/'
+        name: 'Blacksmith Storage Chests - Automatic Storage for Smithing Supplies'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5c03293
+      # Vanilla
+      - <<: *quickClean
+        crc: 0x29599805
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
+      # Dawnguard
+      - <<: *quickClean
+        crc: 0x05C03293
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
         udr: 4
+      # Dawnguard and Hearthfire
+      - <<: *quickClean
+        crc: 0x421CBEA7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        udr: 4
+      # Dragonborn
+      - <<: *quickClean
+        crc: 0x4B16010C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # Complete
+      - <<: *quickClean
+        crc: 0x645979FC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # Complete with Carpenter Chests
+      - <<: *quickClean
+        crc: 0xB67C95F3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+  - name: 'Blacksmiths Hideout - Honeyside Upgrade( \(no dialogue\))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/11362/'
+        name: 'Blacksmiths Hideout - Honeyside Upgrade'
   - name: 'Blacksmiths Hideout - Honeyside Upgrade.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11362/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1d635da3
-        itm: 22
+      - <<: *quickClean
+        crc: 0x1D635DA3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
   - name: 'Blacksmiths Hideout - Honeyside Upgrade (no dialogue).esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11362/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x92e12685
-        itm: 20
+      - <<: *quickClean
+        crc: 0x92E12685
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 25
   - name: 'BlackwoodCompanyHall.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/12761/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/12761/'
+        name: 'Blackwood Company Hall'
     msg:
       - <<: *obsolete
-        condition: 'checksum("BlackwoodCompanyHall.esp", BFBCB393) or checksum("BlackwoodCompanyHall.esp", 9E17E71E) or checksum("BlackwoodCompanyHall.esp", 0970AA3E)'
+        condition: 'checksum("BlackwoodCompanyHall.esp", E3D77630) or checksum("BlackwoodCompanyHall.esp", A36D8058)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x848a0e9a
-        itm: 184
-        udr: 1
+      # v2.0
+      - <<: *reqManualFix
+        crc: 0xE3D77630
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 455
+        udr: 3
+        nav: 1
+      # v2.0 - after QAC
+      - <<: *reqManualFix
+        crc: 0xA36D8058
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # v2.01
+      - <<: *reqManualFix
+        crc: 0xE7B5943E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 452
+        udr: 3
+        nav: 1
+      # v2.01 - after QAC
+      - <<: *reqManualFix
+        crc: 0x1F0B2DF2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'Borderlands.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25618/' ]
     dirty:
@@ -11470,64 +11526,100 @@ plugins:
         itm: 9
         udr: 1
   - name: 'BreezehomeRenovation(Fem|JP|FemJP|FSW|FSWJP)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9755/'
+        name: 'Breezehome Renovation with Bathroom'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("BreezehomeRenovation(Fem|JP|FemJP|FSW|FSWJP)?\.esp")'
         subs: [ 'BreezehomeRenovation .esp file' ]
-  - name: 'BreezehomeRenovationFemJP.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9755/' ]
+  - name: 'BreezehomeRenovation.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4df14350
+      - <<: *reqManualFix
+        crc: 0xE4AF58E1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
         udr: 19
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xBEAFFC2C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'BreezehomeRenovationFem.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9755/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5c313e5b
+      - <<: *reqManualFix
+        crc: 0x5C313E5B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
         udr: 19
         nav: 1
-  - name: 'BreezehomeRenovationFSWJP.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9755/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8e58df5
-        udr: 29
+      - <<: *reqManualFix
+        crc: 0xD2CF5D99
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'BreezehomeRenovationFSW.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9755/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf94b1083
+      - <<: *reqManualFix
+        crc: 0xF94B1083
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
         udr: 29
         nav: 1
+      - <<: *reqManualFix
+        crc: 0xEFE619EC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'BreezehomeRenovationJP.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9755/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1b7a18af
+      - <<: *reqManualFix
+        crc: 0x1B7A18AF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
         udr: 19
         nav: 1
-  - name: 'BreezehomeRenovation.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9755/' ]
+      - <<: *reqManualFix
+        crc: 0xA7126BC0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'BreezehomeRenovationFemJP.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe4af58e1
+      - <<: *reqManualFix
+        crc: 0x4DF14350
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
         udr: 19
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x377BE26D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+  - name: 'BreezehomeRenovationFSWJP.esp'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x08E58DF5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+        udr: 29
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x2D3CD553
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Breezehome Revised.*\.esp'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("Breezehome Revised.*\.esp")'
         subs: [ 'Breezehome Revised .esp file' ]
-  - name: 'BreezehomeEnchantingTable.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/37095/' ]
+  - name: 'BreezeHomeEnchantingTable.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/37095/'
+        name: 'Breezehome Enchanting Table'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x17ab3f3a
+      - <<: *quickClean
+        crc: 0x56AFD8B5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-        udr: 10
+        udr: 5
   - name: 'Breezehome PLUS.esp'
     inc:
       - '0001BertsBreezehomeRemodel.V.2(Grotto).esp'
@@ -12333,14 +12425,31 @@ plugins:
         crc: 0xD167169B
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 46
+  - name: 'DragonsReach_Hideout.esm'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8197/'
+        name: 'DragonsReach Hideout'
+    dirty:
+      - <<: *quickClean
+        crc: 0x1D44AA39
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 67
+        udr: 3
   - name: 'DragonsReach_Hideout_Assassin_Redesign3_0.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/15021/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15021/'
+        name: 'DragonsReach Assassins Hideout Redesign - Evil'
     req: [ 'DragonsReach_Hideout.esm' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf5b9f021
+      - <<: *reqManualFix
+        crc: 0xF5B9F021
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 11
         udr: 177
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x8FAA8792
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'DragonsReach_Hideout_(Plus|Assassin|Nightingale)\.esp'
     msg:
