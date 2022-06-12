@@ -12885,39 +12885,36 @@ plugins:
         itm: 13
         udr: 9
   - name: 'FortBuffscale.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/23376/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/23376/'
+        name: 'Fort Buffscale'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1fbbacf2
-        itm: 23
-        udr: 45
-      - <<: *dirtyPlugin
-        crc: 0x35168fd9
-        itm: 281
+      # Complete
+      - <<: *quickClean
+        crc: 0x35168FD9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 293
         udr: 38
-      - <<: *dirtyPlugin
-        crc: 0x74868200
-        itm: 297
-        udr: 45
-      - <<: *dirtyPlugin
-        crc: 0x7BFBCD8F
-        itm: 297
-        udr: 45
-      - <<: *dirtyPlugin
-        crc:  0x8edb06c9
-        itm: 299
-        udr: 53
-      - <<: *dirtyPlugin
-        crc: 0xe8b27322
-        itm: 280
+      # Dawnguard
+      - <<: *quickClean
+        crc: 0x8EDB06C9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 305
         udr: 53
   - name: 'FortDawnguardEnhanced.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24367/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24367/'
+        name: 'Fort Dawnguard Enhanced'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x56c4e14e
-        itm: 27
+      - <<: *reqManualFix
+        crc: 0x56C4E14E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 29
         udr: 102
+        nav: 9
+      - <<: *reqManualFix
+        crc: 0x5598D79C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 9
   - name: 'FortHeljarchen.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30488/' ]
@@ -14402,77 +14399,88 @@ plugins:
         itm: 32
         udr: 13
   - name: 'MorthalFortified.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22575/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22575/'
+        name: 'Morthal Fortified'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf463c9ff
+      - <<: *quickClean
+        crc: 0xF463C9FF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'mq stickyspot workaround.esp'
     inc: [ 'The Paarthurnax Dilemma.esp' ]
   - name: 'Mudcrab Farm.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17171/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/17171/'
+        name: 'Mudcrab Farm'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf90c3cc9
-        itm: 6
+      - <<: *quickClean
+        crc: 0xF90C3CC9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
         udr: 6
   - name: 'My Home Is Your Home.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18045/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18045/'
+        name: 'My Home Is Your Home - a mod for followers'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc36587b3
-        itm: 3
-      - <<: *dirtyPlugin
+      # English
+      - <<: *quickClean
         crc: 0xDDC76932
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+      # German
+      - <<: *quickClean
+        crc: 0x5B254525
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'My Inn.esp'
     msg: [ *obsolete ]
   - name: 'MzarkWonders.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/36317/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/36317/'
+        name: 'The Lost Wonders of Mzark'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7adeaf2
+      - <<: *quickClean
+        crc: 0x07ADEAF2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 23
-  - name: 'N70MountainsideHome.esp'
-    msg: [ *obsolete ]
-  - name: 'N70MountainsideHomeManne.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19593/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8fc53a5f
-        itm: 12
-        udr: 5
-  - name: 'N70MountainsideHomeStuds.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19593/' ]
-    inc: [ 'N70MountainsideHomeManne.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x67856b7
-        itm: 12
-        udr: 4
   - name: 'NeworldShrineAndArena.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24727/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24727/'
+        name: 'Foxtreat Manor'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xabfc4312
-        itm: 2
+      - <<: *quickClean
+        crc: 0xABFC4312
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
   - name: 'niflheim1.esp'
     msg:
       - <<: *obsolete
         subs: [ '[Forfeoranna Heim](https://www.nexusmods.com/skyrim/mods/13351/).' ]
   - name: 'Nirn Falls Manor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/14590/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/14590/'
+        name: 'Nirn Falls Manor'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf6d72530
+      - <<: *reqManualFix
+        crc: 0xF6D72530
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 55
         udr: 31
         nav: 17
+      - <<: *reqManualFix
+        crc: 0x18355E3A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 17
   - name: 'NoDeathMod.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29312/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/29312/'
+        name: 'No Death Mod'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb5369abe
+      - <<: *quickClean
+        crc: 0x3B39CBDD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 57
   - name: 'nomorecobwebsfortdawnguard.esp'
     url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=87452172' ]
@@ -14482,19 +14490,51 @@ plugins:
         util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 91
   - name: 'Northern Bathhouses.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/27489/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/27489/'
+        name: 'Northern Bathhouses'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfbe79f4f
-        itm: 96
+      # v1.1
+      - <<: *reqManualFix
+        crc: 0xFABE8C7B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 879
         udr: 12
         nav: 2
+      # v1.1 - after QAC
+      - <<: *reqManualFix
+        crc: 0xC7CFE9FD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
+      # v1.1 clean
+      - <<: *quickClean
+        crc: 0xCC0E050C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 109
+      # v1.1 Immersive Settlements
+      - <<: *reqManualFix
+        crc: 0x16572F7A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 116
+        nav: 3
+      # v1.1 Immersive Settlements - after QAC
+      - <<: *reqManualFix
+        crc: 0x1E31C2A7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'NorthKeep.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29686/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/29686/'
+        name: 'North Keep Player Town'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x51a8111e
-        itm: 6
+      - <<: *reqManualFix
+        crc: 0x51A8111E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0x72AC527B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'OBIS(DB)?\.esp'
     url:
@@ -15018,31 +15058,44 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 27
   - name: 'Skyhold Lodge.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/12714/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/12714/'
+        name: 'SkyHold_Lodge'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8824535f
-        itm: 5
+      - <<: *quickClean
+        crc: 0x8824535F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
         udr: 5
   - name: 'The Skyrim Gate Room - First Version.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/23079/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/23079/'
+        name: 'The Gate Room'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9b13ac3b
-        itm: 14
+      - <<: *quickClean
+        crc: 0x9B13AC3B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 113
         udr: 3
   - name: 'skyrimovens.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/26814/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/26814/'
+        name: 'Skyrim Ovens for Hearthfire'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfa9e4ca
+      - <<: *quickClean
+        crc: 0x0FA9E4CA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
         udr: 61
   - name: 'SnowberryCottage.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/16366/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/16366/'
+        name: 'Snowberry Cottage'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdc320f38
-        itm: 13
+      - <<: *quickClean
+        crc: 0x6D84FA0F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 23
   - name: 'soldynemuseum.esp'
     url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=77638317' ]
     dirty:
@@ -15053,49 +15106,78 @@ plugins:
   - name: 'SolitudeBetterDocks-SoG-Compatible Version.esp'
     inc: [ 'SolitudeBetterDocks.esp' ]
   - name: 'UAL002_solitude_smelter01.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10407/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10407/'
+        name: 'Solitude Smelter and Ingot Room'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbaa337a
-        itm: 11
+      - <<: *quickClean
+        crc: 0x0BAA337A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 32
   - name: 'SoLo Solace.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20265/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20265/'
+        name: 'Solace'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x72642247
-        itm: 1
-  - name: 'someprivacyplease_bedroomwall_lakeview.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/32563/' ]
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+  - name: 'someprivacyplease(_)?((bedroomwall|door)_(heljarchen|hjaalmarch|lakeview|pale))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/32563/'
+        name: 'Some Privacy Please'
+  - name: 'someprivacyplease.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x561179ae
+      - <<: *quickClean
+        crc: 0x2B26D26C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+  - name: 'someprivacyplease_bedroomwall_lakeview.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x561179AE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 11
   - name: 'someprivacyplease_bedroomwall_pale.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/32563/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8151cf7f
+      - <<: *quickClean
+        crc: 0x8151CF7F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-  - name: 'someprivacyplease_door_hjaalmarch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/32563/' ]
+  - name: 'someprivacyplease_door_heljarchen.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1c5c73b5
+      - <<: *quickClean
+        crc: 0x790CC6A0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+  - name: 'someprivacyplease_door_hjaalmarch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x1C5C73B5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
         udr: 4
   - name: 'someprivacyplease_door_Lakeview.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/32563/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf02fe87b
+      - <<: *quickClean
+        crc: 0xF02FE87B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'SoulForgeMysticArena.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8971/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8971/'
+        name: 'Soul Forge Mystic Arena'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x42e3cf2d
-        itm: 31
+      - <<: *reqManualFix
+        crc: 0x42E3CF2D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 52
         udr: 2
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xC01AD1B1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Sovngarde - completed main quest.esp'
     msg:
@@ -15114,69 +15196,107 @@ plugins:
       - <<: *obsolete
         condition: 'version("SovngardeNordHeroes.esp","1.3",<)'
   - name: 'SovngardeQuest.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20581/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20581/'
+        name: 'Sovngarde The Return'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd50921f7
-        itm: 16
+      - <<: *quickClean
+        crc: 0x055F0558
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 56
   - name: 'SSHjerimMod.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/32868/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/32868/'
+        name: 'Super Simple Hjerim with Basement'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6c605c36
-        itm: 151
-      - <<: *dirtyPlugin
-        crc: 0xada84946
-        itm: 141
+      - <<: *quickClean
+        crc: 0xADA84946
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 142
   - name: 'Stag''sRest.esp'
     inc: [ 'Cabin in the woods.esp' ]
   - name: 'Stegdon''s Book Collection.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/12237/' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Stegdon''s Book Collection.esp", A53FC583)'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/12237/'
+        name: 'Stegdons Book Collection'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd87b6464
-        itm: 10
-        udr: 11
+      - <<: *reqManualFix
+        crc: 0xB3CDD433
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 123
+        udr: 18
+        nav: 35
+      - <<: *reqManualFix
+        crc: 0x486BF5DB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 35
   - name: 'StonewallGarden3.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29472/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/29472/'
+        name: 'Stonewall Garden V3'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa9a027a0
-        itm: 190
+      - <<: *reqManualFix
+        crc: 0xA9A027A0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 224
         udr: 32
         nav: 3
+      - <<: *reqManualFix
+        crc: 0xBA9A6644
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'Stoop Vlindrel Hall.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/26856/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/26856/'
+        name: 'Stoop Over Markarth -- Vlindrel Hall Elevated Patio'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3a4b94a0
-        itm: 9
+      - <<: *reqManualFix
+        crc: 0x6027A776
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xD10C9726
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Stormreach Mansion.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22499/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22499/'
+        name: 'Stormreach Mansion'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x973c7cf3
-        itm: 17
+      - <<: *reqManualFix
+        crc: 0xF74F94BA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 291
         udr: 7
         nav: 1
+      - <<: *reqManualFix
+        crc: 0x74EBDC7F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'suncresthall.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10380/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10380/'
+        name: 'Suncrest Hall'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xafea2e1
-        itm: 48
+      - <<: *reqManualFix
+        crc: 0x0AFEA2E1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 58
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xEEC60671
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
   - name: 'SuperSkyrimBros.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24709/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24709/'
+        name: 'SUPER SKYRIM BROS'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xac16f40
-        itm: 70
+      - <<: *quickClean
+        crc: 0xE2D1419C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'Survive The Night.esp'
     req:
       - *SKSE
