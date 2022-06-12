@@ -12716,12 +12716,23 @@ plugins:
         crc: 0xFF400D31
         util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
+  - name: 'Falkreath Graveyard(B)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9035/'
+        name: 'Bigger Falkreath Graveyard'
   - name: 'Falkreath Graveyard.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9035/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x51c7052a
+      - <<: *quickClean
+        crc: 0x51C7052A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
+  - name: 'Falkreath GraveyardB.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xF70BFAC5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+        udr: 1
   - name: 'fallentreebridges.esp'
     clean:
       # version: 2.0.2
@@ -12740,21 +12751,20 @@ plugins:
       - <<: *obsolete
         subs: [ '[JobsofSkyrim.esp](https://www.nexusmods.com/skyrim/mods/25020/).' ]
   - name: 'fishchickenlodge.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11120/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/11120/'
+        name: 'Fishchicken Lodge in Falkreath'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x226a8a66
-        itm: 1
+      - <<: *reqManualFix
+        crc: 0x226A8A66
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 28
         udr: 5
         nav: 1
-  - name: 'Fjollheimr.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/4211/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3870b742
-        itm: 38
-        udr: 195
-        nav: 3
+      - <<: *reqManualFix
+        crc: 0xC3C89153
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
   - name: 'flaho_shi_eagles_nest_ENG.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/34834/' ]
     dirty:
@@ -12769,24 +12779,41 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'flaho_shi_wassersturz.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21122/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21122/'
+        name: 'Wassersturz - Cascades'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3fbcf912
-        itm: 29
+      # English
+      - <<: *reqManualFix
+        crc: 0x3FBCF912
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 53
         udr: 6
         nav: 1
-      - <<: *dirtyPlugin
-        crc: 0x4ea6342f
-        itm: 22
+      - <<: *reqManualFix
+        crc: 0xF5B304A4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # German
+      - <<: *reqManualFix
+        crc: 0x4EA6342F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 53
         udr: 6
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0xF8FCB390
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Flatlander_M7001.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21005/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21005/'
+        name: 'Flatlander'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe2dc21c7
-        itm: 4
+      - <<: *quickClean
+        crc: 0xE2DC21C7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
   - name: 'Fleetford.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/16188/' ]
     inc:
@@ -12810,45 +12837,53 @@ plugins:
             text: '最新版（v4.0以降）は完全にスタンドアローン化し、独自のEditor IDs、form ID、フォルダ構造を有しています。そのためオリジナルのModと別々にインストールし、同時に使用することができます。'
   - name: 'FM - UNP Merchants LvLists.esp'
     tag: [ Relev ]
+  - name: 'FM - (Heljarchen|Lakeview|Windstad) Library\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/31375/'
+        name: 'Hearthfire Alternative Library'
   - name: 'FM - Heljarchen Library.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/31375/' ]
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x94274828
-        itm: 11
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
   - name: 'FM - Lakeview Library.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/31375/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xaae5d1f5
-        itm: 8
+      - <<: *quickClean
+        crc: 0xAAE5D1F5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
   - name: 'FM - Windstad Library.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/31375/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x420d0514
-        itm: 12
+      - <<: *quickClean
+        crc: 0x420D0514
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
   - name: 'Forfeorannaheim.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13351/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/13351/'
+        name: 'Forfeoranna Heim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x59266cbf
-        itm: 51
+      - <<: *reqManualFix
+        crc: 0x59266CBF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 153
         udr: 31
+        nav: 7
+      - <<: *reqManualFix
+        crc: 0x16F740B4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 7
   - name: 'Forges of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21046/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21046/'
+        name: 'Forges of Skyrim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x54b8820
-        itm: 3
+      - <<: *quickClean
+        crc: 0x054B8820
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
         udr: 9
-  - name: 'Forsworn Campaign.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/82011/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x435b7df0
-        itm: 24
-        udr: 21
   - name: 'FortBuffscale.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23376/' ]
     dirty:
