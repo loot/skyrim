@@ -15303,20 +15303,72 @@ plugins:
       - *SkyUI
   - name: 'Sutvaka2.esp'
     url:
-      - 'https://www.nexusmods.com/skyrim/mods/33473/'
-      - 'https://www.nexusmods.com/skyrim/mods/73145/'
+      - link: 'https://www.nexusmods.com/skyrim/mods/33473/'
+        name: 'Sutvaka Fortified Estate'
+      - link: 'https://www.nexusmods.com/skyrim/mods/73145/'
+        name: 'Sutvaka Expanded Fortified Estate and Town'
     tag: [ Relev ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x90aeb6d4
-        itm: 9
+      # 33473 - v2.0.2
+      - <<: *reqManualFix
+        crc: 0x7BE7F578
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 36
+        nav: 11
+      # 33473 - v2.0.2 - after QAC
+      - <<: *reqManualFix
+        crc: 0x98084B41
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 11
+      # 73145 - v0.8
+      - <<: *reqManualFix
+        crc: 0xD8527836
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 582
+        nav: 11
+      # 73145 - v0.8 - after QAC
+      - <<: *reqManualFix
+        crc: 0x1F5CD695
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 11
+      # 73145 - v1.0
+      - <<: *reqManualFix
+        crc: 0xB42EEF40
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 40
+        nav: 11
+      # 73145 - v1.0 - after QAC
+      - <<: *reqManualFix
+        crc: 0x41C8048C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 11
+  - name: 'Sutvaka2 - (DG|HL)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/33473/'
+        name: 'Sutvaka Fortified Estate'
+  - name: 'Sutvaka2 - DG.esp'
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x05019D15
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 36
+        nav: 11
+      - <<: *reqManualFix
+        crc: 0x7E28FF11
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 11
   - name: 'Sutvaka2 - HL.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/33473/' ]
     tag: [ Relev ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc5aad236
-        itm: 9
+      - <<: *reqManualFix
+        crc: 0xFC24D7E4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 32
+        nav: 11
+      - <<: *reqManualFix
+        crc: 0xD61FA619
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 11
   - name: 'Sweet&Sexy Lingerie.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25389/' ]
     msg: [ *requiresCBBE ]
@@ -15328,75 +15380,118 @@ plugins:
         itm: 9
         udr: 3
   - name: 'Syerscote.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29381/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/29381/'
+        name: 'Syerscote- A New settlement with Player home Custom NPCs and Quests'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb999c95d
-        itm: 23
-  - name: 'Sylvanheim.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/16599/' ]
+      - <<: *quickClean
+        crc: 0xB999C95D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 56
+  - name: 'Sylvanheim (NO )?(mannequins|shrine) (and|but) (NO )?(mannequins|shrine)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/16599/'
+        name: 'Sylvanheim - Player Home'
+  - name: 'Sylvanheim mannequins but NO shrine.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x674a01b0
+      - <<: *quickClean
+        crc: 0x4D19404C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+        udr: 18
+  - name: 'Sylvanheim NO shrine and NO mannequins.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x4BD29D2C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+        udr: 18
+  - name: 'Sylvanheim shrine and mannequins.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x78ECC370
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+        udr: 18
+  - name: 'Sylvanheim shrine but NO mannequins.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xDE480F96
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 24
         udr: 18
   - name: 'Tame Beast.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/28944/'
-        name: 'Tame The Beasts of Skyrim'
+      - link: 'https://www.nexusmods.com/skyrim/mods/50698/'
+        name: 'Tame the Beasts of Skyrim II'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x162e47a1
-        itm: 52
-        udr: 9
-      - <<: *dirtyPlugin
-        crc: 0x305b14b5
-        itm: 53
-        udr: 9
-      - <<: *dirtyPlugin
-        crc: 0xdd944705
+      # Main file
+      - <<: *quickClean
+        crc: 0xDD944705
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
+      # Update file
+      - <<: *quickClean
+        crc: 0xEF090A75
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 22
   - name: 'TG Headquarters Overhaul v.1.5.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22331/'
         name: 'Thieves Guild HQ Overhaul'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdab11b5f
-        itm: 6
+      # v1.5
+      - <<: *reqManualFix
+        crc: 0xD29B4EA2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 111
         udr: 224
         nav: 1
-      - <<: *dirtyPlugin
-        crc: 0xD29B4EA2
-        itm: 6
+      # v1.5 - after QAC
+      - <<: *reqManualFix
+        crc: 0x65895B89
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 1
+      # Hotfix
+      - <<: *reqManualFix
+        crc: 0xDAB11B5F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 111
         udr: 224
+        nav: 1
+      # Hotfix - after QAC
+      - <<: *reqManualFix
+        crc: 0x25C3968B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'A Thane-Worthy Breezehome.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/27661/'
         name: 'A Bit Better Breezehome - Hearthfire'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb7504810
-        udr: 31
+      - <<: *reqManualFix
+        crc: 0xB8A6F7A5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
-  - name: 'TheArena.esp'
+  - name: 'SavaGhost''s pack o tests.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/9380/'
         name: 'The Arena III'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x48b89c4d
-        itm: 19
-        udr: 6
+      - <<: *quickClean
+        crc: 0x85934FD3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 39
+        udr: 106
   - name: 'The Asteria - Dwemer Airship.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/13641/'
         name: 'The Asteria'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4d03e50a
-        itm: 148
+      - <<: *quickClean
+        crc: 0x4D03E50A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 162
   - name: 'theaviary.esp'
     url:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=108427245'
