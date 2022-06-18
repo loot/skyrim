@@ -1865,10 +1865,6 @@ plugins:
         subs: [ 'Obsolete. Update to latest version, Hjakhtraevarr Tomb.' ]
   - name: 'Natural Characters and Companions.esm'
     req: [ 'LovelyHairstyles.esp' ]
-  - name: 'NeV-P_ExtremeMaterials.esm'
-    tag:
-      - Delev
-      - Relev
   - name: 'OrientalRace.esm'
     msg: [ *obsolete ]
   - name: 'ORS_MorthalPain.esm'
@@ -1881,10 +1877,10 @@ plugins:
   - name: 'ORS_SolitudeGate.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21256/' ]
     dirty:
-      # v1.7
+      # v1.8
       - <<: *quickClean
-        crc: 0x8EC27DFD
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        crc: 0x0BA2D509
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 35
   - name: 'ORS_SolitudeGate.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21256/' ]
@@ -17449,9 +17445,16 @@ plugins:
         name: 'Armonizer (Merged and Compatibilized Esp)'
     tag: [ Delev ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb96f7183
-        itm: 6
+      # 27028
+      - <<: *quickClean
+        crc: 0xB96F7183
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+      # 81642
+      - <<: *quickClean
+        crc: 0x33E0E1E4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'RSkyrimChildren.esm'
     msg:
       - <<: *requiresX
@@ -17490,13 +17493,21 @@ plugins:
       # version: 1.2.0 Update - 170618
       - crc: 0x04696654
         util: 'TES5Edit v4.0.1'
-  - name: 'Killable Children - Quest Important Protected.esp'
+  - name: 'Killable Children( - Quest Important Protected)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/774/'
         name: 'Killable Children'
+  - name: 'Killable Children.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4231901c
+      - <<: *quickClean
+        crc: 0xD2BEAD09
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+  - name: 'Killable Children - Quest Important Protected.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x4231901C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 11
   - name: 'knc_resilient_dragons(_Vanillashout)?\.esp'
     inc: [ 'DeadlyDragons.esp' ]
@@ -17531,8 +17542,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/24223/'
         name: 'Logical Civil War Faction Armor Stats'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdcb1078b
+      - <<: *quickClean
+        crc: 0xDCB1078B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'longercandlelight2min.esp'
     inc: [ 'longercandlelight.esp' ]
@@ -17540,13 +17552,14 @@ plugins:
     inc:
       - 'longercandlelight.esp'
       - 'longercandlelight2min.esp'
-  - name: 'LorebalanceArtifacts.esp'
+  - name: 'LoreBalanceArtifacts.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/21779/'
         name: 'Lorebalance Artifacts'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe22f5916
+      - <<: *quickClean
+        crc: 0xFD8297CC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'lowerlevellegendaryandrevereddragons.esp'
     tag: [ Relev ]
@@ -17579,26 +17592,23 @@ plugins:
         name: 'Mastered Magicka'
   - name: 'masteredmagicka.esp'
     inc: [ 'Mighty Magick Skyrim - Main.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe5918397
-        itm: 2
+    clean:
+      - crc: 0xE5918397
+        util: 'TES5Edit v4.0.4b'
   - name: 'masteredmagickaalternative.esp'
     inc:
       - 'masteredmagicka.esp'
       - 'Mighty Magick Skyrim - Main.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x89ff6fe5
-        itm: 2
+    clean:
+      - crc: 0x89FF6FE5
+        util: 'TES5Edit v4.0.4b'
   - name: 'masteredmagickaboundweapons.esp'
     inc: [ 'Mighty Magick Skyrim - Main.esp' ]
   - name: 'masteredmagickaenchantmentfix.esp'
     inc: [ 'Mighty Magick Skyrim - Main.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x94af712d
-        itm: 2
+    clean:
+      - crc: 0x94AF712D
+        util: 'TES5Edit v4.0.4b'
   - name: 'EnchantPowerX.*\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17620,12 +17630,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/12459/'
         name: 'MECRs Mythic Dawn Commentaries are Skill Books'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("MECR_MythicDawnCommentaries_are_Skill_Books.esp", A3A58E7D)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8dab779c
+      - <<: *quickClean
+        crc: 0x8DAB779C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 2
   - name: 'MenuShoutsInDragonsLanguage.esp'
     msg:
@@ -17639,8 +17647,9 @@ plugins:
       - <<: *wildEdits
         subs: [ 'Mod contains wild edits to some NPC_ records''s tint masks. Delete the NPC_ tree to remove the wild edits.' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x82f59d12
+      - <<: *quickClean
+        crc: 0x82F59D12
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
   - name: 'mjhReducedGoldRewards.esp'
     tag: [ Delev ]
@@ -17664,18 +17673,29 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/21805/'
         name: 'Morahirs Staff Overhaul'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd31d84e2
+      - <<: *quickClean
+        crc: 0xD31D84E2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'NeV-P_ExtremeMaterialsENG.esp'
+  - name: 'NeV-P_ExtremeMaterials(DWG|ENG(_IP)?|WAddon)?\.es(m|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/23888/'
         name: 'Extreme materials'
-    inc: [ 'NeV-P_ExtremeMaterials.esp' ]
+  - name: 'NeV-P_ExtremeMaterials.esm'
+    tag:
+      - Delev
+      - Relev
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x745b4390
-        itm: 8
+      - <<: *quickClean
+        crc: 0xE389FDD0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 218
+  - name: 'NeV-P_ExtremeMaterialsENG.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xEFEEAB2E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'No Falling Damage.esp'
     inc: [ 'Less Falling Damage.esp' ]
   - name: 'No Lootless goats.esp'
@@ -17727,24 +17747,25 @@ plugins:
       # - https://www.nexusmods.com/skyrim/mods/29375/
       - 'EBS - Books (Before).esp'
       - 'EBS - Books (After).esp'
-  - name: 'ORS_MorthalPain_InsanePatch.esp'
+  - name: 'ORS2_InsanePatch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/25676/'
         name: 'The Oblivion Realms Serie - Morthal Pain'
-    inc: [ 'ORS_MorthalPain_AdeptPatch.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb623f96d
-        itm: 2
-  - name: 'ORS1InsanePatch.esp'
+      - <<: *quickClean
+        crc: 0xBAF13C57
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+  - name: 'ORS1_InsanePatch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/21256/'
         name: 'The Oblivion Realms Serie - The Gate of Solitude'
     inc: [ 'ORS1AdeptPatch.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcd653e42
-        itm: 1
+      - <<: *quickClean
+        crc: 0x7CBA415C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
   - name: 'Paralyze-1.1b.esp'
     inc: [ 'Paralyze.esp' ]
   - name: 'Paralyze.esp'
@@ -17770,8 +17791,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/22313/'
         name: 'The Power of Blood - Passive Vampire Lord Perks'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9572b55c
+      - <<: *quickClean
+        crc: 0x9572B55C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Proper_Aiming.esp'
     msg: [ *obsolete ]
