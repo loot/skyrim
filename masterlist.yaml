@@ -2346,7 +2346,7 @@ plugins:
       # v2.25 - Normal
       - <<: *quickClean
         crc: 0x6F0640AF
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
       # v2.25 - Compatibility
       - <<: *reqManualFix
@@ -2365,7 +2365,7 @@ plugins:
       # v2.25 - Normal
       - <<: *quickClean
         crc: 0xF462EFAE
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
   - name: 'ExpandedWinterholdRuinsExterior.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30554/' ]
@@ -17814,12 +17814,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/10825/'
         name: 'Realistic Animal Behaviour'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Realistic Animal Behaviour.esp", BAAA3FD3) or checksum("Realistic Animal Behaviour.esp", 68D49ED7) or checksum("Realistic Animal Behaviour.esp", D4718D13)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5cc5de01
+      - <<: *quickClean
+        crc: 0x5CC5DE01
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Realistic_DamageV2.esp'
     url:
@@ -17827,8 +17825,9 @@ plugins:
         name: 'Realistic Damages - Enhanced Damages'
     req: [ *SKSE ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x907a7547
+      - <<: *quickClean
+        crc: 0x907A7547
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
   - name: 'RealNightEye(Red|Green|Colorless|Blue|Yellow)?\.esp'
     msg:
@@ -17871,17 +17870,17 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/12324/'
         name: 'Skyrim Survival Suite'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdd9d0f1a
+      - <<: *quickClean
+        crc: 0xDD9D0F1A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'Skyrim Bridges.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/38158/'
         name: 'Skyrim Bridges'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x43c9e18a
-        itm: 3
+    clean:
+      - crc: 0xC72344BB
+        util: 'TES5Edit v4.0.4b'
   - name: 'SkyJubs_Invisible_Helmets_English_Main_1_(2|3|3v|4|4v)\.esp'
     msg: [ *obsolete ]
   - name: 'SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp'
@@ -18013,7 +18012,7 @@ plugins:
     dirty:
       - <<: *quickClean
         crc: 0xBD40ECF4
-        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
     clean:
       - crc: 0x5D6ABC17
@@ -18024,16 +18023,8 @@ plugins:
     dirty:
       - <<: *quickClean
         crc: 0x598C3077
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'SkyTEST-RealisticAnimals&Predators-Dragonborn.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/10175/'
-        name: 'SkyTEST - Realistic Animals and Predators'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x23f00d9a
-        itm: 17
   - name: 'SkyTEST-RealisticAnimals&Predators\.es(p|m)'
     msg:
       - <<: *useOnlyOneX
@@ -18289,12 +18280,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("vanillaarcheryimproved(dawnguard)?\.esp")'
         subs: [ 'vanillaarcheryimproved .esp file' ]
-  - name: 'VariousGuardReplacer.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/10687/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x66065eb2
-        itm: 1
   - name: 'Visible Aetherial Crown.esp'
     msg: [ *obsolete ]
   - name: 'wabba-ori_proj.esp'
@@ -18307,10 +18292,13 @@ plugins:
       - <<: *obsolete
         condition: 'checksum("wabba-unrel_proj.esp", F1E2BBDE) or checksum("wabba-unrel_proj.esp", 7F102922) or checksum("wabba-unrel_proj.esp", 285D704B)'
   - name: 'WeaponSmith.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/14252/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/14252/'
+        name: 'WeaponSmith'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf7850589
+      - <<: *quickClean
+        crc: 0xF7850589
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Werewolves(Occurring|Invading)Naturally\.esp'
     msg:
@@ -18335,11 +18323,14 @@ plugins:
           - lang: ru
             text: 'Этот файл содержит ошибки 00000000 FormID, ошибки с двумя записями REFR и должен быть удален.'
   - name: 'workhorse.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/12700/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/12700/'
+        name: 'Mikes Mystical Mounts'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xabfb4c56
-        itm: 5
+      - <<: *quickClean
+        crc: 0xABFB4C56
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
         udr: 7
   - name: 'R1Cots-Refait.esp'
     inc: [ 'YChildren of the Sky.esp' ]
@@ -18385,10 +18376,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/31371/'
         name: 'Unique Region Names - Dragonborn'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe71dbfd
-        itm: 1
+    clean:
+      - crc: 0x902F10C5
+        util: 'TES5Edit v4.0.4b'
   - name: 'CK''s Improved Windhelm.esp'
     msg:
       - type: warn
@@ -18406,14 +18396,12 @@ plugins:
       - <<: *obsolete
         subs: [ '[latest version](https://www.nexusmods.com/skyrim/mods/20700/).' ]
   - name: 'Drinking Fountains of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24282/' ]
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Drinking Fountains of Skyrim.esp", 5A348F0C)'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1a86291b
-        itm: 1
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24282/'
+        name: 'Drinking Fountains of Skyrim'
+    clean:
+      - crc: 0x67A97572
+        util: 'TES5Edit v4.0.4b'
   - name: 'Drinking Fountains of Skyrim Sound EN.esp'
     msg: [ *obsolete ]
   - name: 'Drinking Fountains of Skyrim Sound EN DB.esp'
@@ -18423,42 +18411,54 @@ plugins:
   - name: 'Drinking Fountains of Skyrim Sound DE DB.esp'
     msg: [ *obsolete ]
   - name: 'Expanded Villages2.0.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8867/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8867/'
+        name: 'Expanded Villages'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8afa9e8e
-        itm: 5
+      - <<: *reqManualFix
+        crc: 0x8AFA9E8E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
         udr: 242
         nav: 3
+      - <<: *reqManualFix
+        crc: 0x366083C1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
   - name: 'FarvynsDivineOctavo.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20880/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20880/'
+        name: 'The Divine Octavo'
     inc: [ 'Open Cities Skyrim.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe8a983e6
-        itm: 18
+      - <<: *quickClean
+        crc: 0x47F39EAE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 51
   - name: 'Helgen Reborn.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/35841/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/35841/'
+        name: 'Helgen Reborn'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4f2eeb00
-        itm: 6
-      - <<: *dirtyPlugin
-        crc: 0xbf003cbe
-        itm: 1
+      - <<: *quickClean
+        crc: 0x91F56C13
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 41
   - name: 'Lanterns of Skyrim - All In One - (Dawnstar Expanded Patch|Winterhold Destruction Ruins)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/31431/'
         name: 'Lanterns of Skyrim - All In One Compatibility Patches'
   - name: 'Lanterns of Skyrim - All In One - Dawnstar Expanded Patch.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x336f1ce9
+      - <<: *quickClean
+        crc: 0x336F1CE9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Lanterns of Skyrim - All In One - Winterhold Destruction Ruins.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x22902f71
+      - <<: *quickClean
+        crc: 0x22902F71
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Log Cabin Riften.esp'
     msg:
@@ -18469,53 +18469,72 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/18023/'
         name: 'The Merchants Guild'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcbaa3162
-        itm: 11
+      - <<: *quickClean
+        crc: 0xCBAA3162
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
         udr: 2
-  - name: 'Nernies(Solitude(andVillage)?|CityandVillage)Expansion\.esp'
+  - name: 'Nernies(Solitude|CityandVillage)Expansion\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22959/'
         name: 'Nernies City and Village Expansion'
   - name: 'NerniesSolitudeExpansion.esp'
     after: [ '3DNPC.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x304709ff
-        itm: 52
+      - <<: *quickClean
+        crc: 0x304709FF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 91
         udr: 4
-  - name: 'NerniesSolitudeandVillageExpansion.esp'
-    msg: [ *obsolete ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xafdf87bd
-        itm: 82
-        udr: 24
   - name: 'NerniesCityandVillageExpansion.esp'
     after: [ '3DNPC.esp' ]
     inc: [ 'NerniesSolitudeExpansion.esp' ]
+    msg:
+      - <<: *obsolete
+        condition: 'checksum("NerniesCityandVillageExpansion.esp", 70F30848) or checksum("NerniesCityandVillageExpansion.esp", E57FFAF5)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x53a97488
-        itm: 174
+      # v1.25
+      - <<: *reqManualFix
+        crc: 0x70F30848
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 319
+        nav: 9
+      # v1.25 - after QAC
+      - <<: *reqManualFix
+        crc: 0xE57FFAF5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 9
+      # v1.26
+      - <<: *reqManualFix
+        crc: 0x53A97488
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 339
+        nav: 9
+      # v1.26 - after QAC
+      - <<: *reqManualFix
+        crc: 0x0BD99A35
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 9
   - name: 'NerniesRangerPack.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22674/'
         name: 'Nernies Ranger Pack'
     tag: [ Delev ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6b9fe044
-        itm: 52
+      - <<: *quickClean
+        crc: 0x6B9FE044
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 98
         udr: 12
   - name: 'NerniesThiefPack.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22730/'
         name: 'Nernies Thief Pack'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe2322238
-        itm: 17
+      - <<: *quickClean
+        crc: 0xE2322238
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 66
         udr: 4
   - name: 'Riverwood Enhanced( - (Detailed Cities|NO NPC))?\.esp'
     url:
@@ -18562,7 +18581,9 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'RiverwoodEnhancedPlugin.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/18952/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18952/'
+        name: 'Towns and Villages Enhanced - Riverwood'
     msg:
       - type: say
         content:
@@ -18583,9 +18604,10 @@ plugins:
             text: '削除してください。LoS and RE patch.espはRiverwoodEnhancedPlugin.espを置き換えるように作られています。アドオンではありません。'
         condition: 'file("LoS and RE patch.esp")'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5b3c0e5a
-        itm: 4
+      - <<: *quickClean
+        crc: 0x5B3C0E5A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
         udr: 5
   - name: 'seadragonoasis.esp'
     url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=16767' ]
@@ -18651,33 +18673,35 @@ plugins:
         condition: 'not file("Solitude A City Of Trade.esm") or not file("Solitude A City Of Trade.esp") or not file("Solitude A City Of Trade LITE!.esp")'
         subs: [ 'Solitude A City Of Trade' ]
   - name: 'TAVERiften.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/20185/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20185/'
+        name: 'Towns and Villages Enhanced - Riften'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1057d425
-        itm: 13
+      - <<: *quickClean
+        crc: 0x1057D425
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 23
         udr: 2
   - name: 'TAVESolitude.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21148/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21148/'
+        name: 'Towns and Villages Enhanced - Solitude'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5856d538
-        itm: 14
+      - <<: *quickClean
+        crc: 0x9F9D1C35
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
         udr: 1
   - name: 'TAVEWindhelm.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22608/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22608/'
+        name: 'Towns and Villages Enhanced - Windhelm'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x476326a8
-        itm: 12
+      - <<: *quickClean
+        crc: 0x3FD0EB7E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
         udr: 2
-  - name: 'tavevillages.esp'
-    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=68336872' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x73b52f67
-        itm: 15
-        nav: 1
   - name: 'tos_amber_guard.esp'
     url:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=98945240'
@@ -18715,7 +18739,11 @@ plugins:
         itm: 14
         udr: 3
   - name: 'TownsAndCitiesEnhanced.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/17406/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/17406/'
+        name: 'Towns and Villages Enhanced - Villages (Nexus)'
+      - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=68336872'
+        name: 'Towns and Villages Enhanced - Villages (Steam Workshop)'
     msg:
       - type: say
         content:
@@ -18736,9 +18764,10 @@ plugins:
             text: '削除してください。L0S and TaVE patch.espはTownsAndCitiesEnhanced.espを置き換えるように作られています。アドオンではありません。'
         condition: 'file("L0S and TaVE patch.esp")'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa37760e6
-        itm: 18
+      - <<: *quickClean
+        crc: 0xA37760E6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 53
   - name: 'L0S and TaVE patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/27395/'
