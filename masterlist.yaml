@@ -18707,35 +18707,29 @@ plugins:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=98945240'
         name: 'The Elder Scrolls Places: Amber Guard'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa74635ec
-        itm: 36
+      - <<: *quickClean
+        crc: 0xA74635EC
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 53
   - name: 'tos_oakwood.esp'
     url:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=97501644'
         name: 'The Elder Scrolls Places: Oakwood'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need to use Heartfires version of Oakwood to work as intended with Hearthfires.'
-          - lang: de
-            text: 'Sie müssen die Heartfires Version von Oakwood verwenden, damit die Mod wie vorgesehen mit Hearthfires zusammen funktioniert.'
-          - lang: ja
-            text: 'Hearthfiresでも本来の動作をさせるにはHeartfiresバージョンのOakwoodを使用する必要があります。'
-        condition: 'active("HearthFires.esm")'
+    msg: [ *useVersionHearthFires ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9ff8763e
-        itm: 9
+      - <<: *quickClean
+        crc: 0x9FF8763E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 46
         udr: 3
   - name: 'tos_oakwood_hf.esp'
     url:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=100934504'
         name: 'The Elder Scrolls Places: Oakwood -Hearthfire Edition-'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x33196be1
+      - <<: *quickClean
+        crc: 0x33196BE1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 14
         udr: 3
   - name: 'TownsAndCitiesEnhanced.esp'
@@ -18768,14 +18762,22 @@ plugins:
         crc: 0xA37760E6
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 53
-  - name: 'L0S and TaVE patch.esp'
+  - name: 'L(0|o)S and (RE|TaVE) patch\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/27395/'
         name: 'Lanterns of Skyrim and Towns and Villages Enhanced patch'
+  - name: 'L0S and TaVE patch.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x76cf8279
-        itm: 1
+      - <<: *quickClean
+        crc: 0x895F67A4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
+  - name: 'LoS and RE patch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x2C7E344F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
   - name: 'ultime skyrim - riverwood.esp'
     msg: [ *obsolete ]
   - name: 'ultimate skyrim - riverwood.esp'
@@ -18796,40 +18798,50 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/19799/'
         name: 'Towns and Villages Enhanced - Whiterun'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2ef5fc25
-        itm: 18
+      - <<: *quickClean
+        crc: 0xF34512E2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
   - name: 'Whiterun Repaired Plus.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/17981/'
         name: 'Whiterun Repaired Plus'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x17c2c0de
+      - <<: *quickClean
+        crc: 0x17C2C0DE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
         udr: 15
   - name: 'Better Forests and Environments.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/10144/'
         name: 'Better Forests and Environments'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xae2df319
-        itm: 92
-        udr: 3
+      - <<: *quickClean
+        crc: 0xDD3D059E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
   - name: 'CampingKitNorthernRanger( - (Without Amberwood|Tent Not For Sale|Free Kits))?\.esp'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("CampingKitNorthernRanger( - (Without Amberwood|Tent Not For Sale|Free Kits))?\.esp")'
         subs: [ 'CampingKitNorthernRanger .esp file' ]
-  - name: 'CityForestv2.esp'
-    msg: [ *obsolete ]
-  - name: 'City Forest and Landscape V2 trees whiterun light fix.esp'
+  - name: 'City( )?Forest(V2_6| and Landscape V2 trees whiterun light fix)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/9558/'
         name: 'City Forests and Landscape V2 trees'
+  - name: 'CityForestV2_6.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc81876c0
+      - <<: *quickClean
+        crc: 0x114740D6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 43
+        udr: 30
+  - name: 'City Forest and Landscape V2 trees whiterun light fix.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC81876C0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 45
         udr: 32
   - name: 'City Secret Entrances.esp'
@@ -18837,27 +18849,29 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/25050/'
         name: 'City Secret Entrances'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcac40c72
-        itm: 5
+      - <<: *quickClean
+        crc: 0xCAC40C72
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
         udr: 1
   - name: 'City Secret Entrances Map Markers.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/25050/'
         name: 'City Secret Entrances'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdfffcffd
-        itm: 5
-        udr: 1
+      - <<: *quickClean
+        crc: 0xDFFFCFFD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'enhanced_bridges.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/17122/'
         name: 'Enhanced bridges'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x67e29a71
-        itm: 16
+      - <<: *quickClean
+        crc: 0x206468C1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 34
         udr: 2
   - name: 'GloriousEnviroments.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/27770/' ]
@@ -22064,9 +22078,15 @@ plugins:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=100947272'
         name: 'The Elder Scrolls Places: Laintar Dale -Hearthfire Edition-'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe536de07
-        itm: 13
+      - <<: *reqManualFix
+        crc: 0xE536DE07
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 25
+        nav: 2
+      - <<: *reqManualFix
+        crc: 0xB3F763DD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 2
   - name: 'Serenity(Crew|Seapoint)Patch.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/59925/'
