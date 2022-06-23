@@ -5561,24 +5561,26 @@ plugins:
   - name: 'real glaciers.esp'
     msg: [ *obsolete ]
 
+  - name: 'Real Wildlife Skyrim 0\.1( No Food)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9778/'
+        name: 'Real Wildlife - Skyrim'
   - name: 'Real Wildlife Skyrim 0.1.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9778/' ]
     tag: [ Delev ]
     dirty:
       # v1.343
       - <<: *quickClean
         crc: 0xBFFF72CE
-        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 11
   - name: 'Real Wildlife Skyrim 0.1 No Food.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9778/' ]
     inc: [ 'Real Wildlife Skyrim 0.1.esp' ]
     tag: [ Delev ]
     dirty:
       # v1.341
       - <<: *quickClean
         crc: 0x52DD73E8
-        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 383
   - name: 'Real Wildlife.esp'
     tag: [ Relev ]
@@ -18886,16 +18888,18 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/13212/'
         name: 'Grass and Ground Fixes'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xce13ba2a
-        itm: 15
+      - <<: *quickClean
+        crc: 0x0D14E29A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 408
   - name: 'icefloes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/26194/'
         name: 'Ice Floes - Travel the Polar Sea Dry-Shod'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbcce527d
+      - <<: *quickClean
+        crc: 0xBCCE527D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'Immersive Gras.*\.esp'
     msg:
@@ -18908,54 +18912,85 @@ plugins:
         name: 'Landscaped Lake Modification'
     msg:
       - <<: *useVersionHearthFires
-        condition: 'active("HearthFires.esm") and ( checksum("LakeExpanded01.esp", 43AEF0BF) or checksum("LakeExpanded01.esp", 843EB3FC) )'
+        condition: 'active("HearthFires.esm") and checksum("LakeExpanded01.esp", 43AEF0BF)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x43aef0bf
-        itm: 39
+      # v1.2
+      - <<: *quickClean
+        crc: 0x43AEF0BF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 75
         udr: 39
-      - <<: *dirtyPlugin
-        crc: 0x5f7097bf
-        itm: 38
+      # v1.3
+      - <<: *quickClean
+        crc: 0x5F7097BF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 75
         udr: 55
+      # v1.5
+      - <<: *quickClean
+        crc: 0x3EEF7427
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 75
+        udr: 78
   - name: 'LushRiverwood.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/17732/'
         name: 'Lush Riverwood'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x19e662c4
-        itm: 1
+      - <<: *quickClean
+        crc: 0x19E662C4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
         udr: 2
   - name: 'MoreForests.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24307/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24307/'
+        name: 'More Forests'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa8b7dd63
-        itm: 314
-        udr: 150
+      - <<: *reqManualFix
+        crc: 0x5552AA04
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 359
+        udr: 149
+        nav: 8
+      - <<: *reqManualFix
+        crc: 0x51D519FA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 8
   - name: 'SummerSkyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22300/'
         name: 'Summer Skyrim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc5bf6c9d
-        udr: 1
+      # v3.60
+      - <<: *quickClean
+        crc: 0x1258A680
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+      # v3.71
+      - <<: *quickClean
+        crc: 0xF4D6CF18
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+        udr: 2
   - name: 'tavefalkreath.esp'
-    url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=92628430' ]
+    url:
+      - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=92628430'
+        name: 'Towns and Villages Enhanced: Falkreath'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa570b56f
+      - <<: *quickClean
+        crc: 0xA570B56F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'ThicketAndShrubRemover.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/22692/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/22692/'
+        name: 'Dead Shrub and Thicket Remover'
     msg: [ *corrupt ]
     dirty:
       - <<: *quickClean
         crc: 0xA27FA332
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 26231
   - name: 'trueskyrimLOD.esp'
     msg: [ *obsolete ]
@@ -18964,37 +18999,46 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/20494/'
         name: 'Tundra to Forest'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x12d6056d
-        itm: 20
+      - <<: *quickClean
+        crc: 0x12D6056D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 48
         udr: 11
   - name: 'Beautiful Cities.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/9843/'
         name: 'Beautiful Cities'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb70ceb49
+      - <<: *quickClean
+        crc: 0xB70CEB49
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 243
         udr: 22
   - name: 'CLWhiterun.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/23249/'
         name: 'CL Cities - Whiterun'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x71e40e2e
-        itm: 9
+      - <<: *quickClean
+        crc: 0x71E40E2E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
         udr: 3
   - name: 'Markath-CityofBloodandSilver.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/18779/'
         name: 'Markarth - CoBaS'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb398364c
+      - <<: *quickClean
+        crc: 0xB398364C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 31
         udr: 3
-      - <<: *dirtyPlugin
+      # No trees version
+      - <<: *quickClean
         crc: 0x9F7DE10B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 36
         udr: 3
   - name: 'Populated Cities v.+\.esp'
     msg: [ *obsolete ]
@@ -19023,12 +19067,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/25029/'
         name: 'Perseids Inns and Taverns - Realistic Room Rental Enhanced'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x484ef81f
-        itm: 2
-      - <<: *dirtyPlugin
-        crc: 0xd3c52997
-        itm: 44
+      - <<: *quickClean
+        crc: 0xF2A80AE6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
   - name: 'RealisticRoomRental-Basic.esp'
     inc: [ 'RealisticRoomRental.esp' ]
   - name: 'AOS_WetandCold Patch.esp'
@@ -19136,9 +19178,10 @@ plugins:
           - lang: ru
             text: 'Не используйте Crash Fix ESP для этого мода. Он помечен как мастерфайл и предназначен только как последнее средство для исправления вылетов.'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc1743294
-        itm: 8
+      - <<: *quickClean
+        crc: 0xC1743294
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
   - name: 'SoS - Civilization.esp'
     msg:
       - <<: *patchProvided
@@ -19387,12 +19430,13 @@ plugins:
       - *SKSE
       - *SkyUI
   - name: 'kuerteeEatAndSleep.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13246/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/13246/'
+        name: 'Eat and sleep'
     req: [ *SKSE ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xce3a5e41
-        itm: 2
+    clean:
+      - crc: 0xE55ED2DA
+        util: 'TES5Edit v4.0.4b'
   - name: 'kuerteeEatAndSleep MCM.esp'
     req: [ *SKSE ]
   - name: 'Medium hit.esp'
@@ -19563,17 +19607,6 @@ plugins:
     after: [ '3DNPC.esp' ]
   - name: 'FalskaarRNDHotfix.esp'
     after: [ '3DNPC.esp' ]
-  - name: 'Real Wildlife Skyrim 0.1 IMCN.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9778/' ]
-    inc:
-      - 'Real Wildlife Skyrim 0.1.esp'
-      - 'Real Wildlife Skyrim 0.1 No Food.esp'
-    tag: [ Delev ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6ff9970f
-        itm: 322
-        udr: 9
   - name: 'SkyRealism - Capacity and Carry Weight.esp'
     req: [ *SKSE ]
     msg:
@@ -19691,9 +19724,10 @@ plugins:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=85627684'
         name: 'Godly Werewolf'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8badfd1b
-        itm: 5
+      - <<: *quickClean
+        crc: 0x8BADFD1B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
   - name: 'LFox No Werewolf Form Cooldown.esp'
     msg:
       - <<: *alreadyInX
