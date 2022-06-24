@@ -9438,8 +9438,11 @@ plugins:
     inc: [ 'EpicGloryByMadmole.esp' ]
   - name: 'FactionOverhaulV25.esp'
     msg: [ *obsolete ]
+  - name: 'Requiem( - (No (Overencumbered )?Messages|Restored (Rewarding Sounds|Saving Messages)|Vanilla Dragonborn DLC))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19281/'
+        name: 'Requiem - The Roleplaying Overhaul'
   - name: 'Requiem.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19281/' ]
     group: *requiemGroup
     inc:
       - 'Requiem plus PCEA 3-5.esp'
@@ -9486,8 +9489,13 @@ plugins:
       - SpellStats
       - Stats
       - Text
+    dirty:
+      # v4.0.2
+      - <<: *quickClean
+        crc: 0xC3845C6C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
   - name: 'Requiem - Vanilla Dragonborn DLC.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19281/' ]
     msg:
       - <<: *alreadyInX
         condition: 'active("Fozars_Dragonborn_-_Requiem_Patch.esp")'
@@ -19959,8 +19967,9 @@ plugins:
         display: 'Requiem v2.0.0+'
         condition: 'version("Requiem.esp", "2.0.0", >=)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe410b8ec
+      - <<: *quickClean
+        crc: 0x011048DF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Aurora - The Doomstone Package.esp'
     after: [ 'EnchantingAwakened.esp' ]
@@ -20000,18 +20009,32 @@ plugins:
         name: 'Summon Ethereal Bard - Svaknir'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x804a34e
-        itm: 12
+      # v1a
+      - <<: *quickClean
+        crc: 0x0804A34E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+      # v2a
+      - <<: *quickClean
+        crc: 0x210B825A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
   - name: 'BladesBaurusSummon.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22058/'
         name: 'Summon Blades Defender - Baurus'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x87c1bd13
-        itm: 4
+      # v1a
+      - <<: *quickClean
+        crc: 0x87C1BD13
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+      # v2a
+      - <<: *quickClean
+        crc: 0xEEE8E255
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
   - name: 'BladesBolarSummon.esp'
     msg: [ *alreadyInLegendarySouls ]
   - name: 'MidasSkyrim.esp'
@@ -20050,8 +20073,15 @@ plugins:
         name: 'Summon Cursed Companion - Skjor'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x67e339e3
+      # v1b
+      - <<: *quickClean
+        crc: 0x67E339E3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+      # v2b
+      - <<: *quickClean
+        crc: 0x4F33A84B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'CompanionKodlakSummon.esp'
     msg: [ *alreadyInLegendarySouls ]
@@ -20059,12 +20089,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/21881/'
         name: 'Conjure Armored Husky'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Conjure_Armored_Husky.esp", F0E45BC9)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf3a51e21
+      - <<: *quickClean
+        crc: 0xF3A51E21
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Conjure_Armored_Troll.esp'
     msg:
@@ -20074,13 +20102,11 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/21791/'
         name: 'Conjure Death Hound Spell'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Conjure_Death_Hound.esp", 9207A5B2) or checksum("Conjure_Death_Hound.esp", 98298BAD) or checksum("Conjure_Death_Hound.esp", 15417CD3) or checksum("Conjure_Death_Hound.esp", BDD73A1A)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf273f759
-        itm: 2
+      - <<: *quickClean
+        crc: 0xF273F759
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
   - name: 'conjureatronarchfix.esp'
     msg: [ *alreadyInOrFixedByUSLEEP ]
   - name: 'cremation.esp'
@@ -20088,8 +20114,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/8543/'
         name: 'Skyrim Cremation Mod'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x849d7480
+      - <<: *quickClean
+        crc: 0x849D7480
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'CW - 0(.\d)? weight potions\.esp'
     msg:
@@ -20119,8 +20146,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/10871/'
         name: 'Feather Spells and Tomes'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x56d0f717
+      - <<: *quickClean
+        crc: 0x56D0F717
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'ForswornFaolanSummon.esp'
     url:
@@ -20128,8 +20156,15 @@ plugins:
         name: 'Summon Forsworn King - Faolan the Red Eagle'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4af28309
+      # v1a
+      - <<: *quickClean
+        crc: 0xDCED2F72
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+      # v2a
+      - <<: *quickClean
+        crc: 0x4AF28309
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
   - name: 'GamblerVashaSummon.esp'
     url:
@@ -20137,35 +20172,55 @@ plugins:
         name: 'Summon Rogue Gambler - Vasha'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xec3b6a2a
-        itm: 9
+      # v1b
+      - <<: *quickClean
+        crc: 0xEC3B6A2A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+      # v2b
+      - <<: *quickClean
+        crc: 0x03684E08
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
   - name: 'GreybeardJurgenSummon.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/16054/'
         name: 'Summon Greybeard Master - Jurgen Windcaller'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4a9199ed
-        itm: 5
+      # v1b
+      - <<: *quickClean
+        crc: 0x4A9199ED
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+      # v2b
+      - <<: *quickClean
+        crc: 0x6C45A686
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
   - name: 'HeroYsgramorSummon.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/18800/'
         name: 'Summon Legendary Hero - Ysgramor'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xaa174ff
-        itm: 7
+      # v1a
+      - <<: *quickClean
+        crc: 0x0AA174FF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+      # v2a
+      - <<: *quickClean
+        crc: 0x12D376C0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
   - name: 'HitStop.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/23681/'
         name: 'TK HitStop'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf45aac6e
-        itm: 2
+    clean:
+      - crc: 0x0B59F4D6
+        util: 'TES5Edit v4.0.4b'
   - name: 'Isharas_Glimpse_of_Elsweyr.esp'
     msg:
       - type: say
@@ -20186,8 +20241,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/36897/'
         name: 'Leazers Open Lock 2_0'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe574c0f2
+      - <<: *quickClean
+        crc: 0xE574C0F2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'lootninja.esp'
     req: [ *SKSE ]
@@ -20199,17 +20255,31 @@ plugins:
         name: 'Summon Soul Shade - Arniel Gane'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9c386d04
-        itm: 2
+      # v1a
+      - <<: *quickClean
+        crc: 0x9C386D04
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+      # v2a
+      - <<: *quickClean
+        crc: 0x2866E688
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
   - name: 'MagesSavosSummon.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/16388/'
         name: 'Summon Arch Mage - Savos Aren'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5ce9ec31
+      # v1a
+      - <<: *quickClean
+        crc: 0x5CE9EC31
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # v2a
+      - <<: *quickClean
+        crc: 0xB93F3740
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'MarkRecallPow.esp'
     msg: [ *obsolete ]
