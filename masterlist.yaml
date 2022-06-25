@@ -284,10 +284,6 @@ common:
     <<: *alreadyInX
     condition: 'file("Craft, Temper, Smelt.esp")'
     subs: [ 'Craft, Temper, Smelt.esp' ]
-  - &alreadyInFFNords
-    <<: *alreadyInX
-    condition: 'file("FFNords.esp")'
-    subs: [ 'FFNords.esp' ]
   - &alreadyInLegendarySouls
     <<: *alreadyInX
     condition: 'file("LegendarySouls.esp")'
@@ -22175,17 +22171,25 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/31061/'
         name: 'Dovahkiin and The Apprentice of Thuum'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf12ccb3a
+      # Basic
+      - <<: *quickClean
+        crc: 0xF12CCB3A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - <<: *dirtyPlugin
+      # Dawnguard
+      - <<: *quickClean
         crc: 0x7E5C2CDD
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - <<: *dirtyPlugin
+      # Dragonborn
+      - <<: *quickClean
         crc: 0x84ED10C1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-      - <<: *dirtyPlugin
+      # Dawnguard and Dragonborn
+      - <<: *quickClean
         crc: 0x72B5099C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Aragorn.Esp'
     msg: [ *requiresBetterMales ]
@@ -22193,17 +22197,18 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/33019/'
         name: 'Better Kharjo'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcb773cef
+    clean:
+      - crc: 0xD083F7E5
+        util: 'TES5Edit v4.0.4b'
   - name: 'begleittiger.esp'
     url:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=84535256'
         name: 'Talking Sabre Cat Follower'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa3222ef4
-        itm: 11
+      - <<: *quickClean
+        crc: 0xA3222EF4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
         udr: 1
   - name: 'Boromir.Esp'
     msg: [ *requiresBetterMales ]
@@ -22212,8 +22217,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/21782/'
         name: 'DFB - Companions Lost No More'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x500dd498
+      - <<: *quickClean
+        crc: 0x500DD498
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'DFB - Disable Hidden Follower Bows & Arrows.esp'
     msg: [ *alreadyInUFO ]
@@ -22258,40 +22264,53 @@ plugins:
         crc: 0xB3F763DD
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 2
-  - name: 'Serenity(Crew|Seapoint)Patch.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/59925/'
-        name: 'Serenity - player house ship'
-  - name: 'SerenityCrewPatch.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8de14c64
-        itm: 3
-  - name: 'SerenitySeapointPatch.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x74F86411
-        itm: 4
   - name: 'Morskom.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/57141/'
         name: 'Morskom Estate'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x700cd98d
-        itm: 8
-      # version: 1.3
-      - <<: *quickClean
-        crc: 0x043A5D8F
-        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 52
+    clean:
+      # v3.0
+      - crc: 0x0867A4D0
+        util: 'TES5Edit v4.0.4b'
   - name: 'SeaPointSettlement.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/56084/'
+        name: 'SeaPoint Settlement'
     dirty:
-      # version: 1.01
+      # v1.01
       - <<: *quickClean
         crc: 0x0CA559AA
-        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 69
+  - name: 'Serenity(( )?(Crew|Seapoint( DLC)?)( )?Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/59925/'
+        name: 'Serenity - player house ship'
+  - name: 'Serenity.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xE9704998
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+  - name: 'SerenityCrewPatch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x8DE14C64
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+  - name: 'SerenitySeapointPatch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xBB07B139
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+  - name: 'Serenity SeaPoint DLC Patch.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xFEC81C7B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+        udr: 1
   - name: 'OriginalrecipeUlfric.esp'
     inc: [ 'CWBattleUlfric.esp' ]
   - name: 'Legolas.Esp'
@@ -22301,8 +22320,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/36058/'
         name: 'Lilium Follower'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3c10445f
+      - <<: *quickClean
+        crc: 0x7E6C2966
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'paradise_halls.esp'
     msg: [ *obsolete ]
@@ -22316,19 +22336,18 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/34224/'
         name: 'Vendor Sale Delay - GONE'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6c8ab86b
-        itm: 2
+    clean:
+      # v2.0
+      - crc: 0xA744F450
+        util: 'TES5Edit v4.0.4b'
   - name: 'Viconia.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/28941/'
         name: 'Viconia DeVir for Skyrim'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x735a2800
-        itm: 3
-        udr: 3
+    clean:
+      # v4.2
+      - crc: 0xCEF6CE01
+        util: 'TES5Edit v4.0.4b'
   - name: 'voidMountedFollowers.esp'
     msg:
       - *alreadyInUFO
@@ -22338,9 +22357,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/16296/'
         name: 'FC Kara the Pathfinder'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x69a4fb16
-        itm: 7
+      - <<: *quickClean
+        crc: 0x69A4FB16
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
         udr: 10
   - name: 'XFLDialogue.esp'
     inc:
@@ -22383,23 +22403,28 @@ plugins:
           - lang: ru
             text: 'Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на [странице мода](https://www.nexusmods.com/skyrim/mods/14037)(Eng).'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6ef3ffba
-        itm: 18
-      - <<: *dirtyPlugin
+      # v1.2i
+      - <<: *quickClean
         crc: 0x396AE69F
-        itm: 18
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+      # vAIO1.2i
+      - <<: *quickClean
+        crc: 0xA0084D3B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
   - name: 'UFO - Dawnguard AddOn.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa7a56d2
-        itm: 18
+      - <<: *quickClean
+        crc: 0x0A7A56D2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'UFO - Heartfire AddOn.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x47aa94a
-        itm: 29
-        udr: 18
+      - <<: *quickClean
+        crc: 0x047AA94A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'UFO - Dragonborn AddOn - Unofficial.esp'
     inc: [ 'UFO - Dragonborn AddOn.esp' ]
     msg:
@@ -22489,12 +22514,14 @@ plugins:
             text: 'KTNUlfric.espのUFOバージョンを使用してください。'
         condition: 'checksum("KTNUlfric.esp", 35CB3586) and not file("UFO - Ultimate Follower Overhaul.esp")'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x35cb3586
-        itm: 15
-      - <<: *dirtyPlugin
-        crc: 0x8cf90f55
-        itm: 18
+      - <<: *quickClean
+        crc: 0x35CB3586
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+      - <<: *quickClean
+        crc: 0x8CF90F55
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
   - name: 'SPTConsistentOlderPeople.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19730/' ]
     msg:
@@ -22549,14 +22576,6 @@ plugins:
     msg: [ *requiresCBBE ]
   - name: 'Angelina Jolie UNP.esp'
     msg: [ *requiresUNP ]
-  - name: 'Annekke.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/5139/'
-        name: 'Companion Annekke - Buffed and Essential'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd2e8a173
-        itm: 4
   - name: 'DA01Aranea.esp'
     msg:
       - <<: *corrupt
@@ -22566,8 +22585,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/29023/'
         name: 'Azog the Pale companion The Hobbit'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5a6d9903
+      - <<: *quickClean
+        crc: 0x5A6D9903
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Balimund.esp'
     msg: [ *corrupt ]
@@ -22598,16 +22618,18 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/17735/'
         name: 'better fences'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1e04aaa7
-        itm: 2
+      - <<: *quickClean
+        crc: 0x1E04AAA7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
   - name: 'Borgakh.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/37392/'
         name: 'Borgakh redone'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x66f14b1b
+      - <<: *quickClean
+        crc: 0x10A05506
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'Braithwen Fernleaf( Archer| Auburn| Auburn Auto)?\.esp'
     msg:
@@ -22615,22 +22637,15 @@ plugins:
         type: say
         subs: [ '[Human Eyes for Elves](https://www.nexusmods.com/skyrim/mods/195/)' ]
       - *corrupt
-  - name: 'BrelynaMaryon.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/8316/'
-        name: 'Better looking Brelyna Maryon'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa18148f
-        itm: 3
-  - name: 'CamillaValerius.esp'
+  - name: 'Camilla Valerius.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/14368/'
         name: 'Camilla Valerius Replacer'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3a9b09d3
-        itm: 4
+      - <<: *quickClean
+        crc: 0x4005C566
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
   - name: 'Cicero.esp'
     msg:
       - <<: *requiresX
@@ -22643,8 +22658,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/17354/'
         name: 'Sexy Warrior Companion Ria'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x24989bbb
+      - <<: *quickClean
+        crc: 0xB60462A8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'CompanionsAriseFinal.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23129/' ]
@@ -22708,17 +22724,17 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/18837/'
         name: 'Better Delphine'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf91a519e
-        itm: 3
+    clean:
+      - crc: 0x49173B97
+        util: 'TES5Edit v4.0.4b'
   - name: 'Dorjiram.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/21719/'
         name: 'Dorjiram Female Khajiit Companion'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x20562ab6
+      - <<: *quickClean
+        crc: 0xAA5B26C3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Dova''s Angels - (Iona|Jordis|Lydia|Mjoll|Saadia|Sylgja|Uthgerd)?\ - V(4|5)?\.esp'
     msg: [ *corrupt ]
@@ -22727,8 +22743,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/25970/'
         name: 'Dragoon - Dragon Follower'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb683cacb
+      - <<: *quickClean
+        crc: 0xB683CACB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
   - name: 'DwarvenDollFollowers.esp'
     req:
@@ -22757,14 +22774,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/15979/'
         name: 'Extra Blades - fixed'
-    msg:
-      - <<: *obsolete
-        subs: [ '[latest version](https://www.nexusmods.com/skyrim/mods/15979/).' ]
-        condition: 'checksum("ExtraBlades.esp", 4CA21BFE)'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8f9b3b9c
-        itm: 1
+    clean:
+      - crc: 0x054DEE57
+        util: 'TES5Edit v4.0.4b'
   - name: 'SimplyFaendal(NoArmor|Specialized)?\.esp'
     msg: [ *obsolete ]
   - name: 'UniqueFaendal(Specialized)?\.esp'
@@ -22772,22 +22784,19 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("UniqueFaendal(Specialized)?\.esp")'
         subs: [ 'UniqueFaendal .esp file' ]
-  - name: 'Faralda.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29337/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf5f6a469
-        itm: 1
   - name: 'Farkas.esp'
     msg:
       - <<: *corrupt
         condition: 'checksum("Farkas.esp", 817EF15F)'
   - name: 'FaseleTheCompanion.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/15319/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15319/'
+        name: 'Fasele Solirsk Breton Spellsword Follower'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf3d542db
-        itm: 3
+      - <<: *quickClean
+        crc: 0xF3D542DB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
   - name: 'Feline Friendship.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11312/' ]
     dirty:
@@ -22814,68 +22823,43 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("FFDogs.esp", 907CBDCD)'
-  - name: 'FFBretonClaribelle.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24619/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xca543d50
-        itm: 3
-  - name: 'FFNordDawsyn.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24495/' ]
-    msg: [ *alreadyInFFNords ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x77750ed7
-        itm: 9
-  - name: 'FFNordKaadi.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24495/' ]
-    msg: [ *alreadyInFFNords ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x45cb5aef
-        itm: 8
-  - name: 'FFNordLiann.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24495/' ]
-    msg: [ *alreadyInFFNords ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3d826908
-        itm: 8
-  - name: 'FFNordNatilde.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24495/' ]
-    msg: [ *alreadyInFFNords ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x457c74e3
-        itm: 9
-  - name: 'FFNordYsilia.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24495/' ]
-    msg: [ *alreadyInFFNords ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x555c9d09
-        itm: 9
+  - name: 'FFBretons.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24619/'
+        name: 'Fabulous Followers - 5 Breton Girls'
+    clean:
+      - crc: 0x1F118BE1
+        util: 'TES5Edit v4.0.4b'
   - name: 'FFNords.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24495/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24495/'
+        name: 'Fabulous Followers - 5 Nord Girls'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x32cddeaf
-        itm: 6
+      - <<: *quickClean
+        crc: 0x32CDDEAF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
   - name: 'FollowerBerserker.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22452/'
         name: '-Follower- Berserker Lancelot from Fate Zero'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5a8cee25
+      - <<: *quickClean
+        crc: 0x5A8CEE25
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0xB43DDC37
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'FollowerSaber.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/21650/'
         name: '-Follower- Saber from Fate Stay Night'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x515d1f46
+      - <<: *quickClean
+        crc: 0x515D1F46
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'FTBS_.+\.esp'
     msg: [ *corrupt ]
@@ -22904,10 +22888,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/3748/'
         name: 'Hroki Hair Change without texture Issues'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x690073bb
-        itm: 4
+    clean:
+      - crc: 0xE5FE224E
+        util: 'TES5Edit v4.0.4b'
   - name: 'Illdi.esp'
     msg:
       - <<: *corrupt
@@ -23027,14 +23010,22 @@ plugins:
             text: '必ず[DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)か[CBBE](https://www.nexusmods.com/skyrim/mods/2666)のうち、インストールされている体型Modと同じバージョンのEspを使用してください。.'
           - lang: ru
             text: 'Убедитесь, что используете корректный реплейсер тел для этого esp. [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) или [CBBE](https://www.nexusmods.com/skyrim/mods/2666).'
-  - name: 'LianVera-v2.5.esp'
+  - name: 'LianVera-v2\.(1|5)\.es(m|p)'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/17814/'
         name: 'Lian Vera - Mage Follower'
+  - name: 'LianVera-v2.1.esm'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x37af13c0
-        itm: 28
+      - <<: *quickClean
+        crc: 0xFC482394
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+  - name: 'LianVera-v2.5.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x37AF13C0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 55
   - name: 'liliath.esp'
     msg:
       - <<: *alreadyInPrettyFollowers
@@ -23048,8 +23039,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/9430/'
         name: 'Argonian Ria'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc4d779ea
+      - <<: *quickClean
+        crc: 0xC4D779EA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
   - name: 'Beauty Lydia.esp'
     msg: [ *corrupt ]
@@ -23093,10 +23085,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/87580/'
         name: 'Maven Black-Briar NPC Replacer'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x87e58a02
-        itm: 4
+    clean:
+      - crc: 0xC6D3DEDE
+        util: 'TES5Edit v4.0.4b'
   - name: 'MC-Fiona.esp'
     req:
       - name: 'FlansEyesForSkrim.esp'
@@ -23136,17 +23127,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/107514/'
         name: 'Mirabelle Ervine'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x51df62f4
+      - <<: *quickClean
+        crc: 0xD5236BC2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-  - name: 'Mjoll.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/18624/'
-        name: 'New Mjoll'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcd371a27
-        itm: 2
   - name: 'Mjollfacelift-(blackhair|blondehair)?\.esp'
     msg: [ *obsolete ]
   - name: 'mjollfacelift-v4-1-Blonde.esp'
@@ -23172,8 +23156,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/17429/'
         name: 'Wolf Follower Okami Shiranui WIP'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfd8a3158
+      - <<: *quickClean
+        crc: 0xFD8A3158
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Onmund.esp'
     msg:
@@ -23246,40 +23231,44 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/21771/'
         name: 'Sloads of Skyrim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd249ade2
-        itm: 2
+      - <<: *quickClean
+        crc: 0xB583E782
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 15
   - name: 'SprigganFollower(_lvl\d)?\d?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19750/'
+        name: 'Spriggan Follower - Kriju'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("SprigganFollower(_lvl\d)?\d?\.esp")'
         subs: [ 'SprigganFollower .esp file' ]
   - name: 'SprigganFollower.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19750/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1179651
-        itm: 2
-        udr: 2
-  - name: 'SprigganFollower_lvl25.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19750/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x22f1546b
-        itm: 2
-        udr: 2
-  - name: 'SprigganFollower_lvl50.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19750/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3045f427
+      - <<: *quickClean
+        crc: 0x01179651
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 2
   - name: 'SprigganFollower_lvl1.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19750/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3e675448
+      - <<: *quickClean
+        crc: 0x3E675448
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        udr: 2
+  - name: 'SprigganFollower_lvl25.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x22F1546B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+        udr: 2
+  - name: 'SprigganFollower_lvl50.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x3045F427
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
         udr: 2
   - name: 'Stenvar.esp'
@@ -23290,37 +23279,30 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/8007/'
         name: 'Sven Revamped'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4060cc94
-        itm: 6
+    clean:
+      - crc: 0xF2233681
+        util: 'TES5Edit v4.0.4b'
   - name: 'SylgjaSylvan1.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/37637/'
         name: 'Sylgja Sylvan Makeover Standalone'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x16f069f
-        itm: 4
-  - name: 'Taarie.esp'
+    clean:
+      - crc: 0x36CF9504
+        util: 'TES5Edit v4.0.4b'
+  - name: 'taarie.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/14451/'
         name: 'Prettier Taarie'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4d5bbfdc
-        itm: 4
+    clean:
+      - crc: 0xF23B8A3A
+        util: 'TES5Edit v4.0.4b'
   - name: 'Thieves Guild Followers.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/13057/'
         name: 'Thieves Guild Followers'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Thieves Guild Followers.esp", F6ADA4DE) or checksum("Thieves Guild Followers.esp", 355D31EE) or checksum("Thieves Guild Followers.esp", 4B1DC5DF)'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa533dc5e
-        itm: 4
+    clean:
+      - crc: 0x0E34A13B
+        util: 'TES5Edit v4.0.4b'
   - name: 'ThorinArmor.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/29047/'
@@ -23825,36 +23807,14 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Henrys All Animals BeFriend.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9224/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9224/'
+        name: 'Henrys All Animals BeFriend for Skyrim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xadd032ed
-        itm: 40
-  - name: 'Henrys All Animals BeFriend German.esp'
-    inc: [ 'Henrys All Animals BeFriend.esp' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x772b3a32
-        itm: 20
-  - name: 'Henrys All Animals and Creatures BeFriend.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9224/' ]
-    inc:
-      - 'Henrys All Animals BeFriend.esp'
-      - 'Henrys All Animals BeFriend German.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x11e1b4a5
-        itm: 40
-  - name: 'Henrys All Animals and Creatures BeFriend German.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9224/' ]
-    inc:
-      - 'Henrys All Animals BeFriend.esp'
-      - 'Henrys All Animals BeFriend German.esp'
-      - 'Henrys All Animals  and Creatures BeFriend.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7e773ee5
-        itm: 21
+      - <<: *quickClean
+        crc: 0xFFF2EC0E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'LiFE.esp'
     inc: [ 'LiFE.esm' ]
     msg: [ *requiresCBBEorUNP ]
