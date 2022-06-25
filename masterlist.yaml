@@ -1212,10 +1212,6 @@ plugins:
       # v8.1
       - crc: 0x5F90EC7C
         util: 'TES5Edit v4.0.2f'
-  - name: 'AP Skyrim.esm'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("AP Skyrim.esm", 857D5AAC) or checksum("AP Skyrim.esm", CBE8B5C2)'
   - name: 'archmageTrophyhall.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11123/' ]
     dirty:
@@ -20288,8 +20284,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/20740/'
         name: 'Mass effect Biotic Spells in Skyrim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc32007ed
+      - <<: *quickClean
+        crc: 0xC32007ED
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: '(Light|Medium|Total) Voidmagic\.esp'
     msg:
@@ -20303,8 +20300,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/21950/'
         name: 'Milestone Memoirs'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3722e902
+      - <<: *quickClean
+        crc: 0x3722E902
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'MiningforMages(Advanced|Easy)?\.esp'
     url:
@@ -20312,38 +20310,44 @@ plugins:
         name: 'Mining for Mages'
   - name: 'MiningforMages.esp'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x99730711
-        itm: 8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
   - name: 'MiningforMagesAdvanced.esp'
     inc: [ 'MiningforMages.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe7f03a9
-        itm: 7
+      - <<: *quickClean
+        crc: 0x0E7F03A9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
   - name: 'MiningforMagesEasy.esp'
     inc:
       - 'MiningforMages.esp'
       - 'MiningforMagesAdvanced.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6164a0c6
-        itm: 8
+      - <<: *quickClean
+        crc: 0x6164A0C6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 11
   - name: 'More elements in skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/20794/'
         name: 'More Magic elements in Skyrim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2ab8a62e
+      - <<: *quickClean
+        crc: 0x2AB8A62E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'Mortar.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/29571/'
         name: 'I like mortars'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x5a649071
+      - <<: *quickClean
+        crc: 0x5A649071
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
         udr: 1
   - name: 'MYSpellHard.esp'
     inc: [ 'MYSpell.esp' ]
@@ -20351,38 +20355,51 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/20721/'
         name: 'Advanced Skyrim Overhaul (aka Nature of the beast II)'
-    msg:
-      - <<: *obsolete
-        condition: 'not checksum("Nature of the beast.esp", 7EDCD683) and not checksum("Nature of the beast.esp", E20D43CA)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7edcd683
-        itm: 3
+      - <<: *quickClean
+        crc: 0x45D300FB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
   - name: 'NightingaleGallusSummon.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/15676/'
         name: 'Summon Nightingale Sentinel - Gallus'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb93f275a
-        itm: 2
+      # v1c
+      - <<: *quickClean
+        crc: 0xB93F275A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
+      # v2c
+      - <<: *quickClean
+        crc: 0x53A766A6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'OblivionMankarSummon.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/21515/'
         name: 'Summon Oblivion Usurper - Mankar Camoran'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd62798d4
+      # v2
+      - <<: *quickClean
+        crc: 0xD62798D4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+      # v2a
+      - <<: *quickClean
+        crc: 0xCE4F08DA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'OldSchoolSpells.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/9122/'
         name: 'Old School Spells'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x989f915c
+      - <<: *quickClean
+        crc: 0x989F915C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'Phenderix''s Magic Evolved -( Cleaned)?( - No Perks)?\.esp'
     msg:
@@ -20412,8 +20429,15 @@ plugins:
         name: 'Summon Wolf Queen - Potema'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb3f2fcd8
+      # v1b
+      - <<: *quickClean
+        crc: 0xB3F2FCD8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+      # v2b
+      - <<: *quickClean
+        crc: 0xE679EB82
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'room.esp'
     inc: [ 'UFO - Ultimate Follower Overhaul.esp' ]
@@ -20424,17 +20448,19 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/23882/'
         name: 'Spell Combos'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe82c9392
-        itm: 14
+      - <<: *quickClean
+        crc: 0xE82C9392
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 22
   - name: 'Spells by Chaszyrr.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/29698/'
         name: 'Spells by Chaszyrr'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x171f09f0
-        itm: 3
+      - <<: *quickClean
+        crc: 0x92304BBE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'SpellsOfTheThirdEra.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29170/' ]
     dirty:
@@ -20447,9 +20473,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/9304/'
         name: 'Alternate Atronachs'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfcc956db
-        itm: 1
+      - <<: *quickClean
+        crc: 0xFCC956DB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
   - name: 'Star Wars Force Abilities.esp'
     msg:
       - <<: *corrupt
@@ -20538,16 +20565,18 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/19770/'
         name: 'Transmute Precious Gem Spell'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x95b1b63b
+      - <<: *quickClean
+        crc: 0x95B1B63B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Undead Summoning.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/10463/'
         name: 'Undead Summoning'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2630ccba
+      - <<: *quickClean
+        crc: 0xF92F138E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'Unspontaneous-combustion.esp'
     req: [ *SKSE ]
@@ -20556,8 +20585,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/12718/'
         name: 'The One Power - Wheel Of Time Spells in Skyrim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9a60231c
+      - <<: *quickClean
+        crc: 0x9A60231C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
         udr: 3
   - name: 'WhispersCallerSummon.esp'
     url:
@@ -20565,18 +20596,31 @@ plugins:
         name: 'Summon Whisper Conjurer - The Caller'
     msg: [ *alreadyInLegendarySouls ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcd6e13f0
-        itm: 6
+      # v1
+      - <<: *quickClean
+        crc: 0xCD6E13F0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
+      # v2
+      - <<: *quickClean
+        crc: 0xEB07337D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 8
   - name: 'shouts_for_thuu''mic_2.esp'
     msg: [ *obsolete ]
   - name: 'chfshPlayerVoicesets.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/51387/'
         name: 'Player Voicesets'
+    clean:
+      # Main file - v0.5.1
+      - crc: 0xC8FB13EF
+        util: 'TES5Edit v4.0.4b'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7988cb2a
+      # Optional file - v0.3.8HF
+      - <<: *quickClean
+        crc: 0x7988CB2A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'DragonFire - Voice of the Dragon.esp'
     inc: [ 'DragonFire.esp' ]
@@ -20602,22 +20646,21 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/23137/'
         name: 'Shout-Tastic'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("Shout-tastic.esp", 7BE79CD0) or checksum("Shout-tastic.esp", 96544986)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8420cd21
-        itm: 11
+      - <<: *quickClean
+        crc: 0x8420CD21
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
   - name: 'Shout-tastic_no CD.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/27554/'
         name: 'Shout-Tastic - NO COOLDOWNS Edition'
     inc: [ 'Shout-tastic.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8453f97a
-        itm: 11
+      - <<: *quickClean
+        crc: 0x5966CC0C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
   - name: 'BurnifiedEffects.esp'
     msg: [ *obsolete ]
   - name: 'Candlelightspelllasts15min.esp'
@@ -20680,13 +20723,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/12510/'
         name: 'Named Souls in Gems'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa030e3d0
-        itm: 5
-      - <<: *dirtyPlugin
-        crc: 0x3b92c13a
-        itm: 3
+    clean:
+      - crc: 0x4F713A4A
+        util: 'TES5Edit v4.0.4b'
   - name: 'More Accessible Magicka( no buyable masters)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/20488/'
@@ -20694,13 +20733,15 @@ plugins:
   - name: 'More Accessible Magicka.esp'
     inc: [ 'More Accessible Magicka no buyable masters.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1230b90
+      - <<: *quickClean
+        crc: 0x01230B90
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'More Accessible Magicka no buyable masters.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa6a5f13f
+      - <<: *quickClean
+        crc: 0xA6A5F13F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'MorePowerfulNecromancy.esp'
     msg: [ *obsolete ]
@@ -20711,8 +20752,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/18920/'
         name: 'Paralysis in Illusion'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x7a14834a
+      - <<: *quickClean
+        crc: 0x7A14834A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'PartyTime.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8093/' ]
@@ -20757,14 +20799,24 @@ plugins:
         subs: [ 'WiS IV - AI & Spells for NPC .esp file' ]
   - name: 'Alchemy Fixed Beta 0.02.esp'
     msg: [ *obsolete ]
-  - name: 'BloodPotionRecipe.esp'
+  - name: '(BloodPotionRecipe|DVC)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22140/'
         name: 'Vampiric Blood Potion Recipe for Dawnguard'
+  - name: 'BloodPotionRecipe.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x25395f5d
-        itm: 2
+      # v1.0
+      - <<: *quickClean
+        crc: 0x25395F5D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+  - name: 'DVC.esp'
+    dirty:
+      # v1.1
+      - <<: *quickClean
+        crc: 0x16317A66
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
   - name: 'DynamicPotions.esp'
     msg:
       - type: say
@@ -20803,8 +20855,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/14210/'
         name: 'Destruction Damage Enchantment'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xeee99d11
+      - <<: *quickClean
+        crc: 0xEEE99D11
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'disenchnateverything.esp'
     msg: [ *obsolete ]
@@ -20850,31 +20903,32 @@ plugins:
     clean:
       - crc: 0xB15437DF
         util: 'TES5Edit v4.0.2f'
-  - name: 'BalancedCombat.esp'
+  - name: 'BalancedCombat(2\.5)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/8377/'
         name: 'Balanced Combat'
+  - name: 'BalancedCombat.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8952cb95
+      - <<: *quickClean
+        crc: 0x8952CB95
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 51
   - name: 'BalancedCombat2.5.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/8377/'
-        name: 'Balanced Combat'
     inc: [ 'BalancedCombat.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x523e7956
+      - <<: *quickClean
+        crc: 0x523E7956
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 60
   - name: 'Combat Remastered.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/24377/'
         name: 'Combat Remastered'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd2eb1521
-        itm: 1
+      - <<: *quickClean
+        crc: 0xC184CE15
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
   - name: 'CombatMoraleNoLootBag.esp'
     inc: [ 'CombatMorale.esp' ]
   - name: 'DeadlyCombat_NoDamageChanges.esp'
@@ -20896,12 +20950,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/20372/'
         name: 'Duel Wield 2 Handed Weapons V1'
-    msg:
-      - <<: *obsolete
-        condition: 'checksum("duel weild 2 hand.esp", 3B654AD9)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x546fcea3
+      - <<: *quickClean
+        crc: 0xCDE6CC62
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
   - name: 'DukePatricks - CombatTweaks.esp'
     msg:
@@ -20912,9 +20964,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/24286/'
         name: 'Horsemen - Mounted Combat Enhancement'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb652c4f9
-        itm: 24
+      - <<: *quickClean
+        crc: 0xB652C4F9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
   - name: 'KillMoveRandom \d{2,3}\.esp'
     msg: [ *obsolete ]
   - name: 'killmoverandom-(\d{1,3})(-)?(P)?(-)?(L)?\.esp'
@@ -21138,40 +21191,41 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/13281/'
         name: 'Grandmaster - True Unarmed and Unarmored Combat'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcdc7d117
-        itm: 22
-  - name: 'HeavyArmorPerksv2.2.esp'
+      - <<: *quickClean
+        crc: 0xCDC7D117
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 21
+  - name: 'HeavyArmorPerks( - )?(v2\.2|Helmetless)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/7202/'
         name: 'Revised Heavy Armor Perks'
+  - name: 'HeavyArmorPerksv2.2.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd3c0a697
+      - <<: *quickClean
+        crc: 0xD3C0A697
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'HeavyArmorPerks - Helmetless.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/7202/'
-        name: 'Revised Heavy Armor Perks'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3a11fdb9
+      - <<: *quickClean
+        crc: 0x3A11FDB9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
-  - name: 'Hunter''s Perks Plus.esp'
+  - name: 'Hunter''s Perks( Plus)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/12924/'
         name: 'Hunter Perks'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x73ff45bf
-        itm: 4
   - name: 'Hunter''s Perks.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/12924/'
-        name: 'Hunter Perks'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd861ad0b
+      - <<: *quickClean
+        crc: 0xD861AD0B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+  - name: 'Hunter''s Perks Plus.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x73FF45BF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'kuerteeSkillBasedDamageMultipliers.esp'
     req: [ *SKSE ]
@@ -21180,8 +21234,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/18695/'
         name: 'Enchanting and Alchemy Redux'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1774bfd2
+      - <<: *quickClean
+        crc: 0x1774BFD2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'levelingperkslite.esp'
     msg:
@@ -21207,19 +21262,15 @@ plugins:
       - 'SkyRe_Main.esp'
       - 'SkyRe_Main_NoDawnguard.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1617a10d
-        itm: 3
+      - <<: *quickClean
+        crc: 0x56F7A25C
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'MR_(FasterDualcasting|MagickaRevisited|PowerfulDualcasting)\.esp'
     msg:
       - <<: *useOnlyOneX
         condition: 'many("MR_(FasterDualcasting|MagickaRevisited|PowerfulDualcasting)\.esp")'
         subs: [ 'MR_ .esp file' ]
-  - name: 'Path of Shadows - Sneak Settings.esp'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x33a55a9b
-        itm: 4
   - name: 'perksbymatope.esp'
     msg:
       - <<: *alreadyInX
@@ -21443,8 +21494,9 @@ plugins:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=431887152'
         name: 'Non-Linear Perks'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcd66dcfb
+      - <<: *quickClean
+        crc: 0xFFA8684E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'Overpower.esp'
     url:
@@ -21753,20 +21805,21 @@ plugins:
         itm: 2
   - name: 'ActionPoser.esp'
     req: [ *FNIS ]
-  - name: 'AP Skyrim.esp'
-    msg: [ *obsolete ]
-  - name: 'AP Skyrim-Dev.esp'
+  - name: 'AP Skyrim.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/10748/' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xef92e2ee
-        itm: 2
+      # v5.21
+      - <<: *quickClean
+        crc: 0x49C82390
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
   - name: 'AP Skyrim-NCG_patch.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25406/' ]
-    inc: [ 'AP Skyrim.esm' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x86f0226b
+      # v0.2
+      - <<: *quickClean
+        crc: 0x86F0226B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'ElinRaceIdle.esp'
     req: [ *FNIS ]
@@ -21866,23 +21919,14 @@ plugins:
       - <<: *requiresX
         subs: [ 'Hair packs of TES IV: Oblivion and Hair packs of Fallout3, which are no longer available' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa31830f1
-        itm: 1
+      - <<: *quickClean
+        crc: 0xA31830F1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
   - name: 'RANsHair_02_06.esp'
     msg: [ *obsolete ]
   - name: 'RANs Hair Ver 2.0.esp'
     msg: [ *obsolete ]
-  - name: 'KidsColouredEyes.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/30347/'
-        name: 'Children of Skyrim Eye Colours'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb6ae437
-        itm: 5
-  - name: 'KidsColouredEyesNoHF.esp'
-    inc: [ 'KidsColouredEyesV2.esp' ]
   - name: 'serana1normaleyes.esp'
     inc: [ 'serana1.esp' ]
   - name: 'serana1demoneyes.esp'
@@ -21910,16 +21954,18 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/30031/'
         name: 'Conan Cimmerian Race'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1dcf01ba
+      - <<: *quickClean
+        crc: 0x1DCF01BA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
   - name: 'Dwarf.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/19253/'
         name: 'Dwarf race'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xa6d2870e
+      - <<: *quickClean
+        crc: 0xA6D2870E
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 12
   - name: 'Dwarf Race.Esp'
     msg: [ *requiresBetterMales ]
@@ -21931,25 +21977,29 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/8341/'
         name: 'Dwemer Race'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x91cd07be
+      - <<: *quickClean
+        crc: 0x91CD07BE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 20
   - name: 'FlyableDragonRacesRevamped.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/17178/'
         name: 'Flyable Dragon Races REVAMPED'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x183a85a8
+      - <<: *quickClean
+        crc: 0x183A85A8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 45
   - name: 'garbon race.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/73197/'
         name: 'Garbon'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xaaa3653f
-        itm: 31
+      - <<: *quickClean
+        crc: 0xDDC298FA
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 61
+        udr: 1
   - name: 'GiantChild.esp'
     msg: [ *obsolete ]
   - name: 'Gollum.Esp'
@@ -21969,33 +22019,37 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/25461/'
         name: 'HN66s Litheria - Race - BodyReplacer - Armors'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe2f3f924
-        itm: 9
-      - <<: *dirtyPlugin
-        crc: 0x803807F4
-        itm: 9
-      - <<: *dirtyPlugin
+      # v1.11
+      - <<: *quickClean
         crc: 0x3EC6C2A3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 9
+      # v2.0
+      - <<: *quickClean
+        crc: 0xD6541AA1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
   - name: 'Matera.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/23170/'
         name: 'MaTera'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x1e48287e
-        itm: 1
-  - name: 'MilkyGirlRaceAssassinExtendedcolors.esp'
-    inc: [ 'MilkyGirlRaceAssassin.esp' ]
-  - name: 'MilkyGirlRaceMage.esp'
+    clean:
+      - crc: 0x2455B711
+        util: 'TES5Edit v4.0.4b'
+      - crc: 0x1033A0BF
+        util: 'TES5Edit v4.0.4b'
+  - name: 'MilkyGirlRace(Assassin|Mage|Warrior)(Extendedcolors)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/14352/'
         name: 'MilkyGirl Race'
+  - name: 'MilkyGirlRaceMage.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xb05087fe
-        itm: 9
+      - <<: *quickClean
+        crc: 0xB05087FE
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+  - name: 'MilkyGirlRaceAssassinExtendedcolors.esp'
+    inc: [ 'MilkyGirlRaceAssassin.esp' ]
   - name: 'MilkyGirlRaceMageExtendedcolors.esp'
     inc: [ 'MilkyGirlMage.esp' ]
   - name: 'MilkyGirlRaceWarriorExtendedcolors.esp'
@@ -22004,43 +22058,32 @@ plugins:
     req:
       - name: 'DSpSoB.esp'
         display: '[Duel Sheath plus Shields on Back](https://www.nexusmods.com/skyrim/mods/17746)'
-  - name: 'New Playable Races by Budcat v3.0.esp'
-    msg: [ *obsolete ]
+  - name: '(New Playable Races|NPR 4.0 w Unarmed Compatibility) by Budcat( v4\.0)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/13984/'
+        name: 'Eight New Lore-Friendly and Balanced Races by Budcat'
   - name: 'New Playable Races by Budcat v4.0.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/13984/'
-        name: 'Eight New Lore-Friendly and Balanced Races by Budcat'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x8e8cca8c
+      - <<: *quickClean
+        crc: 0x4850B0C3
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 80
-  - name: 'NewSuccubusRace.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/22903/'
-        name: 'Succubus Race'
-    msg:
-      - <<: *wildEdits
-        subs: [ 'Mod contains undeleted French data.' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf3c4e9c8
-        itm: 94
   - name: 'NPR 4.0 w Unarmed Compatibility by Budcat.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/13984/'
-        name: 'Eight New Lore-Friendly and Balanced Races by Budcat'
     inc: [ 'New Playable Races by Budcat v4.0.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xf1caa272
+      - <<: *quickClean
+        crc: 0xF1CAA272
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 51
   - name: 'OhmesRaht.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/18418/'
         name: 'Ohmes-Raht Race - UNP CBBE'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcb3e2362
+      # v2.0
+      - <<: *quickClean
+        crc: 0x2205DFA6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
   - name: 'RZW_ChubbyRaces.esp'
     msg: [ *requiresCHSBHC ]
@@ -22053,24 +22096,48 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/39489/'
         name: 'Siren Race Continued'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x166a1f4f
+      # v2.0
+      - <<: *quickClean
+        crc: 0x166A1F4F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 13
+      # v2.1
+      - <<: *quickClean
+        crc: 0x290EE59F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 13
+      # v2.2
+      - <<: *quickClean
+        crc: 0xCF4E8902
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
+  - name: 'SirenRace_BetterVamps.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/39489/'
+        name: 'Siren Race Continued'
+    dirty:
+      # v2.2bv
+      - <<: *quickClean
+        crc: 0xCF4E8902
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'SkyTEST-MysticLands.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/8399/'
         name: 'SkyTEST - MysticLands Races'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x98d9ed8b
-        itm: 20
+      - <<: *quickClean
+        crc: 0x818AB2C4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 27
   - name: 'WUS - Witcher Race.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/8796/'
         name: 'WUS Witcher Race v05'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xfe98631
+      - <<: *quickClean
+        crc: 0x0FE98631
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 12
   - name: 'Children of Skyrim - NORD PRESETS.esp'
     msg: [ *obsolete ]
