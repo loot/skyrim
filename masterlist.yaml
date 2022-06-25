@@ -9662,7 +9662,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/22134/'
         name: 'Werewolf Perks Expanded - Dawnguard'
     after: [ 'Requiem.esp' ]
-    # Add cleaning report here
+    clean:
+      - crc: 0xA65EDB5F
+        util: 'TES5Edit v4.0.4b'
   - name: 'Religion.esp'
     after: [ 'Requiem.esp' ]
   - name: 'No Vendor or Loot Spells - Riverwood Trader Requiem.esp'
@@ -23823,8 +23825,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/9570/'
         name: 'Nighteye Ability for all the races'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xbb8b06a8
+      - <<: *quickClean
+        crc: 0xBB8B06A8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 12
   - name: 'MorrowindAblities.esp'
     msg: [ *obsolete ]
@@ -23835,8 +23838,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/12725/'
         name: 'Race Abilities and Skills Redone'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe4a1c5f7
+      - <<: *quickClean
+        crc: 0xE4A1C5F7
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
   - name: 'RaRe.esp'
     msg:
@@ -23847,12 +23851,14 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/26553/'
         name: 'Real RaceHeights Dainty Lil Ladies'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x9e21d7c9
-        itm: 3
-      - <<: *dirtyPlugin
-        crc: 0xc83962eb
-        itm: 2
+      - <<: *quickClean
+        crc: 0x9E21D7C9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+      - <<: *quickClean
+        crc: 0xC83962EB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
   - name: 'Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/29063/' ]
     msg:
@@ -23908,10 +23914,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/22711/'
         name: 'Skyrim Grammar Hammer'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x90a68aa7
-        itm: 1
+    clean:
+      - crc: 0x90A68AA7
+        util: 'TES5Edit v4.0.4b'
   - name: '72HoursRespawn.esp'
     msg: [ *useBashTweakInstead ]
   - name: 'WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp'
@@ -23947,19 +23952,11 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/6566/'
         name: 'Shaders Begone - NoGlow'
-    msg:
-      - <<: *obsolete
-        subs: [ 'You can obtain the authors new version [here](https://www.nexusmods.com/skyrim/mods/6566/).' ]
-        condition: 'checksum("Duns_Inc_Shaders_Begone.esp", B0D9FEDA) or checksum("Duns_Inc_Shaders_Begone.esp", 2C0126D)'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xC8FF638F
+      - <<: *quickClean
+        crc: 0x200633E2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'Duns_Inc_Shaders_Begone_xWeapons.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ 'You can obtain the authors new version [here](https://www.nexusmods.com/skyrim/mods/6566/).' ]
-        condition: 'checksum("Duns_Inc_Shaders_Begone_xWeapons.esp", 4928C96B) or checksum("Duns_Inc_Shaders_Begone_xWeapons.esp", 493A9DEA)'
   - name: 'rcrnShaders.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/1875/' ]
     msg:
@@ -24085,21 +24082,21 @@ plugins:
           - lang: ru
             text: 'Если используется версия 1.1, тогда требуется мод [RCRN](https://www.nexusmods.com/skyrim/mods/1875/), иначе ваша игра может вылетать.'
         condition: 'not file("rcrnShaders.esp") and not file("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp")'
-  - name: 'Alternate Visuals for Spell Effects.esp'
+  - name: '(Alternate|Replacer) Visuals for Spell Effects\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/15625/'
         name: 'Alternate Visuals for Spell Effects'
+  - name: 'Alternate Visuals for Spell Effects.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x42df8ddf
+      - <<: *quickClean
+        crc: 0x42DF8DDF
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 29
   - name: 'Replacer Visuals for Spell Effects.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/15625/'
-        name: 'Alternate Visuals for Spell Effects'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x98cc7458
+      - <<: *quickClean
+        crc: 0x98CC7458
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 8
   - name: 'Animated Weapon Enchants.esp'
     msg:
@@ -24112,14 +24109,14 @@ plugins:
         condition: 'many("DTHSpellMageArmorEffectReplacer.+\.esp")'
         subs: [ 'DTHSpellMageArmorEffectReplacer .esp file' ]
   - name: 'RealShelter.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/52612/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/52612/'
+        name: 'Real Shelter - Full Release'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x47b98821
-        itm: 214
-      - <<: *dirtyPlugin
-        crc: 0xad1d1564
-        itm: 220
+      - <<: *quickClean
+        crc: 0xFB9099A4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
   - name: 'SkyFalls + SkyMills + DG + DB.esp'
     after: [ 'Distant DetailHF.esp' ]
   - name: 'SeeEnchs.esp'
@@ -24128,10 +24125,13 @@ plugins:
         condition: 'file("EnchantingAwakened.esp") and not file("EnchantingAwakenedSeeEnchPatch.esp")'
         subs: [ 'the [Enchanting Awakened SeeEnchantments Patch](https://www.nexusmods.com/skyrim/mods/42796/)' ]
   - name: 'Hot Volcanic Water.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21889/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21889/'
+        name: 'Hot Volcanic Water'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcb9a32b4
+      - <<: *quickClean
+        crc: 0xCB9A32B4
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
   - name: 'RealisticWaterTwo.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/41076/' ]
@@ -24457,57 +24457,55 @@ plugins:
       - crc: 0x62BA0D27
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'Map Markers Cities.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25455/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xd1ae83bd
-        itm: 142
-  - name: 'Map Markers Cities OC.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25455/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x20f13b58
-        itm: 144
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25455/'
+        name: 'Map Markers Cities'
+    clean:
+      - crc: 0x6FFAE76A
+        util: 'TES5Edit v4.0.4b'
+  - name: 'Map Markers Complete( )?(DLC|nC|OC)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25603/'
+        name: 'Map Markers Complete'
   - name: 'Map Markers Complete.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25603/' ]
     clean:
       - crc: 0x949A4992
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'Map Markers Complete DLC.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25603/' ]
     clean:
       - crc: 0x39CFF01E
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'Map Markers Complete nC.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25603/' ]
     clean:
       - crc: 0x59F3445F
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'Map Markers Complete OC.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25603/' ]
     clean:
       - crc: 0x91225D49
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'Map Markers Landmarks.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/26246/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe6e78cbb
-        itm: 146
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/26246/'
+        name: 'Map Markers Landmarks'
+    clean:
+      - crc: 0x2F9E6E20
+        util: 'TES5Edit v4.0.4b'
   - name: 'Map Markers Misc.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/26688/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/26688/'
+        name: 'Map Markers Misc'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3b14a58a
+      - <<: *quickClean
+        crc: 0x3B14A58A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 146
   - name: 'Map Markers Ruins.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/26245/'
         name: 'Map Markers Ruins'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe7b303cd
-        itm: 146
+    clean:
+      - crc: 0xCC96F446
+        util: 'TES5Edit v4.0.4b'
   - name: 'Map Markers Shrines.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/25217/' ]
     clean:
@@ -24540,49 +24538,58 @@ plugins:
         subs: [ 'smakit_house_markers .esp file' ]
   - name: 'smakit_house_markers.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcdb6a10b
-        itm: 11
+      - <<: *quickClean
+        crc: 0xCDB6A10B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 14
   - name: 'smakit_house_markers_french.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xdbee7cc8
-        itm: 9
+      - <<: *quickClean
+        crc: 0xDBEE7CC8
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'smakit_house_markers_german.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x2b4220e5
-        itm: 13
+      - <<: *quickClean
+        crc: 0x2B4220E5
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
   - name: 'smakit_house_markers_italian.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xffd1b168
-        itm: 9
+      - <<: *quickClean
+        crc: 0xFFD1B168
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'smakit_house_markers_plus.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x6fdbd6b9
-        itm: 12
+      - <<: *quickClean
+        crc: 0x6FDBD6B9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 23
   - name: 'smakit_house_markers_plus_russian.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x34bbd145
-        itm: 11
+      - <<: *quickClean
+        crc: 0x34BBD145
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
   - name: 'smakit_house_markers_polish.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x4bd3a2a0
-        itm: 9
+      - <<: *quickClean
+        crc: 0x4BD3A2A0
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'smakit_house_markers_russian.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x3077b684
-        itm: 7
+      - <<: *quickClean
+        crc: 0x3077B684
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'smakit_house_markers_spanish.esp'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xcd86d7b9
-        itm: 9
+      - <<: *quickClean
+        crc: 0xCD86D7B9
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 12
   - name: 'PaperMapHeightEnhanced.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22425/' ]
   - name: 'WorldMapInFull3D.esp'
@@ -24637,9 +24644,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/21689/'
         name: 'Bat Travel Vampire Power'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xe33f0d1f
-        itm: 54
+      - <<: *quickClean
+        crc: 0xE33F0D1F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 57
   - name: 'SKSE Hotkeys.esp'
     req: [ *SKSE ]
   - name: 'Skyrim Performance MOD 5min.esp'
@@ -24652,7 +24660,9 @@ plugins:
         condition: 'many("World_Map_Height_Pitch_Tweak(_(130|170|200|250|Vanilla_pitch))?(_50|_90)?\.esp")'
         subs: [ 'World_Map_Height_Pitch_Tweak .esp file' ]
   - name: 'Warburg''s 3D Paper World Map - Texture [12]\.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25501/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25501/'
+        name: 'Paper World Map'
     group: *alternateStartGroup
     msg:
       - type: say
@@ -24666,17 +24676,21 @@ plugins:
   - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
     inc: [ 'Warburg''s 3D Paper World Map - Texture 2.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xc243a5f2
-        itm: 9
+      - <<: *quickClean
+        crc: 0xC243A5F2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
   - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
     inc: [ 'Warburg''s 3D Paper World Map - Texture 1.esp' ]
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0xaafe91d6
+      - <<: *quickClean
+        crc: 0xAAFE91D6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
   - name: 'Warburg''s 3D Paper World Map - (Dawnguard|Dragonborn)\.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/25501/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25501/'
+        name: 'Paper World Map'
     group: *mapMarkersGroup
     after:
       - 'Warburg''s 3D Paper World Map - Texture 1.esp'
@@ -24892,19 +24906,23 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/52474/'
         name: 'Combat Drama Overhaul'
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x964e1f5c
-        itm: 2
+    clean:
+      - crc: 0xCB2D91B4
+        util: 'TES5Edit v4.0.4b'
   - name: 'LakeviewManorRoad.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/27377/'
         name: 'Lakeview Manor Road - Hearthfire'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x14c1ed9b
-        itm: 43
+      - <<: *reqManualFix
+        crc: 0x14C1ED9B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 58
         udr: 6
+        nav: 1
+      - <<: *reqManualFix
+        crc: 0x6C386922
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
   - name: 'Skyrim Unbound.esp'
     url:
@@ -24956,8 +24974,9 @@ plugins:
       - name: -Relev
         condition: 'file("PerkusMaximus_Master.esp")'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0xD2C71E94
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 5
 
   - name: 'Pre PaMa WAFR Patch.esp'
@@ -25018,24 +25037,26 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/36017/'
         name: 'Solstheim - The Lost Levels'
     dirty:
-      - <<: *dirtyPlugin
+      - <<: *quickClean
         crc: 0x98580AA3
-        itm: 1
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 35
   - name: '_tck_SpellCrafting.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/33598/'
         name: 'Spell Crafting for Skyrim'
     dirty:
-      - <<: *dirtyPlugin
-        crc: 0x43EBAE28
-        itm: 3
-        udr: 20
+      - <<: *quickClean
+        crc: 0x82A982CB
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
   - name: 'Unique Grasses.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/42370/' ]
-    dirty:
-      - <<: *dirtyPlugin
-        crc: 0x094C536C
-        itm: 5
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/42370/'
+        name: 'Unique Grasses and Groundcovers'
+    clean:
+      - crc: 0xA97B0A1F
+        util: 'TES5Edit v4.0.4b'
   - name: 'JaxonzEnhGrab.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/52583/' ]
     dirty:
