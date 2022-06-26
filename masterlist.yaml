@@ -905,6 +905,14 @@ plugins:
     msg: [ *obsolete ]
 
 ###### Gameplay - User Interface ######
+  - name: 'AMatterOfTime.esp'
+    after:
+      - name: 'FISS.esp'
+        condition: 'version("AMatterOfTime.esp", "2", >=)'
+    clean:
+      # version: 2.0.10
+      - crc: 0x512CD10C
+        util: 'TES5Edit v4.0.1'
   - name: 'iHUD.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/3222/'
@@ -4857,14 +4865,6 @@ plugins:
         crc: 0xCC07C650
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-  - name: 'AMatterOfTime.esp'
-    after:
-      - name: 'FISS.esp'
-        condition: 'version("AMatterOfTime.esp", "2", >=)'
-    clean:
-      # version: 2.0.10
-      - crc: 0x512CD10C
-        util: 'TES5Edit v4.0.1'
   - name: 'Harvest More Food & Ingredients.esp'
     tag: [ Delev ]
   - name: 'hearthfire_buyingots.esp'
