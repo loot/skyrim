@@ -939,6 +939,16 @@ plugins:
       - crc: 0x6098B756
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'SkyUI.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/3863/'
+        name: 'SkyUI'
+    req: [ *SKSE ]
+    clean:
+      # version: 5.1
+      - crc: 0xBEA2DC76
+        util: 'TES5Edit v4.0.4b'
+
 ###### Locations ######
   - name: 'Arthmoor''s Skyrim Villages - All In One.esp'
     url: [ 'https://www.afkmods.com/index.php?/files/file/2111-arthmoors-skyrim-villages-all-in-one/' ]
@@ -6480,15 +6490,6 @@ plugins:
     req: [ *SKSE ]
   - name: 'VanillaUsesCustom.esp'
     msg: [ *obsolete ]
-  - name: 'SkyUI.esp'
-    req: [ *SKSE ]
-    after:
-      - name: 'Fhaarkas Font Mod - SkyUI.esp'
-        condition: 'version("SkyUI.esp", "4", >=) and version("Fhaarkas Font Mod - SkyUI.esp", "4.0", ==)'
-    clean:
-      # version 5.1
-      - crc: 0xBEA2DC76
-        util: 'TES5Edit v4.0.1'
   - name: 'LessIntrusiveHUD.esp'
     req:
       - *SKSE
