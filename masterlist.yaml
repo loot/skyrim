@@ -870,6 +870,16 @@ plugins:
         util: 'TES5Edit v4.0.4b'
 
 ###### Encounters - Allies ######
+  - name: 'CompanionArissa.esm'
+    msg:
+      - <<: *patch3rdParty_Requiem_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Arissa.esp")'
+    dirty:
+      # version: 2.2.2
+      - <<: *quickClean
+        crc: 0xC4AE95C0
+        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
 
 ###### Gameplay ######
   - name: 'Frostfall.esp'
@@ -25484,16 +25494,6 @@ plugins:
             text: 'Guard Dialogue Overhaul erkannt. Verwenden Sie die Guard Dialogue Overhaul Version, damit beide Mods wie vorgesehen funktionieren.'
           - lang: ja
             text: 'Guard Dialogue Overhaulが見つかりました。本来の動作をさせるにはGuard Dialogue Overhaulバージョンを使用する必要があります。'
-  - name: 'CompanionArissa.esm'
-    msg:
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Arissa.esp")'
-    dirty:
-      # version: 2.2.2
-      - <<: *quickClean
-        crc: 0xC4AE95C0
-        util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 10
   - name: 'Gray Fox Cowl.esm'
     dirty:
       # version: 2.0DC
