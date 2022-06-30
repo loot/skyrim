@@ -870,6 +870,16 @@ plugins:
         util: 'TES5Edit v4.0.4b'
 
 ###### Gameplay ######
+  - name: 'Frostfall.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/11163/' ]
+    msg:
+      - <<: *patch3rdParty_Requiem_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp")'
+    clean:
+      # version: 3.4.1
+      - crc: 0x21E97089
+        util: 'TES5Edit v4.0.1'
+
   - name: 'UsefulDogs.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/64021/'
@@ -25836,15 +25846,6 @@ plugins:
           - 'Requiem'
           - '[More Requiem Patches](https://www.nexusmods.com/skyrim/mods/58141/)'
         condition: 'active("Requiem.esp") and not active("Requiem - Fire and Ice Overhaul.esp") and not active("Requiem - Fire and Ice Overhaul - AOS.esp")'
-  - name: 'Frostfall.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/11163/' ]
-    msg:
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Frostfall.esp")'
-    clean:
-      # version: 3.4.1
-      - crc: 0x21E97089
-        util: 'TES5Edit v4.0.1'
   - name: 'HothFollower.esp'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
