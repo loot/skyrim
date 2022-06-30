@@ -779,6 +779,15 @@ plugins:
     msg: [ *moddingPlugin ]
 
 ###### Resources & Frameworks ######
+  - name: 'Campfire.esm'
+    msg:
+      - <<: *patch3rdParty_Requiem_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp")'
+    clean:
+      # version: 1.11
+      - crc: 0x321C14B7
+        util: 'TES5Edit v4.0.1'
+
   - name: 'RaceMenu(Mimic|Overlays|Plugin)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/29624/'
@@ -25455,14 +25464,6 @@ plugins:
             text: 'Guard Dialogue Overhaul erkannt. Verwenden Sie die Guard Dialogue Overhaul Version, damit beide Mods wie vorgesehen funktionieren.'
           - lang: ja
             text: 'Guard Dialogue Overhaulが見つかりました。本来の動作をさせるにはGuard Dialogue Overhaulバージョンを使用する必要があります。'
-  - name: 'Campfire.esm'
-    msg:
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Campfire.esp")'
-    clean:
-      # version: 1.11
-      - crc: 0x321C14B7
-        util: 'TES5Edit v4.0.1'
   - name: 'CompanionArissa.esm'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
