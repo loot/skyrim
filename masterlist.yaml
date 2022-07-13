@@ -1153,6 +1153,15 @@ plugins:
       - crc: 0x8AFD20DB
         util: 'TES5Edit v4.0.1'
 
+  - name: 'Book Covers Skyrim - Lost Library.esp'
+    msg:
+      - <<: *patch3rdParty_Requiem_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Lost Library.esp")'
+    clean:
+      # version: 1.7
+      - crc: 0x8F56DE23
+        util: 'TES5Edit v4.0.1'
+
 ###### Locations ######
   - name: 'Arthmoor''s Skyrim Villages - All In One.esp'
     url: [ 'https://www.afkmods.com/index.php?/files/file/2111-arthmoors-skyrim-villages-all-in-one/' ]
@@ -26324,14 +26333,6 @@ plugins:
         crc: 0x058841E0
         util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-  - name: 'Book Covers Skyrim - Lost Library.esp'
-    msg:
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Lost Library.esp")'
-    clean:
-      # version: 1.7
-      - crc: 0x8F56DE23
-        util: 'TES5Edit v4.0.1'
   - name: 'The Eyes Of Beauty - Elves Edition.esp'
     clean:
       # version: 10.0.1
