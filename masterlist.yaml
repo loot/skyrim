@@ -1155,6 +1155,16 @@ plugins:
       # version: 3.6
       - crc: 0x8AFD20DB
         util: 'TES5Edit v4.0.4b'
+  - name: 'Book Covers Dawnguard.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp", B8DA5EF5)'
+        subs: [ 'Book Covers Skyrim.esp' ]
+  - name: 'Book Covers Hearthfire.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp", B8DA5EF5)'
+        subs: [ 'Book Covers Skyrim.esp' ]
 
   - name: 'Book Covers Skyrim - Lost Library.esp'
     url:
@@ -16993,16 +17003,6 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Requiem.esp' ]
         condition: 'active("Requiem.esp")'
-  - name: 'Book Covers Dawnguard.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp", B8DA5EF5)'
-        subs: [ 'Book Covers Skyrim.esp' ]
-  - name: 'Book Covers Hearthfire.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'file("Book Covers Skyrim.esp") and checksum("Book Covers Skyrim.esp", B8DA5EF5)'
-        subs: [ 'Book Covers Skyrim.esp' ]
   - name: 'REQ - BCS Patch.esp'
     inc:
       - name: 'Requiem.esp'
