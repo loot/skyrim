@@ -1139,6 +1139,19 @@ plugins:
         util: 'TES5Edit v4.0.4b'
 
 ###### Items ######
+  - name: 'Book Covers Skyrim.esp'
+    after: [ 'BetterQuestObjectives.esp' ]
+    msg:
+      - <<: *patch3rdParty_Requiem_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Book Covers Skyrim.esp")'
+    tag:
+      - Graphics
+      - Names
+      - ObjectBounds
+    clean:
+      # version: 3.6
+      - crc: 0x8AFD20DB
+        util: 'TES5Edit v4.0.1'
 
 ###### Locations ######
   - name: 'Arthmoor''s Skyrim Villages - All In One.esp'
@@ -16965,19 +16978,6 @@ plugins:
       - <<: *alreadyInX
         subs: [ 'Requiem.esp' ]
         condition: 'active("Requiem.esp")'
-  - name: 'Book Covers Skyrim.esp'
-    after: [ 'BetterQuestObjectives.esp' ]
-    msg:
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Book Covers Skyrim.esp")'
-    tag:
-      - Graphics
-      - Names
-      - ObjectBounds
-    clean:
-      # version: 3.6
-      - crc: 0x8AFD20DB
-        util: 'TES5Edit v4.0.1'
   - name: 'Book Covers Dawnguard.esp'
     msg:
       - <<: *alreadyInX
