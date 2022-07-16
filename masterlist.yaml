@@ -885,6 +885,61 @@ plugins:
       - crc: 0xE87C93C0
         util: 'TES5Edit v4.0.4b'
 
+###### AudioVisual - Sound & Music ######
+  - name: 'AOS.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/43773/'
+        name: 'Audio Overhaul for Skyrim 2'
+    after:
+      - 'WetandCold.esp'
+      # RWT must be loaded after Requiem but AOS shouldn't so this rule is disabled when Requiem is installed
+      - name: 'RealisticWaterTwo.esp'
+        condition: 'not file("AOS2_RealisticWaterTwo Patch.esp") and not file("WAO-.*RWT.*\.esp") and not active("Requiem.esp")'
+    msg:
+      - <<: *patch3rdParty_Requiem_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp")'
+    tag:
+      - Graphics
+      - Sound
+    clean:
+      # v2.5.1
+      - crc: 0x5B5430F7
+        util: 'TES5Edit v4.0.4b'
+  - name: 'AOS_Reduced_Reverb_Addon.esp'
+    group: *reproccerGroup
+  - name: 'AOS2_DD Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Requiem - Deadly Dragons - AOS.esp")'
+        subs: [ 'Requiem - Deadly Dragons - AOS.esp' ]
+  - name: 'AOS2_Purity Patch.esp'
+    clean:
+      - crc: 0x06C1155E
+        util: 'TES5Edit v4.0.4b'
+  - name: 'AOS2_Requiem Patch.esp'
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+  - name: 'AOS2_TrueStorms Patch.esp'
+    clean:
+      - crc: 0x64CE5BC3
+        util: 'TES5Edit v4.0.4b'
+  - name: 'AOS2_Unique Uniques Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Requiem - Unique Uniques - AOS.esp")'
+        subs: [ 'Requiem - Unique Uniques - AOS.esp' ]
+    clean:
+      - crc: 0x9B99AD18
+        util: 'TES5Edit v4.0.4b'
+  - name: 'AOS2_WAF Patch.esp'
+    after: [ 'AOS2_GDO Patch.esp' ]
+  - name: 'AOS2_WetandCold Patch.esp'
+    clean:
+      - crc: 0x1DD2CB8E
+        util: 'TES5Edit v4.0.4b'
+
 ###### AudioVisual - Weather & Lighting ######
   - name: 'Purity.esp'
     url:
@@ -3657,40 +3712,6 @@ plugins:
       # v1.3 - DG
       - crc: 0xB7A24777
         util: 'TES5Edit v4.0.2i'
-  - name: 'AOS.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/43773/' ]
-    after:
-      - 'WetandCold.esp'
-      # RWT must be loaded after Requiem but AOS shouldn't so this rule is disabled when Requiem is installed
-      - name: 'RealisticWaterTwo.esp'
-        condition: 'not file("AOS2_RealisticWaterTwo Patch.esp") and not file("WAO-.*RWT.*\.esp") and not active("Requiem.esp")'
-    msg:
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp")'
-    tag:
-      - Graphics
-      - Sound
-    clean:
-      # v2.5.1
-      - crc: 0x5B5430F7
-        util: 'TES5Edit v4.0.2f'
-  - name: 'AOS2_DD Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Deadly Dragons - AOS.esp")'
-        subs: [ 'Requiem - Deadly Dragons - AOS.esp' ]
-  - name: 'AOS2_Unique Uniques Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Unique Uniques - AOS.esp")'
-        subs: [ 'Requiem - Unique Uniques - AOS.esp' ]
-  - name: 'AOS2_WAF Patch.esp'
-    after: [ 'AOS2_GDO Patch.esp' ]
-  - name: 'AOS2_Requiem Patch.esp'
-    inc:
-      - name: 'Requiem.esp'
-        display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     dirty:
       # Vanilla + Dawnguard + Dragonborn
@@ -19373,38 +19394,6 @@ plugins:
         itm: 24
   - name: 'RealisticRoomRental-Basic.esp'
     inc: [ 'RealisticRoomRental.esp' ]
-  - name: 'AOS_WetandCold Patch.esp'
-    after:
-      - 'WetandCold.esp'
-      - 'AOS.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Audio Overhaul for Skyrim 2](https://www.nexusmods.com/skyrim/mods/43773/).' ]
-  - name: 'AOS_ICS Patch.esp'
-    after: [ 'Improved Combat Sounds v2.2.esp' ]
-  - name: 'AOS_BlockSparkles Patch.esp'
-    after: [ 'BlockSparkles.esp' ]
-  - name: 'AOS_EBT Patch.esp'
-    after: [ 'AOS.esp' ]
-    msg:
-      - <<: *obsolete
-        subs: [ '[Audio Overhaul for Skyrim 2](https://www.nexusmods.com/skyrim/mods/43773/).' ]
-  - name: 'AOS_DBAscendant Patch.esp'
-    after:
-      - 'DragonbornAscendant.esp'
-      - 'DragonbornAscendantDawnguardExpansion.esp'
-      - 'DragonbornAscendantDragonbornDLCAddon.esp'
-  - name: 'AOS_RWT Patch.esp'
-    after:
-      - 'AOS.esp'
-      - 'RealisticWaterTwo.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Audio Overhaul for Skyrim 2](https://www.nexusmods.com/skyrim/mods/43773/).' ]
-  - name: 'AOS_CWO Patch.esp'
-    after:
-      - 'Civil War Overhaul.esp'
-      - 'AOS.esp'
   - name: 'MHYH_RentRoomFollower.esp'
     req: [ *SKSE ]
   - name: 'SkyrimSewers.esp'
@@ -25154,20 +25143,6 @@ plugins:
   #Post Reproccer Scoped Bows Patch must load after qotsafans stuff
   - name: 'Post Reproccer Scoped Bows Patch.esp'
     group: *postReproccerGroup
-  - name: 'AOS_SkyRe-Patch Patch.esp'
-    group: *reproccerGroup
-    msg:
-      - <<: *obsolete
-        subs: [ '[Audio Overhaul for Skyrim 2](https://www.nexusmods.com/skyrim/mods/43773/).' ]
-    ## a compat patch for qotsafans compat patches
-  - name: 'AOS_CTD_Fix.esp'
-    after: [ 'AOS_SkyRe-Patch Patch.esp' ]
-    group: *reproccerGroup
-  - name: 'AOS_Reduced_Reverb_Addon.esp'
-    after:
-      - 'AOS_CTD_Fix.esp'
-      - 'AOS_SkyRe-Patch Patch.esp'
-    group: *reproccerGroup
   - name: 'EzEWorldMap.esp'
     group: *mapGroup
   - name: 'EzEMapSolstheim.esp'
