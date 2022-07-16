@@ -19375,38 +19375,6 @@ plugins:
         itm: 24
   - name: 'RealisticRoomRental-Basic.esp'
     inc: [ 'RealisticRoomRental.esp' ]
-  - name: 'AOS_WetandCold Patch.esp'
-    after:
-      - 'WetandCold.esp'
-      - 'AOS.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Audio Overhaul for Skyrim 2](https://www.nexusmods.com/skyrim/mods/43773/).' ]
-  - name: 'AOS_ICS Patch.esp'
-    after: [ 'Improved Combat Sounds v2.2.esp' ]
-  - name: 'AOS_BlockSparkles Patch.esp'
-    after: [ 'BlockSparkles.esp' ]
-  - name: 'AOS_EBT Patch.esp'
-    after: [ 'AOS.esp' ]
-    msg:
-      - <<: *obsolete
-        subs: [ '[Audio Overhaul for Skyrim 2](https://www.nexusmods.com/skyrim/mods/43773/).' ]
-  - name: 'AOS_DBAscendant Patch.esp'
-    after:
-      - 'DragonbornAscendant.esp'
-      - 'DragonbornAscendantDawnguardExpansion.esp'
-      - 'DragonbornAscendantDragonbornDLCAddon.esp'
-  - name: 'AOS_RWT Patch.esp'
-    after:
-      - 'AOS.esp'
-      - 'RealisticWaterTwo.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Audio Overhaul for Skyrim 2](https://www.nexusmods.com/skyrim/mods/43773/).' ]
-  - name: 'AOS_CWO Patch.esp'
-    after:
-      - 'Civil War Overhaul.esp'
-      - 'AOS.esp'
   - name: 'MHYH_RentRoomFollower.esp'
     req: [ *SKSE ]
   - name: 'SkyrimSewers.esp'
@@ -25156,19 +25124,7 @@ plugins:
   #Post Reproccer Scoped Bows Patch must load after qotsafans stuff
   - name: 'Post Reproccer Scoped Bows Patch.esp'
     group: *postReproccerGroup
-  - name: 'AOS_SkyRe-Patch Patch.esp'
-    group: *reproccerGroup
-    msg:
-      - <<: *obsolete
-        subs: [ '[Audio Overhaul for Skyrim 2](https://www.nexusmods.com/skyrim/mods/43773/).' ]
-    ## a compat patch for qotsafans compat patches
-  - name: 'AOS_CTD_Fix.esp'
-    after: [ 'AOS_SkyRe-Patch Patch.esp' ]
-    group: *reproccerGroup
   - name: 'AOS_Reduced_Reverb_Addon.esp'
-    after:
-      - 'AOS_CTD_Fix.esp'
-      - 'AOS_SkyRe-Patch Patch.esp'
     group: *reproccerGroup
   - name: 'EzEWorldMap.esp'
     group: *mapGroup
