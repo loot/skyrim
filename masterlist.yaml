@@ -886,6 +886,40 @@ plugins:
         util: 'TES5Edit v4.0.4b'
 
 ###### AudioVisual - Sound & Music ######
+  - name: 'AOS.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/43773/' ]
+    after:
+      - 'WetandCold.esp'
+      # RWT must be loaded after Requiem but AOS shouldn't so this rule is disabled when Requiem is installed
+      - name: 'RealisticWaterTwo.esp'
+        condition: 'not file("AOS2_RealisticWaterTwo Patch.esp") and not file("WAO-.*RWT.*\.esp") and not active("Requiem.esp")'
+    msg:
+      - <<: *patch3rdParty_Requiem_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp")'
+    tag:
+      - Graphics
+      - Sound
+    clean:
+      # v2.5.1
+      - crc: 0x5B5430F7
+        util: 'TES5Edit v4.0.2f'
+  - name: 'AOS2_DD Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Requiem - Deadly Dragons - AOS.esp")'
+        subs: [ 'Requiem - Deadly Dragons - AOS.esp' ]
+  - name: 'AOS2_Unique Uniques Patch.esp'
+    msg:
+      - <<: *alreadyInX
+        condition: 'active("Requiem - Unique Uniques - AOS.esp")'
+        subs: [ 'Requiem - Unique Uniques - AOS.esp' ]
+  - name: 'AOS2_WAF Patch.esp'
+    after: [ 'AOS2_GDO Patch.esp' ]
+  - name: 'AOS2_Requiem Patch.esp'
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
 
 ###### AudioVisual - Weather & Lighting ######
   - name: 'Purity.esp'
@@ -3659,40 +3693,6 @@ plugins:
       # v1.3 - DG
       - crc: 0xB7A24777
         util: 'TES5Edit v4.0.2i'
-  - name: 'AOS.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/43773/' ]
-    after:
-      - 'WetandCold.esp'
-      # RWT must be loaded after Requiem but AOS shouldn't so this rule is disabled when Requiem is installed
-      - name: 'RealisticWaterTwo.esp'
-        condition: 'not file("AOS2_RealisticWaterTwo Patch.esp") and not file("WAO-.*RWT.*\.esp") and not active("Requiem.esp")'
-    msg:
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Audio Overhaul for Skyrim.esp")'
-    tag:
-      - Graphics
-      - Sound
-    clean:
-      # v2.5.1
-      - crc: 0x5B5430F7
-        util: 'TES5Edit v4.0.2f'
-  - name: 'AOS2_DD Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Deadly Dragons - AOS.esp")'
-        subs: [ 'Requiem - Deadly Dragons - AOS.esp' ]
-  - name: 'AOS2_Unique Uniques Patch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Unique Uniques - AOS.esp")'
-        subs: [ 'Requiem - Unique Uniques - AOS.esp' ]
-  - name: 'AOS2_WAF Patch.esp'
-    after: [ 'AOS2_GDO Patch.esp' ]
-  - name: 'AOS2_Requiem Patch.esp'
-    inc:
-      - name: 'Requiem.esp'
-        display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     dirty:
       # Vanilla + Dawnguard + Dragonborn
