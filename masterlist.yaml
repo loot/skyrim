@@ -1101,16 +1101,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/8240/'
         name: 'Whiterun Trees'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Different mod with same name. Probably incompatible.'
-          - lang: de
-            text: 'Unterschiedliche Mod mit gleichem Namen. Wahrscheinlich nicht kompatibel.'
-          - lang: ja
-            text: '同名のModとは異なります。おそらく両立できません。'
-        condition: 'checksum("Whiterun Trees.esp", D2995274)'
+    inc: [ 'Whiterun Trees.esp' ]
     dirty:
       # Whiterun Trees - v1.1
       - <<: *quickClean
