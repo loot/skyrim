@@ -1167,6 +1167,23 @@ plugins:
     msg: [ *obsolete ]
 
 ###### Gameplay - Mount & Follower Managers ######
+  - name: 'AmazingFollowerTweaks.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15524/'
+        name: 'Amazing Follower Tweaks'
+      - link: 'https://www.nexusmods.com/skyrim/mods/71689/'
+        name: 'Immersive Amazing Follower Tweaks'
+    after: [ 'Inigo.esp' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0xD6C72A3C
+        util: '[TES5Edit v4.0.4c](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+      - <<: *quickClean
+        crc: 0xDC4BC1BF
+        util: '[TES5Edit v4.0.4c](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+
   - name: 'Convenient Horses.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/14950/'
@@ -23839,23 +23856,7 @@ plugins:
         condition: 'checksum("NonEssentialChildren.esp", BAE841DB)'
   - name: 'Vr - Guard Comment Tweak.esp'
     msg: [ *obsolete ]
-  - name: 'AmazingFollowerTweaks.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'German version'
-          - lang: de
-            text: 'Deutsche Version'
-          - lang: ja
-            text: 'ドイツ語版です。'
-        condition: 'checksum("AmazingFollowerTweaks.esp", 1482CEEC)'
-    after: [ 'Inigo.esp' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xD6C72A3C
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 7
+
   - name: 'Guardian HeadQuarters.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19563/' ]
     dirty:
