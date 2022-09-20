@@ -870,38 +870,18 @@ plugins:
     inc:
       - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
       - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
-    msg:
-      # huge number of incompatible plugins, so this msg is likely better than inc
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp'
     inc:
       - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
       - 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
       - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
       - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
-    msg:
-      # huge number of incompatible plugins, so this msg is likely better than inc
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
   - name: 'SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp'
     inc:
       - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
       - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp'
   - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dawnguard.esp'
     inc: [ 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp' ]
   - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dragonborn.esp'
