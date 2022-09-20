@@ -1543,6 +1543,23 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 13
 
+  - name: 'Manoir des chutes du Dragon.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/11644/'
+        name: 'Le Manoir des Chutes du Dragon - Dragon Falls Manor'
+    inc: [ 'Dragon Falls Manor.esp' ]
+    dirty:
+      - <<: *reqManualFix
+        crc: 0x02590076
+        util: '[TES5Edit v4.0.4c](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 804
+        udr: 19
+        nav: 3
+      - <<: *reqManualFix
+        crc: 0xBF6ABBCC
+        util: '[TES5Edit v4.0.4c](https://www.nexusmods.com/skyrim/mods/25859)'
+        nav: 3
+
 ###### Anything new can go after this (If you're not sure where to put it) ######
   - name: 'MoT_First_LoadOrder_File_After_Skyrim.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/6272/' ]
@@ -12783,31 +12800,6 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/9548/' ]
     msg: [ *obsolete ]
 
-  - name: 'Manoir des chutes du Dragon.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/11644/'
-        name: 'Le Manoir des Chutes du Dragon - Dragon Falls Manor'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'French translation of Dragon Falls Manor.esp.'
-          - lang: de
-            text: 'Französische Übersetzung von Dragon Falls Manor.esp.'
-          - lang: ja
-            text: 'Dragon Falls Manor.espのフランス語版です。'
-        condition: 'file("Dragon Falls Manor.esp")'
-    dirty:
-      - <<: *reqManualFix
-        crc: 0x02590076
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 804
-        udr: 19
-        nav: 3
-      - <<: *reqManualFix
-        crc: 0xBF6ABBCC
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        nav: 3
   - name: 'DragonmournInn.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/33323/' ]
     dirty:
