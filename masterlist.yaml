@@ -860,6 +860,36 @@ plugins:
       - crc: 0x9700EC44
         util: 'TES5Edit v4.0.4b'
 
+  - name: '(SJ|SkyJub)s_I(nvHelm|nvisible_Helmet)s_(Eng|Ger)_(Main|ModKit|Plugin).*\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18250/'
+        name: 'SkyJubs Invisible Helmets - No Helmet Mod - Hide Helmet Mod'
+  - name: 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
+    inc: [ 'SkyJubs_Invisible_Helmets_Eng_Main.esp' ]
+  - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
+  - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp'
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
+      - 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
+  - name: 'SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp'
+    inc:
+      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
+      - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp'
+  - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dawnguard.esp'
+    inc: [ 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp' ]
+  - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dragonborn.esp'
+    inc: [ 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp' ]
+  # SkyJub's Invisible Helmets - Obsolete plugins
+  - name: 'SkyJubs_Invisible_Helmets_Eng_.+\.esp'
+    msg: [ *obsolete ]
+
 ###### AudioVisual - Animations & Physics ######
   - name: 'dD-No Spinning Death Animation( Merged)?\.esp'
     url:
@@ -18225,72 +18255,7 @@ plugins:
     clean:
       - crc: 0xC72344BB
         util: 'TES5Edit v4.0.4b'
-  - name: 'SkyJubs_Invisible_Helmets_English_Main_1_(2|3|3v|4|4v)\.esp'
-    msg: [ *obsolete ]
-  - name: 'SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp'
-    msg: [ *obsolete ]
-  - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
-    msg: [ *obsolete ]
-  - name: 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyHelmets.esp'
-    msg: [ *obsolete ]
-  - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_DragonboneEbonsteel.esp'
-    msg:
-      - *corrupt
-      - *obsolete
-  - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_DragonKnightArmor.esp'
-    msg:
-      - *corrupt
-      - *obsolete
-  - name: 'SkyJubs_Invisible_Helmets_Eng_Plugin_InquisitionSet.esp'
-    msg:
-      - *corrupt
-      - *obsolete
-  - name: 'SkyJubs_Invisible_Helmets_German_Main_1_2.esp'
-    msg: [ *obsolete ]
-  - name: 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
-    inc: [ 'SkyJubs_Invisible_Helmets_Eng_Main.esp' ]
-  - name: 'SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp'
-    inc:
-      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
-      - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
-  - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
-    inc:
-      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
-      - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
-    msg:
-      # huge number of incompatible plugins, so this msg is likely better than inc
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
-  - name: 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp'
-    inc:
-      - 'SkyJubs_Invisible_Helmets_Eng_Main.esp'
-      - 'SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp'
-      - 'SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp'
-      - 'SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp'
-    msg:
-      # huge number of incompatible plugins, so this msg is likely better than inc
-      - type: say
-        content:
-          - lang: en
-            text: 'Incompatible with: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: de
-            text: 'Inkompatibel mit: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-          - lang: ja
-            text: '競合: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp'
-        condition: 'file("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp")'
-  - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dawnguard.esp'
-    inc: [ 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp' ]
-  - name: 'SkyJubs_Invisible_Helmets_Ger_Plugin_Dragonborn.esp'
-    inc: [ 'SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp' ]
-  - name: 'SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_(2|3)\.esp'
-    msg: [ *obsolete ]
+
   - name: 'Skyrim_Dragon Update.esp'
     inc: [ 'DeadlyDragons.esp' ]
     tag:
