@@ -1069,6 +1069,40 @@ plugins:
       - crc: 0xD1FE9ECE
         util: 'TES5Edit v4.0.4b'
 
+###### Environment, Landscape & Flora ######
+  - name: 'Whiterun Trees.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/9420/'
+        name: 'Trees for Whiterun'
+      - link: 'https://www.nexusmods.com/skyrim/mods/8240/'
+        name: 'Whiterun Trees'
+    msg:
+      - <<: *obsolete
+        subs: [ '[Whiterun Trees 1.1.esp](https://www.nexusmods.com/skyrim/mods/8240/).' ]
+        condition: 'checksum("Whiterun Trees.esp", 226D7357)'
+    dirty:
+      # Trees for Whiterun - v1.0
+      - <<: *quickClean
+        crc: 0x2EA9488D
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+      # Trees for Whiterun - v1.1
+      - <<: *quickClean
+        crc: 0xD2995274
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 5
+
+  - name: 'Whiterun Trees 1.1.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/8240/'
+        name: 'Whiterun Trees'
+    inc: [ 'Whiterun Trees.esp' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x88C69EB7
+        util: '[TES5Edit v4.0.4c](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+
 ###### Gameplay ######
   - name: 'Frostfall.esp'
     url:
@@ -16634,52 +16668,7 @@ plugins:
             text: 'このファイルは実際にはEsmファイルではありません。ファイル名の付け間違いです。'
           - lang: ru
             text: 'Это не настоящий esm-файл. Неверно назван.'
-  - name: 'Whiterun Trees.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/9420/'
-        name: 'Trees for Whiterun'
-      - link: 'https://www.nexusmods.com/skyrim/mods/8240/'
-        name: 'Whiterun Trees'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Whiterun Trees 1.1.esp](https://www.nexusmods.com/skyrim/mods/8240/).' ]
-        condition: 'checksum("Whiterun Trees.esp", 226D7357)'
-    dirty:
-      # Trees for Whiterun - v1.0
-      - <<: *quickClean
-        crc: 0x2EA9488D
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 5
-      # Trees for Whiterun - v1.1
-      - <<: *quickClean
-        crc: 0xD2995274
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 5
-      # Whiterun Trees - v1.0 - Old file
-      - <<: *quickClean
-        crc: 0x226D7357
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 7
-  - name: 'Whiterun Trees 1.1.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/8240/'
-        name: 'Whiterun Trees'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Different mod with same name. Probably incompatible.'
-          - lang: de
-            text: 'Unterschiedliche Mod mit gleichem Namen. Wahrscheinlich nicht kompatibel.'
-          - lang: ja
-            text: '同名のModとは異なります。おそらく両立できません。'
-        condition: 'checksum("Whiterun Trees.esp", D2995274)'
-    dirty:
-      # Whiterun Trees - v1.1
-      - <<: *quickClean
-        crc: 0x88C69EB7
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 7
+
   - name: '(BETA) Immersive Cities - Whiterun.esp'
     msg: [ *obsolete ]
   - name: 'Whiterun Ferns.esp'
