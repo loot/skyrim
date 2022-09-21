@@ -1066,14 +1066,8 @@ plugins:
     msg:
       - <<: *useVersionDawnguard
         condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and (checksum("ExpandedSnowSystems.esp", DB538BE0) or checksum("ExpandedSnowSystems.esp", 74DF9966))'
-      - type: warn
-        content:
-          - lang: en
-            text: 'ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.'
-          - lang: de
-            text: 'ClimatesOfTamriel.esm ist vorhanden oder aktiv. Verwenden Sie stattdessen ExpandedSnowSystems-CoT.esp, damit die Mod wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'ClimatesOfTamriel.esmが存在するかアクティブになっています。代わりにExpandedSnowSystems-CoT.espを使用しなければ正しく動作しません。'
+      - <<: *useVersion
+        subs: [ '[Climates of Tamriel](https://www.nexusmods.com/skyrim/mods/28016/)' ]
         condition: 'active("ClimatesOfTamriel.esm")'
     clean:
       # v1.4 - DG and DB
