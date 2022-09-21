@@ -1059,6 +1059,31 @@ plugins:
       - crc: 0x1675469B
         util: 'TES5Edit v4.0.2f'
 
+  - name: 'ExpandedSnowSystems.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/28016/' ]
+    msg:
+      - <<: *useVersionDawnguard
+        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and ( checksum("ExpandedSnowSystems.esp", DB538BE0) or checksum("ExpandedSnowSystems.esp", 74DF9966) )'
+      - type: warn
+        content:
+          - lang: en
+            text: 'ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.'
+          - lang: de
+            text: 'ClimatesOfTamriel.esm ist vorhanden oder aktiv. Verwenden Sie stattdessen ExpandedSnowSystems-CoT.esp, damit die Mod wie vorgesehen funktioniert.'
+          - lang: ja
+            text: 'ClimatesOfTamriel.esmが存在するかアクティブになっています。代わりにExpandedSnowSystems-CoT.espを使用しなければ正しく動作しません。'
+        condition: 'active("ClimatesOfTamriel.esm")'
+    clean:
+      # v1.4 - DG and DB
+      - crc: 0x74DF9966
+        util: 'TES5Edit v4.0.2i'
+      # v1.3 - No DG
+      - crc: 0xDB538BE0
+        util: 'TES5Edit v4.0.2i'
+      # v1.3 - DG
+      - crc: 0xB7A24777
+        util: 'TES5Edit v4.0.2i'
+
   - name: 'Purity.esp'
     url:
       - link: 'https://drive.google.com/file/d/13h2nfiK7GPjw0xPtJCzfiNx3FWkDym_w/'
@@ -3738,30 +3763,7 @@ plugins:
     after: [ 'WATER.esp' ]
   - name: 'VanillaSnowWindyand150percentLessView.esp'
     msg: [ *obsolete ]
-  - name: 'ExpandedSnowSystems.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/28016/' ]
-    msg:
-      - <<: *useVersionDawnguard
-        condition: 'active("Dawnguard.esm") and not active("Dragonborn.esm") and ( checksum("ExpandedSnowSystems.esp", DB538BE0) or checksum("ExpandedSnowSystems.esp", 74DF9966) )'
-      - type: warn
-        content:
-          - lang: en
-            text: 'ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.'
-          - lang: de
-            text: 'ClimatesOfTamriel.esm ist vorhanden oder aktiv. Verwenden Sie stattdessen ExpandedSnowSystems-CoT.esp, damit die Mod wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'ClimatesOfTamriel.esmが存在するかアクティブになっています。代わりにExpandedSnowSystems-CoT.espを使用しなければ正しく動作しません。'
-        condition: 'active("ClimatesOfTamriel.esm")'
-    clean:
-      # v1.4 - DG and DB
-      - crc: 0x74DF9966
-        util: 'TES5Edit v4.0.2i'
-      # v1.3 - No DG
-      - crc: 0xDB538BE0
-        util: 'TES5Edit v4.0.2i'
-      # v1.3 - DG
-      - crc: 0xB7A24777
-        util: 'TES5Edit v4.0.2i'
+
   - name: 'Prometheus_No_snow_Under_the_roof.esp'
     dirty:
       # Vanilla + Dawnguard + Dragonborn
