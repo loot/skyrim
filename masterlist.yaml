@@ -1274,16 +1274,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/16761/'
         name: 'Wood Chopping Extended'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This file contains 00000000 FormID errors and errors with two REFR records and should be removed.'
-          - lang: de
-            text: 'Diese Datei enthält 00000000 FormID-Fehler und Fehler mit zwei REFR-Datensätzen und sollte entfernt werden.'
-          - lang: ja
-            text: 'このファイルには00000000 FormIDエラーおよび2つのREFRレコードエラーが含まれています。エラーを取り除くべきでしょう。'
-          - lang: ru
-            text: 'Этот файл содержит ошибки 00000000 FormID, ошибки с двумя записями REFR и должен быть удален.'
+      - <<: *corrupt
+        condition: 'checksum("WoodChoppingExtended.esp", 61AE5456)'
 
 ###### Gameplay - Economy & Item Balance ######
   - name: '(Realistic Wildlife Loot|RWL).*\.es(m|p)'
