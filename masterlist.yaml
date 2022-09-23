@@ -1398,6 +1398,14 @@ plugins:
         name: 'Convenient Horses'
     # doNotClean
 
+  - name: '((EFF|XFL)(Core|Dialogue|Main|Plugins)|Follower Limit Increased)\.es[mp]'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/12933/'
+        name: 'Extensible Follower Framework'
+  # EFF - Obsolete plugins
+  - name: '(Follower Limit Increased|XFL(Dialogue|Main|Plugins))\.es[mp]'
+    msg: [ *obsolete ]
+
 ###### Gameplay - Quests ######
   - name: 'BarenziahQuestMarkers_Droppable.esp'
     url:
@@ -2977,23 +2985,7 @@ plugins:
         crc: 0x939075D0
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
-  - name: 'XFLMain.esm'
-    inc:
-      - 'BDO.esp'
-      - 'UFO - Ultimate Follower Overhaul.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'For safe mod uninstall see special uninstallation instructions on [mod page](https://www.nexusmods.com/skyrim/mods/12933/).'
-          - lang: de
-            text: 'Für eine sichere Deinstallation der Mod lesen Sie bitte die Deinstallationsanleitung auf der [Mod Seite](https://www.nexusmods.com/skyrim/mods/12933/).'
-          - lang: es
-            text: 'Para desisntalar de manera segura por favor ve la [página del mod](https://www.nexusmods.com/skyrim/mods/12933/).'
-          - lang: ja
-            text: '安全にアンインストールするには[Modのページ](https://www.nexusmods.com/skyrim/mods/12933)に記載されている専用のアンインストール手順を確認してください。'
-          - lang: ru
-            text: 'Для безопасного удаления мода смотрите инструкции по удалению на [странице мода](https://www.nexusmods.com/skyrim/mods/12933/).'
+
   - name: 'ZZZ_Stenvar_Replacer_THAIDEN.esm'
     msg: [ *obsolete ]
 # Low priority .esp's
@@ -22449,14 +22441,7 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 13
         udr: 10
-  - name: 'XFLDialogue.esp'
-    inc:
-      - 'UFO - Ultimate Follower Overhaul.esp'
-      - 'BDO.esp'
-  - name: 'XFLPlugins.esp'
-    inc:
-      - 'UFO - Ultimate Follower Overhaul.esp'
-      - 'BDO.esp'
+
   - name: 'UFO - (Ultimate Follower Overhaul|(Dawnguard|Heartfire) AddOn|AllwaysDrawWeapons)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/14037/'
@@ -23576,9 +23561,7 @@ plugins:
       - *alreadyInUFO
   - name: 'Followers Unlimited 11.esp'
     msg: [ *alreadyInUFO ]
-  - name: 'Follower Limit Increased.esp'
-    inc: [ 'Better Follower Improvements.esp' ]
-    msg: [ *alreadyInUFO ]
+
   - name: 'EMCompViljaSkyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/26393/' ]
     msg:
