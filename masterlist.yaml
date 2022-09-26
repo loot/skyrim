@@ -987,6 +987,35 @@ plugins:
       - crc: 0x1DD2CB8E
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'SoS - Civilization( ?-Patch(CoT.*|RCRN|RLO.*|SPO))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/20193/'
+        name: 'Sounds of Skyrim - Civilization'
+      - link: 'https://www.elderscrollsportal.de/ressourcen/sounds-of-skyrim-civilization-zivilisation.2566/'
+        name: 'Sounds of Skyrim - Civilization (Zivilisation)'
+  - name: 'SoS - Civilization.esp'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Climates Of Tamriel' ]
+        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - Civilization ?-PatchCoT(Sounds)?(WinterEdition)?\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
+      - <<: *patchProvided
+        subs: [ 'Realistic Colors & Real Nights AE' ]
+        condition: 'file("rcrnShaders.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ 'Realistic Colors & Real Nights Plus' ]
+        condition: 'active("rcrnPlus.esp") and not active("SoS - Civilization-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Major City Interiors' ]
+        condition: 'file("Realistic Lighting Overhaul - Major City Interiors.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
+      - <<: *patchProvided
+        subs: [ 'RLO Minor Cities and Town Interiors' ]
+        condition: 'file("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
+  - name: 'SoS - Civilization ?-PatchCoT(Sounds)?(WinterEdition)?\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Sounds of Skyrim - Civilization and CoT patch' ]
+        condition: 'many("SoS - Civilization ?-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+
   - name: 'SoS - The Dungeons(-Patch(CoTHardcore|RCRN|RLO.*|SPO))?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/8601/'
@@ -19326,33 +19355,6 @@ plugins:
       - crc: 0x4162917F
         util: 'TES5Edit v4.0.3f'
 
-  - name: 'SoS - Civilization.esp'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Climates Of Tamriel' ]
-        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - Civilization(-PatchCoT| -PatchCoTSounds.esp|-PatchCoTWinterEdition| -PatchCoTSoundsWinterEdition)\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
-      - <<: *patchProvided
-        subs: [ 'RLO Major City Interiors' ]
-        condition: 'file("Realistic Lighting Overhaul - Major City Interiors.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
-      - <<: *patchProvided
-        subs: [ 'RLO Minor Cities and Town Interiors.esp' ]
-        condition: 'file("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
-      - <<: *patchProvided
-        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
-        condition: 'file("rcrnShaders.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
-      - <<: *patchProvided
-        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
-        condition: 'active("rcrnPlus.esp") and not active("SoS - Civilization-PatchRCRN.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not use the Crash Fix ESP for this mod. It is flagged as a master and is only meant as a last resort for fixing crashes.'
-          - lang: de
-            text: 'Verwenden Sie für diesen Mod nicht die Crash Fix ESP. Es ist als Master gekennzeichnet und nur als letzter Ausweg zur Behebung von Abstürzen gedacht.'
-          - lang: ja
-            text: 'このMod用のCrash Fix ESPは使用しないでください。マスターファイルとしてのフラグが立ちます。クラッシュを修正するための最後の手段としてください。'
-          - lang: ru
-            text: 'Не используйте Crash Fix ESP для этого мода. Он помечен как мастерфайл и предназначен только как последнее средство для исправления вылетов.'
   - name: 'Realistic Lighting( - Full| - Addon)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -19525,11 +19527,6 @@ plugins:
       - crc: 0x6E3D2DFA
         util: 'TES5Edit v4.0.2f'
 
-  - name: 'SoS - Civilization( -|-| - )PatchCoT(Sounds)?(WinterEdition)?\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("SoS - Civilization( -|-| - )PatchCoT(Sounds)?(WinterEdition)?\.esp")'
-        subs: [ 'Sounds of Skyrim - Civilization and CoT patch' ]
   - name: 'SoS - The Dungeons-PatchELFX.esp'
     after:
       - 'rcrnShaders.esp'
@@ -24112,11 +24109,6 @@ plugins:
       - 'rcrnPlus.esp'
       - 'RCRNvolumetric.esp'
 
-  - name: 'SoS - Civilization-PatchRCRN.esp'
-    req:
-      - name: 'rcrnShaders.esp'
-        display: '[RCRN](https://www.nexusmods.com/skyrim/mods/1875/)'
-        condition: 'not file("rcrnPlus.esp")'
   - name: 'Volrath - Enhanced Lights and Fixes - RCRN.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19933/' ]
     msg:
