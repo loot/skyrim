@@ -1011,6 +1011,47 @@ plugins:
         subs: [ 'RLO Dungeons' ]
         condition: 'file("Realistic Lighting Overhaul - Dungeons.esp") and not file("SoS - The Dungeons-PatchRLODungeons.esp")'
 
+  - name: 'SoS - The Wilds.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/10886/'
+        name: 'Sounds of Skyrim - The Wilds'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Climates Of Tamriel' ]
+        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - The Wilds-PatchCoT.*\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
+        condition: 'file("rcrnShaders.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
+        condition: 'active("rcrnPlus.esp") and not active("SoS - The Wilds-PatchRCRN.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'Do not use the Crash Fix ESP for this mod. It is flagged as a master and is only meant as a last resort for fixing crashes.'
+          - lang: de
+            text: 'Verwenden Sie für diesen Mod nicht die Crash Fix ESP. Es ist als Master gekennzeichnet und nur als letzter Ausweg zur Behebung von Abstürzen gedacht.'
+          - lang: ja
+            text: 'このMod用のCrash Fix ESPは使用しないでください。マスターファイルとしてのフラグが立ちます。クラッシュを修正するための最後の手段としてください。'
+          - lang: ru
+            text: 'Не используйте Crash Fix ESP для этого мода. Он помечен как мастерфайл и предназначен только как последнее средство для исправления вылетов.'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC1743294
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 17
+  - name: 'SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp'
+    inc: [ 'WAO-WeatherAndAmbienceOverhaul.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        condition: 'many("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
+        subs: [ 'Sounds of Skyrim - The Wilds and CoT patch' ]
+  - name: 'SoS - The Wilds-PatchRCRN.esp'
+    req:
+      - name: 'rcrnShaders.esp'
+        display: '[RCRN](https://www.nexusmods.com/skyrim/mods/1875/)'
+        condition: 'not file("rcrnPlus.esp")'
+
 ###### AudioVisual - Weather & Lighting ######
   - name: 'ClimatesOfTamriel(-(Dawnguard|Dragonborn|Dungeons|Interiors|Nights|Winter).*)?\.es[mp]'
     url:
@@ -19299,35 +19340,6 @@ plugins:
       - crc: 0x4162917F
         util: 'TES5Edit v4.0.3f'
 
-  - name: 'SoS - The Wilds.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/10886/'
-        name: 'Sounds of Skyrim - The Wilds'
-    msg:
-      - <<: *patchProvided
-        subs: [ 'Climates Of Tamriel' ]
-        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - The Wilds-PatchCoT.*\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
-      - <<: *patchProvided
-        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
-        condition: 'file("rcrnShaders.esp") and not file("SoS - The Wilds-PatchRCRN.esp")'
-      - <<: *patchProvided
-        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
-        condition: 'active("rcrnPlus.esp") and not active("SoS - The Wilds-PatchRCRN.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Do not use the Crash Fix ESP for this mod. It is flagged as a master and is only meant as a last resort for fixing crashes.'
-          - lang: de
-            text: 'Verwenden Sie für diesen Mod nicht die Crash Fix ESP. Es ist als Master gekennzeichnet und nur als letzter Ausweg zur Behebung von Abstürzen gedacht.'
-          - lang: ja
-            text: 'このMod用のCrash Fix ESPは使用しないでください。マスターファイルとしてのフラグが立ちます。クラッシュを修正するための最後の手段としてください。'
-          - lang: ru
-            text: 'Не используйте Crash Fix ESP для этого мода. Он помечен как мастерфайл и предназначен только как последнее средство для исправления вылетов.'
-    dirty:
-      - <<: *quickClean
-        crc: 0xC1743294
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 17
   - name: 'SoS - Civilization.esp'
     msg:
       - <<: *patchProvided
@@ -19526,12 +19538,7 @@ plugins:
       # v0.9.5f
       - crc: 0x6E3D2DFA
         util: 'TES5Edit v4.0.2f'
-  - name: 'SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp'
-    inc: [ 'WAO-WeatherAndAmbienceOverhaul.esp' ]
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
-        subs: [ 'Sounds of Skyrim - The Wilds and CoT patch' ]
+
   - name: 'SoS - Civilization( -|-| - )PatchCoT(Sounds)?(WinterEdition)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -24119,11 +24126,6 @@ plugins:
       - 'rcrnPlus.esp'
       - 'RCRNvolumetric.esp'
 
-  - name: 'SoS - The Wilds-PatchRCRN.esp'
-    req:
-      - name: 'rcrnShaders.esp'
-        display: '[RCRN](https://www.nexusmods.com/skyrim/mods/1875/)'
-        condition: 'not file("rcrnPlus.esp")'
   - name: 'SoS - Civilization-PatchRCRN.esp'
     req:
       - name: 'rcrnShaders.esp'
