@@ -997,19 +997,19 @@ plugins:
     msg:
       - <<: *patchProvided
         subs: [ 'Climates Of Tamriel' ]
-        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - Civilization(-PatchCoT| -PatchCoTSounds.esp|-PatchCoTWinterEdition| -PatchCoTSoundsWinterEdition)\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
+        condition: 'file("ClimatesOfTamriel.esm") and not file("SoS - Civilization ?-PatchCoT(Sounds)?(WinterEdition)?\.esp") and not file("WAO-WeatherAndAmbienceOverhaul.esp")'
+      - <<: *patchProvided
+        subs: [ 'Realistic Colors & Real Nights AE' ]
+        condition: 'file("rcrnShaders.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
+      - <<: *patchProvided
+        subs: [ 'Realistic Colors & Real Nights Plus' ]
+        condition: 'active("rcrnPlus.esp") and not active("SoS - Civilization-PatchRCRN.esp")'
       - <<: *patchProvided
         subs: [ 'RLO Major City Interiors' ]
         condition: 'file("Realistic Lighting Overhaul - Major City Interiors.esp") and not file("SoS - Civilization-PatchRLOMajorCityInteriors.esp")'
       - <<: *patchProvided
-        subs: [ 'RLO Minor Cities and Town Interiors.esp' ]
+        subs: [ 'RLO Minor Cities and Town Interiors' ]
         condition: 'file("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp") and not file("SoS - Civilization-PatchRLOMinorCities.esp")'
-      - <<: *patchProvided
-        subs: [ '(RCRN AE) Realistic Colors & Real Nights AE' ]
-        condition: 'file("rcrnShaders.esp") and not file("SoS - Civilization-PatchRCRN.esp")'
-      - <<: *patchProvided
-        subs: [ '(RCRN  Plus) Realistic Colors & Real Nights Plus' ]
-        condition: 'active("rcrnPlus.esp") and not active("SoS - Civilization-PatchRCRN.esp")'
   - name: 'SoS - Civilization ?-PatchCoT(Sounds)?(WinterEdition)?\.esp'
     msg:
       - <<: *useOnlyOneX
