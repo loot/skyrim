@@ -6501,23 +6501,7 @@ plugins:
       # v2.81
       - crc: 0x7BF50CFC
         util: 'TES5Edit v4.0.2j'
-  - name: 'Skyrim Scaling Stopper - Misc Edits.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'If version 3+ is being used, Skyrim Monster Mod is required.'
-          - lang: de
-            text: 'Ab Version 3+ ist der Skyrim Monster Mod erforderlich.'
-          - lang: es
-            text: 'Skyrim Monster Mod es requerido si utilizas la versión 3+.'
-          - lang: ja
-            text: 'バージョン3以降ではSkyrim Monster Modが必要です。'
-          - lang: ru
-            text: 'Для версий 3 или выше требуется Skyrim Monster Mod.'
-    tag:
-      - Delev
-      - Relev
+
   - name: 'Skyrim Scaling Stopper - Vanilla Dragon Scaling Patch.esp'
     tag:
       - Delev
@@ -10278,18 +10262,7 @@ plugins:
         crc: 0xC599B0AB
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1974
-  - name: 'YASH.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'If installing optional files, use either YASH.esp + YASH_AllOptionals.esp OR YASH.esp + one or more of the optional ESPs.'
-          - lang: de
-            text: 'Wenn Sie optionale Dateien installieren, verwenden Sie entweder YASH.esp + YASH_AllOptionals.esp ODER YASH.esp + eine oder mehrere der optionalen ESPs.'
-          - lang: ja
-            text: 'オプションファイルをインストールする場合、YASH.espとYASH_AllOptionals.espか、YASH.espと他のオプションファイルのどちらかの組み合わせで使用してください。'
-          - lang: ru
-            text: 'Если установлены опциональные файлы, используйте любой YASH.esp + YASH_AllOptionals.esp или YASH.esp + один или более опциональных ESP.'
+
   - name: 'DragonSwarms.esp'
     inc: [ 'DS-MoreAgressionForRemover.esp' ]
   - name: 'DragonSwarms (V...)?-Easy Mode\.esp'
@@ -10435,18 +10408,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: '(ERSO 03.2 patch - )?(MD with )?DeadlyD( and)? DDiversified( Dawnguard)?( Unleveled)?\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'ERSO 03.2 plugins are no longer recommended or supported by the mod author.'
-          - lang: de
-            text: 'ERSO 03.2 Plugins werden vom Mod Autor nicht mehr empfohlen oder unterstützt.'
-          - lang: ja
-            text: 'ERSO 03.2のプラグインは現在は製作者によってサポートされておらず、使用は推奨されません。'
-          - lang: ru
-            text: 'Плагины ERSO 03.2 больше не рекомендуются или поддерживаются автором.'
   - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DG\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -18517,19 +18478,7 @@ plugins:
   - name: 'Ustengrav gate removal - alternate.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/23838/' ]
     inc: [ 'Ustengrav gate removal.esp' ]
-  - name: 'valkiirs_tastier_food.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Hearthfires version to get changes made to Hearthfires food.'
-          - lang: de
-            text: 'Verwenden Sie die Hearthfires Version, um Änderungen am Essen von Hearthfires zu erhalten.'
-          - lang: ja
-            text: 'Hearthfiresの食べ物にも変更を加えるならHearthfiresバージョンを使用してください。'
-        condition: 'active("HearthFires.esm")'
-  - name: 'valkiirs_tastier_food_hearthfire.esp'
-    inc: [ 'valkiirs_tastier_food.esp' ]
+
   - name: 'valuablecoins.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/11701/' ]
     dirty:
@@ -19651,20 +19600,6 @@ plugins:
     after: [ '3DNPC.esp' ]
   - name: 'Hunterborn_RND-Patch.esp'
     after: [ '3DNPC.esp' ]
-  - name: 'RND_NCVE-Patch.esp'
-    after: [ '3DNPC.esp' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove. Use RND_NCVE-FAMP.esp instead.'
-          - lang: de
-            text: 'Zu löschen. Verwenden Sie stattdessen RND_NCVE-FAMP.esp.'
-          - lang: ja
-            text: '削除し、RND_NCVE-FAMP.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
-        condition: 'file("PotionsBETA.esp")'
   - name: 'RND_NerniesRangerPack-Patch.esp'
     after: [ '3DNPC.esp' ]
   - name: 'PrivateNeeds-RND.esp'
@@ -19675,20 +19610,6 @@ plugins:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
-  - name: 'RND_RWL-Patch.esp'
-    after: [ '3DNPC.esp' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove. Use RND_RWL-FAMP.esp instead.'
-          - lang: de
-            text: 'Löschen. Verwenden Sie stattdessen RND_RWL-FAMP.esp.'
-          - lang: ja
-            text: '削除し、RND_RWL-FAMP.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
-        condition: 'file("PotionsBETA.esp")'
   - name: 'RND_RWS-Patch.esp'
     after: [ '3DNPC.esp' ]
     msg:
@@ -24320,46 +24241,7 @@ plugins:
     after: [ 'Tamriel Reloaded.esp' ]
   - name: 'Better Mills Textures - Tropical Skyrim.esp'
     after: [ 'Tropical Skyrim.esp' ]
-  - name: 'RealisticWaterTextures.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'DELETE. Use WATER.esp instead'
-          - lang: de
-            text: 'Löschen. Verwenden Sie stattdessen WATER.esp'
-          - lang: es
-            text: 'Borrar. Utilizar WATER.esp en lugar.'
-          - lang: ja
-            text: '削除してWATER.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте WATER.esp вместо этого.'
-        condition: 'file("WATER.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Old. Use [WATER](https://www.nexusmods.com/skyrim/mods/13268) mod instead.'
-          - lang: de
-            text: 'Ist Veraltet. Verwenden Sie stattdessen die [WATER](https://www.nexusmods.com/skyrim/mods/13268) Mod.'
-          - lang: es
-            text: 'Obsoleto. Utilizar [WATER](https://www.nexusmods.com/skyrim/mods/13268) en lugar.'
-          - lang: ja
-            text: '古いファイルです。[WATER](https://www.nexusmods.com/skyrim/mods/13268)を使用してください。'
-          - lang: ru
-            text: 'Устарело. Используйте вместо этого мод [WATER](https://www.nexusmods.com/skyrim/mods/13268).'
-        condition: 'file("WATER.esp")'
-  - name: 'RWTT - Get Wet.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Originally for Realistic Water Textures and Terrain, may be obsolete.'
-          - lang: de
-            text: 'Ursprünglich für Realistic Water Textures and Terrain, kann hinfällig sein.'
-          - lang: ja
-            text: '本来はRealistic Water Textures and Terrain用のEspです。旧式のファイルかもしれません。'
-          - lang: ru
-            text: 'В основном реалистичные текстуры воды и земли, вероятно устарело.'
+
   - name: 'WATER DB Waves.esp'
     inc: [ 'WATER DB.esp' ]
   - name: 'Water FX - Get Wet.esp'
