@@ -1896,6 +1896,36 @@ plugins:
       - crc: 0x9D2249BE
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
 
+  - name: 'RiverwoodEnhancedPlugin.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18952/'
+        name: 'Towns and Villages Enhanced - Riverwood'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.'
+          - lang: de
+            text: 'Verwenden Sie stattdessen den Patch [Lanterns of Skyrim and Towns and Villages Enhanced](https://www.nexusmods.com/skyrim/mods/27395), damit Lanterns of Skyrim ordnungsgemäß mit Towns and Villages Enhanced - Riverwood zusammen funktioniert.'
+          - lang: ja
+            text: 'Lanterns of SkyrimとTowns and Villages Enhanced - Riverwoodを正常に両立させるには[Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395)を代わりに使用する必要があります。'
+        condition: 'file("Lanterns Of Skyrim - All In One - Main.esm")'
+      - type: error
+        content:
+          - lang: en
+            text: 'Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not as an add-on.'
+          - lang: de
+            text: 'Zu löschen. LoS and RE patch.esp wurde als Ersatz für RiverwoodEnhancedPlugin.esp entwickelt und nicht als Add-On.'
+          - lang: ja
+            text: '削除してください。LoS and RE patch.espはRiverwoodEnhancedPlugin.espを置き換えるように作られています。アドオンではありません。'
+        condition: 'file("LoS and RE patch.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x5B3C0E5A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 7
+        udr: 5
+
 ###### Locations - Player Homes ######
   - name: 'CaranthirTowerReborn.esp'
     url:
@@ -18794,35 +18824,7 @@ plugins:
         crc: 0x93C50630
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 1
-  - name: 'RiverwoodEnhancedPlugin.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/18952/'
-        name: 'Towns and Villages Enhanced - Riverwood'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Patch [Lanterns of Skyrim and Towns and Villages Enhanced](https://www.nexusmods.com/skyrim/mods/27395), damit Lanterns of Skyrim ordnungsgemäß mit Towns and Villages Enhanced - Riverwood zusammen funktioniert.'
-          - lang: ja
-            text: 'Lanterns of SkyrimとTowns and Villages Enhanced - Riverwoodを正常に両立させるには[Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395)を代わりに使用する必要があります。'
-        condition: 'file("Lanterns Of Skyrim - All In One - Main.esm")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not as an add-on.'
-          - lang: de
-            text: 'Zu löschen. LoS and RE patch.esp wurde als Ersatz für RiverwoodEnhancedPlugin.esp entwickelt und nicht als Add-On.'
-          - lang: ja
-            text: '削除してください。LoS and RE patch.espはRiverwoodEnhancedPlugin.espを置き換えるように作られています。アドオンではありません。'
-        condition: 'file("LoS and RE patch.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x5B3C0E5A
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 7
-        udr: 5
+
   - name: 'seadragonoasis.esp'
     url: [ 'https://steamcommunity.com/sharedfiles/filedetails/?id=16767' ]
     dirty:
