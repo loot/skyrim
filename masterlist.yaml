@@ -1271,15 +1271,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/16828/'
         name: 'Ulfric Overhaul - Better Dialogue and Follower Options'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use UFO version of KTNUlfric.esp'
-          - lang: de
-            text: 'Verwenden Sie die UFO Version von KTNUlfric.esp'
-          - lang: ja
-            text: 'KTNUlfric.espのUFOバージョンを使用してください。'
-        condition: 'checksum("KTNUlfric.esp", 8CF90F55) and file("UFO - Ultimate Follower Overhaul.esp")'
+      - <<: *useVersion
+        type: say
+        subs: [ 'UFO' ]
+        condition: '(checksum("KTNUlfric.esp", 8CF90F55) or checksum("KTNUlfric.esp", B974D654)) and active("UFO - Ultimate Follower Overhaul.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x35CB3586
