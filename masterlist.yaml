@@ -916,15 +916,9 @@ plugins:
         name: 'Respectful Guard Animations'
   - name: 'GuardAnimations.esp'
     msg:
-      - type: warn
+      - <<: *useVersion
+        subs: [ 'Guard Dialogue Overhaul' ]
         condition: 'active("Guard Dialogue Overhaul.esp")'
-        content:
-          - lang: en
-            text: 'Guard Dialogue Overhaul detected. Use the Guard Dialogue Overhaul version to have both mods work as intended.'
-          - lang: de
-            text: 'Guard Dialogue Overhaul erkannt. Verwenden Sie die Guard Dialogue Overhaul Version, damit beide Mods wie vorgesehen funktionieren.'
-          - lang: ja
-            text: 'Guard Dialogue Overhaulが見つかりました。本来の動作をさせるにはGuard Dialogue Overhaulバージョンを使用する必要があります。'
   - name: 'GuardAnimationsGDO.esp'
     clean:
       # version: 1.5
