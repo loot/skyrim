@@ -1921,18 +1921,12 @@ plugins:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=68336872/'
         name: 'Towns and Villages Enhanced - Villages (Steam Workshop)'
     msg:
+      - <<: *alreadyInX
+        subs: [ '**L0S and TaVE patch.esp**' ]
+        condition: 'active("L0S and TaVE patch.esp")'
       - <<: *useVersion
         subs: [ '[Lanterns of Skyrim](https://www.nexusmods.com/skyrim/mods/27395/)' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("L0S and TaVE patch.esp")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove. L0S and TaVE patch.esp is designed as a replacement for TownsAndCitiesEnhanced.esp, not as an add-on.'
-          - lang: de
-            text: 'Zu löschen. L0S und TaVE patch.esp wurde als Ersatz für TownsAndCitiesEnhanced.esp entwickelt, nicht als Add-On.'
-          - lang: ja
-            text: '削除してください。L0S and TaVE patch.espはTownsAndCitiesEnhanced.espを置き換えるように作られています。アドオンではありません。'
-        condition: 'file("L0S and TaVE patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0xA37760E6
