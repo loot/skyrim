@@ -883,24 +883,12 @@ plugins:
   - name: 'Remove Interior Fog V2 - Skyrim.esp'
     inc: [ 'RemoveAmbientInteriorFog.esp' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Remove Interior Fog V2 - Dawnguard.esp in addition to include Dawnguard locations.'
-          - lang: de
-            text: 'Verwenden Sie ebenfalls Remove Interior Fog V2 - Dawnguard.esp, um zusätzlich Dawnguard-Standorte einzuschließen.'
-          - lang: ja
-            text: 'Dawnguardのロケーションに対応させるためにRemove Interior Fog V2 - Dawnguard.espを使用してください。'
-        condition: 'file("Dawnguard.esm")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Remove Interior Fog V2 - Hearthfire.esp in addition to include Hearthfires locations.'
-          - lang: de
-            text: 'Verwenden Sie ebenfalls Remove Interior Fog V2 - Hearthfire.esp, um zusätzlich Hearthfire-Standorte einzuschließen.'
-          - lang: ja
-            text: 'Hearthfiresのロケーションに対応させるためにRemove Interior Fog V2 - Hearthfire.espを使用してください。'
-        condition: 'file("HearthFires.esm")'
+      - <<: *patchProvided
+        subs: [ 'Dawnguard' ]
+        condition: 'active("Dawnguard.esm") and not active("Remove Interior Fog V2 - Dawnguard.esp")'
+      - <<: *patchProvided
+        subs: [ 'Hearthfire' ]
+        condition: 'active("HearthFires.esm") and not active("Remove Interior Fog V2 - Hearthfire.esp")'
 
   - name: '(SJ|SkyJub)s_I(nvHelm|nvisible_Helmet)s_(Eng|Ger)_(Main|ModKit|Plugin).*\.esp'
     url:
