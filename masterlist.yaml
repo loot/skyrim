@@ -869,16 +869,6 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/29253/'
         name: 'Remove Interior Fog V2'
   - name: 'Remove Interior Fog V2 - Full Version.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Do not use the modular versions of Remove Interior Fog V2 with the Full version.'
-          - lang: de
-            text: 'Verwenden Sie nicht die modularen Versionen von Remove Interior Fog V2 mit der Vollversion.'
-          - lang: ja
-            text: 'Full版のRemove Interior Fog V2を使用する場合は個別インストール版を使用しないでください。'
-        condition: 'file("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp")'
     dirty:
       # v1.3
       - <<: *quickClean
@@ -886,6 +876,10 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
   - name: 'Remove Interior Fog V2 - (Dawnguard|Dragonborn|Full Version - NH|Hearthfire|Skyrim)\.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**Remove Interior Fog V2 - Full Version.esp**' ]
+        condition: 'active("Remove Interior Fog V2 - Full Version.esp")'
   - name: 'Remove Interior Fog V2 - Skyrim.esp'
     inc: [ 'RemoveAmbientInteriorFog.esp' ]
     msg:
