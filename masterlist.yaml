@@ -1901,15 +1901,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/18952/'
         name: 'Towns and Villages Enhanced - Riverwood'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Patch [Lanterns of Skyrim and Towns and Villages Enhanced](https://www.nexusmods.com/skyrim/mods/27395), damit Lanterns of Skyrim ordnungsgemäß mit Towns and Villages Enhanced - Riverwood zusammen funktioniert.'
-          - lang: ja
-            text: 'Lanterns of SkyrimとTowns and Villages Enhanced - Riverwoodを正常に両立させるには[Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395)を代わりに使用する必要があります。'
-        condition: 'file("Lanterns Of Skyrim - All In One - Main.esm")'
+      - <<: *useVersion
+        subs: [ '[Lanterns of Skyrim](https://www.nexusmods.com/skyrim/mods/27395/)' ]
+        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("LoS and RE patch.esp")'
       - type: error
         content:
           - lang: en
