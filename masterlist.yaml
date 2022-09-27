@@ -1266,6 +1266,39 @@ plugins:
       - crc: 0xD1FE9ECE
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'KTNUlfric.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/16828/'
+        name: 'Ulfric Overhaul - Better Dialogue and Follower Options'
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Use UFO version of KTNUlfric.esp'
+          - lang: de
+            text: 'Verwenden Sie die UFO Version von KTNUlfric.esp'
+          - lang: ja
+            text: 'KTNUlfric.espのUFOバージョンを使用してください。'
+        condition: 'checksum("KTNUlfric.esp", 8CF90F55) and file("UFO - Ultimate Follower Overhaul.esp")'
+      - type: error
+        content:
+          - lang: en
+            text: 'Use UFO version of KTNUlfric.esp'
+          - lang: de
+            text: 'Verwenden Sie die UFO Version von KTNUlfric.esp'
+          - lang: ja
+            text: 'KTNUlfric.espのUFOバージョンを使用してください。'
+        condition: 'checksum("KTNUlfric.esp", 35CB3586) and not file("UFO - Ultimate Follower Overhaul.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0x35CB3586
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 16
+      - <<: *quickClean
+        crc: 0x8CF90F55
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 19
+
 ###### Encounters - Enemies ######
   - name: 'Bandit Raid.esp'
     url:
@@ -22484,38 +22517,7 @@ plugins:
       - 'Feminine Females Dawnguard.esp'
       - 'Feminine Females Hearthfires.esp'
       - 'Feminine Females Dragonborn.esp'
-  - name: 'KTNUlfric.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/16828/'
-        name: 'Ulfric Overhaul - Better Dialogue and Follower Options'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use UFO version of KTNUlfric.esp'
-          - lang: de
-            text: 'Verwenden Sie die UFO Version von KTNUlfric.esp'
-          - lang: ja
-            text: 'KTNUlfric.espのUFOバージョンを使用してください。'
-        condition: 'checksum("KTNUlfric.esp", 8CF90F55) and file("UFO - Ultimate Follower Overhaul.esp")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Use UFO version of KTNUlfric.esp'
-          - lang: de
-            text: 'Verwenden Sie die UFO Version von KTNUlfric.esp'
-          - lang: ja
-            text: 'KTNUlfric.espのUFOバージョンを使用してください。'
-        condition: 'checksum("KTNUlfric.esp", 35CB3586) and not file("UFO - Ultimate Follower Overhaul.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0x35CB3586
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 16
-      - <<: *quickClean
-        crc: 0x8CF90F55
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 19
+
   - name: 'SPTConsistentOlderPeople.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19730/' ]
     msg:
