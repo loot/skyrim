@@ -1921,15 +1921,9 @@ plugins:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=68336872/'
         name: 'Towns and Villages Enhanced - Villages (Steam Workshop)'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns And Cities Enhanced.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Patch [Lanterns of Skyrim and Towns and Villages Enhanced](https://www.nexusmods.com/skyrim/mods/27395), damit Lanterns of Skyrim ordnungsgemäß mit Towns And Cities Enhanced zusammen funktioniert.'
-          - lang: ja
-            text: 'Lanterns of SkyrimとTowns And Cities Enhancedを正常に両立させるには[Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395)を代わりに使用する必要があります。'
-        condition: 'file("Lanterns Of Skyrim - All In One - Main.esm")'
+      - <<: *useVersion
+        subs: [ '[Lanterns of Skyrim](https://www.nexusmods.com/skyrim/mods/27395/)' ]
+        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("L0S and TaVE patch.esp")'
       - type: error
         content:
           - lang: en
