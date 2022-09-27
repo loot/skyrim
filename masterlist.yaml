@@ -864,6 +864,47 @@ plugins:
       - crc: 0x9700EC44
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'Remove Interior Fog V2 - Full Version.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29253/' ]
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Do not use the modular versions of Remove Interior Fog V2 with the Full version.'
+          - lang: de
+            text: 'Verwenden Sie nicht die modularen Versionen von Remove Interior Fog V2 mit der Vollversion.'
+          - lang: ja
+            text: 'Full版のRemove Interior Fog V2を使用する場合は個別インストール版を使用しないでください。'
+        condition: 'file("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp")'
+    dirty:
+      # v1.3
+      - <<: *quickClean
+        crc: 0x4FD63CD3
+        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+  - name: 'Remove Interior Fog V2 - Skyrim.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/29253/' ]
+    inc: [ 'RemoveAmbientInteriorFog.esp' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Use Remove Interior Fog V2 - Dawnguard.esp in addition to include Dawnguard locations.'
+          - lang: de
+            text: 'Verwenden Sie ebenfalls Remove Interior Fog V2 - Dawnguard.esp, um zusätzlich Dawnguard-Standorte einzuschließen.'
+          - lang: ja
+            text: 'Dawnguardのロケーションに対応させるためにRemove Interior Fog V2 - Dawnguard.espを使用してください。'
+        condition: 'file("Dawnguard.esm")'
+      - type: say
+        content:
+          - lang: en
+            text: 'Use Remove Interior Fog V2 - Hearthfire.esp in addition to include Hearthfires locations.'
+          - lang: de
+            text: 'Verwenden Sie ebenfalls Remove Interior Fog V2 - Hearthfire.esp, um zusätzlich Hearthfire-Standorte einzuschließen.'
+          - lang: ja
+            text: 'Hearthfiresのロケーションに対応させるためにRemove Interior Fog V2 - Hearthfire.espを使用してください。'
+        condition: 'file("HearthFires.esm")'
+
   - name: '(SJ|SkyJub)s_I(nvHelm|nvisible_Helmet)s_(Eng|Ger)_(Main|ModKit|Plugin).*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/18250/'
@@ -4211,46 +4252,6 @@ plugins:
         crc: 0x2014AA8E
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 9
-  - name: 'Remove Interior Fog V2 - Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29253/' ]
-    inc: [ 'RemoveAmbientInteriorFog.esp' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Remove Interior Fog V2 - Dawnguard.esp in addition to include Dawnguard locations.'
-          - lang: de
-            text: 'Verwenden Sie ebenfalls Remove Interior Fog V2 - Dawnguard.esp, um zusätzlich Dawnguard-Standorte einzuschließen.'
-          - lang: ja
-            text: 'Dawnguardのロケーションに対応させるためにRemove Interior Fog V2 - Dawnguard.espを使用してください。'
-        condition: 'file("Dawnguard.esm")'
-      - type: say
-        content:
-          - lang: en
-            text: 'Use Remove Interior Fog V2 - Hearthfire.esp in addition to include Hearthfires locations.'
-          - lang: de
-            text: 'Verwenden Sie ebenfalls Remove Interior Fog V2 - Hearthfire.esp, um zusätzlich Hearthfire-Standorte einzuschließen.'
-          - lang: ja
-            text: 'Hearthfiresのロケーションに対応させるためにRemove Interior Fog V2 - Hearthfire.espを使用してください。'
-        condition: 'file("HearthFires.esm")'
-  - name: 'Remove Interior Fog V2 - Full Version.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/29253/' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Do not use the modular versions of Remove Interior Fog V2 with the Full version.'
-          - lang: de
-            text: 'Verwenden Sie nicht die modularen Versionen von Remove Interior Fog V2 mit der Vollversion.'
-          - lang: ja
-            text: 'Full版のRemove Interior Fog V2を使用する場合は個別インストール版を使用しないでください。'
-        condition: 'file("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp")'
-    dirty:
-      # v1.3
-      - <<: *quickClean
-        crc: 0x4FD63CD3
-        util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 3
 
   ### Warmer Magic Lights ###
   - name: 'Warmer Magic Lights v2.esp'
