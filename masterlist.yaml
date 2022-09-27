@@ -910,6 +910,25 @@ plugins:
       - crc: 0x23E4EB08
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'GuardAnimations.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/52326/' ]
+    msg:
+      - type: warn
+        condition: 'active("Guard Dialogue Overhaul.esp")'
+        content:
+          - lang: en
+            text: 'Guard Dialogue Overhaul detected. Use the Guard Dialogue Overhaul version to have both mods work as intended.'
+          - lang: de
+            text: 'Guard Dialogue Overhaul erkannt. Verwenden Sie die Guard Dialogue Overhaul Version, damit beide Mods wie vorgesehen funktionieren.'
+          - lang: ja
+            text: 'Guard Dialogue Overhaulが見つかりました。本来の動作をさせるにはGuard Dialogue Overhaulバージョンを使用する必要があります。'
+  - name: 'GuardAnimationsGDO.esp'
+    after: [ 'Guard Dialogue Overhaul.esp' ]
+    clean:
+      # version: 1.5
+      - crc: 0x6DBF6EA1
+        util: 'TES5Edit v4.0.1'
+
 ###### AudioVisual - Models & Textures ######
   - name: 'FleshFX.esp'
     url:
@@ -25184,24 +25203,7 @@ plugins:
   - name: 'Dynamic Dialogue Followers.esp'
     after: [ 'EFFDialogue.esp' ]
     url: []
-  - name: 'GuardAnimationsGDO.esp'
-    after: [ 'Guard Dialogue Overhaul.esp' ]
-    clean:
-      # version: 1.5
-      - crc: 0x6DBF6EA1
-        util: 'TES5Edit v4.0.1'
-  - name: 'GuardAnimations.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/52326/' ]
-    msg:
-      - type: warn
-        condition: 'active("Guard Dialogue Overhaul.esp")'
-        content:
-          - lang: en
-            text: 'Guard Dialogue Overhaul detected. Use the Guard Dialogue Overhaul version to have both mods work as intended.'
-          - lang: de
-            text: 'Guard Dialogue Overhaul erkannt. Verwenden Sie die Guard Dialogue Overhaul Version, damit beide Mods wie vorgesehen funktionieren.'
-          - lang: ja
-            text: 'Guard Dialogue Overhaulが見つかりました。本来の動作をさせるにはGuard Dialogue Overhaulバージョンを使用する必要があります。'
+
   - name: 'Gray Fox Cowl.esm'
     dirty:
       # version: 2.0DC
