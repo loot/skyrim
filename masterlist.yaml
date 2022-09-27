@@ -1901,18 +1901,12 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/18952/'
         name: 'Towns and Villages Enhanced - Riverwood'
     msg:
+      - <<: *alreadyInX
+        subs: [ '**LoS and RE patch.esp**' ]
+        condition: 'active("LoS and RE patch.esp")'
       - <<: *useVersion
         subs: [ '[Lanterns of Skyrim](https://www.nexusmods.com/skyrim/mods/27395/)' ]
         condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("LoS and RE patch.esp")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not as an add-on.'
-          - lang: de
-            text: 'Zu löschen. LoS and RE patch.esp wurde als Ersatz für RiverwoodEnhancedPlugin.esp entwickelt und nicht als Add-On.'
-          - lang: ja
-            text: '削除してください。LoS and RE patch.espはRiverwoodEnhancedPlugin.espを置き換えるように作られています。アドオンではありません。'
-        condition: 'file("LoS and RE patch.esp")'
     dirty:
       - <<: *quickClean
         crc: 0x5B3C0E5A
