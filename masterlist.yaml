@@ -1914,6 +1914,25 @@ plugins:
         itm: 7
         udr: 5
 
+  - name: 'TownsAndCitiesEnhanced.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/17406/'
+        name: 'Towns and Villages Enhanced - Villages (Nexus Mods)'
+      - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=68336872/'
+        name: 'Towns and Villages Enhanced - Villages (Steam Workshop)'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**L0S and TaVE patch.esp**' ]
+        condition: 'active("L0S and TaVE patch.esp")'
+      - <<: *useVersion
+        subs: [ '[Lanterns of Skyrim](https://www.nexusmods.com/skyrim/mods/27395/)' ]
+        condition: 'active("Lanterns Of Skyrim - All In One - Main.esm") and not active("L0S and TaVE patch.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0xA37760E6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 53
+
 ###### Locations - Player Homes ######
   - name: 'CaranthirTowerReborn.esp'
     url:
@@ -18936,36 +18955,7 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 14
         udr: 3
-  - name: 'TownsAndCitiesEnhanced.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/17406/'
-        name: 'Towns and Villages Enhanced - Villages (Nexus)'
-      - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=68336872'
-        name: 'Towns and Villages Enhanced - Villages (Steam Workshop)'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Use the [Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395) instead to have Lanterns of Skyrim work properly with Towns And Cities Enhanced.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den Patch [Lanterns of Skyrim and Towns and Villages Enhanced](https://www.nexusmods.com/skyrim/mods/27395), damit Lanterns of Skyrim ordnungsgemäß mit Towns And Cities Enhanced zusammen funktioniert.'
-          - lang: ja
-            text: 'Lanterns of SkyrimとTowns And Cities Enhancedを正常に両立させるには[Lanterns of Skyrim and Towns and Villages Enhanced patch](https://www.nexusmods.com/skyrim/mods/27395)を代わりに使用する必要があります。'
-        condition: 'file("Lanterns Of Skyrim - All In One - Main.esm")'
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove. L0S and TaVE patch.esp is designed as a replacement for TownsAndCitiesEnhanced.esp, not as an add-on.'
-          - lang: de
-            text: 'Zu löschen. L0S und TaVE patch.esp wurde als Ersatz für TownsAndCitiesEnhanced.esp entwickelt, nicht als Add-On.'
-          - lang: ja
-            text: '削除してください。L0S and TaVE patch.espはTownsAndCitiesEnhanced.espを置き換えるように作られています。アドオンではありません。'
-        condition: 'file("L0S and TaVE patch.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0xA37760E6
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 53
+
   - name: 'L(0|o)S and (RE|TaVE) patch\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/27395/'
