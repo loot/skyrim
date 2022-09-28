@@ -10510,10 +10510,6 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'ERSO 01 - Vanilla Race Redone v.1.4.esp'
-    msg: [ *obsolete ]
-  - name: 'ERSO 02 - Enhanced Fauna and Monsters for Skyrim v.2.0.esp'
-    msg: [ *obsolete ]
 
   - name: 'DeadlyDiversifiedDragonsPatch.esp'
     after:
@@ -10560,73 +10556,10 @@ plugins:
       - Delev
       - Relev
 
-  - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DG\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DG\.esp")'
-        subs: [ 'ERSO 03 Dawnguard .esp file' ]
-  - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DB\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DB\.esp")'
-        subs: [ 'ERSO 03 Dragonborn .esp file' ]
-  - name: 'ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DD\.esp'
-    msg:
-      - <<: *requiresX
-        condition: 'not file("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp")'
-        subs: [ '[Deadly Dragons](https://www.nexusmods.com/skyrim/mods/3829/) (6.3.5)' ]
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DD\.esp")'
-        subs: [ 'ERSO 03 Deadly Dragons .esp file' ]
-  - name: 'ERSO 03.1a - .+\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 03.1a - .+\.esp")'
-        subs: [ 'ERSO 03.1a .esp file' ]
-  - name: 'ERSO 03.1b - .+\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 03.1b - .+\.esp")'
-        subs: [ 'ERSO 03.1b .esp file' ]
-  - name: 'ERSO 03.3 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dawnguard Dragons\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 03.3 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dawnguard Dragons\.esp")'
-        subs: [ 'ERSO 03.3 .esp file' ]
-  - name: 'ERSO 03.4 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dragonborn Dragons\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 03.4 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dragonborn Dragons\.esp")'
-        subs: [ 'ERSO 03.4 .esp file' ]
   - name: 'DeadlyMonsters.esp'
     req: [ *SKSE ]
     msg: [ *requiresMCM_SkyUI ]
-  - name: 'ERSO 03.5 - New Dragon( Super)? Loots\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 03.5 - New Dragon( Super)? Loots\.esp")'
-        subs: [ 'ERSO 03.5 .esp file' ]
-    tag:
-      - Delev
-      - Relev
-  - name: 'ERSO 09 - Vendor Trainer Quest-giver protected( USKP)?\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 09 - Vendor Trainer Quest-giver protected( USKP)?\.esp")'
-        subs: [ 'ERSO 09 Vendor Trainer .esp file' ]
-  - name: 'ERSO 13.03 .*\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 13.03 .*\.esp")'
-        subs: [ 'ERSO 13.03 .esp file' ]
-  - name: 'ERSO 32 - Lord of the Dead( for S(PERG|KYRE))?\.esp'
-    msg:
-      - <<: *useOnlyOneX
-        condition: 'many("ERSO 32 - Lord of the Dead( for S(PERG|KYRE))?\.esp")'
-        subs: [ 'ERSO 32 .esp file' ]
-    tag:
-      - Delev
-      - Relev
+
   - name: 'mehrdrachenstufen.esp'
     tag: [ Relev ]
   - name: 'Monster Wars.esp'
