@@ -1331,6 +1331,22 @@ plugins:
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 16
 
+  - name: 'SpecializedFollowers.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'Delete. Use Better Followers - S*.esp instead.'
+          - lang: de
+            text: 'Zu löschen. Verwenden Sie stattdessen Better Followers - S*.esp.'
+          - lang: ja
+            text: '削除してBetter Followers - S*.espを使用してください。'
+          - lang: ru
+            text: 'Удалите. Используйте вместо этого Better Followers - S*.esp.'
+        condition: 'file("Better Followers - .+\.esp")'
+  - name: 'SpecializedFollowers.esm'
+    msg: [ *obsolete ]
+
 ###### Encounters - Enemies ######
   - name: 'Bandit Raid.esp'
     url:
@@ -3188,8 +3204,7 @@ plugins:
         udr: 2
   - name: 'SmithBornMaterials.esm'
     after: [ 'SmithBornPerks.esm' ]
-  - name: 'SpecializedFollowers.esm'
-    msg: [ *obsolete ]
+
   - name: 'SPTDiverseGuardsSkyrimResources.esm'
     msg: [ *obsolete ]
   - name: 'SPTMuscularFemaleRaces.esm'
@@ -22420,19 +22435,7 @@ plugins:
         condition: 'version("SPTConsistentOlderPeople.esp", "1.3", <)'
   - name: 'Better Followers.esp'
     msg: [ *obsolete ]
-  - name: 'SpecializedFollowers.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete. Use Better Followers - S*.esp instead.'
-          - lang: de
-            text: 'Zu löschen. Verwenden Sie stattdessen Better Followers - S*.esp.'
-          - lang: ja
-            text: '削除してBetter Followers - S*.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте вместо этого Better Followers - S*.esp.'
-        condition: 'file("Better Followers - .+\.esp")'
+
   - name: 'Better Followers - Specialized( - Not E)?\.esp'
     msg: [ *obsolete ]
   - name: 'AdaliaFollower.esp'
