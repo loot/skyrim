@@ -1340,6 +1340,54 @@ plugins:
       - crc: 0xA133C0B8
         util: 'TES5Edit v4.0.4c'
 
+  - name: 'Skyrim Immersive Creatures.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24913/' ]
+    after:
+      - 'Sleeping Dangers - Sands of Time.esp'
+      - 'SleepingDangers-SandsofTime.esp'
+    inc:
+      - name: 'Skyrim Immersive Creatures.esm'
+        condition: 'not checksum("Skyrim Immersive Creatures.esp", 2EEAD88A)'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'This is the Lore-Friendly version by jackstarr. Do not use the original esp or esm by lifestorock.'
+          - lang: de
+            text: 'Dies ist die Lore-Freundliche-Version von jackstarr. Verwenden Sie nicht die Original esp oder esm von lifestorock.'
+          - lang: ja
+            text: 'このEspはjackstarr氏によるロアフレンドリーバージョンです。lifestorock氏によるオリジナル版のEspもしくはEsmは使用しないでください。'
+        condition: 'checksum("Skyrim Immersive Creatures.esp", 2EEAD88A)'
+      - *patchUnavailableRequiem
+    tag:
+      - Delev
+      - Relev
+    clean:
+      - crc: 0xBA4FDA63
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Skyrim Immersive Creatures - DLC2.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24913/' ]
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'This addon is for use with Skyrim Immersive Creatures.esm, not Skyrim Immersive Creatures.esp'
+          - lang: de
+            text: 'Dieses Addon ist für die Verwendung mit Skyrim Immersive Creatures.esm vorgesehen, nicht mit Skyrim Immersive Creatures.esp.'
+          - lang: ja
+            text: 'Skyrim Immersive Creatures.esm用のアドオンです。Skyrim Immersive Creatures.esp用ではありません。'
+        condition: 'checksum("Skyrim Immersive Creatures - DLC2.esp", C64CF88A) and not active("Skyrim Immersive Creatures.esm")'
+    tag:
+      - Delev
+      - Relev
+    clean:
+      - crc: 0x2C158B9F
+        util: 'TES5Edit v4.0.2f'
+  - name: 'Skyrim Immersive Creatures.esm'
+    tag:
+      - Delev
+      - Relev
+
 ###### Environment, Landscape & Flora ######
   - name: 'Whiterun Trees.esp'
     url:
@@ -2986,10 +3034,7 @@ plugins:
       - <<: *requiresX
         type: say
         subs: [ '[Amazing Smooth Females Complete](https://www.nexusmods.com/skyrim/mods/140/)' ]
-  - name: 'Skyrim Immersive Creatures.esm'
-    tag:
-      - Delev
-      - Relev
+
   - name: 'SkyMoMod.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/35631/'
@@ -6468,49 +6513,7 @@ plugins:
         crc: 0xB3FA0216
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 10
-  - name: 'Skyrim Immersive Creatures.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24913/' ]
-    after:
-      - 'Sleeping Dangers - Sands of Time.esp'
-      - 'SleepingDangers-SandsofTime.esp'
-    inc:
-      - name: 'Skyrim Immersive Creatures.esm'
-        condition: 'not checksum("Skyrim Immersive Creatures.esp", 2EEAD88A)'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This is the Lore-Friendly version by jackstarr. Do not use the original esp or esm by lifestorock.'
-          - lang: de
-            text: 'Dies ist die Lore-Freundliche-Version von jackstarr. Verwenden Sie nicht die Original esp oder esm von lifestorock.'
-          - lang: ja
-            text: 'このEspはjackstarr氏によるロアフレンドリーバージョンです。lifestorock氏によるオリジナル版のEspもしくはEsmは使用しないでください。'
-        condition: 'checksum("Skyrim Immersive Creatures.esp", 2EEAD88A)'
-      - *patchUnavailableRequiem
-    tag:
-      - Delev
-      - Relev
-    clean:
-      - crc: 0xBA4FDA63
-        util: 'TES5Edit v4.0.2f'
-  - name: 'Skyrim Immersive Creatures - DLC2.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/24913/' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'This addon is for use with Skyrim Immersive Creatures.esm, not Skyrim Immersive Creatures.esp'
-          - lang: de
-            text: 'Dieses Addon ist für die Verwendung mit Skyrim Immersive Creatures.esm vorgesehen, nicht mit Skyrim Immersive Creatures.esp.'
-          - lang: ja
-            text: 'Skyrim Immersive Creatures.esm用のアドオンです。Skyrim Immersive Creatures.esp用ではありません。'
-        condition: 'checksum("Skyrim Immersive Creatures - DLC2.esp", C64CF88A) and not active("Skyrim Immersive Creatures.esm")'
-    tag:
-      - Delev
-      - Relev
-    clean:
-      - crc: 0x2C158B9F
-        util: 'TES5Edit v4.0.2f'
+
   - name: 'SkyMoMod_lists.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/16411/' ]
     req:
