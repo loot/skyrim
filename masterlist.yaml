@@ -1337,17 +1337,9 @@ plugins:
         name: 'Specialized Followers'
   - name: 'specializedfollowers.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete. Use Better Followers - S*.esp instead.'
-          - lang: de
-            text: 'Zu löschen. Verwenden Sie stattdessen Better Followers - S*.esp.'
-          - lang: ja
-            text: '削除してBetter Followers - S*.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте вместо этого Better Followers - S*.esp.'
-        condition: 'file("Better Followers - .+\.esp")'
+      - <<: *useInstead
+        subs: [ 'Better Followers - Specialized ESP' ]
+        condition: 'active("Better Followers - B?N?P\.esp")'
   - name: 'SpecializedFollowers.esm'
     msg: [ *obsolete ]
 
