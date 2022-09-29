@@ -1596,6 +1596,49 @@ plugins:
   - name: 'Imp''s More Complex Needs.esm'
     msg: [ *obsolete ]
 
+  - name: '(RealisticNeedsandDiseases|RND_\w+-Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/26228/'
+        name: 'Realistic Needs and Diseases'
+      - link: 'https://www.nexusmods.com/skyrim/mods/75876/'
+        name: 'Realistic Needs and Diseases All-In-One for USLEEP'
+      - link: 'https://www.nexusmods.com/skyrim/mods/78785/'
+        name: 'Realistic Needs and Diseases 2.0'
+  - name: 'RealisticNeedsandDiseases.esp'
+    after:
+      - '3DNPC.esp'
+      - 'TradeRoutes.esp'
+    msg: [ *patchUnavailableRequiem ]
+    tag:
+      - Delev
+      - Graphics
+      - Invent.Add
+      - Invent.Change
+      - Invent.Remove
+      - Names
+      - Relev
+      - Stats
+    dirty:
+      # v1.0.3 RealisticNeedsandDiseasesUSLEEP - ENG
+      - <<: *quickClean
+        crc: 0x8B0C212F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+  - name: 'RND_(BabettesFeast|Dawnguard|DestructibleBottles|Dragonborn|DrinkingFountains|ETaC|HearthFires|Requiem|RWS|UniqueBoozeBottles|USKP)-Patch\.esp'
+    after: [ '3DNPC.esp' ]
+  - name: 'RND_Requiem-Patch.esp'
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+  - name: 'RND_UniqueBoozeBottles-Patch.esp'
+    msg:
+      - <<: *requiresResources
+        subs: [ '[Unique Booze Bottles](https://www.nexusmods.com/skyrim/mods/19922/)' ]
+        condition: 'not file("meshes/clutter/ingredients/mead01NORDALE.nif")'
+  - name: 'RND_USKP-Patch.esp'
+    tag: [ Relev ]
+
   - name: 'UsefulDogs.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/64021/'
@@ -19457,74 +19500,14 @@ plugins:
       - 'dD - Realistic Ragdoll Force - Medium.esp'
       - 'dD - Realistic Ragdoll Force - Realistic.esp'
       - 'dD - Realistic Ragdoll Force - Reduced.esp'
-  - name: 'RealisticNeedsandDiseases.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/75876/'
-        name: 'Realistic Needs and Diseases All-In-One for USLEEP on Nexus Mods'
-    after:
-      - '3DNPC.esp'
-      - 'TradeRoutes.esp'
-    msg: [ *patchUnavailableRequiem ]
-    tag:
-      - Delev
-      - Graphics
-      - Invent.Add
-      - Invent.Change
-      - Invent.Remove
-      - Names
-      - Relev
-      - Stats
-    dirty:
-      ## v1.0.3 RealisticNeedsandDiseasesUSLEEP - ENG
-      - <<: *quickClean
-        crc: 0x8B0C212F
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 1
-  - name: 'RND_Dawnguard-Patch.esp'
-    after: [ '3DNPC.esp' ]
-  - name: 'RND_HearthFires-Patch.esp'
-    after: [ '3DNPC.esp' ]
-  - name: 'RND_Dragonborn-Patch.esp'
-    after: [ '3DNPC.esp' ]
+
   - name: 'RND_Overhaul.esp'
     after: [ '3DNPC.esp' ]
   - name: 'RND_CheckNeedsTranslation.esp'
     after: [ '3DNPC.esp' ]
   - name: 'RND_BabettesFeasts.esp'
     after: [ '3DNPC.esp' ]
-  - name: 'RND_BabettesFeast-Patch.esp'
-    after: [ '3DNPC.esp' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove. Use RND_BabettesFeast-FAMP.esp instead.'
-          - lang: de
-            text: 'Zu löschen. Verwenden Sie stattdessen RND_BabettesFeast-FAMP.esp.'
-          - lang: ja
-            text: '削除し、RND_BabettesFeast-FAMP.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
-        condition: 'file("PotionsBETA.esp")'
   - name: 'RND_Cliffracers-Patch.esp'
-    after: [ '3DNPC.esp' ]
-  - name: 'RND_DestructibleBottles-Patch.esp'
-    after: [ '3DNPC.esp' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove. Use RND_DestructibleBottles-FAMP.esp instead.'
-          - lang: de
-            text: 'Zu löschen. Verwenden Sie stattdessen RND_DestructibleBottles-FAMP.esp.'
-          - lang: ja
-            text: '削除し、RND_DestructibleBottles-FAMP.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
-        condition: 'file("PotionsBETA.esp")'
-  - name: 'RND_DrinkingFountains-Patch.esp'
-    after: [ '3DNPC.esp' ]
-  - name: 'RND_ETaC-Patch.esp'
     after: [ '3DNPC.esp' ]
   - name: 'RND_HighlandMilkFarm-Patch.esp'
     after: [ '3DNPC.esp' ]
@@ -19534,49 +19517,12 @@ plugins:
     after: [ '3DNPC.esp' ]
   - name: 'PrivateNeeds-RND.esp'
     after: [ '3DNPC.esp' ]
-  - name: 'RND_Requiem-Patch.esp'
-    after: [ '3DNPC.esp' ]
-    inc:
-      - name: 'Requiem.esp'
-        display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
-  - name: 'RND_RWS-Patch.esp'
-    after: [ '3DNPC.esp' ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Remove. Use RND_RWS-FAMP.esp instead.'
-          - lang: de
-            text: 'Zu löschen. Verwenden Sie stattdessen RND_RWS-FAMP.esp.'
-          - lang: ja
-            text: '削除し、RND_RWS-FAMP.espを使用してください。'
-          - lang: ru
-            text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
-        condition: 'file("PotionsBETA.esp")'
   - name: 'RND_SkyMoMod-Patch.esp'
     after: [ '3DNPC.esp' ]
-  - name: 'RND_USKP-Patch.esp'
-    after: [ '3DNPC.esp' ]
-    tag: [ Relev ]
   - name: 'SI_RNADPatch.esp'
     after: [ '3DNPC.esp' ]
   - name: 'Disease Descriptions_RND Compatibile.esp'
     after: [ '3DNPC.esp' ]
-  - name: 'RND_UniqueBoozeBottles-Patch.esp'
-    after: [ '3DNPC.esp' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.'
-          - lang: de
-            text: 'Die Plugin Datei Unique BOOZE Bottles kann in Ihrer Ladereihenfolge deaktiviert werden, wenn dieser Patch aktiviert ist. Denken Sie jedoch daran, die installierten Meshes und Texturen beizubehalten.'
-          - lang: ja
-            text: 'このパッチをアクティブにすればUnique BOOZE Bottlesのプラグインは非アクティブにしても構いません。ただしメッシュとテクスチャは必ず残しておいてください。'
-          - lang: ru
-            text: 'Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.'
-        condition: 'file("Unique BOOZE Bottles.*\.esp")'
   - name: 'KnapsackEnhanced.esp'
     after: [ '3DNPC.esp' ]
   - name: 'FalskaarRNDHotfix.esp'
