@@ -1625,8 +1625,8 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
   - name: 'RND_(BabettesFeast|Dawnguard|DestructibleBottles|Dragonborn|DrinkingFountains|ETaC|HearthFires|Requiem|RWS|UniqueBoozeBottles|USKP)-Patch\.esp'
-  - name: 'RND_BabettesFeast-Patch.esp'
     after: [ '3DNPC.esp' ]
+  - name: 'RND_BabettesFeast-Patch.esp'
     msg:
       - type: error
         content:
@@ -1640,9 +1640,7 @@ plugins:
             text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_Dawnguard-Patch.esp'
-    after: [ '3DNPC.esp' ]
   - name: 'RND_DestructibleBottles-Patch.esp'
-    after: [ '3DNPC.esp' ]
     msg:
       - type: error
         content:
@@ -1656,21 +1654,15 @@ plugins:
             text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_Dragonborn-Patch.esp'
-    after: [ '3DNPC.esp' ]
   - name: 'RND_DrinkingFountains-Patch.esp'
-    after: [ '3DNPC.esp' ]
   - name: 'RND_ETaC-Patch.esp'
-    after: [ '3DNPC.esp' ]
   - name: 'RND_HearthFires-Patch.esp'
-    after: [ '3DNPC.esp' ]
   - name: 'RND_Requiem-Patch.esp'
-    after: [ '3DNPC.esp' ]
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
   - name: 'RND_RWS-Patch.esp'
-    after: [ '3DNPC.esp' ]
     msg:
       - type: error
         content:
@@ -1684,7 +1676,6 @@ plugins:
             text: 'Удалите. Используйте RND_RWS-FAMP.esp вместо этого.'
         condition: 'file("PotionsBETA.esp")'
   - name: 'RND_UniqueBoozeBottles-Patch.esp'
-    after: [ '3DNPC.esp' ]
     msg:
       - type: say
         content:
@@ -1698,7 +1689,6 @@ plugins:
             text: 'Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.'
         condition: 'file("Unique BOOZE Bottles.*\.esp")'
   - name: 'RND_USKP-Patch.esp'
-    after: [ '3DNPC.esp' ]
     tag: [ Relev ]
 
   - name: 'UsefulDogs.esp'
