@@ -1640,35 +1640,34 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/1368/'
         name: 'Cooking Recipes Pack'
   - name: 'Wolfs(_Advanced_Recipes(_Rus)?|RecettesAvancees)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Cooking Recipes Pack Advanced ESP' ]
+        condition: 'many("Wolfs(_Advanced_Recipes(_Rus)?|RecettesAvancees)\.esp")'
   - name: 'Wolfs(_Buff_Recipes(_Rus)?|RecettesBuff)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Cooking Recipes Pack Buff ESP' ]
+        condition: 'many("Wolfs(_Buff_Recipes(_Rus)?|RecettesBuff)\.esp")'
   - name: 'Wolfs(_Intermediate_Recipes(_Rus)?|RecettesIntermediaires)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Cooking Recipes Pack Intermediate ESP' ]
+        condition: 'many("Wolfs(_Intermediate_Recipes(_Rus)?|RecettesIntermediaires)\.esp")'
   - name: 'Wolfs(_Simple_Recipes|RecettesSimples)\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Cooking Recipes Pack Simple ESP' ]
+        condition: 'many("Wolfs(_Simple_Recipes|RecettesSimples)\.esp")'
   # Cooking Recipes Pack - Translations
   - name: 'RecettesMaterielFabrication.esp'
     inc: [ 'CraftingMaterialsRecipes.esp' ]
   - name: 'RecettesSansSel.esp'
     inc: [ 'NoSaltRecipes.esp' ]
   - name: 'Wolfs_Advanced_Recipes_Rus.esp'
-    inc: [ 'Wolfs_Advanced_Recipes.esp' ]
   - name: 'Wolfs_Buff_Recipes_Rus.esp'
-    inc: [ 'Wolfs_Buff_Recipes.esp' ]
   - name: 'Wolfs_Intermediate_Recipes_Rus.esp'
-    inc: [ 'Wolfs_Intermediate_Recipes.esp' ]
   - name: 'WolfsRecettes.+\.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use Wolfs_*_Recipes esps or WolfsRecettes* esps, not both.'
-          - lang: de
-            text: 'Benutzen Sie Wolfs_*_Recipes esps oder WolfsRecettes* esps, nicht beide.'
-          - lang: es
-            text: 'Usar Wolfs_*_Recipes esps o WolfsRecettes* esps, no ambos.'
-          - lang: ja
-            text: 'Wolfs_*_Recipes espかWolfsRecettes* espのどちらかを使用してください。'
-          - lang: ru
-            text: 'Используйте Wolfs_*_Recipes esps или WolfsRecettes* esps, не не вместе.'
-        condition: 'file("Wolfs_.+_Recipes\.esp") and file("WolfsRecettes.+\.esp")'
 
   - name: 'WoodChoppingExtended.esp'
     url:
