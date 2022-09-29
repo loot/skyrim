@@ -1641,17 +1641,9 @@ plugins:
   - name: 'RND_RWS-Patch.esp'
   - name: 'RND_UniqueBoozeBottles-Patch.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.'
-          - lang: de
-            text: 'Die Plugin Datei Unique BOOZE Bottles kann in Ihrer Ladereihenfolge deaktiviert werden, wenn dieser Patch aktiviert ist. Denken Sie jedoch daran, die installierten Meshes und Texturen beizubehalten.'
-          - lang: ja
-            text: 'このパッチをアクティブにすればUnique BOOZE Bottlesのプラグインは非アクティブにしても構いません。ただしメッシュとテクスチャは必ず残しておいてください。'
-          - lang: ru
-            text: 'Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.'
-        condition: 'file("Unique BOOZE Bottles.*\.esp")'
+      - <<: *requiresResources
+        subs: [ '[Unique Booze Bottles](https://www.nexusmods.com/skyrim/mods/19922/)' ]
+        condition: 'not file("meshes/clutter/ingredients/mead01NORDALE.nif")'
   - name: 'RND_USKP-Patch.esp'
     tag: [ Relev ]
 
