@@ -977,6 +977,18 @@ plugins:
       - crc: 0xE87C93C0
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'Unique BOOZE Bottles( Alternate Names Version)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19922/'
+        name: 'Unique Booze Bottles HD'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**RND_UniqueBoozeBottles-Patch.esp**' ]
+        condition: 'file("RND_UniqueBoozeBottles-Patch.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Unique Booze Bottles ESP' ]
+        condition: 'many("Unique BOOZE Bottles( Alternate Names Version)?\.esp")'
+
 ###### AudioVisual - Sound & Music ######
   - name: 'AOS.esp'
     url:
