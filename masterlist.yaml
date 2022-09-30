@@ -1895,6 +1895,28 @@ plugins:
     msg: [ *obsolete ]
 
 ###### Gameplay - NPC Behaviour & Dialogue ######
+  - name: 'CompanionsAriseFinal.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/23129/' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'This mod will most likely conflict with other Companions altering mods.'
+          - lang: de
+            text: 'Dieser Mod wird höchstwahrscheinlich mit anderen Begleiter ändernden Mods in Konflikt geraten.'
+          - lang: ja
+            text: 'このModは仲間に変更を加えるModと競合するでしょう。'
+          - lang: ru
+            text: 'Этот мод скорее всего конфликтует с другими модами на изменение компаньонов'
+    dirty:
+      - <<: *quickClean
+        crc: 0x49701951
+        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 123
+        udr: 16
+    clean:
+      - crc: 0x15D9448A
+        util: 'TES5Edit v4.0.3'
 
 ###### Gameplay - Quests ######
   - name: 'BarenziahQuestMarkers_Droppable.esp'
@@ -22389,28 +22411,7 @@ plugins:
         crc: 0xB60462A8
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'CompanionsAriseFinal.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/23129/' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This mod will most likely conflict with other Companions altering mods.'
-          - lang: de
-            text: 'Dieser Mod wird höchstwahrscheinlich mit anderen Begleiter ändernden Mods in Konflikt geraten.'
-          - lang: ja
-            text: 'このModは仲間に変更を加えるModと競合するでしょう。'
-          - lang: ru
-            text: 'Этот мод скорее всего конфликтует с другими модами на изменение компаньонов'
-    dirty:
-      - <<: *quickClean
-        crc: 0x49701951
-        util: '[TES5Edit v4.0.3](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 123
-        udr: 16
-    clean:
-      - crc: 0x15D9448A
-        util: 'TES5Edit v4.0.3'
+
   - name: 'CMCompanionLevel.esp'
     msg: [ *alreadyInOrFixedByPatchv1_6 ]
   - name: 'Companion_Crea.esp'
