@@ -1442,18 +1442,8 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/9596/'
         name: 'Border Regions Disabled'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Recommended to change Skyrim.ini bBorderRegionsEnabled=1 to bBorderRegionsEnabled=0 instead.'
-          - lang: de
-            text: 'Empfohlen, Skyrim.ini bBorderRegionsEnabled=1 in bBorderRegionsEnabled=0 zu ändern.'
-          - lang: es
-            text: 'Recomendamos que cambies un valor en Skyrim.ini: bBorderRegionsEnabled=1 a bBorderRegionsEnabled=0.'
-          - lang: ja
-            text: 'Skyrim.iniのbBorderRegionsEnabled=1をbBorderRegionsEnabled=0に書き換えるよう推奨します。'
-          - lang: ru
-            text: 'Рекомендуется изменить параметр Skyrim.ini bBorderRegionsEnabled=1 на bBorderRegionsEnabled=0 и удалить этот мод.'
+      - <<: *useINITweakInstead
+        subs: [ 'Skyrim.ini -> bBorderRegionsEnabled=0' ]
 
   - name: 'CAS.esp'
     url:
