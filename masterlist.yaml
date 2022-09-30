@@ -10163,33 +10163,7 @@ plugins:
         crc: 0xA51AF24C
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-  - name: 'T3nd0sOverhaul.esp'
-    msg:
-      - *obsolete
-      - type: say
-        content:
-          - lang: en
-            text: 'Only for non ENB users'
-          - lang: de
-            text: 'Nur für Benutzer ohne ENB.'
-          - lang: ja
-            text: 'ENBを使用しないユーザー向けのプラグインです。'
-          - lang: ru
-            text: 'Для не ENB-пользователей.'
-  - name: 'T3nd0sOverhaulNoLighting.esp'
-    inc: [ 'T3nd0sOverhaul.esp' ]
-    msg:
-      - *obsolete
-      - type: say
-        content:
-          - lang: en
-            text: 'Only for ENB users'
-          - lang: de
-            text: 'Nur für Benutzer mit ENB.'
-          - lang: ja
-            text: 'ENBを使用しないユーザー向けのプラグインです。'
-          - lang: ru
-            text: 'Только для не ENB пользователей.'
+
   - name: 'Legendary Lore - Dragons.esp'
     inc: [ 'DeadlyDragons.esp' ]
   - name: 'Dragon Overhaul.esp'
@@ -10928,17 +10902,6 @@ plugins:
       - <<: *deleteOrDeactivateX
         condition: 'active("StaRe.esp")'
         subs: [ 'StaRe.esp' ]
-  - name: 'SkyRe_StandingStones_Fix.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This mod is meant to be used with the Races module of SkyRe. The game should generally work fine without it, but the effect from the Lady Standing Stone may not behave as expected.'
-          - lang: de
-            text: 'Diese Mod soll mit dem Rassen Modul von SkyRe verwendet werden. Das Spiel sollte generell auch ohne gut funktionieren, aber der Effekt vom Lady Standing Stone verhält sich möglicherweise nicht wie erwartet.'
-          - lang: ja
-            text: 'このModはSkyReの種族用モジュール（Races module）との使用を想定されています。モジュール抜きでも全体的に問題なく動作しますが、淑女の石碑から得られる効果が正しく発揮されない可能性があります。'
-        condition: 'not active("SkyRe_Races.esp")'
   - name: 'SkyRe_Survivalism.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9286/' ]
     dirty:
@@ -23683,17 +23646,7 @@ plugins:
       - 'ArmedttTeeth.esm'
       - '[MPX]RaceHeights.esp'
       - '[mpx] npc gender race heights v2.esp'
-  - name: 'SkyRe_Races_Fix.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This mod is meant to be used with the Races module of SkyRe. The game should work fine without it, but the Khajiit "Claws" effect will have a wrong description.'
-          - lang: de
-            text: 'Diese Mod soll mit dem Rassen-Modul von SkyRe verwendet werden. Das Spiel sollte ohne es gut funktionieren, aber der Khajiit "Claws" Effekt wird eine falsche Beschreibung haben.'
-          - lang: ja
-            text: 'このModはSkyReの種族用モジュール（Races module）との使用を想定されています。プラグインが欠けていても機能しますが、カジートの「爪」の効果説明が本来と異なってしまいます。'
-        condition: 'not active("SkyRe_Races.esp")'
+
   - name: 'ethereal_elven_overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24273/' ]
     inc: [ 'XCES.esp' ]
