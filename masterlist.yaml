@@ -1674,17 +1674,9 @@ plugins:
         name: 'Vanilla Archery Improved'
     inc: [ 'vanillaarcheryimproveddawnguard.esp' ]
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use vanillaarcheryimproveddawnguard.esp instead'
-          - lang: de
-            text: 'Verwenden Sie stattdessen vanillaarcheryimproveddawnguard.esp'
-          - lang: ja
-            text: 'vanillaarcheryimproveddawnguard.espを使用してください。'
-          - lang: ru
-            text: 'Используйте вместо этого vanillaarcheryimproveddawnguard.esp'
-        condition: 'active("Dawnguard.esm") and not file("vanillaarcheryimproveddawnguard.esp")'
+      - <<: *useVersion
+        subs: [ '[Dawnguard](https://steamcommunity.com/sharedfiles/filedetails/?id=88845585/)' ]
+        condition: 'active("Dawnguard.esm") and not active("vanillaarcheryimproveddawnguard.esp")'
 
   - name: 'WTF.esp'
     url:
