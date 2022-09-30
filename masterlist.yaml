@@ -2353,6 +2353,18 @@ plugins:
         nav: 3
 
 ###### 3rd Party Patches ######
+  - name: 'ReProccerDragonborn.esp'
+    group: *reproccerGroup
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature.'
+          - lang: de
+            text: 'Ändern Sie die Masterdatei dieses Patches von ReProccer.esp zu SUM.esp, wenn Sie die Funktion für zusammengeführte Patches von SUM verwenden.'
+          - lang: ja
+            text: 'SUMのmerged patch機能を使用している場合、このパッチのマスターファイルをReProccer.espからSUM.espに変更してください。'
+        condition: 'file("SUM.esp")'
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
   - name: 'MoT_First_LoadOrder_File_After_Skyrim.esm'
@@ -24443,18 +24455,6 @@ plugins:
       - <<: *alreadyInX
         condition: 'file("qotsafans.*\.esp")'
         subs: [ 'Qotsafan''s Reproccer patches' ]
-  - name: 'ReProccerDragonborn.esp'
-    group: *reproccerGroup
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature.'
-          - lang: de
-            text: 'Ändern Sie die Masterdatei dieses Patches von ReProccer.esp zu SUM.esp, wenn Sie die Funktion für zusammengeführte Patches von SUM verwenden.'
-          - lang: ja
-            text: 'SUMのmerged patch機能を使用している場合、このパッチのマスターファイルをReProccer.espからSUM.espに変更してください。'
-        condition: 'file("SUM.esp")'
   - name: 'ReProccer-SkyforgeShields.esp'
     group: *reproccerGroup
   - name: 'SkyforgedWeapons ReProccer Patch.esp'
