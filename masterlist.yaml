@@ -1699,17 +1699,6 @@ plugins:
         name: 'Sharlikrans Compatibility Patches'
     inc: [ 'Smithing Perks Overhaul.esp' ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. [Compatibility Patch](https://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: de
-            text: 'Enthält keine unerwarteten (oder nicht ordnungsgemäßen) Datensätze oder TESVSnip Kürzungsprobleme, wie sie in anderen Mods von verschiedenen Autoren gefunden wurden. Eine neuere Version, die mit TES5Edit repariert und gereinigt wurde und zusätzliche Stabilität bietet, kann hier bezogen werden. [Kompatibilitätspatch] (https://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ja
-            text: '予期しない（または順番が狂った）レコード、または他の作者のModで見られたようなTESVSnipの切り捨て問題は存在しませんが、TES5Editで修正しクリーニングを行った新しいEspも入手可能です。こちらはより安定するでしょう。[Compatibility Patch](https://www.nexusmods.com/skyrim/mods/26230)'
-          - lang: ru
-            text: 'Не содержит неверных записей, как было найдено в других модах от разных авторов, однако новый esp, исправленный и очищенный в Tes5Edit вы можене найти [здесь](https://www.nexusmods.com/skyrim/mods/26230). Исправленный esp добавит больше стабильности. Если вы уже используете русифицированную-исправленную версию, то вам не о чем беспокоиться.'
-        condition: 'not checksum("Complete Crafting Overhaul.esp", 8534CD3C) and not checksum("Complete Crafting Overhaul - BS version.esp", 193D9214)'
       - type: warn
         content:
           - lang: en
@@ -1723,7 +1712,15 @@ plugins:
         condition: 'file("(Headbomb''s )?Better Sorting.*\.esp") and file("Complete Crafting Overhaul.esp")'
   - name: 'Complete Crafting Overhaul.esp'
     inc: [ 'Complete Crafting Overhaul - BS version.esp' ]
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Sharlikrans Compatibility Patches](https://www.nexusmods.com/skyrim/mods/26230/) (Complete_Crafting_Overhaul_Compatibility_Patch)' ]
+        condition: 'not checksum("Complete Crafting Overhaul.esp", 8534CD3C)'
   - name: 'Complete Crafting Overhaul - BS version.esp'
+    msg:
+      - <<: *patchUpdateAvailable
+        subs: [ '[Sharlikrans Compatibility Patches](https://www.nexusmods.com/skyrim/mods/26230/) (Complete_Crafting_Overhaul_Compatibility_Patch)' ]
+        condition: 'not checksum("Complete Crafting Overhaul - BS version.esp", 193D9214)'
 
   - name: 'Immersive Ingestibles.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/71708/' ]
