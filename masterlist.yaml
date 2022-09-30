@@ -1698,24 +1698,16 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/26230/'
         name: 'Sharlikrans Compatibility Patches'
     inc: [ 'Smithing Perks Overhaul.esp' ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Use only BS-version for Better Sorting.'
-          - lang: de
-            text: 'Verwenden Sie nur die BS-Version für Better Sorting.'
-          - lang: ja
-            text: 'Better SortingにはBS-versionを使用してください。'
-          - lang: ru
-            text: 'Для Better Sorting используйте только BS-версию.'
-        condition: 'file("(Headbomb''s )?Better Sorting.*\.esp") and file("Complete Crafting Overhaul.esp")'
   - name: 'Complete Crafting Overhaul.esp'
     inc: [ 'Complete Crafting Overhaul - BS version.esp' ]
     msg:
       - <<: *patchUpdateAvailable
         subs: [ '[Sharlikrans Compatibility Patches](https://www.nexusmods.com/skyrim/mods/26230/) (Complete_Crafting_Overhaul_Compatibility_Patch)' ]
         condition: 'not checksum("Complete Crafting Overhaul.esp", 8534CD3C)'
+      - <<: *useVersion
+        type: warn
+        subs: [ 'Better Sorting' ]
+        condition: 'file("Headbomb''s Better Sorting - (Ammo|Miscellaneous)\.esp")'
   - name: 'Complete Crafting Overhaul - BS version.esp'
     msg:
       - <<: *patchUpdateAvailable
