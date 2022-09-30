@@ -1432,20 +1432,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/21015/'
         name: 'Configurable Auto-Saver'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Only use the save features of either "CAS" or "kuertee''s auto-save and time".'
-          - lang: de
-            text: 'Verwenden Sie nur die Speicherfunktionen von "CAS" oder "kuertee''s auto-save and time".'
-          - lang: es
-            text: 'Utilizar únicamente las funciones de guardar de "CAS" o "kuertee''s auto-save and time".'
-          - lang: ja
-            text: 'セーブ機能は「CAS」か「kuertee''s auto-save and time」のどちらかの機能のみ利用できます。'
-          - lang: ru
-            text: 'Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee''s auto-save and time".'
-        condition: 'file("kuerteeAutoSaveAndTime.esp")'
+    inc: [ 'kuerteeAutoSaveAndTime.esp' ]
 
   - name: 'ERSO \d{2}.+\.esp'
     url:
