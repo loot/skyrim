@@ -1668,6 +1668,20 @@ plugins:
       - crc: 0x4B399546
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'vanillaarcheryimproved.esp'
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Use vanillaarcheryimproveddawnguard.esp instead'
+          - lang: de
+            text: 'Verwenden Sie stattdessen vanillaarcheryimproveddawnguard.esp'
+          - lang: ja
+            text: 'vanillaarcheryimproveddawnguard.espを使用してください。'
+          - lang: ru
+            text: 'Используйте вместо этого vanillaarcheryimproveddawnguard.esp'
+        condition: 'active("Dawnguard.esm") and not file("vanillaarcheryimproveddawnguard.esp")'
+
   - name: 'WTF.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/28761/'
@@ -18544,19 +18558,7 @@ plugins:
         crc: 0xFE29441F
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
-  - name: 'vanillaarcheryimproved.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use vanillaarcheryimproveddawnguard.esp instead'
-          - lang: de
-            text: 'Verwenden Sie stattdessen vanillaarcheryimproveddawnguard.esp'
-          - lang: ja
-            text: 'vanillaarcheryimproveddawnguard.espを使用してください。'
-          - lang: ru
-            text: 'Используйте вместо этого vanillaarcheryimproveddawnguard.esp'
-        condition: 'active("Dawnguard.esm") and not file("vanillaarcheryimproveddawnguard.esp")'
+
   - name: 'vanillaarcheryimproved(dawnguard)?\.esp'
     msg:
       - <<: *useOnlyOneX
