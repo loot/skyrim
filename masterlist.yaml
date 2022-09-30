@@ -2359,15 +2359,11 @@ plugins:
         name: 'Balbor and Steelsouls SkyRe ReProccer Project'
     group: *reproccerGroup
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Change the master file of this patch from ReProccer.esp to SUM.esp if using SUM''s merged patch feature.'
-          - lang: de
-            text: 'Ändern Sie die Masterdatei dieses Patches von ReProccer.esp zu SUM.esp, wenn Sie die Funktion für zusammengeführte Patches von SUM verwenden.'
-          - lang: ja
-            text: 'SUMのmerged patch機能を使用している場合、このパッチのマスターファイルをReProccer.espからSUM.espに変更してください。'
-        condition: 'file("SUM.esp")'
+      - <<: *masterReassign
+        subs:
+          - 'ReProccer.esp'
+          - 'SUM.esp'
+        condition: 'active("SUM.esp")'
 
 ###### Anything new can go after this (If you're not sure where to put it) ######
   - name: 'MoT_First_LoadOrder_File_After_Skyrim.esm'
