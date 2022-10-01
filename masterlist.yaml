@@ -1801,14 +1801,10 @@ plugins:
       - <<: *alsoUseX
         subs: [ '[FileAccess Interface for Skyrim Script](https://www.nexusmods.com/skyrim/mods/48265/)' ]
         condition: 'not active("FISS.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'To gain access to all the features of Dynamic Potions version 3.1, you will need to upgrade to [SKSE version 1.7+](https://skse.silverlock.org)'
-          - lang: de
-            text: 'Um auf alle Funktionen von Dynamic Potions Version 3.1 zugreifen zu können, müssen Sie ein Upgrade auf [SKSE Version 1.7+](https://skse.silverlock.org) durchführen.'
-          - lang: ja
-            text: 'Dynamic Potions 3.1のすべての機能を利用するには[SKSE](https://skse.silverlock.org)を1.7以上に更新する必要があります。'
+      - <<: *versionXofYorGreaterRequired
+        subs:
+          - '1.7.0'
+          - '[Skyrim Script Extender](https://skse.silverlock.org)'
         condition: 'version("../skse_loader.exe", "0.1.7.0", <)'
 
   - name: '(Realistic Wildlife Loot|RWL).*\.es(m|p)'
