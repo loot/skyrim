@@ -1793,6 +1793,21 @@ plugins:
         condition: 'checksum("WoodChoppingExtended.esp", 61AE5456)'
 
 ###### Gameplay - Economy & Item Balance ######
+  - name: 'DynamicPotions.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/47521/'
+        name: 'Dynamic Potions - Poisons - Ingredients - Food'
+    msg:
+      - <<: *alsoUseX
+        subs: [ '[FileAccess Interface for Skyrim Script](https://www.nexusmods.com/skyrim/mods/48265/)' ]
+        condition: 'not active("FISS.esp")'
+      - *requiresMCM_SkyUI
+      - <<: *versionXofYorGreaterRequired
+        subs:
+          - '1.7.0'
+          - '[Skyrim Script Extender](https://skse.silverlock.org)'
+        condition: 'version("../skse_loader.exe", "0.1.7.0", <)'
+
   - name: '(Realistic Wildlife Loot|RWL).*\.es(m|p)'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8075/' ]
   - name: 'Realistic Wildlife Loot - (Realistic|Reduced)\.esp'
@@ -20612,26 +20627,7 @@ plugins:
         crc: 0x16317A66
         util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 6
-  - name: 'DynamicPotions.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'To save and load custom presets while using this mod, download the [FISS plugin](https://www.nexusmods.com/skyrim/mods/48265). A "Presets" page will appear in the MCM menu once FISS is active.'
-          - lang: de
-            text: 'Um benutzerdefinierte Voreinstellungen (eng: custom presets) zu speichern und zu laden während Sie diese Mod verwenden, laden Sie das [FISS-Plugin](https://www.nexusmods.com/skyrim/mods/48265) herunter. Sobald FISS aktiviert ist, wird im MCM-Menü eine Seite "Voreinstellungen" angezeigt.'
-          - lang: ja
-            text: 'カスタムプリセットの保存や読み込みを行うには[FISS plugin](https://www.nexusmods.com/skyrim/mods/48265)をインストールする必要があります。FISSをアクティブにすればMCMメニューに「プリセット」ページが表示されます。'
-        condition: 'not file("FISS.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'To gain access to all the features of Dynamic Potions version 3.1, you will need to upgrade to [SKSE version 1.7+](https://skse.silverlock.org)'
-          - lang: de
-            text: 'Um auf alle Funktionen von Dynamic Potions Version 3.1 zugreifen zu können, müssen Sie ein Upgrade auf [SKSE Version 1.7+](https://skse.silverlock.org) durchführen.'
-          - lang: ja
-            text: 'Dynamic Potions 3.1のすべての機能を利用するには[SKSE](https://skse.silverlock.org)を1.7以上に更新する必要があります。'
-        condition: 'version("../skse_loader.exe", "0.1.7.0", <)'
+
   - name: 'Eld-combinePotions.esp'
     msg:
       - <<: *corrupt
