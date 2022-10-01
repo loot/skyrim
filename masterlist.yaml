@@ -1798,15 +1798,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/47521/'
         name: 'Dynamic Potions - Poisons - Ingredients - Food'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'To save and load custom presets while using this mod, download the [FISS plugin](https://www.nexusmods.com/skyrim/mods/48265). A "Presets" page will appear in the MCM menu once FISS is active.'
-          - lang: de
-            text: 'Um benutzerdefinierte Voreinstellungen (eng: custom presets) zu speichern und zu laden während Sie diese Mod verwenden, laden Sie das [FISS-Plugin](https://www.nexusmods.com/skyrim/mods/48265) herunter. Sobald FISS aktiviert ist, wird im MCM-Menü eine Seite "Voreinstellungen" angezeigt.'
-          - lang: ja
-            text: 'カスタムプリセットの保存や読み込みを行うには[FISS plugin](https://www.nexusmods.com/skyrim/mods/48265)をインストールする必要があります。FISSをアクティブにすればMCMメニューに「プリセット」ページが表示されます。'
-        condition: 'not file("FISS.esp")'
+      - <<: *alsoUseX
+        subs: [ '[FileAccess Interface for Skyrim Script](https://www.nexusmods.com/skyrim/mods/48265/)' ]
+        condition: 'not active("FISS.esp")'
       - type: say
         content:
           - lang: en
