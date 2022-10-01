@@ -1943,19 +1943,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/9504/'
         name: 'Followers can Relax'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'XFLMain.esm has the same functional, but you can still use FollowerWander2.esp.'
-          - lang: de
-            text: 'XFLMain.esm hat die gleiche Funktionalität, aber Sie können weiterhin FollowerWander2.esp verwenden.'
-          - lang: ja
-            text: 'XFLMain.esmに同じ機能が存在しますが、任意でFollowerWander2.espを使用することもできます。'
-          - lang: ru
-            text: 'XFLMain.esm имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.'
-        condition: 'file("XFLMain.esm")'
       - *alreadyInBDO
       - *alreadyInUFO
+      - <<: *alreadyInX
+        subs: [ 'Extensible Follower Framework' ]
+        condition: 'active("EFFCore.esm")'
 
 ###### Gameplay - Quests ######
   - name: 'BarenziahQuestMarkers_Droppable.esp'
