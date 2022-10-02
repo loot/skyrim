@@ -1376,6 +1376,60 @@ plugins:
       - crc: 0xA133C0B8
         util: 'TES5Edit v4.0.4c'
 
+  - name: 'High Level Enemies.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27866/' ]
+    tag: [ Relev ]
+    clean:
+      # Main
+      - crc: 0xD1C184A2
+        util: 'TES5Edit v4.0.2f'
+      # Main Scaled
+      - crc: 0x6A544F26
+        util: 'TES5Edit v4.0.2f'
+      # Main SIC
+      - crc: 0x297D77BE
+        util: 'TES5Edit v4.0.2f'
+  - name: 'High Level Enemies - Dawnguard.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27866/' ]
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'High Level Enemies.esp must be active for this file to work properly.'
+          - lang: de
+            text: 'High Level Enemies.esp muss aktiviert sein, damit diese Datei ordnungsgemäß funktioniert.'
+          - lang: es
+            text: 'High Level Enemies.esp debe estar activado para que este mod funcione correctamente.'
+          - lang: ja
+            text: 'このファイルを正常に機能させるにはHigh Level Enemies.espをアクティブにする必要があります。'
+          - lang: ru
+            text: 'High Level Enemies.esp должен быть активирован, для корректной работы.'
+        condition: 'not active("High Level Enemies.esp")'
+    tag: [ Relev ]
+    dirty:
+      # DG
+      - <<: *quickClean
+        crc: 0xAC94562C
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+      # DG Scaled
+      - <<: *quickClean
+        crc: 0xD656F01A
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+  - name: 'High Level Enemies - Dragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27866/' ]
+    tag: [ Relev ]
+    clean:
+      # DB
+      - crc: 0x3170B6F4
+        util: 'TES5Edit v4.0.2f'
+      # DB Scaled
+      - crc: 0x9933D9D4
+        util: 'TES5Edit v4.0.2f'
+  - name: 'High Level Enemies - Falskaar.esp'
+    tag: [ Relev ]
+
   - name: 'Skyrim Immersive Creatures( - DLC2)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/24913/'
@@ -5852,59 +5906,7 @@ plugins:
         crc: 0xBC1E72EF
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-  - name: 'High Level Enemies.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/27866/' ]
-    tag: [ Relev ]
-    clean:
-      # Main
-      - crc: 0xD1C184A2
-        util: 'TES5Edit v4.0.2f'
-      # Main Scaled
-      - crc: 0x6A544F26
-        util: 'TES5Edit v4.0.2f'
-      # Main SIC
-      - crc: 0x297D77BE
-        util: 'TES5Edit v4.0.2f'
-  - name: 'High Level Enemies - Dawnguard.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/27866/' ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'High Level Enemies.esp must be active for this file to work properly.'
-          - lang: de
-            text: 'High Level Enemies.esp muss aktiviert sein, damit diese Datei ordnungsgemäß funktioniert.'
-          - lang: es
-            text: 'High Level Enemies.esp debe estar activado para que este mod funcione correctamente.'
-          - lang: ja
-            text: 'このファイルを正常に機能させるにはHigh Level Enemies.espをアクティブにする必要があります。'
-          - lang: ru
-            text: 'High Level Enemies.esp должен быть активирован, для корректной работы.'
-        condition: 'not active("High Level Enemies.esp")'
-    tag: [ Relev ]
-    dirty:
-      # DG
-      - <<: *quickClean
-        crc: 0xAC94562C
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 1
-      # DG Scaled
-      - <<: *quickClean
-        crc: 0xD656F01A
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 1
-  - name: 'High Level Enemies - Dragonborn.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/27866/' ]
-    tag: [ Relev ]
-    clean:
-      # DB
-      - crc: 0x3170B6F4
-        util: 'TES5Edit v4.0.2f'
-      # DB Scaled
-      - crc: 0x9933D9D4
-        util: 'TES5Edit v4.0.2f'
-  - name: 'High Level Enemies - Falskaar.esp'
-    tag: [ Relev ]
+
   - name: 'HigherLevelEnemies.esp'
     tag: [ Relev ]
   - name: 'HM Child Character.esp'
