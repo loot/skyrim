@@ -1931,6 +1931,15 @@ plugins:
   - name: 'Realistic Wildlife Loot (V1\.3.*|- IMCN)\.esp'
     msg: [ *obsolete ]
 
+###### Gameplay - Magic & Abilities ######
+  - name: 'iMaxPlayerRunes0\d{2}\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/3822/'
+        name: 'Maximum Player Runes minimod'
+    msg:
+      - <<: *useBashTweakInstead
+        subs: [ 'Tweak Settings -> Magic: Max Active Runes' ]
+
 ###### Gameplay - Mount & Follower Managers ######
   - name: 'AmazingFollowerTweaks.esp'
     url:
@@ -17603,18 +17612,7 @@ plugins:
     inc: [ 'Housecarls Can Wear Anything.esp' ]
   - name: 'Housecarls improved AI( \+ higher lvl cap)?\.esp'
     msg: [ *alreadyInUFO ]
-  - name: 'iMaxPlayerRunes\d+\.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This is actually iMaxPlayerRunes which is a game setting - you might be able to just set it in the .ini file and skip the plugin.'
-          - lang: de
-            text: 'Dies ist eigentlich iMaxPlayerRunes, eine Spieleinstellung. Möglicherweise können Sie sie einfach in der INI-Datei festlegen und das Plugin weglassen.'
-          - lang: ja
-            text: 'このプラグインはgame settingのiMaxPlayerRunesを変更するだけのものです。iniファイルを開いて直接編集すれば無視しても構いません。'
-          - lang: ru
-            text: 'Это просто параметр iMaxPlayerRunes из настроек игры - вы можете просто поменять его значение в .ini файле и не использовать этот плагин.'
+
   - name: 'Improved blessing.esp'
     msg:
       - <<: *corrupt
