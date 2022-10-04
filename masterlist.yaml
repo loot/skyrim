@@ -2138,6 +2138,31 @@ plugins:
         name: 'Glimpse of Elsweyr'
     tag: [ Invent.Add ]
 
+  - name: 'JSwords.esm'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1002/' ]
+    msg:
+      - *alreadyInCompleteCraftingOverhaulRemade
+      - <<: *obsoleteSharlikran
+        condition: 'version("JSwords.esm", "14.0", <)'
+    clean:
+      - crc: 0x142A34B6
+        util: 'TES5Edit v4.0.3f'
+  - name: 'JSwordsDistributionBalancePlugin.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](https://www.nexusmods.com/skyrim/mods/26230).'
+          - lang: de
+            text: 'Der Kompatibilitätspatch Version 14.0, ausgebessert und gesäubert mit TES5Edit, kann [hier](https://www.nexusmods.com/skyrim/mods/26230) heruntergeladen werden.'
+          - lang: ja
+            text: '[こちら](https://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
+        condition: 'version("JSwordsDistributionBalancePlugin.esp","14.0",<)'
+      - <<: *alreadyInCompleteCraftingOverhaulRemade
+    tag:
+      - Delev
+      - Relev
+
   - name: 'Organized Books v2.0.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/26913/'
@@ -3010,16 +3035,6 @@ plugins:
         itm: 6
   - name: 'IsharasUniqueRaces.esm'
     inc: [ 'ethereal_elven_overhaul.esp' ]
-
-  - name: 'JSwords.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/1002/' ]
-    msg:
-      - *alreadyInCompleteCraftingOverhaulRemade
-      - <<: *obsoleteSharlikran
-        condition: 'version("JSwords.esm", "14.0", <)'
-    clean:
-      - crc: 0x142A34B6
-        util: 'TES5Edit v4.0.3f'
 
   - name: 'kuerteeInventoryAndWeight.esm'
     msg: [ *obsolete ]
@@ -8765,21 +8780,6 @@ plugins:
         itm: 13
   - name: 'JSwords.esp'
     msg: [ *obsolete ]
-  - name: 'JSwordsDistributionBalancePlugin.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](https://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: de
-            text: 'Der Kompatibilitätspatch Version 14.0, ausgebessert und gesäubert mit TES5Edit, kann [hier](https://www.nexusmods.com/skyrim/mods/26230) heruntergeladen werden.'
-          - lang: ja
-            text: '[こちら](https://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
-        condition: 'version("JSwordsDistributionBalancePlugin.esp","14.0",<)'
-      - <<: *alreadyInCompleteCraftingOverhaulRemade
-    tag:
-      - Delev
-      - Relev
   - name: 'Deleveled Skyrim - JSwords.esp'
     tag:
       - Delev
