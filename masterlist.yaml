@@ -2154,15 +2154,8 @@ plugins:
         util: 'TES5Edit v4.0.3f'
   - name: 'JSwordsDistributionBalancePlugin.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'Version 14.0 compatibility patch fixed and cleaned with TES5Edit can be obtained [here](https://www.nexusmods.com/skyrim/mods/26230).'
-          - lang: de
-            text: 'Der Kompatibilitätspatch Version 14.0, ausgebessert und gesäubert mit TES5Edit, kann [hier](https://www.nexusmods.com/skyrim/mods/26230) heruntergeladen werden.'
-          - lang: ja
-            text: '[こちら](https://www.nexusmods.com/skyrim/mods/26230)からTES5Editで修正しクリーニングを行った14.0の互換パッチを入手できます。'
-        condition: 'version("JSwordsDistributionBalancePlugin.esp","14.0",<)'
+      - <<: *obsoleteSharlikran
+        condition: 'version("JSwordsDistributionBalancePlugin.esp", "14.0", <)'
     tag:
       - Delev
       - Relev
