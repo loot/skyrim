@@ -1236,6 +1236,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/14019/'
         name: 'Light up the night - People Have Torches'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Light up the night ESP' ]
+        condition: 'many("People Have (Lanterns|Torches)\.esp")'
   - name: 'People Have Lanterns.esp'
     msg:
       - type: say
@@ -1248,7 +1252,6 @@ plugins:
             text: 'バージョンが1.2.2未満の場合は最新版に更新してください。'
         condition: 'not checksum("People Have Lanterns.esp", DC3B2BAE)'
   - name: 'People Have Torches.esp'
-    inc: [ 'People Have Lanterns.esp' ]
     msg:
       - type: say
         content:
