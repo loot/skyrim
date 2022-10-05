@@ -1232,6 +1232,30 @@ plugins:
       - crc: 0xB7A24777
         util: 'TES5Edit v4.0.2i'
 
+  - name: 'People Have Lanterns.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'If this file is not higher than v1.2.2, update to the latest version.'
+          - lang: de
+            text: 'Wenn diese Datei nicht neuer als v1.2.2 ist, aktualisieren Sie sie auf die neueste Version.'
+          - lang: ja
+            text: 'バージョンが1.2.2未満の場合は最新版に更新してください。'
+        condition: 'not checksum("People Have Lanterns.esp", DC3B2BAE)'
+  - name: 'People Have Torches.esp'
+    inc: [ 'People Have Lanterns.esp' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'If this file is not higher than v1.2.2, update to the latest version.'
+          - lang: de
+            text: 'Wenn diese Datei nicht neuer als v1.2.2 ist, aktualisieren Sie sie auf die neueste Version.'
+          - lang: ja
+            text: 'バージョンが1.2.2未満の場合は最新版に更新してください。'
+        condition: 'not checksum("People Have Torches.esp", 7E5D2415)'
+
   - name: 'Purity.esp'
     url:
       - link: 'https://drive.google.com/file/d/13h2nfiK7GPjw0xPtJCzfiNx3FWkDym_w/'
@@ -6427,29 +6451,7 @@ plugins:
     req:
       - *SKSE
       - *SkyUI
-  - name: 'People Have Lanterns.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'If this file is not higher than v1.2.2, update to the latest version.'
-          - lang: de
-            text: 'Wenn diese Datei nicht neuer als v1.2.2 ist, aktualisieren Sie sie auf die neueste Version.'
-          - lang: ja
-            text: 'バージョンが1.2.2未満の場合は最新版に更新してください。'
-        condition: 'not checksum("People Have Lanterns.esp", DC3B2BAE)'
-  - name: 'People Have Torches.esp'
-    inc: [ 'People Have Lanterns.esp' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'If this file is not higher than v1.2.2, update to the latest version.'
-          - lang: de
-            text: 'Wenn diese Datei nicht neuer als v1.2.2 ist, aktualisieren Sie sie auf die neueste Version.'
-          - lang: ja
-            text: 'バージョンが1.2.2未満の場合は最新版に更新してください。'
-        condition: 'not checksum("People Have Torches.esp", 7E5D2415)'
+
   - name: 'Perks Unbound.esp'
     msg:
       - type: say
