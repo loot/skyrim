@@ -1152,6 +1152,10 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/27443/'
         name: 'Better Torches'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Better Torches ESP' ]
+        condition: 'many("better_torches(_brighter_torchlight)?\.esp")'
   - name: 'better_torches.esp'
     msg:
       - type: warn
@@ -1168,7 +1172,6 @@ plugins:
       - crc: 0xB7F684D4
         util: 'TES5Edit v4.0.2i'
   - name: 'better_torches_brighter_torchlight.esp'
-    inc: [ 'better_torches.esp' ]
     msg:
       - type: warn
         content:
