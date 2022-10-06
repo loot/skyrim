@@ -2208,6 +2208,31 @@ plugins:
       - crc: 0x83E18690
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'Warburg''s 3D Paper World Map - (dawnguard|Dragonborn|Texture [12])\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/25501/'
+        name: 'Paper World Map'
+  - name: 'Warburg''s 3D Paper World Map - Texture [12]\.esp'
+    group: *alternateStartGroup
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Paper World Map Texture ESP' ]
+        condition: 'many("Warburg''s 3D Paper World Map - Texture [12]\.esp")'
+  - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xC243A5F2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+  - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xAAFE91D6
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 10
+  - name: 'Warburg''s 3D Paper World Map - (dawnguard|Dragonborn)\.esp'
+    group: *mapMarkersGroup
+
 ###### Items ######
   - name: 'Book Covers Skyrim.esp'
     url:
@@ -24148,42 +24173,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("World_Map_Height_Pitch_Tweak(_(130|170|200|250|Vanilla_pitch))?(_50|_90)?\.esp")'
         subs: [ 'World_Map_Height_Pitch_Tweak .esp file' ]
-  - name: 'Warburg''s 3D Paper World Map - Texture [12]\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/25501/'
-        name: 'Paper World Map'
-    group: *alternateStartGroup
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'In case of persistent zoom-in issues, consider creating and using a Userlist to load the map lower, below any dynamic plugin(s).'
-          - lang: de
-            text: 'Bei anhaltenden Problemen mit dem Zoomen sollten Sie eine Benutzerliste erstellen und verwenden, um die Karte unter allen dynamischen Plug-ins zu laden.'
-          - lang: ja
-            text: 'ズームイン時に問題が発生し続ける場合、ユーザーリストを編集してなるべく下の方、動的に生成されたプラグインの後にロードさせてください。'
-  - name: 'Warburg''s 3D Paper World Map - Texture 1.esp'
-    inc: [ 'Warburg''s 3D Paper World Map - Texture 2.esp' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xC243A5F2
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 10
-  - name: 'Warburg''s 3D Paper World Map - Texture 2.esp'
-    inc: [ 'Warburg''s 3D Paper World Map - Texture 1.esp' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0xAAFE91D6
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 10
-  - name: 'Warburg''s 3D Paper World Map - (Dawnguard|Dragonborn)\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/25501/'
-        name: 'Paper World Map'
-    group: *mapMarkersGroup
-    after:
-      - 'Warburg''s 3D Paper World Map - Texture 1.esp'
-      - 'Warburg''s 3D Paper World Map - Texture 2.esp'
 
   - name: 'TES5Merged.esp'
     group: *dynamicPatchGroup
