@@ -2255,6 +2255,17 @@ plugins:
       - 'EBS - Books (Before).esp'
       - 'EBS - Books (After).esp'
 
+  - name: 'TrissArmorRetextured.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/4708/'
+        name: 'Triss Armor Retextured CBBE HDT'
+      - link: 'https://www.nexusmods.com/skyrim/mods/26230/'
+        name: 'Sharlikran''s Compatibility Patches'
+    msg:
+      - <<: *obsolete
+        subs: [ '[Triss Armor Retextured CBBE HDT](https://www.nexusmods.com/skyrim/mods/4708/)' ]
+        condition: 'checksum("TrissArmorRetextured.esp", 342AD937)'
+
   - name: 'Unique Uniques.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/33292/'
@@ -9766,30 +9777,7 @@ plugins:
         subs: [ 'Meshes and textures from [Tribunal Maskes by Zairaam](https://www.nexusmods.com/skyrim/mods/20077/), esp usage optional' ]
   - name: 'TorchArrow-Dawnguard.esp'
     inc: [ 'TorchArrow.esp' ]
-  - name: 'TrissArmorRetextured.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'As of version 3.0 Sharlikran''s Compatibility Patch is no longer needed.'
-          - lang: de
-            text: 'Ab Version 3.0 wird Sharlikran''s Kompatibilitätspatch nicht mehr benötigt.'
-          - lang: ja
-            text: '3.0以降ではSharlikran''s Compatibility Patchは不要です。'
-        condition: 'version("TrissArmorRetextured.esp","2.1.1",>)'
-      - type: warn
-        condition: 'checksum("TrissArmorRetextured.esp", ED5D1DE)'
-        content:
-          - lang: en
-            text: 'Version 2.1.1 was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. [Dovahkiin Hideout Continued](https://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: de
-            text: 'Version 2.1.1 wurde vor dem Creation Kit (07 Feb. 2012) veröffentlicht. Ein Kompatibilitätspatch, ausgebessert und gesäubert mit TES5Edit, kann hier gefunden werden: [Dovahkiin Hideout Continued](https://www.nexusmods.com/skyrim/mods/43593)'
-          - lang: es
-            text: 'Version 2.1.1 fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. [Dovahkiin Hideout Continued](https://www.nexusmods.com/skyrim/mods/43593).'
-          - lang: ja
-            text: 'バージョン2.1.1はCreation Kitのリリース日（2012年2月7日）より前にリリースされています。[Dovahkiin Hideout Continued](https://www.nexusmods.com/skyrim/mods/43593)からTES5Editで修正しクリーニングを行った互換パッチを入手可能です。'
-          - lang: ru
-            text: 'Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден [Dovahkiin Hideout Continued](https://www.nexusmods.com/skyrim/mods/43593). Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.'
+
   - name: 'UnenchantedNightingaleArmour.esp'
     msg: [ *obsolete ]
   - name: 'UniqueLeveledItemsUpgrade(1dot)?\d?\.esp'
