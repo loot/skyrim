@@ -2062,6 +2062,20 @@ plugins:
   - name: 'LB_MuchAdoSnowElves_WeaponsOnly.esp'
     inc: [ 'LB_MuchAdoSnowElves_Quest.esp' ]
 
+###### Gameplay - Skills & Perks ######
+  - name: 'Perks Unbound( - Helmless Warrior)?( - (Dawnguard|Dragonborn|Merged))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/19538/'
+        name: 'Perks Unbound - Legendary Edition'
+  - name: 'Perks Unbound.esp'
+    msg:
+      - <<: *useVersion
+        type: warn
+        subs: [ 'Merged' ]
+        condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp")'
+  - name: 'Perks Unbound - Helmless Warrior.esp'
+    inc: [ 'Perks Unbound.esp' ]
+
 ###### Gameplay - User Interface ######
   - name: 'AHZmoreHUD.esp'
     url:
@@ -6437,19 +6451,6 @@ plugins:
       - *SKSE
       - *SkyUI
 
-  - name: 'Perks Unbound.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Update (PU,PU-DG,PU-DB) to Perks Unbound - Merged.esp'
-          - lang: de
-            text: 'Aktualisiere (PU,PU-DG,PU-DB) auf Perks Unbound - Merged.esp'
-          - lang: ja
-            text: 'Perks Unbound.esp（- Dawnguard & Dragonborn）をPerks Unbound - Merged.espに更新してください。'
-        condition: 'file("Perks Unbound - Dragonborn.esp") and file("Perks Unbound - Dawnguard.esp")'
-  - name: 'Perks Unbound - Helmless Warrior.esp'
-    inc: [ 'Perks Unbound.esp' ]
   - name: 'pf_removeenchantingrestrictions.esp'
     msg: [ *corrupt ]
   - name: 'phiNoFF.esp'
