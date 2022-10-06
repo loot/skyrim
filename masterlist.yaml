@@ -2046,12 +2046,13 @@ plugins:
       - 'EMViljessicaPatch.esp'
       - 'PC Exclusive Animation Path - Vilja.esp'
     inc: [ 'BDO.esp' ]
-    req:
-      - name: 'UFO - Dawnguard AddOn.esp'
-        condition: 'active("Dawnguard.esm") and checksum("UFO - Ultimate Follower Overhaul.esp", 396AE69F)'
-      - name: 'UFO - Heartfire AddOn.esp'
-        condition: 'active("HearthFires.esm") and checksum("UFO - Ultimate Follower Overhaul.esp", 396AE69F)'
     msg:
+      - <<: *patchProvided
+        subs: [ 'Dawnguard' ]
+        condition: 'active("Dawnguard.esm") and checksum("UFO - Ultimate Follower Overhaul.bsa", F1E51273) and not active("UFO - Dawnguard AddOn.esp")'
+      - <<: *patchProvided
+        subs: [ 'Hearthfire' ]
+        condition: 'active("HearthFires.esm") and checksum("UFO - Ultimate Follower Overhaul.bsa", F1E51273) and not active("UFO - Heartfire AddOn.esp")'
       - type: say
         content:
           - lang: en
