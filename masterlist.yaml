@@ -2262,15 +2262,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/26230/'
         name: 'Sharlikran''s Compatibility Patches'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'As of version 3.0 Sharlikran''s Compatibility Patch is no longer needed.'
-          - lang: de
-            text: 'Ab Version 3.0 wird Sharlikran''s Kompatibilitätspatch nicht mehr benötigt.'
-          - lang: ja
-            text: '3.0以降ではSharlikran''s Compatibility Patchは不要です。'
-        condition: 'version("TrissArmorRetextured.esp","2.1.1",>)'
+      - <<: *obsolete
+        subs: [ '[Triss Armor Retextured CBBE HDT](https://www.nexusmods.com/skyrim/mods/4708/)' ]
+        condition: 'checksum("TrissArmorRetextured.esp", 342AD937)'
 
   - name: 'Unique Uniques.esp'
     url:
