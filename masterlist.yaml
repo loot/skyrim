@@ -992,20 +992,6 @@ plugins:
         name: 'Radiant and Unique Potions and Poisons HD'
   - name: 'Radiant and Unique Potions Poisons and BOOZE.esp'
     tag: [ Graphics ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Uninstall Unique BOOZE Bottles.'
-          - lang: de
-            text: 'Deinstallieren Sie Unique BOOZE Bottles.'
-          - lang: es
-            text: 'Desinstala Unique BOOZE Bottles.'
-          - lang: ja
-            text: 'Unique BOOZE Bottlesをアンインストールしてください。'
-          - lang: ru
-            text: 'Деинсталируйте Unique BOOZE Bottles.'
-        condition: 'file("Unique BOOZE Bottles.*\.esp")'
   - name: 'Radiant and Unique Potions and Poisons.esp'
     msg: [ *obsolete ]
 
@@ -1014,6 +1000,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/19922/'
         name: 'Unique Booze Bottles HD'
     msg:
+      - <<: *alreadyInX
+        subs: [ '**Radiant and Unique Potions Poisons and BOOZE.esp**' ]
+        condition: 'file("Radiant and Unique Potions Poisons and BOOZE.esp")'
       - <<: *alreadyInX
         subs: [ '**RND_UniqueBoozeBottles-Patch.esp**' ]
         condition: 'file("RND_UniqueBoozeBottles-Patch.esp")'
