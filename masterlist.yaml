@@ -1756,6 +1756,16 @@ plugins:
   - name: 'RND_USKP-Patch.esp'
     tag: [ Relev ]
 
+  - name: 'SkyRealism - Capacity and Carry Weight.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/21224/'
+        name: 'SkyRealism - Capacity'
+    req: [ *SKSE ]
+    msg:
+      - <<: *useVersionDawnguard
+        type: warn
+        condition: 'active("Dawnguard.esm") and checksum("SkyRealism - Capacity and Carry Weight.esp", 4F1987E0)'
+
   - name: 'UsefulDogs.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/64021/'
@@ -19394,20 +19404,7 @@ plugins:
     after: [ '3DNPC.esp' ]
   - name: 'FalskaarRNDHotfix.esp'
     after: [ '3DNPC.esp' ]
-  - name: 'SkyRealism - Capacity and Carry Weight.esp'
-    req: [ *SKSE ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You are not using the Dawnguard compatible version.'
-          - lang: de
-            text: 'Sie verwenden nicht die Dawnguard kompatible Version.'
-          - lang: ja
-            text: 'Dawnguard互換バージョンを使用していません。'
-          - lang: ru
-            text: 'Рекомендуется использовать совместимую с Dawnguard версию.'
-        condition: 'active("Dawnguard.esm") and not checksum("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) and not checksum("SkyRealism - Capacity and Carry Weight.esp", 31764A66)'
+
   - name: 'SkyRealism - Portable Crafting Kits.esp'
     req: [ *SKSE ]
   - name: 'SkyrimHeartRate.esp'
