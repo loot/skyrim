@@ -1148,6 +1148,25 @@ plugins:
         condition: 'many("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp")'
 
 ###### AudioVisual - Weather & Lighting ######
+  - name: 'better_torches(_brighter_torchlight)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/27443/'
+        name: 'Better Torches'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Better Torches ESP' ]
+        condition: 'many("better_torches(_brighter_torchlight)?\.esp")'
+  - name: 'better_torches.esp'
+    clean:
+      # v1.1
+      - crc: 0xB7F684D4
+        util: 'TES5Edit v4.0.2i'
+  - name: 'better_torches_brighter_torchlight.esp'
+    clean:
+      # v1.1
+      - crc: 0x29540D4F
+        util: 'TES5Edit v4.0.2i'
+
   - name: 'ClimatesOfTamriel(-(Dawnguard|Dragonborn|Dungeons|Interiors|Nights|Winter).*)?\.es[mp]'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/17802/'
@@ -4671,39 +4690,7 @@ plugins:
   - name: 'LIAT - (AI Packages|Crowded|Less Visitors|Lively Inns and Taverns|More Visitors)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19841/' ]
     msg: [ *obsolete ]
-  - name: 'better_torches.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/27443/' ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This mod appears to have a duplicated cell. You may encounter ''weirdness'' in the Riften Ratway.'
-          - lang: de
-            text: 'Diese Mod scheint eine duplizierte Zelle zu haben. Möglicherweise verhält sich der Riften Ratway etwas ''verrückt''.'
-          - lang: ja
-            text: 'このModには重複したセルが存在するようです。リフテンのラットウェイがおかしなことになっているかもしれません。'
-        condition: 'checksum("better_torches.esp", 9F5EA6E6) or checksum("better_torches.esp", 96F75656)'
-    clean:
-      # v1.1
-      - crc: 0xB7F684D4
-        util: 'TES5Edit v4.0.2i'
-  - name: 'better_torches_brighter_torchlight.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/27443/' ]
-    inc: [ 'better_torches.esp' ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This mod appears to have a duplicated cell. You may encounter ''weirdness'' in the Riften Ratway.'
-          - lang: de
-            text: 'Diese Mod scheint eine duplizierte Zelle zu haben. Möglicherweise verhält sich der Riften Ratway etwas ''verrückt''.'
-          - lang: ja
-            text: 'このModには重複したセルが存在するようです。リフテンのラットウェイがおかしなことになっているかもしれません。'
-        condition: 'checksum("better_torches_brighter_torchlight.esp", 9BEBAD4D) or checksum("better_torches_brighter_torchlight.esp", CB5777CE)'
-    clean:
-      # v1.1
-      - crc: 0x29540D4F
-        util: 'TES5Edit v4.0.2i'
+
   - name: 'DynamicTorches.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8070/' ]
     dirty:
