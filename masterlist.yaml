@@ -1530,12 +1530,14 @@ plugins:
         itm: 7
 
 ###### Gameplay ######
+  - name: 'Better Vampires.*\.esp'
   - name: 'Better Vampires.esp'
     after: [ 'Requiem.esp' ]
     msg:
       - <<: *patchIncluded
         subs: [ 'Requiem' ]
         condition: 'active("Requiem.esp") and not active("Requiem - Better Vampires Patch.esp")'
+  - name: 'Better Vampires (ML)?( ?- No DawnGuard)?\.esp'
   - name: 'Better Vampires ML.esp'
     inc:
       - 'Better Vampires.esp'
