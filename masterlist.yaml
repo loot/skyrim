@@ -1762,17 +1762,9 @@ plugins:
         name: 'SkyRealism - Capacity'
     req: [ *SKSE ]
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You are not using the Dawnguard compatible version.'
-          - lang: de
-            text: 'Sie verwenden nicht die Dawnguard kompatible Version.'
-          - lang: ja
-            text: 'Dawnguard互換バージョンを使用していません。'
-          - lang: ru
-            text: 'Рекомендуется использовать совместимую с Dawnguard версию.'
-        condition: 'active("Dawnguard.esm") and not checksum("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) and not checksum("SkyRealism - Capacity and Carry Weight.esp", 31764A66)'
+      - <<: *useVersionDawnguard
+        type: warn
+        condition: 'active("Dawnguard.esm") and checksum("SkyRealism - Capacity and Carry Weight.esp", 4F1987E0)'
 
   - name: 'UsefulDogs.esp'
     url:
