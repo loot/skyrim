@@ -2063,6 +2063,19 @@ plugins:
     inc: [ 'LB_MuchAdoSnowElves_Quest.esp' ]
 
 ###### Gameplay - Skills & Perks ######
+  - name: 'Perks Unbound.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Update (PU,PU-DG,PU-DB) to Perks Unbound - Merged.esp'
+          - lang: de
+            text: 'Aktualisiere (PU,PU-DG,PU-DB) auf Perks Unbound - Merged.esp'
+          - lang: ja
+            text: 'Perks Unbound.esp（- Dawnguard & Dragonborn）をPerks Unbound - Merged.espに更新してください。'
+        condition: 'file("Perks Unbound - Dragonborn.esp") and file("Perks Unbound - Dawnguard.esp")'
+  - name: 'Perks Unbound - Helmless Warrior.esp'
+    inc: [ 'Perks Unbound.esp' ]
 
 ###### Gameplay - User Interface ######
   - name: 'AHZmoreHUD.esp'
@@ -6439,19 +6452,6 @@ plugins:
       - *SKSE
       - *SkyUI
 
-  - name: 'Perks Unbound.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Update (PU,PU-DG,PU-DB) to Perks Unbound - Merged.esp'
-          - lang: de
-            text: 'Aktualisiere (PU,PU-DG,PU-DB) auf Perks Unbound - Merged.esp'
-          - lang: ja
-            text: 'Perks Unbound.esp（- Dawnguard & Dragonborn）をPerks Unbound - Merged.espに更新してください。'
-        condition: 'file("Perks Unbound - Dragonborn.esp") and file("Perks Unbound - Dawnguard.esp")'
-  - name: 'Perks Unbound - Helmless Warrior.esp'
-    inc: [ 'Perks Unbound.esp' ]
   - name: 'pf_removeenchantingrestrictions.esp'
     msg: [ *corrupt ]
   - name: 'phiNoFF.esp'
