@@ -2030,6 +2030,62 @@ plugins:
   - name: '(Follower Limit Increased|XFL(Dialogue|Main|Plugins))\.es[mp]'
     msg: [ *obsolete ]
 
+  - name: 'UFO - (Ultimate Follower Overhaul|(Dawnguard|Heartfire) AddOn|AllwaysDrawWeapons)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/14037/'
+        name: 'UFO - Ultimate Follower Overhaul'
+  - name: 'UFO - Ultimate Follower Overhaul.esp'
+    after:
+      - 'brhucefollower.esp'
+      - 'brhucelegacy.esp'
+      - 'EMViljangelinaPatch.esp'
+      - 'EMViljessicaPatch.esp'
+      - 'EMCompViljaNarphousHeadPatch.esp'
+      - 'EMCompViljaSkyrimBodyPatch.esp'
+      - 'PC Exclusive Animation Path - Vilja.esp'
+      - 'EMCompViljaSkyrim.esp'
+      - 'EMViljaInSolstheimAddOn.esp'
+    inc: [ 'BDO.esp' ]
+    req:
+      - name: 'UFO - Dawnguard AddOn.esp'
+        condition: 'active("Dawnguard.esm") and checksum("UFO - Ultimate Follower Overhaul.esp", 396AE69F)'
+      - name: 'UFO - Heartfire AddOn.esp'
+        condition: 'active("HearthFires.esm") and checksum("UFO - Ultimate Follower Overhaul.esp", 396AE69F)'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on [mod page](https://www.nexusmods.com/skyrim/mods/14037).'
+          - lang: de
+            text: 'Für eine sichere Installation müssen Sie alle Ihre Begleiter entlassen, speichern, alle enthaltenen Mods löschen, erneut laden, UFO speichern und installieren. Informationen zum sicheren Deinstallieren oder Aktualisieren finden Sie in den speziellen Anweisungen auf der [Mod Seite](https://www.nexusmods.com/skyrim/mods/14037).'
+          - lang: ja
+            text: '安全にインストールするには従者全員と別れてからセーブし、関連Modをすべて削除してからロード→セーブしたデータを使ってください。アンインストールまたは更新の方法については[公開ページ](https://www.nexusmods.com/skyrim/mods/14037)にある専用手順を参照してください。'
+          - lang: ru
+            text: 'Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на [странице мода](https://www.nexusmods.com/skyrim/mods/14037)(Eng).'
+    dirty:
+      # v1.2i
+      - <<: *quickClean
+        crc: 0x396AE69F
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+      # vAIO1.2i
+      - <<: *quickClean
+        crc: 0xA0084D3B
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 24
+  - name: 'UFO - Dawnguard AddOn.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x0A7A56D2
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+  - name: 'UFO - Heartfire AddOn.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x047AA94A
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+
 ###### Gameplay - NPC Behaviour & Dialogue ######
   - name: 'CompanionsAriseFinal.esp'
     url:
@@ -22068,61 +22124,6 @@ plugins:
         itm: 13
         udr: 10
 
-  - name: 'UFO - (Ultimate Follower Overhaul|(Dawnguard|Heartfire) AddOn|AllwaysDrawWeapons)\.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/14037/'
-        name: 'UFO - Ultimate Follower Overhaul'
-  - name: 'UFO - Ultimate Follower Overhaul.esp'
-    after:
-      - 'brhucefollower.esp'
-      - 'brhucelegacy.esp'
-      - 'EMViljangelinaPatch.esp'
-      - 'EMViljessicaPatch.esp'
-      - 'EMCompViljaNarphousHeadPatch.esp'
-      - 'EMCompViljaSkyrimBodyPatch.esp'
-      - 'PC Exclusive Animation Path - Vilja.esp'
-      - 'EMCompViljaSkyrim.esp'
-      - 'EMViljaInSolstheimAddOn.esp'
-    inc: [ 'BDO.esp' ]
-    req:
-      - name: 'UFO - Dawnguard AddOn.esp'
-        condition: 'active("Dawnguard.esm") and checksum("UFO - Ultimate Follower Overhaul.esp", 396AE69F)'
-      - name: 'UFO - Heartfire AddOn.esp'
-        condition: 'active("HearthFires.esm") and checksum("UFO - Ultimate Follower Overhaul.esp", 396AE69F)'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on [mod page](https://www.nexusmods.com/skyrim/mods/14037).'
-          - lang: de
-            text: 'Für eine sichere Installation müssen Sie alle Ihre Begleiter entlassen, speichern, alle enthaltenen Mods löschen, erneut laden, UFO speichern und installieren. Informationen zum sicheren Deinstallieren oder Aktualisieren finden Sie in den speziellen Anweisungen auf der [Mod Seite](https://www.nexusmods.com/skyrim/mods/14037).'
-          - lang: ja
-            text: '安全にインストールするには従者全員と別れてからセーブし、関連Modをすべて削除してからロード→セーブしたデータを使ってください。アンインストールまたは更新の方法については[公開ページ](https://www.nexusmods.com/skyrim/mods/14037)にある専用手順を参照してください。'
-          - lang: ru
-            text: 'Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на [странице мода](https://www.nexusmods.com/skyrim/mods/14037)(Eng).'
-    dirty:
-      # v1.2i
-      - <<: *quickClean
-        crc: 0x396AE69F
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 24
-      # vAIO1.2i
-      - <<: *quickClean
-        crc: 0xA0084D3B
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 24
-  - name: 'UFO - Dawnguard AddOn.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x0A7A56D2
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 2
-  - name: 'UFO - Heartfire AddOn.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x047AA94A
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 2
   - name: 'UFO - Dragonborn AddOn - Unofficial.esp'
     inc: [ 'UFO - Dragonborn AddOn.esp' ]
     msg:
