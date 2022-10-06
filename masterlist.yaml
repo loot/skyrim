@@ -1530,6 +1530,52 @@ plugins:
         itm: 7
 
 ###### Gameplay ######
+  - name: 'Better Vampires.esp'
+    after: [ 'Requiem.esp' ]
+    msg:
+      - <<: *patchIncluded
+        condition: 'active("Requiem.esp") and not active("Requiem - Better Vampires Patch.esp")'
+        subs: [ 'Requiem' ]
+  - name: 'Better Vampires ML.esp'
+    inc:
+      - 'Better Vampires.esp'
+      - 'Better Vampires DG.esp'
+  - name: 'Better Vampires ML - No DawnGuard.esp'
+    inc:
+      - 'Better Vampires.esp'
+      - 'Better Vampires DG.esp'
+      - 'Better Vampires ML.esp'
+      - 'Better Vampires - No DawnGuard.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'You need the Dawnguard version of better vampires to work as intended with dawnguard.'
+          - lang: de
+            text: 'Sie benötigen die Dawnguard Version von better vampires, damit alles mit Dawnguard wie vorgesehen funktioniert.'
+          - lang: ja
+            text: 'Dawnguard環境下で本来の動作をさせるには、DawnguardバージョンのBetter Vampiresを使用する必要があります。'
+          - lang: ru
+            text: 'Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.'
+        condition: 'active("Dawnguard.esm")'
+  - name: 'Better Vampires - No DawnGuard.esp'
+    inc:
+      - 'Better Vampires.esp'
+      - 'Better Vampires DG.esp'
+      - 'Better Vampires ML.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'You need the Dawnguard version of better vampires to work as intended with dawnguard.'
+          - lang: de
+            text: 'Sie benötigen die Dawnguard Version von better vampires, damit alles mit Dawnguard wie vorgesehen funktioniert.'
+          - lang: ja
+            text: 'Dawnguard環境下で本来の動作をさせるには、DawnguardバージョンのBetter Vampiresを使用する必要があります。'
+          - lang: ru
+            text: 'Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.'
+        condition: 'active("Dawnguard.esm")'
+
   - name: 'BorderRegionsDisabled(EV)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/9596/'
@@ -19512,51 +19558,6 @@ plugins:
         util: 'TES5Edit v4.0.1'
   - name: 'Better Vampires DG.esp'
     msg: [ *obsolete ]
-  - name: 'Better Vampires.esp'
-    after: [ 'Requiem.esp' ]
-    msg:
-      - <<: *patchIncluded
-        condition: 'active("Requiem.esp") and not active("Requiem - Better Vampires Patch.esp")'
-        subs: [ 'Requiem' ]
-  - name: 'Better Vampires ML.esp'
-    inc:
-      - 'Better Vampires.esp'
-      - 'Better Vampires DG.esp'
-  - name: 'Better Vampires - No DawnGuard.esp'
-    inc:
-      - 'Better Vampires.esp'
-      - 'Better Vampires DG.esp'
-      - 'Better Vampires ML.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need the Dawnguard version of better vampires to work as intended with dawnguard.'
-          - lang: de
-            text: 'Sie benötigen die Dawnguard Version von better vampires, damit alles mit Dawnguard wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'Dawnguard環境下で本来の動作をさせるには、DawnguardバージョンのBetter Vampiresを使用する必要があります。'
-          - lang: ru
-            text: 'Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.'
-        condition: 'active("Dawnguard.esm")'
-  - name: 'Better Vampires ML - No DawnGuard.esp'
-    inc:
-      - 'Better Vampires.esp'
-      - 'Better Vampires DG.esp'
-      - 'Better Vampires ML.esp'
-      - 'Better Vampires - No DawnGuard.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'You need the Dawnguard version of better vampires to work as intended with dawnguard.'
-          - lang: de
-            text: 'Sie benötigen die Dawnguard Version von better vampires, damit alles mit Dawnguard wie vorgesehen funktioniert.'
-          - lang: ja
-            text: 'Dawnguard環境下で本来の動作をさせるには、DawnguardバージョンのBetter Vampiresを使用する必要があります。'
-          - lang: ru
-            text: 'Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.'
-        condition: 'active("Dawnguard.esm")'
   - name: 'godly werewold.esp'
     url:
       - link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=85627684'
