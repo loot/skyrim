@@ -1771,17 +1771,11 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/35050/'
         name: 'Skyrim Heart Rate Beta'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'A patch for Skyrim Heart Rate is available for people using Think to Yourself Messages. It is available [at the Skyrim Nexus](https://www.nexusmods.com/skyrim/mods/36182).'
-          - lang: de
-            text: 'Für Benutzer von Think to Yourself Messages ist ein Patch für die Skyrim-Herzfrequenz Mod verfügbar. Er ist erhältlich [im Skyrim Nexus](https://www.nexusmods.com/skyrim/mods/36182).'
-          - lang: ja
-            text: 'Think to Yourself Messagesを利用している方向けのSkyrim Heart Rateのパッチがあります。[Skyrim Nexus](https://www.nexusmods.com/skyrim/mods/36182)で入手可能です。'
-          - lang: ru
-            text: 'Патч для Skyrim Heart Rate доступен для людей, использующих сообщения из мода Think to Yourself. Доступен на [Skyrim Nexus](https://www.nexusmods.com/skyrim/mods/36182).'
-        condition: 'file("TTYM - Think to Yourself Messages.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Think To Yourself Messages'
+          - '[Skyrim Heart Rate - TTYM patch](https://www.nexusmods.com/skyrim/mods/36182/)'
+        condition: 'active("TTYM - Think to Yourself Messages.esp") and checksum("scripts/SHR_Strings.pex", DD3C5CA2)'
     # Do not clean
 
   - name: 'UsefulDogs.esp'
