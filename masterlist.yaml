@@ -986,11 +986,23 @@ plugins:
       - crc: 0xE87C93C0
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'Radiant and Unique Potions( and)? Poisons( v2\.0| and BOOZE)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/18799/'
+        name: 'Radiant and Unique Potions and Poisons HD'
+  - name: 'Radiant and Unique Potions Poisons and BOOZE.esp'
+    tag: [ Graphics ]
+  - name: 'Radiant and Unique Potions and Poisons.esp'
+    msg: [ *obsolete ]
+
   - name: 'Unique BOOZE Bottles( Alternate Names Version)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/19922/'
         name: 'Unique Booze Bottles HD'
     msg:
+      - <<: *alreadyInX
+        subs: [ '**Radiant and Unique Potions Poisons and BOOZE.esp**' ]
+        condition: 'file("Radiant and Unique Potions Poisons and BOOZE.esp")'
       - <<: *alreadyInX
         subs: [ '**RND_UniqueBoozeBottles-Patch.esp**' ]
         condition: 'file("RND_UniqueBoozeBottles-Patch.esp")'
@@ -6538,24 +6550,7 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 11
         udr: 71
-  - name: 'Radiant and Unique Potions and Poisons.esp'
-    msg: [ *obsolete ]
-  - name: 'Radiant and Unique Potions Poisons and BOOZE.esp'
-    tag: [ Graphics ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Uninstall Unique BOOZE Bottles.'
-          - lang: de
-            text: 'Deinstallieren Sie Unique BOOZE Bottles.'
-          - lang: es
-            text: 'Desinstala Unique BOOZE Bottles.'
-          - lang: ja
-            text: 'Unique BOOZE Bottlesをアンインストールしてください。'
-          - lang: ru
-            text: 'Деинсталируйте Unique BOOZE Bottles.'
-        condition: 'file("Unique BOOZE Bottles.*\.esp")'
+
   - name: 'Real Clouds.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/39450/' ]
     dirty:
