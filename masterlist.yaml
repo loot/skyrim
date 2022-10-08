@@ -2152,6 +2152,24 @@ plugins:
         subs: [ 'Extensible Follower Framework' ]
         condition: 'active("EFFCore.esm")'
 
+  - name: 'mjhKhajiitSpeak(DLC - Dawnguard|DLC - Hearthfire|DLC - Dragonborn)?\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/14513/' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'This mod overwrites all dialogue. You likely wish to enable only when playing as a Khajiit.'
+          - lang: de
+            text: 'Diese Mod überschreibt alle Dialoge. Sie möchten sie wahrscheinlich nur aktivieren, wenn Sie als Khajiit spielen.'
+          - lang: ja
+            text: 'このModはすべての会話選択肢を上書きします。カジートプレイをしたい時のみ有効にするといいでしょう。'
+          - lang: ru
+            text: 'Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.'
+  - name: 'mjhKhajiitSpeakExtra - Dagi-Raht.esp'
+    inc: [ 'mjhKhajiitSpeakExtra - Ohmes-Raht.esp' ]
+  - name: 'mjhKhajiitSpeakExtra - Ohmes-Raht.esp'
+    inc: [ 'mjhKhajiitSpeakExtra - Dagi-Raht.esp' ]
+
 ###### Gameplay - Quests ######
   - name: 'BarenziahQuestMarkers_Droppable.esp'
     url:
@@ -23159,23 +23177,7 @@ plugins:
       # v3.2 - clean
       - crc: 0xB7CFBB8D
         util: 'TES5Edit v4.0.3'
-  - name: 'mjhKhajiitSpeak(DLC - Dawnguard|DLC - Hearthfire|DLC - Dragonborn)?\.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/14513/' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This mod overwrites all dialogue. You likely wish to enable only when playing as a Khajiit.'
-          - lang: de
-            text: 'Diese Mod überschreibt alle Dialoge. Sie möchten sie wahrscheinlich nur aktivieren, wenn Sie als Khajiit spielen.'
-          - lang: ja
-            text: 'このModはすべての会話選択肢を上書きします。カジートプレイをしたい時のみ有効にするといいでしょう。'
-          - lang: ru
-            text: 'Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.'
-  - name: 'mjhKhajiitSpeakExtra - Dagi-Raht.esp'
-    inc: [ 'mjhKhajiitSpeakExtra - Ohmes-Raht.esp' ]
-  - name: 'mjhKhajiitSpeakExtra - Ohmes-Raht.esp'
-    inc: [ 'mjhKhajiitSpeakExtra - Dagi-Raht.esp' ]
+
   - name: 'BecomeKingofSkyrim.esp'
     url:
       - 'https://www.nexusmods.com/skyrim/mods/41087/'  # V1
