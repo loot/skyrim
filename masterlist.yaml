@@ -2169,10 +2169,12 @@ plugins:
           - lang: ru
             text: 'Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.'
   - name: 'mjhKhajiitSpeakExtra - (Dagi|Ohmes)-Raht\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Khajiit Speak Extra ESP' ]
+        condition: 'many("mjhKhajiitSpeakExtra - (Dagi|Ohmes)-Raht\.esp")'
   - name: 'mjhKhajiitSpeakExtra - Dagi-Raht.esp'
-    inc: [ 'mjhKhajiitSpeakExtra - Ohmes-Raht.esp' ]
   - name: 'mjhKhajiitSpeakExtra - Ohmes-Raht.esp'
-    inc: [ 'mjhKhajiitSpeakExtra - Dagi-Raht.esp' ]
 
 ###### Gameplay - Quests ######
   - name: 'BarenziahQuestMarkers_Droppable.esp'
