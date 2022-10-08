@@ -2195,6 +2195,32 @@ plugins:
   - name: 'LB_MuchAdoSnowElves_WeaponsOnly.esp'
     inc: [ 'LB_MuchAdoSnowElves_Quest.esp' ]
 
+  - name: '(Dawnguard - )?Vigilant of Stendarr Quests( Master| Patch)?\.es[mp]'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/13725/'
+        name: 'Vigilant of Stendarr Quests'
+  - name: 'Vigilant of Stendarr Quests.esp'
+    dirty:
+      # v1.5B
+      - <<: *quickClean
+        crc: 0xA0318472
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
+      # v1.5C
+      - <<: *quickClean
+        crc: 0x63846C4B
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 18
+  - name: 'Dawnguard - Vigilant of Stendarr Quests Patch.esp'
+    msg: [ *corrupt ]
+  - name: 'Vigilant of Stendarr Quests Master.esm'
+    dirty:
+      # v1.5
+      - <<: *quickClean
+        crc: 0x0B0207CF
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+
 ###### Gameplay - Skills & Perks ######
   - name: 'Perks Unbound( - Helmless Warrior)?( - (Dawnguard|Dragonborn|Merged))?\.esp'
     url:
@@ -3761,47 +3787,7 @@ plugins:
         crc: 0x40169648
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 88
-  - name: 'Vigilant of Stendarr Quests Master.esm'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13725/' ]
-    dirty:
-      # v1.5
-      - <<: *quickClean
-        crc: 0x0B0207CF
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 3
-  - name: 'Dawnguard - Vigilant of Stendarr Quests Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13725/' ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This patch is to be used only if the Hall of the Viligent has been "trashed" by the Dawnguard NPC''s.'
-          - lang: de
-            text: 'Dieser Patch darf nur verwendet werden, wenn die Halle der Wachsamkeit (eng: Hall of the Viligent) von den Dawnguard NPCs "verwüstet" wurde.'
-          - lang: ja
-            text: 'このパッチは番人の間がドーンガードのNPCによって「破壊」されている場合にのみ使用してください。'
-        condition: 'not active("Dawnguard.esm")'
-    dirty:
-      # v1.0
-      - <<: *quickClean
-        crc: 0x9F4D4339
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 8
-  - name: 'Vigilant of Stendarr Quests.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/13725/' ]
-    dirty:
-      # v1.5B
-      - <<: *quickClean
-        crc: 0xA0318472
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 18
-      # v1.5C
-      - <<: *quickClean
-        crc: 0x63846C4B
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 18
-  - name: 'Vigilant of Stendarr Quests No Joining Requirements Patch.esp'
-    msg: [ *obsolete ]
+
   - name: 'WARZONES - Civil Unrest.esm'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9494/' ]
     dirty:
