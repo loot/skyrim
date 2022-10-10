@@ -1601,20 +1601,6 @@ plugins:
       - <<: *useOnlyOneX
         subs: [ 'Better Followers ESP' ]
         condition: 'many("Better Followers - (S)?(B)?(N)?P\.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete %1% from %2%.'
-          - lang: de
-            text: 'Löschen Sie die Datei %1% aus dem Ordner %2%, falls vorhanden.'
-          - lang: ja
-            text: '%2%フォルダに%1%が入っていた場合はそのまま削除してください。'
-          - lang: ru
-            text: 'Удалите скрипт %1%, из папки %2%, если он существует.'
-        subs:
-          - 'Scripts/C01QuestScript.pex'
-          - 'Better Followers'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp") and checksum("Scripts/C01QuestScript.pex", CADBE633)'
   - name: 'Better Followers - BNP.esp'
     dirty:
       - <<: *quickClean
@@ -2248,6 +2234,9 @@ plugins:
       - 'PC Exclusive Animation Path - Vilja.esp'
     inc: [ 'BDO.esp' ]
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Better Followers' ]
+        condition: 'active("Better Followers - S?B?N?P\.esp") and checksum("Scripts/C01QuestScript.pex", CADBE633)'
       - <<: *patchProvided
         subs: [ 'Dawnguard' ]
         condition: 'active("Dawnguard.esm") and checksum("UFO - Ultimate Follower Overhaul.bsa", F1E51273) and not active("UFO - Dawnguard AddOn.esp")'
