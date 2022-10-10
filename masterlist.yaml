@@ -2206,6 +2206,58 @@ plugins:
       - crc: 0x39EA9697
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'BetterQuestObjectives(-DBForevertoMisc| ?-.+Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/32695/'
+        name: 'Even Better Quest Objectives'
+  - name: 'BetterQuestObjectives.esp'
+    group: *underridesGroup
+    msg:
+      - <<: *obsolete
+        subs: [ '[Even Better Quest Objectives](https://www.nexusmods.com/skyrim/mods/32695/)' ]
+        condition: 'checksum("BetterQuestObjectives.esp", BCD35920)'
+    tag: [ NoMerge ]
+    clean:
+      # version: 1.7
+      - crc: 0xF861B2A2
+        util: 'TES5Edit v4.0.1'
+  - name: 'BetterQuestObjectives-AlternateStartPatch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**Requiem - Live Another Life.esp**' ]
+        condition: 'active("Requiem - Live Another Life.esp")'
+  - name: 'BetterQuestObjectives-AMBSkyforgePatch.esp'
+    after: [ 'ESFCompanions.esp' ]
+  - name: 'BetterQuestObjectives-BSaQBPatch.esp'
+    msg:
+      - <<: *requiresX
+        subs: [ '[Better Skill and Quest Books Names](https://www.nexusmods.com/skyrim/mods/10125/)' ]
+        condition: 'not file("Better Skill and Quest Books Names( - BS)?\.esp")'
+  - name: 'BetterQuestObjectives-CRFPatch.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**Requiem - Cutting Room Floor.esp**' ]
+        condition: 'active("Requiem - Cutting Room Floor.esp")'
+  - name: 'BetterQuestObjectives-ESFCompanionsPatch.esp'
+    after: [ 'Brevi_MoonlightTales.esp' ]
+  - name: 'BetterQuestObjectives-Moonlight(Mastery)?Patch\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'EBQO & Moonlight Tales patch' ]
+        condition: 'many("BetterQuestObjectives-Moonlight(Mastery)?Patch\.esp")'
+  - name: 'BetterQuestObjectives-MoonlightMasteryPatch.esp'
+    msg:
+      - <<: *requiresX
+        type: error
+        subs: [ 'Moonlight Tales version of Werewolf Mastery' ]
+        condition: 'active("WerewolfMastery.esp") and not (checksum("WerewolfMastery.esp", DE432644) or checksum("WerewolfMastery.esp", 3C819E27))'
+  - name: 'BetterQuestObjectives-RequiemPatch.esp'
+    after: [ 'ESFCompanions.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**Requiem.esp**' ]
+        condition: 'active("Requiem.esp")'
+
   - name: 'Hebrock_Der Schatten von Meresis.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/25872/'
@@ -17058,42 +17110,7 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("BetterNordHeroWeapons.esp", 0B39EBC1)'
-  - name: 'BetterQuestObjectives.esp'
-    group: *underridesGroup
-    msg:
-      - <<: *obsolete
-        subs: [ '[Even Better Quest Objectives](https://www.nexusmods.com/skyrim/mods/32695/)' ]
-        condition: 'checksum("BetterQuestObjectives.esp", BCD35920)'
-    tag: [ NoMerge ]
-    clean:
-      # version: 1.7
-      - crc: 0xF861B2A2
-        util: 'TES5Edit v4.0.1'
-  - name: 'BetterQuestObjectives-AlternateStartPatch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Live Another Life.esp")'
-        subs: [ 'Requiem - Live Another Life.esp' ]
-  - name: 'BetterQuestObjectives-CRFPatch.esp'
-    msg:
-      - <<: *alreadyInX
-        condition: 'active("Requiem - Cutting Room Floor.esp")'
-        subs: [ 'Requiem - Cutting Room Floor.esp' ]
-  - name: 'BetterQuestObjectives-BSaQBPatch.esp'
-    msg:
-      - <<: *requiresX
-        subs: [ '[Better Skill and Quest Books Names](https://www.nexusmods.com/skyrim/mods/10125/)' ]
-        condition: 'not file("Better Skill and Quest Books Names.esp") or not file("Better Skill and Quest Books Names - BS.esp")'
-  - name: 'BetterQuestObjectives-BSaQB-BSPatch.esp'
-    msg:
-      - <<: *obsolete
-        subs: [ '[Nexus](https://www.nexusmods.com/skyrim/mods/32695/)' ]
-  - name: BetterQuestObjectives-RequiemPatch.esp
-    after: [ 'ESFCompanions.esp' ]
-    msg:
-      - <<: *alreadyInX
-        subs: [ 'Requiem.esp' ]
-        condition: 'active("Requiem.esp")'
+
   - name: 'REQ - BCS Patch.esp'
     inc:
       - name: 'Requiem.esp'
@@ -17460,8 +17477,7 @@ plugins:
         util: 'TES5Edit v4.0.2'
   - name: 'ESFCompanions - VilkasProvingHonorNoShowFix.esp'
     after: [ 'Brevi_MoonlightTales.esp' ]
-  - name: 'BetterQuestObjectives-ESFCompanionsPatch.esp'
-    after: [ 'Brevi_MoonlightTales.esp' ]
+
   - name: 'Essential Frost.esp'
     msg:
       - <<: *corrupt
@@ -18532,8 +18548,7 @@ plugins:
     req:
       - name: 'Weapons & Armor Fixes_Remade.esp'
         display: '[Weapon and Armor Fixes Remade](https://www.nexusmods.com/skyrim/mods/34093/?)'
-  - name: 'BetterQuestObjectives-AMBSkyforgePatch.esp'
-    after: [ 'ESFCompanions.esp' ]
+
   - name: 'WeaponsArmorFixes_MultiMod_(DLC)?(Vanilla)?Patch\.esp'
     req:
       - name: 'Weapons & Armor Fixes_Remade.esp'
@@ -19633,21 +19648,7 @@ plugins:
       # v3.0 - Dawnguard
       - crc: 0xA4647A07
         util: 'TES5Edit v4.0.4b'
-  - name: 'BetterQuestObjectives-MoonlightPatch.esp'
-    inc: [ 'BetterQuestObjectives-MoonlightMasteryPatch.esp' ]
-  - name: 'BetterQuestObjectives-MoonlightMasteryPatch.esp'
-    inc: [ 'BetterQuestObjectives-MoonlightPatch.esp' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This patch is only usable with the Moonlight Tales compatible version of Werewolf Mastery.'
-          - lang: de
-            text: 'Dieser Patch kann nur mit der Moonlight Tales-kompatiblen Version von Werewolf Mastery verwendet werden.'
-          - lang: ja
-            text: 'このパッチはWerewolf MasteryのMoonlight Tales互換版でのみ使用できます。'
-          - lang: ru
-            text: 'Этот патч используется только совместимой с Moonlight Tales версией Werewolf Mastery.'
+
   - name: 'YetAnotherWerewolfImprovement_DG.esp'
     inc: [ 'YetAnotherWerewolfImprovement.esp' ]
   - name: 'DawnguardDelayedStart(20|30|40|50|999)\.esp'
