@@ -2247,16 +2247,10 @@ plugins:
         condition: 'many("BetterQuestObjectives-Moonlight(Mastery)?Patch\.esp")'
   - name: 'BetterQuestObjectives-MoonlightMasteryPatch.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'This patch is only usable with the Moonlight Tales compatible version of Werewolf Mastery.'
-          - lang: de
-            text: 'Dieser Patch kann nur mit der Moonlight Tales-kompatiblen Version von Werewolf Mastery verwendet werden.'
-          - lang: ja
-            text: 'このパッチはWerewolf MasteryのMoonlight Tales互換版でのみ使用できます。'
-          - lang: ru
-            text: 'Этот патч используется только совместимой с Moonlight Tales версией Werewolf Mastery.'
+      - <<: *requiresX
+        type: error
+        subs: [ 'Moonlight Tales version of Werewolf Mastery' ]
+        condition: 'active("WerewolfMastery.esp") and not (checksum("WerewolfMastery.esp", DE432644) or checksum("WerewolfMastery.esp", 3C819E27))'
   - name: 'BetterQuestObjectives-MoonlightPatch.esp'
   - name: 'BetterQuestObjectives-RequiemPatch.esp'
     after: [ 'ESFCompanions.esp' ]
