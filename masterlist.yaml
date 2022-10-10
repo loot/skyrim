@@ -2241,8 +2241,11 @@ plugins:
   - name: 'BetterQuestObjectives-ESFCompanionsPatch.esp'
     after: [ 'Brevi_MoonlightTales.esp' ]
   - name: 'BetterQuestObjectives-Moonlight(Mastery)?Patch\.esp'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'EBQO & Moonlight Tales patch' ]
+        condition: 'many("BetterQuestObjectives-Moonlight(Mastery)?Patch\.esp")'
   - name: 'BetterQuestObjectives-MoonlightMasteryPatch.esp'
-    inc: [ 'BetterQuestObjectives-MoonlightPatch.esp' ]
     msg:
       - type: say
         content:
@@ -2255,7 +2258,6 @@ plugins:
           - lang: ru
             text: 'Этот патч используется только совместимой с Moonlight Tales версией Werewolf Mastery.'
   - name: 'BetterQuestObjectives-MoonlightPatch.esp'
-    inc: [ 'BetterQuestObjectives-MoonlightMasteryPatch.esp' ]
   - name: 'BetterQuestObjectives-RequiemPatch.esp'
     after: [ 'ESFCompanions.esp' ]
     msg:
