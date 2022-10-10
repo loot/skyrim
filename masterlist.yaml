@@ -1591,6 +1591,84 @@ plugins:
         itm: 7
 
 ###### Gameplay ######
+  - name: 'Better (Followers - S?B?N?P|NPC - Faction Pack)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/7554/'
+        name: 'Better Followers'
+  - name: 'Better Followers - S?B?N?P\.esp'
+    inc: [ 'TCG.esp' ]
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Better Followers ESP' ]
+        condition: 'many("Better Followers - S?B?N?P\.esp")'
+  - name: 'Better Followers - BNP.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x2F37E229
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+  - name: 'Better Followers - BP.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xEEDBCBE7
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+  - name: 'Better Followers - NP.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x8DB9F05E
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+  - name: 'Better Followers - P.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x7514FA0B
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+  - name: 'Better Followers - SBN?P\.esp'
+    msg:
+      - <<: *requiresX
+        subs: [ 'Better Followers - Armor Pack I' ]
+        condition: 'not file("meshes/armor/better followers")'
+  - name: 'Better Followers - SBNP.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x81D32E08
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+  - name: 'Better Followers - SBP.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x63344B7A
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 6
+  - name: 'Better Followers - SNP.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x3232C8E8
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+  - name: 'Better Followers - SP.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0xEBC0A97C
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 4
+  - name: 'Better NPC - Faction Pack.esp'
+    msg:
+      - <<: *requiresX
+        subs: [ 'Better Followers Beauty ESP' ]
+        condition: 'not active("Better Followers - S?BN?P\.esp")'
+    dirty:
+      - <<: *quickClean
+        crc: 0xBDC85BE7
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 3
+      - <<: *quickClean
+        crc: 0x87A4686B
+        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 2
+
   - name: 'Better Vampires.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/9717/'
@@ -2156,6 +2234,9 @@ plugins:
       - 'PC Exclusive Animation Path - Vilja.esp'
     inc: [ 'BDO.esp' ]
     msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Better Followers' ]
+        condition: 'active("Better Followers - S?B?N?P\.esp") and checksum("Scripts/C01QuestScript.pex", CADBE633)'
       - <<: *patchProvided
         subs: [ 'Dawnguard' ]
         condition: 'active("Dawnguard.esm") and checksum("UFO - Ultimate Follower Overhaul.bsa", F1E51273) and not active("UFO - Dawnguard AddOn.esp")'
@@ -22938,96 +23019,6 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Zeeri.esp", DDD4D989)'
-
-  ### Better Followers ###
-  - name: 'Better Followers - (S)?(B)?(N)?P\.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/7554/' ]
-    inc: [ 'TCG.esp' ]
-    msg:
-      - <<: *useOnlyOneX
-        subs: [ 'Better Followers ESP' ]
-        condition: 'many("Better Followers - (S)?(B)?(N)?P\.esp")'
-      - type: warn
-        content:
-          - lang: en
-            text: 'Delete %1% from %2%.'
-          - lang: de
-            text: 'Löschen Sie die Datei %1% aus dem Ordner %2%, falls vorhanden.'
-          - lang: ja
-            text: '%2%フォルダに%1%が入っていた場合はそのまま削除してください。'
-          - lang: ru
-            text: 'Удалите скрипт %1%, из папки %2%, если он существует.'
-        subs:
-          - 'Scripts/C01QuestScript.pex'
-          - 'Better Followers'
-        condition: 'file("UFO - Ultimate Follower Overhaul.esp") and checksum("Scripts/C01QuestScript.pex", CADBE633)'
-  - name: 'Better Followers - SB(N)?P\.esp'
-    msg:
-      - <<: *requiresX
-        subs: [ 'Better Followers - Armor Pack I' ]
-        condition: 'not file("meshes/armor/better followers")'
-  - name: 'Better Followers - NP.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x8DB9F05E
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 4
-  - name: 'Better Followers - P.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x7514FA0B
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 4
-  - name: 'Better Followers - BNP.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x2F37E229
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 6
-  - name: 'Better Followers - BP.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0xEEDBCBE7
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 6
-  - name: 'Better Followers - SNP.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x3232C8E8
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 4
-  - name: 'Better Followers - SP.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0xEBC0A97C
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 4
-  - name: 'Better Followers - SBNP.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x81D32E08
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 6
-  - name: 'Better Followers - SBP.esp'
-    dirty:
-      - <<: *quickClean
-        crc: 0x63344B7A
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 6
-  - name: 'Better NPC - Faction Pack.esp'
-    msg:
-      - <<: *requiresX
-        subs: [ 'Beautiful ESP' ]
-        condition: 'not file("Better Followers - (S)?B(N)?P\.esp")'
-    dirty:
-      - <<: *quickClean
-        crc: 0xBDC85BE7
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 3
-      - <<: *quickClean
-        crc: 0x87A4686B
-        util: '[TES5Edit v4.0.3f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 2
 
   - name: 'AskFollowerSkills.esp'
     msg: [ *alreadyInBDO ]
