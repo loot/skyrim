@@ -952,6 +952,16 @@ plugins:
       - crc: 0x23E4EB08
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'dD - Realistic Ragdoll Force - (Realistic|Reduced|Medium|High)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/601/'
+        name: 'Realistic Ragdolls and Force'
+    after: [ 'Requiem.esp' ]
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**XPMSE.esp**' ]
+        condition: 'active("XPMSE.esp")'
+
   - name: 'GuardAnimations(GDO)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/52326/'
@@ -10559,22 +10569,7 @@ plugins:
     after:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
       - 'Requiem_Minor_Arcana.esp'
-  - name: 'dD - Realistic Ragdoll Force - (Realistic|Reduced|Medium|High)\.esp'
-    after: [ 'Requiem.esp' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Ragdolls will conflict with other mods that change the skeleton.nif. Check [ Custom Skeleton Replacers](https://www.nexusmods.com/skyrim/mods/16712) for compatibly with other skeleton.nif.'
-          - lang: de
-            text: 'Ragdolls stehen in Konflikt mit anderen Mods, die das skeleton.nif verändern. Prüfen Sie [Custom Skeleton Replacers](https://www.nexusmods.com/skyrim/mods/16712) bzgl. Kompatibilität mit anderen skeleton.nif.'
-          - lang: ja
-            text: 'skeleton.nifを変更するModとラグドールが競合します。[Custom Skeleton Replacers](https://www.nexusmods.com/skyrim/mods/16712)にて他のskeleton.nifとの互換ファイルがないか確認してください。'
-          - lang: ru
-            text: 'Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу [ Custom Skeleton Replacers](https://www.nexusmods.com/skyrim/mods/16712), для поддержки других версий skeleton.nif или попробуйте использовать [XP32 Maximum Skeleton Extended - XPMSE](https://www.nexusmods.com/skyrim/mods/68000).'
-      - <<: *alreadyInX
-        condition: 'active("XPMSE.esp")'
-        subs: [ 'XPMSE.esp' ]
+
   - name: 'XPMSE.esp'
     after: [ 'Requiem.esp' ]
     clean:
