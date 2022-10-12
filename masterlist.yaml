@@ -2187,6 +2187,18 @@ plugins:
       - <<: *useBashTweakInstead
         subs: [ 'Tweak Settings -> Magic: Max Active Runes' ]
 
+  - name: 'Improved Soultrap.esp'
+    msg:
+      - type: error
+        content:
+          - lang: en
+            text: 'Use NamedSoulGems compatibility patch instead.'
+          - lang: de
+            text: 'Verwenden Sie stattdessen den NamedSoulGems Kompatibilitätspatch.'
+          - lang: ja
+            text: 'NamedSoulGemsの互換パッチを代わりに使用してください。'
+        condition: 'file("NamedSoulGems.esp")'
+
   - name: 'InfernoStormShout.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/8343/'
@@ -20484,17 +20496,7 @@ plugins:
     clean:
       - crc: 0x9578E0FF
         util: 'TES5Edit v4.0.2f'
-  - name: 'Improved Soultrap.esp'
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use NamedSoulGems compatibility patch instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den NamedSoulGems Kompatibilitätspatch.'
-          - lang: ja
-            text: 'NamedSoulGemsの互換パッチを代わりに使用してください。'
-        condition: 'file("NamedSoulGems.esp")'
+
   - name: 'NamedSoulGems.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/12510/'
