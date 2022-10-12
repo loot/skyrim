@@ -2192,15 +2192,9 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/28588/'
         name: 'Spell - SoulClaim'
     msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'Use NamedSoulGems compatibility patch instead.'
-          - lang: de
-            text: 'Verwenden Sie stattdessen den NamedSoulGems Kompatibilitätspatch.'
-          - lang: ja
-            text: 'NamedSoulGemsの互換パッチを代わりに使用してください。'
-        condition: 'file("NamedSoulGems.esp")'
+      - <<: *useInstead
+        subs: [ 'Named Souls In Gems - Compatibility Patch' ]
+        condition: 'active("NamedSoulGems.esp")'
 
   - name: 'InfernoStormShout.esp'
     url:
