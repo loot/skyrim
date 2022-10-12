@@ -1901,16 +1901,6 @@ plugins:
   - name: 'mslVampiricThirst.esp'
     req: [ *SKSE ]
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Conflicts with other mods that change the vampirism system.'
-          - lang: de
-            text: 'Steht im Konflikt mit anderen Mods, die das Vampirismus-System verändern.'
-          - lang: ja
-            text: '吸血鬼のシステムを変更するModとは競合します。'
-          - lang: ru
-            text: 'конфликты с другими модами, меняющими систему вампиризма.'
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Vampiric Thirst.esp")'
     clean:
