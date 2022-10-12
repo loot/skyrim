@@ -1894,6 +1894,33 @@ plugins:
   - name: 'Imp''s More Complex Needs.esm'
     msg: [ *obsolete ]
 
+  - name: 'mslVampiricThirst.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/24222/'
+        name: 'Vampiric Thirst - Dawnguard Edition'
+    req: [ *SKSE ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Conflicts with other mods that change the vampirism system.'
+          - lang: de
+            text: 'Steht im Konflikt mit anderen Mods, die das Vampirismus-System verändern.'
+          - lang: ja
+            text: '吸血鬼のシステムを変更するModとは競合します。'
+          - lang: ru
+            text: 'конфликты с другими модами, меняющими систему вампиризма.'
+      - <<: *patch3rdParty_Requiem_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Vampiric Thirst.esp")'
+    clean:
+      - crc: 0x87674AA1
+        util: 'TES5Edit v4.0.4b'
+  - name: 'mslVampiricThirst - Requiem.esp'
+    inc:
+      - name: 'Requiem.esp'
+        display: 'Requiem v3.0.0+'
+        condition: 'version("Requiem.esp", "3.0.0", >=)'
+
   - name: '(RealisticNeedsandDiseases|RND_\w+-Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/26228/'
@@ -19563,32 +19590,7 @@ plugins:
       - <<: *alreadyInX
         condition: 'file("LFox Werewolf Improvements.esp")'
         subs: [ 'LFox Werewolf Improvements.esp' ]
-  - name: 'mslVampiricThirst.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/24222/'
-        name: 'Vampiric Thirst - Dawnguard Edition'
-    req: [ *SKSE ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Conflicts with other mods that change the vampirism system.'
-          - lang: de
-            text: 'Steht im Konflikt mit anderen Mods, die das Vampirismus-System verändern.'
-          - lang: ja
-            text: '吸血鬼のシステムを変更するModとは競合します。'
-          - lang: ru
-            text: 'конфликты с другими модами, меняющими систему вампиризма.'
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Vampiric Thirst.esp")'
-    clean:
-      - crc: 0x87674AA1
-        util: 'TES5Edit v4.0.4b'
-  - name: 'mslVampiricThirst - Requiem.esp'
-    inc:
-      - name: 'Requiem.esp'
-        display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+
   - name: 'playerwerewolfgrowth.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/12185/'
