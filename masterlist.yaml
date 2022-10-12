@@ -2085,6 +2085,20 @@ plugins:
           - '[Skyrim Script Extender](https://skse.silverlock.org)'
         condition: 'version("../skse_loader.exe", "0.1.7.0", <)'
 
+  - name: 'Morrowloot.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/44212/'
+        name: 'Morrowloot'
+    tag:
+      - Delev
+      - Relev
+    dirty:
+      # v4.0 and v4.0.1
+      - <<: *quickClean
+        crc: 0x7522A792
+        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 15
+
   - name: '(Realistic Wildlife Loot|RWL).*\.es(m|p)'
     url: [ 'https://www.nexusmods.com/skyrim/mods/8075/' ]
   - name: 'Realistic Wildlife Loot - (Realistic|Reduced)\.esp'
@@ -11057,39 +11071,6 @@ plugins:
         crc: 0x92CF529F
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 1
-  - name: 'Morrowloot.esp'
-    url:
-      - link: 'https://www.nexusmods.com/skyrim/mods/44212/'
-        name: 'Morrowloot'
-      - link: 'https://www.nexusmods.com/skyrim/mods/50740/'
-        name: 'Morrowloot 4E Edition'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'It is recommended to load morrowloot after any plugins that have a Relev tag which change the same leveled lists as morrowloot because they will re-add vanilla records removed by morrowloot.'
-          - lang: de
-            text: 'Es wird empfohlen, morrowloot nach Plugins mit einem Relev-Tag zu laden, die die gleichen Leveled Lists wie morrowloot ändern, da sie von morrowloot entfernte Standard-Datensätze erneut hinzufügen.'
-          - lang: ja
-            text: 'morrowlootと同じレベルドリストを変更するRelevタグ付きのプラグインがあった場合は、それよりも後にロードすることをお勧めします。morrowlootによって削除されたVanillaのレコードが再度追加されてしまうためです。'
-          - lang: ru
-            text: 'Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.'
-    tag:
-      - Delev
-      - Relev
-    dirty:
-      # Morrowloot - v4.0 and v4.0.1
-      - <<: *quickClean
-        crc: 0x7522A792
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 15
-      # Morrowloot 4E Edition - v4.3
-      - <<: *quickClean
-        crc: 0x06851CEB
-        util: '[TES5Edit v4.0.4b](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 26
-        udr: 1
-
   ### SkyRe - Compatibility Plugins for Weapons and Armor ###
   - name: 'SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/21092/' ]
