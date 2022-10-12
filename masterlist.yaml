@@ -1918,6 +1918,50 @@ plugins:
         display: 'Requiem v3.0.0+'
         condition: 'version("Requiem.esp", "3.0.0", >=)'
 
+  - name: 'PISE.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1269/' ]
+    tag:
+      - Delev
+      - Relev
+    dirty:
+      - <<: *quickClean
+        crc: 0x3FD14C0F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 133
+    msg: [ *corrupt ]
+  - name: 'PISE-Bartering Tweaks Only.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1269/' ]
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'The next one conflicts with some equipment changes, but you''ll get some of my changes with the rest of his in the case of a conflict. In most cases, do not use.'
+          - lang: de
+            text: 'Der nächste steht im Konflikt mit einigen Ausrüstungsänderungen, aber im Falle eines Konflikts werden Sie einige meiner Änderungen mit dem Rest von seinen erhalten. In den meisten Fällen, nicht verwenden.'
+          - lang: ja
+            text: '次のプラグインと装備の変更で競合しますが、競合が発生した場合もこちらの変更箇所をある程度残せます。ほとんどの場合、使用する必要はありません。'
+          - lang: ru
+            text: 'Возможны конфликты с некоторыми модами, правящими инвентарь, но вы можете получить некоторые из моих изменений с другими, из конфликтующего мода. В большинстве случаев не используйте этот мод.'
+  - name: 'PISE-Less Intense Level Scaling.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/1269/' ]
+    msg: [ *obsolete ]
+  - name: 'PISE-Reduced Potions.esp'
+    tag:
+      - Delev
+      - Relev
+  - name: 'WeaponsOf3E 1-0 PISE Plugin.esp'
+    tag:
+      - Delev
+      - Relev
+  - name: 'WeaponsOf3E Beta PISE Compatibility Plugin.esp'
+    tag:
+      - Delev
+      - Relev
+  - name: 'WeaponsOf3E PISE Plugin.esp'
+    tag:
+      - Delev
+      - Relev
+
   - name: '(RealisticNeedsandDiseases|RND_\w+-Patch)\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/26228/'
@@ -10745,46 +10789,7 @@ plugins:
         condition: 'file("DragonSwarms.*\.esp")'
   - name: 'DS-VanillaTimer+MultipleEvents.esp'
     inc: [ 'DS-MoreAgressionForRemover.esp' ]
-  - name: 'PISE.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/1269/' ]
-    tag:
-      - Delev
-      - Relev
-    dirty:
-      - <<: *quickClean
-        crc: 0x3FD14C0F
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 133
-    msg: [ *corrupt ]
-  - name: 'PISE-Bartering Tweaks Only.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/1269/' ]
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'The next one conflicts with some equipment changes, but you''ll get some of my changes with the rest of his in the case of a conflict. In most cases, do not use.'
-          - lang: de
-            text: 'Der nächste steht im Konflikt mit einigen Ausrüstungsänderungen, aber im Falle eines Konflikts werden Sie einige meiner Änderungen mit dem Rest von seinen erhalten. In den meisten Fällen, nicht verwenden.'
-          - lang: ja
-            text: '次のプラグインと装備の変更で競合しますが、競合が発生した場合もこちらの変更箇所をある程度残せます。ほとんどの場合、使用する必要はありません。'
-          - lang: ru
-            text: 'Возможны конфликты с некоторыми модами, правящими инвентарь, но вы можете получить некоторые из моих изменений с другими, из конфликтующего мода. В большинстве случаев не используйте этот мод.'
-  - name: 'PISE-Less Intense Level Scaling.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/1269/' ]
-    msg: [ *obsolete ]
-  - name: 'WeaponsOf3E Beta PISE Compatibility Plugin.esp'
-    tag:
-      - Delev
-      - Relev
-  - name: 'WeaponsOf3E 1-0 PISE Plugin.esp'
-    tag:
-      - Delev
-      - Relev
   - name: 'WeaponsOf3E PISE Compatibility Plugin.esp'
-    tag:
-      - Delev
-      - Relev
-  - name: 'WeaponsOf3E PISE Plugin.esp'
     tag:
       - Delev
       - Relev
@@ -20577,10 +20582,7 @@ plugins:
     msg:
       - <<: *corrupt
         condition: 'checksum("Eld-combinePotions.esp", B44CC974)'
-  - name: 'PISE-Reduced Potions.esp'
-    tag:
-      - Delev
-      - Relev
+
   - name: 'PT(Alchemy)?(Food)?Overhaul(_ONLY)?(_BetterSorting)?\.esp'
     msg:
       - <<: *useOnlyOneX
