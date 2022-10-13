@@ -2641,6 +2641,37 @@ plugins:
       - crc: 0x8F56DE23
         util: 'TES5Edit v4.0.4b'
 
+  - name: 'Hothtrooper44_ArmorCompilation.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19733/' ]
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches. It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.'
+          - lang: de
+            text: 'Dies ist die Skyjubs Invisible Helmets Version von hothtrooper44_ArmorCompilation.esp und führt möglicherweise nicht zu den gewünschten Effekten in Verbindung mit anderen hothtrooper Patches. Es ist nur mit den Dawnguard und Dragonborn Plugins kompatibel.'
+          - lang: ja
+            text: 'このプラグインはhothtrooper44_ArmorCompilation.espのSkyjubs Invisible Helmetsバージョンです。他のhothtrooper氏のパッチと同時に使用しても期待される効果は発生しないでしょう。DawnguardとDragonborn以外のSkyjubs Invisible Helmets esp群とは互換性がありません。'
+        condition: 'checksum("hothtrooper44_ArmorCompilation.esp", 1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp", 983EFB9E)'
+      - <<: *patch3rdParty_Requiem_RPC
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Armors.esp")'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", >)'
+    tag:
+      - name: Delev
+        condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=)'
+      - Relev
+    clean:
+      # v8
+      - crc: 0x0F782AFB
+        util: 'TES5Edit v4.0.2j'
+  - name: 'Hothtrooper44_Armor_Ecksstra.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/19733/' ]
+    clean:
+      # v8
+      - crc: 0x344E6933
+        util: 'TES5Edit v4.0.2j'
+
   - name: 'Isharas_Glimpse_of_Elsweyr.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/25362/'
@@ -8818,36 +8849,6 @@ plugins:
         crc: 0xD5E4880B
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         udr: 1
-  - name: 'Hothtrooper44_Armor_Ecksstra.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19733/' ]
-    clean:
-      # v8
-      - crc: 0x344E6933
-        util: 'TES5Edit v4.0.2j'
-  - name: 'Hothtrooper44_ArmorCompilation.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/19733/' ]
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches. It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.'
-          - lang: de
-            text: 'Dies ist die Skyjubs Invisible Helmets Version von hothtrooper44_ArmorCompilation.esp und führt möglicherweise nicht zu den gewünschten Effekten in Verbindung mit anderen hothtrooper Patches. Es ist nur mit den Dawnguard und Dragonborn Plugins kompatibel.'
-          - lang: ja
-            text: 'このプラグインはhothtrooper44_ArmorCompilation.espのSkyjubs Invisible Helmetsバージョンです。他のhothtrooper氏のパッチと同時に使用しても期待される効果は発生しないでしょう。DawnguardとDragonborn以外のSkyjubs Invisible Helmets esp群とは互換性がありません。'
-        condition: 'checksum("hothtrooper44_ArmorCompilation.esp", 1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp", 983EFB9E)'
-      - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Armors.esp")'
-      - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", >)'
-    tag:
-      - name: Delev
-        condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=)'
-      - Relev
-    clean:
-      # v8
-      - crc: 0x0F782AFB
-        util: 'TES5Edit v4.0.2j'
 
   - name: 'Level List - Immersive Armor.esp'
     tag:
