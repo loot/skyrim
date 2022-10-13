@@ -2647,15 +2647,6 @@ plugins:
         name: 'Immersive Armors'
   - name: 'Hothtrooper44_ArmorCompilation.esp'
     msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches. It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.'
-          - lang: de
-            text: 'Dies ist die Skyjubs Invisible Helmets Version von hothtrooper44_ArmorCompilation.esp und führt möglicherweise nicht zu den gewünschten Effekten in Verbindung mit anderen hothtrooper Patches. Es ist nur mit den Dawnguard und Dragonborn Plugins kompatibel.'
-          - lang: ja
-            text: 'このプラグインはhothtrooper44_ArmorCompilation.espのSkyjubs Invisible Helmetsバージョンです。他のhothtrooper氏のパッチと同時に使用しても期待される効果は発生しないでしょう。DawnguardとDragonborn以外のSkyjubs Invisible Helmets esp群とは互換性がありません。'
-        condition: 'checksum("hothtrooper44_ArmorCompilation.esp", 1B01C914) or checksum("hothtrooper44_ArmorCompilation.esp", 983EFB9E)'
       - <<: *patch3rdParty_Requiem_RPC
         condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Armors.esp")'
       - <<: *patchUnavailableRequiem
