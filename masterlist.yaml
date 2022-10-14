@@ -1416,6 +1416,9 @@ plugins:
       - <<: *compatIssuesWithX
         subs: [ 'Skyrim Redone' ]
         condition: 'active("SkyRe_Races.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Expanded Skyrim Presets ESP' ]
+        condition: 'many("ESPv1_1(nondependent)?\.esp")'
   - name: 'ESP.esp'
     msg: [ *obsolete ]
 
