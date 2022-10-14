@@ -1996,14 +1996,14 @@ plugins:
         condition: 'active("Dawnguard.esm") and checksum("SkyRealism - Capacity and Carry Weight.esp", 4F1987E0)'
 
   - name: 'SkyRe_Main.esp'
+    after: [ 'Scoped Bows.esp' ]
     req: [ *SKSE ]
     inc:
       - 'ACE Crafting.esp'
       - 'ACE Speech.esp'
-      - 'Perky.esp'
-      - 'Crafting300.esp'
       - 'Complete Crafting Overhaul.esp'
       - 'Complete Crafting Overhaul - BS version.esp'
+      - 'Crafting300.esp'
       - 'PerkUP-Alchemy.esp'
       - 'PerkUP-Alteration.esp'
       - 'PerkUP-Archery.esp'
@@ -2022,32 +2022,32 @@ plugins:
       - 'PerkUP-Sneak.esp'
       - 'PerkUP-Speech.esp'
       - 'PerkUP-TwoHanded.esp'
-      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
       - 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
       - 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
-      - 'Uncapped Perks - Combat + Stealth.esp'
-      - 'Uncapped Perks - Magic.esp'
+      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
+      - 'Perky.esp'
       - 'Uncapped Perks - Alchemy.esp'
       - 'Uncapped Perks - Alteration.esp'
       - 'Uncapped Perks - Archery.esp'
       - 'Uncapped Perks - Block.esp'
+      - 'Uncapped Perks - Combat + Stealth.esp'
       - 'Uncapped Perks - Conjuration.esp'
       - 'Uncapped Perks - Destruction.esp'
       - 'Uncapped Perks - Enchanting.esp'
       - 'Uncapped Perks - Heavy Armor.esp'
       - 'Uncapped Perks - Illusion.esp'
       - 'Uncapped Perks - Light Armor.esp'
+      - 'Uncapped Perks - Magic.esp'
       - 'Uncapped Perks - One Handed.esp'
       - 'Uncapped Perks - Pickpocket.esp'
       - 'Uncapped Perks - Restoration.esp'
       - 'Uncapped Perks - Sneak.esp'
       - 'Uncapped Perks - Speech.esp'
       - 'Uncapped Perks - Two Handed.esp'
-    after: [ 'Scoped Bows.esp' ]
     msg:
       - <<: *requiresX
-        condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
         subs: [ '[Skyrim -Community- Uncapper](https://www.nexusmods.com/skyrim/mods/1175/) for full perk functionality' ]
+        condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
       - type: say
         content:
           - lang: en
@@ -2117,23 +2117,23 @@ plugins:
             text: 'Отключите ''SkyRe_EnemyAI.esp'' перед созданием ASIS-патча и активируйте только после создания.'
         condition: 'active("SkyRe_EnemyAI.esp") and (file("ASIS.esp") or file("ASIS-Dependency.esp"))'
   - name: 'SkyRe_EnemyScaling.esp'
-    tag: [ Relev ]
     after: [ 'Immersive Weapons.esp' ]
+    tag: [ Relev ]
   - name: 'SkyRe_Races.esp'
     inc:
-      - 'EnhancedCharacterEdit.esp'
-      - 'DSpSoB.esp'
       - 'ArmedttTeeth.esm'
-      - '[MPX]RaceHeights.esp'
+      - 'DSpSoB.esp'
+      - 'EnhancedCharacterEdit.esp'
       - '[mpx] npc gender race heights v2.esp'
+      - '[MPX]RaceHeights.esp'
   - name: 'SkyRe_StandingStones.esp'
     inc:
       - 'Drakian race.esp'
       - 'Signs and Guardians.esp'
     msg:
       - <<: *deleteOrDeactivateX
+        subs: [ '**StaRe.esp**' ]
         condition: 'active("StaRe.esp")'
-        subs: [ 'StaRe.esp' ]
   - name: 'SkyRe_Survivalism.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/9286/' ]
     dirty:
