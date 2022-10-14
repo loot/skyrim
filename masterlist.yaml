@@ -1406,6 +1406,22 @@ plugins:
   - name: 'MTOH.esm'
     msg: [ *obsolete ]
 
+###### Character Appearance - Presets ######
+  - name: 'ESP(v1_1(nondependent)?)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/15963/'
+        name: 'ESP - Expanded Skyrim Presets'
+  - name: 'ESPv1_1(nondependent)?\.esp'
+    msg:
+      - <<: *compatIssuesWithX
+        subs: [ 'Skyrim Redone' ]
+        condition: 'active("SkyRe_Races.esp")'
+      - <<: *useOnlyOneX
+        subs: [ 'Expanded Skyrim Presets ESP' ]
+        condition: 'many("ESPv1_1(nondependent)?\.esp")'
+  - name: 'ESP.esp'
+    msg: [ *obsolete ]
+
 ###### Encounters - Allies ######
   - name: 'BreezeDog.esp'
     url:
@@ -18263,19 +18279,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'SkyReWarchiefArmorPlugin.esp'
     msg: [ *obsolete ]
-  - name: 'ESP.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.'
-          - lang: de
-            text: 'Überschreibt Änderungen der Rasseninformationen von SkyRe.esp oder SkyReNoLighting.esp, kann jedoch nach Verwendung von Rassenmenü sicher deaktiviert werden.'
-          - lang: ja
-            text: 'SkyRe.espまたはSkyReNoLighting.espによって変更された種族情報を上書きします。ただし種族メニューの利用後は安全に非アクティブにすることができます。'
-          - lang: ru
-            text: 'Может перезаписать расовую информацию. из SkyRe.esp или SkyReNoLighting.esp, но может быть безопасно отключен, после использования расового меню.'
-        condition: 'file("SkyRe.esp") and file("SkyReNoLighting.esp")'
+
   - name: 'Skyrim Creatures Alive.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/69/' ]
     tag:
