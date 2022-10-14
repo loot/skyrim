@@ -1995,6 +1995,303 @@ plugins:
         type: warn
         condition: 'active("Dawnguard.esm") and checksum("SkyRealism - Capacity and Carry Weight.esp", 4F1987E0)'
 
+  - name: 'SkyRe_Main.esp'
+    req: [ *SKSE ]
+    inc:
+      - 'ACE Crafting.esp'
+      - 'ACE Speech.esp'
+      - 'Perky.esp'
+      - 'Crafting300.esp'
+      - 'Complete Crafting Overhaul.esp'
+      - 'Complete Crafting Overhaul - BS version.esp'
+      - 'PerkUP-Alchemy.esp'
+      - 'PerkUP-Alteration.esp'
+      - 'PerkUP-Archery.esp'
+      - 'PerkUP-Block.esp'
+      - 'PerkUP-Conjuration.esp'
+      - 'PerkUP-Destruction.esp'
+      - 'PerkUP-Enchanting.esp'
+      - 'PerkUP-HeavyArmor.esp'
+      - 'PerkUP-Illusion.esp'
+      - 'PerkUP-LightArmor.esp'
+      - 'PerkUP-Lockpicking.esp'
+      - 'PerkUP-OneHanded.esp'
+      - 'PerkUP-Pickpocket.esp'
+      - 'PerkUP-Restoration.esp'
+      - 'PerkUP-Smithing.esp'
+      - 'PerkUP-Sneak.esp'
+      - 'PerkUP-Speech.esp'
+      - 'PerkUP-TwoHanded.esp'
+      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
+      - 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
+      - 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
+      - 'Uncapped Perks - Combat + Stealth.esp'
+      - 'Uncapped Perks - Magic.esp'
+      - 'Uncapped Perks - Alchemy.esp'
+      - 'Uncapped Perks - Alteration.esp'
+      - 'Uncapped Perks - Archery.esp'
+      - 'Uncapped Perks - Block.esp'
+      - 'Uncapped Perks - Conjuration.esp'
+      - 'Uncapped Perks - Destruction.esp'
+      - 'Uncapped Perks - Enchanting.esp'
+      - 'Uncapped Perks - Heavy Armor.esp'
+      - 'Uncapped Perks - Illusion.esp'
+      - 'Uncapped Perks - Light Armor.esp'
+      - 'Uncapped Perks - One Handed.esp'
+      - 'Uncapped Perks - Pickpocket.esp'
+      - 'Uncapped Perks - Restoration.esp'
+      - 'Uncapped Perks - Sneak.esp'
+      - 'Uncapped Perks - Speech.esp'
+      - 'Uncapped Perks - Two Handed.esp'
+    after: [ 'Scoped Bows.esp' ]
+    msg:
+      - <<: *requiresX
+        condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
+        subs: [ '[Skyrim -Community- Uncapper](https://www.nexusmods.com/skyrim/mods/1175/) for full perk functionality' ]
+      - type: say
+        content:
+          - lang: en
+            text: 'If lockpicking is not working, try to delete ''interface/lockpickingmenu.swf''.'
+          - lang: de
+            text: 'Wenn Schlösserknacken nicht funktioniert, versuchen Sie ''interface/lockpickingmenu.swf'' Zu löschen.'
+          - lang: es
+            text: 'Si lockpicking no funciona intenta borrar ''interface/lockpickingmenu.swf''.'
+          - lang: ja
+            text: '開錠ができなくなった場合は''interface/lockpickingmenu.swf''を削除してみてください。'
+          - lang: ru
+            text: 'Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл ''interface/lockpickingmenu.swf''.'
+        condition: 'file("interface/lockpickingmenu.swf")'
+      - type: say
+        content:
+          - lang: en
+            text: 'If you have a problem with aiming, try to install [this](https://www.nexusmods.com/skyrim/mods/13652) mod.'
+          - lang: de
+            text: 'Wenn Sie ein Problem mit dem Zielen haben, versuchen Sie [diese](https://www.nexusmods.com/skyrim/mods/13652) Mod zu installieren.'
+          - lang: es
+            text: 'Si tienes problemas al apuntar intenta instalar [este](https://www.nexusmods.com/skyrim/mods/13652) mod.'
+          - lang: ja
+            text: '狙いを上手くつけられない場合は[こちら](https://www.nexusmods.com/skyrim/mods/13652)のModをインストールしてみてください。'
+          - lang: ru
+            text: 'Если у вас проблемы с прицеливанием, попробуйте установить [этот](https://www.nexusmods.com/skyrim/mods/13652) мод.'
+        condition: 'not file("Proper Aiming.esp")'
+      - type: say
+        content:
+          - lang: en
+            text: 'To make aiming easier add the following lines to Skyrim.ini: %1%'
+          - lang: de
+            text: 'Um das Zielen zu vereinfachen, fügen Sie die folgenden Zeilen zu Skyrim.ini hinzu: %1%'
+          - lang: es
+            text: 'Para hacer apuntar más fácil agrega estas líneas a Skyrim.ini: %1%'
+          - lang: ja
+            text: '以下の記述をSkyrim.iniに追加すると狙いをつけ易くなります。%1%'
+          - lang: ru
+            text: 'Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки: %1%'
+        subs:
+          - |
+
+            ```
+            [Actor]
+            fVisibleNavmeshMoveDist=12288.0000
+
+            [Combat]
+            f1PArrowTiltUpAngle=0.64
+            f3PArrowTiltUpAngle=0.64
+            fMagnetismStrafeHeadingMult=0.0
+            fMagnetismLookingMult=0.0
+            ```
+    tag:
+      - Delev
+      - Relev
+  # SkyRe - Optional Modules #
+  - name: 'SkyRe_EnemyAI.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Deactivate ''SkyRe_EnemyAI.esp'' before creation of ASIS patch and activate only after creation of ASIS patch. Or you can add SkyRe_EnemyAI.esp to ASIS''s blocklist.txt ([instructions](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922))'
+          - lang: de
+            text: 'Deaktivieren Sie ''SkyRe_EnemyAI.esp'' vor der Erstellung des ASIS-Patches und aktivieren Sie es erst nach der Erstellung des ASIS-Patches. Oder Sie können SkyRe_EnemyAI.esp zu ASIS''s blocklist.txt hinzufügen ([Anweisungen](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922)).'
+          - lang: ja
+            text: 'ASISでパッチを作成する場合はその前に''SkyRe_EnemyAI.esp''を非アクティブにし、パッチ作成後にアクティブにしてください。SkyRe_EnemyAI.espをASISのblocklist.txt に追加してもいいでしょう。([解説](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922))'
+          - lang: ru
+            text: 'Отключите ''SkyRe_EnemyAI.esp'' перед созданием ASIS-патча и активируйте только после создания.'
+        condition: 'active("SkyRe_EnemyAI.esp") and (file("ASIS.esp") or file("ASIS-Dependency.esp"))'
+  - name: 'SkyRe_EnemyScaling.esp'
+    tag: [ Relev ]
+    after: [ 'Immersive Weapons.esp' ]
+  - name: 'SkyRe_Races.esp'
+    inc:
+      - 'EnhancedCharacterEdit.esp'
+      - 'DSpSoB.esp'
+      - 'ArmedttTeeth.esm'
+      - '[MPX]RaceHeights.esp'
+      - '[mpx] npc gender race heights v2.esp'
+  - name: 'SkyRe_StandingStones.esp'
+    inc:
+      - 'Drakian race.esp'
+      - 'Signs and Guardians.esp'
+    msg:
+      - <<: *deleteOrDeactivateX
+        condition: 'active("StaRe.esp")'
+        subs: [ 'StaRe.esp' ]
+  - name: 'SkyRe_Survivalism.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/9286/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x92CF529F
+        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
+        itm: 1
+  # SkyRe - Obsolete plugins #
+  - name: 'SkyRe_Enemies.esp'
+    msg: [ *obsolete ]
+    tag: [ Relev ]
+  - name: 'SkyRe_Lighting.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Only for non ENB users'
+          - lang: de
+            text: 'Nur für Benutzer ohne ENB.'
+          - lang: ja
+            text: 'ENBを使用しないユーザー向けのプラグインです。'
+          - lang: ru
+            text: 'Только для не ENB пользователей.'
+  - name: 'SkyRe_Main_NoDawnguard.esp'
+    req: [ *SKSE ]
+    inc:
+      - 'SkyRe_Main.esp'
+      - 'Dawnguard.esm'
+      - 'ACE Crafting.esp'
+      - 'ACE Speech.esp'
+      - 'Perky.esp'
+      - 'Crafting300.esp'
+      - 'Complete Crafting Overhaul.esp'
+      - 'Complete Crafting Overhaul - BS version.esp'
+      - 'PerkUP-Alchemy.esp'
+      - 'PerkUP-Alteration.esp'
+      - 'PerkUP-Archery.esp'
+      - 'PerkUP-Block.esp'
+      - 'PerkUP-Conjuration.esp'
+      - 'PerkUP-Destruction.esp'
+      - 'PerkUP-Enchanting.esp'
+      - 'PerkUP-HeavyArmor.esp'
+      - 'PerkUP-Illusion.esp'
+      - 'PerkUP-LightArmor.esp'
+      - 'PerkUP-Lockpicking.esp'
+      - 'PerkUP-OneHanded.esp'
+      - 'PerkUP-Pickpocket.esp'
+      - 'PerkUP-Restoration.esp'
+      - 'PerkUP-Smithing.esp'
+      - 'PerkUP-Sneak.esp'
+      - 'PerkUP-Speech.esp'
+      - 'PerkUP-TwoHanded.esp'
+      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
+      - 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
+      - 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
+      - 'Uncapped Perks - Combat + Stealth.esp'
+      - 'Uncapped Perks - Magic.esp'
+      - 'Uncapped Perks - Alchemy.esp'
+      - 'Uncapped Perks - Alteration.esp'
+      - 'Uncapped Perks - Archery.esp'
+      - 'Uncapped Perks - Block.esp'
+      - 'Uncapped Perks - Conjuration.esp'
+      - 'Uncapped Perks - Destruction.esp'
+      - 'Uncapped Perks - Enchanting.esp'
+      - 'Uncapped Perks - Heavy Armor.esp'
+      - 'Uncapped Perks - Illusion.esp'
+      - 'Uncapped Perks - Light Armor.esp'
+      - 'Uncapped Perks - One Handed.esp'
+      - 'Uncapped Perks - Pickpocket.esp'
+      - 'Uncapped Perks - Restoration.esp'
+      - 'Uncapped Perks - Sneak.esp'
+      - 'Uncapped Perks - Speech.esp'
+      - 'Uncapped Perks - Two Handed.esp'
+    msg:
+      - type: warn
+        content:
+          - lang: en
+            text: 'The SkyRe has many conflicts with other mods. Please read the readme before playing with mod. This will prevent many problems. Read it [here](https://www.nexusmods.com/skyrim/mods/9286).'
+          - lang: de
+            text: 'SkyRe hat viele Konflikte mit anderen Mods. Bitte lesen Sie die Readme bevor Sie mit der Mod spielen. Dadurch werden viele Probleme vermieden. Die Readme ist [hier](https://www.nexusmods.com/skyrim/mods/9286) zu finden.'
+          - lang: ja
+            text: 'SkyReを他のModと併用すると多数の競合が発生します。プレイする前にReadmeの内容を読んでおけば問題の多くを防げるでしょう。[こちら](https://www.nexusmods.com/skyrim/mods/9286)を参照してください。'
+          - lang: ru
+            text: 'SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его [здесь](https://www.nexusmods.com/skyrim/mods/9286)(Англ.).'
+      - <<: *requiresX
+        condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
+        subs: [ '[Skyrim -Community- Uncapper](https://www.nexusmods.com/skyrim/mods/1175/) for full perk functionality' ]
+      - type: say
+        content:
+          - lang: en
+            text: 'If lockpicking is not working, try to delete ''interface/lockpickingmenu.swf'''
+          - lang: de
+            text: 'Wenn Schlösserknacken nicht funktioniert, versuchen Sie ''interface/lockpickingmenu.swf'' Zu löschen.'
+          - lang: ja
+            text: '開錠ができなくなった場合は''interface/lockpickingmenu.swf''を削除してみてください。'
+          - lang: ru
+            text: 'Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл ''interface/lockpickingmenu.swf'''
+        condition: 'file("interface/lockpickingmenu.swf")'
+      - type: say
+        content:
+          - lang: en
+            text: 'If you have a problem with aiming, try to install [this](https://www.nexusmods.com/skyrim/mods/13652) mod.'
+          - lang: de
+            text: 'Wenn Sie ein Problem mit dem Zielen haben, versuchen Sie [diese](https://www.nexusmods.com/skyrim/mods/13652) Mod zu installieren.'
+          - lang: ja
+            text: '狙いを上手くつけられない場合は[こちら](https://www.nexusmods.com/skyrim/mods/13652)のModをインストールしてみてください。'
+          - lang: ru
+            text: 'Если у вас проблемы с прицеливанием, попробуйте установить [этот](https://www.nexusmods.com/skyrim/mods/13652) мод.'
+      - type: say
+        content:
+          - lang: en
+            text: 'To make aiming easier, add the following lines to Skyrim.ini: %1%'
+          - lang: de
+            text: 'Um das Zielen zu vereinfachen, fügen Sie die folgenden Zeilen zu Skyrim.ini hinzu: %1%'
+          - lang: es
+            text: 'Para hacer apuntar más fácil agrega estas líneas a Skyrim.ini: %1%'
+          - lang: ja
+            text: '次の記述をSkyrim.iniに追加すると狙いをつけ易くなります。%1%'
+          - lang: ru
+            text: 'Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки: %1%'
+        subs:
+          - |
+
+            ```
+            [Actor]
+            fVisibleNavmeshMoveDist=12288.0000
+
+            [Combat]
+            f1PArrowTiltUpAngle=0.64
+            f3PArrowTiltUpAngle=0.64
+            fMagnetismStrafeHeadingMult=0.0
+            fMagnetismLookingMult=0.0
+            ```
+    tag:
+      - Delev
+      - Relev
+  - name: 'SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21092/' ]
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_BetterBows(_1.4.1)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_DaggerCraft(_1.3)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_DragonBoneWeaponsComplete(_1.03)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_InsanitysCelticKatana(_1.2)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_InsanitysDragonKatana(_1.2)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_JaySuS(Swords|words)(_1.3D)?\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Plugin_NicoroshiCreations.*\.esp'
+    msg: [ *useInsteadReProccer ]
+  - name: 'SkyRe_Vampirism.esp'
+    msg: [ *obsolete ]
+
   - name: 'SkyrimHeartRate.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/35050/'
@@ -10804,282 +11101,12 @@ plugins:
         crc: 0x4F354881
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         nav: 4
-  - name: 'SkyRe_Main.esp'
-    req: [ *SKSE ]
-    inc:
-      - 'ACE Crafting.esp'
-      - 'ACE Speech.esp'
-      - 'Perky.esp'
-      - 'Crafting300.esp'
-      - 'Complete Crafting Overhaul.esp'
-      - 'Complete Crafting Overhaul - BS version.esp'
-      - 'PerkUP-Alchemy.esp'
-      - 'PerkUP-Alteration.esp'
-      - 'PerkUP-Archery.esp'
-      - 'PerkUP-Block.esp'
-      - 'PerkUP-Conjuration.esp'
-      - 'PerkUP-Destruction.esp'
-      - 'PerkUP-Enchanting.esp'
-      - 'PerkUP-HeavyArmor.esp'
-      - 'PerkUP-Illusion.esp'
-      - 'PerkUP-LightArmor.esp'
-      - 'PerkUP-Lockpicking.esp'
-      - 'PerkUP-OneHanded.esp'
-      - 'PerkUP-Pickpocket.esp'
-      - 'PerkUP-Restoration.esp'
-      - 'PerkUP-Smithing.esp'
-      - 'PerkUP-Sneak.esp'
-      - 'PerkUP-Speech.esp'
-      - 'PerkUP-TwoHanded.esp'
-      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
-      - 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
-      - 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
-      - 'Uncapped Perks - Combat + Stealth.esp'
-      - 'Uncapped Perks - Magic.esp'
-      - 'Uncapped Perks - Alchemy.esp'
-      - 'Uncapped Perks - Alteration.esp'
-      - 'Uncapped Perks - Archery.esp'
-      - 'Uncapped Perks - Block.esp'
-      - 'Uncapped Perks - Conjuration.esp'
-      - 'Uncapped Perks - Destruction.esp'
-      - 'Uncapped Perks - Enchanting.esp'
-      - 'Uncapped Perks - Heavy Armor.esp'
-      - 'Uncapped Perks - Illusion.esp'
-      - 'Uncapped Perks - Light Armor.esp'
-      - 'Uncapped Perks - One Handed.esp'
-      - 'Uncapped Perks - Pickpocket.esp'
-      - 'Uncapped Perks - Restoration.esp'
-      - 'Uncapped Perks - Sneak.esp'
-      - 'Uncapped Perks - Speech.esp'
-      - 'Uncapped Perks - Two Handed.esp'
-    after: [ 'Scoped Bows.esp' ]
-    msg:
-      - <<: *requiresX
-        condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
-        subs: [ '[Skyrim -Community- Uncapper](https://www.nexusmods.com/skyrim/mods/1175/) for full perk functionality' ]
-      - type: say
-        content:
-          - lang: en
-            text: 'If lockpicking is not working, try to delete ''interface/lockpickingmenu.swf''.'
-          - lang: de
-            text: 'Wenn Schlösserknacken nicht funktioniert, versuchen Sie ''interface/lockpickingmenu.swf'' Zu löschen.'
-          - lang: es
-            text: 'Si lockpicking no funciona intenta borrar ''interface/lockpickingmenu.swf''.'
-          - lang: ja
-            text: '開錠ができなくなった場合は''interface/lockpickingmenu.swf''を削除してみてください。'
-          - lang: ru
-            text: 'Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл ''interface/lockpickingmenu.swf''.'
-        condition: 'file("interface/lockpickingmenu.swf")'
-      - type: say
-        content:
-          - lang: en
-            text: 'If you have a problem with aiming, try to install [this](https://www.nexusmods.com/skyrim/mods/13652) mod.'
-          - lang: de
-            text: 'Wenn Sie ein Problem mit dem Zielen haben, versuchen Sie [diese](https://www.nexusmods.com/skyrim/mods/13652) Mod zu installieren.'
-          - lang: es
-            text: 'Si tienes problemas al apuntar intenta instalar [este](https://www.nexusmods.com/skyrim/mods/13652) mod.'
-          - lang: ja
-            text: '狙いを上手くつけられない場合は[こちら](https://www.nexusmods.com/skyrim/mods/13652)のModをインストールしてみてください。'
-          - lang: ru
-            text: 'Если у вас проблемы с прицеливанием, попробуйте установить [этот](https://www.nexusmods.com/skyrim/mods/13652) мод.'
-        condition: 'not file("Proper Aiming.esp")'
-      - type: say
-        content:
-          - lang: en
-            text: 'To make aiming easier add the following lines to Skyrim.ini: %1%'
-          - lang: de
-            text: 'Um das Zielen zu vereinfachen, fügen Sie die folgenden Zeilen zu Skyrim.ini hinzu: %1%'
-          - lang: es
-            text: 'Para hacer apuntar más fácil agrega estas líneas a Skyrim.ini: %1%'
-          - lang: ja
-            text: '以下の記述をSkyrim.iniに追加すると狙いをつけ易くなります。%1%'
-          - lang: ru
-            text: 'Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки: %1%'
-        subs:
-          - |
 
-            ```
-            [Actor]
-            fVisibleNavmeshMoveDist=12288.0000
-
-            [Combat]
-            f1PArrowTiltUpAngle=0.64
-            f3PArrowTiltUpAngle=0.64
-            fMagnetismStrafeHeadingMult=0.0
-            fMagnetismLookingMult=0.0
-            ```
-    tag:
-      - Delev
-      - Relev
-  - name: 'SkyRe_Main_NoDawnguard.esp'
-    req: [ *SKSE ]
-    inc:
-      - 'SkyRe_Main.esp'
-      - 'Dawnguard.esm'
-      - 'ACE Crafting.esp'
-      - 'ACE Speech.esp'
-      - 'Perky.esp'
-      - 'Crafting300.esp'
-      - 'Complete Crafting Overhaul.esp'
-      - 'Complete Crafting Overhaul - BS version.esp'
-      - 'PerkUP-Alchemy.esp'
-      - 'PerkUP-Alteration.esp'
-      - 'PerkUP-Archery.esp'
-      - 'PerkUP-Block.esp'
-      - 'PerkUP-Conjuration.esp'
-      - 'PerkUP-Destruction.esp'
-      - 'PerkUP-Enchanting.esp'
-      - 'PerkUP-HeavyArmor.esp'
-      - 'PerkUP-Illusion.esp'
-      - 'PerkUP-LightArmor.esp'
-      - 'PerkUP-Lockpicking.esp'
-      - 'PerkUP-OneHanded.esp'
-      - 'PerkUP-Pickpocket.esp'
-      - 'PerkUP-Restoration.esp'
-      - 'PerkUP-Smithing.esp'
-      - 'PerkUP-Sneak.esp'
-      - 'PerkUP-Speech.esp'
-      - 'PerkUP-TwoHanded.esp'
-      - 'PerkUP-zOptional-Pickpocket_CarryMore100.esp'
-      - 'PerkUP-zOptional_HeavyArmor_NoHelmsReq.esp'
-      - 'PerkUP-zOptional_LightArmor_NoHelmsReq.esp'
-      - 'Uncapped Perks - Combat + Stealth.esp'
-      - 'Uncapped Perks - Magic.esp'
-      - 'Uncapped Perks - Alchemy.esp'
-      - 'Uncapped Perks - Alteration.esp'
-      - 'Uncapped Perks - Archery.esp'
-      - 'Uncapped Perks - Block.esp'
-      - 'Uncapped Perks - Conjuration.esp'
-      - 'Uncapped Perks - Destruction.esp'
-      - 'Uncapped Perks - Enchanting.esp'
-      - 'Uncapped Perks - Heavy Armor.esp'
-      - 'Uncapped Perks - Illusion.esp'
-      - 'Uncapped Perks - Light Armor.esp'
-      - 'Uncapped Perks - One Handed.esp'
-      - 'Uncapped Perks - Pickpocket.esp'
-      - 'Uncapped Perks - Restoration.esp'
-      - 'Uncapped Perks - Sneak.esp'
-      - 'Uncapped Perks - Speech.esp'
-      - 'Uncapped Perks - Two Handed.esp'
-    msg:
-      - type: warn
-        content:
-          - lang: en
-            text: 'The SkyRe has many conflicts with other mods. Please read the readme before playing with mod. This will prevent many problems. Read it [here](https://www.nexusmods.com/skyrim/mods/9286).'
-          - lang: de
-            text: 'SkyRe hat viele Konflikte mit anderen Mods. Bitte lesen Sie die Readme bevor Sie mit der Mod spielen. Dadurch werden viele Probleme vermieden. Die Readme ist [hier](https://www.nexusmods.com/skyrim/mods/9286) zu finden.'
-          - lang: ja
-            text: 'SkyReを他のModと併用すると多数の競合が発生します。プレイする前にReadmeの内容を読んでおけば問題の多くを防げるでしょう。[こちら](https://www.nexusmods.com/skyrim/mods/9286)を参照してください。'
-          - lang: ru
-            text: 'SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его [здесь](https://www.nexusmods.com/skyrim/mods/9286)(Англ.).'
-      - <<: *requiresX
-        condition: 'not file("SKSE/Plugins/SKSE_Elys_Uncapper.dll")'
-        subs: [ '[Skyrim -Community- Uncapper](https://www.nexusmods.com/skyrim/mods/1175/) for full perk functionality' ]
-      - type: say
-        content:
-          - lang: en
-            text: 'If lockpicking is not working, try to delete ''interface/lockpickingmenu.swf'''
-          - lang: de
-            text: 'Wenn Schlösserknacken nicht funktioniert, versuchen Sie ''interface/lockpickingmenu.swf'' Zu löschen.'
-          - lang: ja
-            text: '開錠ができなくなった場合は''interface/lockpickingmenu.swf''を削除してみてください。'
-          - lang: ru
-            text: 'Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл ''interface/lockpickingmenu.swf'''
-        condition: 'file("interface/lockpickingmenu.swf")'
-      - type: say
-        content:
-          - lang: en
-            text: 'If you have a problem with aiming, try to install [this](https://www.nexusmods.com/skyrim/mods/13652) mod.'
-          - lang: de
-            text: 'Wenn Sie ein Problem mit dem Zielen haben, versuchen Sie [diese](https://www.nexusmods.com/skyrim/mods/13652) Mod zu installieren.'
-          - lang: ja
-            text: '狙いを上手くつけられない場合は[こちら](https://www.nexusmods.com/skyrim/mods/13652)のModをインストールしてみてください。'
-          - lang: ru
-            text: 'Если у вас проблемы с прицеливанием, попробуйте установить [этот](https://www.nexusmods.com/skyrim/mods/13652) мод.'
-      - type: say
-        content:
-          - lang: en
-            text: 'To make aiming easier, add the following lines to Skyrim.ini: %1%'
-          - lang: de
-            text: 'Um das Zielen zu vereinfachen, fügen Sie die folgenden Zeilen zu Skyrim.ini hinzu: %1%'
-          - lang: es
-            text: 'Para hacer apuntar más fácil agrega estas líneas a Skyrim.ini: %1%'
-          - lang: ja
-            text: '次の記述をSkyrim.iniに追加すると狙いをつけ易くなります。%1%'
-          - lang: ru
-            text: 'Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки: %1%'
-        subs:
-          - |
-
-            ```
-            [Actor]
-            fVisibleNavmeshMoveDist=12288.0000
-
-            [Combat]
-            f1PArrowTiltUpAngle=0.64
-            f3PArrowTiltUpAngle=0.64
-            fMagnetismStrafeHeadingMult=0.0
-            fMagnetismLookingMult=0.0
-            ```
-    tag:
-      - Delev
-      - Relev
   - name: 'SkyRE-Patch.esp'
     req:
       - *SKSE
       - *SkyUI
-  - name: 'SkyRe_EnemyScaling.esp'
-    tag: [ Relev ]
-    after: [ 'Immersive Weapons.esp' ]
-  - name: 'SkyRe_Enemies.esp'
-    msg: [ *obsolete ]
-    tag: [ Relev ]
-  - name: 'SkyRe_Lighting.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Only for non ENB users'
-          - lang: de
-            text: 'Nur für Benutzer ohne ENB.'
-          - lang: ja
-            text: 'ENBを使用しないユーザー向けのプラグインです。'
-          - lang: ru
-            text: 'Только для не ENB пользователей.'
-  - name: 'SkyRe_StandingStones.esp'
-    inc:
-      - 'Drakian race.esp'
-      - 'Signs and Guardians.esp'
-    msg:
-      - <<: *deleteOrDeactivateX
-        condition: 'active("StaRe.esp")'
-        subs: [ 'StaRe.esp' ]
-  - name: 'SkyRe_Survivalism.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/9286/' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x92CF529F
-        util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
-        itm: 1
-  ### SkyRe - Compatibility Plugins for Weapons and Armor ###
-  - name: 'SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/21092/' ]
-    msg: [ *useInsteadReProccer ]
-  - name: 'SkyRe_Plugin_BetterBows(_1.4.1)?\.esp'
-    msg: [ *useInsteadReProccer ]
-  - name: 'SkyRe_Plugin_DaggerCraft(_1.3)?\.esp'
-    msg: [ *useInsteadReProccer ]
-  - name: 'SkyRe_Plugin_DragonBoneWeaponsComplete(_1.03)?\.esp'
-    msg: [ *useInsteadReProccer ]
-  - name: 'SkyRe_Plugin_InsanitysCelticKatana(_1.2)?\.esp'
-    msg: [ *useInsteadReProccer ]
-  - name: 'SkyRe_Plugin_InsanitysDragonKatana(_1.2)?\.esp'
-    msg: [ *useInsteadReProccer ]
   - name: 'SkyRe_Plugin_isilNarsil.esp'
-    msg: [ *useInsteadReProccer ]
-  - name: 'SkyRe_Plugin_NicoroshiCreations.*\.esp'
-    msg: [ *useInsteadReProccer ]
-  - name: 'SkyRe_Plugin_JaySuS(Swords|words)(_1.3D)?\.esp'
     msg: [ *useInsteadReProccer ]
   - name: 'SkyRe_Plugin_Scoiatael Weapons.esp'
     msg: [ *useInsteadReProccer ]
@@ -11090,8 +11117,6 @@ plugins:
   - name: 'SkyRe_Plugin_Omegared99(-WeaponSets|sACv3_6|sArmorCompilation)(_3.5a)?\.esp'
     msg: [ *useInsteadReProccer ]
   - name: 'SkyRe_Plugin_Oriental Weapon&Armor.*\.esp'
-    msg: [ *useInsteadReProccer ]
-  - name: 'SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp'
     msg: [ *useInsteadReProccer ]
 
   - name: 'Scoped Bows - SkyRe Patch.esp'
@@ -19516,8 +19541,7 @@ plugins:
       - *SKSE
       - *SkyUI
       - *FNIS
-  - name: 'SkyRe_Vampirism.esp'
-    msg: [ *obsolete ]
+
   - name: 'DVA - Dynamic Vampire Appearance.esp'
     req:
       - *SKSE
@@ -23257,13 +23281,6 @@ plugins:
     msg:
       - <<: *obsolete
         subs: [ '[Vampirism Polished](https://www.nexusmods.com/skyrim/mods/23016/).' ]
-  - name: 'SkyRe_Races.esp'
-    inc:
-      - 'EnhancedCharacterEdit.esp'
-      - 'DSpSoB.esp'
-      - 'ArmedttTeeth.esm'
-      - '[MPX]RaceHeights.esp'
-      - '[mpx] npc gender race heights v2.esp'
 
   - name: 'ethereal_elven_overhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24273/' ]
@@ -24025,19 +24042,7 @@ plugins:
     group: *latePatchGroup
   - name: 'SUM.esp'
     group: *sumGroup
-  - name: 'SkyRe_EnemyAI.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Deactivate ''SkyRe_EnemyAI.esp'' before creation of ASIS patch and activate only after creation of ASIS patch. Or you can add SkyRe_EnemyAI.esp to ASIS''s blocklist.txt ([instructions](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922))'
-          - lang: de
-            text: 'Deaktivieren Sie ''SkyRe_EnemyAI.esp'' vor der Erstellung des ASIS-Patches und aktivieren Sie es erst nach der Erstellung des ASIS-Patches. Oder Sie können SkyRe_EnemyAI.esp zu ASIS''s blocklist.txt hinzufügen ([Anweisungen](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922)).'
-          - lang: ja
-            text: 'ASISでパッチを作成する場合はその前に''SkyRe_EnemyAI.esp''を非アクティブにし、パッチ作成後にアクティブにしてください。SkyRe_EnemyAI.espをASISのblocklist.txt に追加してもいいでしょう。([解説](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922))'
-          - lang: ru
-            text: 'Отключите ''SkyRe_EnemyAI.esp'' перед созданием ASIS-патча и активируйте только после создания.'
-        condition: 'active("SkyRe_EnemyAI.esp") and (file("ASIS.esp") or file("ASIS-Dependency.esp"))'
+
   - name: 'DeadlyCombat_ASIS_Patch.esp'
     group: *reproccerGroup
   - name: 'PostASISPatch.esp'
