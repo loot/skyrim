@@ -1407,6 +1407,19 @@ plugins:
     msg: [ *obsolete ]
 
 ###### Character Appearance - Presets ######
+  - name: 'ESP.esp'
+    msg:
+      - type: say
+        content:
+          - lang: en
+            text: 'Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.'
+          - lang: de
+            text: 'Überschreibt Änderungen der Rasseninformationen von SkyRe.esp oder SkyReNoLighting.esp, kann jedoch nach Verwendung von Rassenmenü sicher deaktiviert werden.'
+          - lang: ja
+            text: 'SkyRe.espまたはSkyReNoLighting.espによって変更された種族情報を上書きします。ただし種族メニューの利用後は安全に非アクティブにすることができます。'
+          - lang: ru
+            text: 'Может перезаписать расовую информацию. из SkyRe.esp или SkyReNoLighting.esp, но может быть безопасно отключен, после использования расового меню.'
+        condition: 'file("SkyRe.esp") and file("SkyReNoLighting.esp")'
 
 ###### Encounters - Allies ######
   - name: 'BreezeDog.esp'
@@ -18265,19 +18278,7 @@ plugins:
     msg: [ *obsolete ]
   - name: 'SkyReWarchiefArmorPlugin.esp'
     msg: [ *obsolete ]
-  - name: 'ESP.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.'
-          - lang: de
-            text: 'Überschreibt Änderungen der Rasseninformationen von SkyRe.esp oder SkyReNoLighting.esp, kann jedoch nach Verwendung von Rassenmenü sicher deaktiviert werden.'
-          - lang: ja
-            text: 'SkyRe.espまたはSkyReNoLighting.espによって変更された種族情報を上書きします。ただし種族メニューの利用後は安全に非アクティブにすることができます。'
-          - lang: ru
-            text: 'Может перезаписать расовую информацию. из SkyRe.esp или SkyReNoLighting.esp, но может быть безопасно отключен, после использования расового меню.'
-        condition: 'file("SkyRe.esp") and file("SkyReNoLighting.esp")'
+
   - name: 'Skyrim Creatures Alive.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/69/' ]
     tag:
