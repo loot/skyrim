@@ -8081,16 +8081,6 @@ plugins:
       - <<: *useOnlyOneX
         condition: 'many("bouncy_bodices.*\.esp")'
         subs: [ 'bouncy_bodices .esp file' ]
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure you have the correct body replacer installed for this esp.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie den richtigen Körper Ersetzer für diese esp installiert haben.'
-          - lang: ja
-            text: 'このEspを使用するときは適切な体型変更Modをインストールしてください。'
-          - lang: ru
-            text: 'Убедитесь, что для этого esp у вас установлена корректная версия реплейсера тел.'
 
   - name: 'BoundArmors.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30462/' ]
@@ -13154,16 +13144,6 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 78
   - name: 'FM - UNP Merchants.esp'
-    msg:
-      - type: warn
-        condition: 'version("FM - UNP Merchants.esp", "4.0", <)'
-        content:
-          - lang: en
-            text: 'The latest version (v4.0 and higher) of this mod is completely standalone now and has it''s own editor IDs, form IDs, folder structure and can be installed and used alongside any of the original mods it contains.'
-          - lang: de
-            text: 'Die neueste Version (v4.0 und höher) dieser Mod ist jetzt völlig eigenständig und verfügt über eigene Editor-IDs, Form-IDs und Ordnerstruktur. Sie kann zusammen mit den enthaltenen Original-Mods installiert und verwendet werden.'
-          - lang: ja
-            text: '最新版（v4.0以降）は完全にスタンドアローン化し、独自のEditor IDs、form ID、フォルダ構造を有しています。そのためオリジナルのModと別々にインストールし、同時に使用することができます。'
   - name: 'FM - UNP Merchants LvLists.esp'
     tag: [ Relev ]
   - name: 'FM - (Heljarchen|Lakeview|Windstad) Library\.esp'
@@ -21967,32 +21947,10 @@ plugins:
     msg: [ *alreadyInOrFixedByPatchv1_6 ]
   - name: 'Companion_Crea.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24710/' ]
-    msg:
-      - *requiresCBBEorUNP
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure you have the correct esp for the body type installed.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie die richtige esp für den Körpertyp installiert haben.'
-          - lang: ja
-            text: '必ずインストールされている体型に対応するEspを使用してください。'
-          - lang: ru
-            text: 'Убедитесь, что вы используете правильный esp, для соответствующего типа тела'
+    msg: [ *requiresCBBEorUNP ]
   - name: 'Companion_Lese.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/24710/' ]
-    msg:
-      - *requiresCBBEorUNP
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure you have the correct esp for the body type installed.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie die richtige esp für den Körpertyp installiert haben.'
-          - lang: ja
-            text: '必ずインストールされている体型に対応するEspを使用してください。'
-          - lang: ru
-            text: 'Убедитесь, что вы используете правильный esp, для соответствующего типа тела'
+    msg: [ *requiresCBBEorUNP ]
   - name: 'Consuelo de Montoya.esp'
     msg:
       - <<: *corrupt
