@@ -3934,19 +3934,7 @@ plugins:
     req:
       - *SKSE
       - *FNIS
-    msg:
-      - *requiresMCM_SkyUI
-      - type: error
-        content:
-          - lang: en
-            text: 'FNIS_SexLab_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise ''Override Skips'' option for archive of this mod in the ''Installers'' tab.'
-          - lang: de
-            text: 'FNIS_SexLab_List.txt ist nicht installiert. Animationen der Mod werden nicht zur FNIS Liste hinzugefügt und werden nicht im Spiel funktionieren. Vor der Installation durch Wrye Bash Bain sollten Sie die ''Override Skips'' Option für das Archiv der Mod im ''Installers'' Tab auswählen.'
-          - lang: ja
-            text: 'FNIS_SexLab_List.txtがインストールされていません。このファイルがなければModの追加アニメーションがFNISのリストに登録されず、再生もできません。Wrye Bashでインストールする場合は、まず最初に「Installers」タブを開いてModのアーカイブを選択し、右クリックメニューから「Override Skips」オプションを有効にする必要があります。'
-          - lang: ru
-            text: 'FNIS_SexLab_List.txt не установлен. Анимации мода не будут добавлены в список FNIS и не будут работать в игре. Перед установкой через Wrye Bash Bain вам необходимо выбрать опцию "Не пропускать ничего" для архива этого мода на вкладке ''Установщики''.'
-        condition: 'not file("meshes/actors/character/animations/SexLab/FNIS_SexLab_List.txt")'
+    msg: [ *requiresMCM_SkyUI ]
     clean:
       # v1.62
       - crc: 0xBC339CA4
@@ -3960,18 +3948,6 @@ plugins:
   - name: 'ZaZAnimationPack.esm'
     url: [ 'https://www.loverslab.com/files/file/156-zaz-animation-pack-v70-2017-05-16/' ]
     req: [ *FNIS ]
-    msg:
-      - type: error
-        content:
-          - lang: en
-            text: 'FNIS_ZaZAnimationPack_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise ''Override Skips'' option for archive of this mod in the ''Installers'' tab.'
-          - lang: de
-            text: 'FNIS_ZaZAnimationPack_List.txt ist nicht installiert. Animationen der Mod werden nicht zur FNIS Liste hinzugefügt und werden nicht im Spiel funktionieren. Vor der Installation durch Wrye Bash Bain sollten Sie die ''Override Skips'' Option für das Archiv der Mod im ''Installers'' Tab auswählen.'
-          - lang: ja
-            text: 'FNIS_SexLab_List.txtがインストールされていません。このファイルがなければModの追加アニメーションがFNISのリストに登録されず、再生もできません。Wrye Bashでインストールする場合は、まず最初に「Installers」タブを開いてModのアーカイブを選択し、右クリックメニューから「Override Skips」オプションを有効にする必要があります。'
-          - lang: ru
-            text: 'FNIS_ZaZAnimationPack_List.txt не установлен. Анимации мода не будут добавлены в список FNIS и не будут работать в игре. Перед установкой через Wrye Bash Bain вам необходимо выбрать опцию "Не пропускать ничего" для архива этого мода на вкладке ''Установщики''.'
-        condition: 'not file("meshes/actors/character/animations/ZaZAnimationPack/FNIS_ZaZAnimationPack_List.txt")'
     clean:
       # v7.0
       - crc: 0x8C11D683
