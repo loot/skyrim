@@ -2058,17 +2058,9 @@ plugins:
   # SkyRe - Optional Modules #
   - name: 'SkyRe_EnemyAI.esp'
     msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Deactivate ''SkyRe_EnemyAI.esp'' before creation of ASIS patch and activate only after creation of ASIS patch. Or you can add SkyRe_EnemyAI.esp to ASIS''s blocklist.txt ([instructions](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922))'
-          - lang: de
-            text: 'Deaktivieren Sie ''SkyRe_EnemyAI.esp'' vor der Erstellung des ASIS-Patches und aktivieren Sie es erst nach der Erstellung des ASIS-Patches. Oder Sie können SkyRe_EnemyAI.esp zu ASIS''s blocklist.txt hinzufügen ([Anweisungen](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922)).'
-          - lang: ja
-            text: 'ASISでパッチを作成する場合はその前に''SkyRe_EnemyAI.esp''を非アクティブにし、パッチ作成後にアクティブにしてください。SkyRe_EnemyAI.espをASISのblocklist.txt に追加してもいいでしょう。([解説](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/page-2922))'
-          - lang: ru
-            text: 'Отключите ''SkyRe_EnemyAI.esp'' перед созданием ASIS-патча и активируйте только после создания.'
-        condition: 'active("SkyRe_EnemyAI.esp") and (file("ASIS.esp") or file("ASIS-Dependency.esp"))'
+      - <<: *alsoUseX
+        subs: [ 'ASIS''s [**BlockList.txt**](https://forums.nexusmods.com/index.php?/topic/563161-t3nd0s-perk-overhaul/?p=8328716)' ]
+        condition: 'active("ASIS-Dependency.esp")'
   - name: 'SkyRe_EnemyScaling.esp'
     after: [ 'Immersive Weapons.esp' ]
     tag: [ Relev ]
