@@ -1018,6 +1018,36 @@ plugins:
         name: 'Realistic Weapon Positions'
     group: *reproccerGroup
 
+  - name: 'SMIM-Merged-All.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8655/' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x26FC8290
+        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
+        udr: 1
+    clean:
+      - crc: 0x7B6DD44D
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+  - name: 'SMIM-ShackRoofFixes.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8655/' ]
+    clean:
+      # v2.08
+      - crc: 0x7938E7F0
+        util: 'TES5Edit v4.0.2j'
+  - name: 'SMIM-ShackRoofFixesDragonborn.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/8655/' ]
+    clean:
+      # v2.08
+      - crc: 0xFC4F77F9
+        util: 'TES5Edit v4.0.2j'
+  - name: 'StaticMeshImprovementMod.esp'
+    msg:
+      - type: say
+        content:
+          - lang: ru
+            text: 'Вы можете использовать данный esp для версии 1.20-1.26 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.'
+        condition: 'checksum("StaticMeshImprovementMod.esp", 8806A693)'
+
   - name: 'Unique BOOZE Bottles( Alternate Names Version)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/19922/'
@@ -5317,25 +5347,7 @@ plugins:
     tag:
       - Delev
       - Relev
-  - name: 'StaticMeshImprovementMod.esp'
-    msg:
-      - type: say
-        content:
-          - lang: ru
-            text: 'Вы можете использовать данный esp для версии 1.20-1.26 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.'
-        condition: 'checksum("StaticMeshImprovementMod.esp", 8806A693)'
-  - name: 'SMIM-ShackRoofFixes.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8655/' ]
-    clean:
-      # v2.08
-      - crc: 0x7938E7F0
-        util: 'TES5Edit v4.0.2j'
-  - name: 'SMIM-ShackRoofFixesDragonborn.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8655/' ]
-    clean:
-      # v2.08
-      - crc: 0xFC4F77F9
-        util: 'TES5Edit v4.0.2j'
+
   - name: 'SurvivalistIngenuity.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/83096/'
@@ -24718,16 +24730,6 @@ plugins:
         util: '[TES5Edit v4.0.1](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 123
 
-  - name: 'SMIM-Merged-All.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/8655/' ]
-    dirty:
-      - <<: *quickClean
-        crc: 0x26FC8290
-        util: '[TES5Edit v4.0.3h (Hotfix 1)](https://www.nexusmods.com/skyrim/mods/25859)'
-        udr: 1
-    clean:
-      - crc: 0x7B6DD44D
-        util: 'TES5Edit v4.0.3h (Hotfix 1)'
   - name: 'SkyrimUnhinged.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/93144/' ]
     dirty:
