@@ -8076,20 +8076,11 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 7
   - name: 'bouncy_bodices.*\.esp'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/21271/' ]
     msg:
       - <<: *useOnlyOneX
         condition: 'many("bouncy_bodices.*\.esp")'
         subs: [ 'bouncy_bodices .esp file' ]
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure you have the correct body replacer installed for this esp.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie den richtigen Körper Ersetzer für diese esp installiert haben.'
-          - lang: ja
-            text: 'このEspを使用するときは適切な体型変更Modをインストールしてください。'
-          - lang: ru
-            text: 'Убедитесь, что для этого esp у вас установлена корректная версия реплейсера тел.'
 
   - name: 'BoundArmors.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/30462/' ]
@@ -8411,17 +8402,8 @@ plugins:
         util: '[TES5Edit v4.0.2j](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 4
   - name: 'DemonHunterArmor.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure you have the correct version for the body type installed: [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) or [CBBE](https://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie die richtige Version für den Körpertyp installiert haben: [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) oder [CBBE](https://www.nexusmods.com/skyrim/mods/2666)'
-          - lang: ja
-            text: '必ずインストールされている体型Mod（[DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)か[CBBE](https://www.nexusmods.com/skyrim/mods/2666)）とマッチするバージョンを使用してください。'
-          - lang: ru
-            text: 'Убедитесь что у вас установлена корректная версия типа тел: [DIMONIZED женское тело UNP](https://www.nexusmods.com/skyrim/mods/6709) или [женское тело CBBE](https://www.nexusmods.com/skyrim/mods/2666).'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/27060/' ]
+    msg: [ *requiresCBBEorUNP ]
   - name: 'DemonHunterV2armor.esp'
     msg: [ *requiresCBBE ]
 
@@ -9423,17 +9405,8 @@ plugins:
         condition: 'checksum("matys mithril armor enhanced.esp", A71FA4F0)'
 
   - name: 'MorSit.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure to use the correct esp for [CBBE](https://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)'
-          - lang: de
-            text: 'Achten Sie darauf, die richtige esp für [CBBE](https://www.nexusmods.com/skyrim/mods/2666) | [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) zu verwenden.'
-          - lang: ja
-            text: '必ず[CBBE](https://www.nexusmods.com/skyrim/mods/2666)か[DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)用のうちの適切なEspを使用するようにしてください。'
-          - lang: ru
-            text: 'Убедидесь, что используете правильный esp для [CBBE](https://www.nexusmods.com/skyrim/mods/2666) или [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/25213/' ]
+    msg: [ *requiresCBBEorUNP ]
 
   ### Mystic Elven Armor ###
   - name: 'SaderHorses.esp'
@@ -9770,17 +9743,8 @@ plugins:
     msg: [ *requiresUNPB ]
 
   - name: 'SeraphineHuntedArmor.esp'
-    msg:
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure you have the correct body mod for the esp. [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) or [CBBE](https://www.nexusmods.com/skyrim/mods/2666).'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie den richtigen Körper Mod für die esp haben. [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) oder [CBBE](https://www.nexusmods.com/skyrim/mods/2666).'
-          - lang: ja
-            text: '必ず[DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)か[CBBE](https://www.nexusmods.com/skyrim/mods/2666)のうち、インストールされている体型Modと同じバージョンのEspを使用してください。.'
-          - lang: ru
-            text: 'Убедитесь, что используете корректный реплейсер тел для этого esp. [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) или [CBBE](https://www.nexusmods.com/skyrim/mods/2666).'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24723/' ]
+    msg: [ *requiresCBBEorUNP ]
 
   - name: 'Shadowrend.esp'
     url:
@@ -13149,17 +13113,7 @@ plugins:
         crc: 0x6D3A13D9
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 78
-  - name: 'FM - UNP Merchants.esp'
-    msg:
-      - type: warn
-        condition: 'version("FM - UNP Merchants.esp", "4.0", <)'
-        content:
-          - lang: en
-            text: 'The latest version (v4.0 and higher) of this mod is completely standalone now and has it''s own editor IDs, form IDs, folder structure and can be installed and used alongside any of the original mods it contains.'
-          - lang: de
-            text: 'Die neueste Version (v4.0 und höher) dieser Mod ist jetzt völlig eigenständig und verfügt über eigene Editor-IDs, Form-IDs und Ordnerstruktur. Sie kann zusammen mit den enthaltenen Original-Mods installiert und verwendet werden.'
-          - lang: ja
-            text: '最新版（v4.0以降）は完全にスタンドアローン化し、独自のEditor IDs、form ID、フォルダ構造を有しています。そのためオリジナルのModと別々にインストールし、同時に使用することができます。'
+
   - name: 'FM - UNP Merchants LvLists.esp'
     tag: [ Relev ]
   - name: 'FM - (Heljarchen|Lakeview|Windstad) Library\.esp'
@@ -21962,31 +21916,11 @@ plugins:
   - name: 'CMCompanionLevel.esp'
     msg: [ *alreadyInOrFixedByPatchv1_6 ]
   - name: 'Companion_Crea.esp'
-    msg:
-      - *requiresCBBEorUNP
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure you have the correct esp for the body type installed.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie die richtige esp für den Körpertyp installiert haben.'
-          - lang: ja
-            text: '必ずインストールされている体型に対応するEspを使用してください。'
-          - lang: ru
-            text: 'Убедитесь, что вы используете правильный esp, для соответствующего типа тела'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24710/' ]
+    msg: [ *requiresCBBEorUNP ]
   - name: 'Companion_Lese.esp'
-    msg:
-      - *requiresCBBEorUNP
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure you have the correct esp for the body type installed.'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie die richtige esp für den Körpertyp installiert haben.'
-          - lang: ja
-            text: '必ずインストールされている体型に対応するEspを使用してください。'
-          - lang: ru
-            text: 'Убедитесь, что вы используете правильный esp, для соответствующего типа тела'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/24710/' ]
+    msg: [ *requiresCBBEorUNP ]
   - name: 'Consuelo de Montoya.esp'
     msg:
       - <<: *corrupt
@@ -22171,19 +22105,8 @@ plugins:
       - <<: *corrupt
         condition: 'checksum("Illdi.esp", B941754D)'
   - name: 'Illia.esp'
-    msg:
-      - <<: *corrupt
-        condition: 'checksum("Illdi.esp", B941754D)'
-      - type: say
-        content:
-          - lang: en
-            text: 'Be sure you have the correct body mod for the esp. [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) or [CBBE](https://www.nexusmods.com/skyrim/mods/2666).'
-          - lang: de
-            text: 'Stellen Sie sicher, dass Sie den richtigen Körper Mod für die esp haben. [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) oder [CBBE](https://www.nexusmods.com/skyrim/mods/2666).'
-          - lang: ja
-            text: '必ず[DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709)か[CBBE](https://www.nexusmods.com/skyrim/mods/2666)のうち、インストールされている体型Modと同じバージョンのEspを使用してください。.'
-          - lang: ru
-            text: 'Убедитесь, что используете корректный реплейсер тел для этого esp. [DIMONIZED UNP](https://www.nexusmods.com/skyrim/mods/6709) или [CBBE](https://www.nexusmods.com/skyrim/mods/2666).'
+    url: [ 'https://www.nexusmods.com/skyrim/mods/13997/' ]
+    msg: [ *requiresCBBEorUNP ]
   - name: 'ImaniSuda.esp'
     msg:
       - <<: *corrupt
