@@ -2719,8 +2719,10 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrim/mods/70970/'
         name: 'Smart Training - Tweaked'
     msg:
-      - type: error
-        content: 'The Requiem Patch provided on this plugin''s mod page is incompatible with Requiem v2.0.0+.'
+      - <<: *versionXIncY
+        subs:
+          - 'Smart Training - Tweaked & Requiem patch'
+          - 'Requiem (v2.0.0+)'
         condition: 'version("Requiem.esp", "2.0.0", >=) and checksum("Scripts/REQ_MCM_DataStorage.pex", 6862E3DC)'
     clean:
       - crc: 0x2270F07E
