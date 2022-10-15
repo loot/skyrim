@@ -2700,7 +2700,7 @@ plugins:
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 3
 
-###### Gameplay - Skills & Perks ######
+###### Gameplay - Skills, Perks & Leveling ######
   - name: 'Perks Unbound( - Helmless Warrior)?( - (Dawnguard|Dragonborn|Merged))?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/19538/'
@@ -2713,6 +2713,20 @@ plugins:
         condition: 'active("Unofficial Skyrim Legendary Edition Patch.esp")'
   - name: 'Perks Unbound - Helmless Warrior.esp'
     inc: [ 'Perks Unbound.esp' ]
+
+  - name: 'SmartTraining.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/70970/'
+        name: 'Smart Training - Tweaked'
+    msg:
+      - <<: *versionXIncY
+        subs:
+          - 'Smart Training - Tweaked & Requiem patch'
+          - 'Requiem (v2.0.0+)'
+        condition: 'version("Requiem.esp", "2.0.0", >=) and checksum("Scripts/REQ_MCM_DataStorage.pex", 6862E3DC)'
+    clean:
+      - crc: 0x2270F07E
+        util: 'TES5Edit v4.0.3h (Hotfix 1)'
 
   - name: 'SMLeveledItemSmithing.esp'
     url:
@@ -25218,15 +25232,7 @@ plugins:
       # version: final
       - crc: 0xD6C78911
         util: 'TES5Edit v4.0.1'
-  - name: 'SmartTraining.esp'
-    url: [ 'https://www.nexusmods.com/skyrim/mods/70970/' ]
-    msg:
-      - type: error
-        content: 'The Requiem Patch provided on this plugin''s mod page is incompatible with Requiem v2.0.0+.'
-        condition: 'version("Requiem.esp", "2.0.0", >=) and checksum("Scripts/REQ_MCM_DataStorage.pex", 6862E3DC)'
-    clean:
-      - crc: 0x2270F07E
-        util: 'TES5Edit v4.0.3h (Hotfix 1)'
+
   - name: 'KS Hairdos - HDT.esp'
     clean:
       # version: 1.0
