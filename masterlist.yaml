@@ -508,18 +508,18 @@ globals:
 # Latest Version
   # SKSE
   - <<: *versionOldX
-    subs: [ '**Script Extender ([SKSE](https://skse.silverlock.org))**' ]
-    condition: 'version("../skse_loader.exe", "0.1.7.3", <) and file("../skse_loader.exe")'
+    subs: [ '**[SKSE](https://skse.silverlock.org) Classic**' ]
+    condition: 'file("../skse_loader.exe") and version("../skse_loader.exe", "0.1.7.3", <)'
   - <<: *versionUpToDateX
-    subs: [ '**Script Extender ([SKSE](https://skse.silverlock.org))**' ]
-    condition: 'version("../skse_loader.exe", "0.1.7.3", >=) and file("../skse_loader.exe")'
+    subs: [ '**SKSE Classic**' ]
+    condition: 'version("../skse_loader.exe", "0.1.7.3", >=)'
 
 # SKSE
   # Missing
   - <<: *scriptExtenderMissing
     subs:
       - 'SKSE'
-      - '[SKSE](https://skse.silverlock.org)'
+      - '[Skyrim Script Extender](https://skse.silverlock.org) Classic'
     condition: 'file("SKSE/Plugins/([^\.]+\.dll)") and not file("../skse_loader.exe")'
   # Required Scripts
   - <<: *scriptExtenderRequiredScripts
