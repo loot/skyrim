@@ -1127,6 +1127,9 @@ plugins:
       - <<: *alreadyInX
         subs: [ '**Player Home Tavern Music - Legendary.esp**' ]
         condition: 'active("Player Home Tavern Music - Legendary.esp")'
+      - <<: *useVersion
+        subs: [ 'Legendary' ]
+        condition: 'active("HearthFires.esm") and active("Dragonborn.esm") and not active("Player Home Tavern Music - Legendary.esp")'
     # Group rules to avoid cyclic interactions
   - name: 'Player Home Tavern Music - (Dragonborn|Hearthfire)\.esp'
     after: [ 'Player Home Tavern Music.esp' ]
