@@ -590,8 +590,12 @@ groups:
   - name: &unlockedGroup Skyrim Unlocked
     after: [ *alternateStartGroup ]
 
-  - name: &lightingGroup Lighting
+  - name: &cellMusicGroup Cell Music
+    description: 'A group for modules that modify cell music.'
     after: [ *unlockedGroup ]
+
+  - name: &lightingGroup Lighting
+    after: [ *cellMusicGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
     after: [ *lightingGroup ]
