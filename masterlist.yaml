@@ -590,8 +590,12 @@ groups:
   - name: &unlockedGroup Skyrim Unlocked
     after: [ *alternateStartGroup ]
 
-  - name: &lightingGroup Lighting
+  - name: &cellMusicGroup Cell Music
+    description: 'A group for modules that modify cell music.'
     after: [ *unlockedGroup ]
+
+  - name: &lightingGroup Lighting
+    after: [ *cellMusicGroup ]
 
   - name: &dynamicPatchGroup Dynamic Patches
     after: [ *lightingGroup ]
@@ -1112,6 +1116,30 @@ plugins:
     clean:
       - crc: 0x1DD2CB8E
         util: 'TES5Edit v4.0.4b'
+
+  - name: 'Player Home Tavern Music( - (Dragonborn|Hearthfire|Legendary))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrim/mods/17627/'
+        name: 'Player Home Tavern Music'
+    group: *cellMusicGroup
+    tag: [ C.Music ]
+  - name: 'Player Home Tavern Music( - (Dragonborn|Hearthfire))?\.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**Player Home Tavern Music - Legendary.esp**' ]
+        condition: 'active("Player Home Tavern Music - Legendary.esp")'
+      - <<: *useVersion
+        subs: [ 'Legendary' ]
+        condition: 'active("HearthFires.esm") and active("Dragonborn.esm") and not active("Player Home Tavern Music - Legendary.esp")'
+    # Group rules to avoid cyclic interactions
+  - name: 'Player Home Tavern Music - (Dragonborn|Hearthfire)\.esp'
+    after: [ 'Player Home Tavern Music.esp' ]
+  - name: 'Player Home Tavern Music - Dragonborn.esp'
+    after: [ 'Player Home Tavern Music - Hearthfire.esp' ]
+  - name: 'Player Home Tavern Music - Legendary.esp'
+    msg:
+      - <<: *sortMasters
+        condition: 'checksum("Player Home Tavern Music - Legendary.esp", C38CDF1A)'
 
   - name: 'SoS - Civilization( ?-Patch(CoT.*|RCRN|RLO.*|SPO))?\.esp'
     url:
