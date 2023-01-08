@@ -1121,9 +1121,13 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/17627/'
         name: 'Player Home Tavern Music'
+    group: *cellMusicGroup
   - name: 'Player Home Tavern Music( - (Dragonborn|Hearthfire))?\.esp'
+    # Group rules to avoid cyclic interactions
   - name: 'Player Home Tavern Music - (Dragonborn|Hearthfire)\.esp'
+    after: [ 'Player Home Tavern Music.esp' ]
   - name: 'Player Home Tavern Music - Dragonborn.esp'
+    after: [ 'Player Home Tavern Music - Hearthfire.esp' ]
   - name: 'Player Home Tavern Music - Legendary.esp'
 
   - name: 'SoS - Civilization( ?-Patch(CoT.*|RCRN|RLO.*|SPO))?\.esp'
