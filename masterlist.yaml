@@ -151,11 +151,6 @@ prelude:
       type: say
       content: 'If you add, remove, or update plugins that alter WRLD/CELL records, remember to update this module with **xLODGen**.'
 
-    - &sortMasters
-      type: say
-      content: 'Plugin''s Masters require sorting. %1%'
-      subs: [ '[xEdit - Sort Masters](https://tes5edit.github.io/docs/7-mod-cleaning-and-error-checking.html#SortingMasterFileLoadOrders)' ]
-
     - &useBashTweakInstead
       type: say
       content: 'A Bashed Patch tweak can be used instead of this plugin. %1%'
@@ -1140,10 +1135,6 @@ plugins:
     after: [ 'Player Home Tavern Music.esp' ]
   - name: 'Player Home Tavern Music - Dragonborn.esp'
     after: [ 'Player Home Tavern Music - Hearthfire.esp' ]
-  - name: 'Player Home Tavern Music - Legendary.esp'
-    msg:
-      - <<: *sortMasters
-        condition: 'checksum("Player Home Tavern Music - Legendary.esp", C38CDF1A)'
 
   - name: 'SoS - Civilization( ?-Patch(CoT.*|RCRN|RLO.*|SPO))?\.esp'
     url:
@@ -17242,8 +17233,7 @@ plugins:
         crc: 0x1386FA38
         util: '[TES5Edit v4.0.2f](https://www.nexusmods.com/skyrim/mods/25859)'
         itm: 2
-  - name: 'Dawnguard - Att.esp'
-    msg: [ *sortMasters ]
+
   - name: 'DawnguardArmorLaup26.esp'
     after: [ 'LorebalanceArtifacts.esp' ]
   - name: 'DawnguardDawnbreaker_((Sun|Holy)?(Fire)?Ed(_ST)?)?\.esp'
