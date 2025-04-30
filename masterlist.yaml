@@ -98,10 +98,6 @@ prelude:
       content: 'Obsolete. Update to the latest version. {0}'
       subs: [ '' ]
 
-    - &onlyUseSmashOrBash
-      type: say
-      content: 'Can be used with a {0} but would require additional work. A Smashed Patch or Bash Patch should be used independently of one another.'
-
     - &optional
       type: say
       content: 'This plugin is optional.'
@@ -23622,20 +23618,13 @@ plugins:
     group: *dynamicPatchesGroup
     after: [ 'TES5Merged.esp' ]
     tag: [ NoMerge ]
-    msg:
-      - <<: *onlyUseSmashOrBash
-        condition: 'file("Bashed Patch.*\.esp")'
-        subs: [ 'Bashed Patch' ]
+
   - name: 'Bashed Patch.*\.esp'
     url: [ 'https://www.nexusmods.com/site/mods/591/' ]
     group: *dynamicPatchesGroup
     after:
       - 'Scarcity - Less Loot Mod.esp'
       - 'TES5Merged.esp'
-    msg:
-      - <<: *onlyUseSmashOrBash
-        condition: 'file("Smashed Patch.esp")'
-        subs: [ 'Smashed Patch.esp' ]
 
   - name: 'Automated Leveled List Addition.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/98170/' ]
