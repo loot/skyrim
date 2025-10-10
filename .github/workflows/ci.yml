@@ -4,38 +4,5 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-
-  build:
-    runs-on: ubuntu-24.04
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install metadata validator dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-upgrade \
-            libicu74 \
-            libtbb12
-
-      - name: Install metadata validator
-        run: |
-          wget https://github.com/loot/metadata-validator/releases/download/0.26.1/metadata-validator-0.26.1-0-g23e0aa1_0.26.1-Linux.tar.xz -O - | tar -xJ --strip-components=1
-          ln -s libloot.so.0.26.1 libloot.so.0
-
-      - name: Install parser
-        run: npm install -g js-yaml
-
-      - name: Download prelude file
-        run: wget https://raw.githubusercontent.com/loot/prelude/v0.26/prelude.yaml
-
-      - name: Run metadata validator
-        run: |
-          ./metadata_validator $GITHUB_WORKSPACE/masterlist.yaml
-          ./metadata_validator $GITHUB_WORKSPACE/masterlist.yaml $GITHUB_WORKSPACE/prelude.yaml
-          js-yaml $GITHUB_WORKSPACE/masterlist.yaml > /dev/null
+  validate:
+    uses: loot/prelude/.github/workflows/masterlist-ci.yml@v0.26
