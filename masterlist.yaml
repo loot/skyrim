@@ -324,31 +324,31 @@ common:
   - &alreadyInOrFixedByPatchv1_4
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.4' ]
-    condition: 'version("../TESV.exe", "1.4", >=)'
+    condition: 'version("../TESV.exe", >=, "1.4")'
   - &alreadyInOrFixedByPatchv1_4_26
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.4.26' ]
-    condition: 'version("../TESV.exe", "1.4", >=)'
+    condition: 'version("../TESV.exe", >=, "1.4")'
   - &alreadyInOrFixedByPatchv1_5
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.5' ]
-    condition: 'version("../TESV.exe", "1.5", >=)'
+    condition: 'version("../TESV.exe", >=, "1.5")'
   - &alreadyInOrFixedByPatchv1_6
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.6' ]
-    condition: 'version("../TESV.exe", "1.6", >=)'
+    condition: 'version("../TESV.exe", >=, "1.6")'
   - &alreadyInOrFixedByPatchv1_8
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.8' ]
-    condition: 'version("../TESV.exe", "1.8", >=)'
+    condition: 'version("../TESV.exe", >=, "1.8")'
   - &alreadyInOrFixedByPatchv1_9
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.9' ]
-    condition: 'version("../TESV.exe", "1.9", >=)'
+    condition: 'version("../TESV.exe", >=, "1.9")'
   - &alreadyInOrFixedByPatchv1_9_26
     <<: *alreadyInOrFixedByX
     subs: [ 'Skyrim Patch 1.9.26' ]
-    condition: 'version("../TESV.exe", "1.9", >=)'
+    condition: 'version("../TESV.exe", >=, "1.9")'
   - &alreadyInOrFixedByUSLEEP
     <<: *alreadyInOrFixedByX
     subs: [ '[Unofficial Skyrim Legendary Edition Patch](https://www.nexusmods.com/skyrim/mods/71214/)' ]
@@ -528,10 +528,10 @@ globals:
   # SKSE
   - <<: *versionOldX
     subs: [ '**[SKSE](https://skse.silverlock.org) Classic**' ]
-    condition: 'file("../skse_loader.exe") and version("../skse_loader.exe", "0.1.7.3", <)'
+    condition: 'file("../skse_loader.exe") and version("../skse_loader.exe", <, "0.1.7.3")'
   - <<: *versionUpToDateX
     subs: [ '**SKSE Classic**' ]
-    condition: 'version("../skse_loader.exe", "0.1.7.3", >=)'
+    condition: 'version("../skse_loader.exe", >=, "0.1.7.3")'
 
 # SKSE
   # Missing
@@ -1117,7 +1117,7 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "3.0.0")'
   - name: 'AOS2_TrueStorms Patch.esp'
     clean:
       - crc: 0x64CE5BC3
@@ -2061,7 +2061,7 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "3.0.0")'
 
   - name: '(PISE.*|WeaponsOf3E( 1-0| Beta)? PISE( Compatibility)? Plugin)\.esp'
     url:
@@ -2105,7 +2105,7 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "3.0.0")'
   - name: 'RND_UniqueBoozeBottles-Patch.esp'
     msg:
       - <<: *requiresResources
@@ -2306,7 +2306,7 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "3.0.0")'
 
   - name: '(Wolfs(_\w+_Recipes(_Rus)?|Recettes\w+)|(CraftingMaterials|NoSalt)Recipes|Recettes(MaterielFabrication|SansSel))\.esp'
     url:
@@ -2360,7 +2360,7 @@ plugins:
         subs:
           - '1.7.0'
           - '[Skyrim Script Extender](https://skse.silverlock.org)'
-        condition: 'not version("../skse_loader.exe", "0.1.7.0", >=)'
+        condition: 'not version("../skse_loader.exe", >=, "0.1.7.0")'
 
   - name: 'Morrowloot.esp'
     url:
@@ -2761,7 +2761,7 @@ plugins:
         subs:
           - 'Smart Training - Tweaked & Requiem patch'
           - 'Requiem (v2.0.0+)'
-        condition: 'version("Requiem.esp", "2.0.0", >=) and checksum("Scripts/REQ_MCM_DataStorage.pex", 6862E3DC)'
+        condition: 'version("Requiem.esp", >=, "2.0.0") and checksum("Scripts/REQ_MCM_DataStorage.pex", 6862E3DC)'
     clean:
       - crc: 0x2270F07E
         util: 'TES5Edit v4.0.3h (Hotfix 1)'
@@ -2790,7 +2790,7 @@ plugins:
         name: 'A Matter of Time - A HUD clock widget'
     after:
       - name: 'FISS.esp'
-        condition: 'version("AMatterOfTime.esp", "2", >=)'
+        condition: 'version("AMatterOfTime.esp", >=, "2")'
     clean:
       # version: 2.0.10
       - crc: 0x512CD10C
@@ -2900,12 +2900,12 @@ plugins:
   - name: 'Hothtrooper44_ArmorCompilation.esp'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Armors.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", <=, "3.4.0") and not active("Requiem - Immersive Armors.esp")'
       - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", >)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >, "3.4.0")'
     tag:
       - name: Delev
-        condition: 'version("hothtrooper44_ArmorCompilation.esp", "7", >=)'
+        condition: 'version("hothtrooper44_ArmorCompilation.esp", >=, "7")'
       - Relev
     clean:
       # v8
@@ -2933,14 +2933,14 @@ plugins:
   - name: 'JSwords.esm'
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("JSwords.esm", "14.0", <)'
+        condition: 'version("JSwords.esm", <, "14.0")'
     clean:
       - crc: 0x142A34B6
         util: 'TES5Edit v4.0.3f'
   - name: 'JSwordsDistributionBalancePlugin.esp'
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("JSwordsDistributionBalancePlugin.esp", "14.0", <)'
+        condition: 'version("JSwordsDistributionBalancePlugin.esp", <, "14.0")'
     tag:
       - Delev
       - Relev
@@ -2993,7 +2993,7 @@ plugins:
         name: 'Unique Uniques'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "4.0.2", <) and not active("Requiem - Unique Uniques.esp") and not active("Requiem - Unique Uniques - AOS.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", <, "4.0.2") and not active("Requiem - Unique Uniques.esp") and not active("Requiem - Unique Uniques - AOS.esp")'
     clean:
       # version: 1.8
       - crc: 0x51024687
@@ -5688,19 +5688,19 @@ plugins:
   - name: 'BabettesFeastBalanced.esp'
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("BabettesFeastBalanced.esp", "1.2", <)'
+        condition: 'version("BabettesFeastBalanced.esp", <, "1.2")'
   - name: 'BabettesFeastOverpowered.esp'
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("BabettesFeastOverpowered.esp", "1.2", <)'
+        condition: 'version("BabettesFeastOverpowered.esp", <, "1.2")'
   - name: 'BabettesFeastWeakerEffects.esp'
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("BabettesFeastWeakerEffects.esp", "1.2", <)'
+        condition: 'version("BabettesFeastWeakerEffects.esp", <, "1.2")'
   - name: 'BabettesFeast - IMCN.esp'
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("BabettesFeast - IMCN.esp", "0.31", <)'
+        condition: 'version("BabettesFeast - IMCN.esp", <, "0.31")'
 
   - name: 'Baby Dragons.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/19206/' ]
@@ -5948,7 +5948,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/5830/' ]
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("cao_goldbrand_WT.esp", "1.0", <)'
+        condition: 'version("cao_goldbrand_WT.esp", <, "1.0")'
 
   - name: 'cao_ToolsTrade_BuyRL.esp'
     url:
@@ -8553,7 +8553,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/6537/' ]
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("DPArmor.esp", "0.3", <)'
+        condition: 'version("DPArmor.esp", <, "0.3")'
 
   - name: 'DragonboneCrossbow.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/22303/' ]
@@ -8794,7 +8794,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/17582/' ]
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("..\TESV.exe", "1.8", >) and (checksum("EternalShineArmorAndWeapons.esp", D092DCAF) or checksum("EternalShineArmorAndWeapons.esp", 549A2BEB))'
+        condition: 'version("..\TESV.exe", >, "1.8") and (checksum("EternalShineArmorAndWeapons.esp", D092DCAF) or checksum("EternalShineArmorAndWeapons.esp", 549A2BEB))'
 
   - name: 'Explosive Arrows.esp'
     url:
@@ -8854,7 +8854,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/6348/' ]
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("..\TESV.exe", "1.8", >) and checksum("Frostmourne.esp", 5599D528)'
+        condition: 'version("..\TESV.exe", >, "1.8") and checksum("Frostmourne.esp", 5599D528)'
 
   - name: 'Frostmourne 1.0.1.esp'
     msg: [ *obsolete ]
@@ -9083,9 +9083,9 @@ plugins:
     after: [ 'AmazingFollowerTweaks.esp' ]
     msg:
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Immersive Weapons.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", <=, "3.4.0") and not active("Requiem - Immersive Weapons.esp")'
       - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", >)'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", >, "3.4.0")'
     tag:
       - Delev
       - Relev
@@ -9722,7 +9722,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/7692/' ]
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("Redguard Shield.esp", "1.2", <)'
+        condition: 'version("Redguard Shield.esp", <, "1.2")'
 
   - name: 'RedguardKnight.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/13500/' ]
@@ -9904,7 +9904,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/23034/' ]
     msg:
       - <<: *obsoleteSharlikran
-        condition: 'version("Skimpy Plate Armor.esp", "1.1", <)'
+        condition: 'version("Skimpy Plate Armor.esp", <, "1.1")'
       - *requiresCBBE
 
   - name: 'SkyHeels.esp'
@@ -10600,25 +10600,25 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v4.0.0+'
-        condition: 'checksum("Fozars_Dragonborn_-_Requiem_Patch.esp", 0AE44632) and version("Requiem.esp", "4.0.0", >=)'
+        condition: 'checksum("Fozars_Dragonborn_-_Requiem_Patch.esp", 0AE44632) and version("Requiem.esp", >=, "4.0.0")'
   - name: 'KFR-Kryptopyr''sFixesReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61520/' ]
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "3.0.0")'
   - name: 'COR-CraftingOverhaulReqtified.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61569/' ]
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "3.0.0")'
   - name: 'RSE-RequiemSurvivalExperience.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/56275/' ]
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "3.0.0")'
   - name: 'Requiem_Minor_Arcana.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/90983/'
@@ -10628,7 +10628,7 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v4.0.0+'
-        condition: 'version("Requiem.esp", "4.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "4.0.0")'
   - name: 'Requiem - Cutting Room Floor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/61621/' ]
     after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
@@ -10716,13 +10716,13 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v4.0.0+'
-        condition: 'version("Requiem.esp", "4.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "4.0.0")'
   - name: 'Requiem - Immersive Divine Blessings.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/90691/' ]
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v4.0.0+'
-        condition: 'version("Requiem.esp", "4.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "4.0.0")'
   - name: 'AZ Tweaks.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/81785/' ]
     after: [ 'Requiem_Minor_Arcana.esp' ]
@@ -15536,7 +15536,7 @@ plugins:
   - name: 'SovngardeNordHeroes.esp'
     msg:
       - <<: *obsolete
-        condition: 'version("SovngardeNordHeroes.esp", "1.3", <)'
+        condition: 'version("SovngardeNordHeroes.esp", <, "1.3")'
   - name: 'SovngardeQuest.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrim/mods/20581/'
@@ -16488,7 +16488,7 @@ plugins:
   - name: 'WARZONES - Civil Unrest.esp'
     msg:
       - <<: *obsolete
-        condition: 'version("WARZONES - Civil Unrest.esp", "2015.2", <)'
+        condition: 'version("WARZONES - Civil Unrest.esp", <, "2015.2")'
   - name: 'waterstonemanor.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/37631/' ]
     dirty:
@@ -16974,7 +16974,7 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v2.0.0+'
-        condition: 'version("Requiem.esp", "2.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "2.0.0")'
   ### Headbomb's Better Sorting ###
   - name: 'Headbomb''s Better Sorting.*\.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/2730/' ]
@@ -16982,12 +16982,12 @@ plugins:
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Ammo.esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Ammo.esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Books.esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Books.esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Books.esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Food \(((Light|Normal|Reduced) Weight|Weightless)\)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -16997,37 +16997,37 @@ plugins:
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Food (Light Weight).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Food (Normal Weight).esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Food (Normal Weight).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Food (Reduced Weight).esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Food (Reduced Weight).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Food (Weightless).esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Food (Weightless).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Ingredients.esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Ingredients.esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Miscellaneous.esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Miscellaneous.esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Potions (Half Weight).esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Potions (Half Weight).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Potions \(((Light|Half|Normal) Weight|Weightless)\)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17037,22 +17037,22 @@ plugins:
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Potions (Light Weight).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Potions (Normal Weight).esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Potions (Normal Weight).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Potions (Weightless).esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Potions (Weightless).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Soul Gems (PseudoVanilla).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Soul Gems \((Ranked|PseudoVanilla)\)\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -17062,12 +17062,12 @@ plugins:
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Soul Gems (Ranked).esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting - Spells.esp'
     msg:
       # doNotClean
       - <<: *obsoleteSharlikran
-        condition: 'version("Headbomb''s Better Sorting - Spells.esp", "2.06", <)'
+        condition: 'version("Headbomb''s Better Sorting - Spells.esp", <, "2.06")'
   - name: 'Headbomb''s Better Sorting.esp'
     msg: [ *obsolete ]
 
@@ -17328,7 +17328,7 @@ plugins:
       - 'BetterQuestObjectives.esp'
     msg:
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'version("ESFCompanions.esp", "0.3.8", >=) and active("Requiem.esp") and not active("Requiem - ESF Companions.esp")'
+        condition: 'version("ESFCompanions.esp", >=, "0.3.8") and active("Requiem.esp") and not active("Requiem - ESF Companions.esp")'
     clean:
       # version: 0.3.8
       - crc: 0xB9E80CB2
@@ -19522,7 +19522,7 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v2.0.0+'
-        condition: 'version("Requiem.esp", "2.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "2.0.0")'
     dirty:
       - <<: *quickClean
         crc: 0x011048DF
@@ -21891,7 +21891,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/19730/' ]
     msg:
       - <<: *obsolete
-        condition: 'version("SPTConsistentOlderPeople.esp", "1.3", <)'
+        condition: 'version("SPTConsistentOlderPeople.esp", <, "1.3")'
   - name: 'Better Followers.esp'
     msg: [ *obsolete ]
 
@@ -22802,7 +22802,7 @@ plugins:
     group: *alternateStartGroup
     msg:
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "3.4.0", <=) and not active("Requiem - Live Another Life.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", <=, "3.4.0") and not active("Requiem - Live Another Life.esp")'
     tag: [ C.Location ]
     clean:
       # version: 3.1.7
@@ -24616,7 +24616,7 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrim/mods/63766/' ]
     msg:
       - <<: *patch3rdParty_Requiem_RPC
-        condition: 'active("Requiem.esp") and version("Requiem.esp", "4.0.2", <) and not active("Requiem - Rustic Soulgems.esp") and not active("Requiem - Rustic Soulgems - ISC.esp")'
+        condition: 'active("Requiem.esp") and version("Requiem.esp", <, "4.0.2") and not active("Requiem - Rustic Soulgems.esp") and not active("Requiem - Rustic Soulgems - ISC.esp")'
       - <<: *deletePlugin
         condition: 'active("RUSTIC SOULGEMS - (Uns|S)orted\.esp") and active("Requiem - Rustic Soulgems( - ISC)?.esp")'
         subs: [ 'the Requiem patch for Rustic Soulgems' ]
@@ -24639,7 +24639,7 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v2.0.0+'
-        condition: 'version("Requiem.esp", "2.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "2.0.0")'
   - name: 'WM Flora Fixes.esp'
     url: [ 'https://www.nexusmods.com/skyrim/mods/70656/' ]
     msg:
@@ -24674,7 +24674,7 @@ plugins:
     inc:
       - name: 'Requiem.esp'
         display: 'Requiem v3.0.0+'
-        condition: 'version("Requiem.esp", "3.0.0", >=)'
+        condition: 'version("Requiem.esp", >=, "3.0.0")'
   - name: 'Requiem - Immersive Jewelry( BTC| ISC)?\.esp'
     msg:
       - <<: *useOnlyOneX
@@ -24726,7 +24726,7 @@ plugins:
   - name: 'Serana Dialogue Edit.esp'
     after:
       - name: 'Relationship Dialogue Overhaul.esp'
-        condition: 'version("Serana Dialogue Edit.esp", "1.0", >=)'
+        condition: 'version("Serana Dialogue Edit.esp", >=, "1.0")'
     clean:
       # version: 1.01
       - crc: 0x19E50E3F
